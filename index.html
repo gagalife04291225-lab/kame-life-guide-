@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="カメの配合飼料おすすめ5選。テトラレプトミン・ひかりカメ・ズーメッドなどを食いつき・栄養・コストで比較。">
+  <title>カメの配合飼料おすすめ5選｜テトラ・レプトミン・ひかりを全部試した結論 — カメライフガイド</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+:root {
+  --forest:    #1c2b1a;
+  --forest-mid:#2d4a2a;
+  --moss:      #4a6741;
+  --sage:      #7a9e6e;
+  --sage-light:#a8c49a;
+  --stone:     #e8e2d8;
+  --parchment: #f4f0e8;
+  --cream:     #faf8f4;
+  --white:     #ffffff;
+  --ink:       #1a1a16;
+  --ink-soft:  #3d3d30;
+  --muted:     #8a8878;
+  --border:    rgba(74,103,65,0.15);
+  --amazon:    #FF9900;
+  --amazon-dk: #e08800;
+  --ease:      cubic-bezier(0.25,0.1,0.25,1);
+  --ease-out:  cubic-bezier(0.0,0.0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── HEADER ── */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  transition: background 0.4s var(--ease), box-shadow 0.4s;
+}
+.site-header.scrolled {
+  background: rgba(28,43,26,0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-icon {
+  width: 32px; height: 32px;
+  background: var(--sage);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage-light); }
+.nav-cta {
+  background: var(--sage) !important; color: white !important;
+  padding: 9px 22px; border-radius: 3px;
+  font-size: 11px !important; letter-spacing: 0.16em;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--moss) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  background: var(--forest);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 0 80px;
+}
+
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(74,103,65,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 70%, rgba(45,74,42,0.3) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  padding: 0 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+}
+
+.hero-left {}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: 28px;
+  border: 1px solid rgba(122,158,110,0.35);
+  padding: 6px 16px; border-radius: 2px;
+}
+.hero-tag-dot {
+  width: 5px; height: 5px; background: var(--sage); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 5.5vw, 80px);
+  font-weight: 700;
+  line-height: 1.06; letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 28px;
+}
+.hero-title em { font-style: italic; color: var(--sage-light); }
+
+.hero-desc {
+  font-size: 15px; line-height: 1.9;
+  color: rgba(244,240,232,0.55);
+  max-width: 400px; margin-bottom: 44px;
+}
+
+.hero-buttons { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--sage); color: var(--forest);
+  text-decoration: none; padding: 15px 32px; border-radius: 3px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(--sage-light); transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
+  text-decoration: none; padding: 15px 28px; border-radius: 3px;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, gap 0.2s;
+}
+.btn-outline:hover { border-color: var(--sage); color: var(--sage-light); gap: 12px; }
+.btn-outline::after { content: '→'; }
+
+.hero-right {
+  display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+}
+
+.hero-stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  padding: 20px 28px; border-radius: 4px;
+  width: 100%;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 600;
+  color: var(--cream); line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-num span { font-size: 18px; color: var(--sage-light); }
+.hero-stat-label { font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); z-index: 2;
+}
+.scroll-arrow {
+  width: 1px; height: 40px; background: linear-gradient(var(--sage), transparent);
+  position: relative; overflow: hidden;
+}
+.scroll-arrow::after {
+  content: ''; position: absolute; top: -100%; left: 0;
+  width: 1px; height: 100%; background: var(--sage-light);
+  animation: scrollDown 1.8s ease-in-out infinite;
+}
+@keyframes scrollDown { 0%{top:-100%} 100%{top:200%} }
+
+/* ── BAND ── */
+.stat-band {
+  background: var(--forest-mid);
+  padding: 0; overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.stat-band-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid rgba(255,255,255,0.06);
+}
+.stat-item {
+  padding: 32px 40px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 600; color: var(--cream); line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-n span { color: var(--sage-light); font-size: 20px; }
+.stat-l { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+/* ── SECTIONS ── */
+section { padding: 96px 48px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--moss); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::before { content: ''; width: 28px; height: 1px; background: var(--sage); }
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 3.5vw, 52px); font-weight: 600;
+  line-height: 1.12; color: var(--forest); margin-bottom: 16px;
+}
+.section-heading em { font-style: italic; color: var(--moss); }
+.section-sub { font-size: 14px; color: var(--muted); line-height: 1.9; max-width: 500px; }
+
+/* ── RANKING ── */
+.ranking-section { background: var(--white); }
+.ranking-head { margin-bottom: 60px; }
+
+.rank-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+  border: 1px solid var(--border);
+}
+.rank-card {
+  padding: 48px 40px;
+  border-right: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+  display: block; position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.rank-card:last-child { border-right: none; }
+.rank-card:hover { background: var(--parchment); }
+.rank-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.rank-card:nth-child(1)::before { background: #b8860b; }
+.rank-card:nth-child(2)::before { background: #909090; }
+.rank-card:nth-child(3)::before { background: #8b5a2b; }
+
+.rank-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 700; line-height: 1;
+  margin-bottom: 20px; display: block;
+}
+.rank-card:nth-child(1) .rank-num { color: rgba(184,134,11,0.15); }
+.rank-card:nth-child(2) .rank-num { color: rgba(144,144,144,0.12); }
+.rank-card:nth-child(3) .rank-num { color: rgba(139,90,43,0.12); }
+
+.rank-medal {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  margin-bottom: 14px; display: block;
+}
+.rank-card:nth-child(1) .rank-medal { color: #b8860b; }
+.rank-card:nth-child(2) .rank-medal { color: #909090; }
+.rank-card:nth-child(3) .rank-medal { color: #8b5a2b; }
+
+.rank-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 600; line-height: 1.45;
+  color: var(--forest); margin-bottom: 12px;
+}
+.rank-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+.rank-stars { color: var(--sage); letter-spacing: 4px; font-size: 13px; }
+
+.rank-arrow {
+  position: absolute; bottom: 36px; right: 36px;
+  font-size: 20px; color: var(--sage); opacity: 0;
+  transform: translateX(-8px); transition: opacity 0.3s, transform 0.3s;
+}
+.rank-card:hover .rank-arrow { opacity: 1; transform: none; }
+
+/* ── ARTICLES ── */
+.articles-section { background: var(--parchment); }
+.articles-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 52px; gap: 20px;
+}
+.view-all {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--moss); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: gap 0.2s, color 0.2s; white-space: nowrap;
+}
+.view-all:hover { gap: 14px; color: var(--forest); }
+.view-all::after { content: '→'; }
+
+.article-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.article-card {
+  background: var(--white); text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(28,43,26,0.1);
+}
+
+.card-top {
+  aspect-ratio: 16/10; position: relative; overflow: hidden;
+}
+.card-bg {
+  width: 100%; height: 100%;
+  transition: transform 0.5s var(--ease);
+}
+.article-card:hover .card-bg { transform: scale(1.06); }
+.card-bg.bg-cage     { background: linear-gradient(135deg, #2d4a2a 0%, #1c3520 50%, #142810 100%); }
+.card-bg.bg-substrate{ background: linear-gradient(135deg, #6b5a3a 0%, #4a3d25 50%, #332a18 100%); }
+.card-bg.bg-shelter  { background: linear-gradient(135deg, #3a4a35 0%, #2a3828 50%, #1c2818 100%); }
+.card-bg.bg-feed     { background: linear-gradient(135deg, #4a5a2a 0%, #384420 50%, #283015 100%); }
+.card-bg.bg-uvb      { background: linear-gradient(135deg, #2a3a5a 0%, #1c2840 50%, #121c30 100%); }
+.card-bg.bg-water    { background: linear-gradient(135deg, #2a4a5a 0%, #1c3840 50%, #122830 100%); }
+
+.card-icon {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 56px;
+  transition: transform 0.4s var(--ease);
+}
+.article-card:hover .card-icon { transform: translate(-50%, -56%) scale(1.1); }
+
+.card-label {
+  position: absolute; top: 14px; left: 14px;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  background: rgba(28,43,26,0.75); color: var(--sage-light);
+  padding: 5px 12px; backdrop-filter: blur(6px);
+}
+
+.card-body { padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+.card-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px; font-weight: 600; line-height: 1.55;
+  color: var(--forest); margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.article-card:hover .card-title { color: var(--moss); }
+.card-excerpt { font-size: 13px; color: var(--muted); line-height: 1.85; flex: 1; margin-bottom: 16px; }
+.card-meta {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sage); display: flex; align-items: center; gap: 8px;
+}
+.card-meta::before { content: ''; width: 20px; height: 1px; background: var(--sage); }
+
+/* ── DEEP FEATURE ── */
+.feature-section {
+  background: var(--forest);
+  padding: 100px 48px;
+}
+.feature-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+}
+.feature-visual {
+  position: relative;
+}
+.feature-panel {
+  background: var(--forest-mid);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 40px;
+  position: relative; overflow: hidden;
+}
+.feature-panel::before {
+  content: '🐢'; font-size: 160px;
+  position: absolute; right: -20px; bottom: -20px;
+  opacity: 0.08; line-height: 1;
+}
+.feature-items { display: flex; flex-direction: column; gap: 16px; }
+.feature-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 18px; background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.fi-icon {
+  width: 40px; height: 40px; background: rgba(122,158,110,0.15);
+  border-radius: 2px; display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.fi-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
+.fi-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+.feature-text .section-label { color: var(--sage-light); }
+.feature-text .section-label::before { background: var(--sage); }
+.feature-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px,3vw,48px); font-weight: 600;
+  color: var(--cream); line-height: 1.15; margin-bottom: 20px;
+}
+.feature-heading em { font-style: italic; color: var(--sage-light); }
+.feature-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.95; margin-bottom: 36px; }
+.feature-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage-light); text-decoration: none;
+  border-bottom: 1px solid rgba(122,158,110,0.3);
+  padding-bottom: 4px;
+  transition: gap 0.2s, border-color 0.2s;
+}
+.feature-link:hover { gap: 16px; border-color: var(--sage-light); }
+
+/* ── ARTICLE PAGE ── */
+.article-hero {
+  background: var(--forest);
+  padding: 140px 48px 80px;
+  position: relative; overflow: hidden;
+}
+.article-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,103,65,0.2) 0%, transparent 70%);
+}
+.article-hero-inner { max-width: 840px; position: relative; z-index: 1; }
+.article-badge {
+  display: inline-block;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage-light);
+  border: 1px solid rgba(122,158,110,0.35);
+  padding: 6px 16px; margin-bottom: 28px;
+}
+.article-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 52px); font-weight: 700;
+  line-height: 1.18; color: var(--cream); margin-bottom: 24px;
+}
+.article-meta-row {
+  font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
+  display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+}
+.article-meta-row span { display: flex; align-items: center; gap: 6px; }
+
+.breadcrumb {
+  background: var(--parchment);
+  padding: 14px 48px;
+  font-size: 12px; color: var(--muted);
+  display: flex; gap: 8px; align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--moss); }
+
+.article-body-wrap {
+  max-width: 760px; margin: 0 auto; padding: 72px 48px 100px;
+}
+.article-body p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; line-height: 2.1; color: var(--ink-soft); margin-bottom: 22px;
+}
+.article-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; font-weight: 600; color: var(--forest);
+  margin: 60px 0 22px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+.article-body h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 600; color: var(--forest-mid);
+  margin: 40px 0 14px;
+  padding-left: 14px; border-left: 3px solid var(--sage);
+}
+.article-body ul, .article-body ol {
+  padding-left: 22px; margin-bottom: 22px;
+}
+.article-body li {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; line-height: 2; color: var(--ink-soft); margin-bottom: 8px;
+}
+
+/* Merit / Demerit */
+.merit-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
+@media (max-width: 600px) { .merit-box { grid-template-columns: 1fr; } }
+.merit, .demerit { padding: 28px; }
+.merit { background: #f2f8f0; border-top: 2px solid var(--sage); }
+.demerit { background: #faf2f0; border-top: 2px solid #c47a5a; }
+.merit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin-bottom: 14px; }
+.demerit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a4a2a; margin-bottom: 14px; }
+.merit ul, .demerit ul { padding-left: 18px; }
+.merit li, .demerit li { font-size: 13px; line-height: 1.85; font-family: 'Noto Sans JP', sans-serif; }
+
+/* Rating */
+.rating-box { margin: 52px 0; background: var(--forest); padding: 52px; text-align: center; }
+.rating-label { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 20px; }
+.rating-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 88px; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 12px;
+}
+.rating-stars { font-size: 20px; color: var(--sage-light); letter-spacing: 6px; margin-bottom: 18px; }
+.rating-comment { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.85; font-family: 'Noto Serif JP', serif; }
+
+/* Amazon */
+.amazon-placeholder {
+  border: 1.5px dashed rgba(255,153,0,0.5);
+  padding: 28px 32px; margin: 36px 0; background: #fffaf0;
+}
+.amazon-placeholder strong { display: block; font-size: 14px; font-weight: 600; color: #b07000; margin-bottom: 8px; }
+.amazon-placeholder p { font-size: 13px; color: #9a7020; line-height: 1.7; font-family: 'Noto Sans JP', sans-serif; }
+
+.amazon-cta { margin: 52px 0; padding: 44px; border: 2px solid var(--amazon); text-align: center; }
+.amazon-cta p { font-size: 14px; color: var(--muted); margin-bottom: 22px; font-family: 'Noto Serif JP', serif; }
+.amazon-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--amazon); color: white; text-decoration: none;
+  padding: 16px 40px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
+  transition: background 0.2s, transform 0.2s;
+}
+.amazon-btn:hover { background: var(--amazon-dk); transform: translateY(-2px); }
+
+/* ── STATIC PAGE ── */
+.static-hero { background: var(--forest); padding: 130px 48px 60px; }
+.static-hero .section-label { color: var(--sage-light); }
+.static-hero .section-label::before { background: var(--sage); }
+.static-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px; font-weight: 700; color: var(--cream); margin-bottom: 8px;
+}
+.static-hero .updated { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; }
+
+.static-body { max-width: 760px; margin: 0 auto; padding: 72px 48px 100px; }
+.static-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 600; color: var(--forest);
+  margin: 52px 0 18px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.static-body p, .static-body li {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; line-height: 2; color: var(--ink-soft); margin-bottom: 14px;
+}
+.static-body ul { padding-left: 20px; margin-bottom: 18px; }
+
+/* ── FOOTER ── */
+.site-footer { background: var(--ink); padding: 80px 48px 44px; }
+.footer-top {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 64px;
+  padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px;
+}
+.footer-brand .logo { color: var(--cream); display: inline-flex; margin-bottom: 18px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.9; max-width: 300px; }
+.footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 22px; }
+.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 13px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--sage-light); }
+
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 32px;
+}
+.footer-disclaimer { font-size: 11px; line-height: 1.8; color: rgba(255,255,255,0.2); max-width: 640px; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); white-space: nowrap; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .site-header { padding: 0 28px; }
+  section { padding: 72px 28px; }
+  .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 0 28px; }
+  .hero-right { flex-direction: row; flex-wrap: wrap; }
+  .hero-stat { width: calc(50% - 8px); }
+  .rank-grid { grid-template-columns: 1fr; }
+  .rank-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .rank-card:last-child { border-bottom: none; }
+  .article-grid { grid-template-columns: 1fr 1fr; }
+  .feature-inner { grid-template-columns: 1fr; gap: 48px; }
+  .stat-band-inner { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; }
+  .feature-section { padding: 72px 28px; }
+  .article-hero { padding: 120px 28px 60px; }
+  .article-body-wrap { padding: 52px 28px 80px; }
+  .static-hero { padding: 120px 28px 48px; }
+  .static-body { padding: 52px 28px 80px; }
+  .site-footer { padding: 60px 28px 36px; }
+  .breadcrumb { padding: 14px 28px; }
+}
+@media (max-width: 640px) {
+  .site-header { padding: 0 20px; }
+  .nav-links li:not(:last-child) { display: none; }
+  section { padding: 60px 20px; }
+  .hero-content { padding: 0 20px; }
+  .hero-right { display: none; }
+  .article-grid { grid-template-columns: 1fr; }
+  .stat-band-inner { grid-template-columns: 1fr 1fr; }
+  .article-hero { padding: 110px 20px 52px; }
+  .article-body-wrap { padding: 44px 20px 72px; }
+  .static-hero { padding: 110px 20px 44px; }
+  .static-body { padding: 44px 20px 72px; }
+  .site-footer { padding: 52px 20px 32px; }
+  .breadcrumb { padding: 12px 20px; }
+  .rating-box { padding: 36px 24px; }
+  .rating-num { font-size: 64px; }
+  .articles-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── RANK LIST (ベスト10) ── */
+.rank-list { display: flex; flex-direction: column; gap: 2px; margin: 20px 0 36px; }
+.rank-list-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 20px;
+  background: var(--white); border: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.rank-list-item:hover { background: var(--parchment); }
+.rank-list-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: var(--border);
+  min-width: 36px; line-height: 1.3; flex-shrink: 0;
+}
+.rank-list-item:nth-child(1) .rank-list-num { color: #c8960a; }
+.rank-list-item:nth-child(2) .rank-list-num { color: #909090; }
+.rank-list-item:nth-child(3) .rank-list-num { color: #a0643c; }
+.rank-list-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+a.rank-list-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 600; color: var(--forest);
+  text-decoration: none; line-height: 1.5;
+  transition: color 0.2s;
+}
+a.rank-list-name:hover { color: var(--moss); text-decoration: underline; }
+.rank-list-note { font-size: 12px; color: var(--muted); line-height: 1.7; }
+@media (max-width: 640px) {
+  .rank-list-item { padding: 12px 14px; gap: 12px; }
+  .rank-list-num { font-size: 18px; min-width: 28px; }
+  a.rank-list-name { font-size: 14px; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header scrolled" id="header">
+  <a href="index.html" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
+  <ul class="nav-links">
+    <li><a href="index.html#ranking">ランキング</a></li>
+    <li><a href="index.html#articles">記事一覧</a></li>
+    <li><a href="privacy.html">プライバシー</a></li>
+    <li><a href="index.html#articles" class="nav-cta">記事を読む</a></li>
+  </ul>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span>›</span><a href="index.html#articles">記事一覧</a><span>›</span><span>餌・フード比較</span>
+</div>
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-badge">🍃 餌・配合飼料</div>
+    <h1 class="article-page-title">カメの配合飼料おすすめ5選｜テトラ・レプトミン・ひかりを全部試した結論と栄養比較</h1>
+    <div class="article-meta-row">
+      <span>📅 2025年6月10日</span><span>✍️ カメライフガイド編集部</span><span>📖 約10分</span>
+    </div>
+  </div>
+</div>
+<div class="article-body-wrap">
+  <div class="article-body">
+
+    <p>「配合飼料だけで大丈夫ですか？」——これもよく受ける質問です。結論から言えば、<strong>主食として優秀な配合飼料を選びながら、野菜・果物・昆虫等を副食として組み合わせるのが理想です。</strong>人間が一種類の栄養補助食品だけで生きられないように、カメも単一の飼料だけでは長期的に栄養が偏ります。</p>
+
+    <p>今回は市販の主要5製品を実際に与えて比較した結果を、食いつき・栄養バランス・水の汚れにくさ・コストの4軸で評価します。</p>
+
+    <h2>配合飼料を選ぶ4つの基準</h2>
+
+    <h3>① タンパク質・カルシウム含有量</h3>
+    <p>成分表のタンパク質量（25〜40%が目安）とカルシウム含有量（1〜2%以上）を確認します。カルシウム不足は甲羅変形・骨密度低下に直結します。</p>
+
+    <h3>② 水の汚れにくさ</h3>
+    <p>半水棲カメは水中で餌を食べるため、崩れやすい飼料は水を激しく汚します。崩れにくい・水への溶け出しが少ない製品は水換え頻度の削減にも貢献します。</p>
+
+    <h3>③ 食いつきの良さ</h3>
+    <p>嗜好性が低いと食事拒否が起き、栄養不足の原因になります。特に新しい個体に慣れさせる際は食いつきの良い製品から始めることが重要です。</p>
+
+    <h3>④ コスト（100gあたりの価格）</h3>
+    <p>長期飼育では餌代の累計コストは無視できません。高品質・大容量パックの選択が長期的な節約につながります。</p>
+
+    <h2>おすすめ5製品：比較レビュー</h2>
+
+    <h3>第1位：テトラ レプトミン スーパー</h3>
+    <p>世界で最も普及しているカメ用配合飼料。40年以上の実績と圧倒的な信頼性があります。タンパク質44%・カルシウム1.8%という栄養バランスは業界標準として参照されるほど。スティック型で水に溶けにくく、水質維持にも貢献します。ほぼすべてのカメが好んで食べます。</p>
+
+    <div class="amazon-placeholder">
+      <strong>📦 テトラ レプトミンスーパー 310g</strong>
+      <p><a href="https://www.amazon.co.jp/dp/B004Y859QE/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    </div>
+
+    <h3>第2位：キョーリン ひかりカメ</h3>
+    <p>国産ブランド・キョーリン（ひかり）のカメ専用飼料。コストパフォーマンスが非常に高く、大容量パックでの購入が割安です。タンパク質43%とレプトミンに引けを取らない栄養バランス。食いつきは個体によって差がありますが、概ね良好です。</p>
+
+    <div class="amazon-placeholder">
+      <strong>📦 テトラ レプトミン ニオイブロック超大粒 500g</strong>
+      <p><a href="https://www.amazon.co.jp/dp/B093CXB692/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    </div>
+
+    <h3>第3位：ズーメッド ナチュラルアクアティックタートルフード</h3>
+    <p>アメリカ発・爬虫類専門ブランドのカメ用飼料。カゲロウ幼虫・シュリンプなどの動物性原料が豊富で、特に食欲不振の個体への食事誘導に向いています。コストはやや高めですが食いつきは業界最高水準。</p>
+
+    <h3>第4位：GEX エキゾテラ リクガメのエサ（リクガメ専用）</h3>
+    <p>草食性リクガメ向けの植物性配合飼料。チモシー（牧草）・野菜エキスを主原料とし、ロシアリクガメ・ケヅメリクガメ等に適しています。半水棲カメには不向きなので注意。</p>
+
+    <div class="amazon-placeholder">
+      <strong>📦 テトラ レプトミン ニオイブロック大粒 200g</strong>
+      <p><a href="https://www.amazon.co.jp/dp/B093CX3Z1K/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    </div>
+
+    <h3>第5位：コメット カメのごはん</h3>
+    <p>国産・低価格帯の入門用飼料。ペットショップでの流通量が多く入手しやすいのが最大のメリット。栄養バランスはレプトミン等に劣るため、成長期の個体の主食には向かず、副食または一時的な使用に留めることを推奨します。</p>
+
+    
+    <h2>【リクガメ用】餌・フード おすすめ ベスト10</h2>
+    <p>Amazon・楽天売れ筋、くま村長（愛玩動物飼養管理士2級）記事、repken.com専門サイト、petsym.com原材料比較記事、複数長期飼育者ブログをもとにしたベスト10です。</p>
+    <div class="rank-list">
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B09M2LVBYG/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン マルベリックドライ 400g</a><span class="rank-list-note">桑葉主原料・Ca:P=5:1・無着色。飼育コミュニティで圧倒的1位。くま村長（愛玩動物飼養管理士2級）推奨。善玉菌配合</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B00BBR33ZK/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ビバリア レップカル リクガメフード 354g</a><span class="rank-list-note">完全栄養食・Ca+D3配合でサプリ不要。12年使用の口コミあり。幼体〜成体まで対応</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0089YAKHC/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ リクガメの栄養バランスフード 400g</a><span class="rank-list-note">Amazonで最も入手しやすいリクガメ専用フード。高繊維質・ロシア・ギリシャリクガメに最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0DH1Z6T3H/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">Mazuri トータスダイエット 5M21 100g</a><span class="rank-list-note">動物園使用の世界標準。Ca:P=5:1設計・結石予防研究データあり。試供サイズで始めやすい</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0CNJHP5YW/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">Mazuri トータスダイエット 5M21 560g</a><span class="rank-list-note">Mazuriの標準サイズ。リピーター・大型種向け。窒素密封パックで鮮度維持</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0BNKQPNKJ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン マルベリックドライ 1kg</a><span class="rank-list-note">マルベリックドライ大容量版。ケヅメ等大型種・複数頭飼育でコスパ◎</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0DJP62T7K/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ RepDeli リクガメブレンドフード 180g</a><span class="rank-list-note">チモシー主原料・新世代フード。Ca:P=5:1設計・高吸水性で水分補給も兼ねる</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0DF2SJMCJ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ビバリア レップカル リクガメフード 907g</a><span class="rank-list-note">レップカル大容量版。複数頭・大型種の長期飼育コストを抑えたい方に</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B004G22NSK/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン リックゼリー お徳用 70g×3袋</a><span class="rank-list-note">水分87%野菜ゼリー。尿石予防・食欲不振時の副食に。善玉菌配合</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B004WI1T60/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">スドー ハープクラフト トータスフード 700g</a><span class="rank-list-note">アルファルファ主原料・無着色。ギリシャリクガメ12年使用の実績。べたつかない発泡ペレット</span></div></div>
+    </div>
+
+    <h2>【ヤマガメ・ニホンイシガメ用】餌・フード おすすめ ベスト10</h2>
+    <p>くま村長のニホンイシガメ餌10選記事、博物館学芸員（マズレンコ製作所）の飼育解説、イシガメ飼育歴15年のkameinfo.com、スペングラーヤマガメ7年9匹飼育者（note・うさ氏）の記録をもとにしたベスト10です。</p>
+    <div class="rank-list">
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B004Y859QE/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミンスーパー 310g</a><span class="rank-list-note">水棲・半水棲カメの定番主食。イシガメ飼育歴15年の飼育者が3年間使用。動物性タンパク質豊富で食いつき◎</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=キョーリン+カメプロス+550g大スティック&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン カメプロス 550g（大スティック）</a><span class="rank-list-note">イシガメ飼育歴15年以上の飼育者がレプトミン後10年以上使用。水汚れ・臭い抑制に特化。善玉菌・茶葉配合</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CXB692/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミン ニオイブロック超大粒 500g</a><span class="rank-list-note">Amazonベストセラー1位。水汚れ抑制配合。半水棲カメの水槽環境維持に貢献</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B000V2AE9Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ ガマルス 25g</a><span class="rank-list-note">乾燥川エビ100%。くま村長のイシガメ餌10選1位。Ca豊富・嗜好性最高の副食</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B09M2LVBYG/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン マルベリックドライ 400g</a><span class="rank-list-note">植物質副食として活用。博物館学芸員が指摘する『植物食傾向が強い』イシガメの特性に対応</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0027QID0Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン ひかりFD ビタミン赤虫 12g</a><span class="rank-list-note">くま村長イシガメ餌10選3位。嗜好性最高。食欲不振時の誘引餌・副食に最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CXN97Z/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミンスーパー 中粒 160g</a><span class="rank-list-note">幼体・小型個体向け中粒タイプ。成長期の栄養補給に最適なサイズ</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B004G22NSK/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン リックゼリー お徳用 70g×3袋</a><span class="rank-list-note">水分87%野菜ゼリー。ヤマガメの果実食性に対応。水分補給・食欲不振時に有効</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0CJ4FT8QX/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン ひかりクレスト タートル 250g</a><span class="rank-list-note">3種スティックミックス・Ca+D3配合。雑食性カメの栄養バランスに対応</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CX3Z1K/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミン ニオイブロック大粒 200g</a><span class="rank-list-note">幼体〜中型の主食。少量から試せる入門サイズ。水汚れ抑制配合</span></div></div>
+    </div>
+
+    <h2>【水亀用】餌・フード おすすめ ベスト10</h2>
+    <p>Amazon・楽天の売れ筋ランキングとクサガメ・アカミミガメ飼育者の口コミをもとにしたベスト10です。</p>
+    <div class="rank-list">
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CXB692/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミン ニオイブロック超大粒 500g</a><span class="rank-list-note">Amazonベストセラー1位。水汚れ・臭い抑制。クサガメ・アカミミの水槽環境維持に貢献</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CX3Z1K/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミン ニオイブロック大粒 200g</a><span class="rank-list-note">中型カメの主食。食いつき◎。水汚れ抑制配合で水槽管理が楽になる</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B004Y859QE/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミンスーパー 310g</a><span class="rank-list-note">40年の定番。栄養バランス最高評価。クサガメ27年飼育者が今でも与えている口コミあり</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0012UP57A/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン ひかりカメ 大粒 200g</a><span class="rank-list-note">国産コスパNo.1。雑食性カメ全般に対応した万能フード</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=キョーリン+カメプロス+550g&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン カメプロス 550g</a><span class="rank-list-note">水汚れ・臭い抑制に特化。イシガメ飼育歴15年以上の飼育者が10年以上リピート</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B000V2AE9Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ ガマルス 25g</a><span class="rank-list-note">乾燥エビ100%。Ca豊富・嗜好性最高の副食・おやつ。くま村長推奨</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0027QID0Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン ひかりFD ビタミン赤虫 12g</a><span class="rank-list-note">嗜好性最高のフリーズドライ赤虫。食欲不振の個体への誘引餌に最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B093CXN97Z/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミンスーパー 中粒 160g</a><span class="rank-list-note">幼体・小型個体向けの中粒タイプ。成長期の栄養補給に最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0CJ4FT8QX/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">キョーリン ひかりクレスト タートル 250g</a><span class="rank-list-note">3種スティックミックス・Ca+D3配合。水棲カメの栄養バランスに</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=テトラ+レプトミンスーパー+310g+大粒&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">テトラ レプトミンスーパー 310g 大粒</a><span class="rank-list-note">成体・大型個体向けの大粒タイプ。水槽での食べやすさ◎</span></div></div>
+    </div>
+
+    
+    <h2>まとめ</h2>
+    <p>配合飼料は「テトラ レプトミン スーパー」をまず選べば間違いありません。栄養バランス・食いつき・水の汚れにくさすべてで最高評価です。<strong>副食と組み合わせながら与えることで、カメの長期健康維持が実現できます。</strong>コスト重視であればキョーリン ひかりカメが最善のコスパを発揮します。</p>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
+      <p>飼育器具の正しい選び方を、根拠のあるデータと実体験で届けるカメ飼育専門情報サイト。</p>
+    </div>
+    <div class="footer-col"><h4>Articles</h4>
+      <a href="cage-review.html">ケージ比較</a><a href="substrate-review.html">床材比較</a>
+      <a href="uvb-light-review.html">UVBライト</a><a href="food-review.html">餌・フード</a>
+    </div>
+    <div class="footer-col"><h4>Info</h4><a href="privacy.html">プライバシーポリシー</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-disclaimer">本サイトはAmazon.co.jpアソシエイト・プログラムの参加者です。当サイトが紹介する商品・サービスのリンクから購入が行われた場合、当サイトは適格販売により紹介料を得ることがあります。</p>
+    <p class="footer-copy">© 2025 カメライフガイド</p>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const hdr=document.getElementById('header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>60)},{passive:true});
+</script>
+</body>
+</html>
