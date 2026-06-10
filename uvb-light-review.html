@@ -3,864 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="カメの床材おすすめ6種を徹底比較。ヤシガラ土・赤玉土・川砂・水苔・ハスクチップ・砂利の保湿力・安全性・コストを解説。">
-  <title>カメの床材おすすめ6種を比較｜ヤシガラ・赤玉土・砂どれがベスト？ — カメライフガイド</title>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
-
-:root {
-  --forest:    #1c2b1a;
-  --forest-mid:#2d4a2a;
-  --moss:      #4a6741;
-  --sage:      #7a9e6e;
-  --sage-light:#a8c49a;
-  --stone:     #e8e2d8;
-  --parchment: #f4f0e8;
-  --cream:     #faf8f4;
-  --white:     #ffffff;
-  --ink:       #1a1a16;
-  --ink-soft:  #3d3d30;
-  --muted:     #8a8878;
-  --border:    rgba(74,103,65,0.15);
-  --amazon:    #FF9900;
-  --amazon-dk: #e08800;
-  --ease:      cubic-bezier(0.25,0.1,0.25,1);
-  --ease-out:  cubic-bezier(0.0,0.0,0.2,1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-
-/* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── HEADER ── */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  transition: background 0.4s var(--ease), box-shadow 0.4s;
-}
-.site-header.scrolled {
-  background: rgba(28,43,26,0.96);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--cream);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  display: flex; align-items: center; gap: 10px;
-}
-.logo-icon {
-  width: 32px; height: 32px;
-  background: var(--sage);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-}
-
-.nav-links {
-  display: flex; align-items: center; gap: 32px; list-style: none;
-}
-.nav-links a {
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.6); text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--sage-light); }
-.nav-cta {
-  background: var(--sage) !important; color: white !important;
-  padding: 9px 22px; border-radius: 3px;
-  font-size: 11px !important; letter-spacing: 0.16em;
-  transition: background 0.2s !important;
-}
-.nav-cta:hover { background: var(--moss) !important; }
-
-/* ── HERO ── */
-.hero {
-  min-height: 100svh;
-  background: var(--forest);
-  position: relative; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 0 80px;
-}
-
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(74,103,65,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 70%, rgba(45,74,42,0.3) 0%, transparent 60%);
-}
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto; width: 100%;
-  padding: 0 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
-}
-
-.hero-left {}
-
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sage-light);
-  margin-bottom: 28px;
-  border: 1px solid rgba(122,158,110,0.35);
-  padding: 6px 16px; border-radius: 2px;
-}
-.hero-tag-dot {
-  width: 5px; height: 5px; background: var(--sage); border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(44px, 5.5vw, 80px);
-  font-weight: 700;
-  line-height: 1.06; letter-spacing: -0.02em;
-  color: var(--cream);
-  margin-bottom: 28px;
-}
-.hero-title em { font-style: italic; color: var(--sage-light); }
-
-.hero-desc {
-  font-size: 15px; line-height: 1.9;
-  color: rgba(244,240,232,0.55);
-  max-width: 400px; margin-bottom: 44px;
-}
-
-.hero-buttons { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--sage); color: var(--forest);
-  text-decoration: none; padding: 15px 32px; border-radius: 3px;
-  font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  transition: background 0.2s, transform 0.2s;
-}
-.btn-primary:hover { background: var(--sage-light); transform: translateY(-2px); }
-
-.btn-outline {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
-  text-decoration: none; padding: 15px 28px; border-radius: 3px;
-  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s, gap 0.2s;
-}
-.btn-outline:hover { border-color: var(--sage); color: var(--sage-light); gap: 12px; }
-.btn-outline::after { content: '→'; }
-
-.hero-right {
-  display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
-}
-
-.hero-stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  padding: 20px 28px; border-radius: 4px;
-  width: 100%;
-}
-.hero-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px; font-weight: 600;
-  color: var(--cream); line-height: 1;
-  margin-bottom: 4px;
-}
-.hero-stat-num span { font-size: 18px; color: var(--sage-light); }
-.hero-stat-label { font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
-
-.hero-scroll {
-  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3); z-index: 2;
-}
-.scroll-arrow {
-  width: 1px; height: 40px; background: linear-gradient(var(--sage), transparent);
-  position: relative; overflow: hidden;
-}
-.scroll-arrow::after {
-  content: ''; position: absolute; top: -100%; left: 0;
-  width: 1px; height: 100%; background: var(--sage-light);
-  animation: scrollDown 1.8s ease-in-out infinite;
-}
-@keyframes scrollDown { 0%{top:-100%} 100%{top:200%} }
-
-/* ── BAND ── */
-.stat-band {
-  background: var(--forest-mid);
-  padding: 0; overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.stat-band-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  divide-x: 1px solid rgba(255,255,255,0.06);
-}
-.stat-item {
-  padding: 32px 40px;
-  border-right: 1px solid rgba(255,255,255,0.06);
-  text-align: center;
-}
-.stat-item:last-child { border-right: none; }
-.stat-n {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px; font-weight: 600; color: var(--cream); line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-n span { color: var(--sage-light); font-size: 20px; }
-.stat-l { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-
-/* ── SECTIONS ── */
-section { padding: 96px 48px; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-
-.section-label {
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--moss); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::before { content: ''; width: 28px; height: 1px; background: var(--sage); }
-
-.section-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 3.5vw, 52px); font-weight: 600;
-  line-height: 1.12; color: var(--forest); margin-bottom: 16px;
-}
-.section-heading em { font-style: italic; color: var(--moss); }
-.section-sub { font-size: 14px; color: var(--muted); line-height: 1.9; max-width: 500px; }
-
-/* ── RANKING ── */
-.ranking-section { background: var(--white); }
-.ranking-head { margin-bottom: 60px; }
-
-.rank-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
-  border: 1px solid var(--border);
-}
-.rank-card {
-  padding: 48px 40px;
-  border-right: 1px solid var(--border);
-  text-decoration: none; color: inherit;
-  display: block; position: relative; overflow: hidden;
-  transition: background 0.3s;
-}
-.rank-card:last-child { border-right: none; }
-.rank-card:hover { background: var(--parchment); }
-.rank-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-}
-.rank-card:nth-child(1)::before { background: #b8860b; }
-.rank-card:nth-child(2)::before { background: #909090; }
-.rank-card:nth-child(3)::before { background: #8b5a2b; }
-
-.rank-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 72px; font-weight: 700; line-height: 1;
-  margin-bottom: 20px; display: block;
-}
-.rank-card:nth-child(1) .rank-num { color: rgba(184,134,11,0.15); }
-.rank-card:nth-child(2) .rank-num { color: rgba(144,144,144,0.12); }
-.rank-card:nth-child(3) .rank-num { color: rgba(139,90,43,0.12); }
-
-.rank-medal {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  margin-bottom: 14px; display: block;
-}
-.rank-card:nth-child(1) .rank-medal { color: #b8860b; }
-.rank-card:nth-child(2) .rank-medal { color: #909090; }
-.rank-card:nth-child(3) .rank-medal { color: #8b5a2b; }
-
-.rank-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px; font-weight: 600; line-height: 1.45;
-  color: var(--forest); margin-bottom: 12px;
-}
-.rank-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
-.rank-stars { color: var(--sage); letter-spacing: 4px; font-size: 13px; }
-
-.rank-arrow {
-  position: absolute; bottom: 36px; right: 36px;
-  font-size: 20px; color: var(--sage); opacity: 0;
-  transform: translateX(-8px); transition: opacity 0.3s, transform 0.3s;
-}
-.rank-card:hover .rank-arrow { opacity: 1; transform: none; }
-
-/* ── ARTICLES ── */
-.articles-section { background: var(--parchment); }
-.articles-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 52px; gap: 20px;
-}
-.view-all {
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--moss); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: gap 0.2s, color 0.2s; white-space: nowrap;
-}
-.view-all:hover { gap: 14px; color: var(--forest); }
-.view-all::after { content: '→'; }
-
-.article-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-}
-.article-card {
-  background: var(--white); text-decoration: none; color: inherit;
-  display: flex; flex-direction: column;
-  border: 1px solid var(--border);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.article-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(28,43,26,0.1);
-}
-
-.card-top {
-  aspect-ratio: 16/10; position: relative; overflow: hidden;
-}
-.card-bg {
-  width: 100%; height: 100%;
-  transition: transform 0.5s var(--ease);
-}
-.article-card:hover .card-bg { transform: scale(1.06); }
-.card-bg.bg-cage     { background: linear-gradient(135deg, #2d4a2a 0%, #1c3520 50%, #142810 100%); }
-.card-bg.bg-substrate{ background: linear-gradient(135deg, #6b5a3a 0%, #4a3d25 50%, #332a18 100%); }
-.card-bg.bg-shelter  { background: linear-gradient(135deg, #3a4a35 0%, #2a3828 50%, #1c2818 100%); }
-.card-bg.bg-feed     { background: linear-gradient(135deg, #4a5a2a 0%, #384420 50%, #283015 100%); }
-.card-bg.bg-uvb      { background: linear-gradient(135deg, #2a3a5a 0%, #1c2840 50%, #121c30 100%); }
-.card-bg.bg-water    { background: linear-gradient(135deg, #2a4a5a 0%, #1c3840 50%, #122830 100%); }
-
-.card-icon {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 56px;
-  transition: transform 0.4s var(--ease);
-}
-.article-card:hover .card-icon { transform: translate(-50%, -56%) scale(1.1); }
-
-.card-label {
-  position: absolute; top: 14px; left: 14px;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-  background: rgba(28,43,26,0.75); color: var(--sage-light);
-  padding: 5px 12px; backdrop-filter: blur(6px);
-}
-
-.card-body { padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column; }
-.card-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16px; font-weight: 600; line-height: 1.55;
-  color: var(--forest); margin-bottom: 10px;
-  transition: color 0.2s;
-}
-.article-card:hover .card-title { color: var(--moss); }
-.card-excerpt { font-size: 13px; color: var(--muted); line-height: 1.85; flex: 1; margin-bottom: 16px; }
-.card-meta {
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--sage); display: flex; align-items: center; gap: 8px;
-}
-.card-meta::before { content: ''; width: 20px; height: 1px; background: var(--sage); }
-
-/* ── DEEP FEATURE ── */
-.feature-section {
-  background: var(--forest);
-  padding: 100px 48px;
-}
-.feature-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
-}
-.feature-visual {
-  position: relative;
-}
-.feature-panel {
-  background: var(--forest-mid);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 40px;
-  position: relative; overflow: hidden;
-}
-.feature-panel::before {
-  content: '🐢'; font-size: 160px;
-  position: absolute; right: -20px; bottom: -20px;
-  opacity: 0.08; line-height: 1;
-}
-.feature-items { display: flex; flex-direction: column; gap: 16px; }
-.feature-item {
-  display: flex; gap: 16px; align-items: flex-start;
-  padding: 18px; background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.fi-icon {
-  width: 40px; height: 40px; background: rgba(122,158,110,0.15);
-  border-radius: 2px; display: flex; align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0;
-}
-.fi-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
-.fi-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.7; }
-
-.feature-text .section-label { color: var(--sage-light); }
-.feature-text .section-label::before { background: var(--sage); }
-.feature-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px,3vw,48px); font-weight: 600;
-  color: var(--cream); line-height: 1.15; margin-bottom: 20px;
-}
-.feature-heading em { font-style: italic; color: var(--sage-light); }
-.feature-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.95; margin-bottom: 36px; }
-.feature-link {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--sage-light); text-decoration: none;
-  border-bottom: 1px solid rgba(122,158,110,0.3);
-  padding-bottom: 4px;
-  transition: gap 0.2s, border-color 0.2s;
-}
-.feature-link:hover { gap: 16px; border-color: var(--sage-light); }
-
-/* ── ARTICLE PAGE ── */
-.article-hero {
-  background: var(--forest);
-  padding: 140px 48px 80px;
-  position: relative; overflow: hidden;
-}
-.article-hero::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,103,65,0.2) 0%, transparent 70%);
-}
-.article-hero-inner { max-width: 840px; position: relative; z-index: 1; }
-.article-badge {
-  display: inline-block;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sage-light);
-  border: 1px solid rgba(122,158,110,0.35);
-  padding: 6px 16px; margin-bottom: 28px;
-}
-.article-page-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 52px); font-weight: 700;
-  line-height: 1.18; color: var(--cream); margin-bottom: 24px;
-}
-.article-meta-row {
-  font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
-  display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
-}
-.article-meta-row span { display: flex; align-items: center; gap: 6px; }
-
-.breadcrumb {
-  background: var(--parchment);
-  padding: 14px 48px;
-  font-size: 12px; color: var(--muted);
-  display: flex; gap: 8px; align-items: center;
-  border-bottom: 1px solid var(--border);
-}
-.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.breadcrumb a:hover { color: var(--moss); }
-
-.article-body-wrap {
-  max-width: 760px; margin: 0 auto; padding: 72px 48px 100px;
-}
-.article-body p {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; line-height: 2.1; color: var(--ink-soft); margin-bottom: 22px;
-}
-.article-body h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px; font-weight: 600; color: var(--forest);
-  margin: 60px 0 22px;
-  padding-bottom: 16px; border-bottom: 1px solid var(--border);
-}
-.article-body h3 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px; font-weight: 600; color: var(--forest-mid);
-  margin: 40px 0 14px;
-  padding-left: 14px; border-left: 3px solid var(--sage);
-}
-.article-body ul, .article-body ol {
-  padding-left: 22px; margin-bottom: 22px;
-}
-.article-body li {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; line-height: 2; color: var(--ink-soft); margin-bottom: 8px;
-}
-
-/* Merit / Demerit */
-.merit-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
-@media (max-width: 600px) { .merit-box { grid-template-columns: 1fr; } }
-.merit, .demerit { padding: 28px; }
-.merit { background: #f2f8f0; border-top: 2px solid var(--sage); }
-.demerit { background: #faf2f0; border-top: 2px solid #c47a5a; }
-.merit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin-bottom: 14px; }
-.demerit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a4a2a; margin-bottom: 14px; }
-.merit ul, .demerit ul { padding-left: 18px; }
-.merit li, .demerit li { font-size: 13px; line-height: 1.85; font-family: 'Noto Sans JP', sans-serif; }
-
-/* Rating */
-.rating-box { margin: 52px 0; background: var(--forest); padding: 52px; text-align: center; }
-.rating-label { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 20px; }
-.rating-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 88px; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 12px;
-}
-.rating-stars { font-size: 20px; color: var(--sage-light); letter-spacing: 6px; margin-bottom: 18px; }
-.rating-comment { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.85; font-family: 'Noto Serif JP', serif; }
-
-/* Amazon */
-.amazon-placeholder {
-  border: 1.5px dashed rgba(255,153,0,0.5);
-  padding: 28px 32px; margin: 36px 0; background: #fffaf0;
-}
-.amazon-placeholder strong { display: block; font-size: 14px; font-weight: 600; color: #b07000; margin-bottom: 8px; }
-.amazon-placeholder p { font-size: 13px; color: #9a7020; line-height: 1.7; font-family: 'Noto Sans JP', sans-serif; }
-
-.amazon-cta { margin: 52px 0; padding: 44px; border: 2px solid var(--amazon); text-align: center; }
-.amazon-cta p { font-size: 14px; color: var(--muted); margin-bottom: 22px; font-family: 'Noto Serif JP', serif; }
-.amazon-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--amazon); color: white; text-decoration: none;
-  padding: 16px 40px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
-  transition: background 0.2s, transform 0.2s;
-}
-.amazon-btn:hover { background: var(--amazon-dk); transform: translateY(-2px); }
-
-/* ── STATIC PAGE ── */
-.static-hero { background: var(--forest); padding: 130px 48px 60px; }
-.static-hero .section-label { color: var(--sage-light); }
-.static-hero .section-label::before { background: var(--sage); }
-.static-hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 44px; font-weight: 700; color: var(--cream); margin-bottom: 8px;
-}
-.static-hero .updated { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; }
-
-.static-body { max-width: 760px; margin: 0 auto; padding: 72px 48px 100px; }
-.static-body h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; font-weight: 600; color: var(--forest);
-  margin: 52px 0 18px;
-  padding-bottom: 14px; border-bottom: 1px solid var(--border);
-}
-.static-body p, .static-body li {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px; line-height: 2; color: var(--ink-soft); margin-bottom: 14px;
-}
-.static-body ul { padding-left: 20px; margin-bottom: 18px; }
-
-/* ── FOOTER ── */
-.site-footer { background: var(--ink); padding: 80px 48px 44px; }
-.footer-top {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 64px;
-  padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px;
-}
-.footer-brand .logo { color: var(--cream); display: inline-flex; margin-bottom: 18px; }
-.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.9; max-width: 300px; }
-.footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 22px; }
-.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 13px; transition: color 0.2s; }
-.footer-col a:hover { color: var(--sage-light); }
-
-.footer-bottom {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 32px;
-}
-.footer-disclaimer { font-size: 11px; line-height: 1.8; color: rgba(255,255,255,0.2); max-width: 640px; }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); white-space: nowrap; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  .site-header { padding: 0 28px; }
-  section { padding: 72px 28px; }
-  .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 0 28px; }
-  .hero-right { flex-direction: row; flex-wrap: wrap; }
-  .hero-stat { width: calc(50% - 8px); }
-  .rank-grid { grid-template-columns: 1fr; }
-  .rank-card { border-right: none; border-bottom: 1px solid var(--border); }
-  .rank-card:last-child { border-bottom: none; }
-  .article-grid { grid-template-columns: 1fr 1fr; }
-  .feature-inner { grid-template-columns: 1fr; gap: 48px; }
-  .stat-band-inner { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; }
-  .feature-section { padding: 72px 28px; }
-  .article-hero { padding: 120px 28px 60px; }
-  .article-body-wrap { padding: 52px 28px 80px; }
-  .static-hero { padding: 120px 28px 48px; }
-  .static-body { padding: 52px 28px 80px; }
-  .site-footer { padding: 60px 28px 36px; }
-  .breadcrumb { padding: 14px 28px; }
-}
-@media (max-width: 640px) {
-  .site-header { padding: 0 20px; }
-  .nav-links li:not(:last-child) { display: none; }
-  section { padding: 60px 20px; }
-  .hero-content { padding: 0 20px; }
-  .hero-right { display: none; }
-  .article-grid { grid-template-columns: 1fr; }
-  .stat-band-inner { grid-template-columns: 1fr 1fr; }
-  .article-hero { padding: 110px 20px 52px; }
-  .article-body-wrap { padding: 44px 20px 72px; }
-  .static-hero { padding: 110px 20px 44px; }
-  .static-body { padding: 44px 20px 72px; }
-  .site-footer { padding: 52px 20px 32px; }
-  .breadcrumb { padding: 12px 20px; }
-  .rating-box { padding: 36px 24px; }
-  .rating-num { font-size: 64px; }
-  .articles-header { flex-direction: column; align-items: flex-start; }
-}
-
-/* ── RANK LIST (ベスト10) ── */
-.rank-list { display: flex; flex-direction: column; gap: 2px; margin: 20px 0 36px; }
-.rank-list-item {
-  display: flex; align-items: flex-start; gap: 16px;
-  padding: 16px 20px;
-  background: var(--white); border: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.rank-list-item:hover { background: var(--parchment); }
-.rank-list-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 700; color: var(--border);
-  min-width: 36px; line-height: 1.3; flex-shrink: 0;
-}
-.rank-list-item:nth-child(1) .rank-list-num { color: #c8960a; }
-.rank-list-item:nth-child(2) .rank-list-num { color: #909090; }
-.rank-list-item:nth-child(3) .rank-list-num { color: #a0643c; }
-.rank-list-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
-a.rank-list-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 600; color: var(--forest);
-  text-decoration: none; line-height: 1.5;
-  transition: color 0.2s;
-}
-a.rank-list-name:hover { color: var(--moss); text-decoration: underline; }
-.rank-list-note { font-size: 12px; color: var(--muted); line-height: 1.7; }
-@media (max-width: 640px) {
-  .rank-list-item { padding: 12px 14px; gap: 12px; }
-  .rank-list-num { font-size: 18px; min-width: 28px; }
-  a.rank-list-name { font-size: 14px; }
-}
-
-</style>
+  <meta name="description" content="カメのUVBライト完全ガイド。レプティサン・エキゾテラ等のおすすめ製品比較と、出力の選び方・設置距離・交換時期を解説。くる病・甲羅の変形を防ぐ正しい紫外線管理。">
+  <title>カメのUVBライト完全ガイド｜おすすめ製品と正しい使い方・交換時期 — カメライフガイド</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <header class="site-header scrolled" id="header">
-  <a href="index.html" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
   <ul class="nav-links">
-    <li><a href="index.html#ranking">ランキング</a></li>
-    <li><a href="index.html#articles">記事一覧</a></li>
-    <li><a href="privacy.html">プライバシー</a></li>
-    <li><a href="index.html#articles" class="nav-cta">記事を読む</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#ranking">ランキング</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles">記事一覧</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシー</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles" class="nav-cta">記事を読む</a></li>
   </ul>
 </header>
-
 <div class="breadcrumb">
-  <a href="index.html">ホーム</a><span>›</span>
-  <a href="index.html#articles">記事一覧</a><span>›</span>
-  <span>床材比較</span>
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/">ホーム</a><span>›</span>
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles">記事一覧</a><span>›</span>
+  <span>UVBライト</span>
 </div>
-
 <div class="article-hero">
   <div class="article-hero-inner">
-    <div class="article-badge">🌱 床材・底床</div>
-    <h1 class="article-page-title">カメの床材おすすめ6種を徹底比較｜ヤシガラ・赤玉土・砂——種類別の正解を解説</h1>
+    <div class="article-badge">💡 UVBライト・照明</div>
+    <h1 class="article-page-title">カメのUVBライト完全ガイド｜おすすめ製品と正しい使い方・交換時期</h1>
     <div class="article-meta-row">
-      <span>📅 2025年6月3日</span>
-      <span>✍️ カメライフガイド編集部</span>
-      <span>📖 約10分</span>
+      <span>📅 2026年6月10日</span><span>✍️ カメライフガイド編集部</span><span>📖 約11分</span>
     </div>
   </div>
 </div>
-
 <div class="article-body-wrap">
   <div class="article-body">
+    <p>UVB（紫外線B波）は、カメが体内でビタミンD3を合成するために不可欠な光です。D3がなければ食べたカルシウムを吸収できず、どれだけ栄養バランスの良い餌を与えても、くる病（代謝性骨疾患）・甲羅の軟化や変形につながります。屋外で日光浴できない室内飼育では、UVBライトは「あれば良いもの」ではなく生命維持装置です。</p>
+    <p>今回はUVBライトを、出力・形状・照射範囲・ランニングコストの4軸で比較し、種類別・ケージ別の最適解を提示します。</p>
 
-    <p>床材はカメにとって「地面」そのものです。適切な床材を選ぶことで、保湿管理・爪の磨耗・誤飲リスクの低減に大きく貢献します。逆に、間違った床材を使い続けると慢性的な脱水・消化管閉塞・皮膚炎につながる場合があります。</p>
+    <h2>UVBライトを選ぶ際の4つの基準</h2>
+    <h3>① 出力（5.0と10.0の違い）</h3>
+    <p>UVB蛍光灯には「5.0」「10.0」といった出力表記があります。森林系・半水棲種（クサガメ、イシガメ、ヤマガメ等）には5.0、強い日差しの環境に暮らす砂漠・草原系リクガメ（ロシア、ギリシャ、ヒョウモン等）には10.0が目安です。強ければ良いわけではなく、種の生息環境に合わせます。</p>
+    <h3>② 形状（直管・コンパクト・水銀灯）</h3>
+    <p>直管（ストレート管）は照射範囲が広くケージ全体をカバーでき、最も推奨される形状です。コンパクト型（電球型）は安価で導入しやすい反面、照射範囲が狭く至近距離限定。水銀灯タイプ（パワーサン等）はUVB＋熱＋可視光を1灯でまかなえる強力な選択肢ですが、小型ケージでは過剰になります。</p>
+    <h3>③ 照射距離</h3>
+    <p>UVBは距離で急激に減衰します。製品ごとの推奨距離（多くは20〜30cm程度）を守り、ケージ内のバスキングスポットに届く位置に設置します。ガラスやアクリル越しではUVBがほぼカットされるため、必ずケージ内またはメッシュ越しに照射します。</p>
+    <h3>④ 交換時期（見た目では分からない劣化）</h3>
+    <p>UVB蛍光灯は可視光が点いていてもUVB出力は徐々に低下します。一般に6〜12ヶ月での交換が推奨されており、「点いているから大丈夫」が最も危険な思い込みです。交換日をケージに貼っておくか、UVチェッカーで実測するのが確実です。</p>
 
-    <p>今回は<strong>実際に使用した6種類の床材</strong>を、保湿力・誤飲リスク・コスト・管理しやすさの4軸で比較し、カメの種類別に最適な選択肢を提示します。</p>
+    <h2>主要UVBライトの詳細比較</h2>
+    <h3>① ズーメッド レプティサン 10.0（直管）</h3>
+    <p>UVBライトの世界的定番。安定したUVB出力と信頼性で、爬虫類飼育者・ブリーダーから長年支持されています。砂漠・草原系リクガメのメイン照明の第一候補です。</p>
+    <p><a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+10.0&tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    <h3>② ズーメッド レプティサン 5.0（直管）</h3>
+    <p>森林系・半水棲種向けの定番。クサガメ・イシガメ・ヤマガメの室内飼育ならまずこれが基準です。</p>
+    <h3>③ GEX エキゾテラ レプタイルUVB100 / 150</h3>
+    <p>国内で入手しやすいコンパクト型。UVB100が森林系向け、UVB150が砂漠系向け。専用ソケットと組み合わせて手軽に導入できますが、照射範囲が狭いので設置位置はバスキングスポット直上に。</p>
+    <p><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+レプタイルUVB&tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    <h3>④ ズーメッド パワーサンUV（水銀灯）</h3>
+    <p>UVB・熱・可視光を1灯で供給するオールインワン。大型ケージや大型リクガメに向きますが、発熱が大きいため小型ケージでは温度過昇に注意が必要です。</p>
 
-    <h2>床材を選ぶ際の4つの基準</h2>
+    <h2>バスキングライトとの関係</h2>
+    <p>UVBライトとバスキングライト（保温球）は役割が違います。UVBは「ビタミンD3合成」、バスキングは「体温を上げて代謝・消化を回す」ため。多くの環境ではUVB蛍光灯＋バスキング球の2灯構成が基本になります。同じ場所に両方が当たる「ホットスポット」を作ると、カメは日光浴と紫外線浴を同時に行えます。</p>
 
-    <h3>基準1：保湿力</h3>
-    <p>陸棲カメの多くは適切な湿度（40〜70%程度）を必要とします。乾燥しすぎる床材はカメの脱水を招きます。</p>
-
-    <h3>基準2：誤飲・誤食リスク</h3>
-    <p>カメは採食時に床材ごと口に入れることがあります。細かい砂粒・化学処理された素材は腸閉塞の原因になる場合があります。</p>
-
-    <h3>基準3：管理のしやすさ（清掃・交換）</h3>
-    <p>排泄物の吸収・臭い抑制・部分交換のしやすさが長期飼育のストレス軽減に直結します。</p>
-
-    <h3>基準4：コスト（初期費用と維持費）</h3>
-    <p>床材は消耗品です。定期的な全交換コストも含めて検討することが重要です。</p>
-
-    <h2>6種類の床材 詳細比較</h2>
-
-    <h3>① ヤシガラ土（ジクラアース・ハスクチップ等）</h3>
-    <p>保湿力が高く、自然素材で誤飲しても比較的安全。カメ・爬虫類飼育で最もよく使われる床材の一つです。ジクラアースのような細粒タイプはリクガメの産卵床としても使えます。臭い吸収力も優秀。コスト感は10L袋で1,200〜1,800円程度。</p>
-
-    <div class="amazon-placeholder">
-      <strong>📦 ジクラ 爬虫類専用万能ヤシガラマット 細目 8L</strong>
-      <p><a href="https://www.amazon.co.jp/dp/B005J94WEM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
-    </div>
-
-    <h3>② 赤玉土（硬質・小粒）</h3>
-    <p>ガーデニング用として安価に入手できる定番床材。硬質タイプは崩れにくく、通気性と保湿力のバランスが良好。Amazonより園芸店・ホームセンターでの購入が割安（10kg 500〜800円程度）。ただし長期使用で粉化するため3〜4ヶ月での交換が推奨されます。</p>
-
-    <h3>③ 川砂・爬虫類用砂</h3>
-    <p>砂漠系爬虫類の底床として人気ですが、カメには粒子の細かいものは誤飲リスクがあります。リクガメ（ギリシャリクガメ・ロシアリクガメ等）への使用は可能ですが、細粒は避け中粗目を選ぶことを推奨します。</p>
-
-    <h3>④ 水苔（スファグナムモス）</h3>
-    <p>保湿力が最も高い素材のひとつ。半水棲カメの陸場・産卵床に適しています。ただし汚れやすく、黴の発生リスクがあるため定期的な交換が必要。コストは高めです。</p>
-
-    <div class="amazon-placeholder">
-      <strong>📦 SMILE PET CLUB ヤシガラ 爬虫類・両生類用 2L</strong>
-      <p><a href="https://www.amazon.co.jp/dp/B0BN76YBM8/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
-    </div>
-
-    <h3>⑤ 爬虫類専用人工芝</h3>
-    <p>洗って繰り返し使えるコスト面での優秀さが特徴。保湿力はないため、別途加湿対策が必要です。半水棲カメの陸場として水の汚染も少なく使いやすい選択肢です。</p>
-
-    <h3>⑥ 砂利・砂（熱帯魚用）</h3>
-    <p>水棲・半水棲カメの底床として流用可能。ただし食欲旺盛な個体の誤飲リスクに注意が必要です。大粒（直径5mm以上）のものを選ぶと比較的安全です。</p>
-
-    
-    <h2>【リクガメ用】床材 おすすめ ベスト10</h2>
+    <h2>【UVBライト】おすすめ ベスト10</h2>
     <div class="rank-list">
-      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B005J94WEM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ジクラ 万能ヤシガラマット 細目 8L</a><span class="rank-list-note">リクガメ飼育者に最も支持される定番。保湿・消臭・産卵床に使える万能素材</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B06XC8YK4Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ デザートソイル 2kg</a><span class="rank-list-note">Amazonベストセラー1位。消臭・保湿・掃除しやすさ三拍子揃う</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B07F3QBSP1/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ デザートソイル 4kg</a><span class="rank-list-note">大容量コスパ版。レビュー312件・星4.5の高評価</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+フォレストバーク&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ フォレストバーク 8.8L</a><span class="rank-list-note">天然ベイマツ100%。星4.2・93件レビュー。リクガメ・トカゲ類に最適</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ハスクチップ+爬虫類+10L&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ハスクチップ 爬虫類用 10L</a><span class="rank-list-note">粗めのヤシガラ。大型リクガメの産卵床・陸場向き</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=赤玉土+硬質+中粒+14L&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">硬質赤玉土（中粒）14L</a><span class="rank-list-note">コスパ最強。ホームセンターで安価入手可。定番床材</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+テラリウムソイル+4kg&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ テラリウムソイル 4kg</a><span class="rank-list-note">星4.5・312件。亜熱帯系リクガメにも対応するpH設計</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B0BN76YBM8/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">SMILE PET CLUB ヤシガラ 細目 2L</a><span class="rank-list-note">国産・細目で幼体にも安心。少量から試したい方に</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=鹿沼土+中粒+14L&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">鹿沼土（中粒）14L</a><span class="rank-list-note">乾燥系リクガメ（ロシア・ギリシャ）に最適。保湿確認が視覚的にしやすい</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクバーク+爬虫類+床材&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">コルクバーク（天然コルク樹皮）</a><span class="rank-list-note">自然感◎。産卵床・シェルター兼用として人気</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+10.0+直管&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ズーメッド レプティサン 10.0（直管）</a><span class="rank-list-note">世界的定番。砂漠・草原系リクガメのメイン照明の第一候補</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+5.0+直管&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ズーメッド レプティサン 5.0（直管）</a><span class="rank-list-note">森林系・半水棲種の基準。クサガメ・イシガメ・ヤマガメに</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+レプタイルUVB150&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ レプタイルUVB150</a><span class="rank-list-note">入手しやすいコンパクト型の砂漠系向け。導入コスト低め</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+レプタイルUVB100&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ レプタイルUVB100</a><span class="rank-list-note">森林系・半水棲向けコンパクト型。小型ケージと相性良し</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ズーメッド+パワーサン+UV&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ズーメッド パワーサンUV（水銀灯）</a><span class="rank-list-note">UVB＋熱＋可視光のオールインワン。大型ケージ・大型種に</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ソーラーラプター+メタハラ&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ソーラーラプター（メタルハライド）</a><span class="rank-list-note">太陽光に最も近い質のUVBと光量。本気の飼育環境構築に</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+ライトドーム&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ ライトドーム（灯具）</a><span class="rank-list-note">コンパクト型UVB・バスキング球用の定番ソケット</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+直管+蛍光灯+灯具&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">直管用ライトスタンド・灯具</a><span class="rank-list-note">レプティサン直管の設置に必須。ケージ幅に合わせて選ぶ</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=バスキングライト+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">バスキングライト（保温球）</a><span class="rank-list-note">UVBとセットで2灯構成の基本。ホットスポットづくりに</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=UVチェッカー+紫外線測定&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">UVチェッカー（紫外線測定器）</a><span class="rank-list-note">「点いているのにUVBゼロ」を見抜く保険。交換時期の実測に</span></div></div>
     </div>
-
-    <h2>【ヤマガメ・水亀用】床材 おすすめ ベスト10</h2>
-    <div class="rank-list">
-      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=赤玉土+硬質+中粒+14L&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">硬質赤玉土（中粒）14L</a><span class="rank-list-note">半水棲×陸場に最適。安価で入手しやすくヤマガメ飼育者の定番</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B005J94WEM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ジクラ 万能ヤシガラマット 細目 8L</a><span class="rank-list-note">陸場用として幅広い種に対応。保湿力も高い</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/dp/B06XC8YK4Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ デザートソイル 2kg</a><span class="rank-list-note">消臭効果が高く臭い対策に◎。水棲カメの陸場にも</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=水苔+スファグナムモス+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">水苔（スファグナムモス）各種</a><span class="rank-list-note">保湿力最高峰。産卵床・ヤマガメの潜り場として必須</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=砂利+大粒+アクアリウム&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">砂利（大粒・直径5mm以上）</a><span class="rank-list-note">水亀の水槽底床。大粒なので誤飲リスクが低い</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+フォレストバーク&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ フォレストバーク 8.8L</a><span class="rank-list-note">ヤマガメの陸場に自然な環境を再現。星4.2・高評価</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+川砂+底床&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">川砂（中粗目）爬虫類用</a><span class="rank-list-note">砂浜環境の再現。ニホンイシガメの産卵環境にも活用</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+テラリウムソイル+4kg&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ テラリウムソイル 4kg</a><span class="rank-list-note">亜熱帯・半水棲カメに適したpH中性〜弱酸性設計</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類用+人工芝+洗える&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">爬虫類用 洗える人工芝</a><span class="rank-list-note">水槽の陸場に。繰り返し洗えてメンテナンス最小</span></div></div>
-      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクバーク+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">コルクバーク（天然コルク樹皮）大</a><span class="rank-list-note">ヤマガメのシェルター兼床材として人気。自然派レイアウト向き</span></div></div>
-    </div>
-<div class="merit-box">
-      <div class="merit">
-        <h4>✅ ヤシガラ土のメリット</h4>
-        <ul>
-          <li>自然素材で安全性が高い</li>
-          <li>保湿力・吸水性に優れる</li>
-          <li>臭い吸収が優秀</li>
-          <li>産卵床としても使える</li>
-          <li>幅広いカメ種に対応</li>
-        </ul>
-      </div>
-      <div class="demerit">
-        <h4>⚠️ ヤシガラ土のデメリット</h4>
-        <ul>
-          <li>細粒は誤飲すると問題になることも</li>
-          <li>水が多すぎるとカビが生える</li>
-          <li>砂・砂利より価格が高い</li>
-          <li>交換時の廃棄処理が必要</li>
-        </ul>
-      </div>
-    </div>
-
-    
-    <h3>⑦ GEX エキゾテラ デザートソイル 2kg（Amazonベストセラー1位）</h3>
-    <p>Amazonの爬虫類用底砂・床材カテゴリで長期にわたりベストセラー1位を獲得している定番ソイル。多孔質な天然素材がケージ内の臭いを吸着し、適度な保湿性も兼ね備えています。リクガメをはじめ、半水棲カメの陸場にも使いやすく、排泄物がまとまりやすいので日々の掃除が格段にラクになると好評です。消臭・保湿・お掃除のしやすさを同時に実現したい方に最もおすすめできる一品です。</p>
-    <div class="amazon-placeholder">
-      <strong>📦 GEX エキゾテラ デザートソイル 2kg</strong>
-      <p><a href="https://www.amazon.co.jp/dp/B06XC8YK4Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
-    </div>
-
-    <h3>⑧ GEX エキゾテラ デザートソイル 4kg（大容量・コスパ重視派に）</h3>
-    <p>上記デザートソイルの大容量版（4kg）。大型ケージや複数頭飼育でまとめて床材を揃えたい方にとって、単価を抑えられるコスパ優秀モデルです。Amazonレビュー312件以上・星4.5という高評価を誇り、リクガメ・半水棲カメ問わず幅広い種類に対応。「臭いが明らかに減った」「掃除が楽になった」という口コミが多数寄せられています。定期交換を前提にするなら4kgパックがお得です。</p>
-    <div class="amazon-placeholder">
-      <strong>📦 GEX エキゾテラ デザートソイル 4kg</strong>
-      <p><a href="https://www.amazon.co.jp/dp/B07F3QBSP1/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
-    </div>
-
-    <h2>カメの種類別おすすめ床材</h2>
-    <ul>
-      <li><strong>クサガメ・ミシシッピアカミミガメ</strong>：陸場に赤玉土 or 人工芝、水場は砂利（大粒）</li>
-      <li><strong>ニホンイシガメ</strong>：赤玉土（中粒）＋部分保湿用水苔の組み合わせ</li>
-      <li><strong>ロシアリクガメ・ギリシャリクガメ</strong>：ヤシガラ土または中粗目の砂の混合</li>
-      <li><strong>ヒョウモンリクガメ等大型種</strong>：ヤシガラ土を厚めに敷く（10cm以上）</li>
-    </ul>
 
     <div class="amazon-cta">
-      <p>ヤシガラ土はAmazonで購入するとまとめ買いが割安です🌱</p>
-      <a href="https://www.amazon.co.jp/dp/B06XC8YK4Y/?tag=kamelife09-22" target="_blank" rel="nofollow" class="amazon-btn">🛒 GEX エキゾテラ デザートソイル — Amazonで価格を確認する</a>
+      <p>迷ったら、種に合わせたレプティサン（5.0/10.0）の直管が王道です💡</p>
+      <a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン&tag=kamelife09-22" target="_blank" rel="nofollow" class="amazon-btn">🛒 ズーメッド レプティサン — Amazonで価格を確認する</a>
     </div>
-
     <div class="rating-box">
-      <div class="rating-label">総合評価 — ヤシガラ土（ジクラアース）</div>
+      <div class="rating-label">総合評価 — ズーメッド レプティサン 10.0</div>
       <div class="rating-num">4.9</div>
       <div class="rating-stars">★★★★★</div>
-      <div class="rating-comment">迷ったらヤシガラ土。保湿力・安全性・使い勝手のすべてで最高水準。<br>半数以上のカメ種で「最適解」になる万能床材。</div>
+      <div class="rating-comment">UVB出力の安定性と信頼性で他を引き離す世界標準。<br>リクガメ飼育の照明はここから始めるのが王道。</div>
     </div>
-
     <h2>まとめ</h2>
-    <p>床材選びで最もよくある失敗は「見た目だけで選ぶ」ことです。白いカルシウムサンドや色付きの砂は映えますが、カメの健康への影響が不明な製品も多い。<strong>迷ったら自然素材のヤシガラ土か硬質赤玉土を選ぶのが正解です。</strong>特にヤシガラ土は汎用性が高く、初めての方に最もおすすめできます。</p>
-
+    <p>UVBライトで最も多い失敗は「切れていないから交換しない」ことと「ガラス越しの日光浴で足りていると思い込む」ことです。UVB出力は見えないまま劣化し、ガラスはUVBをほぼ遮断します。<strong>種に合った出力（森林系5.0／砂漠系10.0）を正しい距離で照射し、6〜12ヶ月で必ず交換する——この3点を守ることが、くる病と甲羅の変形からカメを守る最低条件です。</strong></p>
   </div>
 </div>
-
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
       <p>飼育器具の正しい選び方を、根拠のあるデータと実体験で届けるカメ飼育専門情報サイト。</p>
     </div>
-    <div class="footer-col">
-      <h4>Articles</h4>
-      <a href="cage-review.html">ケージ比較</a><a href="substrate-review.html">床材比較</a>
-      <a href="uvb-light-review.html">UVBライト</a><a href="food-review.html">餌・フード</a>
+    <div class="footer-col"><h4>Articles</h4>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-review.html">ケージ比較</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-review.html">床材比較</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/food-review.html">餌・フード</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-review.html">シェルター</a>
     </div>
-    <div class="footer-col"><h4>Info</h4><a href="privacy.html">プライバシーポリシー</a></div>
+    <div class="footer-col"><h4>Info</h4>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシーポリシー</a>
+      <a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">カメの生態コラム（note）</a>
+    </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-disclaimer">本サイトはAmazon.co.jpアソシエイト・プログラムの参加者です。当サイトが紹介する商品・サービスのリンクから購入が行われた場合、当サイトは適格販売により紹介料を得ることがあります。</p>
-    <p class="footer-copy">© 2025 カメライフガイド</p>
+    <p class="footer-copy">© 2026 カメライフガイド</p>
   </div>
 </footer>
 <script>
-const obs = new IntersectionObserver(e => e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const hdr=document.getElementById('header');
 window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>60)},{passive:true});
