@@ -3,750 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー — カメライフガイド</title>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
-
-:root {
-  --forest:    #1c2b1a;
-  --forest-mid:#2d4a2a;
-  --moss:      #4a6741;
-  --sage:      #7a9e6e;
-  --sage-light:#a8c49a;
-  --stone:     #e8e2d8;
-  --parchment: #f4f0e8;
-  --cream:     #faf8f4;
-  --white:     #ffffff;
-  --ink:       #1a1a16;
-  --ink-soft:  #3d3d30;
-  --muted:     #8a8878;
-  --border:    rgba(74,103,65,0.15);
-  --amazon:    #FF9900;
-  --amazon-dk: #e08800;
-  --ease:      cubic-bezier(0.25,0.1,0.25,1);
-  --ease-out:  cubic-bezier(0.0,0.0,0.2,1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-
-/* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── HEADER ── */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  transition: background 0.4s var(--ease), box-shadow 0.4s;
-}
-.site-header.scrolled {
-  background: rgba(28,43,26,0.96);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--cream);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  display: flex; align-items: center; gap: 10px;
-}
-.logo-icon {
-  width: 32px; height: 32px;
-  background: var(--sage);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-}
-
-.nav-links {
-  display: flex; align-items: center; gap: 32px; list-style: none;
-}
-.nav-links a {
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.6); text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--sage-light); }
-.nav-cta {
-  background: var(--sage) !important; color: white !important;
-  padding: 9px 22px; border-radius: 3px;
-  font-size: 11px !important; letter-spacing: 0.16em;
-  transition: background 0.2s !important;
-}
-.nav-cta:hover { background: var(--moss) !important; }
-
-/* ── HERO ── */
-.hero {
-  min-height: 100svh;
-  background: var(--forest);
-  position: relative; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 0 80px;
-}
-
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(74,103,65,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 70%, rgba(45,74,42,0.3) 0%, transparent 60%);
-}
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto; width: 100%;
-  padding: 0 48px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
-}
-
-.hero-left {}
-
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sage-light);
-  margin-bottom: 28px;
-  border: 1px solid rgba(122,158,110,0.35);
-  padding: 6px 16px; border-radius: 2px;
-}
-.hero-tag-dot {
-  width: 5px; height: 5px; background: var(--sage); border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(44px, 5.5vw, 80px);
-  font-weight: 700;
-  line-height: 1.06; letter-spacing: -0.02em;
-  color: var(--cream);
-  margin-bottom: 28px;
-}
-.hero-title em { font-style: italic; color: var(--sage-light); }
-
-.hero-desc {
-  font-size: 15px; line-height: 1.9;
-  color: rgba(244,240,232,0.55);
-  max-width: 400px; margin-bottom: 44px;
-}
-
-.hero-buttons { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--sage); color: var(--forest);
-  text-decoration: none; padding: 15px 32px; border-radius: 3px;
-  font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  transition: background 0.2s, transform 0.2s;
-}
-.btn-primary:hover { background: var(--sage-light); transform: translateY(-2px); }
-
-.btn-outline {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
-  text-decoration: none; padding: 15px 28px; border-radius: 3px;
-  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s, gap 0.2s;
-}
-.btn-outline:hover { border-color: var(--sage); color: var(--sage-light); gap: 12px; }
-.btn-outline::after { content: '→'; }
-
-.hero-right {
-  display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
-}
-
-.hero-stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  padding: 20px 28px; border-radius: 4px;
-  width: 100%;
-}
-.hero-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px; font-weight: 600;
-  color: var(--cream); line-height: 1;
-  margin-bottom: 4px;
-}
-.hero-stat-num span { font-size: 18px; color: var(--sage-light); }
-.hero-stat-label { font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
-
-.hero-scroll {
-  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3); z-index: 2;
-}
-.scroll-arrow {
-  width: 1px; height: 40px; background: linear-gradient(var(--sage), transparent);
-  position: relative; overflow: hidden;
-}
-.scroll-arrow::after {
-  content: ''; position: absolute; top: -100%; left: 0;
-  width: 1px; height: 100%; background: var(--sage-light);
-  animation: scrollDown 1.8s ease-in-out infinite;
-}
-@keyframes scrollDown { 0%{top:-100%} 100%{top:200%} }
-
-/* ── BAND ── */
-.stat-band {
-  background: var(--forest-mid);
-  padding: 0; overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.stat-band-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  divide-x: 1px solid rgba(255,255,255,0.06);
-}
-.stat-item {
-  padding: 32px 40px;
-  border-right: 1px solid rgba(255,255,255,0.06);
-  text-align: center;
-}
-.stat-item:last-child { border-right: none; }
-.stat-n {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px; font-weight: 600; color: var(--cream); line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-n span { color: var(--sage-light); font-size: 20px; }
-.stat-l { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-
-/* ── SECTIONS ── */
-section { padding: 96px 48px; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-
-.section-label {
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--moss); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::before { content: ''; width: 28px; height: 1px; background: var(--sage); }
-
-.section-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(34px, 3.5vw, 52px); font-weight: 600;
-  line-height: 1.12; color: var(--forest); margin-bottom: 16px;
-}
-.section-heading em { font-style: italic; color: var(--moss); }
-.section-sub { font-size: 14px; color: var(--muted); line-height: 1.9; max-width: 500px; }
-
-/* ── RANKING ── */
-.ranking-section { background: var(--white); }
-.ranking-head { margin-bottom: 60px; }
-
-.rank-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
-  border: 1px solid var(--border);
-}
-.rank-card {
-  padding: 48px 40px;
-  border-right: 1px solid var(--border);
-  text-decoration: none; color: inherit;
-  display: block; position: relative; overflow: hidden;
-  transition: background 0.3s;
-}
-.rank-card:last-child { border-right: none; }
-.rank-card:hover { background: var(--parchment); }
-.rank-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-}
-.rank-card:nth-child(1)::before { background: #b8860b; }
-.rank-card:nth-child(2)::before { background: #909090; }
-.rank-card:nth-child(3)::before { background: #8b5a2b; }
-
-.rank-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 72px; font-weight: 700; line-height: 1;
-  margin-bottom: 20px; display: block;
-}
-.rank-card:nth-child(1) .rank-num { color: rgba(184,134,11,0.15); }
-.rank-card:nth-child(2) .rank-num { color: rgba(144,144,144,0.12); }
-.rank-card:nth-child(3) .rank-num { color: rgba(139,90,43,0.12); }
-
-.rank-medal {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  margin-bottom: 14px; display: block;
-}
-.rank-card:nth-child(1) .rank-medal { color: #b8860b; }
-.rank-card:nth-child(2) .rank-medal { color: #909090; }
-.rank-card:nth-child(3) .rank-medal { color: #8b5a2b; }
-
-.rank-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px; font-weight: 600; line-height: 1.45;
-  color: var(--forest); margin-bottom: 12px;
-}
-.rank-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
-.rank-stars { color: var(--sage); letter-spacing: 4px; font-size: 13px; }
-
-.rank-arrow {
-  position: absolute; bottom: 36px; right: 36px;
-  font-size: 20px; color: var(--sage); opacity: 0;
-  transform: translateX(-8px); transition: opacity 0.3s, transform 0.3s;
-}
-.rank-card:hover .rank-arrow { opacity: 1; transform: none; }
-
-/* ── ARTICLES ── */
-.articles-section { background: var(--parchment); }
-.articles-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 52px; gap: 20px;
-}
-.view-all {
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--moss); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: gap 0.2s, color 0.2s; white-space: nowrap;
-}
-.view-all:hover { gap: 14px; color: var(--forest); }
-.view-all::after { content: '→'; }
-
-.article-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-}
-.article-card {
-  background: var(--white); text-decoration: none; color: inherit;
-  display: flex; flex-direction: column;
-  border: 1px solid var(--border);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.article-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(28,43,26,0.1);
-}
-
-.card-top {
-  aspect-ratio: 16/10; position: relative; overflow: hidden;
-}
-.card-bg {
-  width: 100%; height: 100%;
-  transition: transform 0.5s var(--ease);
-}
-.article-card:hover .card-bg { transform: scale(1.06); }
-.card-bg.bg-cage     { background: linear-gradient(135deg, #2d4a2a 0%, #1c3520 50%, #142810 100%); }
-.card-bg.bg-substrate{ background: linear-gradient(135deg, #6b5a3a 0%, #4a3d25 50%, #332a18 100%); }
-.card-bg.bg-shelter  { background: linear-gradient(135deg, #3a4a35 0%, #2a3828 50%, #1c2818 100%); }
-.card-bg.bg-feed     { background: linear-gradient(135deg, #4a5a2a 0%, #384420 50%, #283015 100%); }
-.card-bg.bg-uvb      { background: linear-gradient(135deg, #2a3a5a 0%, #1c2840 50%, #121c30 100%); }
-.card-bg.bg-water    { background: linear-gradient(135deg, #2a4a5a 0%, #1c3840 50%, #122830 100%); }
-
-.card-icon {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 56px;
-  transition: transform 0.4s var(--ease);
-}
-.article-card:hover .card-icon { transform: translate(-50%, -56%) scale(1.1); }
-
-.card-label {
-  position: absolute; top: 14px; left: 14px;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-  background: rgba(28,43,26,0.75); color: var(--sage-light);
-  padding: 5px 12px; backdrop-filter: blur(6px);
-}
-
-.card-body { padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column; }
-.card-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16px; font-weight: 600; line-height: 1.55;
-  color: var(--forest); margin-bottom: 10px;
-  transition: color 0.2s;
-}
-.article-card:hover .card-title { color: var(--moss); }
-.card-excerpt { font-size: 13px; color: var(--muted); line-height: 1.85; flex: 1; margin-bottom: 16px; }
-.card-meta {
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--sage); display: flex; align-items: center; gap: 8px;
-}
-.card-meta::before { content: ''; width: 20px; height: 1px; background: var(--sage); }
-
-/* ── DEEP FEATURE ── */
-.feature-section {
-  background: var(--forest);
-  padding: 100px 48px;
-}
-.feature-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
-}
-.feature-visual {
-  position: relative;
-}
-.feature-panel {
-  background: var(--forest-mid);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 40px;
-  position: relative; overflow: hidden;
-}
-.feature-panel::before {
-  content: '🐢'; font-size: 160px;
-  position: absolute; right: -20px; bottom: -20px;
-  opacity: 0.08; line-height: 1;
-}
-.feature-items { display: flex; flex-direction: column; gap: 16px; }
-.feature-item {
-  display: flex; gap: 16px; align-items: flex-start;
-  padding: 18px; background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.fi-icon {
-  width: 40px; height: 40px; background: rgba(122,158,110,0.15);
-  border-radius: 2px; display: flex; align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0;
-}
-.fi-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
-.fi-desc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.7; }
-
-.feature-text .section-label { color: var(--sage-light); }
-.feature-text .section-label::before { background: var(--sage); }
-.feature-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px,3vw,48px); font-weight: 600;
-  color: var(--cream); line-height: 1.15; margin-bottom: 20px;
-}
-.feature-heading em { font-style: italic; color: var(--sage-light); }
-.feature-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.95; margin-bottom: 36px; }
-.feature-link {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--sage-light); text-decoration: none;
-  border-bottom: 1px solid rgba(122,158,110,0.3);
-  padding-bottom: 4px;
-  transition: gap 0.2s, border-color 0.2s;
-}
-.feature-link:hover { gap: 16px; border-color: var(--sage-light); }
-
-/* ── ARTICLE PAGE ── */
-.article-hero {
-  background: var(--forest);
-  padding: 140px 48px 80px;
-  position: relative; overflow: hidden;
-}
-.article-hero::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,103,65,0.2) 0%, transparent 70%);
-}
-.article-hero-inner { max-width: 840px; position: relative; z-index: 1; }
-.article-badge {
-  display: inline-block;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sage-light);
-  border: 1px solid rgba(122,158,110,0.35);
-  padding: 6px 16px; margin-bottom: 28px;
-}
-.article-page-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 52px); font-weight: 700;
-  line-height: 1.18; color: var(--cream); margin-bottom: 24px;
-}
-.article-meta-row {
-  font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.08em;
-  display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
-}
-.article-meta-row span { display: flex; align-items: center; gap: 6px; }
-
-.breadcrumb {
-  background: var(--parchment);
-  padding: 14px 48px;
-  font-size: 12px; color: var(--muted);
-  display: flex; gap: 8px; align-items: center;
-  border-bottom: 1px solid var(--border);
-}
-.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.breadcrumb a:hover { color: var(--moss); }
-
-.article-body-wrap {
-  max-width: 760px; margin: 0 auto; padding: 72px 48px 100px;
-}
-.article-body p {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; line-height: 2.1; color: var(--ink-soft); margin-bottom: 22px;
-}
-.article-body h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px; font-weight: 600; color: var(--forest);
-  margin: 60px 0 22px;
-  padding-bottom: 16px; border-bottom: 1px solid var(--border);
-}
-.article-body h3 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px; font-weight: 600; color: var(--forest-mid);
-  margin: 40px 0 14px;
-  padding-left: 14px; border-left: 3px solid var(--sage);
-}
-.article-body ul, .article-body ol {
-  padding-left: 22px; margin-bottom: 22px;
-}
-.article-body li {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; line-height: 2; color: var(--ink-soft); margin-bottom: 8px;
-}
-
-/* Merit / Demerit */
-.merit-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
-@media (max-width: 600px) { .merit-box { grid-template-columns: 1fr; } }
-.merit, .demerit { padding: 28px; }
-.merit { background: #f2f8f0; border-top: 2px solid var(--sage); }
-.demerit { background: #faf2f0; border-top: 2px solid #c47a5a; }
-.merit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin-bottom: 14px; }
-.demerit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a4a2a; margin-bottom: 14px; }
-.merit ul, .demerit ul { padding-left: 18px; }
-.merit li, .demerit li { font-size: 13px; line-height: 1.85; font-family: 'Noto Sans JP', sans-serif; }
-
-/* Rating */
-.rating-box { margin: 52px 0; background: var(--forest); padding: 52px; text-align: center; }
-.rating-label { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 20px; }
-.rating-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 88px; font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 12px;
-}
-.rating-stars { font-size: 20px; color: var(--sage-light); letter-spacing: 6px; margin-bottom: 18px; }
-.rating-comment { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.85; font-family: 'Noto Serif JP', serif; }
-
-/* Amazon */
-.amazon-placeholder {
-  border: 1.5px dashed rgba(255,153,0,0.5);
-  padding: 28px 32px; margin: 36px 0; background: #fffaf0;
-}
-.amazon-placeholder strong { display: block; font-size: 14px; font-weight: 600; color: #b07000; margin-bottom: 8px; }
-.amazon-placeholder p { font-size: 13px; color: #9a7020; line-height: 1.7; font-family: 'Noto Sans JP', sans-serif; }
-
-.amazon-cta { margin: 52px 0; padding: 44px; border: 2px solid var(--amazon); text-align: center; }
-.amazon-cta p { font-size: 14px; color: var(--muted); margin-bottom: 22px; font-family: 'Noto Serif JP', serif; }
-.amazon-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--amazon); color: white; text-decoration: none;
-  padding: 16px 40px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em;
-  transition: background 0.2s, transform 0.2s;
-}
-.amazon-btn:hover { background: var(--amazon-dk); transform: translateY(-2px); }
-
-/* ── STATIC PAGE ── */
-.static-hero { background: var(--forest); padding: 130px 48px 60px; }
-.static-hero .section-label { color: var(--sage-light); }
-.static-hero .section-label::before { background: var(--sage); }
-.static-hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 44px; font-weight: 700; color: var(--cream); margin-bottom: 8px;
-}
-.static-hero .updated { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; }
-
-.static-body { max-width: 760px; margin: 0 auto; padding: 72px 48px 100px; }
-.static-body h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px; font-weight: 600; color: var(--forest);
-  margin: 52px 0 18px;
-  padding-bottom: 14px; border-bottom: 1px solid var(--border);
-}
-.static-body p, .static-body li {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px; line-height: 2; color: var(--ink-soft); margin-bottom: 14px;
-}
-.static-body ul { padding-left: 20px; margin-bottom: 18px; }
-
-/* ── FOOTER ── */
-.site-footer { background: var(--ink); padding: 80px 48px 44px; }
-.footer-top {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 64px;
-  padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px;
-}
-.footer-brand .logo { color: var(--cream); display: inline-flex; margin-bottom: 18px; }
-.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.9; max-width: 300px; }
-.footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 22px; }
-.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 13px; transition: color 0.2s; }
-.footer-col a:hover { color: var(--sage-light); }
-
-.footer-bottom {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 32px;
-}
-.footer-disclaimer { font-size: 11px; line-height: 1.8; color: rgba(255,255,255,0.2); max-width: 640px; }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); white-space: nowrap; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  .site-header { padding: 0 28px; }
-  section { padding: 72px 28px; }
-  .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 0 28px; }
-  .hero-right { flex-direction: row; flex-wrap: wrap; }
-  .hero-stat { width: calc(50% - 8px); }
-  .rank-grid { grid-template-columns: 1fr; }
-  .rank-card { border-right: none; border-bottom: 1px solid var(--border); }
-  .rank-card:last-child { border-bottom: none; }
-  .article-grid { grid-template-columns: 1fr 1fr; }
-  .feature-inner { grid-template-columns: 1fr; gap: 48px; }
-  .stat-band-inner { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; }
-  .feature-section { padding: 72px 28px; }
-  .article-hero { padding: 120px 28px 60px; }
-  .article-body-wrap { padding: 52px 28px 80px; }
-  .static-hero { padding: 120px 28px 48px; }
-  .static-body { padding: 52px 28px 80px; }
-  .site-footer { padding: 60px 28px 36px; }
-  .breadcrumb { padding: 14px 28px; }
-}
-@media (max-width: 640px) {
-  .site-header { padding: 0 20px; }
-  .nav-links li:not(:last-child) { display: none; }
-  section { padding: 60px 20px; }
-  .hero-content { padding: 0 20px; }
-  .hero-right { display: none; }
-  .article-grid { grid-template-columns: 1fr; }
-  .stat-band-inner { grid-template-columns: 1fr 1fr; }
-  .article-hero { padding: 110px 20px 52px; }
-  .article-body-wrap { padding: 44px 20px 72px; }
-  .static-hero { padding: 110px 20px 44px; }
-  .static-body { padding: 44px 20px 72px; }
-  .site-footer { padding: 52px 20px 32px; }
-  .breadcrumb { padding: 12px 20px; }
-  .rating-box { padding: 36px 24px; }
-  .rating-num { font-size: 64px; }
-  .articles-header { flex-direction: column; align-items: flex-start; }
-}
-
-/* ── RANK LIST (ベスト10) ── */
-.rank-list { display: flex; flex-direction: column; gap: 2px; margin: 20px 0 36px; }
-.rank-list-item {
-  display: flex; align-items: flex-start; gap: 16px;
-  padding: 16px 20px;
-  background: var(--white); border: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.rank-list-item:hover { background: var(--parchment); }
-.rank-list-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 700; color: var(--border);
-  min-width: 36px; line-height: 1.3; flex-shrink: 0;
-}
-.rank-list-item:nth-child(1) .rank-list-num { color: #c8960a; }
-.rank-list-item:nth-child(2) .rank-list-num { color: #909090; }
-.rank-list-item:nth-child(3) .rank-list-num { color: #a0643c; }
-.rank-list-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
-a.rank-list-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 600; color: var(--forest);
-  text-decoration: none; line-height: 1.5;
-  transition: color 0.2s;
-}
-a.rank-list-name:hover { color: var(--moss); text-decoration: underline; }
-.rank-list-note { font-size: 12px; color: var(--muted); line-height: 1.7; }
-@media (max-width: 640px) {
-  .rank-list-item { padding: 12px 14px; gap: 12px; }
-  .rank-list-num { font-size: 18px; min-width: 28px; }
-  a.rank-list-name { font-size: 14px; }
-}
-
-</style>
+  <meta name="description" content="カメ・リクガメ用シェルター（隠れ家）おすすめを徹底比較。素材・サイズ・湿度保持・安全性を解説し、種類別の最適な選び方を紹介します。">
+  <title>カメのシェルター（隠れ家）おすすめ比較｜素材・サイズ・湿度別の正解を解説 — カメライフガイド</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <header class="site-header scrolled" id="header">
-  <a href="index.html" class="logo">
-    <div class="logo-icon">🐢</div>
-    カメライフガイド
-  </a>
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
   <ul class="nav-links">
-    <li><a href="index.html#ranking">ランキング</a></li>
-    <li><a href="index.html#articles">記事一覧</a></li>
-    <li><a href="privacy.html">プライバシー</a></li>
-    <li><a href="index.html#articles" class="nav-cta">記事を読む</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#ranking">ランキング</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles">記事一覧</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシー</a></li>
+    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles" class="nav-cta">記事を読む</a></li>
   </ul>
 </header>
-
-<div class="static-hero">
-  <div class="section-label">Legal</div>
-  <h1>プライバシーポリシー</h1>
-  <p class="updated">最終更新日：2025年6月1日</p>
+<div class="breadcrumb">
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/">ホーム</a><span>›</span>
+  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/#articles">記事一覧</a><span>›</span>
+  <span>シェルター比較</span>
 </div>
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-badge">🏠 シェルター・隠れ家</div>
+    <h1 class="article-page-title">カメのシェルター（隠れ家）おすすめ比較｜素材・サイズ・湿度別の正しい選び方</h1>
+    <div class="article-meta-row">
+      <span>📅 2025年6月8日</span><span>✍️ カメライフガイド編集部</span><span>📖 約10分</span>
+    </div>
+  </div>
+</div>
+<div class="article-body-wrap">
+  <div class="article-body">
+    <p>シェルター（隠れ家）は、カメにとって「安心して身を隠せる巣穴」の代わりになる重要な設備です。野生のカメは岩陰や倒木の下、茂みの奥に潜り込んで外敵や急激な温度・光の変化から身を守っています。飼育下でこの「隠れる場所」がないと、カメは慢性的なストレスを抱え、食欲不振や免疫低下につながることがあります。</p>
+    <p>今回はシェルターを素材・サイズ・湿度保持・安全性の4軸で比較し、リクガメ・ヤマガメ・水棲ガメそれぞれに最適なタイプを種類別に提示します。</p>
 
-<main class="static-body">
+    <h2>シェルターを選ぶ際の4つの基準</h2>
+    <h3>① サイズ（甲長との関係）</h3>
+    <p>シェルターは「カメ全体がすっぽり入り、中で向きを変えられる」サイズが理想です。目安は入り口の幅が甲長の1.2〜1.5倍、内部の高さは甲高の1.5倍以上。大きすぎると落ち着かず、小さすぎると体が引っかかって危険です。成長を見越して少し余裕を持たせると買い替えが減ります。</p>
+    <h3>② 湿度保持力</h3>
+    <p>熱帯・亜熱帯系のカメ（多くのヤマガメ、アカアシガメなど）には、内部の湿度を保てる「ウェットシェルター（湿度シェルター）」が有効です。逆に乾燥系リクガメ（ロシア・ギリシャ・ヒョウモンなど）には通気性のあるドライタイプが向きます。種の原産地の環境に合わせるのが基本です。</p>
+    <h3>③ 素材の安全性</h3>
+    <p>素焼き（テラコッタ）、天然コルク、木製、樹脂などが一般的です。素焼きは保湿・放熱性に優れ、コルクは軽くて自然な見た目、樹脂は丸洗いできて衛生的。塗料や接着剤の溶出が心配な安価な装飾品は避け、爬虫類用として販売されているものを選ぶと安心です。</p>
+    <h3>④ 安定性と掃除のしやすさ</h3>
+    <p>カメは意外と力が強く、軽いシェルターは押して動かしたり、潜り込んでひっくり返したりします。底が安定して倒れにくく、取り出して丸洗いできる構造だと衛生管理が楽になります。</p>
 
-  <p>「カメライフガイド」（以下、「当サイト」）は、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+    <h2>シェルターの主なタイプ：詳細比較</h2>
+    <h3>① 素焼き（テラコッタ）ハーフドーム型</h3>
+    <p>植木鉢を半分にしたような定番タイプ。素焼きが水分を含んで内部の湿度を保ちやすく、保温・放熱のバランスもよい。重さがあるので安定性も高く、リクガメから半水棲種まで幅広く使えます。</p>
+    <p><a href="https://www.amazon.co.jp/s?k=爬虫類+シェルター+素焼き+隠れ家&tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    <h3>② ウェットシェルター（陶器・給水タイプ）</h3>
+    <p>上部に水を溜める皿があり、陶器を通じて内部をしっとり保つ構造。多湿を好むヤマガメや幼体の脱皮補助に効果的。スドーの「ウェットシェルター」が爬虫類飼育者の定番です。</p>
+    <p><a href="https://www.amazon.co.jp/s?k=スドー+ウェットシェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    <h3>③ 天然コルクバーク（樹皮）</h3>
+    <p>軽くて自然な見た目。床材兼シェルターとして使え、ヤマガメの潜り場や立体的なレイアウトに向きます。軽いぶん固定の工夫が必要ですが、ビバリウムの雰囲気づくりに最適。</p>
+    <p><a href="https://www.amazon.co.jp/s?k=コルクバーク+爬虫類+シェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored">Amazonで価格・詳細を確認する →</a></p>
+    <h3>④ 樹脂製ロック（人工岩）シェルター</h3>
+    <p>軽量で丸洗いでき、衛生的。人工岩風のデザインでレイアウトになじみます。乾燥系リクガメの日陰スポットや水棲ガメの陸場下の隠れ家に。</p>
+    <h3>⑤ 木製ハイドボックス</h3>
+    <p>箱型で囲まれた安心感が高く、警戒心の強い個体に向きます。通気性があり乾燥系に適しますが、水濡れに弱いので多湿環境では不向き。</p>
+    <h3>⑥ 自然石・流木の組み合わせ</h3>
+    <p>市販品ではなくレイアウトで作る隠れ家。岩を組んで陰を作る方法は、立体移動を好む種に運動の機会も与えます。崩落・転倒でカメを挟まないよう、安定した固定が絶対条件です。</p>
 
-  <h2>Amazonアソシエイト・プログラムへの参加について</h2>
-  <p>当サイトは、<strong>Amazon.co.jpアソシエイト・プログラム</strong>（以下、「アマゾンアソシエイト」）の参加者です。アマゾンアソシエイトとは、Amazon.co.jpが運営するアフィリエイト（成果報酬型広告）プログラムです。当サイトに掲載されているAmazon.co.jpへのリンクをクリックし、そのまま商品をご購入いただいた場合、当サイトはAmazon.co.jpより紹介料を受け取ることがあります。</p>
-  <ul>
-    <li>紹介料はAmazon.co.jpが負担するものであり、商品価格は通常価格と変わりません。</li>
-    <li>当サイトの収益はサイト運営・記事作成費用に充てられます。</li>
-    <li>商品レビューの内容は、紹介料の有無にかかわらず、実際の使用感と客観的な評価に基づくものです。</li>
-  </ul>
+    <h2>【リクガメ用】シェルター おすすめ ベスト10</h2>
+    <div class="rank-list">
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+シェルター+素焼き+大型&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">素焼きハーフドーム シェルター（大）</a><span class="rank-list-note">保湿・放熱バランス◎。重量があり大型リクガメでも倒しにくい定番</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+リプタイルケイブ&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ リプタイルケイブ</a><span class="rank-list-note">人工岩風で自然なレイアウト。サイズ展開が豊富で選びやすい</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクバーク+リクガメ+隠れ家&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">天然コルクバーク（大）</a><span class="rank-list-note">軽量で自然派。通気性が高く乾燥系リクガメの日陰づくりに最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+木製+ハイドボックス&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">木製ハイドボックス</a><span class="rank-list-note">囲まれた安心感が高く警戒心の強い個体向き。乾燥環境に好適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=ジェックス+爬虫類+ロックシェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">樹脂製ロックシェルター（人工岩）</a><span class="rank-list-note">丸洗いできて衛生的。軽量で配置換えがしやすい</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=スドー+ロックシェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">スドー ロックシェルター</a><span class="rank-list-note">天然石風で重量があり安定。中型リクガメの定番サイズ</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=植木鉢+素焼き+半分+シェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">素焼き植木鉢（半割り）</a><span class="rank-list-note">コスパ最強の自作派向け。割って角を整えれば安価なシェルターに</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+ハイド+特大&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">特大ハイド（大型種用）</a><span class="rank-list-note">ヒョウモン・ケヅメなど大型リクガメの成体に対応するサイズ</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクトンネル+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">コルクトンネル</a><span class="rank-list-note">筒状で通り抜けでき、運動と隠れ家を兼ねる。亜成体に人気</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+シェルター+小型&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">小型シェルター（幼体用）</a><span class="rank-list-note">ベビー〜幼体に。成長に合わせ買い替え前提のスターター向き</span></div></div>
+    </div>
 
-  <h2>広告の掲載について</h2>
-  <p>当サイトは、第三者配信の広告サービスを利用する場合があります。これらの広告配信事業者は、ユーザーの興味に応じた広告を表示するためにCookieを使用することがあります。</p>
+    <h2>【ヤマガメ・水亀用】シェルター おすすめ ベスト10</h2>
+    <div class="rank-list">
+      <div class="rank-list-item"><span class="rank-list-num">01</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=スドー+ウェットシェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">スドー ウェットシェルター</a><span class="rank-list-note">上部給水で内部を多湿に保つ。ヤマガメ・幼体の脱皮補助に定番</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">02</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクバーク+ヤマガメ+隠れ家&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">天然コルクバーク（中）</a><span class="rank-list-note">湿った林床を好むヤマガメの潜り場に。自然なレイアウト向き</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">03</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+シェルター+素焼き&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">素焼きハーフドーム シェルター（中）</a><span class="rank-list-note">水で濡らせば保湿効果。半水棲種の陸場の隠れ家に最適</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">04</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=水苔+スファグナムモス+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">水苔（スファグナムモス）</a><span class="rank-list-note">シェルター内に敷けば局所的に高湿度をキープ。潜り場としても</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">05</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=亀+浮島+バスキング+隠れ家&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">水棲ガメ用 浮島（隠れ家付き）</a><span class="rank-list-note">水亀の甲羅干しと水中の隠れ場を兼ねる。クサガメ・イシガメに</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">06</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+リプタイルケイブ+S&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">GEX エキゾテラ リプタイルケイブ（S）</a><span class="rank-list-note">小〜中型ヤマガメに収まりのよいサイズ。人工岩風で違和感なし</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">07</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=流木+爬虫類+レイアウト&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">流木（レイアウト用）</a><span class="rank-list-note">組み合わせて陰をつくる。立体移動を好むヤマガメの運動にも</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">08</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=亀+水槽+土管+シェルター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">陶器製 土管シェルター</a><span class="rank-list-note">水中設置できる筒型。水亀が落ち着いて休む暗がりを提供</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">09</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=コルクトンネル+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">コルクトンネル</a><span class="rank-list-note">通り抜けられる筒状。陸場に置けばヤマガメの隠れ道に</span></div></div>
+      <div class="rank-list-item"><span class="rank-list-num">10</span><div class="rank-list-body"><a href="https://www.amazon.co.jp/s?k=爬虫類+ウェットハイド+小&tag=kamelife09-22" target="_blank" rel="nofollow sponsored" class="rank-list-name">ウェットハイド（小・幼体用）</a><span class="rank-list-note">幼体の保湿に。脱水しやすいベビー期の多湿スポット確保に</span></div></div>
+    </div>
 
-  <h2>アクセス解析ツールについて</h2>
-  <p>当サイトでは、サイトの利用状況把握のためにアクセス解析ツール（Google アナリティクス等）を使用する場合があります。これらのツールはCookieを使用してトラフィックデータを収集しますが、個人を特定するものではありません。</p>
-
-  <h2>個人情報の収集と利用</h2>
-  <p>当サイトでは、お問い合わせ等においてお名前・メールアドレス等の個人情報をご提供いただく場合があります。取得した個人情報は、ご連絡・ご回答の目的のみに利用し、第三者への提供は行いません。</p>
-
-  <h2>免責事項</h2>
-  <p>当サイトは可能な限り正確な情報を掲載するよう努めておりますが、情報の正確性・完全性を保証するものではありません。当サイトの情報を参考に行動した結果生じた損害について、当サイトは一切の責任を負いません。</p>
-  <p>商品の価格・仕様・在庫状況は変動する場合があります。購入の際は必ず販売ページにて最新情報をご確認ください。また、飼育に関する情報は種・個体によって異なります。獣医師等の専門家への相談を推奨します。</p>
-
-  <h2>著作権について</h2>
-  <p>当サイトに掲載されているすべてのコンテンツ（文章・画像・デザイン等）の著作権は当サイト運営者に帰属します。無断での転用・転載はご遠慮ください。</p>
-
-  <h2>プライバシーポリシーの変更について</h2>
-  <p>当サイトは必要に応じて本プライバシーポリシーを変更することがあります。変更後のポリシーは当ページへの掲載をもって効力を生じます。</p>
-
-  <h2 id="contact">お問い合わせ</h2>
-  <p>本ポリシーに関するお問い合わせは下記よりご連絡ください。</p>
-  <p>サイト名：カメライフガイド<br>
-  メールアドレス：<em>（公開後、ご自身のメールアドレスをここに記入してください）</em></p>
-
-</main>
-
+    <div class="amazon-cta">
+      <p>多湿を好む種なら、まずスドー ウェットシェルターが鉄板の選択です🌿</p>
+      <a href="https://www.amazon.co.jp/s?k=スドー+ウェットシェルター&tag=kamelife09-22" target="_blank" rel="nofollow" class="amazon-btn">🛒 スドー ウェットシェルター — Amazonで価格を確認する</a>
+    </div>
+    <div class="rating-box">
+      <div class="rating-label">総合評価 — 素焼きハーフドーム シェルター</div>
+      <div class="rating-num">4.8</div>
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-comment">保湿・放熱・安定性のバランスが取れた万能タイプ。<br>多くのカメ種で「最初の1つ」に選んで失敗しない定番。</div>
+    </div>
+    <h2>まとめ</h2>
+    <p>シェルター選びでよくある失敗は「見た目だけで選んで湿度が種に合っていない」ことです。乾燥系には通気性のあるドライタイプ、多湿系には給水できるウェットタイプ、と原産地の環境に合わせるのが基本。<strong>サイズはカメ全体が入って向きを変えられる大きさを選び、倒れにくく丸洗いできるものを選べばまず間違いありません。</strong></p>
+  </div>
+</div>
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">🐢</div>
-        カメライフガイド
-      </a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
       <p>飼育器具の正しい選び方を、根拠のあるデータと実体験で届けるカメ飼育専門情報サイト。</p>
     </div>
-    <div class="footer-col">
-      <h4>Articles</h4>
-      <a href="cage-review.html">ケージ比較</a>
-      <a href="substrate-review.html">床材比較</a>
-      <a href="uvb-light-review.html">UVBライト</a>
-      <a href="food-review.html">餌・フード</a>
+    <div class="footer-col"><h4>Articles</h4>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-review.html">ケージ比較</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-review.html">床材比較</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-review.html">UVBライト</a>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/food-review.html">餌・フード</a>
     </div>
-    <div class="footer-col">
-      <h4>Info</h4>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="privacy.html#contact">お問い合わせ</a>
+    <div class="footer-col"><h4>Info</h4>
+      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシーポリシー</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -754,10 +126,11 @@ a.rank-list-name:hover { color: var(--moss); text-decoration: underline; }
     <p class="footer-copy">© 2025 カメライフガイド</p>
   </div>
 </footer>
-
 <script>
-const hdr = document.getElementById('header');
-window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', scrollY > 60); }, { passive: true });
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const hdr=document.getElementById('header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>60)},{passive:true});
 </script>
 </body>
 </html>
