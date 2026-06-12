@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gagalife04291225-lab.github.io/kame-life-guide-/sitemap.xml
