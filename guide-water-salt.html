@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汽水・水辺ガメの飼い方ガイド（ミナミイシガメ・ダイヤモンドバックテラピン等）｜カメライフガイド</title>
+<meta name="description" content="ミナミイシガメやダイヤモンドバックテラピンなど、汽水や水辺環境に暮らす水棲ガメの飼い方。水質・塩分・陸場・餌の考え方と、暮らしから逆算した飼育機材の選び方をまとめます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#b07c3f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Noto Serif JP",serif;
+    color:var(--forest-deep);
+    background:var(--parchment);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:60px 0 54px;
+    text-align:center;
+  }
+  header.hero .eyebrow{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    letter-spacing:.04em;
+    color:var(--accent);
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+  header.hero p.lead{
+    font-size:1.02rem;
+    color:#d9e0d6;
+    max-width:600px;
+    margin:0 auto;
+  }
+  nav.crumbs{
+    background:var(--forest);
+    color:#cdd8cc;
+    font-size:.86rem;
+    padding:11px 0;
+    text-align:center;
+  }
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  section.intro{padding:46px 0 12px;}
+  section.intro h2{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.5rem;
+    color:var(--forest);
+    margin-bottom:18px;
+  }
+  section.intro p{margin-bottom:16px;font-size:1rem;}
+  .note-box{
+    background:#fff;
+    border-left:4px solid var(--accent);
+    padding:18px 22px;
+    margin:24px 0;
+    border-radius:0 8px 8px 0;
+    font-size:.95rem;
+    box-shadow:0 1px 4px rgba(13,31,26,.06);
+  }
+  .note-box strong{color:var(--accent-dark);}
+
+  section.ranking{padding:30px 0 50px;}
+  .item{
+    background:#fff;
+    border-radius:12px;
+    margin-bottom:26px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(13,31,26,.07);
+  }
+  .item-head{
+    display:flex;
+    align-items:center;
+    background:linear-gradient(110deg,var(--forest) 0%,var(--forest-deep) 100%);
+    color:var(--parchment);
+    padding:16px 22px;
+  }
+  .rank-num{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--accent);
+    line-height:1;
+    margin-right:16px;
+    min-width:46px;
+    text-align:center;
+  }
+  .item-head .titles h3{
+    font-size:1.12rem;
+    font-weight:700;
+    line-height:1.4;
+  }
+  .item-head .titles .maker{
+    font-size:.82rem;
+    color:#bcd0c0;
+    letter-spacing:.03em;
+  }
+  .item-body{padding:20px 22px 22px;}
+  .spec{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .spec span{
+    background:var(--parchment);
+    border:1px solid #e2d8c2;
+    color:var(--accent-dark);
+    font-size:.78rem;
+    padding:3px 11px;
+    border-radius:20px;
+  }
+  .item-body p{font-size:.96rem;margin-bottom:10px;}
+  .who{
+    background:#f0f4ee;
+    border-radius:8px;
+    padding:11px 15px;
+    font-size:.9rem;
+    margin:14px 0 4px;
+  }
+  .who b{color:var(--forest);}
+  .btn-area{margin-top:16px;}
+  .amazon-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.95rem;
+    padding:12px 30px;
+    border-radius:8px;
+    transition:background .2s;
+  }
+  .amazon-btn:hover{background:var(--accent-dark);}
+  .amazon-btn.disabled{
+    background:#c8c8c0;
+    color:#fff;
+    cursor:default;
+    pointer-events:none;
+  }
+
+  .diy{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    border-radius:12px;
+    margin-bottom:26px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(13,31,26,.12);
+  }
+  .diy .diy-head{
+    padding:16px 22px;
+    border-bottom:1px solid #25382f;
+  }
+  .diy .diy-head .label{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    color:var(--accent);
+    font-size:.9rem;
+    letter-spacing:.05em;
+  }
+  .diy .diy-head h3{font-size:1.12rem;font-weight:700;margin-top:4px;}
+  .diy .diy-body{padding:18px 22px 22px;}
+  .diy .diy-body p{font-size:.95rem;color:#d9e0d6;margin-bottom:10px;}
+  .diy .diy-body p:last-child{margin-bottom:0;}
+  .diy .btn-area{margin-top:16px;}
+
+  section.closing{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:48px 0;
+  }
+  section.closing h2{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.45rem;
+    color:var(--accent);
+    margin-bottom:18px;
+    text-align:center;
+  }
+  section.closing p{font-size:.98rem;margin-bottom:14px;color:#d9e0d6;}
+  .hub-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .hub-links a{
+    background:var(--forest);
+    color:var(--parchment);
+    text-decoration:none;
+    font-size:.9rem;
+    padding:10px 20px;
+    border-radius:24px;
+    border:1px solid #3d5a4b;
+    transition:background .2s;
+  }
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{
+    background:#08130f;
+    color:#7d8c81;
+    text-align:center;
+    font-size:.78rem;
+    padding:26px 0;
+    line-height:1.7;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{
+    font-size:.76rem;
+    color:#9aa89d;
+    max-width:640px;
+    margin:18px auto 0;
+    line-height:1.7;
+  }
+  @media(max-width:520px){
+    header.hero h1{font-size:1.6rem;}
+    .rank-num{font-size:1.5rem;min-width:38px;}
+    .item-head .titles h3{font-size:1rem;}
+  }
+
+  /* --- hub専用 --- */
+  section.body{padding:40px 0 20px;}
+  section.body h2{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:1.5rem;color:var(--forest);margin:34px 0 16px;
+  }
+  section.body h2:first-child{margin-top:0;}
+  section.body p{margin-bottom:16px;font-size:1rem;}
+  section.body ul{margin:0 0 18px 1.1em;}
+  section.body li{margin-bottom:8px;font-size:.98rem;}
+  .species-tags{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px;}
+  .species-tags span{
+    background:var(--forest);color:var(--parchment);font-size:.8rem;
+    padding:4px 13px;border-radius:20px;letter-spacing:.02em;
+  }
+  .gear{
+    background:var(--forest-deep);color:var(--parchment);
+    border-radius:14px;padding:30px 26px;margin:34px 0 10px;
+  }
+  .gear h3{
+    font-family:"Playfair Display",serif;font-style:italic;color:var(--accent);
+    font-size:1.25rem;margin-bottom:6px;text-align:center;
+  }
+  .gear .gear-sub{font-size:.9rem;color:#cdd8cc;text-align:center;margin-bottom:22px;}
+  .rlinks{display:flex;flex-direction:column;gap:11px;}
+  .rlink{
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--forest);color:var(--parchment);text-decoration:none;
+    padding:15px 20px;border-radius:10px;border:1px solid #3d5a4b;
+    transition:background .2s,border-color .2s;
+  }
+  .rlink:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  .rlink .rl-txt{font-weight:700;font-size:1rem;}
+  .rlink .rl-sub{font-size:.82rem;color:#cdd8cc;display:block;margin-top:2px;font-weight:400;}
+  .rlink:hover .rl-sub{color:#f0e6d4;}
+  .rlink .rl-arrow{font-size:1.3rem;color:var(--accent);margin-left:14px;}
+  .rlink:hover .rl-arrow{color:#fff;}
+</style>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Care Guide — Brackish &amp; Waterside Turtles</div>
+    <h1>汽水・水辺ガメの<br>飼い方ガイド</h1>
+    <p class="lead">ダイヤモンドバックテラピンのような汽水域のカメや、水辺を強く好む水棲ガメ。水質と陸場の作り方を、野生の暮らしから整理します。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="index.html">カメライフガイド</a> ＞ 種類から探す ＞ 汽水・水辺ガメ
+  </div>
+</nav>
+
+<section class="body">
+  <div class="wrap">
+
+    <div class="species-tags">
+      <span>ダイヤモンドバックテラピン</span><span>ミナミイシガメ</span><span>汽水性の水棲ガメ</span>
+    </div>
+
+    <h2>「汽水」という特殊な暮らし</h2>
+    <p>カメの多くは淡水で暮らしますが、なかには河口や塩性湿地など、海水と淡水が混ざる汽水域に適応した種がいます。代表がダイヤモンドバックテラピンです。こうした種は塩分にある程度耐えますが、「塩分が必須」とは限らず、種ごとに最適な飼育水の条件が大きく異なります。お迎え前に、その種が本当に汽水を必要とするのか、どの程度の塩分濃度が適切なのかを、必ず専門情報で確認してください。</p>
+    <p>基本の飼育設備は淡水の水棲ガメと共通で、「泳げる水量」と「乾ける陸場」「バスキング」「UVB」が要ります。違いは水質管理の繊細さです。塩分を加える場合は淡水以上に蒸発や濃度変化に気を配る必要があり、ろ過器や器具の塩分耐性も考える必要があります。</p>
+
+    <h2>水辺を強く好む水棲ガメ全般にも</h2>
+    <p>厳密な汽水種でなくても、水辺環境を強く好み、泳ぎが得意な水棲ガメは多くいます。これらも「広い遊泳スペース」「しっかりした陸場とバスキング」という基本は同じ。水量を確保して水質を安定させ、登りやすい陸場で甲羅を乾かせる環境を作るのが健康の土台です。</p>
+
+    <div class="note-box">
+      <strong>塩分の扱いは慎重に。</strong> 「汽水＝必ず塩を入れる」ではありません。誤った塩分管理はかえって体調を崩します。必ず飼育対象種の専門情報で適切な塩分濃度・水質を確認してから設定してください。
+    </div>
+
+    <div class="gear">
+      <h3>この暮らしから選ぶ飼育機材</h3>
+      <div class="gear-sub">水辺・汽水ガメに必要な機材を、機材別ベスト10で紹介しています</div>
+      <div class="rlinks">
+        <a class="rlink" href="water-filter-best10.html"><span class="rl-txt">水槽・フィルターの選び方<span class="rl-sub">水質を安定させるろ過と水換え</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="cage-best10.html"><span class="rl-txt">ケージ・水槽の選び方<span class="rl-sub">遊泳スペースと水量を確保する</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="uvb-light-best10.html"><span class="rl-txt">UVBライトの選び方<span class="rl-sub">屋内飼育の甲羅・骨の健康に</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="food-best10.html"><span class="rl-txt">餌・フードの選び方<span class="rl-sub">動物質中心の食性に合わせて</span></span><span class="rl-arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの暮らしのガイド</h2>
+    <p>飼っているカメの暮らしに近いガイドから、必要な機材を選んでください。</p>
+    <div class="hub-links">
+      <a href="guide-water-full.html">水棲・淡水</a>
+      <a href="guide-semi.html">半水棲</a>
+      <a href="guide-moist.html">ヤマガメ・半陸生</a>
+      <a href="guide-dry.html">リクガメ乾燥系</a>
+      <a href="guide-arid.html">リクガメ多湿系</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）</p>
+    <p class="disclaimer">
+      当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。汽水性の種は塩分管理に専門知識を要します。本ガイドは一般的な目安であり、お迎えする種の専門情報を必ずご確認ください。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
