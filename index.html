@@ -1,165 +1,434 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="474aLoqxfFCwFMfA5shuI5XBW0LnEsaUgXKa3K6uMF0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="カメ飼育専門情報サイト。ケージ・床材・シェルター・餌・UVBライトなど飼育器具を徹底比較レビュー。Amazonで買える厳選アイテムをプロ視点で解説。">
-  <title>カメライフガイド — 飼育器具・餌の専門レビューサイト</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメライフガイド｜野生の暮らしから逆算する、カメ・リクガメの飼育情報</title>
+<meta name="description" content="クサガメからリクガメ、ヤマガメまで。そのカメが野生でどう暮らしているかから逆算して、飼育環境と機材を考えるカメ・リクガメの飼育情報サイト。実際に飼っている人間が書いています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#b07c3f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Noto Serif JP",serif;
+    color:var(--forest-deep);
+    background:var(--parchment);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:60px 0 54px;
+    text-align:center;
+  }
+  header.hero .eyebrow{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    letter-spacing:.04em;
+    color:var(--accent);
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+  header.hero p.lead{
+    font-size:1.02rem;
+    color:#d9e0d6;
+    max-width:600px;
+    margin:0 auto;
+  }
+  nav.crumbs{
+    background:var(--forest);
+    color:#cdd8cc;
+    font-size:.86rem;
+    padding:11px 0;
+    text-align:center;
+  }
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  section.intro{padding:46px 0 12px;}
+  section.intro h2{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.5rem;
+    color:var(--forest);
+    margin-bottom:18px;
+  }
+  section.intro p{margin-bottom:16px;font-size:1rem;}
+  .note-box{
+    background:#fff;
+    border-left:4px solid var(--accent);
+    padding:18px 22px;
+    margin:24px 0;
+    border-radius:0 8px 8px 0;
+    font-size:.95rem;
+    box-shadow:0 1px 4px rgba(13,31,26,.06);
+  }
+  .note-box strong{color:var(--accent-dark);}
+
+  section.ranking{padding:30px 0 50px;}
+  .item{
+    background:#fff;
+    border-radius:12px;
+    margin-bottom:26px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(13,31,26,.07);
+  }
+  .item-head{
+    display:flex;
+    align-items:center;
+    background:linear-gradient(110deg,var(--forest) 0%,var(--forest-deep) 100%);
+    color:var(--parchment);
+    padding:16px 22px;
+  }
+  .rank-num{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--accent);
+    line-height:1;
+    margin-right:16px;
+    min-width:46px;
+    text-align:center;
+  }
+  .item-head .titles h3{
+    font-size:1.12rem;
+    font-weight:700;
+    line-height:1.4;
+  }
+  .item-head .titles .maker{
+    font-size:.82rem;
+    color:#bcd0c0;
+    letter-spacing:.03em;
+  }
+  .item-body{padding:20px 22px 22px;}
+  .spec{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .spec span{
+    background:var(--parchment);
+    border:1px solid #e2d8c2;
+    color:var(--accent-dark);
+    font-size:.78rem;
+    padding:3px 11px;
+    border-radius:20px;
+  }
+  .item-body p{font-size:.96rem;margin-bottom:10px;}
+  .who{
+    background:#f0f4ee;
+    border-radius:8px;
+    padding:11px 15px;
+    font-size:.9rem;
+    margin:14px 0 4px;
+  }
+  .who b{color:var(--forest);}
+  .btn-area{margin-top:16px;}
+  .amazon-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.95rem;
+    padding:12px 30px;
+    border-radius:8px;
+    transition:background .2s;
+  }
+  .amazon-btn:hover{background:var(--accent-dark);}
+  .amazon-btn.disabled{
+    background:#c8c8c0;
+    color:#fff;
+    cursor:default;
+    pointer-events:none;
+  }
+
+  .diy{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    border-radius:12px;
+    margin-bottom:26px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(13,31,26,.12);
+  }
+  .diy .diy-head{
+    padding:16px 22px;
+    border-bottom:1px solid #25382f;
+  }
+  .diy .diy-head .label{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    color:var(--accent);
+    font-size:.9rem;
+    letter-spacing:.05em;
+  }
+  .diy .diy-head h3{font-size:1.12rem;font-weight:700;margin-top:4px;}
+  .diy .diy-body{padding:18px 22px 22px;}
+  .diy .diy-body p{font-size:.95rem;color:#d9e0d6;margin-bottom:10px;}
+  .diy .diy-body p:last-child{margin-bottom:0;}
+  .diy .btn-area{margin-top:16px;}
+
+  section.closing{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:48px 0;
+  }
+  section.closing h2{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.45rem;
+    color:var(--accent);
+    margin-bottom:18px;
+    text-align:center;
+  }
+  section.closing p{font-size:.98rem;margin-bottom:14px;color:#d9e0d6;}
+  .hub-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+  .hub-links a{
+    background:var(--forest);
+    color:var(--parchment);
+    text-decoration:none;
+    font-size:.9rem;
+    padding:10px 20px;
+    border-radius:24px;
+    border:1px solid #3d5a4b;
+    transition:background .2s;
+  }
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{
+    background:#08130f;
+    color:#7d8c81;
+    text-align:center;
+    font-size:.78rem;
+    padding:26px 0;
+    line-height:1.7;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{
+    font-size:.76rem;
+    color:#9aa89d;
+    max-width:640px;
+    margin:18px auto 0;
+    line-height:1.7;
+  }
+  @media(max-width:520px){
+    header.hero h1{font-size:1.6rem;}
+    .rank-num{font-size:1.5rem;min-width:38px;}
+    .item-head .titles h3{font-size:1rem;}
+  }
+
+  /* --- top専用 --- */
+  .hero .tagline{
+    font-family:"Playfair Display",serif;font-style:italic;
+    font-size:1.15rem;color:var(--accent);margin-bottom:18px;letter-spacing:.02em;
+  }
+  section.lead-in{padding:46px 0 10px;}
+  section.lead-in .wrap{max-width:760px;}
+  section.lead-in p{font-size:1.06rem;line-height:2;margin-bottom:20px;}
+  section.lead-in p strong{color:var(--forest);}
+  .section-title{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:1.65rem;color:var(--forest);margin:0 0 6px;
+  }
+  .section-eyebrow{
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-dark);margin-bottom:8px;font-weight:700;
+  }
+  .section-note{font-size:.98rem;color:#5a6b60;margin:0 0 26px;max-width:680px;}
+  section.discover{padding:44px 0 18px;}
+  section.gear-index{padding:30px 0 18px;}
+  .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .dcard{
+    display:block;text-decoration:none;background:#fff;border:1px solid #e4ddc9;
+    border-radius:14px;padding:24px 22px;transition:transform .15s,box-shadow .15s,border-color .15s;
+  }
+  .dcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,31,26,.10);border-color:var(--accent);}
+  .dcard .dc-eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:9px;}
+  .dcard h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.3rem;color:var(--forest);margin-bottom:9px;}
+  .dcard p{font-size:.92rem;color:#56655b;line-height:1.7;margin:0;}
+  .dcard .dc-species{font-size:.82rem;color:#8a9389;margin-top:11px;}
+  .gcard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+  .gcard{
+    display:flex;flex-direction:column;text-decoration:none;background:var(--forest-deep);
+    border-radius:12px;padding:20px 18px;transition:background .18s;
+  }
+  .gcard:hover{background:var(--accent-dark);}
+  .gcard .gc-label{font-family:"Playfair Display",serif;font-style:italic;font-size:1.12rem;color:var(--accent);margin-bottom:5px;}
+  .gcard:hover .gc-label{color:#fff;}
+  .gcard .gc-sub{font-size:.82rem;color:#cdd8cc;line-height:1.6;}
+  .gcard:hover .gc-sub{color:#f0e6d4;}
+  section.author{padding:46px 0 24px;}
+  .author-box{
+    background:var(--forest-deep);color:var(--parchment);border-radius:16px;
+    padding:38px 34px;display:flex;gap:26px;align-items:flex-start;
+  }
+  .author-mark{
+    flex-shrink:0;width:58px;height:58px;border-radius:50%;
+    background:var(--accent);color:var(--forest-deep);display:flex;
+    align-items:center;justify-content:center;font-family:"Playfair Display",serif;
+    font-style:italic;font-size:1.7rem;font-weight:600;
+  }
+  .author-box h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.35rem;color:var(--accent);margin-bottom:12px;}
+  .author-box p{font-size:.98rem;line-height:1.85;color:#e7eee6;margin-bottom:14px;}
+  .author-box .note-link{
+    display:inline-block;background:var(--accent);color:var(--forest-deep);
+    text-decoration:none;font-weight:700;font-size:.92rem;padding:11px 22px;
+    border-radius:8px;transition:background .18s;
+  }
+  .author-box .note-link:hover{background:#e0c089;}
+  @media(max-width:640px){
+    .card-grid{grid-template-columns:1fr;}
+    .gcard-grid{grid-template-columns:1fr 1fr;}
+    .author-box{flex-direction:column;gap:16px;padding:28px 22px;}
+    section.lead-in p{font-size:1rem;}
+  }
+</style>
 <body>
-<header class="site-header" id="header">
-  <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo">
-    <div class="logo-icon">🐢</div>カメライフガイド
-  </a>
-  <ul class="nav-links">
-    <li><a href="#ranking">ランキング</a></li>
-    <li><a href="#articles">記事一覧</a></li>
-    <li><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシー</a></li>
-    <li><a href="#articles" class="nav-cta">記事を読む</a></li>
-  </ul>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Kame Life Guide</div>
+    <p class="tagline">野生の暮らしから逆算する、カメの飼育</p>
+    <h1>そのカメは、野生で<br>どう生きているか。</h1>
+    <p class="lead">飼育用品を選ぶ前に、一度だけ立ち止まって考えたいことがあります。あなたのカメは、本来どんな場所で、どんなふうに暮らしている生き物なのか——。このサイトは、その問いから飼育環境を組み立てていくための場所です。</p>
+  </div>
 </header>
-<section class="hero" style="padding:0;">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content" style="padding-top:140px;padding-bottom:80px;">
-    <div class="hero-left">
-      <div class="hero-tag reveal"><span class="hero-tag-dot"></span>カメ飼育専門メディア</div>
-      <h1 class="hero-title reveal reveal-delay-1">正しい知識が、<br>カメの<em>一生</em>を<br>変える。</h1>
-      <p class="hero-desc reveal reveal-delay-2">ケージ・床材・シェルター・UVBライト・餌——<br>飼育器具の選び方を、根拠のあるデータと実体験で解説します。</p>
-      <div class="hero-buttons reveal reveal-delay-3">
-        <a href="#articles" class="btn-primary">記事を読む</a>
-        <a href="#ranking" class="btn-outline">ランキングを見る</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stat"><div class="hero-stat-num">6<span>本+</span></div><div class="hero-stat-label">専門レビュー記事</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">15<span>種+</span></div><div class="hero-stat-label">比較検証アイテム</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Amazon</div><div class="hero-stat-label">全商品 購入リンクあり</div></div>
-    </div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    カメ・リクガメの飼育情報｜実際に飼っている人間が書いています
   </div>
-  <div class="hero-scroll"><div class="scroll-arrow"></div>Scroll</div>
-</section>
-<section class="ranking-section" id="ranking">
-  <div class="section-inner">
-    <div class="ranking-head">
-      <div class="section-label reveal">Editor's Pick</div>
-      <h2 class="section-heading reveal reveal-delay-1">今月の<em>ベスト</em>製品</h2>
-      <p class="section-sub reveal reveal-delay-2">実際に購入・検証した飼育器具の中から、コスパと品質を総合評価した厳選ランキング。</p>
-    </div>
-    <div class="rank-grid">
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html" class="rank-card reveal">
-        <span class="rank-num">01</span><span class="rank-medal">Gold — ケージ部門</span>
-        <div class="rank-name">レップジャパン グラステラリウム 6030</div>
-        <div class="rank-desc">前面ドア・通気性・拡張性を兼ね備えた定番ケージ。長期使用での耐久性も◎。</div>
-        <div class="rank-stars">★★★★★</div><div class="rank-arrow">→</div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html" class="rank-card reveal reveal-delay-1">
-        <span class="rank-num">02</span><span class="rank-medal">Gold — 床材部門</span>
-        <div class="rank-name">ジクラ ジクラアース ヤシガラ土 10L</div>
-        <div class="rank-desc">保湿性・吸水性・自然素材の安全性を両立。半水棲〜陸棲カメ共通で使えるコスパ最高の床材。</div>
-        <div class="rank-stars">★★★★★</div><div class="rank-arrow">→</div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html" class="rank-card reveal reveal-delay-2">
-        <span class="rank-num">03</span><span class="rank-medal">Gold — ライト部門</span>
-        <div class="rank-name">ズーメッド レプティサン 10.0 UVBランプ</div>
-        <div class="rank-desc">ビタミンD3合成に必要なUVBを確実に照射。陸棲・半水棲カメの健康維持に欠かせない信頼のブランド。</div>
-        <div class="rank-stars">★★★★☆</div><div class="rank-arrow">→</div>
-      </a>
-    </div>
+</nav>
+
+<section class="lead-in">
+  <div class="wrap">
+    <p>水槽の大きさ、ライトの強さ、床材の種類。カメの飼育で迷うことは尽きません。けれど、その答えのほとんどは「そのカメが野生でどう暮らしているか」の中にあります。乾いた草原を歩き回るリクガメと、薄暗い林の床に潜むヤマガメでは、必要なものがまるで違うからです。</p>
+    <p>このサイトでは、カメを<strong>暮らしのタイプ</strong>で分け、それぞれの生態から逆算して飼育環境と機材を考えていきます。難しい話を並べるのではなく、「なぜそれが必要なのか」が腑に落ちるように書いているつもりです。お迎えを迷っている方も、すでに一緒に暮らしている方も、気になるところから読んでみてください。</p>
   </div>
 </section>
-<section class="articles-section" id="species-guide">
-  <div class="section-inner">
-    <div class="articles-header">
-      <div><div class="section-label reveal">Find by Species</div><h2 class="section-heading reveal reveal-delay-1">カメの<em>種類</em>から探す</h2></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;">
-        <div style="font-size:32px;margin-bottom:10px;">💧</div>
-        <h3 style="font-size:17px;margin-bottom:8px;color:var(--forest);">クサガメ・イシガメ・アカミミ（水亀）を飼う方</h3>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px;">水質管理が成功の9割。まずは水槽とフィルター、次に餌とバスキング環境を整えましょう。</p>
-        <p style="font-size:13px;line-height:2;"><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/water-filter-best10.html">→ 水槽・フィルターの選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/food-best10.html">→ 餌・フードの選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html">→ UVBライトの選び方</a></p>
-      </div>
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;">
-        <div style="font-size:32px;margin-bottom:10px;">🌵</div>
-        <h3 style="font-size:17px;margin-bottom:8px;color:var(--forest);">リクガメ（ロシア・ヘルマン・ギリシャ等）を飼う方</h3>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px;">温度・湿度・紫外線の3点管理が基本。ケージと床材、UVBライトから揃えるのが王道です。</p>
-        <p style="font-size:13px;line-height:2;"><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html">→ ケージの選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html">→ 床材の選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html">→ UVBライトの選び方</a></p>
-      </div>
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;">
-        <div style="font-size:32px;margin-bottom:10px;">🌿</div>
-        <h3 style="font-size:17px;margin-bottom:8px;color:var(--forest);">ヤマガメ・ハコガメを飼う方</h3>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px;">多湿環境と隠れ家が鍵。シェルターと保湿できる床材で、落ち着ける環境を作りましょう。</p>
-        <p style="font-size:13px;line-height:2;"><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-best10.html">→ シェルターの選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html">→ 床材の選び方</a><br><a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html">→ ケージの選び方</a></p>
-      </div>
+
+<section class="discover">
+  <div class="wrap">
+    <div class="section-eyebrow">Find by Habitat</div>
+    <h2 class="section-title">暮らしから探す</h2>
+    <p class="section-note">飼っている（迎えたい）カメの暮らしに近いタイプを選ぶと、必要な環境と機材の考え方がまとまっています。</p>
+
+    <div class="card-grid">
+
+      <a class="dcard" href="guide-water-full.html">
+        <div class="dc-eyebrow">Freshwater</div>
+        <h3>水棲・淡水ガメ</h3>
+        <p>一日の多くを水の中で過ごすカメ。泳げる水量と、甲羅を乾かす陸場の両立が健康の土台になります。</p>
+        <div class="dc-species">クサガメ・アカミミガメ・イシガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-water-salt.html">
+        <div class="dc-eyebrow">Brackish</div>
+        <h3>汽水・水辺ガメ</h3>
+        <p>河口や塩性湿地に適応した、少し特殊な暮らしのカメ。水質と塩分の管理に専門的な配慮が要ります。</p>
+        <div class="dc-species">ダイヤモンドバックテラピン など</div>
+      </a>
+
+      <a class="dcard" href="guide-semi.html">
+        <div class="dc-eyebrow">Semi-aquatic</div>
+        <h3>半水棲ガメ</h3>
+        <p>泳ぐより水底を歩くのが得意なカメ。浅い水位と、登れる陸場・隠れ家がポイントになります。</p>
+        <div class="dc-species">ニオイガメ・ドロガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-moist.html">
+        <div class="dc-eyebrow">Forest Floor</div>
+        <h3>ヤマガメ・ハコガメ</h3>
+        <p>湿った林の床に暮らす森林性のカメ。湿度と隠れ家、浅い水場で「しっとりした林床」を再現します。</p>
+        <div class="dc-species">スペングラーヤマガメ・ヒラセガメ・ハコガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-dry.html">
+        <div class="dc-eyebrow">Arid Grassland</div>
+        <h3>乾燥系リクガメ</h3>
+        <p>乾いた草原を歩き回るリクガメ。広い床面積と強い光、草食メインの食事が暮らしの起点です。</p>
+        <div class="dc-species">ロシア・ヘルマン・ギリシャリクガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-arid.html">
+        <div class="dc-eyebrow">Humid Tropics</div>
+        <h3>多湿系リクガメ</h3>
+        <p>湿度のある暖かい環境を好む熱帯のリクガメ。広さに加え、適度な保湿が幼体期の健康を左右します。</p>
+        <div class="dc-species">アカアシ・ヒョウモン・ケヅメリクガメ など</div>
+      </a>
+
     </div>
   </div>
 </section>
-<section class="articles-section" id="articles">
-  <div class="section-inner">
-    <div class="articles-header">
-      <div><div class="section-label reveal">Latest Articles</div><h2 class="section-heading reveal reveal-delay-1">専門<em>レビュー</em>記事</h2></div>
-      <a href="#articles" class="view-all reveal">すべて見る</a>
-    </div>
-    <div class="article-grid">
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html" class="article-card reveal">
-        <div class="card-top"><div class="card-bg bg-cage"><div class="card-icon">🏠</div></div><div class="card-label">ケージ</div></div>
-        <div class="card-body"><div class="card-title">【2025年版】カメ用ケージおすすめ5選｜サイズ別・種類別に徹底比較</div><div class="card-excerpt">グラステラリウム・自作・衣装ケース——それぞれの特徴をコスト・通気性・管理のしやすさで比較。</div><div class="card-meta">ケージ比較</div></div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html" class="article-card reveal reveal-delay-1">
-        <div class="card-top"><div class="card-bg bg-substrate"><div class="card-icon">🌱</div></div><div class="card-label">床材</div></div>
-        <div class="card-body"><div class="card-title">カメの床材おすすめ6種を比較｜ヤシガラ・赤玉土・砂どれがベスト？</div><div class="card-excerpt">保湿力・誤飲リスク・コスト・清掃のしやすさを6種類の床材で徹底比較。種類別の選び方も解説。</div><div class="card-meta">床材比較</div></div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-best10.html" class="article-card reveal reveal-delay-2">
-        <div class="card-top"><div class="card-bg bg-shelter"><div class="card-icon">🪨</div></div><div class="card-label">シェルター</div></div>
-        <div class="card-body"><div class="card-title">カメのシェルター（隠れ家）おすすめ4選｜ストレス軽減に本当に必要？</div><div class="card-excerpt">陸棲・半水棲カメのシェルターの必要性と選び方。素材・形状・サイズの選定基準を実例で解説。</div><div class="card-meta">シェルター</div></div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html" class="article-card reveal">
-        <div class="card-top"><div class="card-bg bg-uvb"><div class="card-icon">💡</div></div><div class="card-label">UVBライト</div></div>
-        <div class="card-body"><div class="card-title">カメのUVBライト完全ガイド｜おすすめ4製品と正しい使い方・交換時期</div><div class="card-excerpt">くる病・甲羅の変形を防ぐUVBランプの選び方。出力・設置距離・交換サイクルを分かりやすく解説。</div><div class="card-meta">UVBライト</div></div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/food-best10.html" class="article-card reveal reveal-delay-1">
-        <div class="card-top"><div class="card-bg bg-feed"><div class="card-icon">🍃</div></div><div class="card-label">餌・フード</div></div>
-        <div class="card-body"><div class="card-title">カメの配合飼料おすすめ5選｜テトラ・レプトミン・ひかりを全部試した結論</div><div class="card-excerpt">主要ブランドを食いつき・栄養バランス・コストで比較。半水棲・陸棲別の選び方も解説。</div><div class="card-meta">餌・フード</div></div>
-      </a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/water-filter-best10.html" class="article-card reveal reveal-delay-2">
-        <div class="card-top"><div class="card-bg bg-water"><div class="card-icon">💧</div></div><div class="card-label">水槽・フィルター</div></div>
-        <div class="card-body"><div class="card-title">半水棲カメの水槽・フィルターおすすめ｜ニオイ・水換え頻度を激減させる選び方</div><div class="card-excerpt">クサガメ・イシガメ・ミシシッピアカミミガメに対応した水槽＋フィルターの組み合わせを徹底解説。</div><div class="card-meta">水槽・フィルター</div></div>
-      </a>
+
+<section class="gear-index">
+  <div class="wrap">
+    <div class="section-eyebrow">Find by Gear</div>
+    <h2 class="section-title">機材から探す</h2>
+    <p class="section-note">機材ごとに、実在を確認した製品をベスト10で紹介しています。「野生の暮らしから逆算する」という視点はどのページにも通底しています。</p>
+
+    <div class="gcard-grid">
+      <a class="gcard" href="cage-best10.html"><span class="gc-label">ケージ・水槽</span><span class="gc-sub">床面積と水量を暮らしから選ぶ</span></a>
+      <a class="gcard" href="substrate-best10.html"><span class="gc-label">床材・砂</span><span class="gc-sub">保湿か水はけか、地面を再現する</span></a>
+      <a class="gcard" href="shelter-best10.html"><span class="gc-label">シェルター・浮島</span><span class="gc-sub">成体サイズで選ぶ隠れ家と陸場</span></a>
+      <a class="gcard" href="uvb-light-best10.html"><span class="gc-label">UVBライト</span><span class="gc-sub">種に合った強さで甲羅と骨を守る</span></a>
+      <a class="gcard" href="food-best10.html"><span class="gc-label">餌・フード</span><span class="gc-sub">食性に合わせた主食を選ぶ</span></a>
+      <a class="gcard" href="water-filter-best10.html"><span class="gc-label">フィルター</span><span class="gc-sub">水量と水位に合うろ過を選ぶ</span></a>
     </div>
   </div>
 </section>
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/" class="logo"><div class="logo-icon">🐢</div>カメライフガイド</a>
-      <p>飼育器具の正しい選び方を、根拠のあるデータと実体験で届けるカメ飼育専門情報サイト。すべての商品はAmazonで購入できます。</p>
-    </div>
-    <div class="footer-col"><h4>Articles</h4>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html">ケージ比較</a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html">床材比較</a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-best10.html">シェルター</a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html">UVBライト</a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/food-best10.html">餌・フード</a>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/water-filter-best10.html">水槽・フィルター</a>
-    </div>
-    <div class="footer-col"><h4>Info</h4>
-      <a href="https://gagalife04291225-lab.github.io/kame-life-guide-/privacy.html">プライバシーポリシー</a>
-      <a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">カメの生態コラム（note）</a>
+
+<section class="author">
+  <div class="wrap">
+    <div class="author-box">
+      <div class="author-mark">T</div>
+      <div>
+        <h3>書いている人について</h3>
+        <p>このサイトを運営しているのは、実際にカメと暮らしている一人の愛好家です。スペングラーヤマガメ、ヒラセガメ、ミツユビハコガメなどを飼育しながら、国内外の論文や飼育記録、専門誌を自分で調べ、日々の観察とつき合わせて記事を書いています。机上の情報をまとめ直しただけの内容にはしたくない、という思いでやっています。</p>
+        <p>カメ一種一種の生態については、note でもう少し物語のかたちで書いています。生き物としてのカメに関心がある方は、よければそちらものぞいてみてください。</p>
+        <a class="note-link" href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note の記事を読む →</a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p class="footer-disclaimer">本サイトはAmazon.co.jpアソシエイト・プログラムの参加者です。当サイトが紹介する商品・サービスのリンクから購入が行われた場合、当サイトは適格販売により紹介料を得ることがあります。</p>
-    <p class="footer-copy">© 2026 カメライフガイド</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="privacy.html" style="color:var(--accent);">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      当サイトはAmazonアソシエイト・プログラムの参加者です。当サイトのリンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。掲載する商品の仕様・価格・在庫は変更される場合がありますので、購入前にAmazonの商品ページで最新情報を必ずご確認ください。飼育方法は種・個体・環境によって異なります。本サイトの情報は一般的な目安であり、お迎えする種の専門情報もあわせてご確認ください。
+    </p>
   </div>
 </footer>
-<script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-const hdr=document.getElementById('header');
-window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>60)},{passive:true});
-</script>
+
 </body>
 </html>
