@@ -42,6 +42,7 @@ body {
 .species-count { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 6px 20px; font-size: .85rem; color: var(--parchment-dark); margin-bottom: 40px; }
 .route-intro { width: 100%; margin-bottom: 32px; }
 .route-intro-label { font-size: .8rem; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+.route-card-arrow { font-size: .9rem; color: var(--accent-light); flex-shrink: 0; margin-left: 4px; }
 .route-cards { display: grid; gap: 10px; width: 100%; }
 .route-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 14px; text-align: left; cursor: pointer; transition: background .18s, border-color .18s, transform .15s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; width: 100%; }
 .route-card:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.2); }
@@ -52,10 +53,6 @@ body {
 .route-name { font-size: 1rem; font-weight: 600; color: var(--parchment); }
 .route-desc { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
 .route-q { font-size: .8rem; color: var(--accent-light); flex-shrink: 0; }
-.btn-start { width: 100%; max-width: 340px; padding: 17px 24px; background: var(--accent); color: var(--parchment); border: none; border-radius: var(--radius); font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; letter-spacing: .04em; cursor: pointer; transition: background .18s, transform .15s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; box-shadow: 0 4px 20px rgba(143,95,44,.4); }
-.btn-start:hover { background: var(--accent-light); }
-.btn-start:active { transform: scale(.97); }
-.btn-start:disabled { opacity: .45; cursor: not-allowed; }
 #screen-quiz { gap: 0; }
 .quiz-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
 .btn-back { background: none; border: 1px solid rgba(255,255,255,.18); color: var(--parchment); border-radius: 8px; padding: 8px 14px; font-size: .85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; flex-shrink: 0; }
@@ -111,10 +108,9 @@ body {
   <p class="start-sub">カメライフガイド</p>
   <div class="species-count">80種以上・5ルート対応</div>
   <div class="route-intro">
-    <div class="route-intro-label">診断ルートを選んでください</div>
+    <div class="route-intro-label">ルートをタップして診断スタート</div>
     <div class="route-cards" id="route-cards"></div>
   </div>
-  <button class="btn-start" id="btn-start" disabled>ルートを選んで診断スタート</button>
 </section>
 
 <section id="screen-quiz" class="screen">
@@ -563,24 +559,14 @@ function initStart() {
     card.innerHTML = '<span class="route-emoji">' + route.emoji + '</span>' +
       '<div class="route-info"><div class="route-name">' + route.name + '</div>' +
       '<div class="route-desc">' + route.desc + '</div></div>' +
-      '<div class="route-q">' + route.qCount + '問</div>';
-    card.addEventListener('click', function(){ selectRoute(route.id); });
+      '<div class="route-card-arrow">▶</div>';
+    card.addEventListener('click', function(){ startQuizWithRoute(route.id); });
     container.appendChild(card);
   });
 }
 
-function selectRoute(id) {
+function startQuizWithRoute(id) {
   selectedRoute = ROUTES.find(function(r){ return r.id === id; });
-  document.querySelectorAll('.route-card').forEach(function(c){
-    c.classList.toggle('selected', c.dataset.id === id);
-  });
-  var btn = document.getElementById('btn-start');
-  btn.disabled = false;
-  btn.textContent = '「' + selectedRoute.name + '」で診断スタート';
-}
-
-function startQuiz() {
-  if (!selectedRoute) return;
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
@@ -688,10 +674,6 @@ document.getElementById('btn-back').addEventListener('click', function(){
 
 document.getElementById('btn-retry').addEventListener('click', function(){
   selectedRoute = null;
-  document.querySelectorAll('.route-card').forEach(function(c){ c.classList.remove('selected'); });
-  var btn = document.getElementById('btn-start');
-  btn.disabled = true;
-  btn.textContent = 'ルートを選んで診断スタート';
   show('screen-start');
 });
 
@@ -706,10 +688,8 @@ document.getElementById('btn-share').addEventListener('click', function(){
   }
 });
 
-document.getElementById('btn-start').addEventListener('click', startQuiz);
 document.addEventListener('DOMContentLoaded', initStart);
 initStart();
 </script>
 </body>
 </html>
-
