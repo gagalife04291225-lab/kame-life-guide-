@@ -311,6 +311,63 @@
     .author-box{flex-direction:column;gap:16px;padding:28px 22px;}
     section.lead-in p{font-size:1rem;}
   }
+
+  /* --- PHASE1追加 --- */
+  .cta-btn-primary{
+    display:inline-block;
+    margin-top:28px;
+    background:var(--accent);
+    color:var(--forest-deep);
+    text-decoration:none;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:1.05rem;
+    padding:15px 34px;
+    border-radius:40px;
+    letter-spacing:.03em;
+    transition:background .2s,transform .15s;
+    box-shadow:0 4px 16px rgba(0,0,0,.22);
+  }
+  .cta-btn-primary:hover{background:#e0c089;transform:translateY(-2px);}
+
+  section.entry-nav{padding:36px 0 8px;}
+  .entry-nav-label{
+    font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-dark);font-weight:700;margin-bottom:14px;
+  }
+  .entry-nav-btns{display:flex;flex-wrap:wrap;gap:12px;}
+  .entry-nav-btns a{
+    display:flex;align-items:center;gap:8px;
+    background:#fff;border:1.5px solid #d4c9a8;
+    color:var(--forest);text-decoration:none;
+    font-size:.95rem;font-weight:700;
+    padding:12px 22px;border-radius:32px;
+    transition:border-color .15s,background .15s;
+  }
+  .entry-nav-btns a:hover{border-color:var(--accent);background:#fffbf3;}
+
+  section.species-preview{
+    padding:28px 0 34px;
+    border-top:1px solid #ddd5be;
+  }
+  .sp-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+  }
+  .sp-inner .sp-text p{font-size:1rem;color:#5a6b60;margin-top:6px;}
+  .sp-link{
+    flex-shrink:0;
+    display:inline-block;
+    background:var(--forest);color:var(--parchment);
+    text-decoration:none;font-weight:700;font-size:.92rem;
+    padding:11px 24px;border-radius:8px;
+    transition:background .18s;white-space:nowrap;
+  }
+  .sp-link:hover{background:var(--accent-dark);}
+  @media(max-width:520px){
+    .entry-nav-btns a{font-size:.88rem;padding:10px 16px;}
+    .sp-inner{flex-direction:column;align-items:flex-start;}
+  }
 </style>
 <body>
 
@@ -320,6 +377,7 @@
     <p class="tagline">野生の暮らしから逆算する、カメの飼育</p>
     <h1>そのカメは、野生で<br>どう生きているか。</h1>
     <p class="lead">飼育用品を選ぶ前に、一度だけ立ち止まって考えたいことがあります。あなたのカメは、本来どんな場所で、どんなふうに暮らしている生き物なのか——。このサイトは、その問いから飼育環境を組み立てていくための場所です。</p>
+    <a href="shindan/index.html" class="cta-btn-primary">🐢 あなたに合う亀を診断する（81種・無料）</a>
   </div>
 </header>
 
@@ -336,7 +394,18 @@
   </div>
 </section>
 
-<section class="discover">
+<section class="entry-nav">
+  <div class="wrap">
+    <div class="entry-nav-label">どこから探しますか？</div>
+    <div class="entry-nav-btns">
+      <a href="shindan/index.html">🐢 診断で探す</a>
+      <a href="species-list.html">📋 種一覧から探す</a>
+      <a href="#discover">🌿 生態から探す</a>
+    </div>
+  </div>
+</section>
+
+<section class="discover" id="discover">
   <div class="wrap">
     <div class="section-eyebrow">Find by Habitat</div>
     <h2 class="section-title">暮らしから探す</h2>
@@ -386,6 +455,40 @@
         <div class="dc-species">アカアシ・ヒョウモン・ケヅメリクガメ など</div>
       </a>
 
+      <a class="dcard" href="guide-softshell.html">
+        <div class="dc-eyebrow">Softshell &amp; Side-neck</div>
+        <h3>スッポン・ヘビクビガメ</h3>
+        <p>砂に潜るスッポンと、首を横に曲げる曲頸類。どちらも深水と強力なろ過が飼育の核心になります。</p>
+        <div class="dc-species">スパイニースッポン・ヘビクビガメ・ナガクビガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-japan.html">
+        <div class="dc-eyebrow">Japanese Native</div>
+        <h3>日本産カメ</h3>
+        <p>日本の清流と里山に生きる固有種。野外個体は採集禁止——CB個体を選ぶことが保全につながります。</p>
+        <div class="dc-species">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-brackish.html">
+        <div class="dc-eyebrow">Brackish Water</div>
+        <h3>汽水・ダイヤモンドバックテラピン</h3>
+        <p>河口の塩性湿地に棲む北米唯一の汽水性カメ。塩分濃度の管理が飼育の最大のポイントです。</p>
+        <div class="dc-species">ノーザン・カロリナ・オルナータ ダイヤモンドバックテラピン</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="species-preview">
+  <div class="wrap">
+    <div class="sp-inner">
+      <div class="sp-text">
+        <div class="section-eyebrow">Species Index</div>
+        <h2 class="section-title">種一覧で探す</h2>
+        <p>お迎えを検討している種名がわかっている場合は、種一覧から直接探せます。難易度・サイズ・法規制で絞り込み可能。</p>
+      </div>
+      <a href="species-list.html" class="sp-link">81種の一覧を見る →</a>
     </div>
   </div>
 </section>
