@@ -22,7 +22,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: 'リクガメ用木製ケージ 90cm（市販品または自作）' },
     uvb:       { asin: 'B00JZFJ5R0', label: 'ビバリア スパイラルUVB デザート 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '赤玉土・砂ミックス' },
+    substrate: { asin: 'B00I0MM9MC', label: 'あかぎ園芸 赤玉土 小粒 20L（まとめ買いはAmazonが便利）' },
     food:      { asin: 'B0DF2SJMCJ', label: 'ビバリア リクガメフード 907g' },
     filter:    null
   },
@@ -40,7 +40,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '自作ケージ推奨（120cm以上）' },
     uvb:       { asin: 'B00JZFJ5R0', label: 'ビバリア スパイラルUVB デザート 26W' },
     basking:   { asin: 'B0043AYZL8', label: 'GEX EXOTERRA サングロータイトビーム 100W' },
-    substrate: { asin: null,         label: '赤玉土・砂ミックス' },
+    substrate: { asin: 'B00I0MM9MC', label: 'あかぎ園芸 赤玉土 小粒 20L（まとめ買いはAmazonが便利）' },
     food:      { asin: 'B0DF2SJMCJ', label: 'ビバリア リクガメフード 907g' },
     filter:    null
   },
