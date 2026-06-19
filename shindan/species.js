@@ -1,412 +1,719 @@
 'use strict';
-// routes.js - ルート定義・質問データ（PHASE 1 分離版）
-// 種データは species.js の SPECIES オブジェクトを参照
-'use strict';
-// equipment.js - 種別推奨機材ASINマップ（PHASE 4）
-// カテゴリ: cage / uvb / basking / substrate / food / filter
-// ASINはすべてweb_search確認済み。未確認はnullのまま。
-// Amazonアソシエイト タグ: kamelife09-22
+// species.js - 全ルート種データ（PHASE 1 分離版）
 
-const EQUIPMENT = {
+const SPECIES = {
 
-  // ========== リクガメ系（乾燥〜半乾燥） ==========
-  // ロシア・ヘルマン・ギリシャ・フチゾリ・チャコ共通
-  '_land_dry': {
-    cage:      { asin: 'B08L3S9Q5X', label: 'リクガメ用ケージ 90cm' },
-    uvb:       { asin: 'B07BKLYQ4K', label: 'UVBランプ（砂漠10.0）' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: '赤玉土・砂ミックス' },
-    food:      { asin: 'B07G7KPWGZ', label: 'リクガメフード テトラ' },
-    filter:    null
+// ==================== リクガメルート ====================
+land: [
+  { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
+    specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2; },
+    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.beginner||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
-  // エロンガータ・アカアシ（多湿リクガメ）
-  '_land_humid': {
-    cage:      { asin: 'B08L3S9Q5X', label: 'リクガメ用ケージ 90cm' },
-    uvb:       { asin: 'B07BKLYQ4K', label: 'UVBランプ（熱帯5.0）' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・保湿床材' },
-    food:      { asin: 'B07G7KPWGZ', label: 'リクガメフード テトラ' },
-    filter:    null
+  { name: 'ヘルマンリクガメ（ヒガシ亜種）', latin: 'Testudo hermanni boettgeri', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。最も人気の高い地中海系リクガメ。',
+    specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.compact||0) >= 1 && (s.humid||0) >= 2; },
+    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
-  // ヒョウモン・ケヅメ・アルダブラ（大型乾燥）
-  '_land_large': {
-    cage:      { asin: null,         label: '自作ケージ推奨（120cm以上）' },
-    uvb:       { asin: 'B07BKLYQ4K', label: 'UVBランプ（砂漠10.0）' },
-    basking:   { asin: null,         label: 'バスキングランプ 100W以上' },
-    substrate: { asin: null,         label: '赤玉土・砂ミックス' },
-    food:      { asin: 'B07G7KPWGZ', label: 'リクガメフード テトラ' },
-    filter:    null
+  { name: 'ヘルマンリクガメ（ニシ亜種）', latin: 'Testudo hermanni hermanni', emoji: '🍋', difficulty: '中級', size: 'S〜M（10〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ヒガシ亜種より小型で黄みが強い体色が特徴。コンパクトなケージで飼育できる小型リクガメを求める中級者に向く。EU産CB流通あり。',
+    specs: { '最大甲長': '18cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '24〜29℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.compact||0) >= 2 && (s.humid||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+(s.small_form||0); }
   },
-
-  // ========== 水棲ガメ系（小型：ドロガメ・ニオイガメ） ==========
-  '_aquatic_small': {
-    cage:      { asin: 'B07H3Q4V9T', label: '水槽 45cm（ニッソー）' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 水棲用 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 50W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 水棲ガメ用' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター（テトラ）' }
+  { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites',
+    reason: '亜種が多く産地によって環境適応が大きく異なります。産地情報付きCBを選ぶことが重要で、中級以上向きです。',
+    specs: { '最大甲長': '25cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜33℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.intermediate||0) >= 2 || (s.advanced||0) >= 1; },
+    score: function(s){ return (s.medium||0)+(s.dry||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
-  // 水棲ガメ中型（チズガメ・スライダー・イシガメ）
-  '_aquatic_medium': {
-    cage:      { asin: null,         label: '水槽 60〜90cm' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 水棲用 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 水棲ガメ用' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター（テトラ）' }
+  { name: 'フチゾリリクガメ', latin: 'Testudo marginata', emoji: '🌊', difficulty: '中〜上級', size: 'M（25〜35cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ギリシャ・サルデーニャ島産の地中海リクガメ。後部甲羅が特徴的に外側に反り返る個性的な体型。ヘルマンより大型化するが乾燥管理は同様。',
+    specs: { '最大甲長': '35cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.medium||0) >= 2 && (s.dry||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium||0)+(s.dry||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
-  // 水棲ガメ大型・マタマタ・テラピン
-  '_aquatic_large': {
-    cage:      { asin: null,         label: '水槽 90cm以上' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 水棲用 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 100W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 水棲ガメ用' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター 大型' }
+  { name: 'エロンガータリクガメ', latin: 'Indotestudo elongata', emoji: '🌴', difficulty: '中〜上級', size: 'M（25〜33cm）', cites: 'CITES II', legal: 'cites',
+    reason: '東南アジア〜インド産の森林性リクガメ。高温多湿の環境を好み、地中海系リクガメとは異なる飼育感覚が楽しい。ミスト管理がポイント。',
+    specs: { '最大甲長': '33cm', '主な食事': '野草・野菜・果物少量', '水容量': '浅め水入れ', '温度': '27〜32℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.medium||0) >= 2 && (s.humid||0) >= 2; },
+    score: function(s){ return (s.medium||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.asia_land||0); }
   },
-
-  // ========== ヤマガメ・ハコガメ系 ==========
-  '_forest_cool': {
-    cage:      { asin: null,         label: '衣装ケース・自作テラリウム推奨' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 森林5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 50W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・腐葉土ミックス' },
-    food:      { asin: 'B001VBKBQA', label: 'レプトミン（半陸棲ガメ用）' },
-    filter:    null
+  { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
+    reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
+    specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
+    score: function(s){ return (s.large||0)+(s.humid||0)+(s.intermediate||0)+(s.charisma||0); }
   },
-  // 北米ハコガメ（ミツユビ・トウブ等）
-  '_box_na': {
-    cage:      { asin: null,         label: '60cm以上テラリウム' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 森林5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 50W' },
-    substrate: { asin: null,         label: 'ヤシガラ土ミックス' },
-    food:      { asin: 'B001VBKBQA', label: 'レプトミン（雑食ガメ用）' },
-    filter:    null
+  { name: 'チャコリクガメ', latin: 'Chelonoidis chilensis', emoji: '🌵', difficulty: '上級', size: 'M（22〜27cm）', cites: 'CITES II', legal: 'cites',
+    reason: '南米チャコ地方の乾燥地帯産。コンパクトなサイズで本格的な乾燥管理を楽しみたい上級者向き。WCは状態が悪いことが多くCBを強く推奨。',
+    specs: { '最大甲長': '27cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '26〜33℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.compact||0) >= 1 && (s.dry||0) >= 3 && (s.advanced||0) >= 1; },
+    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.herbivore||0)+(s.small_form||0); }
   },
-  // アジア産ハコガメ（セマル・マレー・モエギ等）
-  '_box_asia': {
-    cage:      { asin: null,         label: '60cm以上テラリウム' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 森林5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 50W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・水苔ミックス' },
-    food:      { asin: 'B001VBKBQA', label: 'レプトミン（雑食ガメ用）' },
-    filter:    null
+  { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
+    specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
+    score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)*2; }
   },
-
-  // ========== マニアック系 ==========
-  // スッポン系
-  '_softshell': {
-    cage:      { asin: null,         label: '90cm以上水槽（深め）' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: '細かい川砂（必須）' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 肉食系' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター' }
+  { name: 'ベルセオレガメ', latin: 'Kinixys belliana', emoji: '🔒', difficulty: '上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ヒンジバック（背甲後部が可動する）という独特の構造を持つアフリカ産リクガメ。WC個体が多く状態管理が難しい。CB個体を入手できれば中型で飼いやすい。',
+    specs: { '最大甲長': '25cm', '主な食事': '野草・野菜・昆虫少量', '水容量': '水入れ', '温度': '26〜32℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.advanced||0) >= 2 && (s.humid||0) >= 1; },
+    score: function(s){ return (s.advanced||0)+(s.humid||0)+(s.medium||0)+(s.charisma||0)*2; }
   },
-  // 汽水テラピン系
-  '_brackish': {
-    cage:      { asin: null,         label: '60cm以上水槽' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: '珊瑚砂・汽水用底砂' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 水棲ガメ用' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター（汽水対応）' }
+  { name: 'ソマリアリクガメ（エジプトリクガメ）', latin: 'Testudo kleinmanni', emoji: '🏜️', difficulty: '上級', size: 'S（8〜14cm）', cites: 'CITES II', legal: 'cites',
+    reason: '世界最小クラスのリクガメ。乾燥した砂漠地帯産で、CB流通は限られている。小さなケージで本格リクガメ飼育を楽しみたい上級者向き。',
+    specs: { '最大甲長': '14cm（メス）', '主な食事': '野草・乾燥野菜', '水容量': '極浅水入れ', '温度': '27〜35℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.compact||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.small_form||0); }
   },
-  // 曲頸類
-  '_snakeneck': {
-    cage:      { asin: null,         label: '60〜90cm水槽' },
-    uvb:       { asin: 'B07MHJL2MB', label: 'UVBランプ 5.0' },
-    basking:   { asin: 'B001CQTJHQ', label: 'バスキングランプ 75W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
-    food:      { asin: 'B001VBKBQA', label: 'カメプロス 水棲ガメ用' },
-    filter:    { asin: 'B07BHLZVGQ', label: '外部フィルター' }
+  { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
+    reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
+    specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0); }
+  },
+  { name: 'アルダブラゾウガメ', latin: 'Aldabrachelys gigantea', emoji: '🐘', difficulty: '上級', size: 'XL（80〜120cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'セイシェル・アルダブラ島固有の巨大リクガメ。個人飼育は法的に可能だが広大なスペースと数十年の覚悟が必要。ケヅメより穏やかな性格で知られる。',
+    specs: { '最大甲長': '120cm超', '主な食事': '野草・乾草', '水容量': '水浴び池必須', '温度': '28〜33℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large||0) >= 3 && (s.humid||0) >= 1 && (s.advanced||0) >= 3; },
+    score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.charisma||0); }
+  },
+  { name: 'インプレッサムツアシガメ', latin: 'Manouria impressa', emoji: '🏔️', difficulty: '上級', size: 'M（25〜31cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
+    specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
+    score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
   }
+],
 
-};
-
-// 種名 → 機材キー マッピング
-const EQUIPMENT_MAP = {
-  // リクガメ乾燥系
-  'ロシアリクガメ':              '_land_dry',
-  'ヘルマンリクガメ（ヒガシ亜種）': '_land_dry',
-  'ヘルマンリクガメ（ニシ亜種）':  '_land_dry',
-  'ギリシャリクガメ':            '_land_dry',
-  'フチゾリリクガメ':            '_land_dry',
-  'チャコリクガメ':              '_land_dry',
-  'ソマリアリクガメ（エジプトリクガメ）': '_land_dry',
-  // リクガメ多湿系
-  'エロンガータリクガメ':        '_land_humid',
-  'アカアシリクガメ':            '_land_humid',
-  'インプレッサムツアシガメ':    '_land_humid',
-  // リクガメ大型系
-  'ヒョウモンガメ':              '_land_large',
-  'ベルセオレガメ':              '_land_large',
-  'ケヅメリクガメ（スルカタ）':  '_land_large',
-  'アルダブラゾウガメ':          '_land_large',
-  // 水棲小型
-  'ニオイガメ':                  '_aquatic_small',
-  'ヒメニオイガメ':              '_aquatic_small',
-  'ミシシッピドロガメ':          '_aquatic_small',
-  'ミスジドロガメ':              '_aquatic_small',
-  'カブトニオイガメ':            '_aquatic_small',
-  'スジクビニオイガメ':          '_aquatic_small',
-  'ホオアカドロガメ':            '_aquatic_small',
-  'キイロドロガメ':              '_aquatic_small',
-  'ハーレラドロガメ':            '_aquatic_small',
-  'シロクチドロガメ':            '_aquatic_small',
-  // 水棲中型
-  'ペインテッドタートル':        '_aquatic_medium',
-  'クサガメ':                    '_aquatic_medium',
-  'キバラガメ':                  '_aquatic_medium',
-  'ミシシッピチズガメ':          '_aquatic_medium',
-  'ニセチズガメ':                '_aquatic_medium',
-  'フトマユチズガメ':            '_aquatic_medium',
-  'ニホンイシガメ':              '_aquatic_medium',
-  'ヤエヤマイシガメ':            '_aquatic_medium',
-  'ミナミイシガメ':              '_aquatic_medium',
-  'ニシキマゲクビガメ（ピンクベリー）': '_aquatic_medium',
-  'ヨーロッパヌマガメ':          '_aquatic_medium',
-  'カントンクサガメ':            '_aquatic_medium',
-  'ブランディングガメ':          '_aquatic_medium',
-  'クロコブチズガメ':            '_aquatic_medium',
-  'ワモンチズガメ':              '_aquatic_medium',
-  'サラドロガメ':                '_aquatic_medium',
-  // 水棲大型
-  'ミシシッピアカミミガメ':      '_aquatic_large',
-  'ペニンシュラクーター':        '_aquatic_large',
-  'マタマタ':                    '_aquatic_large',
-  'アマゾンマタマタ':            '_aquatic_large',
-  // ヤマガメ系（保冷）
-  'スペングラーヤマガメ':        '_forest_cool',
-  'ヒラセガメ':                  '_forest_cool',
-  'キボシイシガメ':              '_forest_cool',
-  'モリイシガメ':                '_forest_cool',
-  'アカスジヤマガメ':            '_forest_cool',
-  'ネンリンヤマガメ':            '_forest_cool',
-  'マンヤマガメ':                '_forest_cool',
-  'ニカラグアクジャクガメ':      '_forest_cool',
-  // 北米ハコガメ
-  'ミツユビハコガメ':            '_box_na',
-  'トウブハコガメ':              '_box_na',
-  'ガルフコーストハコガメ':      '_box_na',
-  'フロリダハコガメ':            '_box_na',
-  'キタニシキハコガメ':          '_box_na',
-  // アジア産ハコガメ
-  'タイワンセマルハコガメ':      '_box_asia',
-  'マレーハコガメ':              '_box_asia',
-  'チュウゴクセマルハコガメ':    '_box_asia',
-  'モエギハコガメ':              '_box_asia',
-  'オルナータハコガメ':          '_box_asia',
-  'ミスジハコガメ':              '_box_asia',
-  'ミスジハコガメ（希少コレクション）': '_box_asia',
-  // スッポン系
-  'スパイニースッポン':          '_softshell',
-  'スムーススッポン':            '_softshell',
-  'フロリダスッポン':            '_softshell',
-  'スッポンモドキ':              '_softshell',
-  'スッポン（シナスッポン）':    '_softshell',
-  'アルビノシナスッポン':        '_softshell',
-  // 汽水テラピン
-  'ノーザンダイヤモンドバックテラピン':    '_brackish',
-  'カロリナダイヤモンドバックテラピン':    '_brackish',
-  'オルナータダイヤモンドバックテラピン':  '_brackish',
-  // 曲頸類
-  'ヘビクビガメ':                '_snakeneck',
-  'ニシキヘビクビガメ':          '_snakeneck',
-  'ジーベンロックナガクビガメ':  '_snakeneck',
-  'アフリカヨコクビガメ':        '_snakeneck',
-  'ヒラリーカエルガメ':          '_snakeneck',
-  'パーケリーナガクビガメ':      '_snakeneck',
-  // 大型ドロガメ
-  'サソリドロガメ':              '_aquatic_large',
-  'スジオオニオイガメ':          '_aquatic_large',
-};
-
-// 種名から機材データを取得するヘルパー
-function getEquipment(speciesName) {
-  var key = EQUIPMENT_MAP[speciesName];
-  return key ? EQUIPMENT[key] : null;
-}
-
-const ROUTES = [
-  {
-    id: 'land', emoji: '🏔️', name: 'リクガメルート',
-    desc: 'ロシア・ヘルマン・ケヅメ・アカアシなど', qCount: 5,
-    get species(){ return SPECIES.land; },
-    questions: [
-      { text: '飼育スペースはどのくらいを想定していますか？', choices: [
-        { label: '60cm水槽程度（〜0.4㎡）', scores: { compact: 3, medium: 0, large: 0 } },
-        { label: '90cm水槽相当（〜0.8㎡）', scores: { compact: 1, medium: 3, large: 0 } },
-        { label: '120cm以上または屋外（1㎡超）', scores: { compact: 0, medium: 1, large: 3 } }
-      ]},
-      { text: '温度・湿度の管理はどこまでできますか？', choices: [
-        { label: 'サーモスタット＋バスキング程度', scores: { dry: 3, humid: 0 } },
-        { label: 'ミスト・加湿器も使える', scores: { dry: 1, humid: 3 } },
-        { label: 'どちらでも対応できる', scores: { dry: 2, humid: 2 } }
-      ]},
-      { text: '草食中心の管理（毎日の野菜・草の準備）ができますか？', choices: [
-        { label: 'はい、毎日準備できます', scores: { herbivore: 3 } },
-        { label: '週に数回なら可能', scores: { herbivore: 1 } },
-        { label: 'フード中心にしたい', scores: { herbivore: 0 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: '亀・リクガメの飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]},
-      { text: 'リクガメを選ぶ際に最も重視することは？', choices: [
-        { label: '欧州産CB・定番地中海系を確実に入手したい', scores: { eu_cb: 3, charisma: 0, small_form: 0, asia_land: 0 } },
-        { label: 'アフリカ・南米など個性的な大型種に挑戦したい', scores: { eu_cb: 0, charisma: 3, small_form: 0, asia_land: 0 } },
-        { label: 'なるべく小型・コンパクトな種を長く飼いたい', scores: { eu_cb: 0, charisma: 0, small_form: 3, asia_land: 0 } },
-        { label: 'アジア産の独特な多湿環境の種を楽しみたい', scores: { eu_cb: 0, charisma: 0, small_form: 0, asia_land: 3 } }
-      ]}
-    ]
+// ==================== 水棲ガメルート ====================
+aquatic: [
+  { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
+    reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。お手頃価格で流通も安定。',
+    specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 2; },
+    score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
-  {
-    id: 'aquatic', emoji: '🏊', name: '水棲ガメルート',
-    desc: 'ニオイガメ・チズガメ・スライダーなど', qCount: 8,
-    get species(){ return SPECIES.aquatic; },
-    questions: [
-      { text: '水槽・水場のサイズはどのくらい用意できますか？', choices: [
-        { label: '30〜60cm水槽', scores: { small_tank: 3, medium_tank: 0, large_tank: 0 } },
-        { label: '60〜90cm水槽', scores: { small_tank: 1, medium_tank: 3, large_tank: 0 } },
-        { label: '90cm以上', scores: { small_tank: 0, medium_tank: 1, large_tank: 3 } }
-      ]},
-      { text: '水替えやフィルター管理はどのくらいできますか？', choices: [
-        { label: '週1〜2回は水替えできる', scores: { maintenance: 3 } },
-        { label: '外部フィルターで月1回程度', scores: { maintenance: 2 } },
-        { label: 'なるべく手間を減らしたい', scores: { maintenance: 0 } }
-      ]},
-      { text: '飼育スタイルの好みは？', choices: [
-        { label: '小型でじっくり観察したい', scores: { observational: 3, active: 0, ambush: 0 } },
-        { label: '元気よく泳ぐ姿を見たい', scores: { observational: 0, active: 3, ambush: 0 } },
-        { label: '底に潜む神秘的な種が好き', scores: { observational: 2, active: 0, ambush: 3 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '魚や爬虫類の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: '水棲ガメの飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]},
-      { text: '飼育したい水棲ガメのキャラクターは？', choices: [
-        { label: '丈夫で入手しやすい定番種がいい', scores: { mainstream: 3, beauty: 0, japan_native: 0, rare_water: 0 } },
-        { label: '美しい模様・キールにこだわりたい（チズガメ系等）', scores: { mainstream: 0, beauty: 3, japan_native: 0, rare_water: 0 } },
-        { label: '日本固有・アジア産の種を飼いたい', scores: { mainstream: 0, beauty: 0, japan_native: 3, rare_water: 0 } },
-        { label: '流通の少ない希少なドロガメ・ニオイガメが好み', scores: { mainstream: 0, beauty: 0, japan_native: 0, rare_water: 3 } }
-      ]},
-      { text: '水棲ガメの行動スタイルの好みは？', choices: [
-        { label: '活発に泳ぎ回る姿を楽しみたい', scores: { swimmer: 3, bottom_dweller: 0, mud_lover: 0 } },
-        { label: '底・シェルターでじっとしている観察向きが好き', scores: { swimmer: 0, bottom_dweller: 0, mud_lover: 3 } },
-        { label: '水面〜中層をゆったり漂う（チズガメ・イシガメ系）', scores: { swimmer: 0, bottom_dweller: 3, mud_lover: 0 } }
-      ]},
-      { text: '原産地・産地へのこだわりは？', choices: [
-        { label: '北米産（北アメリカ産が好み）', scores: { na_water: 3, asia_water: 0, eu_water: 0, sa_water: 0 } },
-        { label: 'アジア・日本産（国産・アジア産が好み）', scores: { na_water: 0, asia_water: 3, eu_water: 0, sa_water: 0 } },
-        { label: '南米・アフリカ・欧州など珍しい産地', scores: { na_water: 0, asia_water: 0, eu_water: 3, sa_water: 0 } }
-      ]},
-      { text: '飼育したいカメの生息地の気候は？', choices: [
-        { label: '温帯・涼しい環境産が好き（北米北部・日本等）', scores: { cool_climate: 3, warm_climate: 0, tropical_climate: 0 } },
-        { label: '亜熱帯・暖かい環境産が好き（北米南部・東南アジア等）', scores: { cool_climate: 0, warm_climate: 3, tropical_climate: 0 } },
-        { label: '熱帯・高温多湿産が好き（中米・南米・アフリカ等）', scores: { cool_climate: 0, warm_climate: 0, tropical_climate: 3 } }
-      ]}
-    ]
+  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '入門', size: 'S（8〜11cm）', cites: null, legal: null,
+    reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
+    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 3 && (s.observational||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
-  {
-    id: 'forest', emoji: '🍂', name: 'ヤマガメ・ハコガメルート',
-    desc: 'スペングラー・ハコガメ・半水棲など', qCount: 5,
-    get species(){ return SPECIES.forest; },
-    questions: [
-      { text: '温度・湿度の管理環境はどのくらい整えられますか？', choices: [
-        { label: '温度管理のみ（エアコン＋バスキング）', scores: { basic_env: 3, advanced_env: 0, cooling: 0 } },
-        { label: '湿度も管理（ミスト・保湿床材）', scores: { basic_env: 1, advanced_env: 3, cooling: 0 } },
-        { label: '夏の冷却管理もできる（保冷剤・クーラー）', scores: { basic_env: 0, advanced_env: 3, cooling: 3 } }
-      ]},
-      { text: '陸棲〜半陸棲ガメへの希望は？', choices: [
-        { label: '陸場メインで水場は少な目でいい', scores: { terrestrial: 3, semi_aquatic: 0 } },
-        { label: '水場もしっかり設けたい', scores: { terrestrial: 0, semi_aquatic: 3 } },
-        { label: 'どちらでも設計できる', scores: { terrestrial: 1, semi_aquatic: 1 } }
-      ]},
-      { text: '希望するカメのサイズは？', choices: [
-        { label: 'S（〜15cm）の小型種', scores: { s_size: 3, m_size: 0 } },
-        { label: 'M（15〜25cm）の中型種', scores: { s_size: 0, m_size: 3 } },
-        { label: 'どちらでもよい', scores: { s_size: 1, m_size: 1 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: 'カメや爬虫類の飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]},
-      { text: '特に気になる系統は？', choices: [
-        { label: '北米産ハコガメ（トウブ・フロリダ・ニシキ等）', scores: { na_box: 3, asia_box: 0, ya_ma: 0 } },
-        { label: 'アジア産ハコガメ（セマル・マレー・モエギ等）', scores: { na_box: 0, asia_box: 3, ya_ma: 0 } },
-        { label: 'ヤマガメ・イシガメ系（半水棲・森林棲）', scores: { na_box: 0, asia_box: 0, ya_ma: 3 } }
-      ]}
-    ]
+  { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', difficulty: '入門', size: 'S（10〜12cm）', cites: null, legal: null,
+    reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
+    specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
-  {
-    id: 'exotic', emoji: '🌀', name: 'マニアック・特殊ルート',
-    desc: 'ソフトシェル・汽水・曲頸類など', qCount: 4,
-    get species(){ return SPECIES.exotic; },
-    questions: [
-      { text: '特に興味がある系統は？', choices: [
-        { label: 'スッポン・ソフトシェル系', scores: { softshell: 3, brackish: 0, snakeneck: 0, rare_asian: 0, large_mud: 0 } },
-        { label: '汽水・テラピン系', scores: { softshell: 0, brackish: 3, snakeneck: 0, rare_asian: 0, large_mud: 0 } },
-        { label: '曲頸類（ナガクビ・マゲクビ）', scores: { softshell: 0, brackish: 0, snakeneck: 3, rare_asian: 0, large_mud: 0 } },
-        { label: 'アジア産ハコガメの希少種', scores: { softshell: 0, brackish: 0, snakeneck: 0, rare_asian: 3, large_mud: 0 } },
-        { label: '大型ドロガメ・スジオオニオイガメ系', scores: { softshell: 0, brackish: 0, snakeneck: 0, rare_asian: 0, large_mud: 3 } }
-      ]},
-      { text: '設備投資の覚悟は？', choices: [
-        { label: '2〜3万円程度で抑えたい', scores: { budget_low: 3, budget_high: 0 } },
-        { label: '5万円以上かけられる', scores: { budget_low: 0, budget_high: 3 } },
-        { label: '10万円以上、本格的にやりたい', scores: { budget_low: 0, budget_high: 3, budget_max: 3 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: '爬虫類・水棲生物の経験あり', scores: { intermediate: 3, advanced: 0 } },
-        { label: 'カメ・爬虫類の飼育経験豊富', scores: { intermediate: 1, advanced: 3 } },
-        { label: '希少種・マニアック種を飼育したことがある', scores: { intermediate: 0, advanced: 3, expert: 3 } }
-      ]},
-      { text: '希少種への情熱はどのくらいですか？', choices: [
-        { label: 'まずは入手しやすい流通種から始めたい', scores: { accessible: 3, collector_grade: 0, ultra_rare: 0 } },
-        { label: '多少高価でも珍しい種を積極的に求めたい', scores: { accessible: 0, collector_grade: 3, ultra_rare: 0 } },
-        { label: '価格を問わず国内屈指の希少種を目指す', scores: { accessible: 0, collector_grade: 0, ultra_rare: 3 } }
-      ]}
-    ]
+  { name: 'ミスジドロガメ', latin: 'Kinosternon baurii', emoji: '〰️', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: null, legal: null,
+    reason: '甲羅に3本の明瞭な筋が走る美しいドロガメ。小型で飼育しやすく温和な性格。ニオイガメと並ぶ小型水棲ガメ入門の選択肢。',
+    specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
-  {
-    id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: '全80種・6問で総合マッチング', qCount: 6,
-    get species(){ return SPECIES.all; },
-    questions: [
-      { text: '飼育環境の主な環境タイプを選んでください。', choices: [
-        { label: '水槽・水中メイン', scores: { aquatic: 4 } },
-        { label: '陸場メイン・半陸棲', scores: { terrestrial: 4 } },
-        { label: 'リクガメ専用ケージ', scores: { land_tortoise: 4 } }
-      ]},
-      { text: '希望するカメのサイズは？', choices: [
-        { label: '小型（〜15cm）', scores: { small: 3 } },
-        { label: '中型（15〜30cm）', scores: { medium: 3 } },
-        { label: '大型（30cm〜）', scores: { large: 3 } }
-      ]},
-      { text: '温度・湿度管理はどこまでできますか？', choices: [
-        { label: '乾燥〜普通（温度管理のみ）', scores: { dry_env: 3 } },
-        { label: '保湿〜多湿（ミスト使用可）', scores: { humid_env: 3 } },
-        { label: '夏の保冷も対応できる', scores: { cool_env: 3 } }
-      ]},
-      { text: '日本の法規制について事前に調べましたか？', choices: [
-        { label: '完全に把握している', scores: { legal_aware: 3 } },
-        { label: 'なんとなく知っている', scores: { legal_aware: 1 } },
-        { label: 'これから調べる', scores: { legal_aware: 0 } }
-      ]},
-      { text: 'どんな飼育体験をしたいですか？', choices: [
-        { label: '手から餌を食べさせたい・なつかせたい', scores: { interactive: 3 } },
-        { label: '自然な生態を観察したい', scores: { observational: 3 } },
-        { label: '希少種・マニアック種で差をつけたい', scores: { collector: 3 } }
-      ]},
-      { text: '飼育経験について教えてください。', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: -1 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: 'カメ・爬虫類の本格的な飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]}
-    ]
+  { name: 'カブトニオイガメ', latin: 'Sternotherus carinatus', emoji: '⛑️', difficulty: '入門〜中級', size: 'M（10〜15cm）', cites: null, legal: null,
+    reason: 'キールが目立つ個性的な甲羅が魅力。ニオイガメよりやや大型化しますが45cm水槽から飼育可能。気性がやや荒い個体もいます。',
+    specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 1 && (s.observational||0) >= 2; },
+    score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'スジクビニオイガメ', latin: 'Sternotherus minor peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: null, legal: null,
+    reason: '首と頭部に細かいストライプが走る美しいニオイガメ系の小型種。国内CB流通が確認されており、マニアに人気。小型水槽で観察を楽しめる。',
+    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 2 && (s.observational||0) >= 2 && (s.intermediate||0) >= 2; },
+    score: function(s){ return (s.small_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ホオアカドロガメ', latin: 'Kinosternon cruentatum', emoji: '🔴', difficulty: '中級', size: 'M（13〜15cm）', cites: null, legal: null,
+    reason: '頬の赤みが特徴的なメキシコ〜中米産のドロガメ。温和な性格で45cm水槽から飼育可能。国内CB流通が増加しており入手しやすくなっている。',
+    specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'ペインテッドタートル', latin: 'Chrysemys picta', emoji: '🎨', difficulty: '入門', size: 'M（13〜25cm）', cites: null, legal: null,
+    reason: '甲羅の縁に赤・黄のラインが走る美しい種。泳ぎが活発で60〜90cm水槽が適切。草食傾向が強く管理しやすい。',
+    specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)*2+(s.swimmer||0)+(s.na_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'クサガメ', latin: 'Mauremys reevesii', emoji: '🇯🇵', difficulty: '入門', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高く初心者にも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'キバラガメ', latin: 'Trachemys scripta scripta', emoji: '💛', difficulty: '入門', size: 'M（17〜27cm）', cites: null, legal: null,
+    reason: 'アカミミガメの近縁種で耳が黄色い。泳ぎが活発で観察が楽しい。アカミミガメと違い特定外来生物ではなく新規購入・飼育が可能。',
+    specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ミシシッピアカミミガメ', latin: 'Trachemys scripta elegans', emoji: '🔴', difficulty: '入門', size: 'L（20〜30cm）', cites: null, legal: 'conditional_invasive',
+    reason: '【条件付特定外来生物】新規購入・販売は禁止ですが、既に飼育中の場合は継続飼育・少数無償譲渡が可能。野外への放流は厳禁。責任ある飼育が求められます。',
+    specs: { '最大甲長': '30cm', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.large_tank||0) >= 1 && (s.beginner||0) >= 2 && (s.active||0) >= 2; },
+    score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.beginner||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: null, legal: null,
+    reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
+    specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ニセチズガメ', latin: 'Graptemys pseudogeographica pseudogeographica', emoji: '🗺️', difficulty: '中級', size: 'M（オス12cm/メス22cm）', cites: null, legal: null,
+    reason: 'ミシシッピチズガメの基亜種。背中のキールがより目立ち観察の楽しさがある。チズガメを一通り揃えたい中級者向け。',
+    specs: { '最大甲長': '22cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
+    reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
+    specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
+    reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'ヤエヤマイシガメ', latin: 'Mauremys mutica kami', emoji: '🌺', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+    reason: '台湾・中国南部および八重山諸島に分布するイシガメの亜種。宮古島では国内外来種として問題視されており飼育個体の野外放流は厳禁。国内CB入手推奨。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.observational||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ミナミイシガメ', latin: 'Mauremys mutica', emoji: '🍃', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+    reason: '台湾・中国南部産のイシガメ属。国内CB流通あり。ニホンイシガメよりやや高温を好む傾向。コンパクトで管理しやすい。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1 && (s.maintenance||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ニシキマゲクビガメ（ピンクベリー）', latin: 'Emydura subglobosa', emoji: '🌸', difficulty: '中〜上級', size: 'M（18〜25cm）', cites: null, legal: null,
+    reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気が高い。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.observational||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.bottom_dweller||0)+(s.sa_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'ペニンシュラクーター', latin: 'Pseudemys peninsularis', emoji: '🏊', difficulty: '中級', size: 'L（25〜37cm）', cites: null, legal: null,
+    reason: 'フロリダ半島産の大型スライダー系。活発な泳ぎと草食傾向で90cm以上の水槽が必要。大きくなる種を飼いたい中級者向け。',
+    specs: { '最大甲長': '37cm（メス）', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.large_tank||0) >= 2 && (s.active||0) >= 2; },
+    score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ブランディングガメ', latin: 'Emydoidea blandingii', emoji: '😊', difficulty: '上級', size: 'M（17〜27cm）', cites: null, legal: null,
+    reason: '黄色い喉元と半開きの口がにっこり笑っているように見える独特の風貌。温帯種で夏の高温に弱く保冷が必要。国内CB確認済み。',
+    specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '15〜24℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.advanced||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
+    reason: '枯れ葉のような外見で待ち伏せして魚を丸ごと吸い込む神秘的な種。水流を嫌い独特の飼育法を習得する必要がある本格派種。',
+    specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.large_tank||0) >= 2 && (s.ambush||0) >= 2; },
+    score: function(s){ return (s.ambush||0)+(s.advanced||0)+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'サラドロガメ', latin: 'Kinosternon integrum', emoji: '🟤', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+    reason: 'メキシコ固有のドロガメ。甲長20cm程度と国内流通するドロガメ属では大型。温和な性格で60cm水槽から飼育できる。国内CB流通が増加中。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.maintenance||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'ヨーロッパヌマガメ', latin: 'Emys orbicularis', emoji: '🌿', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+    reason: 'ユーラシア大陸唯一のヌマガメ科。国内CB・EUCB流通あり。低温に強く日本の温帯気候にも馴染みやすい。甲羅と頭部の黄色い斑点が美しい。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '16〜26℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.eu_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'カントンクサガメ', latin: 'Mauremys reevesii（広東型）', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: 'クサガメの広東産地個体群。黄みがかった体色や明確な産地証明が魅力。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'キイロドロガメ', latin: 'Kinosternon flavescens', emoji: '💛', difficulty: '中級', size: 'M（10〜14cm）', cites: null, legal: null,
+    reason: '腹甲が黄みがかる個性的なドロガメ。テキサス〜イリノイ産。小型で管理しやすく、ドロガメ系コレクションの1種として人気。流通確認済み。',
+    specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ハーレラドロガメ', latin: 'Kinosternon herrerai', emoji: '🔸', difficulty: '上級', size: 'M（14〜16cm）', cites: null, legal: null,
+    reason: 'メキシコ・ベラクルス州に限定分布する希少なドロガメ。ザラアシドロガメとは別種。専門店からのCB入荷が確認されており、希少ドロガメを集めるマニア向き。',
+    specs: { '最大甲長': '16cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'シロクチドロガメ', latin: 'Kinosternon leucostomum', emoji: '⬜', difficulty: '上級', size: 'M（15〜17cm）', cites: null, legal: null,
+    reason: '白い口周りが特徴の中米産ドロガメ。ぶりくらでCB出品確認済み。ドロガメ属の中でも比較的大型で存在感がある。上級者の希少種コレクション向き。',
+    specs: { '最大甲長': '17cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2 && (s.maintenance||0) >= 1; },
+    score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
+  },
+  { name: 'クロコブチズガメ', latin: 'Graptemys nigrinoda', emoji: '⚫', difficulty: '中〜上級', size: 'M（オス10cm/メス18cm）', cites: null, legal: null,
+    reason: '背中キールの黒いコブが印象的なチズガメ。ぶりくらCB出品確認済み。チズガメ属の中でも個性的な外見で、コレクション性が高い中上級種。',
+    specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'ワモンチズガメ', latin: 'Graptemys oculifera', emoji: '🔵', difficulty: '上級', size: 'M（オス9cm/メス18cm）', cites: null, legal: null,
+    reason: '目の後方に輪状の美麗模様が入るチズガメ屈指の美種。ぶりくら2025出品リスト記載。水質への敏感さと飼育難度から上級者向きだが所有する価値は高い。',
+    specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 3 && (s.advanced||0) >= 3; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   }
-];
+],
+
+// ==================== ヤマガメ・ハコガメルート ====================
+forest: [
+  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: null, legal: null,
+    reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
+    specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
+    score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); }
+  },
+  { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: null, legal: null,
+    reason: '甲羅に年輪のような刻みと橙色の模様が美しい北米産。低温を好む温帯種で夏の保冷が必要。半水棲で陸場と水場を行き来する。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '16〜24℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 1 && (s.semi_aquatic||0) >= 1; },
+    score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)+(s.ya_ma||0); }
+  },
+  { name: 'スペングラーヤマガメ', latin: 'Geoemyda spengleri', emoji: '🌿', difficulty: '中〜上級', size: 'S（10〜14cm）', cites: 'CITES II', legal: 'cites',
+    reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷管理が必須。動物性タンパクを好む雑食性で、ユニークな飼育体験ができます。著者も飼育中。',
+    specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.s_size||0) >= 2 && (s.cooling||0) >= 2; },
+    score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
+  },
+  { name: 'ヒラセガメ', latin: 'Pyxidea mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中で、落ち着いた性格が魅力。',
+    specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.m_size||0) >= 1 && (s.cooling||0) >= 2; },
+    score: function(s){ return (s.m_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
+  },
+  { name: 'アカスジヤマガメ', latin: 'Rhinoclemmys pulcherrima', emoji: '🔴', difficulty: '中〜上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '甲羅と頭部に鮮やかな赤いラインが走る美しい中米産ヤマガメ。半陸棲で湿度管理が必要。マンヤマガメとの区別に注意。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 2 && (s.advanced_env||0) >= 2; },
+    score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced_env||0)+(s.advanced||0)+(s.ya_ma||0); }
+  },
+  { name: 'ネンリンヤマガメ', latin: 'Rhinoclemmys annulata', emoji: '🌀', difficulty: '中〜上級', size: 'M（18〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '甲羅に年輪のような輪状の模様が美しい中南米産ヤマガメ。半陸棲で高湿度と水場が必要。国内CB流通確認済み。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.m_size||0) >= 1 && (s.advanced_env||0) >= 2 && (s.semi_aquatic||0) >= 1; },
+    score: function(s){ return (s.m_size||0)+(s.advanced_env||0)+(s.semi_aquatic||0)+(s.advanced||0)+(s.ya_ma||0); }
+  },
+  { name: 'マンヤマガメ', latin: 'Rhinoclemmys pulcherrima manni', emoji: '🎨', difficulty: '中〜上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '古代民族の陶器のような鮮やかな色彩が特徴の中米産ヤマガメ。かめぢから・ぶりくら路面店での流通確認済み。果物・人工飼料なんでも食べる飼育しやすさが◎。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.ya_ma||0); }
+  },
+  { name: 'ニカラグアクジャクガメ', latin: 'Rhinoclemmys annulata（ニカラグア産）', emoji: '🦚', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '鮮やかな模様を持つ中米産ヤマガメ。ぶりくら2025出品リストにニカラグアクジャクガメとして記載。半陸棲で水場と陸場を行き来する。高湿度環境が必要。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 2 && (s.advanced_env||0) >= 1; },
+    score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.ya_ma||0); }
+  },
+  { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '後肢が3本指の北米産ハコガメ。腹甲を完全に閉じられる独自構造が特徴。雑食性で飼育食への移行がしやすい。著者も飼育中。',
+    specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
+  },
+  { name: 'トウブハコガメ', latin: 'Terrapene carolina carolina', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '北米産ハコガメの基亜種。国内CBの流通も盛ん。腹甲全体を閉じられる独特の能力をもつ。雑食性で飼育食への移行も比較的容易。',
+    specs: { '最大甲長': '20cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.na_box||0); }
+  },
+  { name: 'ガルフコーストハコガメ', latin: 'Terrapene carolina major', emoji: '🌊', difficulty: '中〜上級', size: 'M〜L（18〜22cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ハコガメの中で最も大型になる亜種。やや湿度の高い環境を好む。中型〜大型の陸棲ガメを求める中上級者に適する。',
+    specs: { '最大甲長': '22cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 2 && (s.advanced_env||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
+  },
+  { name: 'フロリダハコガメ', latin: 'Terrapene bauri', emoji: '🌴', difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'フロリダ産の小型ハコガメ。甲羅に放射状の美しい模様がある。他のハコガメより小さく、50cm程度のケージでも飼育可能。',
+    specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜29℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.s_size||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.intermediate||0)+(s.na_box||0); }
+  },
+  { name: 'キタニシキハコガメ', latin: 'Terrapene ornata ornata', emoji: '💎', difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites',
+    reason: '甲羅に黄色のニシキ模様が入る美しいハコガメ。乾燥気味の環境を好み草食傾向が強い。北米ハコガメの中でも個性的な一種。',
+    specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜30℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 3 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
+  },
+  { name: 'タイワンセマルハコガメ', latin: 'Cuora flavomarginata evelynae', emoji: '🟠', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '甲羅の縁がオレンジ色に縁どられた美しい台湾産ハコガメ。CB個体は流通している。沖縄産は天然記念物で全く別扱い。必ずCB証明書を確認のこと。',
+    specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.asia_box||0); }
+  },
+  { name: 'マレーハコガメ', latin: 'Cuora amboinensis', emoji: '🌊', difficulty: '中〜上級', size: 'M（18〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '東南アジア広域に分布する半水棲のハコガメ。水場・陸場を行き来する。高温多湿を好みアジア的な雰囲気がある。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '26〜30℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1; },
+    score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.asia_box||0); }
+  },
+  { name: 'チュウゴクセマルハコガメ', latin: 'Cuora flavomarginata', emoji: '🇨🇳', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '中国本土産のセマルハコガメ。CB個体の流通がある。タイワン産と同様の管理で飼育できるが亜種の証明書をしっかり確認することが重要。',
+    specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.advanced||0) >= 1; },
+    score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.advanced||0)+(s.asia_box||0); }
+  },
+  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES II', legal: 'cites',
+    reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。',
+    specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
+    score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); }
+  },
+  { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '甲羅の美しい模様が特徴のアジア産ハコガメ。モエギに次ぐ希少性で上級者向き。湿度と温度の精密管理が必要。',
+    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '22〜27℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2; },
+    score: function(s){ return (s.terrestrial||0)+(s.advanced||0)+(s.advanced_env||0)+(s.asia_box||0); }
+  },
+  { name: 'ミスジハコガメ', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites',
+    reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。高価で流通が非常に少ない。CB個体を入手できれば本格的なアジアガメ飼育の頂点。',
+    specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.semi_aquatic||0) >= 1 && (s.advanced||0) >= 3 && (s.advanced_env||0) >= 3; },
+    score: function(s){ return (s.semi_aquatic||0)+(s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.asia_box||0); }
+  }
+],
+
+// ==================== マニアック・特殊ルート ====================
+exotic: [
+  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
+    reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
+    specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 3; },
+    score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; }
+  },
+  { name: 'スムーススッポン', latin: 'Apalone mutica', emoji: '🫧', difficulty: '上級', size: 'L（25〜45cm）', cites: null, legal: null,
+    reason: 'スパイニースッポンよりキールが目立たない滑らかな甲羅を持つ。砂底必須・水流弱め。スッポン属の中でも温和な個体が多い。',
+    specs: { '最大甲長': '45cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 2 && (s.budget_high||0) >= 1; },
+    score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0); }
+  },
+  { name: 'フロリダスッポン', latin: 'Apalone ferox', emoji: '🐊', difficulty: '上級', size: 'L（35〜60cm）', cites: null, legal: null,
+    reason: 'スッポン属最大種のひとつ。非常に攻撃的で飼育難度が高い。本格的なソフトシェル飼育に挑戦したい経験者向け。',
+    specs: { '最大甲長': '60cm（メス）', '水槽サイズ': '120cm〜', '底床': '細かい砂必須', '水温': '25〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 1; },
+    score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2; }
+  },
+  { name: 'スッポンモドキ', latin: 'Carettochelys insculpta', emoji: '🌊', difficulty: '上級', size: 'XL（50〜70cm）', cites: null, legal: null,
+    reason: 'ニューギニア・オーストラリア北部産の大型種。前肢がウミガメのようなヒレ状。26〜30℃の高水温と広い水槽が必須の本格飼育種。',
+    specs: { '最大甲長': '70cm', '水槽サイズ': '150cm〜', '底床': '砂利〜砂', '水温': '26〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 2; },
+    score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0); }
+  },
+  { name: 'スッポン（シナスッポン）', latin: 'Pelodiscus sinensis', emoji: '🍵', difficulty: '中〜上級', size: 'L（25〜35cm）', cites: null, legal: null,
+    reason: '食用としても知られる東アジア産スッポン。ペットとしての飼育者も多く国内流通が安定している。砂底必須・嚙みつき注意。軟らかい甲羅と独特の動きが面白い。',
+    specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.accessible||0); }
+  },
+  { name: 'アルビノシナスッポン', latin: 'Pelodiscus sinensis（アルビノ）', emoji: '⬜', difficulty: '中〜上級', size: 'L（25〜35cm）', cites: null, legal: null,
+    reason: '白〜クリーム色の体色が美しいシナスッポンのアルビノ個体。アクアスペースなど専門店で入荷確認済み。スッポンの迫力とアルビノの希少感を兼ね備えた観賞種。',
+    specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 2; },
+    score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.collector_grade||0); }
+  },
+  { name: 'ノーザンダイヤモンドバックテラピン', latin: 'Malaclemys terrapin terrapin', emoji: '💎', difficulty: '上級', size: 'M（15〜23cm）', cites: null, legal: null,
+    reason: '汽水（海水と淡水の混合）で飼育する北米唯一の汽水ガメ。独特の菱形模様が美しく専門的な塩分管理が必要。ディープなマニア向き。',
+    specs: { '最大甲長': '23cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.brackish||0) >= 3; },
+    score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; }
+  },
+  { name: 'カロリナダイヤモンドバックテラピン', latin: 'Malaclemys terrapin centrata', emoji: '💠', difficulty: '上級', size: 'M（13〜21cm）', cites: null, legal: null,
+    reason: '最も美しいとも言われるダイヤモンドバックテラピンの亜種。甲羅の同心円模様が見事。国内CB流通が盛んになっている。',
+    specs: { '最大甲長': '21cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 1; },
+    score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.collector_grade||0); }
+  },
+  { name: 'オルナータダイヤモンドバックテラピン', latin: 'Malaclemys terrapin macrospilota', emoji: '🔶', difficulty: '上級', size: 'M（13〜20cm）', cites: null, legal: null,
+    reason: 'フロリダ産の派手な模様を持つダイヤモンドバックテラピンの亜種。国内CB流通が盛ん（アクアスペース2024年入荷確認）。汽水管理が必要だが亜種中で最も流通が多い。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 2; },
+    score: function(s){ return (s.brackish||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); }
+  },
+  { name: 'ヘビクビガメ', latin: 'Chelodina longicollis', emoji: '🐍', difficulty: '中〜上級', size: 'M（20〜28cm）', cites: null, legal: null,
+    reason: 'オーストラリア産の曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる独特の防御行動が印象的。',
+    specs: { '最大甲長': '28cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; }
+  },
+  { name: 'ニシキヘビクビガメ', latin: 'Chelodina mccordi', emoji: '🎊', difficulty: '上級', size: 'M（25〜30cm）', cites: null, legal: null,
+    reason: '甲羅に美しい模様が入るチモール島産の曲頸類。ヘビクビガメより稀少でCB流通は限られる。本格的な曲頸類コレクションの一種。',
+    specs: { '最大甲長': '30cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.advanced||0)+(s.collector_grade||0)*2; }
+  },
+  { name: 'ジーベンロックナガクビガメ', latin: 'Macrochelodina rugosa', emoji: '🌊', difficulty: '上級', size: 'L（25〜35cm）', cites: null, legal: null,
+    reason: 'オーストラリア北部産の大型曲頸類。頑丈な甲羅と大きなサイズが特徴。水中生活が主体で大型水槽が必要な本格派。',
+    specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
+  },
+  { name: 'アフリカヨコクビガメ', latin: 'Pelomedusa subrufa', emoji: '🌍', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: 'サハラ以南に広く分布する曲頸類。比較的安価で入手しやすくなっている。横に首を曲げる独特の行動が面白い。水棲傾向が強い。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 1 && (s.budget_low||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.budget_low||0)+(s.accessible||0)*2; }
+  },
+  { name: 'ヒラリーカエルガメ', latin: 'Phrynops hilarii', emoji: '🐸', difficulty: '上級', size: 'L（30〜40cm）', cites: null, legal: null,
+    reason: '南米産曲頸類で流通量が多く、飼育もしやすい入門的曲頸種。下顎のヒゲ状突起がユーモラス。大型になるが水質・水温への許容範囲が広い。2025CB流通確認済み。',
+    specs: { '最大甲長': '40cm', '水槽サイズ': '90cm〜', '水温': '20〜28℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 1; },
+    score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.accessible||0); }
+  },
+  { name: 'パーケリーナガクビガメ', latin: 'Chelodina parkeri', emoji: '🦅', difficulty: '上級', size: 'M（20〜25cm）', cites: null, legal: null,
+    reason: 'ナガクビガメ属の中で最も精悍な顔つきと評されるニューギニア産。EUCB流通あり。色抜け個体は非常に美しく、曲頸類の中でも上位の観賞価値を持つ。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); }
+  },
+  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'アマゾン川の底に潜む枯れ葉擬態の達人。生き餌または冷凍魚を水ごと吸い込む独特の捕食。水族館レベルの本格飼育種。',
+    specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.expert||0)+(s.budget_high||0); }
+  },
+  { name: 'アマゾンマタマタ', latin: 'Chelus orinocensis', emoji: '🌿', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'オリノコ川水系産のマタマタ近縁種。外見はマタマタに酷似するが別種。CITES II。究極の枯れ葉擬態カメをコレクションに加えたい上級者向き。',
+    specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 2; },
+    score: function(s){ return (s.snakeneck||0)+(s.budget_max||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0); }
+  },
+  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES II', legal: 'cites',
+    reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。希少種コレクター向き。',
+    specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.rare_asian||0) >= 2 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.rare_asian||0)+(s.advanced||0)+(s.expert||0); }
+  },
+  { name: 'ミスジハコガメ（希少コレクション）', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites',
+    reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。CITES II。希少種を求める本格コレクター向きの頂点種。高価だがCB個体入手が夢のマニアには究極の存在。',
+    specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.rare_asian||0) >= 3 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.rare_asian||0)+(s.collector_grade||0)+(s.ultra_rare||0)+(s.budget_high||0); }
+  },
+  { name: 'サソリドロガメ', latin: 'Kinosternon scorpioides', emoji: '🦂', difficulty: '上級', size: 'L（17〜27cm）', cites: null, legal: null,
+    reason: 'ドロガメ属最大種。中南米広域に分布し複数の亜種が知られる。噛みつき力が非常に強く取り扱いに注意が必要。大型ドロガメ系の迫力と個性を楽しみたいマニア向き。',
+    specs: { '最大甲長': '27cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.collector_grade||0); }
+  },
+  { name: 'スジオオニオイガメ', latin: 'Staurotypus salvinii', emoji: '💪', difficulty: '上級', size: 'L（25〜38cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手での取り扱い厳禁。CITES II。大型ドロガメ系の究極形として国内での飼育者もいる本格マニア向き種。',
+    specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.large_mud||0) >= 3 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
+  }
+],
+
+// ==================== 全カテゴリルート ====================
+all: [
+  { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
+    reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。',
+    specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 2 && (s.beginner||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.interactive||0); }
+  },
+  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '入門', size: 'S（8〜11cm）', cites: null, legal: null,
+    reason: '国内流通する最小クラスの水棲ガメ。30cm水槽から飼育可能で扱いやすい。',
+    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 3 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.observational||0); }
+  },
+  { name: 'クサガメ', latin: 'Mauremys reevesii', emoji: '🇯🇵', difficulty: '入門', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: '昔からペットとして親しまれてきた水棲ガメ。丈夫で適応力が高く初心者にも飼いやすい。国内CB個体を選ぶこと。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.beginner||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.interactive||0); }
+  },
+  { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'リクガメ入門の定番。乾燥した環境を好み、好奇心が旺盛でなつきやすく、初心者にも人気。',
+    specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.dry_env||0) >= 2; },
+    score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.dry_env||0)+(s.beginner||0)+(s.interactive||0); }
+  },
+  { name: 'ヘルマンリクガメ（ヒガシ亜種）', latin: 'Testudo hermanni boettgeri', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'EU産CBの流通が豊富でコンディションが安定。最も人気の高い地中海系リクガメ。',
+    specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
+    links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.medium||0) >= 1 && (s.humid_env||0) >= 1; },
+    score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.intermediate||0)+(s.interactive||0); }
+  },
+  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: null, legal: null,
+    reason: '黒い甲羅に黄色の水玉模様が美しい北米産半水棲ガメ。低温を好む温帯種で夏の保冷が必要。',
+    specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.small||0) >= 2 && (s.cool_env||0) >= 1; },
+    score: function(s){ return (s.small||0)+(s.cool_env||0)+(s.intermediate||0)+(s.observational||0); }
+  },
+  { name: 'スペングラーヤマガメ', latin: 'Geoemyda spengleri', emoji: '🌿', difficulty: '中〜上級', size: 'S（10〜14cm）', cites: 'CITES II', legal: 'cites',
+    reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷が必須。著者も飼育中。',
+    specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.small||0) >= 2 && (s.cool_env||0) >= 2; },
+    score: function(s){ return (s.terrestrial||0)+(s.small||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
+  },
+  { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '後肢3本指の北米産ハコガメ。雑食性で腹甲を完全に閉じられる独自構造。著者も飼育中。',
+    specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.humid_env||0)+(s.intermediate||0)+(s.observational||0); }
+  },
+  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: null, legal: null,
+    reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
+    specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.intermediate||0)+(s.observational||0); }
+  },
+  { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
+    reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。',
+    specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 1 && (s.cool_env||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.cool_env||0)+(s.intermediate||0)+(s.observational||0); }
+  },
+  { name: 'ヒラセガメ', latin: 'Pyxidea mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites',
+    reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中。',
+    specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
+    links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1 && (s.cool_env||0) >= 2; },
+    score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
+  },
+  { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
+    reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で高温多湿の環境が必要。大型化するためスペースが必要。',
+    specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.humid_env||0) >= 2; },
+    score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.humid_env||0)+(s.intermediate||0); }
+  },
+  { name: 'ニシキマゲクビガメ（ピンクベリー）', latin: 'Emydura subglobosa', emoji: '🎀', difficulty: '中〜上級', size: 'M（18〜25cm）', cites: null, legal: null,
+    reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.collector||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.collector||0)+(s.observational||0)+(s.intermediate||0); }
+  },
+  { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。',
+    specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.dry_env||0) >= 2; },
+    score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0)+(s.collector||0); }
+  },
+  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
+    reason: '枯れ葉擬態の達人。生き餌を水ごと吸い込む独特の捕食スタイル。コレクターが憧れる本格飼育種。',
+    specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
+    links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.advanced||0)+(s.collector||0)+(s.observational||0); }
+  },
+  { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
+    reason: '成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要。',
+    specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
+    links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
+  }
+]
+
+}; // end SPECIES
