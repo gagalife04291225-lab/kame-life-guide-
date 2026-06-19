@@ -147,7 +147,7 @@ const ROUTES = [
   },
   {
     id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: '全80種・6問で総合マッチング', qCount: 6,
+    desc: '全81種・6問で総合マッチング', qCount: 6,
     get species(){ return SPECIES.all; },
     questions: [
       { text: '飼育環境の主な環境タイプを選んでください。', choices: [

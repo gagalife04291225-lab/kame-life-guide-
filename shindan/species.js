@@ -5,7 +5,7 @@ const SPECIES = {
 
 // ==================== リクガメルート ====================
 land: [
-  { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+  { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
     reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
@@ -623,7 +623,7 @@ all: [
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.interactive||0); }
   },
-  { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+  { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
     reason: 'リクガメ入門の定番。乾燥した環境を好み、好奇心が旺盛でなつきやすく、初心者にも人気。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
