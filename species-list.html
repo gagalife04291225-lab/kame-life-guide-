@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメ・リクガメ 種一覧（81種）｜カメライフガイド</title>
+<meta name="description" content="リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメ全81種の一覧。難易度・カテゴリで絞り込みができます。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species-list.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px;}
+
+  header.hero{background:var(--forest-deep);color:var(--parchment);padding:52px 0 46px;text-align:center;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:12px;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2rem;line-height:1.3;margin-bottom:14px;}
+  header.hero p.lead{font-size:.98rem;color:#d9e0d6;max-width:580px;margin:0 auto;}
+
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  /* フィルターバー */
+  .filter-bar{background:#fff;border-bottom:1px solid #e4ddc9;padding:18px 0 14px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(13,31,26,.06);}
+  .filter-group{margin-bottom:10px;}
+  .filter-group:last-child{margin-bottom:0;}
+  .filter-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
+  .filter-btns{display:flex;flex-wrap:wrap;gap:7px;}
+  .fbtn{
+    padding:5px 14px;border-radius:20px;font-size:.82rem;font-family:"Noto Serif JP",serif;
+    border:1.5px solid #d4c9a8;background:#fff;color:var(--forest-deep);cursor:pointer;
+    transition:background .15s,border-color .15s,color .15s;-webkit-tap-highlight-color:transparent;
+  }
+  .fbtn:hover{border-color:var(--accent);background:#fffbf3;}
+  .fbtn.active{background:var(--forest);border-color:var(--forest);color:var(--parchment);}
+  .fbtn.active-diff{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
+
+  /* 件数表示 */
+  .count-bar{padding:18px 0 6px;}
+  .count-text{font-size:.9rem;color:#6b7c70;}
+  .count-num{font-weight:700;color:var(--forest);font-size:1.05rem;}
+
+  /* 種カードグリッド */
+  section.species-grid{padding:4px 0 60px;}
+  .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .sp-card{
+    background:#fff;border-radius:14px;border:1px solid #e4ddc9;
+    padding:18px 18px 16px;
+    box-shadow:0 2px 8px rgba(13,31,26,.06);
+    display:flex;flex-direction:column;gap:0;
+    transition:transform .14s,box-shadow .14s,border-color .14s;
+  }
+  .sp-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,31,26,.1);border-color:var(--accent);}
+  .sp-card-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .sp-emoji{font-size:1.6rem;line-height:1;flex-shrink:0;}
+  .sp-name-wrap{min-width:0;}
+  .sp-name{font-weight:700;font-size:.95rem;color:var(--forest);line-height:1.3;}
+  .sp-latin{font-style:italic;font-size:.72rem;color:#8a9389;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .sp-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
+  .spb{font-size:.7rem;padding:2px 9px;border-radius:12px;font-weight:700;white-space:nowrap;}
+  .spb-begin{background:#e8f5ee;color:#2d6a4f;border:1px solid #a8d5be;}
+  .spb-inter{background:#fff3e0;color:#8f5f2c;border:1px solid #f0c878;}
+  .spb-adv{background:#fdeaea;color:#b03a2e;border:1px solid #f5a9a0;}
+  .spb-size{background:var(--parchment);color:var(--forest);border:1px solid #d4c9a8;}
+  .spb-cites{background:#fffde7;color:#7d6608;border:1px solid #e8d84a;}
+  .spb-invasive{background:#fff0f0;color:#b03a2e;border:1px solid #f5a9a0;}
+  .sp-reason{font-size:.78rem;color:#5a6b60;line-height:1.6;flex:1;margin-bottom:12px;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  .sp-link{
+    display:block;text-align:center;padding:8px 12px;
+    background:var(--forest);color:var(--parchment);text-decoration:none;
+    border-radius:8px;font-size:.78rem;font-weight:700;
+    transition:background .15s;margin-top:auto;
+  }
+  .sp-link:hover{background:var(--accent-dark);}
+
+  .no-result{text-align:center;padding:60px 0;color:#8a9389;font-size:1rem;}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:44px 0;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:760px){.sp-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){
+    .sp-grid{grid-template-columns:1fr;}
+    header.hero h1{font-size:1.6rem;}
+    .filter-bar{position:static;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Index</div>
+    <h1>カメ・リクガメ 種一覧</h1>
+    <p class="lead">81種をカテゴリ・難易度で絞り込めます。各カードから飼育ガイドへアクセスできます。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="index.html">カメライフガイド</a> ＞ 種一覧
+  </div>
+</nav>
+
+<div class="filter-bar">
+  <div class="wrap">
+    <div class="filter-group">
+      <div class="filter-label">カテゴリ</div>
+      <div class="filter-btns" id="cat-btns">
+        <button class="fbtn active" data-cat="all">すべて</button>
+        <button class="fbtn" data-cat="リクガメ">リクガメ</button>
+        <button class="fbtn" data-cat="水棲ガメ">水棲ガメ</button>
+        <button class="fbtn" data-cat="ヤマガメ・ハコガメ">ヤマガメ・ハコガメ</button>
+        <button class="fbtn" data-cat="スッポン・曲頸">スッポン・曲頸</button>
+        <button class="fbtn" data-cat="汽水">汽水テラピン</button>
+        <button class="fbtn" data-cat="日本産">日本産</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">難易度</div>
+      <div class="filter-btns" id="diff-btns">
+        <button class="fbtn active-diff" data-diff="all">すべて</button>
+        <button class="fbtn" data-diff="入門">入門</button>
+        <button class="fbtn" data-diff="中級">中級</button>
+        <button class="fbtn" data-diff="上級">上級</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="count-bar">
+    <span class="count-text"><span class="count-num" id="count-num">81</span> 種 表示中</span>
+  </div>
+</div>
+
+<section class="species-grid">
+  <div class="wrap">
+    <div class="sp-grid" id="sp-grid"></div>
+    <div class="no-result" id="no-result" style="display:none">条件に一致する種が見つかりませんでした。</div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>生態から探す</h2>
+    <p>カテゴリ別の飼育ガイドは以下から。</p>
+    <div class="hub-links">
+      <a href="guide-water-full.html">水棲・淡水ガメ</a>
+      <a href="guide-semi.html">半水棲（ニオイガメ等）</a>
+      <a href="guide-japan.html">日本産カメ</a>
+      <a href="guide-brackish.html">汽水・テラピン</a>
+      <a href="guide-softshell.html">スッポン・ヘビクビガメ</a>
+      <a href="guide-moist.html">ヤマガメ・ハコガメ</a>
+      <a href="guide-dry.html">乾燥系リクガメ</a>
+      <a href="guide-arid.html">多湿系リクガメ</a>
+      <a href="shindan/index.html">🐢 亀診断（81種）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      当サイトはAmazonアソシエイト・プログラムの参加者です。掲載する飼育情報は一般的な目安であり、お迎えする種の専門情報もあわせてご確認ください。法規制・流通状況は変動することがあります。購入前に必ず最新情報をご確認ください。
+    </p>
+  </div>
+</footer>
+
+<script src="shindan/species.js"></script>
+<script>
+'use strict';
+
+// カテゴリ例外マップ（ルートキーだけでは判定できない種）
+var CAT_OVERRIDE = {
+  'ニホンイシガメ':                      '日本産',
+  'ヤエヤマイシガメ':                    '日本産',
+  'ミナミイシガメ':                      '日本産',
+  'ノーザンダイヤモンドバックテラピン':   '汽水',
+  'カロリナダイヤモンドバックテラピン':   '汽水',
+  'オルナータダイヤモンドバックテラピン': '汽水',
+  'ニシキマゲクビガメ（ピンクベリー）':   'スッポン・曲頸',
+  'スパイニースッポン':                  'スッポン・曲頸',
+  'スムーススッポン':                    'スッポン・曲頸',
+  'フロリダスッポン':                    'スッポン・曲頸',
+  'スッポンモドキ':                      'スッポン・曲頸',
+  'スッポン（シナスッポン）':             'スッポン・曲頸',
+  'アルビノシナスッポン':                'スッポン・曲頸',
+  'ヘビクビガメ':                        'スッポン・曲頸',
+  'ニシキヘビクビガメ':                  'スッポン・曲頸',
+  'ジーベンロックナガクビガメ':           'スッポン・曲頸',
+  'アフリカヨコクビガメ':                'スッポン・曲頸',
+  'ヒラリーカエルガメ':                  'スッポン・曲頸',
+  'パーケリーナガクビガメ':              'スッポン・曲頸',
+  'モエギハコガメ':                      'ヤマガメ・ハコガメ',
+  'ミスジハコガメ（希少コレクション）':   'ヤマガメ・ハコガメ',
+  'マタマタ':                            '水棲ガメ',
+  'アマゾンマタマタ':                    '水棲ガメ',
+  'サソリドロガメ':                      '水棲ガメ',
+  'スジオオニオイガメ':                  '水棲ガメ',
+};
+
+var ROUTE_CAT = {
+  land:    'リクガメ',
+  aquatic: '水棲ガメ',
+  forest:  'ヤマガメ・ハコガメ',
+  exotic:  'スッポン・曲頸',
+};
+
+// 全種データ構築（重複除去）
+var seen = {};
+var ALL_SPECIES = [];
+['land','aquatic','forest','exotic'].forEach(function(route) {
+  SPECIES[route].forEach(function(sp) {
+    if (seen[sp.name]) return;
+    seen[sp.name] = true;
+    var cat = CAT_OVERRIDE[sp.name] || ROUTE_CAT[route];
+    ALL_SPECIES.push({ sp: sp, cat: cat });
+  });
+});
+
+// バッジHTML
+function diffBadge(diff) {
+  var c = (diff === '入門' || diff === '入門〜中級') ? 'spb-begin'
+        : (diff === '上級') ? 'spb-adv' : 'spb-inter';
+  return '<span class="spb ' + c + '">' + diff + '</span>';
+}
+
+function legalBadge(sp) {
+  if (sp.legal === 'conditional_invasive') {
+    return '<span class="spb spb-invasive">条件付特定外来</span>';
+  }
+  if (sp.cites) {
+    return '<span class="spb spb-cites">' + sp.cites + '</span>';
+  }
+  return '';
+}
+
+// リンクURL（shindan/ の相対パス ../xxx.html → xxx.html）
+function guideHref(sp) {
+  if (!sp.links || !sp.links[0]) return 'index.html';
+  return sp.links[0].href.replace('../', '');
+}
+function guideLabel(sp) {
+  if (!sp.links || !sp.links[0]) return '飼育ガイドを見る';
+  return sp.links[0].label;
+}
+
+// カード生成
+function renderCard(item) {
+  var sp = item.sp;
+  var legal = legalBadge(sp);
+  return '<div class="sp-card" data-cat="' + item.cat + '" data-diff="' + sp.difficulty + '">' +
+    '<div class="sp-card-top">' +
+      '<span class="sp-emoji" aria-hidden="true">' + sp.emoji + '</span>' +
+      '<div class="sp-name-wrap">' +
+        '<div class="sp-name">' + sp.name + '</div>' +
+        '<div class="sp-latin">' + sp.latin + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="sp-badges">' +
+      diffBadge(sp.difficulty) +
+      '<span class="spb spb-size">' + sp.size + '</span>' +
+      legal +
+    '</div>' +
+    '<p class="sp-reason">' + sp.reason + '</p>' +
+    '<a href="' + guideHref(sp) + '" class="sp-link">' + guideLabel(sp) + ' →</a>' +
+  '</div>';
+}
+
+// 初期描画
+var grid = document.getElementById('sp-grid');
+grid.innerHTML = ALL_SPECIES.map(renderCard).join('');
+
+// フィルター状態
+var currentCat = 'all';
+var currentDiff = 'all';
+
+function applyFilter() {
+  var cards = grid.querySelectorAll('.sp-card');
+  var visible = 0;
+  cards.forEach(function(card) {
+    var catOk = currentCat === 'all' || card.dataset.cat === currentCat;
+    var diff = card.dataset.diff;
+    var diffOk = true;
+    if (currentDiff === '入門')  diffOk = diff.indexOf('入門') >= 0;
+    if (currentDiff === '中級')  diffOk = diff.indexOf('中') >= 0;
+    if (currentDiff === '上級')  diffOk = diff.indexOf('上級') >= 0;
+    var show = catOk && diffOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('count-num').textContent = visible;
+  document.getElementById('no-result').style.display = visible === 0 ? '' : 'none';
+}
+
+// カテゴリボタン
+document.getElementById('cat-btns').addEventListener('click', function(e) {
+  var btn = e.target.closest('.fbtn');
+  if (!btn) return;
+  document.querySelectorAll('#cat-btns .fbtn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  currentCat = btn.dataset.cat;
+  applyFilter();
+});
+
+// 難易度ボタン
+document.getElementById('diff-btns').addEventListener('click', function(e) {
+  var btn = e.target.closest('.fbtn');
+  if (!btn) return;
+  document.querySelectorAll('#diff-btns .fbtn').forEach(function(b){ b.classList.remove('active-diff'); });
+  btn.classList.add('active-diff');
+  currentDiff = btn.dataset.diff;
+  applyFilter();
+});
+</script>
+</body>
+</html>
