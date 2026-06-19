@@ -22,7 +22,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: 'リクガメ用木製ケージ 90cm（市販品または自作）' },
     uvb:       { asin: 'B00JZFJ5R0', label: 'ビバリア スパイラルUVB デザート 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: 'B00I0MM9MC', label: 'あかぎ園芸 赤玉土 小粒 20L（まとめ買いはAmazonが便利）' },
+    substrate: { asin: 'B00I0MM9MC',         label: 'あかぎ園芸 赤玉土 小粒 20L' },
     food:      { asin: 'B0DF2SJMCJ', label: 'ビバリア リクガメフード 907g' },
     filter:    null
   },
@@ -31,7 +31,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: 'リクガメ用木製ケージ 90cm（市販品または自作）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・保湿床材' },
+    substrate: { asin: 'B005J94WEM',         label: 'ジクラ 爬虫類専用万能ヤシガラマット 細目 8L' },
     food:      { asin: 'B0DF2SJMCJ', label: 'ビバリア リクガメフード 907g' },
     filter:    null
   },
@@ -40,7 +40,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '自作ケージ推奨（120cm以上）' },
     uvb:       { asin: 'B00JZFJ5R0', label: 'ビバリア スパイラルUVB デザート 26W' },
     basking:   { asin: 'B0043AYZL8', label: 'GEX EXOTERRA サングロータイトビーム 100W' },
-    substrate: { asin: 'B00I0MM9MC', label: 'あかぎ園芸 赤玉土 小粒 20L（まとめ買いはAmazonが便利）' },
+    substrate: { asin: 'B00I0MM9MC',         label: 'あかぎ園芸 赤玉土 小粒 20L' },
     food:      { asin: 'B0DF2SJMCJ', label: 'ビバリア リクガメフード 907g' },
     filter:    null
   },
@@ -50,7 +50,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '水槽 45cm（市販品）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B2AJQ', label: 'マルカン バスキングライト 30W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
+    substrate: { asin: 'B00XVP3TPO',         label: '水作 水槽の底砂 大磯砂 2.4kg' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
@@ -59,7 +59,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '水槽 60〜90cm（市販品）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
+    substrate: { asin: 'B00XVP3TPO',         label: '水作 水槽の底砂 大磯砂 2.4kg' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
@@ -68,7 +68,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '水槽 90cm以上（市販品）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
+    substrate: { asin: 'B00XVP3TPO',         label: '水作 水槽の底砂 大磯砂 2.4kg' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
@@ -78,7 +78,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '衣装ケース・自作テラリウム推奨' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B2AJQ', label: 'マルカン バスキングライト 30W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・腐葉土ミックス' },
+    substrate: { asin: 'B005J94WEM',         label: 'ジクラ 爬虫類専用万能ヤシガラマット 細目 8L' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    null
   },
@@ -87,7 +87,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '60cm以上テラリウム' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B2AJQ', label: 'マルカン バスキングライト 30W' },
-    substrate: { asin: null,         label: 'ヤシガラ土ミックス' },
+    substrate: { asin: 'B005J94WEM',         label: 'ジクラ 爬虫類専用万能ヤシガラマット 細目 8L' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    null
   },
@@ -96,7 +96,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '60cm以上テラリウム' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B2AJQ', label: 'マルカン バスキングライト 30W' },
-    substrate: { asin: null,         label: 'ヤシガラ土・水苔ミックス' },
+    substrate: { asin: 'B005J94WEM',         label: 'ジクラ 爬虫類専用万能ヤシガラマット 細目 8L' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    null
   },
@@ -107,7 +107,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '90cm以上水槽（深め）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '細かい川砂（必須）' },
+    substrate: { asin: 'B0C1Y1XRF5',         label: '水作 国産天然砂 川砂 1.0L' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
@@ -116,7 +116,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '60cm以上水槽' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '珊瑚砂・汽水用底砂' },
+    substrate: { asin: null,         label: '汽水専用底砂はショップで相談推奨' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
@@ -125,7 +125,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '60〜90cm水槽' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: null,         label: '大磯砂・底砂' },
+    substrate: { asin: 'B00XVP3TPO',         label: '水作 水槽の底砂 大磯砂 2.4kg' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   }
