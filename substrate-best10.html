@@ -245,6 +245,16 @@
     .rank-num{font-size:1.5rem;min-width:38px;}
     .item-head .titles h3{font-size:1rem;}
   }
+
+  /* 種別早見セクション */
+  .sg-section{padding:28px 0 14px;border-bottom:2px solid #e4ddc9;}
+  .sg-eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:6px;}
+  .sg-title{font-family:"Playfair Display",serif;font-style:italic;font-size:1.35rem;color:var(--forest);margin-bottom:16px;}
+  .sg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .sg-row{background:#fff;border-radius:10px;padding:12px 16px;border:1px solid #e4ddc9;display:flex;gap:12px;align-items:flex-start;}
+  .sg-key{flex-shrink:0;width:148px;font-size:.82rem;font-weight:700;color:var(--forest);line-height:1.5;}
+  .sg-val{font-size:.82rem;color:#5a6b60;line-height:1.55;}
+  @media(max-width:520px){.sg-grid{grid-template-columns:1fr;}.sg-key{width:110px;}}
 </style>
 </head>
 <body>
@@ -271,6 +281,40 @@
 
     <div class="note-box">
       <strong>選び方の軸は3つ。</strong> ①野生環境に合わせる（森林性=保湿系／乾燥系=水はけ重視）。②誤飲・インパクションのリスクが低いものを選ぶ。③こまめに交換・部分交換して清潔を保つ。湿度を要する種ほど、定期的なリフレッシュでカビ・コバエを防ぎます。
+    </div>
+  </div>
+</section>
+
+
+<section class="sg-section">
+  <div class="wrap">
+    <div class="sg-eyebrow">Species Guide</div>
+    <h2 class="sg-title">種別床材・底砂の選び方早見表</h2>
+    <div class="sg-grid">
+      <div class="sg-row">
+        <span class="sg-key">細かい川砂（必須）</span>
+        <span class="sg-val">スッポン類全般（スパイニー・シナスッポン等）——潜砂のため角のない細砂が必須</span>
+      </div>
+      <div class="sg-row">
+        <span class="sg-key">大磯砂・砂利</span>
+        <span class="sg-val">水棲ガメ全般（クサガメ・チズガメ・ニオイガメ等）</span>
+      </div>
+      <div class="sg-row">
+        <span class="sg-key">赤玉土・砂ミックス</span>
+        <span class="sg-val">乾燥系リクガメ（ロシア・ヘルマン・ギリシャ等）</span>
+      </div>
+      <div class="sg-row">
+        <span class="sg-key">ヤシガラ土</span>
+        <span class="sg-val">多湿系リクガメ（アカアシ・エロンガータ）・ヤマガメ・ハコガメ全般</span>
+      </div>
+      <div class="sg-row">
+        <span class="sg-key">腐葉土ミックス</span>
+        <span class="sg-val">ヤマガメ・ハコガメ（スペングラー・ヒラセ・ミツユビ等）</span>
+      </div>
+      <div class="sg-row">
+        <span class="sg-key">珊瑚砂</span>
+        <span class="sg-val">汽水テラピン——塩分環境に適した底砂として使用</span>
+      </div>
     </div>
   </div>
 </section>
