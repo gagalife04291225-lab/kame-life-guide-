@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git push *)",
+            "command": "node -e \"const buf=require('fs').readFileSync(0,'utf8');const d=JSON.parse(buf);const cmd=(d.tool_input&&d.tool_input.command)||'';if(!cmd.match(/^git push/)){process.exit(0);}console.log(JSON.stringify({hookSpecificOutput:{hookEventName:'PostToolUse',additionalContext:'git push が完了しました。GitHub Pages のデプロイを待って（約60秒）、変更したページを WebFetch で取得して内容を確認してください。確認URL: https://gagalife04291225-lab.github.io/kame-life-guide-/ および今回変更したページのURL。変更内容が正しく反映されているか検証し、問題があれば報告してください。'}}));\"",
+            "statusMessage": "git push 完了 — 自動検証を準備中..."
+          }
+        ]
+      }
+    ]
+  }
+}
