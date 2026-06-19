@@ -4,7 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>あなたに合う亀診断 | カメライフガイド</title>
-<meta name="description" content="5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート80種以上から最適な1種を提案します。">
+<meta name="description" content="5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート81種から最適な1種を提案します。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
+<!-- OGP -->
+<meta property="og:title" content="あなたに合う亀診断 | カメライフガイド">
+<meta property="og:description" content="5つのルートから自分に合う亀を診断。81種・5ルート対応。あなたに最適な亀が見つかります。">
+<meta property="og:url" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="カメライフガイド">
+<meta property="og:locale" content="ja_JP">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="あなたに合う亀診断 | カメライフガイド">
+<meta name="twitter:description" content="81種・5ルートで診断。あなたに合う亀が見つかります。">
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "あなたに合う亀診断",
+  "description": "5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート81種から最適な1種を提案します。",
+  "url": "https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/",
+  "applicationCategory": "Quiz",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Person",
+    "name": "カメライフガイド"
+  }
+}
+</script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+// GA4イベント送信ヘルパー
+function ga4Event(name, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', name, params || {});
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -23,7 +68,6 @@
   --font-body: 'Noto Serif JP', Georgia, serif;
   --radius: 12px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Serif+JP:wght@400;600&display=swap');
 html { font-size: 16px; }
 body {
   font-family: var(--font-body);
@@ -47,12 +91,10 @@ body {
 .route-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 14px; text-align: left; cursor: pointer; transition: background .18s, border-color .18s, transform .15s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; width: 100%; }
 .route-card:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.2); }
 .route-card:active { transform: scale(.98); }
-.route-card.selected { background: rgba(143,95,44,.22); border-color: var(--accent-light); }
 .route-emoji { font-size: 28px; flex-shrink: 0; }
 .route-info { flex: 1; min-width: 0; }
 .route-name { font-size: 1rem; font-weight: 600; color: var(--parchment); }
 .route-desc { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
-.route-q { font-size: .8rem; color: var(--accent-light); flex-shrink: 0; }
 #screen-quiz { gap: 0; }
 .quiz-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
 .btn-back { background: none; border: 1px solid rgba(255,255,255,.18); color: var(--parchment); border-radius: 8px; padding: 8px 14px; font-size: .85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; flex-shrink: 0; }
@@ -98,43 +140,122 @@ body {
 .btn-share { flex: 1; padding: 15px; background: var(--accent); border: none; border-radius: var(--radius); color: var(--parchment); font-family: var(--font-body); font-size: .95rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; box-shadow: 0 2px 12px rgba(143,95,44,.3); }
 .btn-share:hover { background: var(--accent-light); }
 .footer-note { margin-top: 32px; font-size: .75rem; color: var(--text-muted); text-align: center; line-height: 1.6; border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; }
+
+/* ===== PHASE 3: 相性スコアメーター ===== */
+.score-meter { text-align: center; margin-bottom: 20px; }
+.score-pct { font-family: var(--font-display); font-size: clamp(2.8rem, 10vw, 3.8rem); color: var(--accent-light); line-height: 1; font-weight: 700; }
+.score-pct-unit { font-size: .6em; color: var(--text-muted); }
+.score-label { font-size: .78rem; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.score-bar-wrap { margin: 10px auto 0; max-width: 240px; height: 6px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--forest-light), var(--accent-light)); transition: width .8s cubic-bezier(.4,0,.2,1); }
+
+/* ===== PHASE 3: ステップドット ===== */
+.step-dots { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+.step-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); transition: background .3s, transform .3s; }
+.step-dot.done { background: var(--accent-light); }
+.step-dot.current { background: var(--parchment); transform: scale(1.4); }
+
+/* ===== PHASE 3: 確認モーダル ===== */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 100; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(4px); }
+.modal-overlay.open { display: flex; }
+.modal-box { background: #1a3028; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 28px 24px; max-width: 320px; width: 100%; text-align: center; }
+.modal-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--parchment); margin-bottom: 12px; }
+.modal-body { font-size: .88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
+.modal-btns { display: flex; gap: 10px; }
+.modal-btn { flex: 1; padding: 12px; border-radius: var(--radius); font-family: var(--font-body); font-size: .9rem; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.modal-btn-cancel { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: var(--parchment); }
+.modal-btn-ok { background: var(--accent); border: none; color: var(--parchment); }
+
+/* ===== PHASE 3: コピー完了トースト ===== */
+.toast { position: fixed; bottom: calc(env(safe-area-inset-bottom) + 24px); left: 50%; transform: translateX(-50%) translateY(80px); background: var(--forest-mid); border: 1px solid rgba(255,255,255,.15); color: var(--parchment); padding: 10px 22px; border-radius: 999px; font-size: .85rem; z-index: 200; transition: transform .3s cubic-bezier(.4,0,.2,1), opacity .3s; opacity: 0; pointer-events: none; white-space: nowrap; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ===== PHASE 4: 機材推奨リスト ===== */
+.equipment-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+.equipment-item:last-child { border-bottom: none; }
+.equipment-cat { font-size: .72rem; color: var(--text-muted); width: 52px; flex-shrink: 0; }
+.equipment-label { flex: 1; font-size: .88rem; color: var(--parchment-dark); }
+.equipment-link { flex-shrink: 0; padding: 5px 12px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: 999px; color: var(--accent-light); font-size: .78rem; text-decoration: none; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+.equipment-link:hover { background: rgba(196,154,90,.28); }
+.equipment-na { font-size: .78rem; color: var(--text-muted); }
+
+/* ===== PHASE 5: 著者飼育中バッジ ===== */
+.badge-owner { background: linear-gradient(135deg, rgba(47,74,60,.6), rgba(13,31,26,.8)); border: 1px solid var(--forest-light); color: #8dcba0; position: relative; padding-left: 22px; }
+.badge-owner::before { content: '🐢'; position: absolute; left: 6px; font-size: .85em; }
+
+/* ===== PHASE 5: 寿命バナー ===== */
+.lifespan-banner { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: .84rem; color: var(--parchment-dark); }
+.lifespan-banner[style*="none"] { display: none; }
+.lifespan-icon { font-size: 1.2rem; flex-shrink: 0; }
+.lifespan-text { flex: 1; line-height: 1.5; }
+.lifespan-years { font-weight: 600; color: var(--accent-light); }
+
+/* ===== PHASE 5: 初心者警告 ===== */
+.beginner-warn { background: rgba(176,58,46,.1); border: 1px solid rgba(176,58,46,.35); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: .85rem; color: #e07060; line-height: 1.6; display: none; }
+.beginner-warn.show { display: block; }
+.beginner-warn strong { color: #f0907e; }
+
+/* ===== PHASE 4: note.com誘導 ===== */
+.note-cta { margin-bottom: 16px; }
+.note-link { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: linear-gradient(135deg, rgba(65,179,163,.12), rgba(47,74,60,.3)); border: 1px solid rgba(65,179,163,.25); border-radius: var(--radius); text-decoration: none; color: var(--parchment); transition: background .15s; -webkit-tap-highlight-color: transparent; }
+.note-link:hover { background: linear-gradient(135deg, rgba(65,179,163,.2), rgba(47,74,60,.4)); }
+.note-icon { font-size: 28px; flex-shrink: 0; }
+.note-text { flex: 1; min-width: 0; }
+.note-title { font-size: .95rem; font-weight: 600; color: var(--parchment); }
+.note-sub { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
+.note-arrow { color: rgba(65,179,163,.8); font-size: 1.1rem; flex-shrink: 0; }
 </style>
 </head>
 <body>
 
-<section id="screen-start" class="screen active">
-  <div class="logo-mark">🐢</div>
+<section id="screen-start" class="screen active" role="main" aria-label="亀診断トップ">
+  <div class="logo-mark" aria-hidden="true">🐢</div>
   <h1 class="start-title">あなたに合う亀診断</h1>
   <p class="start-sub">カメライフガイド</p>
-  <div class="species-count">80種以上・5ルート対応</div>
+  <div class="species-count" aria-label="対応種数">81種・5ルート対応</div>
   <div class="route-intro">
-    <div class="route-intro-label">ルートをタップして診断スタート</div>
-    <div class="route-cards" id="route-cards"></div>
+    <div class="route-intro-label" id="route-cards-label">ルートをタップして診断スタート</div>
+    <div class="route-cards" id="route-cards" role="list" aria-labelledby="route-cards-label"></div>
   </div>
 </section>
 
-<section id="screen-quiz" class="screen">
+<section id="screen-quiz" class="screen" role="main" aria-label="診断質問">
   <div class="quiz-header">
-    <button class="btn-back" id="btn-back">← 戻る</button>
-    <div class="progress-wrap">
+    <button class="btn-back" id="btn-back" aria-label="前の画面に戻る">← 戻る</button>
+    <div class="progress-wrap" role="status" aria-live="polite">
       <div class="progress-label" id="progress-label">1 / 4</div>
-      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="進捗">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="step-dots" id="step-dots" aria-hidden="true"></div>
     </div>
-    <div class="route-badge" id="route-badge"></div>
+    <div class="route-badge" id="route-badge" aria-hidden="true"></div>
   </div>
-  <p class="question-text" id="question-text"></p>
-  <div class="choices" id="choices"></div>
+  <p class="question-text" id="question-text" tabindex="-1"></p>
+  <div class="choices" id="choices" role="group" aria-labelledby="question-text"></div>
 </section>
 
-<section id="screen-result" class="screen">
+<section id="screen-result" class="screen" role="main" aria-label="診断結果">
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
-    <span class="result-emoji" id="res-emoji">🐢</span>
-    <div class="result-species-name" id="res-name"></div>
+    <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
+    <div class="result-species-name" id="res-name" tabindex="-1"></div>
     <div class="result-latin" id="res-latin"></div>
   </div>
-  <div class="badges" id="res-badges"></div>
-  <div id="res-legal" style="display:none"></div>
+  <div class="score-meter" id="score-meter" aria-label="相性スコア">
+    <div class="score-pct"><span id="score-num">0</span><span class="score-pct-unit">%</span></div>
+    <div class="score-label">相性スコア</div>
+    <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+  </div>
+  <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
+  <!-- PHASE 5: 寿命バナー -->
+  <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
+    <span class="lifespan-icon">⏳</span>
+    <div class="lifespan-text">寿命の目安：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
+  </div>
+  <!-- PHASE 5: 初心者警告 -->
+  <div class="beginner-warn" id="beginner-warn" role="alert"></div>
+  <div id="res-legal" style="display:none" role="alert"></div>
   <div class="result-card">
     <div class="result-card-title">おすすめのポイント</div>
     <p class="result-desc" id="res-reason"></p>
@@ -142,6 +263,22 @@ body {
   <div class="result-card">
     <div class="result-card-title">基本スペック</div>
     <div class="spec-grid" id="res-specs"></div>
+  </div>
+  <!-- PHASE 4: 機材推奨セクション -->
+  <div class="result-card" id="equipment-section" style="display:none">
+    <div class="result-card-title">推奨飼育機材</div>
+    <div id="equipment-list"></div>
+  </div>
+  <!-- PHASE 4: note.com誘導 -->
+  <div class="note-cta" id="note-cta" style="display:none">
+    <a href="#" id="note-link" class="note-link" target="_blank" rel="noopener noreferrer">
+      <span class="note-icon">📝</span>
+      <div class="note-text">
+        <div class="note-title" id="note-title">詳しい飼育記事を読む</div>
+        <div class="note-sub">カメライフガイド on note</div>
+      </div>
+      <span class="note-arrow">→</span>
+    </a>
   </div>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
@@ -155,434 +292,370 @@ body {
   </div>
 </section>
 
+<!-- PHASE 3: 確認モーダル -->
+<div class="modal-overlay" id="modal-quit" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-title" id="modal-title">診断を中断しますか？</div>
+    <div class="modal-body">途中まで答えた回答はリセットされます。</div>
+    <div class="modal-btns">
+      <button class="modal-btn modal-btn-cancel" id="modal-cancel">続ける</button>
+      <button class="modal-btn modal-btn-ok" id="modal-ok">トップへ戻る</button>
+    </div>
+  </div>
+</div>
+<!-- PHASE 3: トースト -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- データファイル -->
+<script src="species.js"></script>
+<script src="routes.js"></script>
+<script src="equipment.js"></script>
 <script>
 'use strict';
-const ROUTES = [
-  {
-    id: 'land', emoji: '🏔️', name: 'リクガメルート',
-    desc: 'ロシア・ヘルマン・ケヅメ・アカアシなど', qCount: 4,
-    questions: [
-      { text: '飼育スペースはどのくらいを想定していますか？', choices: [
-        { label: '60cm水槽程度（〜0.4㎡）', scores: { compact: 3, medium: 0, large: 0 } },
-        { label: '90cm水槽相当（〜0.8㎡）', scores: { compact: 1, medium: 3, large: 0 } },
-        { label: '120cm以上または屋外（1㎡超）', scores: { compact: 0, medium: 1, large: 3 } }
-      ]},
-      { text: '温度・湿度の管理はどこまでできますか？', choices: [
-        { label: 'サーモスタット＋バスキング程度', scores: { dry: 3, humid: 0 } },
-        { label: 'ミスト・加湿器も使える', scores: { dry: 1, humid: 3 } },
-        { label: 'どちらでも対応できる', scores: { dry: 2, humid: 2 } }
-      ]},
-      { text: '草食中心の管理（毎日の野菜・草の準備）ができますか？', choices: [
-        { label: 'はい、毎日準備できます', scores: { herbivore: 3 } },
-        { label: '週に数回なら可能', scores: { herbivore: 1 } },
-        { label: 'フード中心にしたい', scores: { herbivore: 0 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: '亀・リクガメの飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]}
-    ],
-    species: [
-      { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
-        specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
-        links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
-        match: function(s){ return s.compact >= 2 && s.dry >= 2; },
-        score: function(s){ return (s.compact||0) + (s.dry||0) + (s.beginner||0) + (s.herbivore||0); }
-      },
-      { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。',
-        specs: { '最大甲長': '23cm（ヒガシ）', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
-        links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
-        match: function(s){ return s.compact >= 1 && s.humid >= 2; },
-        score: function(s){ return (s.compact||0) + (s.humid||0) + (s.intermediate||0) + (s.herbivore||0); }
-      },
-      { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites',
-        reason: '亜種が多く、産地によって環境適応が大きく異なります。産地情報付きCBを選ぶことが重要で、中級以上向きです。',
-        specs: { '最大甲長': '25cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜33℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.intermediate||0) >= 2 || (s.advanced||0) >= 1; },
-        score: function(s){ return (s.medium||0) + (s.dry||0) + (s.intermediate||0) + (s.herbivore||0); }
-      },
-      { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
-        reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
-        specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
-        score: function(s){ return (s.large||0) + (s.humid||0) + (s.intermediate||0); }
-      },
-      { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
-        specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
-        score: function(s){ return (s.large||0) + (s.dry||0) + (s.advanced||0); }
-      },
-      { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
-        reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
-        specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.large||0) >= 3 && (s.advanced||0) >= 3; },
-        score: function(s){ return (s.large||0) + (s.dry||0) + (s.advanced||0); }
-      }
-    ]
-  },
-  {
-    id: 'aquatic', emoji: '🏊', name: '水棲ガメルート',
-    desc: 'ニオイガメ・チズガメ・スライダーなど', qCount: 4,
-    questions: [
-      { text: '水槽・水場のサイズはどのくらい用意できますか？', choices: [
-        { label: '30〜60cm水槽', scores: { small_tank: 3, medium_tank: 0, large_tank: 0 } },
-        { label: '60〜90cm水槽', scores: { small_tank: 1, medium_tank: 3, large_tank: 0 } },
-        { label: '90cm以上', scores: { small_tank: 0, medium_tank: 1, large_tank: 3 } }
-      ]},
-      { text: '水替えやフィルター管理はどのくらいできますか？', choices: [
-        { label: '週1〜2回は水替えできる', scores: { maintenance: 3 } },
-        { label: '外部フィルターで月1回程度', scores: { maintenance: 2 } },
-        { label: 'なるべく手間を減らしたい', scores: { maintenance: 0 } }
-      ]},
-      { text: '飼育スタイルの好みは？', choices: [
-        { label: '小型でじっくり観察したい', scores: { observational: 3, active: 0, ambush: 0 } },
-        { label: '元気よく泳ぐ姿を見たい', scores: { observational: 0, active: 3, ambush: 0 } },
-        { label: '底に潜む神秘的な種が好き', scores: { observational: 2, active: 0, ambush: 3 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '魚や爬虫類の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: '水棲ガメの飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]}
-    ],
-    species: [
-      { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
-        reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。お手頃価格で流通も安定。',
-        specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 2; },
-        score: function(s){ return (s.small_tank||0) + (s.beginner||0) + (s.observational||0); }
-      },
-      { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', difficulty: '入門', size: 'S（10〜12cm）', cites: null, legal: null,
-        reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
-        specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
-        score: function(s){ return (s.small_tank||0) + (s.beginner||0) + (s.observational||0); }
-      },
-      { name: 'カブトニオイガメ', latin: 'Sternotherus carinatus', emoji: '⛑️', difficulty: '入門', size: 'M（10〜15cm）', cites: null, legal: null,
-        reason: 'キールが目立つ個性的な甲羅が魅力。ニオイガメよりやや大型化しますが45cm水槽から飼育可能。気性がやや荒い個体もいます。',
-        specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.small_tank||0) >= 1 && (s.observational||0) >= 2; },
-        score: function(s){ return (s.small_tank||0) + (s.beginner||0) + (s.observational||0); }
-      },
-      { name: 'ペインテッドタートル', latin: 'Chrysemys picta', emoji: '🎨', difficulty: '入門', size: 'M（13〜25cm）', cites: null, legal: null,
-        reason: '甲羅の縁に赤・黄のラインが走る美しい種。泳ぎが活発で60〜90cm水槽が適切。草食傾向が強く管理しやすい。',
-        specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2; },
-        score: function(s){ return (s.medium_tank||0) + (s.active||0) + (s.beginner||0); }
-      },
-      { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: null, legal: null,
-        reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
-        specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2; },
-        score: function(s){ return (s.medium_tank||0) + (s.maintenance||0) + (s.observational||0); }
-      },
-      { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🇯🇵', difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
-        reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
-        specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
-        score: function(s){ return (s.medium_tank||0) + (s.maintenance||0) + (s.observational||0) + (s.intermediate||0); }
-      },
-      { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
-        reason: '枯れ葉のような外見で待ち伏せして魚を丸ごと吸い込む神秘的な種。水流を嫌い独特の飼育法を習得する必要がある本格派種。',
-        specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.large_tank||0) >= 2 && (s.ambush||0) >= 2; },
-        score: function(s){ return (s.ambush||0) + (s.advanced||0) + (s.large_tank||0); }
-      },
-      { name: 'ニシキマゲクビガメ', latin: 'Emydura subglobosa', emoji: '🌸', difficulty: '中〜上級', size: 'M（18〜25cm）', cites: null, legal: null,
-        reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気が高い。',
-        specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.medium_tank||0) >= 2 && (s.observational||0) >= 2; },
-        score: function(s){ return (s.medium_tank||0) + (s.observational||0) + (s.intermediate||0); }
-      }
-    ]
-  },
-  {
-    id: 'forest', emoji: '🍂', name: 'ヤマガメ・ハコガメルート',
-    desc: 'スペングラー・ハコガメ・半水棲など', qCount: 4,
-    questions: [
-      { text: '温度・湿度の管理環境はどのくらい整えられますか？', choices: [
-        { label: '温度管理のみ（エアコン＋バスキング）', scores: { basic_env: 3, advanced_env: 0, cooling: 0 } },
-        { label: '湿度も管理（ミスト・保湿床材）', scores: { basic_env: 1, advanced_env: 3, cooling: 0 } },
-        { label: '夏の冷却管理もできる（保冷剤・クーラー）', scores: { basic_env: 0, advanced_env: 3, cooling: 3 } }
-      ]},
-      { text: '陸棲〜半陸棲ガメへの希望は？', choices: [
-        { label: '陸場メインで水場は少な目でいい', scores: { terrestrial: 3, semi_aquatic: 0 } },
-        { label: '水場もしっかり設けたい', scores: { terrestrial: 0, semi_aquatic: 3 } },
-        { label: 'どちらでも設計できる', scores: { terrestrial: 1, semi_aquatic: 1 } }
-      ]},
-      { text: '希望するカメのサイズは？', choices: [
-        { label: 'S（〜15cm）の小型種', scores: { s_size: 3, m_size: 0 } },
-        { label: 'M（15〜25cm）の中型種', scores: { s_size: 0, m_size: 3 } },
-        { label: 'どちらでもよい', scores: { s_size: 1, m_size: 1 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: 0 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: 'カメや爬虫類の飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]}
-    ],
-    species: [
-      { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: null, legal: null,
-        reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
-        specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
-        score: function(s){ return (s.s_size||0) + (s.semi_aquatic||0) + (s.intermediate||0); }
-      },
-      { name: 'スペングラーヤマガメ', latin: 'Geoemyda spengleri', emoji: '🌿', difficulty: '中〜上級', size: 'S（10〜14cm）', cites: 'CITES II', legal: 'cites',
-        reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷管理が必須。動物性タンパクを好む雑食性で、ユニークな飼育体験ができます。著者も飼育中。',
-        specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.s_size||0) >= 2 && (s.cooling||0) >= 2; },
-        score: function(s){ return (s.s_size||0) + (s.cooling||0) + (s.advanced||0) + (s.advanced_env||0); }
-      },
-      { name: 'ヒラセガメ', latin: 'Pyxidea mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites',
-        reason: '扁平な甲羅で岩の隙間に逃げ込む独特の習性をもつ。植物食傾向が強め。夏の高温対策と適度な湿度管理が必要。著者も飼育中。',
-        specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜26℃', '難易度': '★★★' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.m_size||0) >= 1 && (s.cooling||0) >= 2; },
-        score: function(s){ return (s.m_size||0) + (s.cooling||0) + (s.advanced||0) + (s.advanced_env||0); }
-      },
-      { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites',
-        reason: '後ろ脚の趾が3本。陸棲傾向が強く腹甲を閉じて完全に甲羅に入れる「ハコガメ」の特性が魅力。著者も飼育中。',
-        specs: { '最大甲長': '18cm', 'タイプ': '陸棲〜半陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
-        score: function(s){ return (s.terrestrial||0) + (s.m_size||0) + (s.intermediate||0) + (s.advanced_env||0); }
-      },
-      { name: 'トウブハコガメ', latin: 'Terrapene carolina carolina', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
-        reason: '北米産ハコガメの基亜種。国内CBの流通も盛ん。腹甲全体を閉じられる独特の能力をもつ。雑食性で飼育食への移行も比較的容易。',
-        specs: { '最大甲長': '20cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
-        score: function(s){ return (s.terrestrial||0) + (s.m_size||0) + (s.intermediate||0); }
-      },
-      { name: 'マレーハコガメ', latin: 'Cuora amboinensis', emoji: '🌊', difficulty: '中〜上級', size: 'M（18〜20cm）', cites: 'CITES II', legal: 'cites',
-        reason: '東南アジア広域に分布する半水棲のハコガメ。水場・陸場を行き来する。高温多湿を好みアジア的な雰囲気がある。',
-        specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '26〜30℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1; },
-        score: function(s){ return (s.semi_aquatic||0) + (s.m_size||0) + (s.advanced_env||0); }
-      }
-    ]
-  },
-  {
-    id: 'exotic', emoji: '🌀', name: 'マニアック・特殊ルート',
-    desc: 'ソフトシェル・汽水・曲頸類など', qCount: 3,
-    questions: [
-      { text: '特に興味がある系統は？', choices: [
-        { label: 'スッポン・ソフトシェル系', scores: { softshell: 3, brackish: 0, snakeneck: 0, rare_asian: 0 } },
-        { label: '汽水・テラピン系', scores: { softshell: 0, brackish: 3, snakeneck: 0, rare_asian: 0 } },
-        { label: '曲頸類（ナガクビ・マゲクビ）', scores: { softshell: 0, brackish: 0, snakeneck: 3, rare_asian: 0 } },
-        { label: 'アジア産ハコガメの希少種', scores: { softshell: 0, brackish: 0, snakeneck: 0, rare_asian: 3 } }
-      ]},
-      { text: '設備投資の覚悟は？', choices: [
-        { label: '2〜3万円程度で抑えたい', scores: { budget_low: 3, budget_high: 0 } },
-        { label: '5万円以上かけられる', scores: { budget_low: 0, budget_high: 3 } },
-        { label: '10万円以上、本格的にやりたい', scores: { budget_low: 0, budget_high: 3, budget_max: 3 } }
-      ]},
-      { text: '飼育経験はどのくらいありますか？', choices: [
-        { label: '爬虫類・水棲生物の経験あり', scores: { intermediate: 3, advanced: 0 } },
-        { label: 'カメ・爬虫類の飼育経験豊富', scores: { intermediate: 1, advanced: 3 } },
-        { label: '希少種・マニアック種を飼育したことがある', scores: { intermediate: 0, advanced: 3, expert: 3 } }
-      ]}
-    ],
-    species: [
-      { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
-        reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
-        specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.softshell||0) >= 3; },
-        score: function(s){ return (s.softshell||0) + (s.advanced||0) + (s.budget_high||0); }
-      },
-      { name: 'ノーザンダイヤモンドバックテラピン', latin: 'Malaclemys terrapin terrapin', emoji: '💎', difficulty: '上級', size: 'M（15〜23cm）', cites: null, legal: null,
-        reason: '汽水（海水と淡水の混合）で飼育する北米唯一の汽水ガメ。独特の菱形模様が美しく専門的な塩分管理が必要。ディープなマニア向き。',
-        specs: { '最大甲長': '23cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.brackish||0) >= 3; },
-        score: function(s){ return (s.brackish||0) + (s.advanced||0) + (s.budget_high||0); }
-      },
-      { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'アマゾン川の底に潜む枯れ葉擬態の達人。生き餌または冷凍魚を水ごと吸い込む独特の捕食。水族館レベルの本格飼育種。',
-        specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
-        score: function(s){ return (s.snakeneck||0) + (s.advanced||0) + (s.expert||0); }
-      },
-      { name: 'ヘビクビガメ', latin: 'Chelodina longicollis', emoji: '🐍', difficulty: '中〜上級', size: 'M（20〜28cm）', cites: null, legal: null,
-        reason: 'オーストラリア産の曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる独特の防御行動が印象的。',
-        specs: { '最大甲長': '28cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★★' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.snakeneck||0) >= 2; },
-        score: function(s){ return (s.snakeneck||0) + (s.intermediate||0); }
-      },
-      { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES II', legal: 'cites',
-        reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。',
-        specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
-        links: [{ label: 'カメライフガイドトップ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/' }], asin: null,
-        match: function(s){ return (s.rare_asian||0) >= 2 && (s.advanced||0) >= 2; },
-        score: function(s){ return (s.rare_asian||0) + (s.advanced||0) + (s.expert||0); }
-      }
-    ]
-  },
-  {
-    id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: '全80種以上・6問で総合マッチング', qCount: 6,
-    questions: [
-      { text: '飼育環境の主な環境タイプを選んでください。', choices: [
-        { label: '水槽・水中メイン', scores: { aquatic: 4 } },
-        { label: '陸場メイン・半陸棲', scores: { terrestrial: 4 } },
-        { label: 'リクガメ専用ケージ', scores: { land_tortoise: 4 } }
-      ]},
-      { text: '希望するカメのサイズは？', choices: [
-        { label: '小型（〜15cm）', scores: { small: 3 } },
-        { label: '中型（15〜30cm）', scores: { medium: 3 } },
-        { label: '大型（30cm〜）', scores: { large: 3 } }
-      ]},
-      { text: '温度・湿度管理はどこまでできますか？', choices: [
-        { label: '乾燥〜普通（温度管理のみ）', scores: { dry_env: 3 } },
-        { label: '保湿〜多湿（ミスト使用可）', scores: { humid_env: 3 } },
-        { label: '夏の保冷も対応できる', scores: { cool_env: 3 } }
-      ]},
-      { text: '日本の法規制について事前に調べましたか？', choices: [
-        { label: '完全に把握している', scores: { legal_aware: 3 } },
-        { label: 'なんとなく知っている', scores: { legal_aware: 1 } },
-        { label: 'これから調べる', scores: { legal_aware: 0 } }
-      ]},
-      { text: 'どんな飼育体験をしたいですか？', choices: [
-        { label: '手から餌を食べさせたい・なつかせたい', scores: { interactive: 3 } },
-        { label: '自然な生態を観察したい', scores: { observational: 3 } },
-        { label: '希少種・マニアック種で差をつけたい', scores: { collector: 3 } }
-      ]},
-      { text: '飼育経験について教えてください。', choices: [
-        { label: 'はじめて（爬虫類も初）', scores: { beginner: 3, intermediate: 0, advanced: -1 } },
-        { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
-        { label: 'カメ・爬虫類の本格的な飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
-      ]}
-    ],
-    species: [
-      { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
-        reason: '水棲ガメの入門種。30〜45cm水槽から始められ、維持費も抑えられる。じっくり慣らすと手渡し給餌も可能。',
-        specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 2 && (s.beginner||0) >= 2; },
-        score: function(s){ return (s.aquatic||0) + (s.small||0) + (s.beginner||0) + (s.interactive||0); }
-      },
-      { name: 'ロシアリクガメ', latin: 'Testudo horsfieldii', emoji: '🏔️', difficulty: '中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'リクガメ入門の定番。乾燥環境向きで60cm程度のケージから始められる。なつきやすく対話的な飼育が楽しめる。',
-        specs: { '最大甲長': '20cm', 'ケージ': '60cm〜', '温度': '25〜32℃', '難易度': '★★☆' },
-        links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
-        match: function(s){ return (s.land_tortoise||0) >= 2 && (s.dry_env||0) >= 2; },
-        score: function(s){ return (s.land_tortoise||0) + (s.medium||0) + (s.dry_env||0) + (s.beginner||0) + (s.interactive||0); }
-      },
-      { name: 'スペングラーヤマガメ', latin: 'Geoemyda spengleri', emoji: '🌿', difficulty: '中〜上級', size: 'S（10〜14cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'サイト著者も飼育中。森林棲の小型種で夏の保冷管理が最大チャレンジ。慣れれば手渡し給餌も可能。マニア度が高い。',
-        specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜26℃', '難易度': '★★★' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.terrestrial||0) >= 2 && (s.small||0) >= 2 && (s.cool_env||0) >= 2; },
-        score: function(s){ return (s.terrestrial||0) + (s.small||0) + (s.cool_env||0) + (s.advanced||0) + (s.collector||0); }
-      },
-      { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites',
-        reason: '腹甲を完全に閉じる「箱型」の能力をもつ北米産ハコガメ。陸場メインで雑食性。観察しやすく個体差が楽しい。',
-        specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1; },
-        score: function(s){ return (s.terrestrial||0) + (s.medium||0) + (s.humid_env||0) + (s.intermediate||0) + (s.observational||0); }
-      },
-      { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: null, legal: null,
-        reason: 'チズガメ類の入門種。独特の甲羅の模様と首のラインが美しい。フィルター必須ですが60cm水槽から始められる。',
-        specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1; },
-        score: function(s){ return (s.aquatic||0) + (s.medium||0) + (s.intermediate||0) + (s.observational||0); }
-      },
-      { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm）', cites: 'CITES II', legal: 'cites',
-        reason: 'EU産CBの流通が豊富でコンディションが安定。温和な性格でなつきやすい。地中海らしい雰囲気が好きな方に。',
-        specs: { '最大甲長': '23cm', 'ケージ': '60cm〜', '温度': '25〜30℃', '難易度': '★★☆' },
-        links: [{ label: 'リクガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry-full.html' }], asin: null,
-        match: function(s){ return (s.land_tortoise||0) >= 2 && (s.medium||0) >= 1; },
-        score: function(s){ return (s.land_tortoise||0) + (s.medium||0) + (s.intermediate||0) + (s.interactive||0); }
-      },
-      { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
-        reason: '枯れ葉に擬態した神秘的なアマゾン産亀。待ち伏せ型捕食と独特の飼育方法が魅力のコレクター向き種。',
-        specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
-        links: [{ label: '水棲ガメ飼育ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html' }], asin: null,
-        match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2; },
-        score: function(s){ return (s.aquatic||0) + (s.large||0) + (s.advanced||0) + (s.collector||0) + (s.observational||0); }
-      },
-      { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: null, legal: null,
-        reason: '黒甲羅に黄色の水玉模様が美しい北米産。小型で観察しやすく、夏の保冷管理が得意な方向き。',
-        specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
-        links: [{ label: '半湿地帯生体ガイドへ', href: 'https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi-full.html' }], asin: null,
-        match: function(s){ return (s.small||0) >= 2 && (s.cool_env||0) >= 1; },
-        score: function(s){ return (s.small||0) + (s.cool_env||0) + (s.intermediate||0) + (s.observational||0); }
-      }
-    ]
-  }
-];
 
-let selectedRoute = null;
-let currentQuestionIndex = 0;
-let scores = {};
-let result = null;
-let answerHistory = [];
+// ===== 状態変数 =====
+var selectedRoute = null;
+var currentQuestionIndex = 0;
+var scores = {};
+var result = null;
+var resultScore = 0;
+var resultMaxScore = 0;
+var answerHistory = [];
+var toastTimer = null;
 
+// ===== 画面切替 =====
 function show(id) {
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
 }
 
+// ===== トースト =====
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2400);
+}
+
+// ===== URLパラメータ =====
+function saveResultToUrl(routeId, speciesName) {
+  try {
+    var url = new URL(location.href);
+    url.searchParams.set('r', routeId);
+    url.searchParams.set('s', encodeURIComponent(speciesName));
+    history.replaceState(null, '', url.toString());
+  } catch(e){}
+}
+
+function clearResultUrl() {
+  try {
+    var url = new URL(location.href);
+    url.searchParams.delete('r');
+    url.searchParams.delete('s');
+    history.replaceState(null, '', url.toString());
+  } catch(e){}
+}
+
+function tryRestoreFromUrl() {
+  try {
+    var params = new URLSearchParams(location.search);
+    var routeId = params.get('r');
+    var specName = decodeURIComponent(params.get('s') || '');
+    if (!routeId || !specName) return false;
+    var route = ROUTES.find(function(r){ return r.id === routeId; });
+    if (!route) return false;
+    var sp = route.species.find(function(s){ return s.name === specName; });
+    if (!sp) return false;
+    selectedRoute = route;
+    result = sp;
+    resultScore = 0;
+    resultMaxScore = 1;
+    showResult(sp, 0);
+    return true;
+  } catch(e){ return false; }
+}
+
+// ===== スコア%計算 =====
+function calcMatchPercent(sp, currentScores) {
+  // 全候補のスコア分布から相対%を算出
+  var candidates = selectedRoute ? selectedRoute.species : [];
+  var allScores = candidates.map(function(c){ return c.score(currentScores); });
+  var minS = Math.min.apply(null, allScores);
+  var maxS = Math.max.apply(null, allScores);
+  var myScore = sp.score(currentScores);
+  if (maxS === minS) return 85; // 全員同スコアなら85%固定
+  var pct = Math.round(((myScore - minS) / (maxS - minS)) * 55 + 40); // 40〜95%に正規化
+  return Math.min(95, Math.max(40, pct));
+}
+
+// ===== PHASE 5: 著者飼育中種リスト =====
+var OWNER_SPECIES = {
+  'スペングラーヤマガメ': true,
+  'ヒラセガメ': true,
+  'ミツユビハコガメ': true
+};
+
+// ===== PHASE 5: 寿命データ（平均寿命目安） =====
+var LIFESPAN_DATA = {
+  // リクガメ
+  'ロシアリクガメ':              '40〜50年',
+  'ヘルマンリクガメ（ヒガシ亜種）': '50〜80年',
+  'ヘルマンリクガメ（ニシ亜種）':  '50〜80年',
+  'ギリシャリクガメ':            '50〜100年',
+  'フチゾリリクガメ':            '50〜100年',
+  'エロンガータリクガメ':        '40〜60年',
+  'アカアシリクガメ':            '50〜80年',
+  'チャコリクガメ':              '50〜80年',
+  'ヒョウモンガメ':              '50〜100年',
+  'ベルセオレガメ':              '25〜50年',
+  'ソマリアリクガメ（エジプトリクガメ）': '20〜40年',
+  'ケヅメリクガメ（スルカタ）':  '50〜80年',
+  'アルダブラゾウガメ':          '80〜150年以上',
+  'インプレッサムツアシガメ':    '不明（長寿と推定）',
+  // 水棲
+  'ニオイガメ':                  '30〜50年',
+  'ヒメニオイガメ':              '20〜30年',
+  'ミシシッピドロガメ':          '20〜30年',
+  'ミスジドロガメ':              '20〜30年',
+  'カブトニオイガメ':            '20〜30年',
+  'スジクビニオイガメ':          '20〜30年',
+  'ホオアカドロガメ':            '20〜30年',
+  'ペインテッドタートル':        '25〜40年',
+  'クサガメ':                    '25〜40年',
+  'キバラガメ':                  '25〜40年',
+  'ミシシッピアカミミガメ':      '30〜40年',
+  'ミシシッピチズガメ':          '20〜30年',
+  'ニホンイシガメ':              '20〜30年',
+  'ヤエヤマイシガメ':            '20〜30年',
+  'マタマタ':                    '15〜30年',
+  'ブランディングガメ':          '60〜80年以上',
+  // ヤマガメ・ハコガメ
+  'スペングラーヤマガメ':        '25〜40年',
+  'ヒラセガメ':                  '30〜50年',
+  'ミツユビハコガメ':            '30〜50年',
+  'トウブハコガメ':              '50〜100年',
+  'キボシイシガメ':              '25〜50年',
+  'モリイシガメ':                '40〜60年',
+  'タイワンセマルハコガメ':      '25〜35年',
+  'マレーハコガメ':              '25〜30年',
+  'モエギハコガメ':              '30〜50年',
+  'ミスジハコガメ':              '30〜50年',
+};
+
+// ===== PHASE 5: 初心者警告データ =====
+var BEGINNER_WARN_DATA = {
+  'ケヅメリクガメ（スルカタ）':
+    '⚠️ <strong>飼育前に必ずご確認ください：</strong>成体は体重30〜100kgになります。6畳以上の屋外スペースと数十年の飼育計画が必要です。終生飼育できる環境を確保してから入手してください。',
+  'アルダブラゾウガメ':
+    '⚠️ <strong>大型種警告：</strong>成体は甲長120cm超・体重250kgを超えることもあります。施設レベルの飼育環境が必要で、個人飼育は非常に限られます。',
+  'ヒョウモンガメ':
+    '⚠️ <strong>上級者向け：</strong>成体は甲長65cm・体重40kgに達します。広いスペースと専門的な温度・湿度管理が必要です。',
+  'インプレッサムツアシガメ':
+    '⚠️ <strong>極めて飼育困難：</strong>低温・高湿度・高通気の三立が必要で、長期飼育記録が世界的にも少ない最難関種です。経験豊富な専門家のみ推奨します。',
+  'ミシシッピアカミミガメ':
+    '⚠️ <strong>条件付特定外来生物：</strong>新規購入・販売は法律で禁止されています。既飼育個体のみ継続飼育可。野外放流は絶対に禁止です。',
+  'スジオオニオイガメ':
+    '⚠️ <strong>取扱注意：</strong>噛みつき力が非常に強く、素手での取り扱いは厳禁です。CITES II規制対象で入手時は書類確認が必須。',
+  'フロリダスッポン':
+    '⚠️ <strong>攻撃的：</strong>非常に攻撃的で長い首で遠くまで噛みつきます。取り扱いには専用の器具が必要です。',
+  'スッポンモドキ':
+    '⚠️ <strong>大型種：</strong>成体は甲長70cmに達し、150cm以上の水槽が必要です。設備コストが高く本格的な飼育環境を用意してください。',
+  'ミスジハコガメ':
+    '⚠️ <strong>超希少・高価：</strong>国内流通が極めて限られ、入手価格は非常に高額です。CITES IIのCB証明書を必ず確認してください。',
+  'ミスジハコガメ（希少コレクション）':
+    '⚠️ <strong>超希少・高価：</strong>国内流通が極めて限られ、入手価格は非常に高額です。CITES IIのCB証明書を必ず確認してください。',
+};
+
+// ===== PHASE 5: 描画関数 =====
+function renderPhase5(sp) {
+  // 1) 著者飼育中バッジ
+  if (OWNER_SPECIES[sp.name]) {
+    var badges = document.getElementById('res-badges');
+    var ownerBadge = document.createElement('span');
+    ownerBadge.className = 'badge badge-owner';
+    ownerBadge.textContent = '著者飼育中';
+    ownerBadge.title = 'カメライフガイド著者が実際に飼育している種です';
+    badges.appendChild(ownerBadge);
+  }
+
+  // 2) 寿命バナー
+  var lifespanBanner = document.getElementById('lifespan-banner');
+  var lifespanYears = document.getElementById('lifespan-years');
+  var lifespan = LIFESPAN_DATA[sp.name];
+  if (lifespan) {
+    lifespanYears.textContent = lifespan;
+    lifespanBanner.style.display = '';
+  } else {
+    lifespanBanner.style.display = 'none';
+  }
+
+  // 3) 初心者警告
+  var warn = document.getElementById('beginner-warn');
+  var warnText = BEGINNER_WARN_DATA[sp.name];
+  if (warnText) {
+    warn.innerHTML = warnText;
+    warn.classList.add('show');
+  } else {
+    warn.innerHTML = '';
+    warn.classList.remove('show');
+  }
+}
+
+// ===== PHASE 4: note.com記事マップ =====
+var NOTE_ARTICLES = {
+  'スペングラーヤマガメ':   'https://note.com/proper_bison2362/n/n89de527bc4d0',
+  'ヒラセガメ':             'https://note.com/proper_bison2362/n/nb2a4c8e91f2c',
+  'ミツユビハコガメ':       'https://note.com/proper_bison2362/n/n7a3f1d9c5e6b',
+  'ニホンイシガメ':         'https://note.com/proper_bison2362/n/nf8c2a1d7e3b4',
+  'ヤエヤマイシガメ':       'https://note.com/proper_bison2362/n/n2d5f8a9c1e07',
+  'ノーザンダイヤモンドバックテラピン': 'https://note.com/proper_bison2362/n/n4b7e2f1a8c93',
+  'ニオイガメ':             'https://note.com/proper_bison2362',
+  'ロシアリクガメ':         'https://note.com/proper_bison2362',
+  'ヘルマンリクガメ（ヒガシ亜種）': 'https://note.com/proper_bison2362',
+  'ギリシャリクガメ':       'https://note.com/proper_bison2362',
+};
+
+// ===== PHASE 4: 機材推奨セクション描画 =====
+var EQUIP_CAT_LABELS = {
+  cage:      'ケージ',
+  uvb:       'UVB',
+  basking:   '保温',
+  substrate: '床材',
+  food:      'フード',
+  filter:    'フィルター'
+};
+
+function renderEquipment(sp) {
+  var sec = document.getElementById('equipment-section');
+  var list = document.getElementById('equipment-list');
+  list.innerHTML = '';
+
+  var eq = (typeof getEquipment === 'function') ? getEquipment(sp.name) : null;
+  if (!eq) { sec.style.display = 'none'; return; }
+
+  var hasAny = false;
+  var cats = ['cage', 'uvb', 'basking', 'substrate', 'food', 'filter'];
+  cats.forEach(function(cat) {
+    var item = eq[cat];
+    if (!item) return;
+    hasAny = true;
+    var asinHref = item.asin
+      ? 'https://www.amazon.co.jp/dp/' + item.asin + '?tag=kamelife09-22'
+      : null;
+    var row = document.createElement('div');
+    row.className = 'equipment-item';
+    row.innerHTML =
+      '<span class="equipment-cat">' + (EQUIP_CAT_LABELS[cat] || cat) + '</span>' +
+      '<span class="equipment-label">' + item.label + '</span>' +
+      (asinHref
+        ? '<a href="' + asinHref + '" class="equipment-link" target="_blank" rel="noopener noreferrer sponsored" data-cat="' + cat + '" data-species="' + sp.name + '">Amazon</a>'
+        : '<span class="equipment-na">—</span>');
+    list.appendChild(row);
+  });
+
+  sec.style.display = hasAny ? '' : 'none';
+
+  // GA4: 機材リンクのクリックイベント
+  list.querySelectorAll('.equipment-link').forEach(function(a) {
+    a.addEventListener('click', function() {
+      ga4Event('equipment_click', {
+        species_name: a.dataset.species,
+        category: a.dataset.cat,
+        asin: a.href.match(/\/dp\/([A-Z0-9]+)/)?.[1] || ''
+      });
+    });
+  });
+}
+
+// ===== PHASE 4: note.com誘導描画 =====
+function renderNoteCta(sp) {
+  var cta = document.getElementById('note-cta');
+  var link = document.getElementById('note-link');
+  var title = document.getElementById('note-title');
+  var url = NOTE_ARTICLES[sp.name];
+  var isSpecific = url && url.includes('/n/n');
+
+  if (url) {
+    link.href = url;
+    title.textContent = isSpecific
+      ? '「' + sp.name + '」の詳しい飼育記事を読む'
+      : 'カメライフガイドの飼育記事を読む';
+    cta.style.display = '';
+    // GA4: note誘導クリック
+    link.onclick = function() {
+      ga4Event('note_cta_click', { species_name: sp.name, has_article: isSpecific });
+    };
+  } else {
+    cta.style.display = 'none';
+  }
+}
+
+// ===== スタート画面初期化 =====
 function initStart() {
+  clearResultUrl();
   var container = document.getElementById('route-cards');
   container.innerHTML = '';
   ROUTES.forEach(function(route) {
     var card = document.createElement('button');
     card.className = 'route-card';
     card.dataset.id = route.id;
-    card.innerHTML = '<span class="route-emoji">' + route.emoji + '</span>' +
-      '<div class="route-info"><div class="route-name">' + route.name + '</div>' +
-      '<div class="route-desc">' + route.desc + '</div></div>' +
-      '<div class="route-card-arrow">▶</div>';
+    card.setAttribute('role', 'listitem');
+    card.innerHTML =
+      '<span class="route-emoji" aria-hidden="true">' + route.emoji + '</span>' +
+      '<div class="route-info">' +
+        '<div class="route-name">' + route.name + '</div>' +
+        '<div class="route-desc">' + route.desc + '</div>' +
+      '</div>' +
+      '<span class="route-card-arrow" aria-hidden="true">▶</span>';
     card.addEventListener('click', function(){ startQuizWithRoute(route.id); });
     container.appendChild(card);
   });
 }
 
+// ===== 診断開始 =====
 function startQuizWithRoute(id) {
   selectedRoute = ROUTES.find(function(r){ return r.id === id; });
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
+  // GA4: 診断開始
+  ga4Event('shindan_start', { route_id: id, route_name: selectedRoute.name });
   show('screen-quiz');
   showQuestion();
 }
 
+// ===== 質問表示 =====
 function showQuestion() {
   var route = selectedRoute;
   var q = route.questions[currentQuestionIndex];
   var total = route.questions.length;
+  var pct = Math.round((currentQuestionIndex / total) * 100);
+
+  // プログレスバー更新
   document.getElementById('progress-label').textContent = (currentQuestionIndex + 1) + ' / ' + total;
-  var pct = (currentQuestionIndex / total) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
+  var fill = document.getElementById('progress-fill');
+  fill.style.width = pct + '%';
+  fill.parentElement.setAttribute('aria-valuenow', pct);
+
+  // ステップドット更新
+  var dotsWrap = document.getElementById('step-dots');
+  if (dotsWrap) {
+    dotsWrap.innerHTML = '';
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'step-dot' + (i < currentQuestionIndex ? ' done' : i === currentQuestionIndex ? ' current' : '');
+      dot.setAttribute('aria-hidden', 'true');
+      dotsWrap.appendChild(dot);
+    }
+  }
+
   document.getElementById('route-badge').textContent = route.emoji + ' ' + route.name;
-  document.getElementById('question-text').textContent = q.text;
+  var qt = document.getElementById('question-text');
+  qt.textContent = q.text;
+  qt.focus();
+
   var container = document.getElementById('choices');
   container.innerHTML = '';
   q.choices.forEach(function(choice) {
@@ -594,11 +667,11 @@ function showQuestion() {
   });
 }
 
+// ===== 選択処理 =====
 function selectChoice(choice) {
   answerHistory.push({ questionIndex: currentQuestionIndex, scores: choice.scores });
   Object.entries(choice.scores).forEach(function(entry){
-    var key = entry[0]; var val = entry[1];
-    scores[key] = (scores[key] || 0) + val;
+    scores[entry[0]] = (scores[entry[0]] || 0) + entry[1];
   });
   currentQuestionIndex++;
   if (currentQuestionIndex < selectedRoute.questions.length) {
@@ -608,8 +681,12 @@ function selectChoice(choice) {
   }
 }
 
+// ===== 結果計算 =====
 function calcResult() {
-  document.getElementById('progress-fill').style.width = '100%';
+  var fill = document.getElementById('progress-fill');
+  fill.style.width = '100%';
+  fill.parentElement.setAttribute('aria-valuenow', 100);
+
   var candidates = selectedRoute.species;
   var matched = candidates.filter(function(sp){ return sp.match(scores); });
   var pool = matched.length > 0 ? matched : candidates;
@@ -620,34 +697,62 @@ function calcResult() {
     if (s > bestScore) { bestScore = s; best = sp; }
   });
   result = best;
-  showResult(best);
+  var pct = calcMatchPercent(best, scores);
+  // GA4: 診断結果
+  ga4Event('shindan_result', {
+    route_id: selectedRoute.id,
+    species_name: best.name,
+    match_pct: pct,
+    difficulty: best.difficulty,
+    cites: best.cites || 'none'
+  });
+  showResult(best, pct);
+  saveResultToUrl(selectedRoute.id, best.name);
 }
 
-function showResult(sp) {
+// ===== 結果表示 =====
+function showResult(sp, pct) {
   document.getElementById('res-emoji').textContent = sp.emoji;
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
   document.getElementById('res-reason').textContent = sp.reason;
+
+  // バッジ
   var badges = document.getElementById('res-badges');
   badges.innerHTML = '';
   var diffClass = sp.difficulty.indexOf('入門') >= 0 ? 'badge-beginner'
                 : sp.difficulty.indexOf('上級') >= 0 ? 'badge-advanced' : 'badge-intermediate';
-  badges.innerHTML += '<span class="badge ' + diffClass + '">' + sp.difficulty + '</span>';
-  badges.innerHTML += '<span class="badge badge-intermediate">' + sp.size + '</span>';
+  badges.innerHTML +=
+    '<span class="badge ' + diffClass + '">' + sp.difficulty + '</span>' +
+    '<span class="badge badge-intermediate">' + sp.size + '</span>';
   if (sp.cites) badges.innerHTML += '<span class="badge badge-cites">' + sp.cites + '</span>';
+
+  // 法規制
   var legalBox = document.getElementById('res-legal');
   if (sp.legal === 'cites') {
     legalBox.style.display = '';
     legalBox.className = 'legal-box';
     legalBox.textContent = '⚠️ この種はCITES IIです。国内で合法的に流通しているCB個体（国内繁殖個体）には取引証明書が発行されます。購入時は書類の有無を必ず確認してください。';
+  } else if (sp.legal === 'conditional_invasive') {
+    legalBox.style.display = '';
+    legalBox.className = 'legal-box';
+    legalBox.textContent = '⚠️ 条件付特定外来生物：新規購入・販売は禁止です。既飼育個体の継続飼育・少数無償譲渡は可。野外放流は厳禁。';
   } else {
     legalBox.style.display = 'none';
   }
+
+  // スペック
   var specGrid = document.getElementById('res-specs');
   specGrid.innerHTML = '';
   Object.entries(sp.specs).forEach(function(entry){
-    specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + entry[0] + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+    specGrid.innerHTML +=
+      '<div class="spec-item">' +
+        '<div class="spec-label">' + entry[0] + '</div>' +
+        '<div class="spec-value">' + entry[1] + '</div>' +
+      '</div>';
   });
+
+  // リンク
   var linksDiv = document.getElementById('res-links');
   linksDiv.innerHTML = '';
   sp.links.forEach(function(l){
@@ -656,40 +761,125 @@ function showResult(sp) {
   if (sp.asin) {
     linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife09-22" class="amazon-link" target="_blank" rel="noopener noreferrer">Amazon で関連商品を見る</a>';
   }
+
+  // ===== PHASE 5: 著者バッジ・寿命・初心者警告 =====
+  renderPhase5(sp);
+
+  // ===== PHASE 4: 機材推奨セクション =====
+  renderEquipment(sp);
+
+  // ===== PHASE 4: note.com誘導 =====
+  renderNoteCta(sp);
+
   show('screen-result');
+  document.getElementById('res-name').focus();
+
+  // スコアメーターをアニメーション表示
+  var displayPct = typeof pct === 'number' ? pct : 0;
+  document.getElementById('score-num').textContent = '0';
+  document.getElementById('score-bar').style.width = '0%';
+  setTimeout(function(){
+    document.getElementById('score-bar').style.width = displayPct + '%';
+    // カウントアップアニメーション
+    var start = 0;
+    var duration = 800;
+    var startTime = null;
+    function animCount(ts) {
+      if (!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      document.getElementById('score-num').textContent = Math.round(ease * displayPct);
+      if (progress < 1) requestAnimationFrame(animCount);
+    }
+    requestAnimationFrame(animCount);
+  }, 100);
 }
 
+// ===== 戻るボタン（モーダル付き） =====
 document.getElementById('btn-back').addEventListener('click', function(){
   if (currentQuestionIndex === 0) {
     show('screen-start');
   } else {
-    currentQuestionIndex--;
-    var removed = answerHistory.pop();
-    Object.entries(removed.scores).forEach(function(entry){
-      scores[entry[0]] = (scores[entry[0]] || 0) - entry[1];
-    });
-    showQuestion();
+    // 途中の場合はモーダル確認
+    openModal();
   }
 });
 
-document.getElementById('btn-retry').addEventListener('click', function(){
+// ===== モーダル =====
+function openModal() {
+  var m = document.getElementById('modal-quit');
+  m.classList.add('open');
+  document.getElementById('modal-cancel').focus();
+}
+function closeModal() {
+  document.getElementById('modal-quit').classList.remove('open');
+}
+document.getElementById('modal-cancel').addEventListener('click', closeModal);
+document.getElementById('modal-ok').addEventListener('click', function(){
+  closeModal();
   selectedRoute = null;
+  currentQuestionIndex = 0;
+  scores = {};
+  answerHistory = [];
   show('screen-start');
 });
+document.getElementById('modal-quit').addEventListener('click', function(e){
+  if (e.target === this) closeModal(); // オーバーレイクリックで閉じる
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeModal();
+});
 
+// ===== もう一度ボタン =====
+document.getElementById('btn-retry').addEventListener('click', function(){
+  selectedRoute = null;
+  currentQuestionIndex = 0;
+  scores = {};
+  answerHistory = [];
+  show('screen-start');
+  clearResultUrl();
+});
+
+// ===== シェアボタン（Web Share API + コピーfallback） =====
 document.getElementById('btn-share').addEventListener('click', function(){
   if (!result) return;
-  var text = '【亀診断】私に合う亀は「' + result.name + '」でした！🐢 #亀診断 #カメライフガイド';
-  var url = 'https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/';
+  var pct = document.getElementById('score-num').textContent;
+  var text = '【亀診断】私に合う亀は「' + result.name + '」(相性' + pct + '%)でした！🐢 #亀診断 #カメライフガイド';
+  var shareUrl = 'https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/?r=' +
+    encodeURIComponent(selectedRoute ? selectedRoute.id : '') +
+    '&s=' + encodeURIComponent(result.name);
+  // GA4: シェアイベント
+  ga4Event('shindan_share', { species_name: result.name, method: navigator.share ? 'native' : 'clipboard' });
   if (navigator.share) {
-    navigator.share({ title: 'あなたに合う亀診断', text: text, url: url }).catch(function(){});
+    navigator.share({ title: 'あなたに合う亀診断', text: text, url: shareUrl })
+      .catch(function(){});
   } else {
-    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url), '_blank', 'noopener,noreferrer');
+    // クリップボードコピー → fallback でTwitter
+    var fullText = text + ' ' + shareUrl;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(fullText).then(function(){
+        showToast('📋 コピーしました！');
+      }).catch(function(){
+        openTwitter(text, shareUrl);
+      });
+    } else {
+      openTwitter(text, shareUrl);
+    }
   }
 });
 
-document.addEventListener('DOMContentLoaded', initStart);
-initStart();
+function openTwitter(text, url) {
+  window.open(
+    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url),
+    '_blank', 'noopener,noreferrer'
+  );
+}
+
+// ===== 初期化（URL復元対応） =====
+if (!tryRestoreFromUrl()) {
+  initStart();
+}
 </script>
 </body>
 </html>
