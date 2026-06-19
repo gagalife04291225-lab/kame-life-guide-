@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本産カメの飼い方ガイド（ニホンイシガメ・ヤエヤマイシガメ）｜カメライフガイド</title>
+<meta name="description" content="ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメなど日本固有・日本産カメの飼育ガイド。野外個体は採集禁止。CB個体を選ぶ理由と、低温・夏越しのポイントをまとめます。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guide-japan.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  header.hero{background:var(--forest-deep);color:var(--parchment);padding:60px 0 54px;text-align:center;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:14px;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.05rem;line-height:1.3;margin-bottom:18px;}
+  header.hero p.lead{font-size:1.02rem;color:#d9e0d6;max-width:600px;margin:0 auto;}
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+  section.body{padding:40px 0 20px;}
+  section.body h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.5rem;color:var(--forest);margin:34px 0 16px;}
+  section.body h2:first-child{margin-top:0;}
+  section.body p{margin-bottom:16px;font-size:1rem;}
+  section.body ul{margin:0 0 18px 1.1em;}
+  section.body li{margin-bottom:8px;font-size:.98rem;}
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+  .warn-box{background:#fff8e1;border-left:4px solid #e6a817;padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;}
+  .warn-box strong{color:#b07c00;}
+  .species-tags{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px;}
+  .species-tags span{background:var(--forest);color:var(--parchment);font-size:.8rem;padding:4px 13px;border-radius:20px;letter-spacing:.02em;}
+  .sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 28px;}
+  .sp-card{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .sp-card .sp-name{font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:2px;}
+  .sp-card .sp-latin{font-style:italic;font-size:.78rem;color:#8a9389;margin-bottom:9px;}
+  .sp-card .sp-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px;}
+  .sp-badge{font-size:.72rem;padding:2px 9px;border-radius:14px;font-weight:700;}
+  .sp-badge.inter{background:#fff3e0;color:#8f5f2c;border:1px solid #f0c878;}
+  .sp-badge.size{background:var(--parchment);color:var(--forest);border:1px solid #d4c9a8;}
+  .sp-card .sp-reason{font-size:.86rem;color:#5a6b60;line-height:1.65;}
+  .compare-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:.92rem;}
+  .compare-table th{background:var(--forest);color:var(--parchment);padding:10px 14px;text-align:left;font-weight:700;}
+  .compare-table td{padding:10px 14px;border-bottom:1px solid #e4ddc9;background:#fff;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .gear{background:var(--forest-deep);color:var(--parchment);border-radius:14px;padding:30px 26px;margin:34px 0 10px;}
+  .gear h3{font-family:"Playfair Display",serif;font-style:italic;color:var(--accent);font-size:1.25rem;margin-bottom:6px;text-align:center;}
+  .gear .gear-sub{font-size:.9rem;color:#cdd8cc;text-align:center;margin-bottom:22px;}
+  .rlinks{display:flex;flex-direction:column;gap:11px;}
+  .rlink{display:flex;align-items:center;justify-content:space-between;background:var(--forest);color:var(--parchment);text-decoration:none;padding:15px 20px;border-radius:10px;border:1px solid #3d5a4b;transition:background .2s,border-color .2s;}
+  .rlink:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  .rlink .rl-txt{font-weight:700;font-size:1rem;}
+  .rlink .rl-sub{font-size:.82rem;color:#cdd8cc;display:block;margin-top:2px;font-weight:400;}
+  .rlink:hover .rl-sub{color:#f0e6d4;}
+  .rlink .rl-arrow{font-size:1.3rem;color:var(--accent);margin-left:14px;}
+  .rlink:hover .rl-arrow{color:#fff;}
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--accent);margin-bottom:18px;text-align:center;}
+  section.closing p{font-size:.98rem;margin-bottom:14px;color:#d9e0d6;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.9rem;padding:10px 20px;border-radius:24px;border:1px solid #3d5a4b;transition:background .2s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:26px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.76rem;color:#9aa89d;max-width:640px;margin:18px auto 0;line-height:1.7;}
+  @media(max-width:520px){
+    header.hero h1{font-size:1.6rem;}
+    .sp-grid{grid-template-columns:1fr;}
+    .compare-table{font-size:.82rem;}
+    .compare-table th,.compare-table td{padding:8px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Care Guide — Japanese Native Turtles</div>
+    <h1>日本産カメの<br>飼い方ガイド</h1>
+    <p class="lead">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ——日本の清流と里山に生きるカメたち。野外個体の採集は禁止。CB個体を選ぶことが、彼らの未来につながります。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="index.html">カメライフガイド</a> ＞ 種類から探す ＞ 日本産カメ
+  </div>
+</nav>
+
+<section class="body">
+  <div class="wrap">
+
+    <div class="species-tags">
+      <span>ニホンイシガメ</span><span>ヤエヤマイシガメ</span><span>ミナミイシガメ</span>
+    </div>
+
+    <h2>日本固有種の現状と飼育の意義</h2>
+    <p>ニホンイシガメ（<i>Mauremys japonica</i>）は日本固有種で、かつては全国の清流・水田・ため池に普通に見られました。しかし現在、生息地の消失・外来種（クサガメとの交雑・アライグマによる捕食）・採集圧などにより生息数が急減し、レッドリストに掲載される地域が増えています。</p>
+    <p>飼育下で命をつなぐ意義は小さくありません。ただし野外個体の採集は種の保全を脅かします。<b>必ず国内繁殖（CB）個体を選んでください。</b></p>
+
+    <h2>ニホンイシガメとクサガメの見分け方</h2>
+    <p>ペットショップで「イシガメ」として販売されているカメがクサガメ（<i>Mauremys reevesii</i>）であることは珍しくありません。購入前に以下の点を確認してください。</p>
+
+    <table class="compare-table">
+      <tr>
+        <th>特徴</th>
+        <th>ニホンイシガメ</th>
+        <th>クサガメ</th>
+      </tr>
+      <tr>
+        <td>背甲のキール</td>
+        <td>3本の明瞭なキール</td>
+        <td>幼体では3本あるが成体で目立たなくなる</td>
+      </tr>
+      <tr>
+        <td>腹甲</td>
+        <td>黄色〜橙色で模様ほぼなし</td>
+        <td>黒い大きな模様が入る</td>
+      </tr>
+      <tr>
+        <td>頭部</td>
+        <td>細かい模様がない黄土色</td>
+        <td>黄色い細かい縞模様が多数入る</td>
+      </tr>
+      <tr>
+        <td>臭腺</td>
+        <td>ほぼ無臭</td>
+        <td>威嚇時に独特の臭いを出す</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      <strong>⚠️ 交雑個体（ウンキュウ）に注意：</strong>ニホンイシガメとクサガメの交雑個体「ウンキュウ」が野外・飼育下で多数確認されています。外見が中間的で判別が難しく、野外への放流は厳禁。国内CB個体を入手する際は、信頼できるブリーダーや専門店から産地・親個体の情報付きで購入することを推奨します。
+    </div>
+
+    <h2>飼育の要点</h2>
+    <ul>
+      <li><b>水温管理：</b>ニホンイシガメは清水産で18〜27℃が適温。夏の高温（28℃超）が長続きすると体調を崩します。室内飼育では夏の冷却対策（水槽用クーラー・エアコン）が重要です。</li>
+      <li><b>水質：</b>清水を好む傾向があり、水の汚れに敏感。外部フィルター使用＋週1〜2回の水換えが基本です。</li>
+      <li><b>陸場・バスキング：</b>半水棲なので登りやすい陸場とバスキングスポットを設けます。甲羅干しは皮膚病予防に不可欠。</li>
+      <li><b>冬眠：</b>野外では冬眠しますが、室内飼育では通年加温で飼育するのが安全です。初心者の冬眠管理は事故リスクが高く、推奨しません。</li>
+      <li><b>餌：</b>雑食性。カメプロスなどの人工配合飼料を基本に、ときどき赤虫・野菜を与えます。</li>
+    </ul>
+
+    <h2>対応種リスト</h2>
+    <div class="sp-grid">
+
+      <div class="sp-card">
+        <div class="sp-name">ニホンイシガメ</div>
+        <div class="sp-latin">Mauremys japonica</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中級</span>
+          <span class="sp-badge size">M（13〜20cm）</span>
+        </div>
+        <div class="sp-reason">日本固有種で国内CB流通も確立。清水を好み夏の高温管理が重要。クサガメより水質に敏感。CB個体を必ず選ぶこと。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ヤエヤマイシガメ</div>
+        <div class="sp-latin">Mauremys mutica kami</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中級</span>
+          <span class="sp-badge size">M（15〜20cm）</span>
+        </div>
+        <div class="sp-reason">台湾・中国南部および八重山諸島に分布するイシガメの亜種。国内CB入手推奨。宮古島では国内外来種として問題視されており野外放流は厳禁。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ミナミイシガメ</div>
+        <div class="sp-latin">Mauremys mutica</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中級</span>
+          <span class="sp-badge size">M（15〜20cm）</span>
+        </div>
+        <div class="sp-reason">台湾・中国南部産のイシガメ属。国内CB流通あり。ニホンイシガメよりやや高温を好む傾向（22〜29℃）。コンパクトで管理しやすい。</div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>クサガメについて：</strong>クサガメは飼育ガイドページ（<a href="guide-water-full.html" style="color:var(--accent-dark)">水棲・淡水ガメ</a>）でも扱っています。外来起源説があり、厳密には「日本固有種」ではありません。本ページでは純粋な在来イシガメ3種に絞って解説しています。
+    </div>
+
+    <div class="gear">
+      <h3>この暮らしから選ぶ飼育機材</h3>
+      <div class="gear-sub">日本産カメの飼育に必要な機材を機材別ガイドで紹介しています</div>
+      <div class="rlinks">
+        <a class="rlink" href="cage-best10.html"><span class="rl-txt">ケージ・水槽の選び方<span class="rl-sub">60〜90cm水槽が目安、陸場の設計も重要</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="water-filter-best10.html"><span class="rl-txt">フィルターの選び方<span class="rl-sub">清水を好むイシガメの水質管理</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="uvb-light-best10.html"><span class="rl-txt">UVBライトの選び方<span class="rl-sub">屋内飼育のカルシウム吸収に</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="food-best10.html"><span class="rl-txt">餌・フードの選び方<span class="rl-sub">雑食性——人工フード＋副食のバランス</span></span><span class="rl-arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの暮らしのガイド</h2>
+    <p>飼っているカメの暮らしに近いガイドから、必要な機材を選んでください。</p>
+    <div class="hub-links">
+      <a href="guide-water-full.html">水棲・淡水ガメ</a>
+      <a href="guide-semi.html">半水棲（ニオイガメ等）</a>
+      <a href="guide-softshell.html">スッポン・ヘビクビガメ</a>
+      <a href="guide-brackish.html">汽水・テラピン</a>
+      <a href="guide-moist.html">ヤマガメ・ハコガメ</a>
+      <a href="guide-dry.html">乾燥系リクガメ</a>
+      <a href="guide-arid.html">多湿系リクガメ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。飼育方法は種・個体・飼育環境によって異なります。本ガイドは一般的な目安であり、お迎えする種の専門情報もあわせてご確認ください。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

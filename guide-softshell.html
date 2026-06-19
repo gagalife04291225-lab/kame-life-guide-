@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スッポン・ヘビクビガメの飼い方ガイド｜カメライフガイド</title>
+<meta name="description" content="スパイニースッポン・スッポンモドキ・ヘビクビガメ・ナガクビガメなど、特殊な体型を持つカメの飼育ガイド。砂底・深水・強力ろ過が共通の核心です。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guide-softshell.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  header.hero{background:var(--forest-deep);color:var(--parchment);padding:60px 0 54px;text-align:center;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:14px;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.05rem;line-height:1.3;margin-bottom:18px;}
+  header.hero p.lead{font-size:1.02rem;color:#d9e0d6;max-width:600px;margin:0 auto;}
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+  section.body{padding:40px 0 20px;}
+  section.body h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.5rem;color:var(--forest);margin:34px 0 16px;}
+  section.body h2:first-child{margin-top:0;}
+  section.body p{margin-bottom:16px;font-size:1rem;}
+  section.body ul{margin:0 0 18px 1.1em;}
+  section.body li{margin-bottom:8px;font-size:.98rem;}
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+  .warn-box{background:#fff8e1;border-left:4px solid #e6a817;padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;}
+  .warn-box strong{color:#b07c00;}
+  .species-tags{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px;}
+  .species-tags span{background:var(--forest);color:var(--parchment);font-size:.8rem;padding:4px 13px;border-radius:20px;letter-spacing:.02em;}
+  .sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 28px;}
+  .sp-card{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .sp-card .sp-name{font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:2px;}
+  .sp-card .sp-latin{font-style:italic;font-size:.78rem;color:#8a9389;margin-bottom:9px;}
+  .sp-card .sp-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px;}
+  .sp-badge{font-size:.72rem;padding:2px 9px;border-radius:14px;font-weight:700;}
+  .sp-badge.adv{background:#fdeaea;color:#b03a2e;border:1px solid #f5a9a0;}
+  .sp-badge.inter{background:#fff3e0;color:#8f5f2c;border:1px solid #f0c878;}
+  .sp-badge.cites{background:#fffde7;color:#7d6608;border:1px solid #e8d84a;}
+  .sp-badge.size{background:var(--parchment);color:var(--forest);border:1px solid #d4c9a8;}
+  .sp-card .sp-reason{font-size:.86rem;color:#5a6b60;line-height:1.65;}
+  .gear{background:var(--forest-deep);color:var(--parchment);border-radius:14px;padding:30px 26px;margin:34px 0 10px;}
+  .gear h3{font-family:"Playfair Display",serif;font-style:italic;color:var(--accent);font-size:1.25rem;margin-bottom:6px;text-align:center;}
+  .gear .gear-sub{font-size:.9rem;color:#cdd8cc;text-align:center;margin-bottom:22px;}
+  .rlinks{display:flex;flex-direction:column;gap:11px;}
+  .rlink{display:flex;align-items:center;justify-content:space-between;background:var(--forest);color:var(--parchment);text-decoration:none;padding:15px 20px;border-radius:10px;border:1px solid #3d5a4b;transition:background .2s,border-color .2s;}
+  .rlink:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  .rlink .rl-txt{font-weight:700;font-size:1rem;}
+  .rlink .rl-sub{font-size:.82rem;color:#cdd8cc;display:block;margin-top:2px;font-weight:400;}
+  .rlink:hover .rl-sub{color:#f0e6d4;}
+  .rlink .rl-arrow{font-size:1.3rem;color:var(--accent);margin-left:14px;}
+  .rlink:hover .rl-arrow{color:#fff;}
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--accent);margin-bottom:18px;text-align:center;}
+  section.closing p{font-size:.98rem;margin-bottom:14px;color:#d9e0d6;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.9rem;padding:10px 20px;border-radius:24px;border:1px solid #3d5a4b;transition:background .2s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:26px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.76rem;color:#9aa89d;max-width:640px;margin:18px auto 0;line-height:1.7;}
+  @media(max-width:520px){
+    header.hero h1{font-size:1.6rem;}
+    .sp-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Care Guide — Softshell &amp; Side-neck Turtles</div>
+    <h1>スッポン・ヘビクビガメの<br>飼い方ガイド</h1>
+    <p class="lead">砂に潜るスッポンと、首を横に曲げる曲頸類。共通するのは「深水」「強力ろ過」「繊細な取り扱い」——野生の暮らしから必要な環境を整理します。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="index.html">カメライフガイド</a> ＞ 種類から探す ＞ スッポン・ヘビクビガメ
+  </div>
+</nav>
+
+<section class="body">
+  <div class="wrap">
+
+    <div class="species-tags">
+      <span>スパイニースッポン</span><span>スッポンモドキ</span><span>シナスッポン</span>
+      <span>ヘビクビガメ</span><span>ナガクビガメ</span><span>ニシキマゲクビガメ</span>
+    </div>
+
+    <h2>スッポンと曲頸類——2つの「変わったカメ」</h2>
+    <p>このページで扱う2グループは、見た目も生態もまったく異なりますが、飼育の難しさという点で共通しています。</p>
+    <p><b>スッポン類（ソフトシェル）</b>は骨のある甲羅を持たず、革のような柔らかい皮膚で覆われています。水底の砂に潜り、長い首を素早く伸ばして獲物に噛みつく待ち伏せ型の捕食者。非常に攻撃的な個体が多く、素手での扱いは厳禁です。</p>
+    <p><b>曲頸類（サイドネック）</b>は、首を縦ではなく横に曲げて甲羅に収める独特の亜目。ヘビクビガメ・ナガクビガメ・アフリカヨコクビガメなど多様な種を含みます。スッポンより温和な種が多いものの、大型化する種も多く設備に余裕が必要です。</p>
+
+    <h2>飼育の核心：深水・砂底・強力ろ過</h2>
+    <ul>
+      <li><b>水深：</b>スッポンは最低20cm以上の水深が必要。砂に潜った状態で首を伸ばして水面に届く深さが理想です。曲頸類も水深は充分に取ります。</li>
+      <li><b>砂底（スッポン必須）：</b>細かい川砂を5〜10cm以上敷く。角のある砂は腹甲を傷つけるため使用禁止。大磯砂・サンゴ砂も不可。</li>
+      <li><b>ろ過：</b>大型肉食種が多く水を非常に汚します。外部フィルターまたは上部フィルターを使い、週1〜2回の水換えを組み合わせて水質を維持します。</li>
+      <li><b>水流：</b>スッポンは強い水流を嫌います。フィルターの排水は壁に当てて拡散させる等の工夫を。</li>
+      <li><b>陸場：</b>スッポンには原則不要（砂に潜って休む）。曲頸類には設けることが望ましい種もいます。</li>
+      <li><b>UVB：</b>補助的に用意する。陸場で日光浴する機会が少なくても、UVBランプで代替可能。</li>
+    </ul>
+
+    <div class="warn-box">
+      <strong>⚠️ 取り扱い注意：</strong>スッポン類は噛みつき力が非常に強く、首が長いため予想外の角度から咬傷を負います。スコップや専用トングを使い、素手での持ち上げは避けてください。スッポンモドキ・フロリダスッポンは特に攻撃的です。
+    </div>
+
+    <h2>対応種リスト</h2>
+
+    <h2 style="font-size:1.15rem;margin-top:20px;">スッポン類（ソフトシェル）</h2>
+    <div class="sp-grid">
+
+      <div class="sp-card">
+        <div class="sp-name">スパイニースッポン</div>
+        <div class="sp-latin">Apalone spinifera</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">L（30〜50cm）</span>
+        </div>
+        <div class="sp-reason">最も流通量の多いスッポン属。砂底必須・水流弱め。独特の柔らかい甲羅と素早い動きが魅力。取り扱いに注意。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">スムーススッポン</div>
+        <div class="sp-latin">Apalone mutica</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">L（25〜45cm）</span>
+        </div>
+        <div class="sp-reason">スパイニースッポンよりキールが目立たない滑らかな甲羅。同属の中では比較的温和な個体が多い。砂底・弱水流必須。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">フロリダスッポン</div>
+        <div class="sp-latin">Apalone ferox</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">L（35〜60cm）</span>
+        </div>
+        <div class="sp-reason">スッポン属最大種のひとつ。非常に攻撃的で飼育難度が高い。120cm以上の大型水槽が必須。本格経験者向け。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">スッポンモドキ</div>
+        <div class="sp-latin">Carettochelys insculpta</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">XL（50〜70cm）</span>
+        </div>
+        <div class="sp-reason">前肢がウミガメのようなヒレ状。ニューギニア・オーストラリア北部産。26〜30℃の高水温と150cm以上の大型水槽が必須。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">スッポン（シナスッポン）</div>
+        <div class="sp-latin">Pelodiscus sinensis</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中〜上級</span>
+          <span class="sp-badge size">L（25〜35cm）</span>
+        </div>
+        <div class="sp-reason">食用としても知られる東アジア産スッポン。国内流通が安定しており入手しやすい。砂底必須・噛みつき注意。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">アルビノシナスッポン</div>
+        <div class="sp-latin">Pelodiscus sinensis（アルビノ）</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中〜上級</span>
+          <span class="sp-badge size">L（25〜35cm）</span>
+        </div>
+        <div class="sp-reason">白〜クリーム色の体色が美しいシナスッポンのアルビノ。専門店で入荷確認済み。飼育方法は基本種と同じ。</div>
+      </div>
+
+    </div>
+
+    <h2 style="font-size:1.15rem;margin-top:8px;">曲頸類（ヘビクビ・ナガクビ・ヨコクビ）</h2>
+    <div class="sp-grid">
+
+      <div class="sp-card">
+        <div class="sp-name">ニシキマゲクビガメ（ピンクベリー）</div>
+        <div class="sp-latin">Emydura subglobosa</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中〜上級</span>
+          <span class="sp-badge size">M（18〜25cm）</span>
+        </div>
+        <div class="sp-reason">腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類の入門種として人気が高い。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ヘビクビガメ</div>
+        <div class="sp-latin">Chelodina longicollis</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中〜上級</span>
+          <span class="sp-badge size">M（20〜28cm）</span>
+        </div>
+        <div class="sp-reason">オーストラリア産の曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる独特の防御行動が印象的。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">アフリカヨコクビガメ</div>
+        <div class="sp-latin">Pelomedusa subrufa</div>
+        <div class="sp-badges">
+          <span class="sp-badge inter">中〜上級</span>
+          <span class="sp-badge size">M（15〜25cm）</span>
+        </div>
+        <div class="sp-reason">サハラ以南に広く分布する曲頸類。比較的安価で入手しやすい。水棲傾向が強く、横に首を曲げる行動が面白い。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ヒラリーカエルガメ</div>
+        <div class="sp-latin">Phrynops hilarii</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">L（30〜40cm）</span>
+        </div>
+        <div class="sp-reason">南米産曲頸類で流通量が多く飼育もしやすい入門的曲頸種。下顎のヒゲ状突起がユーモラス。大型になるが水質への許容範囲が広い。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ニシキヘビクビガメ</div>
+        <div class="sp-latin">Chelodina mccordi</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">M（25〜30cm）</span>
+        </div>
+        <div class="sp-reason">甲羅に美しい模様が入るチモール島産の曲頸類。ヘビクビガメより稀少でCB流通は限られる。本格的な曲頸類コレクション向き。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">ジーベンロックナガクビガメ</div>
+        <div class="sp-latin">Macrochelodina rugosa</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">L（25〜35cm）</span>
+        </div>
+        <div class="sp-reason">オーストラリア北部産の大型曲頸類。水中生活が主体で90cm以上の大型水槽が必要。頑丈な甲羅と大きなサイズが特徴。</div>
+      </div>
+
+      <div class="sp-card">
+        <div class="sp-name">パーケリーナガクビガメ</div>
+        <div class="sp-latin">Chelodina parkeri</div>
+        <div class="sp-badges">
+          <span class="sp-badge adv">上級</span>
+          <span class="sp-badge size">M（20〜25cm）</span>
+        </div>
+        <div class="sp-reason">ナガクビガメ属の中で最も精悍な顔つきと評されるニューギニア産。EUCB流通あり。色抜け個体は非常に美しい。</div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <strong>「スッポンモドキ」の名前に注意：</strong>スッポンモドキ（<i>Carettochelys insculpta</i>）はスッポンの仲間ではなく、ピッグノーズタートルとも呼ばれる独立した科の種です。管理方法も異なります（高水温・大型水槽・植物質の餌も与える）。
+    </div>
+
+    <div class="gear">
+      <h3>この暮らしから選ぶ飼育機材</h3>
+      <div class="gear-sub">スッポン・曲頸類に必要な機材を機材別ガイドで紹介しています</div>
+      <div class="rlinks">
+        <a class="rlink" href="water-filter-best10.html"><span class="rl-txt">フィルターの選び方<span class="rl-sub">大型肉食種向け・強力ろ過の選び方</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="cage-best10.html"><span class="rl-txt">ケージ・水槽の選び方<span class="rl-sub">深水対応・90cm以上が基準</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="substrate-best10.html"><span class="rl-txt">床材の選び方<span class="rl-sub">スッポン用：細かい川砂の選び方</span></span><span class="rl-arrow">→</span></a>
+        <a class="rlink" href="uvb-light-best10.html"><span class="rl-txt">UVBライトの選び方<span class="rl-sub">補助的なUVB照射の考え方</span></span><span class="rl-arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの暮らしのガイド</h2>
+    <p>飼っているカメの暮らしに近いガイドから、必要な機材を選んでください。</p>
+    <div class="hub-links">
+      <a href="guide-water-full.html">水棲・淡水ガメ</a>
+      <a href="guide-semi.html">半水棲（ニオイガメ等）</a>
+      <a href="guide-japan.html">日本産カメ</a>
+      <a href="guide-brackish.html">汽水・テラピン</a>
+      <a href="guide-moist.html">ヤマガメ・ハコガメ</a>
+      <a href="guide-dry.html">乾燥系リクガメ</a>
+      <a href="guide-arid.html">多湿系リクガメ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。飼育方法は種・個体・飼育環境によって異なります。本ガイドは一般的な目安であり、お迎えする種の専門情報もあわせてご確認ください。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
