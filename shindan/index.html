@@ -10,6 +10,8 @@
 <meta property="og:title" content="あなたに合う亀診断 | カメライフガイド">
 <meta property="og:description" content="5つのルートから自分に合う亀を診断。81種・5ルート対応。あなたに最適な亀が見つかります。">
 <meta property="og:url" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
+<meta property="og:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
+<meta name="twitter:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="カメライフガイド">
 <meta property="og:locale" content="ja_JP">
@@ -715,6 +717,7 @@ function calcResult() {
 
 // ===== 結果表示 =====
 function showResult(sp, pct) {
+  document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
   document.getElementById('res-emoji').textContent = sp.emoji;
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
