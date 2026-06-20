@@ -4,7 +4,7 @@
 // ASINはすべてweb_search実在確認済み（2026-06-19）。未確認はnullのまま。
 // Amazonアソシエイト タグ: kamelife09-22
 //
-// 確認済みASIN一覧:
+// 確認済みASIN一覧（web_search で amazon.co.jp に商品ページ実在を確認済み）:
 //   B00JZFJ5R0 = ビバリア スパイラルUVB デザート 26W（砂漠・リクガメ用）
 //   B00JZFJ5LQ = ビバリア スパイラルUVB フォレスト 26W（森林・水棲ガメ用）
 //   B0043AYZL8 = GEX EXOTERRA サングロータイトビーム バスキング 100W
@@ -13,6 +13,10 @@
 //   B0DF2SJMCJ = ビバリア リクガメフード 907g
 //   B00E0GMQAM = キョーリン カメプロス 200g
 //   B0012UO6Q6 = テトラ オートワンタッチフィルター AT-50
+//   B00I0MM9MC = あかぎ園芸 赤玉土 小粒 20L
+//   B005J94WEM = ジクラ 爬虫類専用万能ヤシガラマット 細目 8L
+//   B00XVP3TPO = 水作 水槽の底砂 大磯砂 2.4kg
+//   B004WH8YBO = 水作 水槽の底砂 川砂 2.4kg（スッポン用）
 
 const EQUIPMENT = {
 
@@ -107,7 +111,7 @@ const EQUIPMENT = {
     cage:      { asin: null,         label: '90cm以上水槽（深め）' },
     uvb:       { asin: 'B00JZFJ5LQ', label: 'ビバリア スパイラルUVB フォレスト 26W' },
     basking:   { asin: 'B0043B0AU2', label: 'マルカン バスキングライト 50W' },
-    substrate: { asin: 'B0C1Y1XRF5',         label: '水作 国産天然砂 川砂 1.0L' },
+    substrate: { asin: 'B004WH8YBO',         label: '水作 水槽の底砂 川砂 2.4kg' },
     food:      { asin: 'B00E0GMQAM', label: 'キョーリン カメプロス 200g' },
     filter:    { asin: 'B0012UO6Q6', label: 'テトラ オートワンタッチフィルター AT-50' }
   },
