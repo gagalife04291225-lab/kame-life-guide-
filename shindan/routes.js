@@ -75,7 +75,7 @@ const ROUTES = [
       { text: '原産地・産地へのこだわりは？', choices: [
         { label: '北米産（北アメリカ産が好み）', scores: { na_water: 3, asia_water: 0, eu_water: 0, sa_water: 0 } },
         { label: 'アジア・日本産（国産・アジア産が好み）', scores: { na_water: 0, asia_water: 3, eu_water: 0, sa_water: 0 } },
-        { label: '南米・アフリカ・欧州など珍しい産地', scores: { na_water: 0, asia_water: 0, eu_water: 3, sa_water: 0 } }
+        { label: '南米・アフリカ・欧州など珍しい産地', scores: { na_water: 0, asia_water: 0, eu_water: 3, sa_water: 3 } }
       ]},
       { text: '飼育したいカメの生息地の気候は？', choices: [
         { label: '温帯・涼しい環境産が好き（北米北部・日本等）', scores: { cool_climate: 3, warm_climate: 0, tropical_climate: 0 } },

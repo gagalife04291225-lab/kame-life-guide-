@@ -99,7 +99,7 @@ land: [
   { name: 'インプレッサムツアシガメ', latin: 'Manouria impressa', emoji: '🏔️', difficulty: '上級', size: 'M（25〜31cm）', cites: 'CITES II', legal: 'cites',
     reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
     specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
   }
@@ -682,7 +682,7 @@ all: [
   { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で高温多湿の環境が必要。大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.humid_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.humid_env||0)+(s.intermediate||0); }
   },
