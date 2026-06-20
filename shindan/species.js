@@ -43,14 +43,14 @@ land: [
   { name: 'エロンガータリクガメ', latin: 'Indotestudo elongata', emoji: '🌴', difficulty: '中〜上級', size: 'M（25〜33cm）', cites: 'CITES II', legal: 'cites',
     reason: '東南アジア〜インド産の森林性リクガメ。高温多湿の環境を好み、地中海系リクガメとは異なる飼育感覚が楽しい。ミスト管理がポイント。',
     specs: { '最大甲長': '33cm', '主な食事': '野草・野菜・果物少量', '水容量': '浅め水入れ', '温度': '27〜32℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.medium||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.medium||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.asia_land||0); }
   },
   { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.intermediate||0)+(s.charisma||0); }
   },
@@ -64,7 +64,7 @@ land: [
   { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)*2; }
   },
@@ -85,21 +85,21 @@ land: [
   { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
     reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0); }
   },
   { name: 'アルダブラゾウガメ', latin: 'Aldabrachelys gigantea', emoji: '🐘', difficulty: '上級', size: 'XL（80〜120cm）', cites: 'CITES II', legal: 'cites',
     reason: 'セイシェル・アルダブラ島固有の巨大リクガメ。個人飼育は法的に可能だが広大なスペースと数十年の覚悟が必要。ケヅメより穏やかな性格で知られる。',
     specs: { '最大甲長': '120cm超', '主な食事': '野草・乾草', '水容量': '水浴び池必須', '温度': '28〜33℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.humid||0) >= 1 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.charisma||0); }
   },
   { name: 'インプレッサムツアシガメ', latin: 'Manouria impressa', emoji: '🏔️', difficulty: '上級', size: 'M（25〜31cm）', cites: 'CITES II', legal: 'cites',
     reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
     specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
   }
@@ -363,7 +363,7 @@ forest: [
     match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
-  { name: 'ニカラグアクジャクガメ', latin: 'Rhinoclemmys annulata（ニカラグア産）', emoji: '🦚', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+  { name: 'ニカラグアクジャクガメ', latin: 'Rhinoclemmys pulcherrima incisa', emoji: '🦚', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
     reason: '鮮やかな模様を持つ中米産ヤマガメ。ぶりくら2025出品リストにニカラグアクジャクガメとして記載。半陸棲で水場と陸場を行き来する。高湿度環境が必要。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
@@ -472,7 +472,7 @@ exotic: [
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2; }
   },
-  { name: 'スッポンモドキ', latin: 'Carettochelys insculpta', emoji: '🌊', difficulty: '上級', size: 'XL（50〜70cm）', cites: null, legal: null,
+  { name: 'スッポンモドキ', latin: 'Carettochelys insculpta', emoji: '🌊', difficulty: '上級', size: 'XL（50〜70cm）', cites: 'CITES II', legal: 'cites',
     reason: 'ニューギニア・オーストラリア北部産の大型種。前肢がウミガメのようなヒレ状。26〜30℃の高水温と広い水槽が必須の本格飼育種。',
     specs: { '最大甲長': '70cm', '水槽サイズ': '150cm〜', '底床': '砂利〜砂', '水温': '26〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
@@ -522,7 +522,7 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; }
   },
   { name: 'ニシキヘビクビガメ', latin: 'Chelodina mccordi', emoji: '🎊', difficulty: '上級', size: 'M（25〜30cm）', cites: null, legal: null,
-    reason: '甲羅に美しい模様が入るチモール島産の曲頸類。ヘビクビガメより稀少でCB流通は限られる。本格的な曲頸類コレクションの一種。',
+    reason: '甲羅に美しい模様が入るロテ島（ロティ島・インドネシア）産の曲頸類。ヘビクビガメより稀少でCB流通は限られる。本格的な曲頸類コレクションの一種。',
     specs: { '最大甲長': '30cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★★' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.intermediate||0) >= 1; },
@@ -587,14 +587,14 @@ exotic: [
   { name: 'サソリドロガメ', latin: 'Kinosternon scorpioides', emoji: '🦂', difficulty: '上級', size: 'L（17〜27cm）', cites: null, legal: null,
     reason: 'ドロガメ属最大種。中南米広域に分布し複数の亜種が知られる。噛みつき力が非常に強く取り扱いに注意が必要。大型ドロガメ系の迫力と個性を楽しみたいマニア向き。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.collector_grade||0); }
   },
   { name: 'スジオオニオイガメ', latin: 'Staurotypus salvinii', emoji: '💪', difficulty: '上級', size: 'L（25〜38cm）', cites: 'CITES II', legal: 'cites',
     reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手での取り扱い厳禁。CITES II。大型ドロガメ系の究極形として国内での飼育者もいる本格マニア向き種。',
     specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     match: function(s){ return (s.large_mud||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
   }
@@ -682,7 +682,7 @@ all: [
   { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites',
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で高温多湿の環境が必要。大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.humid_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.humid_env||0)+(s.intermediate||0); }
   },
@@ -696,7 +696,7 @@ all: [
   { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.dry_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -710,7 +710,7 @@ all: [
   { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
     reason: '成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
   }
