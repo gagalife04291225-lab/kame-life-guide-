@@ -28,9 +28,9 @@ kame-life-guide-/
 │
 ├── # ──── ハビタット別飼育ガイド（guide-*.html）────
 ├── guide-dry.html          # 乾燥系リクガメ（ロシア・ヘルマン・ギリシャ等）
-├── guide-moist.html        # 多湿系リクガメ（エロンガータ・アカアシ等）
-├── guide-arid.html         # 砂漠系リクガメ（ヒョウモン・ケヅメ等）
-├── guide-semi.html         # 半水棲ガメ（ハコガメ・イシガメ等）
+├── guide-moist.html        # ヤマガメ・ハコガメ（半陸生・森林性：スペングラー・ヒラセ・ミツユビハコガメ等）
+├── guide-arid.html         # 多湿系リクガメ（熱帯・大型：アカアシ・ヒョウモン・ケヅメ等）
+├── guide-semi.html         # 半水棲ガメ（ニオイガメ・ドロガメ等）
 ├── guide-water-full.html   # 完全水棲ガメ（ニオイガメ・チズガメ等）
 ├── guide-brackish.html     # 汽水ガメ（ダイヤモンドバックテラピン等）
 ├── guide-japan.html        # 日本在来種（ニホンイシガメ等）
