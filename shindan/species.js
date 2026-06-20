@@ -64,7 +64,7 @@ land: [
   { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)*2; }
   },
@@ -85,14 +85,14 @@ land: [
   { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
     reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0); }
   },
   { name: 'アルダブラゾウガメ', latin: 'Aldabrachelys gigantea', emoji: '🐘', difficulty: '上級', size: 'XL（80〜120cm）', cites: 'CITES II', legal: 'cites',
     reason: 'セイシェル・アルダブラ島固有の巨大リクガメ。個人飼育は法的に可能だが広大なスペースと数十年の覚悟が必要。ケヅメより穏やかな性格で知られる。',
     specs: { '最大甲長': '120cm超', '主な食事': '野草・乾草', '水容量': '水浴び池必須', '温度': '28〜33℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 3 && (s.humid||0) >= 1 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.charisma||0); }
   },
@@ -696,7 +696,7 @@ all: [
   { name: 'ヒョウモンガメ', latin: 'Stigmochelys pardalis', emoji: '🐆', difficulty: '上級', size: 'L（40〜65cm）', cites: 'CITES II', legal: 'cites',
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.dry_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -710,7 +710,7 @@ all: [
   { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
     reason: '成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
-    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
   }
