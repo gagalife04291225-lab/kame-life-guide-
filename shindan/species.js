@@ -521,13 +521,6 @@ exotic: [
     match: function(s){ return (s.snakeneck||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; }
   },
-  { name: 'ニシキヘビクビガメ', latin: 'Chelodina mccordi', emoji: '🎊', difficulty: '上級', size: 'M（25〜30cm）', cites: null, legal: null,
-    reason: '甲羅に美しい模様が入るロテ島（ロティ島・インドネシア）産の曲頸類。ヘビクビガメより稀少でCB流通は限られる。本格的な曲頸類コレクションの一種。',
-    specs: { '最大甲長': '30cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★★' },
-    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    match: function(s){ return (s.snakeneck||0) >= 2 && (s.intermediate||0) >= 1; },
-    score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.advanced||0)+(s.collector_grade||0)*2; }
-  },
   { name: 'ジーベンロックナガクビガメ', latin: 'Macrochelodina rugosa', emoji: '🌊', difficulty: '上級', size: 'L（25〜35cm）', cites: null, legal: null,
     reason: 'オーストラリア北部産の大型曲頸類。頑丈な甲羅と大きなサイズが特徴。水中生活が主体で大型水槽が必要な本格派。',
     specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
