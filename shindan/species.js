@@ -75,13 +75,6 @@ land: [
     match: function(s){ return (s.advanced||0) >= 2 && (s.humid||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.humid||0)+(s.medium||0)+(s.charisma||0)*2; }
   },
-  { name: 'ソマリアリクガメ（エジプトリクガメ）', latin: 'Testudo kleinmanni', emoji: '🏜️', difficulty: '上級', size: 'S（8〜14cm）', cites: 'CITES II', legal: 'cites',
-    reason: '世界最小クラスのリクガメ。乾燥した砂漠地帯産で、CB流通は限られている。小さなケージで本格リクガメ飼育を楽しみたい上級者向き。',
-    specs: { '最大甲長': '14cm（メス）', '主な食事': '野草・乾燥野菜', '水容量': '極浅水入れ', '温度': '27〜35℃' },
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    match: function(s){ return (s.compact||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.small_form||0); }
-  },
   { name: 'ケヅメリクガメ（スルカタ）', latin: 'Centrochelys sulcata', emoji: '🦏', difficulty: '上級', size: 'XL（50〜100cm）', cites: 'CITES II', legal: 'cites',
     reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
@@ -114,7 +107,7 @@ aquatic: [
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
-  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '入門', size: 'S（8〜11cm）', cites: null, legal: null,
+  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '入門', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
     reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
@@ -240,7 +233,7 @@ aquatic: [
     match: function(s){ return (s.large_tank||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
-  { name: 'ブランディングガメ', latin: 'Emydoidea blandingii', emoji: '😊', difficulty: '上級', size: 'M（17〜27cm）', cites: null, legal: null,
+  { name: 'ブランディングガメ', latin: 'Emydoidea blandingii', emoji: '😊', difficulty: '上級', size: 'M（17〜27cm）', cites: 'CITES II', legal: null,
     reason: '黄色い喉元と半開きの口がにっこり笑っているように見える独特の風貌。温帯種で夏の高温に弱く保冷が必要。国内CB確認済み。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '15〜24℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
@@ -314,14 +307,14 @@ aquatic: [
 
 // ==================== ヤマガメ・ハコガメルート ====================
 forest: [
-  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: null, legal: null,
+  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
     reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
     specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); }
   },
-  { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: null, legal: null,
+  { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
     reason: '甲羅に年輪のような刻みと橙色の模様が美しい北米産。低温を好む温帯種で夏の保冷が必要。半水棲で陸場と水場を行き来する。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '16〜24℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
