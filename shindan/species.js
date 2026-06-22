@@ -92,7 +92,7 @@ land: [
   { name: 'インプレッサムツアシガメ', latin: 'Manouria impressa', emoji: '🏔️', difficulty: '上級', size: 'M（25〜31cm）', cites: 'CITES II', legal: 'cites',
     reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
     specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
   }
@@ -236,7 +236,7 @@ aquatic: [
   { name: 'ブランディングガメ', latin: 'Emydoidea blandingii', emoji: '😊', difficulty: '上級', size: 'M（17〜27cm）', cites: 'CITES II', legal: null,
     reason: '黄色い喉元と半開きの口がにっこり笑っているように見える独特の風貌。温帯種で夏の高温に弱く保冷が必要。国内CB確認済み。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '15〜24℃', '難易度': '★★★' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.advanced||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -310,14 +310,14 @@ forest: [
   { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
     reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
     specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); }
   },
   { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
     reason: '甲羅に年輪のような刻みと橙色の模様が美しい北米産。低温を好む温帯種で夏の保冷が必要。半水棲で陸場と水場を行き来する。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '16〜24℃', '難易度': '★★☆' },
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 1 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)+(s.ya_ma||0); }
   },
@@ -703,3 +703,4 @@ all: [
 ]
 
 }; // end SPECIES
+
