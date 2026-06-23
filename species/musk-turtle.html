@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ニオイガメの飼い方｜水槽・水温・フィルター・餌｜カメライフガイド</title>
+<meta name="description" content="ニオイガメ（Sternotherus odoratus）の飼育ガイド。北米東部の緩流・水草帯という野生環境から逆算した水温・水深・フィルター・餌の基本と、30cm水槽から始められる推奨機材セットをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/musk-turtle.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ニオイガメ：北米の沼地・水中の緑・苔むした底 */
+    --sp-from:#0e1e16;
+    --sp-to:#091410;
+    --sp-accent:#6daa88;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:linear-gradient(160deg,var(--sp-from) 0%,#142218 45%,var(--sp-to) 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 65% 25%,rgba(109,170,136,.18) 0%,transparent 55%),
+      radial-gradient(ellipse 40% 60% at 30% 70%,rgba(47,74,60,.3) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(109,170,136,.65);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#0e1e16;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid #1a6040;}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:#1a4030;line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  .point-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:10px;background:#e8f5ee;color:#2d6a4f;border:1px solid #a8d5be;margin-right:6px;vertical-align:middle;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🔬</span>
+    <h1>ニオイガメ</h1>
+    <div class="latin">Sternotherus odoratus — Common Musk Turtle</div>
+    <p class="lead">北米東部の浅い池や緩流に暮らす、最大14cmの小型水棲ガメ。30cm水槽から始められ、慣れると臭いもほとんど出さない——水棲ガメ入門の定番として長く愛されている種です。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">10〜14cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">入門</div></div>
+      <div class="stat-item"><div class="stat-label">法規制</div><div class="stat-value">制限なし</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">雑食（動物寄り）</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ニオイガメ
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <h2>野生の暮らし</h2>
+
+    <p>ニオイガメはアメリカ東部・カナダ南部に広く分布します。浅い池・沼・緩流の河川を好み、水草が茂り底が泥や砂の環境に生息しています。水深は浅めを好み、首を伸ばせば水面に頭を出せる程度の水位にいることが多いです。</p>
+
+    <p>英名「Common Musk Turtle（ムスクガメ）」は、威嚇時に腹部の臭腺から分泌液を出す習性から来ています。ただし飼育下で慣れた個体はほとんど臭いを出さないため、「臭い」という名前は日常的な問題になりません。</p>
+
+    <p>野生での食性は動物食が中心で、水生昆虫・甲殻類・小魚・貝類・両生類などを食べています。植物性食品（藻類・水草）も摂りますが、動物性食品への嗜好が強い種です。</p>
+
+    <div class="note-box">
+      <strong>気性について：</strong>小さな体に反して気が強く、指や他個体に噛みつくことがあります。ハンドリングは必要最小限にして、慣れるまでは焦らず見守る飼い方が向いています。慣れてくると自ら泳いでくる個体も多いです。
+    </div>
+
+    <h2>飼育環境の数値</h2>
+    <p>水棲ガメの飼育で最も重要なのは水質管理です。ニオイガメは小さな体の割に水を汚しやすいため、フィルター選びを最優先に考えます。</p>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">水温</div>
+        <div class="env-value">22〜28℃</div>
+        <div class="env-sub">ヒーターで管理。夏は冷却ファンで28℃を超えないよう注意。ベビーは25〜28℃がより安定</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">水深</div>
+        <div class="env-value">10〜30cm</div>
+        <div class="env-sub">首を伸ばして呼吸できる深さが安全。ベビーは5〜10cm程度の浅めから始める</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">水槽サイズ</div>
+        <div class="env-value">30〜45cm〜</div>
+        <div class="env-sub">成体には45cm以上を推奨。水量が多いほど水質が安定するため、余裕のあるサイズを</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">水質 pH</div>
+        <div class="env-value">6.5〜7.5</div>
+        <div class="env-sub">中性付近を維持。週1回の水換え（1/3程度）が基本。アンモニア・亜硝酸に注意</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">バスキング温度</div>
+        <div class="env-value">28〜32℃</div>
+        <div class="env-sub">陸場は必須。ニオイガメは甲羅干しをする。浮島や流木で体を完全に乾かせる場所を用意</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB</div>
+        <div class="env-value">UVB 5.0</div>
+        <div class="env-sub">水棲ガメには中程度のUVBが適切。なくても飼育は可能だが、設置することで代謝が安定する</div>
+      </div>
+    </div>
+
+    <h2>餌と与え方</h2>
+    <p>カメ専用人工フード（カメプロス・レプトミンなど）を主食にできます。動物食の強い種なので、冷凍赤虫・乾燥エビ・コオロギなどを補助的に与えると拒食になりにくいです。</p>
+    <p>給餌頻度はベビーは毎日少量、成体は2〜3日に1回が目安です。食べ残しは水質悪化の原因になるため、10分以内に食べ切れる量だけ与えます。</p>
+
+    <h2>推奨機材セット</h2>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">🏊</div>
+        <div class="gear-info">
+          <div class="gear-name">水槽 45cm規格（市販品）</div>
+          <div class="gear-why">30cmでも飼育可能ですが、水量が多いほど水質が安定します。45cm規格水槽は水量・管理のしやすさのバランスが良く、成体まで使えるサイズです。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=水槽+45cm+カメ&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/水槽+45cm+カメ" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🔄</div>
+        <div class="gear-info">
+          <div class="gear-name">テトラ オートワンタッチフィルター AT-50</div>
+          <div class="gear-why"><span class="point-tag">最重要</span>水質管理がニオイガメ飼育の核心。フンが多く水が汚れやすいため、フィルターは絶対に必要です。外掛け式は設置が簡単で、低水位でも使いやすいです。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0012USSE2/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/テトラ+AT-50+外掛け" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🌡️</div>
+        <div class="gear-info">
+          <div class="gear-name">水中ヒーター（サーモスタット付き）</div>
+          <div class="gear-why">水温を22〜28℃に安定させるために必須。カメがヒーターに直接触れないよう、カバー付きかコーナーに固定する工夫が必要です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=水中ヒーター+サーモスタット+カメ&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/水中ヒーター+サーモスタット+カメ" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏝️</div>
+        <div class="gear-info">
+          <div class="gear-name">タートルバンク S（吸盤式浮島）</div>
+          <div class="gear-why">ニオイガメは意外と甲羅干しをします。吸盤でガラスに固定できる浮島は小型水槽でも場所を取らず、管理がしやすいです。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B07SFCGCP1/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/タートルバンク+S+カメ+浮島" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">ビバリア スパイラルUVB フォレスト 26W</div>
+          <div class="gear-why">水棲ガメには中程度のUVB5.0クラスが適切。バスキングエリアに照射することでカルシウム代謝を助けます。1年を目安に交換してください。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5LQ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/スパイラルUVB+フォレスト" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🍖</div>
+        <div class="gear-info">
+          <div class="gear-name">キョーリン カメプロス 沈下性ペレット</div>
+          <div class="gear-why">水中で採食するニオイガメに向いた沈下性タイプ。タンパク質・ビタミン・カルシウムのバランスが取れた水棲ガメ定番フードです。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GMQAM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/カメプロス+沈下性" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>臭いは本当に出ますか？</summary>
+        <div class="faq-body">
+          ストレスを感じると腹部の臭腺からかなり強烈な臭いを分泌しますが、飼育下で慣れた個体は滅多に出しません。お迎え直後は慣れるまでハンドリングを控え、静かに見守ることが大切です。慣れた個体はほぼ無臭で、クサガメなどより扱いやすいという飼育者も多いです。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>カブトニオイガメとどちらが向いていますか？</summary>
+        <div class="faq-body">
+          ニオイガメは最大14cmと小さく30cm水槽から始められるため、スペース面での優位性があります。カブトニオイガメは最大16cmになりますが、背甲の独特なキール（稜線）が魅力です。どちらも水棲ガメ入門向けですが、より小型で省スペースを重視するならニオイガメがおすすめです。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>水換えはどのくらいの頻度でしますか？</summary>
+        <div class="faq-body">
+          フィルターを使用している場合は週1回・1/3〜1/2の水換えが基本です。フィルターなしの場合は毎日〜2日に1回の全換えが必要になります。水が白く濁ってきたり、アンモニア臭がするようになったら即座に水換えのサインです。定期的な水換えはニオイガメの健康管理で最も重要な作業です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>複数飼育はできますか？</summary>
+        <div class="faq-body">
+          ニオイガメは気が強く、縄張り意識のある個体もいます。スペースが十分にあれば複数飼育は可能ですが、餌の取り合いや噛み合いが起きることがあります。特にオス同士は相性が悪いことが多いため、観察しながら問題があればすぐ隔離できる準備をしておくことを推奨します。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a href="../guide-semi.html" class="rel-btn">🏊 半水棲ガメ 飼育ガイド</a>
+      <a href="../species/razorback-musk-turtle.html" class="rel-btn">⛑️ カブトニオイガメ</a>
+      <a href="../water-filter-best10.html" class="rel-btn">🔄 フィルター一覧</a>
+      <a href="../trouble/swollen-eyes.html" class="rel-btn">👁 目のトラブル</a>
+      <a href="../trouble/index.html" class="rel-btn">🚑 トラブル解決ハブ</a>
+      <a href="../food-best10.html" class="rel-btn">🍖 餌・フード一覧</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>ほかの水棲ガメも見てみたい方、自分に合う種を探している方は診断ツールへ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの飼育ガイド</h2>
+    <p>種一覧・ハビタットガイドからも探せます。</p>
+    <div class="hub-links">
+      <a href="../index.html">TOP</a>
+      <a href="../species-list.html">種一覧（81種）</a>
+      <a href="../guide-semi.html">半水棲ガメ</a>
+      <a href="../trouble/index.html">🚑 トラブル解決</a>
+      <a href="../shindan/index.html">🐢 亀診断</a>
+      <a href="../water-filter-best10.html">フィルター</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+  </div>
+</footer>
+</body>
+</html>
