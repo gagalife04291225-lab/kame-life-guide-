@@ -257,12 +257,21 @@ function legalBadge(sp) {
   return '';
 }
 
-// リンクURL（shindan/ の相対パス ../xxx.html → xxx.html）
+// 種別詳細ページマップ（Phase1実装済み3種）
+var SPECIES_PAGE_MAP = {
+  'ロシアリクガメ': 'species/russian-tortoise.html',
+  'ニオイガメ':     'species/musk-turtle.html',
+  'ミツユビハコガメ': 'species/three-toed-box-turtle.html'
+};
+
+// リンクURL（種別ページがあればそちら優先、shindan/ の相対パス ../xxx.html → xxx.html）
 function guideHref(sp) {
+  if (SPECIES_PAGE_MAP[sp.name]) return SPECIES_PAGE_MAP[sp.name];
   if (!sp.links || !sp.links[0]) return 'index.html';
   return sp.links[0].href.replace('../', '');
 }
 function guideLabel(sp) {
+  if (SPECIES_PAGE_MAP[sp.name]) return '詳しく見る';
   if (!sp.links || !sp.links[0]) return '飼育ガイドを見る';
   return sp.links[0].label;
 }
