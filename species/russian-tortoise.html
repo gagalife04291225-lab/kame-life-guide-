@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ロシアリクガメの飼い方｜温度・餌・ケージ・冬眠｜カメライフガイド</title>
+<meta name="description" content="ロシアリクガメ（Testudo horsfieldii）の飼育ガイド。中央アジアの乾燥草原・岩礫地という野生環境から逆算した温度・湿度・UVB・餌の基本と推奨機材セットをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/russian-tortoise.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ロシアリクガメ：中央アジアの岩礫地・青空・乾いた大地 */
+    --sp-from:#1a1e2e;
+    --sp-to:#0d1518;
+    --sp-accent:#9ab8d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:linear-gradient(155deg,var(--sp-from) 0%,#202830 45%,var(--sp-to) 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 70% 20%,rgba(154,184,216,.18) 0%,transparent 55%),
+      radial-gradient(ellipse 40% 60% at 25% 75%,rgba(212,169,106,.1) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(154,184,216,.65);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🏔️</span>
+    <h1>ロシアリクガメ</h1>
+    <div class="latin">Testudo (Agrionemys) horsfieldii — Russian Tortoise</div>
+    <p class="lead">カザフスタンからアフガニスタンにかけての乾燥草原・岩礫地に暮らす、リクガメ入門の定番種。好奇心旺盛でよくなつき、60〜90cmケージから始められるコンパクトさも人気の理由です。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">15〜20cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">入門〜中級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ロシアリクガメ
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <div class="cites-box">
+      <strong>⚠ CITES II 掲載種</strong>　国内CB個体は飼育可能です。購入時は国内CBであることを確認し、インボイス（取引証明書）付きの個体を選んでください。
+    </div>
+
+    <h2>野生の暮らし</h2>
+
+    <p>ロシアリクガメはカザフスタン南部・ウズベキスタン・トルクメニスタン・アフガニスタン・パキスタン北部にかけて広く分布します。「ロシアリクガメ」という名ですが、その分布域はむしろ中央アジアが中心です。</p>
+
+    <p>野生では乾燥した草原・岩礫地・砂漠縁辺部を好み、穴掘りが非常に得意です。夏の猛暑と冬の厳寒を穴の中で夏眠・冬眠してやり過ごすため、活動期間は春（3〜5月）と秋（9〜10月）に集中しています。活動可能な温度帯は意外と狭く、25〜32℃ほどが最適で、それ以外の季節は地下で過ごします。</p>
+
+    <p>食事は草・多肉植物・花・果実などで、野生では数十種類の植物を季節ごとに使い分けています。タンパク質はほとんど必要としない、純粋な草食動物です。</p>
+
+    <div class="note-box">
+      <strong>穴掘り習性に注意：</strong>野生での強い穴掘り本能があります。ケージの底を脱走できないよう塞ぐか、プラ舟などで飼育する場合は高さと強度に注意してください。屋外飼育では必ず逃走防止柵を設けます。
+    </div>
+
+    <h2>飼育環境の数値</h2>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキングスポット</div>
+        <div class="env-value">33〜38℃</div>
+        <div class="env-sub">中央アジアの強烈な日射を再現。石の上で体温を上げる行動を想定した高温スポットが必要</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">ケージ全体（昼間）</div>
+        <div class="env-value">24〜30℃</div>
+        <div class="env-sub">クールスポットは24℃前後。温度勾配を広めに設けて体温調整できる環境を</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">夜間温度</div>
+        <div class="env-value">16〜22℃</div>
+        <div class="env-sub">野生では夜間に急冷する。成体は低温耐性が高いが、幼体は18℃以下にしないよう注意</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">30〜50%</div>
+        <div class="env-sub">乾燥系リクガメの中でも特に乾燥を好む。高湿度（60%超）は呼吸器疾患のリスクになる</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB指数</div>
+        <div class="env-value">UVB 10.0</div>
+        <div class="env-sub">砂漠縁辺部の強い紫外線を再現。スパイラルUVBデザートやレプタイルUVB150が適切</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">推奨ケージサイズ</div>
+        <div class="env-value">60〜90cm〜</div>
+        <div class="env-sub">幼体は60cmから。成体には90cm以上の床面積が理想。穴掘り用に床材を厚く敷く</div>
+      </div>
+    </div>
+
+    <h2>餌と水の与え方</h2>
+
+    <p>タンポポ・オオバコ・シロツメクサ・チコリなど繊維質の高い野草が理想の主食です。入手できる季節は積極的に活用してください。葉野菜（コマツナ・チンゲン菜・ケール）も適していますが、ほうれん草は多量に与えないようにします。</p>
+
+    <p>人工フードはリクガメ専用のものを補助的に使えます。水でふやかして与えると食べやすいです。果物は糖分が多いため少量に留め、タンパク質（肉・昆虫など）は基本的に与えません。カルシウムパウダーを週2〜3回餌に振りかけることで甲羅の健康を維持します。</p>
+
+    <p>水入れは浅めのものを常設しますが、飲まない個体も多いです。週1〜2回の温浴（30℃・15〜20分）が水分補給と排泄促進に有効です。</p>
+
+    <h2>推奨機材セット</h2>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">グラステラリウム 6045（前面ドア・中大型）</div>
+          <div class="gear-why">ロシアリクガメはよく動き、穴を掘ろうとする行動も見せます。前面ドアで世話がしやすく、通気性が確保できる爬虫類専用ケージが管理しやすいです。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B004HXXKLM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/グラステラリウム+6045" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">ビバリア スパイラルUVB デザート 26W</div>
+          <div class="gear-why">中央アジアの乾燥砂漠環境を再現するUVB10.0クラス。ビタミンD3の合成とカルシウム代謝に必須。購入から1年を目安に交換します。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/スパイラルUVB+デザート" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏜️</div>
+        <div class="gear-info">
+          <div class="gear-name">赤玉土 小粒（乾燥系床材）</div>
+          <div class="gear-why">中央アジアの乾いた土地を再現するのに適した床材。穴掘り行動を受け止めるため5〜10cmの厚みで敷くのが理想。コスパが良く大量に使えます。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0CJM4TL3Q/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/赤玉土+小粒+爬虫類+リクガメ" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🪨</div>
+        <div class="gear-info">
+          <div class="gear-name">ロックシェルター SP XL（岩型シェルター）</div>
+          <div class="gear-why">岩陰に隠れて休む野生の習性を再現。成体がすっぽり入れるXLサイズが安心感を生みます。穴代わりに使う個体も多く、必需品です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B07F3SR326/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ロックシェルター+XL+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🍃</div>
+        <div class="gear-info">
+          <div class="gear-name">ビバリア リクガメフード 907g（大容量）</div>
+          <div class="gear-why">野草が手に入らない冬場の補助主食として。ビタミンD3・カルシウム配合で草食リクガメの栄養ニーズに対応。大容量で経済的です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード+907g" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">💧</div>
+        <div class="gear-info">
+          <div class="gear-name">ウォーターディッシュ M（浅型水入れ）</div>
+          <div class="gear-why">リクガメが飲みやすい浅型。深すぎると顔が浸かって危険なため、甲長の1/4以下の深さが目安です。自然石調デザインでケージに馴染みます。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B004HT2ZTO/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ウォーターディッシュ+M+リクガメ" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>なぜ「ロシアリクガメ」という名前なのですか？</summary>
+        <div class="faq-body">
+          かつてソ連（ロシア）領だった中央アジア一帯が主な分布域で、ソ連時代に大量に輸出されたことから「ロシアリクガメ」という名が広まりました。現在の主な分布国はカザフスタン・ウズベキスタン・アフガニスタンなどで、ロシア本土にはほとんど生息していません。学名の種小名 horsfieldii はイギリスの博物学者トーマス・ホースフィールドに由来します。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>穴掘りが激しくて困っています</summary>
+        <div class="faq-body">
+          野生での強い本能なので、完全に抑制はできません。床材を厚く（10cm以上）敷くことで掘る欲求をある程度満たせます。それでも激しい場合はストレス（温度・スペース不足）が原因のことが多いです。ケージの底に板を置いてトンネル掘りを防ぎつつ、床材を厚く確保する設計が理想です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>冬眠はさせた方がいいですか？</summary>
+        <div class="faq-body">
+          野生では厳しい冬眠をします。飼育下での冬眠は適切に管理すれば繁殖行動を促す効果がありますが、管理ミスで死亡するリスクもあります。初心者は室内で保温して通年飼育する方が安全です。冬眠させる場合は秋から食事量を落とし、体内の食物を消化させてから気温5〜10℃の環境で管理します。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>ヘルマンリクガメとどちらが飼いやすいですか？</summary>
+        <div class="faq-body">
+          どちらも入門向けですが、ロシアリクガメの方がやや低温に強く、穴掘り本能が強い分ケージの工夫が必要です。ヘルマンリクガメはEU産CBの流通が安定しており、飼育実績が豊富なため情報を集めやすい利点があります。見た目の好みや入手しやすさで選んで問題ありません。どちらも飼育環境の基本（温度・UVB・草食）は共通です。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a href="../guide-dry.html" class="rel-btn">🌵 乾燥系リクガメ 飼育ガイド</a>
+      <a href="../species/hermann-tortoise.html" class="rel-btn">🌿 ヘルマンリクガメ</a>
+      <a href="../species/greek-tortoise.html" class="rel-btn">🏛️ ギリシャリクガメ</a>
+      <a href="../trouble/not-eating.html" class="rel-btn">🍃 餌を食べないときは</a>
+      <a href="../trouble/index.html" class="rel-btn">🚑 トラブル解決ハブ</a>
+      <a href="../uvb-light-best10.html" class="rel-btn">☀️ UVBライト一覧</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>ほかのリクガメも見てみたい方、自分に合う種を探している方は診断ツールへ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの飼育ガイド</h2>
+    <p>種一覧・ハビタットガイドからも探せます。</p>
+    <div class="hub-links">
+      <a href="../index.html">TOP</a>
+      <a href="../species-list.html">種一覧（81種）</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../trouble/index.html">🚑 トラブル解決</a>
+      <a href="../shindan/index.html">🐢 亀診断</a>
+      <a href="../food-best10.html">餌・フード</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。法規制・流通状況は変動することがありますので購入前に最新情報をご確認ください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+  </div>
+</footer>
+</body>
+</html>
