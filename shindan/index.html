@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>あなたに合う亀診断 | カメライフガイド</title>
-<meta name="description" content="5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート81種から最適な1種を提案します。">
+<meta name="description" content="5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート・約80種から最適な1種を提案します。">
 <link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
 <!-- OGP -->
 <meta property="og:title" content="あなたに合う亀診断 | カメライフガイド">
-<meta property="og:description" content="5つのルートから自分に合う亀を診断。81種・5ルート対応。あなたに最適な亀が見つかります。">
+<meta property="og:description" content="5つのルートから自分に合う亀を診断。約80種対応。あなたに最適な亀が見つかります。">
 <meta property="og:url" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
 <meta property="og:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
 <meta name="twitter:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
@@ -18,14 +18,14 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="あなたに合う亀診断 | カメライフガイド">
-<meta name="twitter:description" content="81種・5ルートで診断。あなたに合う亀が見つかります。">
+<meta name="twitter:description" content="約80種対応で診断。あなたに合う亀が見つかります。">
 <!-- JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "あなたに合う亀診断",
-  "description": "5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート81種から最適な1種を提案します。",
+  "description": "5つのルートから自分に合う亀を診断。リクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルート・約80種から最適な1種を提案します。",
   "url": "https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/",
   "applicationCategory": "Quiz",
   "inLanguage": "ja",
@@ -219,7 +219,7 @@ body {
   <div class="logo-mark" aria-hidden="true">🐢</div>
   <h1 class="start-title">あなたに合う亀診断</h1>
   <p class="start-sub">カメライフガイド</p>
-  <div class="species-count" aria-label="対応種数">81種・5ルート対応</div>
+  <div class="species-count" aria-label="対応種数">約80種対応</div>
   <div class="route-intro">
     <div class="route-intro-label" id="route-cards-label">ルートをタップして診断スタート</div>
     <div class="route-cards" id="route-cards" role="list" aria-labelledby="route-cards-label"></div>
@@ -775,6 +775,19 @@ function showResult(sp, pct) {
       '<a href="../species/' + sp.slug + '.html" class="species-page-cta">' +
         '<div class="species-page-cta-label">Species Guide</div>' +
         '<div class="species-page-cta-title">' + sp.name + ' の詳しい飼育ガイドを読む<span class="species-page-cta-arrow">→</span></div>' +
+      '</a>';
+  }
+
+  // hasPage:false フォールバックCTA
+  if (!sp.hasPage) {
+    var habitatHref = '../guide-beginner.html';
+    if (sp.category === 'water' || sp.category === 'semi') habitatHref = '../guide-water-full.html';
+    else if (sp.category === 'tortoise' || sp.category === 'dry') habitatHref = '../guide-dry.html';
+    else if (sp.category === 'forest' || sp.category === 'humid') habitatHref = '../guide-humid.html';
+    linksDiv.innerHTML +=
+      '<a href="' + habitatHref + '" class="species-page-cta" style="opacity:.85;">' +
+        '<div class="species-page-cta-label">Habitat Guide</div>' +
+        '<div class="species-page-cta-title">このタイプの飼育ガイドを見る<span class="species-page-cta-arrow">→</span></div>' +
       '</a>';
   }
 
