@@ -617,14 +617,6 @@ exotic: [
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); }
   },
-  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
-    reason: 'アマゾン川の底に潜む枯れ葉擬態の達人。生き餌または冷凍魚を水ごと吸い込む独特の捕食。水族館レベルの本格飼育種。',
-    specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: 'matamata', hasPage: true,
-    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
-    score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.expert||0)+(s.budget_high||0); }
-  },
   { name: 'アマゾンマタマタ', latin: 'Chelus orinocensis', emoji: '🌿', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites',
     reason: 'オリノコ川水系産のマタマタ近縁種。外見はマタマタに酷似するが別種。CITES II。究極の枯れ葉擬態カメをコレクションに加えたい上級者向き。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
@@ -632,22 +624,6 @@ exotic: [
     slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_max||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0); }
-  },
-  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES II', legal: 'cites',
-    reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。希少種コレクター向き。',
-    specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
-    match: function(s){ return (s.rare_asian||0) >= 2 && (s.advanced||0) >= 2; },
-    score: function(s){ return (s.rare_asian||0)+(s.advanced||0)+(s.expert||0); }
-  },
-  { name: 'ミスジハコガメ（希少コレクション）', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites',
-    reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。CITES II。希少種を求める本格コレクター向きの頂点種。高価だがCB個体入手が夢のマニアには究極の存在。',
-    specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
-    match: function(s){ return (s.rare_asian||0) >= 3 && (s.intermediate||0) >= 1; },
-    score: function(s){ return (s.rare_asian||0)+(s.collector_grade||0)+(s.ultra_rare||0)+(s.budget_high||0); }
   },
   { name: 'サソリドロガメ', latin: 'Kinosternon scorpioides', emoji: '🦂', difficulty: '上級', size: 'L（17〜27cm）', cites: null, legal: null,
     reason: 'ドロガメ属最大種。中南米広域に分布し複数の亜種が知られる。噛みつき力が非常に強く取り扱いに注意が必要。大型ドロガメ系の迫力と個性を楽しみたいマニア向き。',
