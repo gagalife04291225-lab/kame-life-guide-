@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ケヅメリクガメの飼い方｜大型化・屋外飼育・長期計画｜カメライフガイド</title>
+<meta name="description" content="ケヅメリクガメ（Centrochelys sulcata）の飼育ガイド。サハラ以南の半乾燥地帯という野生環境から逆算した温度・餌・ケージと、成体100kg超に向けた長期計画の立て方をまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/sulcata-tortoise.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ケヅメリクガメ：サハラ以南のサバンナ・赤土・沈む太陽 */
+    --sp-from:#1e0e04;
+    --sp-to:#2a1208;
+    --sp-accent:#e8a54a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:linear-gradient(155deg,var(--sp-from) 0%,#3a1c06 45%,var(--sp-to) 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 65% 20%,rgba(232,165,74,.22) 0%,transparent 55%),
+      radial-gradient(ellipse 50% 40% at 20% 80%,rgba(180,80,10,.15) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(232,165,74,.65);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+
+  .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
+  .warn-box strong{color:#bf360c;}
+
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🦏</span>
+    <h1>ケヅメリクガメ</h1>
+    <div class="latin">Centrochelys sulcata — African Spurred Tortoise</div>
+    <p class="lead">サハラ砂漠南縁のサヘル地帯に生息する、世界第3位の大きさを誇るリクガメ。亜成体期の愛らしさに惚れ込む人は多いが、成体は甲長90cm・体重100kgに達する。10年先・20年先を見据えた計画こそが飼育の出発点です。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">60〜90cm超</div></div>
+      <div class="stat-item"><div class="stat-label">体重</div><div class="stat-value">成体30〜100kg</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ケヅメリクガメ
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="cites-box">
+    <strong>⚠️ CITES付属書II掲載種</strong><br>
+    国内CBは個人購入・飼育とも法的に問題ありません。輸出入には許可証が必要なため、<strong>信頼できる国内ブリーダーや爬虫類専門店からのCB個体を推奨</strong>します。
+  </div>
+</div>
+
+<main class="wrap">
+  <article class="article">
+
+    <h2>Wild Life — サヘルの大地を生きる</h2>
+    <p>ケヅメリクガメの原産地はセネガルからエチオピアにかけてのサヘル地帯。年間降水量200〜600mm、気温は日中40℃を超えることも珍しくない過酷な環境です。この地で彼らが選んだ戦略は「穴を掘ること」。最大深さ3m・奥行き10mにも及ぶ巣穴を自ら掘り、炎天下の昼間と夜間の冷え込みをしのぎます。</p>
+    <p>野生では乾季と雨季のリズムに合わせて活動パターンを変え、雨季には新鮮な草やイネ科植物を旺盛に食べ、乾季には穴の中で代謝を落として過ごします。この「食いだめ」の生理特性が、飼育下での肥満リスクにつながります。</p>
+    <div class="note-box">
+      <strong>穴掘り本能について</strong><br>
+      飼育下でも穴掘り行動は強く残ります。柔らかい土や砂を用意しないと、フェンスや壁を壊す方向にエネルギーが向かいます。成体の破壊力は相当なもので、木製ケージは数年で崩壊します。
+    </div>
+
+    <h2>飼育環境 — 幼体と成体で戦略が変わる</h2>
+    <p>ケヅメの飼育で最も重要なのは「現在のサイズ」でなく「5年後・10年後のサイズ」を前提に計画することです。幼体（10cm以下）はケージ飼育から始められますが、甲長30cmを超えた時点で屋外管理への移行を考え始める必要があります。</p>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキング温度</div>
+        <div class="env-value">38〜42℃</div>
+        <div class="env-sub">スポット直下。クールサイドは26℃前後を確保</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">環境温度（昼）</div>
+        <div class="env-value">28〜32℃</div>
+        <div class="env-sub">夜間は20℃以上をキープ。15℃以下は危険</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">30〜50%</div>
+        <div class="env-sub">過湿はRI（呼吸器感染症）の原因に。乾燥系が基本</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB</div>
+        <div class="env-value">UVI 3〜6</div>
+        <div class="env-sub">屋外飼育なら自然光が理想。室内はUVB12%相当を推奨</div>
+      </div>
+    </div>
+
+    <h3>幼体期（甲長〜20cm）のケージ管理</h3>
+    <p>幼体は体温調節能力が低く、乾燥や温度変化に敏感です。90〜120cmケージから始め、毎日30分程度の温浴で水分と排泄を促しましょう。床材は赤玉土と砂を7：3で混合したものが掃除しやすく推奨されます。</p>
+
+    <h3>成長後（甲長30cm〜）の屋外管理</h3>
+    <p>甲長30cmを超えると室内管理の限界が見えてきます。理想は6畳（約10㎡）以上の屋外スペース。コンクリートブロックや金属メッシュで周囲を囲み（高さ60cm以上）、冬季は温室や断熱小屋を用意します。日本の冬には保温が必須で、関東以西でも10月〜4月は補助加温が必要です。</p>
+
+    <div class="warn-box">
+      <strong>⚠️ 大型化のタイムライン（目安）</strong><br>
+      生後1年：甲長10〜15cm / 3年：20〜30cm / 5年：35〜50cm / 10年：60cm超・30kg超<br>
+      個体差・飼育環境により大きく異なりますが、10年以内に大型犬サイズになると考えておくべきです。
+    </div>
+
+    <h2>食事 — 質より量より「種類」が大切</h2>
+    <p>野生のケヅメはイネ科の乾草・多肉植物・低木の葉など繊維質に富んだ植物を主食とします。飼育下では<strong>チモシー・オーチャードグラスなどの乾草を主軸</strong>に、野草（タンポポ・オオバコ・クワ）を副食として与えます。市販のリクガメフードは補助的に使用可能ですが、主食化すると肥満・腎臓疾患のリスクが高まります。</p>
+    <p>果物は糖分が高く内臓負担になるため原則不要。カルシウム補給はカトルボーンや炭酸カルシウムを週2〜3回ふりかけで対応します。</p>
+
+    <h2>推奨機材セット</h2>
+    <p>幼体〜亜成体期（甲長20cmまで）の室内飼育を想定したセットです。</p>
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">UVB蛍光灯（12%・フォレスト/デザート兼用）</div>
+          <div class="gear-why">ケヅメは太陽光量の多い環境出身。室内では高出力UVB（10〜12%相当）が必須。6〜12ヶ月で交換。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ケヅメリクガメ+UVBランプ+爬虫類/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🔆</div>
+        <div class="gear-info">
+          <div class="gear-name">バスキングランプ（75〜100W）</div>
+          <div class="gear-why">スポット直下42℃を作るには高W数が必要。ランプと床面の距離を調整して適温を確認する。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043AYZL8?tag=kamelife09-22" target="_blank" rel="noopener">Amazon（75W）</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/バスキングランプ+リクガメ/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🌿</div>
+        <div class="gear-info">
+          <div class="gear-name">リクガメフード（補助用）</div>
+          <div class="gear-why">乾草が入手しにくい場合の補助食。主食は乾草・野草とし、フードは全体の2〜3割程度にとどめる。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード+乾草/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくあるトラブルQ&A</h2>
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>幼体が餌を食べません</summary>
+        <div class="faq-body">
+          バスキング温度が低い可能性が最も高いです。スポット直下が38℃以上あるか確認してください。消化吸収には高温が必要なため、温度が不足すると食欲が落ちます。次に環境に慣れていない場合もあります。シェルターを用意し、静かな場所で様子を見てください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>甲羅がデコボコになってきました（ピラミッディング）</summary>
+        <div class="faq-body">
+          タンパク質過多・急速な成長・湿度不足が主な原因とされています。乾草と野草中心の食事に切り替え、カルシウムを定期補給してください。完全には戻りませんが、適切な管理で進行を遅らせることは可能です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>成体になったとき飼えなくなるかもしれません</summary>
+        <div class="faq-body">
+          正直な不安として受け止めてほしい問題です。里親探しは非常に難しく、爬虫類専門の保護団体も少ないのが現状です。購入前に「終生飼育できるか」「屋外スペースを確保できるか」「家族の同意はあるか」を必ず確認してください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>冬の保温はどうすればいいですか？</summary>
+        <div class="faq-body">
+          屋外飼育の場合、断熱材で囲んだ小屋にパネルヒーターや遠赤外線ヒーターを組み合わせます。小屋内温度を最低15℃以上（できれば18℃以上）に保つことが目標。大型個体になるほど保温コストも上がるため、電気代も計算に入れた計画を立てましょう。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>穴を掘って外に出ようとします</summary>
+        <div class="faq-body">
+          本能的な行動です。フェンスは地面から30cm以上埋めるか、コンクリートブロックを基礎として使用してください。木材は数年で噛み壊されます。脱走防止には「地下対策」が地上対策と同じくらい重要です。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a class="rel-btn" href="../guide-dry.html">🌵 乾燥系リクガメ 飼育ガイド</a>
+      <a class="rel-btn" href="../species/russian-tortoise.html">🏔️ ロシアリクガメ</a>
+      <a class="rel-btn" href="../species/greek-tortoise.html">🏛️ ギリシャリクガメ</a>
+      <a class="rel-btn" href="../species/hermann-tortoise.html">🌿 ヘルマンリクガメ</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>大型リクガメを本当に飼えるか、生活環境から診断してみませんか？</p>
+      <a href="../index.html#shindan">🐢 カメ適性診断をはじめる</a>
+    </div>
+
+  </article>
+</main>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Kame Life Guide</h2>
+    <p>野生環境から逆算した飼育情報を、すべて無料で。</p>
+    <div class="hub-links">
+      <a href="../index.html">トップ</a>
+      <a href="../species-list.html">種一覧</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../guide-arid.html">多湿系リクガメ</a>
+      <a href="../uvb-light-best10.html">UVBランプ</a>
+      <a href="../food-best10.html">フード・餌</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2025 カメライフガイド</p>
+    <p class="disclaimer">本サイトの情報は飼育参考を目的としており、獣医学的診断・治療の代替となるものではありません。Amazonアソシエイトプログラム参加サイトです。</p>
+  </div>
+</footer>
+
+</body>
+</html>
