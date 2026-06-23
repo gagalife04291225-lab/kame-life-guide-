@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヘルマンリクガメの飼い方｜温度・餌・ケージ・EU産CBの選び方｜カメライフガイド</title>
+<meta name="description" content="ヘルマンリクガメ（ヒガシ亜種・ニシ亜種）の飼育ガイド。地中海の岩場と林縁の野生環境から逆算した温度・湿度・UVB・餌の基本と、推奨機材セットをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/hermann-tortoise.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ヘルマン専用：地中海の温かみあるオリーブグリーン */
+    --sp-hero-from:#1a2e1c;
+    --sp-hero-to:#0d1f1a;
+    --sp-accent:#a8c878;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* ヒーロー：地中海の岩場・夏の光 */
+  header.hero{
+    background:linear-gradient(155deg, var(--sp-hero-from) 0%, #2a3d1f 45%, var(--sp-hero-to) 100%);
+    color:var(--parchment);
+    padding:64px 0 56px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(168,200,120,.18) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212,169,106,.12) 0%, transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(212,200,170,.75);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  /* statsバー */
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:0;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  /* パンくず */
+  nav.crumbs{background:#1a2b23;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  /* CITES警告 */
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+
+  /* 記事本文 */
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:1.45rem;color:var(--forest);
+    margin:48px 0 18px;padding-bottom:10px;
+    border-bottom:1.5px solid #ddd5be;
+  }
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  /* note-box */
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  /* 環境数値カード */
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  /* 推奨機材 */
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px 18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  /* FAQ アコーディオン */
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  /* 内部リンク */
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  /* 診断CTA */
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  /* closing */
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stats-inner{gap:0;}
+    .stat-item{padding:8px 14px;font-size:.88rem;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🌿</span>
+    <h1>ヘルマンリクガメ</h1>
+    <div class="latin">Testudo hermanni — Hermann's Tortoise</div>
+    <p class="lead">南ヨーロッパの地中海沿岸、岩がちな丘陵と低木の林縁に暮らすリクガメ。EU産CBの流通が安定しており、地中海系リクガメのなかで最も飼育実績が積み重ねられた種のひとつです。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長（ヒガシ亜種）</div><div class="stat-value">15〜23cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ヘルマンリクガメ
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <div class="cites-box">
+      <strong>⚠ CITES II 掲載種</strong>　国内で繁殖されたCB個体は飼育可能です。購入時は国内CBであることを確認してください。輸入個体には書類（付属書II証明書）が必要です。
+    </div>
+
+    <h2>野生の暮らし</h2>
+
+    <p>ヘルマンリクガメは南ヨーロッパの地中海沿岸、スペイン東部からトルコ西部にかけて広く分布しています。<cite index="1-1">典型的な生息環境は日当たりの良い岩がちな丘陵地や、低木や草がまばらに生える半開放的な地中海性植生です。夏は高温乾燥、冬は低温多湿という地中海性気候が基盤で、晴れた日は早朝から太陽光で体を温め活動を始めます。</cite></p>
+
+    <p>野生では46科134種以上の植物を食べることが確認されており、タンポポ・アザミなどキク科植物を好む傾向があります。動物性食品はほとんど食べない、ほぼ完全な草食動物です。</p>
+
+    <p>亜種は3つ確認されており、<cite index="3-1">日本ではヒガシヘルマンリクガメが多く流通しています。飼育環境下で繁殖した個体が主に出回っているため、人に慣れており環境への順応性が高い個体が多いです。</cite>ニシ亜種はヒガシより小型で、最大18cm前後です。</p>
+
+    <div class="note-box">
+      <strong>ヒガシとニシの違い：</strong>ヒガシ亜種（boettgeri）は最大23cm前後で体色がやや明るく黒と黄のコントラストがはっきりしています。ニシ亜種（hermanni）は最大18cm前後と小型で体色がやや黒っぽい。日本の流通量はヒガシ亜種が圧倒的に多いです。
+    </div>
+
+    <h2>飼育環境の数値</h2>
+    <p><cite index="1-1">活動に適した温度帯は20〜30℃で、夏は暑さを避けて朝夕に活動します。</cite>飼育下ではこの温度勾配をケージ内で再現することが重要です。</p>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキングスポット</div>
+        <div class="env-value">33〜38℃</div>
+        <div class="env-sub">体温を上げるためのホットスポット。ライトから10〜15cm程度の距離で調整する</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">ケージ全体（昼間）</div>
+        <div class="env-value">25〜30℃</div>
+        <div class="env-sub">クールスポットは25℃前後に保ち、温度勾配を設ける</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">夜間温度</div>
+        <div class="env-value">18〜22℃</div>
+        <div class="env-sub">成体は一定の低温に耐えられる。幼体は20℃以下にしないよう注意</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">40〜60%</div>
+        <div class="env-sub">乾燥系だが極端な乾燥は皮膚に悪影響。高湿度（70%超）は避ける</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB指数</div>
+        <div class="env-value">UVB 10.0</div>
+        <div class="env-sub">乾燥草原の強い紫外線環境を再現。レプタイルUVB150クラスが目安</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">推奨ケージサイズ</div>
+        <div class="env-value">90cm〜</div>
+        <div class="env-sub">成体には120cm幅以上が理想。よく歩き回るため床面積が重要</div>
+      </div>
+    </div>
+
+    <h2>餌と水の与え方</h2>
+    <p>野草・葉野菜を主食にします。タンポポ・オオバコ・シロツメクサなどが手に入る季節は積極的に活用してください。チンゲン菜・コマツナ・ケールなども適しています。果物は糖分が多いため少量に留め、タンパク質（動物性食品）は基本的に不要です。</p>
+    <p>人工フード（レップカルやマズリなど）は主食として利用できますが、繊維質を補うため野草・野菜との組み合わせが推奨されます。カルシウムパウダーを餌に振りかけることで甲羅の形成を助けます。</p>
+    <p>水は浅めの水入れを常設します。温浴（週1〜2回、30℃のぬるま湯で15分程度）は水分補給と排泄促進に効果的です。</p>
+
+    <h2>推奨機材セット</h2>
+    <p>ヘルマンリクガメの飼育に必要な機材を、野生環境からの逆算でまとめます。</p>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">グラステラリウム 9045（前面ドア・大型）</div>
+          <div class="gear-why">ヘルマンはよく歩くリクガメです。成体には90cm幅の前面ドアケージが最低ライン。大型前面ドアで世話がしやすく、通気性も良好です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GLLKI/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/グラステラリウム+9045" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">レプタイルUVB150 26W（高UVBランプ）</div>
+          <div class="gear-why">地中海の強い日射を再現するためUVB10.0クラスが適切。カルシウム代謝とビタミンD3合成に必要。購入から1年が交換の目安です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00BF91PYA/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/レプタイルUVB150" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏔️</div>
+        <div class="gear-info">
+          <div class="gear-name">デザートソイル（乾燥系床材）</div>
+          <div class="gear-why">地中海の乾いた土の地面を再現。適度な硬さで歩行しやすく、誤飲リスクも低い。3〜5cmの厚さで敷くことで掘り行動も満足させられます。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B06XC8YK4Y/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/デザートソイル+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🪨</div>
+        <div class="gear-info">
+          <div class="gear-name">ロックシェルター SP XL</div>
+          <div class="gear-why">岩陰に隠れて休む野生の習性を再現。成体がすっぽり入れる大きさのシェルターが安心感を生みます。ドーム型で通気性も良好です。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B07F3SR326/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ロックシェルター+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🍃</div>
+        <div class="gear-info">
+          <div class="gear-name">レップカル リクガメフード（草食リクガメ用人工フード）</div>
+          <div class="gear-why">野草の入手が難しい時期の主食補助として。ビタミンD3・カルシウム配合で地中海リクガメの草食ニーズに対応しています。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00BBR33ZK/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/レップカル+リクガメフード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">💧</div>
+        <div class="gear-info">
+          <div class="gear-name">ウォーターディッシュ M（浅型水入れ）</div>
+          <div class="gear-why">リクガメが身を乗り出して飲める浅型が最適。深すぎると溺れるリスクがあります。岩型デザインで自然な景観にも馴染みます。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B004HT2ZTO/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ウォーターディッシュ+リクガメ" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>ヒガシ亜種とニシ亜種、どちらを選べばいいですか？</summary>
+        <div class="faq-body">
+          日本での流通量はヒガシ亜種（boettgeri）が圧倒的に多く、入手しやすいです。最大23cm前後と少し大きくなりますが、飼育環境はほぼ同じです。ニシ亜種（hermanni）は最大18cm前後と小型のため、スペースに制約がある方に向いています。どちらも国内CBが中心で、コンディションの良い個体が多いです。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>冬眠はさせた方がいいですか？</summary>
+        <div class="faq-body">
+          野生では冬眠しますが、飼育下では必須ではありません。冬眠中の管理ミスは命に関わるリスクがあるため、初心者は室内保温で冬眠させない方法を選ぶケースが多いです。冬眠させる場合は冬眠前に健康確認を行い、体重が適切か、寄生虫がないかを確認してから行ってください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>甲羅のこぶ（ピラミッド）が気になります</summary>
+        <div class="faq-body">
+          甲板が盛り上がる「ピラミッディング」はカルシウム不足・UVB不足・タンパク質過剰・急成長などが原因として挙げられています。一度変形した甲羅は元に戻りませんが、適切な環境で育てることで進行を抑えることができます。食事の多様化、UVBの確保、適度な温浴が予防になります。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>餌を急に食べなくなりました</summary>
+        <div class="faq-body">
+          最初にバスキングスポットの温度を確認してください。ホットスポットが33℃以上に達していないと消化器が正常に働かず食欲が落ちます。秋以降は季節性拒食（冬眠準備）の可能性もあります。2週間以上続く場合や体重減少がある場合は<a href="../trouble/not-eating.html" style="color:var(--accent-dark);">トラブルページ</a>を参照してください。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+
+    <div class="related-links">
+      <a href="../guide-dry.html" class="rel-btn">🌵 乾燥系リクガメ 飼育ガイド</a>
+      <a href="../species/russian-tortoise.html" class="rel-btn">🏔️ ロシアリクガメ</a>
+      <a href="../species/greek-tortoise.html" class="rel-btn">🏛️ ギリシャリクガメ</a>
+      <a href="../trouble/not-eating.html" class="rel-btn">🍃 餌を食べないときは</a>
+      <a href="../uvb-light-best10.html" class="rel-btn">☀️ UVBライト一覧</a>
+      <a href="../cage-best10.html" class="rel-btn">🏠 ケージ一覧</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>飼いたいカメがまだ決まっていない方、またはほかの種も見てみたい方は診断ツールへ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの飼育ガイド</h2>
+    <p>種一覧・ハビタットガイドからも探せます。</p>
+    <div class="hub-links">
+      <a href="../species-list.html">種一覧（81種）</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../guide-arid.html">多湿系リクガメ</a>
+      <a href="../trouble/index.html">🚑 トラブル解決</a>
+      <a href="../shindan/index.html">🐢 亀診断</a>
+      <a href="../food-best10.html">餌・フード</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      掲載する飼育情報は一般的な目安です。個体・環境・亜種によって最適値は異なります。法規制・流通状況は変動することがありますので、購入前に最新情報をご確認ください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
