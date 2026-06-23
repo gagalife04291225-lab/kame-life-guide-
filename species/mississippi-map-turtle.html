@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ミシシッピチズガメの飼い方｜水質・バスキング・観察の楽しみ｜カメライフガイド</title>
+<meta name="description" content="ミシシッピチズガメ（Graptemys pseudogeographica kohni）の飼育ガイド。北米ミシシッピ川水系の野生環境から逆算した水質・水温・バスキングの考え方と、オスメス差の大きなチズガメの魅力をまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/mississippi-map-turtle.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ミシシッピチズガメ：北米の大河・流れる水・岩の上の日光浴 */
+    --sp-from:#0e1a24;
+    --sp-to:#0a1018;
+    --sp-accent:#6eb8d4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:linear-gradient(155deg,#0e1a24 0%,#162535 45%,#0a1018 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 65% 45% at 65% 20%,rgba(110,184,212,.2) 0%,transparent 55%),
+      radial-gradient(ellipse 40% 35% at 20% 80%,rgba(212,169,106,.1) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(110,184,212,.65);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🗺️</span>
+    <h1>ミシシッピチズガメ</h1>
+    <div class="latin">Graptemys pseudogeographica kohni — Mississippi Map Turtle</div>
+    <p class="lead">北米ミシシッピ川水系に生息する、甲羅のキールと首の地図のような模様が特徴的な中型水棲ガメ。チズガメ類の中で最も流通が多く、観察型飼育の楽しみを教えてくれる入門種です。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長（オス）</div><div class="stat-value">8〜12cm</div></div>
+      <div class="stat-item"><div class="stat-label">甲長（メス）</div><div class="stat-value">15〜20cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中級</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">雑食</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ミシシッピチズガメ
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="article">
+
+    <h2>Wild Life — 大河の流れに刻まれた模様</h2>
+    <p>ミシシッピチズガメはミシシッピ川・オハイオ川などの大河川に生息し、流れのある清澄な水を好みます。岩や倒木の上で集団日光浴する姿がよく観察され、人が近づくとすぐに水中に飛び込む警戒心の強さが特徴です。</p>
+    <p>チズガメ（Map Turtle）という名前は、甲羅の模様が地図の等高線に似ていることに由来します。甲羅の背面中央を走るキール（隆起）も本種の特徴で、成長とともにはっきりしてきます。</p>
+    <div class="note-box">
+      <strong>オスとメスのサイズ差（性的二型）</strong><br>
+      チズガメ類はカメの中でも特にオスメス差が大きい種です。オスは最大12cm程度、メスは最大20cmに達します。ペア飼育ではメスに合わせた水槽サイズが必要です。また食性もやや異なり、メスは貝・甲殻類など硬い獲物をより多く食べます。
+    </div>
+
+    <h2>飼育環境 — 水質がすべての鍵</h2>
+    <p>チズガメ類は清澄な流水を好む種のため、水質悪化に対して他の水棲ガメより敏感です。強力なフィルターと定期的な水換えが飼育成功の絶対条件です。</p>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">水温</div>
+        <div class="env-value">22〜28℃</div>
+        <div class="env-sub">25℃前後が最適。30℃超は避ける。夏の高温対策が必要</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">バスキング温度</div>
+        <div class="env-value">30〜35℃</div>
+        <div class="env-sub">体全体を乾かせる陸場が必須。紫外線ランプも一緒に</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">水質</div>
+        <div class="env-value">清澄・中性</div>
+        <div class="env-sub">アンモニア・亜硝酸ゼロが目標。週1回以上の水換えを</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB</div>
+        <div class="env-value">UVI 2〜4</div>
+        <div class="env-sub">陸場でのバスキング時にUVBを当てる。室内はUVB5%相当</div>
+      </div>
+    </div>
+
+    <h3>水槽サイズの目安</h3>
+    <p>メス成体（20cm）には90cm以上の水槽が推奨されます。チズガメは活発に泳ぐため、クサガメより広い遊泳スペースがあると理想的です。水深は甲長の2倍以上を確保し、陸場は体全体が乗れるサイズを設置してください。</p>
+
+    <h3>警戒心の強さへの対応</h3>
+    <p>野生個体や慣れていない個体は人が近づくだけで水中に逃げ込みます。ガラス越しの観察を基本とし、餌やりの時間をルーティン化することで少しずつ慣れてきます。ハンドリングは最小限にとどめることが飼育のコツです。</p>
+
+    <h2>食事 — メスは硬い餌が好き</h2>
+    <p>配合飼料を主食に、副食として赤虫・コオロギ・小魚を与えます。メス成体は野生で二枚貝や巻貝を砕いて食べるため、カルシウム豊富な食材（カトルボーン・乾燥えび）を多めに取り入れると健康的です。オスはより小型なので食べる量も少なめです。</p>
+
+    <h2>推奨機材セット</h2>
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">🔬</div>
+        <div class="gear-info">
+          <div class="gear-name">外部式フィルター（高濾過能力）</div>
+          <div class="gear-why">チズガメは水質への感受性が高く、フィルターの性能が飼育成否を左右する。水量の5〜10倍/hを処理できる能力を選ぶ。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0012UO6Q6?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/亀+外部フィルター+水質/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🐢</div>
+        <div class="gear-info">
+          <div class="gear-name">亀用配合飼料</div>
+          <div class="gear-why">栄養バランスが整った水棲ガメ用フードが基本。浮上性タイプは食べ残し確認がしやすく水も汚れにくい。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GMQAM?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/カメフード+水棲ガメ/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🔆</div>
+        <div class="gear-info">
+          <div class="gear-name">UVB蛍光灯（5%・フォレスト）</div>
+          <div class="gear-why">室内飼育でのUVB確保に必須。バスキングランプと組み合わせて陸場に設置する。6〜12ヶ月で定期交換。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5LQ?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/亀+UVBランプ+水棲/" target="_blank" rel="noopener">楽天</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくあるトラブルQ&A</h2>
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>全然慣れてくれません・すぐ逃げます</summary>
+        <div class="faq-body">
+          チズガメは本来警戒心の強い種です。ガラス越しに静かに観察することを基本にしてください。餌やりを毎日同じ時間に行い、徐々に人の存在に慣らしていきます。ハンドリングを繰り返すとストレスになるため、観察型の飼育スタイルが向いています。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>水がすぐ汚れてアンモニア臭がします</summary>
+        <div class="faq-body">
+          フィルターの濾過能力が不足している可能性が高いです。水量の5〜10倍/hを処理できる外部式フィルターへのグレードアップを検討してください。また餌の量を適切に管理し（10分以内に食べきれる量）、食べ残しはすぐ取り除くことが重要です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>陸場に上がりません</summary>
+        <div class="faq-body">
+          陸場の設置場所・安定性・素材を確認してください。チズガメは人の目が気になって陸場に上がれないことがあります。水槽を見えにくい場所に置くか、シートで目隠しして観察窓だけ開けておく方法が有効です。また陸場の温度が低い場合も上がりません。バスキングライトで30〜35℃を確保してください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>オスとメスを一緒に飼えますか？</summary>
+        <div class="faq-body">
+          可能ですが、オスがメスにしつこく交尾を迫るストレスに注意が必要です。メスが食事できているか・逃げ場があるかを確認してください。またメスの産卵時期（春〜夏）には産卵床を用意してあげると健康維持につながります。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a class="rel-btn" href="../guide-water-full.html">💧 水棲ガメ 飼育ガイド</a>
+      <a class="rel-btn" href="../species/musk-turtle.html">🔬 ニオイガメ</a>
+      <a class="rel-btn" href="../species/reeves-turtle.html">🇯🇵 クサガメ</a>
+      <a class="rel-btn" href="../water-filter-best10.html">🔬 おすすめフィルター</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>自分に合う水棲ガメを診断してみませんか？</p>
+      <a href="../index.html#shindan">🐢 カメ適性診断をはじめる</a>
+    </div>
+
+  </article>
+</main>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Kame Life Guide</h2>
+    <p>野生環境から逆算した飼育情報を、すべて無料で。</p>
+    <div class="hub-links">
+      <a href="../index.html">トップ</a>
+      <a href="../species-list.html">種一覧</a>
+      <a href="../guide-water-full.html">水棲ガメガイド</a>
+      <a href="../guide-semi.html">半水棲ガメガイド</a>
+      <a href="../water-filter-best10.html">フィルター</a>
+      <a href="../food-best10.html">フード・餌</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2025 カメライフガイド</p>
+    <p class="disclaimer">本サイトの情報は飼育参考を目的としており、獣医学的診断・治療の代替となるものではありません。Amazonアソシエイトプログラム参加サイトです。</p>
+  </div>
+</footer>
+
+</body>
+</html>
