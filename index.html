@@ -375,6 +375,26 @@
     .entry-nav-btns a{font-size:.88rem;padding:10px 16px;}
     .sp-inner{flex-direction:column;align-items:flex-start;}
   }
+  /* === 人気の亀ガイド === */
+  section.popular-guides{padding:34px 0 10px;border-top:1px solid #ddd5be;}
+  .pg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+  .pg-card{
+    background:#fff;border:1.5px solid #ddd5be;border-radius:14px;
+    padding:20px 18px 18px;text-decoration:none;color:var(--forest-deep);
+    display:flex;flex-direction:column;gap:6px;
+    box-shadow:0 2px 8px rgba(13,31,26,.06);
+    transition:border-color .15s,transform .14s,box-shadow .14s;
+  }
+  .pg-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,31,26,.1);}
+  .pg-emoji{font-size:2rem;line-height:1;margin-bottom:4px;}
+  .pg-name{font-weight:700;font-size:.98rem;color:var(--forest);line-height:1.35;}
+  .pg-latin{font-style:italic;font-size:.72rem;color:#8a9389;margin-top:1px;}
+  .pg-desc{font-size:.8rem;color:#5a6b60;line-height:1.6;margin-top:4px;flex:1;}
+  .pg-cta{font-size:.78rem;font-weight:700;color:var(--accent-dark);margin-top:8px;}
+  .pg-all{display:block;text-align:center;margin-top:18px;font-size:.9rem;color:var(--accent-dark);font-weight:700;text-decoration:none;}
+  .pg-all:hover{text-decoration:underline;}
+  @media(max-width:520px){.pg-grid{grid-template-columns:1fr;gap:10px;}}
+
 </style>
 <body>
 
@@ -491,6 +511,38 @@
       </div>
       <a href="species-list.html" class="sp-link">81種の一覧を見る →</a>
     </div>
+  </div>
+</section>
+
+<section class="popular-guides">
+  <div class="wrap">
+    <div class="section-eyebrow">Popular Species</div>
+    <h2 class="section-title">人気の亀ガイド</h2>
+    <p class="section-note">実飼育者が書いた、3種の詳しいガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
+    <div class="pg-grid">
+      <a href="species/russian-tortoise.html" class="pg-card">
+        <div class="pg-emoji">🏔️</div>
+        <div class="pg-name">ロシアリクガメ</div>
+        <div class="pg-latin">Testudo horsfieldii</div>
+        <p class="pg-desc">リクガメ入門の定番。60〜90cmケージから始められる乾燥系リクガメ。好奇心旺盛でなつきやすい。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
+      <a href="species/musk-turtle.html" class="pg-card">
+        <div class="pg-emoji">🔬</div>
+        <div class="pg-name">ニオイガメ</div>
+        <div class="pg-latin">Sternotherus odoratus</div>
+        <p class="pg-desc">水棲ガメ入門の定番。最大14cm・30cm水槽から。慣れれば臭いも少なく飼育しやすい小型種。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
+      <a href="species/three-toed-box-turtle.html" class="pg-card">
+        <div class="pg-emoji">📦</div>
+        <div class="pg-name">ミツユビハコガメ</div>
+        <div class="pg-latin">Terrapene carolina triunguis</div>
+        <p class="pg-desc">腹甲を完全に閉じる独自構造の北米産ハコガメ。雑食性で飼育食への移行がしやすい。著者も飼育中。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
+    </div>
+    <a href="species-list.html" class="pg-all">全81種の一覧を見る →</a>
   </div>
 </section>
 
