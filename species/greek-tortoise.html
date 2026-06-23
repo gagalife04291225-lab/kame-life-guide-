@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ギリシャリクガメの飼い方｜亜種・産地・温度・餌｜カメライフガイド</title>
+<meta name="description" content="ギリシャリクガメ（Testudo graeca）の飼育ガイド。イベラ・アラブ・アナムールなど亜種による環境差と、地中海〜中東の乾燥草原から逆算した温度・UVB・餌の基本をまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/greek-tortoise.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* ギリシャ専用：古代遺跡・白亜の石灰岩・地中海の青 */
+    --sp-hero-from:#1c2535;
+    --sp-hero-to:#0d1520;
+    --sp-accent:#c8b87a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* ヒーロー：古代の石造り・白い石灰岩の大地 */
+  header.hero{
+    background:linear-gradient(150deg, var(--sp-hero-from) 0%, #252d1a 50%, var(--sp-hero-to) 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 75% 15%, rgba(200,184,122,.15) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 70% at 25% 75%, rgba(100,130,80,.1) 0%, transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(200,184,122,.7);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:0;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#1a2228;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+
+  /* 重要警告（亜種問題） */
+  .warn-box{background:#fdf0ef;border-left:4px solid #c0392b;padding:16px 20px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.92rem;color:#5a1a12;}
+  .warn-box strong{color:#c0392b;}
+
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  /* 亜種比較テーブル */
+  .subspecies-table{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(13,31,26,.07);margin:20px 0;}
+  .st-head{background:var(--forest);color:var(--parchment);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;padding:12px 18px;font-size:.78rem;font-weight:700;gap:4px;}
+  .st-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;padding:12px 18px;border-bottom:1px solid #f0ebe0;font-size:.84rem;line-height:1.5;gap:4px;}
+  .st-row:last-child{border-bottom:none;}
+  .st-row:nth-child(even){background:#fafaf7;}
+  .st-name{font-weight:700;color:var(--forest);}
+
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .st-head,.st-row{grid-template-columns:1.2fr 1fr 1fr;font-size:.78rem;}
+    .st-head span:last-child,.st-row span:last-child{display:none;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🏛️</span>
+    <h1>ギリシャリクガメ</h1>
+    <div class="latin">Testudo graeca — Greek Tortoise / Spur-thighed Tortoise</div>
+    <p class="lead">甲羅の模様がギリシャ織りに似ていることから名付けられた、地中海から中東・北アフリカに広く分布するリクガメ。亜種が非常に多く、産地によって環境適応が大きく異なるのが最大の特徴です。</p>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">15〜25cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中〜上級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ギリシャリクガメ
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <div class="cites-box">
+      <strong>⚠ CITES II 掲載種</strong>　国内で繁殖されたCB個体は飼育可能です。購入時は国内CBであることを確認してください。輸入個体には書類が必要です。
+    </div>
+
+    <div class="warn-box">
+      <strong>⚠ 亜種に注意：</strong>「ギリシャリクガメ」という名称で10種類以上の別亜種が流通しています。亜種によって最適温度・湿度・冬眠可否が大きく異なります。購入時は亜種名（産地）を確認し、その亜種に合った飼育環境を調べてから迎えることを強く推奨します。
+    </div>
+
+    <h2>野生の暮らし</h2>
+
+    <p><cite index="11-1">ギリシャリクガメは南ヨーロッパから中東、北アフリカにかけて広く分布しています。乾燥した草原や低木林、砂漠、荒れ地に生息する乾燥系リクガメに分類されています。</cite></p>
+
+    <p><cite index="9-1">亜種や個体群によっては夜間や冬季など温度が低くなる時は穴を掘って過ごし、食性は草食性で、主に草を食べるが木の葉、花、果実なども食べます。</cite>後肢の付け根にある「けづめ（距）」と呼ばれる棘状の突起がヘルマンリクガメとの識別ポイントになります。</p>
+
+    <p><cite index="12-1">成体は高温・低温・多湿・乾燥など様々な環境に幅広く対応できます。ただし幼体は低温と乾燥に弱く、亜種によってはアラブギリシャリクガメのように低温に弱いものも存在するため注意が必要です。</cite></p>
+
+    <h2>主な亜種と産地の違い</h2>
+
+    <p>日本で流通する主な亜種と、その環境適応の違いをまとめます。亜種名が不明で販売されている個体には注意が必要です。</p>
+
+    <div class="subspecies-table">
+      <div class="st-head">
+        <span>亜種名</span>
+        <span>分布</span>
+        <span>温度帯</span>
+        <span>冬眠</span>
+      </div>
+      <div class="st-row">
+        <div class="st-name">イベラギリシャ<br><small>（T. g. ibera）</small></div>
+        <span>トルコ・コーカサス</span>
+        <span>25〜32℃</span>
+        <span>可</span>
+      </div>
+      <div class="st-row">
+        <div class="st-name">アラブギリシャ<br><small>（T. g. terrestris）</small></div>
+        <span>イスラエル・シリア</span>
+        <span>28〜35℃</span>
+        <span>不可（熱帯系）</span>
+      </div>
+      <div class="st-row">
+        <div class="st-name">アナムールギリシャ<br><small>（T. g. anamurensis）</small></div>
+        <span>トルコ南部</span>
+        <span>25〜32℃</span>
+        <span>亜種により異なる</span>
+      </div>
+      <div class="st-row">
+        <div class="st-name">ムーア（アルジェリア）<br><small>（T. g. graeca）</small></div>
+        <span>北アフリカ・スペイン南部</span>
+        <span>25〜32℃</span>
+        <span>可（冷涼な地域）</span>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>亜種不明個体の扱い：</strong>販売時に亜種名が記載されていない個体は、どの亜種か判断できないため飼育環境の設定が難しくなります。可能であれば、亜種名と産地情報が明示されている、信頼できる販売元から購入することを推奨します。
+    </div>
+
+    <h2>飼育環境の数値（イベラ亜種・一般的な設定）</h2>
+    <p>亜種によって最適値は異なります。以下はイベラ亜種（最も流通量が多い）を基準とした目安です。アラブ亜種など熱帯系の亜種は温度をさらに高めに設定する必要があります。</p>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキングスポット</div>
+        <div class="env-value">35〜40℃</div>
+        <div class="env-sub">強い日射を好む乾燥系リクガメ。ヘルマンより高めのスポット温度が目安</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">ケージ全体（昼間）</div>
+        <div class="env-value">26〜32℃</div>
+        <div class="env-sub">クールスポットとホットスポットの温度差を10℃程度設ける</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">夜間温度</div>
+        <div class="env-value">18〜22℃</div>
+        <div class="env-sub">イベラ亜種は低温に比較的強い。アラブ亜種は22℃以上を維持する</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">30〜50%</div>
+        <div class="env-sub">ヘルマンより乾燥を好む傾向。高湿度（60%超）は避ける</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB指数</div>
+        <div class="env-value">UVB 10.0</div>
+        <div class="env-sub">砂漠〜乾燥草原の強い紫外線環境を再現。UVB150クラスが適切</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">推奨ケージサイズ</div>
+        <div class="env-value">90〜120cm</div>
+        <div class="env-sub">よく動く種。成体には120cm以上の床面積が理想的</div>
+      </div>
+    </div>
+
+    <h2>餌と水の与え方</h2>
+    <p>野草・葉野菜を主食にします。タンポポ・オオバコ・シロツメクサ・コマツナ・チンゲン菜などが適しています。キャベツ・ほうれん草は多量に与えると甲状腺・カルシウム代謝に影響する場合があるため少量に留めます。</p>
+    <p>果物は糖分が多く腸内環境を乱す可能性があるため、ほとんど与えないのが基本です。カルシウムパウダーを餌に振りかけることで甲羅の健康を維持します。</p>
+    <p>水はケージ内に浅めの水入れを常設し、定期的に新鮮な水と交換します。温浴（週1〜2回）で水分補給と排泄を促すことができます。</p>
+
+    <h2>推奨機材セット</h2>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-icon">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">グラステラリウム 9045（前面ドア・大型）</div>
+          <div class="gear-why">よく動き回る乾燥系リクガメには広い床面積が必須。前面ドアで給餌・掃除がしやすく、通気性も確保できる爬虫類専用ケージ。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GLLKI/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/グラステラリウム+9045" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">レプタイルUVB150 26W（砂漠・乾燥系）</div>
+          <div class="gear-why">砂漠〜乾燥草原の強い紫外線環境を再現するためUVB10.0クラスが適切。ビタミンD3合成とカルシウム代謝に必須。1年で交換を。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00BF91PYA/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/レプタイルUVB150" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏜️</div>
+        <div class="gear-info">
+          <div class="gear-name">ウォールナッツサンド / デザートソイル（乾燥系床材）</div>
+          <div class="gear-why">砂漠〜乾燥草原の地面を再現。ウォールナッツサンドは消臭効果があり管理しやすい。デザートソイルは湿度調整しやすい。亜種の産地環境に合わせて選択する。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B09CLYQVYR/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ウォールナッツサンド+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🪨</div>
+        <div class="gear-info">
+          <div class="gear-name">ロックシェルター SP XL（岩型シェルター）</div>
+          <div class="gear-why">岩陰・低木の下で休む野生の習性を再現。成体がすっぽり入れるサイズが重要。ギリシャリクガメは隠れ場所に入って落ち着く行動を見せます。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B07F3SR326/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ロックシェルター+XL" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🍃</div>
+        <div class="gear-info">
+          <div class="gear-name">レップカル リクガメフード（草食リクガメ用）</div>
+          <div class="gear-why">野草が手に入らない時期の主食補助として。ビタミンD3・カルシウム強化で草食リクガメの栄養ニーズに対応。水でふやかして与えると食いつきが良い。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00BBR33ZK/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/レップカル+リクガメフード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>よくある質問</h2>
+
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>ヘルマンリクガメとどちらが飼いやすいですか？</summary>
+        <div class="faq-body">
+          亜種が明確なヘルマンリクガメの方が、飼育環境の設定がしやすいです。ギリシャリクガメは亜種によって最適環境が大きく変わるため、亜種不明の個体を購入するリスクがあります。ただし亜種情報が明確で、その亜種の飼育実績がある方なら、ギリシャリクガメも非常に丈夫で楽しめる種です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>甲羅の模様で亜種を判断できますか？</summary>
+        <div class="faq-body">
+          <cite index="10-1">同じ亜種名の中でも甲羅の模様が違うと他の亜種と見分けがつかなくなったり、個体差も大きいため、甲羅だけでの断定はできないとも言われています。</cite>販売者に産地情報を確認するのが最も確実な方法です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>冬眠はさせるべきですか？</summary>
+        <div class="faq-body">
+          亜種によります。イベラ亜種などは野生で冬眠しますが、アラブ亜種など温暖な地域の亜種は冬眠しません。亜種不明の場合は冬眠させず、室内保温での通年飼育が安全です。冬眠させる場合は健康状態の確認と適切な温度管理が必須です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>水を全く飲まないのですが大丈夫ですか？</summary>
+        <div class="faq-body">
+          <cite index="16-1">水入れから水を飲まない個体もいます。その場合は水入れを置かずにエサで水分を補給する方法があります。水分の多い葉野菜を与えたり、週1〜2回の温浴で水分補給することが効果的です。</cite>ただし体重が減少しているようなら脱水の可能性があります。
+        </div>
+      </details>
+
+    </div>
+
+    <h2>関連ページ</h2>
+
+    <div class="related-links">
+      <a href="../guide-dry.html" class="rel-btn">🌵 乾燥系リクガメ 飼育ガイド</a>
+      <a href="../species/hermann-tortoise.html" class="rel-btn">🌿 ヘルマンリクガメ</a>
+      <a href="../species/russian-tortoise.html" class="rel-btn">🏔️ ロシアリクガメ</a>
+      <a href="../trouble/not-eating.html" class="rel-btn">🍃 餌を食べないときは</a>
+      <a href="../uvb-light-best10.html" class="rel-btn">☀️ UVBライト一覧</a>
+      <a href="../substrate-best10.html" class="rel-btn">🏜️ 床材一覧</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>ほかの地中海リクガメや、自分に合う種が知りたい方は診断ツールへ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの飼育ガイド</h2>
+    <p>種一覧・ハビタットガイドからも探せます。</p>
+    <div class="hub-links">
+      <a href="../species-list.html">種一覧（81種）</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../trouble/index.html">🚑 トラブル解決</a>
+      <a href="../shindan/index.html">🐢 亀診断</a>
+      <a href="../food-best10.html">餌・フード</a>
+      <a href="../cage-best10.html">ケージ・水槽</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      掲載する飼育情報は一般的な目安です。亜種・個体・環境によって最適値は大きく異なります。法規制・流通状況は変動することがありますので、購入前に最新情報をご確認ください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
