@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アカアシリクガメの飼い方｜カメライフガイド</title>
+<meta name="description" content="アカアシリクガメ（Chelonoidis carbonarius — Red-footed Tortoise）の飼育ガイド。野生環境から逆算した飼育数値・推奨機材・よくあるトラブルをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/red-footed-tortoise.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;
+    --accent:#d4a96a;--accent-dark:#8f5f2c;
+    --sp-from:#1e0a06;--sp-to:#140604;--sp-accent:#d06040;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  header.hero{background:linear-gradient(155deg,var(--sp-from) 0%,#1a2a20 45%,var(--sp-to) 100%);color:var(--parchment);padding:64px 0 56px;text-align:center;position:relative;overflow:hidden;}
+  header.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 65% 20%,rgba(212,169,106,.16) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(47,74,60,.3) 0%,transparent 55%);pointer-events:none;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(212,200,170,.6);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+  .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
+  .warn-box strong{color:#bf360c;}
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+  .inline-cta{background:linear-gradient(135deg,#162a20 0%,#0d1f1a 100%);border-radius:14px;padding:22px 20px;margin:40px 0;display:flex;align-items:center;gap:16px;border:1px solid #2f4a3c;}
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9e0d6;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;}
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+  .compare-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+  .compare-table th:first-child{border-radius:12px 0 0 0;}.compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:nth-child(even) td{background:#faf6ef;}
+  .compare-table tr.recommended td{background:#fffbf0;}
+  .compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+  .badge-easy{background:#e8f5e9;color:#2e7d32;}.badge-mid{background:#fff8e1;color:#f57f17;}.badge-hard{background:#fce4ec;color:#c62828;}.badge-rec{background:var(--accent);color:#fff;}
+  .scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-rak:hover{background:#8c0000;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  .faq-tag{font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;flex-shrink:0;background:#f0e8d8;color:#8f5f2c;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}.faq-tag.tag-health{background:#fce4ec;color:#c62828;}.faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}.faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+  .end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+  .end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#b8c8b4;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;transition:background .2s,transform .15s,box-shadow .15s;box-shadow:0 4px 16px rgba(212,169,106,.35);}
+  .btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,169,106,.45);}
+  .btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(244,239,226,.25);transition:border-color .2s,background .2s;}
+  .btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+  /* species-nav */
+  .species-nav{border-top:1.5px solid #e4ddc9;margin-top:44px;padding-top:28px;}
+  .species-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+  .species-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .species-nav-link{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--forest);font-size:.85rem;font-weight:700;transition:border-color .15s,background .15s;line-height:1.35;}
+  .species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+  .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+  .species-nav-link .snl-text{min-width:0;}
+  .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;line-height:1.3;}
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+    .scroll-hint{display:block;}
+    .inline-cta{flex-direction:column;text-align:center;}
+    .end-cta{padding:28px 18px 24px;}
+    .end-cta h3{font-size:1.25rem;}
+    @media(max-width:400px){.species-nav-grid{grid-template-columns:1fr;}}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🔴</span>
+    <h1>アカアシリクガメ</h1>
+    <div class="latin">Chelonoidis carbonarius — Red-footed Tortoise</div>
+    <p class="lead">南米・カリブ海の熱帯雨林に生息する、足と頭部の赤い模様が印象的なリクガメ。草食中心ながら果物・動物性も食べる雑食性が特徴で、高湿度管理が求められる点が乾燥系リクガメと根本的に異なります。</p>
+  </div>
+</header>
+<div class="stats-bar"><div class="wrap"><div class="stats-inner">
+  <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">30〜35cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中〜上級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">雑食寄り草食</div></div>
+      
+</div></div></div>
+<nav class="crumbs">
+  <div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ アカアシリクガメ</div>
+</nav>
+<div class="wrap"><div class="cites-box">
+  <strong>⚠️ CITES付属書II掲載種</strong><br>
+  国内CBは個人購入・飼育とも法的に問題ありません。輸出入には許可証が必要なため、<strong>国内ブリーダー・爬虫類専門店からのCB個体を推奨</strong>します。
+</div></div>
+<main class="wrap"><article class="article">
+  <h2>Wild Life — 熱帯の森に生きる、赤い足のリクガメ</h2>
+  <p>アカアシリクガメはブラジル・コロンビア・ベネズエラ・トリニダードなど南米・カリブ海に広く分布します。年間を通じて高温多湿な環境に生息し、落ち葉の積もった森の床を歩き回ります。足・頭部・甲羅縁辺に走る赤〜オレンジ色の斑点が最大の特徴です。</p>
+<p>野生では果物・きのこ・葉・昆虫・死肉まで幅広く食べる雑食性を持ちます。この食性の広さが他のリクガメと大きく異なり、果物の与えすぎによる内臓負担に注意が必要な一方、動物性タンパク質をうまく利用できる強みもあります。</p>
+<div class="note-box"><strong>乾燥系リクガメとの最大の違い</strong><br>ロシア・ヘルマン・ギリシャリクガメは乾燥環境出身で湿度30〜50%が適正ですが、アカアシは熱帯雨林出身で湿度60〜80%が必要です。同じ「リクガメ」でも管理方法が根本的に異なります。</div>
+  <div class="inline-cta">
+    <div class="inline-cta-emoji">🐢</div>
+    <div class="inline-cta-body">
+      <p>アカアシリクガメと乾燥系リクガメ、どちらが自分の管理スタイルに合う？ 97種対応の診断ツールで確かめましょう。</p>
+      <a href="../shindan/index.html">無料で診断する（3分）</a>
+    </div>
+  </div>
+  <h2>飼育環境の数値</h2>
+  <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキング温度</div>
+        <div class="env-value">33〜38℃</div>
+        <div class="env-sub">スポット直下。クールサイドは26℃前後を確保</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">環境温度（昼）</div>
+        <div class="env-value">26〜30℃</div>
+        <div class="env-sub">夜間も20℃以上をキープ。熱帯産なので低温に弱い</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">60〜80%</div>
+        <div class="env-sub">最重要管理項目。乾燥させすぎると脱水・呼吸器疾患のリスク</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB</div>
+        <div class="env-value">UVI 3〜5</div>
+        <div class="env-sub">地中海産より低めでよいが省略不可。UVB5〜10%相当を推奨</div>
+      </div>
+  </div>
+  <h2>近似種との比較</h2>
+  <p class="scroll-hint">← 横にスクロールできます</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead><tr>
+        <th>種名</th><th>甲長</th><th>難易度</th><th>必要スペース</th><th>必要湿度</th><th>向いている人</th>
+      </tr></thead>
+      <tbody><tr class="recommended"><td>アカアシリクガメ <span class="badge badge-rec">このページ</span></td><td>30〜35cm</td><td><span class="badge badge-mid">中〜上級</span></td><td>90cm〜</td><td>60〜80%</td><td>多湿・南米系リクガメ</td></tr>
+<tr><td><a href="russian-tortoise.html">ロシアリクガメ</a></td><td>15〜20cm</td><td><span class="badge badge-easy">入門〜中級</span></td><td>60cm〜</td><td>30〜50%</td><td>乾燥系・コンパクト</td></tr>
+<tr><td><a href="hermann-tortoise.html">ヘルマンリクガメ</a></td><td>20〜28cm</td><td><span class="badge badge-mid">中級</span></td><td>90cm〜</td><td>40〜60%</td><td>乾燥系・CB豊富</td></tr>
+<tr><td><a href="sulcata-tortoise.html">ケヅメリクガメ</a></td><td>60〜90cm超</td><td><span class="badge badge-hard">上級</span></td><td>屋外必須</td><td>30〜50%</td><td>大型・最高難度</td></tr>
+</tbody>
+    </table>
+  </div>
+  <h2>食事</h2>
+  <p>野草・葉野菜（小松菜・チンゲン菜・タンポポ）を主食に、果物（イチゴ・パパイヤ・マンゴー）を週1〜2回副食として与えます。動物性タンパク質（コオロギ・ミルワーム・ゆで卵）も月1〜2回加えると野生の食性に近づきます。果物の与えすぎは内臓負担になるため全体の2割以下に抑えてください。カルシウム補給にカトルボーンか炭酸カルシウムを週2〜3回ふりかけます。</p>
+  <h2>推奨機材セット</h2>
+  <div class="gear-cards">
+      <div class="gear-card">
+        <div class="gear-icon">💧</div>
+        <div class="gear-info">
+          <div class="gear-name">ミスト器・加湿器</div>
+          <div class="gear-why">湿度60〜80%を維持するためにミスト器または加湿器が事実上必須。自動タイマー制御ができると管理が楽。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+ミスト器+加湿&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+ミスト器+加湿/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">UVB蛍光灯（デザート10%）</div>
+          <div class="gear-why">乾燥系より弱めのUVBでよいが必須。UVI 3〜5相当を陸場に設置し6〜12ヶ月で交換。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメ+UVBランプ/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🔆</div>
+        <div class="gear-info">
+          <div class="gear-name">バスキングランプ（50〜75W）</div>
+          <div class="gear-why">スポット直下35〜38℃を作る。ケージサイズと距離で調整。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043AYZL8?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/バスキングランプ+リクガメ/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🌿</div>
+        <div class="gear-info">
+          <div class="gear-name">リクガメフード（補助用）</div>
+          <div class="gear-why">野草が入手しにくい時期の補助食。アカアシは雑食性があるため動物性成分入りのフードも利用可能。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード+多湿/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+  </div>
+  <h2>よくあるトラブルQ&amp;A</h2>
+  <div class="faq-list">
+      <details class="faq">
+        <summary>ヘルマンリクガメとどちらが飼いやすいですか？<span class="faq-tag ">比較</span></summary>
+        <div class="faq-body">湿度管理ができる環境があるならほぼ同等ですが、ヘルマンは乾燥管理が簡単（30〜50%でよい）なのに対し、アカアシは60〜80%の高湿度維持が必要です。ミスト器・加湿器の導入が前提になる分、アカアシの方が管理難度は上がります。</div>
+      </details>
+      <details class="faq">
+        <summary>湿度が足りないとどうなりますか？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">脱水・甲羅の変形・呼吸器感染症（RI）のリスクが高まります。乾燥が続くと幼体は特に弱く、温浴（ぬるま湯で週2〜3回）と加湿器の組み合わせで対応してください。</div>
+      </details>
+      <details class="faq">
+        <summary>果物はどのくらい与えてもいいですか？<span class="faq-tag tag-food">餌</span></summary>
+        <div class="faq-body">全体の2割以下が目安です。果物の糖分が多すぎると内臓（特に腎臓・肝臓）に負担がかかります。与える場合はパパイヤ・マンゴー・イチゴなど糖分の少ない果物を少量にとどめてください。</div>
+      </details>
+      <details class="faq">
+        <summary>低温にはどの程度弱いですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">熱帯産なので20℃以下が続くと活性が落ち、拒食・免疫低下につながります。日本の冬は必ず加温設備が必要です。屋外飼育は関東以西でも冬季の加温・防寒対策が必須です。</div>
+      </details>
+      <details class="faq">
+        <summary>動物性タンパク質は与えるべきですか？<span class="faq-tag tag-food">餌</span></summary>
+        <div class="faq-body">野生の食性に近い形で月1〜2回程度与えることを推奨します。コオロギ・ミルワーム・ゆで卵の白身が適しています。ただし与えすぎは腎臓への負担になるため少量にとどめてください。</div>
+      </details>
+      <details class="faq">
+        <summary>CITES IIの入手方法は？<span class="faq-tag tag-law">法律</span></summary>
+        <div class="faq-body">国内ブリーダー・爬虫類専門店でのCB入手が安全です。CB個体は国内での購入・飼育に特別な許可は不要です。購入時にCBであることとインボイスの有無を確認してください。</div>
+      </details>
+      <details class="faq">
+        <summary>成体サイズのケージはどのくらいが必要ですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">成体（35cm）には最低120cm×60cm程度のケージが必要です。できれば150cm以上が理想。横の動き回れるスペースが健康維持に重要です。</div>
+      </details>
+  </div>
+  <h2>関連ページ</h2>
+  <div class="related-links">
+    <a class="rel-btn" href="../guide-arid.html">🌿 多湿系リクガメ 飼育ガイド</a>
+      <a class="rel-btn" href="russian-tortoise.html">🏔️ ロシアリクガメ</a>
+      <a class="rel-btn" href="hermann-tortoise.html">🌿 ヘルマンリクガメ</a>
+      <a class="rel-btn" href="../uvb-light-best10.html">☀️ UVBライト一覧</a>
+      <a class="rel-btn" href="../food-best10.html">🍃 フード・餌</a>
+      
+  </div>
+  <div class="shindan-cta">
+    <p>多湿系リクガメが自分に合うか、診断ツールで確かめてみませんか？</p>
+    <a href="../shindan/index.html">🐢 カメ適性診断をはじめる（97種）</a>
+  </div>
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>湿度を制する者が、アカアシを制する</h3>
+    <p>加湿管理の準備ができているか確認してから迎えましょう。診断ツールで生活環境との適性をチェック。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">まずは自分に合う亀を診断する</a>
+      <a class="btn-cta-secondary" href="../uvb-light-best10.html">☀️ UVBライトを選ぶ</a>
+      <a class="btn-cta-secondary" href="../food-best10.html">🍃 フード・餌を選ぶ</a>
+    </div>
+  </div>
+  <nav class="species-nav" aria-label="関連ナビゲーション">
+    <div class="species-nav-label">もっと探す</div>
+    <div class="species-nav-grid">
+      <a class="species-nav-link" href="../shindan/index.html">
+        <span class="snl-icon">🐢</span>
+        <span class="snl-text">AI亀診断<span class="snl-sub">97種から適性を診断</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-beginner.html">
+        <span class="snl-icon">🌱</span>
+        <span class="snl-text">初心者向けの亀を見る<span class="snl-sub">入門種ガイド一覧</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-arid.html">
+        <span class="snl-icon">🌿</span>
+        <span class="snl-text">リクガメを比較する<span class="snl-sub">ハビタットガイドで比較</span></span>
+      </a>
+      <a class="species-nav-link" href="../species-list.html">
+        <span class="snl-icon">📋</span>
+        <span class="snl-text">他のspecies記事を見る<span class="snl-sub">種一覧（97種）</span></span>
+      </a>
+    </div>
+  </nav>
+</article></main>
+<section class="closing"><div class="wrap">
+  <h2>Kame Life Guide</h2>
+  <p>野生環境から逆算した飼育情報を、すべて無料で。</p>
+  <div class="hub-links">
+    <a href="../index.html">トップ</a>
+    <a href="../species-list.html">種一覧</a>
+    <a href="../guide-water-full.html">水棲ガメガイド</a>
+    <a href="../guide-semi.html">半水棲ガメガイド</a>
+    <a href="../water-filter-best10.html">フィルター</a>
+    <a href="../food-best10.html">フード・餌</a>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+  <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+</div></footer>
+</body></html>
