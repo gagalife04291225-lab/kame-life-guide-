@@ -127,6 +127,25 @@
     .gear-card{flex-direction:column;}
     .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
   }
+  .end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+  .end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#b8c8b4;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;transition:background .2s,transform .15s,box-shadow .15s;box-shadow:0 4px 16px rgba(212,169,106,.35);}
+  .btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,169,106,.45);}
+  .btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(244,239,226,.25);transition:border-color .2s,background .2s;}
+  .btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+  .species-nav{border-top:1.5px solid #e4ddc9;margin-top:44px;padding-top:28px;}
+  .species-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+  .species-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .species-nav-link{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--forest);font-size:.85rem;font-weight:700;transition:border-color .15s,background .15s;line-height:1.35;}
+  .species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+  .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+  .species-nav-link .snl-text{min-width:0;}
+  .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;line-height:1.3;}
+  @media(max-width:520px){.species-nav-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -351,7 +370,39 @@
     <div class="shindan-cta">
       <p>水棲ガメをほかにも見てみたい方、または自分に合う種を探している方は診断ツールへ。</p>
       <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（約80種対応）</a>
+
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>カブト型の甲羅が映える、個性派ニオイガメ</h3>
+    <p>カブトニオイガメは丈夫で飼育しやすいニオイガメ属の入門種。小型水槽から始められます。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">まずは自分に合う亀を診断する</a>
+      <a class="btn-cta-secondary" href="../guide-semi.html">💧 水棲ガメ飼育ガイド</a>
+      <a class="btn-cta-secondary" href="../water-filter-best10.html">🔧 フィルターを選ぶ</a>
     </div>
+  </div>
+  <nav class="species-nav" aria-label="関連ナビゲーション">
+    <div class="species-nav-label">もっと探す</div>
+    <div class="species-nav-grid">
+      <a class="species-nav-link" href="../guide-semi.html">
+        <span class="snl-icon">💧</span>
+        <span class="snl-text">水棲ガメを比較する<span class="snl-sub">半水棲ハビタットガイド</span></span>
+      </a>
+      <a class="species-nav-link" href="musk-turtle.html">
+        <span class="snl-icon">🐢</span>
+        <span class="snl-text">ニオイガメ<span class="snl-sub">入門・最小種</span></span>
+      </a>
+      <a class="species-nav-link" href="stripe-necked-musk-turtle.html">
+        <span class="snl-icon">🐢</span>
+        <span class="snl-text">スジクビニオイガメ<span class="snl-sub">中級・ニオイガメ属</span></span>
+      </a>
+      <a class="species-nav-link" href="../species-list.html">
+        <span class="snl-icon">📋</span>
+        <span class="snl-text">他の種記事を見る<span class="snl-sub">種一覧</span></span>
+      </a>
+    </div>
+  </nav>
+
 
   </div>
 </div>
