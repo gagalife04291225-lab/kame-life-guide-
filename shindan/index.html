@@ -513,12 +513,7 @@ function renderPhase5(sp) {
   }
 }
 
-// ===== Phase1.6: 種別詳細ページマップ =====
-var SPECIES_PAGE = {
-  'ロシアリクガメ':   '../species/russian-tortoise.html',
-  'ニオイガメ':       '../species/musk-turtle.html',
-  'ミツユビハコガメ': '../species/three-toed-box-turtle.html'
-};
+// ===== Phase3.1: 種別ページ — species.js の slug/hasPage を参照（MAPなし） =====
 
 // ===== PHASE 4: note.com記事マップ =====
 // NOTE_ARTICLES: 個別記事URLはひでおさんが実在確認したURLのみ記載する
@@ -775,9 +770,9 @@ function showResult(sp, pct) {
   // 種別ページCTA（Phase1.6）
   var linksDiv = document.getElementById('res-links');
   linksDiv.innerHTML = '';
-  if (SPECIES_PAGE[sp.name]) {
+  if (sp.hasPage && sp.slug) {
     linksDiv.innerHTML +=
-      '<a href="' + SPECIES_PAGE[sp.name] + '" class="species-page-cta">' +
+      '<a href="../species/' + sp.slug + '.html" class="species-page-cta">' +
         '<div class="species-page-cta-label">Species Guide</div>' +
         '<div class="species-page-cta-title">' + sp.name + ' の詳しい飼育ガイドを読む<span class="species-page-cta-arrow">→</span></div>' +
       '</a>';
