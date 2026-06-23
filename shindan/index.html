@@ -201,6 +201,11 @@ body {
 .note-cta { margin-bottom: 16px; }
 .note-link { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: linear-gradient(135deg, rgba(65,179,163,.12), rgba(47,74,60,.3)); border: 1px solid rgba(65,179,163,.25); border-radius: var(--radius); text-decoration: none; color: var(--parchment); transition: background .15s; -webkit-tap-highlight-color: transparent; }
 .note-link:hover { background: linear-gradient(135deg, rgba(65,179,163,.2), rgba(47,74,60,.4)); }
+.species-page-cta { display: block; padding: 16px 18px; background: linear-gradient(135deg, rgba(212,169,106,.18), rgba(47,74,60,.3)); border: 1.5px solid rgba(212,169,106,.45); border-radius: var(--radius); color: var(--parchment); text-decoration: none; font-size: .95rem; font-weight: 600; transition: background .15s, border-color .15s; -webkit-tap-highlight-color: transparent; margin-bottom: 12px; }
+.species-page-cta:hover { background: linear-gradient(135deg, rgba(212,169,106,.28), rgba(47,74,60,.45)); border-color: var(--accent-light); }
+.species-page-cta-label { font-size: .72rem; color: var(--accent-light); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.species-page-cta-title { font-size: 1rem; }
+.species-page-cta-arrow { float: right; color: var(--accent-light); }
 .note-icon { font-size: 28px; flex-shrink: 0; }
 .note-text { flex: 1; min-width: 0; }
 .note-title { font-size: .95rem; font-weight: 600; color: var(--parchment); }
@@ -508,6 +513,13 @@ function renderPhase5(sp) {
   }
 }
 
+// ===== Phase1.6: 種別詳細ページマップ =====
+var SPECIES_PAGE = {
+  'ロシアリクガメ':   '../species/russian-tortoise.html',
+  'ニオイガメ':       '../species/musk-turtle.html',
+  'ミツユビハコガメ': '../species/three-toed-box-turtle.html'
+};
+
 // ===== PHASE 4: note.com記事マップ =====
 // NOTE_ARTICLES: 個別記事URLはひでおさんが実在確認したURLのみ記載する
 // 未確認URLは note.com トップに差し替え済み（2026-06-20）
@@ -760,9 +772,18 @@ function showResult(sp, pct) {
       '</div>';
   });
 
-  // リンク
+  // 種別ページCTA（Phase1.6）
   var linksDiv = document.getElementById('res-links');
   linksDiv.innerHTML = '';
+  if (SPECIES_PAGE[sp.name]) {
+    linksDiv.innerHTML +=
+      '<a href="' + SPECIES_PAGE[sp.name] + '" class="species-page-cta">' +
+        '<div class="species-page-cta-label">Species Guide</div>' +
+        '<div class="species-page-cta-title">' + sp.name + ' の詳しい飼育ガイドを読む<span class="species-page-cta-arrow">→</span></div>' +
+      '</a>';
+  }
+
+  // リンク
   sp.links.forEach(function(l){
     linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + l.label + '</a>';
   });
