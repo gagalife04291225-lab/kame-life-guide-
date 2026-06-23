@@ -164,6 +164,23 @@
     cursor:default;
     pointer-events:none;
   }
+  .rakuten-btn{
+    display:inline-block;
+    background:#bf0000;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.95rem;
+    padding:12px 30px;
+    border-radius:8px;
+    transition:background .2s;
+    margin-left:10px;
+  }
+  .rakuten-btn:hover{background:#8c0000;}
+  @media(max-width:480px){
+    .rakuten-btn{margin-left:0;margin-top:10px;display:block;text-align:center;}
+    .amazon-btn{display:block;text-align:center;}
+  }
 
   .diy{
     background:var(--forest-deep);
@@ -640,6 +657,25 @@
         b.textContent = "リンク準備中";
         b.removeAttribute("href");
       }
+    });
+
+    // 楽天ボタン生成
+    var items = document.querySelectorAll(".item-body, .diy");
+    items.forEach(function(item){
+      var h3 = item.querySelector("h3");
+      var btnArea = item.querySelector(".btn-area");
+      if(!h3 || !btnArea) return;
+      var name = h3.textContent.trim();
+      // カッコ内の注釈を除去して検索語を整理
+      var searchName = name.replace(/（[^）]*）/g, "").replace(/\s+/g, " ").trim();
+      var rakutenUrl = "https://search.rakuten.co.jp/search/mall/" + encodeURIComponent(searchName);
+      var rBtn = document.createElement("a");
+      rBtn.className = "rakuten-btn";
+      rBtn.href = rakutenUrl;
+      rBtn.target = "_blank";
+      rBtn.rel = "nofollow noopener";
+      rBtn.textContent = "楽天で探す";
+      btnArea.appendChild(rBtn);
     });
   })();
 </script>
