@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マタマタの飼い方｜カメライフガイド</title>
+<meta name="description" content="マタマタ（Chelus fimbriata — Mata Mata）の飼育ガイド。野生環境から逆算した飼育数値・推奨機材・よくあるトラブルをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/matamata.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{--forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;--accent:#d4a96a;--accent-dark:#8f5f2c;--sp-from:#1a1204;--sp-to:#100c02;--sp-accent:#b89040;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  header.hero{background:linear-gradient(155deg,var(--sp-from) 0%,#1a2a1e 45%,var(--sp-to) 100%);color:var(--parchment);padding:64px 0 56px;text-align:center;position:relative;overflow:hidden;}
+  header.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 65% 20%,rgba(212,169,106,.16) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(47,74,60,.3) 0%,transparent 55%);pointer-events:none;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(212,200,170,.6);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+  .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
+  .warn-box strong{color:#bf360c;}
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+  .inline-cta{background:linear-gradient(135deg,#162a20 0%,#0d1f1a 100%);border-radius:14px;padding:22px 20px;margin:40px 0;display:flex;align-items:center;gap:16px;border:1px solid #2f4a3c;}
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9e0d6;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;}
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+  .compare-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+  .compare-table th:first-child{border-radius:12px 0 0 0;}.compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:nth-child(even) td{background:#faf6ef;}
+  .compare-table tr.recommended td{background:#fffbf0;}
+  .compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+  .badge-easy{background:#e8f5e9;color:#2e7d32;}.badge-mid{background:#fff8e1;color:#f57f17;}.badge-hard{background:#fce4ec;color:#c62828;}.badge-rec{background:var(--accent);color:#fff;}
+  .scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-rak:hover{background:#8c0000;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  .faq-tag{font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;flex-shrink:0;background:#f0e8d8;color:#8f5f2c;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}.faq-tag.tag-health{background:#fce4ec;color:#c62828;}.faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}.faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+  .end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+  .end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#b8c8b4;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;transition:background .2s,transform .15s,box-shadow .15s;box-shadow:0 4px 16px rgba(212,169,106,.35);}
+  .btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,169,106,.45);}
+  .btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(244,239,226,.25);transition:border-color .2s,background .2s;}
+  .btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+  .species-nav{border-top:1.5px solid #e4ddc9;margin-top:44px;padding-top:28px;}
+  .species-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+  .species-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .species-nav-link{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--forest);font-size:.85rem;font-weight:700;transition:border-color .15s,background .15s;line-height:1.35;}
+  .species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+  .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+  .species-nav-link .snl-text{min-width:0;}
+  .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;line-height:1.3;}
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+    .scroll-hint{display:block;}.inline-cta{flex-direction:column;text-align:center;}
+    .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}
+    .species-nav-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🍂</span>
+    <h1>マタマタ</h1>
+    <div class="latin">Chelus fimbriata — Mata Mata</div>
+    <p class="lead">アマゾン川・オリノコ川流域の浅い沼地に生息する、枯れ葉に擬態した待ち伏せハンター。魚を吸い込む独特の捕食行動と異形の外見が唯一無二の存在感を放つ。泳がず水流を嫌い、水質管理と給餌方法に専用の知識が必要な上級種です。</p>
+  </div>
+</header>
+<div class="stats-bar"><div class="wrap"><div class="stats-inner">
+  <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">35〜45cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">上級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">捕食スタイル</div><div class="stat-value">待ち伏せ吸引</div></div>
+      
+</div></div></div>
+<nav class="crumbs">
+  <div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ マタマタ</div>
+</nav>
+<div class="wrap"><div class="cites-box">
+  <strong>⚠️ CITES II掲載 / 独自の飼育知識が必要</strong><br>
+  マタマタは一般的な水棲ガメとまったく異なる飼育方法が必要です。<strong>泳がない・水流を嫌う・配合飼料を食べない</strong>の三点が飼育の前提条件です。
+</div></div>
+<main class="wrap"><article class="article">
+  <h2>Wild Life — アマゾンの沼に潜む、枯れ葉擬態の待ち伏せ捕食者</h2>
+  <p>マタマタはアマゾン川・オリノコ川流域の浅い沼・湿地・流れの緩い淡水域に生息します。扁平で凹凸のある甲羅・皮膚のフリンジ・三角形の頭部が枯れ葉に完璧に擬態しており、水底で動かずに獲物を待ちます。英名「Mata Mata」はスペイン語で「殺す・殺す」の意。</p>
+<p>捕食方法は他のカメと根本的に異なります。獲物が近づくと口を瞬時に大きく開き、周囲の水ごと魚を吸い込みます。この吸引捕食は光速に近く、肉眼では追えません。野生では小型の魚・オタマジャクシ・水生無脊椎動物を食べます。</p>
+<div class="note-box"><strong>「泳がない」という飼育の前提</strong><br>マタマタは水中で泳ぐことができず、水底を歩いて移動します。水深は鼻先を水面に出せる程度（甲長の1〜1.5倍）が適切で、深い水槽では溺死するリスクがあります。また水流を強く嫌うため、フィルターの出水を弱める工夫が必要です。</div>
+  <div class="inline-cta">
+    <div class="inline-cta-emoji">🐢</div>
+    <div class="inline-cta-body">
+      <p>マタマタの独自の飼育スタイルが自分に合うか確認しましょう。97種診断ツールで適性をチェック。</p>
+      <a href="../shindan/index.html">無料で診断する（3分）</a>
+    </div>
+  </div>
+  <h2>飼育環境の数値</h2>
+  <div class="env-grid">
+      <div class="env-card"><div class="env-label">水温</div><div class="env-value">26〜30℃</div><div class="env-sub">熱帯産で低温に弱い。常時ヒーターで管理</div></div>
+      <div class="env-card"><div class="env-label">水深</div><div class="env-value">甲長の1〜1.5倍</div><div class="env-sub">鼻を出せる深さが上限。深すぎると溺れるリスク</div></div>
+      <div class="env-card"><div class="env-label">水流</div><div class="env-value">極めて弱く</div><div class="env-sub">強い水流はストレス源。フィルター出水を拡散させる</div></div>
+      <div class="env-card"><div class="env-label">水質</div><div class="env-value">弱酸性（pH5〜6.5）</div><div class="env-sub">ブラックウォーター環境が理想。腐葉土・ピートモスで酸性化</div></div>
+  </div>
+  <h2>近似種との比較</h2>
+  <p class="scroll-hint">← 横にスクロールできます</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead><tr><th>種名</th><th>甲長</th><th>難易度</th><th>必要スペース</th><th>給餌スタイル</th><th>向いている人</th></tr></thead>
+      <tbody><tr class="recommended"><td>マタマタ <span class="badge badge-rec">このページ</span></td><td>35〜45cm</td><td><span class="badge badge-hard">上級</span></td><td>90〜120cm水槽</td><td>生き餌（魚）のみ</td><td>唯一無二の外見・捕食観察</td></tr>
+<tr><td><a href="giant-musk-turtle.html">スジオオニオイガメ</a></td><td>30〜40cm超</td><td><span class="badge badge-hard">上級</span></td><td>120cm以上水槽</td><td>生き餌・配合飼料</td><td>大型ニオイガメ</td></tr>
+<tr><td><a href="musk-turtle.html">ニオイガメ</a></td><td>10〜14cm</td><td><span class="badge badge-easy">入門</span></td><td>30〜45cm〜</td><td>配合飼料OK</td><td>省スペース入門種</td></tr>
+<tr><td><a href="mississippi-map-turtle.html">ミシシッピチズガメ</a></td><td>8〜20cm</td><td><span class="badge badge-mid">中級</span></td><td>60cm〜</td><td>配合飼料OK</td><td>模様・観察重視</td></tr>
+</tbody>
+    </table>
+  </div>
+  <h2>食事</h2>
+  <p>金魚・メダカ・小型熱帯魚などの生き魚が主食です。水槽に放した魚をマタマタが自分で捕食する方法が最もストレスが少なく推奨されます。冷凍小赤・冷凍マウス（ピンクマウス）を使う場合は、動かして捕食本能を刺激する必要があります。配合飼料はほぼ受け付けないため、生き餌・冷凍餌の安定した調達ルートを確保してから迎えてください。</p>
+  <h2>推奨機材セット</h2>
+  <div class="gear-cards">
+      <div class="gear-card">
+        <div class="gear-icon">🐟</div>
+        <div class="gear-info">
+          <div class="gear-name">金魚・メダカ（生き餌）</div>
+          <div class="gear-why">マタマタの主食。金魚・メダカ・小型鯉など動く生き魚を水槽に放して捕食させる。安定した入手ルートを確保することが飼育継続の鍵。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=金魚+メダカ+餌用&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/金魚+メダカ+餌用/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🔬</div>
+        <div class="gear-info">
+          <div class="gear-name">弱水流対応の外部フィルター</div>
+          <div class="gear-why">水質管理は重要だが水流を弱くする工夫が必要。出水口にスポンジを取り付けるか拡散ノズルを使用。生物濾過中心の大型外部フィルターが適切。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0012UO6Q6?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/外部フィルター+拡散+水棲/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🍂</div>
+        <div class="gear-info">
+          <div class="gear-name">ピートモス・腐葉土（水質調整）</div>
+          <div class="gear-why">弱酸性（pH5〜6.5）のブラックウォーター環境を作るために使用。ピートモスをフィルターに入れるか、腐葉土を少量使用してタンニンで酸性化する。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=ピートモス+爬虫類+ブラックウォーター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ピートモス+ブラックウォーター+水槽/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+  </div>
+  <h2>よくあるトラブルQ&amp;A</h2>
+  <div class="faq-list">
+      <details class="faq">
+        <summary>配合飼料を食べてくれません<span class="faq-tag tag-food">餌</span></summary>
+        <div class="faq-body">マタマタは配合飼料をほぼ食べない種です。生き魚（金魚・メダカ）を水槽に放すか、冷凍小赤を動かして与えることが基本です。飼育前に生き餌の安定した入手ルートを確保してください。</div>
+      </details>
+      <details class="faq">
+        <summary>水深はどのくらいが適切ですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">甲長の1〜1.5倍が目安です。鼻先を水面に出して呼吸できる深さが上限で、それを超えると溺れるリスクがあります。成体（45cm）なら水深45〜60cm程度が目安です。</div>
+      </details>
+      <details class="faq">
+        <summary>水流が強いとどうなりますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">強い水流は著しいストレスになり、拒食・体力消耗・免疫低下につながります。フィルターの出水口にスポンジを付けるか、水流を壁に当てて拡散させるなど、水流を最小化する工夫が必要です。</div>
+      </details>
+      <details class="faq">
+        <summary>水が茶色くなっています（ブラックウォーター）<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">正常な状態です。ピートモス・腐葉土が溶け出してタンニンで着色したブラックウォーターは、マタマタの野生環境（アマゾン川）に近い状態です。水が茶色くても透明度があれば問題ありません。</div>
+      </details>
+      <details class="faq">
+        <summary>全く動かないのですが大丈夫ですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">マタマタは基本的に動かない種です。水底で静止して獲物を待つのが本来の行動です。食後・夜間に少し移動する程度で、昼間はほとんど動きません。ただし全く餌を食べない・水面に浮かんでいるような場合は体調不良のサインです。</div>
+      </details>
+      <details class="faq">
+        <summary>CITES IIの入手方法は？<span class="faq-tag tag-law">法律</span></summary>
+        <div class="faq-body">国内ブリーダー・爬虫類専門店・爬虫類イベントでCB個体が入手できます。国内CB個体の購入・飼育に特別な許可証は不要です。マタマタはCB流通が増えてきていますが、まだ少数なので専門店への問い合わせが確実です。</div>
+      </details>
+      <details class="faq">
+        <summary>飼育の難しさはどのくらいですか？<span class="faq-tag ">比較</span></summary>
+        <div class="faq-body">上級種です。配合飼料を使えない・水深制限が必要・水流を弱くする必要がある・ブラックウォーター管理が必要と、一般的な水棲ガメと異なる点が多いです。ニオイガメ・クサガメなどの飼育経験を十分に積んでから挑戦することを推奨します。</div>
+      </details>
+  </div>
+  <h2>関連ページ</h2>
+  <div class="related-links">
+    <a class="rel-btn" href="../guide-water-full.html">💧 水棲ガメ 飼育ガイド</a>
+      <a class="rel-btn" href="giant-musk-turtle.html">🦷 スジオオニオイガメ</a>
+      <a class="rel-btn" href="musk-turtle.html">🔬 ニオイガメ</a>
+      <a class="rel-btn" href="../water-filter-best10.html">🔬 おすすめフィルター</a>
+      
+  </div>
+  <div class="shindan-cta">
+    <p>上級水棲ガメへの挑戦前に、自分の経験・環境を診断ツールで確認しましょう。</p>
+    <a href="../shindan/index.html">🐢 カメ適性診断をはじめる（97種）</a>
+  </div>
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>唯一無二の捕食者を迎える準備はできていますか？</h3>
+    <p>マタマタは既存の水棲ガメ飼育経験が前提の上級種です。生き餌調達・水深制限・水流管理を整えてから迎えましょう。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">まずは自分に合う亀を診断する</a>
+      <a class="btn-cta-secondary" href="../water-filter-best10.html">🔬 フィルターを選ぶ</a>
+      <a class="btn-cta-secondary" href="../guide-water-full.html">💧 水棲ガメガイドへ</a>
+    </div>
+  </div>
+  <nav class="species-nav" aria-label="関連ナビゲーション">
+    <div class="species-nav-label">もっと探す</div>
+    <div class="species-nav-grid">
+      <a class="species-nav-link" href="../shindan/index.html">
+        <span class="snl-icon">🐢</span>
+        <span class="snl-text">AI亀診断<span class="snl-sub">97種から適性を診断</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-beginner.html">
+        <span class="snl-icon">🌱</span>
+        <span class="snl-text">初心者向けの亀を見る<span class="snl-sub">入門種ガイド一覧</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-water-full.html">
+        <span class="snl-icon">💧</span>
+        <span class="snl-text">水棲ガメを比較する<span class="snl-sub">ハビタットガイドで比較</span></span>
+      </a>
+      <a class="species-nav-link" href="../species-list.html">
+        <span class="snl-icon">📋</span>
+        <span class="snl-text">他のspecies記事を見る<span class="snl-sub">種一覧（97種）</span></span>
+      </a>
+    </div>
+  </nav>
+</article></main>
+<section class="closing"><div class="wrap">
+  <h2>Kame Life Guide</h2>
+  <p>野生環境から逆算した飼育情報を、すべて無料で。</p>
+  <div class="hub-links">
+    <a href="../index.html">トップ</a><a href="../species-list.html">種一覧</a>
+    <a href="../guide-water-full.html">水棲ガメガイド</a><a href="../guide-dry.html">リクガメガイド</a>
+    <a href="../water-filter-best10.html">フィルター</a><a href="../food-best10.html">フード・餌</a>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+  <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+</div></footer>
+</body></html>
