@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメのトラブル解決ガイド｜食欲不振・鼻水・目の腫れ｜カメライフガイド</title>
+<meta name="description" content="カメが餌を食べない、鼻水が出る、目が腫れている。よくある飼育トラブルの原因と対処法、動物病院に行くべきサインをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/trouble/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    --danger:#c0392b;
+    --danger-light:#fdf0ef;
+    --caution:#e67e22;
+    --caution-light:#fef9f3;
+    --safe:#2d6a4f;
+    --safe-light:#edf7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"Noto Serif JP",serif;
+    color:var(--forest-deep);
+    background:var(--parchment);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* ヘッダー */
+  header.hero{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:60px 0 54px;
+    text-align:center;
+  }
+  header.hero .eyebrow{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    letter-spacing:.04em;
+    color:var(--accent);
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+  header.hero h1{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+  header.hero p.lead{
+    font-size:1.02rem;
+    color:#d9e0d6;
+    max-width:600px;
+    margin:0 auto;
+  }
+
+  /* パンくず */
+  nav.crumbs{
+    background:var(--forest);
+    color:#cdd8cc;
+    font-size:.86rem;
+    padding:11px 0;
+    text-align:center;
+  }
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  /* 注意書き */
+  .medical-notice{
+    background:#fff;
+    border-left:4px solid var(--caution);
+    padding:18px 22px;
+    margin:36px 0 0;
+    border-radius:0 8px 8px 0;
+    font-size:.93rem;
+    box-shadow:0 1px 4px rgba(13,31,26,.06);
+    color:#5a3e00;
+  }
+  .medical-notice strong{color:var(--caution);}
+
+  /* イントロ */
+  section.intro{padding:40px 0 16px;}
+  section.intro p{font-size:1rem;margin-bottom:16px;}
+
+  /* トラブルカードグリッド */
+  section.trouble-grid{padding:10px 0 56px;}
+  .tg-title{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.35rem;
+    color:var(--forest);
+    margin-bottom:22px;
+  }
+  .tg-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .tc{
+    background:#fff;
+    border-radius:14px;
+    border:1px solid #e4ddc9;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(13,31,26,.07);
+    text-decoration:none;
+    color:var(--forest-deep);
+    display:flex;
+    flex-direction:column;
+    transition:transform .14s,box-shadow .14s,border-color .14s;
+  }
+  .tc:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,31,26,.11);border-color:var(--accent);}
+  .tc-band{
+    height:6px;
+  }
+  .tc-band.urgent{background:var(--danger);}
+  .tc-band.caution{background:var(--caution);}
+  .tc-band.watch{background:#f1c40f;}
+  .tc-body{padding:20px 20px 22px;flex:1;display:flex;flex-direction:column;gap:8px;}
+  .tc-icon{font-size:2rem;line-height:1;}
+  .tc-urgency{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:.72rem;
+    font-weight:700;
+    padding:2px 10px;
+    border-radius:12px;
+    width:fit-content;
+  }
+  .tc-urgency.urgent{background:var(--danger-light);color:var(--danger);}
+  .tc-urgency.caution{background:var(--caution-light);color:var(--caution);}
+  .tc-urgency.watch{background:#fefde8;color:#7d6608;}
+  .tc-name{
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--forest);
+    line-height:1.35;
+    margin-top:2px;
+  }
+  .tc-desc{font-size:.83rem;color:#5a6b60;line-height:1.65;flex:1;}
+  .tc-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:.82rem;
+    font-weight:700;
+    color:var(--accent-dark);
+    margin-top:10px;
+  }
+  .tc-link::after{content:"→";}
+
+  /* 近日公開プレースホルダー */
+  .tc.coming{
+    opacity:.65;
+    pointer-events:none;
+  }
+  .tc-coming-badge{
+    font-size:.72rem;
+    background:#e8e4d9;
+    color:#8a9389;
+    padding:2px 10px;
+    border-radius:12px;
+    width:fit-content;
+  }
+
+  /* 緊急度の見方 */
+  section.urgency-guide{padding:0 0 50px;}
+  .ug-title{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.2rem;
+    color:var(--forest);
+    margin-bottom:18px;
+  }
+  .ug-list{display:flex;flex-direction:column;gap:12px;}
+  .ug-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    background:#fff;
+    border-radius:10px;
+    padding:16px 18px;
+    box-shadow:0 1px 6px rgba(13,31,26,.06);
+  }
+  .ug-dot{
+    width:14px;height:14px;border-radius:50%;
+    flex-shrink:0;margin-top:5px;
+  }
+  .ug-dot.urgent{background:var(--danger);}
+  .ug-dot.caution{background:var(--caution);}
+  .ug-dot.watch{background:#f1c40f;}
+  .ug-item-body{}
+  .ug-label{font-weight:700;font-size:.9rem;margin-bottom:3px;}
+  .ug-label.urgent{color:var(--danger);}
+  .ug-label.caution{color:var(--caution);}
+  .ug-label.watch{color:#7d6608;}
+  .ug-item-body p{font-size:.85rem;color:#5a6b60;line-height:1.65;}
+
+  /* closing */
+  section.closing{
+    background:var(--forest-deep);
+    color:var(--parchment);
+    padding:48px 0;
+  }
+  section.closing h2{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.45rem;
+    color:var(--accent);
+    margin-bottom:18px;
+    text-align:center;
+  }
+  section.closing p{font-size:.98rem;margin-bottom:14px;color:#d9e0d6;text-align:center;}
+  .hub-links{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;
+  }
+  .hub-links a{
+    background:var(--forest);color:var(--parchment);text-decoration:none;
+    font-size:.9rem;padding:10px 20px;border-radius:24px;border:1px solid #3d5a4b;transition:background .2s;
+  }
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{
+    background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:26px 0;line-height:1.7;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.76rem;color:#9aa89d;max-width:640px;margin:18px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .tg-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Trouble Shooting</div>
+    <h1>カメのトラブル解決</h1>
+    <p class="lead">食欲がない、鼻水が出る、目が腫れている——よくある症状の原因と確認ポイント、動物病院に行くべきタイミングをまとめています。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ トラブル解決
+  </div>
+</nav>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="medical-notice">
+      <strong>このサイトは医療診断を行いません。</strong>
+      症状が続く場合、または緊急度「高」の症状が見られる場合は、爬虫類対応の動物病院を受診してください。記載内容は一般的な情報であり、個体の状態によって判断は異なります。
+    </div>
+  </div>
+</section>
+
+<section class="trouble-grid">
+  <div class="wrap">
+    <h2 class="tg-title">症状から探す</h2>
+    <div class="tg-grid">
+
+      <a href="not-eating.html" class="tc">
+        <div class="tc-band caution"></div>
+        <div class="tc-body">
+          <div class="tc-icon">🍃</div>
+          <span class="tc-urgency caution">⚠ 要観察</span>
+          <div class="tc-name">餌を食べない</div>
+          <p class="tc-desc">拒食・食欲不振の原因は多岐にわたります。温度・季節・ストレスから病気まで、順番に確認するポイントを解説します。</p>
+          <div class="tc-link">原因と対処法を見る</div>
+        </div>
+      </a>
+
+      <a href="runny-nose.html" class="tc">
+        <div class="tc-band urgent"></div>
+        <div class="tc-body">
+          <div class="tc-icon">💧</div>
+          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <div class="tc-name">鼻水・鼻詰まり</div>
+          <p class="tc-desc">上部気道感染症のサインである可能性があります。放置すると肺炎に進行するリスクがあるため、早期の対応が重要です。</p>
+          <div class="tc-link">原因と対処法を見る</div>
+        </div>
+      </a>
+
+      <a href="swollen-eyes.html" class="tc">
+        <div class="tc-band urgent"></div>
+        <div class="tc-body">
+          <div class="tc-icon">👁</div>
+          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <div class="tc-name">目の腫れ・開かない</div>
+          <p class="tc-desc">ビタミンA欠乏・細菌感染・異物刺激など複数の原因が考えられます。両眼か片眼かで原因の絞り込みが変わります。</p>
+          <div class="tc-link">原因と対処法を見る</div>
+        </div>
+      </a>
+
+      <div class="tc coming">
+        <div class="tc-band watch"></div>
+        <div class="tc-body">
+          <div class="tc-icon">🐢</div>
+          <span class="tc-coming-badge">近日公開</span>
+          <div class="tc-name">動かない・元気がない</div>
+          <p class="tc-desc">低体温・脱水・消化不良・冬眠準備など複数の可能性があります。温度と水分を最初に確認します。</p>
+          <div class="tc-link" style="color:#aaa">準備中</div>
+        </div>
+      </div>
+
+      <div class="tc coming">
+        <div class="tc-band watch"></div>
+        <div class="tc-body">
+          <div class="tc-icon">🦴</div>
+          <span class="tc-coming-badge">近日公開</span>
+          <div class="tc-name">甲羅の変形・白化</div>
+          <p class="tc-desc">カルシウム不足・UVB不足・代謝性骨疾患（MBD）の可能性を確認します。</p>
+          <div class="tc-link" style="color:#aaa">準備中</div>
+        </div>
+      </div>
+
+      <div class="tc coming">
+        <div class="tc-band watch"></div>
+        <div class="tc-body">
+          <div class="tc-icon">💦</div>
+          <span class="tc-coming-badge">近日公開</span>
+          <div class="tc-name">下痢・軟便</div>
+          <p class="tc-desc">寄生虫・細菌感染・食事の偏りなど消化器系のトラブルを確認します。</p>
+          <div class="tc-link" style="color:#aaa">準備中</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="urgency-guide">
+  <div class="wrap">
+    <h2 class="ug-title">緊急度の見方</h2>
+    <div class="ug-list">
+      <div class="ug-item">
+        <div class="ug-dot urgent"></div>
+        <div class="ug-item-body">
+          <div class="ug-label urgent">緊急度 高：数日以内に受診を検討</div>
+          <p>明らかな感染症・呼吸困難・急激な体重減少・両眼の閉眼など。放置すると急速に悪化するリスクがある症状です。</p>
+        </div>
+      </div>
+      <div class="ug-item">
+        <div class="ug-dot caution"></div>
+        <div class="ug-item-body">
+          <div class="ug-label caution">要観察：1週間以上続くなら受診を</div>
+          <p>温度・環境など飼育側の要因で改善できる可能性がある症状。まず環境を見直し、改善しなければ受診してください。</p>
+        </div>
+      </div>
+      <div class="ug-item">
+        <div class="ug-dot watch"></div>
+        <div class="ug-item-body">
+          <div class="ug-label watch">経過観察：変化を記録しながら見守る</div>
+          <p>季節・ストレス・個体差の範囲内である可能性が高い症状。記録をつけながら様子を見て、悪化すれば受診を。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>飼育環境を見直す</h2>
+    <p>トラブルの多くは、飼育環境の改善で予防できます。</p>
+    <div class="hub-links">
+      <a href="../shindan/index.html">🐢 亀診断（81種）</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../guide-semi.html">半水棲ガメ</a>
+      <a href="../guide-moist.html">ヤマガメ・ハコガメ</a>
+      <a href="../species-list.html">種一覧</a>
+      <a href="../uvb-light-best10.html">UVBライト</a>
+      <a href="../food-best10.html">餌・フード</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      掲載する情報は一般的な飼育知識の目安であり、医療的な診断・治療の代替となるものではありません。症状が続く場合は必ず爬虫類対応の動物病院を受診してください。当サイトはAmazonアソシエイト・プログラムの参加者です。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
