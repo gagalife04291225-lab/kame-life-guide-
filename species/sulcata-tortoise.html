@@ -18,7 +18,6 @@
     --parchment:#f4efe2;
     --accent:#d4a96a;
     --accent-dark:#8f5f2c;
-    /* ケヅメリクガメ：サハラ以南のサバンナ・赤土・沈む太陽 */
     --sp-from:#1e0e04;
     --sp-to:#2a1208;
     --sp-accent:#e8a54a;
@@ -59,9 +58,43 @@
 
   .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
   .cites-box strong{color:#8f6000;}
-
   .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
   .warn-box strong{color:#bf360c;}
+
+  /* inline CTA */
+  .inline-cta{
+    background:linear-gradient(135deg,#2a1208 0%,#1a0a02 100%);
+    border-radius:14px;padding:22px 20px;margin:40px 0;
+    display:flex;align-items:center;gap:16px;border:1px solid #5a2e0a;
+  }
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9e0d6;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{
+    display:inline-block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:.85rem;
+    padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;
+  }
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+
+  /* compare table */
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+  .compare-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+  .compare-table th:first-child{border-radius:12px 0 0 0;}
+  .compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:nth-child(even) td{background:#faf6ef;}
+  .compare-table tr.recommended td{background:#fffbf0;}
+  .compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+  .badge-easy{background:#e8f5e9;color:#2e7d32;}
+  .badge-mid{background:#fff8e1;color:#f57f17;}
+  .badge-hard{background:#fce4ec;color:#c62828;}
+  .badge-rec{background:var(--accent);color:#fff;}
+  .scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
 
   .article{padding:40px 0 20px;}
   .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
@@ -78,23 +111,49 @@
   .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
 
   .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
-  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-card{
+    background:#fff;border-radius:12px;display:flex;align-items:flex-start;
+    gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);
+    border:1px solid #e4ddc9;position:relative;
+  }
   .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
   .gear-info{flex:1;min-width:0;}
   .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
   .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
   .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
-  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz{
+    display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;
+    transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;
+  }
   .btn-amz:hover{background:var(--accent-dark);}
-  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak{
+    display:inline-block;background:#bf0000;color:#fff;text-decoration:none;
+    font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;
+    transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;
+  }
   .btn-rak:hover{background:#8c0000;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
 
   .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
   details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
-  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+  details.faq summary{
+    padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+    gap:12px;-webkit-tap-highlight-color:transparent;
+  }
   details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
   details.faq[open] summary::after{content:'－';}
   details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  .faq-tag{
+    font-size:.65rem;font-weight:700;letter-spacing:.06em;
+    padding:2px 8px;border-radius:12px;flex-shrink:0;
+    background:#f0e8d8;color:#8f5f2c;white-space:nowrap;align-self:flex-start;margin-top:2px;
+  }
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}
+  .faq-tag.tag-health{background:#fce4ec;color:#c62828;}
+  .faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}
+  .faq-tag.tag-law{background:#fffde7;color:#8f6000;}
 
   .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
   .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
@@ -105,13 +164,41 @@
   .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
   .shindan-cta a:hover{background:var(--accent-dark);}
 
+  /* end CTA */
+  .end-cta{
+    background:linear-gradient(145deg,#2a1208 0%,#1a0a02 100%);
+    border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .end-cta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(232,165,74,.15) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sp-accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#c8b898;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{
+    display:block;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;
+    transition:background .2s,transform .15s,box-shadow .15s;
+    box-shadow:0 4px 16px rgba(212,169,106,.35);
+  }
+  .btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,169,106,.45);}
+  .btn-cta-secondary{
+    display:block;background:transparent;color:var(--parchment);text-decoration:none;
+    font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;
+    border:1.5px solid rgba(232,165,74,.3);transition:border-color .2s,background .2s;
+  }
+  .btn-cta-secondary:hover{border-color:var(--sp-accent);background:rgba(232,165,74,.08);}
+
   section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
   section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
   section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
   .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
   .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
   .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
-
   footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
   footer a{color:var(--accent);text-decoration:none;}
   .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
@@ -122,6 +209,10 @@
     .env-grid{grid-template-columns:1fr 1fr;}
     .gear-card{flex-direction:column;}
     .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+    .scroll-hint{display:block;}
+    .inline-cta{flex-direction:column;text-align:center;}
+    .end-cta{padding:28px 18px 24px;}
+    .end-cta h3{font-size:1.25rem;}
   }
 </style>
 </head>
@@ -172,6 +263,15 @@
       飼育下でも穴掘り行動は強く残ります。柔らかい土や砂を用意しないと、フェンスや壁を壊す方向にエネルギーが向かいます。成体の破壊力は相当なもので、木製ケージは数年で崩壊します。
     </div>
 
+    <!-- inline CTA：ケヅメ特化コピー -->
+    <div class="inline-cta">
+      <div class="inline-cta-emoji">🐢</div>
+      <div class="inline-cta-body">
+        <p>ケヅメを飼う覚悟があるか、生活環境から確かめましょう。屋外スペース・家族の同意・10年後の計画を診断ツールが問いかけます。</p>
+        <a href="../shindan/index.html">無料で診断する（3分）</a>
+      </div>
+    </div>
+
     <h2>飼育環境 — 幼体と成体で戦略が変わる</h2>
     <p>ケヅメの飼育で最も重要なのは「現在のサイズ」でなく「5年後・10年後のサイズ」を前提に計画することです。幼体（10cm以下）はケージ飼育から始められますが、甲長30cmを超えた時点で屋外管理への移行を考え始める必要があります。</p>
 
@@ -210,6 +310,59 @@
       個体差・飼育環境により大きく異なりますが、10年以内に大型犬サイズになると考えておくべきです。
     </div>
 
+    <!-- 比較表：大型リクガメ対比 -->
+    <h2>他のリクガメとの比較</h2>
+    <p>ケヅメとよく比較されるリクガメ3種。最終サイズと必要スペースを先に確認してください。</p>
+    <p class="scroll-hint">← 横にスクロールできます</p>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>種名</th>
+            <th>最大甲長</th>
+            <th>難易度</th>
+            <th>必要スペース</th>
+            <th>CITES</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="recommended">
+            <td>ケヅメリクガメ <span class="badge badge-rec">このページ</span></td>
+            <td>90cm超</td>
+            <td><span class="badge badge-hard">上級</span></td>
+            <td>屋外10㎡以上</td>
+            <td>II</td>
+            <td>最大・最高破壊力</td>
+          </tr>
+          <tr>
+            <td><a href="russian-tortoise.html">ロシアリクガメ</a></td>
+            <td>20cm</td>
+            <td><span class="badge badge-easy">入門</span></td>
+            <td>60cm〜ケージ</td>
+            <td>II</td>
+            <td>コンパクト・よくなつく</td>
+          </tr>
+          <tr>
+            <td><a href="greek-tortoise.html">ギリシャリクガメ</a></td>
+            <td>25cm</td>
+            <td><span class="badge badge-mid">中級</span></td>
+            <td>90cm〜ケージ</td>
+            <td>II</td>
+            <td>亜種多様・地中海産</td>
+          </tr>
+          <tr>
+            <td><a href="hermann-tortoise.html">ヘルマンリクガメ</a></td>
+            <td>28cm</td>
+            <td><span class="badge badge-mid">中級</span></td>
+            <td>90cm〜ケージ</td>
+            <td>II</td>
+            <td>EU産CB流通豊富</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <h2>食事 — 質より量より「種類」が大切</h2>
     <p>野生のケヅメはイネ科の乾草・多肉植物・低木の葉など繊維質に富んだ植物を主食とします。飼育下では<strong>チモシー・オーチャードグラスなどの乾草を主軸</strong>に、野草（タンポポ・オオバコ・クワ）を副食として与えます。市販のリクガメフードは補助的に使用可能ですが、主食化すると肥満・腎臓疾患のリスクが高まります。</p>
     <p>果物は糖分が高く内臓負担になるため原則不要。カルシウム補給はカトルボーンや炭酸カルシウムを週2〜3回ふりかけで対応します。</p>
@@ -221,12 +374,13 @@
       <div class="gear-card">
         <div class="gear-icon">☀️</div>
         <div class="gear-info">
-          <div class="gear-name">UVB蛍光灯（12%・フォレスト/デザート兼用）</div>
-          <div class="gear-why">ケヅメは太陽光量の多い環境出身。室内では高出力UVB（10〜12%相当）が必須。6〜12ヶ月で交換。</div>
+          <div class="gear-name">UVB蛍光灯（デザート12%）</div>
+          <div class="gear-why">ケヅメは太陽光量の多いサヘル地帯出身。室内では高出力UVB（10〜12%相当）が必須。6〜12ヶ月で定期交換。</div>
           <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ケヅメリクガメ+UVBランプ+爬虫類/" target="_blank" rel="noopener">楽天</a>
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ケヅメリクガメ+UVBランプ+爬虫類/" target="_blank" rel="nofollow noopener">楽天で探す</a>
           </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
         </div>
       </div>
 
@@ -234,11 +388,12 @@
         <div class="gear-icon">🔆</div>
         <div class="gear-info">
           <div class="gear-name">バスキングランプ（75〜100W）</div>
-          <div class="gear-why">スポット直下42℃を作るには高W数が必要。ランプと床面の距離を調整して適温を確認する。</div>
+          <div class="gear-why">スポット直下42℃を作るには高W数が必要。ランプと床面の距離を調整して適温を確認する。幼体には75W、成長後は100Wに切り替えを。</div>
           <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043AYZL8?tag=kamelife09-22" target="_blank" rel="noopener">Amazon（75W）</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/バスキングランプ+リクガメ/" target="_blank" rel="noopener">楽天</a>
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043AYZL8?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る（75W）</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/バスキングランプ+リクガメ/" target="_blank" rel="nofollow noopener">楽天で探す</a>
           </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
         </div>
       </div>
 
@@ -246,51 +401,101 @@
         <div class="gear-icon">🌿</div>
         <div class="gear-info">
           <div class="gear-name">リクガメフード（補助用）</div>
-          <div class="gear-why">乾草が入手しにくい場合の補助食。主食は乾草・野草とし、フードは全体の2〜3割程度にとどめる。</div>
+          <div class="gear-why">乾草が入手しにくい場合の補助食。主食は乾草・野草とし、フードは全体の2〜3割程度にとどめる。ビタミンD3・カルシウム配合。</div>
           <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ?tag=kamelife09-22" target="_blank" rel="noopener">Amazon</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード+乾草/" target="_blank" rel="noopener">楽天</a>
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード+乾草/" target="_blank" rel="nofollow noopener">楽天で探す</a>
           </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏜️</div>
+        <div class="gear-info">
+          <div class="gear-name">床材（赤玉土 小粒）</div>
+          <div class="gear-why">乾燥系の床材として最適。穴掘り行動を満たすため10cm以上の厚みで敷く。湿度を上げすぎないよう管理しやすく経済的。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=赤玉土+小粒+リクガメ&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/赤玉土+小粒+爬虫類+リクガメ/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
         </div>
       </div>
 
     </div>
 
-    <h2>よくあるトラブルQ&A</h2>
+    <h2>よくあるトラブルQ&amp;A</h2>
     <div class="faq-list">
 
       <details class="faq">
-        <summary>幼体が餌を食べません</summary>
+        <summary>
+          幼体が餌を食べません
+          <span class="faq-tag tag-food">餌</span>
+        </summary>
         <div class="faq-body">
           バスキング温度が低い可能性が最も高いです。スポット直下が38℃以上あるか確認してください。消化吸収には高温が必要なため、温度が不足すると食欲が落ちます。次に環境に慣れていない場合もあります。シェルターを用意し、静かな場所で様子を見てください。
         </div>
       </details>
 
       <details class="faq">
-        <summary>甲羅がデコボコになってきました（ピラミッディング）</summary>
+        <summary>
+          甲羅がデコボコになってきました（ピラミッディング）
+          <span class="faq-tag tag-health">健康</span>
+        </summary>
         <div class="faq-body">
           タンパク質過多・急速な成長・湿度不足が主な原因とされています。乾草と野草中心の食事に切り替え、カルシウムを定期補給してください。完全には戻りませんが、適切な管理で進行を遅らせることは可能です。
         </div>
       </details>
 
       <details class="faq">
-        <summary>成体になったとき飼えなくなるかもしれません</summary>
+        <summary>
+          成体になったとき飼えなくなるかもしれません
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
         <div class="faq-body">
           正直な不安として受け止めてほしい問題です。里親探しは非常に難しく、爬虫類専門の保護団体も少ないのが現状です。購入前に「終生飼育できるか」「屋外スペースを確保できるか」「家族の同意はあるか」を必ず確認してください。
         </div>
       </details>
 
       <details class="faq">
-        <summary>冬の保温はどうすればいいですか？</summary>
+        <summary>
+          冬の保温はどうすればいいですか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
         <div class="faq-body">
           屋外飼育の場合、断熱材で囲んだ小屋にパネルヒーターや遠赤外線ヒーターを組み合わせます。小屋内温度を最低15℃以上（できれば18℃以上）に保つことが目標。大型個体になるほど保温コストも上がるため、電気代も計算に入れた計画を立てましょう。
         </div>
       </details>
 
       <details class="faq">
-        <summary>穴を掘って外に出ようとします</summary>
+        <summary>
+          穴を掘って外に出ようとします
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
         <div class="faq-body">
           本能的な行動です。フェンスは地面から30cm以上埋めるか、コンクリートブロックを基礎として使用してください。木材は数年で噛み壊されます。脱走防止には「地下対策」が地上対策と同じくらい重要です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          CITES IIの種はどこで買えますか？
+          <span class="faq-tag tag-law">法律</span>
+        </summary>
+        <div class="faq-body">
+          国内の爬虫類専門店またはブリーダーから購入してください。CITES II種の国内CB個体は、購入・飼育に特別な許可証は不要です。購入時にCB（国内繁殖）であることとインボイス（取引証明書）の有無を確認することを推奨します。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          ロシアリクガメと迷っています
+          <span class="faq-tag">比較</span>
+        </summary>
+        <div class="faq-body">
+          居住スペースと長期計画が決め手です。ロシアリクガメは成体でも20cm・60cmケージから管理でき、賃貸でも十分飼えます。ケヅメは10年後に屋外10㎡以上が必要になるため、自宅の庭や長期的な住環境を先に確認してください。
+          → <a href="russian-tortoise.html" style="color:var(--accent-dark);font-weight:700;">ロシアリクガメの詳細はこちら</a>
         </div>
       </details>
 
@@ -299,14 +504,33 @@
     <h2>関連ページ</h2>
     <div class="related-links">
       <a class="rel-btn" href="../guide-dry.html">🌵 乾燥系リクガメ 飼育ガイド</a>
-      <a class="rel-btn" href="../species/russian-tortoise.html">🏔️ ロシアリクガメ</a>
-      <a class="rel-btn" href="../species/greek-tortoise.html">🏛️ ギリシャリクガメ</a>
-      <a class="rel-btn" href="../species/hermann-tortoise.html">🌿 ヘルマンリクガメ</a>
+      <a class="rel-btn" href="russian-tortoise.html">🏔️ ロシアリクガメ</a>
+      <a class="rel-btn" href="greek-tortoise.html">🏛️ ギリシャリクガメ</a>
+      <a class="rel-btn" href="hermann-tortoise.html">🌿 ヘルマンリクガメ</a>
+      <a class="rel-btn" href="../uvb-light-best10.html">☀️ UVBライト</a>
+      <a class="rel-btn" href="../food-best10.html">🍃 フード・餌</a>
     </div>
 
     <div class="shindan-cta">
       <p>大型リクガメを本当に飼えるか、生活環境から診断してみませんか？</p>
-      <a href="../index.html#shindan">🐢 カメ適性診断をはじめる</a>
+      <a href="../shindan/index.html">🐢 カメ適性診断をはじめる（97種）</a>
+    </div>
+
+    <div class="end-cta">
+      <div class="end-cta-label">Next Step</div>
+      <h3>10年後の自分に問いかけてから始める</h3>
+      <p>ケヅメは衝動買いが最も後悔を生む種です。まず診断ツールで適性を確認し、それから機材を揃えましょう。</p>
+      <div class="end-cta-btns">
+        <a class="btn-cta-primary" href="../shindan/index.html">
+          まずは自分に合う亀を診断する
+        </a>
+        <a class="btn-cta-secondary" href="../uvb-light-best10.html">
+          ☀️ UVBライトを選ぶ
+        </a>
+        <a class="btn-cta-secondary" href="../food-best10.html">
+          🍃 フード・餌を選ぶ
+        </a>
+      </div>
     </div>
 
   </article>
@@ -329,8 +553,8 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2025 カメライフガイド</p>
-    <p class="disclaimer">本サイトの情報は飼育参考を目的としており、獣医学的診断・治療の代替となるものではありません。Amazonアソシエイトプログラム参加サイトです。</p>
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
   </div>
 </footer>
 
