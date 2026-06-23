@@ -207,6 +207,36 @@
     .end-cta{padding:28px 18px 24px;}
     .end-cta h3{font-size:1.25rem;}
   }
+  /* ── SPECIES NAV FOOTER ── */
+  .species-nav{
+    border-top:1.5px solid #e4ddc9;
+    margin-top:44px;padding-top:28px;
+  }
+  .species-nav-label{
+    font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-dark);margin-bottom:14px;
+  }
+  .species-nav-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .species-nav-link{
+    display:flex;align-items:center;gap:8px;
+    background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;
+    padding:13px 14px;text-decoration:none;
+    color:var(--forest);font-size:.85rem;font-weight:700;
+    transition:border-color .15s,background .15s;line-height:1.35;
+  }
+  .species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+  .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+  .species-nav-link .snl-text{min-width:0;}
+  .species-nav-link .snl-sub{
+    display:block;font-size:.72rem;font-weight:400;
+    color:#8a7a60;margin-top:2px;line-height:1.3;
+  }
+  @media(max-width:400px){
+    .species-nav-grid{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
 <body>
@@ -509,7 +539,37 @@
           🍃 フード・餌を選ぶ
         </a>
       </div>
-    </div>
+    
+    <nav class="species-nav" aria-label="関連ナビゲーション">
+      <div class="species-nav-label">もっと探す</div>
+      <div class="species-nav-grid">
+        <a class="species-nav-link" href="../shindan/index.html">
+          <span class="snl-icon">🐢</span>
+          <span class="snl-text">AI亀診断
+            <span class="snl-sub">97種から適性を診断</span>
+          </span>
+        </a>
+        <a class="species-nav-link" href="../guide-semi.html">
+          <span class="snl-icon">🌱</span>
+          <span class="snl-text">初心者向けの亀を見る
+            <span class="snl-sub">入門種ガイド一覧</span>
+          </span>
+        </a>
+        <a class="species-nav-link" href="../guide-water-full.html">
+          <span class="snl-icon">💧</span>
+          <span class="snl-text">水棲ガメを比較する
+            <span class="snl-sub">ハビタットガイドで比較</span>
+          </span>
+        </a>
+        <a class="species-nav-link" href="../species-list.html">
+          <span class="snl-icon">📋</span>
+          <span class="snl-text">他のspecies記事を見る
+            <span class="snl-sub">種一覧（97種）</span>
+          </span>
+        </a>
+      </div>
+    </nav>
+</div>
 
   </article>
 </main>
