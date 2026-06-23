@@ -9,6 +9,7 @@ land: [
     reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'russian-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2; },
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.beginner||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
@@ -16,6 +17,7 @@ land: [
     reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。最も人気の高い地中海系リクガメ。',
     specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'hermann-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 1 && (s.humid||0) >= 2; },
     score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
@@ -23,6 +25,7 @@ land: [
     reason: 'ヒガシ亜種より小型で黄みが強い体色が特徴。コンパクトなケージで飼育できる小型リクガメを求める中級者に向く。EU産CB流通あり。',
     specs: { '最大甲長': '18cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '24〜29℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'hermann-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 2 && (s.humid||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+(s.small_form||0); }
   },
@@ -30,6 +33,7 @@ land: [
     reason: '亜種が多く産地によって環境適応が大きく異なります。産地情報付きCBを選ぶことが重要で、中級以上向きです。',
     specs: { '最大甲長': '25cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜33℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'greek-tortoise', hasPage: true,
     match: function(s){ return (s.intermediate||0) >= 2 || (s.advanced||0) >= 1; },
     score: function(s){ return (s.medium||0)+(s.dry||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
@@ -37,6 +41,7 @@ land: [
     reason: 'ギリシャ・サルデーニャ島産の地中海リクガメ。後部甲羅が特徴的に外側に反り返る個性的な体型。ヘルマンより大型化するが乾燥管理は同様。',
     specs: { '最大甲長': '35cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium||0) >= 2 && (s.dry||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium||0)+(s.dry||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); }
   },
@@ -44,6 +49,7 @@ land: [
     reason: '東南アジア〜インド産の森林性リクガメ。高温多湿の環境を好み、地中海系リクガメとは異なる飼育感覚が楽しい。ミスト管理がポイント。',
     specs: { '最大甲長': '33cm', '主な食事': '野草・野菜・果物少量', '水容量': '浅め水入れ', '温度': '27〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.medium||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.asia_land||0); }
   },
@@ -51,6 +57,7 @@ land: [
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.intermediate||0)+(s.charisma||0); }
   },
@@ -58,6 +65,7 @@ land: [
     reason: '南米チャコ地方の乾燥地帯産。コンパクトなサイズで本格的な乾燥管理を楽しみたい上級者向き。WCは状態が悪いことが多くCBを強く推奨。',
     specs: { '最大甲長': '27cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '26〜33℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.compact||0) >= 1 && (s.dry||0) >= 3 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.herbivore||0)+(s.small_form||0); }
   },
@@ -65,6 +73,7 @@ land: [
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)*2; }
   },
@@ -72,6 +81,7 @@ land: [
     reason: 'ヒンジバック（背甲後部が可動する）という独特の構造を持つアフリカ産リクガメ。WC個体が多く状態管理が難しい。CB個体を入手できれば中型で飼いやすい。',
     specs: { '最大甲長': '25cm', '主な食事': '野草・野菜・昆虫少量', '水容量': '水入れ', '温度': '26〜32℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.advanced||0) >= 2 && (s.humid||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.humid||0)+(s.medium||0)+(s.charisma||0)*2; }
   },
@@ -79,6 +89,7 @@ land: [
     reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0); }
   },
@@ -86,6 +97,7 @@ land: [
     reason: 'セイシェル・アルダブラ島固有の巨大リクガメ。個人飼育は法的に可能だが広大なスペースと数十年の覚悟が必要。ケヅメより穏やかな性格で知られる。',
     specs: { '最大甲長': '120cm超', '主な食事': '野草・乾草', '水容量': '水浴び池必須', '温度': '28〜33℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 3 && (s.humid||0) >= 1 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.charisma||0); }
   },
@@ -93,6 +105,7 @@ land: [
     reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
     specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
   }
@@ -104,6 +117,7 @@ aquatic: [
     reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。お手頃価格で流通も安定。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'musk-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -111,6 +125,7 @@ aquatic: [
     reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 3 && (s.observational||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -118,6 +133,7 @@ aquatic: [
     reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -125,6 +141,7 @@ aquatic: [
     reason: '甲羅に3本の明瞭な筋が走る美しいドロガメ。小型で飼育しやすく温和な性格。ニオイガメと並ぶ小型水棲ガメ入門の選択肢。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -132,6 +149,7 @@ aquatic: [
     reason: 'キールが目立つ個性的な甲羅が魅力。ニオイガメよりやや大型化しますが45cm水槽から飼育可能。気性がやや荒い個体もいます。',
     specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'razorback-musk-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.observational||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -139,6 +157,7 @@ aquatic: [
     reason: '首と頭部に細かいストライプが走る美しいニオイガメ系の小型種。国内CB流通が確認されており、マニアに人気。小型水槽で観察を楽しめる。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.observational||0) >= 2 && (s.intermediate||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -146,6 +165,7 @@ aquatic: [
     reason: '頬の赤みが特徴的なメキシコ〜中米産のドロガメ。温和な性格で45cm水槽から飼育可能。国内CB流通が増加しており入手しやすくなっている。',
     specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
   },
@@ -153,6 +173,7 @@ aquatic: [
     reason: '甲羅の縁に赤・黄のラインが走る美しい種。泳ぎが活発で60〜90cm水槽が適切。草食傾向が強く管理しやすい。',
     specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)*2+(s.swimmer||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -160,6 +181,7 @@ aquatic: [
     reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高く初心者にも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
   },
@@ -167,6 +189,7 @@ aquatic: [
     reason: 'アカミミガメの近縁種で耳が黄色い。泳ぎが活発で観察が楽しい。アカミミガメと違い特定外来生物ではなく新規購入・飼育が可能。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -174,6 +197,7 @@ aquatic: [
     reason: '【条件付特定外来生物】新規購入・販売は禁止ですが、既に飼育中の場合は継続飼育・少数無償譲渡が可能。野外への放流は厳禁。責任ある飼育が求められます。',
     specs: { '最大甲長': '30cm', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large_tank||0) >= 1 && (s.beginner||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.beginner||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -181,6 +205,7 @@ aquatic: [
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -188,6 +213,7 @@ aquatic: [
     reason: 'ミシシッピチズガメの基亜種。背中のキールがより目立ち観察の楽しさがある。チズガメを一通り揃えたい中級者向け。',
     specs: { '最大甲長': '22cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -195,6 +221,7 @@ aquatic: [
     reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -202,6 +229,7 @@ aquatic: [
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
   },
@@ -209,6 +237,7 @@ aquatic: [
     reason: '台湾・中国南部および八重山諸島に分布するイシガメの亜種。宮古島では国内外来種として問題視されており飼育個体の野外放流は厳禁。国内CB入手推奨。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.observational||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
   },
@@ -216,6 +245,7 @@ aquatic: [
     reason: '台湾・中国南部産のイシガメ属。国内CB流通あり。ニホンイシガメよりやや高温を好む傾向。コンパクトで管理しやすい。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1 && (s.maintenance||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
   },
@@ -223,6 +253,7 @@ aquatic: [
     reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気が高い。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.observational||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.bottom_dweller||0)+(s.sa_water||0)+(s.tropical_climate||0); }
   },
@@ -230,6 +261,7 @@ aquatic: [
     reason: 'フロリダ半島産の大型スライダー系。活発な泳ぎと草食傾向で90cm以上の水槽が必要。大きくなる種を飼いたい中級者向け。',
     specs: { '最大甲長': '37cm（メス）', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large_tank||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -237,6 +269,7 @@ aquatic: [
     reason: '黄色い喉元と半開きの口がにっこり笑っているように見える独特の風貌。温帯種で夏の高温に弱く保冷が必要。国内CB確認済み。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '15〜24℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.advanced||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -244,6 +277,7 @@ aquatic: [
     reason: '枯れ葉のような外見で待ち伏せして魚を丸ごと吸い込む神秘的な種。水流を嫌い独特の飼育法を習得する必要がある本格派種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large_tank||0) >= 2 && (s.ambush||0) >= 2; },
     score: function(s){ return (s.ambush||0)+(s.advanced||0)+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0); }
   },
@@ -251,6 +285,7 @@ aquatic: [
     reason: 'メキシコ固有のドロガメ。甲長20cm程度と国内流通するドロガメ属では大型。温和な性格で60cm水槽から飼育できる。国内CB流通が増加中。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.maintenance||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
   },
@@ -258,6 +293,7 @@ aquatic: [
     reason: 'ユーラシア大陸唯一のヌマガメ科。国内CB・EUCB流通あり。低温に強く日本の温帯気候にも馴染みやすい。甲羅と頭部の黄色い斑点が美しい。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '16〜26℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.eu_water||0)+(s.cool_climate||0); }
   },
@@ -265,6 +301,7 @@ aquatic: [
     reason: 'クサガメの広東産地個体群。黄みがかった体色や明確な産地証明が魅力。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
   },
@@ -272,6 +309,7 @@ aquatic: [
     reason: '腹甲が黄みがかる個性的なドロガメ。テキサス〜イリノイ産。小型で管理しやすく、ドロガメ系コレクションの1種として人気。流通確認済み。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -279,6 +317,7 @@ aquatic: [
     reason: 'メキシコ・ベラクルス州に限定分布する希少なドロガメ。ザラアシドロガメとは別種。専門店からのCB入荷が確認されており、希少ドロガメを集めるマニア向き。',
     specs: { '最大甲長': '16cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
   },
@@ -286,6 +325,7 @@ aquatic: [
     reason: '白い口周りが特徴の中米産ドロガメ。ぶりくらでCB出品確認済み。ドロガメ属の中でも比較的大型で存在感がある。上級者の希少種コレクション向き。',
     specs: { '最大甲長': '17cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2 && (s.maintenance||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); }
   },
@@ -293,6 +333,7 @@ aquatic: [
     reason: '背中キールの黒いコブが印象的なチズガメ。ぶりくらCB出品確認済み。チズガメ属の中でも個性的な外見で、コレクション性が高い中上級種。',
     specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -300,6 +341,7 @@ aquatic: [
     reason: '目の後方に輪状の美麗模様が入るチズガメ屈指の美種。ぶりくら2025出品リスト記載。水質への敏感さと飼育難度から上級者向きだが所有する価値は高い。',
     specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 3 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   }
@@ -311,6 +353,7 @@ forest: [
     reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
     specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); }
   },
@@ -318,6 +361,7 @@ forest: [
     reason: '甲羅に年輪のような刻みと橙色の模様が美しい北米産。低温を好む温帯種で夏の保冷が必要。半水棲で陸場と水場を行き来する。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '16〜24℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 1 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)+(s.ya_ma||0); }
   },
@@ -325,6 +369,7 @@ forest: [
     reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷管理が必須。動物性タンパクを好む雑食性で、ユニークな飼育体験ができます。著者も飼育中。',
     specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.s_size||0) >= 2 && (s.cooling||0) >= 2; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
@@ -332,6 +377,7 @@ forest: [
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中で、落ち着いた性格が魅力。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.m_size||0) >= 1 && (s.cooling||0) >= 2; },
     score: function(s){ return (s.m_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
@@ -339,6 +385,7 @@ forest: [
     reason: '甲羅と頭部に鮮やかな赤いラインが走る美しい中米産ヤマガメ。半陸棲で湿度管理が必要。マンヤマガメとの区別に注意。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 2 && (s.advanced_env||0) >= 2; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced_env||0)+(s.advanced||0)+(s.ya_ma||0); }
   },
@@ -346,6 +393,7 @@ forest: [
     reason: '甲羅に年輪のような輪状の模様が美しい中南米産ヤマガメ。半陸棲で高湿度と水場が必要。国内CB流通確認済み。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.m_size||0) >= 1 && (s.advanced_env||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.advanced_env||0)+(s.semi_aquatic||0)+(s.advanced||0)+(s.ya_ma||0); }
   },
@@ -353,6 +401,7 @@ forest: [
     reason: '古代民族の陶器のような鮮やかな色彩が特徴の中米産ヤマガメ。かめぢから・ぶりくら路面店での流通確認済み。果物・人工飼料なんでも食べる飼育しやすさが◎。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
@@ -360,6 +409,7 @@ forest: [
     reason: '鮮やかな模様を持つ中米産ヤマガメ。ぶりくら2025出品リストにニカラグアクジャクガメとして記載。半陸棲で水場と陸場を行き来する。高湿度環境が必要。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 2 && (s.advanced_env||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.ya_ma||0); }
   },
@@ -367,6 +417,7 @@ forest: [
     reason: '後肢が3本指の北米産ハコガメ。腹甲を完全に閉じられる独自構造が特徴。雑食性で飼育食への移行がしやすい。著者も飼育中。',
     specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: 'three-toed-box-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
   },
@@ -374,6 +425,7 @@ forest: [
     reason: '北米産ハコガメの基亜種。国内CBの流通も盛ん。腹甲全体を閉じられる独特の能力をもつ。雑食性で飼育食への移行も比較的容易。',
     specs: { '最大甲長': '20cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.na_box||0); }
   },
@@ -381,6 +433,7 @@ forest: [
     reason: 'ハコガメの中で最も大型になる亜種。やや湿度の高い環境を好む。中型〜大型の陸棲ガメを求める中上級者に適する。',
     specs: { '最大甲長': '22cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 2 && (s.advanced_env||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
   },
@@ -388,6 +441,7 @@ forest: [
     reason: 'フロリダ産の小型ハコガメ。甲羅に放射状の美しい模様がある。他のハコガメより小さく、50cm程度のケージでも飼育可能。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜29℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.s_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.intermediate||0)+(s.na_box||0); }
   },
@@ -395,6 +449,7 @@ forest: [
     reason: '甲羅に黄色のニシキ模様が入る美しいハコガメ。乾燥気味の環境を好み草食傾向が強い。北米ハコガメの中でも個性的な一種。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜30℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 3 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); }
   },
@@ -402,6 +457,7 @@ forest: [
     reason: '甲羅の縁がオレンジ色に縁どられた美しい台湾産ハコガメ。CB個体は流通している。沖縄産は天然記念物で全く別扱い。必ずCB証明書を確認のこと。',
     specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.asia_box||0); }
   },
@@ -409,6 +465,7 @@ forest: [
     reason: '東南アジア広域に分布する半水棲のハコガメ。水場・陸場を行き来する。高温多湿を好みアジア的な雰囲気がある。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '26〜30℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.asia_box||0); }
   },
@@ -416,6 +473,7 @@ forest: [
     reason: '中国本土産のセマルハコガメ。CB個体の流通がある。タイワン産と同様の管理で飼育できるが亜種の証明書をしっかり確認することが重要。',
     specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.advanced||0)+(s.asia_box||0); }
   },
@@ -423,6 +481,7 @@ forest: [
     reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。',
     specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); }
   },
@@ -430,6 +489,7 @@ forest: [
     reason: '甲羅の美しい模様が特徴のアジア産ハコガメ。モエギに次ぐ希少性で上級者向き。湿度と温度の精密管理が必要。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '22〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.advanced||0)+(s.advanced_env||0)+(s.asia_box||0); }
   },
@@ -437,6 +497,7 @@ forest: [
     reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。高価で流通が非常に少ない。CB個体を入手できれば本格的なアジアガメ飼育の頂点。',
     specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.semi_aquatic||0) >= 1 && (s.advanced||0) >= 3 && (s.advanced_env||0) >= 3; },
     score: function(s){ return (s.semi_aquatic||0)+(s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.asia_box||0); }
   }
@@ -448,6 +509,7 @@ exotic: [
     reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
     specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 3; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; }
   },
@@ -455,6 +517,7 @@ exotic: [
     reason: 'スパイニースッポンよりキールが目立たない滑らかな甲羅を持つ。砂底必須・水流弱め。スッポン属の中でも温和な個体が多い。',
     specs: { '最大甲長': '45cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0); }
   },
@@ -462,6 +525,7 @@ exotic: [
     reason: 'スッポン属最大種のひとつ。非常に攻撃的で飼育難度が高い。本格的なソフトシェル飼育に挑戦したい経験者向け。',
     specs: { '最大甲長': '60cm（メス）', '水槽サイズ': '120cm〜', '底床': '細かい砂必須', '水温': '25〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2; }
   },
@@ -469,6 +533,7 @@ exotic: [
     reason: 'ニューギニア・オーストラリア北部産の大型種。前肢がウミガメのようなヒレ状。26〜30℃の高水温と広い水槽が必須の本格飼育種。',
     specs: { '最大甲長': '70cm', '水槽サイズ': '150cm〜', '底床': '砂利〜砂', '水温': '26〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 2; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0); }
   },
@@ -476,6 +541,7 @@ exotic: [
     reason: '食用としても知られる東アジア産スッポン。ペットとしての飼育者も多く国内流通が安定している。砂底必須・嚙みつき注意。軟らかい甲羅と独特の動きが面白い。',
     specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.accessible||0); }
   },
@@ -483,6 +549,7 @@ exotic: [
     reason: '白〜クリーム色の体色が美しいシナスッポンのアルビノ個体。アクアスペースなど専門店で入荷確認済み。スッポンの迫力とアルビノの希少感を兼ね備えた観賞種。',
     specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 2; },
     score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.collector_grade||0); }
   },
@@ -490,6 +557,7 @@ exotic: [
     reason: '汽水（海水と淡水の混合）で飼育する北米唯一の汽水ガメ。独特の菱形模様が美しく専門的な塩分管理が必要。ディープなマニア向き。',
     specs: { '最大甲長': '23cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.brackish||0) >= 3; },
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; }
   },
@@ -497,6 +565,7 @@ exotic: [
     reason: '最も美しいとも言われるダイヤモンドバックテラピンの亜種。甲羅の同心円模様が見事。国内CB流通が盛んになっている。',
     specs: { '最大甲長': '21cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.collector_grade||0); }
   },
@@ -504,6 +573,7 @@ exotic: [
     reason: 'フロリダ産の派手な模様を持つダイヤモンドバックテラピンの亜種。国内CB流通が盛ん（アクアスペース2024年入荷確認）。汽水管理が必要だが亜種中で最も流通が多い。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.brackish||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); }
   },
@@ -511,6 +581,7 @@ exotic: [
     reason: 'オーストラリア産の曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる独特の防御行動が印象的。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; }
   },
@@ -518,6 +589,7 @@ exotic: [
     reason: 'オーストラリア北部産の大型曲頸類。頑丈な甲羅と大きなサイズが特徴。水中生活が主体で大型水槽が必要な本格派。',
     specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
   },
@@ -525,6 +597,7 @@ exotic: [
     reason: 'サハラ以南に広く分布する曲頸類。比較的安価で入手しやすくなっている。横に首を曲げる独特の行動が面白い。水棲傾向が強い。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 1 && (s.budget_low||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.budget_low||0)+(s.accessible||0)*2; }
   },
@@ -532,6 +605,7 @@ exotic: [
     reason: '南米産曲頸類で流通量が多く、飼育もしやすい入門的曲頸種。下顎のヒゲ状突起がユーモラス。大型になるが水質・水温への許容範囲が広い。2025CB流通確認済み。',
     specs: { '最大甲長': '40cm', '水槽サイズ': '90cm〜', '水温': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.accessible||0); }
   },
@@ -539,6 +613,7 @@ exotic: [
     reason: 'ナガクビガメ属の中で最も精悍な顔つきと評されるニューギニア産。EUCB流通あり。色抜け個体は非常に美しく、曲頸類の中でも上位の観賞価値を持つ。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); }
   },
@@ -546,6 +621,7 @@ exotic: [
     reason: 'アマゾン川の底に潜む枯れ葉擬態の達人。生き餌または冷凍魚を水ごと吸い込む独特の捕食。水族館レベルの本格飼育種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.expert||0)+(s.budget_high||0); }
   },
@@ -553,6 +629,7 @@ exotic: [
     reason: 'オリノコ川水系産のマタマタ近縁種。外見はマタマタに酷似するが別種。CITES II。究極の枯れ葉擬態カメをコレクションに加えたい上級者向き。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_max||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0); }
   },
@@ -560,6 +637,7 @@ exotic: [
     reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。希少種コレクター向き。',
     specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.rare_asian||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.rare_asian||0)+(s.advanced||0)+(s.expert||0); }
   },
@@ -567,6 +645,7 @@ exotic: [
     reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。CITES II。希少種を求める本格コレクター向きの頂点種。高価だがCB個体入手が夢のマニアには究極の存在。',
     specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.rare_asian||0) >= 3 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.rare_asian||0)+(s.collector_grade||0)+(s.ultra_rare||0)+(s.budget_high||0); }
   },
@@ -574,6 +653,7 @@ exotic: [
     reason: 'ドロガメ属最大種。中南米広域に分布し複数の亜種が知られる。噛みつき力が非常に強く取り扱いに注意が必要。大型ドロガメ系の迫力と個性を楽しみたいマニア向き。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.collector_grade||0); }
   },
@@ -581,6 +661,7 @@ exotic: [
     reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手での取り扱い厳禁。CITES II。大型ドロガメ系の究極形として国内での飼育者もいる本格マニア向き種。',
     specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.large_mud||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
   }
@@ -592,6 +673,7 @@ all: [
     reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'musk-turtle', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 2 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.interactive||0); }
   },
@@ -599,6 +681,7 @@ all: [
     reason: '国内流通する最小クラスの水棲ガメ。30cm水槽から飼育可能で扱いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 3 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.observational||0); }
   },
@@ -606,6 +689,7 @@ all: [
     reason: '昔からペットとして親しまれてきた水棲ガメ。丈夫で適応力が高く初心者にも飼いやすい。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.interactive||0); }
   },
@@ -613,6 +697,7 @@ all: [
     reason: 'リクガメ入門の定番。乾燥した環境を好み、好奇心が旺盛でなつきやすく、初心者にも人気。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'russian-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.dry_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.dry_env||0)+(s.beginner||0)+(s.interactive||0); }
   },
@@ -620,6 +705,7 @@ all: [
     reason: 'EU産CBの流通が豊富でコンディションが安定。最も人気の高い地中海系リクガメ。',
     specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'hermann-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.medium||0) >= 1 && (s.humid_env||0) >= 1; },
     score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.intermediate||0)+(s.interactive||0); }
   },
@@ -627,6 +713,7 @@ all: [
     reason: '黒い甲羅に黄色の水玉模様が美しい北米産半水棲ガメ。低温を好む温帯種で夏の保冷が必要。',
     specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small||0) >= 2 && (s.cool_env||0) >= 1; },
     score: function(s){ return (s.small||0)+(s.cool_env||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -634,6 +721,7 @@ all: [
     reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷が必須。著者も飼育中。',
     specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.small||0) >= 2 && (s.cool_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.small||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -641,6 +729,7 @@ all: [
     reason: '後肢3本指の北米産ハコガメ。雑食性で腹甲を完全に閉じられる独自構造。著者も飼育中。',
     specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: 'three-toed-box-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.humid_env||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -648,6 +737,7 @@ all: [
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -655,6 +745,7 @@ all: [
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 1 && (s.cool_env||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.cool_env||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -662,6 +753,7 @@ all: [
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1 && (s.cool_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -669,6 +761,7 @@ all: [
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で高温多湿の環境が必要。大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.humid_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.humid_env||0)+(s.intermediate||0); }
   },
@@ -676,6 +769,7 @@ all: [
     reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.collector||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.collector||0)+(s.observational||0)+(s.intermediate||0); }
   },
@@ -683,6 +777,7 @@ all: [
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.dry_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -690,6 +785,7 @@ all: [
     reason: '枯れ葉擬態の達人。生き餌を水ごと吸い込む独特の捕食スタイル。コレクターが憧れる本格飼育種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.advanced||0)+(s.collector||0)+(s.observational||0); }
   },
@@ -697,6 +793,7 @@ all: [
     reason: '成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
   }
