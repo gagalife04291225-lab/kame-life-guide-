@@ -107,10 +107,11 @@ body {
 .progress-fill { height: 100%; background: var(--accent-light); border-radius: 99px; transition: width .4s cubic-bezier(.4,0,.2,1); }
 .route-badge { font-size: .78rem; color: var(--accent-light); letter-spacing: .04em; white-space: nowrap; }
 .question-text { font-family: var(--font-display); font-size: clamp(1.1rem, 4vw, 1.35rem); line-height: 1.55; color: var(--parchment); margin-bottom: 28px; min-height: 3.5em; }
-.choices { display: grid; gap: 10px; flex: 1; }
+.choices { display: grid; gap: 12px; flex: 1; }
 .choice-btn { background: rgba(255,255,255,.07); border: 1.5px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 16px 18px; color: var(--parchment); font-family: var(--font-body); font-size: .95rem; line-height: 1.45; text-align: left; cursor: pointer; transition: background .15s, border-color .15s, transform .12s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; min-height: 56px; width: 100%; }
 .choice-btn:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.22); }
 .choice-btn:active { transform: scale(.98); background: rgba(143,95,44,.2); }
+.choice-btn.selected { background: rgba(143,95,44,.35); border-color: var(--accent-light); color: var(--parchment); }
 #screen-result { gap: 0; }
 .result-header { text-align: center; margin-bottom: 28px; }
 .result-label { font-size: .8rem; color: var(--accent-light); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
@@ -248,6 +249,7 @@ body {
     <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
     <div class="result-species-name" id="res-name" tabindex="-1"></div>
     <div class="result-latin" id="res-latin"></div>
+    <button class="btn-retry" id="btn-retry-top" style="margin-top:12px;width:auto;padding:10px 22px;font-size:.88rem;opacity:.8;">もう一度診断する</button>
   </div>
   <div class="score-meter" id="score-meter" aria-label="相性スコア">
     <div class="score-pct"><span id="score-num">0</span><span class="score-pct-unit">%</span></div>
@@ -273,7 +275,7 @@ body {
   </div>
   <!-- PHASE 4: 機材推奨セクション -->
   <div class="result-card" id="equipment-section" style="display:none">
-    <div class="result-card-title">推奨飼育機材</div>
+    <div class="result-card-title">はじめに揃えるもの</div>
     <div id="equipment-list"></div>
   </div>
   <!-- PHASE 4: note.com誘導 -->
@@ -382,7 +384,7 @@ function tryRestoreFromUrl() {
     result = sp;
     resultScore = 0;
     resultMaxScore = 1;
-    showResult(sp, 0);
+    showResult(sp, null);  // null = URL復元時はスコア非表示
     return true;
   } catch(e){ return false; }
 }
@@ -676,23 +678,29 @@ function showQuestion() {
     var btn = document.createElement('button');
     btn.className = 'choice-btn';
     btn.textContent = choice.label;
-    btn.addEventListener('click', function(){ selectChoice(choice); });
+    btn.addEventListener('click', function(){ selectChoice(choice, this); });
     container.appendChild(btn);
   });
 }
 
 // ===== 選択処理 =====
-function selectChoice(choice) {
-  answerHistory.push({ questionIndex: currentQuestionIndex, scores: choice.scores });
-  Object.entries(choice.scores).forEach(function(entry){
-    scores[entry[0]] = (scores[entry[0]] || 0) + entry[1];
-  });
-  currentQuestionIndex++;
-  if (currentQuestionIndex < selectedRoute.questions.length) {
-    showQuestion();
-  } else {
-    calcResult();
-  }
+function selectChoice(choice, clickedBtn) {
+  // selected状態を表示してから0.25秒後に次へ
+  var allBtns = document.querySelectorAll('.choice-btn');
+  allBtns.forEach(function(b){ b.disabled = true; });
+  if (clickedBtn) clickedBtn.classList.add('selected');
+  setTimeout(function(){
+    answerHistory.push({ questionIndex: currentQuestionIndex, scores: choice.scores });
+    Object.entries(choice.scores).forEach(function(entry){
+      scores[entry[0]] = (scores[entry[0]] || 0) + entry[1];
+    });
+    currentQuestionIndex++;
+    if (currentQuestionIndex < selectedRoute.questions.length) {
+      showQuestion();
+    } else {
+      calcResult();
+    }
+  }, 250);
 }
 
 // ===== 結果計算 =====
@@ -703,7 +711,14 @@ function calcResult() {
 
   var candidates = selectedRoute.species;
   var matched = candidates.filter(function(sp){ return sp.match(scores); });
-  var pool = matched.length > 0 ? matched : candidates;
+  // 安全fallback: conditional_invasive・難易度「上級」単体・XLサイズを除外
+  var safeFallback = candidates.filter(function(sp){
+    if (sp.legal === 'conditional_invasive') return false;
+    if (sp.difficulty && sp.difficulty === '上級') return false;
+    if (sp.size && sp.size.indexOf('XL') !== -1) return false;
+    return true;
+  });
+  var pool = matched.length > 0 ? matched : (safeFallback.length > 0 ? safeFallback : candidates);
   var best = pool[0];
   var bestScore = -Infinity;
   pool.forEach(function(sp){
@@ -778,16 +793,29 @@ function showResult(sp, pct) {
       '</a>';
   }
 
-  // hasPage:false フォールバックCTA
+  // hasPage:false フォールバックCTA（ルートIDで正しいガイドへ誘導）
   if (!sp.hasPage) {
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
     var habitatHref = '../guide-beginner.html';
-    if (sp.category === 'water' || sp.category === 'semi') habitatHref = '../guide-water-full.html';
-    else if (sp.category === 'tortoise' || sp.category === 'dry') habitatHref = '../guide-dry.html';
-    else if (sp.category === 'forest' || sp.category === 'humid') habitatHref = '../guide-humid.html';
+    var habitatLabel = 'Habitat Guide';
+    var habitatText = 'この種に合った飼育ガイドを見る';
+    if (routeId === 'land') {
+      habitatHref = '../guide-dry.html';
+      habitatText = 'このタイプのリクガメ飼育ガイドを見る';
+    } else if (routeId === 'aquatic') {
+      habitatHref = '../guide-water-full.html';
+      habitatText = '水棲ガメの飼育環境を確認する';
+    } else if (routeId === 'forest') {
+      habitatHref = '../guide-moist.html';
+      habitatText = '湿度管理が必要なヤマガメ・ハコガメ飼育ガイドを見る';
+    } else if (routeId === 'exotic') {
+      habitatHref = '../guide-softshell.html';
+      habitatText = '上級者向け・特殊種の飼育ポイントを見る';
+    }
     linksDiv.innerHTML +=
       '<a href="' + habitatHref + '" class="species-page-cta" style="opacity:.85;">' +
-        '<div class="species-page-cta-label">Habitat Guide</div>' +
-        '<div class="species-page-cta-title">このタイプの飼育ガイドを見る<span class="species-page-cta-arrow">→</span></div>' +
+        '<div class="species-page-cta-label">' + habitatLabel + '</div>' +
+        '<div class="species-page-cta-title">' + habitatText + '<span class="species-page-cta-arrow">→</span></div>' +
       '</a>';
   }
 
@@ -811,26 +839,32 @@ function showResult(sp, pct) {
   show('screen-result');
   document.getElementById('res-name').focus();
 
-  // スコアメーターをアニメーション表示
-  var displayPct = typeof pct === 'number' ? pct : 0;
-  document.getElementById('score-num').textContent = '0';
-  document.getElementById('score-bar').style.width = '0%';
-  setTimeout(function(){
-    document.getElementById('score-bar').style.width = displayPct + '%';
-    // カウントアップアニメーション
-    var start = 0;
-    var duration = 800;
-    var startTime = null;
-    function animCount(ts) {
-      if (!startTime) startTime = ts;
-      var elapsed = ts - startTime;
-      var progress = Math.min(elapsed / duration, 1);
-      var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      document.getElementById('score-num').textContent = Math.round(ease * displayPct);
-      if (progress < 1) requestAnimationFrame(animCount);
-    }
-    requestAnimationFrame(animCount);
-  }, 100);
+  // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
+  var scoreMeter = document.getElementById('score-meter');
+  if (pct === null || pct === undefined) {
+    scoreMeter.style.display = 'none';
+  } else {
+    scoreMeter.style.display = '';
+    var displayPct = typeof pct === 'number' ? pct : 0;
+    document.getElementById('score-num').textContent = '0';
+    document.getElementById('score-bar').style.width = '0%';
+    setTimeout(function(){
+      document.getElementById('score-bar').style.width = displayPct + '%';
+      // カウントアップアニメーション
+      var start = 0;
+      var duration = 800;
+      var startTime = null;
+      function animCount(ts) {
+        if (!startTime) startTime = ts;
+        var elapsed = ts - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        document.getElementById('score-num').textContent = Math.round(ease * displayPct);
+        if (progress < 1) requestAnimationFrame(animCount);
+      }
+      requestAnimationFrame(animCount);
+    }, 100);
+  }
 }
 
 // ===== 戻るボタン（モーダル付き） =====
@@ -869,14 +903,16 @@ document.addEventListener('keydown', function(e){
 });
 
 // ===== もう一度ボタン =====
-document.getElementById('btn-retry').addEventListener('click', function(){
+function resetToStart() {
   selectedRoute = null;
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
   show('screen-start');
   clearResultUrl();
-});
+}
+document.getElementById('btn-retry').addEventListener('click', resetToStart);
+document.getElementById('btn-retry-top').addEventListener('click', resetToStart);
 
 // ===== シェアボタン（Web Share API + コピーfallback） =====
 document.getElementById('btn-share').addEventListener('click', function(){
