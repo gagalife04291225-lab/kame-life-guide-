@@ -57,7 +57,7 @@ land: [
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'red-footed-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.intermediate||0)+(s.charisma||0); }
   },
@@ -125,7 +125,7 @@ aquatic: [
     reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'hime-nioi-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 3 && (s.observational||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -157,7 +157,7 @@ aquatic: [
     reason: '首と頭部に細かいストライプが走る美しいニオイガメ系の小型種。国内CB流通が確認されており、マニアに人気。小型水槽で観察を楽しめる。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'stripe-necked-musk-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.observational||0) >= 2 && (s.intermediate||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -229,7 +229,7 @@ aquatic: [
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'japanese-pond-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
   },
@@ -301,7 +301,7 @@ aquatic: [
     reason: 'クサガメの広東産地個体群。黄みがかった体色や明確な産地証明が魅力。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'canton-reeves-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); }
   },
@@ -661,7 +661,7 @@ exotic: [
     reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手での取り扱い厳禁。CITES II。大型ドロガメ系の究極形として国内での飼育者もいる本格マニア向き種。',
     specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'giant-musk-turtle', hasPage: true,
     match: function(s){ return (s.large_mud||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
   }
@@ -681,7 +681,7 @@ all: [
     reason: '国内流通する最小クラスの水棲ガメ。30cm水槽から飼育可能で扱いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'hime-nioi-turtle', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 3 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.observational||0); }
   },
@@ -745,7 +745,7 @@ all: [
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
     links: [{ label: '日本産カメ 飼育ガイド', href: '../guide-japan.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'japanese-pond-turtle', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 1 && (s.cool_env||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.cool_env||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -761,7 +761,7 @@ all: [
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で高温多湿の環境が必要。大型化するためスペースが必要。',
     specs: { '最大甲長': '40cm前後', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'red-footed-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.humid_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.humid_env||0)+(s.intermediate||0); }
   },
