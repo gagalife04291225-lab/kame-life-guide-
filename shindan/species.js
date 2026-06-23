@@ -89,7 +89,7 @@ land: [
     reason: '亜成体は愛らしいが成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要な種です。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'sulcata-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0); }
   },
@@ -181,7 +181,7 @@ aquatic: [
     reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高く初心者にも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'reeves-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); }
   },
@@ -205,7 +205,7 @@ aquatic: [
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'mississippi-map-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
@@ -689,7 +689,7 @@ all: [
     reason: '昔からペットとして親しまれてきた水棲ガメ。丈夫で適応力が高く初心者にも飼いやすい。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'reeves-turtle', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.beginner||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.interactive||0); }
   },
@@ -737,7 +737,7 @@ all: [
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'mississippi-map-turtle', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.intermediate||0)+(s.observational||0); }
   },
@@ -793,7 +793,7 @@ all: [
     reason: '成体は30〜100kgになる本格派。6畳以上の屋外放し飼いを念頭に置いた長期的な計画が必要。',
     specs: { '最大甲長': '90cm超', '主な食事': '乾草・野草', '水容量': '大型水場', '温度': '30〜38℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'sulcata-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
   }
