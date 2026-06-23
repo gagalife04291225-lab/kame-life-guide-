@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメの目の腫れ・目が開かない原因と対処法｜カメライフガイド</title>
+<meta name="description" content="カメの目が腫れている、目が開かない原因は、ビタミンA欠乏・細菌感染・異物刺激などが考えられます。両眼か片眼かで原因の絞り込みが変わります。動物病院に行くべきサインも解説。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/trouble/swollen-eyes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    --danger:#c0392b;
+    --danger-light:#fdf0ef;
+    --caution:#e67e22;
+    --caution-light:#fef9f3;
+    --safe:#2d6a4f;
+    --safe-light:#edf7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{background:var(--forest-deep);color:var(--parchment);padding:58px 0 50px;text-align:center;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:14px;}
+  header.hero .urgency-tag{display:inline-block;background:var(--danger);color:#fff;font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.06em;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2rem;line-height:1.3;margin-bottom:18px;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;}
+
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .article{padding:44px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:44px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:28px 0 12px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  .urgent-banner{background:var(--danger);color:#fff;border-radius:12px;padding:20px 24px;margin:28px 0;box-shadow:0 4px 16px rgba(192,57,43,.25);}
+  .urgent-banner strong{display:block;font-size:1.05rem;margin-bottom:8px;}
+  .urgent-banner p{font-size:.92rem;margin:0;color:rgba(255,255,255,.9);}
+
+  .alert-box{background:var(--danger-light);border-left:4px solid var(--danger);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(192,57,43,.08);}
+  .alert-box strong{color:var(--danger);}
+  .alert-box ul{margin:10px 0 0 1.2em;}
+  .alert-box li{margin-bottom:6px;font-size:.93rem;}
+
+  .safe-box{background:var(--safe-light);border-left:4px solid var(--safe);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;}
+  .safe-box strong{color:var(--safe);}
+
+  /* 診断フローチャート（両眼 vs 片眼） */
+  .flow{margin:22px 0;}
+  .flow-branch{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .flow-card{
+    background:#fff;border-radius:12px;padding:20px 18px;
+    box-shadow:0 2px 8px rgba(13,31,26,.07);
+    border-top:4px solid var(--forest);
+  }
+  .flow-card.both{border-top-color:var(--danger);}
+  .flow-card.one{border-top-color:var(--caution);}
+  .flow-head{font-weight:700;font-size:.95rem;color:var(--forest);margin-bottom:10px;}
+  .flow-head.both{color:var(--danger);}
+  .flow-head.one{color:var(--caution);}
+  .flow-body{font-size:.86rem;color:#4a5a50;line-height:1.7;}
+
+  .cause-list{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+  .cause-card{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-left:4px solid #e4ddc9;}
+  .cause-card.high{border-left-color:var(--danger);}
+  .cause-card.mid{border-left-color:var(--caution);}
+  .cause-card.low{border-left-color:#f1c40f;}
+  .cause-card h3{margin:0 0 8px;font-size:1rem;}
+  .cause-card p{font-size:.91rem;margin:0;color:#4a5a50;line-height:1.75;}
+  .cause-tag{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:10px;margin-bottom:6px;}
+  .cause-tag.high{background:var(--danger-light);color:var(--danger);}
+  .cause-tag.mid{background:var(--caution-light);color:var(--caution);}
+  .cause-tag.low{background:#fefde8;color:#7d6608;}
+
+  .checklist{background:#fff;border-radius:12px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 8px rgba(13,31,26,.07);}
+  .checklist-title{font-weight:700;font-size:.88rem;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+  .cl-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f0ebe0;}
+  .cl-item:last-child{border-bottom:none;padding-bottom:0;}
+  .cl-num{width:26px;height:26px;border-radius:50%;background:var(--forest);color:var(--parchment);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .cl-text{font-size:.93rem;line-height:1.7;}
+  .cl-sub{font-size:.82rem;color:#6b7c70;margin-top:2px;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:center;gap:16px;padding:16px 18px;box-shadow:0 1px 6px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-emoji{font-size:1.6rem;flex-shrink:0;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.95rem;color:var(--forest);margin-bottom:3px;}
+  .gear-desc{font-size:.82rem;color:#5a6b60;line-height:1.6;}
+  .gear-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .species-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;}
+  .sp-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .sp-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:40px 0 0;color:var(--parchment);text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .flow-branch{grid-template-columns:1fr;}
+    .gear-card{flex-direction:column;align-items:flex-start;}
+    .gear-btns{width:100%;}
+    .btn-amz,.btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Trouble Shooting</div>
+    <span class="urgency-tag">● 緊急度 高</span>
+    <h1>カメの目の腫れ・目が開かない</h1>
+    <p class="lead">両眼か片眼か、腫れているのか分泌物で塞がっているのか——状態によって原因が異なります。ビタミンA欠乏から細菌感染まで、確認ポイントをまとめます。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="index.html">トラブル解決</a> ＞ 目の腫れ・開かない
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <div class="urgent-banner">
+      <strong>⚠ このページの症状は「緊急度 高」です</strong>
+      <p>目の症状はビタミン欠乏・感染症など治療が必要な原因であることが多いです。自己判断での点眼薬使用は避け、数日以内に爬虫類対応の動物病院に相談することを推奨します。</p>
+    </div>
+
+    <p>カメの目のトラブルで最初に確認するべきことは、「両眼か片眼か」です。この一点で、原因の可能性が大きく絞り込まれます。</p>
+
+    <div class="note-box">
+      <strong>記録しておくこと：</strong>両眼か片眼か、いつから気づいたか、目が腫れているのか分泌物で塞がっているのか、食欲・元気はあるか。これらを動物病院で伝えると診察がスムーズです。
+    </div>
+
+    <h2>まず確認：両眼か片眼か</h2>
+
+    <div class="flow">
+      <div class="flow-branch">
+        <div class="flow-card both">
+          <div class="flow-head both">両眼が腫れている・開かない</div>
+          <div class="flow-body">
+            ビタミンA欠乏症（ハイポビタミノーシスA）の可能性が高い。全身的な栄養問題のため、食事の見直しと医療的な補充が必要になることが多い。水棲ガメで特に多く見られる。
+          </div>
+        </div>
+        <div class="flow-card one">
+          <div class="flow-head one">片眼のみ腫れている・開かない</div>
+          <div class="flow-body">
+            細菌感染・異物の混入・外傷の可能性が高い。局所的な問題であることが多いが、感染が広がる前に早期対処が重要。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>よくある原因</h2>
+
+    <div class="cause-list">
+
+      <div class="cause-card high">
+        <span class="cause-tag high">最も多い（水棲ガメ）</span>
+        <h3>ビタミンA欠乏症（ハイポビタミノーシスA）</h3>
+        <p>特に水棲ガメで多く見られます。人工フード中心で野菜・動物性食品が不足していると起こりやすい症状です。まぶたの内側にある結膜が腫れ、目が開きにくくなります。両眼に出ることが特徴です。治療にはビタミンAの補充が必要ですが、過剰投与も害になるため自己判断での大量投与は禁物です。</p>
+      </div>
+
+      <div class="cause-card high">
+        <span class="cause-tag high">感染症</span>
+        <h3>結膜炎・眼感染症</h3>
+        <p>細菌（特にグラム陰性菌）による眼の感染症。片眼から始まることが多く、白い膿のような分泌物が溜まることがあります。飼育水が汚染されている水棲ガメや、外傷を負ったカメに多い。抗生物質による治療が必要です。</p>
+      </div>
+
+      <div class="cause-card mid">
+        <span class="cause-tag mid">環境要因</span>
+        <h3>飼育水・床材による刺激</h3>
+        <p>水棲ガメの場合、水質の悪化（アンモニア・亜硝酸の蓄積）が目の粘膜を刺激し、炎症を引き起こすことがあります。床材のホコリや鋭い粒子が眼を傷つけることも。水換えや床材変更で改善する軽度の場合もありますが、症状が続くなら受診を。</p>
+      </div>
+
+      <div class="cause-card mid">
+        <span class="cause-tag mid">物理的原因</span>
+        <h3>外傷・異物</h3>
+        <p>多頭飼育での噛み合い、シェルターや流木の角による擦り傷など。片眼だけ突然腫れた場合はこの可能性を疑います。軽度であれば清潔な環境で自然治癒することもありますが、感染に発展するリスクがあります。</p>
+      </div>
+
+      <div class="cause-card low">
+        <span class="cause-tag low">要確認</span>
+        <h3>UVB不足による全身状態の低下</h3>
+        <p>UVBライトの照射量不足や球切れが続くと、免疫力が全般的に低下し、目の症状を含む各種疾患が出やすくなります。ライトの交換時期（購入後1年が目安）と照射距離を確認してください。</p>
+      </div>
+
+    </div>
+
+    <h2>自宅でできる確認リスト</h2>
+
+    <div class="checklist">
+      <div class="checklist-title">この順番で確認してください</div>
+      <div class="cl-item">
+        <div class="cl-num">1</div>
+        <div class="cl-text">
+          両眼か片眼かを確認・記録する
+          <div class="cl-sub">両眼ならビタミンA欠乏を最初に疑う。片眼なら外傷・感染を疑う。スマートフォンで撮影しておく。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">2</div>
+        <div class="cl-text">
+          食事の内容を振り返る（水棲ガメの場合）
+          <div class="cl-sub">人工フードだけを与えていた期間が長いなら、ビタミンA含有フードや緑黄色野菜（ニンジン・カボチャ）を少量追加してみる。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">3</div>
+        <div class="cl-text">
+          水棲ガメは水質を確認する
+          <div class="cl-sub">水換えの頻度を上げ、清潔な環境に。亜硝酸・アンモニアが高い場合は直ちに換水。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">4</div>
+        <div class="cl-text">
+          UVBライトの状態を確認する
+          <div class="cl-sub">購入から1年以上経過しているなら交換を検討。紫外線テスターがあれば照射量を実測する。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">5</div>
+        <div class="cl-text">
+          多頭飼育なら隔離する
+          <div class="cl-sub">他個体による外傷や感染の拡大を防ぐために、症状が出た個体を別ケージへ移す。</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>すぐに動物病院へ行くべきサイン</h2>
+
+    <div class="alert-box">
+      <strong>以下に該当する場合は、爬虫類対応の動物病院を受診してください：</strong>
+      <ul>
+        <li>両眼が腫れている・開かない（ビタミンA欠乏の可能性）</li>
+        <li>目から白い膿のような分泌物が出ている</li>
+        <li>症状が3日以上続いている・または悪化している</li>
+        <li>目の症状と同時に食欲低下・元気がない</li>
+        <li>目の症状と同時に鼻水・口内の白い膜などがある</li>
+        <li>水換えなど環境改善をしても変化がない</li>
+      </ul>
+    </div>
+
+    <div class="safe-box">
+      <strong>市販の人間用・犬猫用目薬は使用しないでください。</strong>
+      成分や濃度がカメの粘膜に適していない場合があり、症状を悪化させる可能性があります。爬虫類専門の獣医師の処方薬を使用してください。
+    </div>
+
+    <h2>関連する飼育機材</h2>
+    <p>目の症状の予防には、食事の多様性・UVBの適切な照射・水質管理が重要です。</p>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-emoji">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">UVBライト（種に合った強さを選ぶ）</div>
+          <div class="gear-desc">UVBはビタミンD3合成に必要で、免疫機能の維持にも関わります。水棲ガメには5.0、リクガメには10.0が目安。購入から1年が交換の目安。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="../uvb-light-best10.html" style="background:var(--forest);">UVBライト一覧へ</a>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-emoji">🐠</div>
+        <div class="gear-info">
+          <div class="gear-name">水棲ガメ用フィルター（水質管理）</div>
+          <div class="gear-desc">水質の悪化は目・皮膚のトラブルに直結します。水棲ガメの飼育ではろ過能力が高いフィルターが不可欠。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="../water-filter-best10.html" style="background:var(--forest);">フィルター一覧へ</a>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-emoji">🥕</div>
+        <div class="gear-info">
+          <div class="gear-name">ビタミン総合サプリメント（爬虫類用）</div>
+          <div class="gear-desc">ビタミンA欠乏の予防に、爬虫類専用マルチビタミンの定期的な添加が有効。ただし過剰投与は毒性があるため用量を守ること。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+マルチビタミン+サプリメント&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+マルチビタミン+サプリメント" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>種別ページで適切な食事とケアを確認する</h2>
+    <p>ビタミンA欠乏はとくに水棲ガメで多く、食事内容が原因になりやすい症状です。種別ページで推奨食事を確認してください。</p>
+    <div class="species-links">
+      <a href="../species/russian-tortoise.html" class="sp-btn">🏔️ ロシアリクガメ</a>
+      <a href="../species/musk-turtle.html" class="sp-btn">🔬 ニオイガメ</a>
+      <a href="../species/three-toed-box-turtle.html" class="sp-btn">📦 ミツユビハコガメ</a>
+      <a href="../species-list.html" class="sp-btn">全81種の一覧 →</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>今の飼育環境・食事が種に合っているか確認したい方は、診断ツールで最適環境を再確認できます。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかのトラブルと飼育ガイド</h2>
+    <p>気になる症状や飼育環境から探せます。</p>
+    <div class="hub-links">
+      <a href="index.html">← トラブル一覧</a>
+      <a href="not-eating.html">餌を食べない</a>
+      <a href="runny-nose.html">鼻水・鼻詰まり</a>
+      <a href="../guide-water-full.html">水棲ガメ</a>
+      <a href="../guide-semi.html">半水棲ガメ</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      掲載する情報は一般的な飼育知識の目安であり、医療的な診断・治療の代替となるものではありません。症状が続く場合や緊急サインに該当する場合は、必ず爬虫類対応の動物病院を受診してください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
