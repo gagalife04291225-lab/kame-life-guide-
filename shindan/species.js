@@ -772,8 +772,116 @@ all: [
     slug: 'sulcata-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0); }
+  },
+  // ========== 追加24種（allルート拡張）==========
+  // --- 入門水棲 ---
+  { name: 'カブトニオイガメ', latin: 'Sternotherus carinatus', emoji: '⛑️', difficulty: '入門〜中級', size: 'M（10〜15cm）', cites: null, legal: null,
+    reason: 'キールが目立つ個性的な甲羅が魅力。ニオイガメよりやや大型で45cm水槽から飼育可能。',
+    specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'razorback-musk-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 1 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.beginner||0)+(s.observational||0); }
+  },
+  { name: 'ペインテッドタートル', latin: 'Chrysemys picta', emoji: '🎨', difficulty: '入門', size: 'M（13〜25cm）', cites: null, legal: null,
+    reason: '甲羅の縁に赤・黄のラインが走る美しい種。活発に泳ぎ、草食傾向が強く管理しやすい。',
+    specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: 'painted-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.interactive||0); }
+  },
+  { name: 'ニセチズガメ', latin: 'Graptemys pseudogeographica pseudogeographica', emoji: '🗺️', difficulty: '中級', size: 'M（オス12cm/メス22cm）', cites: null, legal: null,
+    reason: '背中のキールが目立ちチズガメ入門に最適。水質管理を楽しみながら育てる観察向き種。',
+    specs: { '最大甲長': '22cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: 'false-map-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.intermediate||0)+(s.observational||0); }
+  },
+  { name: 'カントンクサガメ', latin: 'Mauremys reevesii（広東型）', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: '産地明確な国内CB個体が流通。クサガメの個性的な地域型でコレクター性もある。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
+    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: 'canton-reeves-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.collector||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.beginner||0)+(s.collector||0); }
+  },
+  // --- リクガメ代表 ---
+  { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites',
+    reason: '亜種が多く産地ごとに環境適応が異なる。産地情報付きCBを選ぶことが重要。',
+    specs: { '最大甲長': '25cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜33℃' },
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'greek-tortoise', hasPage: true,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.medium||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.dry_env||0)+(s.intermediate||0); }
+  },
+  { name: 'フチゾリリクガメ', latin: 'Testudo marginata', emoji: '🌊', difficulty: '中〜上級', size: 'M（25〜35cm）', cites: 'CITES II', legal: 'cites',
+    reason: '後部甲羅が外側に反り返る個性的な体型のギリシャ・サルデーニャ産リクガメ。',
+    specs: { '最大甲長': '35cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'marginated-tortoise', hasPage: true,
+    match: function(s){ return (s.land_tortoise||0) >= 2 && (s.medium||0) >= 2 && (s.dry_env||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.land_tortoise||0)+(s.medium||0)+(s.dry_env||0)+(s.intermediate||0); }
+  },
+  { name: 'トウブハコガメ', latin: 'Terrapene carolina carolina', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites',
+    reason: '北米産ハコガメの基亜種。腹甲を完全に閉じられる独自能力。雑食性で飼育食移行も容易。',
+    specs: { '最大甲長': '20cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: 'eastern-box-turtle', hasPage: true,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1 && (s.humid_env||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.humid_env||0)+(s.intermediate||0)+(s.interactive||0); }
+  },
+  { name: 'ガルフコーストハコガメ', latin: 'Terrapene carolina major', emoji: '🌊', difficulty: '中〜上級', size: 'M〜L（18〜22cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ハコガメ最大亜種。やや湿度の高い環境を好む。中〜大型の陸棲ガメを求める中上級者に。',
+    specs: { '最大甲長': '22cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
+    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: 'gulf-coast-box-turtle', hasPage: true,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 2 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.humid_env||0)+(s.intermediate||0); }
+  },
+  // --- ヤマガメ代表 ---
+  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
+    reason: '最も流通量の多いスッポン属。砂底必須・水流弱めが飼育のコツ。独特の柔らかい甲羅が魅力。',
+    specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2 && (s.collector||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.advanced||0)+(s.collector||0); }
+  },
+  { name: 'スッポン（シナスッポン）', latin: 'Pelodiscus sinensis', emoji: '🍵', difficulty: '中〜上級', size: 'L（25〜35cm）', cites: null, legal: null,
+    reason: '食用としても有名な東アジア産スッポン。砂底必須・噛みつき注意。軟らかい甲羅と動きが独特。',
+    specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
+    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 1 && (s.collector||0) >= 2; },
+    score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.intermediate||0)+(s.collector||0); }
+  },
+  { name: 'ヘビクビガメ', latin: 'Chelodina longicollis', emoji: '🐍', difficulty: '中〜上級', size: 'M（20〜28cm）', cites: null, legal: null,
+    reason: 'オーストラリア産曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる防御行動が印象的。',
+    specs: { '最大甲長': '28cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★★' },
+    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.medium||0) >= 1 && (s.collector||0) >= 2 && (s.advanced||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.medium||0)+(s.advanced||0)+(s.collector||0)+(s.observational||0); }
+  },
+  { name: 'スジオオニオイガメ', latin: 'Staurotypus salvinii', emoji: '💪', difficulty: '上級', size: 'L（25〜38cm）', cites: 'CITES II', legal: 'cites',
+    reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手取扱厳禁。大型ドロガメ系の究極種。',
+    specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'giant-musk-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2 && (s.collector||0) >= 3; },
+    score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.advanced||0)+(s.collector||0); }
+  },
+  // --- 追加バランス種 ---
+  { name: 'スジクビニオイガメ', latin: 'Sternotherus minor peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: null, legal: null,
+    reason: '首と頭部に細かいストライプが走る美しいニオイガメ系小型種。国内CB流通確認済み。',
+    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: 'stripe-necked-musk-turtle', hasPage: true,
+    match: function(s){ return (s.aquatic||0) >= 2 && (s.small||0) >= 2 && (s.intermediate||0) >= 2 && (s.collector||0) >= 1; },
+    score: function(s){ return (s.aquatic||0)+(s.small||0)+(s.intermediate||0)+(s.collector||0)+(s.observational||0); }
   }
 ]
-
 }; // end SPECIES
 
