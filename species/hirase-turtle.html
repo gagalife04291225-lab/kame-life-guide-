@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヒラセガメの飼い方｜カメライフガイド</title>
+<meta name="description" content="ヒラセガメ（Geoemyda japonica — Ryukyu Black-breasted Leaf Turtle）の飼育ガイド。野生環境から逆算した飼育数値・推奨機材・よくあるトラブルをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/hirase-turtle.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{--forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;--accent:#d4a96a;--accent-dark:#8f5f2c;--sp-from:#0e1a0c;--sp-to:#08100a;--sp-accent:#7ab87a;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  header.hero{background:linear-gradient(155deg,var(--sp-from) 0%,#1a2a1e 45%,var(--sp-to) 100%);color:var(--parchment);padding:64px 0 56px;text-align:center;position:relative;overflow:hidden;}
+  header.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 65% 20%,rgba(212,169,106,.16) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(47,74,60,.3) 0%,transparent 55%);pointer-events:none;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(212,200,170,.6);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+  .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
+  .warn-box strong{color:#bf360c;}
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+  .inline-cta{background:linear-gradient(135deg,#162a20 0%,#0d1f1a 100%);border-radius:14px;padding:22px 20px;margin:40px 0;display:flex;align-items:center;gap:16px;border:1px solid #2f4a3c;}
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9e0d6;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;}
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+  .compare-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+  .compare-table th:first-child{border-radius:12px 0 0 0;}.compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:nth-child(even) td{background:#faf6ef;}
+  .compare-table tr.recommended td{background:#fffbf0;}
+  .compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+  .badge-easy{background:#e8f5e9;color:#2e7d32;}.badge-mid{background:#fff8e1;color:#f57f17;}.badge-hard{background:#fce4ec;color:#c62828;}.badge-rec{background:var(--accent);color:#fff;}
+  .scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-rak:hover{background:#8c0000;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  .faq-tag{font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;flex-shrink:0;background:#f0e8d8;color:#8f5f2c;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}.faq-tag.tag-health{background:#fce4ec;color:#c62828;}.faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}.faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+  .end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+  .end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#b8c8b4;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;transition:background .2s,transform .15s,box-shadow .15s;box-shadow:0 4px 16px rgba(212,169,106,.35);}
+  .btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,169,106,.45);}
+  .btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(244,239,226,.25);transition:border-color .2s,background .2s;}
+  .btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+  .species-nav{border-top:1.5px solid #e4ddc9;margin-top:44px;padding-top:28px;}
+  .species-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+  .species-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .species-nav-link{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--forest);font-size:.85rem;font-weight:700;transition:border-color .15s,background .15s;line-height:1.35;}
+  .species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+  .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+  .species-nav-link .snl-text{min-width:0;}
+  .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;line-height:1.3;}
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+    .scroll-hint{display:block;}.inline-cta{flex-direction:column;text-align:center;}
+    .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}
+    .species-nav-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🫓</span>
+    <h1>ヒラセガメ</h1>
+    <div class="latin">Geoemyda japonica — Ryukyu Black-breasted Leaf Turtle</div>
+    <p class="lead">琉球列島（沖縄・奄美）原産の扁平な甲羅が特徴的な小型ヤマガメ。近縁のスペングラーヤマガメと同様に高湿度と夏の保冷管理が必要。落ち着いた性格と独特のフォルムが魅力で、飼育者からの評価が高い中上級種です。</p>
+  </div>
+</header>
+<div class="stats-bar"><div class="wrap"><div class="stats-inner">
+  <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">15〜18cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中〜上級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">特性</div><div class="stat-value">扁平甲羅・高湿度</div></div>
+      
+</div></div></div>
+<nav class="crumbs">
+  <div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ヒラセガメ</div>
+</nav>
+<div class="wrap"><div class="cites-box">
+  <strong>⚠️ CITES II掲載 / 琉球列島固有種</strong><br>
+  ヒラセガメは沖縄・奄美の固有種です。国内CBは個人飼育可能ですが、<strong>野外個体の採集は地方条例・種の保存法により禁止</strong>されている場合があります。必ず国内CBを選んでください。
+</div></div>
+<main class="wrap"><article class="article">
+  <h2>Wild Life — 琉球の林床に生きる、扁平な甲羅のヤマガメ</h2>
+  <p>ヒラセガメは沖縄本島・奄美大島など琉球列島に生息する固有種で、名前の通り甲羅が著しく扁平（"ヒラセ"）なことが最大の特徴です。亜熱帯性の森林床・渓流沿いの湿った環境を好み、落ち葉・苔・朽木が積もった場所に潜んでいます。</p>
+<p>野生では昆虫・ミミズ・カタツムリ・小型両生類・植物の実などを食べる雑食性です。スペングラーヤマガメと生態が近い一方、やや大きく（18cm程度）、温度への許容幅もやや広い傾向があります。日本固有種ならではの「地続きの生態」を感じられる存在です。</p>
+<div class="note-box"><strong>脱皮不全に注意</strong><br>湿度が不足すると脱皮が正常に進まず、古い皮膚が残り（脱皮不全）炎症・感染のリスクが上がります。湿度70%以上を維持し、温浴（30℃・15分）を週1〜2回行うと脱皮促進に効果的です。</div>
+  <div class="inline-cta">
+    <div class="inline-cta-emoji">🐢</div>
+    <div class="inline-cta-body">
+      <p>ヒラセガメが自分の住環境に合うか確認しましょう。97種対応の診断ツールで湿度管理への適性を診断します。</p>
+      <a href="../shindan/index.html">無料で診断する（3分）</a>
+    </div>
+  </div>
+  <h2>飼育環境の数値</h2>
+  <div class="env-grid">
+      <div class="env-card"><div class="env-label">環境温度</div><div class="env-value">22〜28℃</div><div class="env-sub">夏の29℃超が続く場合は保冷が必要。28℃以下を維持できるか事前確認を</div></div>
+      <div class="env-card"><div class="env-label">湿度</div><div class="env-value">70〜85%</div><div class="env-sub">林床の高湿度を再現。床材（水苔・ヤシガラ）を湿らせて維持</div></div>
+      <div class="env-card"><div class="env-label">水場</div><div class="env-value">浅い水入れ</div><div class="env-sub">体が半分浸かれる程度の浅い水場を常設。清潔に保つ</div></div>
+      <div class="env-card"><div class="env-label">UVB</div><div class="env-value">UVI 1〜3</div><div class="env-sub">薄暗い林床出身。弱〜中程度のUVBを陸場に設置</div></div>
+  </div>
+  <h2>近似種との比較</h2>
+  <p class="scroll-hint">← 横にスクロールできます</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead><tr><th>種名</th><th>甲長</th><th>難易度</th><th>必要スペース</th><th>甲羅の形</th><th>向いている人</th></tr></thead>
+      <tbody><tr class="recommended"><td>ヒラセガメ <span class="badge badge-rec">このページ</span></td><td>15〜18cm</td><td><span class="badge badge-hard">中〜上級</span></td><td>60cm〜ケージ</td><td>扁平（flat）</td><td>独特フォルム・国産固有種</td></tr>
+<tr><td><a href="spenglers-leaf-turtle.html">スペングラーヤマガメ</a></td><td>10〜14cm</td><td><span class="badge badge-hard">中〜上級</span></td><td>60cm〜ケージ</td><td>やや扁平</td><td>超小型・保冷必須</td></tr>
+<tr><td><a href="three-toed-box-turtle.html">ミツユビハコガメ</a></td><td>10〜15cm</td><td><span class="badge badge-mid">中〜上級</span></td><td>60cm〜ケージ</td><td>ドーム型（閉じる）</td><td>北米産・ハコガメ</td></tr>
+<tr><td><a href="japanese-pond-turtle.html">ニホンイシガメ</a></td><td>13〜20cm</td><td><span class="badge badge-mid">中級</span></td><td>60cm〜水槽</td><td>標準型</td><td>水棲・国産固有種</td></tr>
+</tbody>
+    </table>
+  </div>
+  <h2>食事</h2>
+  <p>ミミズ・コオロギ・デュビア・ミルワームを主食に、キノコ・熟した果実（イチゴ・バナナ少量）を副食として週1〜2回加えます。カルシウムパウダーを生き餌にダスティングして与えてください。市販の爬虫類用配合飼料は補助として使えますが、生き餌の嗜好性の方が高い個体が多いです。</p>
+  <h2>推奨機材セット</h2>
+  <div class="gear-cards">
+      <div class="gear-card">
+        <div class="gear-icon">💧</div>
+        <div class="gear-info">
+          <div class="gear-name">ミスト器・自動加湿器</div>
+          <div class="gear-why">湿度70〜85%を維持するために必要。タイマー設定で1日2〜3回自動霧吹きできると管理が楽。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+ミスト器+自動&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+ミスト器+湿度/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🌿</div>
+        <div class="gear-info">
+          <div class="gear-name">水苔・ヤシガラ土（床材）</div>
+          <div class="gear-why">湿度保持に優れた床材。厚く（5〜8cm）敷くことでカメが潜れる環境を作れる。定期的に交換してカビを防ぐ。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+水苔+ヤシガラ+床材&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+水苔+ヤシガラ+床材/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+      <div class="gear-card">
+        <div class="gear-icon">🪲</div>
+        <div class="gear-info">
+          <div class="gear-name">コオロギ・デュビア（生き餌）</div>
+          <div class="gear-why">動物性タンパク質が主食。カルシウムパウダーをダスティングして与えることで栄養バランスを確保。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=コオロギ+爬虫類+餌&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/コオロギ+デュビア+爬虫類/" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+  </div>
+  <h2>よくあるトラブルQ&amp;A</h2>
+  <div class="faq-list">
+      <details class="faq">
+        <summary>スペングラーヤマガメとどちらが飼いやすいですか？<span class="faq-tag ">比較</span></summary>
+        <div class="faq-body">ヒラセガメの方がやや温度許容幅が広く（28℃まで許容）、サイズも大きいため飼育しやすい傾向があります。ただしどちらも夏の保冷管理と高湿度維持が必要な点は共通です。</div>
+      </details>
+      <details class="faq">
+        <summary>脱皮不全を防ぐには？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">湿度70%以上の維持が最重要です。週1〜2回の温浴（30℃・15分）で皮膚を柔らかくして脱皮を促してください。脱皮不全の皮膚を無理に剥がすと傷になるため、温浴を繰り返して自然に脱落させてください。</div>
+      </details>
+      <details class="faq">
+        <summary>夏の温度管理はどうすればいいですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">日本の夏（6〜9月）は29℃超になることが多く、保冷対策が必要です。エアコン設定温度を26℃以下にするか、スポットクーラーをケージに向けて使用します。保冷ができない環境での飼育は避けてください。</div>
+      </details>
+      <details class="faq">
+        <summary>餌を食べません<span class="faq-tag tag-food">餌</span></summary>
+        <div class="faq-body">新環境への慣れに1〜2週間かかる個体が多いです。シェルターを充実させ静かな環境で様子を見てください。生き餌（ミミズが特に効果的）を使うと拒食打開につながります。温度・湿度が適切かも必ず確認してください。</div>
+      </details>
+      <details class="faq">
+        <summary>複数匹一緒に飼えますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">同性同士は比較的穏やかですが、十分なスペースと隠れ場所が必要です。オス同士は縄張り争いが起きやすいため、できれば単独飼育を推奨します。</div>
+      </details>
+      <details class="faq">
+        <summary>国内CBの入手方法は？<span class="faq-tag tag-law">法律</span></summary>
+        <div class="faq-body">爬虫類専門ブリーダー・爬虫類専門店・爬虫類イベントが主な入手経路です。流通量が少ないため予約や情報収集が重要です。SNSの爬虫類コミュニティ、ぶりくら等のイベントをチェックしてください。</div>
+      </details>
+      <details class="faq">
+        <summary>水場の水換えはどのくらいの頻度ですか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">毎日〜2日に1回が理想です。水が汚れると感染症のリスクが上がります。水入れは取り出して丸洗いできるサイズを選んでください。</div>
+      </details>
+  </div>
+  <h2>関連ページ</h2>
+  <div class="related-links">
+    <a class="rel-btn" href="../guide-moist.html">🌿 ヤマガメ・ハコガメ 飼育ガイド</a>
+      <a class="rel-btn" href="spenglers-leaf-turtle.html">🍃 スペングラーヤマガメ</a>
+      <a class="rel-btn" href="japanese-pond-turtle.html">🗾 ニホンイシガメ</a>
+      <a class="rel-btn" href="three-toed-box-turtle.html">🌳 ミツユビハコガメ</a>
+      
+  </div>
+  <div class="shindan-cta">
+    <p>日本産・森林棲のカメをもっと比較してみませんか？</p>
+    <a href="../shindan/index.html">🐢 カメ適性診断をはじめる（97種）</a>
+  </div>
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>琉球の森を再現する、本格的な飼育</h3>
+    <p>湿度と温度の管理が整えば、ヒラセガメは長く安定して飼える魅力的な固有種です。まず住環境との適性を診断してください。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">まずは自分に合う亀を診断する</a>
+      <a class="btn-cta-secondary" href="../guide-moist.html">🌿 ヤマガメ・ハコガメガイド</a>
+      <a class="btn-cta-secondary" href="../food-best10.html">🍃 フード・餌を選ぶ</a>
+    </div>
+  </div>
+  <nav class="species-nav" aria-label="関連ナビゲーション">
+    <div class="species-nav-label">もっと探す</div>
+    <div class="species-nav-grid">
+      <a class="species-nav-link" href="../shindan/index.html">
+        <span class="snl-icon">🐢</span>
+        <span class="snl-text">AI亀診断<span class="snl-sub">97種から適性を診断</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-beginner.html">
+        <span class="snl-icon">🌱</span>
+        <span class="snl-text">初心者向けの亀を見る<span class="snl-sub">入門種ガイド一覧</span></span>
+      </a>
+      <a class="species-nav-link" href="../guide-moist.html">
+        <span class="snl-icon">🌿</span>
+        <span class="snl-text">ヤマガメを比較する<span class="snl-sub">ハビタットガイドで比較</span></span>
+      </a>
+      <a class="species-nav-link" href="../species-list.html">
+        <span class="snl-icon">📋</span>
+        <span class="snl-text">他のspecies記事を見る<span class="snl-sub">種一覧（97種）</span></span>
+      </a>
+    </div>
+  </nav>
+</article></main>
+<section class="closing"><div class="wrap">
+  <h2>Kame Life Guide</h2>
+  <p>野生環境から逆算した飼育情報を、すべて無料で。</p>
+  <div class="hub-links">
+    <a href="../index.html">トップ</a><a href="../species-list.html">種一覧</a>
+    <a href="../guide-water-full.html">水棲ガメガイド</a><a href="../guide-dry.html">リクガメガイド</a>
+    <a href="../water-filter-best10.html">フィルター</a><a href="../food-best10.html">フード・餌</a>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+  <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+</div></footer>
+</body></html>
