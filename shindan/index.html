@@ -809,7 +809,12 @@ function showResult(sp, pct) {
       habitatHref = '../guide-moist.html';
       habitatText = '湿度管理が必要なヤマガメ・ハコガメ飼育ガイドを見る';
     } else if (routeId === 'exotic') {
-      habitatHref = '../guide-softshell.html';
+      // exotic種はlinks[0].hrefがスッポン/テラピン/曲頸類で異なるため種固有リンクを優先使用
+      if (sp.links && sp.links.length > 0) {
+        habitatHref = sp.links[0].href;
+      } else {
+        habitatHref = '../guide-softshell.html';
+      }
       habitatText = '上級者向け・特殊種の飼育ポイントを見る';
     }
     linksDiv.innerHTML +=
