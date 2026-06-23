@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【種名】の飼い方｜温度・餌・ケージ・冬眠｜カメライフガイド</title>
+<meta name="description" content="【種名】（学名）の飼育ガイド。野生環境から逆算した温度・湿度・UVB・餌の基本と推奨機材セットをまとめています。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/SLUG.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  /* ===== DESIGN TOKENS (既存) ===== */
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    /* 種ごとに変える3変数 */
+    --sp-from:#1a1e2e;
+    --sp-to:#0d1518;
+    --sp-accent:#9ab8d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  /* ===== HERO (既存) ===== */
+  header.hero{
+    background:linear-gradient(155deg,var(--sp-from) 0%,#202830 45%,var(--sp-to) 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 70% 20%,rgba(154,184,216,.18) 0%,transparent 55%),
+      radial-gradient(ellipse 40% 60% at 25% 75%,rgba(212,169,106,.1) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(154,184,216,.65);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+
+  /* ===== STATS BAR (既存) ===== */
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  /* ===== BREADCRUMB (既存) ===== */
+  nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  /* ===== INLINE CTA — 記事途中の診断誘導 (NEW) ===== */
+  /* CLSゼロ：min-height固定なし、高さはコンテンツ依存のみ */
+  .inline-cta{
+    background:linear-gradient(135deg,#162a20 0%,#0d1f1a 100%);
+    border-radius:14px;padding:22px 20px;margin:40px 0;
+    display:flex;align-items:center;gap:16px;
+    border:1px solid #2f4a3c;
+  }
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9e0d6;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{
+    display:inline-block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:.85rem;
+    padding:10px 20px;border-radius:8px;transition:background .2s;
+    white-space:nowrap;
+  }
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+
+  /* ===== BOXES (既存) ===== */
+  .cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+  .cites-box strong{color:#8f6000;}
+
+  /* ===== ARTICLE BODY (既存) ===== */
+  .article{padding:40px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:26px 0 10px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  /* ===== ENV GRID (既存) ===== */
+  .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+  .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+  .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+  .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
+
+  /* ===== COMPARISON TABLE — 横スクロール対応 (NEW) ===== */
+  .compare-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    margin:20px 0;
+    border-radius:12px;
+    border:1px solid #e4ddc9;
+    /* CLS防止：コンテンツ幅が確定するまで最小高さを持たない */
+  }
+  .compare-table{
+    width:100%;
+    min-width:500px; /* スクロール起動幅 */
+    border-collapse:collapse;
+    font-size:.88rem;
+    background:#fff;
+  }
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{
+    padding:12px 14px;font-weight:700;text-align:left;
+    font-size:.8rem;letter-spacing:.06em;white-space:nowrap;
+  }
+  .compare-table th:first-child{border-radius:12px 0 0 0;}
+  .compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr:nth-child(even) td{background:#faf6ef;}
+  /* 推奨種ハイライト */
+  .compare-table tr.recommended td{background:#fffbf0;}
+  .compare-table tr.recommended td:first-child{
+    border-left:3px solid var(--accent);
+    font-weight:700;
+  }
+  .badge{
+    display:inline-block;font-size:.72rem;font-weight:700;
+    padding:2px 8px;border-radius:20px;white-space:nowrap;
+  }
+  .badge-easy{background:#e8f5e9;color:#2e7d32;}
+  .badge-mid{background:#fff8e1;color:#f57f17;}
+  .badge-hard{background:#fce4ec;color:#c62828;}
+  .badge-rec{background:var(--accent);color:#fff;}
+  /* スクロールヒント（モバイルのみ表示） */
+  .scroll-hint{
+    display:none;
+    font-size:.75rem;color:#9aaa96;text-align:right;
+    margin-top:4px;letter-spacing:.04em;
+  }
+
+  /* ===== GEAR CARDS (既存 + 収益バッジ強化) ===== */
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{
+    background:#fff;border-radius:12px;
+    display:flex;align-items:flex-start;gap:16px;padding:18px;
+    box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;
+    position:relative;
+  }
+  /* NEW：「筆者使用中」バッジ */
+  .gear-card.owner-pick::before{
+    content:'筆者使用中';
+    position:absolute;top:-1px;right:14px;
+    background:var(--forest);color:var(--parchment);
+    font-size:.68rem;font-weight:700;letter-spacing:.06em;
+    padding:3px 10px;border-radius:0 0 8px 8px;
+  }
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{
+    display:inline-block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:.82rem;
+    padding:9px 18px;border-radius:7px;transition:background .2s;
+    white-space:nowrap;min-width:110px;text-align:center;
+  }
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{
+    display:inline-block;background:#bf0000;color:#fff;
+    text-decoration:none;font-weight:700;font-size:.82rem;
+    padding:9px 18px;border-radius:7px;transition:background .2s;
+    white-space:nowrap;min-width:110px;text-align:center;
+  }
+  .btn-rak:hover{background:#8c0000;}
+  /* PR表示 */
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+
+  /* ===== FAQ (既存 + カテゴリタグ NEW) ===== */
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{
+    padding:16px 20px;font-weight:700;font-size:.95rem;
+    cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:12px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  /* NEW：FAQカテゴリタグ */
+  .faq-tag{
+    font-size:.65rem;font-weight:700;letter-spacing:.06em;
+    padding:2px 8px;border-radius:12px;flex-shrink:0;
+    background:#f0e8d8;color:#8f5f2c;white-space:nowrap;
+    align-self:flex-start;margin-top:2px;
+  }
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}
+  .faq-tag.tag-health{background:#fce4ec;color:#c62828;}
+  .faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}
+  .faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+
+  /* ===== RELATED LINKS (既存) ===== */
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{
+    display:inline-block;background:#fff;border:1.5px solid #d4c9a8;
+    color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;
+    padding:10px 18px;border-radius:24px;
+    transition:border-color .15s,background .15s;
+  }
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  /* ===== ARTICLE-END CTA — 押したくなるUI (NEW) ===== */
+  .end-cta{
+    background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);
+    border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .end-cta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .end-cta-label{
+    font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:12px;position:relative;
+  }
+  .end-cta h3{
+    font-family:"Playfair Display",serif;font-style:italic;
+    font-size:1.5rem;color:var(--parchment);
+    margin-bottom:10px;position:relative;line-height:1.35;
+  }
+  .end-cta p{
+    color:#b8c8b4;font-size:.9rem;margin-bottom:24px;
+    position:relative;max-width:480px;margin-left:auto;margin-right:auto;
+    line-height:1.7;
+  }
+  .end-cta p:last-of-type{margin-bottom:0;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  /* プライマリボタン */
+  .btn-cta-primary{
+    display:block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:1.05rem;
+    padding:16px 24px;border-radius:12px;
+    transition:background .2s,transform .15s,box-shadow .15s;
+    box-shadow:0 4px 16px rgba(212,169,106,.35);
+  }
+  .btn-cta-primary:hover{
+    background:var(--accent-dark);
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(212,169,106,.45);
+  }
+  /* セカンダリボタン */
+  .btn-cta-secondary{
+    display:block;background:transparent;color:var(--parchment);
+    text-decoration:none;font-weight:700;font-size:.9rem;
+    padding:13px 24px;border-radius:12px;
+    border:1.5px solid rgba(244,239,226,.25);
+    transition:border-color .2s,background .2s;
+  }
+  .btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+
+  /* ===== INLINE SHINDAN CTA (既存・維持) ===== */
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  /* ===== CLOSING / FOOTER (既存) ===== */
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  /* ===== MOBILE ===== */
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .stat-item{padding:8px 14px;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .gear-card{flex-direction:column;}
+    .gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
+    /* 比較表スクロールヒント表示 */
+    .scroll-hint{display:block;}
+    /* inline-cta 縦積み */
+    .inline-cta{flex-direction:column;text-align:center;}
+    /* end-cta */
+    .end-cta{padding:28px 18px 24px;}
+    .end-cta h3{font-size:1.25rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🏔️</span><!-- 種ごとに変える -->
+    <h1>【種名】</h1>
+    <div class="latin">学名 — 英名</div>
+    <p class="lead">リード文。野生環境・特徴・飼育難易度の概要を2〜3文で。</p>
+  </div>
+</header>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">XX〜XXcm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">入門〜中級</div></div>
+      <div class="stat-item"><div class="stat-label">CITES</div><div class="stat-value">II（CB推奨）</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ 【種名】
+  </div>
+</nav>
+
+<!-- ===== ARTICLE ===== -->
+<div class="article">
+  <div class="wrap">
+
+    <!-- CITES注記（対象種のみ） -->
+    <div class="cites-box">
+      <strong>⚠ CITES II 掲載種</strong>　国内CB個体は飼育可能です。購入時は国内CBであることを確認し、インボイス（取引証明書）付きの個体を選んでください。
+    </div>
+
+    <!-- ── SECTION 1: 野生の暮らし ── -->
+    <h2>野生の暮らし</h2>
+    <p>【原産地・生息環境の説明】</p>
+    <p>【活動パターン・食性・特徴的な習性】</p>
+
+    <div class="note-box">
+      <strong>【注目習性名】：</strong>【飼育に直結する野生習性の解説。ケアへの影響を明示。】
+    </div>
+
+    <!-- ── AI診断 INLINE CTA（セクション間に配置）── -->
+    <!--
+      NEW：記事を読み始めた訪問者を診断ツールへ誘導。
+      高さはコンテンツ依存のみでCLS発生なし。
+    -->
+    <div class="inline-cta">
+      <div class="inline-cta-emoji">🐢</div>
+      <div class="inline-cta-body">
+        <p>「自分に合う種か確かめたい」—— 97種から適性をAIが診断します。</p>
+        <a href="../shindan/index.html">無料で診断する（3分）</a>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: 飼育環境 ── -->
+    <h2>飼育環境の数値</h2>
+
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">バスキングスポット</div>
+        <div class="env-value">XX〜XX℃</div>
+        <div class="env-sub">【理由・注意点】</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">ケージ全体（昼間）</div>
+        <div class="env-value">XX〜XX℃</div>
+        <div class="env-sub">【温度勾配の考え方】</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">夜間温度</div>
+        <div class="env-value">XX〜XX℃</div>
+        <div class="env-sub">【幼体の注意点】</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">XX〜XX%</div>
+        <div class="env-sub">【過湿リスク等】</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB指数</div>
+        <div class="env-value">UVB X.0</div>
+        <div class="env-sub">【推奨ランプ種別】</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">推奨ケージサイズ</div>
+        <div class="env-value">XXcm〜</div>
+        <div class="env-sub">【幼体→成体のサイズアップ目安】</div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: 近似種比較表 (NEW) ── -->
+    <h2>近似種との比較</h2>
+    <p>【種名】と検討されることが多い種を比較します。初心者が迷いやすいポイントをまとめました。</p>
+
+    <!-- スクロールヒント（モバイルのみCSS表示） -->
+    <p class="scroll-hint">← 横にスクロールできます</p>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>種名</th>
+            <th>甲長</th>
+            <th>難易度</th>
+            <th>必要スペース</th>
+            <th>冬眠</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- recommended クラスで現在ページの種をハイライト -->
+          <tr class="recommended">
+            <td>【本種名】 <span class="badge badge-rec">このページ</span></td>
+            <td>XX〜XXcm</td>
+            <td><span class="badge badge-easy">入門</span></td>
+            <td>60cm〜</td>
+            <td>〇可</td>
+            <td>【差別化ポイント1語】</td>
+          </tr>
+          <tr>
+            <td><a href="SLUG2.html">【比較種A】</a></td>
+            <td>XX〜XXcm</td>
+            <td><span class="badge badge-easy">入門</span></td>
+            <td>60cm〜</td>
+            <td>〇可</td>
+            <td>【差別化ポイント1語】</td>
+          </tr>
+          <tr>
+            <td><a href="SLUG3.html">【比較種B】</a></td>
+            <td>XX〜XXcm</td>
+            <td><span class="badge badge-mid">中級</span></td>
+            <td>90cm〜</td>
+            <td>△要検討</td>
+            <td>【差別化ポイント1語】</td>
+          </tr>
+          <tr>
+            <td><a href="SLUG4.html">【比較種C】</a></td>
+            <td>XX〜XXcm</td>
+            <td><span class="badge badge-hard">上級</span></td>
+            <td>屋外必須</td>
+            <td>✕不要</td>
+            <td>【差別化ポイント1語】</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── SECTION 4: 餌と水 ── -->
+    <h2>餌と水の与え方</h2>
+    <p>【主食・副食・禁止食材の解説】</p>
+    <p>【給水方法・温浴頻度】</p>
+
+    <!-- ── SECTION 5: 推奨機材セット (既存強化) ── -->
+    <h2>推奨機材セット</h2>
+
+    <div class="gear-cards">
+
+      <!-- owner-pick クラス = 「筆者使用中」バッジ付き -->
+      <div class="gear-card owner-pick">
+        <div class="gear-icon">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">【ケージ名】</div>
+          <div class="gear-why">【選定理由：種の習性との対応を明記】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/ASIN/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/検索ワード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">【UVBランプ名】</div>
+          <div class="gear-why">【UVB強度の選定理由】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/スパイラルUVB+デザート" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🏜️</div>
+        <div class="gear-info">
+          <div class="gear-name">【床材名】</div>
+          <div class="gear-why">【床材の選定理由：生息地の土壌との関係】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/ASIN/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/検索ワード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🪨</div>
+        <div class="gear-info">
+          <div class="gear-name">【シェルター名】</div>
+          <div class="gear-why">【野生習性との対応】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/ASIN/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/検索ワード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">🍃</div>
+        <div class="gear-info">
+          <div class="gear-name">【フード名】</div>
+          <div class="gear-why">【補助食としての位置づけ】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメフード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-icon">💧</div>
+        <div class="gear-info">
+          <div class="gear-name">【水入れ名】</div>
+          <div class="gear-why">【サイズ・深さの選定理由】</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/ASIN/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/検索ワード" target="_blank" rel="nofollow noopener">楽天で探す</a>
+          </div>
+          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
+        </div>
+      </div>
+
+    </div><!-- /gear-cards -->
+
+    <!-- ── SECTION 6: FAQ（拡張版）── -->
+    <h2>よくある質問</h2>
+
+    <div class="faq-list">
+
+      <!-- 飼育環境系 -->
+      <details class="faq">
+        <summary>
+          【環境系Q1：最もよく検索される質問】
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">【A1：具体的数値・対処法を含む回答】</div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          【環境系Q2】
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">【A2】</div>
+      </details>
+
+      <!-- 健康・病気系 -->
+      <details class="faq">
+        <summary>
+          【健康系Q：甲羅の変形・食欲不振など】
+          <span class="faq-tag tag-health">健康</span>
+        </summary>
+        <div class="faq-body">【A：症状→原因→対処の順で。重症は獣医へ誘導】</div>
+      </details>
+
+      <!-- 餌系 -->
+      <details class="faq">
+        <summary>
+          【餌系Q：○○を食べていいか等】
+          <span class="faq-tag tag-food">餌</span>
+        </summary>
+        <div class="faq-body">【A：可否＋理由＋代替案】</div>
+      </details>
+
+      <!-- 比較系（内部リンク収益につなぐ） -->
+      <details class="faq">
+        <summary>
+          【比較種Q：ヘルマンとどちらが飼いやすい？等】
+          <span class="faq-tag">比較</span>
+        </summary>
+        <div class="faq-body">
+          【A：差異を具体的に。末尾に比較ページリンク誘導】
+          → 詳しくは<a href="SLUG2.html" style="color:var(--accent-dark);font-weight:700;">【比較種名】のページ</a>もご覧ください。
+        </div>
+      </details>
+
+      <!-- 法律系（CITES種のみ） -->
+      <details class="faq">
+        <summary>
+          国内CBとWC個体はどう違いますか？
+          <span class="faq-tag tag-law">法律</span>
+        </summary>
+        <div class="faq-body">
+          CBは国内で繁殖された個体で、輸出入証明書なしに購入・飼育できます。WCは野外採集個体で、CITES II種の場合は輸入に書類が必要です。健康状態・寄生虫リスクの観点からも国内CBを強く推奨します。
+        </div>
+      </details>
+
+      <!-- 冬眠系（温帯種のみ） -->
+      <details class="faq">
+        <summary>
+          冬眠はさせた方がいいですか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">【冬眠の必要性・リスク・安全な方法を種に合わせて記述。初心者は通年加温を推奨する方向で】</div>
+      </details>
+
+    </div><!-- /faq-list -->
+
+    <!-- ── 関連ページ ── -->
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a href="../guide-dry.html" class="rel-btn">🌵 乾燥系リクガメ 飼育ガイド</a>
+      <a href="../species/SLUG2.html" class="rel-btn">🌿 【比較種A】</a>
+      <a href="../species/SLUG3.html" class="rel-btn">🏛️ 【比較種B】</a>
+      <a href="../trouble/not-eating.html" class="rel-btn">🍃 餌を食べないときは</a>
+      <a href="../trouble/index.html" class="rel-btn">🚑 トラブル解決ハブ</a>
+      <a href="../uvb-light-best10.html" class="rel-btn">☀️ UVBライト一覧</a>
+    </div>
+
+    <!-- ── 記事中 AI診断CTA（既存スタイル維持）── -->
+    <div class="shindan-cta">
+      <p>ほかのリクガメも見てみたい方、自分に合う種を探している方は診断ツールへ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（97種）</a>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         NEW：記事末尾 END CTA
+         訪問者の3つの行動を導線化
+    ════════════════════════════════════════ -->
+    <div class="end-cta">
+      <div class="end-cta-label">Next Step</div>
+      <h3>この種を飼う前に、もう一歩</h3>
+      <p>飼育を始める前に機材を揃えましょう。97種対応の診断ツールで、あなたの生活環境に合う種も確認できます。</p>
+      <div class="end-cta-btns">
+        <a class="btn-cta-primary" href="../shindan/index.html">
+          🐢 適性診断をはじめる（無料）
+        </a>
+        <a class="btn-cta-secondary" href="../uvb-light-best10.html">
+          ☀️ UVBライトを選ぶ
+        </a>
+        <a class="btn-cta-secondary" href="../food-best10.html">
+          🍃 フード・餌を選ぶ
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /article -->
+
+<!-- ===== CLOSING ===== -->
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかの飼育ガイド</h2>
+    <p>種一覧・ハビタットガイドからも探せます。</p>
+    <div class="hub-links">
+      <a href="../index.html">TOP</a>
+      <a href="../species-list.html">種一覧（97種）</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../trouble/index.html">🚑 トラブル解決</a>
+      <a href="../shindan/index.html">🐢 亀診断</a>
+      <a href="../food-best10.html">餌・フード</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。法規制・流通状況は変動することがありますので購入前に最新情報をご確認ください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+  </div>
+</footer>
+
+</body>
+</html>
