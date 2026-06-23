@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメの鼻水・鼻詰まりの原因と対処法｜カメライフガイド</title>
+<meta name="description" content="カメの鼻水・鼻詰まりは上部気道感染症（URI）のサインの可能性があります。放置すると肺炎に進行するリスクがあります。原因の確認方法と動物病院に行くべきタイミングを解説します。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/trouble/runny-nose.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    --danger:#c0392b;
+    --danger-light:#fdf0ef;
+    --caution:#e67e22;
+    --caution-light:#fef9f3;
+    --safe:#2d6a4f;
+    --safe-light:#edf7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{background:var(--forest-deep);color:var(--parchment);padding:58px 0 50px;text-align:center;}
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:14px;}
+  header.hero .urgency-tag{display:inline-block;background:var(--danger);color:#fff;font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.06em;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2rem;line-height:1.3;margin-bottom:18px;}
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;}
+
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .article{padding:44px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:44px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+  .article h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:28px 0 12px;}
+
+  .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .note-box strong{color:var(--accent-dark);}
+
+  /* 緊急警告（このページ専用の目立つバナー） */
+  .urgent-banner{
+    background:var(--danger);color:#fff;
+    border-radius:12px;padding:20px 24px;margin:28px 0;
+    box-shadow:0 4px 16px rgba(192,57,43,.25);
+  }
+  .urgent-banner strong{display:block;font-size:1.05rem;margin-bottom:8px;}
+  .urgent-banner p{font-size:.92rem;margin:0;color:rgba(255,255,255,.9);}
+
+  .alert-box{background:var(--danger-light);border-left:4px solid var(--danger);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(192,57,43,.08);}
+  .alert-box strong{color:var(--danger);}
+  .alert-box ul{margin:10px 0 0 1.2em;}
+  .alert-box li{margin-bottom:6px;font-size:.93rem;}
+
+  .safe-box{background:var(--safe-light);border-left:4px solid var(--safe);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;font-size:.95rem;}
+  .safe-box strong{color:var(--safe);}
+
+  /* 症状比較テーブル */
+  .symptom-table{
+    background:#fff;border-radius:12px;overflow:hidden;
+    box-shadow:0 2px 8px rgba(13,31,26,.07);margin:20px 0;
+  }
+  .st-head{
+    background:var(--forest);color:var(--parchment);
+    display:grid;grid-template-columns:1fr 1fr;
+    padding:12px 18px;font-size:.85rem;font-weight:700;gap:10px;
+  }
+  .st-row{
+    display:grid;grid-template-columns:1fr 1fr;
+    padding:13px 18px;border-bottom:1px solid #f0ebe0;gap:10px;
+    font-size:.88rem;line-height:1.6;
+  }
+  .st-row:last-child{border-bottom:none;}
+  .st-row:nth-child(even){background:#fafaf7;}
+  .st-label{font-weight:700;color:var(--forest);}
+
+  .checklist{background:#fff;border-radius:12px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 8px rgba(13,31,26,.07);}
+  .checklist-title{font-weight:700;font-size:.88rem;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+  .cl-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f0ebe0;}
+  .cl-item:last-child{border-bottom:none;padding-bottom:0;}
+  .cl-num{width:26px;height:26px;border-radius:50%;background:var(--forest);color:var(--parchment);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .cl-text{font-size:.93rem;line-height:1.7;}
+  .cl-sub{font-size:.82rem;color:#6b7c70;margin-top:2px;}
+
+  .cause-list{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+  .cause-card{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-left:4px solid #e4ddc9;}
+  .cause-card.high{border-left-color:var(--danger);}
+  .cause-card.mid{border-left-color:var(--caution);}
+  .cause-card.low{border-left-color:#f1c40f;}
+  .cause-card h3{margin:0 0 8px;font-size:1rem;}
+  .cause-card p{font-size:.91rem;margin:0;color:#4a5a50;line-height:1.75;}
+  .cause-tag{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:10px;margin-bottom:6px;}
+  .cause-tag.high{background:var(--danger-light);color:var(--danger);}
+  .cause-tag.mid{background:var(--caution-light);color:var(--caution);}
+  .cause-tag.low{background:#fefde8;color:#7d6608;}
+
+  .gear-cards{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:center;gap:16px;padding:16px 18px;box-shadow:0 1px 6px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+  .gear-emoji{font-size:1.6rem;flex-shrink:0;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.95rem;color:var(--forest);margin-bottom:3px;}
+  .gear-desc{font-size:.82rem;color:#5a6b60;line-height:1.6;}
+  .gear-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;}
+  .btn-rak:hover{background:#8c0000;}
+
+  .species-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;}
+  .sp-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .sp-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:40px 0 0;color:var(--parchment);text-align:center;}
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .st-head,.st-row{grid-template-columns:1fr;gap:4px;}
+    .st-head span:last-child,.st-row .st-right{font-size:.82rem;color:#bcd0c0;}
+    .gear-card{flex-direction:column;align-items:flex-start;}
+    .gear-btns{width:100%;}
+    .btn-amz,.btn-rak{flex:1;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Trouble Shooting</div>
+    <span class="urgency-tag">● 緊急度 高</span>
+    <h1>カメの鼻水・鼻詰まり</h1>
+    <p class="lead">鼻から液体が出る、鼻を鳴らすような呼吸音がする——これらは上部気道感染症（URI）の典型的なサインです。放置すると肺炎に進行するリスクがあります。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="index.html">トラブル解決</a> ＞ 鼻水・鼻詰まり
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <div class="urgent-banner">
+      <strong>⚠ このページの症状は「緊急度 高」です</strong>
+      <p>鼻水・鼻詰まりは環境改善だけでは治まらないことが多く、細菌・ウイルス感染への治療が必要になる場合があります。数日以内に爬虫類対応の動物病院に連絡することを推奨します。</p>
+    </div>
+
+    <p>カメの呼吸器系はとても繊細です。鼻水が出ているとき、その液体が透明か白濁か、片鼻か両鼻かによって原因の重さが変わります。ただし、いずれのケースでも「様子を見れば治る」と判断するのは危険です。</p>
+
+    <div class="note-box">
+      <strong>記録しておくこと：</strong>鼻水の色（透明・白濁・黄色など）、片鼻か両鼻か、いつから気づいたか、呼吸音の有無、口を開けての呼吸はないか。これらを動物病院で伝えると診察がスムーズです。
+    </div>
+
+    <h2>症状の特徴を確認する</h2>
+
+    <div class="symptom-table">
+      <div class="st-head">
+        <span>症状の種類</span>
+        <span>考えられる原因と緊急度</span>
+      </div>
+      <div class="st-row">
+        <div class="st-label">透明な鼻水（片鼻）</div>
+        <div>軽度の刺激・床材のホコリ・低温ストレス。環境改善で改善することもあるが、継続するなら受診を。</div>
+      </div>
+      <div class="st-row">
+        <div class="st-label">白濁・泡状の鼻水</div>
+        <div>細菌・マイコプラズマ感染の可能性が高い。数日以内の受診を推奨。</div>
+      </div>
+      <div class="st-row">
+        <div class="st-label">黄色・緑色の粘液</div>
+        <div>感染が進行している可能性。至急受診してください。</div>
+      </div>
+      <div class="st-row">
+        <div class="st-label">呼吸時のヒューヒュー音</div>
+        <div>気道が狭まっているサイン。緊急度が高い。早急に受診を。</div>
+      </div>
+      <div class="st-row">
+        <div class="st-label">口を開けての呼吸</div>
+        <div>重篤な呼吸困難のサイン。同日または翌日の受診が必要。</div>
+      </div>
+    </div>
+
+    <h2>よくある原因</h2>
+
+    <div class="cause-list">
+
+      <div class="cause-card low">
+        <span class="cause-tag low">環境要因</span>
+        <h3>飼育温度の低下・急激な温度変化</h3>
+        <p>温度が下がると免疫力が低下し、感染しやすい状態になります。また、急激な温度変化自体が気道にダメージを与えることもあります。夜間と昼間の温度差が大きい場合に多く見られます。</p>
+      </div>
+
+      <div class="cause-card low">
+        <span class="cause-tag low">環境要因</span>
+        <h3>床材・ホコリによる物理的刺激</h3>
+        <p>細かいパーティクルの床材（乾燥したヤシガラなど）のホコリが鼻腔を刺激して一時的な鼻水を引き起こすことがあります。床材を変更・加湿することで改善する場合があります。</p>
+      </div>
+
+      <div class="cause-card high">
+        <span class="cause-tag high">感染症</span>
+        <h3>上部気道感染症（URI）</h3>
+        <p>細菌（パスツレラ属など）、マイコプラズマ、ウイルスによる感染症。カメの呼吸器疾患で最も一般的な診断名です。自然治癒することはほぼなく、抗生物質などによる治療が必要です。感染力があるため、多頭飼育の場合は隔離が必要です。</p>
+      </div>
+
+      <div class="cause-card high">
+        <span class="cause-tag high">感染症</span>
+        <h3>肺炎への進行</h3>
+        <p>URIを放置すると肺炎に発展するリスクがあります。肺炎になると食欲が著しく落ち、後肢が弱くなるなど全身症状が現れます。ここまで進行すると治療も長期化します。</p>
+      </div>
+
+    </div>
+
+    <h2>自宅でできる確認リスト</h2>
+
+    <div class="checklist">
+      <div class="checklist-title">受診前に確認・対処できること</div>
+      <div class="cl-item">
+        <div class="cl-num">1</div>
+        <div class="cl-text">
+          飼育温度を即座に確認・改善する
+          <div class="cl-sub">バスキングスポットが適温（リクガメなら30〜35℃）に達しているか実測。不足なら直ちにランプを変更・追加。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">2</div>
+        <div class="cl-text">
+          鼻水の色・量・片鼻両鼻を記録する
+          <div class="cl-sub">スマートフォンで近接写真を撮影。透明か白濁・黄色かで緊急度が変わる。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">3</div>
+        <div class="cl-text">
+          多頭飼育の場合は即座に隔離する
+          <div class="cl-sub">呼吸器感染症はほかのカメに伝染する可能性がある。別のケージに移す。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">4</div>
+        <div class="cl-text">
+          ケージ内の通気性を確認する
+          <div class="cl-sub">湿度が高すぎる、または換気が悪いと細菌が繁殖しやすい。ただし乾燥しすぎもNG。</div>
+        </div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">5</div>
+        <div class="cl-text">
+          爬虫類対応の動物病院に連絡する
+          <div class="cl-sub">症状が1日以上続く場合は自己判断せず受診を。鼻水が白濁・黄色の場合は即日連絡を推奨。</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>すぐに動物病院へ行くべきサイン</h2>
+
+    <div class="alert-box">
+      <strong>以下に該当する場合は、爬虫類対応の動物病院を受診してください：</strong>
+      <ul>
+        <li>鼻水が白濁・黄色・緑色である</li>
+        <li>呼吸時にヒューヒュー・ゴロゴロという音がする</li>
+        <li>口を開けたまま呼吸している</li>
+        <li>首を上に向けた姿勢で呼吸しようとしている</li>
+        <li>鼻水と同時に食欲低下・元気がない</li>
+        <li>透明な鼻水でも3日以上続いている</li>
+        <li>多頭飼育で複数に同症状が出ている</li>
+      </ul>
+    </div>
+
+    <div class="safe-box">
+      <strong>自己判断での市販薬投与は避けてください。</strong>
+      人間用や他の動物用の抗生物質をカメに使用することは、症状を悪化させる可能性があります。必ず獣医師の指示に従ってください。
+    </div>
+
+    <h2>関連する飼育機材</h2>
+    <p>呼吸器疾患の多くは、低温・過湿・換気不足が背景にあります。以下の機材で環境を見直してください。</p>
+
+    <div class="gear-cards">
+
+      <div class="gear-card">
+        <div class="gear-emoji">🌡️</div>
+        <div class="gear-info">
+          <div class="gear-name">デジタル温湿度計（最高・最低記録機能付き）</div>
+          <div class="gear-desc">夜間の温度低下を見逃さないために必須。温度と湿度を同時に管理できる製品が理想的。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=デジタル温湿度計+最高最低+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/デジタル温湿度計+最高最低+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-emoji">💡</div>
+        <div class="gear-info">
+          <div class="gear-name">バスキングランプ（セラミックヒーターも検討）</div>
+          <div class="gear-desc">夜間の保温に、発光しないセラミックヒーターが有効。昼夜の温度差を縮めることで免疫力の低下を防ぐ。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=セラミックヒーター+爬虫類&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/セラミックヒーター+爬虫類" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+      </div>
+
+      <div class="gear-card">
+        <div class="gear-emoji">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">前面通気・換気付きガラスケージ</div>
+          <div class="gear-desc">密閉された衣装ケース等は通気性が悪く、細菌が繁殖しやすい。換気口付きの爬虫類専用ケージに変更することで環境を改善できる。</div>
+        </div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="../cage-best10.html" style="background:var(--forest);">ケージ一覧へ</a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>種別ページで適切な温度を確認する</h2>
+    <p>種ごとに必要な温度は異なります。以下のページで適切な飼育環境の数値を確認してください。</p>
+    <div class="species-links">
+      <a href="../species/russian-tortoise.html" class="sp-btn">🏔️ ロシアリクガメ</a>
+      <a href="../species/musk-turtle.html" class="sp-btn">🔬 ニオイガメ</a>
+      <a href="../species/three-toed-box-turtle.html" class="sp-btn">📦 ミツユビハコガメ</a>
+      <a href="../species-list.html" class="sp-btn">全81種の一覧 →</a>
+    </div>
+
+    <div class="shindan-cta">
+      <p>今の飼育環境が種に合っているか確認したい方は、診断ツールで最適環境を再確認できます。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（81種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかのトラブルと飼育ガイド</h2>
+    <p>気になる症状や飼育環境から探せます。</p>
+    <div class="hub-links">
+      <a href="index.html">← トラブル一覧</a>
+      <a href="not-eating.html">餌を食べない</a>
+      <a href="swollen-eyes.html">目の腫れ</a>
+      <a href="../guide-dry.html">乾燥系リクガメ</a>
+      <a href="../guide-semi.html">半水棲ガメ</a>
+      <a href="../guide-moist.html">ヤマガメ・ハコガメ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">
+      掲載する情報は一般的な飼育知識の目安であり、医療的な診断・治療の代替となるものではありません。症状が続く場合や緊急サインに該当する場合は、必ず爬虫類対応の動物病院を受診してください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
