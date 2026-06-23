@@ -73,7 +73,7 @@ land: [
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。上級者のチャレンジ種として人気。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'leopard-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 3 && (s.dry||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)*2; }
   },
@@ -173,7 +173,7 @@ aquatic: [
     reason: '甲羅の縁に赤・黄のラインが走る美しい種。泳ぎが活発で60〜90cm水槽が適切。草食傾向が強く管理しやすい。',
     specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'painted-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)*2+(s.swimmer||0)+(s.na_water||0)+(s.cool_climate||0); }
   },
@@ -277,7 +277,7 @@ aquatic: [
     reason: '枯れ葉のような外見で待ち伏せして魚を丸ごと吸い込む神秘的な種。水流を嫌い独特の飼育法を習得する必要がある本格派種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'matamata', hasPage: true,
     match: function(s){ return (s.large_tank||0) >= 2 && (s.ambush||0) >= 2; },
     score: function(s){ return (s.ambush||0)+(s.advanced||0)+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0); }
   },
@@ -369,7 +369,7 @@ forest: [
     reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷管理が必須。動物性タンパクを好む雑食性で、ユニークな飼育体験ができます。著者も飼育中。',
     specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'spenglers-leaf-turtle', hasPage: true,
     match: function(s){ return (s.s_size||0) >= 2 && (s.cooling||0) >= 2; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
@@ -377,7 +377,7 @@ forest: [
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中で、落ち着いた性格が魅力。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'hirase-turtle', hasPage: true,
     match: function(s){ return (s.m_size||0) >= 1 && (s.cooling||0) >= 2; },
     score: function(s){ return (s.m_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); }
   },
@@ -621,7 +621,7 @@ exotic: [
     reason: 'アマゾン川の底に潜む枯れ葉擬態の達人。生き餌または冷凍魚を水ごと吸い込む独特の捕食。水族館レベルの本格飼育種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'matamata', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.expert||0)+(s.budget_high||0); }
   },
@@ -721,7 +721,7 @@ all: [
     reason: '小型で独特の容姿が人気の森林棲ヤマガメ。夏の高温に弱く保冷が必須。著者も飼育中。',
     specs: { '最大甲長': '14cm', 'タイプ': '森林棲', '温度': '20〜27℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'spenglers-leaf-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.small||0) >= 2 && (s.cool_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.small||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -753,7 +753,7 @@ all: [
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'hirase-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.medium||0) >= 1 && (s.cool_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.medium||0)+(s.cool_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -777,7 +777,7 @@ all: [
     reason: 'アフリカのサバンナに生息する豹柄の大型リクガメ。広いスペースと安定した高温乾燥環境が必要。',
     specs: { '最大甲長': '65cm', '主な食事': '野草・乾草中心', '水容量': '大型水入れ', '温度': '28〜35℃' },
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'leopard-tortoise', hasPage: true,
     match: function(s){ return (s.land_tortoise||0) >= 2 && (s.large||0) >= 2 && (s.dry_env||0) >= 2; },
     score: function(s){ return (s.land_tortoise||0)+(s.large||0)+(s.dry_env||0)+(s.advanced||0)+(s.collector||0); }
   },
@@ -785,7 +785,7 @@ all: [
     reason: '枯れ葉擬態の達人。生き餌を水ごと吸い込む独特の捕食スタイル。コレクターが憧れる本格飼育種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'matamata', hasPage: true,
     match: function(s){ return (s.aquatic||0) >= 2 && (s.large||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.aquatic||0)+(s.large||0)+(s.advanced||0)+(s.collector||0)+(s.observational||0); }
   },
