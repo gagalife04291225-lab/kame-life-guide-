@@ -371,6 +371,39 @@
     transition:background .18s;white-space:nowrap;
   }
   .sp-link:hover{background:var(--accent-dark);}
+  /* === トラブルハブ === */
+  section.trouble-hub{
+    padding:28px 0 34px;
+    border-top:1px solid #ddd5be;
+    background:#fff;
+  }
+  .th-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;margin-bottom:18px;
+  }
+  .th-inner .th-text p{font-size:.97rem;color:#5a6b60;margin-top:6px;}
+  .th-link{
+    flex-shrink:0;
+    display:inline-block;
+    background:var(--danger,#c0392b);color:#fff;
+    text-decoration:none;font-weight:700;font-size:.92rem;
+    padding:11px 24px;border-radius:8px;
+    transition:background .18s;white-space:nowrap;
+  }
+  .th-link:hover{background:#922b21;}
+  .th-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .th-tags a{
+    background:var(--parchment);border:1.5px solid #ddd5be;
+    color:var(--forest);text-decoration:none;
+    font-size:.88rem;padding:8px 16px;border-radius:20px;
+    transition:border-color .15s,background .15s;
+  }
+  .th-tags a:hover{border-color:var(--accent);background:#fffbf3;}
+  @media(max-width:520px){
+    .th-inner{flex-direction:column;align-items:flex-start;}
+  }
+
+
   @media(max-width:520px){
     .entry-nav-btns a{font-size:.88rem;padding:10px 16px;}
     .sp-inner{flex-direction:column;align-items:flex-start;}
@@ -428,6 +461,7 @@
       <a href="shindan/index.html">🐢 診断で探す</a>
       <a href="species-list.html">📋 種一覧から探す</a>
       <a href="#discover">🌿 生態から探す</a>
+      <a href="trouble/index.html">🚑 トラブル解決</a>
     </div>
   </div>
 </section>
@@ -510,6 +544,25 @@
         <p>迎えたい種名がわかっているなら、一覧から直接探せます。難易度・カテゴリ・法規制のバッジ付きで全81種を並べています。</p>
       </div>
       <a href="species-list.html" class="sp-link">81種の一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="trouble-hub">
+  <div class="wrap">
+    <div class="th-inner">
+      <div class="th-text">
+        <div class="section-eyebrow">Trouble Shooting</div>
+        <h2 class="section-title">カメのトラブル解決</h2>
+        <p>食べない、鼻水が出る、目が開かない——症状から原因と対処法を確認できます。</p>
+      </div>
+      <a href="trouble/index.html" class="th-link">トラブル解決ガイドへ →</a>
+    </div>
+    <div class="th-tags">
+      <a href="trouble/not-eating.html">🍃 餌を食べない</a>
+      <a href="trouble/runny-nose.html">💧 鼻水・鼻詰まり</a>
+      <a href="trouble/swollen-eyes.html">👁 目の腫れ</a>
     </div>
   </div>
 </section>
