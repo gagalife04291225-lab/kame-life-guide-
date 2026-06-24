@@ -134,6 +134,16 @@ land: [
     slug: null, hasPage: false,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); }
+  },
+  { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+    reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES II。国内流通は希少。',
+    specs: { '最大甲長': '18cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '25〜34℃' },
+    coreSpecs: { size: '18cm', temp: '25〜34℃', lifespan: '20〜30年', diet: '草食（野草・乾草中心）' },
+    extraSpecs: {},
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2 && (s.advanced||0) >= 1; },
+    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.collector||0)+(s.ultra_rare||0)+(s.charisma||0); }
   }
 ],
 
@@ -428,6 +438,36 @@ aquatic: [
     slug: null, hasPage: false,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 3 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); }
+  },
+  { name: 'オウアチタチズガメ', latin: 'Graptemys ouachitensis', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス22cm）', cites: null, legal: null,
+    reason: 'ミシシッピチズガメと並ぶ人気チズガメ。甲羅のキールがより鋭く、ミシシッピ川流域に生息。流水好みで水質管理が重要。オス・メスの体格差が大きいため飼育スペースの計画が必要。',
+    specs: { '最大甲長': 'オス10cm/メス22cm', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '★★☆' },
+    coreSpecs: { size: 'オス10cm/メス22cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
+    extraSpecs: { tankSize: '60〜90cm' },
+    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2; },
+    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); }
+  },
+  { name: 'メキシカンジャイアントマスク', latin: 'Staurotypus triporcatus', emoji: '🦕', difficulty: '上級', size: 'L（30〜40cm）', cites: null, legal: null,
+    reason: 'メキシコ・中米産の大型ドロガメ科。スジオオニオイガメの近縁でさらに大型。3本の明確なキールを持ち噛みつき力が非常に強い。素手での取り扱い厳禁。本格マニア向けの希少種。',
+    specs: { '最大甲長': '40cm（メス）', '水槽サイズ': '90cm〜', '水温': '25〜30℃', '難易度': '★★★' },
+    coreSpecs: { size: '40cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '雑食（肉食寄り）' },
+    extraSpecs: { tankSize: '90cm〜' },
+    links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
+  },
+  { name: 'ハナガメ', latin: 'Mauremys sinensis', emoji: '🌸', difficulty: '入門〜中級', size: 'M（20〜25cm）', cites: null, legal: null,
+    reason: '首のストライプが美しい東・東南アジア産の中型水棲ガメ。クサガメと近縁だが首筋の模様が鮮やかで観賞価値が高い。丈夫で飼育しやすく入門者にも向く。国内CBの流通もある。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60〜90cm', '水温': '20〜28℃', '難易度': '★☆☆' },
+    coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
+    extraSpecs: { tankSize: '60〜90cm' },
+    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 1; },
+    score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.beauty||0)+(s.active||0)+(s.asia_water||0)+(s.cool_climate||0)+(s.mainstream||0); }
   }
 ],
 
@@ -622,6 +662,26 @@ forest: [
     slug: null, hasPage: false,
     match: function(s){ return (s.semi_aquatic||0) >= 1 && (s.advanced||0) >= 3 && (s.advanced_env||0) >= 3; },
     score: function(s){ return (s.semi_aquatic||0)+(s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.asia_box||0); }
+  },
+  { name: 'ウッドタートル', latin: 'Glyptemys insculpta', emoji: '🪵', difficulty: '上級', size: 'M（17〜22cm）', cites: null, legal: null,
+    reason: '北米産の半陸棲ガメ。高い知能で知られ、ラビリンス実験でマウスと同等の学習能力が報告されている。木彫のような甲羅模様が美しい。冬眠が必要で高温に弱い飼育難種。',
+    specs: { '最大甲長': '22cm', 'タイプ': '半陸棲', '温度': '15〜24℃', '難易度': '★★★' },
+    coreSpecs: { size: '22cm', temp: '15〜24℃', lifespan: '40〜60年', diet: '雑食（葉・果実・ミミズ等）' },
+    extraSpecs: {},
+    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.cooling||0) >= 2 && (s.advanced||0) >= 2; },
+    score: function(s){ return (s.semi_aquatic||0)+(s.cooling||0)+(s.advanced||0)+(s.collector||0)+(s.ya_ma||0)+(s.cool_climate||0); }
+  },
+  { name: 'メキシコハコガメ', latin: 'Terrapene mexicana', emoji: '🌵', difficulty: '上級', size: 'M（14〜18cm）', cites: null, legal: null,
+    reason: 'メキシコ東部に生息するハコガメ。北米産ハコガメより乾燥への適応幅がやや広い。腹甲を完全に閉じられるハコガメ固有の防御機構を持つ。国内流通が非常に少なくコレクター向け。',
+    specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜30℃', '難易度': '★★★' },
+    coreSpecs: { size: '18cm', temp: '22〜30℃', lifespan: '30〜60年', diet: '雑食' },
+    extraSpecs: {},
+    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.collector||0) >= 1; },
+    score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.advanced||0)+(s.collector||0)+(s.na_box||0)+(s.ultra_rare||0); }
   }
 ],
 
@@ -796,6 +856,16 @@ exotic: [
     slug: 'giant-musk-turtle', hasPage: true,
     match: function(s){ return (s.large_mud||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); }
+  },
+  { name: 'マッコードナガクビガメ', latin: 'Chelodina mccordi', emoji: '🌿', difficulty: '上級', size: 'M（22〜26cm）', cites: 'CITES II', legal: 'cites_ii',
+    reason: 'インドネシア・ロティ島固有の曲頸類。野生個体数が激減しており国内ではCB個体のみ流通。首が長い独特のシルエットが魅力。水温・水質管理が重要な上級者向け希少種。CITES II。',
+    specs: { '最大甲長': '26cm', '水槽サイズ': '60〜90cm', '水温': '25〜30℃', '難易度': '★★★' },
+    coreSpecs: { size: '26cm', temp: '25〜30℃', lifespan: '20〜30年', diet: '雑食（動物食寄り）' },
+    extraSpecs: { tankSize: '60〜90cm' },
+    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: null, hasPage: false,
+    match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 1; },
+    score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); }
   }
 ],
 
