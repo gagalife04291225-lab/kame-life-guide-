@@ -77,7 +77,7 @@ land: [
     coreSpecs: { size: '27cm', temp: '26〜33℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'chaco-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 1 && (s.dry||0) >= 3 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.herbivore||0)+(s.small_form||0); },
     availability: 'common'
@@ -99,7 +99,7 @@ land: [
     coreSpecs: { size: '25cm', temp: '26〜32℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'bell-hinge-back-tortoise', hasPage: true,
     match: function(s){ return (s.advanced||0) >= 2 && (s.humid||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.humid||0)+(s.medium||0)+(s.charisma||0)*2; },
     availability: 'rare'
@@ -121,7 +121,7 @@ land: [
     coreSpecs: { size: '120cm超', temp: '28〜33℃', lifespan: '80〜150年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'aldabra-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 3 && (s.humid||0) >= 1 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.charisma||0); },
     availability: 'rare'
@@ -132,7 +132,7 @@ land: [
     coreSpecs: { size: '31cm', temp: '18〜24℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'impressed-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); },
     availability: 'common'
@@ -143,7 +143,7 @@ land: [
     coreSpecs: { size: '18cm', temp: '25〜34℃', lifespan: '20〜30年', diet: '草食（野草・乾草中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'pancake-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.collector||0)+(s.ultra_rare||0)+(s.charisma||0); },
     availability: 'rare'
@@ -190,7 +190,7 @@ land: [
     coreSpecs: { size: '25cm', temp: '25〜35℃', lifespan: '20〜40年', diet: '草食（野草・多肉植物）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'bowsprit-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)+(s.collector||0)+(s.ultra_rare||0); },
     availability: 'rare'
@@ -201,7 +201,7 @@ land: [
     coreSpecs: { size: '25cm', temp: '26〜32℃', lifespan: '20〜40年', diet: '雑食（キノコ・果実・小動物）' },
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'home-hinge-back-tortoise', hasPage: true,
     match: function(s){ return (s.humid||0) >= 2 && (s.advanced||0) >= 2 && (s.tropical_climate||0) >= 1; },
     score: function(s){ return (s.humid||0)+(s.advanced||0)+(s.tropical_climate||0)+(s.charisma||0)+(s.collector||0)+(s.expert||0); },
     availability: 'rare'
@@ -224,7 +224,7 @@ land: [
     coreSpecs: { size: '30cm', temp: '25〜33℃', lifespan: '50〜80年', diet: '草食（野草・野菜）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'iberian-greek-tortoise', hasPage: true,
     match: function(s){ return (s.intermediate||0) >= 2 || (s.advanced||0) >= 1; },
     score: function(s){ return (s.intermediate||0)+(s.eu_cb||0)+(s.herbivore||0)+(s.dry||0)+(s.compact||0); },
     availability: 'common'
@@ -235,7 +235,7 @@ land: [
     coreSpecs: { size: '40cm', temp: '26〜32℃', lifespan: '30〜50年', diet: '雑食（果実・野菜・小動物）' },
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'cherry-head-tortoise', hasPage: true,
     match: function(s){ return (s.large||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.intermediate||0)+(s.charisma||0)+(s.tropical_climate||0); },
     availability: 'common'
