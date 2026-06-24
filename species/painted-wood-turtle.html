@@ -138,6 +138,20 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="decision-box decision-box-avoid"><div class="decision-box-title">この亀が向いていない人</div><ul class="decision-list"><li>✗ 入門種を求めている方</li><li>✗ 高湿度維持設備を置けない環境</li><li>✗ CITES管理が面倒と感じる方</li></ul></div>
   </div>
 </div>
+
+<!-- Phase 7-C: Quick Facts -->
+<link rel="stylesheet" href="../css/quick-facts.css">
+<div id="quick-facts-root"></div>
+<script src="../js/quick-facts.js"></script>
+<script>mountQuickFacts({ equipmentKey: 'tortoise_forest', name: 'アカスジヤマガメ', difficulty: '中〜上級', lifespan: '20〜50年' });</script>
+<!-- Phase 7A Task 2-B: Starter Kit repositioned -->
+<link rel="stylesheet" href="../css/starter-kit.css">
+<div id="starter-kit-root"></div>
+<script src="../data/products.js"></script>
+<script src="../js/starter-kit.js"></script>
+<script>
+  mountStarterKit({ equipmentKey: 'tortoise_forest', name: 'アカスジヤマガメ', difficulty: '中〜上級', lifespan: '20〜50年' });
+</script>
 <nav class="crumbs"><div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ アカスジヤマガメ</div></nav>
 <div class="article"><div class="wrap">
   <div class="cites-box"><strong>⚠ CITES II 掲載種</strong>　国内CB個体は飼育可能です。購入時は国内CBであることを確認し、インボイス（取引証明書）付きの個体を選んでください。</div>
@@ -169,14 +183,7 @@ footer a{color:var(--accent);text-decoration:none;}
   <div class="species-nav"><div class="species-nav-label">関連する種を見る</div><div class="species-nav-grid"><a href="annulated-wood-turtle.html" class="species-nav-link"><span class="snl-icon">🌀</span><span class="snl-text">ネンリンヤマガメ<span class="snl-sub">中〜上級・同属</span></span></a><a href="spenglers-leaf-turtle.html" class="species-nav-link"><span class="snl-icon">🍃</span><span class="snl-text">スペングラーヤマガメ<span class="snl-sub">中〜上級・小型</span></span></a></div></div>
 </div></div>
 
-<!-- Phase 7A Task 2-B: Starter Kit repositioned -->
-<link rel="stylesheet" href="../css/starter-kit.css">
-<div id="starter-kit-root"></div>
-<script src="../data/products.js"></script>
-<script src="../js/starter-kit.js"></script>
-<script>
-  mountStarterKit({ equipmentKey: 'tortoise_forest', name: 'アカスジヤマガメ', difficulty: '中〜上級', lifespan: '20〜50年' });
-</script>
+
 <section class="closing"><div class="wrap">
   <h2>ほかの飼育ガイド</h2><p>種一覧・ハビタットガイドからも探せます。</p>
   <div class="hub-links"><a href="../index.html">TOP</a><a href="../species-list.html">種一覧（100種）</a><a href="../guide-water-full.html">🌊 水棲ガメ</a><a href="../shindan/index.html">🐢 亀診断</a></div>
