@@ -253,7 +253,7 @@ aquatic: [
     reason: '腹甲がピンク色の美しい曲頸類。横に首を曲げて引っ込める独特の動作が魅力。曲頸類入門として人気が高い。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'pink-bellied-side-necked-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.observational||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.bottom_dweller||0)+(s.sa_water||0)+(s.tropical_climate||0); }
   },
