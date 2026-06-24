@@ -317,7 +317,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
   },
-  { name: 'ペインテッドタートル', latin: 'Chrysemys picta', emoji: '🎨', difficulty: '入門', size: 'M（13〜25cm）', cites: null, legal: null,
+  { name: 'ニシキガメ', latin: 'Chrysemys picta', emoji: '🎨', difficulty: '入門', size: 'M（13〜25cm）', cites: null, legal: null,
     reason: '甲羅の縁に赤・黄のラインが走る美しい種。泳ぎが活発で60〜90cm水槽が適切。草食傾向が強く管理しやすい。',
     specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm（メス）', temp: '20〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -761,7 +761,7 @@ forest: [
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); },
     availability: 'common'
   },
-  { name: 'ヒラセガメ', latin: 'Pyxidea mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ヒラセガメ', latin: 'Cuora mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中で、落ち着いた性格が魅力。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     coreSpecs: { size: '18cm', temp: '20〜28℃', lifespan: '30〜50年', diet: '雑食' },
