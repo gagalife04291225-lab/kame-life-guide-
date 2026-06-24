@@ -248,19 +248,6 @@
   },
   {
     "priority": 20,
-    "id": "basking_ceramic_100w",
-    "name": "セラミックヒートランプ 100W（夜間用）",
-    "category": "lighting_basking",
-    "tier": "standard",
-    "rating": 4.4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "消耗品・定期交換",
-    "amazon_search_hint": "セラミックヒートランプ 100W（夜間用）"
-  },
-  {
-    "priority": 21,
     "id": "basking_solar_raptor",
     "name": "Solar Raptor HID 70W",
     "category": "lighting_basking",
@@ -273,7 +260,7 @@
     "amazon_search_hint": "Solar Raptor HID 70W"
   },
   {
-    "priority": 22,
+    "priority": 21,
     "id": "basking_dual_150w",
     "name": "ダブルバスキングランプ 150W",
     "category": "lighting_basking",
@@ -284,6 +271,19 @@
     "status": "asin_missing",
     "reason": "消耗品・定期交換",
     "amazon_search_hint": "ダブルバスキングランプ 150W"
+  },
+  {
+    "priority": 22,
+    "id": "basking_50w",
+    "name": "バスキングランプ 50W",
+    "category": "lighting_basking",
+    "tier": "budget",
+    "rating": 4.2,
+    "asin": null,
+    "affiliateUrl": "#",
+    "status": "asin_missing",
+    "reason": "消耗品・定期交換",
+    "amazon_search_hint": "バスキングランプ 50W"
   },
   {
     "priority": 23,
@@ -339,6 +339,19 @@
   },
   {
     "priority": 27,
+    "id": "substrate_cypress_mulch",
+    "name": "サイプレスマルチ（Zoo Med）",
+    "category": "substrate",
+    "tier": "premium",
+    "rating": 4.6,
+    "asin": null,
+    "affiliateUrl": "#",
+    "status": "asin_missing",
+    "reason": "消耗品・定期購入",
+    "amazon_search_hint": "サイプレスマルチ（Zoo Med）"
+  },
+  {
+    "priority": 28,
     "id": "substrate_top_soil",
     "name": "培養土（無肥料）5L",
     "category": "substrate",
@@ -351,7 +364,7 @@
     "amazon_search_hint": "培養土（無肥料）5L"
   },
   {
-    "priority": 28,
+    "priority": 29,
     "id": "thermometer_infrared",
     "name": "非接触型赤外線温度計",
     "category": "thermometer",
@@ -364,7 +377,7 @@
     "amazon_search_hint": "非接触型赤外線温度計"
   },
   {
-    "priority": 29,
+    "priority": 30,
     "id": "thermometer_dual_probe",
     "name": "デジタル温度計（デュアルプローブ）",
     "category": "thermometer",
@@ -375,19 +388,6 @@
     "status": "asin_missing",
     "reason": "入門者必需",
     "amazon_search_hint": "デジタル温度計（デュアルプローブ）"
-  },
-  {
-    "priority": 30,
-    "id": "shelter_cork_bark",
-    "name": "コルクバーク（丸太）",
-    "category": "shelter",
-    "tier": "standard",
-    "rating": 4.5,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "必需品",
-    "amazon_search_hint": "コルクバーク（丸太）"
   },
   {
     "priority": 31,
@@ -505,18 +505,5 @@
     "status": "asin_missing",
     "reason": "上級者必需品",
     "amazon_search_hint": "エレクトロライト（電解質補給）"
-  },
-  {
-    "priority": 40,
-    "id": "supplement_cuttlebone",
-    "name": "カトルボーン（甲イカの骨）",
-    "category": "supplements",
-    "tier": "budget",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "上級者必需品",
-    "amazon_search_hint": "カトルボーン（甲イカの骨）"
   }
 ]
