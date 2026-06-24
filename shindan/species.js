@@ -189,7 +189,7 @@ aquatic: [
     reason: 'アカミミガメの近縁種で耳が黄色い。泳ぎが活発で観察が楽しい。アカミミガメと違い特定外来生物ではなく新規購入・飼育が可能。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'yellow-bellied-slider', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
