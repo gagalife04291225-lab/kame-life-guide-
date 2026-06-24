@@ -49,7 +49,7 @@ land: [
     reason: '東南アジア〜インド産の森林性リクガメ。高温多湿の環境を好み、地中海系リクガメとは異なる飼育感覚が楽しい。ミスト管理がポイント。',
     specs: { '最大甲長': '33cm', '主な食事': '野草・野菜・果物少量', '水容量': '浅め水入れ', '温度': '27〜32℃' },
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'elongated-tortoise', hasPage: true,
     match: function(s){ return (s.medium||0) >= 2 && (s.humid||0) >= 2; },
     score: function(s){ return (s.medium||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.asia_land||0); }
   },
