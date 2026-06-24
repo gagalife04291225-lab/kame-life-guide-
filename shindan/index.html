@@ -759,7 +759,7 @@ function showResult(sp, pct) {
 
   // 法規制
   var legalBox = document.getElementById('res-legal');
-  if (sp.legal === 'cites') {
+  if (sp.legal === 'cites_ii') {
     legalBox.style.display = '';
     legalBox.className = 'legal-box';
     legalBox.textContent = '⚠️ この種はCITES IIです。国内で合法的に流通しているCB個体（国内繁殖個体）には取引証明書が発行されます。購入時は書類の有無を必ず確認してください。';
@@ -774,13 +774,28 @@ function showResult(sp, pct) {
   // スペック
   var specGrid = document.getElementById('res-specs');
   specGrid.innerHTML = '';
-  Object.entries(sp.specs).forEach(function(entry){
-    specGrid.innerHTML +=
-      '<div class="spec-item">' +
-        '<div class="spec-label">' + entry[0] + '</div>' +
-        '<div class="spec-value">' + entry[1] + '</div>' +
-      '</div>';
-  });
+  // coreSpecs/extraSpecs（新スキーマ）を優先、specsフィールド（旧）にフォールバック
+  var coreLabels = { size: '最大甲長', temp: '温度帯', lifespan: '寿命', diet: '食性' };
+  var extraLabels = { tankSize: '水槽サイズ', substrate: '底床', salinity: '塩分濃度', waterFlow: '水流', uvb: 'UVB', humidity: '湿度', filter: 'フィルター', basking: 'バスキング' };
+  if (sp.coreSpecs) {
+    Object.entries(sp.coreSpecs).forEach(function(entry){
+      var label = coreLabels[entry[0]] || entry[0];
+      specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + label + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+    });
+    if (sp.extraSpecs) {
+      Object.entries(sp.extraSpecs).forEach(function(entry){
+        if (entry[1]) {
+          var label = extraLabels[entry[0]] || entry[0];
+          specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + label + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+        }
+      });
+    }
+  } else if (sp.specs) {
+    // 旧specsフィールドへのフォールバック（互換性維持）
+    Object.entries(sp.specs).forEach(function(entry){
+      specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + entry[0] + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+    });
+  }
 
   // 種別ページCTA（Phase1.6）
   var linksDiv = document.getElementById('res-links');
