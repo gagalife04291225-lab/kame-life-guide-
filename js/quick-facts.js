@@ -236,6 +236,38 @@ function mountQuickFacts(opts, mountId) {
 
   root.innerHTML = renderQuickFacts(opts);
 
+  // 初期費用セル: products.js ロード待ちリトライ
+  // PRODUCTS / EQUIPMENT_MAP が未定義の場合、100ms×最大10回リトライして上書き
+  (function retryInitCost(attempt) {
+    var key = opts.equipmentKey || '';
+    if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined' || !EQUIPMENT_MAP[key]) {
+      if (attempt < 10) {
+        setTimeout(function() { retryInitCost(attempt + 1); }, 150);
+      }
+      return; // まだ未定義 → 次回リトライ or 諦め（「要確認」のまま）
+    }
+    // PRODUCTS が使えるので計算
+    var SK_CAT_ORDER_QF = [
+      'enclosure','lighting_uvb','lighting_basking',
+      'heating','filter','substrate','thermometer',
+      'shelter','food','supplements'
+    ];
+    var totalLow = 0, totalHigh = 0, counted = 0;
+    SK_CAT_ORDER_QF.forEach(function(cat) {
+      var id = (EQUIPMENT_MAP[key][cat] || {}).budget;
+      if (!id || !PRODUCTS[id]) return;
+      var pr = PRODUCTS[id].priceRange || '';
+      var s  = pr.replace(/[¥,]/g, '');
+      var m  = s.match(/(\d+)[^\d]+(\d+)/);
+      if (m) { totalLow += parseInt(m[1], 10); totalHigh += parseInt(m[2], 10); counted++; }
+    });
+    if (counted < 3) return; // 計算不十分 → 「要確認」のまま
+    var costText = '¥' + totalLow.toLocaleString('ja-JP') + '〜¥' + totalHigh.toLocaleString('ja-JP');
+    // DOMの初期費用セルだけを差し替え
+    var costEl = root.querySelector('.qf-card:nth-child(2) .qf-card-value .qf-cost');
+    if (costEl) costEl.textContent = costText;
+  }(0));
+
   // Sticky CTAをbodyに追記（重複防止）
   if (!document.getElementById('qf-sticky-cta')) {
     var ctaEl = document.createElement('div');
