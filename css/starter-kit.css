@@ -1,0 +1,128 @@
+/* ─── Starter Kit: species page用スタイル ───────────────
+   Phase 6-C Task 3
+   既存ページCSSとの衝突を避けるため sk- プレフィックス統一
+─────────────────────────────────────────────────────── */
+
+.sk-section {
+  padding: 2.5rem 1rem 3rem;
+  background: var(--parchment, #f8f4ed);
+  border-top: 1px solid rgba(0,0,0,.07);
+}
+
+.sk-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.sk-heading-main {
+  font-family: 'Playfair Display', 'Noto Serif JP', serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--forest-deep, #1a2e1a);
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+/* 横スクロールカード列 */
+.sk-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sk-scroll::-webkit-scrollbar { display: none; }
+
+/* カード1枚 */
+.sk-card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+/* カテゴリラベル */
+.sk-cat-label {
+  font-size: .68rem;
+  color: #888;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* tier バッジ */
+.sk-card-badge {
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+.sk-badge-standard { background: #e8f5e9; color: #2e7d32; }
+.sk-badge-budget   { background: #fff3e0; color: #e65100; }
+.sk-badge-premium  { background: #f3e5f5; color: #6a1b9a; }
+
+/* 商品名 */
+.sk-card-name {
+  font-size: .88rem;
+  font-weight: 700;
+  color: #1a2e1a;
+  line-height: 1.4;
+}
+
+/* rating */
+.sk-card-rating {
+  font-size: .75rem;
+  color: #c49a5a;
+}
+
+/* 価格帯 */
+.sk-card-price {
+  font-size: .75rem;
+  color: #888;
+}
+
+/* 説明文 */
+.sk-card-why {
+  font-size: .75rem;
+  color: #555;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* CTAボタン */
+.sk-card-btn {
+  display: block;
+  margin-top: auto;
+  padding: 8px 10px;
+  background: #c49a5a;
+  border-radius: 7px;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.sk-card-btn:hover { background: #a8803e; }
+.sk-card-btn--soon {
+  background: #eee;
+  color: #999;
+  cursor: default;
+}
+
+/* 免責 */
+.sk-disclaimer {
+  font-size: .7rem;
+  color: #aaa;
+  text-align: right;
+  margin-top: .5rem;
+}
