@@ -203,14 +203,16 @@ body {
 .sk-heading { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; padding: 20px 20px 0; }
 .sk-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 16px; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; }
 .sk-scroll::-webkit-scrollbar { display: none; }
-.sk-card { flex: 0 0 180px; scroll-snap-align: start; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.sk-card { flex: 0 0 200px; scroll-snap-align: start; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
 .sk-card-badge { font-size: .68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; align-self: flex-start; white-space: nowrap; }
-.sk-badge-best   { background: rgba(74,122,96,.35); border: 1px solid var(--forest-light); color: #8dcba0; }
-.sk-badge-budget { background: rgba(143,95,44,.25); border: 1px solid var(--accent); color: var(--accent-light); }
-.sk-badge-premium{ background: rgba(176,58,46,.2); border: 1px solid var(--danger); color: #e07060; }
+.sk-badge-best     { background: rgba(74,122,96,.35);  border: 1px solid var(--forest-light); color: #8dcba0; }
+.sk-badge-budget   { background: rgba(143,95,44,.25);  border: 1px solid var(--accent);       color: var(--accent-light); }
+.sk-badge-standard { background: rgba(74,122,96,.25);  border: 1px solid var(--forest-light); color: #8dcba0; }
+.sk-badge-premium  { background: rgba(176,58,46,.2);   border: 1px solid var(--danger);       color: #e07060; }
 .sk-card-name { font-size: .85rem; color: var(--parchment); line-height: 1.4; font-weight: 600; }
 .sk-card-rating { font-size: .75rem; color: var(--accent-light); }
 .sk-card-price { font-size: .75rem; color: var(--text-muted); }
+.sk-card-why  { font-size: .75rem; color: var(--parchment-dark); line-height: 1.5; }
 .sk-card-btn { display: block; margin-top: auto; padding: 8px 10px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: 8px; color: var(--accent-light); font-size: .78rem; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s; }
 .sk-card-btn:hover { background: rgba(196,154,90,.28); }
 .sk-card-btn--soon { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--text-muted); cursor: default; }
@@ -699,52 +701,70 @@ function resolveEquipmentKey(routeId, sp) {
  * @returns {Array} [{cat, badge, product}, ...]
  */
 /**
- * カテゴリ優先順で Best Overall を1枚ずつ選び、最大5枚で停止
- * affiliateUrl が実URLの商品を優先する
+ * EQUIPMENT_MAP v2 対応版 selectKitProducts
+ * getTierProduct() を使い standard → budget → premium の優先順で
+ * affiliateUrl 有効商品を優先して1カテゴリ1枚、最大5枚を選定する。
+ * v1配列形式との後方互換あり。
  * @param {string} equipmentKey
- * @returns {Array} [{cat, badge, product}, ...]
+ * @returns {Array} [{cat, tierLabel, badgeCls, product}, ...]
  */
 function selectKitProducts(equipmentKey) {
   if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
+  if (!EQUIPMENT_MAP[equipmentKey]) return [];
 
-  var ids = EQUIPMENT_MAP[equipmentKey];
-  if (!ids) return [];
+  var isV2 = !Array.isArray(EQUIPMENT_MAP[equipmentKey]);
 
-  // 修正2: カテゴリ優先順（要件指定順）
   var CAT_ORDER = [
     'enclosure', 'lighting_uvb', 'lighting_basking',
     'heating', 'filter', 'substrate', 'thermometer',
     'shelter', 'food', 'supplements'
   ];
 
-  // idリストをカテゴリ別にグループ化
-  var byCat = {};
-  ids.forEach(function(id) {
-    var p = PRODUCTS[id];
-    if (!p) return;
-    if (!byCat[p.category]) byCat[p.category] = [];
-    byCat[p.category].push(p);
-  });
+  var TIER_LABEL = { budget: 'コスパ重視', standard: 'まずはこれ', premium: '本格派' };
+  var TIER_CLS   = { budget: 'sk-badge-budget', standard: 'sk-badge-standard', premium: 'sk-badge-premium' };
 
   var result = [];
-  var seen = {};
+  var seen   = {};
+
+  function pickFromV2(cat) {
+    var TIER_PREF = ['standard', 'budget', 'premium'];
+    var candidate = null, candidateTier = null;
+    for (var i = 0; i < TIER_PREF.length; i++) {
+      var p = (typeof getTierProduct === 'function')
+        ? getTierProduct(equipmentKey, cat, TIER_PREF[i]) : null;
+      if (!p || seen[p.id]) continue;
+      if (p.affiliateUrl && p.affiliateUrl !== '#') {
+        candidate = p; candidateTier = TIER_PREF[i]; break;
+      }
+      if (!candidate) { candidate = p; candidateTier = TIER_PREF[i]; }
+    }
+    return candidate ? { product: candidate, tier: candidateTier } : null;
+  }
+
+  function pickFromV1(cat) {
+    var ids = EQUIPMENT_MAP[equipmentKey];
+    var items = ids.map(function(id) { return PRODUCTS[id]; }).filter(function(p) {
+      return p && p.category === cat && !seen[p.id];
+    });
+    if (!items.length) return null;
+    var withUrl = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
+    var pool = withUrl.length ? withUrl : items;
+    var best = pool.reduce(function(a, b) { return (b.rating || 0) > (a.rating || 0) ? b : a; });
+    return best ? { product: best, tier: best.tier || 'standard' } : null;
+  }
 
   CAT_ORDER.forEach(function(cat) {
-    if (result.length >= 5) return; // 最大5枚で停止
-
-    var items = byCat[cat];
-    if (!items || !items.length) return;
-
-    // affiliateUrl実URL → rating降順 で Best Overall を選定
-    var withUrl  = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
-    var pool     = withUrl.length ? withUrl : items; // URL無しの場合はfallback
-    var best     = pool.reduce(function(a, b) {
-      return (b.rating || 0) > (a.rating || 0) ? b : a;
+    if (result.length >= 5) return;
+    var pick = isV2 ? pickFromV2(cat) : pickFromV1(cat);
+    if (!pick) return;
+    seen[pick.product.id] = true;
+    var t = pick.tier;
+    result.push({
+      cat:       cat,
+      tierLabel: TIER_LABEL[t] || 'まずはこれ',
+      badgeCls:  TIER_CLS[t]   || 'sk-badge-standard',
+      product:   pick.product,
     });
-
-    if (!best || seen[best.id]) return;
-    seen[best.id] = true;
-    result.push({ cat: cat, badge: 'Best Overall', product: best });
   });
 
   return result;
@@ -765,7 +785,7 @@ function starRating(r) {
 }
 
 /**
- * 診断結果画面にスターターキットを描画
+ * 診断結果画面にスターターキットを描画（Phase 6-C Task 2）
  */
 function renderStarterKit(sp) {
   var sec = document.getElementById('starter-kit-section');
@@ -779,24 +799,22 @@ function renderStarterKit(sp) {
   var picks = selectKitProducts(equipKey);
   if (!picks.length) { sec.style.display = 'none'; return; }
 
-  // カード生成
   var cardsHtml = picks.map(function(item) {
     var p = item.product;
     var hasUrl = p.affiliateUrl && p.affiliateUrl !== '#';
-    var badgeCls = item.badge === 'Best Overall' ? 'sk-badge-best'
-                 : item.badge === 'Budget Pick'  ? 'sk-badge-budget'
-                 : 'sk-badge-premium';
     var btnHtml = hasUrl
       ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
-        ' data-cat="' + p.category + '" data-species="' + sp.name + '" data-asin="' + (p.asin || '') + '">Amazonで見る</a>'
+        ' data-cat="' + p.category + '" data-species="' + sp.name +
+        '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで詳細を見る</a>'
       : '<span class="sk-card-btn sk-card-btn--soon">近日公開</span>';
 
     return '<div class="sk-card">' +
       '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
-      '<span class="sk-card-badge ' + badgeCls + '">' + item.badge + '</span>' +
+      '<span class="sk-card-badge ' + item.badgeCls + '">' + item.tierLabel + '</span>' +
       '<div class="sk-card-name">' + p.name + '</div>' +
       (p.rating ? '<div class="sk-card-rating">' + starRating(p.rating) + '</div>' : '') +
       '<div class="sk-card-price">' + p.priceRange + '</div>' +
+      (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
       btnHtml +
     '</div>';
   }).join('');
@@ -810,19 +828,23 @@ function renderStarterKit(sp) {
 
   sec.style.display = '';
 
-  // GA4: kit表示イベント
   if (typeof ga4Event === 'function') {
-    ga4Event('starter_kit_shown', { species_name: sp.name, equipment_key: equipKey, card_count: picks.length });
+    ga4Event('starter_kit_shown', {
+      species_name:  sp.name,
+      equipment_key: equipKey,
+      card_count:    picks.length,
+    });
   }
 
-  // GA4: カードクリックイベント
   sec.querySelectorAll('.sk-card-btn[href]').forEach(function(a) {
     a.addEventListener('click', function() {
       if (typeof ga4Event === 'function') {
         ga4Event('starter_kit_click', {
-          species_name: a.dataset.species,
-          category: a.dataset.cat,
-          asin: a.dataset.asin
+          species_name:  a.dataset.species,
+          category:      a.dataset.cat,
+          asin:          a.dataset.asin,
+          selected_tier: a.dataset.tier,
+          equipment_key: equipKey,
         });
       }
     });
