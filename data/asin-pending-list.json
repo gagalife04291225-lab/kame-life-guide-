@@ -79,32 +79,6 @@
   },
   {
     "priority": 7,
-    "id": "tank_60",
-    "name": "水槽 60cm規格",
-    "category": "enclosure",
-    "tier": "budget",
-    "rating": 4.1,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
-    "amazon_search_hint": "水槽 60cm規格"
-  },
-  {
-    "priority": 8,
-    "id": "enclosure_glass_45",
-    "name": "ガラスケージ 45cm",
-    "category": "enclosure",
-    "tier": "budget",
-    "rating": 4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
-    "amazon_search_hint": "ガラスケージ 45cm"
-  },
-  {
-    "priority": 9,
     "id": "enclosure_plastic_60",
     "name": "プラスチックケース 60L",
     "category": "enclosure",
@@ -117,20 +91,7 @@
     "amazon_search_hint": "プラスチックケース 60L"
   },
   {
-    "priority": 10,
-    "id": "filter_canister_medium",
-    "name": "外部フィルター（中型）",
-    "category": "filter",
-    "tier": "standard",
-    "rating": 4.5,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
-    "amazon_search_hint": "外部フィルター（中型）"
-  },
-  {
-    "priority": 11,
+    "priority": 8,
     "id": "filter_turtle_clean",
     "name": "カメ専用フィルター（テトラ）",
     "category": "filter",
@@ -143,7 +104,7 @@
     "amazon_search_hint": "カメ専用フィルター（テトラ）"
   },
   {
-    "priority": 12,
+    "priority": 9,
     "id": "filter_submersible_medium",
     "name": "水中フィルター（中型）",
     "category": "filter",
@@ -156,20 +117,7 @@
     "amazon_search_hint": "水中フィルター（中型）"
   },
   {
-    "priority": 13,
-    "id": "filter_canister_eheim_2217",
-    "name": "EHEIM クラシック 2217",
-    "category": "filter",
-    "tier": "premium",
-    "rating": 4.9,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
-    "amazon_search_hint": "EHEIM クラシック 2217"
-  },
-  {
-    "priority": 14,
+    "priority": 10,
     "id": "filter_fluval_fx",
     "name": "Fluval FX シリーズ",
     "category": "filter",
@@ -182,7 +130,7 @@
     "amazon_search_hint": "Fluval FX シリーズ"
   },
   {
-    "priority": 15,
+    "priority": 11,
     "id": "filter_canister_large",
     "name": "外部フィルター（大型）",
     "category": "filter",
@@ -195,7 +143,7 @@
     "amazon_search_hint": "外部フィルター（大型）"
   },
   {
-    "priority": 16,
+    "priority": 12,
     "id": "filter_sponge_dual",
     "name": "ダブルスポンジフィルター",
     "category": "filter",
@@ -208,7 +156,7 @@
     "amazon_search_hint": "ダブルスポンジフィルター"
   },
   {
-    "priority": 17,
+    "priority": 13,
     "id": "filter_hang_on",
     "name": "外掛け式フィルター",
     "category": "filter",
@@ -221,20 +169,7 @@
     "amazon_search_hint": "外掛け式フィルター"
   },
   {
-    "priority": 18,
-    "id": "heater_aqua_200w",
-    "name": "水中ヒーター 200W",
-    "category": "heating",
-    "tier": "standard",
-    "rating": 4.4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "水中ヒーター 200W"
-  },
-  {
-    "priority": 19,
+    "priority": 14,
     "id": "heater_aqua_100w",
     "name": "水中ヒーター 100W",
     "category": "heating",
@@ -247,46 +182,7 @@
     "amazon_search_hint": "水中ヒーター 100W"
   },
   {
-    "priority": 20,
-    "id": "heater_panel_45w",
-    "name": "パネルヒーター 45W",
-    "category": "heating",
-    "tier": "standard",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "パネルヒーター 45W"
-  },
-  {
-    "priority": 21,
-    "id": "heater_panel_60w",
-    "name": "パネルヒーター 60W",
-    "category": "heating",
-    "tier": "standard",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "パネルヒーター 60W"
-  },
-  {
-    "priority": 22,
-    "id": "thermostat_digital",
-    "name": "デジタルサーモスタット（プログラム式）",
-    "category": "heating",
-    "tier": "premium",
-    "rating": 4.7,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "デジタルサーモスタット（プログラム式）"
-  },
-  {
-    "priority": 23,
+    "priority": 15,
     "id": "heater_radiant_panel",
     "name": "輻射熱パネルヒーター（天井設置）",
     "category": "heating",
@@ -299,33 +195,7 @@
     "amazon_search_hint": "輻射熱パネルヒーター（天井設置）"
   },
   {
-    "priority": 24,
-    "id": "heater_panel_30w",
-    "name": "パネルヒーター 30W",
-    "category": "heating",
-    "tier": "budget",
-    "rating": 4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "パネルヒーター 30W"
-  },
-  {
-    "priority": 25,
-    "id": "thermostat",
-    "name": "サーモスタット（アナログ）",
-    "category": "heating",
-    "tier": "budget",
-    "rating": 4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
-    "amazon_search_hint": "サーモスタット（アナログ）"
-  },
-  {
-    "priority": 26,
+    "priority": 16,
     "id": "heater_cord_20w",
     "name": "ヒーティングコード 20W",
     "category": "heating",
@@ -338,20 +208,7 @@
     "amazon_search_hint": "ヒーティングコード 20W"
   },
   {
-    "priority": 27,
-    "id": "uvb_arcadia_t5_6",
-    "name": "Arcadia T5 HO 6% UVB",
-    "category": "lighting_uvb",
-    "tier": "standard",
-    "rating": 4.5,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "専門性が高くASINによる差別化が効く",
-    "amazon_search_hint": "Arcadia T5 HO 6% UVB"
-  },
-  {
-    "priority": 28,
+    "priority": 17,
     "id": "uvb_zilla_t5",
     "name": "Zilla Desert 50 T5 UVB",
     "category": "lighting_uvb",
@@ -364,7 +221,7 @@
     "amazon_search_hint": "Zilla Desert 50 T5 UVB"
   },
   {
-    "priority": 29,
+    "priority": 18,
     "id": "uvb_arcadia_t5_12",
     "name": "Arcadia T5 HO 12% UVB",
     "category": "lighting_uvb",
@@ -377,7 +234,7 @@
     "amazon_search_hint": "Arcadia T5 HO 12% UVB"
   },
   {
-    "priority": 30,
+    "priority": 19,
     "id": "uvb_t8_30w",
     "name": "UVB T8 蛍光管 30W",
     "category": "lighting_uvb",
@@ -390,20 +247,7 @@
     "amazon_search_hint": "UVB T8 蛍光管 30W"
   },
   {
-    "priority": 31,
-    "id": "basking_75w",
-    "name": "バスキングランプ 75W",
-    "category": "lighting_basking",
-    "tier": "standard",
-    "rating": 4.4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
-    "amazon_search_hint": "バスキングランプ 75W"
-  },
-  {
-    "priority": 32,
+    "priority": 20,
     "id": "basking_ceramic_100w",
     "name": "セラミックヒートランプ 100W（夜間用）",
     "category": "lighting_basking",
@@ -416,7 +260,7 @@
     "amazon_search_hint": "セラミックヒートランプ 100W（夜間用）"
   },
   {
-    "priority": 33,
+    "priority": 21,
     "id": "basking_100w",
     "name": "バスキングランプ 100W",
     "category": "lighting_basking",
@@ -429,7 +273,7 @@
     "amazon_search_hint": "バスキングランプ 100W"
   },
   {
-    "priority": 34,
+    "priority": 22,
     "id": "basking_solar_raptor",
     "name": "Solar Raptor HID 70W",
     "category": "lighting_basking",
@@ -442,7 +286,7 @@
     "amazon_search_hint": "Solar Raptor HID 70W"
   },
   {
-    "priority": 35,
+    "priority": 23,
     "id": "basking_dual_150w",
     "name": "ダブルバスキングランプ 150W",
     "category": "lighting_basking",
@@ -455,7 +299,7 @@
     "amazon_search_hint": "ダブルバスキングランプ 150W"
   },
   {
-    "priority": 36,
+    "priority": 24,
     "id": "basking_halogen_50w",
     "name": "ハロゲンバスキング 50W",
     "category": "lighting_basking",
@@ -468,7 +312,7 @@
     "amazon_search_hint": "ハロゲンバスキング 50W"
   },
   {
-    "priority": 37,
+    "priority": 25,
     "id": "basking_halogen_35w",
     "name": "ハロゲンバスキング 35W",
     "category": "lighting_basking",
@@ -481,20 +325,7 @@
     "amazon_search_hint": "ハロゲンバスキング 35W"
   },
   {
-    "priority": 38,
-    "id": "basking_infrared_red",
-    "name": "赤外線バスキングランプ 75W",
-    "category": "lighting_basking",
-    "tier": "budget",
-    "rating": 3.8,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
-    "amazon_search_hint": "赤外線バスキングランプ 75W"
-  },
-  {
-    "priority": 39,
+    "priority": 26,
     "id": "substrate_sphagnum_moss",
     "name": "スファグナムモス（水苔）",
     "category": "substrate",
@@ -507,7 +338,7 @@
     "amazon_search_hint": "スファグナムモス（水苔）"
   },
   {
-    "priority": 40,
+    "priority": 27,
     "id": "substrate_grassland_mix",
     "name": "草原系ブレンド床材 5L",
     "category": "substrate",
@@ -520,7 +351,7 @@
     "amazon_search_hint": "草原系ブレンド床材 5L"
   },
   {
-    "priority": 41,
+    "priority": 28,
     "id": "substrate_cypress_mulch",
     "name": "サイプレスマルチ（Zoo Med）",
     "category": "substrate",
@@ -533,7 +364,7 @@
     "amazon_search_hint": "サイプレスマルチ（Zoo Med）"
   },
   {
-    "priority": 42,
+    "priority": 29,
     "id": "substrate_top_soil",
     "name": "培養土（無肥料）5L",
     "category": "substrate",
@@ -546,7 +377,7 @@
     "amazon_search_hint": "培養土（無肥料）5L"
   },
   {
-    "priority": 43,
+    "priority": 30,
     "id": "thermometer_infrared",
     "name": "非接触型赤外線温度計",
     "category": "thermometer",
@@ -559,7 +390,7 @@
     "amazon_search_hint": "非接触型赤外線温度計"
   },
   {
-    "priority": 44,
+    "priority": 31,
     "id": "thermometer_dual_probe",
     "name": "デジタル温度計（デュアルプローブ）",
     "category": "thermometer",
@@ -572,7 +403,7 @@
     "amazon_search_hint": "デジタル温度計（デュアルプローブ）"
   },
   {
-    "priority": 45,
+    "priority": 32,
     "id": "thermometer_pro_wifi",
     "name": "Wi-Fi 温湿度ロガー",
     "category": "thermometer",
@@ -585,7 +416,7 @@
     "amazon_search_hint": "Wi-Fi 温湿度ロガー"
   },
   {
-    "priority": 46,
+    "priority": 33,
     "id": "thermometer_digital",
     "name": "デジタル温湿度計",
     "category": "thermometer",
@@ -598,7 +429,7 @@
     "amazon_search_hint": "デジタル温湿度計"
   },
   {
-    "priority": 47,
+    "priority": 34,
     "id": "thermometer_aqua",
     "name": "水温計（デジタル）",
     "category": "thermometer",
@@ -611,7 +442,7 @@
     "amazon_search_hint": "水温計（デジタル）"
   },
   {
-    "priority": 48,
+    "priority": 35,
     "id": "thermometer_analog",
     "name": "アナログ温湿度計",
     "category": "thermometer",
@@ -624,7 +455,7 @@
     "amazon_search_hint": "アナログ温湿度計"
   },
   {
-    "priority": 49,
+    "priority": 36,
     "id": "shelter_cork_bark",
     "name": "コルクバーク（丸太）",
     "category": "shelter",
@@ -637,7 +468,7 @@
     "amazon_search_hint": "コルクバーク（丸太）"
   },
   {
-    "priority": 50,
+    "priority": 37,
     "id": "shelter_humid_hide",
     "name": "モイストハイド（湿潤シェルター）",
     "category": "shelter",
@@ -650,7 +481,7 @@
     "amazon_search_hint": "モイストハイド（湿潤シェルター）"
   },
   {
-    "priority": 51,
+    "priority": 38,
     "id": "shelter_medium",
     "name": "ロックシェルター M/L",
     "category": "shelter",
@@ -663,7 +494,7 @@
     "amazon_search_hint": "ロックシェルター M/L"
   },
   {
-    "priority": 52,
+    "priority": 39,
     "id": "shelter_large_cave",
     "name": "ラージケーブシェルター",
     "category": "shelter",
@@ -676,7 +507,7 @@
     "amazon_search_hint": "ラージケーブシェルター"
   },
   {
-    "priority": 53,
+    "priority": 40,
     "id": "shelter_premium_wood",
     "name": "ウッドハイドハウス（プレミアム）",
     "category": "shelter",
@@ -689,7 +520,7 @@
     "amazon_search_hint": "ウッドハイドハウス（プレミアム）"
   },
   {
-    "priority": 54,
+    "priority": 41,
     "id": "shelter_small",
     "name": "ロックシェルター SS/S",
     "category": "shelter",
@@ -702,7 +533,7 @@
     "amazon_search_hint": "ロックシェルター SS/S"
   },
   {
-    "priority": 55,
+    "priority": 42,
     "id": "shelter_aqua_dock",
     "name": "水棲ガメ用ドック（浮島タイプ）",
     "category": "shelter",
@@ -715,7 +546,7 @@
     "amazon_search_hint": "水棲ガメ用ドック（浮島タイプ）"
   },
   {
-    "priority": 56,
+    "priority": 43,
     "id": "shelter_slate_flat",
     "name": "スレートフラットシェルター",
     "category": "shelter",
@@ -728,7 +559,7 @@
     "amazon_search_hint": "スレートフラットシェルター"
   },
   {
-    "priority": 57,
+    "priority": 44,
     "id": "food_hikari_turtle",
     "name": "ひかりウーパールーパー（タートル用）",
     "category": "food",
@@ -741,7 +572,7 @@
     "amazon_search_hint": "ひかりウーパールーパー（タートル用）"
   },
   {
-    "priority": 58,
+    "priority": 45,
     "id": "food_repashy_tortoise",
     "name": "Repashy Veggie Burger（ゲル状フード）",
     "category": "food",
@@ -754,7 +585,7 @@
     "amazon_search_hint": "Repashy Veggie Burger（ゲル状フード）"
   },
   {
-    "priority": 59,
+    "priority": 46,
     "id": "food_grassland_salad",
     "name": "グラスランドサラダミックス（乾燥野草）",
     "category": "food",
@@ -767,7 +598,7 @@
     "amazon_search_hint": "グラスランドサラダミックス（乾燥野草）"
   },
   {
-    "priority": 60,
+    "priority": 47,
     "id": "food_aqua_turtle_pellet",
     "name": "カメの主食（GEX）",
     "category": "food",
@@ -780,7 +611,7 @@
     "amazon_search_hint": "カメの主食（GEX）"
   },
   {
-    "priority": 61,
+    "priority": 48,
     "id": "supplement_repcal",
     "name": "Rep-Cal カルシウムサプリ",
     "category": "supplements",
@@ -793,7 +624,7 @@
     "amazon_search_hint": "Rep-Cal カルシウムサプリ"
   },
   {
-    "priority": 62,
+    "priority": 49,
     "id": "supplement_multivitamin",
     "name": "マルチビタミン（爬虫類用）",
     "category": "supplements",
@@ -806,7 +637,7 @@
     "amazon_search_hint": "マルチビタミン（爬虫類用）"
   },
   {
-    "priority": 63,
+    "priority": 50,
     "id": "supplement_iodine",
     "name": "ヨウ素サプリ（亀専用）",
     "category": "supplements",
@@ -819,7 +650,7 @@
     "amazon_search_hint": "ヨウ素サプリ（亀専用）"
   },
   {
-    "priority": 64,
+    "priority": 51,
     "id": "supplement_spirulina",
     "name": "スピルリナパウダー",
     "category": "supplements",
@@ -832,7 +663,7 @@
     "amazon_search_hint": "スピルリナパウダー"
   },
   {
-    "priority": 65,
+    "priority": 52,
     "id": "supplement_probiotics",
     "name": "爬虫類用プロバイオティクス",
     "category": "supplements",
@@ -845,7 +676,7 @@
     "amazon_search_hint": "爬虫類用プロバイオティクス"
   },
   {
-    "priority": 66,
+    "priority": 53,
     "id": "supplement_electrolyte",
     "name": "エレクトロライト（電解質補給）",
     "category": "supplements",
@@ -858,7 +689,7 @@
     "amazon_search_hint": "エレクトロライト（電解質補給）"
   },
   {
-    "priority": 67,
+    "priority": 54,
     "id": "calcium_powder",
     "name": "カルシウムパウダー（D3入り）",
     "category": "supplements",
@@ -871,7 +702,7 @@
     "amazon_search_hint": "カルシウムパウダー（D3入り）"
   },
   {
-    "priority": 68,
+    "priority": 55,
     "id": "calcium_no_d3",
     "name": "カルシウムパウダー（D3なし）",
     "category": "supplements",
@@ -884,7 +715,7 @@
     "amazon_search_hint": "カルシウムパウダー（D3なし）"
   },
   {
-    "priority": 69,
+    "priority": 56,
     "id": "supplement_cuttlebone",
     "name": "カトルボーン（甲イカの骨）",
     "category": "supplements",
