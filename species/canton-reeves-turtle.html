@@ -138,6 +138,22 @@
     .end-cta h3{font-size:1.25rem;}
     @media(max-width:400px){.species-nav-grid{grid-template-columns:1fr;}}
   }
+
+  /* Phase 7 Task 2: Decision Boxes */
+  .decision-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 0;}
+  @media(max-width:520px){.decision-wrap{grid-template-columns:1fr;}}
+  .decision-box{border-radius:14px;padding:18px 18px 16px;}
+  .decision-box-best{background:#f0faf2;border:1.5px solid #81c784;}
+  .decision-box-avoid{background:#fafafa;border:1.5px solid #e0e0e0;}
+  .decision-box-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .decision-box-best .decision-box-title{color:#2e7d32;}
+  .decision-box-avoid .decision-box-title{color:#757575;}
+  .decision-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .decision-list li{font-size:.88rem;line-height:1.55;color:#3a4a40;}
+  .decision-box-avoid .decision-list li{color:#5a5a5a;}
+  .diff-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
+  .diff-badge-stars{color:var(--accent);letter-spacing:.05em;}
+  .diff-badge-label{color:#8a7a60;font-weight:400;font-size:.75rem;margin-left:4px;}
 </style>
 </head>
 <body>
@@ -164,6 +180,20 @@
     <div style="font-size:.78rem;color:#5a6b60;"><span style="font-size:1.1rem;">🍽️</span> <strong>給餌</strong><br>配合飼料・人工飼料対応</div>
     <div style="font-size:.78rem;color:#5a6b60;"><span style="font-size:1.1rem;">⏳</span> <strong>推定寿命</strong><br>20〜30年以上（飼育下）</div>
     <div style="font-size:.78rem;color:#2e7d32;grid-column:1/-1;"><span style="font-size:1.1rem;">✅</span> <strong>初心者向き？</strong> → <strong>入門〜中級</strong>。丈夫で飼いやすい水棲ガメ。ただし外来種の放流は厳禁。</div>
+  </div>
+</div>
+
+<div class="wrap" style="margin-top:12px;">
+  <div class="diff-badge">難易度 <span class="diff-badge-stars">★★☆☆☆</span><span class="diff-badge-label">入門〜中級</span></div>
+  <div class="decision-wrap">
+    <div class="decision-box decision-box-best">
+      <div class="decision-box-title">この亀が向いている人</div>
+      <ul class="decision-list"><li>✓ クサガメに似た日本馴染みの外見が好み</li><li>✓ 比較的温和で観察しやすい水棲ガメを希望</li><li>✓ 60cmクラスから飼育を始めたい</li><li>✓ 丈夫で管理しやすい種を探している</li></ul>
+    </div>
+    <div class="decision-box decision-box-avoid">
+      <div class="decision-box-title">この亀が向いていない人</div>
+      <ul class="decision-list"><li>✗ 入門種として完全なやさしさを求める方</li><li>✗ 水替えを最小化したい方</li><li>✗ 小型種を希望（成体は25cmに達する）</li></ul>
+    </div>
   </div>
 </div>
 <nav class="crumbs">
