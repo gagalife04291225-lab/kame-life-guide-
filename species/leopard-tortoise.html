@@ -127,6 +127,22 @@
     .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}
     .species-nav-grid{grid-template-columns:1fr;}
   }
+
+  /* Phase 7 Task 2: Decision Boxes */
+  .decision-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 0;}
+  @media(max-width:520px){.decision-wrap{grid-template-columns:1fr;}}
+  .decision-box{border-radius:14px;padding:18px 18px 16px;}
+  .decision-box-best{background:#f0faf2;border:1.5px solid #81c784;}
+  .decision-box-avoid{background:#fafafa;border:1.5px solid #e0e0e0;}
+  .decision-box-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .decision-box-best .decision-box-title{color:#2e7d32;}
+  .decision-box-avoid .decision-box-title{color:#757575;}
+  .decision-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .decision-list li{font-size:.88rem;line-height:1.55;color:#3a4a40;}
+  .decision-box-avoid .decision-list li{color:#5a5a5a;}
+  .diff-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
+  .diff-badge-stars{color:var(--accent);letter-spacing:.05em;}
+  .diff-badge-label{color:#8a7a60;font-weight:400;font-size:.75rem;margin-left:4px;}
 </style>
 </head>
 <body>
@@ -153,6 +169,20 @@
     <div style="font-size:.78rem;color:#5a6b60;"><span style="font-size:1.1rem;">💧</span> <strong>湿度</strong><br>40〜60%</div>
     <div style="font-size:.78rem;color:#5a6b60;"><span style="font-size:1.1rem;">⏳</span> <strong>推定寿命</strong><br>50〜100年以上</div>
     <div style="font-size:.78rem;color:#c62828;grid-column:1/-1;"><span style="font-size:1.1rem;">⚠️</span> <strong>初心者向き？</strong> → <strong>上級</strong>。成体60cm超の大型種。屋外スペースなしでの長期飼育は困難。</div>
+  </div>
+</div>
+
+<div class="wrap" style="margin-top:12px;">
+  <div class="diff-badge">難易度 <span class="diff-badge-stars">★★★★☆</span><span class="diff-badge-label">上級</span></div>
+  <div class="decision-wrap">
+    <div class="decision-box decision-box-best">
+      <div class="decision-box-title">この亀が向いている人</div>
+      <ul class="decision-list"><li>✓ 大型リクガメ（40〜65cm）の迫力を楽しみたい</li><li>✓ 広いスペース（屋外飼育含む）を確保できる</li><li>✓ 乾燥系だがUVB・温度管理が充実した環境を用意できる</li><li>✓ 長期飼育のコミットメントがある上級者</li></ul>
+    </div>
+    <div class="decision-box decision-box-avoid">
+      <div class="decision-box-title">この亀が向いていない人</div>
+      <ul class="decision-list"><li>✗ 室内のみ・省スペースで飼育したい方</li><li>✗ 入門〜中級向けを求めている方</li><li>✗ 成体サイズと費用を考慮できない方</li></ul>
+    </div>
   </div>
 </div>
 <nav class="crumbs">
