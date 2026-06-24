@@ -261,19 +261,6 @@
   },
   {
     "priority": 21,
-    "id": "basking_100w",
-    "name": "バスキングランプ 100W",
-    "category": "lighting_basking",
-    "tier": "standard",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
-    "amazon_search_hint": "バスキングランプ 100W"
-  },
-  {
-    "priority": 22,
     "id": "basking_solar_raptor",
     "name": "Solar Raptor HID 70W",
     "category": "lighting_basking",
@@ -286,7 +273,7 @@
     "amazon_search_hint": "Solar Raptor HID 70W"
   },
   {
-    "priority": 23,
+    "priority": 22,
     "id": "basking_dual_150w",
     "name": "ダブルバスキングランプ 150W",
     "category": "lighting_basking",
@@ -299,7 +286,7 @@
     "amazon_search_hint": "ダブルバスキングランプ 150W"
   },
   {
-    "priority": 24,
+    "priority": 23,
     "id": "basking_halogen_50w",
     "name": "ハロゲンバスキング 50W",
     "category": "lighting_basking",
@@ -312,7 +299,7 @@
     "amazon_search_hint": "ハロゲンバスキング 50W"
   },
   {
-    "priority": 25,
+    "priority": 24,
     "id": "basking_halogen_35w",
     "name": "ハロゲンバスキング 35W",
     "category": "lighting_basking",
@@ -325,7 +312,7 @@
     "amazon_search_hint": "ハロゲンバスキング 35W"
   },
   {
-    "priority": 26,
+    "priority": 25,
     "id": "substrate_sphagnum_moss",
     "name": "スファグナムモス（水苔）",
     "category": "substrate",
@@ -338,7 +325,7 @@
     "amazon_search_hint": "スファグナムモス（水苔）"
   },
   {
-    "priority": 27,
+    "priority": 26,
     "id": "substrate_grassland_mix",
     "name": "草原系ブレンド床材 5L",
     "category": "substrate",
@@ -351,7 +338,7 @@
     "amazon_search_hint": "草原系ブレンド床材 5L"
   },
   {
-    "priority": 28,
+    "priority": 27,
     "id": "substrate_cypress_mulch",
     "name": "サイプレスマルチ（Zoo Med）",
     "category": "substrate",
@@ -364,7 +351,7 @@
     "amazon_search_hint": "サイプレスマルチ（Zoo Med）"
   },
   {
-    "priority": 29,
+    "priority": 28,
     "id": "substrate_top_soil",
     "name": "培養土（無肥料）5L",
     "category": "substrate",
@@ -377,7 +364,7 @@
     "amazon_search_hint": "培養土（無肥料）5L"
   },
   {
-    "priority": 30,
+    "priority": 29,
     "id": "thermometer_infrared",
     "name": "非接触型赤外線温度計",
     "category": "thermometer",
@@ -390,7 +377,7 @@
     "amazon_search_hint": "非接触型赤外線温度計"
   },
   {
-    "priority": 31,
+    "priority": 30,
     "id": "thermometer_dual_probe",
     "name": "デジタル温度計（デュアルプローブ）",
     "category": "thermometer",
@@ -403,59 +390,7 @@
     "amazon_search_hint": "デジタル温度計（デュアルプローブ）"
   },
   {
-    "priority": 32,
-    "id": "thermometer_pro_wifi",
-    "name": "Wi-Fi 温湿度ロガー",
-    "category": "thermometer",
-    "tier": "premium",
-    "rating": 4.8,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
-    "amazon_search_hint": "Wi-Fi 温湿度ロガー"
-  },
-  {
-    "priority": 33,
-    "id": "thermometer_digital",
-    "name": "デジタル温湿度計",
-    "category": "thermometer",
-    "tier": "budget",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
-    "amazon_search_hint": "デジタル温湿度計"
-  },
-  {
-    "priority": 34,
-    "id": "thermometer_aqua",
-    "name": "水温計（デジタル）",
-    "category": "thermometer",
-    "tier": "budget",
-    "rating": 4.1,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
-    "amazon_search_hint": "水温計（デジタル）"
-  },
-  {
-    "priority": 35,
-    "id": "thermometer_analog",
-    "name": "アナログ温湿度計",
-    "category": "thermometer",
-    "tier": "budget",
-    "rating": 3.7,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
-    "amazon_search_hint": "アナログ温湿度計"
-  },
-  {
-    "priority": 36,
+    "priority": 31,
     "id": "shelter_cork_bark",
     "name": "コルクバーク（丸太）",
     "category": "shelter",
@@ -468,46 +403,7 @@
     "amazon_search_hint": "コルクバーク（丸太）"
   },
   {
-    "priority": 37,
-    "id": "shelter_humid_hide",
-    "name": "モイストハイド（湿潤シェルター）",
-    "category": "shelter",
-    "tier": "standard",
-    "rating": 4.4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
-    "amazon_search_hint": "モイストハイド（湿潤シェルター）"
-  },
-  {
-    "priority": 38,
-    "id": "shelter_medium",
-    "name": "ロックシェルター M/L",
-    "category": "shelter",
-    "tier": "standard",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
-    "amazon_search_hint": "ロックシェルター M/L"
-  },
-  {
-    "priority": 39,
-    "id": "shelter_large_cave",
-    "name": "ラージケーブシェルター",
-    "category": "shelter",
-    "tier": "standard",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
-    "amazon_search_hint": "ラージケーブシェルター"
-  },
-  {
-    "priority": 40,
+    "priority": 32,
     "id": "shelter_premium_wood",
     "name": "ウッドハイドハウス（プレミアム）",
     "category": "shelter",
@@ -520,33 +416,7 @@
     "amazon_search_hint": "ウッドハイドハウス（プレミアム）"
   },
   {
-    "priority": 41,
-    "id": "shelter_small",
-    "name": "ロックシェルター SS/S",
-    "category": "shelter",
-    "tier": "budget",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
-    "amazon_search_hint": "ロックシェルター SS/S"
-  },
-  {
-    "priority": 42,
-    "id": "shelter_aqua_dock",
-    "name": "水棲ガメ用ドック（浮島タイプ）",
-    "category": "shelter",
-    "tier": "budget",
-    "rating": 4.1,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
-    "amazon_search_hint": "水棲ガメ用ドック（浮島タイプ）"
-  },
-  {
-    "priority": 43,
+    "priority": 33,
     "id": "shelter_slate_flat",
     "name": "スレートフラットシェルター",
     "category": "shelter",
@@ -559,7 +429,7 @@
     "amazon_search_hint": "スレートフラットシェルター"
   },
   {
-    "priority": 44,
+    "priority": 34,
     "id": "food_hikari_turtle",
     "name": "ひかりウーパールーパー（タートル用）",
     "category": "food",
@@ -572,7 +442,7 @@
     "amazon_search_hint": "ひかりウーパールーパー（タートル用）"
   },
   {
-    "priority": 45,
+    "priority": 35,
     "id": "food_repashy_tortoise",
     "name": "Repashy Veggie Burger（ゲル状フード）",
     "category": "food",
@@ -585,7 +455,7 @@
     "amazon_search_hint": "Repashy Veggie Burger（ゲル状フード）"
   },
   {
-    "priority": 46,
+    "priority": 36,
     "id": "food_grassland_salad",
     "name": "グラスランドサラダミックス（乾燥野草）",
     "category": "food",
@@ -598,7 +468,7 @@
     "amazon_search_hint": "グラスランドサラダミックス（乾燥野草）"
   },
   {
-    "priority": 47,
+    "priority": 37,
     "id": "food_aqua_turtle_pellet",
     "name": "カメの主食（GEX）",
     "category": "food",
@@ -611,7 +481,7 @@
     "amazon_search_hint": "カメの主食（GEX）"
   },
   {
-    "priority": 48,
+    "priority": 38,
     "id": "supplement_repcal",
     "name": "Rep-Cal カルシウムサプリ",
     "category": "supplements",
@@ -624,7 +494,7 @@
     "amazon_search_hint": "Rep-Cal カルシウムサプリ"
   },
   {
-    "priority": 49,
+    "priority": 39,
     "id": "supplement_multivitamin",
     "name": "マルチビタミン（爬虫類用）",
     "category": "supplements",
@@ -637,7 +507,7 @@
     "amazon_search_hint": "マルチビタミン（爬虫類用）"
   },
   {
-    "priority": 50,
+    "priority": 40,
     "id": "supplement_iodine",
     "name": "ヨウ素サプリ（亀専用）",
     "category": "supplements",
@@ -650,7 +520,7 @@
     "amazon_search_hint": "ヨウ素サプリ（亀専用）"
   },
   {
-    "priority": 51,
+    "priority": 41,
     "id": "supplement_spirulina",
     "name": "スピルリナパウダー",
     "category": "supplements",
@@ -663,7 +533,7 @@
     "amazon_search_hint": "スピルリナパウダー"
   },
   {
-    "priority": 52,
+    "priority": 42,
     "id": "supplement_probiotics",
     "name": "爬虫類用プロバイオティクス",
     "category": "supplements",
@@ -676,7 +546,7 @@
     "amazon_search_hint": "爬虫類用プロバイオティクス"
   },
   {
-    "priority": 53,
+    "priority": 43,
     "id": "supplement_electrolyte",
     "name": "エレクトロライト（電解質補給）",
     "category": "supplements",
@@ -689,7 +559,7 @@
     "amazon_search_hint": "エレクトロライト（電解質補給）"
   },
   {
-    "priority": 54,
+    "priority": 44,
     "id": "calcium_powder",
     "name": "カルシウムパウダー（D3入り）",
     "category": "supplements",
@@ -702,7 +572,7 @@
     "amazon_search_hint": "カルシウムパウダー（D3入り）"
   },
   {
-    "priority": 55,
+    "priority": 45,
     "id": "calcium_no_d3",
     "name": "カルシウムパウダー（D3なし）",
     "category": "supplements",
@@ -715,7 +585,7 @@
     "amazon_search_hint": "カルシウムパウダー（D3なし）"
   },
   {
-    "priority": 56,
+    "priority": 46,
     "id": "supplement_cuttlebone",
     "name": "カトルボーン（甲イカの骨）",
     "category": "supplements",
