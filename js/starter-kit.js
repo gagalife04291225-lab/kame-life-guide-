@@ -247,9 +247,15 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 /**
  * タブ切り替えイベント設定
  */
-function initSkTabs(root) {
+function initSkTabs(root, species) {
   var btns = root.querySelectorAll('.sk-tab-btn');
   var panels = root.querySelectorAll('.sk-tab-panel');
+  // tab_id → tab_type / selected_tier マップ
+  var TAB_META = {
+    'sk-panel-essential': { tab_type: 'essential', selected_tier: 'budget' },
+    'sk-panel-comfort':   { tab_type: 'comfort',   selected_tier: 'standard' },
+    'sk-panel-advanced':  { tab_type: 'advanced',  selected_tier: 'premium' },
+  };
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var target = btn.dataset.target;
@@ -263,7 +269,14 @@ function initSkTabs(root) {
         else p.setAttribute('hidden', '');
       });
       if (typeof gtag === 'function') {
-        gtag('event', 'starter_kit_tab', { tab_id: target });
+        var meta = TAB_META[target] || {};
+        gtag('event', 'starter_kit_tab', {
+          tab_id:        target,
+          tab_type:      meta.tab_type      || '',
+          selected_tier: meta.selected_tier || '',
+          species_name:  (species && species.name)         || '',
+          equipment_key: (species && species.equipmentKey) || '',
+        });
       }
     });
   });
@@ -284,7 +297,7 @@ function mountStarterKit(species, mountId) {
   if (!html) { root.style.display = 'none'; return; }
 
   root.innerHTML = html;
-  initSkTabs(root);
+  initSkTabs(root, species);
 
   if (typeof gtag === 'function') {
     var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
