@@ -292,6 +292,8 @@ body {
     <div class="result-card-title">基本スペック</div>
     <div class="spec-grid" id="res-specs"></div>
   </div>
+  <!-- PHASE 6-B: おすすめ飼育セット（基本スペック直後） -->
+  <div id="starter-kit-section" style="display:none"></div>
   <!-- PHASE 4: 機材推奨セクション -->
   <div class="result-card" id="equipment-section" style="display:none">
     <div class="result-card-title">はじめに揃えるもの</div>
@@ -308,8 +310,6 @@ body {
       <span class="note-arrow">→</span>
     </a>
   </div>
-  <!-- PHASE 6-B: おすすめ飼育セット -->
-  <div id="starter-kit-section" style="display:none"></div>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
     <button class="btn-retry" id="btn-retry">もう一度診断</button>
@@ -698,17 +698,23 @@ function resolveEquipmentKey(routeId, sp) {
  * @param {string} equipmentKey
  * @returns {Array} [{cat, badge, product}, ...]
  */
+/**
+ * カテゴリ優先順で Best Overall を1枚ずつ選び、最大5枚で停止
+ * affiliateUrl が実URLの商品を優先する
+ * @param {string} equipmentKey
+ * @returns {Array} [{cat, badge, product}, ...]
+ */
 function selectKitProducts(equipmentKey) {
   if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
 
   var ids = EQUIPMENT_MAP[equipmentKey];
   if (!ids) return [];
 
-  // カテゴリ表示順
+  // 修正2: カテゴリ優先順（要件指定順）
   var CAT_ORDER = [
     'enclosure', 'lighting_uvb', 'lighting_basking',
-    'heating', 'filter', 'substrate', 'shelter',
-    'thermometer', 'food', 'supplements'
+    'heating', 'filter', 'substrate', 'thermometer',
+    'shelter', 'food', 'supplements'
   ];
 
   // idリストをカテゴリ別にグループ化
@@ -721,46 +727,24 @@ function selectKitProducts(equipmentKey) {
   });
 
   var result = [];
-  var TIER_RANK = { budget: 1, beginner: 1, standard: 2, intermediate: 2, premium: 3 };
+  var seen = {};
 
   CAT_ORDER.forEach(function(cat) {
+    if (result.length >= 5) return; // 最大5枚で停止
+
     var items = byCat[cat];
     if (!items || !items.length) return;
 
-    // ベスト（rating最高）
-    var best = items.reduce(function(a, b) {
+    // affiliateUrl実URL → rating降順 で Best Overall を選定
+    var withUrl  = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
+    var pool     = withUrl.length ? withUrl : items; // URL無しの場合はfallback
+    var best     = pool.reduce(function(a, b) {
       return (b.rating || 0) > (a.rating || 0) ? b : a;
     });
 
-    // バジェット（budget/beginner tierでrating最高）
-    var budgetItems = items.filter(function(p) {
-      return p.tier === 'budget' || p.tier === 'beginner';
-    });
-    var budget = budgetItems.length
-      ? budgetItems.reduce(function(a, b) { return (b.rating||0) > (a.rating||0) ? b : a; })
-      : null;
-
-    // プレミアム
-    var premiumItems = items.filter(function(p) { return p.tier === 'premium'; });
-    var premium = premiumItems.length
-      ? premiumItems.reduce(function(a, b) { return (b.rating||0) > (a.rating||0) ? b : a; })
-      : null;
-
-    // 重複除去して最大3枚
-    var seen = {};
-    var picks = [];
-    [
-      { badge: 'Best Overall', product: best },
-      { badge: 'Budget Pick', product: budget },
-      { badge: 'Premium',     product: premium }
-    ].forEach(function(item) {
-      if (!item.product) return;
-      if (seen[item.product.id]) return;
-      seen[item.product.id] = true;
-      picks.push({ cat: cat, badge: item.badge, product: item.product });
-    });
-
-    result = result.concat(picks);
+    if (!best || seen[best.id]) return;
+    seen[best.id] = true;
+    result.push({ cat: cat, badge: 'Best Overall', product: best });
   });
 
   return result;
