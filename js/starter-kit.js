@@ -97,8 +97,11 @@ function generateStarterKit(equipmentKey) {
 
 /**
  * カードHTMLを生成
+ * @param {Array} picks - generateStarterKit の戻り値
+ * @param {string} speciesName - 種名
+ * @param {string} equipmentKey - EQUIPMENT_MAPキー（GA4用）
  */
-function renderStarterKitHtml(picks, speciesName) {
+function renderStarterKitHtml(picks, speciesName, equipmentKey) {
   if (!picks || !picks.length) return '';
 
   var heading = speciesName ? (speciesName + 'のおすすめ飼育セット') : 'おすすめ飼育セット';
@@ -114,7 +117,10 @@ function renderStarterKitHtml(picks, speciesName) {
     var btn = hasUrl
       ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
         ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
-        ' data-asin="' + (p.asin||'') + '">Amazonで詳細を見る</a>'
+        ' data-asin="' + (p.asin||'') + '"' +
+        ' data-tier="' + (item.tier||'standard') + '"' +
+        ' data-equipment-key="' + (equipmentKey||'') + '"' +
+        ' data-product-id="' + p.id + '">Amazonで詳細を見る</a>'
       : '<span class="sk-card-btn sk-card-btn--soon">おすすめ商品選定中</span>';
 
     return '<div class="sk-card">' +
@@ -149,7 +155,7 @@ function mountStarterKit(species, mountId) {
   if (!species || !species.equipmentKey) { root.style.display = 'none'; return; }
 
   var picks = generateStarterKit(species.equipmentKey);
-  var html  = renderStarterKitHtml(picks, species.name || '');
+  var html  = renderStarterKitHtml(picks, species.name || '', species.equipmentKey || '');
   if (!html) { root.style.display = 'none'; return; }
 
   root.innerHTML = html;
@@ -171,8 +177,21 @@ function mountStarterKit(species, mountId) {
           species_name:  a.dataset.species,
           category:      a.dataset.cat,
           asin:          a.dataset.asin,
+          selected_tier:  a.dataset.tier,
+          equipment_key:  a.dataset.equipmentKey,
+          product_id:     a.dataset.productId,
         });
       }
     });
   });
+}
+
+/**
+ * generateStarterKit の alias（後方互換・外部呼び出し用）
+ * 既存の generateStarterKit(equipmentKey) を変更せずに提供する。
+ * @param {string} equipmentKey
+ * @returns {Array}
+ */
+function generateStarterKitForEquipmentKey(equipmentKey) {
+  return generateStarterKit(equipmentKey);
 }
