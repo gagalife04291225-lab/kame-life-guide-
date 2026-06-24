@@ -133,7 +133,7 @@ aquatic: [
     reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'mississippi-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); }
   },
