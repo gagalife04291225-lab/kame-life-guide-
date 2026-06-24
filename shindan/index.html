@@ -218,6 +218,18 @@ body {
 .sk-card-btn--soon { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--text-muted); cursor: default; }
 .sk-cat-label { font-size: .68rem; color: var(--text-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
 .sk-disclaimer { font-size: .7rem; color: var(--text-muted); padding: 0 20px 4px; text-align: right; }
+/* Phase 7: 初期費用ボックス */
+.cost-box { display: flex; align-items: center; gap: 12px; margin: 0 20px 12px; padding: 12px 16px; background: rgba(196,154,90,.1); border: 1px solid rgba(196,154,90,.3); border-radius: 10px; }
+.cost-box-icon { font-size: 22px; flex-shrink: 0; }
+.cost-box-body { flex: 1; min-width: 0; }
+.cost-box-label { font-size: .68rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+.cost-box-range { font-size: 1.05rem; font-weight: 700; color: var(--parchment); font-family: var(--font-display); }
+.cost-box-note  { font-size: .68rem; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+/* Phase 7: まとめて見るCTAボタン */
+.sk-cta-wrap { padding: 4px 20px 20px; }
+.sk-cta-btn { display: block; width: 100%; padding: 13px 16px; background: linear-gradient(135deg, rgba(196,154,90,.25), rgba(74,122,96,.2)); border: 1.5px solid rgba(196,154,90,.5); border-radius: 10px; color: var(--parchment); font-size: .92rem; font-weight: 700; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s, border-color .15s; letter-spacing: .03em; }
+.sk-cta-btn:hover { background: linear-gradient(135deg, rgba(196,154,90,.38), rgba(74,122,96,.32)); border-color: var(--accent-light); }
+.sk-cta-btn-arrow { margin-left: 6px; color: var(--accent-light); }
 
 /* ===== PHASE 4: note.com誘導 ===== */
 .note-cta { margin-bottom: 16px; }
@@ -770,6 +782,63 @@ function selectKitProducts(equipmentKey) {
   return result;
 }
 
+/**
+ * Phase 7: selectKitProducts のカテゴリ指定バリアント
+ * @param {string} equipmentKey
+ * @param {Array}  cats  表示したいカテゴリ配列（順序通りに表示）
+ * @returns {Array}
+ */
+function selectKitProductsByCats(equipmentKey, cats) {
+  if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
+  if (!EQUIPMENT_MAP[equipmentKey]) return [];
+
+  var isV2 = !Array.isArray(EQUIPMENT_MAP[equipmentKey]);
+  var TIER_LABEL = { budget: 'コスパ重視', standard: 'まずはこれ', premium: '本格派' };
+  var TIER_CLS   = { budget: 'sk-badge-budget', standard: 'sk-badge-standard', premium: 'sk-badge-premium' };
+  var result = [];
+  var seen   = {};
+
+  cats.forEach(function(cat) {
+    var pick = null;
+    if (isV2) {
+      var TIER_PREF = ['standard', 'budget', 'premium'];
+      var candidate = null, candidateTier = null;
+      for (var i = 0; i < TIER_PREF.length; i++) {
+        var p = (typeof getTierProduct === 'function')
+          ? getTierProduct(equipmentKey, cat, TIER_PREF[i]) : null;
+        if (!p || seen[p.id]) continue;
+        if (p.affiliateUrl && p.affiliateUrl !== '#') {
+          candidate = p; candidateTier = TIER_PREF[i]; break;
+        }
+        if (!candidate) { candidate = p; candidateTier = TIER_PREF[i]; }
+      }
+      if (candidate) pick = { product: candidate, tier: candidateTier };
+    } else {
+      var ids = EQUIPMENT_MAP[equipmentKey];
+      var items = ids.map(function(id) { return PRODUCTS[id]; }).filter(function(p) {
+        return p && p.category === cat && !seen[p.id];
+      });
+      if (items.length) {
+        var withUrl = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
+        var pool = withUrl.length ? withUrl : items;
+        var best = pool.reduce(function(a, b) { return (b.rating || 0) > (a.rating || 0) ? b : a; });
+        if (best) pick = { product: best, tier: best.tier || 'standard' };
+      }
+    }
+    if (!pick) return;
+    seen[pick.product.id] = true;
+    var t = pick.tier;
+    result.push({
+      cat:       cat,
+      tierLabel: TIER_LABEL[t] || 'まずはこれ',
+      badgeCls:  TIER_CLS[t]   || 'sk-badge-standard',
+      product:   pick.product,
+    });
+  });
+
+  return result;
+}
+
 var SK_CAT_LABELS = {
   enclosure:        '飼育ケージ',
   lighting_uvb:     'UVBライト',
@@ -803,8 +872,45 @@ function renderStarterKit(sp) {
 
   if (!equipKey) { sec.style.display = 'none'; return; }
 
-  var picks = selectKitProducts(equipKey);
+  // Phase 7: 表示カテゴリを5種に固定
+  var PHASE7_CATS = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+  var picks = selectKitProductsByCats(equipKey, PHASE7_CATS);
   if (!picks.length) { sec.style.display = 'none'; return; }
+
+  // Phase 7: 初期費用計算（picks の priceRange 下限値を合算）
+  function parsePriceLow(priceRange) {
+    if (!priceRange) return 0;
+    var m = priceRange.replace(/[¥,]/g, '').match(/^(\d+)/);
+    return m ? parseInt(m[1], 10) : 0;
+  }
+  var totalLow  = 0;
+  var totalHigh = 0;
+  picks.forEach(function(item) {
+    var pr = item.product.priceRange || '';
+    var nums = pr.replace(/[¥,]/g, '').match(/(\d+)[^\d]+(\d+)/);
+    if (nums) {
+      totalLow  += parseInt(nums[1], 10);
+      totalHigh += parseInt(nums[2], 10);
+    } else {
+      var single = parsePriceLow(pr);
+      totalLow  += single;
+      totalHigh += single;
+    }
+  });
+  function fmtYen(n) { return '¥' + n.toLocaleString('ja-JP'); }
+  var costRangeText = (totalLow && totalHigh && totalLow !== totalHigh)
+    ? fmtYen(totalLow) + ' 〜 ' + fmtYen(totalHigh)
+    : totalLow ? fmtYen(totalLow) + '〜' : '—';
+
+  var costBoxHtml =
+    '<div class="cost-box">' +
+      '<span class="cost-box-icon">💰</span>' +
+      '<div class="cost-box-body">' +
+        '<div class="cost-box-label">初期費用目安（5点セット）</div>' +
+        '<div class="cost-box-range">' + costRangeText + '</div>' +
+        '<div class="cost-box-note">ケージ・UVB・バスキング・床材・温湿度計の合計目安です</div>' +
+      '</div>' +
+    '</div>';
 
   var cardsHtml = picks.map(function(item) {
     var p = item.product;
@@ -826,11 +932,23 @@ function renderStarterKit(sp) {
     '</div>';
   }).join('');
 
+  // Phase 7: CTAボタン（Amazon検索へ）
+  var ctaQuery = sp.name + ' カメ 飼育セット';
+  var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife09-22';
+  var ctaHtml =
+    '<div class="sk-cta-wrap">' +
+      '<a class="sk-cta-btn" id="sk-cta-btn" href="' + ctaUrl + '" target="_blank" rel="noopener noreferrer sponsored">' +
+        'このセットをまとめて見る<span class="sk-cta-btn-arrow">→</span>' +
+      '</a>' +
+    '</div>';
+
   sec.innerHTML =
     '<div class="result-card sk-section" style="padding:0;overflow:hidden;">' +
-      '<div class="sk-heading">おすすめ飼育セット</div>' +
+      '<div class="sk-heading">はじめての飼育セット（5点）</div>' +
+      costBoxHtml +
       '<div class="sk-scroll">' + cardsHtml + '</div>' +
       '<div class="sk-disclaimer">※Amazonアソシエイトリンクを含みます</div>' +
+      ctaHtml +
     '</div>';
 
   sec.style.display = '';
@@ -843,6 +961,7 @@ function renderStarterKit(sp) {
     });
   }
 
+  // カード個別クリックGA4
   sec.querySelectorAll('.sk-card-btn[href]').forEach(function(a) {
     a.addEventListener('click', function() {
       if (typeof ga4Event === 'function') {
@@ -856,6 +975,19 @@ function renderStarterKit(sp) {
       }
     });
   });
+
+  // CTA ボタンGA4
+  var ctaBtn = document.getElementById('sk-cta-btn');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') {
+        ga4Event('starter_kit_cta_click', {
+          species_name:  sp.name,
+          equipment_key: equipKey,
+        });
+      }
+    });
+  }
 }
 
 // ===== スタート画面初期化 =====
