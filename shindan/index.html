@@ -906,7 +906,7 @@ function renderStarterKit(sp) {
     '<div class="cost-box">' +
       '<span class="cost-box-icon">💰</span>' +
       '<div class="cost-box-body">' +
-        '<div class="cost-box-label">初期費用目安（5点セット）</div>' +
+        '<div class="cost-box-label">初期費用目安（表示中の必須アイテム）</div>' +
         '<div class="cost-box-range">' + costRangeText + '</div>' +
         '<div class="cost-box-note">ケージ・UVB・バスキング・床材・温湿度計の合計目安です</div>' +
       '</div>' +
@@ -919,7 +919,7 @@ function renderStarterKit(sp) {
       ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
         ' data-cat="' + p.category + '" data-species="' + sp.name +
         '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで詳細を見る</a>'
-      : '<span class="sk-card-btn sk-card-btn--soon">おすすめ商品選定中</span>';
+      : '<span class="sk-card-btn sk-card-btn--soon">' + (SK_CAT_LABELS[item.cat] || 'この商品') + 'は現在おすすめ商品を選定中です。飼育前に必ず別途ご用意ください。</span>';
 
     return '<div class="sk-card">' +
       '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
@@ -933,7 +933,7 @@ function renderStarterKit(sp) {
   }).join('');
 
   // Phase 7: CTAボタン（Amazon検索へ）
-  var ctaQuery = sp.name + ' カメ 飼育セット';
+  var ctaQuery = 'カメ 飼育セット ケージ UVB 温湿度計';
   var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife09-22';
   var ctaHtml =
     '<div class="sk-cta-wrap">' +
