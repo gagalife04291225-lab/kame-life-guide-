@@ -9,7 +9,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "KAYUSO 爬虫類ケージ 90cm"
   },
   {
@@ -22,7 +22,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "木製リクガメケージ 90cm"
   },
   {
@@ -35,7 +35,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "アウトドアエンクロージャーパネル"
   },
   {
@@ -48,7 +48,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "木製リクガメケージ 150cm"
   },
   {
@@ -61,7 +61,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "水槽 120cm（アクリル）"
   },
   {
@@ -74,7 +74,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "木製リクガメケージ 120cm"
   },
   {
@@ -87,7 +87,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示",
+    "reason": "高単価",
     "amazon_search_hint": "プラスチックケース 60L"
   },
   {
@@ -100,50 +100,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
+    "reason": "水棲ガメ系必須",
     "amazon_search_hint": "カメ専用フィルター（テトラ）"
   },
   {
     "priority": 9,
-    "id": "filter_submersible_medium",
-    "name": "水中フィルター（中型）",
-    "category": "filter",
-    "tier": "standard",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
-    "amazon_search_hint": "水中フィルター（中型）"
-  },
-  {
-    "priority": 10,
-    "id": "filter_fluval_fx",
-    "name": "Fluval FX シリーズ",
-    "category": "filter",
-    "tier": "premium",
-    "rating": 4.8,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
-    "amazon_search_hint": "Fluval FX シリーズ"
-  },
-  {
-    "priority": 11,
-    "id": "filter_canister_large",
-    "name": "外部フィルター（大型）",
-    "category": "filter",
-    "tier": "premium",
-    "rating": 4.7,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
-    "amazon_search_hint": "外部フィルター（大型）"
-  },
-  {
-    "priority": 12,
     "id": "filter_sponge_dual",
     "name": "ダブルスポンジフィルター",
     "category": "filter",
@@ -152,11 +113,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
+    "reason": "水棲ガメ系必須",
     "amazon_search_hint": "ダブルスポンジフィルター"
   },
   {
-    "priority": 13,
+    "priority": 10,
     "id": "filter_hang_on",
     "name": "外掛け式フィルター",
     "category": "filter",
@@ -165,11 +126,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須",
+    "reason": "水棲ガメ系必須",
     "amazon_search_hint": "外掛け式フィルター"
   },
   {
-    "priority": 14,
+    "priority": 11,
     "id": "heater_aqua_100w",
     "name": "水中ヒーター 100W",
     "category": "heating",
@@ -178,11 +139,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "通年必需品",
+    "reason": "通年必需",
     "amazon_search_hint": "水中ヒーター 100W"
   },
   {
-    "priority": 15,
+    "priority": 12,
     "id": "heater_radiant_panel",
     "name": "輻射熱パネルヒーター（天井設置）",
     "category": "heating",
@@ -191,11 +152,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "通年必需品",
+    "reason": "通年必需",
     "amazon_search_hint": "輻射熱パネルヒーター（天井設置）"
   },
   {
-    "priority": 16,
+    "priority": 13,
     "id": "heater_cord_20w",
     "name": "ヒーティングコード 20W",
     "category": "heating",
@@ -204,11 +165,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "通年必需品",
+    "reason": "通年必需",
     "amazon_search_hint": "ヒーティングコード 20W"
   },
   {
-    "priority": 17,
+    "priority": 14,
     "id": "uvb_zilla_t5",
     "name": "Zilla Desert 50 T5 UVB",
     "category": "lighting_uvb",
@@ -217,11 +178,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高い",
+    "reason": "専門性高",
     "amazon_search_hint": "Zilla Desert 50 T5 UVB"
   },
   {
-    "priority": 18,
+    "priority": 15,
     "id": "uvb_arcadia_t5_12",
     "name": "Arcadia T5 HO 12% UVB",
     "category": "lighting_uvb",
@@ -230,11 +191,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高い",
+    "reason": "専門性高",
     "amazon_search_hint": "Arcadia T5 HO 12% UVB"
   },
   {
-    "priority": 19,
+    "priority": 16,
     "id": "uvb_t8_30w",
     "name": "UVB T8 蛍光管 30W",
     "category": "lighting_uvb",
@@ -243,37 +204,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高い",
+    "reason": "専門性高",
     "amazon_search_hint": "UVB T8 蛍光管 30W"
   },
   {
-    "priority": 20,
-    "id": "basking_solar_raptor",
-    "name": "Solar Raptor HID 70W",
-    "category": "lighting_basking",
-    "tier": "premium",
-    "rating": 4.8,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "消耗品・定期交換",
-    "amazon_search_hint": "Solar Raptor HID 70W"
-  },
-  {
-    "priority": 21,
-    "id": "basking_dual_150w",
-    "name": "ダブルバスキングランプ 150W",
-    "category": "lighting_basking",
-    "tier": "premium",
-    "rating": 4.5,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "消耗品・定期交換",
-    "amazon_search_hint": "ダブルバスキングランプ 150W"
-  },
-  {
-    "priority": 22,
+    "priority": 17,
     "id": "basking_50w",
     "name": "バスキングランプ 50W",
     "category": "lighting_basking",
@@ -282,37 +217,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "消耗品・定期交換",
+    "reason": "消耗品",
     "amazon_search_hint": "バスキングランプ 50W"
   },
   {
-    "priority": 23,
-    "id": "basking_halogen_50w",
-    "name": "ハロゲンバスキング 50W",
-    "category": "lighting_basking",
-    "tier": "budget",
-    "rating": 4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "消耗品・定期交換",
-    "amazon_search_hint": "ハロゲンバスキング 50W"
-  },
-  {
-    "priority": 24,
-    "id": "basking_halogen_35w",
-    "name": "ハロゲンバスキング 35W",
-    "category": "lighting_basking",
-    "tier": "budget",
-    "rating": 3.9,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "消耗品・定期交換",
-    "amazon_search_hint": "ハロゲンバスキング 35W"
-  },
-  {
-    "priority": 25,
+    "priority": 18,
     "id": "substrate_sphagnum_moss",
     "name": "スファグナムモス（水苔）",
     "category": "substrate",
@@ -321,11 +230,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "消耗品・定期購入",
+    "reason": "定期購入",
     "amazon_search_hint": "スファグナムモス（水苔）"
   },
   {
-    "priority": 26,
+    "priority": 19,
     "id": "substrate_grassland_mix",
     "name": "草原系ブレンド床材 5L",
     "category": "substrate",
@@ -334,11 +243,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "消耗品・定期購入",
+    "reason": "定期購入",
     "amazon_search_hint": "草原系ブレンド床材 5L"
   },
   {
-    "priority": 27,
+    "priority": 20,
     "id": "substrate_cypress_mulch",
     "name": "サイプレスマルチ（Zoo Med）",
     "category": "substrate",
@@ -347,11 +256,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "消耗品・定期購入",
+    "reason": "定期購入",
     "amazon_search_hint": "サイプレスマルチ（Zoo Med）"
   },
   {
-    "priority": 28,
+    "priority": 21,
     "id": "substrate_top_soil",
     "name": "培養土（無肥料）5L",
     "category": "substrate",
@@ -360,11 +269,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "消耗品・定期購入",
+    "reason": "定期購入",
     "amazon_search_hint": "培養土（無肥料）5L"
   },
   {
-    "priority": 29,
+    "priority": 22,
     "id": "thermometer_infrared",
     "name": "非接触型赤外線温度計",
     "category": "thermometer",
@@ -377,7 +286,7 @@
     "amazon_search_hint": "非接触型赤外線温度計"
   },
   {
-    "priority": 30,
+    "priority": 23,
     "id": "thermometer_dual_probe",
     "name": "デジタル温度計（デュアルプローブ）",
     "category": "thermometer",
@@ -390,7 +299,7 @@
     "amazon_search_hint": "デジタル温度計（デュアルプローブ）"
   },
   {
-    "priority": 31,
+    "priority": 24,
     "id": "shelter_premium_wood",
     "name": "ウッドハイドハウス（プレミアム）",
     "category": "shelter",
@@ -403,7 +312,7 @@
     "amazon_search_hint": "ウッドハイドハウス（プレミアム）"
   },
   {
-    "priority": 32,
+    "priority": 25,
     "id": "shelter_slate_flat",
     "name": "スレートフラットシェルター",
     "category": "shelter",
@@ -416,7 +325,7 @@
     "amazon_search_hint": "スレートフラットシェルター"
   },
   {
-    "priority": 33,
+    "priority": 26,
     "id": "food_repashy_tortoise",
     "name": "Repashy Veggie Burger（ゲル状フード）",
     "category": "food",
@@ -425,11 +334,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "リピート購入",
+    "reason": "リピート",
     "amazon_search_hint": "Repashy Veggie Burger（ゲル状フード）"
   },
   {
-    "priority": 34,
+    "priority": 27,
     "id": "food_grassland_salad",
     "name": "グラスランドサラダミックス（乾燥野草）",
     "category": "food",
@@ -438,11 +347,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "リピート購入",
+    "reason": "リピート",
     "amazon_search_hint": "グラスランドサラダミックス（乾燥野草）"
   },
   {
-    "priority": 35,
+    "priority": 28,
     "id": "food_aqua_turtle_pellet",
     "name": "カメの主食（GEX）",
     "category": "food",
@@ -451,24 +360,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "リピート購入",
+    "reason": "リピート",
     "amazon_search_hint": "カメの主食（GEX）"
   },
   {
-    "priority": 36,
-    "id": "supplement_iodine",
-    "name": "ヨウ素サプリ（亀専用）",
-    "category": "supplements",
-    "tier": "standard",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "上級者必需品",
-    "amazon_search_hint": "ヨウ素サプリ（亀専用）"
-  },
-  {
-    "priority": 37,
+    "priority": 29,
     "id": "supplement_spirulina",
     "name": "スピルリナパウダー",
     "category": "supplements",
@@ -477,24 +373,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "上級者必需品",
+    "reason": "上級者向け",
     "amazon_search_hint": "スピルリナパウダー"
   },
   {
-    "priority": 38,
-    "id": "supplement_probiotics",
-    "name": "爬虫類用プロバイオティクス",
-    "category": "supplements",
-    "tier": "premium",
-    "rating": 4.6,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "上級者必需品",
-    "amazon_search_hint": "爬虫類用プロバイオティクス"
-  },
-  {
-    "priority": 39,
+    "priority": 30,
     "id": "supplement_electrolyte",
     "name": "エレクトロライト（電解質補給）",
     "category": "supplements",
@@ -503,7 +386,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "上級者必需品",
+    "reason": "上級者向け",
     "amazon_search_hint": "エレクトロライト（電解質補給）"
   }
 ]
