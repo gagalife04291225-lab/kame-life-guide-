@@ -9,7 +9,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "KAYUSO 爬虫類ケージ 90cm"
   },
   {
@@ -22,7 +22,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "木製リクガメケージ 90cm"
   },
   {
@@ -35,7 +35,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "アウトドアエンクロージャーパネル"
   },
   {
@@ -48,7 +48,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "木製リクガメケージ 150cm"
   },
   {
@@ -61,7 +61,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "水槽 120cm（アクリル）"
   },
   {
@@ -74,7 +74,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "木製リクガメケージ 120cm"
   },
   {
@@ -87,7 +87,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "高単価・診断結果で必ず表示される最重要カテゴリ",
+    "reason": "高単価・診断結果で必ず表示",
     "amazon_search_hint": "プラスチックケース 60L"
   },
   {
@@ -100,7 +100,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "カメ専用フィルター（テトラ）"
   },
   {
@@ -113,7 +113,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "水中フィルター（中型）"
   },
   {
@@ -126,7 +126,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "Fluval FX シリーズ"
   },
   {
@@ -139,7 +139,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "外部フィルター（大型）"
   },
   {
@@ -152,7 +152,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "ダブルスポンジフィルター"
   },
   {
@@ -165,7 +165,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "水棲ガメ系で必須・リピート購入も多い",
+    "reason": "水棲ガメ系で必須",
     "amazon_search_hint": "外掛け式フィルター"
   },
   {
@@ -178,7 +178,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
+    "reason": "通年必需品",
     "amazon_search_hint": "水中ヒーター 100W"
   },
   {
@@ -191,7 +191,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
+    "reason": "通年必需品",
     "amazon_search_hint": "輻射熱パネルヒーター（天井設置）"
   },
   {
@@ -204,7 +204,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "冬季に毎年買い替え需要あり・通年必需品",
+    "reason": "通年必需品",
     "amazon_search_hint": "ヒーティングコード 20W"
   },
   {
@@ -217,7 +217,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高くASINによる差別化が効く",
+    "reason": "専門性が高い",
     "amazon_search_hint": "Zilla Desert 50 T5 UVB"
   },
   {
@@ -230,7 +230,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高くASINによる差別化が効く",
+    "reason": "専門性が高い",
     "amazon_search_hint": "Arcadia T5 HO 12% UVB"
   },
   {
@@ -243,7 +243,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "専門性が高くASINによる差別化が効く",
+    "reason": "専門性が高い",
     "amazon_search_hint": "UVB T8 蛍光管 30W"
   },
   {
@@ -256,7 +256,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
+    "reason": "消耗品・定期交換",
     "amazon_search_hint": "セラミックヒートランプ 100W（夜間用）"
   },
   {
@@ -269,7 +269,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
+    "reason": "消耗品・定期交換",
     "amazon_search_hint": "Solar Raptor HID 70W"
   },
   {
@@ -282,7 +282,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
+    "reason": "消耗品・定期交換",
     "amazon_search_hint": "ダブルバスキングランプ 150W"
   },
   {
@@ -295,7 +295,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
+    "reason": "消耗品・定期交換",
     "amazon_search_hint": "ハロゲンバスキング 50W"
   },
   {
@@ -308,7 +308,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "バスキング消耗品・定期交換需要あり",
+    "reason": "消耗品・定期交換",
     "amazon_search_hint": "ハロゲンバスキング 35W"
   },
   {
@@ -321,7 +321,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "床材は消耗品で定期購入につながる",
+    "reason": "消耗品・定期購入",
     "amazon_search_hint": "スファグナムモス（水苔）"
   },
   {
@@ -334,24 +334,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "床材は消耗品で定期購入につながる",
+    "reason": "消耗品・定期購入",
     "amazon_search_hint": "草原系ブレンド床材 5L"
   },
   {
     "priority": 27,
-    "id": "substrate_cypress_mulch",
-    "name": "サイプレスマルチ（Zoo Med）",
-    "category": "substrate",
-    "tier": "premium",
-    "rating": 4.6,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "床材は消耗品で定期購入につながる",
-    "amazon_search_hint": "サイプレスマルチ（Zoo Med）"
-  },
-  {
-    "priority": 28,
     "id": "substrate_top_soil",
     "name": "培養土（無肥料）5L",
     "category": "substrate",
@@ -360,11 +347,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "床材は消耗品で定期購入につながる",
+    "reason": "消耗品・定期購入",
     "amazon_search_hint": "培養土（無肥料）5L"
   },
   {
-    "priority": 29,
+    "priority": 28,
     "id": "thermometer_infrared",
     "name": "非接触型赤外線温度計",
     "category": "thermometer",
@@ -373,11 +360,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
+    "reason": "入門者必需",
     "amazon_search_hint": "非接触型赤外線温度計"
   },
   {
-    "priority": 30,
+    "priority": 29,
     "id": "thermometer_dual_probe",
     "name": "デジタル温度計（デュアルプローブ）",
     "category": "thermometer",
@@ -386,11 +373,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "入門者が最初に買うアイテムのひとつ",
+    "reason": "入門者必需",
     "amazon_search_hint": "デジタル温度計（デュアルプローブ）"
   },
   {
-    "priority": 31,
+    "priority": 30,
     "id": "shelter_cork_bark",
     "name": "コルクバーク（丸太）",
     "category": "shelter",
@@ -399,11 +386,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
+    "reason": "必需品",
     "amazon_search_hint": "コルクバーク（丸太）"
   },
   {
-    "priority": 32,
+    "priority": 31,
     "id": "shelter_premium_wood",
     "name": "ウッドハイドハウス（プレミアム）",
     "category": "shelter",
@@ -412,11 +399,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
+    "reason": "必需品",
     "amazon_search_hint": "ウッドハイドハウス（プレミアム）"
   },
   {
-    "priority": 33,
+    "priority": 32,
     "id": "shelter_slate_flat",
     "name": "スレートフラットシェルター",
     "category": "shelter",
@@ -425,24 +412,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "比較的安価だが必需品、コンバージョン率高い",
+    "reason": "必需品",
     "amazon_search_hint": "スレートフラットシェルター"
   },
   {
-    "priority": 34,
-    "id": "food_hikari_turtle",
-    "name": "ひかりウーパールーパー（タートル用）",
-    "category": "food",
-    "tier": "standard",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "フードはすでにASIN充足（一部残り）",
-    "amazon_search_hint": "ひかりウーパールーパー（タートル用）"
-  },
-  {
-    "priority": 35,
+    "priority": 33,
     "id": "food_repashy_tortoise",
     "name": "Repashy Veggie Burger（ゲル状フード）",
     "category": "food",
@@ -451,11 +425,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "フードはすでにASIN充足（一部残り）",
+    "reason": "リピート購入",
     "amazon_search_hint": "Repashy Veggie Burger（ゲル状フード）"
   },
   {
-    "priority": 36,
+    "priority": 34,
     "id": "food_grassland_salad",
     "name": "グラスランドサラダミックス（乾燥野草）",
     "category": "food",
@@ -464,11 +438,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "フードはすでにASIN充足（一部残り）",
+    "reason": "リピート購入",
     "amazon_search_hint": "グラスランドサラダミックス（乾燥野草）"
   },
   {
-    "priority": 37,
+    "priority": 35,
     "id": "food_aqua_turtle_pellet",
     "name": "カメの主食（GEX）",
     "category": "food",
@@ -477,37 +451,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "フードはすでにASIN充足（一部残り）",
+    "reason": "リピート購入",
     "amazon_search_hint": "カメの主食（GEX）"
   },
   {
-    "priority": 38,
-    "id": "supplement_repcal",
-    "name": "Rep-Cal カルシウムサプリ",
-    "category": "supplements",
-    "tier": "standard",
-    "rating": 4.6,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
-    "amazon_search_hint": "Rep-Cal カルシウムサプリ"
-  },
-  {
-    "priority": 39,
-    "id": "supplement_multivitamin",
-    "name": "マルチビタミン（爬虫類用）",
-    "category": "supplements",
-    "tier": "standard",
-    "rating": 4.4,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
-    "amazon_search_hint": "マルチビタミン（爬虫類用）"
-  },
-  {
-    "priority": 40,
+    "priority": 36,
     "id": "supplement_iodine",
     "name": "ヨウ素サプリ（亀専用）",
     "category": "supplements",
@@ -516,11 +464,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
+    "reason": "上級者必需品",
     "amazon_search_hint": "ヨウ素サプリ（亀専用）"
   },
   {
-    "priority": 41,
+    "priority": 37,
     "id": "supplement_spirulina",
     "name": "スピルリナパウダー",
     "category": "supplements",
@@ -529,11 +477,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
+    "reason": "上級者必需品",
     "amazon_search_hint": "スピルリナパウダー"
   },
   {
-    "priority": 42,
+    "priority": 38,
     "id": "supplement_probiotics",
     "name": "爬虫類用プロバイオティクス",
     "category": "supplements",
@@ -542,11 +490,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
+    "reason": "上級者必需品",
     "amazon_search_hint": "爬虫類用プロバイオティクス"
   },
   {
-    "priority": 43,
+    "priority": 39,
     "id": "supplement_electrolyte",
     "name": "エレクトロライト（電解質補給）",
     "category": "supplements",
@@ -555,37 +503,11 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
+    "reason": "上級者必需品",
     "amazon_search_hint": "エレクトロライト（電解質補給）"
   },
   {
-    "priority": 44,
-    "id": "calcium_powder",
-    "name": "カルシウムパウダー（D3入り）",
-    "category": "supplements",
-    "tier": "budget",
-    "rating": 4.3,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
-    "amazon_search_hint": "カルシウムパウダー（D3入り）"
-  },
-  {
-    "priority": 45,
-    "id": "calcium_no_d3",
-    "name": "カルシウムパウダー（D3なし）",
-    "category": "supplements",
-    "tier": "budget",
-    "rating": 4.2,
-    "asin": null,
-    "affiliateUrl": "#",
-    "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
-    "amazon_search_hint": "カルシウムパウダー（D3なし）"
-  },
-  {
-    "priority": 46,
+    "priority": 40,
     "id": "supplement_cuttlebone",
     "name": "カトルボーン（甲イカの骨）",
     "category": "supplements",
@@ -594,7 +516,7 @@
     "asin": null,
     "affiliateUrl": "#",
     "status": "asin_missing",
-    "reason": "サプリはニッチだが上級者には必需品",
+    "reason": "上級者必需品",
     "amazon_search_hint": "カトルボーン（甲イカの骨）"
   }
 ]
