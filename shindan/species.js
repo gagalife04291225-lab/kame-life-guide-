@@ -16,7 +16,7 @@ land: [
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.beginner||0)+(s.herbivore||0)+(s.eu_cb||0); },
     availability: 'common'
   },
-  { name: 'ヘルマンリクガメ（ヒガシ亜種）', latin: 'Testudo hermanni boettgeri', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', difficulty: '中級', size: 'S〜M（10〜23cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。最も人気の高い地中海系リクガメ。',
     specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
     coreSpecs: { size: '23cm', temp: '25〜30℃', lifespan: '50〜80年', diet: '草食（野草・野菜中心）' },
@@ -25,17 +25,6 @@ land: [
     slug: 'hermann-tortoise', hasPage: true,
     match: function(s){ return (s.compact||0) >= 1 && (s.humid||0) >= 2; },
     score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); },
-    availability: 'common'
-  },
-  { name: 'ヘルマンリクガメ（ニシ亜種）', latin: 'Testudo hermanni hermanni', emoji: '🍋', difficulty: '中級', size: 'S〜M（10〜18cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'ヒガシ亜種より小型で黄みが強い体色が特徴。コンパクトなケージで飼育できる小型リクガメを求める中級者に向く。EU産CB流通あり。',
-    specs: { '最大甲長': '18cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '24〜29℃' },
-    coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '50〜80年', diet: '草食（野草・野菜中心）' },
-    extraSpecs: {},
-    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
-    slug: 'hermann-tortoise', hasPage: true,
-    match: function(s){ return (s.compact||0) >= 2 && (s.humid||0) >= 1 && (s.intermediate||0) >= 1; },
-    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+(s.small_form||0); },
     availability: 'common'
   },
   { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
