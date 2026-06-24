@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヘルマンリクガメの飼い方｜乾燥管理・高UVB・野草食・CITES II｜カメライフガイド</title>
+<meta name="description" content="ヘルマンリクガメ（Testudo hermanni boettgeri）の飼育ガイド。地中海性気候に適応した乾燥系リクガメ。高UVI・赤玉土床材・野草主体の食事・ピラミッディング予防・カルシウム管理を詳しく解説。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/hermann-dry-template.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    --sp-from:#1a140a;
+    --sp-to:#100e04;
+    --sp-accent:#c8b070;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:linear-gradient(155deg,#1a140a 0%,#2a1e0a 45%,#100e04 100%);
+    color:var(--parchment);padding:64px 0 56px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  header.hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 60% 25%,rgba(200,176,112,.20) 0%,transparent 55%),
+      radial-gradient(ellipse 40% 40% at 25% 75%,rgba(212,169,106,.10) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+  header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+  header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+  header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(200,176,112,.7);margin-bottom:18px;position:relative;}
+  header.hero p.lead{font-size:1rem;color:#e0d8c4;max-width:580px;margin:0 auto;position:relative;}
+
+  .stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+  .stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+  .stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+  .stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+
+  nav.crumbs{background:#1a1408;color:#9a9070;font-size:.84rem;padding:10px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  .warn-box{background:#fff3e0;border-left:4px solid #e65100;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a1c00;}
+  .warn-box strong{color:#bf360c;}
+  .info-box{background:#e8f5e9;border-left:4px solid #2e7d32;padding:16px 20px;margin:20px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#1a3a1a;}
+  .info-box strong{color:#1b5e20;}
+  .dry-tip-box{background:#fff8e1;border-left:4px solid #f9a825;padding:16px 20px;margin:20px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a3800;}
+  .dry-tip-box strong{color:#e65100;}
+
+  section.content-section{padding:36px 0 0;}
+  section.content-section h2{font-family:"Playfair Display",serif;font-weight:700;font-size:1.4rem;color:var(--forest-deep);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
+  section.content-section h3{font-size:1.05rem;font-weight:700;color:var(--forest);margin:22px 0 10px;}
+  section.content-section p{font-size:.95rem;line-height:1.9;color:#3a3020;margin-bottom:12px;}
+
+  /* Quick-spec card */
+  .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0;}
+  .spec-card{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid #e4ddc9;box-shadow:0 1px 4px rgba(13,31,26,.05);}
+  .spec-card .sc-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#8f7a50;margin-bottom:4px;}
+  .spec-card .sc-val{font-size:.95rem;font-weight:700;color:var(--forest-deep);}
+  .spec-card.full{grid-column:1/-1;background:linear-gradient(135deg,#0d1f1a 0%,#1a3018 100%);border:none;}
+  .spec-card.full .sc-label{color:rgba(200,176,112,.8);}
+  .spec-card.full .sc-val{color:var(--sp-accent);}
+
+  /* 3秒判定 */
+  .judge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+  .judge-col{background:#fff;border-radius:10px;padding:16px;border:1px solid #e4ddc9;}
+  .judge-col h4{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+  .judge-col.yes h4{color:#2e7d32;}
+  .judge-col.no h4{color:#c62828;}
+  .judge-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .judge-col ul li{font-size:.88rem;line-height:1.5;color:#3a3020;padding-left:1.4em;position:relative;}
+  .judge-col ul li::before{position:absolute;left:0;}
+  .judge-col.yes ul li::before{content:'✅';}
+  .judge-col.no ul li::before{content:'❌';}
+
+  /* env-grid */
+  .env-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin:18px 0;}
+  .env-card{background:#fff;border-radius:10px;padding:14px 15px;border:1px solid #e4ddc9;box-shadow:0 1px 4px rgba(13,31,26,.05);}
+  .env-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#8f7a50;margin-bottom:5px;}
+  .env-value{font-size:1.05rem;font-weight:700;color:var(--forest-deep);}
+  .env-note{font-size:.76rem;color:#7a6a4a;margin-top:3px;line-height:1.4;}
+
+  /* inline-cta */
+  .inline-cta{background:linear-gradient(135deg,#1a1408 0%,#0d1f1a 100%);border-radius:14px;padding:22px 20px;margin:40px 0;display:flex;align-items:center;gap:16px;border:1px solid #3a2e14;}
+  .inline-cta-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+  .inline-cta-body{flex:1;min-width:0;}
+  .inline-cta-body p{color:#d9d0b8;font-size:.88rem;margin-bottom:10px;line-height:1.6;}
+  .inline-cta-body a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;}
+  .inline-cta-body a:hover{background:var(--accent-dark);}
+
+  /* compare */
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+  .compare-table{width:100%;min-width:540px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+  .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+  .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+  .compare-table th:first-child{border-radius:12px 0 0 0;}
+  .compare-table th:last-child{border-radius:0 12px 0 0;}
+  .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:normal;}
+  .compare-table tr:last-child td{border-bottom:none;}
+  .compare-table tr.highlight-row{background:#fffbf0;}
+  .compare-table tr.highlight-row td{font-weight:700;color:var(--forest);}
+  .compare-table td:first-child a{color:var(--accent-dark);text-decoration:none;font-weight:700;}
+  .compare-table td:first-child a:hover{text-decoration:underline;}
+  .badge{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:10px;white-space:nowrap;}
+  .badge-green{background:#e8f5e9;color:#1b5e20;}
+  .badge-amber{background:#fff8e1;color:#8f6000;}
+  .badge-red{background:#fce4ec;color:#b71c1c;}
+
+  /* gear-cards */
+  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
+  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+  .btn-rak:hover{background:#8c0000;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+  details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+  details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
+  details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+  details.faq[open] summary::after{content:'－';}
+  details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+  .faq-tag{font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;flex-shrink:0;background:#f0e8d8;color:#8f5f2c;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+  .faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}
+  .faq-tag.tag-health{background:#fce4ec;color:#c62828;}
+  .faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}
+  .faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+
+  /* related */
+  .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+  .rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+  .rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  /* shindan-cta */
+  .shindan-cta{background:var(--forest-deep);border-radius:14px;padding:28px 26px;margin:44px 0 0;text-align:center;}
+  .shindan-cta p{color:#d9d0b8;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:10px;transition:background .2s;}
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  /* end-cta */
+  .end-cta{background:linear-gradient(145deg,#1a1208 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+  .end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,176,112,.14) 0%,transparent 65%);pointer-events:none;}
+  .end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sp-accent);margin-bottom:12px;position:relative;}
+  .end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+  .end-cta p{color:#c8c0a0;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+  .btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:10px;transition:background .2s;}
+  .btn-cta-primary:hover{background:var(--accent-dark);}
+  .btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-size:.9rem;padding:12px 28px;border-radius:10px;border:1px solid rgba(212,169,106,.4);transition:border-color .2s;}
+  .btn-cta-secondary:hover{border-color:var(--accent);}
+
+  footer{background:#0d1f1a;color:#7a9070;font-size:.8rem;padding:28px 0;text-align:center;margin-top:60px;}
+  footer a{color:var(--accent);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  @media(max-width:600px){
+    header.hero h1{font-size:1.6rem;}
+    .judge-grid{grid-template-columns:1fr;}
+    .spec-grid{grid-template-columns:1fr 1fr;}
+    .env-grid{grid-template-columns:1fr 1fr;}
+    .inline-cta{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🌿</span>
+    <h1>ヘルマンリクガメ</h1>
+    <div class="latin">Testudo hermanni boettgeri — Hermann's Tortoise</div>
+    <p class="lead">南ヨーロッパの地中海性気候に生息する乾燥系リクガメ。温暖な夏・乾燥した環境・強いUVBを好み、野草中心の食事とカルシウム管理がピラミッディング予防の鍵。CITES II種につきCB個体の入手を必ず確認すること。</p>
+  </div>
+</header>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">15〜23cm</div></div>
+      <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中級</div></div>
+      <div class="stat-item"><div class="stat-label">寿命</div><div class="stat-value">50〜80年</div></div>
+      <div class="stat-item"><div class="stat-label">食性</div><div class="stat-value">草食</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BREADCRUMB ===== -->
+<nav class="crumbs">
+  <a href="../index.html">カメライフガイド</a> ＞
+  <a href="../guide-arid.html">種一覧</a> ＞
+  ヘルマンリクガメ
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="wrap">
+
+  <!-- warn/info boxes -->
+  <div class="warn-box">
+    <strong>⚠️ 湿りすぎNG・通気性が生死を分ける</strong><br>
+    多湿環境は呼吸器感染症（RI）・甲羅軟化・菌類感染の直接原因になります。床材が常に濡れている状態・密閉ケージは禁止。必ず一方向に通気口を設けてください。
+  </div>
+  <div class="info-box">
+    <strong>✅ CITES II — CB個体なら飼育合法</strong><br>
+    ヘルマンリクガメはCITES付属書II掲載種です。国内で流通しているCB（繁殖個体）の購入・飼育に法的制限はありません。購入時は必ず証明書類を確認してください。
+  </div>
+  <div class="dry-tip-box">
+    <strong>🌞 dry系ケアの核心：乾燥＋高UVI＋野草</strong><br>
+    湿度40〜60%・UVI 2.9〜4.5・床材は赤玉土または砂質土。市販フードは補助、主食は野草（タンポポ・オオバコ・シロツメクサ）。カルシウム不足がピラミッディングを招きます。
+  </div>
+
+  <!-- クイックスペックカード -->
+  <section class="content-section">
+    <h2>クイックスペック</h2>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="sc-label">🌡️ 温度帯</div>
+        <div class="sc-val">28〜32℃ / 涼端20℃</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">📐 ケージサイズ</div>
+        <div class="sc-val">90cm × 45cm〜</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">🍽️ 給餌頻度</div>
+        <div class="sc-val">毎日〜2日に1回</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">⏳ 推定寿命</div>
+        <div class="sc-val">50〜80年</div>
+      </div>
+      <div class="spec-card full">
+        <div class="sc-label">✅ 初心者向き？</div>
+        <div class="sc-val">中級 — 温度・湿度・UVB管理の3点を徹底できる人向け。乾燥管理と野草の確保が継続的に必要。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3秒判定 -->
+  <section class="content-section">
+    <h2>3秒判定</h2>
+    <div class="judge-grid">
+      <div class="judge-col yes">
+        <h4>向いている人</h4>
+        <ul>
+          <li>90cm以上のケージ設置スペースがある</li>
+          <li>庭や公園で野草を定期収集できる</li>
+          <li>温度・湿度を毎日確認できる</li>
+        </ul>
+      </div>
+      <div class="judge-col no">
+        <h4>向いていない人</h4>
+        <ul>
+          <li>市販フードだけで済ませたい</li>
+          <li>多湿ケージしか用意できない</li>
+          <li>50年以上の長期飼育の覚悟がない</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 野生環境 -->
+  <section class="content-section">
+    <h2>野生の環境</h2>
+    <p>バルカン半島・イタリア・トルコ南西部など南ヨーロッパに分布するヒガシヘルマン（boettgeri 亜種）は最も広域分布する亜種です。生息地は石灰岩台地・マキア（地中海低木林）・乾燥した草地で、夏は高温乾燥、冬は温暖。日照時間が長く、強い紫外線に常にさらされる環境です。</p>
+    <p>野生下では日の出後すぐにバスキングを開始し、正午の高温時には草木の陰で休息するサーモスタット行動をとります。主食はタンポポ・チコリー・クローバー・イチジクの葉など繊維質の高い草本類です。</p>
+    <p>冬眠（冬眠温度：5〜10℃）が自然サイクルの一部ですが、飼育下では健康管理の点から冬眠させない飼育者も多くいます。</p>
+  </section>
+
+  <!-- 飼育環境数値 -->
+  <section class="content-section">
+    <h2>飼育環境の数値目標</h2>
+    <div class="env-grid">
+      <div class="env-card">
+        <div class="env-label">ケージサイズ</div>
+        <div class="env-value">90×45cm〜</div>
+        <div class="env-note">成体は120×60cm推奨。木製ケージが通気性◎</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">ホットスポット</div>
+        <div class="env-value">38〜42℃</div>
+        <div class="env-note">バスキングランプ直下。岩や石タイルを置くと定着</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">クールエンド</div>
+        <div class="env-value">22〜26℃</div>
+        <div class="env-note">温度勾配は必須。逃げ場を確保すること</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">夜間温度</div>
+        <div class="env-value">18〜22℃</div>
+        <div class="env-note">15℃以下は不可。保温が必要な季節は注意</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">湿度</div>
+        <div class="env-value">40〜60%</div>
+        <div class="env-note">60%超えが続くとRIリスク。通気口を常に開放</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">UVB / UVI</div>
+        <div class="env-value">UVI 2.9〜4.5</div>
+        <div class="env-note">砂漠用UVBランプ推奨。6〜12ヶ月で要交換</div>
+      </div>
+      <div class="env-card">
+        <div class="env-label">床材の深さ</div>
+        <div class="env-value">5〜10cm</div>
+        <div class="env-note">赤玉土（小粒）が定番。潜り行動も許容できる深さ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- インラインCTA -->
+  <div class="inline-cta">
+    <div class="inline-cta-emoji">🔍</div>
+    <div class="inline-cta-body">
+      <p>あなたにぴったりのリクガメが見つかる診断ツール。全97種から最適な1種を提案します。</p>
+      <a href="../shindan/index.html">カメ診断ツールを試す →</a>
+    </div>
+  </div>
+
+  <!-- 比較表 -->
+  <section class="content-section">
+    <h2>地中海リクガメ 3種比較</h2>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>種名</th>
+            <th>甲長</th>
+            <th>難易度</th>
+            <th>湿度管理</th>
+            <th>UVI目安</th>
+            <th>CITES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>ヘルマンリクガメ（本種）</td>
+            <td>15〜23cm</td>
+            <td>中級</td>
+            <td>40〜60%（低め）</td>
+            <td>2.9〜4.5</td>
+            <td><span class="badge badge-amber">II</span></td>
+          </tr>
+          <tr>
+            <td><a href="russian-tortoise.html">ロシアリクガメ</a></td>
+            <td>15〜20cm</td>
+            <td>入門〜中級</td>
+            <td>30〜50%（低め）</td>
+            <td>2.0〜3.5</td>
+            <td><span class="badge badge-amber">II</span></td>
+          </tr>
+          <tr>
+            <td><a href="greek-tortoise.html">ギリシャリクガメ</a></td>
+            <td>15〜25cm</td>
+            <td>中〜上級</td>
+            <td>40〜60%（低め）</td>
+            <td>2.9〜4.5</td>
+            <td><span class="badge badge-amber">II</span></td>
+          </tr>
+          <tr>
+            <td><a href="elongated-tortoise.html">エロンガータリクガメ</a></td>
+            <td>25〜33cm</td>
+            <td>中〜上級</td>
+            <td>70〜90%（高め）</td>
+            <td>2.5〜4.0</td>
+            <td><span class="badge badge-amber">II</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 機材セクション -->
+  <section class="content-section">
+    <h2>推奨機材 6選</h2>
+    <p style="font-size:.88rem;color:#6a5a3a;margin-bottom:4px;">land_dry ルート（赤玉土・砂漠用UVB・乾燥管理）</p>
+    <div class="gear-cards">
+
+      <!-- 1. ケージ -->
+      <div class="gear-card">
+        <div class="gear-icon">🏠</div>
+        <div class="gear-info">
+          <div class="gear-name">木製リクガメケージ 90cm〜</div>
+          <div class="gear-why">通気性が最重要。アクリル・ガラスケージは湿度がこもりやすく不向き。木製ケージは湿気を吸収し、乾燥管理が格段にしやすい。成体には120×60cm以上を推奨。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=リクガメ+木製ケージ+90cm&tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で探す</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/リクガメ+木製ケージ/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+      <!-- 2. UVB Desert -->
+      <div class="gear-card">
+        <div class="gear-icon">☀️</div>
+        <div class="gear-info">
+          <div class="gear-name">ビバリア スパイラルUVB デザート 26W</div>
+          <div class="gear-why">乾燥系リクガメに必須の砂漠仕様UVBランプ。UVI 2.9〜4.5の照射が可能で、カルシウム代謝・甲羅の健全な発育に直結する。6〜12ヶ月で交換が必要（UVB量は目視で確認不可）。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ビバリア+スパイラルUVB+デザート/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+      <!-- 3. バスキング -->
+      <div class="gear-card">
+        <div class="gear-icon">🔆</div>
+        <div class="gear-info">
+          <div class="gear-name">マルカン バスキングライト 50W</div>
+          <div class="gear-why">ホットスポット38〜42℃を作る定番バスキングランプ。消化促進・免疫機能維持に欠かせない。距離20〜30cmで温度調整可能。夏場は30Wへの切り替えも検討。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043B0AU2?tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/マルカン+バスキングライト+50W/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+      <!-- 4. 床材 -->
+      <div class="gear-card">
+        <div class="gear-icon">🌱</div>
+        <div class="gear-info">
+          <div class="gear-name">あかぎ園芸 赤玉土 小粒 20L</div>
+          <div class="gear-why">dry系の定番床材。適度な保湿性がありながら排水性も高く、ヘルマンに最適な湿度40〜60%を維持しやすい。深さ5〜10cmで潜り行動も許容。誤食リスクが低い点も安心。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00I0MM9MC?tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/あかぎ園芸+赤玉土+小粒/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+      <!-- 5. フード -->
+      <div class="gear-card">
+        <div class="gear-icon">🍽️</div>
+        <div class="gear-info">
+          <div class="gear-name">ビバリア リクガメフード 907g</div>
+          <div class="gear-why">野草が入手できないときの補助食。主食はあくまで野草（タンポポ・オオバコ・シロツメクサ）だが、栄養バランスを補完するために週1〜2回の活用が効果的。繊維質が豊富な配合。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0DF2SJMCJ?tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で見る</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ビバリア+リクガメフード/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+      <!-- 6. カルシウム剤 -->
+      <div class="gear-card">
+        <div class="gear-icon">🦴</div>
+        <div class="gear-info">
+          <div class="gear-name">爬虫類用カルシウムパウダー（D3入り）</div>
+          <div class="gear-why">ピラミッディング予防の要。野草・フードに週2〜3回ダスティングで与える。UVBが十分でもカルシウム不足は甲羅の変形につながる。ビタミンD3配合タイプを選ぶとUVB補助にもなる。</div>
+          <div class="gear-btns">
+            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+カルシウムパウダー+D3&tag=kamelife09-22" rel="nofollow sponsored noopener" target="_blank">Amazon で探す</a>
+            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+カルシウムパウダー+D3/" rel="nofollow sponsored noopener" target="_blank">楽天で探す</a>
+          </div>
+          <div class="pr-note">※アフィリエイトリンクを含みます</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section">
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>
+          甲羅がデコボコ（ピラミッディング）になってしまいます。原因は？
+          <span class="faq-tag tag-health">健康</span>
+        </summary>
+        <div class="faq-body">
+          ピラミッディングの主な原因は①カルシウム不足②タンパク過多③湿度不足④UVB不足の組み合わせです。幼体期（1〜3歳）に発生しやすく、一度変形した甲羅は元に戻りません。対策は野草中心の食事・カルシウムダスティング（週2〜3回）・砂漠用UVBランプの使用・湿度40〜60%の維持を徹底することです。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          湿度はどのくらいに保てばよいですか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">
+          40〜60%が適正範囲です。60%を超える状態が続くと呼吸器感染症（RI）・甲羅の軟化・カビの原因になります。木製ケージ＋通気口解放が最も管理しやすく、梅雨・夏季は除湿器の補助も有効です。反対に20%以下の極度な乾燥も避けてください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          野草が入手できないときはどうすればよいですか？
+          <span class="faq-tag tag-food">食事</span>
+        </summary>
+        <div class="faq-body">
+          野草が入手できない期間はリクガメフード（ビバリア製など）を主食に切り替えても問題ありません。ただし市販フードはタンパク質・糖質が高めのものがあるため、長期間フードのみにする場合は繊維質の高い製品を選んでください。春〜秋はタンポポ・オオバコ・シロツメクサを公園等で採集し冷凍保存する方法もあります（農薬・除草剤に注意）。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          UVBランプはどのくらいの頻度で交換が必要ですか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">
+          6〜12ヶ月での交換を推奨します。UVB出力は経時劣化しますが、見た目（明るさ）だけでは判断できません。専用UVIメーター（ソルメーターなど）で定期的に計測し、UVI 2.9を下回ったら交換してください。メーカー推奨は6ヶ月が多いですが、品質管理が良好な製品は12ヶ月持つ場合もあります。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          冬眠させた方がよいですか？させない方がよいですか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">
+          野生下では冬眠が自然サイクルの一部ですが、飼育下での冬眠は健康リスクを伴います。冬眠前の体重・健康状態の確認が不十分な場合、冬眠中に衰弱死するケースがあります。初心者・幼体・体調不良の個体は冬眠させないことを推奨します。冬眠を行う場合は専門家・専門書の指示に従い、5〜10℃の安定した環境で管理してください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          CITES IIとはどういう意味ですか？購入に制限はありますか？
+          <span class="faq-tag tag-law">法規制</span>
+        </summary>
+        <div class="faq-body">
+          CITES（ワシントン条約）付属書IIは「商業取引は許可制・証明書が必要」を意味します。日本国内でCB（繁殖個体）として流通しているヘルマンリクガメを購入・飼育することは合法です。購入の際は販売店でCB証明書や取引証明書の提示を求め、保管してください。WC（野生採集個体）の輸入は厳しく制限されています。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>
+          多頭飼育はできますか？オス同士は問題ありませんか？
+          <span class="faq-tag tag-env">環境</span>
+        </summary>
+        <div class="faq-body">
+          オス同士は繁殖期（春〜初夏）に激しく争います。咬傷・ストレスによる拒食・甲羅損傷のリスクがあるため、オス同士の多頭飼育は推奨しません。オス1：メス2以上の比率が安全ですが、メスへの過剰な交尾行動が問題になる場合もあります。複数飼育は十分なスペース（個体数×90cm以上）と別ケージに隔離できる準備が必須です。
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- 関連ページリンク -->
+  <section class="content-section">
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a class="rel-btn" href="russian-tortoise.html">🏔️ ロシアリクガメ</a>
+      <a class="rel-btn" href="greek-tortoise.html">🏛️ ギリシャリクガメ</a>
+      <a class="rel-btn" href="elongated-tortoise.html">🌴 エロンガータリクガメ</a>
+      <a class="rel-btn" href="../guide-arid.html">🌵 乾燥系リクガメ一覧</a>
+    </div>
+  </section>
+
+  <!-- 診断CTA -->
+  <div class="shindan-cta">
+    <p>あなたのライフスタイルに合ったカメを診断で見つけよう。</p>
+    <a href="../shindan/index.html">🔍 カメ診断ツールを使う</a>
+  </div>
+
+  <!-- END CTA -->
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>飼育を始める前に、もう一度確認を</h3>
+    <p>ヘルマンリクガメは50年以上生きます。ケージ・光源・野草の調達ルートを整えてから迎えてください。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">診断ツールで他の種も見る</a>
+      <a class="btn-cta-secondary" href="../index.html">トップページへ戻る</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 カメライフガイド｜<a href="../index.html">トップ</a>｜<a href="../shindan/index.html">診断ツール</a></p>
+  <p style="margin-top:6px;font-size:.72rem;color:#5a7060;">本サイトはAmazonアソシエイト・楽天アフィリエイトに参加しています。</p>
+</footer>
+
+</body>
+</html>
