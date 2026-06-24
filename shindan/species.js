@@ -459,7 +459,7 @@ aquatic: [
     coreSpecs: { size: '27cm', temp: '15〜24℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'blandings-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.advanced||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'rare'
@@ -525,7 +525,7 @@ aquatic: [
     coreSpecs: { size: '16cm', temp: '24〜29℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '45cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'herrera-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
@@ -536,7 +536,7 @@ aquatic: [
     coreSpecs: { size: '17cm', temp: '24〜30℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'white-lipped-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 1 && (s.advanced||0) >= 2 && (s.maintenance||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
@@ -547,7 +547,7 @@ aquatic: [
     coreSpecs: { size: '18cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'black-knobbed-map-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -558,7 +558,7 @@ aquatic: [
     coreSpecs: { size: '18cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'ringed-map-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 3 && (s.advanced||0) >= 3; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'rare'
@@ -580,7 +580,7 @@ aquatic: [
     coreSpecs: { size: '40cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '雑食（肉食寄り）' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'giant-musk-turtle-mx', hasPage: true,
     match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'rare'
@@ -647,7 +647,7 @@ aquatic: [
     coreSpecs: { size: 'オス10cm/メス25cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
     extraSpecs: { tankSize: '60〜90cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'alabama-map-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 3 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.advanced||0)+(s.na_water||0)+(s.collector||0)+(s.cool_climate||0); },
     availability: 'common'
@@ -658,7 +658,7 @@ aquatic: [
     coreSpecs: { size: '20cm', temp: '24〜30℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'asian-black-marsh-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1 && (s.asia_water||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.asia_water||0)+(s.tropical_climate||0)+(s.collector||0)+(s.beauty||0); },
     availability: 'common'
@@ -750,7 +750,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '16〜24℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'wood-turtle', hasPage: true,
     match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 1 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)+(s.ya_ma||0); },
     availability: 'rare'
@@ -783,7 +783,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '24〜30℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'painted-wood-turtle', hasPage: true,
     match: function(s){ return (s.s_size||0) >= 1 && (s.cooling||0) >= 2 && (s.advanced_env||0) >= 2; },
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced_env||0)+(s.advanced||0)+(s.ya_ma||0); },
     availability: 'common'
@@ -794,7 +794,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '24〜30℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'annulated-wood-turtle', hasPage: true,
     match: function(s){ return (s.m_size||0) >= 1 && (s.advanced_env||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.advanced_env||0)+(s.semi_aquatic||0)+(s.advanced||0)+(s.ya_ma||0); },
     availability: 'common'
@@ -805,7 +805,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '24〜30℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'brown-wood-turtle-manni', hasPage: true,
     match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.ya_ma||0); },
     availability: 'common'
@@ -816,7 +816,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'nicaragua-wood-turtle', hasPage: true,
     match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 2 && (s.advanced_env||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.ya_ma||0); },
     availability: 'common'
@@ -860,7 +860,7 @@ forest: [
     coreSpecs: { size: '15cm', temp: '23〜29℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'florida-box-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.s_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.intermediate||0)+(s.na_box||0); },
     availability: 'common'
@@ -871,7 +871,7 @@ forest: [
     coreSpecs: { size: '15cm', temp: '23〜30℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'ornate-box-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 3 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
@@ -882,7 +882,7 @@ forest: [
     coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'taiwan-box-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.asia_box||0); },
     availability: 'common'
@@ -893,7 +893,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '26〜30℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'malayan-box-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.asia_box||0); },
     availability: 'common'
@@ -904,7 +904,7 @@ forest: [
     coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'chinese-box-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.m_size||0) >= 1 && (s.advanced||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.advanced||0)+(s.asia_box||0); },
     availability: 'common'
@@ -915,7 +915,7 @@ forest: [
     coreSpecs: { size: '19cm', temp: '22〜26℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'indochinese-box-turtle', hasPage: true,
     match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); },
     availability: 'rare'
@@ -926,7 +926,7 @@ forest: [
     coreSpecs: { size: '20cm', temp: '22〜27℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'ornate-cuora', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.advanced||0)+(s.advanced_env||0)+(s.asia_box||0); },
     availability: 'rare'
@@ -937,7 +937,7 @@ forest: [
     coreSpecs: { size: '21cm', temp: '22〜27℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'three-striped-box-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 1 && (s.advanced||0) >= 3 && (s.advanced_env||0) >= 3; },
     score: function(s){ return (s.semi_aquatic||0)+(s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.asia_box||0); },
     availability: 'rare'
@@ -948,7 +948,7 @@ forest: [
     coreSpecs: { size: '25cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '雑食（植物・水生昆虫）' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'asian-leaf-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.semi_aquatic||0)+(s.intermediate||0)+(s.m_size||0)+(s.tropical_climate||0)+(s.asia_water||0)+(s.ya_ma||0)+(s.humid_env||0); },
     availability: 'common'
@@ -959,7 +959,7 @@ forest: [
     coreSpecs: { size: '15cm', temp: '22〜32℃', lifespan: '30〜50年', diet: '雑食（昆虫・果実・草）' },
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'desert-box-turtle', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.advanced||0)+(s.collector||0)+(s.na_box||0)+(s.dry_env||0); },
     availability: 'rare'
@@ -974,7 +974,7 @@ exotic: [
     coreSpecs: { size: '50cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'spiny-softshell-turtle', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 3; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
@@ -985,7 +985,7 @@ exotic: [
     coreSpecs: { size: '45cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'smooth-softshell-turtle', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0); },
     availability: 'rare'
@@ -996,7 +996,7 @@ exotic: [
     coreSpecs: { size: '60cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '120cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'florida-softshell-turtle', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2; },
     availability: 'rare'
@@ -1007,7 +1007,7 @@ exotic: [
     coreSpecs: { size: '70cm', temp: '26〜30℃', lifespan: '20〜40年', diet: '雑食（植物多め）' },
     extraSpecs: { tankSize: '150cm〜', substrate: '砂利〜砂' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'pig-nosed-turtle', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 2 && (s.budget_max||0) >= 2; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'common'
@@ -1018,7 +1018,7 @@ exotic: [
     coreSpecs: { size: '35cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'chinese-softshell-turtle', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.accessible||0); },
     availability: 'common'
@@ -1029,7 +1029,7 @@ exotic: [
     coreSpecs: { size: '35cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'albino-chinese-softshell', hasPage: true,
     match: function(s){ return (s.softshell||0) >= 2 && (s.intermediate||0) >= 2; },
     score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.collector_grade||0); },
     availability: 'common'
@@ -1040,7 +1040,7 @@ exotic: [
     coreSpecs: { size: '23cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜', salinity: '0.5〜1.0%' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'northern-diamondback-terrapin', hasPage: true,
     match: function(s){ return (s.brackish||0) >= 3; },
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
@@ -1051,7 +1051,7 @@ exotic: [
     coreSpecs: { size: '21cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜', salinity: '0.5〜1.0%' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'carolina-diamondback-terrapin', hasPage: true,
     match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.collector_grade||0); },
     availability: 'rare'
@@ -1062,7 +1062,7 @@ exotic: [
     coreSpecs: { size: '20cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜', salinity: '0.5〜1.0%' },
     links: [{ label: '汽水ガメ 飼育ガイド', href: '../guide-brackish.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'ornate-diamondback-terrapin', hasPage: true,
     match: function(s){ return (s.brackish||0) >= 3 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.brackish||0)+(s.budget_high||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0); },
     availability: 'rare'
@@ -1073,7 +1073,7 @@ exotic: [
     coreSpecs: { size: '28cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '肉食（魚・エビ中心）' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'eastern-long-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; },
     availability: 'common'
@@ -1084,7 +1084,7 @@ exotic: [
     coreSpecs: { size: '35cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'siebenrocks-snake-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'common'
@@ -1095,7 +1095,7 @@ exotic: [
     coreSpecs: { size: '25cm', temp: '24〜29℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'african-helmeted-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 1 && (s.budget_low||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.budget_low||0)+(s.accessible||0)*2; },
     availability: 'common'
@@ -1106,7 +1106,7 @@ exotic: [
     coreSpecs: { size: '40cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'hilaire-side-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_high||0) >= 1; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.accessible||0); },
     availability: 'rare'
@@ -1117,7 +1117,7 @@ exotic: [
     coreSpecs: { size: '45cm', temp: '26〜30℃', lifespan: '20〜40年', diet: '肉食（待ち伏せ捕食）' },
     extraSpecs: { tankSize: '90cm〜', waterFlow: '極弱' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'amazon-matamata', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 2; },
     score: function(s){ return (s.snakeneck||0)+(s.budget_max||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'common'
@@ -1128,7 +1128,7 @@ exotic: [
     coreSpecs: { size: '27cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'scorpion-mud-turtle', hasPage: true,
     match: function(s){ return (s.large_mud||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.collector_grade||0); },
     availability: 'common'
@@ -1150,7 +1150,7 @@ exotic: [
     coreSpecs: { size: '26cm', temp: '25〜30℃', lifespan: '20〜30年', diet: '雑食（動物食寄り）' },
     extraSpecs: { tankSize: '60〜90cm' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'mccords-snake-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 1; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); },
     availability: 'common'
@@ -1161,7 +1161,7 @@ exotic: [
     coreSpecs: { size: '28cm', temp: '18〜25℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },
     extraSpecs: { tankSize: '60〜90cm' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'collier-snake-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.medium_tank||0)+(s.observational||0)+(s.cool_climate||0)+(s.collector||0); },
     availability: 'common'
