@@ -126,3 +126,108 @@
   text-align: right;
   margin-top: .5rem;
 }
+
+/* ─── Phase 7A: Cost Box ──────────────────────── */
+.sk-cost-box {
+  background: #fff;
+  border: 1.5px solid #e4ddc9;
+  border-radius: 14px;
+  padding: 18px 20px 14px;
+  margin: 0 0 20px;
+  box-shadow: 0 2px 8px rgba(13,31,26,.05);
+}
+.sk-cost-title {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--forest-deep, #0d1f1a);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+.sk-cost-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 16px;
+}
+.sk-cost-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sk-cost-label {
+  font-size: .68rem;
+  color: #8a7a60;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.sk-cost-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--forest, #2f4a3c);
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+.sk-cost-diff {
+  font-size: .88rem;
+}
+.sk-cost-sub {
+  font-size: .65rem;
+  color: #aaa;
+}
+.sk-cost-note {
+  font-size: .68rem;
+  color: #bbb;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ─── Phase 7A: タブUI ──────────────────────── */
+.sk-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #e4ddc9;
+  padding-bottom: 0;
+}
+.sk-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  margin-bottom: -2px;
+  padding: 8px 14px 10px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: .82rem;
+  font-weight: 700;
+  color: #8a7a60;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.sk-tab-btn--active {
+  color: var(--forest, #2f4a3c);
+  border-bottom-color: var(--accent, #d4a96a);
+}
+.sk-tab-btn:hover:not(.sk-tab-btn--active) {
+  color: var(--forest, #2f4a3c);
+}
+.sk-tab-panel[hidden] { display: none; }
+
+.sk-tab-desc {
+  font-size: .8rem;
+  color: #6b7c70;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.sk-empty {
+  font-size: .85rem;
+  color: #aaa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ─── レスポンシブ調整 ─── */
+@media (max-width: 480px) {
+  .sk-cost-grid { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .sk-tab-btn { padding: 7px 10px 9px; font-size: .78rem; }
+  .sk-cost-value { font-size: .92rem; }
+}
