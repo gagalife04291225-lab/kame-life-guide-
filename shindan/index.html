@@ -198,6 +198,25 @@ body {
 .beginner-warn.show { display: block; }
 .beginner-warn strong { color: #f0907e; }
 
+/* ===== PHASE 6-B: おすすめ飼育セット ===== */
+.sk-section { margin-bottom: 16px; }
+.sk-heading { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; padding: 20px 20px 0; }
+.sk-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 16px; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; }
+.sk-scroll::-webkit-scrollbar { display: none; }
+.sk-card { flex: 0 0 180px; scroll-snap-align: start; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.sk-card-badge { font-size: .68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; align-self: flex-start; white-space: nowrap; }
+.sk-badge-best   { background: rgba(74,122,96,.35); border: 1px solid var(--forest-light); color: #8dcba0; }
+.sk-badge-budget { background: rgba(143,95,44,.25); border: 1px solid var(--accent); color: var(--accent-light); }
+.sk-badge-premium{ background: rgba(176,58,46,.2); border: 1px solid var(--danger); color: #e07060; }
+.sk-card-name { font-size: .85rem; color: var(--parchment); line-height: 1.4; font-weight: 600; }
+.sk-card-rating { font-size: .75rem; color: var(--accent-light); }
+.sk-card-price { font-size: .75rem; color: var(--text-muted); }
+.sk-card-btn { display: block; margin-top: auto; padding: 8px 10px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: 8px; color: var(--accent-light); font-size: .78rem; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s; }
+.sk-card-btn:hover { background: rgba(196,154,90,.28); }
+.sk-card-btn--soon { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--text-muted); cursor: default; }
+.sk-cat-label { font-size: .68rem; color: var(--text-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+.sk-disclaimer { font-size: .7rem; color: var(--text-muted); padding: 0 20px 4px; text-align: right; }
+
 /* ===== PHASE 4: note.com誘導 ===== */
 .note-cta { margin-bottom: 16px; }
 .note-link { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: linear-gradient(135deg, rgba(65,179,163,.12), rgba(47,74,60,.3)); border: 1px solid rgba(65,179,163,.25); border-radius: var(--radius); text-decoration: none; color: var(--parchment); transition: background .15s; -webkit-tap-highlight-color: transparent; }
@@ -289,6 +308,8 @@ body {
       <span class="note-arrow">→</span>
     </a>
   </div>
+  <!-- PHASE 6-B: おすすめ飼育セット -->
+  <div id="starter-kit-section" style="display:none"></div>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
     <button class="btn-retry" id="btn-retry">もう一度診断</button>
@@ -322,6 +343,7 @@ body {
 <script src="species.js"></script>
 <script src="routes.js"></script>
 <script src="equipment.js"></script>
+<script src="../data/products.js"></script>
 <script>
 'use strict';
 
@@ -608,6 +630,221 @@ function renderNoteCta(sp) {
   }
 }
 
+// ===== PHASE 6-B: おすすめ飼育セット =====
+
+/**
+ * route.id + sp.size + sp.difficulty → equipmentKey
+ * shindan/species.js には equipmentKey が存在しないため動的に解決する
+ */
+function resolveEquipmentKey(routeId, sp) {
+  var size = (sp.size || '').toUpperCase();
+  var diff = (sp.difficulty || '');
+  var name = (sp.name || '');
+
+  // ── exoticルート（スッポン・マタマタ等）
+  if (routeId === 'exotic') {
+    return 'fully_aquatic';
+  }
+
+  // ── forestルート（ヤマガメ・ハコガメ）
+  if (routeId === 'forest') {
+    // ハコガメ類
+    if (name.indexOf('ハコガメ') >= 0) return 'box_turtle';
+    // ニホンイシガメ・日本産
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    // 半水棲（キボシ・モリイシ等）
+    if (sp.extraSpecs && (sp.extraSpecs.tankSize || '') !== '') return 'semi_aquatic_small';
+    return 'tortoise_forest';
+  }
+
+  // ── aquaticルート（水棲ガメ）
+  if (routeId === 'aquatic') {
+    // 大型種（ミシシッピ・クサガメ等）M以上
+    if (size.indexOf('L') >= 0 || size.indexOf('XL') >= 0) return 'semi_aquatic_medium';
+    // ニホンイシガメ・クサガメ
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    return 'semi_aquatic_small';
+  }
+
+  // ── landルート（リクガメ）
+  if (routeId === 'land') {
+    // XL大型種（ケヅメ・アルダブラ）
+    if (size.indexOf('XL') >= 0) return 'tortoise_dry_large';
+    // 多湿・森林性リクガメ（エロンガータ・アカアシ等）
+    if (name.indexOf('アカアシ') >= 0 || name.indexOf('エロンガータ') >= 0 ||
+        name.indexOf('インプレッサ') >= 0 || name.indexOf('ベルセオレ') >= 0 ||
+        name.indexOf('セオレ') >= 0) return 'tortoise_forest';
+    // 大型L種（ヒョウモン・チャコ・ギリシャ大型等）
+    if (size.indexOf('L（') >= 0) return 'tortoise_dry_large';
+    return 'tortoise_dry_small';
+  }
+
+  // ── allルート（全カテゴリ）→ difficultyで判定
+  if (routeId === 'all') {
+    if (sp.extraSpecs && (sp.extraSpecs.tankSize || '') !== '') return 'semi_aquatic_small';
+    if (name.indexOf('ハコガメ') >= 0) return 'box_turtle';
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    if (name.indexOf('ヤマガメ') >= 0) return 'tortoise_forest';
+    if (size.indexOf('XL') >= 0) return 'tortoise_dry_large';
+    if (size.indexOf('L（') >= 0) return 'tortoise_dry_large';
+    return 'tortoise_dry_small';
+  }
+
+  return null;
+}
+
+/**
+ * カテゴリごとに Best/Budget/Premium の最大3商品を選定
+ * @param {string} equipmentKey
+ * @returns {Array} [{cat, badge, product}, ...]
+ */
+function selectKitProducts(equipmentKey) {
+  if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
+
+  var ids = EQUIPMENT_MAP[equipmentKey];
+  if (!ids) return [];
+
+  // カテゴリ表示順
+  var CAT_ORDER = [
+    'enclosure', 'lighting_uvb', 'lighting_basking',
+    'heating', 'filter', 'substrate', 'shelter',
+    'thermometer', 'food', 'supplements'
+  ];
+
+  // idリストをカテゴリ別にグループ化
+  var byCat = {};
+  ids.forEach(function(id) {
+    var p = PRODUCTS[id];
+    if (!p) return;
+    if (!byCat[p.category]) byCat[p.category] = [];
+    byCat[p.category].push(p);
+  });
+
+  var result = [];
+  var TIER_RANK = { budget: 1, beginner: 1, standard: 2, intermediate: 2, premium: 3 };
+
+  CAT_ORDER.forEach(function(cat) {
+    var items = byCat[cat];
+    if (!items || !items.length) return;
+
+    // ベスト（rating最高）
+    var best = items.reduce(function(a, b) {
+      return (b.rating || 0) > (a.rating || 0) ? b : a;
+    });
+
+    // バジェット（budget/beginner tierでrating最高）
+    var budgetItems = items.filter(function(p) {
+      return p.tier === 'budget' || p.tier === 'beginner';
+    });
+    var budget = budgetItems.length
+      ? budgetItems.reduce(function(a, b) { return (b.rating||0) > (a.rating||0) ? b : a; })
+      : null;
+
+    // プレミアム
+    var premiumItems = items.filter(function(p) { return p.tier === 'premium'; });
+    var premium = premiumItems.length
+      ? premiumItems.reduce(function(a, b) { return (b.rating||0) > (a.rating||0) ? b : a; })
+      : null;
+
+    // 重複除去して最大3枚
+    var seen = {};
+    var picks = [];
+    [
+      { badge: 'Best Overall', product: best },
+      { badge: 'Budget Pick', product: budget },
+      { badge: 'Premium',     product: premium }
+    ].forEach(function(item) {
+      if (!item.product) return;
+      if (seen[item.product.id]) return;
+      seen[item.product.id] = true;
+      picks.push({ cat: cat, badge: item.badge, product: item.product });
+    });
+
+    result = result.concat(picks);
+  });
+
+  return result;
+}
+
+var SK_CAT_LABELS = {
+  enclosure: 'ケージ', lighting_uvb: 'UVB', lighting_basking: 'バスキング',
+  heating: 'ヒーター', filter: 'フィルター', substrate: '床材',
+  shelter: 'シェルター', thermometer: '温湿度計', food: 'フード', supplements: 'サプリ'
+};
+
+function starRating(r) {
+  if (!r) return '';
+  var full  = Math.floor(r);
+  var half  = (r - full) >= 0.5 ? 1 : 0;
+  var empty = 5 - full - half;
+  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty) + ' ' + r.toFixed(1);
+}
+
+/**
+ * 診断結果画面にスターターキットを描画
+ */
+function renderStarterKit(sp) {
+  var sec = document.getElementById('starter-kit-section');
+  if (!sec) return;
+
+  var routeId = selectedRoute ? selectedRoute.id : 'all';
+  var equipKey = sp.equipmentKey || resolveEquipmentKey(routeId, sp);
+
+  if (!equipKey) { sec.style.display = 'none'; return; }
+
+  var picks = selectKitProducts(equipKey);
+  if (!picks.length) { sec.style.display = 'none'; return; }
+
+  // カード生成
+  var cardsHtml = picks.map(function(item) {
+    var p = item.product;
+    var hasUrl = p.affiliateUrl && p.affiliateUrl !== '#';
+    var badgeCls = item.badge === 'Best Overall' ? 'sk-badge-best'
+                 : item.badge === 'Budget Pick'  ? 'sk-badge-budget'
+                 : 'sk-badge-premium';
+    var btnHtml = hasUrl
+      ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
+        ' data-cat="' + p.category + '" data-species="' + sp.name + '" data-asin="' + (p.asin || '') + '">Amazonで見る</a>'
+      : '<span class="sk-card-btn sk-card-btn--soon">近日公開</span>';
+
+    return '<div class="sk-card">' +
+      '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
+      '<span class="sk-card-badge ' + badgeCls + '">' + item.badge + '</span>' +
+      '<div class="sk-card-name">' + p.name + '</div>' +
+      (p.rating ? '<div class="sk-card-rating">' + starRating(p.rating) + '</div>' : '') +
+      '<div class="sk-card-price">' + p.priceRange + '</div>' +
+      btnHtml +
+    '</div>';
+  }).join('');
+
+  sec.innerHTML =
+    '<div class="result-card sk-section" style="padding:0;overflow:hidden;">' +
+      '<div class="sk-heading">おすすめ飼育セット</div>' +
+      '<div class="sk-scroll">' + cardsHtml + '</div>' +
+      '<div class="sk-disclaimer">※Amazonアソシエイトリンクを含みます</div>' +
+    '</div>';
+
+  sec.style.display = '';
+
+  // GA4: kit表示イベント
+  if (typeof ga4Event === 'function') {
+    ga4Event('starter_kit_shown', { species_name: sp.name, equipment_key: equipKey, card_count: picks.length });
+  }
+
+  // GA4: カードクリックイベント
+  sec.querySelectorAll('.sk-card-btn[href]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') {
+        ga4Event('starter_kit_click', {
+          species_name: a.dataset.species,
+          category: a.dataset.cat,
+          asin: a.dataset.asin
+        });
+      }
+    });
+  });
+}
+
 // ===== スタート画面初期化 =====
 function initStart() {
   clearResultUrl();
@@ -855,6 +1092,9 @@ function showResult(sp, pct) {
 
   // ===== PHASE 4: note.com誘導 =====
   renderNoteCta(sp);
+
+  // ===== PHASE 6-B: おすすめ飼育セット =====
+  renderStarterKit(sp);
 
   show('screen-result');
   document.getElementById('res-name').focus();
