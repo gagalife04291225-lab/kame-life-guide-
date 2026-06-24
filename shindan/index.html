@@ -919,7 +919,7 @@ function renderStarterKit(sp) {
       ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
         ' data-cat="' + p.category + '" data-species="' + sp.name +
         '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで詳細を見る</a>'
-      : '<span class="sk-card-btn sk-card-btn--soon">' + (SK_CAT_LABELS[item.cat] || 'この商品') + 'は現在おすすめ商品を選定中です。飼育前に必ず別途ご用意ください。</span>';
+      : '<span class="sk-card-btn sk-card-btn--soon">' + (SK_CAT_LABELS[item.cat] || 'この商品') + 'は選定中です。飼育前に別途ご用意ください。</span>';
 
     return '<div class="sk-card">' +
       '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
