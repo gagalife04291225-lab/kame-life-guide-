@@ -392,7 +392,7 @@ function tryRestoreFromUrl() {
 // ===== スコア%計算 =====
 function calcMatchPercent(sp, currentScores) {
   // 全候補のスコア分布から相対%を算出
-  var candidates = selectedRoute ? selectedRoute.species : [];
+  var candidates = selectedRoute ? selectedRoute.species.filter(function(sp){ return sp.availability !== 'archive'; }) : [];
   var allScores = candidates.map(function(c){ return c.score(currentScores); });
   var minS = Math.min.apply(null, allScores);
   var maxS = Math.max.apply(null, allScores);
@@ -709,7 +709,7 @@ function calcResult() {
   fill.style.width = '100%';
   fill.parentElement.setAttribute('aria-valuenow', 100);
 
-  var candidates = selectedRoute.species;
+  var candidates = selectedRoute.species.filter(function(sp){ return sp.availability !== 'archive'; });
   var matched = candidates.filter(function(sp){ return sp.match(scores); });
   // 安全fallback: conditional_invasive・難易度「上級」単体・XLサイズを除外
   var safeFallback = candidates.filter(function(sp){
