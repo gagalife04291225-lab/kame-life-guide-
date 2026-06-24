@@ -283,7 +283,7 @@ aquatic: [
     coreSpecs: { size: '12cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'striped-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -360,7 +360,7 @@ aquatic: [
     coreSpecs: { size: '30cm', temp: '22〜28℃', lifespan: '30〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'red-eared-slider', hasPage: true,
     match: function(s){ return (s.large_tank||0) >= 1 && (s.beginner||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.beginner||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -448,7 +448,7 @@ aquatic: [
     coreSpecs: { size: '37cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'peninsula-cooter', hasPage: true,
     match: function(s){ return (s.large_tank||0) >= 2 && (s.active||0) >= 2; },
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -492,7 +492,7 @@ aquatic: [
     coreSpecs: { size: '20cm', temp: '16〜26℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'european-pond-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.eu_water||0)+(s.cool_climate||0); },
     availability: 'common'
@@ -591,7 +591,7 @@ aquatic: [
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60〜90cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'chinese-stripe-necked-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.beauty||0)+(s.active||0)+(s.asia_water||0)+(s.cool_climate||0)+(s.mainstream||0); },
     availability: 'common'
@@ -602,7 +602,7 @@ aquatic: [
     coreSpecs: { size: '12cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30〜45cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'eastern-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.mud_lover||0)+(s.observational||0)+(s.na_water||0)+(s.warm_climate||0)+(s.mainstream||0); },
     availability: 'common'
@@ -613,7 +613,7 @@ aquatic: [
     coreSpecs: { size: '28cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（幼体肉食寄り）' },
     extraSpecs: { tankSize: '60〜90cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'cumberland-slider', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -680,7 +680,7 @@ aquatic: [
     coreSpecs: { size: '12cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30〜45cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'florida-mud-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.beginner||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.mud_lover||0)+(s.observational||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
@@ -691,7 +691,7 @@ aquatic: [
     coreSpecs: { size: '14cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30〜45cm' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'loggerhead-musk-turtle', hasPage: true,
     match: function(s){ return (s.small_tank||0) >= 2 && (s.observational||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0)+(s.intermediate||0); },
     availability: 'common'
@@ -739,7 +739,7 @@ forest: [
     coreSpecs: { size: '12cm', temp: '18〜25℃', lifespan: '20〜50年', diet: '雑食' },
     extraSpecs: {},
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: null, hasPage: false,
+    slug: 'spotted-turtle', hasPage: true,
     match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); },
     availability: 'common'
