@@ -191,6 +191,22 @@
   .species-nav-link .snl-text{min-width:0;}
   .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;line-height:1.3;}
   @media(max-width:400px){.species-nav-grid{grid-template-columns:1fr;}}
+
+  /* Phase 7 Task 2: Decision Boxes */
+  .decision-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 0;}
+  @media(max-width:520px){.decision-wrap{grid-template-columns:1fr;}}
+  .decision-box{border-radius:14px;padding:18px 18px 16px;}
+  .decision-box-best{background:#f0faf2;border:1.5px solid #81c784;}
+  .decision-box-avoid{background:#fafafa;border:1.5px solid #e0e0e0;}
+  .decision-box-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+  .decision-box-best .decision-box-title{color:#2e7d32;}
+  .decision-box-avoid .decision-box-title{color:#757575;}
+  .decision-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .decision-list li{font-size:.88rem;line-height:1.55;color:#3a4a40;}
+  .decision-box-avoid .decision-list li{color:#5a5a5a;}
+  .diff-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
+  .diff-badge-stars{color:var(--accent);letter-spacing:.05em;}
+  .diff-badge-label{color:#8a7a60;font-weight:400;font-size:.75rem;margin-left:4px;}
 </style>
 </head>
 <body>
@@ -241,6 +257,20 @@
   </div>
 </div>
 
+
+<div class="wrap" style="margin-top:12px;">
+  <div class="diff-badge">難易度 <span class="diff-badge-stars">★☆☆☆☆</span><span class="diff-badge-label">入門</span></div>
+  <div class="decision-wrap">
+    <div class="decision-box decision-box-best">
+      <div class="decision-box-title">この亀が向いている人</div>
+      <ul class="decision-list"><li>✓ 超小型（10〜12cm）の水棲ガメを探している</li><li>✓ 省スペース・少ない水量で飼育したい</li><li>✓ おとなしくハンドリングしやすい種を希望</li><li>✓ 配合飼料に慣れやすい丈夫な種</li></ul>
+    </div>
+    <div class="decision-box decision-box-avoid">
+      <div class="decision-box-title">この亀が向いていない人</div>
+      <ul class="decision-list"><li>✗ 活発な泳ぎを観察したい方（底生傾向が強い）</li><li>✗ 大型化を楽しみたい方</li><li>✗ 複数飼育を希望（縄張り意識あり）</li></ul>
+    </div>
+  </div>
+</div>
 <nav class="crumbs">
   <div class="wrap">
     <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ミシシッピドロガメ
