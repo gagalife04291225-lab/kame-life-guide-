@@ -1,6 +1,6 @@
 /**
  * Kame Life Guide - Amazon Product Database
- * Phase 6-B Task 2: 28 → 83 products
+ * Phase 6-C Task 1: 28 → 87 products
  *
  * Schema v2 additions:
  *   rating          {number}   - 5点満点レーティング
