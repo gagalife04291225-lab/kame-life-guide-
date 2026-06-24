@@ -155,9 +155,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: null, hasPage: false,
-    match: function(s){ return (s.dry||0) >= 2 && (s.advanced||0) >= 2 && (s.charisma||0) >= 2; },
-    score: function(s){ return (s.dry||0)+(s.advanced||0)+(s.charisma||0)*2+(s.collector||0)+(s.herbivore||0)+(s.tropical_climate||0); }
-    score: function(s){ return (s.dry||0)+(s.advanced||0)+(s.charisma||0)*2+(s.collector||0)+(s.herbivore||0)+(s.tropical_climate||0); },
+    match: function(){ return false; },
+    score: function(){ return -9999; },
     availability: 'archive'
   },
   { name: 'ビルマホシガメ', latin: 'Geochelone platynota', emoji: '🌟', difficulty: '上級', size: 'M（28〜35cm）', cites: 'CITES I', legal: 'cites_i',
@@ -167,9 +166,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: null, hasPage: false,
-    match: function(s){ return (s.dry||0) >= 2 && (s.advanced||0) >= 3 && (s.expert||0) >= 1; },
-    score: function(s){ return (s.dry||0)+(s.advanced||0)+(s.charisma||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); }
-    score: function(s){ return (s.dry||0)+(s.advanced||0)+(s.charisma||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); },
+    match: function(){ return false; },
+    score: function(){ return -9999; },
     availability: 'archive'
   },
   { name: 'エジプトリクガメ', latin: 'Testudo kleinmanni', emoji: '🏺', difficulty: '上級', size: 'S（10〜13cm）', cites: 'CITES I', legal: 'cites_i',
@@ -179,9 +177,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: null, hasPage: false,
-    match: function(s){ return (s.compact||0) >= 3 && (s.dry||0) >= 3 && (s.advanced||0) >= 3; },
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0)+(s.small_form||0); }
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0)+(s.small_form||0); },
+    match: function(){ return false; },
+    score: function(){ return -9999; },
     availability: 'archive'
   },
   { name: 'ソリガメ', latin: 'Chersina angulata', emoji: '🔱', difficulty: '上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
@@ -213,9 +210,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: null, hasPage: false,
-    match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 3 && (s.expert||0) >= 1; },
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.expert||0)+(s.ultra_rare||0)*3+(s.collector||0)+(s.charisma||0)+(s.small_form||0); }
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.expert||0)+(s.ultra_rare||0)*3+(s.collector||0)+(s.charisma||0)+(s.small_form||0); },
+    match: function(){ return false; },
+    score: function(){ return -9999; },
     availability: 'archive'
   },
   { name: 'イベラギリシャリクガメ', latin: 'Testudo graeca ibera', emoji: '🪨', difficulty: '中〜上級', size: 'M（20〜30cm）', cites: 'CITES II', legal: 'cites_ii',
@@ -636,9 +632,8 @@ aquatic: [
     extraSpecs: { tankSize: '45〜60cm' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: null, hasPage: false,
-    match: function(s){ return (s.small_tank||0) >= 1 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1; },
-    score: function(s){ return (s.small_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.collector||0)+(s.cool_climate||0); }
-    score: function(s){ return (s.small_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.collector||0)+(s.cool_climate||0); },
+    match: function(){ return false; },
+    score: function(){ return -9999; },
     availability: 'archive'
   },
   { name: 'アラバマチズガメ', latin: 'Graptemys pulchra', emoji: '💎', difficulty: '中〜上級', size: 'M（オス10cm/メス25cm）', cites: null, legal: null,
