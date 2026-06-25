@@ -36,6 +36,22 @@ nav.crumbs a{color:var(--accent);text-decoration:none;}
 .verdict-item{font-size:.97rem;font-weight:700;line-height:1.45;}
 .verdict-item .arrow{color:var(--accent);margin-right:4px;}
 .verdict-reason{font-size:.85rem;color:rgba(217,224,214,.7);margin-top:12px;line-height:1.7;}
+  /* Winner Badges */
+  .winner-badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;}
+  .wb-group{display:flex;flex-direction:column;gap:6px;flex:1;min-width:140px;}
+  .wb-species{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-dark);font-weight:700;margin-bottom:2px;}
+  .wb-badge{display:inline-flex;align-items:center;gap:5px;
+    padding:5px 13px 5px 10px;border-radius:20px;font-size:.78rem;font-weight:700;
+    letter-spacing:.02em;line-height:1.2;width:fit-content;}
+  .wb-badge.gold{background:linear-gradient(110deg,#d4a96a 0%,#c08a40 100%);color:#fff;}
+  .wb-badge.silver{background:linear-gradient(110deg,#e8e2d6 0%,#cfc6b4 100%);color:#4a3e2a;}
+  .wb-badge.teal{background:linear-gradient(110deg,#2f6a5a 0%,#1e4a3a 100%);color:#e6f0ec;}
+  .wb-badge .wb-icon{font-size:.85rem;}
+  @media(max-width:520px){
+    .winner-badges{flex-direction:column;gap:14px;}
+    .wb-group{min-width:unset;}
+  }
 /* Comparison table */
 .cmp-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1.5px solid #e4ddc9;margin:20px 0;}
 .cmp-table{width:100%;border-collapse:collapse;min-width:380px;font-size:.9rem;}
@@ -96,6 +112,19 @@ footer a{color:var(--accent);text-decoration:none;}
 <div class="article"><div class="wrap">
 
   <p>クサガメとニホンイシガメは、日本でなじみ深い水棲ガメの代表種です。どちらも丈夫で飼育しやすい面がありますが、入手のしやすさ・保全状況・成長後のサイズに違いがあります。屋外飼育を検討している方も、地域と温度管理に注意が必要です。</p>
+
+
+  <div class="winner-badges" aria-label="受賞バッジ">
+    <div class="wb-group">
+      <div class="wb-species">クサガメ</div>
+      <span class="wb-badge gold"><span class="wb-icon">🏆</span>Best Overall</span>
+      <span class="wb-badge gold"><span class="wb-icon">🌱</span>Best for Beginners</span>
+    </div>
+    <div class="wb-group">
+      <div class="wb-species">ニホンイシガメ</div>
+      <span class="wb-badge teal"><span class="wb-icon">🌿</span>Best for Outdoor / Natural Setup</span>
+    </div>
+  </div>
 
   <h2>どっちが向いている？ 3秒で判断</h2>
   <div class="verdict-box">
