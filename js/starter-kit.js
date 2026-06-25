@@ -297,6 +297,7 @@ function initSkTabs(root, species) {
           tab_type:      meta.tab_type      || '',
           selected_tier: meta.selected_tier || '',
           species_name:  (species && species.name)         || '',
+          species:       (species && species.name)         || '',
           equipment_key: (species && species.equipmentKey) || '',
         });
         // 追加イベント
@@ -333,6 +334,7 @@ function mountStarterKit(species, mountId) {
     var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
     gtag('event', 'starter_kit_shown', {
       species_name:  species.name || '',
+      species:       species.name || '',
       equipment_key: species.equipmentKey,
       card_count:    essentialPicks.length,
     });
@@ -345,6 +347,7 @@ function mountStarterKit(species, mountId) {
         // 既存イベント（維持）
         gtag('event', 'starter_kit_click', {
           species_name:  a.dataset.species,
+          species:       a.dataset.species,
           category:      a.dataset.cat,
           asin:          a.dataset.asin,
           selected_tier: a.dataset.tier,
