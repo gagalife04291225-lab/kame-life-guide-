@@ -231,3 +231,150 @@
   .sk-tab-btn { padding: 7px 10px 9px; font-size: .78rem; }
   .sk-cost-value { font-size: .92rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Phase 7-C Step 1-C: Visual Polish
+   ─────────────────────────────────────────────────────────── */
+
+/* ─── 1. sk-hint（不安除去コピー） ─────────────────────────── */
+.sk-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0faf2;
+  border-left: 3px solid var(--accent, #d4a96a);
+  border-radius: 0 8px 8px 0;
+  padding: 11px 16px;
+  margin: 18px 0 4px;
+  font-size: .82rem;
+  color: var(--forest, #2f4a3c);
+  line-height: 1.6;
+}
+.sk-hint strong {
+  color: var(--forest, #2f4a3c);
+  font-weight: 700;
+}
+
+/* ─── 2. Standard タブ強調 ──────────────────────────────────── */
+
+/* 推奨タブに相対位置を与えバッジの土台に */
+.sk-tab-btn--recommended {
+  position: relative;
+  color: var(--forest, #2f4a3c);
+  padding-right: 18px; /* バッジ分の余白 */
+}
+
+/* 「おすすめ」バッジ */
+.sk-tab-rec-badge {
+  display: inline-block;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--accent, #d4a96a);
+  color: #fff;
+  border-radius: 999px;
+  padding: 1px 6px;
+  margin-left: 5px;
+  vertical-align: middle;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* 推奨タブ アクティブ時のアンダーライン強調 */
+.sk-tab-btn--recommended.sk-tab-btn--active {
+  color: var(--forest, #2f4a3c);
+  border-bottom-color: var(--accent, #d4a96a);
+}
+.sk-tab-btn--recommended.sk-tab-btn--active .sk-tab-rec-badge {
+  background: var(--forest, #2f4a3c);
+}
+
+/* ─── 3. カード tier 差の視覚化 ─────────────────────────────── */
+
+/* Budget: ミニマム・控えめ */
+.sk-card--budget {
+  border-color: rgba(0,0,0,.07);
+  box-shadow: none;
+}
+.sk-card--budget .sk-card-btn {
+  background: #b89458;
+  opacity: .9;
+}
+.sk-card--budget .sk-card-btn:hover { background: #9a7840; opacity: 1; }
+
+/* Standard: Best choice 感。フレームを際立たせる */
+.sk-card--standard {
+  border: 1.5px solid var(--accent, #d4a96a);
+  box-shadow: 0 4px 14px rgba(212,169,106,.18);
+  transform: translateY(-1px);
+  background: #fffef9;
+}
+.sk-card--standard .sk-card-btn {
+  background: var(--accent, #d4a96a);
+  font-size: .82rem;
+  padding: 9px 10px;
+}
+.sk-card--standard .sk-card-btn:hover { background: var(--accent-dark, #a8803e); }
+.sk-card--standard .sk-card-price {
+  font-size: .8rem;
+  color: var(--forest, #2f4a3c);
+  font-weight: 700;
+}
+
+/* Premium: ハイエンド感。落ち着いた紫みでの上品さ */
+.sk-card--premium {
+  border-color: #c8b0d8;
+  box-shadow: 0 2px 10px rgba(106,27,154,.08);
+}
+.sk-card--premium .sk-card-btn {
+  background: #5c3d7a;
+}
+.sk-card--premium .sk-card-btn:hover { background: #3e2852; }
+.sk-card--premium .sk-card-badge { letter-spacing: .03em; }
+
+/* ─── 4. 商品カード視認性改善 ──────────────────────────────── */
+
+/* カード幅を少し広げ余白確保 */
+.sk-card {
+  flex: 0 0 210px;
+  gap: 8px;
+  padding: 15px 14px 13px;
+}
+
+/* カードホバー */
+.sk-card:hover {
+  box-shadow: 0 6px 18px rgba(13,31,26,.1);
+  transform: translateY(-2px);
+  transition: box-shadow .18s, transform .18s;
+}
+/* Standard はホバーで元の elevation を維持 */
+.sk-card--standard:hover {
+  box-shadow: 0 7px 20px rgba(212,169,106,.22);
+  transform: translateY(-3px);
+}
+
+/* 価格ヒエラルキー強化 */
+.sk-card-price {
+  font-size: .78rem;
+  font-weight: 600;
+  color: #666;
+}
+
+/* CTAタップターゲット拡大（モバイル） */
+.sk-card-btn {
+  padding: 9px 10px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── 5. レスポンシブ調整追加 ───────────────────────────────── */
+@media (max-width: 480px) {
+  .sk-card { flex: 0 0 190px; }
+  .sk-hint { font-size: .79rem; padding: 10px 14px; }
+  .sk-tab-rec-badge { font-size: .55rem; }
+  .sk-card--standard { transform: none; } /* モバイルでは浮かせない */
+  .sk-card--standard:hover { transform: none; }
+  .sk-card:hover { transform: none; } /* モバイルでhoverアニメなし */
+}
