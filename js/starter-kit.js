@@ -166,6 +166,54 @@ function renderCostBox(picks, opts) {
   '</div>';
 }
 
+
+/**
+ * Price Anchor HTML 生成（タブパネル内）
+ * 各tierのpicksから合計推定額と「まとめ割引」を表示
+ */
+function renderPriceAnchor(picks, tier) {
+  if (!picks || !picks.length) return '';
+
+  // 合計（中央値で推定）
+  var totalLow = 0, totalHigh = 0;
+  picks.forEach(function(item) {
+    var r = parsePriceRange(item.product.priceRange);
+    totalLow  += r.low;
+    totalHigh += r.high;
+  });
+  if (!totalLow && !totalHigh) return '';
+
+  var midpoint = Math.round((totalLow + totalHigh) / 2 / 100) * 100;
+  if (!midpoint) midpoint = totalLow || totalHigh;
+
+  // tier別 割引率（あくまで目安表示）
+  var discountRate = tier === 'premium' ? 0.10 : tier === 'budget' ? 0.00 : 0.12;
+  var kitEstimate  = Math.round(midpoint * (1 - discountRate) / 100) * 100;
+  var saving       = midpoint - kitEstimate;
+
+  var indiv = '約' + fmtYen(midpoint);
+  var kit   = '約' + fmtYen(kitEstimate);
+  var save  = saving > 0 ? '約' + fmtYen(saving) + 'お得' : '—';
+
+  return '<div class="sk-price-anchor" aria-label="価格目安">' +
+    '<div class="sk-pa-row sk-pa-indiv">' +
+      '<span class="sk-pa-label">個別にそろえると</span>' +
+      '<span class="sk-pa-val">' + indiv + '</span>' +
+    '</div>' +
+    '<div class="sk-pa-row sk-pa-kit">' +
+      '<span class="sk-pa-label">スターター構成目安</span>' +
+      '<span class="sk-pa-val sk-pa-val--kit">' + kit + '</span>' +
+    '</div>' +
+    (saving > 0
+      ? '<div class="sk-pa-row sk-pa-save">' +
+          '<span class="sk-pa-save-badge">差額目安</span>' +
+          '<span class="sk-pa-save-val">' + save + '</span>' +
+        '</div>'
+      : '') +
+    '<p class="sk-pa-note">※各商品の参考価格帯から算出した目安です。Amazon実売価格は変動します。</p>' +
+  '</div>';
+}
+
 /**
  * カード1枚のHTML
  */
@@ -216,6 +264,7 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
     (tabDef.id !== 'essential' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
+    renderPriceAnchor(picks, tabDef.tiers[0]) +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
 }
