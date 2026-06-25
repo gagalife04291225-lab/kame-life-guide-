@@ -63,6 +63,107 @@ function _skDisplayCat(cat) {
   return SK_DISPLAY_CAT_MAP[cat] || _skStr(cat);
 }
 
+
+// ── Phase 10-D Step 2: GA4 Debug Panel ──────────────────────
+(function () {
+  var _debugEnabled = (
+    typeof window !== 'undefined' &&
+    /[?&]debug_ga=1/.test(window.location.search)
+  );
+
+  if (!_debugEnabled) {
+    // no-op stub: zero cost for normal users
+    window.KAME_GA_DEBUG_LOG = function () {};
+    return;
+  }
+
+  // ── Panel DOM ────────────────────────────────────────────
+  var _panel, _list, _count = 0;
+  var MAX_ROWS = 10;
+
+  function _buildPanel() {
+    if (_panel) return;
+
+    // Inject minimal CSS
+    var style = document.createElement('style');
+    style.textContent = [
+      '#kame-ga-debug{position:fixed;bottom:0;left:0;right:0;z-index:99999;',
+      'background:rgba(13,20,16,.95);color:#d4f0d4;font:11px/1.4 monospace;',
+      'max-height:220px;overflow:hidden;border-top:2px solid #4caf50;',
+      'box-shadow:0 -4px 20px rgba(0,0,0,.5);}',
+      '#kame-ga-debug-hdr{display:flex;align-items:center;justify-content:space-between;',
+      'padding:5px 10px;background:rgba(0,0,0,.4);border-bottom:1px solid #2a4a2a;',
+      'font-size:10px;letter-spacing:.08em;color:#6fcf6f;font-weight:700;}',
+      '#kame-ga-debug-list{overflow-y:auto;max-height:170px;padding:4px 0;}',
+      '.kgd-row{display:flex;gap:8px;padding:3px 10px;border-bottom:1px solid rgba(76,175,80,.12);',
+      'font-size:10.5px;align-items:flex-start;transition:background .15s;}',
+      '.kgd-row:hover{background:rgba(76,175,80,.08);}',
+      '.kgd-row:first-child{background:rgba(76,175,80,.12);}',
+      '.kgd-n{flex-shrink:0;color:#aaa;min-width:18px;text-align:right;}',
+      '.kgd-ev{flex-shrink:0;color:#f0c060;font-weight:700;min-width:170px;}',
+      '.kgd-pl{color:#9ef0ae;word-break:break-all;white-space:pre-wrap;}',
+    ].join('');
+    document.head.appendChild(style);
+
+    _panel = document.createElement('div');
+    _panel.id = 'kame-ga-debug';
+
+    var hdr = document.createElement('div');
+    hdr.id = 'kame-ga-debug-hdr';
+    hdr.innerHTML =
+      '<span>🐢 KAME GA DEBUG</span>' +
+      '<span style="color:#f0c060">?debug_ga=1 — 最新10件表示</span>' +
+      '<button onclick="document.getElementById('kame-ga-debug').remove()" ' +
+        'style="background:none;border:1px solid #4caf50;color:#4caf50;' +
+        'cursor:pointer;padding:1px 7px;border-radius:3px;font-size:10px;">✕ 閉じる</button>';
+
+    _list = document.createElement('div');
+    _list.id = 'kame-ga-debug-list';
+
+    _panel.appendChild(hdr);
+    _panel.appendChild(_list);
+
+    // append when DOM is ready
+    if (document.body) {
+      document.body.appendChild(_panel);
+    } else {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.appendChild(_panel);
+      });
+    }
+  }
+
+  // ── Public logger ─────────────────────────────────────────
+  window.KAME_GA_DEBUG_LOG = function (eventName, payload) {
+    _buildPanel();
+    _count++;
+
+    // compact JSON: max 120 chars per row
+    var raw = JSON.stringify(payload, null, 0);
+    var compact = raw.length > 200 ? raw.slice(0, 197) + '…}' : raw;
+
+    var row = document.createElement('div');
+    row.className = 'kgd-row';
+    row.innerHTML =
+      '<span class="kgd-n">' + _count + '</span>' +
+      '<span class="kgd-ev">' + eventName + '</span>' +
+      '<span class="kgd-pl">' + compact + '</span>';
+
+    // prepend (newest first)
+    if (_list.firstChild) {
+      _list.insertBefore(row, _list.firstChild);
+    } else {
+      _list.appendChild(row);
+    }
+
+    // trim to MAX_ROWS
+    while (_list.children.length > MAX_ROWS) {
+      _list.removeChild(_list.lastChild);
+    }
+  };
+
+})();
+
 var SK_CAT_LABELS_PAGE = {
   enclosure:        '飼育ケージ',
   lighting_uvb:     'UVBライト',
@@ -344,6 +445,10 @@ function initSkTabs(root, species) {
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
         });
+        window.KAME_GA_DEBUG_LOG('starter_kit_tab', {
+          tab_type: meta.tab_type, selected_tier: meta.selected_tier,
+          species: _skStr(species && species.name), page_path: _skPagePath(),
+        });
         // 追加イベント
         gtag('event', 'starter_kit_tier_click', {
           tab_id:           target,
@@ -353,6 +458,10 @@ function initSkTabs(root, species) {
           equipment_key:    _skStr(species && species.equipmentKey),
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
+        });
+        window.KAME_GA_DEBUG_LOG('starter_kit_tier_click', {
+          tab_type: meta.tab_type, selected_tier: meta.selected_tier,
+          species: _skStr(species && species.name), page_path: _skPagePath(),
         });
       }
     });
@@ -387,6 +496,10 @@ function mountStarterKit(species, mountId) {
       card_count:       essentialPicks.length,
       page_path:        _skPagePath(),
       affiliate_platform: 'amazon',
+    });
+    window.KAME_GA_DEBUG_LOG('starter_kit_shown', {
+      species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
+      page_path: _skPagePath(),
     });
   }
 
@@ -444,6 +557,18 @@ function mountStarterKit(species, mountId) {
             affiliate_platform: 'amazon',
           });
         }
+        // Debug log: 1 entry per click (summary)
+        window.KAME_GA_DEBUG_LOG('starter_kit_click', {
+          species: _skStr(a.dataset.species),
+          category: _skStr(a.dataset.cat),
+          display_category: a.dataset.displayCat || _skDisplayCat(a.dataset.cat),
+          asin: a.dataset.asin || null,
+          selected_tier: _skStr(a.dataset.tier),
+          tab_type: (_tabCtrl && _tabCtrl.getMeta) ? (_tabCtrl.getMeta().tab_type || 'unknown') : 'unknown',
+          product_id: _skStr(a.dataset.productId),
+          page_path: _skPagePath(),
+          affiliate_platform: 'amazon',
+        });
       }
     });
   });
