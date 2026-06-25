@@ -49,21 +49,25 @@
     return (typeof window !== 'undefined' && window.location && window.location.pathname)
       ? window.location.pathname : 'unknown';
   }
-  function _affStr(v) {
-    return (v && typeof v === 'string' && v.trim() !== '') ? v.trim() : 'unknown';
-  }
 
   function fireAffiliateEvent(slug, labelText, productId, href, placement) {
     if (typeof gtag !== 'function') return;
     gtag('event', 'affiliate_cta_click', {
-      species:            slug       || null,
-      cta_label:          labelText  || null,
-      product_id:         productId  || null,
-      destination:        href       || null,
-      placement:          placement  || 'unknown',
+      species:            slug      || null,
+      cta_label:          labelText || null,
+      product_id:         productId || null,
+      destination:        href      || null,
+      placement:          placement || 'unknown',
       page_path:          _affPagePath(),
       affiliate_platform: 'amazon',
     });
+    if (typeof window.KAME_GA_DEBUG_LOG === 'function') {
+      window.KAME_GA_DEBUG_LOG('affiliate_cta_click', {
+        species: slug || null, cta_label: labelText || null,
+        product_id: productId || null, placement: placement || 'unknown',
+        page_path: _affPagePath(), affiliate_platform: 'amazon',
+      });
+    }
   }
 
   /* ── patch btn-amz ────────────────────────────────── */
