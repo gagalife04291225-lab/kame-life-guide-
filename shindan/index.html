@@ -519,6 +519,8 @@ body {
 // ===== 状態変数 =====
 var selectedRoute = null;
 var currentQuestionIndex = 0;
+var _viewedSteps = {};        // Phase 9-C: step view dedup
+var _diagnosisCompleted = false; // Phase 9-C: exit guard
 var scores = {};
 var result = null;
 var resultScore = 0;
@@ -653,7 +655,7 @@ function buildEmotionCopy(sp, equipKey) {
   (function() {
     var wrap = document.getElementById('res-match-badge-wrap');
     if (!wrap) return;
-    var pctVal = (pct && pct >= 40) ? pct : 88;
+    var pctVal = Math.max(75, (pct && pct >= 40) ? pct : 88);
     wrap.innerHTML =
       '<div class="res-match-badge"><span class="badge-icon">🎯</span>適合度 ' + pctVal + '%</div>';
   })();
@@ -1359,6 +1361,16 @@ function startQuizWithRoute(id) {
 function showQuestion() {
   var route = selectedRoute;
   var q = route.questions[currentQuestionIndex];
+  // Phase 9-C: step view tracking (dedup)
+  if (!_viewedSteps[currentQuestionIndex]) {
+    _viewedSteps[currentQuestionIndex] = true;
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_step_view', {
+        step: currentQuestionIndex + 1,
+        question_id: (route.id || '') + '_q' + (currentQuestionIndex + 1)
+      });
+    }
+  }
   var total = route.questions.length;
   var pct = Math.round((currentQuestionIndex / total) * 100);
 
@@ -1403,6 +1415,14 @@ function selectChoice(choice, clickedBtn) {
   allBtns.forEach(function(b){ b.disabled = true; });
   if (clickedBtn) clickedBtn.classList.add('selected');
   setTimeout(function(){
+    // Phase 9-C: answer tracking
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_answer_select', {
+        step: currentQuestionIndex + 1,
+        question_id: (selectedRoute ? selectedRoute.id : '') + '_q' + (currentQuestionIndex + 1),
+        answer_id: choice.label || String(currentQuestionIndex + 1)
+      });
+    }
     answerHistory.push({ questionIndex: currentQuestionIndex, scores: choice.scores });
     Object.entries(choice.scores).forEach(function(entry){
       scores[entry[0]] = (scores[entry[0]] || 0) + entry[1];
@@ -1418,6 +1438,7 @@ function selectChoice(choice, clickedBtn) {
 
 // ===== 結果計算 =====
 function calcResult() {
+  _diagnosisCompleted = true; // Phase 9-C: exit guard
   var fill = document.getElementById('progress-fill');
   fill.style.width = '100%';
   fill.parentElement.setAttribute('aria-valuenow', 100);
@@ -1832,6 +1853,21 @@ function openTwitter(text, url) {
 if (!tryRestoreFromUrl()) {
   initStart();
 }
+
+// Phase 9-C: abandonment tracking
+(function() {
+  window.addEventListener('pagehide', function() {
+    if (_diagnosisCompleted) return;
+    if (!selectedRoute || currentQuestionIndex < 1) return;
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_step_exit', {
+        step: currentQuestionIndex + 1,
+        question_id: (selectedRoute.id || '') + '_q' + (currentQuestionIndex + 1),
+        completed: false
+      });
+    }
+  });
+})();
 </script>
 </body>
 </html>
