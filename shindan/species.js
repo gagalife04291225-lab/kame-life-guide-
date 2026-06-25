@@ -1095,6 +1095,17 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.budget_low||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
+  { name: 'ヒメハコヨコクビガメ', latin: 'Pelusios castaneus', emoji: '🌊', difficulty: '中級', size: 'M（15〜25cm）', cites: null, legal: null,
+    reason: '西アフリカ〜中央アフリカの湿地に分布する曲頸類。腹甲に蝶番を持つハコヨコクビガメ属。水棲寄りだが陸場も使い、ろ過と陸場設計が飼育の鍵。丈夫な体質で実飼育例あり。',
+    specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '26〜28℃', '難易度': '★★★' },
+    coreSpecs: { size: '25cm', temp: '26〜28℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
+    extraSpecs: { tankSize: '60cm〜', uvb: 'UVB 1.0〜2.0' },
+    links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
+    slug: 'west-african-mud-turtle', hasPage: true,
+    match: function(s){ return (s.snakeneck||0) >= 1 && (s.intermediate||0) >= 1; },
+    score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.budget_low||0)+(s.accessible||0); },
+    availability: 'rare'
+  },
   { name: 'ヒラリーカエルガメ', latin: 'Phrynops hilarii', emoji: '🐸', difficulty: '上級', size: 'L（30〜40cm）', cites: null, legal: null,
     reason: '南米産曲頸類で流通量が多く、飼育もしやすい入門的曲頸種。下顎のヒゲ状突起がユーモラス。大型になるが水質・水温への許容範囲が広い。2025CB流通確認済み。',
     specs: { '最大甲長': '40cm', '水槽サイズ': '90cm〜', '水温': '20〜28℃', '難易度': '★★★' },
