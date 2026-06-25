@@ -1521,6 +1521,158 @@
     .gl-heading{font-size:1.3rem;}
     .gl-card{padding:22px 18px 20px;border-radius:16px;}
   }
+  /* ===== Phase 11 Step 1H: Concierge Launch CTA ===== */
+
+  /* ── ce-cta-box (compare-engine内CTA) ── */
+  .ce-cta-box{
+    background:rgba(13,31,26,.96);
+    border:1px solid rgba(212,169,106,.28);
+    border-radius:16px;
+    padding:28px 28px 26px;
+    margin-top:28px;
+    text-align:center;
+  }
+  .ce-cta-box p{
+    font-size:.92rem;
+    color:rgba(217,224,214,.85);
+    margin-bottom:18px;
+    line-height:1.7;
+  }
+  .ce-cta-box p strong{color:var(--accent);}
+  .ce-cta-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);
+    color:var(--forest-deep);
+    text-decoration:none;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:.95rem;
+    padding:13px 32px;border-radius:10px;
+    transition:background .18s,transform .14s;
+  }
+  .ce-cta-btn:hover{background:#e0c089;transform:translateY(-1px);}
+
+  /* ── concierge-launch (page-bottom final CTA) ── */
+  section.concierge-launch{
+    background:var(--forest-deep);
+    padding:88px 0 80px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  section.concierge-launch::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 55% at 30% 90%,rgba(47,74,60,.55) 0%,transparent 60%),
+      radial-gradient(ellipse 60% 50% at 75% 10%,rgba(212,169,106,.09) 0%,transparent 55%);
+    pointer-events:none;
+  }
+  section.concierge-launch .wrap{position:relative;z-index:1;}
+  .cl-eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(212,169,106,.12);
+    border:1px solid rgba(212,169,106,.35);
+    color:var(--accent);
+    font-size:.7rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    padding:5px 16px 5px 12px;border-radius:40px;
+    margin-bottom:28px;
+  }
+  .cl-eyebrow::before{
+    content:"";display:inline-block;
+    width:6px;height:6px;
+    background:var(--accent);border-radius:50%;
+    animation:h3-pulse 2s ease-in-out infinite;
+  }
+  .cl-heading{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:clamp(1.65rem,4.5vw,2.3rem);
+    color:#fff;
+    line-height:1.25;
+    margin-bottom:10px;
+    letter-spacing:-.01em;
+  }
+  .cl-heading em{
+    font-style:normal;
+    background:linear-gradient(95deg,var(--accent) 0%,#edd27e 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .cl-sub{
+    font-size:.92rem;
+    color:rgba(217,224,214,.7);
+    max-width:480px;
+    margin:0 auto 36px;
+    line-height:1.8;
+  }
+  /* promise chips */
+  .cl-chips{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:40px;
+  }
+  .cl-chip{
+    display:inline-flex;align-items:center;gap:5px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    color:rgba(217,224,214,.9);
+    font-size:.78rem;font-weight:700;
+    padding:6px 16px;border-radius:20px;
+    letter-spacing:.02em;
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+  .cl-chip::before{content:"✓";color:var(--accent);font-size:.75rem;}
+  /* primary CTA */
+  .cl-cta-primary{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--accent);
+    color:var(--forest-deep);
+    text-decoration:none;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:1.12rem;
+    padding:18px 48px;border-radius:50px;
+    box-shadow:0 6px 28px rgba(212,169,106,.42);
+    transition:background .2s,transform .15s,box-shadow .2s;
+    letter-spacing:.02em;
+    margin-bottom:18px;
+    display:inline-flex;
+  }
+  .cl-cta-primary:hover{
+    background:#e0c089;
+    transform:translateY(-2px);
+    box-shadow:0 10px 36px rgba(212,169,106,.55);
+  }
+  .cl-cta-primary .cl-arrow{
+    display:inline-block;
+    transition:transform .2s;
+  }
+  .cl-cta-primary:hover .cl-arrow{transform:translateX(4px);}
+  /* secondary link */
+  .cl-secondary{
+    display:block;
+    margin-top:16px;
+    font-size:.84rem;
+    color:rgba(212,169,106,.65);
+    text-decoration:none;
+    letter-spacing:.03em;
+    transition:color .15s;
+  }
+  .cl-secondary:hover{color:var(--accent);}
+  .cl-secondary::after{content:" →";opacity:.7;}
+  /* mobile */
+  @media(max-width:680px){
+    section.concierge-launch{padding:64px 0 60px;}
+    .cl-heading{font-size:1.6rem;}
+    .cl-cta-primary{font-size:1rem;padding:16px 36px;}
+    .cl-chips{gap:7px;}
+    .cl-chip{font-size:.74rem;padding:5px 13px;}
+  }
+  /* ===== /Phase 11 Step 1H ===== */
+
   /* ===== /Phase 11 Step 1G ===== */
 
   /* ===== /Phase 11 Step 1F ===== */
@@ -2248,12 +2400,12 @@
       </table>
     </div>
     <div class="ce-cta-box">
-      <p><strong>迷うならAI診断の方が正確です</strong><br>暮らし方・予算・スペースを答えるだけで、100種以上から最適な1種を提案します。</p>
+      <p><strong>まだ迷っているなら、AI診断が一番正確です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種以上からあなたに合う1種を提案します。</p>
       <a href="./shindan/"
          class="ce-cta-btn"
          data-event="homepage_compare_diagnosis_click"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
-        3分診断を始める →
+        AI診断を起動する →
       </a>
     </div>
   </div>
@@ -2290,6 +2442,41 @@
     </div>
   </div>
 </section>
+<!-- Concierge Launch CTA (Phase 11 Step 1H) -->
+<section class="concierge-launch" id="concierge-launch">
+  <div class="wrap">
+
+    <div class="cl-eyebrow">AI Turtle Concierge</div>
+
+    <h2 class="cl-heading">
+      ここから、<em>あなた向けの</em><br>
+      亀選びを始める。
+    </h2>
+    <p class="cl-sub">
+      予算・スペース・臭いの不安を入力するだけ。<br>
+      100種以上から、3分で最適な1種を提案します。
+    </p>
+
+    <div class="cl-chips" aria-label="サービスの特徴">
+      <span class="cl-chip">3分で完了</span>
+      <span class="cl-chip">100種以上から提案</span>
+      <span class="cl-chip">費用・臭い・サイズも考慮</span>
+    </div>
+
+    <div>
+      <a href="./shindan/"
+         class="cl-cta-primary"
+         data-event="homepage_hero_primary_click"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_launch_cta_click',{event_category:'concierge_launch',event_label:'primary_cta'});(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'launch_section'})">
+        AI診断を起動する <span class="cl-arrow">→</span>
+      </a>
+      <a href="species-list.html" class="cl-secondary">種一覧から探す</a>
+    </div>
+
+  </div>
+</section>
+
+
 
 <footer>
   <div class="wrap">
