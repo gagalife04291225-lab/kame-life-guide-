@@ -1456,7 +1456,7 @@
       <a href="./shindan/"
          class="ce-cta-btn"
          data-event="homepage_compare_diagnosis_click"
-         onclick="gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
         無料で診断する →
       </a>
     </div>
