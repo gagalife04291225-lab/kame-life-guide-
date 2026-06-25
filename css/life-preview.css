@@ -1,0 +1,153 @@
+/* ===== Life Preview Section — Phase 11 Step 2A ===== */
+/* Shared across species pages via <link rel="stylesheet" href="../css/life-preview.css"> */
+
+.life-preview{
+  margin:40px 0 36px;
+  background:#fff;
+  border:1.5px solid #e4ddc9;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(13,31,26,.05);
+}
+
+/* Header */
+.lp-header{
+  background:linear-gradient(115deg,var(--forest-deep,#0d1f1a) 0%,#1a2e24 100%);
+  padding:22px 28px 18px;
+  position:relative;
+  overflow:hidden;
+}
+.lp-header::before{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 80% 0%,rgba(212,169,106,.10) 0%,transparent 60%);
+  pointer-events:none;
+}
+.lp-eyebrow{
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(212,169,106,.75);
+  font-weight:700;
+  margin-bottom:7px;
+  display:block;
+  position:relative;
+}
+.lp-heading{
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.2rem;
+  color:#fff;
+  line-height:1.35;
+  position:relative;
+  margin:0;
+}
+
+/* Grid of 5 blocks */
+.lp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.lp-block{
+  padding:20px 22px 18px;
+  border-bottom:1px solid #ede6d3;
+  border-right:1px solid #ede6d3;
+  position:relative;
+}
+/* Full-width bottom block (regret point) */
+.lp-block.lp-full{
+  grid-column:1 / -1;
+  border-right:none;
+  background:rgba(212,169,106,.04);
+}
+/* Remove right border from even cells */
+.lp-block:nth-child(2),
+.lp-block:nth-child(4){
+  border-right:none;
+}
+/* Remove bottom border from last row */
+.lp-block.lp-full{
+  border-bottom:none;
+}
+
+.lp-block-label{
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent-dark,#b07c3f);
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.lp-block-label span{
+  font-size:.9rem;
+}
+.lp-block-title{
+  font-family:"Playfair Display",serif;
+  font-weight:700;
+  font-size:.95rem;
+  color:var(--forest-deep,#0d1f1a);
+  line-height:1.4;
+  margin-bottom:6px;
+}
+.lp-block p{
+  font-size:.82rem;
+  color:#5a6b60;
+  line-height:1.7;
+  margin:0;
+}
+
+/* Good/Bad fit chips */
+.lp-fit-list{
+  list-style:none;
+  padding:0;margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.lp-fit-list li{
+  font-size:.8rem;
+  color:#5a6b60;
+  line-height:1.55;
+  padding-left:16px;
+  position:relative;
+}
+.lp-fit-list li::before{
+  position:absolute;left:0;top:.05em;
+  font-size:.75rem;
+}
+.lp-fit-list.lp-good li::before{content:"✓";color:#3a7a4a;}
+.lp-fit-list.lp-bad  li::before{content:"✗";color:#c04040;}
+
+/* Regret warning */
+.lp-regret{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.lp-regret-icon{
+  font-size:1.4rem;flex-shrink:0;line-height:1;
+  margin-top:.1rem;
+}
+.lp-regret-body{}
+.lp-regret-body p{
+  font-size:.82rem;
+  color:#5a6b60;
+  line-height:1.7;
+  margin:0;
+}
+
+/* Mobile */
+@media(max-width:520px){
+  .lp-grid{grid-template-columns:1fr;}
+  .lp-block{border-right:none;}
+  .lp-block:last-child{border-bottom:none;}
+  .lp-block.lp-full{grid-column:1;}
+  .lp-header{padding:18px 20px 15px;}
+  .lp-block{padding:16px 18px 15px;}
+}
+/* ===== /Life Preview Section ===== */
