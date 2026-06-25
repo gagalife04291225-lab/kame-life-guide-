@@ -180,7 +180,10 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-click-url="' + p.affiliateUrl + '">' + tierCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
 
-  return '<div class="sk-card">' +
+  var cardTierCls = item.tier === 'standard' ? ' sk-card--standard'
+                 : item.tier === 'premium'  ? ' sk-card--premium'
+                 : ' sk-card--budget';
+  return '<div class="sk-card' + cardTierCls + '">' +
     '<div class="sk-cat-label">' + catLabel + '</div>' +
     '<span class="sk-card-badge ' + tierCls + '">' + tierLabel + '</span>' +
     '<div class="sk-card-name">' + p.name + '</div>' +
@@ -230,10 +233,12 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // タブボタン
   var tabBtns = SK_TABS.map(function(tab, i) {
-    return '<button class="sk-tab-btn' + (i === 0 ? ' sk-tab-btn--active' : '') + '"' +
+    var extraCls = (tab.id === 'comfort') ? ' sk-tab-btn--recommended' : '';
+    return '<button class="sk-tab-btn' + (i === 0 ? ' sk-tab-btn--active' : '') + extraCls + '"' +
       ' data-target="sk-panel-' + tab.id + '"' +
       ' role="tab" aria-selected="' + (i === 0 ? 'true' : 'false') + '">' +
       tab.icon + ' ' + tab.label +
+      (tab.id === 'comfort' ? '<span class="sk-tab-rec-badge">おすすめ</span>' : '') +
     '</button>';
   }).join('');
 
