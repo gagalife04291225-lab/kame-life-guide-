@@ -756,6 +756,83 @@
   }
   /* ===== /Phase 11 Step 1C ===== */
 
+  /* ===== Phase 11 Step 1I Fix: Social Proof Strip CSS ===== */
+  section.social-proof{
+    background:var(--forest-deep);
+    padding:52px 0 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  section.social-proof::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 110%,rgba(212,169,106,.08) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .sp-header{
+    text-align:center;
+    margin-bottom:36px;
+    position:relative;
+  }
+  .sp-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    margin-bottom:10px;
+    display:block;
+  }
+  .sp-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.45rem;
+    color:var(--parchment);
+    line-height:1.3;
+  }
+  .sp-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(212,169,106,.22);
+    border-radius:14px;
+    padding:28px 20px 24px;
+    text-align:center;
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+    transition:border-color .2s,background .2s;
+  }
+  .sp-card:hover{
+    background:rgba(255,255,255,.07);
+    border-color:rgba(212,169,106,.5);
+  }
+  .sp-value{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:2.1rem;
+    color:var(--accent);
+    line-height:1;
+    display:block;
+    margin-bottom:8px;
+  }
+  .sp-metric{
+    font-size:.82rem;
+    font-weight:700;
+    color:var(--parchment);
+    letter-spacing:.04em;
+    display:block;
+    margin-bottom:5px;
+  }
+  .sp-sub{
+    font-size:.72rem;
+    color:#8fa89a;
+    letter-spacing:.02em;
+    display:block;
+    line-height:1.5;
+  }
+  /* ===== /Phase 11 Step 1I Fix ===== */
+
   /* ===== Phase 11 Step 1B: Journey Preview ===== */
   section.journey-preview{
     background:var(--parchment);
