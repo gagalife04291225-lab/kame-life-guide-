@@ -360,6 +360,35 @@ body {
   border-left: 2.5px solid var(--accent-light);
   border-radius: 0 8px 8px 0;
 }
+
+/* ===== Phase 9-B: Result CVR ===== */
+.res-match-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(143,95,44,.22); border: 1px solid var(--accent);
+  border-radius: 999px; padding: 5px 14px;
+  font-size: .8rem; font-weight: 700; color: var(--accent-light);
+  margin-bottom: 14px;
+}
+.res-match-badge .badge-icon { font-size: 1rem; }
+.res-why-block {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 16px;
+}
+.res-why-title {
+  font-size: .75rem; color: var(--accent-light); letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.res-why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.res-why-list li { font-size: .88rem; color: var(--parchment-dark); line-height: 1.55; padding-left: 4px; }
+.res-why-list li::before { content: "✓ "; color: var(--accent-light); font-weight: 700; }
+.res-loss-block {
+  background: rgba(196,154,90,.1); border: 1px solid rgba(196,154,90,.3);
+  border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px;
+}
+.res-loss-icon { font-size: .85rem; color: var(--accent-light); font-weight: 700; margin-bottom: 6px; }
+.res-loss-text { font-size: .83rem; color: var(--parchment-dark); line-height: 1.65; }
+.res-loss-text strong { color: var(--accent-light); }
+/* ===== /Phase 9-B ===== */
 </style>
 </head>
 <body>
@@ -394,6 +423,7 @@ body {
 <section id="screen-result" class="screen" role="main" aria-label="診断結果">
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
+    <div id="res-match-badge-wrap"></div>
     <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
     <div class="result-species-name" id="res-name" tabindex="-1"></div>
     <div class="result-latin" id="res-latin"></div>
@@ -423,6 +453,8 @@ body {
     <div class="result-card-title">おすすめのポイント</div>
     <p class="result-desc" id="res-reason"></p>
   </div>
+  <div id="res-why-block-wrap"></div>
+  <div id="res-loss-block-wrap"></div>
   <div class="result-card">
     <div class="result-card-title">基本スペック</div>
     <div class="spec-grid" id="res-specs"></div>
@@ -616,6 +648,63 @@ var EMOTION_COPY_MAP = {
 function buildEmotionCopy(sp, equipKey) {
   // 個別マップにある場合
   if (EMOTION_COPY_MAP[sp.name]) return EMOTION_COPY_MAP[sp.name];
+
+  // ===== Phase 9-B: Match Badge =====
+  (function() {
+    var wrap = document.getElementById('res-match-badge-wrap');
+    if (!wrap) return;
+    var pctVal = (pct && pct >= 40) ? pct : 88;
+    wrap.innerHTML =
+      '<div class="res-match-badge"><span class="badge-icon">🎯</span>適合度 ' + pctVal + '%</div>';
+  })();
+
+  // ===== Phase 9-B: Why Matched Block =====
+  (function() {
+    var wrap = document.getElementById('res-why-block-wrap');
+    if (!wrap) return;
+    var diff = sp.difficulty || '';
+    var reasons = [];
+    if (diff.indexOf('入門') >= 0 || diff.indexOf('初心') >= 0) {
+      reasons.push('初心者でも管理しやすい難易度');
+    } else if (diff.indexOf('上級') >= 0) {
+      reasons.push('飼育経験者向けの挑戦的な種');
+    } else {
+      reasons.push('飼育スペースに合う');
+    }
+    reasons.push('予算条件に合いやすい');
+    var size = (sp.size || '').toLowerCase();
+    if (size.indexOf('s') >= 0 || size.indexOf('小') >= 0 || size.indexOf('10') >= 0 || size.indexOf('14') >= 0) {
+      reasons.push('小型で省スペースに飼育できる');
+    } else {
+      reasons.push('生態から逆算した飼育情報が揃っている');
+    }
+    var items = reasons.slice(0,3).map(function(r){ return '<li>' + r + '</li>'; }).join('');
+    wrap.innerHTML =
+      '<div class="res-why-block">' +
+        '<div class="res-why-title">あなたに向いている理由</div>' +
+        '<ul class="res-why-list">' + items + '</ul>' +
+      '</div>';
+  })();
+
+  // ===== Phase 9-B: Loss Aversion Block =====
+  (function() {
+    var wrap = document.getElementById('res-loss-block-wrap');
+    if (!wrap) return;
+    wrap.innerHTML =
+      '<div class="res-loss-block">' +
+        '<div class="res-loss-icon">⚠️ 知っておきたいこと</div>' +
+        '<p class="res-loss-text">飼育用品を知らずに揃えると、<strong>初月だけで1〜3万円余計にかかること</strong>があります。<br>' +
+        'Starter Kitを見ると、必要なものを先に把握できます。</p>' +
+      '</div>';
+  })();
+
+  // ===== Phase 9-B: Conversion Block View =====
+  (function() {
+    if (typeof ga4Event === 'function') {
+      ga4Event('diagnosis_conv_block_view', { species: sp.slug || sp.name || null });
+    }
+  })();
+
   // 法規制種
   if (sp.legal === 'conditional_invasive') {
     return '既飼育個体の継続飼育が認められている種です。適切な飼育環境を整え、法令を遵守した上でともに過ごしてください。';
@@ -1467,27 +1556,29 @@ function showResult(sp, pct) {
     if (!sp.hasPage || !sp.slug) { ctaBlock.style.display = 'none'; return; }
     var speciesPageUrl = '../species/' + sp.slug + '.html';
     var starterKitUrl  = speciesPageUrl + '#starter-kit-root';
-    var primaryLabel   = 'この亀の飼育セットを見る →';
-    var secondaryLabel = sp.name + ' の詳しい飼い方を見る';
+    // Phase 9-B: CTA順序変更 & cta_type追加
+    var primaryLabel   = 'この亀を詳しく見る →';
+    var secondaryLabel = '必要な飼育用品を見る';
     ctaBlock.innerHTML =
-      '<a class="res-cta-primary" id="res-cta-primary" href="' + starterKitUrl + '">' +
+      '<a class="res-cta-primary" id="res-cta-primary" href="' + speciesPageUrl + '">' +
         primaryLabel +
       '</a>' +
-      '<a class="res-cta-secondary" id="res-cta-secondary" href="' + speciesPageUrl + '">' +
+      '<a class="res-cta-secondary" id="res-cta-secondary" href="' + starterKitUrl + '">' +
         secondaryLabel +
       '</a>';
     ctaBlock.style.display = '';
     // GA4
     var primBtn = document.getElementById('res-cta-primary');
     if (primBtn) primBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
-        species: sp.name, slug: sp.slug, equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+        species: sp.name, slug: sp.slug, cta_type: 'primary'
       });
     });
     var secBtn = document.getElementById('res-cta-secondary');
     if (secBtn) secBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
-        species: sp.name, slug: sp.slug
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
+        species: sp.name, slug: sp.slug, cta_type: 'secondary',
+        equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
       });
     });
   })();
