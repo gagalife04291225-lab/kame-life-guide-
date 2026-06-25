@@ -1427,13 +1427,13 @@ function showResult(sp, pct) {
     // GA4
     var primBtn = document.getElementById('res-cta-primary');
     if (primBtn) primBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('result_cta_primary_click', {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
         species: sp.name, slug: sp.slug, equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
       });
     });
     var secBtn = document.getElementById('res-cta-secondary');
     if (secBtn) secBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('result_cta_secondary_click', {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
         species: sp.name, slug: sp.slug
       });
     });
@@ -1539,11 +1539,11 @@ function showResult(sp, pct) {
   // ===== PHASE 6-B: おすすめ飼育セット =====
   renderStarterKit(sp);
 
-  // GA4: Phase 7-C Step 2-A result_shown
+  // GA4: Phase 7-C Step 2-A diagnosis_result_view
   if (typeof ga4Event === 'function') {
     var _routeIdGa = selectedRoute ? selectedRoute.id : '';
     var _eqKeyGa   = (sp.equipmentKey) || resolveEquipmentKey(_routeIdGa, sp) || '';
-    ga4Event('result_shown', {
+    ga4Event('diagnosis_result_view', {
       species:       sp.name,
       slug:          sp.slug || '',
       equipment_key: _eqKeyGa,
