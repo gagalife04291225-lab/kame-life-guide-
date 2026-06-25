@@ -21,14 +21,14 @@
         targetName: 'ギリシャリクガメ',
         selfName: 'ヘルマンリクガメ',
         points: ['サイズ', '寿命', '湿度管理', '初心者向け'],
-        comparePage: null
+        comparePage: '../compare/hermann-vs-greek.html'
       },
       {
         target: 'russian-tortoise',
         targetName: 'ロシアリクガメ',
         selfName: 'ヘルマンリクガメ',
         points: ['サイズ', '活動量', '耐寒性', 'ケージサイズ'],
-        comparePage: null
+        comparePage: '../compare/hermann-vs-greek.html'
       }
     ],
     'greek-tortoise': [
@@ -109,7 +109,7 @@
         targetName: 'クサガメ',
         selfName: 'ニホンイシガメ',
         points: ['希少性・保全状況', 'CB入手難易度', '飼育難易度', 'サイズ'],
-        comparePage: null
+        comparePage: '../compare/reeves-vs-japanese-pond.html'
       }
     ],
     'reeves-turtle': [
@@ -118,7 +118,7 @@
         targetName: 'ニホンイシガメ',
         selfName: 'クサガメ',
         points: ['入手しやすさ', '成長後サイズ', '飼育難易度', '臭い'],
-        comparePage: null
+        comparePage: '../compare/reeves-vs-japanese-pond.html'
       }
     ],
     'musk-turtle': [
@@ -127,7 +127,7 @@
         targetName: 'カミソリバックニオイガメ',
         selfName: 'ニオイガメ',
         points: ['甲羅形状', '最大サイズ', '水深要件', '価格帯'],
-        comparePage: null
+        comparePage: '../compare/musk-vs-razorback.html'
       }
     ],
     'razorback-musk-turtle': [
@@ -136,7 +136,7 @@
         targetName: 'ニオイガメ',
         selfName: 'カミソリバックニオイガメ',
         points: ['甲羅形状', '最大サイズ', '入手難易度', '飼育しやすさ'],
-        comparePage: null
+        comparePage: '../compare/musk-vs-razorback.html'
       }
     ]
   };
@@ -240,7 +240,8 @@
         if (typeof gtag === 'function') {
           gtag('event', 'comparison_cta_click', {
             species: currentSlug,
-            compared_to: pair.target
+            compared_to: pair.target,
+            destination_type: pair.comparePage ? 'compare_page' : 'species_page'
           });
         }
       });
