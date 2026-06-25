@@ -245,6 +245,116 @@ body {
 .note-title { font-size: .95rem; font-weight: 600; color: var(--parchment); }
 .note-sub { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
 .note-arrow { color: rgba(65,179,163,.8); font-size: 1.1rem; flex-shrink: 0; }
+
+/* ===== Phase 7-C Step 2-A: 診断結果CVR改善 ===== */
+
+/* 費用サマリーバッジ */
+.res-cost-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.res-cost-item {
+  background: rgba(196,154,90,.1);
+  border: 1px solid rgba(196,154,90,.28);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.res-cost-item-label {
+  font-size: .66rem;
+  color: var(--accent-light);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.res-cost-item-value {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--parchment);
+  font-family: var(--font-display);
+  line-height: 1.25;
+}
+.res-cost-item-note {
+  font-size: .62rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* 購入障壁除去バッジ */
+.res-barrier-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+.res-barrier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  background: rgba(74,122,96,.2);
+  border: 1px solid rgba(74,122,96,.4);
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #8dcba0;
+  white-space: nowrap;
+}
+
+/* 2段CTA */
+.res-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+.res-cta-primary {
+  display: block;
+  padding: 15px 18px;
+  background: linear-gradient(135deg, var(--accent), #7a4e22);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  font-size: .98rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .02em;
+  box-shadow: 0 3px 14px rgba(143,95,44,.35);
+  transition: opacity .15s, transform .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-primary:hover  { opacity: .9; }
+.res-cta-primary:active { transform: scale(.98); }
+.res-cta-secondary {
+  display: block;
+  padding: 13px 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  color: var(--parchment-dark);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-secondary:hover { background: rgba(255,255,255,.11); }
+
+/* emotion copy */
+.res-emotion-copy {
+  font-size: .88rem;
+  color: var(--parchment-dark);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.04);
+  border-left: 2.5px solid var(--accent-light);
+  border-radius: 0 8px 8px 0;
+}
 </style>
 </head>
 <body>
@@ -290,6 +400,12 @@ body {
     <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
   </div>
   <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
+  <!-- Phase 7-C Step 2-A: 費用目安サマリー -->
+  <div class="res-cost-summary" id="res-cost-summary" style="display:none"></div>
+  <!-- Phase 7-C Step 2-A: 購入障壁除去バッジ -->
+  <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
+  <!-- Phase 7-C Step 2-A: emotion copy -->
+  <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
   <!-- PHASE 5: 寿命バナー -->
   <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
     <span class="lifespan-icon">⏳</span>
@@ -324,6 +440,8 @@ body {
       <span class="note-arrow">→</span>
     </a>
   </div>
+  <!-- Phase 7-C Step 2-A: 2段CTA -->
+  <div class="res-cta-block" id="res-cta-block" style="display:none"></div>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
     <button class="btn-retry" id="btn-retry">もう一度診断</button>
@@ -444,6 +562,77 @@ var OWNER_SPECIES = {
   'ヒラセガメ': true,
   'ミツユビハコガメ': true
 };
+
+// ===== Phase 7-C Step 2-A: 月額維持費テーブル =====
+var MONTHLY_COST_MAP = {
+  tortoise_dry_small:  { low: 1000,  high: 3000,  label: '¥1,000〜3,000' },
+  tortoise_dry_large:  { low: 2000,  high: 5000,  label: '¥2,000〜5,000' },
+  tortoise_forest:     { low: 1500,  high: 4000,  label: '¥1,500〜4,000' },
+  semi_aquatic_small:  { low: 1000,  high: 2500,  label: '¥1,000〜2,500' },
+  semi_aquatic_medium: { low: 1500,  high: 3500,  label: '¥1,500〜3,500' },
+  fully_aquatic:       { low: 2000,  high: 5000,  label: '¥2,000〜5,000' },
+  japanese_pond:       { low: 1000,  high: 2500,  label: '¥1,000〜2,500' },
+  box_turtle:          { low: 1500,  high: 3000,  label: '¥1,500〜3,000' },
+};
+
+// ===== Phase 7-C Step 2-A: 購入障壁除去バッジテーブル =====
+// equipmentKey / difficulty / size から最大3つ選ぶ
+var BARRIER_BADGE_MAP = {
+  tortoise_dry_small:  ['🌿 室内飼育OK', '💨 ニオイ少なめ', '👀 観察が楽しい'],
+  tortoise_dry_large:  ['🌿 室内飼育OK', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
+  tortoise_forest:     ['🌿 室内飼育OK', '💧 湿度管理で長生き', '👀 観察が楽しい'],
+  semi_aquatic_small:  ['🏠 省スペース', '🎯 初心者向き', '👀 観察が楽しい'],
+  semi_aquatic_medium: ['🌊 水棲ガメ代表', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
+  fully_aquatic:       ['💧 水棲特化', '📦 飼育イメージをつかみやすい', '👀 観察が楽しい'],
+  japanese_pond:       ['🇯🇵 日本産', '🌊 水槽飼育OK', '👀 観察が楽しい'],
+  box_turtle:          ['🌿 室内飼育OK', '🐢 ユニークな習性', '👀 観察が楽しい'],
+};
+var BARRIER_BADGE_BEGINNER = ['🎯 初心者向き', '📦 必要なものが分かりやすい', '👀 観察が楽しい'];
+var BARRIER_BADGE_ADVANCED  = ['✨ 憧れ枠', '🏆 上級者向け', '📦 詳細ページで確認できる'];
+
+// ===== Phase 7-C Step 2-A: emotion copy テンプレート =====
+var EMOTION_COPY_MAP = {
+  // 入門種
+  'ロシアリクガメ':    '小柄でおっとりした性格。リクガメ入門として長く愛される一種です。草食性なので野菜中心で飼いやすく、慣れてくると手渡しでエサを食べることも。',
+  'ヘルマンリクガメ（ヒガシ亜種）': '活発で好奇心旺盛。ハーブや野草を好み、日光浴の姿が愛らしいリクガメです。ヨーロッパでは最もポピュラーな飼育種のひとつ。',
+  'ヘルマンリクガメ（ニシ亜種）':   '落ち着いた気質で飼育しやすく、小ぶりな体型が室内飼育に向いています。ヒガシ亜種より体格がコンパクトで人気があります。',
+  'ギリシャリクガメ':  'Mediterranean（地中海）の乾燥した草地で暮らす、歴史ある飼育種。丈夫で長命、条件が合えば50年以上のパートナーになります。',
+  'ニオイガメ':        '手のひらサイズの水棲ガメ。45cm水槽から飼育でき、コンパクトなのに存在感があります。においは適切な水質管理で十分抑えられます。',
+  'ヒメニオイガメ':    '国内で最も人気の高い小型水棲ガメのひとつ。水槽が小さくて済み、観察のしやすさが魅力。飼育難易度は低め。',
+  'ミシシッピチズガメ':'背中の独特なキールと首の模様が美しい水棲ガメ。水質管理を丁寧にすれば、長く元気に泳ぐ姿を観察できます。',
+  'ペインテッドタートル': '北米を代表する美しい水棲ガメ。赤みを帯びたふちとオリーブ色の甲羅が印象的。人にも慣れやすく、長期飼育に向いています。',
+  'スペングラーヤマガメ': '小型で個性的な山地性ガメ。ハコガメに近い生態を持ち、陸上でも水中でも観察が楽しめます。著者も実際に飼育中の種です。',
+  'ヒラセガメ': '平たい甲羅と落ち着いた行動が特徴のアジア産ガメ。著者が実際に飼育しており、飼い込むほどに愛着が増す種です。',
+  'ミツユビハコガメ': '三本指の後脚と蝶番式の腹甲が特徴のハコガメ。著者も飼育中で、慣れると動き回る姿が楽しみになる一種です。',
+  'トウブハコガメ': '蝶番のある腹甲で完全に甲羅に閉じこもれる独特のガメ。長生きすることで知られ、50〜100年生きることもあります。',
+  'キバラガメ': 'ミシシッピアカミミガメの近縁種で、耳の模様が黄色いのが特徴。新規購入・飼育が可能な種で、活発な泳ぎが見ていて楽しい。',
+};
+// 難易度 / 法規 / サイズに応じた汎用テンプレート
+function buildEmotionCopy(sp, equipKey) {
+  // 個別マップにある場合
+  if (EMOTION_COPY_MAP[sp.name]) return EMOTION_COPY_MAP[sp.name];
+  // 法規制種
+  if (sp.legal === 'conditional_invasive') {
+    return '既飼育個体の継続飼育が認められている種です。適切な飼育環境を整え、法令を遵守した上でともに過ごしてください。';
+  }
+  // 上級種 / XL大型種
+  var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
+  var isXL = (sp.size || '').indexOf('XL') >= 0;
+  if (isAdvanced || isXL) {
+    return '経験豊富な飼育者が憧れる上級者向けの種です。設備・スペース・長期計画をしっかり準備してから迎えてください。飼育ガイドで詳細を確認することをおすすめします。';
+  }
+  // CITES II
+  if (sp.cites) {
+    return '流通量が限られた希少な種です。CB個体（国内繁殖個体）を入手し、適切な書類を確認してから飼育を開始してください。飼育ガイドでさらに詳しく解説しています。';
+  }
+  // 入門種汎用
+  var isBeginnerFriendly = (sp.difficulty || '').indexOf('入門') >= 0;
+  if (isBeginnerFriendly) {
+    return 'あなたのライフスタイルに合いやすい種です。必要な機材の種類が比較的少なく、飼育イメージをつかみやすいのが特長。詳細ページで日々の管理手順を確認してみましょう。';
+  }
+  // 中級汎用
+  return 'やや専門的な知識が必要ですが、慣れれば長く楽しめる種です。飼育ガイドでポイントを確認してから準備を進めることをおすすめします。';
+}
 
 // ===== PHASE 5: 寿命データ（平均寿命目安） =====
 var LIFESPAN_DATA = {
@@ -1139,6 +1328,117 @@ function showResult(sp, pct) {
     '<span class="badge badge-intermediate">' + sp.size + '</span>';
   if (sp.cites) badges.innerHTML += '<span class="badge badge-cites">' + sp.cites + '</span>';
 
+  // ===== Phase 7-C Step 2-A: 費用サマリー =====
+  (function() {
+    var costEl = document.getElementById('res-cost-summary');
+    if (!costEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    // 初期費用: StarterKitの renderStarterKit が後で描画するので、
+    // PRODUCTS が使えるかどうかに関係なく equipmentKeyベースのteーブルから推定
+    var monthly = equipKey && MONTHLY_COST_MAP[equipKey] ? MONTHLY_COST_MAP[equipKey] : null;
+    // 初期費用は picks から計算（PRODUCTS依存）
+    var initCostText = '個体・設備により変動';
+    if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
+      var PHASE7_CATS_COST = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+      var cLow = 0, cHigh = 0, cnt = 0;
+      PHASE7_CATS_COST.forEach(function(cat) {
+        var p = (typeof getTierProduct === 'function') ? getTierProduct(equipKey, cat, 'budget') : null;
+        if (!p) return;
+        var pr = (p.priceRange || '').replace(/[¥,]/g, '');
+        var m = pr.match(/(\d+)[^\d]+(\d+)/);
+        if (m) { cLow += parseInt(m[1],10); cHigh += parseInt(m[2],10); cnt++; }
+      });
+      if (cnt >= 2) {
+        initCostText = '約 ¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
+      }
+    }
+    var monthlyText = monthly ? ('約 ' + monthly.label) : '個体・設備により変動';
+    costEl.innerHTML =
+      '<div class="res-cost-item">' +
+        '<div class="res-cost-item-label">初期費用目安</div>' +
+        '<div class="res-cost-item-value">' + initCostText + '</div>' +
+        '<div class="res-cost-item-note">機材セット（目安）</div>' +
+      '</div>' +
+      '<div class="res-cost-item">' +
+        '<div class="res-cost-item-label">月額維持費目安</div>' +
+        '<div class="res-cost-item-value">' + monthlyText + '</div>' +
+        '<div class="res-cost-item-note">電気代・フード等</div>' +
+      '</div>';
+    costEl.style.display = '';
+  })();
+
+  // ===== Phase 7-C Step 2-A: 購入障壁除去バッジ =====
+  (function() {
+    var barrierEl = document.getElementById('res-barrier-badges');
+    if (!barrierEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
+    var isBeginner = (sp.difficulty || '').indexOf('入門') >= 0;
+    var badges;
+    if (isAdvanced) {
+      badges = BARRIER_BADGE_ADVANCED;
+    } else if (equipKey && BARRIER_BADGE_MAP[equipKey]) {
+      badges = BARRIER_BADGE_MAP[equipKey];
+    } else if (isBeginner) {
+      badges = BARRIER_BADGE_BEGINNER;
+    } else {
+      badges = ['📦 必要なものが分かりやすい', '🐢 飼育イメージをつかみやすい', '👀 詳細ページで確認できる'];
+    }
+    barrierEl.innerHTML = badges.slice(0, 3).map(function(b) {
+      return '<span class="res-barrier-badge">' + b + '</span>';
+    }).join('');
+    barrierEl.style.display = '';
+  })();
+
+  // ===== Phase 7-C Step 2-A: emotion copy =====
+  (function() {
+    var copyEl = document.getElementById('res-emotion-copy');
+    if (!copyEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    var copy = buildEmotionCopy(sp, equipKey);
+    if (copy) {
+      copyEl.textContent = copy;
+      copyEl.style.display = '';
+    } else {
+      copyEl.style.display = 'none';
+    }
+  })();
+
+  // ===== Phase 7-C Step 2-A: 2段CTA =====
+  (function() {
+    var ctaBlock = document.getElementById('res-cta-block');
+    if (!ctaBlock) return;
+    if (!sp.hasPage || !sp.slug) { ctaBlock.style.display = 'none'; return; }
+    var speciesPageUrl = '../species/' + sp.slug + '.html';
+    var starterKitUrl  = speciesPageUrl + '#starter-kit-root';
+    var primaryLabel   = 'この亀の飼育セットを見る →';
+    var secondaryLabel = sp.name + ' の詳しい飼い方を見る';
+    ctaBlock.innerHTML =
+      '<a class="res-cta-primary" id="res-cta-primary" href="' + starterKitUrl + '">' +
+        primaryLabel +
+      '</a>' +
+      '<a class="res-cta-secondary" id="res-cta-secondary" href="' + speciesPageUrl + '">' +
+        secondaryLabel +
+      '</a>';
+    ctaBlock.style.display = '';
+    // GA4
+    var primBtn = document.getElementById('res-cta-primary');
+    if (primBtn) primBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('result_cta_primary_click', {
+        species: sp.name, slug: sp.slug, equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
+      });
+    });
+    var secBtn = document.getElementById('res-cta-secondary');
+    if (secBtn) secBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('result_cta_secondary_click', {
+        species: sp.name, slug: sp.slug
+      });
+    });
+  })();
+
   // 法規制
   var legalBox = document.getElementById('res-legal');
   if (sp.legal === 'cites_ii') {
@@ -1180,14 +1480,12 @@ function showResult(sp, pct) {
   }
 
   // 種別ページCTA（Phase1.6）
+  // ※ Phase 7-C Step 2-A: hasPage:true の場合は2段CTAブロックが代替するため非表示
   var linksDiv = document.getElementById('res-links');
   linksDiv.innerHTML = '';
   if (sp.hasPage && sp.slug) {
-    linksDiv.innerHTML +=
-      '<a href="../species/' + sp.slug + '.html" class="species-page-cta">' +
-        '<div class="species-page-cta-label">Species Guide</div>' +
-        '<div class="species-page-cta-title">' + sp.name + ' の詳しい飼育ガイドを読む<span class="species-page-cta-arrow">→</span></div>' +
-      '</a>';
+    // 2段CTAが上部に表示されているため、res-linksにはCTAを出さない
+    // （重複防止・スペース節約）
   }
 
   // hasPage:false フォールバックCTA（ルートIDで正しいガイドへ誘導）
@@ -1241,6 +1539,18 @@ function showResult(sp, pct) {
   // ===== PHASE 6-B: おすすめ飼育セット =====
   renderStarterKit(sp);
 
+  // GA4: Phase 7-C Step 2-A result_shown
+  if (typeof ga4Event === 'function') {
+    var _routeIdGa = selectedRoute ? selectedRoute.id : '';
+    var _eqKeyGa   = (sp.equipmentKey) || resolveEquipmentKey(_routeIdGa, sp) || '';
+    ga4Event('result_shown', {
+      species:       sp.name,
+      slug:          sp.slug || '',
+      equipment_key: _eqKeyGa,
+      difficulty:    sp.difficulty || '',
+      has_page:      !!(sp.hasPage && sp.slug),
+    });
+  }
   show('screen-result');
   document.getElementById('res-name').focus();
 
