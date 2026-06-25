@@ -825,6 +825,24 @@
   @media(max-width:600px){.ppk-grid{grid-template-columns:1fr;}.ppk-card{min-height:auto;padding:20px 18px 18px;}}
   /* ===== /Phase 8-B ===== */
 
+  /* ===== Phase 8-C: Compare Section ===== */
+  section.hp-compare{padding:52px 0 48px;background:var(--parchment);border-top:1px solid #e4ddc9;}
+  .hpc-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
+  .hpc-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:6px;}
+  .hpc-sub{font-size:.93rem;color:#5a6b60;text-align:center;margin:0 auto 32px;max-width:520px;line-height:1.7;}
+  .hpc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .hpc-card{background:#fff;border:1.5px solid #e4ddc9;border-radius:18px;padding:22px 20px 18px;box-shadow:0 2px 12px rgba(13,31,26,.055);display:flex;flex-direction:column;min-height:220px;}
+  .hpc-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:.97rem;color:var(--forest-deep);margin-bottom:12px;line-height:1.4;}
+  .hpc-vs{color:var(--accent-dark);font-style:italic;margin:0 4px;}
+  .hpc-points{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:5px;flex:1;}
+  .hpc-points li{font-size:.78rem;color:#5a6b60;padding-left:12px;position:relative;line-height:1.55;}
+  .hpc-points li::before{content:"・";position:absolute;left:0;color:var(--accent);}
+  .hpc-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .hpc-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 8px;background:var(--forest);color:var(--parchment);text-decoration:none;font-weight:700;font-size:.75rem;border-radius:10px;text-align:center;line-height:1.3;transition:background .18s;box-sizing:border-box;}
+  .hpc-btn:hover{background:var(--accent-dark);}
+  @media(max-width:760px){.hpc-grid{grid-template-columns:1fr;}.hpc-card{min-height:auto;}}
+  /* ===== /Phase 8-C ===== */
+
   /* ===== Phase 7-D Task 2A: Sticky CTA ===== */
   #sticky-diagnosis-cta{
     position:fixed;
@@ -1003,6 +1021,63 @@
         </div>
         <span class="ppk-btn">詳しく見る</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- Compare Section (Phase 8-C) -->
+<section class="hp-compare" id="hp-compare">
+  <div class="wrap">
+    <div class="hpc-eyebrow">Species Compare</div>
+    <h2 class="hpc-heading">どっちが合う？人気種を比較</h2>
+    <p class="hpc-sub">迷いやすい定番種を、飼いやすさ・サイズ・費用で比べられます。</p>
+    <div class="hpc-grid">
+
+      <div class="hpc-card">
+        <div class="hpc-title">ヘルマンリクガメ<span class="hpc-vs">vs</span>ギリシャリクガメ</div>
+        <ul class="hpc-points">
+          <li>初心者向けならヘルマン</li>
+          <li>価格を抑えるならギリシャ</li>
+          <li>どちらもリクガメ入門向け</li>
+        </ul>
+        <div class="hpc-btns">
+          <a href="species/hermann-tortoise.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'hermann_vs_greek',selected_species:'hermann-tortoise'})">ヘルマンを見る</a>
+          <a href="species/greek-tortoise.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'hermann_vs_greek',selected_species:'greek-tortoise'})">ギリシャを見る</a>
+        </div>
+      </div>
+
+      <div class="hpc-card">
+        <div class="hpc-title">ミシシッピニオイガメ<span class="hpc-vs">vs</span>カブトニオイガメ</div>
+        <ul class="hpc-points">
+          <li>小型水棲ならミシシッピニオイガメ</li>
+          <li>個性重視ならカブトニオイガメ</li>
+          <li>水槽サイズと濾過が重要</li>
+        </ul>
+        <div class="hpc-btns">
+          <a href="species/musk-turtle.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'musk_vs_razorback',selected_species:'musk-turtle'})">ニオイガメを見る</a>
+          <a href="species/razorback-musk-turtle.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'musk_vs_razorback',selected_species:'razorback-musk-turtle'})">カブトを見る</a>
+        </div>
+      </div>
+
+      <div class="hpc-card">
+        <div class="hpc-title">クサガメ<span class="hpc-vs">vs</span>ニホンイシガメ</div>
+        <ul class="hpc-points">
+          <li>入手性ならクサガメ</li>
+          <li>日本らしさならニホンイシガメ</li>
+          <li>屋外飼育は地域と温度に注意</li>
+        </ul>
+        <div class="hpc-btns">
+          <a href="species/reeves-turtle.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'reeves_vs_japanese_pond',selected_species:'reeves-turtle'})">クサガメを見る</a>
+          <a href="species/japanese-pond-turtle.html" class="hpc-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'reeves_vs_japanese_pond',selected_species:'japanese-pond-turtle'})">イシガメを見る</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
