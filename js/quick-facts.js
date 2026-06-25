@@ -180,9 +180,12 @@ function renderStickyCTA(opts) {
   var isEasy = /入門/.test(opts.difficulty || '');
   var ctaText = isEasy
     ? '初心者向けに全部選んだ飼育セットを見る'
-    : 'この亀を今日から飼えるセットを見る';
+    : '初心者向け飼育セットを見る';
 
-  return '<div class="qf-sticky-cta" id="qf-sticky-cta" aria-label="飼育セットへのリンク">' +
+  var sName = opts.name          || '';
+  var sKey  = opts.equipmentKey  || '';
+  return '<div class="qf-sticky-cta" id="qf-sticky-cta" aria-label="飼育セットへのリンク"' +
+    ' data-species="' + sName + '" data-equipment-key="' + sKey + '">' +
     '<a class="qf-sticky-btn" href="#starter-kit-root">' +
       '<span class="qf-sticky-icon">🐢</span> ' +
       ctaText +
@@ -200,6 +203,8 @@ function initStickyCTA() {
   var el = document.getElementById('qf-sticky-cta');
   if (!el) return;
 
+  var _impressionFired = false;
+
   function updateVisibility() {
     var scrollY   = window.scrollY || window.pageYOffset;
     var docH      = document.documentElement.scrollHeight;
@@ -215,11 +220,34 @@ function initStickyCTA() {
       inView = rect.top < winH && rect.bottom > 0;
     }
 
-    if (pastHero && !atBottom && !inView) {
+    var shouldShow = pastHero && !atBottom && !inView;
+    if (shouldShow) {
       el.classList.add('qf-sticky-visible');
+      // sticky_cta_impression: 初回表示時のみ
+      if (!_impressionFired && typeof gtag === 'function') {
+        _impressionFired = true;
+        gtag('event', 'sticky_cta_impression', {
+          species:       el.dataset.species       || '',
+          equipment_key: el.dataset.equipmentKey  || '',
+        });
+      }
     } else {
       el.classList.remove('qf-sticky-visible');
     }
+  }
+
+  // sticky_cta_click
+  var btn = el.querySelector('.qf-sticky-btn');
+  if (btn) {
+    btn.addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'sticky_cta_click', {
+          species:       el.dataset.species       || '',
+          equipment_key: el.dataset.equipmentKey  || '',
+          click_url:     btn.href || '#starter-kit-root',
+        });
+      }
+    });
   }
 
   window.addEventListener('scroll', updateVisibility, { passive: true });
@@ -235,6 +263,15 @@ function mountQuickFacts(opts, mountId) {
   if (!root) return;
 
   root.innerHTML = renderQuickFacts(opts);
+
+  // quick_facts_view イベント
+  if (typeof gtag === 'function') {
+    gtag('event', 'quick_facts_view', {
+      species:       opts.name          || '',
+      equipment_key: opts.equipmentKey  || '',
+      difficulty:    opts.difficulty    || '',
+    });
+  }
 
   // 初期費用セル: products.js ロード待ちリトライ
   // PRODUCTS / EQUIPMENT_MAP が未定義の場合、100ms×最大10回リトライして上書き
