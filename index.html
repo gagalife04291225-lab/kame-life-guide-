@@ -429,602 +429,304 @@
   .pg-all:hover{text-decoration:underline;}
   @media(max-width:520px){.pg-grid{grid-template-columns:1fr;gap:10px;}}
 
-  /* ===== Phase 7-D: Hero CVR overhaul ===== */
+  /* ===== Phase 11: Hero V3 Concierge Terminal ===== */
 
-  /* Hero rewrite */
+  /* ── Base ── */
   header.hero{
     position:relative;
-    background:var(--forest-deep);
+    background:#080f0c;
     overflow:hidden;
-    padding:72px 0 64px;
+    padding:80px 0 72px;
     text-align:center;
   }
-  /* CSS環境装飾：生息環境を表す幾何学的な波形レイヤー */
+  /* ambient glow layers */
   header.hero::before{
     content:"";
     position:absolute;inset:0;
     background:
-      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(47,74,60,.55) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,169,106,.12) 0%, transparent 55%),
-      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(13,31,26,.9) 0%, transparent 70%);
-    pointer-events:none;
-    z-index:0;
+      radial-gradient(ellipse 70% 55% at 15% 85%, rgba(47,74,60,.6) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 15%, rgba(212,169,106,.10) 0%, transparent 55%),
+      radial-gradient(ellipse 90% 70% at 50% 115%, rgba(13,31,26,.95) 0%, transparent 65%);
+    pointer-events:none;z-index:0;
   }
-  /* 水面リップル装飾 */
+  /* wave divider */
   header.hero::after{
     content:"";
     position:absolute;
     bottom:-1px;left:0;right:0;
-    height:80px;
+    height:72px;
     background:var(--parchment);
     clip-path:ellipse(55% 100% at 50% 100%);
-    pointer-events:none;
-    z-index:1;
+    pointer-events:none;z-index:1;
   }
   header.hero .wrap{position:relative;z-index:2;}
-  header.hero .hero-badge{
-    display:inline-block;
-    background:rgba(212,169,106,.18);
-    border:1px solid rgba(212,169,106,.4);
+
+  /* ── Eyebrow pill ── */
+  .h3-eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(212,169,106,.13);
+    border:1px solid rgba(212,169,106,.38);
     color:var(--accent);
-    font-size:.74rem;
-    font-weight:700;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    padding:5px 16px;
+    font-size:.7rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    padding:5px 16px 5px 12px;
     border-radius:40px;
-    margin-bottom:22px;
+    margin-bottom:28px;
   }
+  .h3-eyebrow::before{
+    content:"";
+    display:inline-block;width:6px;height:6px;
+    background:var(--accent);border-radius:50%;
+    animation:h3-pulse 2s ease-in-out infinite;
+  }
+  @keyframes h3-pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.4;transform:scale(.7);}
+  }
+
+  /* ── Headline ── */
   header.hero h1{
     font-family:"Playfair Display",serif;
     font-weight:700;
-    font-size:2.4rem;
-    line-height:1.25;
+    font-size:clamp(1.85rem,5vw,2.65rem);
+    line-height:1.22;
     color:#fff;
-    margin-bottom:20px;
-    letter-spacing:-.01em;
+    margin-bottom:14px;
+    letter-spacing:-.015em;
   }
   header.hero h1 em{
     font-style:normal;
-    background:linear-gradient(90deg,var(--accent),#e8c97a);
+    background:linear-gradient(95deg,var(--accent) 0%,#edd27e 100%);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
   }
-  header.hero p.lead{
-    font-size:1.04rem;
-    color:rgba(217,224,214,.85);
-    max-width:560px;
+  .h3-subline{
+    font-size:1.0rem;
+    color:rgba(217,224,214,.75);
+    max-width:500px;
     margin:0 auto 36px;
-    line-height:1.85;
+    line-height:1.8;
   }
+
+  /* ── Fear chips ── */
+  .h3-chips{
+    display:flex;flex-wrap:wrap;justify-content:center;
+    gap:8px;
+    margin:0 auto 36px;
+    max-width:480px;
+  }
+  .h3-chip{
+    display:inline-flex;align-items:center;gap:5px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    color:rgba(217,224,214,.9);
+    font-size:.78rem;font-weight:700;
+    padding:6px 14px;
+    border-radius:20px;
+    letter-spacing:.02em;
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+  .h3-chip::before{content:"⚠";font-size:.7rem;opacity:.6;}
+
+  /* ── Fake terminal card ── */
+  .h3-terminal{
+    background:rgba(10,18,14,.88);
+    border:1px solid rgba(212,169,106,.28);
+    border-radius:16px;
+    max-width:400px;
+    margin:0 auto 36px;
+    overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,.45),0 0 0 1px rgba(212,169,106,.08);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    text-align:left;
+  }
+  .h3-term-bar{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(212,169,106,.15);
+    padding:10px 14px;
+  }
+  .h3-term-dot{
+    width:10px;height:10px;border-radius:50%;
+    background:rgba(212,169,106,.3);flex-shrink:0;
+  }
+  .h3-term-title{
+    font-size:.68rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(212,169,106,.65);
+    margin-left:4px;
+  }
+  .h3-term-body{padding:18px 18px 16px;}
+  .h3-term-msg{
+    display:flex;align-items:flex-start;gap:10px;
+    margin-bottom:16px;
+  }
+  .h3-term-avatar{
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,var(--accent) 0%,var(--forest) 100%);
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.75rem;color:#fff;font-weight:700;
+  }
+  .h3-term-bubble{
+    background:rgba(47,74,60,.55);
+    border:1px solid rgba(212,169,106,.18);
+    border-radius:4px 14px 14px 14px;
+    padding:10px 14px;
+    font-size:.88rem;
+    color:rgba(217,224,214,.95);
+    line-height:1.55;
+    max-width:280px;
+  }
+  .h3-term-choices{
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .h3-term-btn{
+    display:block;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(212,169,106,.32);
+    color:rgba(212,169,106,.92);
+    font-family:"Noto Serif JP",serif;
+    font-size:.84rem;font-weight:700;
+    padding:9px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    text-align:left;
+    transition:background .15s,border-color .15s,color .15s;
+    text-decoration:none;
+    letter-spacing:.01em;
+  }
+  .h3-term-btn:hover{
+    background:rgba(212,169,106,.14);
+    border-color:var(--accent);
+    color:var(--accent);
+  }
+  .h3-term-btn::before{content:"→ ";}
+
+  /* ── CTA group ── */
   .hero-cta-group{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
+    display:flex;flex-direction:column;align-items:center;gap:12px;
   }
   .hero-cta-primary{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+    display:inline-flex;align-items:center;gap:10px;
     background:var(--accent);
     color:var(--forest-deep);
     text-decoration:none;
     font-family:"Noto Serif JP",serif;
-    font-weight:700;
-    font-size:1.1rem;
-    padding:17px 38px;
-    border-radius:50px;
-    box-shadow:0 6px 24px rgba(212,169,106,.38);
+    font-weight:700;font-size:1.08rem;
+    padding:17px 42px;border-radius:50px;
+    box-shadow:0 6px 28px rgba(212,169,106,.40);
     transition:background .2s,transform .15s,box-shadow .2s;
     letter-spacing:.02em;
   }
   .hero-cta-primary:hover{
     background:#e0c089;
     transform:translateY(-2px);
-    box-shadow:0 10px 32px rgba(212,169,106,.5);
+    box-shadow:0 10px 36px rgba(212,169,106,.52);
   }
-  .hero-cta-primary .arrow{
-    display:inline-block;
-    transition:transform .2s;
-  }
+  .hero-cta-primary .arrow{display:inline-block;transition:transform .2s;}
   .hero-cta-primary:hover .arrow{transform:translateX(4px);}
   .hero-cta-secondary{
     display:inline-block;
-    color:rgba(212,169,106,.8);
-    text-decoration:none;
-    font-size:.9rem;
-    font-weight:700;
-    padding:8px 18px;
-    border-radius:30px;
-    border:1px solid rgba(212,169,106,.3);
+    color:rgba(212,169,106,.78);
+    text-decoration:none;font-size:.88rem;font-weight:700;
+    padding:8px 18px;border-radius:30px;
+    border:1px solid rgba(212,169,106,.28);
     transition:color .2s,border-color .2s;
   }
   .hero-cta-secondary:hover{color:var(--accent);border-color:rgba(212,169,106,.6);}
 
-  /* Trust stats */
-  /* Social Proof Strip */
-  section.social-proof{
-    background:var(--forest-deep);
-    padding:52px 0 48px;
-    position:relative;
-    overflow:hidden;
-  }
-  section.social-proof::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:radial-gradient(ellipse 70% 60% at 50% 110%, rgba(212,169,106,.08) 0%, transparent 70%);
-    pointer-events:none;
-  }
-  .sp-header{
-    text-align:center;
-    margin-bottom:36px;
-    position:relative;
-  }
-  .sp-eyebrow{
-    font-size:.7rem;
-    letter-spacing:.26em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:700;
-    margin-bottom:10px;
-    display:block;
-  }
-  .sp-heading{
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:1.45rem;
-    color:var(--parchment);
-    line-height:1.3;
-  }
-  .sp-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-    position:relative;
-  }
-  .sp-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(212,169,106,.22);
-    border-radius:14px;
-    padding:28px 20px 24px;
-    text-align:center;
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter:blur(4px);
-    transition:border-color .2s,background .2s;
-  }
-  .sp-card:hover{
-    background:rgba(255,255,255,.07);
-    border-color:rgba(212,169,106,.5);
-  }
-  .sp-value{
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-weight:700;
-    font-size:2.1rem;
-    color:var(--accent);
-    line-height:1;
-    display:block;
-    margin-bottom:8px;
-  }
-  .sp-metric{
-    font-size:.82rem;
-    font-weight:700;
-    color:var(--parchment);
-    letter-spacing:.04em;
-    display:block;
-    margin-bottom:5px;
-  }
-  .sp-sub{
-    font-size:.72rem;
-    color:#8fa89a;
-    letter-spacing:.02em;
-    display:block;
-    line-height:1.5;
-  }
-
-  /* Problem cards */
-  section.problem-cards{
-    padding:56px 0 52px;
-    background:var(--parchment);
-  }
-  .pc-eyebrow{
-    font-size:.72rem;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--accent-dark);
-    font-weight:700;
-    text-align:center;
-    margin-bottom:8px;
-  }
-  .pc-heading{
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:1.55rem;
-    color:var(--forest);
-    text-align:center;
-    margin-bottom:36px;
-  }
-  .pc-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-  }
-  .pc-card{
-    background:#fff;
-    border:1.5px solid #e4ddc9;
-    border-radius:18px;
-    padding:32px 26px 28px;
-    box-shadow:0 2px 14px rgba(13,31,26,.055);
-    transition:transform .15s,box-shadow .15s,border-color .15s;
-  }
-  .pc-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 32px rgba(13,31,26,.10);
-    border-color:var(--accent);
-  }
-  .pc-icon{
-    font-size:1.8rem;
-    line-height:1;
-    margin-bottom:14px;
-    display:block;
-  }
-  .pc-card h3{
-    font-family:"Noto Serif JP",serif;
-    font-weight:700;
-    font-size:1.02rem;
-    color:var(--forest-deep);
-    line-height:1.4;
-    margin-bottom:12px;
-  }
-  .pc-card p{
-    font-size:.88rem;
-    color:#5a6b60;
-    line-height:1.75;
-    margin:0;
-  }
-
+  /* ── Mobile ── */
   @media(max-width:680px){
+    header.hero{padding:64px 0 60px;}
     header.hero h1{font-size:1.75rem;}
-    header.hero p.lead{font-size:.97rem;}
-    .hero-cta-primary{font-size:1rem;padding:15px 30px;}
+    .h3-subline{font-size:.94rem;}
+    .h3-terminal{max-width:100%;}
+    .hero-cta-primary{font-size:1rem;padding:15px 32px;}
     .sp-grid{grid-template-columns:repeat(2,1fr);}
     .pc-grid{grid-template-columns:1fr;}
     .pc-card{padding:26px 22px 22px;}
   }
   @media(max-width:400px){
     header.hero h1{font-size:1.5rem;}
-    .sp-value{font-size:1.65rem;}
+    .h3-chip{font-size:.73rem;padding:5px 11px;}
   }
-  /* Compare Engine */
-  section.compare-engine{
-    padding:56px 0 52px;
-    background:#fff;
-    border-top:1px solid #ddd5be;
-  }
-  .ce-eyebrow{
-    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;
-  }
-  .ce-heading{
-    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
-    font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:10px;
-  }
-  .ce-sub{
-    font-size:.95rem;color:#5a6b60;text-align:center;margin:0 auto 32px;max-width:540px;line-height:1.7;
-  }
-  .ce-table-wrap{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    border-radius:14px;
-    border:1.5px solid #e4ddc9;
-    box-shadow:0 2px 14px rgba(13,31,26,.055);
-  }
-  .ce-table{
-    width:100%;border-collapse:collapse;min-width:520px;
-    font-size:.91rem;
-  }
-  .ce-table thead{
-    background:var(--forest-deep);color:var(--parchment);
-  }
-  .ce-table thead th{
-    padding:14px 18px;font-weight:700;font-size:.78rem;
-    letter-spacing:.1em;text-transform:uppercase;text-align:center;
-    white-space:nowrap;
-  }
-  .ce-table thead th:first-child{text-align:left;}
-  .ce-table tbody tr{
-    border-bottom:1px solid #ede6d3;
-    transition:background .12s;
-  }
-  .ce-table tbody tr:last-child{border-bottom:none;}
-  .ce-table tbody tr:hover{background:#fffbf3;}
-  .ce-table td{
-    padding:15px 18px;text-align:center;vertical-align:middle;
-    color:var(--forest-deep);
-  }
-  .ce-table td:first-child{
-    text-align:left;font-weight:700;font-size:.95rem;
-  }
-  .ce-table td .ce-latin{
-    display:block;font-style:italic;font-size:.72rem;color:#8a9389;font-weight:400;margin-top:2px;
-  }
-  /* 難易度ドット */
-  .ce-dots{display:inline-flex;gap:4px;justify-content:center;}
-  .ce-dot{
-    width:8px;height:8px;border-radius:50%;
-    background:var(--accent);
-  }
-  .ce-dot.empty{background:#e4ddc9;}
-  /* 匂いドット */
-  .ce-smell .ce-dot{background:#6ea8a0;}
-  .ce-smell .ce-dot.empty{background:#e4ddc9;}
-  /* 費用バッジ */
-  .ce-cost{
-    display:inline-block;font-weight:700;font-size:.85rem;
-    color:var(--forest);letter-spacing:.04em;
-  }
-  /* 初心者バッジ */
-  .ce-badge{
-    display:inline-block;padding:3px 12px;border-radius:20px;
-    font-size:.8rem;font-weight:700;
-  }
-  .ce-badge.best{background:#e8f5e9;color:#2e7d32;}
-  .ce-badge.good{background:#e3f2fd;color:#1565c0;}
-  .ce-badge.caution{background:#fff8e1;color:#e65100;}
-  .ce-badge.hard{background:#fce4ec;color:#b71c1c;}
-  .ce-cta-box{
-    margin-top:28px;text-align:center;
-    background:var(--parchment);
-    border-radius:14px;padding:28px 22px;
-    border:1.5px solid #e4ddc9;
-  }
-  .ce-cta-box p{
-    font-size:.97rem;color:#5a6b60;margin-bottom:16px;line-height:1.7;
-  }
-  .ce-cta-box p strong{color:var(--forest-deep);}
-  .ce-cta-btn{
-    display:inline-flex;align-items:center;gap:10px;
-    background:var(--accent);color:var(--forest-deep);text-decoration:none;
-    font-weight:700;font-size:1rem;padding:14px 32px;border-radius:40px;
-    box-shadow:0 4px 16px rgba(212,169,106,.32);
-    transition:background .2s,transform .15s;
-  }
-  .ce-cta-btn:hover{background:#e0c089;transform:translateY(-2px);}
-  .scroll-hint-ce{
-    display:none;font-size:.72rem;color:#9aa89d;text-align:right;margin-bottom:8px;letter-spacing:.05em;
-  }
-  @media(max-width:680px){
-    .scroll-hint-ce{display:block;}
-    .pg-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media(max-width:400px){
-    .pg-grid{grid-template-columns:1fr;}
-  }
-  /* ===== Phase 8-A: Hero enhancements ===== */
-  .hero-trust-badges{
-    display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;
-    margin:4px 0 2px;
-  }
-  .hero-trust-badges span{
-    font-size:.78rem;font-weight:700;
-    color:rgba(212,169,106,.85);
-    letter-spacing:.03em;
-    white-space:nowrap;
-  }
-  .hero-cost-card{
-    display:flex;align-items:center;justify-content:center;gap:0;
-    margin:28px auto 0;
-    max-width:360px;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(212,169,106,.22);
-    border-radius:14px;
-    padding:16px 24px;
-    -webkit-backdrop-filter:blur(8px);
-    backdrop-filter:blur(8px);
-  }
-  .hero-cost-item{
-    display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;
-  }
-  .hero-cost-label{
-    font-size:.68rem;font-weight:700;letter-spacing:.1em;
-    text-transform:uppercase;color:rgba(212,169,106,.7);
-  }
-  .hero-cost-value{
-    font-family:"Playfair Display",serif;font-style:italic;
-    font-size:1.08rem;font-weight:700;color:#fff;
-    white-space:nowrap;
-  }
-  .hero-cost-divider{
-    width:1px;height:36px;background:rgba(212,169,106,.2);
-    margin:0 18px;flex-shrink:0;
-  }
-  @media(max-width:400px){
-    .hero-cost-card{flex-direction:column;gap:12px;padding:14px 18px;}
-    .hero-cost-divider{width:60px;height:1px;margin:0;}
-    .hero-cost-value{font-size:.98rem;}
-  }
-  /* ===== /Phase 8-A ===== */
 
-  /* ===== Phase 8-B: Popular Species Cards ===== */
-  section.popular-picks{padding:56px 0 52px;background:#fff;border-top:1px solid #e4ddc9;}
-  .ppk-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
-  .ppk-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:6px;}
-  .ppk-sub{font-size:.93rem;color:#5a6b60;text-align:center;margin:0 auto 32px;max-width:480px;line-height:1.7;}
-  .ppk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  .ppk-card{display:flex;flex-direction:column;background:var(--parchment);border:1.5px solid #e4ddc9;border-radius:18px;padding:24px 22px 20px;box-shadow:0 2px 14px rgba(13,31,26,.055);transition:transform .15s,box-shadow .15s,border-color .15s;min-height:190px;text-decoration:none;color:inherit;}
-  .ppk-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,31,26,.10);border-color:var(--accent);}
-  .ppk-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.05rem;color:var(--forest-deep);margin-bottom:4px;line-height:1.3;}
-  .ppk-desc{font-size:.8rem;color:#7a8a7d;margin-bottom:14px;line-height:1.55;}
-  .ppk-meta{display:flex;flex-direction:column;gap:5px;margin-bottom:16px;flex:1;}
-  .ppk-meta-row{display:flex;align-items:center;justify-content:space-between;font-size:.78rem;}
-  .ppk-meta-label{color:#8a9a8d;font-weight:700;letter-spacing:.06em;}
-  .ppk-meta-val{color:var(--forest-deep);font-weight:700;}
-  .ppk-stars{color:var(--accent);letter-spacing:-.5px;}
-  .ppk-cost{color:var(--forest);font-family:"Playfair Display",serif;font-style:italic;}
-  .ppk-btn{display:block;background:var(--forest);color:var(--parchment);font-weight:700;font-size:.88rem;text-align:center;padding:12px 0;border-radius:10px;transition:background .18s;min-height:44px;line-height:20px;box-sizing:border-box;}
-  .ppk-card:hover .ppk-btn{background:var(--accent-dark);}
-  @media(max-width:600px){.ppk-grid{grid-template-columns:1fr;}.ppk-card{min-height:auto;padding:20px 18px 18px;}}
-  /* ===== /Phase 8-B ===== */
+  /* ===== /Phase 11 ===== */
 
-  /* ===== Phase 8-C: Compare Section ===== */
-  section.hp-compare{padding:52px 0 48px;background:var(--parchment);border-top:1px solid #e4ddc9;}
-  .hpc-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
-  .hpc-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:6px;}
-  .hpc-sub{font-size:.93rem;color:#5a6b60;text-align:center;margin:0 auto 32px;max-width:520px;line-height:1.7;}
-  .hpc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .hpc-card{background:#fff;border:1.5px solid #e4ddc9;border-radius:18px;padding:22px 20px 18px;box-shadow:0 2px 12px rgba(13,31,26,.055);display:flex;flex-direction:column;min-height:220px;}
-  .hpc-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:.97rem;color:var(--forest-deep);margin-bottom:12px;line-height:1.4;}
-  .hpc-vs{color:var(--accent-dark);font-style:italic;margin:0 4px;}
-  .hpc-points{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:5px;flex:1;}
-  .hpc-points li{font-size:.78rem;color:#5a6b60;padding-left:12px;position:relative;line-height:1.55;}
-  .hpc-points li::before{content:"・";position:absolute;left:0;color:var(--accent);}
-  .hpc-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-  .hpc-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 8px;background:var(--forest);color:var(--parchment);text-decoration:none;font-weight:700;font-size:.75rem;border-radius:10px;text-align:center;line-height:1.3;transition:background .18s;box-sizing:border-box;}
-  .hpc-btn:hover{background:var(--accent-dark);}
-  @media(max-width:760px){.hpc-grid{grid-template-columns:1fr;}.hpc-card{min-height:auto;}}
-  /* ===== /Phase 8-C ===== */
-
-  /* ===== Phase 8-D: Cost Simulator ===== */
-  section.cost-sim{padding:56px 0 52px;background:#fff;border-top:1px solid #e4ddc9;}
-  .csim-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
-  .csim-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:6px;}
-  .csim-sub{font-size:.93rem;color:#5a6b60;text-align:center;margin:0 auto 28px;max-width:520px;line-height:1.7;}
-  .csim-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-  .csim-tab{
-    padding:10px 18px;min-height:44px;border-radius:30px;
-    border:1.5px solid #ddd5be;background:#fff;
-    font-family:"Noto Serif JP",serif;font-size:.88rem;font-weight:700;
-    color:var(--forest);cursor:pointer;transition:all .18s;
-    box-sizing:border-box;
-  }
-  .csim-tab:hover{border-color:var(--accent);background:#fffbf3;}
-  .csim-tab.active{background:var(--forest);color:var(--parchment);border-color:var(--forest);}
-  .csim-panel{display:none;}
-  .csim-panel.active{display:block;}
-  .csim-card{
-    background:var(--parchment);border:1.5px solid #e4ddc9;border-radius:18px;
-    padding:28px 26px 24px;max-width:520px;margin:0 auto;
-    box-shadow:0 2px 14px rgba(13,31,26,.055);
-  }
-  .csim-costs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
-  .csim-cost-item{background:#fff;border-radius:12px;padding:16px 18px;border:1px solid #e4ddc9;}
-  .csim-cost-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
-  .csim-cost-val{font-family:"Playfair Display",serif;font-style:italic;font-size:1.25rem;font-weight:700;color:var(--forest);}
-  .csim-examples{font-size:.82rem;color:#5a6b60;margin-bottom:20px;line-height:1.7;}
-  .csim-examples strong{color:var(--forest);font-weight:700;}
-  .csim-reassure{font-size:.8rem;color:#7a8a7d;margin-bottom:20px;line-height:1.65;padding:10px 14px;background:rgba(47,74,60,.06);border-radius:8px;}
-  .csim-cta{
-    display:block;text-align:center;
-    background:var(--accent);color:var(--forest-deep);text-decoration:none;
-    font-weight:700;font-size:.97rem;padding:15px 24px;border-radius:12px;
-    min-height:44px;box-sizing:border-box;
-    box-shadow:0 4px 14px rgba(212,169,106,.3);
-    transition:background .18s,transform .14s;
-  }
-  .csim-cta:hover{background:#e0c089;transform:translateY(-1px);}
-  @media(max-width:480px){
-    .csim-costs{grid-template-columns:1fr;}
-    .csim-tab{font-size:.82rem;padding:10px 14px;}
-  }
-  /* ===== /Phase 8-D ===== */
-
-  /* ===== Phase 10-B: Guide Links ===== */
-  section.guide-links{padding:52px 0 48px;background:var(--parchment);border-top:1px solid #e4ddc9;}
-  .gl-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
-  .gl-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);text-align:center;margin-bottom:6px;}
-  .gl-sub{font-size:.91rem;color:#5a6b60;text-align:center;margin:0 auto 28px;max-width:480px;line-height:1.7;}
-  .gl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .gl-card{display:flex;flex-direction:column;background:#fff;border:1.5px solid #e4ddc9;border-radius:16px;padding:20px 18px 16px;text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(13,31,26,.05);transition:border-color .15s,transform .15s,box-shadow .15s;min-height:100px;}
-  .gl-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,31,26,.09);}
-  .gl-icon{font-size:1.5rem;margin-bottom:10px;line-height:1;}
-  .gl-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:.97rem;color:var(--forest-deep);margin-bottom:6px;line-height:1.35;}
-  .gl-desc{font-size:.78rem;color:#7a8a7d;line-height:1.55;flex:1;}
-  .gl-cta{font-size:.8rem;font-weight:700;color:var(--accent-dark);margin-top:12px;}
-  @media(max-width:600px){.gl-grid{grid-template-columns:1fr;}.gl-card{min-height:auto;}}
-  /* ===== /Phase 10-B ===== */
-
-  /* ===== Phase 7-D Task 2A: Sticky CTA ===== */
-  #sticky-diagnosis-cta{
-    position:fixed;
-    bottom:10px;
-    left:10px;
-    right:10px;
-    z-index:9000;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    height:68px;
-    padding:0 18px 0 16px;
-    border-radius:18px;
-    background:rgba(13,31,26,.82);
-    -webkit-backdrop-filter:blur(16px) saturate(180%);
-    backdrop-filter:blur(16px) saturate(180%);
-    border:1px solid rgba(212,169,106,.28);
-    box-shadow:0 8px 32px rgba(0,0,0,.36),0 2px 8px rgba(0,0,0,.18);
-    padding-bottom:env(safe-area-inset-bottom,0px);
-    opacity:0;
-    transform:translateY(20px);
-    pointer-events:none;
-    transition:opacity .25s ease,transform .25s ease;
-    will-change:opacity,transform;
-  }
-  #sticky-diagnosis-cta.visible{
-    opacity:1;
-    transform:translateY(0);
-    pointer-events:auto;
-  }
-  .sticky-cta-left{display:flex;align-items:center;gap:10px;min-width:0;flex:1;}
-  .sticky-emoji{font-size:1.55rem;line-height:1;flex-shrink:0;}
-  .sticky-copy{min-width:0;}
-  .sticky-main{font-family:"Noto Serif JP",serif;font-weight:700;font-size:.93rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .sticky-sub{font-size:.72rem;color:rgba(212,169,106,.8);margin-top:1px;white-space:nowrap;}
-  .sticky-btn{flex-shrink:0;display:inline-block;background:var(--accent);color:var(--forest-deep);text-decoration:none;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.88rem;padding:10px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 3px 12px rgba(212,169,106,.35);transition:background .18s,transform .14s;}
-  .sticky-btn:hover{background:#e0c089;transform:translateY(-1px);}
-  @media(min-width:769px){#sticky-diagnosis-cta{display:none;}}
-  @media(max-width:360px){.sticky-main{font-size:.82rem;}.sticky-btn{font-size:.8rem;padding:9px 13px;}}
-  /* ===== /Phase 7-D Task 2A ===== */
-
-  /* ===== /Phase 7-D ===== */
 
 </style>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-badge">AI Turtle Concierge</div>
-    <h1>あなたに合う亀、<br><em>3分でわかる。</em></h1>
-    <p class="lead">100種からAI診断。<br>予算・飼いやすさ・スペースから<br>あなたに最適な1種を提案。</p>
+
+    <!-- Eyebrow -->
+    <div class="h3-eyebrow">AI Turtle Concierge</div>
+
+    <!-- Headline -->
+    <h1>あなたの部屋に、<br>
+    <em>本当に合う亀</em>はどの種？<br>
+    100種以上から、3分で見つかる。</h1>
+
+    <p class="h3-subline">初期費用・臭い・サイズ・寿命・難易度——<br>全部まとめて診断します。</p>
+
+    <!-- Fear chips -->
+    <div class="h3-chips" aria-label="チェックポイント">
+      <span class="h3-chip">初期費用</span>
+      <span class="h3-chip">臭いやすさ</span>
+      <span class="h3-chip">最終サイズ</span>
+      <span class="h3-chip">寿命</span>
+      <span class="h3-chip">飼育難易度</span>
+    </div>
+
+    <!-- Fake AI terminal -->
+    <div class="h3-terminal" role="presentation" aria-hidden="true">
+      <div class="h3-term-bar">
+        <span class="h3-term-dot"></span>
+        <span class="h3-term-dot"></span>
+        <span class="h3-term-dot"></span>
+        <span class="h3-term-title">Kame Concierge — 亀診断AI</span>
+      </div>
+      <div class="h3-term-body">
+        <div class="h3-term-msg">
+          <div class="h3-term-avatar" aria-hidden="true">🐢</div>
+          <div class="h3-term-bubble">予算はどれくらいですか？<br><span style="font-size:.78rem;opacity:.7">（機材・個体込みの目安）</span></div>
+        </div>
+        <div class="h3-term-choices">
+          <a href="./shindan/"
+             class="h3-term-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_low',budget:'under_30k'})">
+            3万円以下で始めたい
+          </a>
+          <a href="./shindan/"
+             class="h3-term-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_mid',budget:'around_50k'})">
+            5万円前後でそろえたい
+          </a>
+          <a href="./shindan/"
+             class="h3-term-btn"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_high',budget:'over_100k'})">
+            10万円以上・本格的に飼いたい
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA group -->
     <div class="hero-cta-group">
       <a href="./shindan/"
          class="hero-cta-primary"
          data-event="homepage_hero_primary_click"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'primary_cta'});(typeof gtag==='function')&&gtag('event','homepage_hero_diagnosis_click',{event_category:'hero',event_label:'primary_cta'})">
-        3分診断を始める <span class="arrow">→</span>
+        無料で診断を始める <span class="arrow">→</span>
       </a>
-      <div class="hero-trust-badges" aria-label="サービス特徴">
-        <span>✓ 100種対応</span>
-        <span>✓ 初心者対応</span>
-        <span>✓ 初期費用も表示</span>
-      </div>
       <a href="#popular-species" class="hero-cta-secondary">人気の亀を見る ↓</a>
     </div>
-    <div class="hero-cost-card" aria-label="費用目安">
-      <div class="hero-cost-item">
-        <span class="hero-cost-label">初期費用目安</span>
-        <span class="hero-cost-value">¥15,000〜¥120,000</span>
-      </div>
-      <div class="hero-cost-divider"></div>
-      <div class="hero-cost-item">
-        <span class="hero-cost-label">月額費用目安</span>
-        <span class="hero-cost-value">¥2,000〜¥15,000</span>
-      </div>
-    </div>
+
   </div>
 </header>
 
