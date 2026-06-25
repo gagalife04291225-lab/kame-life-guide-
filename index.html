@@ -429,233 +429,190 @@
   .pg-all:hover{text-decoration:underline;}
   @media(max-width:520px){.pg-grid{grid-template-columns:1fr;gap:10px;}}
 
-  /* ===== Phase 11: Hero V3 Concierge Terminal ===== */
+  /* ===== Phase 12-A: Hero Premium Redesign ===== */
 
-  /* ── Base ── */
+  /* ── Base & Background ── */
   header.hero{
     position:relative;
-    background:#080f0c;
     overflow:hidden;
-    padding:80px 0 72px;
+    padding:88px 0 80px;
     text-align:center;
+    /* Deep wetland dusk: dark earth → misty forest → amber dawn glow */
+    background:
+      linear-gradient(175deg, #05100d 0%, #0c1e17 38%, #111a10 65%, #0e1509 100%);
   }
-  /* ambient glow layers */
+  /* Multi-layer ambient: wetland mist + forest canopy glow + desert warmth */
   header.hero::before{
     content:"";
     position:absolute;inset:0;
     background:
-      radial-gradient(ellipse 70% 55% at 15% 85%, rgba(47,74,60,.6) 0%, transparent 60%),
-      radial-gradient(ellipse 55% 45% at 85% 15%, rgba(212,169,106,.10) 0%, transparent 55%),
-      radial-gradient(ellipse 90% 70% at 50% 115%, rgba(13,31,26,.95) 0%, transparent 65%);
+      radial-gradient(ellipse 80% 60% at 20% 90%, rgba(30,58,42,.72) 0%, transparent 58%),
+      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(212,169,106,.12) 0%, transparent 52%),
+      radial-gradient(ellipse 100% 50% at 50% 0%, rgba(8,20,14,.80) 0%, transparent 50%),
+      radial-gradient(ellipse 45% 35% at 72% 75%, rgba(47,74,60,.38) 0%, transparent 55%),
+      radial-gradient(ellipse 30% 25% at 12% 18%, rgba(180,140,80,.07) 0%, transparent 60%);
     pointer-events:none;z-index:0;
   }
-  /* wave divider */
+  /* Soft wave divider into next section */
   header.hero::after{
     content:"";
     position:absolute;
     bottom:-1px;left:0;right:0;
-    height:72px;
+    height:68px;
     background:var(--parchment);
     clip-path:ellipse(55% 100% at 50% 100%);
     pointer-events:none;z-index:1;
   }
   header.hero .wrap{position:relative;z-index:2;}
 
-  /* ── Eyebrow pill ── */
-  .h3-eyebrow{
-    display:inline-flex;align-items:center;gap:7px;
-    background:rgba(212,169,106,.13);
-    border:1px solid rgba(212,169,106,.38);
-    color:var(--accent);
-    font-size:.7rem;font-weight:700;
-    letter-spacing:.22em;text-transform:uppercase;
-    padding:5px 16px 5px 12px;
-    border-radius:40px;
-    margin-bottom:28px;
-  }
-  .h3-eyebrow::before{
-    content:"";
-    display:inline-block;width:6px;height:6px;
-    background:var(--accent);border-radius:50%;
-    animation:h3-pulse 2s ease-in-out infinite;
-  }
-  @keyframes h3-pulse{
-    0%,100%{opacity:1;transform:scale(1);}
-    50%{opacity:.4;transform:scale(.7);}
-  }
-
-  /* ── Headline ── */
-  header.hero h1{
+  /* ── Brand name (H1) ── */
+  .h12-brand{
     font-family:"Playfair Display",serif;
     font-weight:700;
-    font-size:clamp(1.85rem,5vw,2.65rem);
-    line-height:1.22;
+    font-size:clamp(2.6rem,8vw,4.4rem);
+    letter-spacing:.18em;
+    line-height:1;
     color:#fff;
-    margin-bottom:14px;
-    letter-spacing:-.015em;
+    margin-bottom:8px;
+    /* Subtle gold shimmer on the brand name */
+    text-shadow:
+      0 0 60px rgba(212,169,106,.22),
+      0 2px 12px rgba(0,0,0,.55);
   }
-  header.hero h1 em{
+  /* The "LIFE" part in gradient gold */
+  .h12-brand em{
     font-style:normal;
+    background:linear-gradient(100deg, #d4a96a 0%, #edd27e 45%, #c89040 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  /* Thin horizontal rule under brand */
+  .h12-brand-rule{
+    display:block;
+    width:40px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    margin:16px auto 28px;
+    opacity:.65;
+  }
+
+  /* ── Main copy (most prominent) ── */
+  .h12-main{
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:clamp(1.22rem,3.8vw,1.72rem);
+    line-height:1.55;
+    color:#f0ece2;
+    max-width:560px;
+    margin:0 auto 16px;
+    letter-spacing:.02em;
+  }
+  .h12-main strong{
     background:linear-gradient(95deg,var(--accent) 0%,#edd27e 100%);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
   }
-  .h3-subline{
-    font-size:1.0rem;
-    color:rgba(217,224,214,.75);
-    max-width:500px;
-    margin:0 auto 36px;
-    line-height:1.8;
-  }
 
-  /* ── Fear chips ── */
-  .h3-chips{
-    display:flex;flex-wrap:wrap;justify-content:center;
-    gap:8px;
-    margin:0 auto 36px;
-    max-width:480px;
+  /* ── Subtitle ── */
+  .h12-sub{
+    font-size:.97rem;
+    color:rgba(217,224,214,.68);
+    max-width:440px;
+    margin:0 auto 40px;
+    line-height:1.85;
   }
-  .h3-chip{
-    display:inline-flex;align-items:center;gap:5px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.14);
-    color:rgba(217,224,214,.9);
-    font-size:.78rem;font-weight:700;
-    padding:6px 14px;
-    border-radius:20px;
-    letter-spacing:.02em;
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter:blur(4px);
-  }
-  .h3-chip::before{content:"⚠";font-size:.7rem;opacity:.6;}
-
-  /* ── Fake terminal card ── */
-  .h3-terminal{
-    background:rgba(10,18,14,.88);
-    border:1px solid rgba(212,169,106,.28);
-    border-radius:16px;
-    max-width:400px;
-    margin:0 auto 36px;
-    overflow:hidden;
-    box-shadow:0 8px 40px rgba(0,0,0,.45),0 0 0 1px rgba(212,169,106,.08);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    text-align:left;
-  }
-  .h3-term-bar{
-    display:flex;align-items:center;gap:6px;
-    background:rgba(255,255,255,.04);
-    border-bottom:1px solid rgba(212,169,106,.15);
-    padding:10px 14px;
-  }
-  .h3-term-dot{
-    width:10px;height:10px;border-radius:50%;
-    background:rgba(212,169,106,.3);flex-shrink:0;
-  }
-  .h3-term-title{
-    font-size:.68rem;font-weight:700;
-    letter-spacing:.14em;text-transform:uppercase;
-    color:rgba(212,169,106,.65);
-    margin-left:4px;
-  }
-  .h3-term-body{padding:18px 18px 16px;}
-  .h3-term-msg{
-    display:flex;align-items:flex-start;gap:10px;
-    margin-bottom:16px;
-  }
-  .h3-term-avatar{
-    width:28px;height:28px;border-radius:50%;
-    background:linear-gradient(135deg,var(--accent) 0%,var(--forest) 100%);
-    flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    font-size:.75rem;color:#fff;font-weight:700;
-  }
-  .h3-term-bubble{
-    background:rgba(47,74,60,.55);
-    border:1px solid rgba(212,169,106,.18);
-    border-radius:4px 14px 14px 14px;
-    padding:10px 14px;
-    font-size:.88rem;
-    color:rgba(217,224,214,.95);
-    line-height:1.55;
-    max-width:280px;
-  }
-  .h3-term-choices{
-    display:flex;flex-direction:column;gap:7px;
-  }
-  .h3-term-btn{
-    display:block;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(212,169,106,.32);
-    color:rgba(212,169,106,.92);
-    font-family:"Noto Serif JP",serif;
-    font-size:.84rem;font-weight:700;
-    padding:9px 16px;
-    border-radius:8px;
-    cursor:pointer;
-    text-align:left;
-    transition:background .15s,border-color .15s,color .15s;
-    text-decoration:none;
-    letter-spacing:.01em;
-  }
-  .h3-term-btn:hover{
-    background:rgba(212,169,106,.14);
-    border-color:var(--accent);
-    color:var(--accent);
-  }
-  .h3-term-btn::before{content:"→ ";}
 
   /* ── CTA group ── */
   .hero-cta-group{
-    display:flex;flex-direction:column;align-items:center;gap:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:13px;
+    margin-bottom:36px;
   }
   .hero-cta-primary{
     display:inline-flex;align-items:center;gap:10px;
-    background:var(--accent);
-    color:var(--forest-deep);
+    background:linear-gradient(105deg,#d4a96a 0%,#c08840 100%);
+    color:#05100d;
     text-decoration:none;
     font-family:"Noto Serif JP",serif;
     font-weight:700;font-size:1.08rem;
-    padding:17px 42px;border-radius:50px;
-    box-shadow:0 6px 28px rgba(212,169,106,.40);
+    padding:17px 46px;border-radius:50px;
+    box-shadow:0 6px 30px rgba(212,169,106,.42),0 0 0 1px rgba(212,169,106,.18);
     transition:background .2s,transform .15s,box-shadow .2s;
-    letter-spacing:.02em;
+    letter-spacing:.03em;
   }
   .hero-cta-primary:hover{
-    background:#e0c089;
+    background:linear-gradient(105deg,#e0c080 0%,#d4a050 100%);
     transform:translateY(-2px);
-    box-shadow:0 10px 36px rgba(212,169,106,.52);
+    box-shadow:0 12px 38px rgba(212,169,106,.56),0 0 0 1px rgba(212,169,106,.28);
   }
   .hero-cta-primary .arrow{display:inline-block;transition:transform .2s;}
   .hero-cta-primary:hover .arrow{transform:translateX(4px);}
   .hero-cta-secondary{
     display:inline-block;
-    color:rgba(212,169,106,.78);
-    text-decoration:none;font-size:.88rem;font-weight:700;
-    padding:8px 18px;border-radius:30px;
-    border:1px solid rgba(212,169,106,.28);
-    transition:color .2s,border-color .2s;
+    color:rgba(212,169,106,.75);
+    text-decoration:none;font-size:.87rem;font-weight:700;
+    padding:8px 20px;border-radius:30px;
+    border:1px solid rgba(212,169,106,.26);
+    transition:color .2s,border-color .2s,background .2s;
+    letter-spacing:.02em;
   }
-  .hero-cta-secondary:hover{color:var(--accent);border-color:rgba(212,169,106,.6);}
+  .hero-cta-secondary:hover{
+    color:var(--accent);
+    border-color:rgba(212,169,106,.55);
+    background:rgba(212,169,106,.06);
+  }
+
+  /* ── Stat row (pills) ── */
+  .h12-stats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+  }
+  .h12-stat{
+    display:inline-flex;align-items:center;gap:5px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(212,169,106,.20);
+    color:rgba(217,224,214,.80);
+    font-size:.73rem;font-weight:700;
+    letter-spacing:.10em;text-transform:uppercase;
+    padding:5px 14px;
+    border-radius:40px;
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+  }
+  .h12-stat::before{
+    content:"";
+    display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--accent);opacity:.7;flex-shrink:0;
+  }
 
   /* ── Mobile ── */
   @media(max-width:680px){
-    header.hero{padding:64px 0 60px;}
-    header.hero h1{font-size:1.75rem;}
-    .h3-subline{font-size:.94rem;}
-    .h3-terminal{max-width:100%;}
-    .hero-cta-primary{font-size:1rem;padding:15px 32px;}
+    header.hero{padding:72px 0 64px;}
+    .h12-brand{letter-spacing:.12em;}
+    .h12-main{font-size:1.15rem;}
+    .hero-cta-primary{font-size:1rem;padding:15px 34px;}
     .sp-grid{grid-template-columns:repeat(2,1fr);}
     .pc-grid{grid-template-columns:1fr;}
     .pc-card{padding:26px 22px 22px;}
   }
   @media(max-width:400px){
-    header.hero h1{font-size:1.5rem;}
-    .h3-chip{font-size:.73rem;padding:5px 11px;}
+    header.hero{padding:60px 0 56px;}
+    .h12-brand{font-size:2.3rem;letter-spacing:.10em;}
+    .h12-main{font-size:1.08rem;}
+    .h12-stat{font-size:.68rem;padding:4px 11px;}
   }
 
-  /* ===== /Phase 11 ===== */
+  /* ── Legacy classes kept for other sections that might reference them ── */
+  .h3-eyebrow{display:none;}
+  .h3-chips,.h3-chip{display:none;}
+  .h3-terminal{display:none;}
+
+  /* ===== /Phase 12-A ===== */
 
 
   /* ===== Phase 11 Step 1C: Problem Cards (Regret Prevention) ===== */
@@ -1765,67 +1722,36 @@
 <header class="hero">
   <div class="wrap">
 
-    <!-- Eyebrow -->
-    <div class="h3-eyebrow">AI Turtle Concierge</div>
+    <!-- Brand name -->
+    <h1 class="h12-brand">KAME&nbsp;<em>LIFE</em></h1>
+    <span class="h12-brand-rule" aria-hidden="true"></span>
 
-    <!-- Headline -->
-    <h1>あなたの部屋に、<br>
-    <em>本当に合う亀</em>はどの種？<br>
-    100種以上から、3分で見つかる。</h1>
+    <!-- Main copy -->
+    <p class="h12-main"><strong>100種</strong>から、あなたに合う亀が<strong>3分</strong>で見つかる。</p>
 
-    <p class="h3-subline">初期費用・臭い・サイズ・寿命・難易度——<br>全部まとめて診断します。</p>
-
-    <!-- Fear chips -->
-    <div class="h3-chips" aria-label="チェックポイント">
-      <span class="h3-chip">初期費用</span>
-      <span class="h3-chip">臭いやすさ</span>
-      <span class="h3-chip">最終サイズ</span>
-      <span class="h3-chip">寿命</span>
-      <span class="h3-chip">飼育難易度</span>
-    </div>
-
-    <!-- Fake AI terminal -->
-    <div class="h3-terminal" role="presentation" aria-hidden="true">
-      <div class="h3-term-bar">
-        <span class="h3-term-dot"></span>
-        <span class="h3-term-dot"></span>
-        <span class="h3-term-dot"></span>
-        <span class="h3-term-title">Kame Concierge — 亀診断AI</span>
-      </div>
-      <div class="h3-term-body">
-        <div class="h3-term-msg">
-          <div class="h3-term-avatar" aria-hidden="true">🐢</div>
-          <div class="h3-term-bubble">予算はどれくらいですか？<br><span style="font-size:.78rem;opacity:.7">（機材・個体込みの目安）</span></div>
-        </div>
-        <div class="h3-term-choices">
-          <a href="./shindan/"
-             class="h3-term-btn"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_low',budget:'under_30k'})">
-            3万円以下で始めたい
-          </a>
-          <a href="./shindan/"
-             class="h3-term-btn"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_mid',budget:'around_50k'})">
-            5万円前後でそろえたい
-          </a>
-          <a href="./shindan/"
-             class="h3-term-btn"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_terminal_click',{event_category:'hero',event_label:'budget_high',budget:'over_100k'})">
-            10万円以上・本格的に飼いたい
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- Subtitle -->
+    <p class="h12-sub">飼育難易度・寿命・初期費用・月額コストまでわかる。<br>初心者でも、失敗しない亀選びを。</p>
 
     <!-- CTA group -->
     <div class="hero-cta-group">
       <a href="./shindan/"
          class="hero-cta-primary"
-         data-event="homepage_hero_primary_click"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'primary_cta'});(typeof gtag==='function')&&gtag('event','homepage_hero_diagnosis_click',{event_category:'hero',event_label:'primary_cta'})">
-        無料で診断を始める <span class="arrow">→</span>
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'primary_cta_p12a'})">
+        3分診断をはじめる <span class="arrow">→</span>
       </a>
-      <a href="#popular-species" class="hero-cta-secondary">人気の亀を見る ↓</a>
+      <a href="#popular-picks"
+         class="hero-cta-secondary"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_secondary_click',{event_category:'hero',event_label:'popular_picks_p12a'})">
+        人気の亀を見る ↓
+      </a>
+    </div>
+
+    <!-- Stat row -->
+    <div class="h12-stats" aria-label="サイト実績">
+      <span class="h12-stat">100 species</span>
+      <span class="h12-stat">98 guides</span>
+      <span class="h12-stat">87 products</span>
+      <span class="h12-stat">AI powered</span>
     </div>
 
   </div>
