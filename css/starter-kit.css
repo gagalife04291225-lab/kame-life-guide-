@@ -306,7 +306,6 @@
 .sk-card--standard {
   border: 1.5px solid var(--accent, #d4a96a);
   box-shadow: 0 4px 14px rgba(212,169,106,.18);
-  transform: translateY(-1px);
   background: #fffef9;
 }
 .sk-card--standard .sk-card-btn {
@@ -341,16 +340,21 @@
   padding: 15px 14px 13px;
 }
 
-/* カードホバー */
-.sk-card:hover {
-  box-shadow: 0 6px 18px rgba(13,31,26,.1);
-  transform: translateY(-2px);
+/* transition はベースに配置（hover-out も自然に戻る） */
+.sk-card {
   transition: box-shadow .18s, transform .18s;
 }
-/* Standard はホバーで元の elevation を維持 */
-.sk-card--standard:hover {
-  box-shadow: 0 7px 20px rgba(212,169,106,.22);
-  transform: translateY(-3px);
+/* カードホバー: PC（hover可能デバイス）のみ */
+@media (hover: hover) {
+  .sk-card:hover {
+    box-shadow: 0 6px 18px rgba(13,31,26,.1);
+    transform: translateY(-2px);
+  }
+  /* Standard はホバーで elevation を強調 */
+  .sk-card--standard:hover {
+    box-shadow: 0 7px 20px rgba(212,169,106,.22);
+    transform: translateY(-3px);
+  }
 }
 
 /* 価格ヒエラルキー強化 */
@@ -374,7 +378,5 @@
   .sk-card { flex: 0 0 190px; }
   .sk-hint { font-size: .79rem; padding: 10px 14px; }
   .sk-tab-rec-badge { font-size: .55rem; }
-  .sk-card--standard { transform: none; } /* モバイルでは浮かせない */
-  .sk-card--standard:hover { transform: none; }
-  .sk-card:hover { transform: none; } /* モバイルでhoverアニメなし */
+  /* transform は @media(hover:hover) でPC限定済み・モバイルでは適用されない */
 }
