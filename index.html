@@ -1051,6 +1051,171 @@
     .ppk-heading{font-size:1.3rem;}
     .ppk-card{padding:20px 18px 18px;}
   }
+  /* ===== Phase 11 Step 1E: Decision Engine ===== */
+  section.hp-compare{
+    padding:72px 0 68px;
+    background:var(--parchment);
+    position:relative;
+  }
+  .hpc-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+    display:block;
+  }
+  .hpc-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.55rem;
+    color:var(--forest);
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.35;
+  }
+  .hpc-sub{
+    font-size:.88rem;
+    color:#6b7c70;
+    text-align:center;
+    margin-bottom:44px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.75;
+  }
+  .hpc-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .hpc-card{
+    background:#fff;
+    border:1.5px solid #e4ddc9;
+    border-radius:20px;
+    padding:26px 24px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    box-shadow:0 2px 12px rgba(13,31,26,.045);
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+    position:relative;
+    overflow:hidden;
+  }
+  .hpc-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg,var(--forest) 0%,var(--accent) 100%);
+    opacity:0;
+    transition:opacity .2s;
+  }
+  .hpc-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 32px rgba(13,31,26,.10);
+    border-color:var(--accent);
+  }
+  .hpc-card:hover::before{opacity:1;}
+  /* Decision label */
+  .hpc-decision-label{
+    font-size:.65rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    margin-bottom:12px;
+    display:block;
+    opacity:.8;
+  }
+  /* Main question */
+  .hpc-question{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:1.02rem;
+    color:var(--forest-deep);
+    line-height:1.4;
+    margin-bottom:10px;
+  }
+  /* VS strip */
+  .hpc-vs-strip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:12px;
+  }
+  .hpc-vs-name{
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--forest);
+    flex:1;
+    text-align:center;
+    background:rgba(47,74,60,.07);
+    border-radius:6px;
+    padding:5px 8px;
+    line-height:1.3;
+  }
+  .hpc-vs{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-size:.8rem;
+    font-weight:700;
+    color:var(--accent);
+    flex-shrink:0;
+  }
+  /* Decision hint */
+  .hpc-hint{
+    font-size:.8rem;
+    color:#5a6b60;
+    line-height:1.65;
+    margin-bottom:18px;
+    padding:10px 12px;
+    background:rgba(212,169,106,.07);
+    border-left:2px solid rgba(212,169,106,.4);
+    border-radius:0 8px 8px 0;
+    flex:1;
+  }
+  /* CTA buttons */
+  .hpc-btns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:auto;
+  }
+  .hpc-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--forest-deep);
+    color:var(--parchment);
+    text-decoration:none;
+    font-size:.76rem;
+    font-weight:700;
+    padding:9px 10px;
+    border-radius:8px;
+    text-align:center;
+    line-height:1.3;
+    transition:background .15s,transform .12s;
+    letter-spacing:.01em;
+  }
+  .hpc-btn:hover{
+    background:var(--forest);
+    transform:translateY(-1px);
+  }
+  @media(max-width:840px){
+    .hpc-grid{grid-template-columns:1fr;}
+    .hpc-card{padding:22px 20px 20px;}
+  }
+  @media(max-width:480px){
+    section.hp-compare{padding:56px 0 52px;}
+    .hpc-heading{font-size:1.3rem;}
+    .hpc-btns{grid-template-columns:1fr;}
+  }
+  /* ===== /Phase 11 Step 1E ===== */
+
   /* ===== /Phase 11 Step 1D ===== */
 
   /* ===== /Phase 11 Step 1B ===== */
@@ -1318,21 +1483,23 @@
   </div>
 </section>
 
-<!-- Compare Section (Phase 8-C) -->
+<!-- Compare Section (Phase 11 Step 1E: Decision Engine) -->
 <section class="hp-compare" id="hp-compare">
   <div class="wrap">
-    <div class="hpc-eyebrow">Species Compare</div>
-    <h2 class="hpc-heading">どっちが合う？人気種を比較</h2>
-    <p class="hpc-sub">迷いやすい定番種を、飼いやすさ・サイズ・費用で比べられます。</p>
+    <span class="hpc-eyebrow">Decision Engine</span>
+    <h2 class="hpc-heading">迷ったら、違いで決める。</h2>
+    <p class="hpc-sub">似ている亀でも、サイズ・費用・飼育難易度は違います。比較ページで後悔しにくい選択へ。</p>
     <div class="hpc-grid">
 
       <div class="hpc-card">
-        <div class="hpc-title">ヘルマンリクガメ<span class="hpc-vs">vs</span>ギリシャリクガメ</div>
-        <ul class="hpc-points">
-          <li>初心者向けならヘルマン</li>
-          <li>価格を抑えるならギリシャ</li>
-          <li>どちらもリクガメ入門向け</li>
-        </ul>
+        <span class="hpc-decision-label">Decision Check 01</span>
+        <div class="hpc-question">リクガメ初心者ならどっち？</div>
+        <div class="hpc-vs-strip">
+          <span class="hpc-vs-name">ヘルマンリクガメ</span>
+          <span class="hpc-vs">vs</span>
+          <span class="hpc-vs-name">ギリシャリクガメ</span>
+        </div>
+        <p class="hpc-hint">ヘルマンは安定感・情報量で安心。ギリシャは価格と亜種バリエーションが魅力。</p>
         <div class="hpc-btns">
           <a href="compare/hermann-vs-greek.html" class="hpc-btn"
              onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'hermann_vs_greek',selected_species:'hermann-tortoise',destination_type:'compare_page'})">ヘルマンを見る</a>
@@ -1342,12 +1509,14 @@
       </div>
 
       <div class="hpc-card">
-        <div class="hpc-title">ミシシッピニオイガメ<span class="hpc-vs">vs</span>カブトニオイガメ</div>
-        <ul class="hpc-points">
-          <li>小型水棲ならミシシッピニオイガメ</li>
-          <li>個性重視ならカブトニオイガメ</li>
-          <li>水槽サイズと濾過が重要</li>
-        </ul>
+        <span class="hpc-decision-label">Decision Check 02</span>
+        <div class="hpc-question">省スペース水棲、どちらが自分向き？</div>
+        <div class="hpc-vs-strip">
+          <span class="hpc-vs-name">ミシシッピ<br>ニオイガメ</span>
+          <span class="hpc-vs">vs</span>
+          <span class="hpc-vs-name">カブト<br>ニオイガメ</span>
+        </div>
+        <p class="hpc-hint">ミシシッピは入門最定番で情報豊富。カブトは独特の甲羅形状で個性を求める方に。</p>
         <div class="hpc-btns">
           <a href="compare/musk-vs-razorback.html" class="hpc-btn"
              onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'musk_vs_razorback',selected_species:'musk-turtle',destination_type:'compare_page'})">ニオイガメを見る</a>
@@ -1357,12 +1526,14 @@
       </div>
 
       <div class="hpc-card">
-        <div class="hpc-title">クサガメ<span class="hpc-vs">vs</span>ニホンイシガメ</div>
-        <ul class="hpc-points">
-          <li>入手性ならクサガメ</li>
-          <li>日本らしさならニホンイシガメ</li>
-          <li>屋外飼育は地域と温度に注意</li>
-        </ul>
+        <span class="hpc-decision-label">Decision Check 03</span>
+        <div class="hpc-question">日本の水棲ガメ、どちらを選ぶ？</div>
+        <div class="hpc-vs-strip">
+          <span class="hpc-vs-name">クサガメ</span>
+          <span class="hpc-vs">vs</span>
+          <span class="hpc-vs-name">ニホンイシガメ</span>
+        </div>
+        <p class="hpc-hint">クサガメは入手しやすく丈夫。ニホンイシガメは純国産種の希少価値と小型サイズが魅力。</p>
         <div class="hpc-btns">
           <a href="compare/reeves-vs-japanese-pond.html" class="hpc-btn"
              onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_species_click',{pair:'reeves_vs_japanese_pond',selected_species:'reeves-turtle',destination_type:'compare_page'})">クサガメを見る</a>
