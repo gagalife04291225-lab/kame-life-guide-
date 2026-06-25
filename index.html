@@ -843,6 +843,50 @@
   @media(max-width:760px){.hpc-grid{grid-template-columns:1fr;}.hpc-card{min-height:auto;}}
   /* ===== /Phase 8-C ===== */
 
+  /* ===== Phase 8-D: Cost Simulator ===== */
+  section.cost-sim{padding:56px 0 52px;background:#fff;border-top:1px solid #e4ddc9;}
+  .csim-eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;}
+  .csim-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:6px;}
+  .csim-sub{font-size:.93rem;color:#5a6b60;text-align:center;margin:0 auto 28px;max-width:520px;line-height:1.7;}
+  .csim-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+  .csim-tab{
+    padding:10px 18px;min-height:44px;border-radius:30px;
+    border:1.5px solid #ddd5be;background:#fff;
+    font-family:"Noto Serif JP",serif;font-size:.88rem;font-weight:700;
+    color:var(--forest);cursor:pointer;transition:all .18s;
+    box-sizing:border-box;
+  }
+  .csim-tab:hover{border-color:var(--accent);background:#fffbf3;}
+  .csim-tab.active{background:var(--forest);color:var(--parchment);border-color:var(--forest);}
+  .csim-panel{display:none;}
+  .csim-panel.active{display:block;}
+  .csim-card{
+    background:var(--parchment);border:1.5px solid #e4ddc9;border-radius:18px;
+    padding:28px 26px 24px;max-width:520px;margin:0 auto;
+    box-shadow:0 2px 14px rgba(13,31,26,.055);
+  }
+  .csim-costs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+  .csim-cost-item{background:#fff;border-radius:12px;padding:16px 18px;border:1px solid #e4ddc9;}
+  .csim-cost-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+  .csim-cost-val{font-family:"Playfair Display",serif;font-style:italic;font-size:1.25rem;font-weight:700;color:var(--forest);}
+  .csim-examples{font-size:.82rem;color:#5a6b60;margin-bottom:20px;line-height:1.7;}
+  .csim-examples strong{color:var(--forest);font-weight:700;}
+  .csim-reassure{font-size:.8rem;color:#7a8a7d;margin-bottom:20px;line-height:1.65;padding:10px 14px;background:rgba(47,74,60,.06);border-radius:8px;}
+  .csim-cta{
+    display:block;text-align:center;
+    background:var(--accent);color:var(--forest-deep);text-decoration:none;
+    font-weight:700;font-size:.97rem;padding:15px 24px;border-radius:12px;
+    min-height:44px;box-sizing:border-box;
+    box-shadow:0 4px 14px rgba(212,169,106,.3);
+    transition:background .18s,transform .14s;
+  }
+  .csim-cta:hover{background:#e0c089;transform:translateY(-1px);}
+  @media(max-width:480px){
+    .csim-costs{grid-template-columns:1fr;}
+    .csim-tab{font-size:.82rem;padding:10px 14px;}
+  }
+  /* ===== /Phase 8-D ===== */
+
   /* ===== Phase 7-D Task 2A: Sticky CTA ===== */
   #sticky-diagnosis-cta{
     position:fixed;
@@ -1078,6 +1122,56 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- Cost Simulator (Phase 8-D) -->
+<section class="cost-sim" id="cost-sim">
+  <div class="wrap">
+    <div class="csim-eyebrow">Cost Simulator</div>
+    <h2 class="csim-heading">飼育費用シミュレーター</h2>
+    <p class="csim-sub">亀のタイプ別に、初期費用と月額費用の目安を確認できます。</p>
+    <div class="csim-tabs" role="tablist">
+      <button class="csim-tab active" role="tab" aria-selected="true"  aria-controls="csim-p1" data-tab="small_aquatic">小型水棲ガメ</button>
+      <button class="csim-tab"        role="tab" aria-selected="false" aria-controls="csim-p2" data-tab="box_forest">ハコガメ・ヤマガメ</button>
+      <button class="csim-tab"        role="tab" aria-selected="false" aria-controls="csim-p3" data-tab="tortoise">リクガメ</button>
+    </div>
+    <div id="csim-p1" class="csim-panel active" role="tabpanel">
+      <div class="csim-card">
+        <div class="csim-costs">
+          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥15,000〜¥35,000</div></div>
+          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥2,000〜¥5,000</div></div>
+        </div>
+        <p class="csim-examples"><strong>代表種：</strong>ミシシッピニオイガメ、クサガメ</p>
+        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <a href="./shindan/" class="csim-cta"
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic'})">このタイプのおすすめ用品を見る</a>
+      </div>
+    </div>
+    <div id="csim-p2" class="csim-panel" role="tabpanel">
+      <div class="csim-card">
+        <div class="csim-costs">
+          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥35,000〜¥80,000</div></div>
+          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥4,000〜¥10,000</div></div>
+        </div>
+        <p class="csim-examples"><strong>代表種：</strong>ミツユビハコガメ、トウブハコガメ</p>
+        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <a href="./shindan/" class="csim-cta"
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest'})">このタイプのおすすめ用品を見る</a>
+      </div>
+    </div>
+    <div id="csim-p3" class="csim-panel" role="tabpanel">
+      <div class="csim-card">
+        <div class="csim-costs">
+          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥40,000〜¥120,000</div></div>
+          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥5,000〜¥15,000</div></div>
+        </div>
+        <p class="csim-examples"><strong>代表種：</strong>ヘルマンリクガメ、ギリシャリクガメ</p>
+        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <a href="./shindan/" class="csim-cta"
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise'})">このタイプのおすすめ用品を見る</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1445,5 +1539,24 @@
 </script>
 
 <script src="js/analytics-funnel.js"></script>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.csim-tab');
+  if(!tabs.length) return;
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var tabId = btn.dataset.tab;
+      tabs.forEach(function(b){
+        b.classList.toggle('active', b===btn);
+        b.setAttribute('aria-selected', b===btn ? 'true' : 'false');
+      });
+      document.querySelectorAll('.csim-panel').forEach(function(p){
+        p.classList.toggle('active', p.id === btn.getAttribute('aria-controls'));
+      });
+      if(typeof gtag==='function') gtag('event','homepage_cost_tab_click',{tab:tabId});
+    });
+  });
+})();
+</script>
 </body>
 </html>
