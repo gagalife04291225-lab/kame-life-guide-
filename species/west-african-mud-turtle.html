@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヒメハコヨコクビガメの飼い方｜水温・陸場・餌・設備｜カメライフガイド</title>
+<meta name="description" content="ヒメハコヨコクビガメ（Pelusios castaneus）の飼育ガイド。西アフリカの湿地・淡水域に暮らす曲頸類として、水温、陸場、ろ過、餌、繁殖期の注意点、推奨機材を実飼育メモとあわせて解説します。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/species/west-african-mud-turtle.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+:root{--forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;--accent:#d4a96a;--accent-dark:#8f5f2c;--sp-from:#0a1a1f;--sp-to:#0d1820;--sp-accent:#6ab4c4;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+header.hero{background:linear-gradient(155deg,var(--sp-from) 0%,#0d2030 45%,var(--sp-to) 100%);color:var(--parchment);padding:64px 0 56px;text-align:center;position:relative;overflow:hidden;}
+header.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 70% 20%,rgba(106,180,196,.18) 0%,transparent 55%);pointer-events:none;}
+header.hero .eyebrow{font-family:"Playfair Display",serif;font-style:italic;letter-spacing:.04em;color:var(--sp-accent);font-size:1rem;margin-bottom:8px;position:relative;}
+header.hero .sp-emoji{font-size:3.2rem;display:block;margin-bottom:14px;position:relative;line-height:1;}
+header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:2.1rem;line-height:1.25;margin-bottom:10px;position:relative;}
+header.hero .latin{font-style:italic;font-size:.9rem;color:rgba(106,180,196,.7);margin-bottom:18px;position:relative;}
+header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;position:relative;}
+.stats-bar{background:var(--forest);color:var(--parchment);padding:16px 0;}
+.stats-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+.stat-item{text-align:center;padding:8px 22px;border-right:1px solid rgba(255,255,255,.12);}
+.stat-item:last-child{border-right:none;}
+.stat-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(212,200,170,.7);margin-bottom:3px;}
+.stat-value{font-size:.95rem;font-weight:700;color:var(--sp-accent);}
+nav.crumbs{background:#18202a;color:#9aaa96;font-size:.84rem;padding:10px 0;text-align:center;}
+nav.crumbs a{color:var(--accent);text-decoration:none;}
+.cites-box{background:#fffde7;border-left:4px solid #f9a825;padding:16px 20px;margin:32px 0 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a3e00;}
+.cites-box strong{color:#8f6000;}
+.warning-box{background:#fff3e0;border-left:4px solid #ff9800;padding:16px 20px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.9rem;color:#4a2f00;}
+.warning-box strong{color:#e65100;}
+.article{padding:40px 0 20px;}
+.article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+.article h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.45rem;color:var(--forest);margin:48px 0 18px;padding-bottom:10px;border-bottom:1.5px solid #ddd5be;}
+.note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+.note-box strong{color:var(--accent-dark);}
+.env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
+.env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
+.env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+.env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:12px;border:1px solid #e4ddc9;}
+.compare-table{width:100%;min-width:480px;border-collapse:collapse;font-size:.88rem;background:#fff;}
+.compare-table thead tr{background:var(--forest);color:var(--parchment);}
+.compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.8rem;letter-spacing:.06em;white-space:nowrap;}
+.compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr:nth-child(even) td{background:#faf6ef;}
+.compare-table tr.recommended td{background:#fffbf0;}
+.compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+.badge-easy{background:#e8f5e9;color:#2e7d32;}.badge-mid{background:#fff8e1;color:#f57f17;}.badge-hard{background:#fce4ec;color:#c62828;}.badge-rec{background:var(--accent);color:#fff;}
+.scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
+.gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
+.gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
+.gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
+.gear-info{flex:1;min-width:0;}
+.gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
+.gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
+.gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+.btn-amz:hover{background:var(--accent-dark);}
+.btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
+.btn-rak:hover{background:#8c0000;}
+.pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
+details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
+details.faq summary::after{content:'＋';color:var(--accent);font-size:1.1rem;flex-shrink:0;}
+details.faq[open] summary::after{content:'－';}
+details.faq .faq-body{padding:0 20px 18px;font-size:.93rem;line-height:1.8;color:#4a5a50;}
+.faq-tag{font-size:.65rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;flex-shrink:0;background:#f0e8d8;color:#8f5f2c;white-space:nowrap;}
+.faq-tag.tag-env{background:#e8f0eb;color:#2f4a3c;}.faq-tag.tag-health{background:#fce4ec;color:#c62828;}.faq-tag.tag-food{background:#e8f5e9;color:#2e7d32;}.faq-tag.tag-law{background:#fffde7;color:#8f6000;}
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;}
+.rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);text-decoration:none;font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s,background .15s;}
+.rel-btn:hover{border-color:var(--accent);background:#fffbf3;}
+.end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:36px 28px 32px;margin:52px 0 0;text-align:center;position:relative;overflow:hidden;}
+.end-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+.end-cta-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;position:relative;}
+.end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--parchment);margin-bottom:10px;position:relative;line-height:1.35;}
+.end-cta p{color:#b8c8b4;font-size:.9rem;margin-bottom:24px;position:relative;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.end-cta-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;position:relative;}
+.btn-cta-primary{display:block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 24px;border-radius:12px;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(212,169,106,.35);}
+.btn-cta-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
+.btn-cta-secondary{display:block;background:transparent;color:var(--parchment);text-decoration:none;font-weight:700;font-size:.9rem;padding:13px 24px;border-radius:12px;border:1.5px solid rgba(244,239,226,.25);transition:border-color .2s,background .2s;}
+.btn-cta-secondary:hover{border-color:var(--accent);background:rgba(212,169,106,.08);}
+section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+.hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+footer a{color:var(--accent);text-decoration:none;}
+.disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+.decision-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 0;}
+@media(max-width:520px){.decision-wrap{grid-template-columns:1fr;}}
+.decision-box{border-radius:14px;padding:18px 18px 16px;}
+.decision-box-best{background:#f0faf2;border:1.5px solid #81c784;}
+.decision-box-avoid{background:#fafafa;border:1.5px solid #e0e0e0;}
+.decision-box-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.decision-box-best .decision-box-title{color:#2e7d32;}
+.decision-box-avoid .decision-box-title{color:#757575;}
+.decision-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.decision-list li{font-size:.88rem;line-height:1.55;color:#3a4a40;}
+.decision-box-avoid .decision-list li{color:#5a5a5a;}
+.diff-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
+.diff-badge-stars{color:var(--accent);letter-spacing:.05em;}
+.diff-badge-label{color:#8a7a60;font-weight:400;font-size:.75rem;margin-left:4px;}
+.species-nav{border-top:1.5px solid #e4ddc9;margin-top:44px;padding-top:28px;}
+.species-nav-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+.species-nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.species-nav-link{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--forest);font-size:.85rem;font-weight:700;transition:border-color .15s,background .15s;line-height:1.35;}
+.species-nav-link:hover{border-color:var(--accent);background:#fffbf3;}
+.species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
+.species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;}
+@media(max-width:520px){.species-nav-grid{grid-template-columns:1fr;}}
+@media(max-width:520px){header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}.gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}.scroll-hint{display:block;}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <span class="sp-emoji">🌊</span>
+    <h1>ヒメハコヨコクビガメ</h1>
+    <div class="latin">Pelusios castaneus — West African Mud Turtle</div>
+    <p class="lead">水棲寄りだが陸場も重要な、西アフリカ産の丈夫な曲頸類。ろ過と陸場設計が飼育の鍵になります。</p>
+  </div>
+</header>
+
+<div class="stats-bar"><div class="wrap"><div class="stats-inner">
+  <div class="stat-item"><div class="stat-label">甲長</div><div class="stat-value">M（15〜25cm）</div></div>
+  <div class="stat-item"><div class="stat-label">難易度</div><div class="stat-value">中級</div></div>
+  <div class="stat-item"><div class="stat-label">水棲度</div><div class="stat-value">高め</div></div>
+  <div class="stat-item"><div class="stat-label">初心者向け</div><div class="stat-value">△〜○</div></div>
+</div></div></div>
+
+<div class="wrap" style="margin-top:16px;">
+  <div class="diff-badge">難易度 <span class="diff-badge-stars">★★★☆☆</span><span class="diff-badge-label">中級（初心者は陸場管理に注意）</span></div>
+  <div class="decision-wrap">
+    <div class="decision-box decision-box-best">
+      <div class="decision-box-title">この亀が向いている人</div>
+      <ul class="decision-list">
+        <li>✓ 西アフリカ産の曲頸類に興味がある</li>
+        <li>✓ 水棲ガメ飼育経験が多少ある</li>
+        <li>✓ 60cm以上の水槽と外部フィルターを用意できる</li>
+        <li>✓ 陸場・産卵場の設計を楽しめる</li>
+      </ul>
+    </div>
+    <div class="decision-box decision-box-avoid">
+      <div class="decision-box-title">この亀が向いていない人</div>
+      <ul class="decision-list">
+        <li>✗ 水棲ガメ完全入門の方（まずニオイガメを検討）</li>
+        <li>✗ 陸場スペースを確保しにくい環境</li>
+        <li>✗ ろ過能力の弱い水槽しか用意できない</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Starter Kit -->
+<link rel="stylesheet" href="../css/starter-kit.css">
+<div id="starter-kit-root"></div>
+<script src="../data/products.js"></script>
+<script src="../js/starter-kit.js"></script>
+<script>
+  mountStarterKit({ equipmentKey: 'semi_aquatic_medium', name: 'ヒメハコヨコクビガメ', difficulty: '中級', lifespan: '20〜40年' });
+</script>
+
+<nav class="crumbs"><div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ヒメハコヨコクビガメ</div></nav>
+
+<div class="article"><div class="wrap">
+
+  <div class="cites-box">
+    <strong>⚠️ 購入・飼育前に必ずご確認ください</strong><br>
+    本種の飼育・購入にあたっては、最新のCITES附属書掲載状況、外来生物法、お住まいの自治体条例、および販売店の説明を必ず確認してください。法規制・流通状況は変動することがあります。本ページの情報は執筆時点の参考情報です。
+  </div>
+
+  <h2>どんな亀か</h2>
+  <p>ヒメハコヨコクビガメ（Pelusios castaneus）は、西アフリカ〜中央アフリカの湿地・流れの緩い淡水域に広く分布する曲頸類（ヨコクビガメ科）です。「ハコ」と名がつく通り、腹甲の前半部に蝶番を持ち、ある程度引き込む動作ができます（ただしハコガメ類ほど完全には閉じません）。</p>
+
+  <div class="warning-box">
+    <strong>⚠️ 混同注意：アフリカヨコクビガメとは別種です</strong><br>
+    アフリカヨコクビガメ（Pelomedusa subrufa）とは属が異なる別種です。Pelusios属（ハコヨコクビガメ属）の特徴は腹甲蝶番の有無で判別できます。販売時に混同されることがあるため、購入前に学名を確認することをおすすめします。
+  </div>
+
+  <p>国内での流通はかつてより減少していますが、CB個体が一部の爬虫類専門店で入手できることがあります。丈夫な体質で知られますが、「丈夫＝何でもOK」ではなく、ろ過と陸場の設計が特に重要です。</p>
+
+  <h2>野生環境から逆算する飼育方針</h2>
+  <p>野生では水温が比較的高めの湿地・池・流れの緩い河川に生息します。水中での活動が中心ですが、日光浴や産卵のために上陸する行動が確認されており、飼育下でも陸場は必須です。食性は肉食寄りの雑食で、水棲昆虫・魚・貝・甲殻類などを捕食します。</p>
+  <p>この生態から逆算すると、飼育の核心は次の3点になります。①水温と水質の安定、②十分な陸場（上陸・バスキング・産卵候補場）、③肉食よりの多様な餌ローテーション。</p>
+
+  <h2>水槽・水深・ろ過</h2>
+  <p>成体の甲長は15〜25cm程度になるため、単独飼育なら最低60cm水槽、余裕を持つなら90cm水槽が推奨です。複数飼育・ペア飼育では特に広さが重要になります。</p>
+  <div class="env-grid">
+    <div class="env-card"><div class="env-label">水槽サイズ</div><div class="env-value">60cm〜（成体・複数なら90cm〜）</div></div>
+    <div class="env-card"><div class="env-label">水深</div><div class="env-value">甲長の2〜3倍程度（泳げる深さ）</div></div>
+    <div class="env-card"><div class="env-label">フィルター</div><div class="env-value">外部式フィルター推奨</div></div>
+    <div class="env-card"><div class="env-label">換水</div><div class="env-value">週1〜2回（水質確認しながら）</div></div>
+  </div>
+  <p>水質悪化には比較的耐性がある面もありますが、慢性的な汚水はいずれ体調悪化につながります。実飼育ではエーハイム500（外部式）クラスのフィルターを使用しており、週1換水と合わせて水質を維持しています。</p>
+  <div class="note-box"><strong>フィルター選びのポイント：</strong>内部式フィルターは60cm水槽の水棲ガメには力不足になりやすいです。外部式または上部式フィルターへのアップグレードを最初から検討しておくと後悔が少なくなります。</div>
+
+  <h2>陸場・ホットスポット・産卵場</h2>
+  <p>ヒメハコヨコクビガメは陸場への上陸頻度が比較的高い種です。水槽内に体全体が出られる広さの陸場を確保してください。市販の浮島でも機能しますが、体格に合わせたサイズ選びが重要です。</p>
+  <p>♀個体を飼育している場合、繁殖期（春〜初夏が多い）には潜って産卵しようとする行動が見られることがあります。実飼育では深さ10cmのタッパー（土・赤玉土など）を産卵場として設置しており、♀が潜る様子を確認しています。産卵可能性がある場合は、十分な深さの産卵床を用意することを強く推奨します。</p>
+  <div class="env-grid">
+    <div class="env-card"><div class="env-label">陸場</div><div class="env-value">必須（体全体が出られる広さ）</div></div>
+    <div class="env-card"><div class="env-label">バスキング温度</div><div class="env-value">30℃前後</div></div>
+    <div class="env-card"><div class="env-label">産卵床（♀）</div><div class="env-value">深さ10cm以上の土場を検討</div></div>
+    <div class="env-card"><div class="env-label">UVB</div><div class="env-value">UVB 1.0〜2.0</div></div>
+  </div>
+
+  <h2>水温・気温・保温</h2>
+  <p>実飼育では水温27〜28℃、外気26℃、ホットスポット30℃前後の環境で安定しています。水温が20℃を下回ると活性が落ち、食欲低下や体調悪化につながることがあります。冬季はヒーターとサーモスタットで水温を管理してください。</p>
+  <div class="env-grid">
+    <div class="env-card"><div class="env-label">水温</div><div class="env-value">26〜28℃</div></div>
+    <div class="env-card"><div class="env-label">外気温</div><div class="env-value">24〜28℃</div></div>
+    <div class="env-card"><div class="env-label">ホットスポット</div><div class="env-value">30℃前後</div></div>
+    <div class="env-card"><div class="env-label">冬季保温</div><div class="env-value">ヒーター＋サーモスタット必須</div></div>
+  </div>
+
+  <h2>餌</h2>
+  <p>肉食寄りの雑食です。水棲ガメ用人工飼料を主食にしつつ、冷凍エビ・冷凍赤虫・小魚・貝類・水棲昆虫などを組み合わせると栄養バランスがとれます。高脂肪の餌（金魚の過剰給餌など）や単食は避け、多様な食材をローテーションすることが大切です。</p>
+  <div class="note-box"><strong>餌のポイント：</strong>人工飼料への移行は個体差があります。ピンセット給餌で動かして見せる・水流で漂わせるなどで興味を引いてみてください。野菜系は少量補助として試す程度で問題ありません。</div>
+
+  <h2>混泳・同居</h2>
+  <p>同種間では比較的おとなしいことが多いですが、飼育スペースが狭いと争いが起きることがあります。複数飼育の場合は90cm以上の水槽を推奨します。他種との混泳は体格差や攻撃性を十分確認してから行ってください。</p>
+
+  <h2>よくある失敗</h2>
+  <p>・<strong>陸場を省略する：</strong>「水棲種だから水だけでいい」という誤解が最も多いミスです。上陸できない環境は甲羅の状態悪化や体調不良の原因になります。</p>
+  <p>・<strong>フィルターが弱すぎる：</strong>肉食系の食性は排泄量が多く、水が汚れやすいです。最初から外部式フィルターを選ぶことで長期的に安心です。</p>
+  <p>・<strong>水温管理を怠る：</strong>夏の高温（32℃超）と冬の低温（20℃未満）はともにリスクになります。サーモスタット付きヒーターと夏の対策を準備しておきましょう。</p>
+  <p>・<strong>♀の産卵場を用意しない：</strong>交尾確認後に産卵場がないと、抱卵した卵を体内に抱え続けて体調を崩す（卵詰まり）リスクがあります。繁殖を視野に入れる場合は土場を早めに用意してください。</p>
+
+  <h2>推奨機材セット</h2>
+  <div class="gear-cards">
+    <div class="gear-card">
+      <div class="gear-icon">🏊</div>
+      <div class="gear-info">
+        <div class="gear-name">60〜90cm水槽</div>
+        <div class="gear-why">成体の甲長を考慮し、単独なら60cm、複数・成体なら90cm以上を。ガラス製が水質管理しやすい。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E6%B0%B4%E6%A7%BD+%E3%82%AC%E3%83%A9%E3%82%B9+60cm&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E6%B0%B4%E6%A7%BD+%E3%82%AC%E3%83%A9%E3%82%B9+60cm" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🌊</div>
+      <div class="gear-info">
+        <div class="gear-name">外部式フィルター（エーハイム500クラス以上）</div>
+        <div class="gear-why">肉食傾向の強い本種は水が汚れやすい。外部式は静音かつ強力で、60〜90cm水槽に適している。実飼育でも使用中。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E3%82%A8%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A0+%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%82%A8%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A0+%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🔆</div>
+      <div class="gear-info">
+        <div class="gear-name">バスキングライト（50W前後）</div>
+        <div class="gear-why">陸場を30℃前後に維持。本種は上陸頻度が比較的高いため、バスキングスポットの整備が重要。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043B2AJQ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%83%9E%E3%83%AB%E3%82%AB%E3%83%B3+%E3%83%90%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%88+50W" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">☀️</div>
+      <div class="gear-info">
+        <div class="gear-name">UVBライト（UVB 1.0〜2.0）</div>
+        <div class="gear-why">甲羅と骨の健康維持に必要。水棲種でもUVBは重要で、陸場での日光浴時に照射できるよう設置する。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5LQ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%83%93%E3%83%90%E3%83%AA%E3%82%A2+%E3%82%B9%E3%83%91%E3%82%A4%E3%83%A9%E3%83%ABUVB" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🌡️</div>
+      <div class="gear-info">
+        <div class="gear-name">水温計・温湿度計</div>
+        <div class="gear-why">水温26〜28℃の維持を確認するために必須。デジタル式が読みやすく管理しやすい。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E6%B0%B4%E6%B8%A9%E8%A8%88+%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E6%B0%B4%E6%B8%A9%E8%A8%88+%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+    <div class="gear-card">
+      <div class="gear-icon">🍃</div>
+      <div class="gear-info">
+        <div class="gear-name">水棲ガメ用人工飼料（カメプロス等）</div>
+        <div class="gear-why">主食として。肉食傾向が強いため冷凍エビ・赤虫・貝類・小魚との組み合わせが理想。</div>
+        <div class="gear-btns">
+          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GMQAM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%83%A1%E3%83%97%E3%83%AD%E3%82%B9" target="_blank" rel="nofollow noopener">楽天で探す</a>
+        </div>
+        <p class="pr-note">※アフィリエイトリンクを含みます</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>近似種との比較</h2>
+  <p class="scroll-hint">← 横にスクロールできます</p>
+  <div class="compare-wrap"><table class="compare-table">
+    <thead><tr><th>種名</th><th>甲長</th><th>難易度</th><th>陸場</th><th>特徴</th></tr></thead>
+    <tbody>
+      <tr class="recommended"><td>ヒメハコヨコクビガメ <span class="badge badge-rec">このページ</span></td><td>15〜25cm</td><td><span class="badge badge-mid">中級</span></td><td>必須・産卵場も</td><td>曲頸類・腹甲蝶番あり</td></tr>
+      <tr><td><a href="african-helmeted-turtle.html">アフリカヨコクビガメ</a></td><td>15〜25cm</td><td><span class="badge badge-hard">中〜上級</span></td><td>乾季上陸あり</td><td>別属・蝶番なし</td></tr>
+      <tr><td><a href="musk-turtle.html">ニオイガメ</a></td><td>8〜14cm</td><td><span class="badge badge-easy">入門〜中級</span></td><td>あると良い</td><td>小型・入門向き</td></tr>
+      <tr><td><a href="pink-bellied-side-necked-turtle.html">ピンクベリーサイドネック</a></td><td>20〜28cm</td><td><span class="badge badge-mid">中級</span></td><td>必須</td><td>曲頸類・美しい腹甲</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>よくある質問</h2>
+  <div class="faq-list">
+    <details class="faq">
+      <summary>アフリカヨコクビガメとどう違いますか？<span class="faq-tag tag-env">種の違い</span></summary>
+      <div class="faq-body">別属の別種です。ヒメハコヨコクビガメ（Pelusios castaneus）はPelusios属で腹甲に蝶番を持ちます。アフリカヨコクビガメ（Pelomedusa subrufa）はPelomedusa属で蝶番がなく、乾季上陸という特殊習性を持つ別の種です。購入時に学名を確認することをおすすめします。</div>
+    </details>
+    <details class="faq">
+      <summary>陸場は必ず必要ですか？<span class="faq-tag tag-env">環境</span></summary>
+      <div class="faq-body">必須です。水棲寄りの種ですが、上陸・バスキング・産卵（♀）のために陸場を使います。陸場がないと体調悪化や甲羅の状態悪化につながることがあります。体全体が出られるサイズの陸場を必ず用意してください。</div>
+    </details>
+    <details class="faq">
+      <summary>♀が潜ろうとしているのですが？<span class="faq-tag tag-env">繁殖</span></summary>
+      <div class="faq-body">産卵行動の可能性があります。交尾確認後や春〜初夏の時期は特に注意が必要です。土や赤玉土を深さ10cm以上詰めたタッパーなどを産卵場として用意してください。産卵場がない状態で卵を抱えたまま上陸できないと、卵詰まりのリスクがあります。</div>
+    </details>
+    <details class="faq">
+      <summary>何を食べさせればいいですか？<span class="faq-tag tag-food">餌</span></summary>
+      <div class="faq-body">水棲ガメ用人工飼料を主食に、冷凍エビ・冷凍赤虫・小魚・貝類などを組み合わせます。肉食傾向が強いため、単食ではなく複数食材のローテーションが理想です。高脂肪の給餌は肥満につながるため注意してください。</div>
+    </details>
+    <details class="faq">
+      <summary>どこで購入できますか？<span class="faq-tag tag-law">入手</span></summary>
+      <div class="faq-body">爬虫類専門店やブリーダー経由での入手が主な方法です。流通量はそれほど多くないため、ぶりくら市・とんぶり市などの爬虫類イベントでCB個体を探すのも一つの方法です。健康状態（目の清潔さ・食欲・体表の状態）を確認してから入手してください。</div>
+    </details>
+  </div>
+
+  <h2>関連ページ</h2>
+  <div class="related-links">
+    <a href="../guide-softshell.html" class="rel-btn">🌊 スッポン・ヘビクビガメ飼育ガイド</a>
+    <a href="../guide-water-full.html" class="rel-btn">💧 水棲ガメ飼育ガイド</a>
+    <a href="../shindan/index.html" class="rel-btn">🐢 亀適性診断</a>
+  </div>
+
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>飼育を始める前に、もう一歩</h3>
+    <p>100種対応の適性診断で、あなたの生活環境・予算・スペースに合う種を確認してから始めましょう。</p>
+    <div class="end-cta-btns">
+      <a class="btn-cta-primary" href="../shindan/index.html">🐢 適性診断をはじめる（無料）</a>
+      <a class="btn-cta-secondary" href="../guide-softshell.html">🌊 曲頸類・スッポン飼育ガイド</a>
+    </div>
+  </div>
+
+  <div class="species-nav">
+    <div class="species-nav-label">関連する種を見る</div>
+    <div class="species-nav-grid">
+      <a href="african-helmeted-turtle.html" class="species-nav-link"><span class="snl-icon">🌍</span><span class="snl-text">アフリカヨコクビガメ<span class="snl-sub">中〜上級・乾季上陸</span></span></a>
+      <a href="musk-turtle.html" class="species-nav-link"><span class="snl-icon">🔬</span><span class="snl-text">ニオイガメ<span class="snl-sub">入門向き・小型水棲</span></span></a>
+      <a href="pink-bellied-side-necked-turtle.html" class="species-nav-link"><span class="snl-icon">🌸</span><span class="snl-text">ピンクベリーサイドネック<span class="snl-sub">中級・曲頸類</span></span></a>
+      <a href="spenglers-leaf-turtle.html" class="species-nav-link"><span class="snl-icon">🌿</span><span class="snl-text">スペングラーヤマガメ<span class="snl-sub">中〜上級・森林性</span></span></a>
+    </div>
+  </div>
+
+</div></div>
+
+<section class="closing"><div class="wrap">
+  <h2>ほかの飼育ガイド</h2>
+  <p>種一覧・ハビタットガイドからも探せます。</p>
+  <div class="hub-links">
+    <a href="../index.html">TOP</a>
+    <a href="../species-list.html">種一覧（100種以上）</a>
+    <a href="../guide-softshell.html">🌊 曲頸類・スッポン</a>
+    <a href="../guide-water-full.html">💧 水棲ガメ</a>
+    <a href="../shindan/index.html">🐢 亀診断</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+  <p class="disclaimer">掲載する飼育情報は一般的な目安です。個体・環境によって最適値は異なります。法規制・流通状況は変動することがありますので購入前に最新情報をご確認ください。当サイトはAmazonアソシエイト・プログラムの参加者です。</p>
+</div></footer>
+</body></html>
