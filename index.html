@@ -658,6 +658,104 @@
   /* ===== /Phase 11 ===== */
 
 
+  /* ===== Phase 11 Step 1C: Problem Cards (Regret Prevention) ===== */
+  section.problem-cards{
+    padding:72px 0 68px;
+    background:#fff;
+  }
+  .pc-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+    display:block;
+  }
+  .pc-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.55rem;
+    color:var(--forest);
+    text-align:center;
+    margin-bottom:48px;
+    line-height:1.4;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .pc-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .pc-card{
+    background:var(--parchment);
+    border:1.5px solid #e4ddc9;
+    border-radius:20px;
+    padding:28px 22px 26px;
+    box-shadow:0 2px 12px rgba(13,31,26,.045);
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .pc-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 32px rgba(13,31,26,.10);
+    border-color:var(--accent);
+  }
+  .pc-fear{
+    font-size:.66rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    margin-bottom:10px;
+    display:block;
+  }
+  .pc-icon{
+    font-size:1.7rem;
+    line-height:1;
+    margin-bottom:12px;
+    display:block;
+  }
+  .pc-card h3{
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:.98rem;
+    color:var(--forest-deep);
+    line-height:1.45;
+    margin-bottom:10px;
+  }
+  .pc-card p{
+    font-size:.83rem;
+    color:#5a6b60;
+    line-height:1.75;
+    margin:0;
+    flex:1;
+  }
+  .pc-reassure{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed #ddd5bf;
+    font-size:.76rem;
+    color:var(--accent-dark);
+    font-weight:700;
+    line-height:1.55;
+  }
+  .pc-reassure::before{content:"✓ ";}
+  @media(max-width:840px){
+    .pc-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:480px){
+    .pc-grid{grid-template-columns:1fr;gap:12px;}
+    .pc-card{padding:24px 20px 22px;border-radius:16px;}
+  }
+  /* ===== /Phase 11 Step 1C ===== */
+
   /* ===== Phase 11 Step 1B: Journey Preview ===== */
   section.journey-preview{
     background:var(--parchment);
@@ -963,27 +1061,45 @@
   </div>
 </section>
 
-<!-- Problem cards -->
+<!-- Problem cards (Phase 11 Step 1C: Regret Prevention Engine) -->
 <section class="problem-cards">
   <div class="wrap">
-    <div class="pc-eyebrow">よくある悩み</div>
-    <h2 class="pc-heading">こんなお悩み、ありませんか？</h2>
+    <span class="pc-eyebrow">後悔しない亀選びのために</span>
+    <h2 class="pc-heading">飼う前に知っておきたい、<br>4つの不安。</h2>
     <div class="pc-grid">
+
       <div class="pc-card">
-        <span class="pc-icon">🤔</span>
-        <h3>何を飼えばいいかわからない</h3>
-        <p>サイズ・性格・飼育難易度から、あなた向きの亀を診断します。</p>
+        <span class="pc-fear">Fear 01 — 臭い・水換え</span>
+        <span class="pc-icon">💧</span>
+        <h3>「部屋が臭くなったらどうしよう」</h3>
+        <p>水棲ガメは管理次第で臭いをほぼ抑えられる。陸棲なら水の問題ごとなくなる。</p>
+        <p class="pc-reassure">診断で臭いの少ない種を絞り込めます</p>
       </div>
+
       <div class="pc-card">
-        <span class="pc-icon">😟</span>
-        <h3>飼ってから後悔したくない</h3>
-        <p>初期費用・必要スペース・初心者向け度を事前に確認できます。</p>
+        <span class="pc-fear">Fear 02 — 最終サイズ</span>
+        <span class="pc-icon">📏</span>
+        <h3>「思ってたより大きくなった…」</h3>
+        <p>成体サイズは種ごとに全然違う。14cmの小型種から60cm超の巨大種まで。</p>
+        <p class="pc-reassure">比較ページで成体サイズを横並びで確認できます</p>
       </div>
+
       <div class="pc-card">
-        <span class="pc-icon">🔧</span>
-        <h3>機材選びが難しい</h3>
-        <p>種別ページからStarter Kitへ進み、必要な飼育用品をまとめて確認できます。</p>
+        <span class="pc-fear">Fear 03 — 初期費用</span>
+        <span class="pc-icon">💰</span>
+        <h3>「結局いくらかかるの？」</h3>
+        <p>ケージ・ライト・ヒーター・エサ…合計すると意外に増える。事前把握が大事。</p>
+        <p class="pc-reassure">Starter Kitで必要機材と費用目安をまとめて確認</p>
       </div>
+
+      <div class="pc-card">
+        <span class="pc-fear">Fear 04 — 寿命</span>
+        <span class="pc-icon">⏳</span>
+        <h3>「30年…飼い続けられる？」</h3>
+        <p>リクガメは寿命50年以上の種も。長く付き合える種を今のライフスタイルで選ぼう。</p>
+        <p class="pc-reassure">診断でライフスタイルに合った寿命の種を提案</p>
+      </div>
+
     </div>
   </div>
 </section>
