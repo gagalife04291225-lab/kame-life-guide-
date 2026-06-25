@@ -16,7 +16,9 @@
     "authority": 55,
     "has_page": true,
     "species_page_url": "/species/mississippi-musk-turtle.html",
-    "compare_urls": ["musk-vs-razorback"],
+    "compare_urls": [
+      "musk-vs-razorback"
+    ],
     "starter_kit_key": "aquatic_small",
     "market_tier": "S",
     "notes": "国内最流通・初心者No.1。臭いは水棲なので低め。smell38は意図的（臭腺あり・水換え必要）"
@@ -38,7 +40,9 @@
     "authority": 55,
     "has_page": true,
     "species_page_url": "/species/hermanns-tortoise.html",
-    "compare_urls": ["hermann-vs-greek"],
+    "compare_urls": [
+      "hermann-vs-greek"
+    ],
     "starter_kit_key": "tortoise_dry",
     "market_tier": "S",
     "notes": "リクガメ入門定番。機材費が全種中最高クラスでアフィ最強。UVB・保温球・ケージ全て必要"
@@ -48,15 +52,15 @@
     "species_name_ja": "ロシアリクガメ",
     "species_name_en": "Russian Tortoise",
     "category": "tortoise",
-    "beginner": 78,
+    "beginner": 84,
     "smell": 92,
-    "cost": 72,
+    "cost": 80,
     "space": 68,
     "maintenance": 70,
     "friendliness": 85,
     "activity": 65,
     "rarity": 28,
-    "monetization": 75,
+    "monetization": 80,
     "authority": 55,
     "has_page": true,
     "species_page_url": "/species/russian-tortoise.html",
@@ -77,12 +81,14 @@
     "maintenance": 62,
     "friendliness": 62,
     "activity": 65,
-    "rarity": 42,
-    "monetization": 62,
-    "authority": 72,
+    "rarity": 52,
+    "monetization": 70,
+    "authority": 82,
     "has_page": true,
     "species_page_url": "/species/japanese-pond-turtle.html",
-    "compare_urls": ["reeves-vs-japanese-pond"],
+    "compare_urls": [
+      "reeves-vs-japanese-pond"
+    ],
     "starter_kit_key": "aquatic_small",
     "market_tier": "S",
     "notes": "CB即完売連続。日本固有種・準絶滅危惧。保全文脈でauthority72。TeTe知見深い"
@@ -93,10 +99,10 @@
     "species_name_en": "Reeves' Turtle",
     "category": "aquatic",
     "beginner": 75,
-    "smell": 42,
+    "smell": 36,
     "cost": 95,
     "space": 72,
-    "maintenance": 62,
+    "maintenance": 55,
     "friendliness": 88,
     "activity": 82,
     "rarity": 12,
@@ -104,7 +110,9 @@
     "authority": 72,
     "has_page": true,
     "species_page_url": "/species/reeves-turtle.html",
-    "compare_urls": ["reeves-vs-japanese-pond"],
+    "compare_urls": [
+      "reeves-vs-japanese-pond"
+    ],
     "starter_kit_key": "aquatic_medium",
     "market_tier": "S",
     "notes": "国民知名度最高。なつき良好。ミドリガメ販売禁止後の代替需要を吸収。友好度88"
@@ -114,15 +122,15 @@
     "species_name_ja": "アカアシリクガメ",
     "species_name_en": "Red-footed Tortoise",
     "category": "tortoise",
-    "beginner": 55,
+    "beginner": 62,
     "smell": 92,
     "cost": 42,
     "space": 42,
     "maintenance": 52,
-    "friendliness": 65,
+    "friendliness": 72,
     "activity": 72,
     "rarity": 48,
-    "monetization": 78,
+    "monetization": 85,
     "authority": 45,
     "has_page": true,
     "species_page_url": "/species/red-footed-tortoise.html",
@@ -192,7 +200,9 @@
     "authority": 52,
     "has_page": true,
     "species_page_url": "/species/razorback-musk-turtle.html",
-    "compare_urls": ["musk-vs-razorback"],
+    "compare_urls": [
+      "musk-vs-razorback"
+    ],
     "starter_kit_key": "aquatic_small",
     "market_tier": "A+",
     "notes": "ニオイガメ2番手。ミシシッピとの比較記事で相乗効果。smell38はミシシッピと同等"
@@ -214,7 +224,9 @@
     "authority": 52,
     "has_page": true,
     "species_page_url": "/species/greek-tortoise.html",
-    "compare_urls": ["hermann-vs-greek"],
+    "compare_urls": [
+      "hermann-vs-greek"
+    ],
     "starter_kit_key": "tortoise_dry",
     "market_tier": "A+",
     "notes": "ヘルマンとの比較需要大。亜種多く記事展開しやすい。機材費はヘルマンと同等"
