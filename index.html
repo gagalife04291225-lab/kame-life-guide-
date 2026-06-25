@@ -903,6 +903,156 @@
     .jp-step-body{flex:1;}
     .jp-step-copy{max-width:100%;}
   }
+  /* ===== Phase 11 Step 1D: AI Recommendation Shelf ===== */
+  section.popular-picks{
+    padding:72px 0 68px;
+    background:var(--forest-deep);
+    position:relative;
+    overflow:hidden;
+  }
+  section.popular-picks::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,169,106,.07) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .ppk-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+    display:block;
+    opacity:.85;
+  }
+  .ppk-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.6rem;
+    color:var(--parchment);
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.35;
+  }
+  .ppk-sub{
+    font-size:.88rem;
+    color:rgba(217,224,214,.65);
+    text-align:center;
+    margin-bottom:44px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.75;
+  }
+  /* 4-column shelf */
+  .ppk-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .ppk-card{
+    display:flex;
+    flex-direction:column;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(212,169,106,.2);
+    border-radius:18px;
+    padding:22px 20px 20px;
+    text-decoration:none;
+    color:var(--parchment);
+    position:relative;
+    transition:transform .18s,background .18s,border-color .18s,box-shadow .18s;
+    overflow:hidden;
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+  .ppk-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.09);
+    border-color:rgba(212,169,106,.55);
+    box-shadow:0 12px 36px rgba(0,0,0,.35),0 0 0 1px rgba(212,169,106,.18);
+  }
+  /* AI match badge */
+  .ppk-ai-badge{
+    display:inline-flex;align-items:center;gap:5px;
+    background:linear-gradient(110deg,rgba(212,169,106,.22) 0%,rgba(212,169,106,.10) 100%);
+    border:1px solid rgba(212,169,106,.4);
+    color:var(--accent);
+    font-size:.65rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:20px;
+    margin-bottom:14px;
+    width:fit-content;
+  }
+  .ppk-ai-badge::before{
+    content:"";
+    display:inline-block;width:5px;height:5px;
+    background:var(--accent);border-radius:50%;
+    opacity:.8;
+  }
+  /* best-for label */
+  .ppk-best{
+    font-size:.68rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(212,169,106,.7);
+    margin-bottom:8px;
+    display:block;
+  }
+  .ppk-name{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:1.05rem;
+    color:#fff;
+    line-height:1.3;
+    margin-bottom:8px;
+  }
+  .ppk-reason{
+    font-size:.8rem;
+    color:rgba(217,224,214,.7);
+    line-height:1.65;
+    margin-bottom:16px;
+    flex:1;
+  }
+  /* meta row */
+  .ppk-meta{
+    display:flex;flex-direction:column;gap:5px;
+    margin-bottom:16px;
+    padding:12px 0;
+    border-top:1px solid rgba(212,169,106,.15);
+    border-bottom:1px solid rgba(212,169,106,.15);
+  }
+  .ppk-meta-row{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:.75rem;
+  }
+  .ppk-meta-label{color:rgba(217,224,214,.5);letter-spacing:.03em;}
+  .ppk-stars{color:var(--accent);letter-spacing:.05em;}
+  .ppk-cost{color:var(--parchment);font-weight:700;}
+  /* CTA link */
+  .ppk-btn{
+    display:inline-flex;align-items:center;justify-content:space-between;
+    font-size:.8rem;font-weight:700;
+    color:var(--accent);
+    letter-spacing:.04em;
+    margin-top:auto;
+  }
+  .ppk-btn::after{content:"→";margin-left:6px;transition:transform .15s;}
+  .ppk-card:hover .ppk-btn::after{transform:translateX(4px);}
+  /* Mobile */
+  @media(max-width:840px){
+    .ppk-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:480px){
+    section.popular-picks{padding:56px 0 52px;}
+    .ppk-grid{grid-template-columns:1fr;gap:12px;}
+    .ppk-heading{font-size:1.3rem;}
+    .ppk-card{padding:20px 18px 18px;}
+  }
+  /* ===== /Phase 11 Step 1D ===== */
+
   /* ===== /Phase 11 Step 1B ===== */
 </style>
 <body>
@@ -1104,49 +1254,66 @@
   </div>
 </section>
 
-<!-- Popular Species Picks (Phase 8-B) -->
+<!-- Popular Species Picks (Phase 11 Step 1D: AI Recommendation Shelf) -->
 <section class="popular-picks" id="popular-picks">
   <div class="wrap">
-    <div class="ppk-eyebrow">Popular Species</div>
-    <h2 class="ppk-heading">人気の飼いやすい亀</h2>
-    <p class="ppk-sub">初心者にも人気の定番種をピックアップ</p>
+    <span class="ppk-eyebrow">AI Recommendations</span>
+    <h2 class="ppk-heading">まず検討したい、相性の良い亀たち。</h2>
+    <p class="ppk-sub">診断データ・飼育難易度・初期費用から、初心者が迷いにくい候補をピックアップ。</p>
     <div class="ppk-grid">
-      <a href="species/hermann-tortoise.html" class="ppk-card" onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'hermann-tortoise'})">
+
+      <a href="species/hermann-tortoise.html" class="ppk-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'hermann-tortoise'})">
+        <span class="ppk-ai-badge">AI Match 94%</span>
+        <span class="ppk-best">初心者向き</span>
         <div class="ppk-name">ヘルマンリクガメ</div>
-        <div class="ppk-desc">初心者向けの定番リクガメ</div>
+        <p class="ppk-reason">飼育情報が豊富で亜種選びに迷いにくい。地中海リクガメ入門の最定番。</p>
         <div class="ppk-meta">
           <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★☆</span></div>
           <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥40,000〜</span></div>
         </div>
-        <span class="ppk-btn">詳しく見る</span>
+        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
-      <a href="species/musk-turtle.html" class="ppk-card" onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'musk-turtle'})">
+
+      <a href="species/musk-turtle.html" class="ppk-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'musk-turtle'})">
+        <span class="ppk-ai-badge">AI Match 97%</span>
+        <span class="ppk-best">省スペース</span>
         <div class="ppk-name">ミシシッピニオイガメ</div>
-        <div class="ppk-desc">小型で飼いやすい水棲種</div>
+        <p class="ppk-reason">最大14cmで30cm水槽から飼育可。水棲ガメ入門の最定番種。</p>
         <div class="ppk-meta">
           <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★★</span></div>
           <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥18,000〜</span></div>
         </div>
-        <span class="ppk-btn">詳しく見る</span>
+        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
-      <a href="species/three-toed-box-turtle.html" class="ppk-card" onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'three-toed-box-turtle'})">
+
+      <a href="species/three-toed-box-turtle.html" class="ppk-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'three-toed-box-turtle'})">
+        <span class="ppk-ai-badge">AI Match 88%</span>
+        <span class="ppk-best">観察向き</span>
         <div class="ppk-name">ミツユビハコガメ</div>
-        <div class="ppk-desc">陸棲寄りで人気のハコガメ</div>
+        <p class="ppk-reason">陸棲寄りで個性的な行動が多く観察が楽しい。ハコガメ入門に最適。</p>
         <div class="ppk-meta">
           <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★☆☆</span></div>
           <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥35,000〜</span></div>
         </div>
-        <span class="ppk-btn">詳しく見る</span>
+        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
-      <a href="species/reeves-turtle.html" class="ppk-card" onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'reeves-turtle'})">
+
+      <a href="species/reeves-turtle.html" class="ppk-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'reeves-turtle'})">
+        <span class="ppk-ai-badge">AI Match 91%</span>
+        <span class="ppk-best">低臭重視</span>
         <div class="ppk-name">クサガメ</div>
-        <div class="ppk-desc">日本で人気の定番種</div>
+        <p class="ppk-reason">ペットショップで入手しやすく、適切な管理で臭いを抑えやすい定番種。</p>
         <div class="ppk-meta">
           <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★☆</span></div>
           <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥15,000〜</span></div>
         </div>
-        <span class="ppk-btn">詳しく見る</span>
+        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
+
     </div>
   </div>
 </section>
