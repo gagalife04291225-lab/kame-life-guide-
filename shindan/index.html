@@ -1166,6 +1166,7 @@ function renderStarterKit(sp) {
   if (typeof ga4Event === 'function') {
     ga4Event('starter_kit_shown', {
       species_name:  sp.name,
+      species:       sp.name,
       equipment_key: equipKey,
       card_count:    picks.length,
     });
@@ -1178,6 +1179,7 @@ function renderStarterKit(sp) {
         // 既存イベント（維持）
         ga4Event('starter_kit_click', {
           species_name:  a.dataset.species,
+          species:       a.dataset.species,
           category:      a.dataset.cat,
           asin:          a.dataset.asin,
           selected_tier: a.dataset.tier,
@@ -1616,6 +1618,7 @@ function showResult(sp, pct) {
     ga4Event('diagnosis_result_view', {
       species:       sp.name,
       slug:          sp.slug || '',
+      species_slug:  sp.slug || '',
       equipment_key: _eqKeyGa,
       difficulty:    sp.difficulty || '',
       has_page:      !!(sp.hasPage && sp.slug),
