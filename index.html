@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カメライフガイド｜野生の暮らしから逆算する、カメ・リクガメの飼育情報</title>
-<meta name="description" content="クサガメからリクガメ、ヤマガメまで。そのカメが野生でどう暮らしているかから逆算して、飼育環境と機材を考えるカメ・リクガメの飼育情報サイト。実際に飼っている人間が書いています。">
+<title>カメライフガイド｜AI亀診断であなたに合う亀がわかる</title>
+<meta name="description" content="100種以上のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をAI診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -654,6 +654,111 @@
     header.hero h1{font-size:1.5rem;}
     .ts-num{font-size:1.55rem;}
   }
+  /* Compare Engine */
+  section.compare-engine{
+    padding:56px 0 52px;
+    background:#fff;
+    border-top:1px solid #ddd5be;
+  }
+  .ce-eyebrow{
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-dark);font-weight:700;text-align:center;margin-bottom:8px;
+  }
+  .ce-heading{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:1.55rem;color:var(--forest);text-align:center;margin-bottom:10px;
+  }
+  .ce-sub{
+    font-size:.95rem;color:#5a6b60;text-align:center;margin:0 auto 32px;max-width:540px;line-height:1.7;
+  }
+  .ce-table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:14px;
+    border:1.5px solid #e4ddc9;
+    box-shadow:0 2px 14px rgba(13,31,26,.055);
+  }
+  .ce-table{
+    width:100%;border-collapse:collapse;min-width:520px;
+    font-size:.91rem;
+  }
+  .ce-table thead{
+    background:var(--forest-deep);color:var(--parchment);
+  }
+  .ce-table thead th{
+    padding:14px 18px;font-weight:700;font-size:.78rem;
+    letter-spacing:.1em;text-transform:uppercase;text-align:center;
+    white-space:nowrap;
+  }
+  .ce-table thead th:first-child{text-align:left;}
+  .ce-table tbody tr{
+    border-bottom:1px solid #ede6d3;
+    transition:background .12s;
+  }
+  .ce-table tbody tr:last-child{border-bottom:none;}
+  .ce-table tbody tr:hover{background:#fffbf3;}
+  .ce-table td{
+    padding:15px 18px;text-align:center;vertical-align:middle;
+    color:var(--forest-deep);
+  }
+  .ce-table td:first-child{
+    text-align:left;font-weight:700;font-size:.95rem;
+  }
+  .ce-table td .ce-latin{
+    display:block;font-style:italic;font-size:.72rem;color:#8a9389;font-weight:400;margin-top:2px;
+  }
+  /* 難易度ドット */
+  .ce-dots{display:inline-flex;gap:4px;justify-content:center;}
+  .ce-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--accent);
+  }
+  .ce-dot.empty{background:#e4ddc9;}
+  /* 匂いドット */
+  .ce-smell .ce-dot{background:#6ea8a0;}
+  .ce-smell .ce-dot.empty{background:#e4ddc9;}
+  /* 費用バッジ */
+  .ce-cost{
+    display:inline-block;font-weight:700;font-size:.85rem;
+    color:var(--forest);letter-spacing:.04em;
+  }
+  /* 初心者バッジ */
+  .ce-badge{
+    display:inline-block;padding:3px 12px;border-radius:20px;
+    font-size:.8rem;font-weight:700;
+  }
+  .ce-badge.best{background:#e8f5e9;color:#2e7d32;}
+  .ce-badge.good{background:#e3f2fd;color:#1565c0;}
+  .ce-badge.caution{background:#fff8e1;color:#e65100;}
+  .ce-badge.hard{background:#fce4ec;color:#b71c1c;}
+  .ce-cta-box{
+    margin-top:28px;text-align:center;
+    background:var(--parchment);
+    border-radius:14px;padding:28px 22px;
+    border:1.5px solid #e4ddc9;
+  }
+  .ce-cta-box p{
+    font-size:.97rem;color:#5a6b60;margin-bottom:16px;line-height:1.7;
+  }
+  .ce-cta-box p strong{color:var(--forest-deep);}
+  .ce-cta-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--accent);color:var(--forest-deep);text-decoration:none;
+    font-weight:700;font-size:1rem;padding:14px 32px;border-radius:40px;
+    box-shadow:0 4px 16px rgba(212,169,106,.32);
+    transition:background .2s,transform .15s;
+  }
+  .ce-cta-btn:hover{background:#e0c089;transform:translateY(-2px);}
+  .scroll-hint-ce{
+    display:none;font-size:.72rem;color:#9aa89d;text-align:right;margin-bottom:8px;letter-spacing:.05em;
+  }
+  @media(max-width:680px){
+    .scroll-hint-ce{display:block;}
+    .pg-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:400px){
+    .pg-grid{grid-template-columns:1fr;}
+  }
   /* ===== /Phase 7-D ===== */
 
 </style>
@@ -827,9 +932,9 @@
       <div class="sp-text">
         <div class="section-eyebrow">Species Index</div>
         <h2 class="section-title">種一覧で探す</h2>
-        <p>迎えたい種名がわかっているなら、一覧から直接探せます。難易度・カテゴリ・法規制のバッジ付きで約80種を並べています。</p>
+        <p>迎えたい種名がわかっているなら、一覧から直接探せます。難易度・カテゴリ・法規制のバッジ付きで100種以上を並べています。</p>
       </div>
-      <a href="species-list.html" class="sp-link">約80種の一覧を見る →</a>
+      <a href="species-list.html" class="sp-link">100種以上の一覧を見る →</a>
     </div>
   </div>
 </section>
@@ -857,7 +962,7 @@
   <div class="wrap">
     <div class="section-eyebrow">Popular Species</div>
     <h2 class="section-title">人気の亀ガイド</h2>
-    <p class="section-note">実飼育者が書いた、3種の詳しいガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
+    <p class="section-note">実飼育者が書いた、種別ガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
     <div class="pg-grid">
       <a href="species/russian-tortoise.html" class="pg-card">
         <div class="pg-emoji">🏔️</div>
@@ -880,8 +985,141 @@
         <p class="pg-desc">腹甲を完全に閉じる独自構造の北米産ハコガメ。雑食性で飼育食への移行がしやすい。著者も飼育中。</p>
         <div class="pg-cta">詳しいガイドを読む →</div>
       </a>
+      <a href="species/spenglers-leaf-turtle.html" class="pg-card">
+        <div class="pg-emoji">🌿</div>
+        <div class="pg-name">スペングラーヤマガメ</div>
+        <div class="pg-latin">Geoemyda spengleri</div>
+        <p class="pg-desc">湿った林床を好む小型ヤマガメ。高湿度環境と豊富な隠れ家が重要。マニア人気が高い。著者も飼育中。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
+      <a href="species/african-helmeted-turtle.html" class="pg-card">
+        <div class="pg-emoji">🌊</div>
+        <div class="pg-name">アフリカヨコクビガメ</div>
+        <div class="pg-latin">Pelomedusa subrufa</div>
+        <p class="pg-desc">丈夫で飼育しやすい曲頸類。乾季に上陸・休眠する特殊習性を持つ。水棲寄りだが陸場も活用する。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
+      <a href="species/reeves-turtle.html" class="pg-card">
+        <div class="pg-emoji">🇯🇵</div>
+        <div class="pg-name">クサガメ</div>
+        <div class="pg-latin">Mauremys reevesii</div>
+        <p class="pg-desc">日本で馴染み深い代表種。丈夫で適応力が高いが、成長後サイズも考慮したい。</p>
+        <div class="pg-cta">詳しいガイドを読む →</div>
+      </a>
     </div>
-    <a href="species-list.html" class="pg-all">全種の一覧を見る →</a>
+    <a href="species-list.html" class="pg-all">98種別ガイドを全て見る →</a>
+  </div>
+</section>
+
+<section class="compare-engine" id="compare-engine">
+  <div class="wrap">
+    <div class="ce-eyebrow">Species Compare</div>
+    <h2 class="ce-heading">どの亀があなた向き？</h2>
+    <p class="ce-sub">初心者が迷いやすい代表種を、飼育難易度・匂い・初期費用で比較しました。</p>
+    <div class="scroll-hint-ce">← 横にスクロール</div>
+    <div class="ce-table-wrap">
+      <table class="ce-table">
+        <thead>
+          <tr>
+            <th>種名</th>
+            <th>難易度</th>
+            <th>匂い</th>
+            <th>初期費用</th>
+            <th>初心者向け</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              ミシシッピニオイガメ
+              <span class="ce-latin">Sternotherus odoratus</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥</span></td>
+            <td><span class="ce-badge best">◎</span></td>
+          </tr>
+          <tr>
+            <td>
+              ヘルマンリクガメ
+              <span class="ce-latin">Testudo hermanni</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥¥</span></td>
+            <td><span class="ce-badge good">○</span></td>
+          </tr>
+          <tr>
+            <td>
+              ミツユビハコガメ
+              <span class="ce-latin">Terrapene carolina triunguis</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥</span></td>
+            <td><span class="ce-badge caution">△</span></td>
+          </tr>
+          <tr>
+            <td>
+              スペングラーヤマガメ
+              <span class="ce-latin">Geoemyda spengleri</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥¥</span></td>
+            <td><span class="ce-badge hard">×</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ce-cta-box">
+      <p><strong>迷うならAI診断の方が正確です</strong><br>暮らし方・予算・スペースを答えるだけで、100種以上から最適な1種を提案します。</p>
+      <a href="./shindan/"
+         class="ce-cta-btn"
+         data-event="homepage_compare_diagnosis_click"
+         onclick="gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
+        無料で診断する →
+      </a>
+    </div>
   </div>
 </section>
 
