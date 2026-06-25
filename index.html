@@ -1214,6 +1214,195 @@
     .hpc-heading{font-size:1.3rem;}
     .hpc-btns{grid-template-columns:1fr;}
   }
+  /* ===== Phase 11 Step 1F: Budget Reality Check ===== */
+  section.cost-sim{
+    padding:72px 0 68px;
+    background:var(--forest-deep);
+    position:relative;
+    overflow:hidden;
+  }
+  section.cost-sim::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse 75% 55% at 50% 110%,rgba(212,169,106,.07) 0%,transparent 65%);
+    pointer-events:none;
+  }
+  .csim-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+    display:block;
+    opacity:.85;
+  }
+  .csim-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.55rem;
+    color:var(--parchment);
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.35;
+  }
+  .csim-sub{
+    font-size:.88rem;
+    color:rgba(217,224,214,.65);
+    text-align:center;
+    margin-bottom:36px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.75;
+  }
+  /* reassurance strip */
+  .csim-reassure-strip{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 16px;
+    margin-bottom:36px;
+  }
+  .csim-reassure-item{
+    font-size:.78rem;
+    font-weight:700;
+    color:rgba(212,169,106,.8);
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    letter-spacing:.02em;
+  }
+  .csim-reassure-item::before{content:"✓";}
+  /* tabs */
+  .csim-tabs{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+  }
+  .csim-tab{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(212,169,106,.2);
+    color:rgba(217,224,214,.65);
+    font-family:"Noto Serif JP",serif;
+    font-size:.82rem;
+    font-weight:700;
+    padding:9px 20px;
+    border-radius:24px;
+    cursor:pointer;
+    transition:background .15s,border-color .15s,color .15s;
+    white-space:nowrap;
+  }
+  .csim-tab:hover{
+    background:rgba(212,169,106,.12);
+    border-color:rgba(212,169,106,.45);
+    color:var(--parchment);
+  }
+  .csim-tab.active{
+    background:rgba(212,169,106,.18);
+    border-color:var(--accent);
+    color:var(--accent);
+  }
+  /* panel */
+  .csim-panel{display:none;}
+  .csim-panel.active{display:block;}
+  /* card */
+  .csim-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(212,169,106,.2);
+    border-radius:20px;
+    padding:30px 28px 26px;
+    max-width:660px;
+    margin:0 auto;
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+  /* budget path header */
+  .csim-path-label{
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:rgba(212,169,106,.65);
+    margin-bottom:18px;
+    display:block;
+  }
+  /* cost grid */
+  .csim-costs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 24px;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(212,169,106,.15);
+  }
+  .csim-cost-item{display:flex;flex-direction:column;gap:5px;}
+  .csim-cost-label{
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:rgba(212,169,106,.6);
+  }
+  .csim-cost-val{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-size:1.4rem;
+    font-weight:700;
+    color:#fff;
+    line-height:1.1;
+  }
+  /* examples + reassure */
+  .csim-examples{
+    font-size:.82rem;
+    color:rgba(217,224,214,.7);
+    margin-bottom:8px;
+    line-height:1.6;
+  }
+  .csim-examples strong{color:rgba(212,169,106,.8);}
+  .csim-reassure{
+    font-size:.8rem;
+    color:rgba(217,224,214,.6);
+    margin-bottom:20px;
+    line-height:1.65;
+    padding:10px 14px;
+    background:rgba(47,74,60,.4);
+    border-radius:8px;
+    border-left:2px solid rgba(212,169,106,.3);
+  }
+  /* CTA */
+  .csim-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--accent);
+    color:var(--forest-deep);
+    text-decoration:none;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;
+    font-size:.9rem;
+    padding:12px 28px;
+    border-radius:10px;
+    transition:background .18s,transform .14s;
+    letter-spacing:.02em;
+  }
+  .csim-cta::after{content:"→";}
+  .csim-cta:hover{background:#e0c089;transform:translateY(-1px);}
+  /* mobile */
+  @media(max-width:680px){
+    section.cost-sim{padding:56px 0 52px;}
+    .csim-heading{font-size:1.3rem;}
+    .csim-costs{grid-template-columns:1fr;gap:10px;}
+    .csim-card{padding:24px 20px 22px;}
+    .csim-cost-val{font-size:1.2rem;}
+    .csim-reassure-strip{flex-direction:column;align-items:center;gap:6px;}
+  }
+  /* ===== /Phase 11 Step 1F ===== */
+
   /* ===== /Phase 11 Step 1E ===== */
 
   /* ===== /Phase 11 Step 1D ===== */
@@ -1546,12 +1735,17 @@
   </div>
 </section>
 
-<!-- Cost Simulator (Phase 8-D) -->
+<!-- Cost Simulator (Phase 11 Step 1F: Budget Reality Check) -->
 <section class="cost-sim" id="cost-sim">
   <div class="wrap">
-    <div class="csim-eyebrow">Cost Simulator</div>
-    <h2 class="csim-heading">飼育費用シミュレーター</h2>
-    <p class="csim-sub">亀のタイプ別に、初期費用と月額費用の目安を確認できます。</p>
+    <span class="csim-eyebrow">Budget Reality Check</span>
+    <h2 class="csim-heading">買う前に、費用を現実的に確認。</h2>
+    <p class="csim-sub">初期費用は種とケージのグレードで変わります。まず目安を知っておくだけで、後から焦らずに済みます。</p>
+    <div class="csim-reassure-strip" aria-label="安心ポイント">
+      <span class="csim-reassure-item">最低限から始められる</span>
+      <span class="csim-reassure-item">慣れたら少しずつアップグレードできる</span>
+      <span class="csim-reassure-item">Starter Kitで費用の目安を確認できる</span>
+    </div>
     <div class="csim-tabs" role="tablist">
       <button class="csim-tab active" role="tab" aria-selected="true"  aria-controls="csim-p1" data-tab="small_aquatic">小型水棲ガメ</button>
       <button class="csim-tab"        role="tab" aria-selected="false" aria-controls="csim-p2" data-tab="box_forest">ハコガメ・ヤマガメ</button>
@@ -1559,38 +1753,59 @@
     </div>
     <div id="csim-p1" class="csim-panel active" role="tabpanel">
       <div class="csim-card">
+        <span class="csim-path-label">まずは最低限 → 標準で安心 → こだわり環境</span>
         <div class="csim-costs">
-          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥15,000〜¥35,000</div></div>
-          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥2,000〜¥5,000</div></div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">初期費用目安</div>
+            <div class="csim-cost-val">¥15,000〜¥35,000</div>
+          </div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">月額費用目安</div>
+            <div class="csim-cost-val">¥2,000〜¥5,000</div>
+          </div>
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミシシッピニオイガメ、クサガメ</p>
-        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <p class="csim-reassure">30cm水槽・フィルター・ヒーターがあれば始められます。小型なので維持費も抑えやすく、初めての亀に最も選ばれているタイプです。</p>
         <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic'})">このタイプのおすすめ用品を見る</a>
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic'})">このタイプの飼育用品を確認する</a>
       </div>
     </div>
     <div id="csim-p2" class="csim-panel" role="tabpanel">
       <div class="csim-card">
+        <span class="csim-path-label">まずは最低限 → 標準で安心 → こだわり環境</span>
         <div class="csim-costs">
-          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥35,000〜¥80,000</div></div>
-          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥4,000〜¥10,000</div></div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">初期費用目安</div>
+            <div class="csim-cost-val">¥35,000〜¥80,000</div>
+          </div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">月額費用目安</div>
+            <div class="csim-cost-val">¥4,000〜¥10,000</div>
+          </div>
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミツユビハコガメ、トウブハコガメ</p>
-        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <p class="csim-reassure">半陸棲・半水棲で、水場と陸場の両方が必要です。温度・湿度の管理が重要ですが、適切な環境を作れば長く付き合える種です。</p>
         <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest'})">このタイプのおすすめ用品を見る</a>
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest'})">このタイプの飼育用品を確認する</a>
       </div>
     </div>
     <div id="csim-p3" class="csim-panel" role="tabpanel">
       <div class="csim-card">
+        <span class="csim-path-label">まずは最低限 → 標準で安心 → こだわり環境</span>
         <div class="csim-costs">
-          <div class="csim-cost-item"><div class="csim-cost-label">初期費用目安</div><div class="csim-cost-val">¥40,000〜¥120,000</div></div>
-          <div class="csim-cost-item"><div class="csim-cost-label">月額費用目安</div><div class="csim-cost-val">¥5,000〜¥15,000</div></div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">初期費用目安</div>
+            <div class="csim-cost-val">¥40,000〜¥120,000</div>
+          </div>
+          <div class="csim-cost-item">
+            <div class="csim-cost-label">月額費用目安</div>
+            <div class="csim-cost-val">¥5,000〜¥15,000</div>
+          </div>
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ヘルマンリクガメ、ギリシャリクガメ</p>
-        <p class="csim-reassure">初心者でも、最初に必要なものを揃えれば安心して始められます。</p>
+        <p class="csim-reassure">UVBライト・バスキングライト・保温器具が必要で初期費用は高めです。ただし一式揃えれば数十年の長期飼育ができる、育てがいのあるタイプです。</p>
         <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise'})">このタイプのおすすめ用品を見る</a>
+           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise'})">このタイプの飼育用品を確認する</a>
       </div>
     </div>
   </div>
