@@ -19,6 +19,12 @@
 
 'use strict';
 
+// ── Phase 7-C Step 3-A: Amazon URL 判定ヘルパー ──────────────────
+function isAmazonUrl(url) {
+  if (!url) return false;
+  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
+}
+
 var SK_CAT_LABELS_PAGE = {
   enclosure:        '飼育ケージ',
   lighting_uvb:     'UVBライト',
@@ -345,7 +351,7 @@ function mountStarterKit(species, mountId) {
           equipment_key: a.dataset.equipmentKey,
           product_id:    a.dataset.productId,
         });
-        // 追加イベント
+        // 既存イベント（維持）
         gtag('event', 'starter_kit_cta_click', {
           species:       a.dataset.species,
           category:      a.dataset.cat,
@@ -355,6 +361,20 @@ function mountStarterKit(species, mountId) {
           product_id:    a.dataset.productId,
           click_url:     a.dataset.clickUrl || a.href,
         });
+        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+        if (isAmazonUrl(a.dataset.clickUrl || a.href)) {
+          gtag('event', 'amazon_outbound_click', {
+            source:        'starter_kit',
+            species:       a.dataset.species       || '',
+            species_slug:  '',
+            equipment_key: a.dataset.equipmentKey  || '',
+            category:      a.dataset.cat           || '',
+            product_id:    a.dataset.productId     || '',
+            asin:          a.dataset.asin          || '',
+            selected_tier: a.dataset.tier          || '',
+            click_url:     a.dataset.clickUrl      || a.href,
+          });
+        }
       }
     });
   });
