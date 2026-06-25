@@ -25,6 +25,44 @@ function isAmazonUrl(url) {
   return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
 }
 
+// ── Phase 10-D: GA4 payload helpers ──────────────────────────
+/**
+ * window.location.pathname を返す（テスト差し替え可能）
+ */
+function _skPagePath() {
+  return (typeof window !== 'undefined' && window.location && window.location.pathname)
+    ? window.location.pathname
+    : 'unknown';
+}
+
+/**
+ * 文字列フォールバック（空・null・undefined → 'unknown'）
+ */
+function _skStr(v) {
+  return (v && typeof v === 'string' && v.trim() !== '') ? v.trim() : 'unknown';
+}
+
+/**
+ * category → display_category マッピング
+ * products.jsにdisplay_categoryフィールドがないため内部マップで解決
+ */
+var SK_DISPLAY_CAT_MAP = {
+  enclosure:        'ケージ',
+  lighting_uvb:     'UVBライト',
+  lighting_basking: 'バスキングライト',
+  heating:          '保温器具',
+  filter:           'フィルター',
+  substrate:        '床材',
+  thermometer:      '温湿度計',
+  shelter:          'シェルター',
+  food:             'フード',
+  supplements:      'サプリメント',
+};
+
+function _skDisplayCat(cat) {
+  return SK_DISPLAY_CAT_MAP[cat] || _skStr(cat);
+}
+
 var SK_CAT_LABELS_PAGE = {
   enclosure:        '飼育ケージ',
   lighting_uvb:     'UVBライト',
@@ -166,54 +204,6 @@ function renderCostBox(picks, opts) {
   '</div>';
 }
 
-
-/**
- * Price Anchor HTML 生成（タブパネル内）
- * 各tierのpicksから合計推定額と「まとめ割引」を表示
- */
-function renderPriceAnchor(picks, tier) {
-  if (!picks || !picks.length) return '';
-
-  // 合計（中央値で推定）
-  var totalLow = 0, totalHigh = 0;
-  picks.forEach(function(item) {
-    var r = parsePriceRange(item.product.priceRange);
-    totalLow  += r.low;
-    totalHigh += r.high;
-  });
-  if (!totalLow && !totalHigh) return '';
-
-  var midpoint = Math.round((totalLow + totalHigh) / 2 / 100) * 100;
-  if (!midpoint) midpoint = totalLow || totalHigh;
-
-  // tier別 割引率（あくまで目安表示）
-  var discountRate = tier === 'premium' ? 0.10 : tier === 'budget' ? 0.00 : 0.12;
-  var kitEstimate  = Math.round(midpoint * (1 - discountRate) / 100) * 100;
-  var saving       = midpoint - kitEstimate;
-
-  var indiv = '約' + fmtYen(midpoint);
-  var kit   = '約' + fmtYen(kitEstimate);
-  var save  = saving > 0 ? '約' + fmtYen(saving) + 'お得' : '—';
-
-  return '<div class="sk-price-anchor" aria-label="価格目安">' +
-    '<div class="sk-pa-row sk-pa-indiv">' +
-      '<span class="sk-pa-label">個別にそろえると</span>' +
-      '<span class="sk-pa-val">' + indiv + '</span>' +
-    '</div>' +
-    '<div class="sk-pa-row sk-pa-kit">' +
-      '<span class="sk-pa-label">スターター構成目安</span>' +
-      '<span class="sk-pa-val sk-pa-val--kit">' + kit + '</span>' +
-    '</div>' +
-    (saving > 0
-      ? '<div class="sk-pa-row sk-pa-save">' +
-          '<span class="sk-pa-save-badge">差額目安</span>' +
-          '<span class="sk-pa-save-val">' + save + '</span>' +
-        '</div>'
-      : '') +
-    '<p class="sk-pa-note">※各商品の参考価格帯から算出した目安です。Amazon実売価格は変動します。</p>' +
-  '</div>';
-}
-
 /**
  * カード1枚のHTML
  */
@@ -231,6 +221,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-asin="' + (p.asin||'') + '" data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
+      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-click-url="' + p.affiliateUrl + '">' + tierCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
 
@@ -264,7 +255,6 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
     (tabDef.id !== 'essential' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
-    renderPriceAnchor(picks, tabDef.tiers[0]) +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
 }
@@ -326,9 +316,12 @@ function initSkTabs(root, species) {
     'sk-panel-comfort':   { tab_type: 'comfort',   selected_tier: 'standard' },
     'sk-panel-advanced':  { tab_type: 'advanced',  selected_tier: 'premium' },
   };
+  // 現在アクティブなtab状態をclosureで保持（click handler側で参照）
+  var _currentMeta = TAB_META['sk-panel-essential'];
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var target = btn.dataset.target;
+      _currentMeta = TAB_META[target] || {};
       btns.forEach(function(b) {
         b.classList.toggle('sk-tab-btn--active', b === btn);
         b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
@@ -342,24 +335,30 @@ function initSkTabs(root, species) {
         var meta = TAB_META[target] || {};
         // 既存イベント（維持）
         gtag('event', 'starter_kit_tab', {
-          tab_id:        target,
-          tab_type:      meta.tab_type      || '',
-          selected_tier: meta.selected_tier || '',
-          species_name:  (species && species.name)         || '',
-          species:       (species && species.name)         || '',
-          equipment_key: (species && species.equipmentKey) || '',
+          tab_id:           target,
+          tab_type:         meta.tab_type      || 'unknown',
+          selected_tier:    meta.selected_tier || 'unknown',
+          species_name:     _skStr(species && species.name),
+          species:          _skStr(species && species.name),
+          equipment_key:    _skStr(species && species.equipmentKey),
+          page_path:        _skPagePath(),
+          affiliate_platform: 'amazon',
         });
         // 追加イベント
         gtag('event', 'starter_kit_tier_click', {
-          tab_id:        target,
-          tab_type:      meta.tab_type      || '',
-          selected_tier: meta.selected_tier || '',
-          species:       (species && species.name)         || '',
-          equipment_key: (species && species.equipmentKey) || '',
+          tab_id:           target,
+          tab_type:         meta.tab_type      || 'unknown',
+          selected_tier:    meta.selected_tier || 'unknown',
+          species:          _skStr(species && species.name),
+          equipment_key:    _skStr(species && species.equipmentKey),
+          page_path:        _skPagePath(),
+          affiliate_platform: 'amazon',
         });
       }
     });
   });
+  // _currentMeta をmountStarterKit側に返す
+  return { getMeta: function() { return _currentMeta; } };
 }
 
 /**
@@ -377,15 +376,17 @@ function mountStarterKit(species, mountId) {
   if (!html) { root.style.display = 'none'; return; }
 
   root.innerHTML = html;
-  initSkTabs(root, species);
+  var _tabCtrl = initSkTabs(root, species);
 
   if (typeof gtag === 'function') {
     var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
     gtag('event', 'starter_kit_shown', {
-      species_name:  species.name || '',
-      species:       species.name || '',
-      equipment_key: species.equipmentKey,
-      card_count:    essentialPicks.length,
+      species_name:     _skStr(species.name),
+      species:          _skStr(species.name),
+      equipment_key:    _skStr(species.equipmentKey),
+      card_count:       essentialPicks.length,
+      page_path:        _skPagePath(),
+      affiliate_platform: 'amazon',
     });
   }
 
@@ -394,37 +395,53 @@ function mountStarterKit(species, mountId) {
     a.addEventListener('click', function() {
       if (typeof gtag === 'function') {
         // 既存イベント（維持）
+        var _clickMeta = (_tabCtrl && _tabCtrl.getMeta) ? _tabCtrl.getMeta() : {};
         gtag('event', 'starter_kit_click', {
-          species_name:  a.dataset.species,
-          species:       a.dataset.species,
-          category:      a.dataset.cat,
-          asin:          a.dataset.asin,
-          selected_tier: a.dataset.tier,
-          equipment_key: a.dataset.equipmentKey,
-          product_id:    a.dataset.productId,
+          species_name:       _skStr(a.dataset.species),
+          species:            _skStr(a.dataset.species),
+          category:           _skStr(a.dataset.cat),
+          product_category:   _skStr(a.dataset.cat),
+          display_category:   a.dataset.displayCat || _skDisplayCat(a.dataset.cat),
+          asin:               a.dataset.asin       || null,
+          selected_tier:      _skStr(a.dataset.tier),
+          tab_type:           _clickMeta.tab_type  || 'unknown',
+          equipment_key:      _skStr(a.dataset.equipmentKey),
+          product_id:         _skStr(a.dataset.productId),
+          page_path:          _skPagePath(),
+          affiliate_platform: 'amazon',
         });
         // 既存イベント（維持）
         gtag('event', 'starter_kit_cta_click', {
-          species:       a.dataset.species,
-          category:      a.dataset.cat,
-          asin:          a.dataset.asin,
-          selected_tier: a.dataset.tier,
-          equipment_key: a.dataset.equipmentKey,
-          product_id:    a.dataset.productId,
-          click_url:     a.dataset.clickUrl || a.href,
+          species:            _skStr(a.dataset.species),
+          category:           _skStr(a.dataset.cat),
+          product_category:   _skStr(a.dataset.cat),
+          display_category:   a.dataset.displayCat || _skDisplayCat(a.dataset.cat),
+          asin:               a.dataset.asin       || null,
+          selected_tier:      _skStr(a.dataset.tier),
+          tab_type:           _clickMeta.tab_type  || 'unknown',
+          equipment_key:      _skStr(a.dataset.equipmentKey),
+          product_id:         _skStr(a.dataset.productId),
+          click_url:          a.dataset.clickUrl   || a.href,
+          page_path:          _skPagePath(),
+          affiliate_platform: 'amazon',
         });
         // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
         if (isAmazonUrl(a.dataset.clickUrl || a.href)) {
           gtag('event', 'amazon_outbound_click', {
-            source:        'starter_kit',
-            species:       a.dataset.species       || '',
-            species_slug:  '',
-            equipment_key: a.dataset.equipmentKey  || '',
-            category:      a.dataset.cat           || '',
-            product_id:    a.dataset.productId     || '',
-            asin:          a.dataset.asin          || '',
-            selected_tier: a.dataset.tier          || '',
-            click_url:     a.dataset.clickUrl      || a.href,
+            source:             'starter_kit',
+            species:            _skStr(a.dataset.species),
+            species_slug:       _skStr(a.dataset.species),
+            equipment_key:      _skStr(a.dataset.equipmentKey),
+            category:           _skStr(a.dataset.cat),
+            product_category:   _skStr(a.dataset.cat),
+            display_category:   a.dataset.displayCat || _skDisplayCat(a.dataset.cat),
+            product_id:         _skStr(a.dataset.productId),
+            asin:               a.dataset.asin       || null,
+            selected_tier:      _skStr(a.dataset.tier),
+            tab_type:           _clickMeta.tab_type  || 'unknown',
+            click_url:          a.dataset.clickUrl   || a.href,
+            page_path:          _skPagePath(),
+            affiliate_platform: 'amazon',
           });
         }
       }
