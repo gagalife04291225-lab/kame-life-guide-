@@ -1401,6 +1401,128 @@
     .csim-cost-val{font-size:1.2rem;}
     .csim-reassure-strip{flex-direction:column;align-items:center;gap:6px;}
   }
+  /* ===== Phase 11 Step 1G: Care Library ===== */
+  section.guide-links{
+    padding:72px 0 68px;
+    background:#fff;
+    position:relative;
+  }
+  .gl-eyebrow{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+    display:block;
+  }
+  .gl-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.55rem;
+    color:var(--forest);
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.35;
+  }
+  .gl-sub{
+    font-size:.88rem;
+    color:#6b7c70;
+    text-align:center;
+    margin-bottom:44px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.75;
+  }
+  .gl-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .gl-card{
+    display:flex;
+    flex-direction:column;
+    background:var(--parchment);
+    border:1.5px solid #e4ddc9;
+    border-radius:20px;
+    padding:26px 22px 22px;
+    text-decoration:none;
+    color:inherit;
+    position:relative;
+    overflow:hidden;
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+  }
+  .gl-card::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg,var(--forest) 0%,var(--accent) 100%);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .22s;
+  }
+  .gl-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(13,31,26,.09);
+    border-color:var(--accent);
+  }
+  .gl-card:hover::after{transform:scaleX(1);}
+  .gl-module-label{
+    font-size:.64rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    margin-bottom:12px;
+    display:block;
+    opacity:.75;
+  }
+  .gl-icon{
+    font-size:1.65rem;
+    line-height:1;
+    margin-bottom:12px;
+    display:block;
+  }
+  .gl-situation{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:1.0rem;
+    color:var(--forest-deep);
+    line-height:1.35;
+    margin-bottom:9px;
+  }
+  .gl-desc{
+    font-size:.83rem;
+    color:#5a6b60;
+    line-height:1.7;
+    flex:1;
+    margin-bottom:16px;
+  }
+  .gl-cta{
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--accent-dark);
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    margin-top:auto;
+    transition:color .15s;
+  }
+  .gl-cta::after{content:"→";transition:transform .15s;}
+  .gl-card:hover .gl-cta{color:var(--accent);}
+  .gl-card:hover .gl-cta::after{transform:translateX(3px);}
+  @media(max-width:680px){
+    section.guide-links{padding:56px 0 52px;}
+    .gl-grid{grid-template-columns:1fr;gap:12px;}
+    .gl-heading{font-size:1.3rem;}
+    .gl-card{padding:22px 18px 20px;border-radius:16px;}
+  }
+  /* ===== /Phase 11 Step 1G ===== */
+
   /* ===== /Phase 11 Step 1F ===== */
 
   /* ===== /Phase 11 Step 1E ===== */
@@ -1811,34 +1933,41 @@
   </div>
 </section>
 
-<!-- Guide Links (Phase 10-B) -->
+<!-- Guide Links (Phase 11 Step 1G: Care Library) -->
 <section class="guide-links" id="guide-links">
   <div class="wrap">
-    <div class="gl-eyebrow">Buyer's Guides</div>
-    <h2 class="gl-heading">おすすめガイド</h2>
-    <p class="gl-sub">目的別に、あなた向きの亀を探せます</p>
+    <span class="gl-eyebrow">Care Library</span>
+    <h2 class="gl-heading">選んだ後も、飼育で迷わせない。</h2>
+    <p class="gl-sub">水槽・床材・温度・食事。飼い始めてから必要になる知識を、飼育スタイル別に整理しています。</p>
     <div class="gl-grid">
+
       <a href="guides/beginner-best-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'beginner_best'})">
-        <div class="gl-icon">🐢</div>
-        <div class="gl-name">初心者向けおすすめ</div>
-        <div class="gl-desc">飼育難易度・費用・サイズで選ぶ、最初の1頭</div>
-        <div class="gl-cta">ガイドを見る →</div>
+        <span class="gl-module-label">Care Module 01</span>
+        <span class="gl-icon">🐢</span>
+        <div class="gl-situation">はじめての1頭、どう選ぶ？</div>
+        <p class="gl-desc">難易度・費用・サイズの三軸で、初心者が後悔しにくい種をランキング形式で解説。</p>
+        <span class="gl-cta">ガイドを読む</span>
       </a>
+
       <a href="guides/small-best-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'small_best'})">
-        <div class="gl-icon">🔬</div>
-        <div class="gl-name">小さい亀おすすめ</div>
-        <div class="gl-desc">省スペースで飼える小型種トップ3</div>
-        <div class="gl-cta">ガイドを見る →</div>
+        <span class="gl-module-label">Care Module 02</span>
+        <span class="gl-icon">🔬</span>
+        <div class="gl-situation">スペースが限られている？</div>
+        <p class="gl-desc">30〜45cm水槽から飼える最大15cm以下の小型種を厳選。省スペース派に最適な3種を比較。</p>
+        <span class="gl-cta">ガイドを読む</span>
       </a>
+
       <a href="guides/low-odor-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'low_odor_best'})">
-        <div class="gl-icon">🌿</div>
-        <div class="gl-name">臭いが少ない亀</div>
-        <div class="gl-desc">室内飼育で臭いを抑えやすい定番種</div>
-        <div class="gl-cta">ガイドを見る →</div>
+        <span class="gl-module-label">Care Module 03</span>
+        <span class="gl-icon">🌿</span>
+        <div class="gl-situation">室内の臭いが心配？</div>
+        <p class="gl-desc">管理次第で臭いを抑えられる種と方法を解説。陸棲なら水の問題ごと解消できます。</p>
+        <span class="gl-cta">ガイドを読む</span>
       </a>
+
     </div>
   </div>
 </section>
