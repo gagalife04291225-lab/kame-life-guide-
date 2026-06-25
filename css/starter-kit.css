@@ -225,6 +225,80 @@
   text-align: center;
 }
 
+
+/* ─── Phase 10-C Step 3: Price Anchor ────────────────────── */
+.sk-price-anchor {
+  background: linear-gradient(110deg, #fffbf3 0%, #fff8ec 100%);
+  border: 1px solid rgba(212,169,106,.35);
+  border-radius: 10px;
+  padding: 12px 16px 10px;
+  margin: 0 0 16px;
+}
+.sk-pa-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+}
+.sk-pa-label {
+  font-size: .72rem;
+  color: #8a7a60;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.sk-pa-val {
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--forest, #2f4a3c);
+  font-family: 'Playfair Display', serif;
+  text-align: right;
+}
+.sk-pa-val--kit {
+  color: var(--accent-dark, #b07c3f);
+  font-size: 1.05rem;
+}
+.sk-pa-indiv { border-bottom: 1px dashed rgba(212,169,106,.25); padding-bottom: 6px; margin-bottom: 3px; }
+.sk-pa-kit   { padding-top: 4px; }
+.sk-pa-save {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(212,169,106,.3);
+}
+.sk-pa-save-badge {
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  background: var(--accent, #d4a96a);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sk-pa-save-val {
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--accent-dark, #b07c3f);
+  font-family: 'Playfair Display', serif;
+  text-align: right;
+  flex: 1;
+}
+.sk-pa-note {
+  font-size: .62rem;
+  color: #bbb;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .sk-price-anchor { padding: 10px 13px 9px; }
+  .sk-pa-val { font-size: .86rem; }
+  .sk-pa-val--kit { font-size: .98rem; }
+}
+
 /* ─── レスポンシブ調整 ─── */
 @media (max-width: 480px) {
   .sk-cost-grid { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
