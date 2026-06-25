@@ -615,6 +615,238 @@
   /* ===== /Phase 12-A ===== */
 
 
+  /* ===== Phase 12-D: Live Compare Section ===== */
+  section.live-compare{
+    background:linear-gradient(170deg,#06110e 0%,#0d1e18 55%,#080f0c 100%);
+    padding:80px 0 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  /* ambient glow — mirrors Hero atmosphere */
+  section.live-compare::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 65% 45% at 5% 95%, rgba(47,74,60,.55) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 95% 5%, rgba(212,169,106,.09) 0%, transparent 52%),
+      radial-gradient(ellipse 80% 35% at 50% 110%, rgba(13,31,26,.9) 0%, transparent 60%);
+    pointer-events:none;z-index:0;
+  }
+  section.live-compare .wrap{position:relative;z-index:1;}
+
+  /* ── Header ── */
+  .lc-eyebrow{
+    display:block;
+    text-align:center;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:14px;
+    opacity:.85;
+  }
+  .lc-heading{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:clamp(1.55rem,4.5vw,2.15rem);
+    color:#f5f0e8;
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.3;
+  }
+  .lc-sub{
+    text-align:center;
+    font-size:.95rem;
+    color:rgba(217,224,214,.62);
+    max-width:440px;
+    margin:0 auto 52px;
+    line-height:1.85;
+  }
+
+  /* ── Card grid ── */
+  .lc-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:44px;
+  }
+  .lc-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(212,169,106,.18);
+    border-radius:20px;
+    overflow:hidden;
+    transition:transform .2s,box-shadow .2s,border-color .2s;
+    text-decoration:none;
+    display:block;
+    color:inherit;
+  }
+  .lc-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 0 1px rgba(212,169,106,.38);
+    border-color:rgba(212,169,106,.45);
+  }
+
+  /* Badge */
+  .lc-badge{
+    display:inline-block;
+    background:linear-gradient(105deg,var(--accent) 0%,var(--accent-dark) 100%);
+    color:#05100d;
+    font-size:.62rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding:4px 12px;
+    border-radius:0 0 10px 10px;
+    margin-left:22px;
+  }
+
+  /* VS strip */
+  .lc-vs-strip{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 22px 16px;
+    gap:8px;
+  }
+  .lc-name{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:.98rem;
+    color:#f0ece2;
+    line-height:1.25;
+    flex:1;
+  }
+  .lc-name.right{ text-align:right; }
+  .lc-vs{
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--accent);
+    flex-shrink:0;
+    padding:0 6px;
+    opacity:.9;
+  }
+
+  /* Divider */
+  .lc-divider{
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(212,169,106,.2),transparent);
+    margin:0 22px;
+  }
+
+  /* Metrics */
+  .lc-metrics{
+    padding:16px 22px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .lc-metric{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:6px;
+    font-size:.78rem;
+  }
+  .lc-metric-label{
+    grid-column:2;
+    color:rgba(217,224,214,.5);
+    font-size:.7rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-align:center;
+    white-space:nowrap;
+  }
+  /* winner pill */
+  .lc-win{
+    background:rgba(212,169,106,.14);
+    border:1px solid rgba(212,169,106,.28);
+    color:var(--accent);
+    font-weight:700;
+    font-size:.72rem;
+    padding:3px 10px;
+    border-radius:20px;
+    text-align:center;
+    white-space:nowrap;
+  }
+  /* tie pill */
+  .lc-tie{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    color:rgba(217,224,214,.55);
+    font-weight:700;
+    font-size:.72rem;
+    padding:3px 10px;
+    border-radius:20px;
+    text-align:center;
+    white-space:nowrap;
+  }
+  /* loser — faded */
+  .lc-lose{
+    color:rgba(217,224,214,.3);
+    font-size:.72rem;
+    text-align:center;
+    padding:3px 10px;
+  }
+
+  /* detail link inside card */
+  .lc-card-cta{
+    display:block;
+    text-align:center;
+    font-size:.75rem;
+    font-weight:700;
+    color:rgba(212,169,106,.6);
+    padding:12px 22px 18px;
+    letter-spacing:.06em;
+    transition:color .15s;
+  }
+  .lc-card:hover .lc-card-cta{ color:var(--accent); }
+
+  /* ── Bottom CTA ── */
+  .lc-cta-wrap{
+    text-align:center;
+  }
+  .lc-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;
+    border:1px solid rgba(212,169,106,.38);
+    color:var(--accent);
+    text-decoration:none;
+    font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:.95rem;
+    padding:14px 36px;border-radius:50px;
+    transition:background .2s,border-color .2s,box-shadow .2s;
+    letter-spacing:.04em;
+  }
+  .lc-cta:hover{
+    background:rgba(212,169,106,.10);
+    border-color:rgba(212,169,106,.65);
+    box-shadow:0 0 28px rgba(212,169,106,.18);
+  }
+  .lc-cta .arrow{display:inline-block;transition:transform .18s;}
+  .lc-cta:hover .arrow{transform:translateX(4px);}
+
+  /* ── Mobile ── */
+  @media(max-width:720px){
+    .lc-grid{
+      grid-template-columns:1fr;
+      gap:16px;
+      max-width:420px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+  @media(max-width:400px){
+    section.live-compare{padding:64px 0 60px;}
+    .lc-name{font-size:.88rem;}
+    .lc-vs{font-size:1.1rem;}
+    .lc-heading{font-size:1.38rem;}
+  }
+  /* ===== /Phase 12-D ===== */
+
   /* ===== Phase 11 Step 1C: Problem Cards (Regret Prevention) ===== */
   section.problem-cards{
     padding:72px 0 68px;
@@ -1884,6 +2116,122 @@
         <span class="sp-sub">あなたに合う亀を診断</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Live Compare (Phase 12-D) -->
+<section class="live-compare" id="live-compare">
+  <div class="wrap">
+
+    <span class="lc-eyebrow">Compare Before You Commit</span>
+    <h2 class="lc-heading">飼う前に、違いを見抜く。</h2>
+    <p class="lc-sub">見た目が似ていても、飼いやすさはまったく違う。<br>人気の比較を、1分で確認。</p>
+
+    <div class="lc-grid">
+
+      <!-- Card 1: Hermann vs Greek -->
+      <a class="lc-card"
+         href="./compare/hermann-vs-greek.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'hermann_vs_greek'})">
+        <span class="lc-badge">初心者に人気</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">ヘルマン<br>リクガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">ギリシャ<br>リクガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 飼いやすい</span>
+            <span class="lc-metric-label">難易度</span>
+            <span class="lc-lose">○ やや難</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-lose">¥40,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-win">◎ ¥25,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ 少ない</span>
+            <span class="lc-metric-label">においリスク</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">詳しく比較する →</span>
+      </a>
+
+      <!-- Card 2: Musk vs Razorback -->
+      <a class="lc-card"
+         href="./compare/musk-vs-razorback.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'musk_vs_razorback'})">
+        <span class="lc-badge">Most Compared</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">ミシシッピ<br>ニオイガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">カブトニオイ<br>ガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 入門向き</span>
+            <span class="lc-metric-label">難易度</span>
+            <span class="lc-lose">初中級</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ ¥15,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-lose">¥20,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-tie">同等</span>
+            <span class="lc-metric-label">においリスク</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">詳しく比較する →</span>
+      </a>
+
+      <!-- Card 3: Reeves vs Japanese Pond -->
+      <a class="lc-card"
+         href="./compare/reeves-vs-japanese-pond.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'reeves_vs_japanese_pond'})">
+        <span class="lc-badge">国産限定</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">クサガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">ニホン<br>イシガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 入手しやすい</span>
+            <span class="lc-metric-label">入手性</span>
+            <span class="lc-lose">希少</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ ¥15,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-lose">¥20,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-tie">同等</span>
+            <span class="lc-metric-label">飼いやすさ</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">詳しく比較する →</span>
+      </a>
+
+    </div>
+
+    <div class="lc-cta-wrap">
+      <a href="./compare/"
+         class="lc-cta"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_all_click',{event_category:'live_compare',event_label:'all_comparisons'})">
+        すべての比較を見る <span class="arrow">→</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
