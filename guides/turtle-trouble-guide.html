@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>亀の異変・トラブル早見表｜食欲不振・鼻水・甲羅・水質のチェック｜カメライフガイド</title>
+<meta name="description" content="亀の食欲不振、鼻水、甲羅の異変、水質悪化、動きが鈍いなど、初心者が迷いやすいサインを早見表で整理。緊急度の目安と、受診・環境見直しのポイントを案内します。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guides/turtle-trouble-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+:root{--forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;--accent:#d4a96a;--accent-dark:#8f5f2c;--danger:#c0392b;--warn:#b07c00;--ok:#2e7d52;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+/* ── Hero ── */
+header.hero{
+  background:linear-gradient(158deg,#1c1a10 0%,#2a1a10 40%,#1a1208 100%);
+  color:var(--parchment);padding:56px 0 48px;
+  text-align:center;position:relative;overflow:hidden;
+}
+header.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 20%,rgba(212,169,106,.10) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 40% at 15% 80%,rgba(192,57,43,.08) 0%,transparent 55%);
+  pointer-events:none;
+}
+header.hero .wrap{position:relative;z-index:1;}
+.hero-eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,169,106,.75);font-weight:700;margin-bottom:14px;}
+header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.42rem,5vw,1.95rem);line-height:1.3;margin-bottom:12px;}
+.hero-sub{font-size:.94rem;color:rgba(217,224,214,.78);max-width:520px;margin:0 auto 20px;}
+.hero-disclaimer{
+  display:inline-flex;align-items:flex-start;gap:9px;
+  background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.38);
+  border-radius:10px;padding:11px 16px;
+  font-size:.80rem;color:rgba(255,210,200,.90);
+  max-width:500px;text-align:left;line-height:1.65;
+}
+.hero-disclaimer strong{color:#ffb3a6;}
+
+/* ── Nav ── */
+nav.crumbs{background:#1c1208;color:#9aaa96;font-size:.84rem;padding:9px 0;text-align:center;}
+nav.crumbs a{color:var(--accent);}
+
+/* ── Article ── */
+.article{padding:40px 0 20px;}
+.article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+.article h2{
+  font-family:"Playfair Display",serif;font-style:italic;
+  font-weight:500;font-size:1.38rem;color:var(--forest);
+  margin:44px 0 16px;padding-bottom:10px;
+  border-bottom:1.5px solid #ddd5be;
+}
+
+/* ── Emergency box ── */
+.emergency-box{
+  background:#1e0a08;
+  border:2px solid rgba(192,57,43,.60);
+  border-radius:14px;padding:22px 24px;margin:24px 0 32px;
+  position:relative;
+}
+.emg-label{
+  font-size:.70rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#ff9980;margin-bottom:12px;display:flex;align-items:center;gap:7px;
+}
+.emg-heading{
+  font-family:"Playfair Display",serif;font-size:1.08rem;
+  color:#ffe0d8;margin-bottom:14px;line-height:1.4;
+}
+.emg-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.emg-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.90rem;color:#ffd0c0;line-height:1.6;
+}
+.emg-icon{flex-shrink:0;font-size:1rem;margin-top:.1em;}
+.emg-footer{
+  margin-top:16px;padding-top:14px;
+  border-top:1px solid rgba(192,57,43,.30);
+  font-size:.80rem;color:rgba(255,192,180,.65);line-height:1.7;
+}
+
+/* ── Trouble table ── */
+.trouble-intro{
+  font-size:.92rem;color:#6a7a6e;margin:0 0 18px;line-height:1.8;
+}
+.trouble-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
+table.trouble-table{
+  width:100%;border-collapse:collapse;font-size:.88rem;
+  min-width:560px;
+}
+table.trouble-table th{
+  background:var(--forest-deep);color:var(--parchment);
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 14px;text-align:left;white-space:nowrap;
+}
+table.trouble-table td{
+  padding:13px 14px;border-bottom:1px solid #ddd5be;
+  vertical-align:top;line-height:1.7;color:#3a4a3e;
+}
+table.trouble-table tr:last-child td{border-bottom:none;}
+table.trouble-table tr:nth-child(even) td{background:rgba(255,255,255,.55);}
+table.trouble-table tr:hover td{background:rgba(212,169,106,.07);}
+.trouble-table td:first-child{font-weight:700;color:var(--forest-deep);white-space:nowrap;}
+
+/* 緊急度バッジ */
+.urg{
+  display:inline-block;font-size:.70rem;font-weight:700;
+  letter-spacing:.06em;padding:3px 10px;border-radius:20px;
+  white-space:nowrap;
+}
+.urg-high{background:#fde8e6;color:var(--danger);}
+.urg-mid {background:#fff8e6;color:var(--warn);}
+.urg-low {background:#e8f5ee;color:var(--ok);}
+
+.table-note{font-size:.76rem;color:#9aaa9d;margin-top:8px;line-height:1.7;}
+
+/* ── Cause cards ── */
+.cause-cards{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.cause-card{
+  background:#fff;border:1.5px solid #e4ddc9;
+  border-radius:12px;padding:18px 20px;
+  box-shadow:0 2px 8px rgba(13,31,26,.04);
+}
+.cause-card-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;
+}
+.cause-icon{font-size:1.2rem;}
+.cause-title{font-weight:700;font-size:.98rem;color:var(--forest-deep);}
+.cause-body{font-size:.88rem;color:#5a6b60;line-height:1.75;}
+.cause-check{
+  margin-top:10px;padding-top:10px;
+  border-top:1px solid #e8e0cc;
+  font-size:.82rem;color:#7a8a7d;line-height:1.7;
+}
+.cause-check strong{color:var(--forest);font-weight:700;}
+
+/* ── Checklist ── */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:9px;margin:16px 0;}
+.checklist li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.92rem;color:#3a4a3e;line-height:1.65;
+}
+.checklist li::before{
+  content:"✓";color:var(--ok);font-weight:700;
+  flex-shrink:0;margin-top:.05em;
+}
+
+/* ── Vet box ── */
+.vet-box{
+  background:linear-gradient(135deg,#0e1f18 0%,#1a2e22 100%);
+  border-radius:14px;padding:22px 24px;margin:32px 0;
+}
+.vet-box-label{
+  font-size:.70rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;
+}
+.vet-box h3{
+  font-family:"Playfair Display",serif;font-style:italic;
+  font-size:1.12rem;color:var(--parchment);margin-bottom:8px;
+}
+.vet-box p{font-size:.88rem;color:#b8c8b4;line-height:1.75;}
+
+/* ── Selection list ── */
+.selection-list{display:flex;flex-direction:column;gap:10px;margin:18px 0;}
+.selection-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid #e4ddc9;border-radius:10px;padding:14px 16px;font-size:.88rem;}
+.selection-label{color:#7a8a7d;flex-shrink:0;min-width:160px;line-height:1.6;}
+.selection-val{color:var(--forest);font-weight:700;line-height:1.6;}
+
+/* ── End CTA ── */
+.end-cta{background:linear-gradient(145deg,#1a2e24 0%,#0d1f1a 100%);border-radius:16px;padding:34px 26px 30px;margin:48px 0 0;text-align:center;position:relative;overflow:hidden;}
+.end-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(212,169,106,.12) 0%,transparent 65%);pointer-events:none;}
+.end-cta-label{font-size:.70rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;position:relative;}
+.end-cta h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.30rem;color:var(--parchment);margin-bottom:8px;position:relative;}
+.end-cta p{color:#b8c8b4;font-size:.87rem;margin-bottom:20px;position:relative;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.end-btns{display:flex;flex-direction:column;gap:10px;max-width:300px;margin:0 auto;position:relative;}
+.btn-p{display:block;background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;text-align:center;padding:15px 20px;border-radius:10px;min-height:44px;transition:background .18s;}
+.btn-p:hover{background:var(--accent-dark);}
+.btn-s{display:block;background:transparent;color:var(--parchment);font-weight:700;font-size:.88rem;text-align:center;padding:12px 20px;border-radius:10px;border:1.5px solid rgba(244,239,226,.22);min-height:44px;transition:border-color .2s;}
+.btn-s:hover{border-color:var(--accent);}
+
+/* ── Related links ── */
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
+.rel-btn{display:inline-block;background:#fff;border:1.5px solid #d4c9a8;color:var(--forest);font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:24px;transition:border-color .15s;}
+.rel-btn:hover{border-color:var(--accent);}
+
+/* ── Closing / Footer ── */
+section.closing{background:var(--forest-deep);color:var(--parchment);padding:44px 0;margin-top:52px;}
+section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.3rem;color:var(--accent);margin-bottom:12px;text-align:center;}
+section.closing p{font-size:.94rem;color:#d9e0d6;text-align:center;margin-bottom:18px;}
+.hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.hub-links a{background:var(--forest);color:var(--parchment);font-size:.86rem;padding:9px 16px;border-radius:20px;border:1px solid #3d5a4b;transition:background .18s;}
+.hub-links a:hover{background:#3d5a4b;}
+footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:22px 0;line-height:1.7;}
+footer a{color:var(--accent);}
+.disclaimer{font-size:.74rem;color:#9aa89d;max-width:620px;margin:14px auto 0;line-height:1.7;}
+
+/* ── Responsive ── */
+@media(max-width:520px){
+  .selection-label{min-width:0;}
+  .selection-item{flex-direction:column;gap:4px;}
+  .hero-disclaimer{font-size:.76rem;}
+  table.trouble-table th,table.trouble-table td{padding:10px 11px;}
+}
+@media(max-width:360px){
+  header.hero h1{font-size:1.28rem;}
+  .emergency-box{padding:18px 16px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Trouble Guide</div>
+    <h1>亀の異変・トラブル早見表</h1>
+    <p class="hero-sub">食欲不振・鼻水・甲羅の変化・水質悪化。<br>初心者が迷いやすいサインを緊急度つきで整理します。</p>
+    <p class="hero-disclaimer" role="note">
+      <span aria-hidden="true">⚠️</span>
+      <span>このページは一般的な目安の情報です。<strong>症状が続く場合・重篤な場合は、爬虫類対応の動物病院に相談してください。</strong>医療的な診断・治療はできません。</span>
+    </p>
+  </div>
+</header>
+
+<nav class="crumbs"><div class="wrap">
+  <a href="../index.html">カメライフガイド</a> ＞
+  <a href="../index.html#guide-links">ガイド</a> ＞
+  亀の異変・トラブル早見表
+</div></nav>
+
+<div class="article"><div class="wrap">
+
+  <p>「最近食欲がない」「目が腫れている気がする」「水がすぐ臭くなる」――亀のトラブルは小さなサインから始まることが多く、初心者には見逃しやすいものです。このページでは、よくある症状を緊急度の目安とともに整理しています。</p>
+  <p>ただし、このページは一般的な情報の整理です。気になる症状が続く場合は、爬虫類を診られる動物病院への相談を優先してください。</p>
+
+  <!-- ── 1. Emergency box ── -->
+  <h2>すぐ病院相談を検討するサイン</h2>
+
+  <div class="emergency-box" role="region" aria-label="緊急サイン">
+    <div class="emg-label">
+      <span aria-hidden="true">🔴</span>
+      Emergency Signs — 早めに爬虫類対応の動物病院へ
+    </div>
+    <p class="emg-heading">以下のサインが見られたら、環境を見直す前に受診を検討してください。</p>
+    <ul class="emg-list">
+      <li><span class="emg-icon" aria-hidden="true">🫁</span>口を開けたまま、または喘ぐような呼吸をしている</li>
+      <li><span class="emg-icon" aria-hidden="true">💧</span>鼻水・粘液が数日以上続いている</li>
+      <li><span class="emg-icon" aria-hidden="true">🌊</span>水面に浮いたまま沈めない、または体が傾いている</li>
+      <li><span class="emg-icon" aria-hidden="true">🐚</span>甲羅が急に柔らかくなった、または悪臭がある</li>
+      <li><span class="emg-icon" aria-hidden="true">🩸</span>出血・外傷が見られる</li>
+      <li><span class="emg-icon" aria-hidden="true">🍽️</span>1〜2週間以上まったく食べていない（幼体はより短期間で注意）</li>
+      <li><span class="emg-icon" aria-hidden="true">👁️</span>目が両方とも腫れ、ほとんど開かない状態が続く</li>
+    </ul>
+    <p class="emg-footer">※爬虫類対応の動物病院は「爬虫類 動物病院 ＋ 地域名」で検索してください。すべての動物病院が爬虫類を診られるわけではありません。</p>
+  </div>
+
+  <!-- ── 2. Trouble table ── -->
+  <h2>よくあるトラブル早見表</h2>
+
+  <p class="trouble-intro">「これは様子見でいいのか、受診すべきか」の判断に迷ったときの参考にしてください。緊急度はあくまで一般的な目安です。</p>
+
+  <div class="trouble-table-wrap" role="region" aria-label="トラブル早見表" tabindex="0">
+  <table class="trouble-table">
+    <thead>
+      <tr>
+        <th>症状</th>
+        <th>よくある原因</th>
+        <th>まず確認すること</th>
+        <th>緊急度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>食欲がない</td>
+        <td>低温・脱皮前・ストレス・消化不良・発情期</td>
+        <td>飼育温度・バスキング温度が適切か確認。脱皮の兆候がないか皮膚を観察</td>
+        <td><span class="urg urg-low">様子見可</span></td>
+      </tr>
+      <tr>
+        <td>鼻水・くしゃみ</td>
+        <td>低温・乾燥・呼吸器感染（RI）の初期</td>
+        <td>飼育温度を見直す。透明な鼻水なら温度管理を改善して数日様子見。粘液状・長期間続く場合は要受診</td>
+        <td><span class="urg urg-mid">3日以上で受診検討</span></td>
+      </tr>
+      <tr>
+        <td>目が開かない・腫れ</td>
+        <td>ビタミンA不足・感染・異物・低温</td>
+        <td>食事にビタミンA含有フードが含まれているか確認。片目だけなら異物の可能性も。両目・長期間は要受診</td>
+        <td><span class="urg urg-mid">早めに受診</span></td>
+      </tr>
+      <tr>
+        <td>甲羅が白い・ぬめる</td>
+        <td>水質悪化・皮膚糸状菌・カルシウム不足</td>
+        <td>水換え頻度と水温を確認。陸棲種は湿度過多でないか確認。悪臭があれば要受診</td>
+        <td><span class="urg urg-mid">早めに環境確認・受診</span></td>
+      </tr>
+      <tr>
+        <td>水がすぐ臭う</td>
+        <td>過密飼育・フィルター能力不足・エサのやりすぎ・水換え不足</td>
+        <td>フィルターのろ材・流量を確認。1週間以内に水換えしているか。エサの与えすぎが多い</td>
+        <td><span class="urg urg-low">環境改善で対応可</span></td>
+      </tr>
+      <tr>
+        <td>陸に上がりっぱなし</td>
+        <td>水温が低い・水質悪化・甲羅干し中・病気</td>
+        <td>水温・水質を確認。水棲種がほとんど水に入らない場合は水温・水質に問題がある可能性大</td>
+        <td><span class="urg urg-mid">2日以上続けば要確認</span></td>
+      </tr>
+      <tr>
+        <td>水に浮く・体が傾く</td>
+        <td>肺炎・浮き袋の異常・消化管ガス（腸閉塞など）</td>
+        <td>無理に沈めようとしない。食欲・呼吸を確認。このサインは放置リスクが高い</td>
+        <td><span class="urg urg-high">早急に受診</span></td>
+      </tr>
+      <tr>
+        <td>皮膚が白くなる・はがれる</td>
+        <td>脱皮・水カビ病・火傷（ヒーター接触）</td>
+        <td>脱皮なら薄い膜が浮くように剥がれる。白くふわふわした付着物は水カビの疑い。ヒーターカバーを確認</td>
+        <td><span class="urg urg-low">水カビは早めに対処</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="table-note">※緊急度はあくまで一般的な目安です。個体・環境・飼育歴によって異なります。不安な場合は早めに爬虫類対応の動物病院へ。</p>
+
+  <!-- ── 3. よくある原因の詳細 ── -->
+  <h2>原因別：よくあるチェックポイント</h2>
+
+  <div class="cause-cards">
+
+    <div class="cause-card">
+      <div class="cause-card-head">
+        <span class="cause-icon" aria-hidden="true">🌡️</span>
+        <span class="cause-title">温度・バスキング</span>
+      </div>
+      <p class="cause-body">多くのトラブルの根本原因は「飼育温度が低すぎる」ことです。亀は変温動物のため、温度が下がると消化・免疫機能が低下し、食欲不振・感染リスクの増加につながります。</p>
+      <div class="cause-check"><strong>確認ポイント：</strong>バスキングスポットは30〜38℃に達しているか。水温は24〜28℃前後（種による）か。夜間の低温はないか。</div>
+    </div>
+
+    <div class="cause-card">
+      <div class="cause-card-head">
+        <span class="cause-icon" aria-hidden="true">💧</span>
+        <span class="cause-title">水質・水換え</span>
+      </div>
+      <p class="cause-body">水棲ガメのトラブルの多くは水質悪化が引き金になります。水が臭う、白く濁る、亀が陸から降りない場合は、まず水換えと水温を確認してください。</p>
+      <div class="cause-check"><strong>確認ポイント：</strong>最後の水換えはいつか。フィルターのろ材は詰まっていないか。エサの食べ残しが沈んでいないか。</div>
+    </div>
+
+    <div class="cause-card">
+      <div class="cause-card-head">
+        <span class="cause-icon" aria-hidden="true">🥗</span>
+        <span class="cause-title">栄養バランス</span>
+      </div>
+      <p class="cause-body">ビタミンA不足は目のトラブルと皮膚の問題に、カルシウム不足は甲羅の軟化につながります。単一フードだけで長期間飼育していると不足しやすいです。</p>
+      <div class="cause-check"><strong>確認ポイント：</strong>カルシウム剤・ビタミン剤を補給しているか。リクガメは野菜の種類が偏っていないか。フード一種類だけに頼っていないか。</div>
+    </div>
+
+    <div class="cause-card">
+      <div class="cause-card-head">
+        <span class="cause-icon" aria-hidden="true">🔆</span>
+        <span class="cause-title">UVB・光周期</span>
+      </div>
+      <p class="cause-body">UVBが不足するとビタミンD3が合成できず、カルシウムの吸収に問題が生じます。屋内飼育でUVBライトを使っていない、または古いランプを使い続けている場合は要確認です。</p>
+      <div class="cause-check"><strong>確認ポイント：</strong>UVBランプは6〜12ヶ月以内に交換しているか。ガラス越しになっていないか（UVBはガラスを透過しない）。1日8〜12時間点灯しているか。</div>
+    </div>
+
+  </div>
+
+  <!-- ── 4. 動物病院について ── -->
+  <h2>爬虫類対応の動物病院について</h2>
+
+  <div class="vet-box">
+    <div class="vet-box-label">Vet Note</div>
+    <h3>すべての動物病院で亀を診てもらえるわけではありません</h3>
+    <p>犬・猫専門のクリニックでは爬虫類の診察を断られるケースがあります。「爬虫類 エキゾチックアニマル 動物病院」＋お住まいの地域名で検索し、事前に電話確認することをおすすめします。受診の際は飼育環境（水温・温度・照明・フード）をメモしておくと診察がスムーズになります。</p>
+  </div>
+
+  <!-- ── 5. 環境見直しチェックリスト ── -->
+  <h2>受診前にできる環境チェックリスト</h2>
+
+  <p>「病院に行く前に環境を見直してほしい」と獣医師に言われることはよくあります。受診の前後を問わず、以下を一度確認してください。</p>
+
+  <ul class="checklist" role="list">
+    <li>バスキングスポットの温度を実測した（温度計を当てて確認）</li>
+    <li>水温を計測した（水温計で確認。手感覚は不正確）</li>
+    <li>水換えを実施、または水換え頻度を見直した</li>
+    <li>UVBランプの交換時期を確認した（目安：6〜12ヶ月）</li>
+    <li>エサの種類・量を見直した（与えすぎ・単一食品を確認）</li>
+    <li>カルシウム剤・ビタミン剤を適切に与えているか確認した</li>
+    <li>ケージ内の設置物（ヒーター・フィルター）に異常がないか確認した</li>
+  </ul>
+
+  <!-- ── 6. 症状別：何を確認するか ── -->
+  <h2>症状から原因を探る：早見マップ</h2>
+
+  <div class="selection-list">
+    <div class="selection-item">
+      <span class="selection-label">食欲がない</span>
+      <span class="selection-val">まず温度・バスキングを確認。脱皮期・発情期の可能性も</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">鼻水・くしゃみ</span>
+      <span class="selection-val">温度管理→続けば受診（呼吸器感染の疑い）</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">目が開かない</span>
+      <span class="selection-val">ビタミンA不足→フード見直し。両目・長期は受診</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">甲羅が白い・ぬめる</span>
+      <span class="selection-val">水換え→改善しなければ水カビ・受診</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">水がすぐ臭う</span>
+      <span class="selection-val">フィルター・水換え頻度・エサ量を見直す</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">水に浮く・傾く</span>
+      <span class="selection-val">早急に受診（肺炎・内部異常の疑い）</span>
+    </div>
+    <div class="selection-item">
+      <span class="selection-label">皮膚がはがれる</span>
+      <span class="selection-val">脱皮なら正常。白くふわふわは水カビ→水換え＋塩浴検討</span>
+    </div>
+  </div>
+
+  <!-- ── Related links ── -->
+  <h2>関連ページ</h2>
+  <div class="related-links">
+    <a href="../guides/beginner-best-turtles.html" class="rel-btn">初心者向け亀おすすめ3選</a>
+    <a href="../guides/small-best-turtles.html" class="rel-btn">小型亀ガイド</a>
+    <a href="../guides/low-odor-turtles.html" class="rel-btn">臭いが少ない亀ガイド</a>
+    <a href="../shindan/" class="rel-btn">🐢 AI診断で種を選ぶ</a>
+    <a href="../index.html#cost-sim" class="rel-btn">飼育コスト早見表</a>
+  </div>
+
+  <!-- ── End CTA ── -->
+  <div class="end-cta">
+    <div class="end-cta-label">Next Step</div>
+    <h3>飼育環境を整える、または種を選ぶ</h3>
+    <p>トラブルの多くは、種に合った環境設定から始まります。AI診断で、あなたのライフスタイルに合う亀を確認しておくのも一つの方法です。</p>
+    <div class="end-btns">
+      <a href="../shindan/" class="btn-p"
+         onclick="(typeof gtag==='function')&&gtag('event','trouble_guide_click',{guide:'trouble_guide',destination:'shindan'})">
+        🐢 AI診断で種を選ぶ
+      </a>
+      <a href="../index.html#top-gear-picks" class="btn-s"
+         onclick="(typeof gtag==='function')&&gtag('event','trouble_guide_click',{guide:'trouble_guide',destination:'top_gear'})">
+        おすすめ飼育機材を見る
+      </a>
+    </div>
+  </div>
+
+</div></div>
+
+<section class="closing"><div class="wrap">
+  <h2>ほかのガイド・種ページ</h2>
+  <p>100種以上の亀・リクガメを種別ガイドと診断で確認できます。</p>
+  <div class="hub-links">
+    <a href="../index.html">TOP</a>
+    <a href="../species-list.html">種一覧</a>
+    <a href="../shindan/">AI診断で種を選ぶ</a>
+    <a href="../guides/beginner-best-turtles.html">初心者向け亀ガイド</a>
+    <a href="../guides/small-best-turtles.html">小型亀ガイド</a>
+    <a href="../guides/low-odor-turtles.html">臭いが少ない亀</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>カメライフガイド｜運営：ひでお（実飼育者）｜<a href="../privacy.html">プライバシーポリシー</a></p>
+  <p class="disclaimer">掲載情報は一般的な目安です。症状が続く場合・重篤な場合は爬虫類対応の動物病院にご相談ください。医療的な診断・治療はできません。</p>
+</div></footer>
+
+<script>
+(function(){
+  if(typeof gtag==='function') gtag('event','trouble_guide_view',{guide:'trouble_guide'});
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "亀が食欲不振のとき、まず何を確認すればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まず飼育温度とバスキングスポットの温度を確認してください。亀は変温動物のため、温度が低いと消化機能が低下し食欲が落ちます。脱皮前や発情期にも一時的に食欲が落ちることがあります。1〜2週間以上まったく食べない場合は、爬虫類対応の動物病院への相談をおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "亀の甲羅が白くなる・ぬめるのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "水質悪化、水カビ（皮膚糸状菌）、カルシウム不足などが主な原因です。まず水換えを行い、フィルターの状態を確認してください。白くふわふわした付着物は水カビの疑いがあります。悪臭がある場合や改善しない場合は、爬虫類対応の動物病院に相談することをおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "亀が水に浮いたまま沈まないのは病気ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "水に浮きっぱなし、または体が傾いている状態は、肺炎・消化管ガス・浮き袋の異常など内部的なトラブルのサインであることがあります。放置するリスクが高いため、早めに爬虫類対応の動物病院に相談することをおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "亀を診てもらえる動物病院はどう探せばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "すべての動物病院が爬虫類を診られるわけではありません。「爬虫類 エキゾチックアニマル 動物病院」＋お住まいの地域名で検索し、事前に電話で確認することをおすすめします。受診の際は水温・飼育温度・フード内容・症状が始まった時期をメモしておくと診察がスムーズになります。"
+      }
+    }
+  ]
+}
+</script>
+</body></html>
