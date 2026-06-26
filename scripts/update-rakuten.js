@@ -91,6 +91,8 @@ function rakutenSearch(searchTerm, maxItems) {
       headers:  {
         'Accept': 'application/json',
         'Authorization': 'Bearer ' + ACCESS_KEY,
+        'Origin': 'https://gagalife04291225-lab.github.io',
+        'Referer': 'https://gagalife04291225-lab.github.io/kame-life-guide-/',
       },
     };
     const req = https.request(options, function(res) {
