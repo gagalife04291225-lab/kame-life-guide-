@@ -694,7 +694,7 @@ function mountStarterKit(species, mountId) {
           equipment_key:      _skStr(a.dataset.equipmentKey),
           product_id:         _skStr(a.dataset.productId),
           page_path:          _skPagePath(),
-          affiliate_platform: 'amazon',
+          affiliate_platform: _provider || 'amazon',
         });
         // 既存イベント（維持）
         gtag('event', 'starter_kit_cta_click', {
@@ -709,7 +709,7 @@ function mountStarterKit(species, mountId) {
           product_id:         _skStr(a.dataset.productId),
           click_url:          a.dataset.clickUrl   || a.href,
           page_path:          _skPagePath(),
-          affiliate_platform: 'amazon',
+          affiliate_platform: _provider || 'amazon',
         });
         // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
         if (isAmazonUrl(a.dataset.clickUrl || a.href)) {
@@ -730,14 +730,13 @@ function mountStarterKit(species, mountId) {
             affiliate_platform: 'amazon',
           });
         }
-        // Dual-affiliate unified click event (TASK 3)
+        // Dual-affiliate unified click event (TASK 3 / Phase 13-B: vendor key removed, provider unified)
         var _provider = a.dataset.provider || 'amazon';
         var _mode = a.dataset.mode || (_provider === 'amazon' ? 'affiliate' : 'search');
         gtag('event', 'affiliate_click', {
           provider:       _provider,
           mode:           _mode,
           product_id:     _skStr(a.dataset.productId),
-          vendor:         _provider,
           species:        _skStr(a.dataset.species),
           tier:           _skStr(a.dataset.tier),
           source_page:    _skPagePath(),
