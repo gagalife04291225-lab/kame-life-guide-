@@ -1,1 +1,0 @@
-[API_ERROR] wrong_parameter | specify valid applicationId
