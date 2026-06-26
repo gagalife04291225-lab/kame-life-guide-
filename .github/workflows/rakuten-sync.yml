@@ -24,22 +24,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: |
-          if [ -f package.json ]; then
-            npm ci --omit=dev
-          else
-            echo "No package.json — running with built-in Node.js modules only"
-          fi
+          node-version: '22'
 
       - name: Run Rakuten sync
         env:
