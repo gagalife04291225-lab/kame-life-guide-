@@ -19,15 +19,16 @@ const path = require('path');
 
 // ─── Config ───────────────────────────────────────────────────
 const APP_ID       = process.env.RAKUTEN_APP_ID;
+const ACCESS_KEY   = process.env.RAKUTEN_ACCESS_KEY;
 const AFFILIATE_ID = process.env.RAKUTEN_AFFILIATE_ID;
 const PRODUCTS_PATH = path.resolve(__dirname, '../data/products.js');
 
 // Confidence threshold to upgrade search → available
 const CONFIDENCE_THRESHOLD = 8.0;
 
-// Rakuten Ichiba Item Search API endpoint
-const RAKUTEN_API_HOST = 'app.rakuten.co.jp';
-const RAKUTEN_API_PATH = '/services/api/IchibaItem/Search/20220601';
+// Rakuten Ichiba Item Search API endpoint (2026 migration)
+const RAKUTEN_API_HOST = 'openapi.rakuten.co.jp';
+const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20220601';
 
 // Category keyword guards (reject items clearly in wrong category)
 const CATEGORY_GUARDS = {
@@ -47,6 +48,7 @@ const CATEGORY_GUARDS = {
 function validateSecrets() {
   const missing = [];
   if (!APP_ID)       missing.push('RAKUTEN_APP_ID');
+  if (!ACCESS_KEY)   missing.push('RAKUTEN_ACCESS_KEY');
   if (!AFFILIATE_ID) missing.push('RAKUTEN_AFFILIATE_ID');
   if (missing.length) {
     // Log names only — never values
@@ -74,6 +76,7 @@ function rakutenSearch(searchTerm, maxItems) {
   return new Promise(function(resolve, reject) {
     const params = new URLSearchParams({
       applicationId: APP_ID,
+      accessKey:     ACCESS_KEY,
       affiliateId:   AFFILIATE_ID,
       keyword:       searchTerm,
       hits:          String(maxItems || 10),
@@ -85,7 +88,10 @@ function rakutenSearch(searchTerm, maxItems) {
       hostname: RAKUTEN_API_HOST,
       path:     RAKUTEN_API_PATH + '?' + params.toString(),
       method:   'GET',
-      headers:  { 'Accept': 'application/json' },
+      headers:  {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + ACCESS_KEY,
+      },
     };
     const req = https.request(options, function(res) {
       let data = '';
@@ -186,13 +192,17 @@ function scoreCandidate(item, product) {
   return Math.round(score * 10) / 10;
 }
 
-// ─── URL builder (with affiliate ID) ─────────────────────────
+// ─── URL builder (affiliate URLs only) ───────────────────────
+// Returns ONLY commission-capable affiliateUrl (hb.afl.rakuten.co.jp).
+// Plain itemUrl is intentionally NOT returned — no commission without affiliateUrl.
 function buildAffiliateUrl(itemUrl, affiliateUrl) {
-  // Prefer Rakuten's pre-built affiliate URL if provided by API
-  if (affiliateUrl && affiliateUrl.includes('rakuten')) return affiliateUrl;
-  // Fallback: encode the item URL as a Rakuten affiliate redirect
-  if (itemUrl) return itemUrl;
-  return null;
+  if (affiliateUrl &&
+      typeof affiliateUrl === 'string' &&
+      affiliateUrl.includes('rakuten') &&
+      affiliateUrl.length > 10) {
+    return affiliateUrl;
+  }
+  return null;  // Never promote to available with plain itemUrl
 }
 
 // ─── Patch a single product's Rakuten fields in source ───────
@@ -312,21 +322,26 @@ async function main() {
     const updates = { rakutenLastUpdated: today };
     const prevStatus = product.rakutenStatus;
 
-    if (bestScore >= CONFIDENCE_THRESHOLD) {
-      // Promote to available
-      const affiliateUrl = buildAffiliateUrl(bestItem.itemUrl, bestItem.affiliateUrl);
-      if (!affiliateUrl) {
-        console.log('[WARN] No usable URL for: ' + productId);
-        continue;
-      }
+    const affiliateUrl = buildAffiliateUrl(bestItem.itemUrl, bestItem.affiliateUrl);
+
+    if (bestScore >= CONFIDENCE_THRESHOLD && affiliateUrl) {
+      // Promote to available — only when BOTH score and commission URL exist
       updates.rakutenStatus     = 'available';
       updates.rakutenUrl        = affiliateUrl;
       updates.rakutenPrice      = bestItem.itemPrice;
       updates.rakutenShop       = bestItem.shopName || '';
       updates.rakutenConfidence = bestScore;
       report.available++;
+      console.log('[PROMOTED] ' + productId + ' affiliateUrl=' + affiliateUrl.slice(0,40) + '...');
+    } else if (bestScore >= CONFIDENCE_THRESHOLD && !affiliateUrl) {
+      // Good score but no commission URL — keep search, log for monitoring
+      updates.rakutenStatus     = 'search';
+      updates.rakutenUrl        = null;
+      updates.rakutenConfidence = bestScore;
+      report.searchFallback++;
+      console.log('[NO_AFF_URL] ' + productId + ' score=' + bestScore + ' no affiliateUrl returned');
     } else {
-      // Keep search fallback; update confidence only
+      // Below threshold — keep search fallback
       updates.rakutenStatus     = 'search';
       updates.rakutenUrl        = null;
       updates.rakutenConfidence = bestScore;
