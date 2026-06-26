@@ -1913,6 +1913,151 @@
     .ppk-heading{font-size:1.3rem;}
     .ppk-card{padding:20px 18px 18px;}
   }
+
+  /* ══ Phase 12-A Sprint 3-A: Species Universe ══════════════════
+     prefix: su-  (Species Universe)
+  ════════════════════════════════════════════════════════════════ */
+
+  .su-section{
+    background:var(--bg-primary,#081411);
+    padding:72px 0 80px;
+    position:relative;overflow:hidden;
+  }
+  .su-cap-top{
+    position:absolute;top:-1px;left:0;right:0;height:52px;
+    background:var(--parchment,#f4efe2);
+    clip-path:ellipse(55% 100% at 50% 0%);
+    pointer-events:none;
+  }
+  .su-cap-bot{
+    position:absolute;bottom:-1px;left:0;right:0;height:52px;
+    background:var(--forest-deep,#0d1f1a);
+    clip-path:ellipse(55% 100% at 50% 100%);
+    pointer-events:none;
+  }
+  .su-section .wrap{position:relative;z-index:1;}
+  .su-eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-gold,#C9A96B);
+    background:rgba(201,169,107,.08);border:1px solid rgba(201,169,107,.20);
+    border-radius:9999px;padding:5px 18px;margin-bottom:20px;
+  }
+  .su-heading{
+    font-family:"Playfair Display",serif;font-weight:700;
+    font-size:clamp(1.60rem,4.5vw,2.20rem);color:#eef0ec;
+    line-height:1.22;letter-spacing:-.02em;margin-bottom:10px;
+  }
+  .su-heading em{font-style:italic;color:var(--accent-gold,#C9A96B);}
+  .su-sub{
+    font-size:.92rem;color:rgba(200,215,205,.58);
+    line-height:1.85;max-width:440px;margin:0 auto 48px;
+  }
+  .su-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .su-panel{
+    display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:240px;border-radius:18px;
+    position:relative;overflow:hidden;
+    text-decoration:none;color:#fff;
+    border:1px solid rgba(255,255,255,.06);
+    transition:transform .28s cubic-bezier(.22,.68,0,1),
+               box-shadow .28s cubic-bezier(.22,.68,0,1),
+               border-color .28s;
+    will-change:transform;
+  }
+  .su-panel:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 48px rgba(0,0,0,.42);
+    border-color:rgba(201,169,107,.28);
+  }
+  .su-panel:focus-visible{outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;}
+  .su-panel--aquatic{
+    background:
+      linear-gradient(180deg,rgba(4,24,32,.20) 0%,rgba(8,40,56,.85) 60%,rgba(4,20,28,.97) 100%),
+      linear-gradient(135deg,#061c24 0%,#0a3040 40%,#062030 70%,#04141e 100%);
+  }
+  .su-panel--tortoise{
+    background:
+      linear-gradient(180deg,rgba(10,16,6,.20) 0%,rgba(18,32,10,.85) 60%,rgba(8,14,4,.97) 100%),
+      linear-gradient(135deg,#0c1a06 0%,#1a3010 40%,#0e2008 70%,#081408 100%);
+  }
+  .su-panel--box{
+    background:
+      linear-gradient(180deg,rgba(12,10,4,.20) 0%,rgba(28,22,8,.85) 60%,rgba(14,10,4,.97) 100%),
+      linear-gradient(135deg,#140e04 0%,#2a1e08 40%,#1c140a 70%,#0e0a04 100%);
+  }
+  .su-panel--rare{
+    background:
+      linear-gradient(180deg,rgba(8,4,16,.20) 0%,rgba(16,8,32,.85) 60%,rgba(6,4,14,.97) 100%),
+      linear-gradient(135deg,#0c0618 0%,#1a0e30 40%,#100820 70%,#060410 100%);
+  }
+  .su-panel::before{
+    content:"";position:absolute;inset:0;pointer-events:none;transition:opacity .28s;
+  }
+  .su-panel--aquatic::before{
+    background:radial-gradient(ellipse 80% 50% at 60% 20%,rgba(126,215,193,.12) 0%,transparent 65%);
+  }
+  .su-panel--tortoise::before{
+    background:radial-gradient(ellipse 80% 50% at 40% 20%,rgba(80,160,80,.10) 0%,transparent 65%);
+  }
+  .su-panel--box::before{
+    background:radial-gradient(ellipse 80% 50% at 50% 15%,rgba(201,169,107,.08) 0%,transparent 60%);
+  }
+  .su-panel--rare::before{
+    background:radial-gradient(ellipse 80% 50% at 50% 20%,rgba(160,100,220,.10) 0%,transparent 60%);
+  }
+  .su-panel:hover::before{opacity:1.6;}
+  .su-panel-inner{position:relative;z-index:1;padding:24px 24px 26px;}
+  .su-panel-badge{
+    display:inline-block;font-size:.60rem;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);
+    border-radius:9999px;padding:3px 11px;margin-bottom:10px;
+    color:rgba(255,255,255,.72);
+  }
+  .su-panel-badge-count{color:var(--accent-gold,#C9A96B);font-weight:700;}
+  .su-panel-title{
+    font-family:"Playfair Display",serif;font-weight:700;
+    font-size:clamp(1.18rem,3vw,1.44rem);line-height:1.22;
+    color:#f0f2ee;margin-bottom:6px;
+  }
+  .su-panel-title em{font-style:italic;color:var(--accent-gold,#C9A96B);}
+  .su-panel-desc{
+    font-size:.82rem;color:rgba(200,215,205,.62);
+    line-height:1.70;margin-bottom:16px;
+  }
+  .su-panel-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.78rem;font-weight:700;
+    color:rgba(201,169,107,.82);letter-spacing:.05em;
+  }
+  .su-panel-cta-arrow{
+    display:inline-block;font-style:normal;
+    transition:transform .22s cubic-bezier(.22,.68,0,1);
+  }
+  .su-panel:hover .su-panel-cta-arrow{transform:translateX(5px);}
+  .su-explore{text-align:center;margin-top:40px;}
+  .su-explore-link{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.88rem;font-weight:700;
+    color:rgba(200,215,205,.55);letter-spacing:.04em;
+    text-decoration:none;
+    border-bottom:1px solid rgba(200,215,205,.18);padding-bottom:2px;
+    transition:color .22s;
+  }
+  .su-explore-link:hover{color:var(--accent-gold,#C9A96B);}
+  .su-explore-link:focus-visible{outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;}
+  @media(max-width:680px){
+    .su-section{padding:60px 0 68px;}
+    .su-grid{grid-template-columns:1fr;gap:12px;}
+    .su-panel{min-height:190px;}
+  }
+  @media(max-width:400px){
+    .su-panel-inner{padding:20px 20px 22px;}
+    .su-panel{min-height:172px;}
+    .su-panel-desc{font-size:.79rem;}
+  }
+
   /* ===== Phase 11 Step 1E: Decision Engine ===== */
   section.hp-compare{
     padding:72px 0 68px;
@@ -3687,68 +3832,105 @@
   </div>
 </section>
 
-<!-- Popular Species Picks (Phase 11 Step 1D: AI Recommendation Shelf) -->
-<section class="popular-picks" id="popular-picks">
+<!-- Phase 12-A Sprint 3-A: Species Universe (replaces Phase 11 Step 1D) -->
+<section class="su-section" id="popular-picks" aria-label="亀の世界を探索する">
+  <div class="su-cap-top" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="ppk-eyebrow">AI Recommendations</span>
-    <h2 class="ppk-heading">まず検討したい、相性の良い亀たち。</h2>
-    <p class="ppk-sub">診断データ・飼育難易度・初期費用から、初心者が迷いにくい候補をピックアップ。</p>
-    <div class="ppk-grid">
 
-      <a href="species/hermann-tortoise.html" class="ppk-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'hermann-tortoise'})">
-        <span class="ppk-ai-badge">AI Match 94%</span>
-        <span class="ppk-best">初心者向き</span>
-        <div class="ppk-name">ヘルマンリクガメ</div>
-        <p class="ppk-reason">飼育情報が豊富で亜種選びに迷いにくい。地中海リクガメ入門の最定番。</p>
-        <div class="ppk-meta">
-          <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★☆</span></div>
-          <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥40,000〜</span></div>
+    <!-- Header -->
+    <div style="text-align:center;">
+      <span class="su-eyebrow reveal-soft">Species Universe</span>
+      <h2 class="su-heading reveal-soft reveal-soft--delay-1">
+        亀の<em>世界</em>へようこそ。
+      </h2>
+      <p class="su-sub reveal-soft reveal-soft--delay-2">
+        水の中から、大地の上まで。<br>
+        あなたの暮らしに合った世界を、静かに探してください。
+      </p>
+    </div>
+
+    <!-- 2×2 Panel Grid -->
+    <div class="su-grid">
+
+      <!-- Panel 1: Aquatic Turtles -->
+      <a href="guide-water-full.html"
+         class="su-panel su-panel--aquatic reveal-soft reveal-soft--delay-1"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'aquatic',location:'popular_picks'})"
+         aria-label="水棲ガメの世界を探索する">
+        <div class="su-panel-inner">
+          <span class="su-panel-badge">
+            <span class="su-panel-badge-count">32</span> 種
+          </span>
+          <p class="su-panel-title">Aquatic Turtles<br><em>水棲ガメ</em></p>
+          <p class="su-panel-desc">静かな水面の下で暮らす、もっとも人気のカテゴリー。</p>
+          <span class="su-panel-cta">
+            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
+          </span>
         </div>
-        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
 
-      <a href="species/musk-turtle.html" class="ppk-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'musk-turtle'})">
-        <span class="ppk-ai-badge">AI Match 97%</span>
-        <span class="ppk-best">省スペース</span>
-        <div class="ppk-name">ミシシッピニオイガメ</div>
-        <p class="ppk-reason">最大14cmで30cm水槽から飼育可。水棲ガメ入門の最定番種。</p>
-        <div class="ppk-meta">
-          <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★★</span></div>
-          <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥18,000〜</span></div>
+      <!-- Panel 2: Tortoises -->
+      <a href="guide-dry.html"
+         class="su-panel su-panel--tortoise reveal-soft reveal-soft--delay-2"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'tortoise',location:'popular_picks'})"
+         aria-label="リクガメの世界を探索する">
+        <div class="su-panel-inner">
+          <span class="su-panel-badge">
+            <span class="su-panel-badge-count">28</span> 種
+          </span>
+          <p class="su-panel-title">Tortoises<br><em>リクガメ</em></p>
+          <p class="su-panel-desc">大地をゆっくり歩く、長寿のパートナー。</p>
+          <span class="su-panel-cta">
+            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
+          </span>
         </div>
-        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
 
-      <a href="species/three-toed-box-turtle.html" class="ppk-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'three-toed-box-turtle'})">
-        <span class="ppk-ai-badge">AI Match 88%</span>
-        <span class="ppk-best">観察向き</span>
-        <div class="ppk-name">ミツユビハコガメ</div>
-        <p class="ppk-reason">陸棲寄りで個性的な行動が多く観察が楽しい。ハコガメ入門に最適。</p>
-        <div class="ppk-meta">
-          <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★☆☆</span></div>
-          <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥35,000〜</span></div>
+      <!-- Panel 3: Box / Forest Turtles -->
+      <a href="guide-moist.html"
+         class="su-panel su-panel--box reveal-soft reveal-soft--delay-3"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'box_forest',location:'popular_picks'})"
+         aria-label="ハコガメ・ヤマガメの世界を探索する">
+        <div class="su-panel-inner">
+          <span class="su-panel-badge">
+            <span class="su-panel-badge-count">18</span> 種
+          </span>
+          <p class="su-panel-title">Box &amp; Forest<br><em>ハコ・ヤマガメ</em></p>
+          <p class="su-panel-desc">森と湿地を好む、表情豊かな仲間たち。</p>
+          <span class="su-panel-cta">
+            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
+          </span>
         </div>
-        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
 
-      <a href="species/reeves-turtle.html" class="ppk-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_popular_species_click',{species:'reeves-turtle'})">
-        <span class="ppk-ai-badge">AI Match 91%</span>
-        <span class="ppk-best">低臭重視</span>
-        <div class="ppk-name">クサガメ</div>
-        <p class="ppk-reason">ペットショップで入手しやすく、適切な管理で臭いを抑えやすい定番種。</p>
-        <div class="ppk-meta">
-          <div class="ppk-meta-row"><span class="ppk-meta-label">飼いやすさ</span><span class="ppk-meta-val ppk-stars">★★★★☆</span></div>
-          <div class="ppk-meta-row"><span class="ppk-meta-label">初期費用</span><span class="ppk-meta-val ppk-cost">¥15,000〜</span></div>
+      <!-- Panel 4: Rare / Exotic -->
+      <a href="species-list.html"
+         class="su-panel su-panel--rare reveal-soft reveal-soft--delay-4"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'rare_exotic',location:'popular_picks'})"
+         aria-label="レア・エキゾチックな亀の世界を探索する">
+        <div class="su-panel-inner">
+          <span class="su-panel-badge">
+            <span class="su-panel-badge-count">20</span> 種以上
+          </span>
+          <p class="su-panel-title">Rare &amp; Exotic<br><em>希少・個性派</em></p>
+          <p class="su-panel-desc">希少で個性的。深い魅力を持つ上級者向け。</p>
+          <span class="su-panel-cta">
+            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
+          </span>
         </div>
-        <span class="ppk-btn">種別ガイドを見る</span>
       </a>
 
     </div>
+
+    <!-- Bottom explore link -->
+    <div class="su-explore reveal-soft">
+      <a href="species-list.html" class="su-explore-link">
+        すべての種を見る（100種以上） <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
   </div>
+  <div class="su-cap-bot" aria-hidden="true"></div>
 </section>
 
 <!-- Compare Section (Phase 11 Step 1E: Decision Engine) -->
