@@ -18,11 +18,12 @@ jobs:
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
-        run: node scripts/diag-rakuten.js > scripts/diag-result.txt 2>&1; cat scripts/diag-result.txt
+        run: |
+          node scripts/diag-rakuten.js > scripts/diag-result.txt 2>&1 || true
+          cat scripts/diag-result.txt
       - name: Commit result
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/diag-result.txt
-          git commit -m "diag: rakuten API response check"
-          git push
+          git diff --cached --quiet || git commit -m "diag: rakuten API response [v2]" && git push
