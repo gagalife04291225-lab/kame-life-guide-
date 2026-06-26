@@ -1,3 +1,0 @@
-[HTTP] 403
-[ITEMS] 0
-[NO_ITEMS]
