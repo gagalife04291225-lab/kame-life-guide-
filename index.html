@@ -429,133 +429,189 @@
   .pg-all:hover{text-decoration:underline;}
   @media(max-width:520px){.pg-grid{grid-template-columns:1fr;gap:10px;}}
 
-  /* ===== Phase 12-A/B: Hero Premium Redesign + Copy Hierarchy ===== */
+  /* ===== Phase 12-B: Premium Hero Redesign ===== */
 
   /* ── Base & Background ── */
   header.hero{
     position:relative;
     overflow:hidden;
-    padding:88px 0 80px;
+    padding:80px 0 96px;
     text-align:center;
     background:
-      linear-gradient(175deg, #05100d 0%, #0c1e17 38%, #111a10 65%, #0e1509 100%);
+      linear-gradient(168deg, #040e0b 0%, #091a13 40%, #0d1c0d 68%, #0a1308 100%);
   }
+  /* Ambient depth layers — no external images */
   header.hero::before{
     content:"";
     position:absolute;inset:0;
     background:
-      radial-gradient(ellipse 80% 60% at 20% 90%, rgba(30,58,42,.72) 0%, transparent 58%),
-      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(212,169,106,.12) 0%, transparent 52%),
-      radial-gradient(ellipse 100% 50% at 50% 0%, rgba(8,20,14,.80) 0%, transparent 50%),
-      radial-gradient(ellipse 45% 35% at 72% 75%, rgba(47,74,60,.38) 0%, transparent 55%),
-      radial-gradient(ellipse 30% 25% at 12% 18%, rgba(180,140,80,.07) 0%, transparent 60%);
+      radial-gradient(ellipse 90% 55% at 18% 88%, rgba(28,54,38,.68) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 45% at 82% 12%, rgba(212,169,106,.10) 0%, transparent 50%),
+      radial-gradient(ellipse 110% 45% at 50% 0%, rgba(6,16,10,.85) 0%, transparent 48%),
+      radial-gradient(ellipse 40% 30% at 75% 70%, rgba(47,74,60,.32) 0%, transparent 52%);
     pointer-events:none;z-index:0;
   }
+  /* Scallop fade to parchment — CLS-free fixed height */
   header.hero::after{
     content:"";
     position:absolute;
     bottom:-1px;left:0;right:0;
-    height:68px;
-    background:var(--parchment);
-    clip-path:ellipse(55% 100% at 50% 100%);
+    height:72px;
+    background:var(--parchment,#f4efe2);
+    clip-path:ellipse(58% 100% at 50% 100%);
     pointer-events:none;z-index:1;
   }
-  header.hero .wrap{position:relative;z-index:2;}
+  header.hero .wrap{
+    position:relative;z-index:2;
+    max-width:720px;
+  }
 
-  /* ── Brand label (eyebrow style) ── */
+  /* ── Eyebrow: AI Concierge label ── */
+  .h12-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:rgba(212,169,106,.78);
+    background:rgba(212,169,106,.08);
+    border:1px solid rgba(212,169,106,.20);
+    border-radius:40px;
+    padding:5px 16px;
+    margin-bottom:22px;
+  }
+  .h12-eyebrow-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--accent,#d4a96a);
+    flex-shrink:0;
+    animation:kame-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes kame-pulse{
+    0%,100%{opacity:.5;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.3);}
+  }
+
+  /* ── Brand label ── */
   .h12-brand{
     font-family:"Playfair Display",serif;
     font-weight:700;
-    font-size:clamp(.82rem,2.2vw,1.05rem);
+    font-size:clamp(.80rem,2vw,.98rem);
     letter-spacing:.28em;
     line-height:1;
-    color:rgba(212,169,106,.82);
-    margin-bottom:20px;
+    color:rgba(212,169,106,.60);
+    margin-bottom:16px;
     text-transform:uppercase;
   }
-  .h12-brand em{
-    font-style:normal;
-    color:var(--accent);
-  }
-  .h12-brand-rule{ display:none; }
+  .h12-brand em{font-style:normal;color:rgba(212,169,106,.82);}
+  .h12-brand-rule{display:none;}
 
-  /* ── Main headline (largest element) ── */
+  /* ── Main headline ── */
   .h12-main{
     font-family:"Playfair Display",serif;
     font-weight:700;
-    font-size:clamp(1.72rem,5.5vw,2.6rem);
-    line-height:1.3;
-    color:#f5f0e8;
-    max-width:600px;
-    margin:0 auto 18px;
-    letter-spacing:-.01em;
+    font-size:clamp(1.78rem,5.8vw,2.72rem);
+    line-height:1.28;
+    color:#f2ede4;
+    max-width:580px;
+    margin:0 auto 16px;
+    letter-spacing:-.02em;
+  }
+  /* accent color on key phrase */
+  .h12-main .h12-accent{
+    color:var(--accent,#d4a96a);
+    font-style:italic;
   }
 
-  /* ── Supporting line (logic layer) ── */
+  /* ── Sub copy: logic + trust in one line ── */
   .h12-support{
-    font-size:.96rem;
-    color:rgba(217,224,214,.65);
-    max-width:400px;
-    margin:0 auto 22px;
-    line-height:1.85;
+    font-size:.95rem;
+    color:rgba(210,220,208,.60);
+    max-width:380px;
+    margin:0 auto 10px;
+    line-height:1.9;
   }
 
-  /* ── Emotional microcopy (above CTA) ── */
+  /* ── Emotional microcopy ── */
   .h12-emotion{
     font-family:"Playfair Display",serif;
     font-style:italic;
-    font-size:.94rem;
-    color:rgba(212,169,106,.72);
-    margin-bottom:18px;
+    font-size:.90rem;
+    color:rgba(212,169,106,.65);
+    margin-bottom:28px;
     letter-spacing:.03em;
   }
 
-  /* Subtitle hidden (replaced by support + emotion) */
-  .h12-sub{ display:none; }
+  .h12-sub{display:none;}
 
   /* ── CTA group ── */
   .hero-cta-group{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:13px;
-    margin-bottom:36px;
+    gap:14px;
+    margin-bottom:38px;
   }
+  /* Primary CTA */
   .hero-cta-primary{
     display:inline-flex;align-items:center;gap:10px;
-    background:linear-gradient(105deg,#d4a96a 0%,#c08840 100%);
-    color:#05100d;
+    background:linear-gradient(108deg,#d4a96a 0%,#be8535 100%);
+    color:#04100c;
     text-decoration:none;
     font-family:"Noto Serif JP",serif;
-    font-weight:700;font-size:1.08rem;
-    padding:17px 46px;border-radius:50px;
-    box-shadow:0 6px 30px rgba(212,169,106,.42),0 0 0 1px rgba(212,169,106,.18);
+    font-weight:700;font-size:1.06rem;
+    padding:16px 44px;border-radius:50px;
+    min-height:54px;
+    box-shadow:
+      0 6px 28px rgba(212,169,106,.40),
+      0 0 0 1px rgba(212,169,106,.16),
+      inset 0 1px 0 rgba(255,255,255,.15);
     transition:background .2s,transform .15s,box-shadow .2s;
-    letter-spacing:.03em;
+    letter-spacing:.04em;
   }
   .hero-cta-primary:hover{
-    background:linear-gradient(105deg,#e0c080 0%,#d4a050 100%);
+    background:linear-gradient(108deg,#ddb870 0%,#cc9040 100%);
     transform:translateY(-2px);
-    box-shadow:0 12px 38px rgba(212,169,106,.56),0 0 0 1px rgba(212,169,106,.28);
+    box-shadow:
+      0 14px 40px rgba(212,169,106,.52),
+      0 0 0 1px rgba(212,169,106,.25),
+      inset 0 1px 0 rgba(255,255,255,.2);
   }
-  .hero-cta-primary .arrow{display:inline-block;transition:transform .2s;}
-  .hero-cta-primary:hover .arrow{transform:translateX(4px);}
-  .hero-cta-secondary{
+  .hero-cta-primary:focus-visible{
+    outline:3px solid var(--accent,#d4a96a);
+    outline-offset:3px;
+  }
+  .hero-cta-primary .arrow{
     display:inline-block;
-    color:rgba(212,169,106,.75);
-    text-decoration:none;font-size:.87rem;font-weight:700;
-    padding:8px 20px;border-radius:30px;
-    border:1px solid rgba(212,169,106,.26);
+    transition:transform .2s;
+    font-style:normal;
+  }
+  .hero-cta-primary:hover .arrow{transform:translateX(4px);}
+
+  /* Secondary CTA */
+  .hero-cta-secondary{
+    display:inline-flex;align-items:center;gap:6px;
+    color:rgba(212,169,106,.72);
+    text-decoration:none;
+    font-size:.86rem;font-weight:700;
+    padding:9px 22px;border-radius:30px;
+    border:1px solid rgba(212,169,106,.24);
     transition:color .2s,border-color .2s,background .2s;
-    letter-spacing:.02em;
+    letter-spacing:.03em;
+    min-height:40px;
   }
   .hero-cta-secondary:hover{
-    color:var(--accent);
-    border-color:rgba(212,169,106,.55);
+    color:var(--accent,#d4a96a);
+    border-color:rgba(212,169,106,.50);
     background:rgba(212,169,106,.06);
   }
+  .hero-cta-secondary:focus-visible{
+    outline:2px solid var(--accent,#d4a96a);
+    outline-offset:2px;
+  }
 
-  /* ── Stat row (pills) ── */
+  /* ── Trust badge row ── */
   .h12-stats{
     display:flex;
     flex-wrap:wrap;
@@ -563,38 +619,55 @@
     gap:8px;
   }
   .h12-stat{
-    display:inline-flex;align-items:center;gap:5px;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(212,169,106,.20);
-    color:rgba(217,224,214,.80);
-    font-size:.73rem;font-weight:700;
-    letter-spacing:.10em;text-transform:uppercase;
-    padding:5px 14px;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(212,169,106,.18);
+    color:rgba(210,220,208,.78);
+    font-size:.72rem;font-weight:700;
+    letter-spacing:.06em;
+    padding:5px 13px;
     border-radius:40px;
-    backdrop-filter:blur(6px);
-    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    white-space:nowrap;
   }
-  .h12-stat::before{
-    content:"";
-    display:inline-block;width:5px;height:5px;border-radius:50%;
-    background:var(--accent);opacity:.7;flex-shrink:0;
+  .h12-stat-icon{
+    font-size:.78rem;
+    flex-shrink:0;
+    opacity:.85;
   }
+
+  /* ── E-E-A-T ribbon (beneath hero) ── */
+  .hero-eeeat{
+    background:var(--forest,#2f4a3c);
+    padding:10px 16px;
+    text-align:center;
+  }
+  .hero-eeeat p{
+    font-size:.80rem;
+    color:rgba(205,218,204,.82);
+    letter-spacing:.02em;
+    line-height:1.5;
+  }
+  .hero-eeeat strong{color:rgba(212,169,106,.90);}
 
   /* ── Mobile ── */
   @media(max-width:680px){
-    header.hero{padding:72px 0 64px;}
-    .h12-brand{letter-spacing:.20em;}
-    .h12-main{font-size:1.52rem;}
-    .hero-cta-primary{font-size:1rem;padding:15px 34px;}
+    header.hero{padding:64px 0 80px;}
+    .h12-main{font-size:1.54rem;}
+    .h12-support{font-size:.90rem;}
+    .hero-cta-primary{font-size:.98rem;padding:14px 32px;}
     .sp-grid{grid-template-columns:repeat(2,1fr);}
     .pc-grid{grid-template-columns:1fr;}
     .pc-card{padding:26px 22px 22px;}
   }
   @media(max-width:400px){
-    header.hero{padding:60px 0 56px;}
-    .h12-brand{font-size:.78rem;letter-spacing:.18em;}
-    .h12-main{font-size:1.35rem;}
-    .h12-stat{font-size:.68rem;padding:4px 11px;}
+    header.hero{padding:52px 0 72px;}
+    .h12-eyebrow{font-size:.66rem;padding:4px 13px;}
+    .h12-brand{font-size:.76rem;letter-spacing:.18em;}
+    .h12-main{font-size:1.38rem;}
+    .h12-stat{font-size:.67rem;padding:4px 10px;}
+    .hero-cta-primary{padding:13px 26px;font-size:.94rem;}
   }
 
   /* ── Legacy classes ── */
@@ -2133,48 +2206,67 @@
 <header class="hero">
   <div class="wrap">
 
-    <!-- Brand label -->
-    <h1 class="h12-brand">KAME&nbsp;<em>LIFE</em></h1>
+    <!-- Eyebrow: AI Concierge identity -->
+    <p class="h12-eyebrow" aria-label="AI亀コンシェルジュ">
+      <span class="h12-eyebrow-dot" aria-hidden="true"></span>
+      AI Turtle Concierge
+    </p>
 
-    <!-- Main headline -->
-    <p class="h12-main">あなたに合う亀が、<br>3分で見つかる。</p>
+    <!-- Brand label (visual only, not SEO h1) -->
+    <p class="h12-brand" aria-hidden="true">KAME&nbsp;<em>LIFE</em></p>
 
-    <!-- Supporting line (logic) -->
-    <p class="h12-support">100種から比較。<br>飼育難易度・寿命・初期費用までわかる。</p>
+    <!-- H1: SEO + 一目でわかるバリュープロップ -->
+    <h1 class="h12-main">
+      あなたに合う亀と、<br>
+      <span class="h12-accent">飼育環境・費用</span>がわかる。
+    </h1>
 
-    <!-- Emotional microcopy -->
+    <!-- Sub copy: logic + AI concierge hint -->
+    <p class="h12-support">
+      100種から診断。難易度・寿命・初期費用・<br>
+      必要な機材まで、まとめて案内します。
+    </p>
+
+    <!-- Emotional closing line -->
     <p class="h12-emotion">失敗しない、最初の一匹を。</p>
 
     <!-- CTA group -->
     <div class="hero-cta-group">
       <a href="./shindan/"
          class="hero-cta-primary"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'primary_cta_p12a'})">
-        3分診断をはじめる <span class="arrow">→</span>
+         onclick="(typeof gtag==='function')&&(gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'primary_cta_p12b',cta_type:'primary',location:'hero'}),gtag('event','hero_cta_click',{cta_type:'primary',location:'hero'}))">
+        亀診断をはじめる <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a href="#popular-picks"
          class="hero-cta-secondary"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_hero_secondary_click',{event_category:'hero',event_label:'popular_picks_p12a'})">
-        人気の亀を見る ↓
+         onclick="(typeof gtag==='function')&&(gtag('event','homepage_hero_secondary_click',{event_category:'hero',event_label:'popular_picks_p12b',cta_type:'secondary',location:'hero'}),gtag('event','hero_cta_click',{cta_type:'secondary',location:'hero'}))">
+        人気の亀を見る <span aria-hidden="true">↓</span>
       </a>
     </div>
 
-    <!-- Stat row -->
-    <div class="h12-stats" aria-label="サイト実績">
-      <span class="h12-stat">100 species</span>
-      <span class="h12-stat">98 guides</span>
-      <span class="h12-stat">87 products</span>
-      <span class="h12-stat">AI powered</span>
+    <!-- Trust badge row: 日本語ラベル + アイコン -->
+    <div class="h12-stats" role="list" aria-label="サービス概要">
+      <span class="h12-stat" role="listitem">
+        <span class="h12-stat-icon" aria-hidden="true">🐢</span>100種対応
+      </span>
+      <span class="h12-stat" role="listitem">
+        <span class="h12-stat-icon" aria-hidden="true">💰</span>初期費用目安あり
+      </span>
+      <span class="h12-stat" role="listitem">
+        <span class="h12-stat-icon" aria-hidden="true">📦</span>Starter Kit対応
+      </span>
+      <span class="h12-stat" role="listitem">
+        <span class="h12-stat-icon" aria-hidden="true">✍️</span>実飼育者が執筆
+      </span>
     </div>
 
   </div>
 </header>
 
-<nav class="crumbs">
-  <div class="wrap">
-    カメ・リクガメの飼育情報｜実際に飼っている人間が書いています
-  </div>
-</nav>
+<!-- E-E-A-T ribbon: Hero直下でtrust強化 -->
+<div class="hero-eeeat">
+  <p>スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを<strong>実際に飼育中</strong>の筆者が、飼育経験をもとに執筆・監修しています。</p>
+</div>
 
 <!-- Journey Preview (Phase 12-C) -->
 <section class="journey-preview" id="journey-preview">
@@ -3120,3 +3212,4 @@
 </script>
 </body>
 </html>
+
