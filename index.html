@@ -16,6 +16,44 @@
   gtag('js', new Date());
   gtag('config', 'G-QQTE5CVF3K');
 </script>
+<!-- ═══════════════════════════════════════════════════════════════════
+     KAME LIFE GA4 Funnel Definitions — Phase 13-B
+     ──────────────────────────────────────────────────────────────────
+     PRIMARY FUNNEL (診断 → 機材 → 購入):
+       hero_cta_click
+       → shindan_start → shindan_result
+       → diagnosis_result_view
+       → diagnosis_result_species_click
+       → starter_kit_shown
+       → starter_kit_click (affiliate_click)
+
+     AI CONCIERGE FUNNEL:
+       ai_concierge_view → ai_concierge_start
+       → ai_concierge_answer × 4
+       → ai_concierge_result
+       → ai_concierge_cta_click
+       → starter_kit_shown
+       → affiliate_click
+
+     READINESS SCORE FUNNEL:
+       readiness_view → readiness_start
+       → readiness_answer × 5
+       → readiness_result
+       → readiness_cta_click
+       → diagnosis_result_view / starter_kit_shown
+       → affiliate_click
+
+     KEY EVENT NOTES:
+       - gtag guard: typeof gtag === 'function' を全箇所に適用済み
+       - species key: index.html は 'species' で統一
+       - starter-kit.js は後方互換のため 'species' + 'species_name' 両方送信
+       - affiliate_click: provider='amazon'|'rakuten', mode='affiliate'|'search'
+       - amazon_outbound_click: Amazon専用の詳細イベント（source keyで発生元分離）
+       - 二重発火が意図的なイベント:
+           homepage_hero_primary_click + hero_cta_click (Hero CTA)
+           starter_kit_tab + starter_kit_tier_click (タブ切替)
+           starter_kit_click + starter_kit_cta_click (商品CTA)
+═════════════════════════════════════════════════════════════════════ -->
 <style>
   :root{
     --forest-deep:#0d1f1a;
@@ -4271,7 +4309,7 @@
           _ga('readiness_start', {});
         }
         // GA4: readiness_answer
-        _ga('readiness_answer', { question_id: qid, score: pts, result_band: '' });
+        _ga('readiness_answer', { question_id: qid, score: pts, result_band: 'pending' });
       });
     });
 
