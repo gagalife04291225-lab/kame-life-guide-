@@ -1,0 +1,4 @@
+[UUID-as-applicationId] status=400 error=wrong_parameter items=0
+[UUID-no-affiliate] status=400 error=wrong_parameter items=0
+APP_ID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AFFILIATE_ID: xxxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx
