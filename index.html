@@ -2767,6 +2767,50 @@
     text-decoration:underline;text-underline-offset:3px;padding:4px;
   }
   .aic-restart:hover{color:var(--forest,#2f4a3c);}
+  /* ── Phase 14-A Step 3: Text Input UI ───────────────────────── */
+  .aic-text-form{margin-bottom:18px;}
+  .aic-text-hint{font-size:.74rem;color:rgba(47,74,60,.55);margin-bottom:10px;text-align:center;letter-spacing:.02em;}
+  .aic-textarea{
+    width:100%;min-height:80px;
+    background:rgba(255,255,255,.82);
+    border:1.5px solid rgba(47,74,60,.18);
+    border-radius:10px;padding:12px 14px;
+    font-family:"Noto Serif JP",serif;
+    font-size:.90rem;color:var(--forest-deep,#0d1f1a);
+    line-height:1.7;resize:vertical;
+    transition:border-color .18s;box-sizing:border-box;
+  }
+  .aic-textarea:focus{outline:none;border-color:rgba(47,74,60,.45);box-shadow:0 0 0 3px rgba(47,74,60,.08);}
+  .aic-textarea::placeholder{color:rgba(47,74,60,.35);font-size:.86rem;}
+  .aic-text-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:10px;}
+  .aic-char-count{font-size:.70rem;color:rgba(47,74,60,.40);white-space:nowrap;flex-shrink:0;}
+  .aic-char-count.aic-over{color:#c0392b;}
+  .aic-submit{
+    display:inline-flex;align-items:center;gap:7px;
+    background:linear-gradient(108deg,var(--forest,#2f4a3c),#1a2e1a);
+    color:#e8f0e8;font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:.88rem;border:none;border-radius:9px;
+    padding:11px 22px;cursor:pointer;min-height:44px;white-space:nowrap;
+    transition:background .18s,transform .12s,opacity .2s;letter-spacing:.03em;
+  }
+  .aic-submit:hover:not(:disabled){background:linear-gradient(108deg,#3d5a4b,#2a3e2a);transform:translateY(-1px);}
+  .aic-submit:disabled{opacity:.38;cursor:default;transform:none;}
+  .aic-submit:focus-visible{outline:2px solid var(--accent,#d4a96a);outline-offset:2px;}
+  .aic-divider{display:flex;align-items:center;gap:10px;margin:18px 0 14px;color:rgba(47,74,60,.35);font-size:.76rem;}
+  .aic-divider::before,.aic-divider::after{content:"";flex:1;height:1px;background:rgba(47,74,60,.12);}
+  .aic-fallback-notice,.aic-lowconf-notice{
+    display:none;border-radius:8px;padding:9px 14px;
+    font-size:.80rem;line-height:1.6;margin-bottom:14px;
+  }
+  .aic-fallback-notice{background:rgba(212,169,106,.10);border:1px solid rgba(212,169,106,.28);color:#6a5a2a;}
+  .aic-lowconf-notice{background:rgba(47,74,60,.06);border:1px solid rgba(47,74,60,.14);color:#3a4a3e;}
+  .aic-fallback-notice.aic-show,.aic-lowconf-notice.aic-show{display:block;}
+  @media(max-width:480px){
+    .aic-text-row{flex-direction:column;align-items:stretch;}
+    .aic-submit{width:100%;justify-content:center;}
+    .aic-char-count{text-align:right;}
+  }
+  @media(max-width:360px){.aic-textarea{font-size:.84rem;padding:10px 12px;}.aic-submit{font-size:.82rem;padding:10px 16px;}}
 
   /* Mobile */
   @media(max-width:480px){
@@ -3144,9 +3188,48 @@
       AI Turtle Concierge
     </p>
     <h2 class="aic-heading">AIに相談してみる</h2>
-    <p class="aic-sub">4つの質問に答えるだけで、<br>あなたに合いそうな亀を候補提案します。</p>
+    <p class="aic-sub">文章でも、下のボタンでも相談できます。<br>AIが候補を提案します — 最終判断には<a href="./shindan/" style="color:var(--forest,#2f4a3c);text-decoration:underline;text-underline-offset:2px;">亀診断</a>も活用してください。</p>
 
     <div class="aic-chat" id="aic-chat" role="region" aria-label="AIコンシェルジュチャット">
+
+      <!-- Phase 14-A Step 3: Text input UI -->
+      <div class="aic-text-form" id="aic-text-form">
+        <p class="aic-text-hint">気になることを自由に書いてみてください</p>
+        <textarea
+          id="aic-textarea"
+          class="aic-textarea"
+          maxlength="500"
+          rows="3"
+          placeholder="例：60cm水槽があります。臭いが少なく、初心者でも飼いやすい亀がいいです"
+          aria-label="亀の飼育について自由に入力"
+          aria-describedby="aic-char-hint"
+        ></textarea>
+        <div class="aic-text-row">
+          <span class="aic-char-count" id="aic-char-count" aria-live="polite" id="aic-char-hint">0 / 500</span>
+          <button
+            type="button"
+            class="aic-submit"
+            id="aic-submit"
+            disabled
+            aria-label="AIに相談する"
+          >
+            <span aria-hidden="true">✦</span>AIに相談する
+          </button>
+        </div>
+      </div>
+
+      <!-- Fallback notice (Worker error) -->
+      <div class="aic-fallback-notice" id="aic-fallback-notice" role="alert" aria-live="polite">
+        ⚡ 今はかんたん質問モードで案内します。下のボタンから選んでください。
+      </div>
+
+      <!-- Low-confidence notice -->
+      <div class="aic-lowconf-notice" id="aic-lowconf-notice" role="status" aria-live="polite">
+        💬 もう少しだけ教えてください。下のボタンで追加情報を選んでください。
+      </div>
+
+      <!-- OR divider (separates text input from button flow) -->
+      <div class="aic-divider" aria-hidden="true">または、ボタンで選ぶ</div>
 
       <!-- Progress dots -->
       <div class="aic-progress" role="progressbar" aria-valuenow="0" aria-valuemax="4" aria-label="質問の進捗">
@@ -4669,12 +4752,13 @@ function showResult(){
   window._aicScore   = score;
 
   _ga('ai_concierge_result',{
-    experience: answers.experience||'',
-    size:       answers.size||'',
-    habitat:    answers.habitat||'',
-    priority:   answers.priority||'',
-    species:    sp.name,
-    score:      score
+    experience:  answers.experience||'',
+    size:        answers.size||'',
+    habitat:     answers.habitat||'',
+    priority:    answers.priority||'',
+    species:     sp.name,
+    score:       score,
+    input_mode:  window._aicInputMode||'button',
   });
 
   QUESTIONS.forEach(function(q){
@@ -4725,7 +4809,124 @@ function showResult(){
   });
 }
 
-/* ── Init ───────────────────────────────────────────────── */
+/* ── Phase 14-A Step 3: Real AI Connector ─────────────────────────
+   Worker: POST KAME_AI_WORKER_URL/intent → IntentJSON
+   Fallback: Worker down / confidence<50 → existing button flow
+────────────────────────────────────────────────────────────────── */
+
+  /* Worker endpoint (replace placeholder after `wrangler deploy`) */
+  var KAME_AI_WORKER_URL = '【WORKER_URL_PLACEHOLDER】';
+  var WORKER_TIMEOUT_MS  = 6000;
+
+  /* IntentJSON → answers object (existing rule engine keys) */
+  function mapIntentToAnswers(intent){
+    return {
+      experience: {beginner:'beginner',some:'some',expert:'expert'}[intent.experience] || 'beginner',
+      size:       {small:'small',medium:'medium',large:'large'}[intent.size]            || 'small',
+      habitat:    {aquatic:'aquatic',land:'land'}[intent.habitat]                       || 'any',
+      priority:   {easy:'easy',looks:'looks',rare:'rare'}[intent.priority]             || 'easy',
+    };
+  }
+
+  function _showEl(id){var el=_qs('#'+id);if(el)el.classList.add('aic-show');}
+  function _hideEl(id){var el=_qs('#'+id);if(el)el.classList.remove('aic-show');}
+
+  /* fetch with AbortController timeout */
+  function fetchIntentWithTimeout(message){
+    var ctrl = typeof AbortController!=='undefined' ? new AbortController() : null;
+    var tid  = ctrl ? setTimeout(function(){ctrl.abort();}, WORKER_TIMEOUT_MS) : null;
+    var opts = {method:'POST',headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({message:message,source:'homepage_ai_concierge'})};
+    if(ctrl) opts.signal = ctrl.signal;
+    return fetch(KAME_AI_WORKER_URL, opts).then(function(res){
+      if(tid) clearTimeout(tid);
+      if(!res.ok) throw new Error('worker_'+res.status);
+      return res.json();
+    }).catch(function(e){if(tid) clearTimeout(tid); throw e;});
+  }
+
+  /* fallback: Worker error → button flow */
+  function activateFallback(reason){
+    _ga('ai_concierge_ai_fallback',{reason:reason});
+    _showEl('aic-fallback-notice');
+    _hideEl('aic-lowconf-notice');
+    step=1; answers={};
+    var r=_qs('#aic-result'); if(r) r.classList.remove('aic-show');
+    showQuestion(1);
+  }
+
+  /* main handler */
+  function handleAiSubmit(){
+    var ta  = _qs('#aic-textarea');
+    var btn = _qs('#aic-submit');
+    if(!ta) return;
+    var message = ta.value.trim().slice(0,500);
+    if(!message) return;
+    if(btn) btn.disabled = true;
+    _hideEl('aic-fallback-notice');
+    _hideEl('aic-lowconf-notice');
+    _ga('ai_concierge_text_submit',{input_length:message.length, confidence:0});
+    var typing = _qs('#aic-typing');
+    if(typing) typing.classList.add('aic-show');
+    var msg = _qs('#aic-msg');
+    if(msg) msg.textContent = '入力内容を読み取っています…';
+    ['aic-q1','aic-q2','aic-q3','aic-q4'].forEach(function(id){
+      var el=_qs('#'+id); if(el) el.setAttribute('hidden','');
+    });
+    /* placeholder未設定 → 即フォールバック */
+    if(!KAME_AI_WORKER_URL || KAME_AI_WORKER_URL==='「WORKER_URL_PLACEHOLDER」'){
+      if(typing) typing.classList.remove('aic-show');
+      if(btn) btn.disabled=(ta.value.trim().length===0);
+      activateFallback('worker_url_not_set');
+      return;
+    }
+    fetchIntentWithTimeout(message).then(function(intent){
+      if(typing) typing.classList.remove('aic-show');
+      if(btn) btn.disabled = false;
+      var confidence = typeof intent.confidence==='number' ? intent.confidence : 0;
+      var summary    = String(intent.free_text_summary||'').slice(0,60);
+      _ga('ai_concierge_ai_success',{confidence:confidence,summary_length:summary.length});
+      if(confidence < 50){
+        _showEl('aic-lowconf-notice');
+        if(msg) msg.textContent = 'もう少し詳しく教えていただけますか？';
+        step=1; answers={};
+        showQuestion(1);
+        return;
+      }
+      answers = mapIntentToAnswers(intent);
+      window._aicInputMode = 'text_ai';
+      if(msg) msg.textContent = summary
+        ? '「'+summary+'」で候補を探しています…'
+        : 'ご希望を読み取りました。候補を探しています…';
+      setTimeout(function(){
+        if(typing) typing.classList.remove('aic-show');
+        showResult();
+      }, 600);
+    }).catch(function(e){
+      if(typing) typing.classList.remove('aic-show');
+      if(btn) btn.disabled = false;
+      activateFallback(e&&e.name==='AbortError'?'timeout':e&&e.message||'unknown');
+    });
+  }
+
+  /* text input UI initialization */
+  function initTextInput(){
+    var ta   = _qs('#aic-textarea');
+    var btn  = _qs('#aic-submit');
+    var cnt  = _qs('#aic-char-count');
+    if(!ta||!btn) return;
+    ta.addEventListener('input',function(){
+      var len = ta.value.length;
+      if(cnt){cnt.textContent=len+' / 500';cnt.classList.toggle('aic-over',len>=500);}
+      btn.disabled = (len===0||len>500);
+    });
+    btn.addEventListener('click', handleAiSubmit);
+    ta.addEventListener('keydown',function(e){
+      if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();if(!btn.disabled)handleAiSubmit();}
+    });
+  }
+
+  /* ── Init ───────────────────────────────────────────────── */
 function init(){
   var section = _qs('#ai-concierge');
   if(!section) return;
@@ -4786,6 +4987,12 @@ function init(){
   if(restart){
     restart.addEventListener('click', function(){
       answers={};step=1;started=false;
+      window._aicInputMode='button';
+      _hideEl('aic-fallback-notice');
+      _hideEl('aic-lowconf-notice');
+      var ta=_qs('#aic-textarea'); if(ta){ta.value='';}
+      var sb=_qs('#aic-submit');   if(sb) sb.disabled=true;
+      var cc=_qs('#aic-char-count');if(cc) cc.textContent='0 / 500';
       var result = _qs('#aic-result');
       if(result) result.classList.remove('aic-show');
       var bar = _qs('#aic-score-bar');
@@ -4798,6 +5005,7 @@ function init(){
 
   // Start
   showQuestion(1);
+  initTextInput();
 }
 
 if(document.readyState==='loading'){
