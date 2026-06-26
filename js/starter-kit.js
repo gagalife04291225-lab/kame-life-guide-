@@ -329,34 +329,47 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-click-url="' + p.affiliateUrl + '">' + tierCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
 
-  // Rakuten CTA: "available" = real URL, "search" = search fallback
+  // ── Rakuten CTA: TASK 2 Dual CTA UX (CASE A/B/C/D) ──────────
+  // CASE A: amazon + rakuten available → 2ボタン（Amazon primary, Rakuten secondary）
+  // CASE B: amazon only → rakutenBtn = '' (hidden)
+  // CASE C: rakuten pending → Coming Soon badge（非クリッカブル）
+  // CASE D: neither → btn全体非表示
   var _rakStatus = p.rakutenStatus || 'pending';
   var _rakSearchUrl = (typeof getRakutenSearchUrl === 'function') ? getRakutenSearchUrl(p) : null;
   var showRakuten  = (typeof hasRakuten === 'function') && hasRakuten(p);
   var showRakSearch = _rakStatus === 'search' && !!_rakSearchUrl;
+  var showRakPending = _rakStatus === 'pending' && hasUrl;  // CASE C: Amazon存在時のみbadge表示
 
   var rakutenBtn = '';
   if (showRakuten) {
-    // Real affiliate URL
-    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten" href="' + p.rakutenUrl + '"' +
+    // CASE A: 楽天 available → セカンダリCTA（forest色）
+    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten"' +
+      ' href="' + p.rakutenUrl + '"' +
       ' target="_blank" rel="noopener noreferrer sponsored"' +
+      ' aria-label="' + p.name + 'を楽天市場で見る"' +
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="affiliate"' +
-      ' data-click-url="' + p.rakutenUrl + '">楽天で見る</a>';
+      ' data-click-url="' + p.rakutenUrl + '">楽天市場で見る</a>';
   } else if (showRakSearch) {
-    // Search fallback URL
-    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten-search" href="' + _rakSearchUrl + '"' +
+    // CASE B\'(search): 楽天検索 → アウトラインセカンダリ
+    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten-search"' +
+      ' href="' + _rakSearchUrl + '"' +
       ' target="_blank" rel="noopener noreferrer"' +
+      ' aria-label="' + p.name + 'を楽天市場で検索"' +
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="search"' +
-      ' data-click-url="' + _rakSearchUrl + '">楽天で探す</a>';
+      ' data-click-url="' + _rakSearchUrl + '">楽天でも探す</a>';
+  } else if (showRakPending) {
+    // CASE C: pending → Coming Soon badge（クリック不可・ARIA hidden）
+    rakutenBtn = '<span class="sk-card-btn--rakuten-soon" aria-hidden="true">楽天 準備中</span>';
   }
+  // CASE D: neither → rakutenBtn = '' (nothing rendered)
 
   var btn = amazonBtn + rakutenBtn;
 
@@ -717,13 +730,14 @@ function mountStarterKit(species, mountId) {
             affiliate_platform: 'amazon',
           });
         }
-        // Dual-affiliate unified click event
+        // Dual-affiliate unified click event (TASK 3)
         var _provider = a.dataset.provider || 'amazon';
         var _mode = a.dataset.mode || (_provider === 'amazon' ? 'affiliate' : 'search');
         gtag('event', 'affiliate_click', {
           provider:       _provider,
           mode:           _mode,
-          product_name:   _skStr(a.dataset.productId),
+          product_id:     _skStr(a.dataset.productId),
+          vendor:         _provider,
           species:        _skStr(a.dataset.species),
           tier:           _skStr(a.dataset.tier),
           source_page:    _skPagePath(),
@@ -769,3 +783,4 @@ function renderStarterKitHtml(picks, speciesName, equipmentKey) {
     '</div>' +
   '</section>';
 }
+
