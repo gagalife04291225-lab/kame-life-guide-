@@ -1,5 +1,29 @@
 # Phase 14-A: Real AI Concierge Architecture Design
 ## KAME LIFE — Hybrid AI Implementation Plan
+## v2.0 — PM Approved (97/100) — 2026-06-26
+
+---
+
+## PM Review Summary
+
+| 項目 | スコア |
+|------|--------|
+| Architecture | 9.3 |
+| Cost efficiency | 9.5 |
+| Safety | 9.0 |
+| Scalability | 8.8 |
+
+**Approved with 4 revisions:**
+- Fix 1: gemini-1.5-flash → gemini-2.5-flash
+- Fix 2: JSON schema に `confidence` フィールド追加
+- Fix 3: `free_text_summary` を200字 → 60字に短縮
+- Fix 4: Rate limiting を Worker に追加必須
+
+**Final Stack:**
+- AI: Gemini 2.5 Flash
+- Backend: Cloudflare Workers
+- Storage (optional later): Cloudflare KV
+- Repo: 別リポジトリ（`kame-ai-worker`）推奨
 
 ---
 
@@ -14,73 +38,73 @@
 │  │                                                              │  │
 │  │  [自由入力テキスト] or [4問ボタン選択] ← 両モード維持       │  │
 │  │               ↓ userMessage                                  │  │
-│  │       ┌───────────────────┐                                  │  │
-│  │       │  Intent Extractor  │  ← LLM の唯一の役割             │  │
-│  │       │  (fetch → proxy)  │                                  │  │
-│  │       └────────┬──────────┘                                  │  │
-│  │                ↓ JSON (IntentSchema)                         │  │
 │  │       ┌────────────────────┐                                 │  │
-│  │       │  Rule Engine (JS)  │  ← 既存ロジックを再利用         │  │
-│  │       │  calcScore()       │    species選択・安全ルール適用   │  │
+│  │       │  Intent Extractor  │  ← LLM の唯一の役割            │  │
+│  │       │  (fetch → proxy)   │    intent extraction only       │  │
+│  │       └────────┬───────────┘                                 │  │
+│  │                ↓ IntentJSON (+ confidence)                   │  │
+│  │       ┌────────────────────────────────────────┐             │  │
+│  │       │         Confidence Router              │             │  │
+│  │       │  confidence < 50 → 追加質問UI表示      │             │  │
+│  │       │  confidence ≥ 50 → Rule Engine へ      │             │  │
+│  │       └────────┬───────────────────────────────┘             │  │
+│  │                ↓                                             │  │
+│  │       ┌────────────────────┐                                 │  │
+│  │       │  Rule Engine (JS)  │  ← species選択は常にここ        │  │
+│  │       │  calcScore()       │    LLMは絶対に種を選ばない      │  │
 │  │       │  safetyFilter()    │                                 │  │
 │  │       └────────┬───────────┘                                 │  │
 │  │                ↓ RecommendResult                             │  │
 │  │       ┌────────────────────┐                                 │  │
 │  │       │  Response Renderer │  ← 既存UI流用                   │  │
-│  │       │  (aic-result card) │                                 │  │
 │  │       └────────────────────┘                                 │  │
 │  └──────────────────────────────────────────────────────────────┘  │
 └────────────────────────────────────────────────────────────────────┘
                           ↕ HTTPS fetch
 ┌────────────────────────────────────────────────────────────────────┐
-│                    Backend Proxy Layer                              │
+│               Cloudflare Worker (kame-ai-worker repo)              │
 │                                                                    │
-│  Option A: Cloudflare Workers (推奨)                               │
-│  Option B: Vercel Edge Function                                    │
-│  Option C: GitHub Actions (非リアルタイム)                          │
-│                                                                    │
-│  役割:                                                              │
-│  1. APIキーをクライアントから隠蔽                                   │
-│  2. システムプロンプトを注入                                        │
-│  3. レスポンスをJSONに強制                                         │
-│  4. レートリミット・コスト制御                                      │
-│  5. キャッシュ（同一入力への重複API呼び出し防止）                   │
-│                                                                    │
-│  Worker pseudo-code:                                               │
 │  ┌──────────────────────────────────────────────────────────────┐  │
-│  │ POST /api/concierge                                          │  │
-│  │ Body: { userMessage: string }                                │  │
-│  │                                                              │  │
-│  │ → LLM API (with SYSTEM_PROMPT + JSON schema enforcement)     │  │
-│  │ → Parse JSON                                                 │  │
-│  │ → Validate schema                                            │  │
-│  │ → Return IntentJSON                                          │  │
-│  └──────────────────────────────────────────────────────────────┘  │
-└────────────────────────────────────────────────────────────────────┘
-                          ↕ HTTPS (server-side only)
-┌────────────────────────────────────────────────────────────────────┐
-│                      LLM API Layer                                 │
-│                                                                    │
-│  Role: INTENT EXTRACTION ONLY — species選択は絶対にしない          │
-│                                                                    │
-│  System Prompt 要点:                                               │
-│  "あなたはカメ飼育の意図抽出器です。                               │
-│   ユーザーの入力から飼育条件を抽出し、                             │
-│   以下のJSONスキーマのみを返してください。                         │
-│   JSON以外は絶対に返さないでください。"                            │
-│                                                                    │
-│  Input: userMessage (自由テキスト or ボタン選択文字列)             │
-│  Output: IntentJSON (下記スキーマ)                                 │
-└────────────────────────────────────────────────────────────────────┘
+│  │  Rate Limiter                                                │  │
+│  │  - 20 req/min per IP  (CF Rate Limiting Rules)              │  │
+│  │  - 200 req/day per IP (CF KV カウンター・optional)          │  │
+│  │  超過 → 429 Too Many Requests                               │  │
+│  └─────────────────────┬────────────────────────────────────────┘  │
+│                        ↓                                           │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │  Request Validator                                           │  │
+│  │  - userMessage.length ≤ 500                                 │  │
+│  │  - Origin check: gagalife04291225-lab.github.io のみ        │  │
+│  └─────────────────────┬────────────────────────────────────────┘  │
+│                        ↓                                           │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │  Gemini 2.5 Flash API Call                                  │  │
+│  │  - responseMimeType: "application/json"                     │  │
+│  │  - temperature: 0.1  (deterministic)                        │  │
+│  │  - maxOutputTokens: 256                                     │  │
+│  │  - SYSTEM_PROMPT: intent extraction only                    │  │
+│  └─────────────────────┬────────────────────────────────────────┘  │
+│                        ↓ raw JSON string                           │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │  JSON Validator + Enum Enforcer (hallucination guard)       │  │
+│  │  - parse JSON                                               │  │
+│  │  - 全フィールドの enum を強制                               │  │
+│  │  - 不正値 → "unknown" にフォールバック                      │  │
+│  │  - confidence: clamp(0, 100)                                │  │
+│  └─────────────────────┬────────────────────────────────────────┘  │
+│                        ↓ validated IntentJSON                      │
+└────────────────────────┼───────────────────────────────────────────┘
+                         ↓ Response to Browser
 ```
 
 ---
 
-## 2. JSON Schema (IntentSchema)
+## 2. JSON Schema v2 (IntentSchema)
 
 ```json
 {
-  "$schema": "kame-life/intent/v1",
+  "$schema": "kame-life/intent/v2",
+
   "experience": {
     "type": "string",
     "enum": ["beginner", "some", "expert", "unknown"],
@@ -133,247 +157,390 @@
     "description": "最重視すること",
     "default": "unknown"
   },
+
+  "confidence": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 100,
+    "description": "入力からの意図抽出信頼度。50未満=情報不足→追加質問UI表示",
+    "examples": {
+      "low (35)":  "「飼いやすい亀がいい」のみ → 情報不足",
+      "mid (65)":  "「小型で水棲、初心者です」 → ある程度抽出可能",
+      "high (90)": "「60cm水槽、臭い嫌い、初めて、小型希望」 → 十分"
+    },
+    "routing": "< 50 → 追加質問UI / ≥ 50 → Rule Engineへ"
+  },
+
   "free_text_summary": {
     "type": "string",
-    "maxLength": 200,
-    "description": "LLMがユーザー意図を日本語で要約した文（rule engineに渡さない・UI表示用）",
+    "maxLength": 60,
+    "description": "LLMがユーザー意図を日本語で要約した文（UI表示用・rule engineは無視）",
+    "example": "初心者、小型水棲、臭いに敏感",
     "default": ""
   }
 }
 ```
 
+**confidence による UI 分岐:**
+```
+confidence < 50:
+  → "まだ情報が足りません。あと2問だけ教えてください。"
+  → 不足フィールドのボタン選択を表示（fallback to button mode）
+
+confidence ≥ 50:
+  → Rule Engine へ渡す
+  → calcScore() → 種推薦 → result card表示
+```
+
 **Rule Engine mapping (IntentSchema → 既存SPECIES weights):**
 ```
-experience: beginner→beginner, some→some, expert→expert
-size:       small→small, medium→medium, large→large
-habitat:    aquatic→aquatic, land→land, semi→any
-priority:   easy→easy, looks→looks, rare→rare
-budget:     low → beginner_capped ON, high → cap解除
-odor_sensitive: true → aquaticペナルティ軽減・陸棲ボーナス
-available_space: under_60cm → large種除外
+experience:      beginner→beginner, some→some, expert→expert
+size:            small→small, medium→medium, large→large
+habitat:         aquatic→aquatic, land→land, semi→any
+priority:        easy→easy, looks→looks, rare→rare
+budget:          low→BEGINNER_CAPPED ON, high→cap解除
+odor_sensitive:  true→aquaticペナルティ軽減・陸棲ボーナス
+available_space: under_60cm→large種を除外
 ```
 
 ---
 
-## 3. Recommended Stack
+## 3. Recommended Stack (Final)
 
-### 比較表
-
-| 項目 | OpenAI API (gpt-4o-mini) | Gemini API (gemini-1.5-flash) | Cloudflare Workers AI |
-|------|--------------------------|-------------------------------|----------------------|
-| コスト | $0.15/1M tokens input | $0.075/1M tokens | $0.011/1K neurons |
-| レイテンシ | 800〜1500ms | 600〜1200ms | 300〜800ms |
-| JSON強制 | ✅ response_format対応 | ✅ JSON mode対応 | △ 追加処理必要 |
-| 幻覚リスク | 低（JSON制約時） | 低 | 中 |
-| 実装複雑度 | 低 | 低 | 中 |
-| プロキシ必要 | ✅ 必須 | ✅ 必須 | △ 組み込み可 |
-| 無料枠 | なし | あり（60req/分） | あり（10万req/日） |
-| 日本語精度 | ◎ | ◎ | ○ |
-
-### 推奨: **Gemini API (gemini-1.5-flash) + Cloudflare Workers**
-
-理由:
-1. **Gemini無料枠** = 60 req/分 → 月約200万回リクエスト無料、初期コストゼロ
-2. **Cloudflare Workers** = GitHub Pages + CF Workers の組み合わせがシンプル
-3. **JSON mode** = `responseMimeType: "application/json"` で hallucination を最小化
-4. **レイテンシ** = Flash モデルは gpt-4o-mini より平均200ms速い
-5. **プロキシ統合** = CF Workers にAPIキーを環境変数として安全に保持
-
-代替: Gemini API + Vercel Edge Function（既存CI/CDがある場合）
+| Layer | 選定 | 理由 |
+|-------|------|------|
+| AI Model | **Gemini 2.5 Flash** | 日本語精度◎・structured output強化・無料枠60rpm |
+| Backend | **Cloudflare Workers** | static site との親和性・無料枠10万req/日 |
+| Storage | **Cloudflare KV** (optional) | 将来のキャッシュ・乱用防止・分析用 |
+| Frontend | 既存 index.html | 最小差分 |
+| Repo | **別リポジトリ** (kame-ai-worker) | blast radius小・secrets隔離・deploy分離 |
 
 ---
 
 ## 4. Step-by-Step Implementation Plan
 
-### Step 1: Architecture Only（本フェーズ）✅ 完了
-- 設計書・スキーマ・スタック決定
-- files touched: 0
-- risk: none
+### Step 1: Architecture Design ✅ APPROVED (本ドキュメント)
 
 ---
 
-### Step 2: Backend Proxy（次フェーズ）
-**目的:** APIキー保護 + JSON強制 + レートリミット
+### Step 2: Cloudflare Worker 実装
 
-**作成ファイル:**
+**Repo:** `kame-ai-worker`（新規作成）
+
+**ファイル構成:**
 ```
-workers/
-  kame-concierge/
-    index.js          ← Cloudflare Worker本体
-    wrangler.toml     ← デプロイ設定
+kame-ai-worker/
+  src/
+    index.js        ← Worker本体（下記参照）
+  wrangler.toml     ← デプロイ設定
+  package.json
+  README.md
 ```
 
-**Worker index.js 骨格:**
+**Worker index.js（完全版）:**
 ```javascript
-// kame-concierge Worker
-const SYSTEM_PROMPT = `
-あなたはカメ飼育条件の意図抽出AIです。
-ユーザーの入力から飼育条件を読み取り、
-以下のJSONスキーマのみを返してください。
-JSON以外は絶対に含めないでください。
+// kame-ai-worker/src/index.js
+// Gemini 2.5 Flash + Intent Extraction Only
 
-スキーマ:
-{"experience":"beginner|some|expert|unknown",
- "size":"small|medium|large|unknown",
- "habitat":"aquatic|land|semi|any|unknown",
- "budget":"low|medium|high|unknown",
- "odor_sensitive":true|false|null,
- "rare_interest":"none|low|high|unknown",
- "family_children":true|false|null,
- "available_space":"under_60cm|60cm|90cm|120cm_plus|outdoor|unknown",
- "priority":"easy|looks|rare|longevity|cost|unknown",
- "free_text_summary":"日本語200字以内の要約"}
-`;
+const ALLOWED_ORIGIN = 'https://gagalife04291225-lab.github.io';
+
+const SYSTEM_PROMPT = `あなたはカメ（亀・リクガメ）の飼育条件を読み取る意図抽出AIです。
+ユーザーの入力から飼育希望条件を抽出し、必ず以下のJSONのみを返してください。
+JSON以外の文字（説明・前置き・マークダウン）は絶対に含めないでください。
+
+重要なルール:
+- あなたは種の推薦をしてはいけません
+- あなたの仕事は「意図の抽出」のみです
+- 不明な項目は "unknown" または null を使ってください
+- confidence は入力の情報量から0〜100で評価してください
+
+返すJSON（このフォーマット厳守）:
+{
+  "experience": "beginner|some|expert|unknown",
+  "size": "small|medium|large|unknown",
+  "habitat": "aquatic|land|semi|any|unknown",
+  "budget": "low|medium|high|unknown",
+  "odor_sensitive": true または false または null,
+  "rare_interest": "none|low|high|unknown",
+  "family_children": true または false または null,
+  "available_space": "under_60cm|60cm|90cm|120cm_plus|outdoor|unknown",
+  "priority": "easy|looks|rare|longevity|cost|unknown",
+  "confidence": 0〜100の整数,
+  "free_text_summary": "60字以内の日本語要約"
+}`;
+
+// Enum validation map
+const VALID_ENUMS = {
+  experience:      ['beginner','some','expert','unknown'],
+  size:            ['small','medium','large','unknown'],
+  habitat:         ['aquatic','land','semi','any','unknown'],
+  budget:          ['low','medium','high','unknown'],
+  rare_interest:   ['none','low','high','unknown'],
+  available_space: ['under_60cm','60cm','90cm','120cm_plus','outdoor','unknown'],
+  priority:        ['easy','looks','rare','longevity','cost','unknown'],
+};
+
+function validateIntent(raw) {
+  const out = {};
+  for (const [key, vals] of Object.entries(VALID_ENUMS)) {
+    out[key] = vals.includes(raw[key]) ? raw[key] : 'unknown';
+  }
+  out.odor_sensitive  = typeof raw.odor_sensitive  === 'boolean' ? raw.odor_sensitive  : null;
+  out.family_children = typeof raw.family_children === 'boolean' ? raw.family_children : null;
+  out.confidence      = Math.max(0, Math.min(100, parseInt(raw.confidence, 10) || 0));
+  out.free_text_summary = String(raw.free_text_summary || '').slice(0, 60);
+  return out;
+}
 
 export default {
   async fetch(request, env) {
-    if (request.method !== 'POST') return new Response('Method Not Allowed', {status:405});
-
-    const { userMessage } = await request.json();
-    if (!userMessage || userMessage.length > 500) {
-      return new Response(JSON.stringify({error:'invalid_input'}), {status:400});
-    }
-
-    // Rate limit: 1 req/sec per IP（CF Workers標準機能）
-    
-    const resp = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + env.GEMINI_API_KEY, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: [{ parts: [{ text: userMessage }] }],
-        generationConfig: {
-          responseMimeType: 'application/json',
-          maxOutputTokens: 256,
-          temperature: 0.1
+    // CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type',
         }
-      })
-    });
-
-    const data = await resp.json();
-    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
-
-    // Validate + sanitize
-    let intent;
-    try { intent = JSON.parse(raw); }
-    catch { intent = {}; }
-
-    // Enforce enum values (hallucination guard)
-    const VALID = {
-      experience: ['beginner','some','expert','unknown'],
-      size:       ['small','medium','large','unknown'],
-      habitat:    ['aquatic','land','semi','any','unknown'],
-      budget:     ['low','medium','high','unknown'],
-      rare_interest: ['none','low','high','unknown'],
-      available_space: ['under_60cm','60cm','90cm','120cm_plus','outdoor','unknown'],
-      priority:   ['easy','looks','rare','longevity','cost','unknown'],
-    };
-    for (const [k, vals] of Object.entries(VALID)) {
-      if (!vals.includes(intent[k])) intent[k] = 'unknown';
+      });
     }
-    if (typeof intent.odor_sensitive !== 'boolean') intent.odor_sensitive = null;
-    if (typeof intent.family_children !== 'boolean') intent.family_children = null;
-    intent.free_text_summary = String(intent.free_text_summary || '').slice(0, 200);
+
+    // Origin check
+    if (request.headers.get('Origin') !== ALLOWED_ORIGIN) {
+      return new Response('Forbidden', { status: 403 });
+    }
+
+    if (request.method !== 'POST') {
+      return new Response('Method Not Allowed', { status: 405 });
+    }
+
+    // Rate limiting: 20 req/min per IP via CF Rate Limiting Rules
+    // (wrangler.toml の rate_limiting セクションで設定)
+    // IP per day: Cloudflare KV で実装 (optional Step)
+
+    // Parse body
+    let userMessage;
+    try {
+      const body = await request.json();
+      userMessage = String(body.userMessage || '').trim();
+    } catch {
+      return new Response(JSON.stringify({ error: 'invalid_json' }), { status: 400 });
+    }
+
+    if (!userMessage || userMessage.length > 500) {
+      return new Response(JSON.stringify({ error: 'invalid_input' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Gemini 2.5 Flash API call
+    const geminiUrl =
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${env.GEMINI_API_KEY}`;
+
+    let geminiResp;
+    try {
+      geminiResp = await fetch(geminiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents: [{ parts: [{ text: userMessage }] }],
+          generationConfig: {
+            responseMimeType: 'application/json',
+            maxOutputTokens: 256,
+            temperature: 0.1,
+          }
+        })
+      });
+    } catch {
+      return new Response(JSON.stringify({ error: 'upstream_error' }), {
+        status: 502,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    if (!geminiResp.ok) {
+      return new Response(JSON.stringify({ error: 'gemini_error', status: geminiResp.status }), {
+        status: 502,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    const geminiData = await geminiResp.json();
+    const rawText = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
+
+    // Parse + validate
+    let intent;
+    try {
+      intent = validateIntent(JSON.parse(rawText));
+    } catch {
+      // JSON parse失敗 → all unknown フォールバック
+      intent = validateIntent({});
+      intent.confidence = 0;
+    }
 
     return new Response(JSON.stringify(intent), {
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://gagalife04291225-lab.github.io'
+        'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+        'Cache-Control': 'no-store',
       }
     });
   }
 };
 ```
 
-**complexity:** 低  **files touched:** 2新規  **risk:** 低
+**wrangler.toml:**
+```toml
+name = "kame-ai-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+[vars]
+# GEMINI_API_KEY は wrangler secret put GEMINI_API_KEY で設定（コミットしない）
+
+# Rate limiting: 20 req/min per IP
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 20, period = 60 }
+```
+
+**デプロイ手順:**
+```bash
+# 1. Cloudflare アカウントでWorkerを有効化
+# 2. wrangler install
+npm install -g wrangler
+
+# 3. login
+wrangler login
+
+# 4. API key を secrets に登録（コミットしない）
+wrangler secret put GEMINI_API_KEY
+# → プロンプトにGemini APIキーを入力
+
+# 5. デプロイ
+wrangler deploy
+
+# 6. URL確認
+# → https://kame-ai-worker.YOUR_SUBDOMAIN.workers.dev
+```
+
+**complexity:** 低  **files:** 3新規（別repo）  **risk:** 低
 
 ---
 
-### Step 3: Frontend Chat Input（フリーテキスト入力追加）
+### Step 3: Frontend テキスト入力追加
 
-**変更ファイル:** `index.html`（AI Conciergeセクションのみ）
+**変更ファイル:** `index.html` のみ（AI Conciergeセクション）
 
-**UI変更:**
-```
-[現状] 4問ボタン選択のみ
-[追加] テキスト入力欄 → Workerへfetch → IntentJSON → 既存calcScore()へ
-[維持] ボタン選択モードはfallbackとして残す
-```
+**変更内容:**
+1. テキスト入力欄を追加（既存4問ボタンの上に配置）
+2. `fetchIntent()` 関数を追加（Worker呼び出し + confidence routing）
+3. confidence < 50 のとき不足フィールドのボタン選択を表示
+4. Worker URL を環境変数的に定数として定義
 
-**追加コード（概算100行）:**
+**追加コード骨格（index.html内 JS）:**
 ```javascript
+var WORKER_URL = 'https://kame-ai-worker.YOUR_SUBDOMAIN.workers.dev';
+
 async function fetchIntent(userMsg) {
-  // Typing indicator ON
-  showTyping(true);
+  showTypingThen_aic(1000, function() {});  // typing ON
   try {
-    const res = await fetch('https://kame-concierge.YOUR_SUBDOMAIN.workers.dev', {
+    var res = await fetch(WORKER_URL, {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({userMessage: userMsg})
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userMessage: userMsg })
     });
-    if (!res.ok) throw new Error('api_error');
-    const intent = await res.json();
+    if (!res.ok) throw new Error('api_' + res.status);
+    var intent = await res.json();
     if (intent.error) throw new Error(intent.error);
-    // IntentJSON → answers オブジェクトへマッピング
-    answers.experience = intent.experience !== 'unknown' ? intent.experience : answers.experience;
-    answers.size       = intent.size       !== 'unknown' ? intent.size       : answers.size;
-    answers.habitat    = intent.habitat    !== 'unknown' ? intent.habitat    : answers.habitat;
-    answers.priority   = intent.priority   !== 'unknown' ? intent.priority   : answers.priority;
-    // 拡張フィールドは新しいcalcScoreV2()に渡す
-    answersV2 = intent;
-    showResult();
+
+    // IntentJSON → answers へマッピング
+    if (intent.experience !== 'unknown') answers.experience = intent.experience;
+    if (intent.size       !== 'unknown') answers.size       = intent.size;
+    if (intent.habitat    !== 'unknown') answers.habitat    = intent.habitat;
+    if (intent.priority   !== 'unknown') answers.priority   = intent.priority;
+
+    // GA4
+    _ga('ai_concierge_intent_extracted', {
+      confidence: intent.confidence,
+      mode: 'text',
+      experience: intent.experience,
+      size: intent.size,
+      habitat: intent.habitat
+    });
+
+    // Confidence routing
+    if (intent.confidence < 50) {
+      // 情報不足 → 不明フィールドのボタン選択を表示
+      showClarifyMode(intent);
+    } else {
+      showResult();  // 既存のresult表示
+    }
   } catch(e) {
-    // フォールバック: ボタン選択モードへ切り替え
-    showFallbackMode();
-  } finally {
-    showTyping(false);
+    _ga('ai_concierge_fallback', { reason: e.message });
+    showQuestion(1);  // 既存4問ボタンモードへフォールバック
   }
 }
 ```
 
-**complexity:** 中  **files touched:** 1（index.html）  **risk:** 中（fallbackで安全担保）
+**complexity:** 中  **files:** 1  **risk:** 中（fallback有）
 
 ---
 
 ### Step 4: Production Launch
 
-**チェックリスト:**
-- [ ] CF Workers デプロイ確認（ステージング → 本番）
-- [ ] Gemini APIキー本番用発行・CF Secrets設定
-- [ ] レートリミット設定（1ユーザー=5req/分）
-- [ ] コスト上限アラート設定（Gemini $5/月上限）
-- [ ] GA4: `ai_concierge_mode` キー追加（`text` vs `button`）
-- [ ] フォールバック動作確認（Worker down時でもボタン選択は動く）
-- [ ] Lighthouse計測（追加JSは最小限）
+- [ ] Worker staging テスト（`wrangler dev` でローカル確認）
+- [ ] CORS origin 設定確認
+- [ ] Gemini 無料枠モニタリング設定（Google AI Studio > Usage）
+- [ ] CF Rate Limiting 動作確認
+- [ ] GA4: `ai_concierge_mode: 'text'|'button'` を全イベントに追加
+- [ ] フォールバック動作確認（Worker URL を意図的に壊してテスト）
+- [ ] Lighthouse 計測（パフォーマンス回帰なし確認）
 
-**complexity:** 低  **files touched:** 0（設定のみ）  **risk:** 低
+**complexity:** 低  **risk:** 低
 
 ---
 
-## 5. Risks
+## 5. Risks (Updated)
 
 | リスク | 重大度 | 対策 |
 |--------|--------|------|
-| APIキー漏洩 | Critical | Workerの環境変数にのみ保持。frontendには絶対に露出しない |
-| LLMが誤った種名を選ぶ | High | LLMは意図抽出のみ。species選択は常にJS rule engineが行う |
-| LLMのJSON破損（malformed） | Medium | Worker側でtry/catchしてenumバリデーション後にフォールバック |
-| レイテンシ増加（2〜3秒） | Medium | typing animationで体感遅延を隠す。ボタン選択はゼロレイテンシ維持 |
-| Workerダウン | Medium | fetchがfailしたらボタン選択モードへ自動フォールバック |
-| 月額コスト増加 | Low | Gemini無料枠内（60req/分）で十分。超過しても$0.075/1M tokens |
-| 「AIが診断した」誤認 | Low | UIに明記: 「AIが意図を読み取り、ルールエンジンが候補提案」 |
-| species DBとの不整合 | Low | IntentSchema → JS weights mappingをV2 calcScoreで一元管理 |
+| APIキー漏洩 | Critical | Worker環境変数(secret)のみ。`wrangler secret put` で管理 |
+| LLMが誤species選択 | High | LLMは意図抽出のみ。rule engineが常に種を選ぶ |
+| JSONパース失敗 | Medium | Worker側でtry/catchしてall-unknownにフォールバック |
+| confidence=0 の悪用 | Medium | confidence < 50 → ボタン選択へ誘導（UX維持） |
+| レイテンシ2〜3秒 | Medium | typing animationで隠蔽。ボタン選択はゼロレイテンシ維持 |
+| Worker障害 | Medium | fetch失敗 → 既存4問ボタンモードへ自動フォールバック |
+| レートリミット超過 | Low | 20req/min per IP。CF Rules で429を返す |
+| 月額コスト超過 | Low | Gemini 無料枠(60rpm)で通常は収まる。超過でも$0.075/1M |
+| 「AIが診断した」誤認 | Low | UIに「AIが意図を読み取り、ルールが候補提案」と明記 |
 
 ---
 
-## 6. Decision Point（今すぐやるか確認が必要なこと）
+## 6. Cloudflare KV 将来活用（Step 4以降）
 
-Step 2の実装に入る前に確認:
+```javascript
+// Worker内でKVを使ったIP日次制限（option）
+const today = new Date().toISOString().slice(0, 10);  // "2026-06-26"
+const key = `req:${ip}:${today}`;
+const count = parseInt(await env.KV.get(key) || '0', 10);
 
-1. **Cloudflare Workers アカウント** をお持ちか？（無料枠あり）
-2. **Gemini API key** をお持ちか？（Google AI Studio で即時発行可能・無料）
-3. **ドメイン**：Workers のURLをindex.htmlにハードコードしてよいか、
-   またはCNAMEで独自ドメイン配置するか？
-4. Step 2 のWorkerファイルをGitHub Pagesリポジトリに置くか、別リポジトリにするか？
+if (count >= 200) {
+  return new Response(JSON.stringify({ error: 'daily_limit' }), { status: 429 });
+}
+await env.KV.put(key, String(count + 1), { expirationTtl: 86400 });
+```
+
+将来用途:
+- **キャッシュ**: 同一入力への重複API呼び出し防止（コスト削減）
+- **Analytics**: 匿名クエリ集計（人気質問パターン把握）
+- **Abuse prevention**: IP別日次上限
 
 ---
-*作成: Phase 14-A Step 1 / 2026-06-26*
+*v1.0: 2026-06-26 初版*
+*v2.0: 2026-06-26 PM Reviewによる4修正適用*
+*Next: Phase 14-A Step 2 — Cloudflare Worker 実装*
