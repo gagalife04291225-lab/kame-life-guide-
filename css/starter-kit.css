@@ -454,3 +454,239 @@
   .sk-tab-rec-badge { font-size: .55rem; }
   /* transform は @media(hover:hover) でPC限定済み・モバイルでは適用されない */
 }
+
+
+/* ─── Bundle Summary ─────────────────────────────────────────
+   Phase: bundle-summary addition
+   Inserted above .sk-tabs; sk- prefix maintained
+──────────────────────────────────────────────────────────── */
+
+.sk-bundle-summary {
+  margin: 1.25rem 0 1rem;
+}
+
+.sk-bundle-eyebrow {
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--moss, #4a6741);
+  margin-bottom: .75rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 3-column grid; collapses to 1 on narrow */
+.sk-bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  /* explicit min-height prevents CLS */
+  min-height: 160px;
+}
+
+@media (max-width: 600px) {
+  .sk-bundle-grid {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+}
+
+.sk-bundle-card {
+  background: #fff;
+  border: 1.5px solid rgba(0,0,0,.09);
+  border-radius: 10px;
+  padding: 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  transition: box-shadow .2s, transform .2s;
+  position: relative;
+}
+.sk-bundle-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+  transform: translateY(-2px);
+}
+
+/* Top accent bar */
+.sk-bundle-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 10px 10px 0 0;
+}
+.sk-bundle--budget::before   { background: #e65100; }
+.sk-bundle--standard::before { background: #2e7d32; }
+.sk-bundle--premium::before  { background: #6a1b9a; }
+
+/* Recommended highlight */
+.sk-bundle-card--rec {
+  border-color: rgba(46,125,50,.35);
+  background: #f9fdf9;
+}
+
+.sk-bundle-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sk-bundle-icon { font-size: 1.05rem; line-height: 1; }
+
+.sk-bundle-label {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--forest-deep, #1a2e1a);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sk-bundle-rec-badge {
+  font-size: .6rem;
+  background: #2e7d32;
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.sk-bundle-desc {
+  font-size: .75rem;
+  color: #666;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.sk-bundle-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sk-bundle-price {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--forest-deep, #1a2e1a);
+}
+
+.sk-bundle-count {
+  font-size: .68rem;
+  color: #888;
+}
+
+.sk-bundle-cta {
+  display: block;
+  width: 100%;
+  background: var(--forest-deep, #1a2e1a);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 10px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  text-align: center;
+  min-height: 40px;
+  transition: background .18s;
+  margin-top: auto;
+}
+.sk-bundle-cta:hover  { background: #2a5a2a; }
+.sk-bundle-cta:focus-visible {
+  outline: 2px solid var(--sage, #7a9e6e);
+  outline-offset: 2px;
+}
+
+/* Budget CTA accent */
+.sk-bundle--budget   .sk-bundle-cta { background: #bf360c; }
+.sk-bundle--budget   .sk-bundle-cta:hover { background: #922b0e; }
+.sk-bundle--standard .sk-bundle-cta { background: #1b5e20; }
+.sk-bundle--standard .sk-bundle-cta:hover { background: #145214; }
+.sk-bundle--premium  .sk-bundle-cta { background: #4a148c; }
+.sk-bundle--premium  .sk-bundle-cta:hover { background: #380f6a; }
+
+/* ─── Rakuten CTA button ────────────────────────────────────
+   Rendered only when product.rakutenUrl && rakutenStatus === "available"
+   Default state: never rendered (no visual regression)
+──────────────────────────────────────────────────────────── */
+
+.sk-card-btn--rakuten {
+  display: block;
+  margin-top: 6px;
+  padding: 8px 12px;
+  background: #bf0000;
+  color: #fff;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  min-height: 36px;
+  line-height: 1.3;
+  transition: background .18s;
+}
+
+.sk-card-btn--rakuten:hover {
+  background: #990000;
+}
+
+.sk-card-btn--rakuten:focus-visible {
+  outline: 2px solid #bf0000;
+  outline-offset: 2px;
+}
+
+/* When both Amazon + Rakuten show, add spacing between them */
+.sk-card-btn + .sk-card-btn--rakuten {
+  margin-top: 6px;
+}
+
+/* Rakuten search fallback button (rakutenStatus === "search") */
+.sk-card-btn--rakuten-search {
+  display: block;
+  margin-top: 6px;
+  padding: 8px 12px;
+  background: #e8004d;
+  color: #fff;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  min-height: 36px;
+  line-height: 1.3;
+  transition: background .18s;
+  position: relative;
+}
+
+.sk-card-btn--rakuten-search:hover {
+  background: #b8003c;
+}
+
+.sk-card-btn--rakuten-search:focus-visible {
+  outline: 2px solid #e8004d;
+  outline-offset: 2px;
+}
+
+/* Search badge overlay */
+.sk-card-btn--rakuten-search::after {
+  content: '検索';
+  display: inline-block;
+  font-size: .58rem;
+  background: rgba(255,255,255,.22);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: .06em;
+}
+
+/* Spacing when following Amazon CTA */
+.sk-card-btn + .sk-card-btn--rakuten-search {
+  margin-top: 6px;
+}
