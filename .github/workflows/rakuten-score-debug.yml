@@ -1,0 +1,28 @@
+name: Rakuten Score Debug
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Score debug
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: node scripts/diag-score.js > scripts/diag-score-result.txt 2>&1 || true
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/diag-score-result.txt
+          git diff --cached --quiet || (git commit -m "diag: score debug" && git push)
