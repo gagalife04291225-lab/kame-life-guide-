@@ -2451,6 +2451,218 @@
     .hpc-btns{flex-direction:column;}
     .hpc-btn{min-height:40px;}
   }
+
+  /* ══ Phase 12-A Sprint 4-B: Commerce / Environment Experience ═
+     cost-sim section redesign: premium environment guidance
+  ═════════════════════════════════════════════════════════════════ */
+
+  /* Section base — keep dark bg */
+  section.cost-sim{
+    padding:72px 0 80px;
+    background:var(--bg-primary,#081411);
+    position:relative;overflow:hidden;
+  }
+  section.cost-sim::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 45% at 50% 0%,  rgba(201,169,107,.06) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 15% 85%, rgba(47,74,60,.25) 0%, transparent 52%);
+  }
+  section.cost-sim .wrap{position:relative;z-index:1;}
+
+  /* Section scallops */
+  .csim-cap-top{
+    position:absolute;top:-1px;left:0;right:0;height:52px;
+    background:var(--parchment,#f4efe2);
+    clip-path:ellipse(55% 100% at 50% 0%);pointer-events:none;
+  }
+  .csim-cap-bot{
+    position:absolute;bottom:-1px;left:0;right:0;height:52px;
+    background:var(--parchment,#f4efe2);
+    clip-path:ellipse(55% 100% at 50% 100%);pointer-events:none;
+  }
+
+  /* Header — upgraded copy */
+  .csim-eyebrow{
+    font-size:.68rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(201,169,107,.72);
+    display:block;text-align:center;margin-bottom:18px;
+  }
+  .csim-heading{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:clamp(1.48rem,4.2vw,2.00rem);
+    color:#eef0ec;
+    line-height:1.28;letter-spacing:-.02em;
+    text-align:center;margin-bottom:12px;
+  }
+  .csim-heading em{font-style:italic;color:var(--accent-gold,#C9A96B);}
+  .csim-sub{
+    font-size:.90rem;color:rgba(200,215,205,.55);
+    line-height:1.95;max-width:440px;
+    margin:0 auto 12px;text-align:center;
+  }
+
+  /* Environment tiers strip */
+  .csim-tiers{
+    display:flex;justify-content:center;gap:8px;
+    flex-wrap:wrap;margin-bottom:36px;
+  }
+  .csim-tier{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.038);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:9999px;padding:7px 16px;
+    font-size:.76rem;font-weight:700;
+    color:rgba(200,215,205,.68);letter-spacing:.04em;
+    white-space:nowrap;
+  }
+  .csim-tier-dot{
+    width:5px;height:5px;border-radius:50%;flex-shrink:0;
+  }
+  .csim-tier--essential .csim-tier-dot{background:#78c8a0;}
+  .csim-tier--comfort   .csim-tier-dot{background:var(--accent-gold,#C9A96B);}
+  .csim-tier--advanced  .csim-tier-dot{background:var(--accent-cyan,#7ED7C1);}
+  .csim-tier--essential{border-color:rgba(120,200,160,.18);}
+  .csim-tier--comfort  {border-color:rgba(201,169,107,.20);}
+  .csim-tier--advanced {border-color:rgba(126,215,193,.18);}
+
+  /* Tabs — re-skin for dark context */
+  .csim-tabs{
+    display:flex;justify-content:center;gap:8px;
+    margin-bottom:24px;flex-wrap:wrap;
+  }
+  .csim-tab{
+    background:rgba(255,255,255,.04);
+    border:1.5px solid rgba(255,255,255,.08);
+    border-radius:9999px;padding:9px 22px;
+    font-size:.80rem;font-weight:700;
+    color:rgba(200,215,205,.55);
+    cursor:pointer;
+    transition:background .20s,border-color .20s,color .20s;
+    min-height:40px;
+  }
+  .csim-tab.active{
+    background:rgba(201,169,107,.12);
+    border-color:rgba(201,169,107,.36);
+    color:rgba(201,169,107,.90);
+  }
+  .csim-tab:hover:not(.active){
+    background:rgba(255,255,255,.07);
+    color:rgba(200,215,205,.80);
+  }
+  .csim-tab:focus-visible{
+    outline:2px solid var(--accent-gold,#C9A96B);outline-offset:2px;
+  }
+
+  /* Panel card */
+  .csim-card{
+    background:rgba(255,255,255,.042);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;padding:28px 26px 24px;
+    box-shadow:0 4px 24px rgba(0,0,0,.24);
+  }
+
+  .csim-path-label{
+    font-size:.66rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(201,169,107,.52);
+    margin-bottom:18px;display:block;
+  }
+  .csim-costs{
+    display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap;
+  }
+  .csim-cost-item{display:flex;flex-direction:column;gap:4px;}
+  .csim-cost-label{
+    font-size:.68rem;font-weight:700;letter-spacing:.10em;
+    text-transform:uppercase;color:rgba(200,215,205,.45);
+  }
+  .csim-cost-val{
+    font-family:"Playfair Display",serif;
+    font-size:1.18rem;font-weight:700;
+    color:#eef0ec;letter-spacing:-.01em;
+  }
+  .csim-examples{
+    font-size:.82rem;color:rgba(200,215,205,.55);
+    margin-bottom:10px;line-height:1.65;
+  }
+  .csim-examples strong{color:rgba(200,215,205,.75);}
+  .csim-reassure{
+    font-size:.84rem;color:rgba(200,215,205,.50);
+    line-height:1.80;margin-bottom:20px;
+  }
+
+  /* CTA — environment guidance (not shop feel) */
+  .csim-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(112deg,var(--accent-gold,#C9A96B) 0%,#9a6e28 100%);
+    color:#05100c;
+    font-family:"Noto Serif JP",serif;font-weight:700;font-size:.88rem;
+    text-decoration:none;padding:13px 28px;border-radius:9999px;
+    min-height:48px;letter-spacing:.03em;
+    box-shadow:0 4px 18px rgba(201,169,107,.28);
+    transition:background .20s,transform .16s,box-shadow .20s;
+    margin-right:12px;
+  }
+  .csim-cta:hover{
+    background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px rgba(201,169,107,.40);
+  }
+  .csim-cta:focus-visible{
+    outline:3px solid var(--accent-gold,#C9A96B);outline-offset:3px;
+  }
+  .csim-cta-secondary{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.82rem;font-weight:700;
+    color:rgba(200,215,205,.45);letter-spacing:.03em;
+    text-decoration:none;
+    border-bottom:1px solid rgba(200,215,205,.18);padding-bottom:2px;
+    transition:color .18s;
+  }
+  .csim-cta-secondary:hover{color:rgba(200,215,205,.75);}
+  .csim-cta-secondary:focus-visible{
+    outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;
+  }
+  .csim-cta-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
+
+  /* reassure strip — gentle re-style */
+  .csim-reassure-strip{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+    margin-bottom:28px;
+  }
+  .csim-reassure-item{
+    font-size:.74rem;color:rgba(200,215,205,.45);
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:9999px;padding:5px 14px;
+    white-space:nowrap;
+  }
+
+  @media(max-width:520px){
+    .csim-costs{gap:16px;}
+    .csim-card{padding:22px 18px 20px;}
+    .csim-cta-row{flex-direction:column;align-items:flex-start;}
+  }
+  @media(max-width:360px){
+    .csim-tab{padding:8px 16px;font-size:.76rem;}
+    .csim-cost-val{font-size:1.06rem;}
+  }
+
+  /* top-gear-picks: subtle rebrand */
+  .tg-eyebrow{
+    font-size:.68rem;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--accent-dark,#b07c3f);display:block;
+    text-align:center;margin-bottom:10px;
+  }
+  .tg-heading{
+    font-family:"Playfair Display",serif;
+    font-style:italic;font-weight:500;font-size:1.48rem;
+    color:var(--forest-deep,#0d1f1a);
+    text-align:center;margin-bottom:8px;
+  }
   @media(max-width:680px){
     .su-section{padding:60px 0 68px;}
     .su-grid{grid-template-columns:1fr;gap:12px;}
@@ -3752,14 +3964,14 @@
 <section class="emo-hook" aria-label="亀と長い時間を共にする">
   <div class="emo-hook-cap-top" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="emo-hook-unit t-label-gold reveal-soft">年</span>
+    <span class="emo-hook-unit t-label-gold">年</span>
     <p class="emo-hook-num reveal-soft reveal-soft--delay-1" aria-label="50年から100年">
       50<em>〜</em>100
     </p>
     <p class="emo-hook-body reveal-soft reveal-soft--delay-2">
       亀は、50年。種によっては100年以上生きる。
     </p>
-    <p class="emo-hook-sub reveal-soft reveal-soft--delay-3">
+    <p class="emo-hook-sub">
       だから、焦って選ぶ必要はありません。<br>
       あなたの暮らしに合う一匹を、静かに探しましょう。
     </p>
@@ -3968,9 +4180,9 @@
 <!-- Top Gear Picks (Phase 12 Patch) -->
 <section class="top-gear-picks" id="top-gear-picks">
   <div class="wrap">
-    <span class="tg-eyebrow">Popular Gear</span>
-    <h2 class="tg-heading">今売れている人気機材</h2>
-    <p class="tg-sub">初心者が最初に選ぶ定番機材</p>
+    <span class="tg-eyebrow">Environment Essentials</span>
+    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
+    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
     <div class="tg-grid">
 
       <a class="tg-card"
@@ -4010,7 +4222,7 @@
 <!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
 <section class="pc-section" id="problem-grid" aria-label="よくある4つの不安">
   <div class="wrap">
-    <span class="pc-eyebrow-s2 reveal-soft">よくある不安に答えます</span>
+    <span class="pc-eyebrow-s2">よくある不安に答えます</span>
     <h2 class="pc-heading-s2 reveal-soft reveal-soft--delay-1">
       飼う前に知っておきたい、<em>4つのこと。</em>
     </h2>
@@ -4050,7 +4262,7 @@
 
     </div>
 
-    <div class="pc-cta-wrap reveal-soft">
+    <div class="pc-cta-wrap">
       <a href="./shindan/"
          class="pc-cta-btn"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_problem_diagnosis_click',{location:'problem_grid',cta:'diagnosis'})">
@@ -4243,11 +4455,11 @@
 
     <!-- Header -->
     <div style="text-align:center;">
-      <span class="su-eyebrow reveal-soft">Species Universe</span>
+      <span class="su-eyebrow">Species Universe</span>
       <h2 class="su-heading reveal-soft reveal-soft--delay-1">
         亀の<em>世界</em>へようこそ。
       </h2>
-      <p class="su-sub reveal-soft reveal-soft--delay-2">
+      <p class="su-sub">
         水の中から、大地の上まで。<br>
         あなたの暮らしに合った世界を、静かに探してください。
       </p>
@@ -4327,7 +4539,7 @@
     </div>
 
     <!-- Bottom explore link -->
-    <div class="su-explore reveal-soft">
+    <div class="su-explore">
       <a href="species-list.html" class="su-explore-link">
         すべての種を見る（100種以上） <span aria-hidden="true">↗</span>
       </a>
@@ -4344,11 +4556,11 @@
   <div class="wrap">
     <!-- Header -->
     <header class="il-header">
-      <span class="il-eyebrow reveal-soft">Intelligence Layer</span>
+      <span class="il-eyebrow">Intelligence Layer</span>
       <h2 class="il-heading reveal-soft reveal-soft--delay-1">
         静かな世界の裏には、<br><em>膨大なデータ</em>があります。
       </h2>
-      <p class="il-sub reveal-soft reveal-soft--delay-2">
+      <p class="il-sub">
         100種以上の生体データ、飼育ページ、機材DB、比較システム。<br>
         AIは感覚ではなく、構造化された知識から提案しています。
       </p>
@@ -4357,31 +4569,31 @@
     <!-- 5 stat cards -->
     <div class="il-grid" role="list">
 
-      <div class="il-card reveal-soft reveal-soft--delay-1" role="listitem">
+      <div class="il-card" role="listitem">
         <span class="il-card-val">100<sup>+</sup></span>
         <span class="il-card-title">Species<br>Profiles</span>
         <span class="il-card-desc">100種以上の亀・リクガメの生体データを収録</span>
       </div>
 
-      <div class="il-card reveal-soft reveal-soft--delay-2" role="listitem">
+      <div class="il-card" role="listitem">
         <span class="il-card-val">98</span>
         <span class="il-card-title">Care<br>Pages</span>
         <span class="il-card-desc">実飼育者が執筆した個別飼育ページ</span>
       </div>
 
-      <div class="il-card reveal-soft reveal-soft--delay-3" role="listitem">
+      <div class="il-card" role="listitem">
         <span class="il-card-val">87</span>
         <span class="il-card-title">Curated<br>Essentials</span>
         <span class="il-card-desc">実使用ベースで厳選した飼育必需品データ</span>
       </div>
 
-      <div class="il-card il-card--ai reveal-soft reveal-soft--delay-4" role="listitem">
+      <div class="il-card il-card--ai" role="listitem">
         <span class="il-card-val il-card-val--label">AI</span>
         <span class="il-card-title">Diagnosis<br>Engine</span>
         <span class="il-card-desc">6問・5ルートで種と環境を提案</span>
       </div>
 
-      <div class="il-card reveal-soft reveal-soft--delay-4" role="listitem">
+      <div class="il-card" role="listitem">
         <span class="il-card-val il-card-val--label">3-Tier</span>
         <span class="il-card-title">Starter<br>Kits</span>
         <span class="il-card-desc">予算別・種別に最適化された機材セット</span>
@@ -4390,7 +4602,7 @@
     </div>
 
     <!-- caption -->
-    <p class="il-caption reveal-soft">
+    <p class="il-caption">
       データは実飼育者による監修のもと継続的に更新しています。
     </p>
   </div>
@@ -4404,11 +4616,11 @@
 
     <!-- Header -->
     <header class="cmp-header">
-      <span class="cmp-eyebrow reveal-soft">Concierge Compare</span>
+      <span class="cmp-eyebrow">Concierge Compare</span>
       <h2 class="cmp-heading reveal-soft reveal-soft--delay-1">
         どの亀が良いかは、<br><em>何を大切にするかで</em>変わります。
       </h2>
-      <p class="cmp-sub reveal-soft reveal-soft--delay-2">
+      <p class="cmp-sub">
         臭い、サイズ、寿命、費用。<br>
         正解は一つではありません。<br>
         あなたの優先順位から考えましょう。
@@ -4416,7 +4628,7 @@
     </header>
 
     <!-- Priority chips -->
-    <div class="cmp-chips reveal-soft reveal-soft--delay-3"
+    <div class="cmp-chips"
          role="list" aria-label="飼育の優先事項">
       <span class="cmp-chip" role="listitem">
         <span class="cmp-chip-icon" aria-hidden="true">💧</span>臭いを抑えたい
@@ -4436,7 +4648,7 @@
     </div>
 
     <!-- Divider -->
-    <div class="cmp-divider reveal-soft" aria-hidden="true">
+    <div class="cmp-divider" aria-hidden="true">
       <span class="cmp-divider-label">比較で絞り込む</span>
     </div>
 
@@ -4497,7 +4709,7 @@
     </div>
 
     <!-- Bottom -->
-    <div class="cmp-bottom reveal-soft">
+    <div class="cmp-bottom">
       <a href="./shindan/" class="cmp-diagnosis-link">
         比較より先に、診断で種を絞り込む <span aria-hidden="true">→</span>
       </a>
@@ -4507,16 +4719,34 @@
 </section>
 
 <!-- Cost Simulator (Phase 11 Step 1F: Budget Reality Check) -->
-<section class="cost-sim" id="cost-sim">
+<section class="cost-sim" id="cost-sim" aria-label="環境提案・費用の目安">
+  <div class="csim-cap-top" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="csim-eyebrow">Budget Reality Check</span>
-    <h2 class="csim-heading">買う前に、費用を現実的に確認。</h2>
-    <p class="csim-sub">初期費用は種とケージのグレードで変わります。まず目安を知っておくだけで、後から焦らずに済みます。</p>
-    <div class="csim-reassure-strip" aria-label="安心ポイント">
-      <span class="csim-reassure-item">最低限から始められる</span>
-      <span class="csim-reassure-item">慣れたら少しずつアップグレードできる</span>
-      <span class="csim-reassure-item">Starter Kitで費用の目安を確認できる</span>
+
+    <!-- Header: Environment guidance (not commerce) -->
+    <span class="csim-eyebrow">Environment Guide</span>
+    <h2 class="csim-heading reveal-soft reveal-soft--delay-1">
+      この環境から始めると、<br><em>安心です。</em>
+    </h2>
+    <p class="csim-sub">
+      亀選びの次に大切なのは、環境づくり。<br>
+      必要なのは「高い機材」ではなく、<br>
+      その種に合った飼育環境です。
+    </p>
+
+    <!-- Environment tiers -->
+    <div class="csim-tiers" aria-label="環境グレード">
+      <span class="csim-tier csim-tier--essential">
+        <span class="csim-tier-dot" aria-hidden="true"></span>Essential — 最低限、安心して始める構成
+      </span>
+      <span class="csim-tier csim-tier--comfort">
+        <span class="csim-tier-dot" aria-hidden="true"></span>Comfort — 管理しやすく、失敗しにくい構成
+      </span>
+      <span class="csim-tier csim-tier--advanced">
+        <span class="csim-tier-dot" aria-hidden="true"></span>Advanced — 長期飼育・繁殖も視野に入れた構成
+      </span>
     </div>
+
     <div class="csim-tabs" role="tablist">
       <button class="csim-tab active" role="tab" aria-selected="true"  aria-controls="csim-p1" data-tab="small_aquatic">小型水棲ガメ</button>
       <button class="csim-tab"        role="tab" aria-selected="false" aria-controls="csim-p2" data-tab="box_forest">ハコガメ・ヤマガメ</button>
@@ -4537,8 +4767,12 @@
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミシシッピニオイガメ、クサガメ</p>
         <p class="csim-reassure">30cm水槽・フィルター・ヒーターがあれば始められます。小型なので維持費も抑えやすく、初めての亀に最も選ばれているタイプです。</p>
-        <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic'})">このタイプの飼育用品を確認する</a>
+        <div class="csim-cta-row">
+          <a href="./shindan/" class="csim-cta"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic'})">Starter Kitを見る</a>
+          <a href="./shindan/" class="csim-cta-secondary"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic_diag'})">診断して最適化する →</a>
+        </div>
       </div>
     </div>
     <div id="csim-p2" class="csim-panel" role="tabpanel">
@@ -4556,8 +4790,12 @@
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミツユビハコガメ、トウブハコガメ</p>
         <p class="csim-reassure">半陸棲・半水棲で、水場と陸場の両方が必要です。温度・湿度の管理が重要ですが、適切な環境を作れば長く付き合える種です。</p>
-        <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest'})">このタイプの飼育用品を確認する</a>
+        <div class="csim-cta-row">
+          <a href="./shindan/" class="csim-cta"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest'})">Starter Kitを見る</a>
+          <a href="./shindan/" class="csim-cta-secondary"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest_diag'})">診断して最適化する →</a>
+        </div>
       </div>
     </div>
     <div id="csim-p3" class="csim-panel" role="tabpanel">
@@ -4575,11 +4813,16 @@
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ヘルマンリクガメ、ギリシャリクガメ</p>
         <p class="csim-reassure">UVBライト・バスキングライト・保温器具が必要で初期費用は高めです。ただし一式揃えれば数十年の長期飼育ができる、育てがいのあるタイプです。</p>
-        <a href="./shindan/" class="csim-cta"
-           onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise'})">このタイプの飼育用品を確認する</a>
+        <div class="csim-cta-row">
+          <a href="./shindan/" class="csim-cta"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise'})">Starter Kitを見る</a>
+          <a href="./shindan/" class="csim-cta-secondary"
+             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise_diag'})">診断して最適化する →</a>
+        </div>
       </div>
     </div>
   </div>
+  <div class="csim-cap-bot" aria-hidden="true"></div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
