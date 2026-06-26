@@ -1,0 +1,7 @@
+=== VERBOSE SYNC REPORT ===
+filter_canister_eheim_2217: HTTP=200 items=5
+  [0] price=24600 rating=4.85(66) affiliateUrl=YES:https://hb.afl.rakuten.co.jp/hgc/g0... itemUrl=YES
+  [1] price=26997 rating=4.64(47) affiliateUrl=YES:https://hb.afl.rakuten.co.jp/hgc/g0... itemUrl=YES
+  [2] price=26997 rating=4.83(40) affiliateUrl=YES:https://hb.afl.rakuten.co.jp/hgc/g0... itemUrl=YES
+uvb_desert_t5: HTTP=200 error= items=0
+filter_canister_medium: HTTP=200 error= items=0
