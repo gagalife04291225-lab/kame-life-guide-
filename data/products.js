@@ -1,21 +1,25 @@
 /**
- * Kame Life Guide - Amazon Product Database
+ * Kame Life Guide - Product Database
  * Phase 6-C Task 1: 28 → 87 products
+ * Schema v4: Rakuten search fallback
  *
- * Schema v2 additions:
- *   rating          {number}   - 5点満点レーティング
- *   badge           {string}   - "Best Overall" / "Budget Pick" / "Premium" etc.
- *   recommendedFor  {string[]} - equipmentKey or difficulty tag
+ * Schema v4 additions:
+ *   rakutenUrl        {string|null} - Real Rakuten affiliate URL
+ *   rakutenStatus     {string}      - "pending" | "available" | "search"
+ *   rakutenSearchTerm {string|null} - Search keyword for Rakuten fallback
  *
- * tier 統一:
- *   budget / standard / premium
- *   ※旧 beginner/intermediate は standard に読み替え（既存キー維持）
+ * Rakuten CTA rendering:
+ *   "available" -> real affiliate URL button
+ *   "search"    -> Rakuten search URL button
+ *   "pending"   -> no Rakuten CTA
  *
  * Helper functions (末尾):
  *   getProductsByCategory(category)
  *   getBestProduct(category)
  *   getBudgetProduct(category)
  *   getTierProduct(equipmentKey, category, tier)
+ *   hasRakuten(product)
+ *   getRakutenSearchUrl(product)
  */
 
 'use strict';
@@ -38,6 +42,9 @@ const PRODUCTS = {
     priceRange: '¥15,000–30,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00BF91SU6?tag=kamelife09-22',
     asin: 'B00BF91SU6',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リクガメ ケージ 90cm 木製',
     image: '/assets/products/placeholder.webp',
     why: 'リクガメに必要な広さと保温性を両立した定番ケージ',
     rating: 4.3,
@@ -53,6 +60,9 @@ const PRODUCTS = {
     priceRange: '¥25,000–50,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0CDLG5XF3?tag=kamelife09-22',
     asin: 'B0CDLG5XF3',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リクガメ ケージ 120cm 木製',
     image: '/assets/products/placeholder.webp',
     why: '中型以上のリクガメや成体に適した広さ',
     rating: 4.5,
@@ -68,6 +78,9 @@ const PRODUCTS = {
     priceRange: '¥3,000–8,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09TF6B5P4?tag=kamelife09-22',
     asin: 'B09TF6B5P4',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水槽 60cm 亀',
     image: '/assets/products/placeholder.webp',
     why: '小型水棲ガメの基本飼育容器。水換えしやすい横長タイプ',
     rating: 4.1,
@@ -83,6 +96,9 @@ const PRODUCTS = {
     priceRange: '¥8,000–18,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004J2G6XK?tag=kamelife09-22',
     asin: 'B004J2G6XK',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水槽 90cm 亀',
     image: '/assets/products/placeholder.webp',
     why: '中型水棲ガメや複数飼育に対応できる容量',
     rating: 4.4,
@@ -194,6 +210,9 @@ const PRODUCTS = {
     priceRange: '¥3,000–6,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife09-22',
     asin: 'B00JZFJ5R0',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Zoo Med ReptiSun 10.0 T5',
     image: '/assets/products/placeholder.webp',
     why: 'UV指数の高い乾燥系・リクガメ用UVBランプ。カルシウム代謝に必須',
     rating: 4.7,
@@ -209,6 +228,9 @@ const PRODUCTS = {
     priceRange: '¥3,000–6,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5LQ?tag=kamelife09-22',
     asin: 'B00JZFJ5LQ',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Zoo Med ReptiSun 5.0 T5',
     image: '/assets/products/placeholder.webp',
     why: '森林・半水棲ガメ向けのUVBランプ。適度なUV量でビタミンD3生成',
     rating: 4.6,
@@ -224,6 +246,9 @@ const PRODUCTS = {
     priceRange: '¥1,500–3,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00BF91Q1W?tag=kamelife09-22',
     asin: 'B00BF91Q1W',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'コンパクトUVBランプ 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: '小型ケージや補助UVBとして使いやすいコンパクトタイプ',
     rating: 3.9,
@@ -241,6 +266,9 @@ const PRODUCTS = {
     priceRange: '¥4,000–8,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09T96TPHJ?tag=kamelife09-22',
     asin: 'B09T96TPHJ',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Arcadia T5 6% UVB 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: '森林・湿潤系ガメに最適な中強度UVB。発色も自然で観察しやすい',
     rating: 4.5,
@@ -271,6 +299,9 @@ const PRODUCTS = {
     priceRange: '¥6,000–12,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07BBMVJ6H?tag=kamelife09-22',
     asin: 'B07BBMVJ6H',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'MVB 自発光 UVBランプ 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: 'UVB＋バスキング一体型。ランプ1本で照明コストを削減できる上級者向け',
     rating: 4.4,
@@ -350,6 +381,9 @@ const PRODUCTS = {
     priceRange: '¥800–2,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004LE7HWK?tag=kamelife09-22',
     asin: 'B004LE7HWK',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'バスキングランプ 75W 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: '標準的な60〜90cmケージのホットスポット形成に最適',
     rating: 4.4,
@@ -365,6 +399,9 @@ const PRODUCTS = {
     priceRange: '¥800–2,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0043AYZL8?tag=kamelife09-22',
     asin: 'B0043AYZL8',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'バスキングランプ 100W 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: '大型ケージや熱帯性リクガメの高温ホットスポット維持に',
     rating: 4.3,
@@ -397,6 +434,9 @@ const PRODUCTS = {
     priceRange: '¥600–1,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0043B3ZJ0?tag=kamelife09-22',
     asin: 'B0043B3ZJ0',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ハロゲンバスキングランプ 50W',
     image: '/assets/products/placeholder.webp',
     why: 'スポット照射が強く、小〜中型種のホットスポットを効率よく作れる',
     rating: 4.0,
@@ -442,6 +482,9 @@ const PRODUCTS = {
     priceRange: '¥1,500–3,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0BMKZGZQ1?tag=kamelife09-22',
     asin: 'B0BMKZGZQ1',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'セラミックヒートランプ 100W 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: '光を出さずに熱だけ供給。夜間加温・視覚刺激なしで自然なサイクルを維持',
     rating: 4.4,
@@ -617,6 +660,9 @@ const PRODUCTS = {
     priceRange: '¥1,500–4,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0012UO6Q6?tag=kamelife09-22',
     asin: 'B0012UO6Q6',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水中フィルター 小型 亀',
     image: '/assets/products/placeholder.webp',
     why: '小型水棲ガメの水質維持に。カメは水を汚しやすいため必須',
     rating: 4.1,
@@ -632,6 +678,9 @@ const PRODUCTS = {
     priceRange: '¥8,000–20,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004FZ99HG?tag=kamelife09-22',
     asin: 'B004FZ99HG',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '外部フィルター 60cm 亀',
     image: '/assets/products/placeholder.webp',
     why: '水量の多い大型水槽向け。ろ過能力が高く水換え頻度を削減',
     rating: 4.5,
@@ -647,6 +696,9 @@ const PRODUCTS = {
     priceRange: '¥15,000–35,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07F42H865?tag=kamelife09-22',
     asin: 'B07F42H865',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '外部フィルター 大型 亀',
     image: '/assets/products/placeholder.webp',
     why: '大型半水棲・完全水棲ガメの90cm以上水槽に対応',
     rating: 4.7,
@@ -694,6 +746,9 @@ const PRODUCTS = {
     priceRange: '¥18,000–28,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B002SGX79U?tag=kamelife09-22',
     asin: 'B002SGX79U',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
     why: '業界標準の外部フィルター。ろ過能力・静音性・耐久性で長年トップクラス',
     rating: 4.9,
@@ -758,6 +813,9 @@ const PRODUCTS = {
     priceRange: '¥500–1,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0CJM4TL3Q?tag=kamelife09-22',
     asin: 'B0CJM4TL3Q',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '赤玉土 小粒 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: 'リクガメの定番床材。保湿性と排水性のバランスが良く経済的',
     rating: 4.3,
@@ -788,6 +846,9 @@ const PRODUCTS = {
     priceRange: '¥1,000–3,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B06XC8YK4Y?tag=kamelife09-22',
     asin: 'B06XC8YK4Y',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '爬虫類 床材 砂 ミックス',
     image: '/assets/products/placeholder.webp',
     why: '乾燥系リクガメの穿孔行動を促す自然に近い床材',
     rating: 4.2,
@@ -865,6 +926,9 @@ const PRODUCTS = {
     priceRange: '¥2,500–5,000',
     affiliateUrl: '#',
     asin: null,
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Zoo Med サイプレスマルチ',
     image: '/assets/products/placeholder.webp',
     why: '防カビ効果があり高湿度環境でも清潔を維持。プロブリーダー御用達',
     rating: 4.6,
@@ -1591,4 +1655,37 @@ function getTierProduct(equipmentKey, category, tier) {
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { PRODUCTS, EQUIPMENT_MAP, getProductsByCategory, getBestProduct, getBudgetProduct, getTierProduct };
+}
+
+// ─────────────────────────────────────────────
+// Rakuten helpers (Schema v4)
+// ─────────────────────────────────────────────
+
+/**
+ * 商品が実際のRakutenアフィリエイトURLを持つか判定
+ * @param {Object} product
+ * @returns {boolean}
+ */
+function hasRakuten(product) {
+  return !!(
+    product &&
+    product.rakutenUrl &&
+    typeof product.rakutenUrl === 'string' &&
+    product.rakutenUrl.length > 0 &&
+    product.rakutenStatus === 'available'
+  );
+}
+
+/**
+ * 楽天検索URLを生成 (rakutenStatus === "search" 用)
+ * @param {Object} product
+ * @returns {string|null}
+ */
+function getRakutenSearchUrl(product) {
+  if (!product || !product.rakutenSearchTerm ||
+      typeof product.rakutenSearchTerm !== 'string') {
+    return null;
+  }
+  return 'https://search.rakuten.co.jp/search/mall/' +
+    encodeURIComponent(product.rakutenSearchTerm) + '/';
 }
