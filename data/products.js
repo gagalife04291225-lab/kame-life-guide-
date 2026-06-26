@@ -125,6 +125,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リクガメ ケージ 90cm 前開き',
   },
 
   // ── Task2 追加 ──
@@ -142,6 +145,9 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   enclosure_glass_45: {
@@ -157,6 +163,9 @@ const PRODUCTS = {
     rating: 4.0,
     badge: null,
     recommendedFor: ['beginner', 'small_aquatic'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ガラスケージ 45cm 爬虫類',
   },
 
   enclosure_wood_150: {
@@ -172,6 +181,9 @@ const PRODUCTS = {
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リクガメ ケージ 150cm 木製',
   },
 
   tank_120_aqua: {
@@ -187,6 +199,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   enclosure_outdoor_panel: {
@@ -202,6 +217,9 @@ const PRODUCTS = {
     rating: 4.1,
     badge: null,
     recommendedFor: ['outdoor', 'tortoise_dry_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   /* ══════════════════════════════════════════
@@ -297,6 +315,9 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   uvb_combo_mvb_100: {
@@ -330,6 +351,9 @@ const PRODUCTS = {
     rating: 3.7,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'UVB LED ライト バー 爬虫類',
   },
 
   uvb_t8_30w: {
@@ -345,6 +369,9 @@ const PRODUCTS = {
     rating: 3.6,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   uvb_zilla_t5: {
@@ -360,6 +387,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   /* ══════════════════════════════════════════
@@ -379,6 +409,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'box_turtle', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   basking_75w: {
@@ -436,6 +469,9 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ハロゲン バスキングランプ 35W 爬虫類',
   },
 
   basking_halogen_50w: {
@@ -469,6 +505,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'バスキングランプ 150W ダブル 爬虫類',
   },
 
   basking_solar_raptor: {
@@ -484,6 +523,9 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['advanced', 'tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'HID ランプ 爬虫類 メタルハライド',
   },
 
   basking_ceramic_100w: {
@@ -519,6 +561,9 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '赤外線 バスキングランプ 75W 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -538,6 +583,9 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_dry_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'パネルヒーター 30W 爬虫類',
   },
 
   heater_panel_45w: {
@@ -553,6 +601,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'パネルヒーター 45W 爬虫類',
   },
 
   heater_aqua_100w: {
@@ -568,6 +619,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   thermostat: {
@@ -583,6 +637,9 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'サーモスタット 爬虫類 アナログ',
   },
 
   // ── Task2 追加 ──
@@ -600,6 +657,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水中ヒーター 200W 亀',
   },
 
   thermostat_digital: {
@@ -615,6 +675,9 @@ const PRODUCTS = {
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
   },
 
   heater_radiant_panel: {
@@ -630,6 +693,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   heater_cord_20w: {
@@ -645,6 +711,9 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   heater_panel_60w: {
@@ -660,6 +729,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'パネルヒーター 60W 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -735,6 +807,9 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '外掛け フィルター 爬虫類 亀',
   },
 
   filter_sponge_dual: {
@@ -750,6 +825,9 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   filter_canister_eheim_2217: {
@@ -787,6 +865,9 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Fluval FX フィルター 亀 大型水槽',
   },
 
   filter_submersible_medium: {
@@ -802,6 +883,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: null,
     recommendedFor: ['semi_aquatic_medium'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水中フィルター 亀 中型',
   },
 
   filter_turtle_clean: {
@@ -817,6 +901,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   /* ══════════════════════════════════════════
@@ -858,6 +945,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ヤシガラ 爬虫類 床材',
   },
 
   substrate_sand_mix: {
@@ -893,6 +983,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   substrate_sphagnum_moss: {
@@ -908,6 +1001,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: null,
     recommendedFor: ['box_turtle', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   substrate_river_sand: {
@@ -923,6 +1019,9 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '川砂 白砂 爬虫類 床材',
   },
 
   substrate_forest_blend: {
@@ -938,6 +1037,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['box_turtle', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '爬虫類 床材 フォレスト ブレンド',
   },
 
   substrate_cypress_mulch: {
@@ -971,6 +1073,9 @@ const PRODUCTS = {
     rating: 3.7,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   /* ══════════════════════════════════════════
@@ -990,6 +1095,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ロックシェルター SS S 爬虫類',
   },
 
   shelter_medium: {
@@ -1005,6 +1113,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ロックシェルター M L 爬虫類',
   },
 
   // ── Task2 追加 ──
@@ -1022,6 +1133,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'コルクバーク 爬虫類 シェルター',
   },
 
   shelter_humid_hide: {
@@ -1037,6 +1151,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['box_turtle', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '湿潤 シェルター モイスト 爬虫類',
   },
 
   shelter_slate_flat: {
@@ -1052,6 +1169,9 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   shelter_large_cave: {
@@ -1067,6 +1187,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ケーブ シェルター 大型 爬虫類',
   },
 
   shelter_premium_wood: {
@@ -1082,6 +1205,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_small', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   shelter_aqua_dock: {
@@ -1097,6 +1223,9 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond', 'beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '亀 浮島 ドック 水棲',
   },
 
   /* ══════════════════════════════════════════
@@ -1116,6 +1245,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'デジタル 温湿度計 爬虫類',
   },
 
   thermometer_aqua: {
@@ -1131,6 +1263,9 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium', 'fully_aquatic'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水温計 デジタル 亀',
   },
 
   // ── Task2 追加 ──
@@ -1148,6 +1283,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   thermometer_infrared: {
@@ -1163,6 +1301,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '赤外線 温度計 非接触 爬虫類',
   },
 
   thermometer_pro_wifi: {
@@ -1178,6 +1319,9 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'WiFi 温湿度 ロガー 爬虫類',
   },
 
   thermometer_analog: {
@@ -1193,6 +1337,9 @@ const PRODUCTS = {
     rating: 3.7,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -1212,6 +1359,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'カメプロス テトラ 亀 餌',
   },
 
   food_tortoise: {
@@ -1227,6 +1377,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リクガメフード Zoo Med 乾燥草',
   },
 
   // ── Task2 追加 ──
@@ -1244,6 +1397,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'レプトミン テトラ 亀 餌',
   },
 
   food_aqua_turtle_pellet: {
@@ -1259,6 +1415,9 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'カメの主食 GEX 亀 フード',
   },
 
   food_box_turtle: {
@@ -1274,6 +1433,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ボックスタートル フード Zoo Med',
   },
 
   food_dried_shrimp: {
@@ -1289,6 +1451,9 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '乾燥エビ 亀 おやつ ひかり',
   },
 
   food_repashy_tortoise: {
@@ -1304,6 +1469,9 @@ const PRODUCTS = {
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['advanced', 'tortoise_forest'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   food_hikari_turtle: {
@@ -1319,6 +1487,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['semi_aquatic_medium', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ひかり タートル 亀 フード',
   },
 
   food_grassland_salad: {
@@ -1334,6 +1505,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   /* ══════════════════════════════════════════
@@ -1354,6 +1528,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large', 'beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'カルシウム パウダー D3 爬虫類',
   },
 
   // ── Task2 追加 ──
@@ -1371,6 +1548,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['outdoor', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'カルシウム パウダー 爬虫類 サプリ',
   },
 
   supplement_repcal: {
@@ -1386,6 +1566,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Rep-Cal カルシウム 爬虫類',
   },
 
   supplement_multivitamin: {
@@ -1401,6 +1584,9 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'マルチビタミン 爬虫類 サプリ',
   },
 
   supplement_iodine: {
@@ -1416,6 +1602,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_large', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ヨウ素 サプリ 亀 甲状腺',
   },
 
   supplement_electrolyte: {
@@ -1431,6 +1620,9 @@ const PRODUCTS = {
     rating: 4.5,
     badge: null,
     recommendedFor: ['advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'エレクトロライト 爬虫類 電解質',
   },
 
   supplement_cuttlebone: {
@@ -1446,6 +1638,9 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'カトルボーン 甲イカ 亀 カルシウム',
   },
 
   supplement_probiotics: {
@@ -1461,6 +1656,9 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '爬虫類 プロバイオティクス 腸内環境',
   },
 
   supplement_spirulina: {
@@ -1476,6 +1674,9 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
 };
@@ -1503,6 +1704,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_reptomin',         standard: 'food_tortoise',          premium: 'food_grassland_salad' },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
@@ -1516,6 +1720,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_tortoise',         standard: 'food_grassland_salad',   premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: 'supplement_iodine' },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 森林系リクガメ（エロンガータ・アカアシ・インプレッサ等）
@@ -1529,6 +1736,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_tortoise',         standard: 'food_repashy_tortoise',  premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_multivitamin',premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 半水棲・小型（ニオイガメ・ドロガメ・ミスクガメ等）
@@ -1541,6 +1751,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
@@ -1553,6 +1766,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
@@ -1563,6 +1779,9 @@ const EQUIPMENT_MAP = {
     substrate:        { budget: 'substrate_river_sand',  standard: 'substrate_river_sand',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 日本産イシガメ類（ニホンイシガメ・クサガメ等）
@@ -1575,6 +1794,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
@@ -1589,6 +1811,9 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_kamepros',         standard: 'food_box_turtle',        premium: 'food_repashy_tortoise' },
     supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
+    rakutenUrl: null,
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: null,
   },
 
 };
