@@ -317,14 +317,48 @@ function renderSkCard(item, speciesName, equipmentKey) {
                 : 'sk-badge-standard';
   var hasUrl = p.affiliateUrl && p.affiliateUrl !== '#';
   var tierCtaText = (SK_TIER_CTA[item.tier] || 'Amazonで価格・在庫を見る');
-  var btn = hasUrl
+
+  // Amazon CTA (unchanged)
+  var amazonBtn = hasUrl
     ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-asin="' + (p.asin||'') + '" data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-provider="amazon"' +
       ' data-click-url="' + p.affiliateUrl + '">' + tierCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
+
+  // Rakuten CTA: "available" = real URL, "search" = search fallback
+  var _rakStatus = p.rakutenStatus || 'pending';
+  var _rakSearchUrl = (typeof getRakutenSearchUrl === 'function') ? getRakutenSearchUrl(p) : null;
+  var showRakuten  = (typeof hasRakuten === 'function') && hasRakuten(p);
+  var showRakSearch = _rakStatus === 'search' && !!_rakSearchUrl;
+
+  var rakutenBtn = '';
+  if (showRakuten) {
+    // Real affiliate URL
+    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten" href="' + p.rakutenUrl + '"' +
+      ' target="_blank" rel="noopener noreferrer sponsored"' +
+      ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
+      ' data-tier="' + (item.tier||'standard') + '"' +
+      ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
+      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-provider="rakuten" data-mode="affiliate"' +
+      ' data-click-url="' + p.rakutenUrl + '">楽天で見る</a>';
+  } else if (showRakSearch) {
+    // Search fallback URL
+    rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten-search" href="' + _rakSearchUrl + '"' +
+      ' target="_blank" rel="noopener noreferrer"' +
+      ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
+      ' data-tier="' + (item.tier||'standard') + '"' +
+      ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
+      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-provider="rakuten" data-mode="search"' +
+      ' data-click-url="' + _rakSearchUrl + '">楽天で探す</a>';
+  }
+
+  var btn = amazonBtn + rakutenBtn;
 
   var cardTierCls = item.tier === 'standard' ? ' sk-card--standard'
                  : item.tier === 'premium'  ? ' sk-card--premium'
@@ -363,6 +397,92 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
 /**
  * メインHTML生成
  */
+// ── Bundle Summary ───────────────────────────────────────────
+/**
+ * 各tierのpicksから合計価格（低価格帯の合計）を算出し¥100単位に丸める
+ */
+function calcBundlePrice(picks) {
+  var total = 0;
+  picks.forEach(function(item) {
+    if (item.product && item.product.priceRange) {
+      total += parsePriceRange(item.product.priceRange).low;
+    }
+  });
+  return Math.round(total / 100) * 100;
+}
+
+/**
+ * バンドルサマリーHTML生成（タブの上に表示）
+ */
+function renderBundleSummary(tabData, speciesName) {
+  var BUNDLES = [
+    {
+      tabId:    'essential',
+      tier:     'budget',
+      idx:      0,
+      label:    'エントリー構成',
+      icon:     '🌱',
+      desc:     '飼育を始めるための最低限セット。まずはここから。',
+      mod:      'sk-bundle--budget',
+    },
+    {
+      tabId:    'comfort',
+      tier:     'standard',
+      idx:      1,
+      label:    'スタンダード構成',
+      icon:     '⭐',
+      desc:     'コストと快適さのベストバランス。最もおすすめ。',
+      mod:      'sk-bundle--standard',
+      recommended: true,
+    },
+    {
+      tabId:    'advanced',
+      tier:     'premium',
+      idx:      2,
+      label:    'プレミアム構成',
+      icon:     '🏆',
+      desc:     '長期管理が楽になる本格仕様。余裕のある方に。',
+      mod:      'sk-bundle--premium',
+    },
+  ];
+
+  var cards = BUNDLES.map(function(b) {
+    var picks = tabData[b.idx] ? tabData[b.idx].picks : [];
+    var price = calcBundlePrice(picks);
+    var count = picks.length;
+    var priceStr = price > 0 ? fmtYen(price) + '〜' : '価格お問い合わせ';
+    var recBadge = b.recommended
+      ? '<span class="sk-bundle-rec-badge">おすすめ</span>'
+      : '';
+
+    return '<div class="sk-bundle-card ' + b.mod + (b.recommended ? ' sk-bundle-card--rec' : '') + '"' +
+      ' data-bundle-tab="sk-panel-' + b.tabId + '"' +
+      ' data-bundle-tier="' + b.tier + '"' +
+      ' data-bundle-price="' + price + '"' +
+      ' data-bundle-count="' + count + '"' +
+      ' data-species="' + (speciesName || '') + '">' +
+      '<div class="sk-bundle-head">' +
+        '<span class="sk-bundle-icon" aria-hidden="true">' + b.icon + '</span>' +
+        '<span class="sk-bundle-label">' + b.label + recBadge + '</span>' +
+      '</div>' +
+      '<p class="sk-bundle-desc">' + b.desc + '</p>' +
+      '<div class="sk-bundle-meta">' +
+        '<span class="sk-bundle-price">' + priceStr + '</span>' +
+        '<span class="sk-bundle-count">' + count + '点セット</span>' +
+      '</div>' +
+      '<button class="sk-bundle-cta" type="button"' +
+        ' aria-label="' + b.label + 'の詳細を見る">' +
+        'この構成をまとめて揃える' +
+      '</button>' +
+    '</div>';
+  }).join('');
+
+  return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド">' +
+    '<p class="sk-bundle-eyebrow">まず構成を選んでください</p>' +
+    '<div class="sk-bundle-grid">' + cards + '</div>' +
+  '</div>';
+}
+
 function renderStarterKitHtmlV2(equipmentKey, opts) {
   var speciesName = opts.name || '';
   var heading = speciesName ? (speciesName + 'の飼育セットガイド') : '飼育セットガイド';
@@ -376,6 +496,9 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
   // Cost Box は必須セット(budget)のpicksで計算
   var essentialPicks = tabData[0].picks;
   var costBoxHtml = renderCostBox(essentialPicks, opts);
+
+  // Bundle Summary（タブ上部）
+  var bundleSummaryHtml = renderBundleSummary(tabData, speciesName);
 
   // タブボタン
   var tabBtns = SK_TABS.map(function(tab, i) {
@@ -397,6 +520,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
     '<div class="sk-inner">' +
       '<h2 class="sk-heading-main">' + heading + '</h2>' +
       costBoxHtml +
+      bundleSummaryHtml +
       '<div class="sk-tabs" role="tablist">' + tabBtns + '</div>' +
       panels +
       '<p class="sk-hint">💡 迷ったら <strong>推奨セット</strong> から始めるのがおすすめです</p>' +
@@ -487,6 +611,42 @@ function mountStarterKit(species, mountId) {
   root.innerHTML = html;
   var _tabCtrl = initSkTabs(root, species);
 
+  // ── Bundle card click: scroll-to-tab + GA4 ───────────────
+  root.querySelectorAll('.sk-bundle-card').forEach(function(card) {
+    card.querySelector('.sk-bundle-cta').addEventListener('click', function() {
+      var targetPanelId = card.dataset.bundleTab;
+      var tier          = card.dataset.bundleTier;
+      var price         = parseInt(card.dataset.bundlePrice, 10) || 0;
+      var count         = parseInt(card.dataset.bundleCount,  10) || 0;
+      var sName         = card.dataset.species || _skStr(species && species.name);
+
+      // Activate matching tab
+      var btn = root.querySelector('.sk-tab-btn[data-target="' + targetPanelId + '"]');
+      if (btn) btn.click();
+
+      // Smooth-scroll to tabs
+      var tabsEl = root.querySelector('.sk-tabs');
+      if (tabsEl) {
+        tabsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // GA4
+      if (typeof gtag === 'function') {
+        gtag('event', 'bundle_card_click', {
+          species:         _skStr(sName),
+          bundle_type:     tier,
+          estimated_price: price,
+          product_count:   count,
+          page_path:       _skPagePath(),
+        });
+        window.KAME_GA_DEBUG_LOG('bundle_card_click', {
+          species: _skStr(sName), bundle_type: tier,
+          estimated_price: price, product_count: count,
+        });
+      }
+    });
+  });
+
   if (typeof gtag === 'function') {
     var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
     gtag('event', 'starter_kit_shown', {
@@ -557,6 +717,19 @@ function mountStarterKit(species, mountId) {
             affiliate_platform: 'amazon',
           });
         }
+        // Dual-affiliate unified click event
+        var _provider = a.dataset.provider || 'amazon';
+        var _mode = a.dataset.mode || (_provider === 'amazon' ? 'affiliate' : 'search');
+        gtag('event', 'affiliate_click', {
+          provider:       _provider,
+          mode:           _mode,
+          product_name:   _skStr(a.dataset.productId),
+          species:        _skStr(a.dataset.species),
+          tier:           _skStr(a.dataset.tier),
+          source_page:    _skPagePath(),
+          category:       _skStr(a.dataset.cat),
+          equipment_key:  _skStr(a.dataset.equipmentKey),
+        });
         // Debug log: 1 entry per click (summary)
         window.KAME_GA_DEBUG_LOG('starter_kit_click', {
           species: _skStr(a.dataset.species),
