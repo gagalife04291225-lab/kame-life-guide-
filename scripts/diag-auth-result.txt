@@ -1,0 +1,7 @@
+[T1-old-query] HTTP=400 error=wrong_parameter items=0
+  desc: specify valid applicationId
+[T2-bearer-header] HTTP=401 error=invalid_token items=0
+  desc: specify valid access token
+[T3-new-path] NET: getaddrinfo ENOTFOUND api.rakuten.co.jp
+[T4-strip-prefix] HTTP=400 error=wrong_parameter items=0
+  desc: specify valid applicationId
