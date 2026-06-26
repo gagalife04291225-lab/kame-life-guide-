@@ -2484,6 +2484,264 @@
     .trs-btn-back,.trs-btn-next{padding:10px 16px;}
   }
 
+
+  /* ═══════════════════════════════════════════════════════
+     Phase 13-A: AI Concierge MVP
+     prefix: aic-  (AI Concierge)
+  ══════════════════════════════════════════════════════════ */
+  .aic-section{
+    padding:64px 0 72px;
+    background:var(--parchment,#f4efe2);
+    border-top:1px solid rgba(47,74,60,.10);
+    border-bottom:1px solid rgba(47,74,60,.10);
+  }
+  .aic-inner{max-width:640px;margin:0 auto;padding:0 20px;}
+
+  /* ── Header ── */
+  .aic-eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.70rem;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;color:rgba(47,74,60,.75);
+    background:rgba(47,74,60,.07);
+    border:1px solid rgba(47,74,60,.16);
+    border-radius:40px;padding:5px 16px;margin-bottom:18px;
+  }
+  .aic-eyebrow-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--forest,#2f4a3c);flex-shrink:0;
+    animation:aic-pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes aic-pulse{
+    0%,100%{opacity:.4;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.35);}
+  }
+  .aic-heading{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(1.4rem,4.5vw,1.85rem);
+    font-weight:700;color:var(--forest-deep,#0d1f1a);
+    line-height:1.3;margin-bottom:8px;
+  }
+  .aic-sub{
+    font-size:.92rem;color:rgba(47,74,60,.65);
+    line-height:1.85;margin-bottom:28px;
+  }
+
+  /* ── Chat window ── */
+  .aic-chat{
+    background:#fff;
+    border:1.5px solid rgba(47,74,60,.14);
+    border-radius:18px;
+    padding:24px 22px 20px;
+    box-shadow:0 4px 24px rgba(13,31,26,.07);
+    min-height:180px;
+  }
+
+  /* Progress dots */
+  .aic-progress{
+    display:flex;gap:6px;justify-content:center;margin-bottom:20px;
+  }
+  .aic-prog-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:rgba(47,74,60,.15);
+    transition:background .3s,transform .3s;
+  }
+  .aic-prog-dot.aic-done{background:var(--forest,#2f4a3c);}
+  .aic-prog-dot.aic-active{
+    background:var(--accent,#d4a96a);
+    transform:scale(1.3);
+  }
+
+  /* AI bubble */
+  .aic-bubble-wrap{
+    display:flex;align-items:flex-start;gap:10px;margin-bottom:18px;
+  }
+  .aic-avatar{
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--forest,#2f4a3c),#1a2e1a);
+    display:flex;align-items:center;justify-content:center;
+    font-size:.82rem;flex-shrink:0;
+    box-shadow:0 2px 8px rgba(13,31,26,.18);
+    color:#e8f0e8;font-weight:700;letter-spacing:-.02em;
+  }
+  .aic-bubble{
+    background:rgba(47,74,60,.06);
+    border:1px solid rgba(47,74,60,.12);
+    border-radius:4px 14px 14px 14px;
+    padding:11px 15px;
+    font-size:.92rem;color:var(--forest-deep,#0d1f1a);
+    line-height:1.7;flex:1;min-width:0;
+  }
+
+  /* Typing dots */
+  .aic-typing{display:none;}
+  .aic-typing.aic-show{display:flex;}
+  .aic-typing{
+    align-items:center;gap:4px;padding:8px 0 4px;
+  }
+  .aic-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:rgba(47,74,60,.35);
+    animation:aic-bounce .9s ease-in-out infinite;
+  }
+  .aic-dot:nth-child(2){animation-delay:.18s;}
+  .aic-dot:nth-child(3){animation-delay:.36s;}
+  @keyframes aic-bounce{
+    0%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(-5px);}
+  }
+
+  /* Option buttons */
+  .aic-options{display:flex;flex-direction:column;gap:9px;}
+  .aic-opt{
+    display:flex;align-items:center;gap:11px;
+    background:#fff;
+    border:1.5px solid rgba(47,74,60,.16);
+    border-radius:10px;padding:13px 16px;
+    cursor:pointer;width:100%;text-align:left;
+    font-family:"Noto Serif JP",serif;
+    font-size:.91rem;color:var(--forest-deep,#0d1f1a);
+    transition:background .16s,border-color .16s,transform .1s;
+    -webkit-tap-highlight-color:transparent;
+    min-height:50px;
+  }
+  .aic-opt:hover{
+    background:rgba(47,74,60,.05);
+    border-color:rgba(47,74,60,.32);
+  }
+  .aic-opt:focus-visible{
+    outline:2px solid var(--accent,#d4a96a);outline-offset:2px;
+  }
+  .aic-opt.aic-selected{
+    background:rgba(47,74,60,.08);
+    border-color:var(--forest,#2f4a3c);
+    font-weight:700;
+  }
+  .aic-opt-icon{
+    font-size:1.1rem;flex-shrink:0;width:24px;text-align:center;
+  }
+
+  /* Result card */
+  .aic-result{
+    display:none;
+    animation:aic-fadein .4s ease-out;
+  }
+  .aic-result.aic-show{display:block;}
+  @keyframes aic-fadein{
+    from{opacity:0;transform:translateY(8px);}
+    to  {opacity:1;transform:translateY(0);}
+  }
+  .aic-result-header{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+  .aic-result-badge{
+    font-size:.66rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;background:rgba(47,74,60,.10);
+    color:var(--forest,#2f4a3c);border-radius:20px;padding:4px 12px;
+    white-space:nowrap;
+  }
+  .aic-species-name{
+    font-family:"Playfair Display",serif;
+    font-size:1.22rem;font-weight:700;
+    color:var(--forest-deep,#0d1f1a);margin-bottom:4px;
+    line-height:1.3;
+  }
+  .aic-species-latin{
+    font-size:.76rem;color:#8a9a8d;font-style:italic;margin-bottom:14px;
+  }
+  /* Score bar */
+  .aic-score-row{
+    display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .aic-score-label{
+    font-size:.70rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#8a9a8d;white-space:nowrap;
+  }
+  .aic-score-bar-wrap{
+    flex:1;height:5px;background:rgba(47,74,60,.10);border-radius:3px;overflow:hidden;
+  }
+  .aic-score-bar{
+    height:100%;border-radius:3px;
+    background:linear-gradient(90deg,var(--forest,#2f4a3c),var(--accent,#d4a96a));
+    transition:width .6s cubic-bezier(.4,0,.2,1);width:0%;
+  }
+  .aic-score-num{
+    font-size:.78rem;font-weight:700;color:var(--forest,#2f4a3c);
+    white-space:nowrap;min-width:36px;text-align:right;
+  }
+  /* Reasons */
+  .aic-reasons{
+    list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:12px;
+  }
+  .aic-reasons li{
+    display:flex;align-items:flex-start;gap:9px;
+    font-size:.87rem;color:#3a4a3e;line-height:1.65;
+  }
+  .aic-reasons li::before{
+    content:"✓";color:var(--forest,#2f4a3c);font-weight:700;
+    flex-shrink:0;margin-top:.05em;
+  }
+  /* Caution */
+  .aic-caution{
+    display:flex;align-items:flex-start;gap:8px;
+    background:rgba(212,169,106,.09);
+    border:1px solid rgba(212,169,106,.28);
+    border-radius:8px;padding:10px 13px;
+    font-size:.82rem;color:#6a5a3a;line-height:1.65;
+    margin-bottom:16px;
+  }
+  .aic-caution-icon{flex-shrink:0;font-size:1rem;margin-top:.05em;}
+  /* Disclaimer */
+  .aic-disclaimer{
+    font-size:.74rem;color:#9aaa9d;line-height:1.6;
+    margin-bottom:16px;text-align:center;
+  }
+  /* CTA buttons */
+  .aic-cta-row{display:flex;gap:9px;flex-wrap:wrap;}
+  .aic-cta-primary{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(108deg,var(--accent,#d4a96a),#be8535);
+    color:#04100c;font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:.88rem;text-decoration:none;
+    border-radius:10px;padding:13px 16px;min-height:46px;
+    transition:background .18s,transform .12s;letter-spacing:.03em;
+  }
+  .aic-cta-primary:hover{
+    background:linear-gradient(108deg,#ddb870,#cc9040);transform:translateY(-1px);
+  }
+  .aic-cta-primary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .aic-cta-secondary{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    background:transparent;color:var(--forest,#2f4a3c);font-family:"Noto Serif JP",serif;
+    font-weight:700;font-size:.86rem;text-decoration:none;
+    border:1.5px solid rgba(47,74,60,.28);border-radius:10px;
+    padding:12px 14px;min-height:46px;
+    transition:border-color .18s,background .18s;letter-spacing:.02em;
+  }
+  .aic-cta-secondary:hover{
+    border-color:var(--forest,#2f4a3c);background:rgba(47,74,60,.05);
+  }
+  .aic-cta-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  /* Restart */
+  .aic-restart{
+    display:block;margin:14px auto 0;background:none;border:none;
+    color:rgba(47,74,60,.45);font-size:.78rem;cursor:pointer;
+    text-decoration:underline;text-underline-offset:3px;padding:4px;
+  }
+  .aic-restart:hover{color:var(--forest,#2f4a3c);}
+
+  /* Mobile */
+  @media(max-width:480px){
+    .aic-section{padding:52px 0 60px;}
+    .aic-chat{padding:18px 16px 16px;border-radius:14px;}
+    .aic-cta-row{flex-direction:column;}
+    .aic-opt{padding:12px 14px;font-size:.87rem;}
+  }
+  @media(max-width:360px){
+    .aic-heading{font-size:1.28rem;}
+    .aic-avatar{width:30px;height:30px;font-size:.74rem;}
+  }
+
 </style>
 <body>
 
@@ -2829,6 +3087,142 @@
         <h3>「30年…飼い続けられる？」</h3>
         <p>リクガメは寿命50年以上の種も。長く付き合える種を今のライフスタイルで選ぼう。</p>
         <p class="pc-reassure">診断でライフスタイルに合った寿命の種を提案</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     Phase 13-A: AI Concierge MVP (Rule-based)
+     Placement: problem-cards直後 / popular-picks直前
+════════════════════════════════════════════════════════ -->
+<section class="aic-section" id="ai-concierge"
+  aria-label="AI亀コンシェルジュ">
+  <div class="aic-inner">
+
+    <p class="aic-eyebrow">
+      <span class="aic-eyebrow-dot" aria-hidden="true"></span>
+      AI Turtle Concierge
+    </p>
+    <h2 class="aic-heading">AIに相談してみる</h2>
+    <p class="aic-sub">4つの質問に答えるだけで、<br>あなたに合いそうな亀を候補提案します。</p>
+
+    <div class="aic-chat" id="aic-chat" role="region" aria-label="AIコンシェルジュチャット">
+
+      <!-- Progress dots -->
+      <div class="aic-progress" role="progressbar" aria-valuenow="0" aria-valuemax="4" aria-label="質問の進捗">
+        <span class="aic-prog-dot aic-active" id="aic-pd-1"></span>
+        <span class="aic-prog-dot" id="aic-pd-2"></span>
+        <span class="aic-prog-dot" id="aic-pd-3"></span>
+        <span class="aic-prog-dot" id="aic-pd-4"></span>
+      </div>
+
+      <!-- AI bubble (message changes per step) -->
+      <div class="aic-bubble-wrap">
+        <div class="aic-avatar" aria-hidden="true">AI</div>
+        <div class="aic-bubble" id="aic-msg" aria-live="polite">
+          亀を飼うのははじめてですか？
+        </div>
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="aic-bubble-wrap">
+        <div class="aic-avatar" aria-hidden="true">AI</div>
+        <div class="aic-typing" id="aic-typing" aria-hidden="true">
+          <span class="aic-dot"></span>
+          <span class="aic-dot"></span>
+          <span class="aic-dot"></span>
+        </div>
+      </div>
+
+      <!-- Q1: 経験 -->
+      <div class="aic-options" id="aic-q1" role="group" aria-label="飼育経験">
+        <button class="aic-opt" data-q="experience" data-v="beginner" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🐣</span>はじめて飼う
+        </button>
+        <button class="aic-opt" data-q="experience" data-v="some" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🌱</span>少し経験がある
+        </button>
+        <button class="aic-opt" data-q="experience" data-v="expert" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🏆</span>飼育ベテラン
+        </button>
+      </div>
+
+      <!-- Q2: サイズ -->
+      <div class="aic-options" id="aic-q2" role="group" aria-label="希望サイズ" hidden>
+        <button class="aic-opt" data-q="size" data-v="small" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🤏</span>小型（〜20cm）
+        </button>
+        <button class="aic-opt" data-q="size" data-v="medium" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🐢</span>中型（20〜40cm）
+        </button>
+        <button class="aic-opt" data-q="size" data-v="large" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🦕</span>大型もOK（40cm〜）
+        </button>
+      </div>
+
+      <!-- Q3: 飼育スタイル -->
+      <div class="aic-options" id="aic-q3" role="group" aria-label="飼育スタイル" hidden>
+        <button class="aic-opt" data-q="habitat" data-v="aquatic" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">💧</span>水槽で水棲ガメを
+        </button>
+        <button class="aic-opt" data-q="habitat" data-v="land" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🌿</span>ケージで陸棲を
+        </button>
+        <button class="aic-opt" data-q="habitat" data-v="any" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">🤔</span>まだ迷っている
+        </button>
+      </div>
+
+      <!-- Q4: 重視すること -->
+      <div class="aic-options" id="aic-q4" role="group" aria-label="重視すること" hidden>
+        <button class="aic-opt" data-q="priority" data-v="easy" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">✨</span>飼いやすさ・手間の少なさ
+        </button>
+        <button class="aic-opt" data-q="priority" data-v="looks" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">👁️</span>見た目・個性
+        </button>
+        <button class="aic-opt" data-q="priority" data-v="rare" type="button">
+          <span class="aic-opt-icon" aria-hidden="true">💎</span>レア度・珍しさ
+        </button>
+      </div>
+
+      <!-- Result -->
+      <div class="aic-result" id="aic-result" aria-live="polite">
+        <div class="aic-result-header">
+          <span class="aic-result-badge">候補提案</span>
+        </div>
+        <p class="aic-species-name" id="aic-species-name"></p>
+        <p class="aic-species-latin" id="aic-species-latin"></p>
+        <div class="aic-score-row">
+          <span class="aic-score-label">適合度</span>
+          <div class="aic-score-bar-wrap">
+            <div class="aic-score-bar" id="aic-score-bar"></div>
+          </div>
+          <span class="aic-score-num" id="aic-score-num"></span>
+        </div>
+        <ul class="aic-reasons" id="aic-reasons" aria-label="おすすめ理由"></ul>
+        <div class="aic-caution" id="aic-caution-box">
+          <span class="aic-caution-icon" aria-hidden="true">⚠️</span>
+          <span id="aic-caution-text"></span>
+        </div>
+        <p class="aic-disclaimer">
+          ※これはAIによる候補提案です。最終的な判断は詳細な診断ツールもご活用ください。
+        </p>
+        <div class="aic-cta-row">
+          <a href="#" id="aic-cta-detail" class="aic-cta-primary"
+            onclick="(typeof gtag==='function')&&gtag('event','ai_concierge_cta_click',{cta:'detail',species:window._aicSpecies||'',score:window._aicScore||0})">
+            詳細を見る →
+          </a>
+          <a href="./shindan/" class="aic-cta-secondary"
+            onclick="(typeof gtag==='function')&&gtag('event','ai_concierge_cta_click',{cta:'shindan',species:window._aicSpecies||'',score:window._aicScore||0})">
+            亀診断へ進む
+          </a>
+        </div>
+        <button class="aic-restart" id="aic-restart" type="button">
+          もう一度相談する
+        </button>
       </div>
 
     </div>
@@ -3918,6 +4312,397 @@
   } else {
     init();
   }
+})();
+</script>
+
+<script>
+/* ── AI Concierge MVP — Phase 13-A ────────────────────────────
+   Rule-based recommendation engine (no external API)
+   GA4: ai_concierge_view/start/answer/result/cta_click
+──────────────────────────────────────────────────────────────── */
+(function(){
+'use strict';
+
+/* ── Species database ─────────────────────────────────────── */
+var SPECIES = [
+  {
+    id:'musk',
+    name:'ミシシッピニオイガメ',
+    latin:'Sternotherus odoratus',
+    url:'./species/musk-turtle.html',
+    weights:{
+      experience:{beginner:30,some:20,expert:10},
+      size:{small:30,medium:10,large:0},
+      habitat:{aquatic:30,land:0,any:15},
+      priority:{easy:30,looks:10,rare:5}
+    },
+    reasons:[
+      '最大14cmと小型で30cm水槽から飼育できます',
+      '丈夫で水質変化に強く、初心者でも管理しやすいです',
+      '臭いが少なく、小さなスペースでも快適に飼育できます'
+    ],
+    caution:'寿命が20〜30年と長い。長期飼育の覚悟が必要です。'
+  },
+  {
+    id:'razorback',
+    name:'カブトニオイガメ',
+    latin:'Sternotherus carinatus',
+    url:'./species/razorback-musk-turtle.html',
+    weights:{
+      experience:{beginner:20,some:28,expert:20},
+      size:{small:25,medium:20,large:5},
+      habitat:{aquatic:30,land:0,any:15},
+      priority:{easy:20,looks:28,rare:20}
+    },
+    reasons:[
+      '甲羅にキール（隆起）があり、個性的な見た目が魅力です',
+      '小型（最大15cm程度）で省スペースに飼育できます',
+      '活発で観察していて楽しく、飼育者に人気の種です'
+    ],
+    caution:'ニオイガメ類の中では比較的個体差が出やすい。選定時に状態確認を。'
+  },
+  {
+    id:'russian',
+    name:'ロシアリクガメ',
+    latin:'Testudo horsfieldii',
+    url:'./species/russian-tortoise.html',
+    weights:{
+      experience:{beginner:28,some:22,expert:12},
+      size:{small:30,medium:15,large:0},
+      habitat:{aquatic:0,land:30,any:18},
+      priority:{easy:28,looks:18,rare:8}
+    },
+    reasons:[
+      'リクガメ入門種として最も実績が多く、飼育情報が豊富です',
+      '最大20cm前後とリクガメの中では小型で扱いやすいです',
+      '丈夫で温度変化にも比較的耐えられる適応力があります'
+    ],
+    caution:'冬眠する個体がいるため、冬の温度管理に注意が必要です。'
+  },
+  {
+    id:'hermann',
+    name:'ヘルマンリクガメ',
+    latin:'Testudo hermanni',
+    url:'./species/hermann-tortoise.html',
+    weights:{
+      experience:{beginner:25,some:25,expert:15},
+      size:{small:20,medium:28,large:5},
+      habitat:{aquatic:0,land:30,any:18},
+      priority:{easy:22,looks:28,rare:10}
+    },
+    reasons:[
+      '甲羅の模様が美しく、地中海リクガメの中でも特に人気があります',
+      '飼育情報が日本語で豊富で、初心者にも取り組みやすいです',
+      '人に慣れやすく、飼育者との関係性が育ちやすい種です'
+    ],
+    caution:'UVBライトとバスキングライトが必須。初期機材費用は¥40,000〜が目安です。'
+  },
+  {
+    id:'map',
+    name:'ミシシッピマップガメ',
+    latin:'Graptemys pseudogeographica',
+    url:'./species/mississippi-map-turtle.html',
+    weights:{
+      experience:{beginner:10,some:28,expert:25},
+      size:{small:15,medium:30,large:10},
+      habitat:{aquatic:30,land:0,any:15},
+      priority:{easy:10,looks:28,rare:22}
+    },
+    reasons:[
+      '甲羅の地図のような模様が個性的で、中級者に人気の種です',
+      '活発で遊泳力が高く、水槽で観察していて楽しいです',
+      '比較的レア度が高く、コレクション性があります'
+    ],
+    caution:'水質管理が重要。強いフィルターと定期的な水換えが必要です。'
+  },
+  {
+    id:'box',
+    name:'トウブハコガメ',
+    latin:'Terrapene carolina carolina',
+    url:'./species/eastern-box-turtle.html',
+    weights:{
+      experience:{beginner:8,some:25,expert:28},
+      size:{small:22,medium:25,large:8},
+      habitat:{aquatic:0,land:28,any:22},
+      priority:{easy:10,looks:25,rare:28}
+    },
+    reasons:[
+      '甲羅が閉じるユニークな構造を持ち、見た目の個性が際立ちます',
+      '半水棲で陸場と浅い水場を使い分け、多様な飼育が楽しめます',
+      'レア度が高く、深くはまる飼育者が多い魅力的な種です'
+    ],
+    caution:'湿度管理が難しく、初心者には難易度が高めです。経験者向けです。'
+  },
+  {
+    id:'elongated',
+    name:'エロンガータリクガメ',
+    latin:'Indotestudo elongata',
+    url:'./species/elongated-tortoise.html',
+    weights:{
+      experience:{beginner:5,some:22,expert:30},
+      size:{small:8,medium:28,large:18},
+      habitat:{aquatic:0,land:30,any:15},
+      priority:{easy:8,looks:22,rare:30}
+    },
+    reasons:[
+      'アジア産リクガメの中でもレア度が高く、コレクター人気があります',
+      '個体によって甲羅の色合いが異なり、個性が楽しめます',
+      '比較的温和で、慣れると人の存在に動じなくなります'
+    ],
+    caution:'流通量が多くなく、状態良好な個体の入手に知識が必要です。'
+  },
+  {
+    id:'spenglers',
+    name:'スペングラーヤマガメ',
+    latin:'Geoemyda spengleri',
+    url:'./species/spenglers-leaf-turtle.html',
+    weights:{
+      experience:{beginner:5,some:20,expert:32},
+      size:{small:28,medium:12,large:0},
+      habitat:{aquatic:5,land:28,any:18},
+      priority:{easy:5,looks:25,rare:35}
+    },
+    reasons:[
+      '世界最小クラスの甲羅幅7〜12cmで、希少性が非常に高いです',
+      '森林性の独特な生態が観察でき、深くはまる魅力があります',
+      'マニア度が高く、こだわりの飼育を楽しみたい方向けです'
+    ],
+    caution:'高湿度・低温（20〜25℃）管理が必要。上級者向けの種です。'
+  }
+];
+
+/* ── State ──────────────────────────────────────────────── */
+var answers = {};
+var step = 1;
+var TOTAL = 4;
+var started = false;
+
+var QUESTIONS = [
+  {id:'aic-q1', key:'experience', msg:'亀を飼うのははじめてですか？'},
+  {id:'aic-q2', key:'size',       msg:'どのくらいのサイズが理想ですか？'},
+  {id:'aic-q3', key:'habitat',    msg:'水棲・陸棲、どちらが気になりますか？'},
+  {id:'aic-q4', key:'priority',   msg:'亀選びで一番重視することは？'}
+];
+
+/* ── Helpers ─────────────────────────────────────────────── */
+function _ga(name, payload){
+  if(typeof gtag==='function') gtag('event', name, payload||{});
+}
+function _qs(sel){return document.querySelector(sel);}
+function _qsa(sel){return document.querySelectorAll(sel);}
+
+/* ── Score engine ────────────────────────────────────────── */
+function calcScore(sp){
+  var s = 0;
+  var keys = ['experience','size','habitat','priority'];
+  keys.forEach(function(k){
+    var v = answers[k];
+    if(v && sp.weights[k] && sp.weights[k][v] !== undefined){
+      s += sp.weights[k][v];
+    }
+  });
+  return Math.min(Math.round(s / 1.2), 100);
+}
+
+function recommend(){
+  var scored = SPECIES.map(function(sp){
+    return {sp:sp, score:calcScore(sp)};
+  }).sort(function(a,b){return b.score-a.score;});
+  return scored[0];
+}
+
+/* ── Progress dots ─────────────────────────────────────── */
+function updateDots(currentStep){
+  for(var i=1;i<=TOTAL;i++){
+    var dot = _qs('#aic-pd-'+i);
+    if(!dot) continue;
+    dot.classList.remove('aic-active','aic-done');
+    if(i < currentStep) dot.classList.add('aic-done');
+    else if(i === currentStep) dot.classList.add('aic-active');
+  }
+  var wrap = _qs('.aic-progress');
+  if(wrap) wrap.setAttribute('aria-valuenow', currentStep-1);
+}
+
+/* ── Typing → show ──────────────────────────────────────── */
+function showTypingThen(ms, fn){
+  var typing = _qs('#aic-typing');
+  if(typing) typing.classList.add('aic-show');
+  setTimeout(function(){
+    if(typing) typing.classList.remove('aic-show');
+    fn();
+  }, ms);
+}
+
+/* ── Show question ──────────────────────────────────────── */
+function showQuestion(n){
+  var qdef = QUESTIONS[n-1];
+  var msg = _qs('#aic-msg');
+  var delay = (n===1) ? 0 : 900;
+
+  QUESTIONS.forEach(function(q){
+    var el = _qs('#'+q.id);
+    if(el) el.setAttribute('hidden','');
+  });
+
+  updateDots(n);
+
+  if(n === 1){
+    if(msg) msg.textContent = qdef.msg;
+    var q1 = _qs('#aic-q1');
+    if(q1) q1.removeAttribute('hidden');
+    return;
+  }
+
+  showTypingThen(delay, function(){
+    if(msg) msg.textContent = qdef.msg;
+    var qel = _qs('#'+qdef.id);
+    if(qel){
+      qel.removeAttribute('hidden');
+      var firstBtn = qel.querySelector('.aic-opt');
+      if(firstBtn) firstBtn.focus();
+    }
+  });
+}
+
+/* ── Show result ────────────────────────────────────────── */
+function showResult(){
+  var best = recommend();
+  var sp = best.sp;
+  var score = best.score;
+
+  window._aicSpecies = sp.name;
+  window._aicScore   = score;
+
+  _ga('ai_concierge_result',{
+    experience: answers.experience||'',
+    size:       answers.size||'',
+    habitat:    answers.habitat||'',
+    priority:   answers.priority||'',
+    species:    sp.name,
+    score:      score
+  });
+
+  QUESTIONS.forEach(function(q){
+    var el = _qs('#'+q.id);
+    if(el) el.setAttribute('hidden','');
+  });
+  updateDots(TOTAL+1);
+
+  showTypingThen(1000, function(){
+    var msg = _qs('#aic-msg');
+    if(msg) msg.textContent = '分析できました！候補を提案します。';
+
+    var result = _qs('#aic-result');
+    if(!result) return;
+    result.classList.add('aic-show');
+
+    _qs('#aic-species-name').textContent = sp.name;
+    _qs('#aic-species-latin').textContent = sp.latin;
+    _qs('#aic-score-num').textContent = score + '/100';
+    _qs('#aic-caution-text').textContent = sp.caution;
+
+    var cta = _qs('#aic-cta-detail');
+    if(cta) cta.href = sp.url;
+
+    var ul = _qs('#aic-reasons');
+    if(ul){
+      ul.innerHTML = '';
+      sp.reasons.forEach(function(r){
+        var li = document.createElement('li');
+        li.textContent = r;
+        ul.appendChild(li);
+      });
+    }
+
+    // Score bar animation
+    setTimeout(function(){
+      var bar = _qs('#aic-score-bar');
+      if(bar) bar.style.width = score + '%';
+    }, 100);
+
+    result.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+}
+
+/* ── Init ───────────────────────────────────────────────── */
+function init(){
+  var section = _qs('#ai-concierge');
+  if(!section) return;
+
+  // View event
+  if('IntersectionObserver' in window){
+    var fired=false;
+    var io = new IntersectionObserver(function(entries){
+      if(!fired && entries[0].isIntersecting){
+        fired=true;
+        _ga('ai_concierge_view',{});
+        io.disconnect();
+      }
+    },{threshold:0.25});
+    io.observe(section);
+  }
+
+  // Option click
+  _qsa('.aic-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q   = btn.dataset.q;
+      var val = btn.dataset.v;
+      answers[q] = val;
+
+      // Visual feedback
+      var parent = btn.closest('.aic-options');
+      if(parent){
+        parent.querySelectorAll('.aic-opt').forEach(function(b){
+          b.classList.remove('aic-selected');
+        });
+      }
+      btn.classList.add('aic-selected');
+
+      // Start event (first answer)
+      if(!started){
+        started = true;
+        _ga('ai_concierge_start',{});
+      }
+
+      // Answer event
+      _ga('ai_concierge_answer',{
+        question_id: q,
+        answer: val,
+        step: step
+      });
+
+      step++;
+      if(step <= TOTAL){
+        showQuestion(step);
+      } else {
+        showResult();
+      }
+    });
+  });
+
+  // Restart
+  var restart = _qs('#aic-restart');
+  if(restart){
+    restart.addEventListener('click', function(){
+      answers={};step=1;started=false;
+      var result = _qs('#aic-result');
+      if(result) result.classList.remove('aic-show');
+      var bar = _qs('#aic-score-bar');
+      if(bar) bar.style.width='0%';
+      _qsa('.aic-opt').forEach(function(b){b.classList.remove('aic-selected');});
+      showQuestion(1);
+      section.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+
+  // Start
+  showQuestion(1);
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+}else{init();}
 })();
 </script>
 
