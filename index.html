@@ -4491,9 +4491,35 @@ function _ga(name, payload){
 function _qs(sel){return document.querySelector(sel);}
 function _qsa(sel){return document.querySelectorAll(sel);}
 
-/* ── Score engine ────────────────────────────────────────── */
+/* ── Score engine (Phase 13-A-2: Safety Rules) ───────────── */
+
+/* 初心者に推薦禁止の種ID */
+var BEGINNER_BLOCKED = ['spenglers', 'box'];
+
+/* 初心者に上限スコアをかける種ID → cap 60 */
+var BEGINNER_CAPPED  = ['elongated', 'map'];
+
+/* レア度優先でもベテラン以外には出さない種ID */
+var RARE_EXPERT_ONLY = ['spenglers', 'box', 'elongated'];
+
+/* レア度重視 + 非ベテランのとき表示するガイドcaution */
+var RARE_NONEXPERT_CAUTION =
+  '希少種も候補に挙がる可能性はありますが、まずは飼育難度と' +
+  '流通状況を確認することをおすすめします。';
+
 function calcScore(sp){
   var s = 0;
+  var exp = answers.experience || '';
+  var pri = answers.priority   || '';
+
+  /* TASK 2: 初心者安全ルール */
+  if(exp === 'beginner'){
+    /* 推薦対象から除外 → 最低スコア固定 */
+    if(BEGINNER_BLOCKED.indexOf(sp.id) !== -1) return -1;
+    /* スコアキャップ */
+    var cappedIds = BEGINNER_CAPPED;
+  }
+
   var keys = ['experience','size','habitat','priority'];
   keys.forEach(function(k){
     var v = answers[k];
@@ -4501,14 +4527,44 @@ function calcScore(sp){
       s += sp.weights[k][v];
     }
   });
-  return Math.min(Math.round(s / 1.2), 100);
+  var raw = Math.min(Math.round(s / 1.2), 100);
+
+  /* TASK 2: 初心者 + キャップ対象 → max 60 */
+  if(exp === 'beginner' && BEGINNER_CAPPED.indexOf(sp.id) !== -1){
+    raw = Math.min(raw, 60);
+  }
+
+  /* TASK 3: レア度重視 + 非ベテランのとき希少種をキャップ */
+  if(pri === 'rare' && exp !== 'expert'){
+    if(RARE_EXPERT_ONLY.indexOf(sp.id) !== -1){
+      raw = Math.min(raw, 50);
+    }
+  }
+
+  return raw;
 }
 
 function recommend(){
+  var exp = answers.experience || '';
+  var pri = answers.priority   || '';
+
   var scored = SPECIES.map(function(sp){
     return {sp:sp, score:calcScore(sp)};
-  }).sort(function(a,b){return b.score-a.score;});
-  return scored[0];
+  /* -1は除外、同スコアはid辞書順で安定ソート */
+  }).filter(function(x){ return x.score >= 0; })
+    .sort(function(a,b){
+      if(b.score !== a.score) return b.score - a.score;
+      return a.sp.id < b.sp.id ? -1 : 1;
+    });
+
+  var best = scored[0];
+
+  /* TASK 3: レア重視 + 非ベテランならcaution上書き */
+  if(pri === 'rare' && exp !== 'expert'){
+    best.rareCaution = RARE_NONEXPERT_CAUTION;
+  }
+
+  return best;
 }
 
 /* ── Progress dots ─────────────────────────────────────── */
@@ -4613,6 +4669,12 @@ function showResult(){
         li.textContent = r;
         ul.appendChild(li);
       });
+    }
+
+    /* TASK 3/4: caution text — rareCaution優先 */
+    var cautionEl = _qs('#aic-caution-text');
+    if(cautionEl){
+      cautionEl.textContent = best.rareCaution || sp.caution;
     }
 
     // Score bar animation
