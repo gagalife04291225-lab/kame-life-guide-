@@ -2047,6 +2047,197 @@
   }
   .su-explore-link:hover{color:var(--accent-gold,#C9A96B);}
   .su-explore-link:focus-visible{outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;}
+
+  /* ══ Phase 12-A Sprint 3-B: Intelligence Layer ════════════════
+     prefix: il-   感情→理性の橋渡し、静かな信頼構築
+  ════════════════════════════════════════════════════════════════ */
+
+  .il-section{
+    background:var(--bg-secondary,#10241d);
+    padding:72px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  /* top: continue dark from Species Universe */
+  .il-cap-top{
+    position:absolute;top:-1px;left:0;right:0;height:52px;
+    background:var(--bg-primary,#081411);
+    clip-path:ellipse(55% 100% at 50% 0%);
+    pointer-events:none;
+  }
+  /* bottom: fade to parchment / next section */
+  .il-cap-bot{
+    position:absolute;bottom:-1px;left:0;right:0;height:52px;
+    background:var(--parchment,#f4efe2);
+    clip-path:ellipse(55% 100% at 50% 100%);
+    pointer-events:none;
+  }
+  .il-section .wrap{position:relative;z-index:1;}
+
+  /* subtle noise texture overlay (pure CSS) */
+  .il-section::before{
+    content:"";
+    position:absolute;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,169,107,.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(126,215,193,.04) 0%, transparent 55%);
+  }
+
+  /* ── Header ── */
+  .il-header{text-align:center;margin-bottom:48px;}
+  .il-eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.68rem;font-weight:700;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(201,169,107,.68);
+    background:rgba(201,169,107,.07);
+    border:1px solid rgba(201,169,107,.18);
+    border-radius:9999px;padding:5px 18px;
+    margin-bottom:20px;
+  }
+  .il-heading{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:clamp(1.48rem,4.2vw,2.0rem);
+    color:#eef0ec;
+    line-height:1.28;
+    letter-spacing:-.02em;
+    margin-bottom:12px;
+  }
+  .il-heading em{
+    font-style:italic;
+    color:var(--accent-gold,#C9A96B);
+  }
+  .il-sub{
+    font-size:.90rem;
+    color:rgba(200,215,205,.52);
+    line-height:1.90;
+    max-width:460px;
+    margin:0 auto;
+  }
+
+  /* ── 5-card grid ── */
+  .il-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+  }
+
+  /* Glass stat card */
+  .il-card{
+    background:rgba(255,255,255,.038);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:14px;
+    padding:24px 16px 22px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:
+      background .24s cubic-bezier(.22,.68,0,1),
+      border-color .24s,
+      transform .24s cubic-bezier(.22,.68,0,1),
+      box-shadow .24s;
+  }
+  .il-card:hover{
+    background:rgba(255,255,255,.060);
+    border-color:rgba(201,169,107,.22);
+    transform:translateY(-3px);
+    box-shadow:0 12px 32px rgba(0,0,0,.30);
+  }
+
+  /* top gold rule per card */
+  .il-card::before{
+    content:"";
+    position:absolute;top:0;left:20%;right:20%;height:1px;
+    background:linear-gradient(90deg,
+      transparent 0%,
+      rgba(201,169,107,.50) 50%,
+      transparent 100%);
+  }
+
+  /* Number / label value */
+  .il-card-val{
+    font-family:"Playfair Display",serif;
+    font-weight:700;
+    font-size:clamp(1.80rem,3.5vw,2.40rem);
+    line-height:1;
+    color:var(--accent-gold,#C9A96B);
+    margin-bottom:6px;
+    display:block;
+    letter-spacing:-.02em;
+  }
+  /* small superscript (+) */
+  .il-card-val sup{
+    font-size:.55em;
+    vertical-align:super;
+    letter-spacing:0;
+    opacity:.75;
+  }
+  /* non-numeric value (AI, 3-Tier) */
+  .il-card-val--label{
+    font-size:clamp(1.32rem,2.5vw,1.72rem);
+    letter-spacing:.04em;
+  }
+
+  /* Card title */
+  .il-card-title{
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.10em;
+    text-transform:uppercase;
+    color:rgba(200,215,205,.58);
+    display:block;
+    margin-bottom:6px;
+    line-height:1.35;
+  }
+
+  /* Card description */
+  .il-card-desc{
+    font-size:.72rem;
+    color:rgba(200,215,205,.36);
+    line-height:1.65;
+  }
+
+  /* gold glow for AI card */
+  .il-card--ai .il-card-val{
+    color:var(--accent-cyan,#7ED7C1);
+  }
+  .il-card--ai::before{
+    background:linear-gradient(90deg,
+      transparent 0%,
+      rgba(126,215,193,.48) 50%,
+      transparent 100%);
+  }
+  .il-card--ai:hover{
+    border-color:rgba(126,215,193,.22);
+  }
+
+  /* ── Bottom caption ── */
+  .il-caption{
+    text-align:center;
+    margin-top:36px;
+    font-size:.76rem;
+    color:rgba(200,215,205,.30);
+    letter-spacing:.05em;
+    line-height:1.7;
+  }
+
+  /* ── Mobile ── */
+  @media(max-width:800px){
+    .il-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+  }
+  @media(max-width:520px){
+    .il-section{padding:56px 0 64px;}
+    .il-grid{grid-template-columns:repeat(2,1fr);gap:9px;}
+    .il-card{padding:20px 12px 18px;}
+    .il-card-val{font-size:1.70rem;}
+  }
+  @media(max-width:360px){
+    .il-card{padding:18px 10px 16px;border-radius:10px;}
+    .il-card-val{font-size:1.52rem;}
+    .il-card-title{font-size:.68rem;}
+    .il-card-desc{font-size:.66rem;}
+  }
   @media(max-width:680px){
     .su-section{padding:60px 0 68px;}
     .su-grid{grid-template-columns:1fr;gap:12px;}
@@ -3931,6 +4122,67 @@
 
   </div>
   <div class="su-cap-bot" aria-hidden="true"></div>
+</section>
+
+<!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
+<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要">
+  <div class="il-cap-top" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <!-- Header -->
+    <header class="il-header">
+      <span class="il-eyebrow reveal-soft">Intelligence Layer</span>
+      <h2 class="il-heading reveal-soft reveal-soft--delay-1">
+        静かな世界の裏には、<br><em>膨大なデータ</em>があります。
+      </h2>
+      <p class="il-sub reveal-soft reveal-soft--delay-2">
+        100種以上の生体データ、飼育ページ、機材DB、比較システム。<br>
+        AIは感覚ではなく、構造化された知識から提案しています。
+      </p>
+    </header>
+
+    <!-- 5 stat cards -->
+    <div class="il-grid" role="list">
+
+      <div class="il-card reveal-soft reveal-soft--delay-1" role="listitem">
+        <span class="il-card-val">100<sup>+</sup></span>
+        <span class="il-card-title">Species<br>Profiles</span>
+        <span class="il-card-desc">100種以上の亀・リクガメの生体データを収録</span>
+      </div>
+
+      <div class="il-card reveal-soft reveal-soft--delay-2" role="listitem">
+        <span class="il-card-val">98</span>
+        <span class="il-card-title">Care<br>Pages</span>
+        <span class="il-card-desc">実飼育者が執筆した個別飼育ページ</span>
+      </div>
+
+      <div class="il-card reveal-soft reveal-soft--delay-3" role="listitem">
+        <span class="il-card-val">87</span>
+        <span class="il-card-title">Verified<br>Products</span>
+        <span class="il-card-desc">実使用ベースで選んだ機材・餌データ</span>
+      </div>
+
+      <div class="il-card il-card--ai reveal-soft reveal-soft--delay-4" role="listitem">
+        <span class="il-card-val il-card-val--label">AI</span>
+        <span class="il-card-title">Diagnosis<br>Engine</span>
+        <span class="il-card-desc">6問・5ルートで種と環境を提案</span>
+      </div>
+
+      <div class="il-card reveal-soft reveal-soft--delay-4" role="listitem">
+        <span class="il-card-val il-card-val--label">3-Tier</span>
+        <span class="il-card-title">Starter<br>Kits</span>
+        <span class="il-card-desc">予算別・種別に最適化された機材セット</span>
+      </div>
+
+    </div>
+
+    <!-- caption -->
+    <p class="il-caption reveal-soft">
+      データは実飼育者による監修のもと継続的に更新しています。
+    </p>
+  </div>
+
+  <div class="il-cap-bot" aria-hidden="true"></div>
 </section>
 
 <!-- Compare Section (Phase 11 Step 1E: Decision Engine) -->
