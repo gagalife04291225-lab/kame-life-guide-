@@ -1,0 +1,6 @@
+[OAuth2-token] HTTP=404
+{"_raw":""}
+[UUID-direct] HTTP=400
+{"error_description":"specify valid applicationId","error":"wrong_parameter"}
+[new-2026-endpoint] HTTP=400
+{"error_description":"IchibaItem/Search doesn't have version 20230601","error":"wrong_parameter"}
