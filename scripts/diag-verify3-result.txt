@@ -1,0 +1,6 @@
+[T1-new+referer+query] HTTP=403
+  err: {"errorCode":403,"errorMessage":"REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING"}
+[T2-new+bearer+referer] HTTP=400
+  err: {"errorCode":400,"errorMessage":"accessKey must be present as a query parameter or in the header"}
+[T3-new+all+referer] HTTP=403
+  err: {"errorCode":403,"errorMessage":"REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING"}
