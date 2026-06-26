@@ -1,0 +1,40 @@
+# workers/kame-ai-worker/wrangler.toml
+# Phase 14-A Step 2 — Kame AI Worker deploy config
+#
+# BEFORE DEPLOYING:
+#   wrangler secret put GEMINI_API_KEY
+#   (paste your key at the prompt — never write it here)
+
+name            = "kame-ai-worker"
+main            = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Workers Free plan supports up to 100,000 req/day.
+# Upgrade to Paid ($5/mo) for higher limits.
+
+# ── Environment variables (non-secret) ───────────────────────────────
+# Secrets (GEMINI_API_KEY) are set via `wrangler secret put`, NOT here.
+[vars]
+ENVIRONMENT = "production"
+
+# ── Rate limiting ─────────────────────────────────────────────────────
+# 20 requests per minute per IP.
+# Exceeding returns 429 automatically — no Worker code needed.
+#
+# Note: `[[unsafe.bindings]]` syntax is for local wrangler dev only.
+# In production, configure Rate Limiting Rules in the Cloudflare dashboard:
+#   Workers & Pages → kame-ai-worker → Settings → Rate Limiting
+#   Rule: 20 req/min per IP → action: block (429)
+#
+# Optional KV binding for daily per-IP limit (uncomment when KV is created):
+# [[kv_namespaces]]
+# binding = "KV"
+# id      = "YOUR_KV_NAMESPACE_ID"        # replace after `wrangler kv:namespace create RATE_LIMIT`
+# preview_id = "YOUR_KV_PREVIEW_ID"
+
+# ── Local dev ─────────────────────────────────────────────────────────
+# Run locally: wrangler dev
+# Test: curl -X POST http://localhost:8787/intent \
+#         -H "Content-Type: application/json" \
+#         -H "Origin: https://gagalife04291225-lab.github.io" \
+#         -d '{"message":"初心者で小型の亀が欲しい","source":"test"}'
