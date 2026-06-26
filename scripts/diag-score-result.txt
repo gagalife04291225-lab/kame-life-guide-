@@ -1,0 +1,29 @@
+Product: filter_canister_eheim_2217 priceRange=¥18,000–28,000
+API returned 5 items
+
+[item 0] name=エーハイム クラシックフィルター 2217-NEW (1個／2個セット／フローパイプ＆水質調整剤付き
+  price=24600 affiliateUrl=YES
+  priceScore=8 (price=24600 mid=23000)
+  ratingScore=10 (rating=4.85)
+  reviewScore=8 (reviews=66)
+  shippingScore=10 (freeShip=true postageFlag=0)
+  shopScore=5 (shop=ミナトワークス)
+  SCORE=8.4 → WOULD PROMOTE
+
+[item 1] name=外部フィルター　50Hz　エーハイム　クラシックフィルター　2217−NEW　東日本用　おまけ付き　
+  price=26997 affiliateUrl=YES
+  priceScore=6 (price=26997 mid=23000)
+  ratingScore=10 (rating=4.64)
+  reviewScore=6 (reviews=47)
+  shippingScore=10 (freeShip=true postageFlag=0)
+  shopScore=9 (shop=charm 楽天市場店)
+  SCORE=7.7 → BELOW THRESHOLD (8.0)
+
+[item 2] name=外部フィルター　60Hz　��ーハイム　クラシックフィルター　2217−NEW　西日本用　おまけ付き
+  price=26997 affiliateUrl=YES
+  priceScore=6 (price=26997 mid=23000)
+  ratingScore=10 (rating=4.83)
+  reviewScore=6 (reviews=40)
+  shippingScore=10 (freeShip=true postageFlag=0)
+  shopScore=9 (shop=charm 楽天市場店)
+  SCORE=7.7 → BELOW THRESHOLD (8.0)
