@@ -1,0 +1,6 @@
+[POST-referer-body] HTTP=400
+  err: {"errorCode":400,"errorMessage":"accessKey must be present as a query parameter or in the header"}
+[GET-origin-header] HTTP=200
+  ITEMS: 1 affiliateUrl: YES
+[GET-x-host] HTTP=403
+  err: {"errorCode":403,"errorMessage":"REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING"}
