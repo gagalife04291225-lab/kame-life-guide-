@@ -78,14 +78,18 @@ const PRODUCTS = {
     priceRange: '¥3,000–8,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09TF6B5P4?tag=kamelife09-22',
     asin: 'B09TF6B5P4',
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F59306%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10092671%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: '水槽 60cm 亀',
     image: '/assets/products/placeholder.webp',
     why: '小型水棲ガメの基本飼育容器。水換えしやすい横長タイプ',
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenPrice: 5600,
+    rakutenShop: 'charm 楽天市場店',
+    rakutenConfidence: 8.2,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   tank_90: {
@@ -104,6 +108,8 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
+    rakutenConfidence: 7.7,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   enclosure_kayuso_90: {
@@ -254,6 +260,8 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenConfidence: 4.5,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   // ── Task2 追加 ──
@@ -389,6 +397,8 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
+    rakutenConfidence: 5,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   basking_100w: {
@@ -407,6 +417,8 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
+    rakutenConfidence: 5.7,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   // ── Task2 追加 ──
@@ -490,6 +502,8 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
+    rakutenConfidence: 7.3,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   basking_infrared_red: {
@@ -746,14 +760,18 @@ const PRODUCTS = {
     priceRange: '¥18,000–28,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B002SGX79U?tag=kamelife09-22',
     asin: 'B002SGX79U',
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2217-new%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fminatodenk%2Fi%2F10093001%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
     why: '業界標準の外部フィルター。ろ過能力・静音性・耐久性で長年トップクラス',
     rating: 4.9,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
+    rakutenPrice: 24600,
+    rakutenShop: 'ミナトワークス',
+    rakutenConfidence: 8.4,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   filter_fluval_fx: {
@@ -813,14 +831,18 @@ const PRODUCTS = {
     priceRange: '¥500–1,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0CJM4TL3Q?tag=kamelife09-22',
     asin: 'B0CJM4TL3Q',
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F97957%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10179240%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: '赤玉土 小粒 爬虫類',
     image: '/assets/products/placeholder.webp',
     why: 'リクガメの定番床材。保湿性と排水性のバランスが良く経済的',
     rating: 4.3,
     badge: 'Budget Pick',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
+    rakutenPrice: 350,
+    rakutenShop: 'charm 楽天市場店',
+    rakutenConfidence: 8.5,
+    rakutenLastUpdated: '2026-06-26',
   },
 
   substrate_coco: {
