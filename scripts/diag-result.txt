@@ -1,0 +1,7 @@
+[DIAG] APP_ID length: 36
+[DIAG] AFFILIATE_ID length: 35
+[DIAG] APP_ID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+[DIAG] Request path (masked): /services/api/IchibaItem/Search/20220601?applicationId=APP_ID_MASKED&affiliateId=AFF_ID_MASKED&keyword=%E3%82%A8%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A0+%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF+2217&hits=3&sort=-reviewCount&availability=1
+[DIAG] HTTP status: 400
+[API ERROR] code: wrong_parameter
+[API ERROR] desc: specify valid applicationId
