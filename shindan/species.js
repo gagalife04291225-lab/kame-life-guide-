@@ -5,7 +5,7 @@ const SPECIES = {
 
 // ==================== リクガメルート ====================
 land: [
-  { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', recommendationPriority: 94, difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     coreSpecs: { size: '20cm前後', temp: '25〜32℃', lifespan: '40〜80年', diet: '草食（野草・野菜中心）' },
@@ -16,18 +16,18 @@ land: [
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.beginner||0)+(s.herbivore||0)+(s.eu_cb||0); },
     availability: 'common'
   },
-  { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', difficulty: '中級', size: 'S〜M（10〜23cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', recommendationPriority: 95, difficulty: '中級', size: 'S〜M（10〜23cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。最も人気の高い地中海系リクガメ。',
     specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
     coreSpecs: { size: '23cm', temp: '25〜30℃', lifespan: '50〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: 'hermann-tortoise', hasPage: true,
-    match: function(s){ return (s.compact||0) >= 1 && (s.humid||0) >= 2; },
-    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0); },
+    match: function(s){ return (s.compact||0) >= 1 || (s.humid||0) >= 2; },
+    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+Math.floor((s.charisma||0)*0.5); },
     availability: 'common'
   },
-  { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', recommendationPriority: 88, difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '亜種が多く産地によって環境適応が大きく異なります。産地情報付きCBを選ぶことが重要で、中級以上向きです。',
     specs: { '最大甲長': '25cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜33℃' },
     coreSpecs: { size: '25cm前後', temp: '25〜33℃', lifespan: '50〜100年', diet: '草食（野草・野菜中心）' },
@@ -240,7 +240,7 @@ land: [
 
 // ==================== 水棲ガメルート ====================
 aquatic: [
-  { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
+  { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', recommendationPriority: 100, difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
     reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。お手頃価格で流通も安定。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '14cm', temp: '22〜28℃', lifespan: '20〜50年', diet: '雑食' },
@@ -251,7 +251,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '入門', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
+  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', recommendationPriority: 98, difficulty: '入門', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
     reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '11cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
@@ -262,7 +262,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', difficulty: '入門', size: 'S（10〜12cm）', cites: null, legal: null,
+  { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', recommendationPriority: 96, difficulty: '入門', size: 'S（10〜12cm）', cites: null, legal: null,
     reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '20〜26℃', lifespan: '15〜30年', diet: '雑食' },
@@ -328,7 +328,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)*2+(s.swimmer||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'クサガメ', latin: 'Mauremys reevesii', emoji: '🇯🇵', difficulty: '入門', size: 'M（15〜25cm）', cites: null, legal: null,
+  { name: 'クサガメ', latin: 'Mauremys reevesii', emoji: '🇯🇵', recommendationPriority: 72, difficulty: '入門', size: 'M（15〜25cm）', cites: null, legal: null,
     reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高く初心者にも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
@@ -394,7 +394,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
+  { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', recommendationPriority: 70, difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '18〜27℃', lifespan: '20〜40年', diet: '雑食' },
@@ -460,7 +460,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.advanced||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'rare'
   },
-  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'マタマタ', latin: 'Chelus fimbriata', emoji: '🍂', recommendationPriority: 30, difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '枯れ葉のような外見で待ち伏せして魚を丸ごと吸い込む神秘的な種。水流を嫌い独特の飼育法を習得する必要がある本格派種。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水温': '26〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '45cm', temp: '26〜30℃', lifespan: '15〜25年', diet: '肉食（待ち伏せ捕食）' },
@@ -728,7 +728,7 @@ aquatic: [
 
 // ==================== ヤマガメ・ハコガメルート ====================
 forest: [
-  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', difficulty: '中級', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
+  { name: 'キボシイシガメ', latin: 'Clemmys guttata', emoji: '✨', recommendationPriority: 80, difficulty: '中級', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
     reason: '黒い甲羅に黄色の水玉模様が美しい北米産。45〜60cm程度の半水棲ケージで飼育可能。低温を好む温帯種で夏の保冷管理が必要。',
     specs: { '最大甲長': '12cm', 'タイプ': '半水棲', '温度': '18〜25℃', '難易度': '★★☆' },
     coreSpecs: { size: '12cm', temp: '18〜25℃', lifespan: '20〜50年', diet: '雑食' },
@@ -739,7 +739,7 @@ forest: [
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
+  { name: 'モリイシガメ', latin: 'Glyptemys insculpta', emoji: '🍁', recommendationPriority: 40, difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
     reason: '甲羅に年輪のような刻みと橙色の模様が美しい北米産。低温を好む温帯種で夏の保冷が必要。半水棲で陸場と水場を行き来する。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '16〜24℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '16〜24℃', lifespan: '20〜50年', diet: '雑食' },
@@ -816,7 +816,7 @@ forest: [
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.ya_ma||0); },
     availability: 'common'
   },
-  { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ミツユビハコガメ', latin: 'Terrapene carolina triunguis', emoji: '📦', recommendationPriority: 78, difficulty: '中〜上級', size: 'M（12〜18cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '後肢が3本指の北米産ハコガメ。腹甲を完全に閉じられる独自構造が特徴。雑食性で飼育食への移行がしやすい。著者も飼育中。',
     specs: { '最大甲長': '18cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '18cm', temp: '22〜28℃', lifespan: '30〜50年', diet: '雑食' },
@@ -827,7 +827,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'トウブハコガメ', latin: 'Terrapene carolina carolina', emoji: '🍁', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'トウブハコガメ', latin: 'Terrapene carolina carolina', emoji: '🍁', recommendationPriority: 73, difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '北米産ハコガメの基亜種。国内CBの流通も盛ん。腹甲全体を閉じられる独特の能力をもつ。雑食性で飼育食への移行も比較的容易。',
     specs: { '最大甲長': '20cm', 'タイプ': '陸棲', '温度': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '22〜28℃', lifespan: '30〜80年', diet: '雑食' },
@@ -849,7 +849,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'フロリダハコガメ', latin: 'Terrapene bauri', emoji: '🌴', difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'フロリダハコガメ', latin: 'Terrapene bauri', emoji: '🌴', recommendationPriority: 75, difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'フロリダ産の小型ハコガメ。甲羅に放射状の美しい模様がある。他のハコガメより小さく、50cm程度のケージでも飼育可能。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '15cm', temp: '23〜29℃', lifespan: '20〜50年', diet: '雑食' },
@@ -963,14 +963,14 @@ forest: [
 
 // ==================== マニアック・特殊ルート ====================
 exotic: [
-  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
+  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
     reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
     specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '50cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
     links: [{ label: 'スッポン・ヘビクビガメ 飼育ガイド', href: '../guide-softshell.html' }], asin: null,
     slug: 'spiny-softshell-turtle', hasPage: true,
-    match: function(s){ return (s.softshell||0) >= 3; },
+    match: function(s){ return (s.softshell||0) >= 2 && (s.advanced||0) >= 2; },
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
