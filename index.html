@@ -570,7 +570,7 @@
     border:1px solid rgba(201,169,107,.22);
     border-radius:var(--radius-pill,9999px);
     padding:5px 18px;
-    margin-bottom:24px;
+    margin-bottom:14px;
   }
   .h12-eyebrow-dot{
     width:6px;height:6px;border-radius:50%;
@@ -591,7 +591,7 @@
     letter-spacing:.30em;
     line-height:1;
     color:rgba(201,169,107,.50);
-    margin-bottom:18px;
+    margin-bottom:12px;
     text-transform:uppercase;
   }
   .h12-brand em{font-style:normal;color:rgba(201,169,107,.80);}
@@ -605,7 +605,7 @@
     line-height:1.16;
     color:#f2f5f0;
     max-width:620px;
-    margin:0 auto 22px;
+    margin:0 auto 16px;
     letter-spacing:-.025em;
     text-wrap:balance;
     text-shadow:0 2px 28px rgba(1,4,2,.65);
@@ -623,8 +623,8 @@
     font-size:1.02rem;
     color:rgba(215,228,220,.82);
     max-width:440px;
-    margin:0 auto 12px;
-    line-height:2.0;
+    margin:0 auto 10px;
+    line-height:1.85;
     letter-spacing:.01em;
     text-shadow:0 1px 14px rgba(1,4,2,.52);
   }
@@ -635,7 +635,7 @@
     font-style:italic;
     font-size:.94rem;
     color:rgba(201,169,107,.74);
-    margin-bottom:40px;
+    margin-bottom:28px;
     letter-spacing:.05em;
     display:block;
     text-shadow:0 1px 18px rgba(1,4,2,.42);
@@ -648,8 +648,8 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:14px;
-    margin-bottom:44px;
+    gap:10px;
+    margin-bottom:28px;
   }
 
   /* Primary: inherit .cta-primary — add overrides for hero context */
@@ -780,22 +780,31 @@
 
   /* ── Mobile ── */
   @media(max-width:680px){
-    header.hero .wrap{ padding:80px 20px 72px; }   /* mobile: reduced to show CTA in viewport */
+    header.hero .wrap{ padding:72px 20px 60px; }
     header.hero{ background-position:62% 40%; }
-    .h12-main{ font-size:clamp(1.78rem,7.5vw,2.40rem); }
-    .h12-support{ font-size:.95rem; }
-    .hero-cta-primary{ font-size:.96rem; padding:15px 34px; }
+    .h12-eyebrow{ margin-bottom:10px; }
+    .h12-brand{ margin-bottom:8px; }
+    .h12-main{ font-size:clamp(1.78rem,7.5vw,2.20rem); margin-bottom:12px; }
+    .h12-support{ font-size:.93rem; line-height:1.75; margin-bottom:8px; }
+    .h12-emotion{ margin-bottom:20px; font-size:.88rem; }
+    .hero-cta-group{ gap:8px; margin-bottom:20px; }
+    .hero-cta-primary{ font-size:.94rem; padding:14px 32px; }
+    .hero-cta-secondary{ padding:10px 20px; min-height:42px; }
     .hero-scallop{ height:48px; }
   }
   @media(max-width:400px){
-    header.hero .wrap{ padding:70px 16px 64px; }   /* 400px: ensure CTA visible */
+    header.hero .wrap{ padding:60px 16px 52px; }
     header.hero{ background-position:60% 38%; }
-    .h12-eyebrow{ font-size:.65rem; padding:4px 14px; }
-    .h12-brand{ font-size:.74rem; letter-spacing:.22em; }
-    .h12-main{ font-size:1.58rem; line-height:1.20; }
-    .h12-stat{ font-size:.64rem; padding:4px 10px; backdrop-filter:none; }
-    .hero-cta-primary{ padding:13px 26px; min-height:50px; }
-    .hero-cta-secondary{ padding:11px 20px; min-height:44px; }
+    .h12-eyebrow{ font-size:.64rem; padding:4px 12px; margin-bottom:8px; }
+    .h12-brand{ font-size:.72rem; letter-spacing:.20em; margin-bottom:6px; }
+    .h12-main{ font-size:1.52rem; line-height:1.18; margin-bottom:10px; }
+    .h12-support{ font-size:.88rem; line-height:1.70; margin-bottom:8px; }
+    .h12-emotion{ display:none; }
+    .hero-cta-group{ gap:8px; margin-bottom:16px; }
+    .hero-cta-primary{ padding:13px 26px; min-height:50px; font-size:.92rem; }
+    .hero-cta-secondary{ padding:10px 18px; min-height:42px; }
+    .h12-stats{ gap:4px; }
+    .h12-stat{ font-size:.62rem; padding:4px 9px; backdrop-filter:none; }
   }
 
   /* ── Legacy classes ── */
@@ -3756,9 +3765,14 @@
     .pc-section,.su-section,.il-section,
     section.hp-compare,section.cost-sim{ padding:34px 0 36px; }
     .journey-preview{ padding:28px 0 32px; }
-    /* Trust badges: wrap on 360 */
-    .h12-stats{ gap:5px; }
-    .h12-stat{ font-size:.62rem; padding:4px 9px; }
+    /* Hero 360px: hide non-essential, maximize readability */
+    header.hero .wrap{ padding:52px 14px 44px; }
+    .h12-eyebrow{ display:none; }
+    .h12-brand{ font-size:.68rem; margin-bottom:4px; }
+    .h12-main{ font-size:1.38rem; margin-bottom:8px; }
+    .h12-support{ font-size:.84rem; margin-bottom:6px; }
+    .h12-stats{ display:none; }
+    .hero-cta-group{ margin-bottom:12px; }
   }</style>
 <body>
 
