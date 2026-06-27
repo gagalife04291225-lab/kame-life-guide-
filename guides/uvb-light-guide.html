@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>亀・リクガメのUVBライト選び方ガイド｜T5・コンパクト比較とおすすめ3選｜カメライフガイド</title>
+<meta name="description" content="亀・リクガメに必要なUVBライトの選び方を解説。T5直管とコンパクトの違い、UVB欠乏症のサイン、種別おすすめ3選（Essential / Comfort / Advanced）を初心者向けにまとめました。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guides/uvb-light-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;
+  --accent:#d4a96a;--accent-gold:#C9A96B;
+  --bg-primary:#081411;--bg-secondary:#10241d;
+  --ok:#2e7d52;--warn:#b07c00;--info:#1a5276;
+  --radius-lg:16px;--radius-pill:9999px;
+  --dur:.24s;--ease:cubic-bezier(.22,.68,0,1);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+img{max-width:100%;height:auto;}
+
+/* ── Mini Nav ── */
+.mini-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(5,14,7,.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,169,107,.14);padding:0 16px;height:44px;display:flex;align-items:center;}
+.mini-nav-inner{display:flex;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;max-width:900px;margin:0 auto;}
+.mini-nav-inner::-webkit-scrollbar{display:none;}
+.mini-nav-logo{font-family:"Playfair Display",serif;font-weight:700;font-size:.78rem;letter-spacing:.16em;color:rgba(201,169,107,.72);text-decoration:none;white-space:nowrap;padding-right:14px;border-right:1px solid rgba(255,255,255,.12);margin-right:10px;flex-shrink:0;}
+.mini-nav-logo:hover{color:var(--accent-gold);}
+.mini-nav-link{font-family:"Noto Serif JP",serif;font-size:.74rem;font-weight:700;color:rgba(200,215,205,.60);text-decoration:none;padding:0 10px;height:44px;line-height:44px;white-space:nowrap;flex-shrink:0;transition:color .18s;letter-spacing:.03em;}
+.mini-nav-link:hover,.mini-nav-link[aria-current="page"]{color:rgba(201,169,107,.88);}
+.mini-nav-cta{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;background:rgba(201,169,107,.12);border:1px solid rgba(201,169,107,.28);border-radius:var(--radius-pill);color:var(--accent-gold);font-size:.70rem;font-weight:700;text-decoration:none;padding:5px 12px;letter-spacing:.04em;transition:background .18s;white-space:nowrap;}
+.mini-nav-cta:hover{background:rgba(201,169,107,.22);}
+@media(max-width:680px){.mini-nav-logo{display:none;}}
+
+/* ── Hero ── */
+header.hero{background:linear-gradient(158deg,#0c1a08 0%,#1a2a0c 45%,#0a1206 100%);color:var(--parchment);padding:72px 0 56px;text-align:center;position:relative;overflow:hidden;}
+header.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 70% 15%,rgba(201,169,107,.12) 0%,transparent 55%),radial-gradient(ellipse 80% 40% at 30% 90%,rgba(30,80,40,.40) 0%,transparent 55%);pointer-events:none;}
+header.hero .wrap{position:relative;z-index:1;}
+.hero-eyebrow{font-size:.70rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,107,.75);font-weight:700;margin-bottom:14px;display:block;}
+header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.52rem,5vw,2.10rem);line-height:1.28;margin-bottom:14px;}
+.hero-sub{font-size:.94rem;color:rgba(217,224,214,.75);max-width:540px;margin:0 auto 24px;line-height:1.85;}
+.hero-badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(201,169,107,.18);border-radius:var(--radius-pill);color:rgba(215,228,220,.78);font-size:.68rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;white-space:nowrap;}
+.hero-cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.90rem;text-decoration:none;padding:13px 30px;border-radius:var(--radius-pill);min-height:48px;letter-spacing:.04em;box-shadow:0 4px 18px rgba(201,169,107,.28);transition:background var(--dur),transform .16s;}
+.btn-primary:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;color:rgba(201,169,107,.70);font-family:"Noto Serif JP",serif;font-size:.86rem;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:var(--radius-pill);border:1px solid rgba(201,169,107,.26);min-height:48px;transition:color var(--dur),border-color var(--dur),background var(--dur);}
+.btn-secondary:hover{color:var(--accent-gold);border-color:rgba(201,169,107,.50);background:rgba(201,169,107,.06);}
+
+/* ── Sections ── */
+.section{padding:56px 0 60px;}
+.section--dark{background:var(--bg-secondary);color:#eef0ec;}
+.section--alt{background:#f0ebe0;}
+.section-eyebrow{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-gold);font-weight:700;display:block;margin-bottom:10px;}
+.section h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.30rem,3.5vw,1.70rem);line-height:1.28;margin-bottom:18px;}
+.section--dark h2{color:#eef0ec;}
+.section p{font-size:.94rem;line-height:1.90;margin-bottom:14px;color:rgba(13,31,26,.82);}
+.section--dark p{color:rgba(210,225,215,.72);}
+.section p:last-child{margin-bottom:0;}
+
+/* ── Info boxes ── */
+.info-box{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.88rem;line-height:1.80;}
+.info-box--ok{background:rgba(46,125,82,.09);border-left:3px solid var(--ok);color:#1a4a2e;}
+.info-box--warn{background:rgba(176,124,0,.09);border-left:3px solid var(--warn);color:#5a3e00;}
+.info-box--info{background:rgba(26,82,118,.09);border-left:3px solid var(--info);color:#0d2d42;}
+.info-box strong{font-weight:700;display:block;margin-bottom:4px;}
+
+/* ── Symptoms list ── */
+.symptom-list{list-style:none;margin:20px 0;}
+.symptom-list li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px dashed #d8d0be;font-size:.90rem;line-height:1.75;}
+.symptom-list li:last-child{border-bottom:none;}
+.symptom-icon{font-size:1.10rem;flex-shrink:0;margin-top:2px;}
+.symptom-label{font-weight:700;color:var(--forest-deep);margin-right:6px;}
+
+/* ── Comparison table ── */
+.cmp-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:24px 0;}
+.cmp-table th{background:var(--forest);color:#f4efe2;font-weight:700;padding:10px 14px;text-align:left;font-size:.78rem;letter-spacing:.06em;}
+.cmp-table td{padding:10px 14px;border-bottom:1px solid #ddd5bf;vertical-align:top;line-height:1.70;}
+.cmp-table tr:nth-child(even) td{background:rgba(255,255,255,.55);}
+.cmp-badge{display:inline-block;font-size:.60rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase;border-radius:var(--radius-pill);padding:2px 8px;}
+.cmp-badge--rec{background:rgba(46,125,82,.12);color:#1a5c38;border:1px solid rgba(46,125,82,.24);}
+.cmp-badge--ok{background:rgba(201,169,107,.12);color:#6a4a10;border:1px solid rgba(201,169,107,.24);}
+@media(max-width:520px){
+  .cmp-table{font-size:.80rem;}
+  .cmp-table th,.cmp-table td{padding:8px 10px;}
+}
+
+/* ── Product cards ── */
+.prod-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px;}
+.prod-card{background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow var(--dur),border-color var(--dur);}
+.prod-card:hover{box-shadow:0 8px 24px rgba(8,20,17,.09);border-color:rgba(201,169,107,.38);}
+.prod-tier{display:inline-flex;align-items:center;gap:5px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:3px 10px;width:fit-content;}
+.prod-tier--essential{background:rgba(46,125,82,.10);color:#1a5c38;border:1px solid rgba(46,125,82,.22);}
+.prod-tier--comfort{background:rgba(201,169,107,.10);color:#6a4a10;border:1px solid rgba(201,169,107,.24);}
+.prod-tier--advanced{background:rgba(126,215,193,.12);color:#1a4a42;border:1px solid rgba(126,215,193,.26);}
+.prod-name{font-family:"Playfair Display",serif;font-weight:700;font-size:1.06rem;color:var(--forest-deep);line-height:1.30;}
+.prod-spec{font-size:.80rem;color:#5a6e60;line-height:1.70;flex:1;}
+.prod-spec strong{color:var(--forest-deep);font-weight:700;}
+.prod-reason{font-size:.80rem;color:rgba(47,74,60,.65);background:rgba(47,74,60,.05);border-radius:8px;padding:8px 12px;line-height:1.65;}
+.prod-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.86rem;text-decoration:none;padding:11px 20px;border-radius:var(--radius-pill);min-height:44px;letter-spacing:.04em;box-shadow:0 3px 14px rgba(201,169,107,.24);transition:background var(--dur),transform .16s;}
+.prod-cta:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+.prod-cta:focus-visible{outline:2px solid var(--accent-gold);outline-offset:3px;}
+@media(min-width:600px){.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:480px){
+  header.hero{padding:60px 0 44px;}
+  .section{padding:44px 0 48px;}
+  .prod-grid{grid-template-columns:1fr;}
+}
+@media(max-width:360px){
+  header.hero h1{font-size:1.38rem;}
+}
+
+/* ── Bottom CTA ── */
+.bottom-cta{background:var(--bg-primary);padding:60px 0 68px;text-align:center;}
+.bottom-cta h2{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.36rem,4vw,1.80rem);color:#eef0ec;margin-bottom:10px;}
+.bottom-cta p{font-size:.90rem;color:rgba(200,215,205,.58);line-height:1.85;margin-bottom:26px;}
+.bottom-cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+/* ── Footer ── */
+footer{background:var(--bg-primary);padding:18px;text-align:center;border-top:1px solid rgba(201,169,107,.10);}
+footer a{font-size:.74rem;color:rgba(200,215,205,.38);text-decoration:none;letter-spacing:.04em;transition:color .18s;}
+footer a:hover{color:rgba(201,169,107,.60);}
+</style>
+</head>
+<body>
+
+<!-- Mini Nav -->
+<nav class="mini-nav" aria-label="サイトナビゲーション">
+  <div class="mini-nav-inner">
+    <a href="../" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
+    <a href="../shindan/" class="mini-nav-link">診断</a>
+    <a href="../species-list.html" class="mini-nav-link">種一覧</a>
+    <a href="../compare/" class="mini-nav-link">比較</a>
+    <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
+    <a href="../shindan/" class="mini-nav-cta"
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'uvb_guide'})">30秒診断 →</a>
+  </div>
+</nav>
+
+<!-- ①Hero -->
+<header class="hero" role="banner">
+  <div class="wrap">
+    <span class="hero-eyebrow">UVB Light Guide</span>
+    <h1>亀・リクガメの<br>UVBライト選び方ガイド</h1>
+    <p class="hero-sub">カルシウム代謝に不可欠なUVB。T5直管とコンパクトの違い、種別の出力選び、交換時期まで初心者向けに解説します。</p>
+    <div class="hero-badge-row">
+      <span class="hero-badge">🌞 UVB 5.0 / 10.0 比較</span>
+      <span class="hero-badge">🐢 T5 vs コンパクト</span>
+      <span class="hero-badge">💡 交換サイクル解説</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#products" class="btn-primary">おすすめ3選を見る</a>
+      <a href="../shindan/" class="btn-secondary"
+         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'hero'})">
+        種類から選ぶ →
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ②Why UVB matters -->
+<section class="section" aria-labelledby="why-uvb">
+  <div class="wrap">
+    <span class="section-eyebrow">Why UVB?</span>
+    <h2 id="why-uvb">なぜUVBが必要なのか</h2>
+    <p>亀・リクガメは皮膚でUVB（紫外線B波）を浴びることで、体内にビタミンD3を合成します。ビタミンD3はカルシウムの腸管吸収を促進し、甲羅や骨格の形成・維持に欠かせない栄養素です。</p>
+    <p>屋外飼育であれば太陽光でまかなえますが、室内飼育では適切なUVBランプがなければ慢性的なD3不足が起こります。食事からのカルシウム補給だけでは不十分で、<strong>UVBなしの室内飼育は骨代謝疾患（MBD）のリスクを大きく高めます。</strong></p>
+    <div class="info-box info-box--ok">
+      <strong>UVBが特に重要な種</strong>
+      リクガメ全般・半水棲ガメ（クサガメ・ニホンイシガメなど）・箱ガメ類。水棲ガメ（ニオイガメ類）も日光浴行動があるため設置を推奨。
+    </div>
+    <div class="info-box info-box--info">
+      <strong>UVBと可視光（バスキング）は別物</strong>
+      バスキングライトは体温調節に必要ですが、UVBはほぼ含みません。UVBランプは別途用意してください。
+    </div>
+  </div>
+</section>
+
+<!-- ③Symptoms of UVB deficiency -->
+<section class="section section--alt" aria-labelledby="symptoms">
+  <div class="wrap">
+    <span class="section-eyebrow">Warning Signs</span>
+    <h2 id="symptoms">UVB不足のサインを見逃さない</h2>
+    <p>以下の症状はUVB・カルシウム不足が原因の代謝性骨疾患（MBD）で見られます。初期段階ではわかりにくいため、月1回の甲羅・行動チェックを習慣にしましょう。</p>
+    <ul class="symptom-list">
+      <li>
+        <span class="symptom-icon">🐢</span>
+        <div><span class="symptom-label">甲羅の変形・凸凹（ピラミッド化）</span>幼体期のカルシウム・UVB不足で甲板が縦に盛り上がる。成体では修正不可。</div>
+      </li>
+      <li>
+        <span class="symptom-icon">🦴</span>
+        <div><span class="symptom-label">脚・首の骨が曲がる</span>重症MBDで四肢が軟化・変形。動き方の不自然さで気づくことが多い。</div>
+      </li>
+      <li>
+        <span class="symptom-icon">😴</span>
+        <div><span class="symptom-label">活動量の低下・食欲減退</span>エネルギー代謝の低下。体温管理も崩れ、バスキング時間が長くなる。</div>
+      </li>
+      <li>
+        <span class="symptom-icon">👁️</span>
+        <div><span class="symptom-label">目が開かない・目やに</span>ビタミンA不足と複合することが多い。UVBと食事の両面を見直す。</div>
+      </li>
+      <li>
+        <span class="symptom-icon">💧</span>
+        <div><span class="symptom-label">卵詰まり（メス）</span>産卵に必要なカルシウムが不足すると卵を体内に保持できなくなる緊急症状。</div>
+      </li>
+    </ul>
+    <div class="info-box info-box--warn">
+      <strong>症状が出てから対処では遅い場合がある</strong>
+      骨変形は不可逆的なことが多く、早期予防が最善です。新しく亀を迎える前にUVBライトを準備しておきましょう。
+    </div>
+  </div>
+</section>
+
+<!-- ④T5 vs Compact comparison -->
+<section class="section" aria-labelledby="comparison">
+  <div class="wrap">
+    <span class="section-eyebrow">T5 vs Compact</span>
+    <h2 id="comparison">T5直管 vs コンパクト型：どちらを選ぶ？</h2>
+    <p>UVBランプには主に「T5直管」「コンパクト（螺旋型・電球型）」の2種類があります。それぞれに向き・不向きがあるため、飼育スペースと予算で選びましょう。</p>
+    <div style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th>T5直管型</th>
+            <th>コンパクト型</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>UVB照射量</strong></td>
+            <td>高い（広範囲に均一照射）</td>
+            <td>中程度（スポット照射）</td>
+          </tr>
+          <tr>
+            <td><strong>照射距離</strong></td>
+            <td>30〜50cm有効<br><span class="cmp-badge cmp-badge--rec">リクガメ向き</span></td>
+            <td>20〜30cm以内推奨</td>
+          </tr>
+          <tr>
+            <td><strong>初期費用</strong></td>
+            <td>¥5,000〜12,000（器具込み）</td>
+            <td>¥1,500〜4,000</td>
+          </tr>
+          <tr>
+            <td><strong>交換サイクル</strong></td>
+            <td>6〜12ヶ月</td>
+            <td>6ヶ月（劣化が早い）</td>
+          </tr>
+          <tr>
+            <td><strong>向いている飼育環境</strong></td>
+            <td>60cm以上のケージ<br>リクガメ・大型水棲ガメ</td>
+            <td>小型ケージ・補助用途<br>ニオイガメなど小型種</td>
+          </tr>
+          <tr>
+            <td><strong>注意点</strong></td>
+            <td>専用器具が必要</td>
+            <td>照射角が狭くムラが出やすい</td>
+          </tr>
+          <tr>
+            <td><strong>おすすめ度</strong></td>
+            <td><span class="cmp-badge cmp-badge--rec">メイン使用に推奨</span></td>
+            <td><span class="cmp-badge cmp-badge--ok">補助・小型種に</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box info-box--info">
+      <strong>出力（5.0 / 10.0）の選び方</strong>
+      数字はUVBインデックスを示します。水棲・森林系ガメは5.0、乾燥系リクガメ（ヘルマン・ギリシャなど）は10.0が基準です。砂漠系リクガメ（ケヅメ・ヒョウモンなど）は150（10.0相当）を使用しましょう。
+    </div>
+  </div>
+</section>
+
+<!-- ⑤Recommended products -->
+<section class="section section--alt" id="products" aria-labelledby="products-h">
+  <div class="wrap">
+    <span class="section-eyebrow">Recommended</span>
+    <h2 id="products-h">おすすめUVBライト 3選</h2>
+    <p>予算・ケージサイズ・飼育種別に3段階で選べるようにまとめました。Amazon（kamelife09-22）のリンクは最新価格でご確認ください。</p>
+    <div class="prod-grid">
+
+      <!-- Essential -->
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--essential">Essential — まず始めるなら</span>
+        <p class="prod-name">GEX エキゾテラ<br>レプタイルUVB100 26W</p>
+        <p class="prod-spec">
+          <strong>形状：</strong>コンパクト（螺旋型）<br>
+          <strong>出力：</strong>UVB 5.0相当<br>
+          <strong>推奨種：</strong>水棲・半水棲ガメ、小型リクガメ<br>
+          <strong>照射距離：</strong>20〜25cm以内<br>
+          <strong>交換目安：</strong>6ヶ月
+        </p>
+        <p class="prod-reason">国内入手性が高く価格が安定。初めて用意する方や小型ケージ向き。T5への移行前の入門として最適。</p>
+        <a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+レプタイルUVB100&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'gex_uvb100',section:'uvb_guide',tier:'essential'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+      <!-- Comfort -->
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--comfort">Comfort — 長く使えるスタンダード</span>
+        <p class="prod-name">ズーメッド<br>レプティサン 10.0 UVB（直管T8）</p>
+        <p class="prod-spec">
+          <strong>形状：</strong>直管（T8）<br>
+          <strong>出力：</strong>UVB 10.0<br>
+          <strong>推奨種：</strong>乾燥系リクガメ（ヘルマン・ギリシャほか）<br>
+          <strong>照射距離：</strong>25〜35cm<br>
+          <strong>交換目安：</strong>6〜10ヶ月
+        </p>
+        <p class="prod-reason">ズーメッドはUVBランプの世界的スタンダード。10.0出力でリクガメの必要量をカバー。T8は比較的手頃で入手しやすい。</p>
+        <a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+10.0+直管&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'repti_sun_10',section:'uvb_guide',tier:'comfort'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+      <!-- Advanced -->
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--advanced">Advanced — 本格飼育・広いケージに</span>
+        <p class="prod-name">ズーメッド<br>レプティサン T5 HO 10.0</p>
+        <p class="prod-spec">
+          <strong>形状：</strong>T5直管（High Output）<br>
+          <strong>出力：</strong>UVB 10.0（T8より高照射量）<br>
+          <strong>推奨種：</strong>大型リクガメ・複数飼育ケージ<br>
+          <strong>照射距離：</strong>30〜50cmでも有効<br>
+          <strong>交換目安：</strong>10〜12ヶ月
+        </p>
+        <p class="prod-reason">T5 HOはT8の約2〜3倍のUVB照射量。広いケージ全体に均一にUVBを届けられる。専用器具（スターター）が必要だが長期コストは低い。</p>
+        <a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+T5+HO+10.0&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'repti_sun_t5_ho',section:'uvb_guide',tier:'advanced'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+    </div>
+    <div class="info-box info-box--warn" style="margin-top:24px;">
+      <strong>交換を忘れずに</strong>
+      UVBランプは見た目の明るさが変わらなくても、6〜12ヶ月でUVB出力が著しく低下します。点灯開始日をカレンダーに記録しておきましょう。
+    </div>
+  </div>
+</section>
+
+<!-- ⑥Starter Kit CTA -->
+<section class="section" aria-labelledby="starter-h">
+  <div class="wrap" style="text-align:center;">
+    <span class="section-eyebrow">Starter Kit</span>
+    <h2 id="starter-h" style="margin-bottom:12px;">UVBライト以外も揃えたい方へ</h2>
+    <p style="max-width:480px;margin:0 auto 24px;">ケージ・フィルター・ヒーター・床材など、初期設備を種別にまとめた Starter Kit でまとめて確認できます。</p>
+    <a href="../" class="btn-primary"
+       onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'starter_kit',location:'mid'})">
+      Starter Kitを見る →
+    </a>
+  </div>
+</section>
+
+<!-- ⑦Bottom CTA: Diagnosis -->
+<section class="bottom-cta">
+  <div class="wrap">
+    <h2>どの種類を飼えばいい？</h2>
+    <p>UVBの必要量は種によって異なります。<br>30秒診断で、あなたの環境に合う種類を提案します。</p>
+    <div class="bottom-cta-row">
+      <a href="../shindan/" class="btn-primary"
+         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'bottom'})">
+        30秒診断を始める →
+      </a>
+      <a href="../guides/" class="btn-secondary">ガイド一覧に戻る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="../">← カメライフガイド トップへ</a>
+</footer>
+
+</body>
+</html>
