@@ -445,48 +445,112 @@
 
   /* ===== Phase 12-A Sprint 2: Ancient Guide Concierge Hero ===== */
 
-  /* ── Base: full-bleed immersive dark ── */
+  /* ══ Phase 15-A Sprint 1: Cinematic Wetland Hero ══════════════
+     Visual: wetland sunrise · morning mist · still water
+             moss foreground · reeds · volumetric light
+     CSS-only (image slot: assets/hero-wetland.webp — add later)
+  ════════════════════════════════════════════════════════════════ */
   header.hero{
     position:relative;
     overflow:hidden;
-    min-height:100svh;       /* immersive first view */
-    min-height:100vh;        /* fallback */
+    min-height:100svh;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    background:var(--bg-primary,#081411);
-    padding:0;               /* padding via inner wrap */
+    padding:0;
+    /* Cinematic wetland base — 5-layer depth composition */
+    background:
+      /* horizon sunrise: warm amber glow at waterline */
+      radial-gradient(ellipse 160% 36% at 50% 66%,
+        rgba(180,118,38,.24) 0%,
+        rgba(110,72,18,.08) 38%,
+        transparent 62%),
+      /* god rays: volumetric light from upper-left forest */
+      radial-gradient(ellipse 52% 78% at 16% 4%,
+        rgba(201,169,107,.16) 0%,
+        rgba(140,98,38,.06) 32%,
+        transparent 62%),
+      /* water surface: teal reflective shimmer */
+      radial-gradient(ellipse 100% 26% at 50% 100%,
+        rgba(48,108,78,.42) 0%,
+        rgba(28,72,52,.24) 42%,
+        transparent 72%),
+      /* mist band: diffuse silver-green at horizon */
+      radial-gradient(ellipse 130% 32% at 50% 57%,
+        rgba(92,130,112,.10) 0%,
+        transparent 55%),
+      /* deep forest canopy: dark saturated green ceiling */
+      linear-gradient(180deg,
+        #020804 0%,
+        #040e07 12%,
+        #081808 24%,
+        #0c2210 38%,
+        #0a1c0c 52%,
+        #071408 68%,
+        #040c06 82%,
+        #020604 100%);
+    background-size:cover;
+    background-position:center 40%;
   }
 
-  /* Layer 1: slow ambient gradient drift — CSS-only, GPU-accelerated */
+  /* ── Overlay Layer 1: cinematic vignette ── */
   header.hero::before{
     content:"";
     position:absolute;inset:0;
     background:
-      radial-gradient(ellipse 120% 70% at 50% 110%, rgba(22,56,40,.80) 0%, transparent 56%),
-      radial-gradient(ellipse 70% 50% at 15% 85%, rgba(28,64,44,.55) 0%, transparent 52%),
-      radial-gradient(ellipse 60% 40% at 85% 20%, rgba(201,169,107,.08) 0%, transparent 50%),
-      radial-gradient(ellipse 90% 35% at 50% -5%, rgba(4,10,8,.95) 0%, transparent 45%);
+      /* top darkening — forest canopy */
+      linear-gradient(to bottom,
+        rgba(1,4,2,.76) 0%,
+        rgba(2,6,3,.44) 16%,
+        rgba(4,8,4,.08) 36%,
+        transparent 54%),
+      /* bottom depth — water/moss anchor */
+      linear-gradient(to top,
+        rgba(1,4,2,.92) 0%,
+        rgba(2,8,4,.58) 18%,
+        rgba(4,12,6,.18) 38%,
+        transparent 58%),
+      /* cinematic side vignette */
+      radial-gradient(ellipse 88% 100% at 50% 50%,
+        transparent 38%,
+        rgba(1,4,2,.42) 100%);
     pointer-events:none;
     z-index:0;
-    animation:hero-drift 22s ease-in-out infinite alternate;
+    animation:hero-drift 28s ease-in-out infinite alternate;
     will-change:opacity;
   }
   @keyframes hero-drift{
-    0%   { opacity:.82; }
-    100% { opacity:1;   }
+    0%   { opacity:.88; }
+    100% { opacity:1.00; }
   }
 
-  /* Layer 2: mist / water surface shimmer — very subtle */
+  /* ── Overlay Layer 2: mist + god ray + bottom fog ── */
   header.hero::after{
     content:"";
-    position:absolute;
-    bottom:0;left:0;right:0;
-    height:40%;
+    position:absolute;inset:0;
     background:
-      linear-gradient(to top, rgba(8,20,17,.92) 0%, transparent 100%),
-      radial-gradient(ellipse 100% 30% at 50% 100%, rgba(126,215,193,.05) 0%, transparent 65%);
+      /* mist band at horizon: soft silver diffusion */
+      radial-gradient(ellipse 200% 16% at 50% 54%,
+        rgba(210,200,185,.06) 0%,
+        transparent 55%),
+      /* single diagonal god ray */
+      linear-gradient(126deg,
+        transparent 28%,
+        rgba(201,169,107,.03) 44%,
+        rgba(215,178,100,.07) 50%,
+        rgba(201,169,107,.03) 56%,
+        transparent 68%),
+      /* low-lying fog pool on still water */
+      radial-gradient(ellipse 150% 20% at 50% 86%,
+        rgba(165,200,182,.06) 0%,
+        transparent 55%),
+      /* deep bottom: ground anchor */
+      linear-gradient(to top,
+        rgba(1,4,2,.96) 0%,
+        rgba(2,8,4,.56) 12%,
+        transparent 30%);
     pointer-events:none;
     z-index:1;
   }
@@ -496,7 +560,7 @@
     position:relative;
     z-index:2;
     max-width:680px;
-    padding:120px 24px 100px; /* top: clears any sticky nav */
+    padding:128px 28px 112px;
     width:100%;
   }
 
@@ -556,40 +620,44 @@
   .h12-main{
     font-family:"Playfair Display",serif;
     font-weight:700;
-    font-size:clamp(2.00rem,6.5vw,3.40rem);
-    line-height:1.18;
-    color:#eef0ec;
-    max-width:600px;
-    margin:0 auto 20px;
-    letter-spacing:var(--tracking-tight,-.02em);
+    font-size:clamp(2.10rem,6.8vw,3.60rem);
+    line-height:1.16;
+    color:#f2f5f0;
+    max-width:620px;
+    margin:0 auto 22px;
+    letter-spacing:-.025em;
     text-wrap:balance;
+    text-shadow:0 2px 28px rgba(1,4,2,.65);
   }
   .h12-main em,
   .h12-main .h12-accent{
     font-style:italic;
     color:var(--accent-gold,#C9A96B);
+    text-shadow:0 0 36px rgba(201,169,107,.30);
   }
 
   /* ── Sub copy ── */
   .h12-support{
     font-family:"Noto Serif JP",serif;
-    font-size:1.00rem;
-    color:rgba(200,215,205,.65);
-    max-width:420px;
-    margin:0 auto 10px;
+    font-size:1.02rem;
+    color:rgba(215,228,220,.82);
+    max-width:440px;
+    margin:0 auto 12px;
     line-height:2.0;
     letter-spacing:.01em;
+    text-shadow:0 1px 14px rgba(1,4,2,.52);
   }
 
   /* ── Emotional closing line ── */
   .h12-emotion{
     font-family:"Playfair Display",serif;
     font-style:italic;
-    font-size:.90rem;
-    color:rgba(201,169,107,.58);
-    margin-bottom:36px;
-    letter-spacing:.04em;
+    font-size:.94rem;
+    color:rgba(201,169,107,.74);
+    margin-bottom:40px;
+    letter-spacing:.05em;
     display:block;
+    text-shadow:0 1px 18px rgba(1,4,2,.42);
   }
 
   
@@ -680,14 +748,16 @@
   }
   .h12-stat{
     display:inline-flex;align-items:center;gap:6px;
-    background:rgba(255,255,255,.040);
-    border:1px solid rgba(201,169,107,.16);
-    color:rgba(200,215,205,.72);
+    background:rgba(255,255,255,.07);       /* +30% brighter glass */
+    border:1px solid rgba(201,169,107,.24);
+    color:rgba(215,228,220,.85);            /* brighter text */
     font-size:.70rem;font-weight:700;
     letter-spacing:.07em;
-    padding:5px 13px;
+    padding:5px 14px;
     border-radius:var(--radius-pill,9999px);
     white-space:nowrap;
+    backdrop-filter:blur(6px);            /* glass effect on photo bg */
+    -webkit-backdrop-filter:blur(6px);
   }
   .h12-stat-icon{font-size:.76rem;flex-shrink:0;opacity:.80;}
 
@@ -729,18 +799,21 @@
 
   /* ── Mobile ── */
   @media(max-width:680px){
-    header.hero .wrap{ padding:100px 20px 88px; }
-    .h12-main{ font-size:clamp(1.70rem,7.5vw,2.40rem); }
-    .h12-support{ font-size:.94rem; }
+    header.hero .wrap{ padding:106px 20px 92px; }
+    /* focal point: shift to show horizon on narrow screens */
+    header.hero{ background-position:62% 40%; }
+    .h12-main{ font-size:clamp(1.78rem,7.5vw,2.40rem); }
+    .h12-support{ font-size:.95rem; }
     .hero-cta-primary{ font-size:.96rem; padding:15px 34px; }
     .hero-scallop{ height:48px; }
   }
   @media(max-width:400px){
-    header.hero .wrap{ padding:90px 16px 80px; }
+    header.hero .wrap{ padding:94px 16px 84px; }
+    header.hero{ background-position:60% 38%; }
     .h12-eyebrow{ font-size:.65rem; padding:4px 14px; }
     .h12-brand{ font-size:.74rem; letter-spacing:.22em; }
-    .h12-main{ font-size:1.56rem; line-height:1.22; }
-    .h12-stat{ font-size:.65rem; padding:4px 10px; }
+    .h12-main{ font-size:1.58rem; line-height:1.20; }
+    .h12-stat{ font-size:.64rem; padding:4px 10px; backdrop-filter:none; }
     .hero-cta-primary{ padding:13px 26px; min-height:50px; }
     .hero-cta-secondary{ padding:11px 20px; min-height:44px; }
   }
