@@ -23,8 +23,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: 'hermann-tortoise', hasPage: true,
-    match: function(s){ return (s.compact||0) >= 1 || (s.humid||0) >= 2 || (s.dry||0) >= 2; },
-    score: function(s){ return (s.compact||0)+Math.floor((s.humid||0)*0.7)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+Math.floor((s.charisma||0)*0.5)+Math.floor((s.dry||0)*0.5); },
+    match: function(s){ return (s.compact||0) >= 1 || (s.humid||0) >= 2 || (s.dry||0) >= 2 || (s.charisma||0) >= 2 || (s.intermediate||0) >= 1 || (s.beginner||0) >= 2; },
+    score: function(s){ return (s.compact||0)+Math.floor((s.humid||0)*0.7)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+Math.floor((s.charisma||0)*0.5)+Math.floor((s.dry||0)*0.5)+Math.floor((s.medium||0)*0.5); },
     availability: 'common'
   },
   { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', recommendationPriority: 88, difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
@@ -446,7 +446,7 @@ aquatic: [
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'peninsula-cooter', hasPage: true,
     match: function(s){ return (s.large_tank||0) >= 2 && (s.active||0) >= 2; },
-    score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
+    score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0)+Math.floor((s.advanced||0)*0.5); },
     availability: 'common'
   },
   { name: 'ブランディングガメ', latin: 'Emydoidea blandingii', emoji: '😊', difficulty: '上級', size: 'M（17〜27cm）', cites: 'CITES II', legal: null,
@@ -467,8 +467,8 @@ aquatic: [
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'matamata', hasPage: true,
-    match: function(s){ return (s.large_tank||0) >= 2 && (s.ambush||0) >= 2; },
-    score: function(s){ return (s.ambush||0)+(s.advanced||0)+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0); },
+    match: function(s){ return ((s.large_tank||0) >= 2 && (s.ambush||0) >= 2) || ((s.large_tank||0) >= 2 && (s.advanced||0) >= 2); },
+    score: function(s){ return (s.ambush||0)+(s.advanced||0)*1.5+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0)+Math.floor((s.budget_high||0)*0.5); },
     availability: 'common'
   },
   { name: 'サラドロガメ', latin: 'Kinosternon integrum', emoji: '🟤', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
@@ -544,8 +544,8 @@ aquatic: [
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'black-knobbed-map-turtle', hasPage: true,
-    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1; },
-    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
+    match: function(s){ return ((s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.advanced||0) >= 1) || ((s.large_tank||0) >= 2 && (s.advanced||0) >= 2 && (s.maintenance||0) >= 1); },
+    score: function(s){ return (s.medium_tank||0)+(s.large_tank||0)*0.8+(s.maintenance||0)+(s.advanced||0)*1.2+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
   { name: 'ワモンチズガメ', latin: 'Graptemys oculifera', emoji: '🔵', difficulty: '上級', size: 'M（オス9cm/メス18cm）', cites: null, legal: null,
