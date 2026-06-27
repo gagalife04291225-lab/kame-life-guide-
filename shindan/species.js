@@ -23,8 +23,8 @@ land: [
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: 'hermann-tortoise', hasPage: true,
-    match: function(s){ return (s.compact||0) >= 1 || (s.humid||0) >= 2; },
-    score: function(s){ return (s.compact||0)+(s.humid||0)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+Math.floor((s.charisma||0)*0.5); },
+    match: function(s){ return (s.compact||0) >= 1 || (s.humid||0) >= 2 || (s.dry||0) >= 2; },
+    score: function(s){ return (s.compact||0)+Math.floor((s.humid||0)*0.7)+(s.intermediate||0)+(s.herbivore||0)+(s.eu_cb||0)+Math.floor((s.charisma||0)*0.5)+Math.floor((s.dry||0)*0.5); },
     availability: 'common'
   },
   { name: 'ギリシャリクガメ', latin: 'Testudo graeca', emoji: '🏛️', recommendationPriority: 88, difficulty: '中〜上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
