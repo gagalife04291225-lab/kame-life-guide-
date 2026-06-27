@@ -445,11 +445,15 @@
 
   /* ===== Phase 12-A Sprint 2: Ancient Guide Concierge Hero ===== */
 
-  /* ══ Phase 15-A Sprint 1: Cinematic Wetland Hero ══════════════
-     Visual: wetland sunrise · morning mist · still water
-             moss foreground · reeds · volumetric light
-     CSS-only (image slot: assets/hero-wetland.webp — add later)
-  ════════════════════════════════════════════════════════════════ */
+  /* ══ Phase 15-A Sprint 1: Cinematic Wetland Hero (REAL IMAGE) ══════
+     Asset: assets/hero-wetland.webp  1536×1024  223KB
+     Image analysis:
+       光源 RGB(202,171,118) at x=62%, y=7%   — warm gold
+       霧帯 RGB(78,75,54)   at y≈52%          — olive-amber
+       水面 RGB(94,89,68)   at y≈65%          — warm taupe
+       苔前 RGB(12–37,17–33,12–15)            — very dark
+       テキストゾーン輝度 42/255 → overlay thin
+  ═════════════════════════════════════════════════════════════════════ */
   header.hero{
     position:relative;
     overflow:hidden;
@@ -460,100 +464,76 @@
     justify-content:center;
     text-align:center;
     padding:0;
-    /* Cinematic wetland base — 5-layer depth composition */
-    background:
-      /* horizon sunrise: warm amber glow at waterline */
-      radial-gradient(ellipse 160% 36% at 50% 66%,
-        rgba(180,118,38,.24) 0%,
-        rgba(110,72,18,.08) 38%,
-        transparent 62%),
-      /* god rays: volumetric light from upper-left forest */
-      radial-gradient(ellipse 52% 78% at 16% 4%,
-        rgba(201,169,107,.16) 0%,
-        rgba(140,98,38,.06) 32%,
-        transparent 62%),
-      /* water surface: teal reflective shimmer */
-      radial-gradient(ellipse 100% 26% at 50% 100%,
-        rgba(48,108,78,.42) 0%,
-        rgba(28,72,52,.24) 42%,
-        transparent 72%),
-      /* mist band: diffuse silver-green at horizon */
-      radial-gradient(ellipse 130% 32% at 50% 57%,
-        rgba(92,130,112,.10) 0%,
-        transparent 55%),
-      /* deep forest canopy: dark saturated green ceiling */
-      linear-gradient(180deg,
-        #020804 0%,
-        #040e07 12%,
-        #081808 24%,
-        #0c2210 38%,
-        #0a1c0c 52%,
-        #071408 68%,
-        #040c06 82%,
-        #020604 100%);
+    /* Real wetland photo */
+    background-image:url(assets/hero-wetland.webp);
     background-size:cover;
-    background-position:center 40%;
+    background-position:62% 35%;   /* focal: god ray x=62%, horizon y=35% */
+    background-repeat:no-repeat;
+    background-color:#050e07;      /* fallback */
   }
 
-  /* ── Overlay Layer 1: cinematic vignette ── */
+  /* ── Overlay Layer 1: text legibility + cinematic depth ── */
+  /* Text zone avg=42/255 (very dark) → thin overlay is sufficient */
   header.hero::before{
     content:"";
     position:absolute;inset:0;
     background:
-      /* top darkening — forest canopy */
+      /* Left text zone: KAME LIFE / copy legibility */
+      linear-gradient(to right,
+        rgba(3,7,4,.68) 0%,
+        rgba(3,7,4,.46) 22%,
+        rgba(3,7,4,.16) 46%,
+        transparent 66%),
+      /* Top edge: sky-to-content transition */
       linear-gradient(to bottom,
-        rgba(1,4,2,.76) 0%,
-        rgba(2,6,3,.44) 16%,
-        rgba(4,8,4,.08) 36%,
-        transparent 54%),
-      /* bottom depth — water/moss anchor */
+        rgba(3,7,4,.44) 0%,
+        rgba(3,7,4,.12) 14%,
+        transparent 30%),
+      /* Bottom anchor: moss into darkness */
       linear-gradient(to top,
-        rgba(1,4,2,.92) 0%,
-        rgba(2,8,4,.58) 18%,
-        rgba(4,12,6,.18) 38%,
-        transparent 58%),
-      /* cinematic side vignette */
-      radial-gradient(ellipse 88% 100% at 50% 50%,
-        transparent 38%,
-        rgba(1,4,2,.42) 100%);
+        rgba(2,5,3,.96) 0%,
+        rgba(2,5,3,.72) 10%,
+        rgba(2,5,3,.24) 28%,
+        transparent 46%),
+      /* Subtle vignette */
+      radial-gradient(ellipse 96% 100% at 50% 50%,
+        transparent 46%,
+        rgba(2,5,3,.28) 100%);
     pointer-events:none;
     z-index:0;
-    animation:hero-drift 28s ease-in-out infinite alternate;
+    animation:hero-drift 32s ease-in-out infinite alternate;
     will-change:opacity;
   }
   @keyframes hero-drift{
-    0%   { opacity:.88; }
+    0%   { opacity:.90; }
     100% { opacity:1.00; }
   }
 
-  /* ── Overlay Layer 2: mist + god ray + bottom fog ── */
+  /* ── Overlay Layer 2: atmosphere (image-calibrated values) ── */
   header.hero::after{
     content:"";
     position:absolute;inset:0;
     background:
-      /* mist band at horizon: soft silver diffusion */
-      radial-gradient(ellipse 200% 16% at 50% 54%,
-        rgba(210,200,185,.06) 0%,
+      /* God ray glow: x=62%, y=7%, RGB(202,171,118) */
+      radial-gradient(ellipse 35% 58% at 62% 7%,
+        rgba(202,171,118,.14) 0%,
+        rgba(202,171,118,.06) 28%,
         transparent 55%),
-      /* single diagonal god ray */
-      linear-gradient(126deg,
-        transparent 28%,
-        rgba(201,169,107,.03) 44%,
-        rgba(215,178,100,.07) 50%,
-        rgba(201,169,107,.03) 56%,
-        transparent 68%),
-      /* low-lying fog pool on still water */
-      radial-gradient(ellipse 150% 20% at 50% 86%,
-        rgba(165,200,182,.06) 0%,
+      /* Mist band: RGB(78,75,54) at y=52% */
+      radial-gradient(ellipse 200% 14% at 50% 52%,
+        rgba(78,75,54,.12) 0%,
         transparent 55%),
-      /* deep bottom: ground anchor */
+      /* Water shimmer: RGB(94,89,68) at y=65% */
+      radial-gradient(ellipse 70% 18% at 52% 65%,
+        rgba(94,89,68,.09) 0%,
+        transparent 50%),
+      /* Deep bottom anchor */
       linear-gradient(to top,
-        rgba(1,4,2,.96) 0%,
-        rgba(2,8,4,.56) 12%,
-        transparent 30%);
+        rgba(2,5,3,.95) 0%,
+        rgba(2,5,3,.50) 10%,
+        transparent 28%);
     pointer-events:none;
     z-index:1;
-  }
 
   /* Inner wrap */
   header.hero .wrap{
