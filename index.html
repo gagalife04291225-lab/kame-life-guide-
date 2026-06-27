@@ -4039,9 +4039,15 @@
 <!-- ══════════════════════════════════════════════════════
      Phase 13-A: AI Concierge MVP (Rule-based)
      Placement: problem-cards直後 / popular-picks直前
+     ---
+     TEMPORARILY HIDDEN — Phase 14-A Rollback
+     AI Concierge is temporarily hidden pending UX repositioning.
+     Do not delete; will be redesigned as scoped turtle matching
+     or post-diagnosis assistant.
 ════════════════════════════════════════════════════════ -->
 <section class="aic-section" id="ai-concierge"
-  aria-label="AI亀コンシェルジュ">
+  aria-label="AI亀コンシェルジュ"
+  hidden>
   <div class="aic-inner">
 
     <p class="aic-eyebrow">
@@ -5964,7 +5970,7 @@ function showResult(){
   /* ── Init ───────────────────────────────────────────────── */
 function init(){
   var section = _qs('#ai-concierge');
-  if(!section) return;
+  if(!section || section.hidden) return;  /* Phase 14-A: skip when hidden */
 
   // View event
   if('IntersectionObserver' in window){
