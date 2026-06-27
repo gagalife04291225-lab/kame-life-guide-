@@ -1888,6 +1888,28 @@ function showResult(sp, pct) {
     }
   }
 
+  // ── FIX: show('screen-result') を副作用より先に実行 ──
+  // 主要テキスト・バッジ・スペックは上で描画済みなので、ここで結果画面を開く
+  show('screen-result');
+  try { document.getElementById('res-name').focus(); } catch(e) {}
+
+  // GA4: diagnosis_result_view（FIX2: 主イベントとして明示）
+  try {
+    if (typeof ga4Event === 'function') {
+      var _routeIdGa = selectedRoute ? selectedRoute.id : '';
+      var _eqKeyGa   = (sp.equipmentKey) || resolveEquipmentKey(_routeIdGa, sp) || '';
+      ga4Event('diagnosis_result_view', {
+        species:       sp.name,
+        slug:          sp.slug || '',
+        species_slug:  sp.slug || '',
+        equipment_key: _eqKeyGa,
+        difficulty:    sp.difficulty || '',
+        has_page:      !!(sp.hasPage && sp.slug),
+      });
+    }
+  } catch(e) {}
+
+  // ── 副次ブロック（失敗しても結果画面表示は影響なし）──
   // ===== PHASE 5: 著者バッジ・寿命・初心者警告 =====
   try { renderPhase5(sp); } catch(e) { console.warn('[renderPhase5]', e); }
 
@@ -1899,22 +1921,6 @@ function showResult(sp, pct) {
 
   // ===== PHASE 6-B: おすすめ飼育セット =====
   try { renderStarterKit(sp); } catch(e) { console.warn('[renderStarterKit]', e); }
-
-  // GA4: Phase 7-C Step 2-A diagnosis_result_view
-  if (typeof ga4Event === 'function') {
-    var _routeIdGa = selectedRoute ? selectedRoute.id : '';
-    var _eqKeyGa   = (sp.equipmentKey) || resolveEquipmentKey(_routeIdGa, sp) || '';
-    ga4Event('diagnosis_result_view', {
-      species:       sp.name,
-      slug:          sp.slug || '',
-      species_slug:  sp.slug || '',
-      equipment_key: _eqKeyGa,
-      difficulty:    sp.difficulty || '',
-      has_page:      !!(sp.hasPage && sp.slug),
-    });
-  }
-  show('screen-result');
-  document.getElementById('res-name').focus();
 
   // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
   var scoreMeter = document.getElementById('score-meter');
