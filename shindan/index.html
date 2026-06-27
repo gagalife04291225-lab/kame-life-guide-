@@ -662,88 +662,92 @@ var EMOTION_COPY_MAP = {
   'キバラガメ': 'ミシシッピアカミミガメの近縁種で、耳の模様が黄色いのが特徴。新規購入・飼育が可能な種で、活発な泳ぎが見ていて楽しい。',
 };
 // 難易度 / 法規 / サイズに応じた汎用テンプレート
-function buildEmotionCopy(sp, equipKey) {
-  // 個別マップにある場合
-  if (EMOTION_COPY_MAP[sp.name]) return EMOTION_COPY_MAP[sp.name];
+function buildEmotionCopy(sp, equipKey, pctArg) {
+  // ── P0 Fix: pctArg を第3引数で受け取り、未定義でも安全に動作 ──
+  var pctVal = Math.max(75, (typeof pctArg === 'number' && pctArg >= 40) ? pctArg : 88);
+
+  // 個別マップ確認（副作用ブロック実行後にreturn）
+  var individualCopy = EMOTION_COPY_MAP[sp.name] || null;
 
   // ===== Phase 9-B: Match Badge =====
-  (function() {
-    var wrap = document.getElementById('res-match-badge-wrap');
-    if (!wrap) return;
-    var pctVal = Math.max(75, (pct && pct >= 40) ? pct : 88);
-    wrap.innerHTML =
-      '<div class="res-match-badge"><span class="badge-icon">🎯</span>適合度 ' + pctVal + '%</div>';
-  })();
+  try {
+    var _w1 = document.getElementById('res-match-badge-wrap');
+    if (_w1) {
+      _w1.innerHTML =
+        '<div class="res-match-badge"><span class="badge-icon">&#x1F3AF;</span>&#x9069;&#x5408;&#x5EA6; ' + pctVal + '%</div>';
+    }
+  } catch(e) {}
 
   // ===== Phase 9-B: Why Matched Block =====
-  (function() {
-    var wrap = document.getElementById('res-why-block-wrap');
-    if (!wrap) return;
-    var diff = sp.difficulty || '';
-    var reasons = [];
-    if (diff.indexOf('入門') >= 0 || diff.indexOf('初心') >= 0) {
-      reasons.push('初心者でも管理しやすい難易度');
-    } else if (diff.indexOf('上級') >= 0) {
-      reasons.push('飼育経験者向けの挑戦的な種');
-    } else {
-      reasons.push('飼育スペースに合う');
+  try {
+    var _w2 = document.getElementById('res-why-block-wrap');
+    if (_w2) {
+      var _diff = sp.difficulty || '';
+      var _reasons = [];
+      if (_diff.indexOf('\u5165\u9580') >= 0 || _diff.indexOf('\u521D\u5FC3') >= 0) {
+        _reasons.push('\u521D\u5FC3\u8005\u3067\u3082\u7BA1\u7406\u3057\u3084\u3059\u3044\u96E3\u6613\u5EA6');
+      } else if (_diff.indexOf('\u4E0A\u7D1A') >= 0) {
+        _reasons.push('\u98FC\u80B2\u7D4C\u9A13\u8005\u5411\u3051\u306E\u6311\u6226\u7684\u306A\u7A2E');
+      } else {
+        _reasons.push('\u98FC\u80B2\u30B9\u30DA\u30FC\u30B9\u306B\u5408\u3046');
+      }
+      _reasons.push('\u4E88\u7B97\u6761\u4EF6\u306B\u5408\u3044\u3084\u3059\u3044');
+      var _sz = (sp.size || '').toLowerCase();
+      if (_sz.indexOf('s') >= 0 || _sz.indexOf('\u5C0F') >= 0 || _sz.indexOf('10') >= 0 || _sz.indexOf('14') >= 0) {
+        _reasons.push('\u5C0F\u578B\u3067\u7701\u30B9\u30DA\u30FC\u30B9\u306B\u98FC\u80B2\u3067\u304D\u308B');
+      } else {
+        _reasons.push('\u751F\u614B\u304B\u3089\u9006\u7B97\u3057\u305F\u98FC\u80B2\u60C5\u5831\u304C\u63C3\u3063\u3066\u3044\u308B');
+      }
+      var _items = _reasons.slice(0,3).map(function(r){ return '<li>' + r + '</li>'; }).join('');
+      _w2.innerHTML =
+        '<div class="res-why-block">' +
+          '<div class="res-why-title">\u3042\u306A\u305F\u306B\u5411\u3044\u3066\u3044\u308B\u7406\u7531</div>' +
+          '<ul class="res-why-list">' + _items + '</ul>' +
+        '</div>';
     }
-    reasons.push('予算条件に合いやすい');
-    var size = (sp.size || '').toLowerCase();
-    if (size.indexOf('s') >= 0 || size.indexOf('小') >= 0 || size.indexOf('10') >= 0 || size.indexOf('14') >= 0) {
-      reasons.push('小型で省スペースに飼育できる');
-    } else {
-      reasons.push('生態から逆算した飼育情報が揃っている');
-    }
-    var items = reasons.slice(0,3).map(function(r){ return '<li>' + r + '</li>'; }).join('');
-    wrap.innerHTML =
-      '<div class="res-why-block">' +
-        '<div class="res-why-title">あなたに向いている理由</div>' +
-        '<ul class="res-why-list">' + items + '</ul>' +
-      '</div>';
-  })();
+  } catch(e) {}
 
   // ===== Phase 9-B: Loss Aversion Block =====
-  (function() {
-    var wrap = document.getElementById('res-loss-block-wrap');
-    if (!wrap) return;
-    wrap.innerHTML =
-      '<div class="res-loss-block">' +
-        '<div class="res-loss-icon">⚠️ 知っておきたいこと</div>' +
-        '<p class="res-loss-text">飼育用品を知らずに揃えると、<strong>初月だけで1〜3万円余計にかかること</strong>があります。<br>' +
-        'Starter Kitを見ると、必要なものを先に把握できます。</p>' +
-      '</div>';
-  })();
+  try {
+    var _w3 = document.getElementById('res-loss-block-wrap');
+    if (_w3) {
+      _w3.innerHTML =
+        '<div class="res-loss-block">' +
+          '<div class="res-loss-icon">&#x26A0;&#xFE0F; \u77E5\u3063\u3066\u304A\u304D\u305F\u3044\u3053\u3068</div>' +
+          '<p class="res-loss-text">\u98FC\u80B2\u7528\u54C1\u3092\u77E5\u3089\u305A\u306B\u63C3\u3048\u308B\u3068\u3001<strong>\u521D\u6708\u3060\u3051\u3067\uFF11\uFF5E\uFF13\u4E07\u5186\u4F59\u8A08\u306B\u304B\u304B\u308B\u3053\u3068</strong>\u304C\u3042\u308A\u307E\u3059\u3002<br>' +
+          'Starter Kit\u3092\u898B\u308B\u3068\u3001\u5FC5\u8981\u306A\u3082\u306E\u3092\u5148\u306B\u628A\u63E1\u3067\u304D\u307E\u3059\u3002</p>' +
+        '</div>';
+    }
+  } catch(e) {}
 
   // ===== Phase 9-B: Conversion Block View =====
-  (function() {
+  try {
     if (typeof ga4Event === 'function') {
-      ga4Event('diagnosis_conv_block_view', { species: sp.slug || sp.name || null });
+      ga4Event('diagnosis_conv_block_view', { species: (sp.slug || sp.name) || null });
     }
-  })();
+  } catch(e) {}
 
-  // 法規制種
+  if (individualCopy) return individualCopy;
+
+  // \u6CD5\u898F\u5236\u7A2E
   if (sp.legal === 'conditional_invasive') {
-    return '既飼育個体の継続飼育が認められている種です。適切な飼育環境を整え、法令を遵守した上でともに過ごしてください。';
+    return '\u65E2\u98FC\u80B2\u500B\u4F53\u306E\u7D9A\u3051\u98FC\u80B2\u304C\u8A8D\u3081\u3089\u308C\u3066\u3044\u308B\u7A2E\u3067\u3059\u3002\u9069\u5207\u306A\u98FC\u80B2\u74B0\u5883\u3092\u6574\u3048\u3001\u6CD5\u4EE4\u3092\u9075\u5B88\u3057\u305F\u4E0A\u3067\u3068\u3082\u306B\u904E\u3054\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
   }
-  // 上級種 / XL大型種
-  var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
-  var isXL = (sp.size || '').indexOf('XL') >= 0;
-  if (isAdvanced || isXL) {
-    return '経験豊富な飼育者が憧れる上級者向けの種です。設備・スペース・長期計画をしっかり準備してから迎えてください。飼育ガイドで詳細を確認することをおすすめします。';
+  var _isAdv = (sp.difficulty || '').indexOf('\u4E0A\u7D1A') >= 0;
+  var _isXL  = (sp.size || '').indexOf('XL') >= 0;
+  if (_isAdv || _isXL) {
+    return '\u7D4C\u9A13\u8C4A\u5BCC\u306A\u98FC\u80B2\u8005\u304C\u6193\u308C\u308B\u4E0A\u7D1A\u8005\u5411\u3051\u306E\u7A2E\u3067\u3059\u3002\u8A2D\u5099\u30FB\u30B9\u30DA\u30FC\u30B9\u30FB\u9577\u671F\u8A08\u753B\u3092\u3057\u3063\u304B\u308A\u6E96\u5099\u3057\u3066\u304B\u3089\u8FCE\u3048\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u8A73\u7D30\u3092\u78BA\u8A8D\u3059\u308B\u3053\u3068\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002';
   }
-  // CITES II
   if (sp.cites) {
-    return '流通量が限られた希少な種です。CB個体（国内繁殖個体）を入手し、適切な書類を確認してから飼育を開始してください。飼育ガイドでさらに詳しく解説しています。';
+    return '\u6D41\u901A\u91CF\u304C\u9650\u3089\u308C\u305F\u5E0C\u5C11\u306A\u7A2E\u3067\u3059\u3002CB\u500B\u4F53\uFF08\u56FD\u5185\u7E41\u6B96\u500B\u4F53\uFF09\u3092\u5165\u624B\u3057\u3001\u9069\u5207\u306A\u66F8\u985E\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u98FC\u80B2\u3092\u958B\u59CB\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u3055\u3089\u306B\u8A73\u3057\u304F\u89E3\u8AAC\u3057\u3066\u3044\u307E\u3059\u3002';
   }
-  // 入門種汎用
-  var isBeginnerFriendly = (sp.difficulty || '').indexOf('入門') >= 0;
-  if (isBeginnerFriendly) {
-    return 'あなたのライフスタイルに合いやすい種です。必要な機材の種類が比較的少なく、飼育イメージをつかみやすいのが特長。詳細ページで日々の管理手順を確認してみましょう。';
+  var _isBeg = (sp.difficulty || '').indexOf('\u5165\u9580') >= 0;
+  if (_isBeg) {
+    return '\u3042\u306A\u305F\u306E\u30E9\u30A4\u30D5\u30B9\u30BF\u30A4\u30EB\u306B\u5408\u3044\u3084\u3059\u3044\u7A2E\u3067\u3059\u3002\u5FC5\u8981\u306A\u6A5F\u6750\u306E\u7A2E\u985E\u304C\u6BD4\u8F03\u7684\u5C11\u306A\u304F\u3001\u98FC\u80B2\u30A4\u30E1\u30FC\u30B8\u3092\u3064\u304B\u307F\u3084\u3059\u3044\u306E\u304C\u7279\u9577\u3002\u8A73\u7D30\u30DA\u30FC\u30B8\u3067\u65E5\u3005\u306E\u7BA1\u7406\u624B\u9806\u3092\u78BA\u8A8D\u3057\u3066\u307F\u307E\u3057\u3087\u3046\u3002';
   }
-  // 中級汎用
-  return 'やや専門的な知識が必要ですが、慣れれば長く楽しめる種です。飼育ガイドでポイントを確認してから準備を進めることをおすすめします。';
+  return '\u3084\u3084\u5C02\u9580\u7684\u306A\u77E5\u8B58\u304C\u5FC5\u8981\u3067\u3059\u304C\u3001\u6163\u308C\u308C\u3070\u9577\u304F\u697D\u3057\u3081\u308B\u7A2E\u3067\u3059\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u30DD\u30A4\u30F3\u30C8\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u6E96\u5099\u3092\u9032\u3081\u308B\u3053\u3068\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002';
 }
+
 
 // ===== PHASE 5: 寿命データ（平均寿命目安） =====
 var LIFESPAN_DATA = {
@@ -1733,7 +1737,7 @@ function showResult(sp, pct) {
     if (!copyEl) return;
     var routeId = selectedRoute ? selectedRoute.id : 'all';
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
-    var copy = buildEmotionCopy(sp, equipKey);
+    var copy = buildEmotionCopy(sp, equipKey, pct);
     if (copy) {
       copyEl.textContent = copy;
       copyEl.style.display = '';
@@ -1888,13 +1892,13 @@ function showResult(sp, pct) {
   renderPhase5(sp);
 
   // ===== PHASE 4: 機材推奨セクション =====
-  renderEquipment(sp);
+  try { renderEquipment(sp); } catch(e) { console.warn('[renderEquipment]', e); }
 
   // ===== PHASE 4: note.com誘導 =====
-  renderNoteCta(sp);
+  try { renderNoteCta(sp); } catch(e) {}
 
   // ===== PHASE 6-B: おすすめ飼育セット =====
-  renderStarterKit(sp);
+  try { renderStarterKit(sp); } catch(e) { console.warn('[renderStarterKit]', e); }
 
   // GA4: Phase 7-C Step 2-A diagnosis_result_view
   if (typeof ga4Event === 'function') {
