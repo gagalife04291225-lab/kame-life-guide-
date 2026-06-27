@@ -3776,6 +3776,18 @@
   }</style>
 <body>
 
+<!-- Phase 13-A P0: Mini Navigation -->
+<nav class="mini-nav" aria-label="サイトナビゲーション">
+  <div class="mini-nav-inner">
+    <a href="./" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
+    <a href="./shindan/" class="mini-nav-link">診断</a>
+    <a href="./species-list.html" class="mini-nav-link">種一覧</a>
+    <a href="./compare/hermann-vs-greek.html" class="mini-nav-link">比較</a>
+    <a href="./guides/turtle-trouble-guide.html" class="mini-nav-link">ガイド</a>
+    <a href="./shindan/" class="mini-nav-cta"
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'mini_nav'})">30秒診断 →</a>
+  </div>
+</nav>
 <header class="hero" role="banner">
   <!-- Scallop: CLS-free transition to next section -->
   <div class="hero-scallop" aria-hidden="true"></div>
@@ -3788,8 +3800,11 @@
       亀診断コンシェルジュ
     </p>
 
-    <!-- H1: Brand name -->
-    <h1 class="h12-brand">KAME&nbsp;<em>LIFE</em></h1>
+    <!-- H1: SEO-enhanced (Phase 13-A P0) -->
+    <h1 class="h12-brand">
+      <span class="h12-brand-visual" aria-hidden="true">KAME&nbsp;<em>LIFE</em></span>
+      <span class="h12-brand-seo">亀・リクガメ 飼育診断 | カメライフガイド</span>
+    </h1>
 
     <!-- Main headline: Sprint 2 copy -->
     <p class="h12-main">
@@ -4091,51 +4106,7 @@
     </div>
 
   </div>
-</section>
-
-<!-- Top Gear Picks (Phase 12 Patch) -->
-<section class="top-gear-picks" id="top-gear-picks">
-  <div class="wrap">
-    <span class="tg-eyebrow">Environment Essentials</span>
-    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
-    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
-    <div class="tg-grid">
-
-      <a class="tg-card"
-         href="uvb-light-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">☀️</span>
-        <span class="tg-cat">UVBライト</span>
-        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
-        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
-        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-      <a class="tg-card"
-         href="water-filter-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">💧</span>
-        <span class="tg-cat">フィルター</span>
-        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
-        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
-        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-      <a class="tg-card"
-         href="cage-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">🌡️</span>
-        <span class="tg-cat">保温器具</span>
-        <span class="tg-title">ヒーター・保温球<br>おすすめ10選</span>
-        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
-        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
+</section><!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
 <section class="pc-section" id="problem-grid" aria-label="よくある4つの不安" hidden>
   <div class="wrap">
     <span class="pc-eyebrow-s2">よくある不安に答えます</span>
@@ -4469,6 +4440,50 @@
 
   </div>
   <div class="su-cap-bot" aria-hidden="true"></div>
+</section>
+
+
+
+<!-- Top Gear Picks (Phase 12 Patch) -->
+<section class="top-gear-picks" id="top-gear-picks">
+  <div class="wrap">
+    <span class="tg-eyebrow">Environment Essentials</span>
+    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
+    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
+    <div class="tg-grid">
+
+      <a class="tg-card"
+         href="uvb-light-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">☀️</span>
+        <span class="tg-cat">UVBライト</span>
+        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
+        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
+        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+      <a class="tg-card"
+         href="water-filter-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">💧</span>
+        <span class="tg-cat">フィルター</span>
+        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
+        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
+        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+      <a class="tg-card"
+         href="cage-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">🌡️</span>
+        <span class="tg-cat">保温器具</span>
+        <span class="tg-title">ヒーター・保温球<br>おすすめ10選</span>
+        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
+        <span class="tg-cta">詳しく見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
 </section>
 
 <!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
