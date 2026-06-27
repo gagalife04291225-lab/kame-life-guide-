@@ -154,7 +154,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <a href="../compare/" class="mini-nav-link">比較</a>
     <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
     <a href="../shindan/" class="mini-nav-cta"
-       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'uvb_guide'})">30秒診断 →</a>
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{source_page:'uvb_light'})">30秒診断 →</a>
   </div>
 </nav>
 
@@ -172,7 +172,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <div class="hero-cta-row">
       <a href="#products" class="btn-primary">おすすめ3選を見る</a>
       <a href="../shindan/" class="btn-secondary"
-         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'hero'})">
+         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'hero',source_page:'uvb_light')">
         種類から選ぶ →
       </a>
     </div>
@@ -315,7 +315,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">国内入手性が高く価格が安定。初めて用意する方や小型ケージ向き。T5への移行前の入門として最適。</p>
         <a href="https://www.amazon.co.jp/s?k=GEX+エキゾテラ+レプタイルUVB100&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'gex_uvb100',section:'uvb_guide',tier:'essential'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'gex_uvb100',source_page:'uvb_light',tier:'essential',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -334,7 +334,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">ズーメッドはUVBランプの世界的スタンダード。10.0出力でリクガメの必要量をカバー。T8は比較的手頃で入手しやすい。</p>
         <a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+10.0+直管&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'repti_sun_10',section:'uvb_guide',tier:'comfort'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'repti_sun_10',source_page:'uvb_light',tier:'comfort',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -353,7 +353,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">T5 HOはT8の約2〜3倍のUVB照射量。広いケージ全体に均一にUVBを届けられる。専用器具（スターター）が必要だが長期コストは低い。</p>
         <a href="https://www.amazon.co.jp/s?k=ズーメッド+レプティサン+T5+HO+10.0&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'repti_sun_t5_ho',section:'uvb_guide',tier:'advanced'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'repti_sun_t5_ho',source_page:'uvb_light',tier:'advanced',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -374,19 +374,19 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 class="related-guides-heading">あわせて確認したい飼育用品ガイド</h2>
     <div class="related-guides-grid">
       <a href="./filter-guide.html" class="related-card"
-         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb',to_guide:'filter'})">
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb_light',to_guide:'filter'})">
         <span class="related-card-icon" aria-hidden="true">💧</span>
         <p class="related-card-title">フィルター</p>
         <span class="related-card-arrow">くわしく →</span>
       </a>
       <a href="./temperature-guide.html" class="related-card"
-         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb',to_guide:'temperature'})">
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb_light',to_guide:'temperature'})">
         <span class="related-card-icon" aria-hidden="true">🌡️</span>
         <p class="related-card-title">温度管理</p>
         <span class="related-card-arrow">くわしく →</span>
       </a>
       <a href="./food-guide.html" class="related-card"
-         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb',to_guide:'food'})">
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'uvb_light',to_guide:'food'})">
         <span class="related-card-icon" aria-hidden="true">🥗</span>
         <p class="related-card-title">餌・フード</p>
         <span class="related-card-arrow">くわしく →</span>
@@ -402,7 +402,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 id="starter-h" style="margin-bottom:12px;">UVBライト以外も揃えたい方へ</h2>
     <p style="max-width:480px;margin:0 auto 24px;">ケージ・フィルター・ヒーター・床材など、初期設備を種別にまとめた Starter Kit でまとめて確認できます。</p>
     <a href="../" class="btn-primary"
-       onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'starter_kit',location:'mid'})">
+       onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'starter_kit',location:'mid',source_page:'uvb_light')">
       Starter Kitを見る →
     </a>
   </div>
@@ -415,7 +415,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <p>UVBの必要量は種によって異なります。<br>30秒診断で、あなたの環境に合う種類を提案します。</p>
     <div class="bottom-cta-row">
       <a href="../shindan/" class="btn-primary"
-         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'bottom'})">
+         onclick="(typeof gtag==='function')&&gtag('event','uvb_guide_cta_click',{cta:'shindan',location:'bottom',source_page:'uvb_light')">
         30秒診断を始める →
       </a>
       <a href="../guides/" class="btn-secondary">ガイド一覧に戻る</a>
