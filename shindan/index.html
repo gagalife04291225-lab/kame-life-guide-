@@ -1454,61 +1454,164 @@ function selectChoice(choice, clickedBtn) {
 // ===== 結果計算 =====
 function calcResult() {
   _diagnosisCompleted = true;
-  // ── P0 Fix: try-catch で包み、エラーでもfallback表示 ──
   try {
     var fill = document.getElementById('progress-fill');
     if (fill) { fill.style.width = '100%'; fill.parentElement.setAttribute('aria-valuenow', 100); }
 
-    // archive / redirect 除外
+    var routeId = (selectedRoute || {}).id || '';
+
+    // ── Step 1: archive / redirect を完全除外 ──
     var candidates = (selectedRoute.species || []).filter(function(sp){
       return sp.availability !== 'archive' && sp.availability !== 'redirect';
     });
+    if (candidates.length === 0) candidates = (selectedRoute.species || []);
 
-    if (candidates.length === 0) {
-      // 全種除外されてしまった場合は全種を対象にする
-      candidates = (selectedRoute.species || []);
+    // ── Step 2: beginner_mode 判定 ──
+    var beginner_mode = (scores.beginner || 0) >= 2;
+
+    // ── Step 3: FIX D — exotic ルートで初心者の場合はルート変更 ──
+    if (routeId === 'exotic' && beginner_mode) {
+      // 初心者にexoticを表示しない: 安全fallback表示
+      var exoFallback = null;
+      if (SPECIES && SPECIES.aquatic) {
+        var exoCandidates = SPECIES.aquatic.filter(function(sp){
+          return sp.availability === 'common' && (sp.difficulty||'').indexOf('入門') >= 0;
+        });
+        if (exoCandidates.length > 0) exoFallback = exoCandidates[0];
+      }
+      if (!exoFallback) {
+        exoFallback = {
+          name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
+          difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
+          reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメは初心者に最も適した定番種です。',
+          hasPage: true, slug: 'musk-turtle', links: [],
+          equipmentKey: '_aquatic_small',
+          coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+          match: function(){ return true; }, score: function(){ return 0; }
+        };
+      }
+      result = exoFallback;
+      showResult(exoFallback, null);
+      saveResultToUrl(routeId, exoFallback.name);
+      return;
     }
 
+    // ── Step 4: match フィルタリング ──
     var matched = candidates.filter(function(sp){
-      try { return sp.match && sp.match(scores); } catch(e){ return false; }
+      try { return sp.match ? sp.match(scores) : true; } catch(e){ return false; }
     });
 
-    // 安全fallback: conditional_invasive・上級単体・XLを除外
+    // ── Step 5: FIX C — rawScore に availability / difficulty / legal penalty ──
+    function finalScore(sp) {
+      var raw = 0;
+      try { raw = sp.score ? sp.score(scores) : 0; } catch(e){}
+
+      // availability 補正
+      var availMult = 1.0;
+      if (sp.availability === 'rare')    availMult = 0.65;
+      if (sp.availability === 'archive') availMult = 0.0;
+
+      // difficulty 補正（beginner_mode 時のみ）
+      var diffMult = 1.0;
+      if (beginner_mode) {
+        var diff = sp.difficulty || '';
+        if (diff === '上級')         diffMult = 0.40;
+        else if (diff === '中〜上級') diffMult = 0.55;
+        else if (diff.indexOf('中級') >= 0 && diff.indexOf('入門') < 0) diffMult = 0.85;
+        // '入門' を含む → 1.00 (変更なし)
+        // '入門〜中級' → 0.92
+        if (diff === '入門〜中級')   diffMult = 0.92;
+      }
+
+      // legal 補正
+      var legalMult = 1.0;
+      if (sp.legal === 'conditional_invasive') legalMult = 0.25;
+
+      return raw * availMult * diffMult * legalMult;
+    }
+
+    // ── Step 6: FIX F — safeFallback 強化 ──
     var safeFallback = candidates.filter(function(sp){
       if (sp.legal === 'conditional_invasive') return false;
-      if (sp.difficulty && sp.difficulty === '上級') return false;
-      if (sp.size && sp.size.indexOf('XL') !== -1) return false;
+      var diff = sp.difficulty || '';
+      if (diff === '上級') return false;
+      if (sp.size && sp.size.indexOf('XL') >= 0) return false;
+      if (beginner_mode && sp.availability === 'rare') return false;
+      if (beginner_mode && diff === '中〜上級') return false;
       return true;
     });
 
-    var pool = matched.length > 0 ? matched
-             : (safeFallback.length > 0 ? safeFallback : candidates);
-
-    // pool が空の場合は初心者向けfallback種を使用
-    if (!pool || pool.length === 0) {
-      pool = (SPECIES.aquatic || []).filter(function(sp){
-        return sp.name && sp.name.indexOf('ニオイガメ') >= 0 && sp.availability !== 'archive';
+    // ── Step 6b: route別 fallback ──
+    var ROUTE_FALLBACK_NAMES = {
+      aquatic: ['ニオイガメ','ヒメニオイガメ','ミシシッピドロガメ'],
+      land:    ['ヘルマンリクガメ','ロシアリクガメ','ギリシャリクガメ'],
+      forest:  ['ミツユビハコガメ','トウブハコガメ','キボシイシガメ'],
+    };
+    function getRouteFallback(rId) {
+      var names = ROUTE_FALLBACK_NAMES[rId] || [];
+      var pool = [];
+      var allSps = (SPECIES && SPECIES[rId]) ? SPECIES[rId] : candidates;
+      names.forEach(function(n){
+        var found = allSps.filter(function(sp){
+          return sp.name === n && sp.availability !== 'archive';
+        });
+        if (found.length) pool.push(found[0]);
       });
-      if (!pool.length) pool = (SPECIES.aquatic || []).slice(0, 3);
+      return pool;
     }
 
-    var best = pool[0];
-    var bestScore = -Infinity;
-    pool.forEach(function(sp){
-      try {
-        var s = sp.score ? sp.score(scores) : 0;
-        if (s > bestScore) { bestScore = s; best = sp; }
-      } catch(e){}
+    var pool;
+    if (matched.length > 0) {
+      pool = matched;
+    } else if (safeFallback.length > 0) {
+      pool = safeFallback;
+    } else {
+      pool = getRouteFallback(routeId);
+      if (!pool.length) pool = candidates;
+    }
+    if (!pool || pool.length === 0) pool = candidates;
+
+    // ── Step 7: FIX G — 同点時ソート安定化 ──
+    var DIFF_ORDER = { '入門': 0, '入門〜中級': 1, '中級': 2, '中〜上級': 3, '上級': 4 };
+    var AVAIL_ORDER = { 'common': 0, 'rare': 1, 'archive': 2 };
+
+    function diffOrder(sp) {
+      var d = sp.difficulty || '';
+      for (var k in DIFF_ORDER) {
+        if (d === k) return DIFF_ORDER[k];
+      }
+      return 99;
+    }
+
+    var scored = pool.map(function(sp){
+      return { sp: sp, fs: finalScore(sp) };
     });
 
+    scored.sort(function(a, b){
+      // 1. finalScore 降順
+      if (b.fs !== a.fs) return b.fs - a.fs;
+      // 2. recommendationPriority 降順
+      var pa = (a.sp.recommendationPriority || 0);
+      var pb = (b.sp.recommendationPriority || 0);
+      if (pb !== pa) return pb - pa;
+      // 3. common > rare
+      var aa = AVAIL_ORDER[a.sp.availability] !== undefined ? AVAIL_ORDER[a.sp.availability] : 1;
+      var ab = AVAIL_ORDER[b.sp.availability] !== undefined ? AVAIL_ORDER[b.sp.availability] : 1;
+      if (aa !== ab) return aa - ab;
+      // 4. difficulty 易しい順
+      if (diffOrder(a.sp) !== diffOrder(b.sp)) return diffOrder(a.sp) - diffOrder(b.sp);
+      // 5. name 固定順
+      return (a.sp.name || '').localeCompare(b.sp.name || '', 'ja');
+    });
+
+    var best = scored.length > 0 ? scored[0].sp : null;
     if (!best) throw new Error('no species resolved');
 
     result = best;
     var pct = calcMatchPercent(best, scores);
 
-    // GA4（安全呼び出し）
     ga4Event('shindan_result', {
-      route_id:     (selectedRoute || {}).id || '',
+      route_id:     routeId,
       species_name: best.name || '',
       match_pct:    pct,
       difficulty:   best.difficulty || '',
@@ -1516,27 +1619,17 @@ function calcResult() {
     });
 
     showResult(best, pct);
-    saveResultToUrl((selectedRoute || {}).id || '', best.name);
+    saveResultToUrl(routeId, best.name);
 
   } catch(err) {
-    // ── P0 Fallback: エラー時も結果画面を表示 ──
     console.warn('[calcResult fallback]', err);
     var fallbackSp = {
-      name: 'ミシシッピニオイガメ',
-      latin: 'Sternotherus odoratus',
-      emoji: '🐢',
-      difficulty: '入門',
-      size: 'S（〜14cm）',
-      cites: null,
-      legal: 'keepable',
+      name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
+      difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
       reason: '初心者に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
-      hasPage: true,
-      slug: 'musk-turtle',
-      links: [],
-      equipmentKey: '_aquatic_small',
+      hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
       coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
-      match: function(){ return true; },
-      score: function(){ return 0; }
+      match: function(){ return true; }, score: function(){ return 0; }
     };
     result = fallbackSp;
     showResult(fallbackSp, null);
