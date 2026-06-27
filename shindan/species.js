@@ -735,7 +735,7 @@ forest: [
     extraSpecs: {},
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
     slug: 'spotted-turtle', hasPage: true,
-    match: function(s){ return (s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1; },
+    match: function(s){ return ((s.s_size||0) >= 2 && (s.semi_aquatic||0) >= 1) || (s.s_size||0) >= 2 || (s.ya_ma||0) >= 1; },
     score: function(s){ return (s.s_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.na_box||0)*2+(s.ya_ma||0)+(s.cool_climate||0); },
     availability: 'common'
   },
@@ -801,7 +801,7 @@ forest: [
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'brown-wood-turtle-manni', hasPage: true,
-    match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1; },
+    match: function(s){ return ((s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 1 && (s.intermediate||0) >= 1) || (s.ya_ma||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.ya_ma||0); },
     availability: 'common'
   },
@@ -812,7 +812,7 @@ forest: [
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'nicaragua-wood-turtle', hasPage: true,
-    match: function(s){ return (s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 2 && (s.advanced_env||0) >= 1; },
+    match: function(s){ return ((s.m_size||0) >= 1 && (s.semi_aquatic||0) >= 2) || (s.ya_ma||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.m_size||0)+(s.semi_aquatic||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.ya_ma||0); },
     availability: 'common'
   },
@@ -823,7 +823,7 @@ forest: [
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'three-toed-box-turtle', hasPage: true,
-    match: function(s){ return (s.terrestrial||0) >= 2 && (s.m_size||0) >= 1; },
+    match: function(s){ return ((s.terrestrial||0) >= 2 && (s.m_size||0) >= 1) || (s.na_box||0) >= 1 || (s.beginner||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
@@ -856,7 +856,7 @@ forest: [
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'florida-box-turtle', hasPage: true,
-    match: function(s){ return (s.terrestrial||0) >= 2 && (s.s_size||0) >= 1 && (s.intermediate||0) >= 1; },
+    match: function(s){ return ((s.terrestrial||0) >= 2 && (s.s_size||0) >= 1 && (s.intermediate||0) >= 1) || (s.na_box||0) >= 2 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.intermediate||0)+(s.na_box||0); },
     availability: 'common'
   },
