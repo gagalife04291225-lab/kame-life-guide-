@@ -154,7 +154,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <a href="../compare/" class="mini-nav-link">比較</a>
     <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
     <a href="../shindan/" class="mini-nav-cta"
-       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'temperature_guide'})">30秒診断 →</a>
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{source_page:'temperature'})">30秒診断 →</a>
   </div>
 </nav>
 
@@ -172,7 +172,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <div class="hero-cta-row">
       <a href="#products" class="btn-primary">おすすめ機器3選を見る</a>
       <a href="../shindan/" class="btn-secondary"
-         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'hero'})">
+         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'hero',source_page:'temperature')">
         種類から選ぶ →
       </a>
     </div>
@@ -402,7 +402,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">水中ヒーター入門として最も手に入れやすい定番。サーモスタット内蔵なので追加投資なしで水温管理がスタートできる。</p>
         <a href="https://www.amazon.co.jp/s?k=GEX+セーフカバー+オートヒーター+亀&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'gex_autoheater',section:'temperature_guide',tier:'essential'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'gex_autoheater',source_page:'temperature',tier:'essential',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -420,7 +420,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">サーモスタット分離型は温度設定の自由度が高く、ヒーターが壊れても本体だけ交換できる。長期飼育でランニングコストを抑えたい方に。</p>
         <a href="https://www.amazon.co.jp/s?k=ニッソー+プロサーモ+サーモスタット+爬虫類&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'nisso_prothermostat',section:'temperature_guide',tier:'comfort'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'nisso_prothermostat',source_page:'temperature',tier:'comfort',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -438,7 +438,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">タイマー・アラーム・精密温度設定を一台で管理。リクガメの季節ごとの温度プログラム、夜間保温のスケジュール設定に最適。</p>
         <a href="https://www.amazon.co.jp/s?k=爬虫類+デジタルサーモスタット+タイマー+大型&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'digital_thermostat_advanced',section:'temperature_guide',tier:'advanced'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'digital_thermostat_advanced',source_page:'temperature',tier:'advanced',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -459,7 +459,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 class="related-guides-heading">あわせて確認したい飼育用品ガイド</h2>
     <div class="related-guides-grid">
       <a href="./uvb-light-guide.html" class="related-card"
-         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'temperature',to_guide:'uvb'})">
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'temperature',to_guide:'uvb_light'})">
         <span class="related-card-icon" aria-hidden="true">🌞</span>
         <p class="related-card-title">紫外線・ライト</p>
         <span class="related-card-arrow">くわしく →</span>
@@ -487,7 +487,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 id="starter-h" style="margin-bottom:12px;">温度管理機器以外も揃えたい方へ</h2>
     <p style="max-width:480px;margin:0 auto 24px;">ケージ・フィルター・UVBライト・床材など、初期設備を種別にまとめた Starter Kit でまとめて確認できます。</p>
     <a href="../" class="btn-primary"
-       onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'starter_kit',location:'mid'})">
+       onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'starter_kit',location:'mid',source_page:'temperature')">
       Starter Kitを見る →
     </a>
   </div>
@@ -500,7 +500,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <p>必要な温度帯は種によって大きく異なります。<br>30秒診断で、あなたの環境に合う種と機材の目安を提案します。</p>
     <div class="bottom-cta-row">
       <a href="../shindan/" class="btn-primary"
-         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'bottom'})">
+         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'bottom',source_page:'temperature')">
         30秒診断を始める →
       </a>
       <a href="../guides/" class="btn-secondary">ガイド一覧に戻る</a>
