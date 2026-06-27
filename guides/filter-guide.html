@@ -154,7 +154,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <a href="../compare/" class="mini-nav-link">比較</a>
     <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
     <a href="../shindan/" class="mini-nav-cta"
-       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'filter_guide'})">30秒診断 →</a>
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{source_page:'filter'})">30秒診断 →</a>
   </div>
 </nav>
 
@@ -172,7 +172,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <div class="hero-cta-row">
       <a href="#products" class="btn-primary">おすすめ3選を見る</a>
       <a href="../shindan/" class="btn-secondary"
-         onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'shindan',location:'hero'})">
+         onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'shindan',location:'hero',source_page:'filter')">
         種類から選ぶ →
       </a>
     </div>
@@ -370,7 +370,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">はじめて水棲ガメを飼う方、小型水槽から始める方に。設置5分・価格も安く失敗しにくい定番エントリーモデル。</p>
         <a href="https://www.amazon.co.jp/s?k=GEX+コーナーパワーフィルター&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'gex_corner_filter',section:'filter_guide',tier:'essential'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'gex_corner_filter',source_page:'filter',tier:'essential',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -389,7 +389,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">外部式の世界的定番。静音・耐久性が高く、メンテナンス間隔が長いため亀飼育者に最も支持されているモデル。</p>
         <a href="https://www.amazon.co.jp/s?k=エーハイム+クラシック+2213&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'eheim_classic_2213',section:'filter_guide',tier:'comfort'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'eheim_classic_2213',source_page:'filter',tier:'comfort',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -408,7 +408,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
         <p class="prod-reason">大型水槽・複数飼育でも安心の最上位外部式。メンテサイクルが長くヒーター内蔵で機材をまとめられる。長期飼育を見据えた本格仕様。</p>
         <a href="https://www.amazon.co.jp/s?k=エーハイム+プロフェッショナル+3+外部フィルター&tag=kamelife09-22"
            class="prod-cta" target="_blank" rel="noopener"
-           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'eheim_pro3',section:'filter_guide',tier:'advanced'})">
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product_id:'eheim_pro3',source_page:'filter',tier:'advanced',guide_category:'commerce'})">
           Amazonで確認 →
         </a>
       </div>
@@ -429,7 +429,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 class="related-guides-heading">あわせて確認したい飼育用品ガイド</h2>
     <div class="related-guides-grid">
       <a href="./uvb-light-guide.html" class="related-card"
-         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'filter',to_guide:'uvb'})">
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'filter',to_guide:'uvb_light'})">
         <span class="related-card-icon" aria-hidden="true">🌞</span>
         <p class="related-card-title">紫外線・ライト</p>
         <span class="related-card-arrow">くわしく →</span>
@@ -457,7 +457,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <h2 id="starter-h" style="margin-bottom:12px;">フィルター以外の機材も揃えたい方へ</h2>
     <p style="max-width:480px;margin:0 auto 24px;">ケージ・UVBライト・ヒーター・床材など、初期設備を種別にまとめた Starter Kit でまとめて確認できます。</p>
     <a href="../" class="btn-primary"
-       onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'starter_kit',location:'mid'})">
+       onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'starter_kit',location:'mid',source_page:'filter')">
       Starter Kitを見る →
     </a>
   </div>
@@ -470,7 +470,7 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <p>フィルター選びは飼う亀の種類・水槽サイズで大きく変わります。<br>30秒診断で、あなたの環境に合う種と機材の目安を提案します。</p>
     <div class="bottom-cta-row">
       <a href="../shindan/" class="btn-primary"
-         onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'shindan',location:'bottom'})">
+         onclick="(typeof gtag==='function')&&gtag('event','filter_guide_cta_click',{cta:'shindan',location:'bottom',source_page:'filter')">
         30秒診断を始める →
       </a>
       <a href="../guides/" class="btn-secondary">ガイド一覧に戻る</a>
