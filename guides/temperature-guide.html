@@ -126,6 +126,21 @@ header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:cl
 footer{background:var(--bg-primary);padding:18px;text-align:center;border-top:1px solid rgba(201,169,107,.10);}
 footer a{font-size:.74rem;color:rgba(200,215,205,.38);text-decoration:none;letter-spacing:.04em;transition:color .18s;}
 footer a:hover{color:rgba(201,169,107,.60);}
+  /* ── Phase 13-F: Related commerce guides ── */
+  .related-guides{background:#f0ebe0;padding:44px 0 48px;}
+  .related-guides-label{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-gold);display:block;text-align:center;margin-bottom:8px;}
+  .related-guides-heading{font-family:"Playfair Display",serif;font-size:clamp(1.06rem,2.8vw,1.26rem);font-weight:700;color:var(--forest-deep);text-align:center;margin-bottom:20px;}
+  .related-guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .related-card{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;text-decoration:none;background:#fff;border:1.5px solid #e2dbc8;border-radius:12px;padding:16px 10px 14px;min-height:44px;transition:border-color .20s,transform .20s,box-shadow .20s;}
+  .related-card:hover{border-color:rgba(201,169,107,.42);transform:translateY(-2px);box-shadow:0 6px 16px rgba(8,20,17,.08);}
+  .related-card:focus-visible{outline:2px solid var(--accent-gold);outline-offset:2px;}
+  .related-card-icon{font-size:1.28rem;line-height:1;}
+  .related-card-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:.80rem;color:var(--forest-deep);line-height:1.3;}
+  .related-card-arrow{font-size:.68rem;font-weight:700;color:rgba(201,169,107,.70);}
+  @media(max-width:520px){
+    .related-guides-grid{grid-template-columns:1fr;}
+    .related-card{flex-direction:row;text-align:left;gap:10px;padding:12px 14px;}
+  }
 </style>
 </head>
 <body>
@@ -432,6 +447,35 @@ footer a:hover{color:rgba(201,169,107,.60);}
     <div class="info-box info-box--info" style="margin-top:24px;">
       <strong>温湿度計は必ず用意する</strong>
       温度計がないと「何℃になっているか」がわかりません。バスキングスポット用とケージ内の2箇所に設置するのが理想です。デジタル式（最高・最低温度を記録できるもの）を推奨します。
+    </div>
+  </div>
+</section>
+
+
+<!-- Phase 13-F: Related commerce guides -->
+<section class="related-guides" aria-labelledby="related-temperature-label">
+  <div class="wrap">
+    <span class="related-guides-label" id="related-temperature-label">関連ガイド</span>
+    <h2 class="related-guides-heading">あわせて確認したい飼育用品ガイド</h2>
+    <div class="related-guides-grid">
+      <a href="./uvb-light-guide.html" class="related-card"
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'temperature',to_guide:'uvb'})">
+        <span class="related-card-icon" aria-hidden="true">🌞</span>
+        <p class="related-card-title">紫外線・ライト</p>
+        <span class="related-card-arrow">くわしく →</span>
+      </a>
+      <a href="./filter-guide.html" class="related-card"
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'temperature',to_guide:'filter'})">
+        <span class="related-card-icon" aria-hidden="true">💧</span>
+        <p class="related-card-title">フィルター</p>
+        <span class="related-card-arrow">くわしく →</span>
+      </a>
+      <a href="./food-guide.html" class="related-card"
+         onclick="(typeof gtag==='function')&&gtag('event','guide_related_click',{from_guide:'temperature',to_guide:'food'})">
+        <span class="related-card-icon" aria-hidden="true">🥗</span>
+        <p class="related-card-title">餌・フード</p>
+        <span class="related-card-arrow">くわしく →</span>
+      </a>
     </div>
   </div>
 </section>
