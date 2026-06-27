@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>亀・リクガメの温度管理ガイド｜水温・バスキング・保温器具の選び方｜カメライフガイド</title>
+<meta name="description" content="亀・リクガメの温度管理を解説。水温・バスキング温度・夜間温度の考え方、種別の適温早見表、ヒーター・サーモスタット・セラミックヒーターの比較、季節別対策を初心者向けにまとめました。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guides/temperature-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;
+  --accent:#d4a96a;--accent-gold:#C9A96B;
+  --bg-primary:#081411;--bg-secondary:#10241d;
+  --ok:#2e7d52;--warn:#b07c00;--info:#1a5276;
+  --radius-lg:16px;--radius-pill:9999px;
+  --dur:.24s;--ease:cubic-bezier(.22,.68,0,1);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+img{max-width:100%;height:auto;}
+
+/* ── Mini Nav ── */
+.mini-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(5,14,7,.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,169,107,.14);padding:0 16px;height:44px;display:flex;align-items:center;}
+.mini-nav-inner{display:flex;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;max-width:900px;margin:0 auto;}
+.mini-nav-inner::-webkit-scrollbar{display:none;}
+.mini-nav-logo{font-family:"Playfair Display",serif;font-weight:700;font-size:.78rem;letter-spacing:.16em;color:rgba(201,169,107,.72);text-decoration:none;white-space:nowrap;padding-right:14px;border-right:1px solid rgba(255,255,255,.12);margin-right:10px;flex-shrink:0;}
+.mini-nav-logo:hover{color:var(--accent-gold);}
+.mini-nav-link{font-family:"Noto Serif JP",serif;font-size:.74rem;font-weight:700;color:rgba(200,215,205,.60);text-decoration:none;padding:0 10px;height:44px;line-height:44px;white-space:nowrap;flex-shrink:0;transition:color .18s;letter-spacing:.03em;}
+.mini-nav-link:hover,.mini-nav-link[aria-current="page"]{color:rgba(201,169,107,.88);}
+.mini-nav-cta{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;background:rgba(201,169,107,.12);border:1px solid rgba(201,169,107,.28);border-radius:var(--radius-pill);color:var(--accent-gold);font-size:.70rem;font-weight:700;text-decoration:none;padding:5px 12px;letter-spacing:.04em;transition:background .18s;white-space:nowrap;}
+.mini-nav-cta:hover{background:rgba(201,169,107,.22);}
+@media(max-width:680px){.mini-nav-logo{display:none;}}
+
+/* ── Hero ── */
+header.hero{background:linear-gradient(158deg,#0c1a08 0%,#1a2a0c 45%,#0a1206 100%);color:var(--parchment);padding:72px 0 56px;text-align:center;position:relative;overflow:hidden;}
+header.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 70% 15%,rgba(201,169,107,.12) 0%,transparent 55%),radial-gradient(ellipse 80% 40% at 30% 90%,rgba(30,80,40,.40) 0%,transparent 55%);pointer-events:none;}
+header.hero .wrap{position:relative;z-index:1;}
+.hero-eyebrow{font-size:.70rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,107,.75);font-weight:700;margin-bottom:14px;display:block;}
+header.hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.52rem,5vw,2.10rem);line-height:1.28;margin-bottom:14px;}
+.hero-sub{font-size:.94rem;color:rgba(217,224,214,.75);max-width:540px;margin:0 auto 24px;line-height:1.85;}
+.hero-badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(201,169,107,.18);border-radius:var(--radius-pill);color:rgba(215,228,220,.78);font-size:.68rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;white-space:nowrap;}
+.hero-cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.90rem;text-decoration:none;padding:13px 30px;border-radius:var(--radius-pill);min-height:48px;letter-spacing:.04em;box-shadow:0 4px 18px rgba(201,169,107,.28);transition:background var(--dur),transform .16s;}
+.btn-primary:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;color:rgba(201,169,107,.70);font-family:"Noto Serif JP",serif;font-size:.86rem;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:var(--radius-pill);border:1px solid rgba(201,169,107,.26);min-height:48px;transition:color var(--dur),border-color var(--dur),background var(--dur);}
+.btn-secondary:hover{color:var(--accent-gold);border-color:rgba(201,169,107,.50);background:rgba(201,169,107,.06);}
+
+/* ── Sections ── */
+.section{padding:56px 0 60px;}
+.section--dark{background:var(--bg-secondary);color:#eef0ec;}
+.section--alt{background:#f0ebe0;}
+.section-eyebrow{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-gold);font-weight:700;display:block;margin-bottom:10px;}
+.section h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.30rem,3.5vw,1.70rem);line-height:1.28;margin-bottom:18px;}
+.section--dark h2{color:#eef0ec;}
+.section p{font-size:.94rem;line-height:1.90;margin-bottom:14px;color:rgba(13,31,26,.82);}
+.section--dark p{color:rgba(210,225,215,.72);}
+.section p:last-child{margin-bottom:0;}
+
+/* ── Info boxes ── */
+.info-box{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.88rem;line-height:1.80;}
+.info-box--ok{background:rgba(46,125,82,.09);border-left:3px solid var(--ok);color:#1a4a2e;}
+.info-box--warn{background:rgba(176,124,0,.09);border-left:3px solid var(--warn);color:#5a3e00;}
+.info-box--info{background:rgba(26,82,118,.09);border-left:3px solid var(--info);color:#0d2d42;}
+.info-box strong{font-weight:700;display:block;margin-bottom:4px;}
+
+/* ── Symptoms list ── */
+.symptom-list{list-style:none;margin:20px 0;}
+.symptom-list li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px dashed #d8d0be;font-size:.90rem;line-height:1.75;}
+.symptom-list li:last-child{border-bottom:none;}
+.symptom-icon{font-size:1.10rem;flex-shrink:0;margin-top:2px;}
+.symptom-label{font-weight:700;color:var(--forest-deep);margin-right:6px;}
+
+/* ── Comparison table ── */
+.cmp-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:24px 0;}
+.cmp-table th{background:var(--forest);color:#f4efe2;font-weight:700;padding:10px 14px;text-align:left;font-size:.78rem;letter-spacing:.06em;}
+.cmp-table td{padding:10px 14px;border-bottom:1px solid #ddd5bf;vertical-align:top;line-height:1.70;}
+.cmp-table tr:nth-child(even) td{background:rgba(255,255,255,.55);}
+.cmp-badge{display:inline-block;font-size:.60rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase;border-radius:var(--radius-pill);padding:2px 8px;}
+.cmp-badge--rec{background:rgba(46,125,82,.12);color:#1a5c38;border:1px solid rgba(46,125,82,.24);}
+.cmp-badge--ok{background:rgba(201,169,107,.12);color:#6a4a10;border:1px solid rgba(201,169,107,.24);}
+@media(max-width:520px){
+  .cmp-table{font-size:.80rem;}
+  .cmp-table th,.cmp-table td{padding:8px 10px;}
+}
+
+/* ── Product cards ── */
+.prod-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px;}
+.prod-card{background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow var(--dur),border-color var(--dur);}
+.prod-card:hover{box-shadow:0 8px 24px rgba(8,20,17,.09);border-color:rgba(201,169,107,.38);}
+.prod-tier{display:inline-flex;align-items:center;gap:5px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:var(--radius-pill);padding:3px 10px;width:fit-content;}
+.prod-tier--essential{background:rgba(46,125,82,.10);color:#1a5c38;border:1px solid rgba(46,125,82,.22);}
+.prod-tier--comfort{background:rgba(201,169,107,.10);color:#6a4a10;border:1px solid rgba(201,169,107,.24);}
+.prod-tier--advanced{background:rgba(126,215,193,.12);color:#1a4a42;border:1px solid rgba(126,215,193,.26);}
+.prod-name{font-family:"Playfair Display",serif;font-weight:700;font-size:1.06rem;color:var(--forest-deep);line-height:1.30;}
+.prod-spec{font-size:.80rem;color:#5a6e60;line-height:1.70;flex:1;}
+.prod-spec strong{color:var(--forest-deep);font-weight:700;}
+.prod-reason{font-size:.80rem;color:rgba(47,74,60,.65);background:rgba(47,74,60,.05);border-radius:8px;padding:8px 12px;line-height:1.65;}
+.prod-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.86rem;text-decoration:none;padding:11px 20px;border-radius:var(--radius-pill);min-height:44px;letter-spacing:.04em;box-shadow:0 3px 14px rgba(201,169,107,.24);transition:background var(--dur),transform .16s;}
+.prod-cta:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+.prod-cta:focus-visible{outline:2px solid var(--accent-gold);outline-offset:3px;}
+@media(min-width:600px){.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:480px){
+  header.hero{padding:60px 0 44px;}
+  .section{padding:44px 0 48px;}
+  .prod-grid{grid-template-columns:1fr;}
+}
+@media(max-width:360px){
+  header.hero h1{font-size:1.38rem;}
+}
+
+/* ── Bottom CTA ── */
+.bottom-cta{background:var(--bg-primary);padding:60px 0 68px;text-align:center;}
+.bottom-cta h2{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.36rem,4vw,1.80rem);color:#eef0ec;margin-bottom:10px;}
+.bottom-cta p{font-size:.90rem;color:rgba(200,215,205,.58);line-height:1.85;margin-bottom:26px;}
+.bottom-cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+/* ── Footer ── */
+footer{background:var(--bg-primary);padding:18px;text-align:center;border-top:1px solid rgba(201,169,107,.10);}
+footer a{font-size:.74rem;color:rgba(200,215,205,.38);text-decoration:none;letter-spacing:.04em;transition:color .18s;}
+footer a:hover{color:rgba(201,169,107,.60);}
+</style>
+</head>
+<body>
+
+<!-- Mini Nav -->
+<nav class="mini-nav" aria-label="サイトナビゲーション">
+  <div class="mini-nav-inner">
+    <a href="../" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
+    <a href="../shindan/" class="mini-nav-link">診断</a>
+    <a href="../species-list.html" class="mini-nav-link">種一覧</a>
+    <a href="../compare/" class="mini-nav-link">比較</a>
+    <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
+    <a href="../shindan/" class="mini-nav-cta"
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'temperature_guide'})">30秒診断 →</a>
+  </div>
+</nav>
+
+<!-- ① Hero -->
+<header class="hero" role="banner">
+  <div class="wrap">
+    <span class="hero-eyebrow">Temperature Guide</span>
+    <h1>亀・リクガメの<br>温度管理ガイド</h1>
+    <p class="hero-sub">水温・バスキング温度・夜間温度――3つの温度を正しく管理することが、亀の健康と長寿の基本です。機器の選び方から季節対策まで解説します。</p>
+    <div class="hero-badge-row">
+      <span class="hero-badge">🌡️ 水温・バスキング・気温の3つ</span>
+      <span class="hero-badge">📊 種別適温早見表</span>
+      <span class="hero-badge">☀️ 夏の過加熱・冬の冷え対策</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#products" class="btn-primary">おすすめ機器3選を見る</a>
+      <a href="../shindan/" class="btn-secondary"
+         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'hero'})">
+        種類から選ぶ →
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ② Why temperature control matters -->
+<section class="section" aria-labelledby="why-temp">
+  <div class="wrap">
+    <span class="section-eyebrow">Why Temperature?</span>
+    <h2 id="why-temp">なぜ温度管理が重要なのか</h2>
+    <p>亀・リクガメは変温動物（外温動物）です。自分で体温を作れないため、<strong>環境温度がそのまま体温・消化速度・免疫機能・活動量に直結します。</strong>適温を外れると食欲低下・消化不良・免疫抑制が起こり、呼吸器疾患や感染症のリスクが急上昇します。</p>
+    <p>室内飼育では季節・昼夜を問わず温度を管理する必要があります。「夏は大丈夫」と思っていても、エアコンのかけすぎによる過冷却や、冬の夜間温度低下は見落とされやすいリスクです。</p>
+    <div class="info-box info-box--warn">
+      <strong>⚠️ 医療上の注意</strong>
+      体調不良や呼吸器症状（口呼吸・鼻水・ゼーゼーした呼吸音）がある場合は、温度調整だけで判断せず爬虫類を診られる動物病院へ相談してください。
+    </div>
+    <div class="info-box info-box--ok">
+      <strong>温度管理で防げる主な疾患</strong>
+      呼吸器感染症（RI）・消化不良・拒食・低温性腸炎・熱中症。温度計を設置して日常的にモニタリングするだけで多くのトラブルを予防できます。
+    </div>
+  </div>
+</section>
+
+<!-- ③ Water / basking / air temperature explained -->
+<section class="section section--alt" aria-labelledby="three-temps">
+  <div class="wrap">
+    <span class="section-eyebrow">3 Temperature Zones</span>
+    <h2 id="three-temps">水温・バスキング温度・気温の考え方</h2>
+    <p>亀の飼育環境には管理すべき温度が3種類あります。それぞれ役割が異なるため、1つの温度計で済ませず、ゾーン別に把握しましょう。</p>
+    <ul class="symptom-list">
+      <li>
+        <span class="symptom-icon">💧</span>
+        <div>
+          <span class="symptom-label">水温（水棲・半水棲ガメ必須）</span>
+          消化・免疫の基盤。水中ヒーターやサーモスタットで25〜28℃に維持するのが基本。30℃超えは病原菌が増殖しやすいため危険。
+        </div>
+      </li>
+      <li>
+        <span class="symptom-icon">☀️</span>
+        <div>
+          <span class="symptom-label">バスキングスポット温度（全種必要）</span>
+          体温上昇・消化促進のための「日光浴」を模した高温ゾーン。種によって30〜45℃の幅があり、種別の適温を守ることが大切。
+        </div>
+      </li>
+      <li>
+        <span class="symptom-icon">🌡️</span>
+        <div>
+          <span class="symptom-label">ケージ内気温・夜間温度（全種管理が必要）</span>
+          昼夜の温度勾配は自然に近いが、冬の夜間に20℃を下回ると危険。水棲・熱帯種は年間を通じて最低22℃以上を維持。
+        </div>
+      </li>
+    </ul>
+    <div class="info-box info-box--info">
+      <strong>「温度勾配」を作ることが大切</strong>
+      ケージ全体を同じ温度にするのではなく、バスキングスポット（高温）とクールゾーン（低温）を作り、亀が自分で体温調節できる環境を整えましょう。
+    </div>
+  </div>
+</section>
+
+<!-- ④ Equipment comparison -->
+<section class="section" aria-labelledby="equipment">
+  <div class="wrap">
+    <span class="section-eyebrow">Equipment</span>
+    <h2 id="equipment">温度管理機器の種類と比較</h2>
+    <p>温度管理に使う機器は複数あります。用途が異なるため、組み合わせて使うのが基本です。</p>
+    <div style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr><th>機器</th><th>役割</th><th>必要度</th><th>価格帯</th><th>注意点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>水中ヒーター</strong></td>
+            <td>水温を一定に保つ</td>
+            <td><span class="cmp-badge cmp-badge--rec">水棲必須</span></td>
+            <td>¥1,500〜4,000</td>
+            <td>適切なW数を選ぶ（水量×1〜2W目安）</td>
+          </tr>
+          <tr>
+            <td><strong>サーモスタット</strong></td>
+            <td>ヒーターの温度を自動制御</td>
+            <td><span class="cmp-badge cmp-badge--rec">強く推奨</span></td>
+            <td>¥2,500〜8,000</td>
+            <td>ないと過加熱・故障で水温急上昇のリスク</td>
+          </tr>
+          <tr>
+            <td><strong>バスキングランプ</strong></td>
+            <td>バスキングスポットの高温を作る</td>
+            <td><span class="cmp-badge cmp-badge--rec">全種必須</span></td>
+            <td>¥800〜3,000</td>
+            <td>タイマー制御推奨（12時間点灯）</td>
+          </tr>
+          <tr>
+            <td><strong>セラミックヒーター</strong></td>
+            <td>光なしで夜間の気温を保温</td>
+            <td><span class="cmp-badge cmp-badge--ok">夜間推奨</span></td>
+            <td>¥1,500〜4,000</td>
+            <td>サーモスタットとの併用が必須</td>
+          </tr>
+          <tr>
+            <td><strong>温湿度計</strong></td>
+            <td>現在の温度・湿度を確認</td>
+            <td><span class="cmp-badge cmp-badge--rec">全種必須</span></td>
+            <td>¥500〜2,500</td>
+            <td>最低2箇所（バスキング付近・クール側）に設置</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ Species-type temperature guide -->
+<section class="section section--alt" aria-labelledby="species-temp">
+  <div class="wrap">
+    <span class="section-eyebrow">Species Guide</span>
+    <h2 id="species-temp">種類別 適温早見表</h2>
+    <p>種類によって必要な温度帯は大きく異なります。飼育する亀のカテゴリを確認してください。</p>
+    <div style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr><th>種類</th><th>水温</th><th>バスキング</th><th>夜間最低気温</th><th>代表種</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>水棲ガメ</strong></td>
+            <td>25〜28℃</td>
+            <td>30〜35℃</td>
+            <td>22℃以上</td>
+            <td>ニオイガメ・クサガメ・ミシシッピ</td>
+          </tr>
+          <tr>
+            <td><strong>半水棲ガメ</strong></td>
+            <td>24〜27℃</td>
+            <td>32〜36℃</td>
+            <td>20℃以上</td>
+            <td>ニホンイシガメ・スッポン</td>
+          </tr>
+          <tr>
+            <td><strong>乾燥系リクガメ</strong></td>
+            <td>不要</td>
+            <td>35〜42℃</td>
+            <td>18〜20℃以上</td>
+            <td>ヘルマン・ギリシャ・ロシア</td>
+          </tr>
+          <tr>
+            <td><strong>熱帯系リクガメ</strong></td>
+            <td>不要</td>
+            <td>35〜40℃</td>
+            <td>22℃以上</td>
+            <td>ケヅメ・ヒョウモン・アルダブラ</td>
+          </tr>
+          <tr>
+            <td><strong>森林・箱ガメ</strong></td>
+            <td>22〜26℃<br>（陸場中心）</td>
+            <td>28〜32℃</td>
+            <td>20℃以上</td>
+            <td>スペングラー・ミツユビハコガメ・ヒラセガメ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box info-box--warn">
+      <strong>⚠️ 医療上の注意（再掲）</strong>
+      体調不良や呼吸器症状がある場合は、温度調整だけで判断せず爬虫類を診られる動物病院へ相談してください。
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ Seasonal management -->
+<section class="section" aria-labelledby="seasonal">
+  <div class="wrap">
+    <span class="section-eyebrow">Seasonal Management</span>
+    <h2 id="seasonal">季節別の温度管理</h2>
+    <ul class="symptom-list">
+      <li>
+        <span class="symptom-icon">🌞</span>
+        <div>
+          <span class="symptom-label">夏の過加熱対策</span>
+          エアコン設定が低すぎると亀が冷えすぎる。室温26〜28℃を目安に設定。バスキングランプは水温との差異に注意。直射日光が当たる水槽は夏に水温が急上昇するため遮光が必要。30℃超えの水温は病原菌増殖・低酸素リスクが高まる。
+        </div>
+      </li>
+      <li>
+        <span class="symptom-icon">❄️</span>
+        <div>
+          <span class="symptom-label">冬の夜間冷却対策</span>
+          日本の冬は夜間に室温が10〜15℃まで下がることがある。夜間専用のセラミックヒーター＋サーモスタットで最低温度を保つ。水中ヒーターは夜間も稼働させ、水温が22℃以下にならないよう管理する。
+        </div>
+      </li>
+      <li>
+        <span class="symptom-icon">🍂</span>
+        <div>
+          <span class="symptom-label">春・秋の温度変動</span>
+          日中と夜間の温度差が大きい季節。日中は暖かくても夜に急冷することで免疫が低下しやすい。この時期の呼吸器感染症（RI）が最も多いため、夜間保温を忘れずに。
+        </div>
+      </li>
+      <li>
+        <span class="symptom-icon">🌡️</span>
+        <div>
+          <span class="symptom-label">停電・機器故障への備え</span>
+          ヒーターが壊れると数時間で危険な低温になる場合がある。予備ヒーターの常備、または温度アラーム機能付きサーモスタットの使用を推奨。
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ⑦ Recommended products -->
+<section class="section section--alt" id="products" aria-labelledby="products-h">
+  <div class="wrap">
+    <span class="section-eyebrow">Recommended</span>
+    <h2 id="products-h">おすすめ温度管理機器 3選</h2>
+    <p>予算・水槽サイズ別に3段階でまとめました。Amazon（kamelife09-22）のリンクは最新価格でご確認ください。</p>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--essential">Essential — まず始めるなら</span>
+        <p class="prod-name">GEX セーフカバー オートヒーター<br><small style="font-size:.80rem;font-weight:400;">（水中ヒーター・サーモ内蔵）</small></p>
+        <p class="prod-spec">
+          <strong>種類：</strong>水中ヒーター（サーモスタット内蔵）<br>
+          <strong>設定温度：</strong>26℃固定（一部可変モデルあり）<br>
+          <strong>推奨水槽：</strong>30〜45cm・小型水棲ガメ<br>
+          <strong>特徴：</strong>安全カバー付き・設置簡単・国内定番<br>
+          <strong>注意：</strong>固定温度モデルは種を選ぶ
+        </p>
+        <p class="prod-reason">水中ヒーター入門として最も手に入れやすい定番。サーモスタット内蔵なので追加投資なしで水温管理がスタートできる。</p>
+        <a href="https://www.amazon.co.jp/s?k=GEX+セーフカバー+オートヒーター+亀&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'gex_autoheater',section:'temperature_guide',tier:'essential'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--comfort">Comfort — 安心して長く使えるセット</span>
+        <p class="prod-name">エーハイム ヒーター＋<br>ニッソー プロサーモ セット<br><small style="font-size:.80rem;font-weight:400;">（分離型ヒーター＋サーモスタット）</small></p>
+        <p class="prod-spec">
+          <strong>種類：</strong>水中ヒーター＋外付けサーモスタット<br>
+          <strong>設定温度：</strong>任意（15〜35℃）<br>
+          <strong>推奨水槽：</strong>45〜60cm・中型水棲ガメ<br>
+          <strong>特徴：</strong>温度を自由に設定・ヒーター故障時に本体交換のみ<br>
+          <strong>注意：</strong>ヒーターとサーモスタットを別々に購入
+        </p>
+        <p class="prod-reason">サーモスタット分離型は温度設定の自由度が高く、ヒーターが壊れても本体だけ交換できる。長期飼育でランニングコストを抑えたい方に。</p>
+        <a href="https://www.amazon.co.jp/s?k=ニッソー+プロサーモ+サーモスタット+爬虫類&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'nisso_prothermostat',section:'temperature_guide',tier:'comfort'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+      <div class="prod-card">
+        <span class="prod-tier prod-tier--advanced">Advanced — 多頭・大型・リクガメ本格管理</span>
+        <p class="prod-name">ゼンスイ TEGARU2<br>または ニッソー プロサーモ 1000EX<br><small style="font-size:.80rem;font-weight:400;">（多機能サーモスタット）</small></p>
+        <p class="prod-spec">
+          <strong>種類：</strong>多機能デジタルサーモスタット<br>
+          <strong>設定温度：</strong>1℃単位で精密設定<br>
+          <strong>推奨水槽：</strong>60〜90cm以上・大型リクガメ・多頭飼育<br>
+          <strong>特徴：</strong>タイマー機能・アラーム付き・複数機器を管理<br>
+          <strong>注意：</strong>価格が高めだが機能で元が取れる
+        </p>
+        <p class="prod-reason">タイマー・アラーム・精密温度設定を一台で管理。リクガメの季節ごとの温度プログラム、夜間保温のスケジュール設定に最適。</p>
+        <a href="https://www.amazon.co.jp/s?k=爬虫類+デジタルサーモスタット+タイマー+大型&tag=kamelife09-22"
+           class="prod-cta" target="_blank" rel="noopener"
+           onclick="(typeof gtag==='function')&&gtag('event','affiliate_click',{provider:'amazon',product:'digital_thermostat_advanced',section:'temperature_guide',tier:'advanced'})">
+          Amazonで確認 →
+        </a>
+      </div>
+
+    </div>
+    <div class="info-box info-box--info" style="margin-top:24px;">
+      <strong>温湿度計は必ず用意する</strong>
+      温度計がないと「何℃になっているか」がわかりません。バスキングスポット用とケージ内の2箇所に設置するのが理想です。デジタル式（最高・最低温度を記録できるもの）を推奨します。
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ Starter Kit CTA -->
+<section class="section" aria-labelledby="starter-h">
+  <div class="wrap" style="text-align:center;">
+    <span class="section-eyebrow">Starter Kit</span>
+    <h2 id="starter-h" style="margin-bottom:12px;">温度管理機器以外も揃えたい方へ</h2>
+    <p style="max-width:480px;margin:0 auto 24px;">ケージ・フィルター・UVBライト・床材など、初期設備を種別にまとめた Starter Kit でまとめて確認できます。</p>
+    <a href="../" class="btn-primary"
+       onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'starter_kit',location:'mid'})">
+      Starter Kitを見る →
+    </a>
+  </div>
+</section>
+
+<!-- ⑨ Bottom CTA -->
+<section class="bottom-cta">
+  <div class="wrap">
+    <h2>飼う亀が決まっていない方へ</h2>
+    <p>必要な温度帯は種によって大きく異なります。<br>30秒診断で、あなたの環境に合う種と機材の目安を提案します。</p>
+    <div class="bottom-cta-row">
+      <a href="../shindan/" class="btn-primary"
+         onclick="(typeof gtag==='function')&&gtag('event','temperature_guide_cta_click',{cta:'shindan',location:'bottom'})">
+        30秒診断を始める →
+      </a>
+      <a href="../guides/" class="btn-secondary">ガイド一覧に戻る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="../">← カメライフガイド トップへ</a>
+</footer>
+
+</body>
+</html>
