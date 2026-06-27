@@ -1531,13 +1531,14 @@ function calcResult() {
     }
 
     // ── Step 6: FIX F — safeFallback 強化 ──
+    // FIX: forest ルートは全種が'中〜上級'のため、中〜上級除外は forest 以外のみ適用
     var safeFallback = candidates.filter(function(sp){
       if (sp.legal === 'conditional_invasive') return false;
       var diff = sp.difficulty || '';
       if (diff === '上級') return false;
       if (sp.size && sp.size.indexOf('XL') >= 0) return false;
       if (beginner_mode && sp.availability === 'rare') return false;
-      if (beginner_mode && diff === '中〜上級') return false;
+      if (beginner_mode && diff === '中〜上級' && routeId !== 'forest') return false;
       return true;
     });
 
@@ -1545,7 +1546,7 @@ function calcResult() {
     var ROUTE_FALLBACK_NAMES = {
       aquatic: ['ニオイガメ','ヒメニオイガメ','ミシシッピドロガメ'],
       land:    ['ヘルマンリクガメ','ロシアリクガメ','ギリシャリクガメ'],
-      forest:  ['ミツユビハコガメ','トウブハコガメ','キボシイシガメ'],
+      forest:  ['キボシイシガメ','ミツユビハコガメ','トウブハコガメ','フロリダハコガメ'],
     };
     function getRouteFallback(rId) {
       var names = ROUTE_FALLBACK_NAMES[rId] || [];
@@ -1553,10 +1554,17 @@ function calcResult() {
       var allSps = (SPECIES && SPECIES[rId]) ? SPECIES[rId] : candidates;
       names.forEach(function(n){
         var found = allSps.filter(function(sp){
-          return sp.name === n && sp.availability !== 'archive';
+          return sp.name === n && sp.availability !== 'archive' && sp.availability !== 'redirect';
         });
         if (found.length) pool.push(found[0]);
       });
+      // fallback pool が空の場合は archive/redirect/上級 以外の全種
+      if (pool.length === 0) {
+        pool = allSps.filter(function(sp){
+          return sp.availability !== 'archive' && sp.availability !== 'redirect'
+                 && (sp.difficulty || '') !== '上級';
+        }).slice(0, 3);
+      }
       return pool;
     }
 
