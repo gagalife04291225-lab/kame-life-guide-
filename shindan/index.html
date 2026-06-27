@@ -38,16 +38,28 @@
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
 <script>
+// dataLayer + gtag は async ロード前から安全に使える標準パターン
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-QQTE5CVF3K');
-// GA4イベント送信ヘルパー
+gtag('config', 'G-QQTE5CVF3K', { send_page_view: true });
+
+// GA4イベント送信ヘルパー（?ga_debug=1 で console.log 出力）
+var _ga4Debug = (location.search.indexOf('ga_debug=1') !== -1);
 function ga4Event(name, params) {
-  if (typeof gtag === 'function') {
-    gtag('event', name, params || {});
+  try {
+    var p = params || {};
+    if (_ga4Debug) {
+      console.log('[GA4]', name, JSON.stringify(p));
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', name, p);
+    }
+  } catch(e) {
+    if (_ga4Debug) console.warn('[GA4 ERROR]', name, e);
   }
 }
+
 // Phase 7-C Step 3-A: Amazon URL 判定ヘルパー
 function isAmazonUrl(url) {
   if (!url) return false;
@@ -514,21 +526,6 @@ body {
 <script src="equipment.js"></script>
 <script src="../data/products.js"></script>
 <script>
-// ── P0 Fix: ga4Event safety wrapper ─────────────────────────
-// GA4 / gtag が未定義でも診断フローを停止させない
-if (typeof ga4Event !== 'function') {
-  window.ga4Event = function(name, params) {
-    try {
-      if (typeof gtag === 'function') {
-        gtag('event', name, params || {});
-      }
-    } catch(e) {
-      // gtag未定義でも無視して続行
-    }
-  };
-}
-// ──────────────────────────────────────────────────────────────
-
 'use strict';
 
 // ===== 状態変数 =====
