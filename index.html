@@ -3842,6 +3842,39 @@
   <p>スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを<strong>実際に飼育中</strong>の筆者が、飼育経験をもとに執筆・監修しています。</p>
 </div>
 
+<!-- P0: Entry Cards — 3 user paths -->
+<section class="entry-cards">
+  <div class="wrap">
+    <div class="entry-cards-grid">
+      <a href="./shindan/" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'shindan'})">
+        <span class="entry-card-icon" aria-hidden="true">🐢</span>
+        <div>
+          <p class="entry-card-label">初めて飼う</p>
+          <p class="entry-card-sub">30秒診断で相性の良い種を探す</p>
+        </div>
+      </a>
+      <a href="compare/hermann-vs-greek.html" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'compare'})">
+        <span class="entry-card-icon" aria-hidden="true">⚖️</span>
+        <div>
+          <p class="entry-card-label">比較したい</p>
+          <p class="entry-card-sub">種ごとの違いを並べて確認</p>
+        </div>
+      </a>
+      <a href="guides/turtle-trouble-guide.html" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'guides'})">
+        <span class="entry-card-icon" aria-hidden="true">📖</span>
+        <div>
+          <p class="entry-card-label">もう飼っている</p>
+          <p class="entry-card-sub">飼育トラブル・ガイドを見る</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- Phase 12-A Sprint 2-B: Emotional Hook -->
 <!-- HIDDEN: removed from homepage flow — P0 Hero Fix. Restore by removing hidden attr. -->
 <section class="emo-hook" aria-label="亀と長い時間を共にする" hidden>
@@ -3863,7 +3896,7 @@
 </section>
 
 <!-- Journey Preview (Phase 12-C) -->
-<section class="journey-preview" id="journey-preview">
+<section class="journey-preview" id="journey-preview" hidden>
   <div class="wrap">
     <span class="jp-eyebrow">How It Works</span>
     <h2 class="jp-heading">答えるだけで、理想の亀にたどり着く。</h2>
@@ -3945,7 +3978,7 @@
 </section>
 
 <!-- Live Compare (Phase 12-D) -->
-<section class="live-compare" id="live-compare">
+<section class="live-compare" id="live-compare" hidden>
   <div class="wrap">
 
     <span class="lc-eyebrow">Compare Before You Commit</span>
@@ -4103,7 +4136,7 @@
 </section>
 
 <!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
-<section class="pc-section" id="problem-grid" aria-label="よくある4つの不安">
+<section class="pc-section" id="problem-grid" aria-label="よくある4つの不安" hidden>
   <div class="wrap">
     <span class="pc-eyebrow-s2">よくある不安に答えます</span>
     <h2 class="pc-heading-s2 reveal-soft reveal-soft--delay-1">
@@ -4439,7 +4472,7 @@
 </section>
 
 <!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
-<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要">
+<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要" hidden>
   <div class="il-cap-top" aria-hidden="true"></div>
 
   <div class="wrap">
@@ -4500,7 +4533,7 @@
 </section>
 
 <!-- Compare Section (Phase 11 Step 1E: Decision Engine) -->
-<section class="hp-compare" id="hp-compare" aria-label="種を比較して選ぶ">
+<section class="hp-compare" id="hp-compare" aria-label="種を比較して選ぶ" hidden>
   <div class="wrap">
 
     <!-- Header -->
@@ -4608,7 +4641,7 @@
 </section>
 
 <!-- Cost Simulator (Phase 11 Step 1F: Budget Reality Check) -->
-<section class="cost-sim" id="cost-sim" aria-label="環境提案・費用の目安">
+<section class="cost-sim" id="cost-sim" aria-label="環境提案・費用の目安" hidden>
   <div class="csim-cap-top" aria-hidden="true"></div>
   <div class="wrap">
 
@@ -4720,7 +4753,7 @@
 ══════════════════════════════════════════════════════════ -->
 <section class="trs-section" id="readiness-score"
   aria-label="亀を迎える準備チェック"
-  data-ga-view="readiness_view">
+  data-ga-view="readiness_view" hidden>
   <div class="trs-inner">
 
     <!-- Header -->
@@ -4905,7 +4938,7 @@
 </section>
 
 <!-- Guide Links (Phase 11 Step 1G: Care Library) -->
-<section class="guide-links" id="guide-links">
+<section class="guide-links" id="guide-links" hidden>
   <div class="wrap">
     <span class="gl-eyebrow">Care Library</span>
     <h2 class="gl-heading">選んだ後も、飼育で迷わせない。</h2>
@@ -4964,7 +4997,7 @@
   </div>
 </section>
 
-<section class="discover" id="discover">
+<section class="discover" id="discover" hidden>
   <div class="wrap">
     <div class="section-eyebrow">Find by Habitat</div>
     <h2 class="section-title">暮らしから探す</h2>
@@ -5262,7 +5295,7 @@
   </div>
 </section>
 <!-- Concierge Launch CTA (Phase 11 Step 1H) -->
-<section class="concierge-launch" id="concierge-launch">
+<section class="concierge-launch" id="concierge-launch" hidden>
   <div class="wrap">
 
     <div class="cl-eyebrow">亀診断コンシェルジュ</div>
