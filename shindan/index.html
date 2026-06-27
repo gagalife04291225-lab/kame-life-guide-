@@ -2,103 +2,2049 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>亀診断ツール メンテナンス中 | カメライフガイド</title>
-<meta name="description" content="亀・リクガメ診断ツールは現在メンテナンス中です。再開まで飼育ガイド・比較ページをご利用ください。">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>あなたに合う亀診断 | カメライフガイド</title>
+<meta name="description" content="100種対応のAI診断でリクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルートから最適な1種を提案します。">
+<link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
+<!-- OGP -->
+<meta property="og:title" content="あなたに合う亀診断 | カメライフガイド">
+<meta property="og:description" content="5つのルートから自分に合う亀を診断。100種対応・5ルート診断。あなたに最適な亀が見つかります。">
+<meta property="og:url" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/">
+<meta property="og:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
+<meta name="twitter:image" content="https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/ogp.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="カメライフガイド">
+<meta property="og:locale" content="ja_JP">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="あなたに合う亀診断 | カメライフガイド">
+<meta name="twitter:description" content="100種対応・5ルート診断。あなたに合う亀が見つかります。">
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "あなたに合う亀診断",
+  "description": "100種対応のAI診断でリクガメ・水棲ガメ・ヤマガメ・マニアック・全カテゴリの5ルートから最適な1種を提案します。",
+  "url": "https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/",
+  "applicationCategory": "Quiz",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Person",
+    "name": "カメライフガイド"
+  }
+}
+</script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QQTE5CVF3K');
+// GA4イベント送信ヘルパー
+function ga4Event(name, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', name, params || {});
+  }
+}
+// Phase 7-C Step 3-A: Amazon URL 判定ヘルパー
+function isAmazonUrl(url) {
+  if (!url) return false;
+  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --forest-deep:#0d1f1a;--forest:#2f4a3c;--parchment:#f4efe2;
-  --accent-gold:#C9A96B;--bg-primary:#081411;--radius-lg:16px;--radius-pill:9999px;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --forest: #0d1f1a;
+  --forest-mid: #2f4a3c;
+  --forest-light: #4a7a60;
+  --parchment: #f4efe2;
+  --parchment-dark: #e8e0cc;
+  --accent: #8f5f2c;
+  --accent-light: #c49a5a;
+  --text: #1a2e25;
+  --text-muted: #5a7060;
+  --danger: #b03a2e;
+  --warning: #7d6608;
+  --font-display: 'Playfair Display', 'Noto Serif JP', serif;
+  --font-body: 'Noto Serif JP', Georgia, serif;
+  --radius: 12px;
 }
-html{scroll-behavior:smooth;}
-body{font-family:"Noto Serif JP",serif;background:var(--parchment);color:var(--forest-deep);min-height:100vh;display:flex;flex-direction:column;}
+html { font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--forest);
+  color: var(--parchment);
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
+}
+.screen { display: none; min-height: 100dvh; padding: 24px 16px 40px; max-width: 520px; margin: 0 auto; }
+.screen.active { display: flex; flex-direction: column; }
+#screen-start { align-items: center; justify-content: center; text-align: center; gap: 0; }
+.logo-mark { font-size: 56px; line-height: 1; margin-bottom: 16px; filter: drop-shadow(0 2px 8px rgba(0,0,0,.4)); }
+.start-title { font-family: var(--font-display); font-size: clamp(1.5rem, 5vw, 2.2rem); color: var(--parchment); letter-spacing: .04em; line-height: 1.3; margin-bottom: 8px; }
+.start-sub { color: var(--accent-light); font-size: .95rem; letter-spacing: .06em; margin-bottom: 32px; }
+.species-count { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 6px 20px; font-size: .85rem; color: var(--parchment-dark); margin-bottom: 40px; }
+.route-intro { width: 100%; margin-bottom: 32px; }
+.route-intro-label { font-size: .8rem; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+.route-card-arrow { font-size: .9rem; color: var(--accent-light); flex-shrink: 0; margin-left: 4px; }
+.route-cards { display: grid; gap: 10px; width: 100%; }
+.route-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 14px; text-align: left; cursor: pointer; transition: background .18s, border-color .18s, transform .15s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; width: 100%; }
+.route-card:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.2); }
+.route-card:active { transform: scale(.98); }
+.route-emoji { font-size: 28px; flex-shrink: 0; }
+.route-info { flex: 1; min-width: 0; }
+.route-name { font-size: 1rem; font-weight: 600; color: var(--parchment); }
+.route-desc { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
+#screen-quiz { gap: 0; }
+.quiz-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.btn-back { background: none; border: 1px solid rgba(255,255,255,.18); color: var(--parchment); border-radius: 8px; padding: 8px 14px; font-size: .85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; flex-shrink: 0; }
+.btn-back:active { opacity: .7; }
+.progress-wrap { flex: 1; }
+.progress-label { font-size: .78rem; color: var(--text-muted); margin-bottom: 6px; }
+.progress-bar { height: 5px; background: rgba(255,255,255,.12); border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent-light); border-radius: 99px; transition: width .4s cubic-bezier(.4,0,.2,1); }
+.route-badge { font-size: .78rem; color: var(--accent-light); letter-spacing: .04em; white-space: nowrap; }
+.question-text { font-family: var(--font-display); font-size: clamp(1.1rem, 4vw, 1.35rem); line-height: 1.55; color: var(--parchment); margin-bottom: 28px; min-height: 3.5em; }
+.choices { display: grid; gap: 12px; flex: 1; }
+.choice-btn { background: rgba(255,255,255,.07); border: 1.5px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 16px 18px; color: var(--parchment); font-family: var(--font-body); font-size: .95rem; line-height: 1.45; text-align: left; cursor: pointer; transition: background .15s, border-color .15s, transform .12s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; min-height: 56px; width: 100%; }
+.choice-btn:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.22); }
+.choice-btn:active { transform: scale(.98); background: rgba(143,95,44,.2); }
+.choice-btn.selected { background: rgba(143,95,44,.35); border-color: var(--accent-light); color: var(--parchment); }
+#screen-result { gap: 0; }
+.result-header { text-align: center; margin-bottom: 28px; }
+.result-label { font-size: .8rem; color: var(--accent-light); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+.result-species-name { font-family: var(--font-display); font-size: clamp(1.8rem, 6vw, 2.4rem); color: var(--parchment); line-height: 1.2; margin-bottom: 4px; }
+.result-latin { font-size: .82rem; color: var(--text-muted); font-style: italic; margin-bottom: 20px; }
+.result-emoji { font-size: 64px; margin-bottom: 20px; display: block; }
+.result-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+.result-card-title { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+.result-desc { font-size: .92rem; line-height: 1.7; color: var(--parchment-dark); }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.badge { padding: 5px 13px; border-radius: 999px; font-size: .78rem; font-weight: 600; letter-spacing: .04em; }
+.badge-beginner { background: rgba(74,122,96,.3); border: 1px solid var(--forest-light); color: #8dcba0; }
+.badge-intermediate { background: rgba(143,95,44,.25); border: 1px solid var(--accent); color: var(--accent-light); }
+.badge-advanced { background: rgba(176,58,46,.2); border: 1px solid var(--danger); color: #e07060; }
+.badge-cites { background: rgba(125,102,8,.2); border: 1px solid var(--warning); color: #c4a820; }
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.spec-item { background: rgba(255,255,255,.04); border-radius: 8px; padding: 10px 12px; }
+.spec-label { font-size: .72rem; color: var(--text-muted); margin-bottom: 4px; }
+.spec-value { font-size: .9rem; color: var(--parchment); }
+.legal-box { background: rgba(125,102,8,.12); border: 1px solid rgba(125,102,8,.4); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: .85rem; color: #c4a820; line-height: 1.6; }
+.result-links { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.art-link { display: block; padding: 14px 18px; background: var(--forest-mid); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); color: var(--parchment); text-decoration: none; font-size: .9rem; transition: background .15s; -webkit-tap-highlight-color: transparent; }
+.art-link:hover { background: #3d5e4e; }
+.art-link::after { content: " →"; color: var(--accent-light); }
+.amazon-link { display: block; padding: 14px 18px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: var(--radius); color: var(--accent-light); text-decoration: none; font-size: .9rem; }
+.btn-row { display: flex; gap: 10px; }
+.btn-retry { flex: 1; padding: 15px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); color: var(--parchment); font-family: var(--font-body); font-size: .95rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.btn-retry:hover { background: rgba(255,255,255,.12); }
+.btn-share { flex: 1; padding: 15px; background: var(--accent); border: none; border-radius: var(--radius); color: var(--parchment); font-family: var(--font-body); font-size: .95rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; box-shadow: 0 2px 12px rgba(143,95,44,.3); }
+.btn-share:hover { background: var(--accent-light); }
+.footer-note { margin-top: 32px; font-size: .75rem; color: var(--text-muted); text-align: center; line-height: 1.6; border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; }
 
-/* ── Mini Nav ── */
-.mini-nav{background:rgba(5,14,7,.92);padding:0 16px;height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(201,169,107,.14);}
-.mini-nav-inner{display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;width:100%;max-width:900px;margin:0 auto;}
-.mini-nav-inner::-webkit-scrollbar{display:none;}
-.mini-nav-logo{font-family:"Playfair Display",serif;font-weight:700;font-size:.78rem;letter-spacing:.16em;color:rgba(201,169,107,.72);text-decoration:none;padding-right:14px;border-right:1px solid rgba(255,255,255,.12);margin-right:10px;white-space:nowrap;}
-.mini-nav-logo:hover{color:var(--accent-gold);}
-.mini-nav-link{font-family:"Noto Serif JP",serif;font-size:.74rem;font-weight:700;color:rgba(200,215,205,.60);text-decoration:none;padding:0 10px;height:44px;line-height:44px;white-space:nowrap;transition:color .18s;}
-.mini-nav-link:hover{color:rgba(201,169,107,.88);}
-@media(max-width:680px){.mini-nav-logo{display:none;}}
+/* ===== PHASE 3: 相性スコアメーター ===== */
+.score-meter { text-align: center; margin-bottom: 20px; }
+.score-pct { font-family: var(--font-display); font-size: clamp(2.8rem, 10vw, 3.8rem); color: var(--accent-light); line-height: 1; font-weight: 700; }
+.score-pct-unit { font-size: .6em; color: var(--text-muted); }
+.score-label { font-size: .78rem; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.score-bar-wrap { margin: 10px auto 0; max-width: 240px; height: 6px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--forest-light), var(--accent-light)); transition: width .8s cubic-bezier(.4,0,.2,1); }
 
-/* ── Main ── */
-.mnt-main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 20px;}
-.mnt-card{background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);padding:40px 32px 36px;max-width:520px;width:100%;text-align:center;box-shadow:0 4px 24px rgba(8,20,17,.07);}
-.mnt-icon{font-size:2.8rem;margin-bottom:16px;display:block;}
-.mnt-title{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.30rem,4vw,1.70rem);color:var(--forest-deep);margin-bottom:16px;line-height:1.3;}
-.mnt-body{font-size:.92rem;color:#4a6058;line-height:1.90;margin-bottom:28px;}
-.mnt-divider{border:none;border-top:1px solid #e2dbc8;margin:24px 0;}
-.mnt-label{font-size:.68rem;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--accent-gold);display:block;margin-bottom:16px;}
-.mnt-links{display:flex;flex-direction:column;gap:10px;}
-.mnt-link{display:flex;align-items:center;gap:10px;text-decoration:none;background:var(--parchment);border:1.5px solid #ddd5bf;border-radius:12px;padding:14px 16px;color:var(--forest-deep);font-size:.88rem;font-weight:700;transition:border-color .20s,transform .18s;}
-.mnt-link:hover{border-color:rgba(201,169,107,.44);transform:translateX(3px);}
-.mnt-link-icon{font-size:1.20rem;flex-shrink:0;}
-.mnt-link-text{text-align:left;}
-.mnt-link-sub{font-size:.72rem;color:rgba(47,74,60,.52);font-weight:400;display:block;margin-top:2px;}
-@media(max-width:480px){.mnt-card{padding:28px 18px 24px;}.mnt-links{gap:8px;}}
+/* ===== PHASE 3: ステップドット ===== */
+.step-dots { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+.step-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); transition: background .3s, transform .3s; }
+.step-dot.done { background: var(--accent-light); }
+.step-dot.current { background: var(--parchment); transform: scale(1.4); }
+
+/* ===== PHASE 3: 確認モーダル ===== */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 100; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(4px); }
+.modal-overlay.open { display: flex; }
+.modal-box { background: #1a3028; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 28px 24px; max-width: 320px; width: 100%; text-align: center; }
+.modal-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--parchment); margin-bottom: 12px; }
+.modal-body { font-size: .88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
+.modal-btns { display: flex; gap: 10px; }
+.modal-btn { flex: 1; padding: 12px; border-radius: var(--radius); font-family: var(--font-body); font-size: .9rem; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.modal-btn-cancel { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: var(--parchment); }
+.modal-btn-ok { background: var(--accent); border: none; color: var(--parchment); }
+
+/* ===== PHASE 3: コピー完了トースト ===== */
+.toast { position: fixed; bottom: calc(env(safe-area-inset-bottom) + 24px); left: 50%; transform: translateX(-50%) translateY(80px); background: var(--forest-mid); border: 1px solid rgba(255,255,255,.15); color: var(--parchment); padding: 10px 22px; border-radius: 999px; font-size: .85rem; z-index: 200; transition: transform .3s cubic-bezier(.4,0,.2,1), opacity .3s; opacity: 0; pointer-events: none; white-space: nowrap; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ===== PHASE 4: 機材推奨リスト ===== */
+.equipment-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+.equipment-item:last-child { border-bottom: none; }
+.equipment-cat { font-size: .72rem; color: var(--text-muted); width: 52px; flex-shrink: 0; }
+.equipment-label { flex: 1; font-size: .88rem; color: var(--parchment-dark); }
+.equipment-link { flex-shrink: 0; padding: 5px 12px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: 999px; color: var(--accent-light); font-size: .78rem; text-decoration: none; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+.equipment-link:hover { background: rgba(196,154,90,.28); }
+.equipment-na { font-size: .78rem; color: var(--text-muted); }
+
+/* ===== PHASE 5: 著者飼育中バッジ ===== */
+.badge-owner { background: linear-gradient(135deg, rgba(47,74,60,.6), rgba(13,31,26,.8)); border: 1px solid var(--forest-light); color: #8dcba0; position: relative; padding-left: 22px; }
+.badge-owner::before { content: '🐢'; position: absolute; left: 6px; font-size: .85em; }
+
+/* ===== PHASE 5: 寿命バナー ===== */
+.lifespan-banner { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: .84rem; color: var(--parchment-dark); }
+.lifespan-banner[style*="none"] { display: none; }
+.lifespan-icon { font-size: 1.2rem; flex-shrink: 0; }
+.lifespan-text { flex: 1; line-height: 1.5; }
+.lifespan-years { font-weight: 600; color: var(--accent-light); }
+
+/* ===== PHASE 5: 初心者警告 ===== */
+.beginner-warn { background: rgba(176,58,46,.1); border: 1px solid rgba(176,58,46,.35); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: .85rem; color: #e07060; line-height: 1.6; display: none; }
+.beginner-warn.show { display: block; }
+.beginner-warn strong { color: #f0907e; }
+
+/* ===== PHASE 6-B: おすすめ飼育セット ===== */
+.sk-section { margin-bottom: 16px; }
+.sk-heading { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; padding: 20px 20px 0; }
+.sk-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 16px; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; }
+.sk-scroll::-webkit-scrollbar { display: none; }
+.sk-card { flex: 0 0 200px; scroll-snap-align: start; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.sk-card-badge { font-size: .68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; align-self: flex-start; white-space: nowrap; }
+.sk-badge-best     { background: rgba(74,122,96,.35);  border: 1px solid var(--forest-light); color: #8dcba0; }
+.sk-badge-budget   { background: rgba(143,95,44,.25);  border: 1px solid var(--accent);       color: var(--accent-light); }
+.sk-badge-standard { background: rgba(74,122,96,.25);  border: 1px solid var(--forest-light); color: #8dcba0; }
+.sk-badge-premium  { background: rgba(176,58,46,.2);   border: 1px solid var(--danger);       color: #e07060; }
+.sk-card-name { font-size: .85rem; color: var(--parchment); line-height: 1.4; font-weight: 600; }
+.sk-card-rating { font-size: .75rem; color: var(--accent-light); }
+.sk-card-price { font-size: .75rem; color: var(--text-muted); }
+.sk-card-why  { font-size: .75rem; color: var(--parchment-dark); line-height: 1.5; }
+.sk-card-btn { display: block; margin-top: auto; padding: 8px 10px; background: rgba(196,154,90,.15); border: 1px solid rgba(196,154,90,.3); border-radius: 8px; color: var(--accent-light); font-size: .78rem; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s; }
+.sk-card-btn:hover { background: rgba(196,154,90,.28); }
+.sk-card-btn--soon { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--text-muted); cursor: default; font-size: .72rem; line-height: 1.35; padding: 6px 8px; text-align: left; word-break: keep-all; }
+.sk-cat-label { font-size: .68rem; color: var(--text-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+.sk-disclaimer { font-size: .7rem; color: var(--text-muted); padding: 0 20px 4px; text-align: right; }
+/* Phase 7: 初期費用ボックス */
+.cost-box { display: flex; align-items: center; gap: 12px; margin: 0 20px 12px; padding: 12px 16px; background: rgba(196,154,90,.1); border: 1px solid rgba(196,154,90,.3); border-radius: 10px; }
+.cost-box-icon { font-size: 22px; flex-shrink: 0; }
+.cost-box-body { flex: 1; min-width: 0; }
+.cost-box-label { font-size: .68rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+.cost-box-range { font-size: 1.05rem; font-weight: 700; color: var(--parchment); font-family: var(--font-display); }
+.cost-box-note  { font-size: .68rem; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+/* Phase 7: まとめて見るCTAボタン */
+.sk-cta-wrap { padding: 4px 20px 20px; }
+.sk-cta-btn { display: block; width: 100%; padding: 13px 16px; background: linear-gradient(135deg, rgba(196,154,90,.25), rgba(74,122,96,.2)); border: 1.5px solid rgba(196,154,90,.5); border-radius: 10px; color: var(--parchment); font-size: .92rem; font-weight: 700; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s, border-color .15s; letter-spacing: .03em; }
+.sk-cta-btn:hover { background: linear-gradient(135deg, rgba(196,154,90,.38), rgba(74,122,96,.32)); border-color: var(--accent-light); }
+.sk-cta-btn-arrow { margin-left: 6px; color: var(--accent-light); }
+
+/* ===== PHASE 4: note.com誘導 ===== */
+.note-cta { margin-bottom: 16px; }
+.note-link { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: linear-gradient(135deg, rgba(65,179,163,.12), rgba(47,74,60,.3)); border: 1px solid rgba(65,179,163,.25); border-radius: var(--radius); text-decoration: none; color: var(--parchment); transition: background .15s; -webkit-tap-highlight-color: transparent; }
+.note-link:hover { background: linear-gradient(135deg, rgba(65,179,163,.2), rgba(47,74,60,.4)); }
+.species-page-cta { display: block; padding: 16px 18px; background: linear-gradient(135deg, rgba(212,169,106,.18), rgba(47,74,60,.3)); border: 1.5px solid rgba(212,169,106,.45); border-radius: var(--radius); color: var(--parchment); text-decoration: none; font-size: .95rem; font-weight: 600; transition: background .15s, border-color .15s; -webkit-tap-highlight-color: transparent; margin-bottom: 12px; }
+.species-page-cta:hover { background: linear-gradient(135deg, rgba(212,169,106,.28), rgba(47,74,60,.45)); border-color: var(--accent-light); }
+.species-page-cta-label { font-size: .72rem; color: var(--accent-light); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.species-page-cta-title { font-size: 1rem; }
+.species-page-cta-arrow { float: right; color: var(--accent-light); }
+.note-icon { font-size: 28px; flex-shrink: 0; }
+.note-text { flex: 1; min-width: 0; }
+.note-title { font-size: .95rem; font-weight: 600; color: var(--parchment); }
+.note-sub { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
+.note-arrow { color: rgba(65,179,163,.8); font-size: 1.1rem; flex-shrink: 0; }
+
+/* ===== Phase 7-C Step 2-A: 診断結果CVR改善 ===== */
+
+/* 費用サマリーバッジ */
+.res-cost-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.res-cost-item {
+  background: rgba(196,154,90,.1);
+  border: 1px solid rgba(196,154,90,.28);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.res-cost-item-label {
+  font-size: .66rem;
+  color: var(--accent-light);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.res-cost-item-value {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--parchment);
+  font-family: var(--font-display);
+  line-height: 1.25;
+}
+.res-cost-item-note {
+  font-size: .62rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* 購入障壁除去バッジ */
+.res-barrier-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+.res-barrier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  background: rgba(74,122,96,.2);
+  border: 1px solid rgba(74,122,96,.4);
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #8dcba0;
+  white-space: nowrap;
+}
+
+/* 2段CTA */
+.res-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+.res-cta-primary {
+  display: block;
+  padding: 15px 18px;
+  background: linear-gradient(135deg, var(--accent), #7a4e22);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  font-size: .98rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .02em;
+  box-shadow: 0 3px 14px rgba(143,95,44,.35);
+  transition: opacity .15s, transform .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-primary:hover  { opacity: .9; }
+.res-cta-primary:active { transform: scale(.98); }
+.res-cta-secondary {
+  display: block;
+  padding: 13px 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  color: var(--parchment-dark);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-secondary:hover { background: rgba(255,255,255,.11); }
+
+/* emotion copy */
+.res-emotion-copy {
+  font-size: .88rem;
+  color: var(--parchment-dark);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.04);
+  border-left: 2.5px solid var(--accent-light);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ===== Phase 9-B: Result CVR ===== */
+.res-match-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(143,95,44,.22); border: 1px solid var(--accent);
+  border-radius: 999px; padding: 5px 14px;
+  font-size: .8rem; font-weight: 700; color: var(--accent-light);
+  margin-bottom: 14px;
+}
+.res-match-badge .badge-icon { font-size: 1rem; }
+.res-why-block {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 16px;
+}
+.res-why-title {
+  font-size: .75rem; color: var(--accent-light); letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.res-why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+.res-why-list li { font-size: .88rem; color: var(--parchment-dark); line-height: 1.55; padding-left: 4px; }
+.res-why-list li::before { content: "✓ "; color: var(--accent-light); font-weight: 700; }
+.res-loss-block {
+  background: rgba(196,154,90,.1); border: 1px solid rgba(196,154,90,.3);
+  border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px;
+}
+.res-loss-icon { font-size: .85rem; color: var(--accent-light); font-weight: 700; margin-bottom: 6px; }
+.res-loss-text { font-size: .83rem; color: var(--parchment-dark); line-height: 1.65; }
+.res-loss-text strong { color: var(--accent-light); }
+/* ===== /Phase 9-B ===== */
 </style>
 </head>
 <body>
 
-<nav class="mini-nav">
-  <div class="mini-nav-inner">
-    <a href="../" class="mini-nav-logo">KAME LIFE</a>
-    <a href="../species-list.html" class="mini-nav-link">種一覧</a>
-    <a href="../compare/" class="mini-nav-link">比較</a>
-    <a href="../guides/" class="mini-nav-link">ガイド</a>
+<section id="screen-start" class="screen active" role="main" aria-label="亀診断トップ">
+  <div class="logo-mark" aria-hidden="true">🐢</div>
+  <h1 class="start-title">あなたに合う亀診断</h1>
+  <p class="start-sub">カメライフガイド</p>
+  <div class="species-count" aria-label="対応種数">100種対応</div>
+  <div class="route-intro">
+    <div class="route-intro-label" id="route-cards-label">ルートをタップして診断スタート</div>
+    <div class="route-cards" id="route-cards" role="list" aria-labelledby="route-cards-label"></div>
   </div>
-</nav>
+</section>
 
-<main class="mnt-main">
-  <div class="mnt-card">
-    <span class="mnt-icon">🔧</span>
-    <h1 class="mnt-title">亀診断ツールは<br>メンテナンス中です</h1>
-    <p class="mnt-body">
-      より正確な診断結果を表示するため、診断エンジンを調整しています。<br>
-      再開まで、種別ページ・飼育ガイド・比較ページをご覧ください。
-    </p>
-    <hr class="mnt-divider">
-    <span class="mnt-label">メンテナンス中の代替ページ</span>
-    <div class="mnt-links">
-      <a href="../species-list.html" class="mnt-link">
-        <span class="mnt-link-icon">🐢</span>
-        <span class="mnt-link-text">
-          種一覧を見る
-          <span class="mnt-link-sub">100種以上の亀・リクガメを一覧で確認</span>
-        </span>
-      </a>
-      <a href="../compare/" class="mnt-link">
-        <span class="mnt-link-icon">⚖️</span>
-        <span class="mnt-link-text">
-          比較ページを見る
-          <span class="mnt-link-sub">気になる種を並べて比較</span>
-        </span>
-      </a>
-      <a href="../guides/" class="mnt-link">
-        <span class="mnt-link-icon">📖</span>
-        <span class="mnt-link-text">
-          飼育ガイドを見る
-          <span class="mnt-link-sub">UVB・フィルター・温度管理・餌ガイド</span>
-        </span>
-      </a>
-      <a href="../" class="mnt-link">
-        <span class="mnt-link-icon">🏠</span>
-        <span class="mnt-link-text">
-          トップページに戻る
-          <span class="mnt-link-sub">カメライフガイド ホーム</span>
-        </span>
-      </a>
+<section id="screen-quiz" class="screen" role="main" aria-label="診断質問">
+  <div class="quiz-header">
+    <button class="btn-back" id="btn-back" aria-label="前の画面に戻る">← 戻る</button>
+    <div class="progress-wrap" role="status" aria-live="polite">
+      <div class="progress-label" id="progress-label">1 / 4</div>
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="進捗">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="step-dots" id="step-dots" aria-hidden="true"></div>
+    </div>
+    <div class="route-badge" id="route-badge" aria-hidden="true"></div>
+  </div>
+  <p class="question-text" id="question-text" tabindex="-1"></p>
+  <div class="choices" id="choices" role="group" aria-labelledby="question-text"></div>
+</section>
+
+<section id="screen-result" class="screen" role="main" aria-label="診断結果">
+  <div class="result-header">
+    <div class="result-label">あなたにおすすめの亀</div>
+    <div id="res-match-badge-wrap"></div>
+    <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
+    <div class="result-species-name" id="res-name" tabindex="-1"></div>
+    <div class="result-latin" id="res-latin"></div>
+    <button class="btn-retry" id="btn-retry-top" style="margin-top:12px;width:auto;padding:10px 22px;font-size:.88rem;opacity:.8;">もう一度診断する</button>
+  </div>
+  <div class="score-meter" id="score-meter" aria-label="相性スコア">
+    <div class="score-pct"><span id="score-num">0</span><span class="score-pct-unit">%</span></div>
+    <div class="score-label">相性スコア</div>
+    <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
+  </div>
+  <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
+  <!-- Phase 7-C Step 2-A: 費用目安サマリー -->
+  <div class="res-cost-summary" id="res-cost-summary" style="display:none"></div>
+  <!-- Phase 7-C Step 2-A: 購入障壁除去バッジ -->
+  <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
+  <!-- Phase 7-C Step 2-A: emotion copy -->
+  <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
+  <!-- PHASE 5: 寿命バナー -->
+  <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
+    <span class="lifespan-icon">⏳</span>
+    <div class="lifespan-text">寿命の目安：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
+  </div>
+  <!-- PHASE 5: 初心者警告 -->
+  <div class="beginner-warn" id="beginner-warn" role="alert"></div>
+  <div id="res-legal" style="display:none" role="alert"></div>
+  <div class="result-card">
+    <div class="result-card-title">おすすめのポイント</div>
+    <p class="result-desc" id="res-reason"></p>
+  </div>
+  <div id="res-why-block-wrap"></div>
+  <div id="res-loss-block-wrap"></div>
+  <div class="result-card">
+    <div class="result-card-title">基本スペック</div>
+    <div class="spec-grid" id="res-specs"></div>
+  </div>
+  <!-- PHASE 6-B: おすすめ飼育セット（基本スペック直後） -->
+  <div id="starter-kit-section" style="display:none"></div>
+  <!-- PHASE 4: 機材推奨セクション -->
+  <div class="result-card" id="equipment-section" style="display:none">
+    <div class="result-card-title">はじめに揃えるもの</div>
+    <div id="equipment-list"></div>
+  </div>
+  <!-- PHASE 4: note.com誘導 -->
+  <div class="note-cta" id="note-cta" style="display:none">
+    <a href="#" id="note-link" class="note-link" target="_blank" rel="noopener noreferrer">
+      <span class="note-icon">📝</span>
+      <div class="note-text">
+        <div class="note-title" id="note-title">詳しい飼育記事を読む</div>
+        <div class="note-sub">カメライフガイド on note</div>
+      </div>
+      <span class="note-arrow">→</span>
+    </a>
+  </div>
+  <!-- Phase 7-C Step 2-A: 2段CTA -->
+  <div class="res-cta-block" id="res-cta-block" style="display:none"></div>
+  <div class="result-links" id="res-links"></div>
+  <div class="btn-row">
+    <button class="btn-retry" id="btn-retry">もう一度診断</button>
+    <button class="btn-share" id="btn-share">結果をシェア</button>
+  </div>
+  <div class="footer-note">
+    ※ 本診断はカメライフガイドが独自に作成したものです。<br>
+    購入前に必ず最新の法規制・入手可能状況をご確認ください。<br>
+    CITES II種はCBインボイス付き国内個体のみ購入を推奨します。<br><br>
+    <a href="https://note.com/proper_bison2362" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light);text-decoration:underline;">カメライフガイド on note</a>
+    &nbsp;｜&nbsp;
+    <a href="../index.html" style="color:var(--accent-light);text-decoration:underline;">← サイトトップへ戻る</a>
+  </div>
+</section>
+
+<!-- PHASE 3: 確認モーダル -->
+<div class="modal-overlay" id="modal-quit" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-title" id="modal-title">診断を中断しますか？</div>
+    <div class="modal-body">途中まで答えた回答はリセットされます。</div>
+    <div class="modal-btns">
+      <button class="modal-btn modal-btn-cancel" id="modal-cancel">続ける</button>
+      <button class="modal-btn modal-btn-ok" id="modal-ok">トップへ戻る</button>
     </div>
   </div>
-</main>
+</div>
+<!-- PHASE 3: トースト -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- データファイル -->
+<script src="species.js"></script>
+<script src="routes.js"></script>
+<script src="equipment.js"></script>
+<script src="../data/products.js"></script>
+<script>
+// ── P0 Fix: ga4Event safety wrapper ─────────────────────────
+// GA4 / gtag が未定義でも診断フローを停止させない
+if (typeof ga4Event !== 'function') {
+  window.ga4Event = function(name, params) {
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params || {});
+      }
+    } catch(e) {
+      // gtag未定義でも無視して続行
+    }
+  };
+}
+// ──────────────────────────────────────────────────────────────
+
+'use strict';
+
+// ===== 状態変数 =====
+var selectedRoute = null;
+var currentQuestionIndex = 0;
+var _viewedSteps = {};        // Phase 9-C: step view dedup
+var _diagnosisCompleted = false; // Phase 9-C: exit guard
+var scores = {};
+var result = null;
+var resultScore = 0;
+var resultMaxScore = 0;
+var answerHistory = [];
+var toastTimer = null;
+
+// ===== 画面切替 =====
+function show(id) {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ===== トースト =====
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2400);
+}
+
+// ===== URLパラメータ =====
+function saveResultToUrl(routeId, speciesName) {
+  try {
+    var url = new URL(location.href);
+    url.searchParams.set('r', routeId);
+    url.searchParams.set('s', encodeURIComponent(speciesName));
+    history.replaceState(null, '', url.toString());
+  } catch(e){}
+}
+
+function clearResultUrl() {
+  try {
+    var url = new URL(location.href);
+    url.searchParams.delete('r');
+    url.searchParams.delete('s');
+    history.replaceState(null, '', url.toString());
+  } catch(e){}
+}
+
+function tryRestoreFromUrl() {
+  try {
+    var params = new URLSearchParams(location.search);
+    var routeId = params.get('r');
+    var specName = decodeURIComponent(params.get('s') || '');
+    if (!routeId || !specName) return false;
+    var route = ROUTES.find(function(r){ return r.id === routeId; });
+    if (!route) return false;
+    var sp = route.species.find(function(s){ return s.name === specName; });
+    if (!sp) return false;
+    selectedRoute = route;
+    result = sp;
+    resultScore = 0;
+    resultMaxScore = 1;
+    showResult(sp, null);  // null = URL復元時はスコア非表示
+    return true;
+  } catch(e){ return false; }
+}
+
+// ===== スコア%計算 =====
+function calcMatchPercent(sp, currentScores) {
+  // 全候補のスコア分布から相対%を算出
+  var candidates = selectedRoute ? selectedRoute.species.filter(function(sp){ return sp.availability !== 'archive'; }) : [];
+  var allScores = candidates.map(function(c){ return c.score(currentScores); });
+  var minS = Math.min.apply(null, allScores);
+  var maxS = Math.max.apply(null, allScores);
+  var myScore = sp.score(currentScores);
+  if (maxS === minS) return 85; // 全員同スコアなら85%固定
+  var pct = Math.round(((myScore - minS) / (maxS - minS)) * 55 + 40); // 40〜95%に正規化
+  return Math.min(95, Math.max(40, pct));
+}
+
+// ===== PHASE 5: 著者飼育中種リスト =====
+var OWNER_SPECIES = {
+  'スペングラーヤマガメ': true,
+  'ヒラセガメ': true,
+  'ミツユビハコガメ': true
+};
+
+// ===== Phase 7-C Step 2-A: 月額維持費テーブル =====
+var MONTHLY_COST_MAP = {
+  tortoise_dry_small:  { low: 1000,  high: 3000,  label: '¥1,000〜3,000' },
+  tortoise_dry_large:  { low: 2000,  high: 5000,  label: '¥2,000〜5,000' },
+  tortoise_forest:     { low: 1500,  high: 4000,  label: '¥1,500〜4,000' },
+  semi_aquatic_small:  { low: 1000,  high: 2500,  label: '¥1,000〜2,500' },
+  semi_aquatic_medium: { low: 1500,  high: 3500,  label: '¥1,500〜3,500' },
+  fully_aquatic:       { low: 2000,  high: 5000,  label: '¥2,000〜5,000' },
+  japanese_pond:       { low: 1000,  high: 2500,  label: '¥1,000〜2,500' },
+  box_turtle:          { low: 1500,  high: 3000,  label: '¥1,500〜3,000' },
+};
+
+// ===== Phase 7-C Step 2-A: 購入障壁除去バッジテーブル =====
+// equipmentKey / difficulty / size から最大3つ選ぶ
+var BARRIER_BADGE_MAP = {
+  tortoise_dry_small:  ['🌿 室内飼育OK', '💨 ニオイ少なめ', '👀 観察が楽しい'],
+  tortoise_dry_large:  ['🌿 室内飼育OK', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
+  tortoise_forest:     ['🌿 室内飼育OK', '💧 湿度管理で長生き', '👀 観察が楽しい'],
+  semi_aquatic_small:  ['🏠 省スペース', '🎯 初心者向き', '👀 観察が楽しい'],
+  semi_aquatic_medium: ['🌊 水棲ガメ代表', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
+  fully_aquatic:       ['💧 水棲特化', '📦 飼育イメージをつかみやすい', '👀 観察が楽しい'],
+  japanese_pond:       ['🇯🇵 日本産', '🌊 水槽飼育OK', '👀 観察が楽しい'],
+  box_turtle:          ['🌿 室内飼育OK', '🐢 ユニークな習性', '👀 観察が楽しい'],
+};
+var BARRIER_BADGE_BEGINNER = ['🎯 初心者向き', '📦 必要なものが分かりやすい', '👀 観察が楽しい'];
+var BARRIER_BADGE_ADVANCED  = ['✨ 憧れ枠', '🏆 上級者向け', '📦 詳細ページで確認できる'];
+
+// ===== Phase 7-C Step 2-A: emotion copy テンプレート =====
+var EMOTION_COPY_MAP = {
+  // 入門種
+  'ロシアリクガメ':    '小柄でおっとりした性格。リクガメ入門として長く愛される一種です。草食性なので野菜中心で飼いやすく、慣れてくると手渡しでエサを食べることも。',
+  'ヘルマンリクガメ（ヒガシ亜種）': '活発で好奇心旺盛。ハーブや野草を好み、日光浴の姿が愛らしいリクガメです。ヨーロッパでは最もポピュラーな飼育種のひとつ。',
+  'ヘルマンリクガメ（ニシ亜種）':   '落ち着いた気質で飼育しやすく、小ぶりな体型が室内飼育に向いています。ヒガシ亜種より体格がコンパクトで人気があります。',
+  'ギリシャリクガメ':  'Mediterranean（地中海）の乾燥した草地で暮らす、歴史ある飼育種。丈夫で長命、条件が合えば50年以上のパートナーになります。',
+  'ニオイガメ':        '手のひらサイズの水棲ガメ。45cm水槽から飼育でき、コンパクトなのに存在感があります。においは適切な水質管理で十分抑えられます。',
+  'ヒメニオイガメ':    '国内で最も人気の高い小型水棲ガメのひとつ。水槽が小さくて済み、観察のしやすさが魅力。飼育難易度は低め。',
+  'ミシシッピチズガメ':'背中の独特なキールと首の模様が美しい水棲ガメ。水質管理を丁寧にすれば、長く元気に泳ぐ姿を観察できます。',
+  'ペインテッドタートル': '北米を代表する美しい水棲ガメ。赤みを帯びたふちとオリーブ色の甲羅が印象的。人にも慣れやすく、長期飼育に向いています。',
+  'スペングラーヤマガメ': '小型で個性的な山地性ガメ。ハコガメに近い生態を持ち、陸上でも水中でも観察が楽しめます。著者も実際に飼育中の種です。',
+  'ヒラセガメ': '平たい甲羅と落ち着いた行動が特徴のアジア産ガメ。著者が実際に飼育しており、飼い込むほどに愛着が増す種です。',
+  'ミツユビハコガメ': '三本指の後脚と蝶番式の腹甲が特徴のハコガメ。著者も飼育中で、慣れると動き回る姿が楽しみになる一種です。',
+  'トウブハコガメ': '蝶番のある腹甲で完全に甲羅に閉じこもれる独特のガメ。長生きすることで知られ、50〜100年生きることもあります。',
+  'キバラガメ': 'ミシシッピアカミミガメの近縁種で、耳の模様が黄色いのが特徴。新規購入・飼育が可能な種で、活発な泳ぎが見ていて楽しい。',
+};
+// 難易度 / 法規 / サイズに応じた汎用テンプレート
+function buildEmotionCopy(sp, equipKey, pctArg) {
+  // ── P0 Fix: pctArg を第3引数で受け取り、未定義でも安全に動作 ──
+  var pctVal = Math.max(75, (typeof pctArg === 'number' && pctArg >= 40) ? pctArg : 88);
+
+  // 個別マップ確認（副作用ブロック実行後にreturn）
+  var individualCopy = EMOTION_COPY_MAP[sp.name] || null;
+
+  // ===== Phase 9-B: Match Badge =====
+  try {
+    var _w1 = document.getElementById('res-match-badge-wrap');
+    if (_w1) {
+      _w1.innerHTML =
+        '<div class="res-match-badge"><span class="badge-icon">&#x1F3AF;</span>&#x9069;&#x5408;&#x5EA6; ' + pctVal + '%</div>';
+    }
+  } catch(e) {}
+
+  // ===== Phase 9-B: Why Matched Block =====
+  try {
+    var _w2 = document.getElementById('res-why-block-wrap');
+    if (_w2) {
+      var _diff = sp.difficulty || '';
+      var _reasons = [];
+      if (_diff.indexOf('\u5165\u9580') >= 0 || _diff.indexOf('\u521D\u5FC3') >= 0) {
+        _reasons.push('\u521D\u5FC3\u8005\u3067\u3082\u7BA1\u7406\u3057\u3084\u3059\u3044\u96E3\u6613\u5EA6');
+      } else if (_diff.indexOf('\u4E0A\u7D1A') >= 0) {
+        _reasons.push('\u98FC\u80B2\u7D4C\u9A13\u8005\u5411\u3051\u306E\u6311\u6226\u7684\u306A\u7A2E');
+      } else {
+        _reasons.push('\u98FC\u80B2\u30B9\u30DA\u30FC\u30B9\u306B\u5408\u3046');
+      }
+      _reasons.push('\u4E88\u7B97\u6761\u4EF6\u306B\u5408\u3044\u3084\u3059\u3044');
+      var _sz = (sp.size || '').toLowerCase();
+      if (_sz.indexOf('s') >= 0 || _sz.indexOf('\u5C0F') >= 0 || _sz.indexOf('10') >= 0 || _sz.indexOf('14') >= 0) {
+        _reasons.push('\u5C0F\u578B\u3067\u7701\u30B9\u30DA\u30FC\u30B9\u306B\u98FC\u80B2\u3067\u304D\u308B');
+      } else {
+        _reasons.push('\u751F\u614B\u304B\u3089\u9006\u7B97\u3057\u305F\u98FC\u80B2\u60C5\u5831\u304C\u63C3\u3063\u3066\u3044\u308B');
+      }
+      var _items = _reasons.slice(0,3).map(function(r){ return '<li>' + r + '</li>'; }).join('');
+      _w2.innerHTML =
+        '<div class="res-why-block">' +
+          '<div class="res-why-title">\u3042\u306A\u305F\u306B\u5411\u3044\u3066\u3044\u308B\u7406\u7531</div>' +
+          '<ul class="res-why-list">' + _items + '</ul>' +
+        '</div>';
+    }
+  } catch(e) {}
+
+  // ===== Phase 9-B: Loss Aversion Block =====
+  try {
+    var _w3 = document.getElementById('res-loss-block-wrap');
+    if (_w3) {
+      _w3.innerHTML =
+        '<div class="res-loss-block">' +
+          '<div class="res-loss-icon">&#x26A0;&#xFE0F; \u77E5\u3063\u3066\u304A\u304D\u305F\u3044\u3053\u3068</div>' +
+          '<p class="res-loss-text">\u98FC\u80B2\u7528\u54C1\u3092\u77E5\u3089\u305A\u306B\u63C3\u3048\u308B\u3068\u3001<strong>\u521D\u6708\u3060\u3051\u3067\uFF11\uFF5E\uFF13\u4E07\u5186\u4F59\u8A08\u306B\u304B\u304B\u308B\u3053\u3068</strong>\u304C\u3042\u308A\u307E\u3059\u3002<br>' +
+          'Starter Kit\u3092\u898B\u308B\u3068\u3001\u5FC5\u8981\u306A\u3082\u306E\u3092\u5148\u306B\u628A\u63E1\u3067\u304D\u307E\u3059\u3002</p>' +
+        '</div>';
+    }
+  } catch(e) {}
+
+  // ===== Phase 9-B: Conversion Block View =====
+  try {
+    if (typeof ga4Event === 'function') {
+      ga4Event('diagnosis_conv_block_view', { species: (sp.slug || sp.name) || null });
+    }
+  } catch(e) {}
+
+  if (individualCopy) return individualCopy;
+
+  // \u6CD5\u898F\u5236\u7A2E
+  if (sp.legal === 'conditional_invasive') {
+    return '\u65E2\u98FC\u80B2\u500B\u4F53\u306E\u7D9A\u3051\u98FC\u80B2\u304C\u8A8D\u3081\u3089\u308C\u3066\u3044\u308B\u7A2E\u3067\u3059\u3002\u9069\u5207\u306A\u98FC\u80B2\u74B0\u5883\u3092\u6574\u3048\u3001\u6CD5\u4EE4\u3092\u9075\u5B88\u3057\u305F\u4E0A\u3067\u3068\u3082\u306B\u904E\u3054\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
+  }
+  var _isAdv = (sp.difficulty || '').indexOf('\u4E0A\u7D1A') >= 0;
+  var _isXL  = (sp.size || '').indexOf('XL') >= 0;
+  if (_isAdv || _isXL) {
+    return '\u7D4C\u9A13\u8C4A\u5BCC\u306A\u98FC\u80B2\u8005\u304C\u6193\u308C\u308B\u4E0A\u7D1A\u8005\u5411\u3051\u306E\u7A2E\u3067\u3059\u3002\u8A2D\u5099\u30FB\u30B9\u30DA\u30FC\u30B9\u30FB\u9577\u671F\u8A08\u753B\u3092\u3057\u3063\u304B\u308A\u6E96\u5099\u3057\u3066\u304B\u3089\u8FCE\u3048\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u8A73\u7D30\u3092\u78BA\u8A8D\u3059\u308B\u3053\u3068\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002';
+  }
+  if (sp.cites) {
+    return '\u6D41\u901A\u91CF\u304C\u9650\u3089\u308C\u305F\u5E0C\u5C11\u306A\u7A2E\u3067\u3059\u3002CB\u500B\u4F53\uFF08\u56FD\u5185\u7E41\u6B96\u500B\u4F53\uFF09\u3092\u5165\u624B\u3057\u3001\u9069\u5207\u306A\u66F8\u985E\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u98FC\u80B2\u3092\u958B\u59CB\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u3055\u3089\u306B\u8A73\u3057\u304F\u89E3\u8AAC\u3057\u3066\u3044\u307E\u3059\u3002';
+  }
+  var _isBeg = (sp.difficulty || '').indexOf('\u5165\u9580') >= 0;
+  if (_isBeg) {
+    return '\u3042\u306A\u305F\u306E\u30E9\u30A4\u30D5\u30B9\u30BF\u30A4\u30EB\u306B\u5408\u3044\u3084\u3059\u3044\u7A2E\u3067\u3059\u3002\u5FC5\u8981\u306A\u6A5F\u6750\u306E\u7A2E\u985E\u304C\u6BD4\u8F03\u7684\u5C11\u306A\u304F\u3001\u98FC\u80B2\u30A4\u30E1\u30FC\u30B8\u3092\u3064\u304B\u307F\u3084\u3059\u3044\u306E\u304C\u7279\u9577\u3002\u8A73\u7D30\u30DA\u30FC\u30B8\u3067\u65E5\u3005\u306E\u7BA1\u7406\u624B\u9806\u3092\u78BA\u8A8D\u3057\u3066\u307F\u307E\u3057\u3087\u3046\u3002';
+  }
+  return '\u3084\u3084\u5C02\u9580\u7684\u306A\u77E5\u8B58\u304C\u5FC5\u8981\u3067\u3059\u304C\u3001\u6163\u308C\u308C\u3070\u9577\u304F\u697D\u3057\u3081\u308B\u7A2E\u3067\u3059\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u30DD\u30A4\u30F3\u30C8\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u6E96\u5099\u3092\u9032\u3081\u308B\u3053\u3068\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002';
+}
+
+
+// ===== PHASE 5: 寿命データ（平均寿命目安） =====
+var LIFESPAN_DATA = {
+  // リクガメ
+  'ロシアリクガメ':              '40〜50年',
+  'ヘルマンリクガメ（ヒガシ亜種）': '50〜80年',
+  'ヘルマンリクガメ（ニシ亜種）':  '50〜80年',
+  'ギリシャリクガメ':            '50〜100年',
+  'フチゾリリクガメ':            '50〜100年',
+  'エロンガータリクガメ':        '40〜60年',
+  'アカアシリクガメ':            '50〜80年',
+  'チャコリクガメ':              '50〜80年',
+  'ヒョウモンガメ':              '50〜100年',
+  'ベルセオレガメ':              '25〜50年',
+  'ソマリアリクガメ（エジプトリクガメ）': '20〜40年',
+  'ケヅメリクガメ（スルカタ）':  '50〜80年',
+  'アルダブラゾウガメ':          '80〜150年以上',
+  'インプレッサムツアシガメ':    '不明（長寿と推定）',
+  // 水棲
+  'ニオイガメ':                  '30〜50年',
+  'ヒメニオイガメ':              '20〜30年',
+  'ミシシッピドロガメ':          '20〜30年',
+  'ミスジドロガメ':              '20〜30年',
+  'カブトニオイガメ':            '20〜30年',
+  'スジクビニオイガメ':          '20〜30年',
+  'ホオアカドロガメ':            '20〜30年',
+  'ペインテッドタートル':        '25〜40年',
+  'クサガメ':                    '25〜40年',
+  'キバラガメ':                  '25〜40年',
+  'ミシシッピアカミミガメ':      '30〜40年',
+  'ミシシッピチズガメ':          '20〜30年',
+  'ニホンイシガメ':              '20〜30年',
+  'ヤエヤマイシガメ':            '20〜30年',
+  'マタマタ':                    '15〜30年',
+  'ブランディングガメ':          '60〜80年以上',
+  // ヤマガメ・ハコガメ
+  'スペングラーヤマガメ':        '25〜40年',
+  'ヒラセガメ':                  '30〜50年',
+  'ミツユビハコガメ':            '30〜50年',
+  'トウブハコガメ':              '50〜100年',
+  'キボシイシガメ':              '25〜50年',
+  'モリイシガメ':                '40〜60年',
+  'タイワンセマルハコガメ':      '25〜35年',
+  'マレーハコガメ':              '25〜30年',
+  'モエギハコガメ':              '30〜50年',
+  'ミスジハコガメ':              '30〜50年',
+};
+
+// ===== PHASE 5: 初心者警告データ =====
+var BEGINNER_WARN_DATA = {
+  'ケヅメリクガメ（スルカタ）':
+    '⚠️ <strong>飼育前に必ずご確認ください：</strong>成体は体重30〜100kgになります。6畳以上の屋外スペースと数十年の飼育計画が必要です。終生飼育できる環境を確保してから入手してください。',
+  'アルダブラゾウガメ':
+    '⚠️ <strong>大型種警告：</strong>成体は甲長120cm超・体重250kgを超えることもあります。施設レベルの飼育環境が必要で、個人飼育は非常に限られます。',
+  'ヒョウモンガメ':
+    '⚠️ <strong>上級者向け：</strong>成体は甲長65cm・体重40kgに達します。広いスペースと専門的な温度・湿度管理が必要です。',
+  'インプレッサムツアシガメ':
+    '⚠️ <strong>極めて飼育困難：</strong>低温・高湿度・高通気の三立が必要で、長期飼育記録が世界的にも少ない最難関種です。経験豊富な専門家のみ推奨します。',
+  'ミシシッピアカミミガメ':
+    '⚠️ <strong>条件付特定外来生物：</strong>新規購入・販売は法律で禁止されています。既飼育個体のみ継続飼育可。野外放流は絶対に禁止です。',
+  'スジオオニオイガメ':
+    '⚠️ <strong>取扱注意：</strong>噛みつき力が非常に強く、素手での取り扱いは厳禁です。CITES II規制対象で入手時は書類確認が必須。',
+  'フロリダスッポン':
+    '⚠️ <strong>攻撃的：</strong>非常に攻撃的で長い首で遠くまで噛みつきます。取り扱いには専用の器具が必要です。',
+  'スッポンモドキ':
+    '⚠️ <strong>大型種：</strong>成体は甲長70cmに達し、150cm以上の水槽が必要です。設備コストが高く本格的な飼育環境を用意してください。',
+  'ミスジハコガメ':
+    '⚠️ <strong>超希少・高価：</strong>国内流通が極めて限られ、入手価格は非常に高額です。CITES IIのCB証明書を必ず確認してください。',
+  'ミスジハコガメ（希少コレクション）':
+    '⚠️ <strong>超希少・高価：</strong>国内流通が極めて限られ、入手価格は非常に高額です。CITES IIのCB証明書を必ず確認してください。',
+};
+
+// ===== PHASE 5: 描画関数 =====
+function renderPhase5(sp) {
+  // 1) 著者飼育中バッジ
+  if (OWNER_SPECIES[sp.name]) {
+    var badges = document.getElementById('res-badges');
+    var ownerBadge = document.createElement('span');
+    ownerBadge.className = 'badge badge-owner';
+    ownerBadge.textContent = '著者飼育中';
+    ownerBadge.title = 'カメライフガイド著者が実際に飼育している種です';
+    badges.appendChild(ownerBadge);
+  }
+
+  // 2) 寿命バナー
+  var lifespanBanner = document.getElementById('lifespan-banner');
+  var lifespanYears = document.getElementById('lifespan-years');
+  var lifespan = LIFESPAN_DATA[sp.name];
+  if (lifespan) {
+    lifespanYears.textContent = lifespan;
+    lifespanBanner.style.display = '';
+  } else {
+    lifespanBanner.style.display = 'none';
+  }
+
+  // 3) 初心者警告
+  var warn = document.getElementById('beginner-warn');
+  var warnText = BEGINNER_WARN_DATA[sp.name];
+  if (warnText) {
+    warn.innerHTML = warnText;
+    warn.classList.add('show');
+  } else {
+    warn.innerHTML = '';
+    warn.classList.remove('show');
+  }
+}
+
+// ===== Phase3.1: 種別ページ — species.js の slug/hasPage を参照（MAPなし） =====
+
+// ===== PHASE 4: note.com記事マップ =====
+// NOTE_ARTICLES: 個別記事URLはひでおさんが実在確認したURLのみ記載する
+// 未確認URLは note.com トップに差し替え済み（2026-06-20）
+var NOTE_ARTICLES = {
+  'スペングラーヤマガメ':   'https://note.com/proper_bison2362',
+  'ヒラセガメ':             'https://note.com/proper_bison2362',
+  'ミツユビハコガメ':       'https://note.com/proper_bison2362',
+  'ニホンイシガメ':         'https://note.com/proper_bison2362',
+  'ヤエヤマイシガメ':       'https://note.com/proper_bison2362',
+  'ノーザンダイヤモンドバックテラピン': 'https://note.com/proper_bison2362',
+  'ニオイガメ':             'https://note.com/proper_bison2362',
+  'ロシアリクガメ':         'https://note.com/proper_bison2362',
+  'ヘルマンリクガメ（ヒガシ亜種）': 'https://note.com/proper_bison2362',
+  'ギリシャリクガメ':       'https://note.com/proper_bison2362',
+};
+
+// ===== PHASE 4: 機材推奨セクション描画 =====
+var EQUIP_CAT_LABELS = {
+  cage:      'ケージ',
+  uvb:       'UVB',
+  basking:   '保温',
+  substrate: '床材',
+  food:      'フード',
+  filter:    'フィルター'
+};
+
+function renderEquipment(sp) {
+  var sec = document.getElementById('equipment-section');
+  var list = document.getElementById('equipment-list');
+  list.innerHTML = '';
+
+  var eq = (typeof getEquipment === 'function') ? getEquipment(sp.name) : null;
+  if (!eq) { sec.style.display = 'none'; return; }
+
+  var hasAny = false;
+  var cats = ['cage', 'uvb', 'basking', 'substrate', 'food', 'filter'];
+  cats.forEach(function(cat) {
+    var item = eq[cat];
+    if (!item) return;
+    hasAny = true;
+    var asinHref = item.asin
+      ? 'https://www.amazon.co.jp/dp/' + item.asin + '?tag=kamelife09-22'
+      : null;
+    var row = document.createElement('div');
+    row.className = 'equipment-item';
+    row.innerHTML =
+      '<span class="equipment-cat">' + (EQUIP_CAT_LABELS[cat] || cat) + '</span>' +
+      '<span class="equipment-label">' + item.label + '</span>' +
+      (asinHref
+        ? '<a href="' + asinHref + '" class="equipment-link" target="_blank" rel="noopener noreferrer sponsored" data-cat="' + cat + '" data-species="' + sp.name + '">Amazon</a>'
+        : '<span class="equipment-na">—</span>');
+    list.appendChild(row);
+  });
+
+  sec.style.display = hasAny ? '' : 'none';
+
+  // GA4: 機材リンクのクリックイベント
+  list.querySelectorAll('.equipment-link').forEach(function(a) {
+    a.addEventListener('click', function() {
+      var asinVal = a.href.match(/\/dp\/([A-Z0-9]+)/)?.[1] || '';
+      // 既存イベント（維持）
+      ga4Event('equipment_click', {
+        species_name: a.dataset.species,
+        category: a.dataset.cat,
+        asin: asinVal
+      });
+      // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+      if (isAmazonUrl(a.href)) {
+        ga4Event('amazon_outbound_click', {
+          source:        'diagnosis_equipment',
+          species:       a.dataset.species || '',
+          species_slug:  '',
+          equipment_key: '',
+          category:      a.dataset.cat    || '',
+          product_id:    '',
+          asin:          asinVal,
+          selected_tier: '',
+          click_url:     a.href,
+        });
+      }
+    });
+  });
+}
+
+// ===== PHASE 4: note.com誘導描画 =====
+function renderNoteCta(sp) {
+  var cta = document.getElementById('note-cta');
+  var link = document.getElementById('note-link');
+  var title = document.getElementById('note-title');
+  var url = NOTE_ARTICLES[sp.name];
+  var isSpecific = url && url.includes('/n/n');
+
+  if (url) {
+    link.href = url;
+    title.textContent = isSpecific
+      ? '「' + sp.name + '」の詳しい飼育記事を読む'
+      : 'カメライフガイドの飼育記事を読む';
+    cta.style.display = '';
+    // GA4: note誘導クリック
+    link.onclick = function() {
+      ga4Event('note_cta_click', { species_name: sp.name, has_article: isSpecific });
+    };
+  } else {
+    cta.style.display = 'none';
+  }
+}
+
+// ===== PHASE 6-B: おすすめ飼育セット =====
+
+/**
+ * route.id + sp.size + sp.difficulty → equipmentKey
+ * shindan/species.js には equipmentKey が存在しないため動的に解決する
+ */
+function resolveEquipmentKey(routeId, sp) {
+  var size = (sp.size || '').toUpperCase();
+  var diff = (sp.difficulty || '');
+  var name = (sp.name || '');
+
+  // ── exoticルート（スッポン・マタマタ等）
+  if (routeId === 'exotic') {
+    return 'fully_aquatic';
+  }
+
+  // ── forestルート（ヤマガメ・ハコガメ）
+  if (routeId === 'forest') {
+    // ハコガメ類
+    if (name.indexOf('ハコガメ') >= 0) return 'box_turtle';
+    // ニホンイシガメ・日本産
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    // 半水棲（キボシ・モリイシ等）
+    if (sp.extraSpecs && (sp.extraSpecs.tankSize || '') !== '') return 'semi_aquatic_small';
+    return 'tortoise_forest';
+  }
+
+  // ── aquaticルート（水棲ガメ）
+  if (routeId === 'aquatic') {
+    // 大型種（ミシシッピ・クサガメ等）M以上
+    if (size.indexOf('L') >= 0 || size.indexOf('XL') >= 0) return 'semi_aquatic_medium';
+    // ニホンイシガメ・クサガメ
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    return 'semi_aquatic_small';
+  }
+
+  // ── landルート（リクガメ）
+  if (routeId === 'land') {
+    // XL大型種（ケヅメ・アルダブラ）
+    if (size.indexOf('XL') >= 0) return 'tortoise_dry_large';
+    // 多湿・森林性リクガメ（エロンガータ・アカアシ等）
+    if (name.indexOf('アカアシ') >= 0 || name.indexOf('エロンガータ') >= 0 ||
+        name.indexOf('インプレッサ') >= 0 || name.indexOf('ベルセオレ') >= 0 ||
+        name.indexOf('セオレ') >= 0) return 'tortoise_forest';
+    // 大型L種（ヒョウモン・チャコ・ギリシャ大型等）
+    if (size.indexOf('L（') >= 0) return 'tortoise_dry_large';
+    return 'tortoise_dry_small';
+  }
+
+  // ── allルート（全カテゴリ）→ difficultyで判定
+  if (routeId === 'all') {
+    if (sp.extraSpecs && (sp.extraSpecs.tankSize || '') !== '') return 'semi_aquatic_small';
+    if (name.indexOf('ハコガメ') >= 0) return 'box_turtle';
+    if (name.indexOf('イシガメ') >= 0 || name.indexOf('クサガメ') >= 0) return 'japanese_pond';
+    if (name.indexOf('ヤマガメ') >= 0) return 'tortoise_forest';
+    if (size.indexOf('XL') >= 0) return 'tortoise_dry_large';
+    if (size.indexOf('L（') >= 0) return 'tortoise_dry_large';
+    return 'tortoise_dry_small';
+  }
+
+  return null;
+}
+
+/**
+ * カテゴリごとに Best/Budget/Premium の最大3商品を選定
+ * @param {string} equipmentKey
+ * @returns {Array} [{cat, badge, product}, ...]
+ */
+/**
+ * EQUIPMENT_MAP v2 対応版 selectKitProducts
+ * getTierProduct() を使い standard → budget → premium の優先順で
+ * affiliateUrl 有効商品を優先して1カテゴリ1枚、最大5枚を選定する。
+ * v1配列形式との後方互換あり。
+ * @param {string} equipmentKey
+ * @returns {Array} [{cat, tierLabel, badgeCls, product}, ...]
+ */
+function selectKitProducts(equipmentKey) {
+  if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
+  if (!EQUIPMENT_MAP[equipmentKey]) return [];
+
+  var isV2 = !Array.isArray(EQUIPMENT_MAP[equipmentKey]);
+
+  var CAT_ORDER = [
+    'enclosure', 'lighting_uvb', 'lighting_basking',
+    'heating', 'filter', 'substrate', 'thermometer',
+    'shelter', 'food', 'supplements'
+  ];
+
+  var TIER_LABEL = { budget: 'コスパ重視', standard: 'まずはこれ', premium: '本格派' };
+  var TIER_CLS   = { budget: 'sk-badge-budget', standard: 'sk-badge-standard', premium: 'sk-badge-premium' };
+
+  var result = [];
+  var seen   = {};
+
+  function pickFromV2(cat) {
+    var TIER_PREF = ['standard', 'budget', 'premium'];
+    var candidate = null, candidateTier = null;
+    for (var i = 0; i < TIER_PREF.length; i++) {
+      var p = (typeof getTierProduct === 'function')
+        ? getTierProduct(equipmentKey, cat, TIER_PREF[i]) : null;
+      if (!p || seen[p.id]) continue;
+      if (p.affiliateUrl && p.affiliateUrl !== '#') {
+        candidate = p; candidateTier = TIER_PREF[i]; break;
+      }
+      if (!candidate) { candidate = p; candidateTier = TIER_PREF[i]; }
+    }
+    return candidate ? { product: candidate, tier: candidateTier } : null;
+  }
+
+  function pickFromV1(cat) {
+    var ids = EQUIPMENT_MAP[equipmentKey];
+    var items = ids.map(function(id) { return PRODUCTS[id]; }).filter(function(p) {
+      return p && p.category === cat && !seen[p.id];
+    });
+    if (!items.length) return null;
+    var withUrl = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
+    var pool = withUrl.length ? withUrl : items;
+    var best = pool.reduce(function(a, b) { return (b.rating || 0) > (a.rating || 0) ? b : a; });
+    return best ? { product: best, tier: best.tier || 'standard' } : null;
+  }
+
+  CAT_ORDER.forEach(function(cat) {
+    if (result.length >= 5) return;
+    var pick = isV2 ? pickFromV2(cat) : pickFromV1(cat);
+    if (!pick) return;
+    seen[pick.product.id] = true;
+    var t = pick.tier;
+    result.push({
+      cat:       cat,
+      tierLabel: TIER_LABEL[t] || 'まずはこれ',
+      badgeCls:  TIER_CLS[t]   || 'sk-badge-standard',
+      product:   pick.product,
+    });
+  });
+
+  return result;
+}
+
+/**
+ * Phase 7: selectKitProducts のカテゴリ指定バリアント
+ * @param {string} equipmentKey
+ * @param {Array}  cats  表示したいカテゴリ配列（順序通りに表示）
+ * @returns {Array}
+ */
+function selectKitProductsByCats(equipmentKey, cats) {
+  if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
+  if (!EQUIPMENT_MAP[equipmentKey]) return [];
+
+  var isV2 = !Array.isArray(EQUIPMENT_MAP[equipmentKey]);
+  var TIER_LABEL = { budget: 'コスパ重視', standard: 'まずはこれ', premium: '本格派' };
+  var TIER_CLS   = { budget: 'sk-badge-budget', standard: 'sk-badge-standard', premium: 'sk-badge-premium' };
+  var result = [];
+  var seen   = {};
+
+  cats.forEach(function(cat) {
+    var pick = null;
+    if (isV2) {
+      var TIER_PREF = ['standard', 'budget', 'premium'];
+      var candidate = null, candidateTier = null;
+      for (var i = 0; i < TIER_PREF.length; i++) {
+        var p = (typeof getTierProduct === 'function')
+          ? getTierProduct(equipmentKey, cat, TIER_PREF[i]) : null;
+        if (!p || seen[p.id]) continue;
+        if (p.affiliateUrl && p.affiliateUrl !== '#') {
+          candidate = p; candidateTier = TIER_PREF[i]; break;
+        }
+        if (!candidate) { candidate = p; candidateTier = TIER_PREF[i]; }
+      }
+      if (candidate) pick = { product: candidate, tier: candidateTier };
+    } else {
+      var ids = EQUIPMENT_MAP[equipmentKey];
+      var items = ids.map(function(id) { return PRODUCTS[id]; }).filter(function(p) {
+        return p && p.category === cat && !seen[p.id];
+      });
+      if (items.length) {
+        var withUrl = items.filter(function(p) { return p.affiliateUrl && p.affiliateUrl !== '#'; });
+        var pool = withUrl.length ? withUrl : items;
+        var best = pool.reduce(function(a, b) { return (b.rating || 0) > (a.rating || 0) ? b : a; });
+        if (best) pick = { product: best, tier: best.tier || 'standard' };
+      }
+    }
+    if (!pick) return;
+    seen[pick.product.id] = true;
+    var t = pick.tier;
+    result.push({
+      cat:       cat,
+      tierLabel: TIER_LABEL[t] || 'まずはこれ',
+      badgeCls:  TIER_CLS[t]   || 'sk-badge-standard',
+      product:   pick.product,
+    });
+  });
+
+  return result;
+}
+
+var SK_CAT_LABELS = {
+  enclosure:        '飼育ケージ',
+  lighting_uvb:     'UVBライト',
+  lighting_basking: 'バスキングライト',
+  heating:          '保温器具',
+  filter:           'フィルター',
+  substrate:        '床材',
+  thermometer:      '温湿度計',
+  shelter:          'シェルター',
+  food:             'フード',
+  supplements:      'サプリ',
+};
+
+function starRating(r) {
+  if (!r) return '';
+  var full  = Math.floor(r);
+  var half  = (r - full) >= 0.5 ? 1 : 0;
+  var empty = 5 - full - half;
+  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty) + ' ' + r.toFixed(1);
+}
+
+/**
+ * 診断結果画面にスターターキットを描画（Phase 6-C Task 2）
+ */
+function renderStarterKit(sp) {
+  var sec = document.getElementById('starter-kit-section');
+  if (!sec) return;
+
+  var routeId = selectedRoute ? selectedRoute.id : 'all';
+  var equipKey = sp.equipmentKey || resolveEquipmentKey(routeId, sp);
+
+  if (!equipKey) { sec.style.display = 'none'; return; }
+
+  // Phase 7: 表示カテゴリを5種に固定
+  var PHASE7_CATS = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+  var picks = selectKitProductsByCats(equipKey, PHASE7_CATS);
+  if (!picks.length) { sec.style.display = 'none'; return; }
+
+  // Phase 7: 初期費用計算（picks の priceRange 下限値を合算）
+  function parsePriceLow(priceRange) {
+    if (!priceRange) return 0;
+    var m = priceRange.replace(/[¥,]/g, '').match(/^(\d+)/);
+    return m ? parseInt(m[1], 10) : 0;
+  }
+  var totalLow  = 0;
+  var totalHigh = 0;
+  picks.forEach(function(item) {
+    var pr = item.product.priceRange || '';
+    var nums = pr.replace(/[¥,]/g, '').match(/(\d+)[^\d]+(\d+)/);
+    if (nums) {
+      totalLow  += parseInt(nums[1], 10);
+      totalHigh += parseInt(nums[2], 10);
+    } else {
+      var single = parsePriceLow(pr);
+      totalLow  += single;
+      totalHigh += single;
+    }
+  });
+  function fmtYen(n) { return '¥' + n.toLocaleString('ja-JP'); }
+  var costRangeText = (totalLow && totalHigh && totalLow !== totalHigh)
+    ? fmtYen(totalLow) + ' 〜 ' + fmtYen(totalHigh)
+    : totalLow ? fmtYen(totalLow) + '〜' : '—';
+
+  var costBoxHtml =
+    '<div class="cost-box">' +
+      '<span class="cost-box-icon">💰</span>' +
+      '<div class="cost-box-body">' +
+        '<div class="cost-box-label">初期費用目安（表示中の必須アイテム）</div>' +
+        '<div class="cost-box-range">' + costRangeText + '</div>' +
+        '<div class="cost-box-note">ケージ・UVB・バスキング・床材・温湿度計の合計目安です</div>' +
+      '</div>' +
+    '</div>';
+
+  var cardsHtml = picks.map(function(item) {
+    var p = item.product;
+    var hasUrl = p.affiliateUrl && p.affiliateUrl !== '#';
+    var btnHtml = hasUrl
+      ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
+        ' data-cat="' + p.category + '" data-species="' + sp.name +
+        '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで詳細を見る</a>'
+      : '<span class="sk-card-btn sk-card-btn--soon">' + (SK_CAT_LABELS[item.cat] || 'この商品') + 'は選定中です。飼育前に別途ご用意ください。</span>';
+
+    return '<div class="sk-card">' +
+      '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
+      '<span class="sk-card-badge ' + item.badgeCls + '">' + item.tierLabel + '</span>' +
+      '<div class="sk-card-name">' + p.name + '</div>' +
+      (p.rating ? '<div class="sk-card-rating">' + starRating(p.rating) + '</div>' : '') +
+      '<div class="sk-card-price">' + p.priceRange + '</div>' +
+      (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
+      btnHtml +
+    '</div>';
+  }).join('');
+
+  // Phase 7: CTAボタン（Amazon検索へ）
+  var ctaQuery = 'カメ 飼育セット ケージ UVB 温湿度計';
+  var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife09-22';
+  var ctaHtml =
+    '<div class="sk-cta-wrap">' +
+      '<a class="sk-cta-btn" id="sk-cta-btn" href="' + ctaUrl + '" target="_blank" rel="noopener noreferrer sponsored">' +
+        'このセットをまとめて見る<span class="sk-cta-btn-arrow">→</span>' +
+      '</a>' +
+    '</div>';
+
+  sec.innerHTML =
+    '<div class="result-card sk-section" style="padding:0;overflow:hidden;">' +
+      '<div class="sk-heading">はじめての飼育セット（5点）</div>' +
+      costBoxHtml +
+      '<div class="sk-scroll">' + cardsHtml + '</div>' +
+      '<div class="sk-disclaimer">※Amazonアソシエイトリンクを含みます</div>' +
+      ctaHtml +
+    '</div>';
+
+  sec.style.display = '';
+
+  if (typeof ga4Event === 'function') {
+    ga4Event('starter_kit_shown', {
+      species_name:  sp.name,
+      species:       sp.name,
+      equipment_key: equipKey,
+      card_count:    picks.length,
+    });
+  }
+
+  // カード個別クリックGA4
+  sec.querySelectorAll('.sk-card-btn[href]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') {
+        // 既存イベント（維持）
+        ga4Event('starter_kit_click', {
+          species_name:  a.dataset.species,
+          species:       a.dataset.species,
+          category:      a.dataset.cat,
+          asin:          a.dataset.asin,
+          selected_tier: a.dataset.tier,
+          equipment_key: equipKey,
+        });
+        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+        if (isAmazonUrl(a.href)) {
+          ga4Event('amazon_outbound_click', {
+            source:        'diagnosis_starterkit',
+            species:       a.dataset.species || sp.name,
+            species_slug:  sp.slug           || '',
+            equipment_key: equipKey          || '',
+            category:      a.dataset.cat     || '',
+            product_id:    '',
+            asin:          a.dataset.asin    || '',
+            selected_tier: a.dataset.tier    || '',
+            click_url:     a.href,
+          });
+        }
+      }
+    });
+  });
+
+  // CTA ボタンGA4
+  var ctaBtn = document.getElementById('sk-cta-btn');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') {
+        // 既存イベント（維持）
+        ga4Event('starter_kit_cta_click', {
+          species_name:  sp.name,
+          equipment_key: equipKey,
+        });
+        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+        if (isAmazonUrl(ctaBtn.href)) {
+          ga4Event('amazon_outbound_click', {
+            source:        'diagnosis_starterkit_cta',
+            species:       sp.name     || '',
+            species_slug:  sp.slug     || '',
+            equipment_key: equipKey    || '',
+            category:      '',
+            product_id:    '',
+            asin:          '',
+            selected_tier: '',
+            click_url:     ctaBtn.href,
+          });
+        }
+      }
+    });
+  }
+}
+
+// ===== スタート画面初期化 =====
+function initStart() {
+  clearResultUrl();
+  var container = document.getElementById('route-cards');
+  container.innerHTML = '';
+  ROUTES.forEach(function(route) {
+    var card = document.createElement('button');
+    card.className = 'route-card';
+    card.dataset.id = route.id;
+    card.setAttribute('role', 'listitem');
+    card.innerHTML =
+      '<span class="route-emoji" aria-hidden="true">' + route.emoji + '</span>' +
+      '<div class="route-info">' +
+        '<div class="route-name">' + route.name + '</div>' +
+        '<div class="route-desc">' + route.desc + '</div>' +
+      '</div>' +
+      '<span class="route-card-arrow" aria-hidden="true">▶</span>';
+    card.addEventListener('click', function(){ startQuizWithRoute(route.id); });
+    container.appendChild(card);
+  });
+}
+
+// ===== 診断開始 =====
+function startQuizWithRoute(id) {
+  selectedRoute = ROUTES.find(function(r){ return r.id === id; });
+  currentQuestionIndex = 0;
+  scores = {};
+  answerHistory = [];
+  // GA4: 診断開始
+  ga4Event('shindan_start', { route_id: id, route_name: selectedRoute.name });
+  show('screen-quiz');
+  showQuestion();
+}
+
+// ===== 質問表示 =====
+function showQuestion() {
+  var route = selectedRoute;
+  var q = route.questions[currentQuestionIndex];
+  // Phase 9-C: step view tracking (dedup)
+  if (!_viewedSteps[currentQuestionIndex]) {
+    _viewedSteps[currentQuestionIndex] = true;
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_step_view', {
+        step: currentQuestionIndex + 1,
+        question_id: (route.id || '') + '_q' + (currentQuestionIndex + 1)
+      });
+    }
+  }
+  var total = route.questions.length;
+  var pct = Math.round((currentQuestionIndex / total) * 100);
+
+  // プログレスバー更新
+  document.getElementById('progress-label').textContent = (currentQuestionIndex + 1) + ' / ' + total;
+  var fill = document.getElementById('progress-fill');
+  fill.style.width = pct + '%';
+  fill.parentElement.setAttribute('aria-valuenow', pct);
+
+  // ステップドット更新
+  var dotsWrap = document.getElementById('step-dots');
+  if (dotsWrap) {
+    dotsWrap.innerHTML = '';
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'step-dot' + (i < currentQuestionIndex ? ' done' : i === currentQuestionIndex ? ' current' : '');
+      dot.setAttribute('aria-hidden', 'true');
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  document.getElementById('route-badge').textContent = route.emoji + ' ' + route.name;
+  var qt = document.getElementById('question-text');
+  qt.textContent = q.text;
+  qt.focus();
+
+  var container = document.getElementById('choices');
+  container.innerHTML = '';
+  q.choices.forEach(function(choice) {
+    var btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice.label;
+    btn.addEventListener('click', function(){ selectChoice(choice, this); });
+    container.appendChild(btn);
+  });
+}
+
+// ===== 選択処理 =====
+function selectChoice(choice, clickedBtn) {
+  // selected状態を表示してから0.25秒後に次へ
+  var allBtns = document.querySelectorAll('.choice-btn');
+  allBtns.forEach(function(b){ b.disabled = true; });
+  if (clickedBtn) clickedBtn.classList.add('selected');
+  setTimeout(function(){
+    // Phase 9-C: answer tracking
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_answer_select', {
+        step: currentQuestionIndex + 1,
+        question_id: (selectedRoute ? selectedRoute.id : '') + '_q' + (currentQuestionIndex + 1),
+        answer_id: choice.label || String(currentQuestionIndex + 1)
+      });
+    }
+    answerHistory.push({ questionIndex: currentQuestionIndex, scores: choice.scores });
+    Object.entries(choice.scores).forEach(function(entry){
+      scores[entry[0]] = (scores[entry[0]] || 0) + entry[1];
+    });
+    currentQuestionIndex++;
+    if (currentQuestionIndex < selectedRoute.questions.length) {
+      showQuestion();
+    } else {
+      calcResult();
+    }
+  }, 250);
+}
+
+// ===== 結果計算 =====
+function calcResult() {
+  _diagnosisCompleted = true;
+  try {
+    var fill = document.getElementById('progress-fill');
+    if (fill) { fill.style.width = '100%'; fill.parentElement.setAttribute('aria-valuenow', 100); }
+
+    var routeId = (selectedRoute || {}).id || '';
+
+    // ── Step 1: archive / redirect を完全除外 ──
+    var candidates = (selectedRoute.species || []).filter(function(sp){
+      return sp.availability !== 'archive' && sp.availability !== 'redirect';
+    });
+    if (candidates.length === 0) candidates = (selectedRoute.species || []);
+
+    // ── Step 2: beginner_mode 判定 ──
+    var beginner_mode = (scores.beginner || 0) >= 2;
+
+    // ── Step 3: FIX D — exotic ルートで初心者の場合はルート変更 ──
+    if (routeId === 'exotic' && beginner_mode) {
+      // 初心者にexoticを表示しない: 安全fallback表示
+      var exoFallback = null;
+      if (SPECIES && SPECIES.aquatic) {
+        var exoCandidates = SPECIES.aquatic.filter(function(sp){
+          return sp.availability === 'common' && (sp.difficulty||'').indexOf('入門') >= 0;
+        });
+        if (exoCandidates.length > 0) exoFallback = exoCandidates[0];
+      }
+      if (!exoFallback) {
+        exoFallback = {
+          name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
+          difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
+          reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメは初心者に最も適した定番種です。',
+          hasPage: true, slug: 'musk-turtle', links: [],
+          equipmentKey: '_aquatic_small',
+          coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+          match: function(){ return true; }, score: function(){ return 0; }
+        };
+      }
+      result = exoFallback;
+      showResult(exoFallback, null);
+      saveResultToUrl(routeId, exoFallback.name);
+      return;
+    }
+
+    // ── Step 4: match フィルタリング ──
+    var matched = candidates.filter(function(sp){
+      try { return sp.match ? sp.match(scores) : true; } catch(e){ return false; }
+    });
+
+    // ── Step 5: FIX C — rawScore に availability / difficulty / legal penalty ──
+    function finalScore(sp) {
+      var raw = 0;
+      try { raw = sp.score ? sp.score(scores) : 0; } catch(e){}
+
+      // availability 補正
+      var availMult = 1.0;
+      if (sp.availability === 'rare')    availMult = 0.65;
+      if (sp.availability === 'archive') availMult = 0.0;
+
+      // difficulty 補正（beginner_mode 時のみ）
+      var diffMult = 1.0;
+      if (beginner_mode) {
+        var diff = sp.difficulty || '';
+        if (diff === '上級')         diffMult = 0.40;
+        else if (diff === '中〜上級') diffMult = 0.55;
+        else if (diff.indexOf('中級') >= 0 && diff.indexOf('入門') < 0) diffMult = 0.85;
+        // '入門' を含む → 1.00 (変更なし)
+        // '入門〜中級' → 0.92
+        if (diff === '入門〜中級')   diffMult = 0.92;
+      }
+
+      // legal 補正
+      var legalMult = 1.0;
+      if (sp.legal === 'conditional_invasive') legalMult = 0.25;
+
+      return raw * availMult * diffMult * legalMult;
+    }
+
+    // ── Step 6: FIX F — safeFallback 強化 ──
+    // FIX: forest ルートは全種が'中〜上級'のため、中〜上級除外は forest 以外のみ適用
+    var safeFallback = candidates.filter(function(sp){
+      if (sp.legal === 'conditional_invasive') return false;
+      var diff = sp.difficulty || '';
+      if (diff === '上級') return false;
+      if (sp.size && sp.size.indexOf('XL') >= 0) return false;
+      if (beginner_mode && sp.availability === 'rare') return false;
+      if (beginner_mode && diff === '中〜上級' && routeId !== 'forest') return false;
+      return true;
+    });
+
+    // ── Step 6b: route別 fallback ──
+    var ROUTE_FALLBACK_NAMES = {
+      aquatic: ['ニオイガメ','ヒメニオイガメ','ミシシッピドロガメ'],
+      land:    ['ヘルマンリクガメ','ロシアリクガメ','ギリシャリクガメ'],
+      forest:  ['キボシイシガメ','ミツユビハコガメ','トウブハコガメ','フロリダハコガメ'],
+    };
+    function getRouteFallback(rId) {
+      var names = ROUTE_FALLBACK_NAMES[rId] || [];
+      var pool = [];
+      var allSps = (SPECIES && SPECIES[rId]) ? SPECIES[rId] : candidates;
+      names.forEach(function(n){
+        var found = allSps.filter(function(sp){
+          return sp.name === n && sp.availability !== 'archive' && sp.availability !== 'redirect';
+        });
+        if (found.length) pool.push(found[0]);
+      });
+      // fallback pool が空の場合は archive/redirect/上級 以外の全種
+      if (pool.length === 0) {
+        pool = allSps.filter(function(sp){
+          return sp.availability !== 'archive' && sp.availability !== 'redirect'
+                 && (sp.difficulty || '') !== '上級';
+        }).slice(0, 3);
+      }
+      return pool;
+    }
+
+    var pool;
+    if (matched.length > 0) {
+      pool = matched;
+    } else if (safeFallback.length > 0) {
+      pool = safeFallback;
+    } else {
+      pool = getRouteFallback(routeId);
+      if (!pool.length) pool = candidates;
+    }
+    if (!pool || pool.length === 0) pool = candidates;
+
+    // ── Step 7: FIX G — 同点時ソート安定化 ──
+    var DIFF_ORDER = { '入門': 0, '入門〜中級': 1, '中級': 2, '中〜上級': 3, '上級': 4 };
+    var AVAIL_ORDER = { 'common': 0, 'rare': 1, 'archive': 2 };
+
+    function diffOrder(sp) {
+      var d = sp.difficulty || '';
+      for (var k in DIFF_ORDER) {
+        if (d === k) return DIFF_ORDER[k];
+      }
+      return 99;
+    }
+
+    var scored = pool.map(function(sp){
+      return { sp: sp, fs: finalScore(sp) };
+    });
+
+    scored.sort(function(a, b){
+      // 1. finalScore 降順
+      if (b.fs !== a.fs) return b.fs - a.fs;
+      // 2. recommendationPriority 降順
+      var pa = (a.sp.recommendationPriority || 0);
+      var pb = (b.sp.recommendationPriority || 0);
+      if (pb !== pa) return pb - pa;
+      // 3. common > rare
+      var aa = AVAIL_ORDER[a.sp.availability] !== undefined ? AVAIL_ORDER[a.sp.availability] : 1;
+      var ab = AVAIL_ORDER[b.sp.availability] !== undefined ? AVAIL_ORDER[b.sp.availability] : 1;
+      if (aa !== ab) return aa - ab;
+      // 4. difficulty 易しい順
+      if (diffOrder(a.sp) !== diffOrder(b.sp)) return diffOrder(a.sp) - diffOrder(b.sp);
+      // 5. name 固定順
+      return (a.sp.name || '').localeCompare(b.sp.name || '', 'ja');
+    });
+
+    var best = scored.length > 0 ? scored[0].sp : null;
+    if (!best) throw new Error('no species resolved');
+
+    result = best;
+    var pct = calcMatchPercent(best, scores);
+
+    ga4Event('shindan_result', {
+      route_id:     routeId,
+      species_name: best.name || '',
+      match_pct:    pct,
+      difficulty:   best.difficulty || '',
+      cites:        best.cites || 'none'
+    });
+
+    showResult(best, pct);
+    saveResultToUrl(routeId, best.name);
+
+  } catch(err) {
+    console.warn('[calcResult fallback]', err);
+    var fallbackSp = {
+      name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
+      difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
+      reason: '初心者に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
+      hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
+      coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+      match: function(){ return true; }, score: function(){ return 0; }
+    };
+    result = fallbackSp;
+    showResult(fallbackSp, null);
+  }
+}
+
+// ===== 結果表示 =====
+function showResult(sp, pct) {
+  document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
+  document.getElementById('res-emoji').textContent = sp.emoji;
+  document.getElementById('res-name').textContent = sp.name;
+  document.getElementById('res-latin').textContent = sp.latin;
+  document.getElementById('res-reason').textContent = sp.reason;
+
+  // バッジ
+  var badges = document.getElementById('res-badges');
+  badges.innerHTML = '';
+  var _diff = sp.difficulty || '';
+  var diffClass = _diff.indexOf('入門') >= 0 ? 'badge-beginner'
+                : _diff.indexOf('上級') >= 0 ? 'badge-advanced' : 'badge-intermediate';
+  badges.innerHTML +=
+    '<span class="badge ' + diffClass + '">' + sp.difficulty + '</span>' +
+    '<span class="badge badge-intermediate">' + sp.size + '</span>';
+  if (sp.cites) badges.innerHTML += '<span class="badge badge-cites">' + sp.cites + '</span>';
+
+  // ===== Phase 7-C Step 2-A: 費用サマリー =====
+  (function() {
+    var costEl = document.getElementById('res-cost-summary');
+    if (!costEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    // 初期費用: StarterKitの renderStarterKit が後で描画するので、
+    // PRODUCTS が使えるかどうかに関係なく equipmentKeyベースのteーブルから推定
+    var monthly = equipKey && MONTHLY_COST_MAP[equipKey] ? MONTHLY_COST_MAP[equipKey] : null;
+    // 初期費用は picks から計算（PRODUCTS依存）
+    var initCostText = '個体・設備により変動';
+    if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
+      var PHASE7_CATS_COST = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+      var cLow = 0, cHigh = 0, cnt = 0;
+      PHASE7_CATS_COST.forEach(function(cat) {
+        var p = (typeof getTierProduct === 'function') ? getTierProduct(equipKey, cat, 'budget') : null;
+        if (!p) return;
+        var pr = (p.priceRange || '').replace(/[¥,]/g, '');
+        var m = pr.match(/(\d+)[^\d]+(\d+)/);
+        if (m) { cLow += parseInt(m[1],10); cHigh += parseInt(m[2],10); cnt++; }
+      });
+      if (cnt >= 2) {
+        initCostText = '約 ¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
+      }
+    }
+    var monthlyText = monthly ? ('約 ' + monthly.label) : '個体・設備により変動';
+    costEl.innerHTML =
+      '<div class="res-cost-item">' +
+        '<div class="res-cost-item-label">初期費用目安</div>' +
+        '<div class="res-cost-item-value">' + initCostText + '</div>' +
+        '<div class="res-cost-item-note">機材セット（目安）</div>' +
+      '</div>' +
+      '<div class="res-cost-item">' +
+        '<div class="res-cost-item-label">月額維持費目安</div>' +
+        '<div class="res-cost-item-value">' + monthlyText + '</div>' +
+        '<div class="res-cost-item-note">電気代・フード等</div>' +
+      '</div>';
+    costEl.style.display = '';
+  })();
+
+  // ===== Phase 7-C Step 2-A: 購入障壁除去バッジ =====
+  (function() {
+    var barrierEl = document.getElementById('res-barrier-badges');
+    if (!barrierEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
+    var isBeginner = (sp.difficulty || '').indexOf('入門') >= 0;
+    var badges;
+    if (isAdvanced) {
+      badges = BARRIER_BADGE_ADVANCED;
+    } else if (equipKey && BARRIER_BADGE_MAP[equipKey]) {
+      badges = BARRIER_BADGE_MAP[equipKey];
+    } else if (isBeginner) {
+      badges = BARRIER_BADGE_BEGINNER;
+    } else {
+      badges = ['📦 必要なものが分かりやすい', '🐢 飼育イメージをつかみやすい', '👀 詳細ページで確認できる'];
+    }
+    barrierEl.innerHTML = badges.slice(0, 3).map(function(b) {
+      return '<span class="res-barrier-badge">' + b + '</span>';
+    }).join('');
+    barrierEl.style.display = '';
+  })();
+
+  // ===== Phase 7-C Step 2-A: emotion copy =====
+  (function() {
+    var copyEl = document.getElementById('res-emotion-copy');
+    if (!copyEl) return;
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    var copy = buildEmotionCopy(sp, equipKey, pct);
+    if (copy) {
+      copyEl.textContent = copy;
+      copyEl.style.display = '';
+    } else {
+      copyEl.style.display = 'none';
+    }
+  })();
+
+  // ===== Phase 7-C Step 2-A: 2段CTA =====
+  (function() {
+    var ctaBlock = document.getElementById('res-cta-block');
+    if (!ctaBlock) return;
+    if (!sp.hasPage || !sp.slug) { ctaBlock.style.display = 'none'; return; }
+    var speciesPageUrl = '../species/' + sp.slug + '.html';
+    var starterKitUrl  = speciesPageUrl + '#starter-kit-root';
+    // Phase 9-B: CTA順序変更 & cta_type追加
+    var primaryLabel   = 'この亀を詳しく見る →';
+    var secondaryLabel = '必要な飼育用品を見る';
+    ctaBlock.innerHTML =
+      '<a class="res-cta-primary" id="res-cta-primary" href="' + speciesPageUrl + '">' +
+        primaryLabel +
+      '</a>' +
+      '<a class="res-cta-secondary" id="res-cta-secondary" href="' + starterKitUrl + '">' +
+        secondaryLabel +
+      '</a>';
+    ctaBlock.style.display = '';
+    // GA4
+    var primBtn = document.getElementById('res-cta-primary');
+    if (primBtn) primBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+        species: sp.name, slug: sp.slug, cta_type: 'primary'
+      });
+    });
+    var secBtn = document.getElementById('res-cta-secondary');
+    if (secBtn) secBtn.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
+        species: sp.name, slug: sp.slug, cta_type: 'secondary',
+        equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
+      });
+    });
+  })();
+
+  // 法規制
+  var legalBox = document.getElementById('res-legal');
+  if (sp.legal === 'cites_ii') {
+    legalBox.style.display = '';
+    legalBox.className = 'legal-box';
+    legalBox.textContent = '⚠️ この種はCITES IIです。国内で合法的に流通しているCB個体（国内繁殖個体）には取引証明書が発行されます。購入時は書類の有無を必ず確認してください。';
+  } else if (sp.legal === 'conditional_invasive') {
+    legalBox.style.display = '';
+    legalBox.className = 'legal-box';
+    legalBox.textContent = '⚠️ 条件付特定外来生物：新規購入・販売は禁止です。既飼育個体の継続飼育・少数無償譲渡は可。野外放流は厳禁。';
+  } else {
+    legalBox.style.display = 'none';
+  }
+
+  // スペック
+  var specGrid = document.getElementById('res-specs');
+  specGrid.innerHTML = '';
+  // coreSpecs/extraSpecs（新スキーマ）を優先、specsフィールド（旧）にフォールバック
+  var coreLabels = { size: '最大甲長', temp: '温度帯', lifespan: '寿命', diet: '食性' };
+  var extraLabels = { tankSize: '水槽サイズ', substrate: '底床', salinity: '塩分濃度', waterFlow: '水流', uvb: 'UVB', humidity: '湿度', filter: 'フィルター', basking: 'バスキング' };
+  if (sp.coreSpecs) {
+    Object.entries(sp.coreSpecs).forEach(function(entry){
+      var label = coreLabels[entry[0]] || entry[0];
+      specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + label + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+    });
+    if (sp.extraSpecs) {
+      Object.entries(sp.extraSpecs).forEach(function(entry){
+        if (entry[1]) {
+          var label = extraLabels[entry[0]] || entry[0];
+          specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + label + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+        }
+      });
+    }
+  } else if (sp.specs) {
+    // 旧specsフィールドへのフォールバック（互換性維持）
+    Object.entries(sp.specs).forEach(function(entry){
+      specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + entry[0] + '</div><div class="spec-value">' + entry[1] + '</div></div>';
+    });
+  }
+
+  // 種別ページCTA（Phase1.6）
+  // ※ Phase 7-C Step 2-A: hasPage:true の場合は2段CTAブロックが代替するため非表示
+  var linksDiv = document.getElementById('res-links');
+  linksDiv.innerHTML = '';
+  if (sp.hasPage && sp.slug) {
+    // 2段CTAが上部に表示されているため、res-linksにはCTAを出さない
+    // （重複防止・スペース節約）
+  }
+
+  // hasPage:false フォールバックCTA（ルートIDで正しいガイドへ誘導）
+  if (!sp.hasPage) {
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var habitatHref = '../guide-beginner.html';
+    var habitatLabel = 'Habitat Guide';
+    var habitatText = 'この種に合った飼育ガイドを見る';
+    if (routeId === 'land') {
+      habitatHref = '../guide-dry.html';
+      habitatText = 'このタイプのリクガメ飼育ガイドを見る';
+    } else if (routeId === 'aquatic') {
+      habitatHref = '../guide-water-full.html';
+      habitatText = '水棲ガメの飼育環境を確認する';
+    } else if (routeId === 'forest') {
+      habitatHref = '../guide-moist.html';
+      habitatText = '湿度管理が必要なヤマガメ・ハコガメ飼育ガイドを見る';
+    } else if (routeId === 'exotic') {
+      // exotic種はlinks[0].hrefがスッポン/テラピン/曲頸類で異なるため種固有リンクを優先使用
+      if (sp.links && sp.links.length > 0) {
+        habitatHref = sp.links[0].href;
+      } else {
+        habitatHref = '../guide-softshell.html';
+      }
+      habitatText = '上級者向け・特殊種の飼育ポイントを見る';
+    }
+    linksDiv.innerHTML +=
+      '<a href="' + habitatHref + '" class="species-page-cta" style="opacity:.85;">' +
+        '<div class="species-page-cta-label">' + habitatLabel + '</div>' +
+        '<div class="species-page-cta-title">' + habitatText + '<span class="species-page-cta-arrow">→</span></div>' +
+      '</a>';
+  }
+
+  // リンク（P0 Fix: links が undefined の種でもクラッシュしない）
+  (sp.links || []).forEach(function(l){
+    if (!l || !l.href) return;
+    linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + (l.label || '') + '</a>';
+  });
+  if (sp.asin) {
+    linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife09-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="noopener noreferrer">Amazon で関連商品を見る</a>';
+    // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+    var spAmzLink = document.getElementById('sp-amazon-link');
+    if (spAmzLink) {
+      spAmzLink.addEventListener('click', function() {
+        if (typeof ga4Event === 'function' && isAmazonUrl(spAmzLink.href)) {
+          ga4Event('amazon_outbound_click', {
+            source:        'diagnosis_amazon_link',
+            species:       sp.name   || '',
+            species_slug:  sp.slug   || '',
+            equipment_key: '',
+            category:      '',
+            product_id:    '',
+            asin:          sp.asin   || '',
+            selected_tier: '',
+            click_url:     spAmzLink.href,
+          });
+        }
+      });
+    }
+  }
+
+  // ===== PHASE 5: 著者バッジ・寿命・初心者警告 =====
+  try { renderPhase5(sp); } catch(e) { console.warn('[renderPhase5]', e); }
+
+  // ===== PHASE 4: 機材推奨セクション =====
+  try { renderEquipment(sp); } catch(e) { console.warn('[renderEquipment]', e); }
+
+  // ===== PHASE 4: note.com誘導 =====
+  try { renderNoteCta(sp); } catch(e) {}
+
+  // ===== PHASE 6-B: おすすめ飼育セット =====
+  try { renderStarterKit(sp); } catch(e) { console.warn('[renderStarterKit]', e); }
+
+  // GA4: Phase 7-C Step 2-A diagnosis_result_view
+  if (typeof ga4Event === 'function') {
+    var _routeIdGa = selectedRoute ? selectedRoute.id : '';
+    var _eqKeyGa   = (sp.equipmentKey) || resolveEquipmentKey(_routeIdGa, sp) || '';
+    ga4Event('diagnosis_result_view', {
+      species:       sp.name,
+      slug:          sp.slug || '',
+      species_slug:  sp.slug || '',
+      equipment_key: _eqKeyGa,
+      difficulty:    sp.difficulty || '',
+      has_page:      !!(sp.hasPage && sp.slug),
+    });
+  }
+  show('screen-result');
+  document.getElementById('res-name').focus();
+
+  // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
+  var scoreMeter = document.getElementById('score-meter');
+  if (pct === null || pct === undefined) {
+    scoreMeter.style.display = 'none';
+  } else {
+    scoreMeter.style.display = '';
+    var displayPct = typeof pct === 'number' ? pct : 0;
+    document.getElementById('score-num').textContent = '0';
+    document.getElementById('score-bar').style.width = '0%';
+    setTimeout(function(){
+      document.getElementById('score-bar').style.width = displayPct + '%';
+      // カウントアップアニメーション
+      var start = 0;
+      var duration = 800;
+      var startTime = null;
+      function animCount(ts) {
+        if (!startTime) startTime = ts;
+        var elapsed = ts - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        document.getElementById('score-num').textContent = Math.round(ease * displayPct);
+        if (progress < 1) requestAnimationFrame(animCount);
+      }
+      requestAnimationFrame(animCount);
+    }, 100);
+  }
+}
+
+// ===== 戻るボタン（モーダル付き） =====
+document.getElementById('btn-back').addEventListener('click', function(){
+  if (currentQuestionIndex === 0) {
+    show('screen-start');
+  } else {
+    // 途中の場合はモーダル確認
+    openModal();
+  }
+});
+
+// ===== モーダル =====
+function openModal() {
+  var m = document.getElementById('modal-quit');
+  m.classList.add('open');
+  document.getElementById('modal-cancel').focus();
+}
+function closeModal() {
+  document.getElementById('modal-quit').classList.remove('open');
+}
+document.getElementById('modal-cancel').addEventListener('click', closeModal);
+document.getElementById('modal-ok').addEventListener('click', function(){
+  closeModal();
+  selectedRoute = null;
+  currentQuestionIndex = 0;
+  scores = {};
+  answerHistory = [];
+  show('screen-start');
+});
+document.getElementById('modal-quit').addEventListener('click', function(e){
+  if (e.target === this) closeModal(); // オーバーレイクリックで閉じる
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeModal();
+});
+
+// ===== もう一度ボタン =====
+function resetToStart() {
+  selectedRoute = null;
+  currentQuestionIndex = 0;
+  scores = {};
+  answerHistory = [];
+  show('screen-start');
+  clearResultUrl();
+}
+document.getElementById('btn-retry').addEventListener('click', resetToStart);
+document.getElementById('btn-retry-top').addEventListener('click', resetToStart);
+
+// ===== シェアボタン（Web Share API + コピーfallback） =====
+document.getElementById('btn-share').addEventListener('click', function(){
+  if (!result) return;
+  var pct = document.getElementById('score-num').textContent;
+  var text = '【亀診断】私に合う亀は「' + result.name + '」(相性' + pct + '%)でした！🐢 #亀診断 #カメライフガイド';
+  var shareUrl = 'https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/?r=' +
+    encodeURIComponent(selectedRoute ? selectedRoute.id : '') +
+    '&s=' + encodeURIComponent(result.name);
+  // GA4: シェアイベント
+  ga4Event('shindan_share', { species_name: result.name, method: navigator.share ? 'native' : 'clipboard' });
+  if (navigator.share) {
+    navigator.share({ title: 'あなたに合う亀診断', text: text, url: shareUrl })
+      .catch(function(){});
+  } else {
+    // クリップボードコピー → fallback でTwitter
+    var fullText = text + ' ' + shareUrl;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(fullText).then(function(){
+        showToast('📋 コピーしました！');
+      }).catch(function(){
+        openTwitter(text, shareUrl);
+      });
+    } else {
+      openTwitter(text, shareUrl);
+    }
+  }
+});
+
+function openTwitter(text, url) {
+  window.open(
+    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url),
+    '_blank', 'noopener,noreferrer'
+  );
+}
+
+// ===== 初期化（URL復元対応） =====
+if (!tryRestoreFromUrl()) {
+  initStart();
+}
+
+// Phase 9-C: abandonment tracking
+(function() {
+  window.addEventListener('pagehide', function() {
+    if (_diagnosisCompleted) return;
+    if (!selectedRoute || currentQuestionIndex < 1) return;
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_step_exit', {
+        step: currentQuestionIndex + 1,
+        question_id: (selectedRoute.id || '') + '_q' + (currentQuestionIndex + 1),
+        completed: false
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>
