@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>亀・リクガメ 比較一覧 | カメライフガイド</title>
+  <meta name="description" content="ヘルマン vs ギリシャ、ニオイガメ vs カブトニオイ、クサガメ vs ニホンイシガメ。人気の亀・リクガメを徹底比較。あなたに合う種類を探しましょう。">
+  <link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/compare/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-QQTE5CVF3K');
+  </script>
+  <style>
+    /* ── Reset & Base ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --forest-deep:#0d1f1a;
+      --forest:#2f4a3c;
+      --parchment:#f4efe2;
+      --accent:#d4a96a;
+      --accent-gold:#C9A96B;
+      --bg-primary:#081411;
+      --bg-secondary:#10241d;
+      --glass-bg:rgba(255,255,255,.045);
+      --glass-border:rgba(255,255,255,.09);
+      --radius-lg:16px;
+      --radius-pill:9999px;
+      --dur-base:.26s;
+      --ease-soft:cubic-bezier(.22,.68,0,1);
+    }
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:"Noto Serif JP",serif;
+      background:var(--parchment);
+      color:var(--forest-deep);
+      min-height:100vh;
+    }
+
+    /* ── Mini Nav (matches homepage) ── */
+    .mini-nav{
+      position:fixed;top:0;left:0;right:0;z-index:300;
+      background:rgba(5,14,7,.90);
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(201,169,107,.14);
+      padding:0 16px;height:44px;
+      display:flex;align-items:center;
+    }
+    .mini-nav-inner{
+      display:flex;align-items:center;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;width:100%;max-width:900px;margin:0 auto;
+    }
+    .mini-nav-inner::-webkit-scrollbar{display:none;}
+    .mini-nav-logo{
+      font-family:"Playfair Display",serif;font-weight:700;
+      font-size:.78rem;letter-spacing:.16em;
+      color:rgba(201,169,107,.72);text-decoration:none;
+      white-space:nowrap;padding-right:14px;
+      border-right:1px solid rgba(255,255,255,.12);margin-right:10px;flex-shrink:0;
+    }
+    .mini-nav-logo:hover{color:var(--accent-gold);}
+    .mini-nav-link{
+      font-family:"Noto Serif JP",serif;font-size:.74rem;font-weight:700;
+      color:rgba(200,215,205,.60);text-decoration:none;
+      padding:0 10px;height:44px;line-height:44px;
+      white-space:nowrap;flex-shrink:0;transition:color .18s;letter-spacing:.03em;
+    }
+    .mini-nav-link:hover,.mini-nav-link[aria-current="page"]{color:rgba(201,169,107,.88);}
+    .mini-nav-cta{
+      margin-left:auto;flex-shrink:0;
+      display:inline-flex;align-items:center;
+      background:rgba(201,169,107,.12);border:1px solid rgba(201,169,107,.28);
+      border-radius:var(--radius-pill);color:var(--accent-gold);
+      font-size:.70rem;font-weight:700;text-decoration:none;
+      padding:5px 12px;letter-spacing:.04em;transition:background .18s;white-space:nowrap;
+    }
+    .mini-nav-cta:hover{background:rgba(201,169,107,.22);}
+    @media(max-width:680px){.mini-nav-logo{display:none;}}
+
+    /* ── Layout ── */
+    .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+    /* ── Hero ── */
+    .ch-hero{
+      background:var(--bg-primary);
+      padding:96px 0 72px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .ch-hero::before{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 80% 50% at 62% 8%,
+          rgba(201,169,107,.12) 0%,transparent 55%),
+        radial-gradient(ellipse 100% 30% at 50% 100%,
+          rgba(22,56,40,.60) 0%,transparent 60%);
+    }
+    .ch-hero .wrap{position:relative;z-index:1;}
+    .ch-eyebrow{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:.68rem;font-weight:700;letter-spacing:.20em;text-transform:uppercase;
+      color:var(--accent-gold);
+      background:rgba(201,169,107,.08);border:1px solid rgba(201,169,107,.20);
+      border-radius:var(--radius-pill);padding:5px 16px;margin-bottom:20px;
+    }
+    .ch-eyebrow-dot{
+      width:5px;height:5px;border-radius:50%;
+      background:var(--accent-gold);flex-shrink:0;
+      animation:pulse 2.8s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+    .ch-heading{
+      font-family:"Playfair Display",serif;font-weight:700;
+      font-size:clamp(1.80rem,5.5vw,2.80rem);
+      color:#f2f5f0;line-height:1.20;letter-spacing:-.02em;
+      margin-bottom:14px;text-shadow:0 2px 24px rgba(1,4,2,.60);
+    }
+    .ch-sub{
+      font-size:.96rem;color:rgba(210,225,215,.72);
+      line-height:1.90;max-width:420px;margin:0 auto 32px;
+    }
+    .ch-cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .ch-cta-primary{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);
+      color:#06110e;font-family:"Noto Serif JP",serif;
+      font-weight:700;font-size:.94rem;text-decoration:none;
+      padding:14px 36px;border-radius:var(--radius-pill);min-height:50px;
+      letter-spacing:.04em;
+      box-shadow:0 5px 22px rgba(201,169,107,.30);
+      transition:background var(--dur-base),transform .16s,box-shadow var(--dur-base);
+    }
+    .ch-cta-primary:hover{
+      background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);
+      transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,107,.42);
+    }
+    .ch-cta-secondary{
+      display:inline-flex;align-items:center;gap:6px;
+      color:rgba(201,169,107,.70);font-family:"Noto Serif JP",serif;
+      font-size:.86rem;font-weight:700;text-decoration:none;
+      padding:12px 22px;border-radius:var(--radius-pill);
+      border:1px solid rgba(201,169,107,.26);min-height:50px;
+      transition:color var(--dur-base),border-color var(--dur-base),background var(--dur-base);
+    }
+    .ch-cta-secondary:hover{
+      color:var(--accent-gold);border-color:rgba(201,169,107,.50);
+      background:rgba(201,169,107,.06);
+    }
+
+    /* ── Compare Cards Section ── */
+    .ch-cards-section{
+      background:var(--parchment);padding:64px 0 72px;
+    }
+    .ch-section-label{
+      font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--accent-gold);display:block;text-align:center;margin-bottom:40px;
+    }
+    .ch-cards{display:grid;grid-template-columns:1fr;gap:16px;}
+
+    .ch-card{
+      display:block;text-decoration:none;
+      background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);
+      padding:28px 26px 24px;
+      box-shadow:0 2px 12px rgba(8,20,17,.05);
+      transition:transform var(--dur-base) var(--ease-soft),
+                 box-shadow var(--dur-base),border-color var(--dur-base);
+    }
+    .ch-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(8,20,17,.10);
+      border-color:rgba(201,169,107,.42);
+    }
+    .ch-card:focus-visible{
+      outline:2px solid var(--accent-gold);outline-offset:3px;
+    }
+    .ch-card-num{
+      font-size:.60rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+      color:rgba(201,169,107,.60);display:block;margin-bottom:10px;
+    }
+    .ch-card-title{
+      font-family:"Playfair Display",serif;font-weight:700;
+      font-size:1.22rem;color:var(--forest-deep);
+      line-height:1.25;margin-bottom:8px;
+    }
+    .ch-card-vs{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-bottom:12px;
+    }
+    .ch-card-species{
+      font-size:.86rem;font-weight:700;color:var(--forest);
+    }
+    .ch-card-vs-badge{
+      font-size:.62rem;font-weight:700;letter-spacing:.08em;
+      color:rgba(201,169,107,.72);
+      background:rgba(201,169,107,.10);border:1px solid rgba(201,169,107,.22);
+      border-radius:var(--radius-pill);padding:2px 8px;flex-shrink:0;
+    }
+    .ch-card-desc{
+      font-size:.86rem;color:#5a6e60;line-height:1.72;margin-bottom:16px;
+    }
+    .ch-card-cta{
+      display:inline-flex;align-items:center;gap:5px;
+      font-size:.78rem;font-weight:700;
+      color:rgba(201,169,107,.80);letter-spacing:.04em;
+    }
+    .ch-card-arrow{
+      display:inline-block;
+      transition:transform var(--dur-base) var(--ease-soft);
+    }
+    .ch-card:hover .ch-card-arrow{transform:translateX(5px);}
+
+    /* ── Bottom CTA ── */
+    .ch-bottom{
+      background:var(--bg-secondary);padding:64px 0 72px;text-align:center;
+    }
+    .ch-bottom-heading{
+      font-family:"Playfair Display",serif;font-style:italic;
+      font-size:clamp(1.40rem,4vw,1.90rem);
+      color:#eef0ec;margin-bottom:10px;
+    }
+    .ch-bottom-sub{
+      font-size:.90rem;color:rgba(200,215,205,.60);
+      line-height:1.85;margin-bottom:28px;
+    }
+    .ch-bottom-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);
+      color:#06110e;font-family:"Noto Serif JP",serif;
+      font-weight:700;font-size:.96rem;text-decoration:none;
+      padding:15px 40px;border-radius:var(--radius-pill);min-height:52px;
+      letter-spacing:.04em;
+      box-shadow:0 5px 22px rgba(201,169,107,.28);
+      transition:background var(--dur-base),transform .16s;
+    }
+    .ch-bottom-btn:hover{
+      background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);
+      transform:translateY(-2px);
+    }
+    .ch-bottom-btn:focus-visible{outline:3px solid var(--accent-gold);outline-offset:3px;}
+
+    /* ── Footer minimal ── */
+    .ch-footer{
+      background:var(--bg-primary);padding:20px;text-align:center;
+      border-top:1px solid rgba(201,169,107,.10);
+    }
+    .ch-footer a{
+      font-size:.74rem;color:rgba(200,215,205,.40);
+      text-decoration:none;letter-spacing:.04em;transition:color .18s;
+    }
+    .ch-footer a:hover{color:rgba(201,169,107,.60);}
+
+    /* ── Mobile ── */
+    @media(min-width:600px){
+      .ch-cards{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:480px){
+      .ch-hero{padding:80px 0 56px;}
+      .ch-heading{font-size:1.72rem;}
+      .ch-cta-group{flex-direction:column;align-items:center;}
+      .ch-cards-section{padding:48px 0 56px;}
+      .ch-card{padding:22px 18px 20px;}
+      .ch-bottom{padding:52px 0 56px;}
+    }
+    @media(max-width:360px){
+      .ch-heading{font-size:1.52rem;}
+      .ch-card-title{font-size:1.08rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mini Nav -->
+  <nav class="mini-nav" aria-label="サイトナビゲーション">
+    <div class="mini-nav-inner">
+      <a href="../" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
+      <a href="../shindan/" class="mini-nav-link">診断</a>
+      <a href="../species-list.html" class="mini-nav-link">種一覧</a>
+      <a href="../compare/" class="mini-nav-link" aria-current="page">比較</a>
+      <a href="../guides/turtle-trouble-guide.html" class="mini-nav-link">ガイド</a>
+      <a href="../shindan/" class="mini-nav-cta"
+         onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'compare_hub'})">30秒診断 →</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="ch-hero" aria-labelledby="ch-h1">
+    <div class="wrap">
+      <p class="ch-eyebrow">
+        <span class="ch-eyebrow-dot" aria-hidden="true"></span>
+        Compare
+      </p>
+      <h1 class="ch-heading" id="ch-h1">どの亀が自分に合う？</h1>
+      <p class="ch-sub">人気の比較を一覧でチェックして、自分に合う種類を探しましょう。</p>
+      <div class="ch-cta-group">
+        <a href="../shindan/" class="ch-cta-primary"
+           onclick="(typeof gtag==='function')&&gtag('event','compare_hub_cta_click',{cta:'shindan',location:'hero'})">
+          30秒診断 →
+        </a>
+        <a href="../species-list.html" class="ch-cta-secondary"
+           onclick="(typeof gtag==='function')&&gtag('event','compare_hub_cta_click',{cta:'species_list',location:'hero'})">
+          種一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare Cards -->
+  <section class="ch-cards-section" aria-labelledby="ch-cards-label">
+    <div class="wrap">
+      <span class="ch-section-label" id="ch-cards-label">比較記事一覧</span>
+      <div class="ch-cards">
+
+        <a href="./hermann-vs-greek.html" class="ch-card"
+           onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'hermann_vs_greek'})">
+          <span class="ch-card-num">Compare 01</span>
+          <p class="ch-card-title">ヘルマン vs ギリシャ</p>
+          <div class="ch-card-vs">
+            <span class="ch-card-species">ヘルマンリクガメ</span>
+            <span class="ch-card-vs-badge">vs</span>
+            <span class="ch-card-species">ギリシャリクガメ</span>
+          </div>
+          <p class="ch-card-desc">初心者に人気の2大リクガメを比較。飼いやすさ・費用・サイズの違いを詳しく解説。</p>
+          <span class="ch-card-cta">
+            くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a href="./musk-vs-razorback.html" class="ch-card"
+           onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'musk_vs_razorback'})">
+          <span class="ch-card-num">Compare 02</span>
+          <p class="ch-card-title">ニオイガメ vs カブトニオイ</p>
+          <div class="ch-card-vs">
+            <span class="ch-card-species">ミシシッピニオイガメ</span>
+            <span class="ch-card-vs-badge">vs</span>
+            <span class="ch-card-species">カブトニオイガメ</span>
+          </div>
+          <p class="ch-card-desc">小型で人気の水棲ガメ比較。省スペースで飼える2種の特徴と違いを解説。</p>
+          <span class="ch-card-cta">
+            くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a href="./reeves-vs-japanese-pond.html" class="ch-card"
+           onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'reeves_vs_japanese_pond'})">
+          <span class="ch-card-num">Compare 03</span>
+          <p class="ch-card-title">クサガメ vs ニホンイシガメ</p>
+          <div class="ch-card-vs">
+            <span class="ch-card-species">クサガメ</span>
+            <span class="ch-card-vs-badge">vs</span>
+            <span class="ch-card-species">ニホンイシガメ</span>
+          </div>
+          <p class="ch-card-desc">日本種同士を比較。入手しやすさ・飼育難易度・希少性の違いをまとめました。</p>
+          <span class="ch-card-cta">
+            くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="ch-bottom">
+    <div class="wrap">
+      <h2 class="ch-bottom-heading">まだ迷う？</h2>
+      <p class="ch-bottom-sub">
+        比較だけでは決めにくい場合は、30秒診断がおすすめです。<br>
+        あなたの条件から、最適な種を提案します。
+      </p>
+      <a href="../shindan/" class="ch-bottom-btn"
+         onclick="(typeof gtag==='function')&&gtag('event','compare_hub_cta_click',{cta:'shindan',location:'bottom'})">
+        診断する →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ch-footer">
+    <a href="../">← カメライフガイド トップへ</a>
+  </footer>
+
+</body>
+</html>
