@@ -514,6 +514,21 @@ body {
 <script src="equipment.js"></script>
 <script src="../data/products.js"></script>
 <script>
+// ── P0 Fix: ga4Event safety wrapper ─────────────────────────
+// GA4 / gtag が未定義でも診断フローを停止させない
+if (typeof ga4Event !== 'function') {
+  window.ga4Event = function(name, params) {
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params || {});
+      }
+    } catch(e) {
+      // gtag未定義でも無視して続行
+    }
+  };
+}
+// ──────────────────────────────────────────────────────────────
+
 'use strict';
 
 // ===== 状態変数 =====
@@ -1438,39 +1453,94 @@ function selectChoice(choice, clickedBtn) {
 
 // ===== 結果計算 =====
 function calcResult() {
-  _diagnosisCompleted = true; // Phase 9-C: exit guard
-  var fill = document.getElementById('progress-fill');
-  fill.style.width = '100%';
-  fill.parentElement.setAttribute('aria-valuenow', 100);
+  _diagnosisCompleted = true;
+  // ── P0 Fix: try-catch で包み、エラーでもfallback表示 ──
+  try {
+    var fill = document.getElementById('progress-fill');
+    if (fill) { fill.style.width = '100%'; fill.parentElement.setAttribute('aria-valuenow', 100); }
 
-  var candidates = selectedRoute.species.filter(function(sp){ return sp.availability !== 'archive'; });
-  var matched = candidates.filter(function(sp){ return sp.match(scores); });
-  // 安全fallback: conditional_invasive・難易度「上級」単体・XLサイズを除外
-  var safeFallback = candidates.filter(function(sp){
-    if (sp.legal === 'conditional_invasive') return false;
-    if (sp.difficulty && sp.difficulty === '上級') return false;
-    if (sp.size && sp.size.indexOf('XL') !== -1) return false;
-    return true;
-  });
-  var pool = matched.length > 0 ? matched : (safeFallback.length > 0 ? safeFallback : candidates);
-  var best = pool[0];
-  var bestScore = -Infinity;
-  pool.forEach(function(sp){
-    var s = sp.score(scores);
-    if (s > bestScore) { bestScore = s; best = sp; }
-  });
-  result = best;
-  var pct = calcMatchPercent(best, scores);
-  // GA4: 診断結果
-  ga4Event('shindan_result', {
-    route_id: selectedRoute.id,
-    species_name: best.name,
-    match_pct: pct,
-    difficulty: best.difficulty,
-    cites: best.cites || 'none'
-  });
-  showResult(best, pct);
-  saveResultToUrl(selectedRoute.id, best.name);
+    // archive / redirect 除外
+    var candidates = (selectedRoute.species || []).filter(function(sp){
+      return sp.availability !== 'archive' && sp.availability !== 'redirect';
+    });
+
+    if (candidates.length === 0) {
+      // 全種除外されてしまった場合は全種を対象にする
+      candidates = (selectedRoute.species || []);
+    }
+
+    var matched = candidates.filter(function(sp){
+      try { return sp.match && sp.match(scores); } catch(e){ return false; }
+    });
+
+    // 安全fallback: conditional_invasive・上級単体・XLを除外
+    var safeFallback = candidates.filter(function(sp){
+      if (sp.legal === 'conditional_invasive') return false;
+      if (sp.difficulty && sp.difficulty === '上級') return false;
+      if (sp.size && sp.size.indexOf('XL') !== -1) return false;
+      return true;
+    });
+
+    var pool = matched.length > 0 ? matched
+             : (safeFallback.length > 0 ? safeFallback : candidates);
+
+    // pool が空の場合は初心者向けfallback種を使用
+    if (!pool || pool.length === 0) {
+      pool = (SPECIES.aquatic || []).filter(function(sp){
+        return sp.name && sp.name.indexOf('ニオイガメ') >= 0 && sp.availability !== 'archive';
+      });
+      if (!pool.length) pool = (SPECIES.aquatic || []).slice(0, 3);
+    }
+
+    var best = pool[0];
+    var bestScore = -Infinity;
+    pool.forEach(function(sp){
+      try {
+        var s = sp.score ? sp.score(scores) : 0;
+        if (s > bestScore) { bestScore = s; best = sp; }
+      } catch(e){}
+    });
+
+    if (!best) throw new Error('no species resolved');
+
+    result = best;
+    var pct = calcMatchPercent(best, scores);
+
+    // GA4（安全呼び出し）
+    ga4Event('shindan_result', {
+      route_id:     (selectedRoute || {}).id || '',
+      species_name: best.name || '',
+      match_pct:    pct,
+      difficulty:   best.difficulty || '',
+      cites:        best.cites || 'none'
+    });
+
+    showResult(best, pct);
+    saveResultToUrl((selectedRoute || {}).id || '', best.name);
+
+  } catch(err) {
+    // ── P0 Fallback: エラー時も結果画面を表示 ──
+    console.warn('[calcResult fallback]', err);
+    var fallbackSp = {
+      name: 'ミシシッピニオイガメ',
+      latin: 'Sternotherus odoratus',
+      emoji: '🐢',
+      difficulty: '入門',
+      size: 'S（〜14cm）',
+      cites: null,
+      legal: 'keepable',
+      reason: '初心者に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
+      hasPage: true,
+      slug: 'musk-turtle',
+      links: [],
+      equipmentKey: '_aquatic_small',
+      coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+      match: function(){ return true; },
+      score: function(){ return 0; }
+    };
+    result = fallbackSp;
+    showResult(fallbackSp, null);
+  }
 }
 
 // ===== 結果表示 =====
@@ -1484,8 +1554,9 @@ function showResult(sp, pct) {
   // バッジ
   var badges = document.getElementById('res-badges');
   badges.innerHTML = '';
-  var diffClass = sp.difficulty.indexOf('入門') >= 0 ? 'badge-beginner'
-                : sp.difficulty.indexOf('上級') >= 0 ? 'badge-advanced' : 'badge-intermediate';
+  var _diff = sp.difficulty || '';
+  var diffClass = _diff.indexOf('入門') >= 0 ? 'badge-beginner'
+                : _diff.indexOf('上級') >= 0 ? 'badge-advanced' : 'badge-intermediate';
   badges.innerHTML +=
     '<span class="badge ' + diffClass + '">' + sp.difficulty + '</span>' +
     '<span class="badge badge-intermediate">' + sp.size + '</span>';
@@ -1684,9 +1755,10 @@ function showResult(sp, pct) {
       '</a>';
   }
 
-  // リンク
-  sp.links.forEach(function(l){
-    linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + l.label + '</a>';
+  // リンク（P0 Fix: links が undefined の種でもクラッシュしない）
+  (sp.links || []).forEach(function(l){
+    if (!l || !l.href) return;
+    linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + (l.label || '') + '</a>';
   });
   if (sp.asin) {
     linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife09-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="noopener noreferrer">Amazon で関連商品を見る</a>';
