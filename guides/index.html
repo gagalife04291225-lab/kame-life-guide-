@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>亀の飼育ガイド一覧 | カメライフガイド</title>
+  <meta name="description" content="亀・リクガメ・水棲ガメの飼育ガイドをカテゴリ別に整理。水槽、紫外線、温度管理、餌、トラブル対処まで、初心者にもわかりやすく案内します。">
+  <link rel="canonical" href="https://gagalife04291225-lab.github.io/kame-life-guide-/guides/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-QQTE5CVF3K');
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --forest-deep:#0d1f1a;
+      --forest:#2f4a3c;
+      --parchment:#f4efe2;
+      --accent-gold:#C9A96B;
+      --bg-primary:#081411;
+      --bg-secondary:#10241d;
+      --radius-lg:16px;
+      --radius-pill:9999px;
+      --dur-base:.26s;
+      --ease-soft:cubic-bezier(.22,.68,0,1);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:"Noto Serif JP",serif;background:var(--parchment);color:var(--forest-deep);min-height:100vh;}
+
+    /* ── Mini Nav ── */
+    .mini-nav{
+      position:fixed;top:0;left:0;right:0;z-index:300;
+      background:rgba(5,14,7,.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(201,169,107,.14);
+      padding:0 16px;height:44px;display:flex;align-items:center;
+    }
+    .mini-nav-inner{
+      display:flex;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;width:100%;max-width:900px;margin:0 auto;
+    }
+    .mini-nav-inner::-webkit-scrollbar{display:none;}
+    .mini-nav-logo{
+      font-family:"Playfair Display",serif;font-weight:700;font-size:.78rem;letter-spacing:.16em;
+      color:rgba(201,169,107,.72);text-decoration:none;white-space:nowrap;
+      padding-right:14px;border-right:1px solid rgba(255,255,255,.12);margin-right:10px;flex-shrink:0;
+    }
+    .mini-nav-logo:hover{color:var(--accent-gold);}
+    .mini-nav-link{
+      font-family:"Noto Serif JP",serif;font-size:.74rem;font-weight:700;
+      color:rgba(200,215,205,.60);text-decoration:none;
+      padding:0 10px;height:44px;line-height:44px;white-space:nowrap;flex-shrink:0;
+      transition:color .18s;letter-spacing:.03em;
+    }
+    .mini-nav-link:hover,.mini-nav-link[aria-current="page"]{color:rgba(201,169,107,.88);}
+    .mini-nav-cta{
+      margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;
+      background:rgba(201,169,107,.12);border:1px solid rgba(201,169,107,.28);
+      border-radius:var(--radius-pill);color:var(--accent-gold);
+      font-size:.70rem;font-weight:700;text-decoration:none;
+      padding:5px 12px;letter-spacing:.04em;transition:background .18s;white-space:nowrap;
+    }
+    .mini-nav-cta:hover{background:rgba(201,169,107,.22);}
+    @media(max-width:680px){.mini-nav-logo{display:none;}}
+
+    .wrap{max-width:820px;margin:0 auto;padding:0 20px;}
+
+    /* ── Hero ── */
+    .gh-hero{
+      background:var(--bg-primary);padding:96px 0 72px;
+      text-align:center;position:relative;overflow:hidden;
+    }
+    .gh-hero::before{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 70% 50% at 55% 8%,rgba(201,169,107,.10) 0%,transparent 55%),
+        radial-gradient(ellipse 100% 35% at 50% 100%,rgba(22,56,40,.55) 0%,transparent 60%);
+    }
+    .gh-hero .wrap{position:relative;z-index:1;}
+    .gh-eyebrow{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:.68rem;font-weight:700;letter-spacing:.20em;text-transform:uppercase;
+      color:var(--accent-gold);background:rgba(201,169,107,.08);
+      border:1px solid rgba(201,169,107,.20);border-radius:var(--radius-pill);
+      padding:5px 16px;margin-bottom:20px;
+    }
+    .gh-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--accent-gold);flex-shrink:0;animation:pulse 2.8s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+    .gh-heading{
+      font-family:"Playfair Display",serif;font-weight:700;
+      font-size:clamp(1.80rem,5.5vw,2.80rem);color:#f2f5f0;
+      line-height:1.20;letter-spacing:-.02em;margin-bottom:14px;
+      text-shadow:0 2px 24px rgba(1,4,2,.60);
+    }
+    .gh-sub{font-size:.94rem;color:rgba(210,225,215,.70);line-height:1.90;max-width:480px;margin:0 auto 32px;}
+    .gh-cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .gh-cta-primary{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);
+      color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.94rem;
+      text-decoration:none;padding:14px 36px;border-radius:var(--radius-pill);min-height:50px;
+      letter-spacing:.04em;box-shadow:0 5px 22px rgba(201,169,107,.30);
+      transition:background var(--dur-base),transform .16s;
+    }
+    .gh-cta-primary:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+    .gh-cta-secondary{
+      display:inline-flex;align-items:center;gap:6px;
+      color:rgba(201,169,107,.70);font-family:"Noto Serif JP",serif;
+      font-size:.86rem;font-weight:700;text-decoration:none;
+      padding:12px 22px;border-radius:var(--radius-pill);border:1px solid rgba(201,169,107,.26);min-height:50px;
+      transition:color var(--dur-base),border-color var(--dur-base),background var(--dur-base);
+    }
+    .gh-cta-secondary:hover{color:var(--accent-gold);border-color:rgba(201,169,107,.50);background:rgba(201,169,107,.06);}
+
+    /* ── Cards Section ── */
+    .gh-section{background:var(--parchment);padding:64px 0 72px;}
+    .gh-section-label{
+      font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--accent-gold);display:block;text-align:center;margin-bottom:12px;
+    }
+    .gh-section-heading{
+      font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+      font-size:clamp(1.20rem,3vw,1.50rem);color:var(--forest-deep);
+      text-align:center;margin-bottom:40px;line-height:1.35;
+    }
+
+    /* ── Category group ── */
+    .gh-cat{margin-bottom:48px;}
+    .gh-cat-title{
+      font-size:.70rem;font-weight:700;letter-spacing:.20em;text-transform:uppercase;
+      color:rgba(47,74,60,.45);border-bottom:1px solid #ddd5bf;
+      padding-bottom:8px;margin-bottom:18px;
+    }
+    .gh-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+
+    .gh-card{
+      display:block;text-decoration:none;
+      background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);
+      padding:22px 20px 20px;
+      box-shadow:0 2px 10px rgba(8,20,17,.04);
+      transition:transform var(--dur-base) var(--ease-soft),box-shadow var(--dur-base),border-color var(--dur-base);
+    }
+    .gh-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(8,20,17,.09);border-color:rgba(201,169,107,.40);}
+    .gh-card:focus-visible{outline:2px solid var(--accent-gold);outline-offset:3px;}
+    .gh-card-tag{
+      display:inline-block;font-size:.60rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+      color:rgba(201,169,107,.68);background:rgba(201,169,107,.09);
+      border:1px solid rgba(201,169,107,.18);border-radius:var(--radius-pill);
+      padding:2px 9px;margin-bottom:10px;
+    }
+    .gh-card-title{
+      font-family:"Playfair Display",serif;font-weight:700;font-size:1.02rem;
+      color:var(--forest-deep);line-height:1.30;margin-bottom:8px;
+    }
+    .gh-card-desc{font-size:.82rem;color:#5a6e60;line-height:1.72;margin-bottom:14px;}
+    .gh-card-cta{
+      display:inline-flex;align-items:center;gap:5px;
+      font-size:.76rem;font-weight:700;color:rgba(201,169,107,.78);letter-spacing:.04em;
+    }
+    .gh-card-arrow{display:inline-block;transition:transform var(--dur-base) var(--ease-soft);}
+    .gh-card:hover .gh-card-arrow{transform:translateX(5px);}
+
+    /* ── Bottom CTA ── */
+    .gh-bottom{background:var(--bg-secondary);padding:64px 0 72px;text-align:center;}
+    .gh-bottom-heading{
+      font-family:"Playfair Display",serif;font-style:italic;
+      font-size:clamp(1.40rem,4vw,1.90rem);color:#eef0ec;margin-bottom:10px;
+    }
+    .gh-bottom-sub{font-size:.90rem;color:rgba(200,215,205,.60);line-height:1.85;margin-bottom:28px;}
+    .gh-bottom-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(112deg,var(--accent-gold) 0%,#9a6e28 100%);
+      color:#06110e;font-family:"Noto Serif JP",serif;font-weight:700;font-size:.96rem;
+      text-decoration:none;padding:15px 40px;border-radius:var(--radius-pill);min-height:52px;
+      letter-spacing:.04em;box-shadow:0 5px 22px rgba(201,169,107,.28);
+      transition:background var(--dur-base),transform .16s;
+    }
+    .gh-bottom-btn:hover{background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);transform:translateY(-2px);}
+    .gh-bottom-btn:focus-visible{outline:3px solid var(--accent-gold);outline-offset:3px;}
+
+    /* ── Footer ── */
+    .gh-footer{background:var(--bg-primary);padding:20px;text-align:center;border-top:1px solid rgba(201,169,107,.10);}
+    .gh-footer a{font-size:.74rem;color:rgba(200,215,205,.40);text-decoration:none;letter-spacing:.04em;transition:color .18s;}
+    .gh-footer a:hover{color:rgba(201,169,107,.60);}
+
+    /* ── Mobile ── */
+    @media(max-width:520px){
+      .gh-hero{padding:80px 0 56px;}
+      .gh-heading{font-size:1.72rem;}
+      .gh-cta-group{flex-direction:column;align-items:center;}
+      .gh-section{padding:48px 0 56px;}
+      .gh-cards{grid-template-columns:1fr;}
+      .gh-card{padding:18px 16px 16px;}
+      .gh-bottom{padding:52px 0 56px;}
+    }
+    @media(max-width:360px){
+      .gh-heading{font-size:1.52rem;}
+      .gh-card-title{font-size:.96rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mini Nav -->
+  <nav class="mini-nav" aria-label="サイトナビゲーション">
+    <div class="mini-nav-inner">
+      <a href="../" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
+      <a href="../shindan/" class="mini-nav-link">診断</a>
+      <a href="../species-list.html" class="mini-nav-link">種一覧</a>
+      <a href="../compare/" class="mini-nav-link">比較</a>
+      <a href="../guides/" class="mini-nav-link" aria-current="page">ガイド</a>
+      <a href="../shindan/" class="mini-nav-cta"
+         onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'guides_hub'})">30秒診断 →</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gh-hero" aria-labelledby="gh-h1">
+    <div class="wrap">
+      <p class="gh-eyebrow">
+        <span class="gh-eyebrow-dot" aria-hidden="true"></span>
+        Care Guides
+      </p>
+      <h1 class="gh-heading" id="gh-h1">飼育ガイドを選ぶ</h1>
+      <p class="gh-sub">水棲ガメ・リクガメ・半水棲ガメ・トラブル対処まで、必要な情報をカテゴリ別に探せます。</p>
+      <div class="gh-cta-group">
+        <a href="../shindan/" class="gh-cta-primary"
+           onclick="(typeof gtag==='function')&&gtag('event','guides_hub_cta_click',{cta:'shindan',location:'hero'})">
+          30秒診断 →
+        </a>
+        <a href="../species-list.html" class="gh-cta-secondary"
+           onclick="(typeof gtag==='function')&&gtag('event','guides_hub_cta_click',{cta:'species_list',location:'hero'})">
+          種一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Cards -->
+  <section class="gh-section" aria-labelledby="gh-sec-label">
+    <div class="wrap">
+      <span class="gh-section-label" id="gh-sec-label">飼育ガイド一覧</span>
+      <h2 class="gh-section-heading">カテゴリから探す</h2>
+
+      <!-- 飼育環境ガイド -->
+      <div class="gh-cat">
+        <p class="gh-cat-title">飼育環境 — 種類別ガイド</p>
+        <div class="gh-cards">
+
+          <a href="../guide-water-full.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'water_full'})">
+            <span class="gh-card-tag">水棲ガメ</span>
+            <p class="gh-card-title">水棲ガメの飼い方</p>
+            <p class="gh-card-desc">水槽・フィルター・水温管理など、水棲ガメ飼育の基本をまとめています。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="../guide-dry.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'dry'})">
+            <span class="gh-card-tag">リクガメ</span>
+            <p class="gh-card-title">リクガメの飼い方</p>
+            <p class="gh-card-desc">ケージ・UVB・温度勾配・床材など、乾燥系リクガメの飼育環境を解説。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="../guide-semi.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'semi'})">
+            <span class="gh-card-tag">半水棲ガメ</span>
+            <p class="gh-card-title">半水棲ガメの飼い方</p>
+            <p class="gh-card-desc">水場と陸場を両立させる飼育レイアウトと温度・湿度管理を紹介。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- 種類選び -->
+      <div class="gh-cat">
+        <p class="gh-cat-title">種類選び — おすすめ候補</p>
+        <div class="gh-cards">
+
+          <a href="./beginner-best-turtles.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'beginner'})">
+            <span class="gh-card-tag">初心者向き</span>
+            <p class="gh-card-title">初心者におすすめの亀</p>
+            <p class="gh-card-desc">飼いやすく失敗しにくい種を厳選。はじめて飼う方への選び方ガイド。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="./low-odor-turtles.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'low_odor'})">
+            <span class="gh-card-tag">臭いが少ない</span>
+            <p class="gh-card-title">臭いの少ない亀を選ぶ</p>
+            <p class="gh-card-desc">室内飼育で臭いが気になる方向け。管理次第で臭いを抑えやすい種を紹介。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="./small-best-turtles.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'small'})">
+            <span class="gh-card-tag">小型種</span>
+            <p class="gh-card-title">小型の亀を選ぶ</p>
+            <p class="gh-card-desc">省スペースで飼える小型種を厳選。60cm以下の水槽から始められる候補を解説。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- トラブル対処 -->
+      <div class="gh-cat">
+        <p class="gh-cat-title">トラブル対処</p>
+        <div class="gh-cards">
+
+          <a href="./turtle-trouble-guide.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'trouble'})">
+            <span class="gh-card-tag">トラブル全般</span>
+            <p class="gh-card-title">飼育トラブル対処ガイド</p>
+            <p class="gh-card-desc">亀が動かない・餌を食べない・甲羅の異常など、よくある症状の原因と対処法。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="./turtle-not-eating.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'not_eating'})">
+            <span class="gh-card-tag">餌・食欲</span>
+            <p class="gh-card-title">亀が餌を食べないときは</p>
+            <p class="gh-card-desc">拒食の原因と対処法を解説。温度・ストレス・病気など、ケース別に確認できます。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="./turtle-runny-nose.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'runny_nose'})">
+            <span class="gh-card-tag">呼吸器</span>
+            <p class="gh-card-title">亀の鼻水・鼻炎の対処</p>
+            <p class="gh-card-desc">鼻水・鼻詰まり・呼吸音の異常。早期発見と適切な対応方法を紹介。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="./turtle-shell-white.html" class="gh-card"
+             onclick="(typeof gtag==='function')&&gtag('event','guides_hub_card_click',{guide:'shell_white'})">
+            <span class="gh-card-tag">甲羅・皮膚</span>
+            <p class="gh-card-title">甲羅が白くなるときは</p>
+            <p class="gh-card-desc">甲羅の白化・白いカビ・脱皮不全の見分け方と対処法を詳しく解説。</p>
+            <span class="gh-card-cta">くわしく見る <span class="gh-card-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="gh-bottom">
+    <div class="wrap">
+      <h2 class="gh-bottom-heading">種類から探したい方へ</h2>
+      <p class="gh-bottom-sub">
+        30秒診断なら、あなたの条件から最適な種を提案します。<br>
+        飼育環境・予算・経験レベルを入力するだけ。
+      </p>
+      <a href="../shindan/" class="gh-bottom-btn"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_hub_cta_click',{cta:'shindan',location:'bottom'})">
+        診断する →
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="gh-footer">
+    <a href="../">← カメライフガイド トップへ</a>
+  </footer>
+
+</body>
+</html>
