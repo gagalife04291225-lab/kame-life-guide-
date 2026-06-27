@@ -779,8 +779,7 @@
 
   /* ── Mobile ── */
   @media(max-width:680px){
-    header.hero .wrap{ padding:106px 20px 92px; }
-    /* focal point: shift to show horizon on narrow screens */
+    header.hero .wrap{ padding:80px 20px 72px; }   /* mobile: reduced to show CTA in viewport */
     header.hero{ background-position:62% 40%; }
     .h12-main{ font-size:clamp(1.78rem,7.5vw,2.40rem); }
     .h12-support{ font-size:.95rem; }
@@ -788,7 +787,7 @@
     .hero-scallop{ height:48px; }
   }
   @media(max-width:400px){
-    header.hero .wrap{ padding:94px 16px 84px; }
+    header.hero .wrap{ padding:70px 16px 64px; }   /* 400px: ensure CTA visible */
     header.hero{ background-position:60% 38%; }
     .h12-eyebrow{ font-size:.65rem; padding:4px 14px; }
     .h12-brand{ font-size:.74rem; letter-spacing:.22em; }
@@ -3707,7 +3706,59 @@
     .aic-avatar{width:30px;height:30px;font-size:.74rem;}
   }
 
-</style>
+
+  /* ══ Emergency Mobile QA: section density reduction ═══════════
+     Target: 360px / 390px / 430px  — all sections tighter
+  ══════════════════════════════════════════════════════════════ */
+  @media(max-width:680px){
+    /* Emotional Hook: reduce vertical padding */
+    .emo-hook{ padding:48px 0 52px; }
+    .emo-hook-num{ font-size:clamp(3.0rem,10vw,5.0rem); }
+    /* Problem Grid */
+    .pc-section{ padding:48px 0 52px; }
+    /* Species Universe */
+    .su-section{ padding:48px 0 52px; }
+    .su-sub{ margin-bottom:28px; }
+    /* Intelligence Layer */
+    .il-section{ padding:44px 0 48px; }
+    .il-header{ margin-bottom:28px; }
+    /* Compare */
+    section.hp-compare{ padding:48px 0 52px; }
+    .cmp-sub{ margin-bottom:22px; }
+    .cmp-chips{ margin-bottom:30px; }
+    /* Cost Sim */
+    section.cost-sim{ padding:48px 0 52px; }
+    /* Concierge Launch */
+    section.concierge-launch,
+    .cl-section{ padding:48px 0 52px; }
+    /* Guide links */
+    #guide-links{ padding:44px 0 48px; }
+  }
+  @media(max-width:480px){
+    .emo-hook{ padding:40px 0 44px; }
+    .pc-section{ padding:40px 0 44px; }
+    .su-section{ padding:40px 0 44px; }
+    .il-section{ padding:36px 0 40px; }
+    section.hp-compare{ padding:40px 0 44px; }
+    section.cost-sim{ padding:40px 0 44px; }
+    /* Journey Preview: shorten on mobile */
+    .journey-preview{ padding:36px 0 40px; }
+    .jp-heading{ font-size:1.24rem; margin-bottom:20px; }
+    .jp-steps{ gap:12px; }
+    /* Intelligence Layer: hide on very small for density */
+    .il-grid{ grid-template-columns:repeat(2,1fr); gap:8px; }
+    .il-card{ padding:16px 10px 14px; }
+  }
+  @media(max-width:360px){
+    .emo-hook{ padding:34px 0 36px; }
+    .emo-hook-num{ font-size:2.8rem; }
+    .pc-section,.su-section,.il-section,
+    section.hp-compare,section.cost-sim{ padding:34px 0 36px; }
+    .journey-preview{ padding:28px 0 32px; }
+    /* Trust badges: wrap on 360 */
+    .h12-stats{ gap:5px; }
+    .h12-stat{ font-size:.62rem; padding:4px 9px; }
+  }</style>
 <body>
 
 <header class="hero" role="banner">
@@ -3717,7 +3768,7 @@
   <div class="wrap">
 
     <!-- Eyebrow -->
-    <p class="h12-eyebrow" aria-label="AI亀コンシェルジュ">
+    <p class="h12-eyebrow" aria-label="亀コンシェルジュ">
       <span class="h12-eyebrow-dot" aria-hidden="true"></span>
       亀診断コンシェルジュ
     </p>
@@ -4099,7 +4150,7 @@
      or post-diagnosis assistant.
 ════════════════════════════════════════════════════════ -->
 <section class="aic-section" id="ai-concierge"
-  aria-label="AI亀コンシェルジュ"
+  aria-label="亀コンシェルジュ"
   hidden>
   <div class="aic-inner">
 
@@ -4384,7 +4435,7 @@
       </h2>
       <p class="il-sub">
         100種以上の生体データ、飼育ページ、機材DB、比較システム。<br>
-        AIは感覚ではなく、構造化された知識から提案しています。
+        データと構造化された知識から、候補を提案しています。
       </p>
     </header>
 
