@@ -137,7 +137,7 @@ const EQUIPMENT = {
 };
 
 // 種名 → 機材キー マッピング
-const EQUIPMENT_MAP = {
+const SPECIES_EQUIPMENT_MAP = {
   // リクガメ乾燥系
   'ロシアリクガメ':              '_land_dry',
   'ヘルマンリクガメ（ヒガシ亜種）': '_land_dry',
@@ -236,6 +236,6 @@ const EQUIPMENT_MAP = {
 
 // 種名から機材データを取得するヘルパー
 function getEquipment(speciesName) {
-  var key = EQUIPMENT_MAP[speciesName];
+  var key = SPECIES_EQUIPMENT_MAP[speciesName];
   return key ? EQUIPMENT[key] : null;
 }
