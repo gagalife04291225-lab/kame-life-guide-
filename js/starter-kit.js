@@ -68,7 +68,8 @@ function _skDisplayCat(cat) {
 (function () {
   var _debugEnabled = (
     typeof window !== 'undefined' &&
-    /[?&]debug_ga=1/.test(window.location.search)
+    /[?&]debug_ga=1/.test(window.location.search) ||
+    /[?&]ga_debug=1/.test(window.location.search)
   );
 
   if (!_debugEnabled) {
@@ -135,6 +136,8 @@ function _skDisplayCat(cat) {
 
   // ── Public logger ─────────────────────────────────────────
   window.KAME_GA_DEBUG_LOG = function (eventName, payload) {
+    // Console にも出力（F12 Console で確認可能）
+    console.log('[GA4:SK]', eventName, payload);
     _buildPanel();
     _count++;
 

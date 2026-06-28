@@ -750,26 +750,45 @@
 }
 
 
-/* ─── Phase 16: Mobile vertical stack (Fix C) ─────────────── */
-/* スマホでカードを縦積みにして見切れを解消 */
+/* ─── Phase 16 Rev2: Mobile horizontal scroll + visible scrollbar ── */
+/* スマホでは横スクロール＋スクロールバー表示で見切れを防ぐ */
 @media (max-width: 640px) {
+  /* ラッパーにパディングを確保してスクロールバーが隠れない */
   .sk-scroll {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    overflow-x: visible;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
     overflow-y: visible;
-    padding: 0 0 4px;
-    scroll-snap-type: none;
+    padding-bottom: 14px;   /* スクロールバー分の余白 */
+    scroll-snap-type: x mandatory;
+    /* スクロールバーを常に表示 */
+    scrollbar-width: thin;
+    scrollbar-color: #c4a05a #e8dcc8;
+    -webkit-overflow-scrolling: touch;
   }
+  /* Chrome/Safari: スクロールバー表示 */
+  .sk-scroll::-webkit-scrollbar {
+    display: block;
+    height: 5px;
+  }
+  .sk-scroll::-webkit-scrollbar-track {
+    background: #ede4d4;
+    border-radius: 3px;
+  }
+  .sk-scroll::-webkit-scrollbar-thumb {
+    background: #c4a05a;
+    border-radius: 3px;
+  }
+  /* カード幅: スマホで1.1枚分見えてスクロール促す */
   .sk-card {
-    flex: unset;
-    min-width: 0;
-    width: 100%;
+    flex: 0 0 82vw;
+    max-width: 300px;
+    min-width: 220px;
     height: auto;
     overflow: visible;
+    scroll-snap-align: start;
   }
-  /* AmazonボタンをフルWidthで確実に表示 */
+  /* ボタンはフル幅・タップしやすく */
   .sk-card-btn,
   .sk-card-btn--rakuten,
   .sk-card-btn--rakuten-search {
@@ -779,10 +798,11 @@
     white-space: normal;
     text-align: center;
     margin-top: 8px;
-    padding: 12px 14px;
+    padding: 12px 10px;
     min-height: 44px;
     justify-content: center;
     align-items: center;
+    font-size: .82rem;
   }
   /* 2ボタン縦並び時の間隔 */
   .sk-card-btn + .sk-card-btn--rakuten,
