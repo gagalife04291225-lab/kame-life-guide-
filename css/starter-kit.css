@@ -203,7 +203,12 @@
   margin-bottom: 14px;
   border-bottom: 2px solid #e4ddc9;
   padding-bottom: 0;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.sk-tabs::-webkit-scrollbar { display: none; }
 .sk-tab-btn {
   background: none;
   border: none;
@@ -486,38 +491,67 @@
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--moss, #4a6741);
-  margin-bottom: .75rem;
+  margin-bottom: .5rem;
   text-align: center;
   font-weight: 600;
 }
-
-/* 3-column grid; collapses to 1 on narrow */
-.sk-bundle-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  /* explicit min-height prevents CLS */
-  min-height: 160px;
+.sk-bundle-eyebrow::after {
+  content: "横にスライドして構成を見る →";
+  display: block;
+  margin-top: 4px;
+  font-size: .72rem;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: #8f5f2c;
+  font-weight: 700;
 }
 
-@media (max-width: 600px) {
-  .sk-bundle-grid {
-    grid-template-columns: 1fr;
-    min-height: unset;
-  }
+/* Bundle grid: 横スクロール（PC/スマホ共通） */
+.sk-bundle-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 4px 6px 18px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #d4a96a rgba(212,169,106,.18);
+}
+.sk-bundle-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.sk-bundle-grid::-webkit-scrollbar-track {
+  background: rgba(212,169,106,.18);
+  border-radius: 999px;
+}
+.sk-bundle-grid::-webkit-scrollbar-thumb {
+  background: #d4a96a;
+  border-radius: 999px;
 }
 
 .sk-bundle-card {
+  flex: 0 0 280px;
+  max-width: 280px;
+  height: auto;
+  overflow: visible;
+  scroll-snap-align: start;
   background: #fff;
   border: 1.5px solid rgba(0,0,0,.09);
   border-radius: 10px;
-  padding: 14px 14px 12px;
+  padding: 14px 14px 18px;
   display: flex;
   flex-direction: column;
   gap: 7px;
   box-shadow: 0 2px 6px rgba(0,0,0,.05);
   transition: box-shadow .2s, transform .2s;
   position: relative;
+}
+@media (max-width: 640px) {
+  .sk-bundle-card {
+    flex: 0 0 82vw;
+    max-width: 82vw;
+  }
 }
 .sk-bundle-card:hover {
   box-shadow: 0 6px 18px rgba(0,0,0,.1);
