@@ -25,23 +25,39 @@
 /* 横スクロールカード列 */
 .sk-scroll {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
-  padding-bottom: 12px;
+  overflow-y: visible;
+  padding: 4px 20px 20px 0;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #d4a96a rgba(212,169,106,.18);
 }
-.sk-scroll::-webkit-scrollbar { display: none; }
+.sk-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.sk-scroll::-webkit-scrollbar-track {
+  background: rgba(212,169,106,.18);
+  border-radius: 999px;
+}
+.sk-scroll::-webkit-scrollbar-thumb {
+  background: #d4a96a;
+  border-radius: 999px;
+}
 
 /* カード1枚 */
 .sk-card {
-  flex: 0 0 200px;
+  flex: 0 0 280px;
+  width: 280px;
+  max-width: 280px;
+  height: auto;
+  overflow: visible;
   scroll-snap-align: start;
   background: #fff;
   border: 1px solid rgba(0,0,0,.09);
   border-radius: 12px;
-  padding: 14px;
+  padding: 14px 14px 18px;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -215,8 +231,17 @@
 .sk-tab-desc {
   font-size: .8rem;
   color: #6b7c70;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   line-height: 1.6;
+}
+.sk-tab-desc::after {
+  content: "　横にスライドして商品を見る →";
+  display: block;
+  margin-top: 4px;
+  font-size: .75rem;
+  color: #8f5f2c;
+  font-weight: 700;
+  letter-spacing: .02em;
 }
 .sk-empty {
   font-size: .85rem;
@@ -407,13 +432,6 @@
 
 /* ─── 4. 商品カード視認性改善 ──────────────────────────────── */
 
-/* カード幅を少し広げ余白確保 */
-.sk-card {
-  flex: 0 0 210px;
-  gap: 8px;
-  padding: 15px 14px 13px;
-}
-
 /* transition はベースに配置（hover-out も自然に戻る） */
 .sk-card {
   transition: box-shadow .18s, transform .18s;
@@ -449,10 +467,8 @@
 
 /* ─── 5. レスポンシブ調整追加 ───────────────────────────────── */
 @media (max-width: 480px) {
-  .sk-card { flex: 0 0 190px; }
   .sk-hint { font-size: .79rem; padding: 10px 14px; }
   .sk-tab-rec-badge { font-size: .55rem; }
-  /* transform は @media(hover:hover) でPC限定済み・モバイルでは適用されない */
 }
 
 
@@ -750,43 +766,12 @@
 }
 
 
-/* ─── Phase 16 Rev2: Mobile horizontal scroll + visible scrollbar ── */
-/* スマホでは横スクロール＋スクロールバー表示で見切れを防ぐ */
+/* ─── Mobile: カード幅を画面幅基準に（横スクロール維持） ──── */
 @media (max-width: 640px) {
-  /* ラッパーにパディングを確保してスクロールバーが隠れない */
-  .sk-scroll {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    overflow-y: visible;
-    padding-bottom: 14px;   /* スクロールバー分の余白 */
-    scroll-snap-type: x mandatory;
-    /* スクロールバーを常に表示 */
-    scrollbar-width: thin;
-    scrollbar-color: #c4a05a #e8dcc8;
-    -webkit-overflow-scrolling: touch;
-  }
-  /* Chrome/Safari: スクロールバー表示 */
-  .sk-scroll::-webkit-scrollbar {
-    display: block;
-    height: 5px;
-  }
-  .sk-scroll::-webkit-scrollbar-track {
-    background: #ede4d4;
-    border-radius: 3px;
-  }
-  .sk-scroll::-webkit-scrollbar-thumb {
-    background: #c4a05a;
-    border-radius: 3px;
-  }
-  /* カード幅: スマホで1.1枚分見えてスクロール促す */
   .sk-card {
     flex: 0 0 82vw;
-    max-width: 300px;
-    min-width: 220px;
-    height: auto;
-    overflow: visible;
-    scroll-snap-align: start;
+    width: 82vw;
+    max-width: 82vw;
   }
   /* ボタンはフル幅・タップしやすく */
   .sk-card-btn,
@@ -804,7 +789,6 @@
     align-items: center;
     font-size: .82rem;
   }
-  /* 2ボタン縦並び時の間隔 */
   .sk-card-btn + .sk-card-btn--rakuten,
   .sk-card-btn + .sk-card-btn--rakuten-search {
     margin-top: 8px;
