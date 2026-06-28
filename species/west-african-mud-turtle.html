@@ -230,7 +230,13 @@ footer a{color:var(--accent);text-decoration:none;}
   <p>・<strong>♀の産卵場を用意しない：</strong>交尾確認後に産卵場がないと、抱卵した卵を体内に抱え続けて体調を崩す（卵詰まり）リスクがあります。繁殖を視野に入れる場合は土場を早めに用意してください。</p>
 
   <h2>推奨機材セット</h2>
-  <div class="gear-cards">
+  <div id="starter-kit-root"></div>
+  <script src="../data/products.js"></script>
+  <script src="../js/starter-kit.js"></script>
+  <script>
+    mountStarterKit({ equipmentKey: 'semi_aquatic_medium', name: 'ヒメハコヨコクビガメ', difficulty: '中級', lifespan: '20〜40年' });
+  </script>
+  <div class="gear-cards" style="display:none">
     <div class="gear-card">
       <div class="gear-icon">🏊</div>
       <div class="gear-info">
@@ -350,12 +356,7 @@ footer a{color:var(--accent);text-decoration:none;}
 
   <!-- Starter Kit -->
   <link rel="stylesheet" href="../css/starter-kit.css">
-  <div id="starter-kit-root"></div>
-  <script src="../data/products.js"></script>
-  <script src="../js/starter-kit.js"></script>
-  <script>
-    mountStarterKit({ equipmentKey: 'semi_aquatic_medium', name: 'ヒメハコヨコクビガメ', difficulty: '中級', lifespan: '20〜40年' });
-  </script>
+
 
   <div class="end-cta">
     <div class="end-cta-label">Next Step</div>
