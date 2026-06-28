@@ -266,14 +266,7 @@
   </div>
 </section>
 
-<!-- Phase 7A Task 2-B: Starter Kit repositioned -->
-<link rel="stylesheet" href="../css/starter-kit.css">
-<div id="starter-kit-root"></div>
-<script src="../data/products.js"></script>
-<script src="../js/starter-kit.js"></script>
-<script>
-  mountStarterKit({ equipmentKey: 'tortoise_dry_small', name: 'ロシアリクガメ', difficulty: '入門〜中級', lifespan: '40〜80年' });
-</script>
+
 <nav class="crumbs">
   <div class="wrap">
     <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ロシアリクガメ
@@ -344,7 +337,23 @@
 
     <h2>推奨機材セット</h2>
 
-    <div class="gear-cards">
+    <!-- Starter Kit V2 (Phase 7A / P1 restore) -->
+    <link rel="stylesheet" href="../css/starter-kit.css">
+    <div id="starter-kit-root"></div>
+    <script src="../data/products.js"></script>
+    <script src="../js/starter-kit.js"></script>
+    <script>
+      mountStarterKit({
+        equipmentKey: 'tortoise_dry_small',
+        name: 'ロシアリクガメ',
+        difficulty: '入門〜中級',
+        lifespan: '40〜80年',
+        monthlyCost: '¥1,000〜3,000'
+      });
+    </script>
+
+    <!-- 手書き gear-cards（Starter Kit V2 導入により非表示） -->
+    <div class="gear-cards" style="display:none">
 
       <div class="gear-card">
         <div class="gear-icon">🏠</div>
