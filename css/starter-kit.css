@@ -506,7 +506,7 @@
   font-weight: 700;
 }
 
-/* Bundle grid: 横スクロール（PC/スマホ共通） */
+/* Bundle grid: 横スクロール（PC/スマホ共通）[v2 2026-06-28] */
 .sk-bundle-grid {
   display: flex;
   gap: 14px;
