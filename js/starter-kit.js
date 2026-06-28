@@ -113,7 +113,7 @@ function _skDisplayCat(cat) {
     hdr.innerHTML =
       '<span>🐢 KAME GA DEBUG</span>' +
       '<span style="color:#f0c060">?debug_ga=1 — 最新10件表示</span>' +
-      '<button onclick="document.getElementById('kame-ga-debug').remove()" ' +
+      '<button onclick="document.getElementById(&quot;kame-ga-debug&quot;).remove()" ' +
         'style="background:none;border:1px solid #4caf50;color:#4caf50;' +
         'cursor:pointer;padding:1px 7px;border-radius:3px;font-size:10px;">✕ 閉じる</button>';
 
