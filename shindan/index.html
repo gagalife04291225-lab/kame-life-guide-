@@ -320,6 +320,43 @@ body {
 }
 
 /* 2段CTA */
+.res-cta-top {
+  margin: 16px 0 20px;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg,#1d3b2d,#305c45);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+.res-cta-top-primary {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  background: linear-gradient(135deg,#c47a2a,#8f5f1e);
+  border-radius: 12px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .02em;
+  box-shadow: 0 4px 14px rgba(143,95,44,.4);
+  transition: opacity .15s, transform .12s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.res-cta-top-primary:hover  { opacity: .92; }
+.res-cta-top-primary:active { transform: scale(.97); }
+.res-cta-top-sub {
+  margin-top: 10px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.78);
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: .01em;
+}
 .res-cta-block {
   display: flex;
   flex-direction: column;
@@ -500,6 +537,8 @@ body {
     <div class="score-label">相性スコア</div>
     <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
   </div>
+  <!-- Phase 16 Sprint1: Top CTA（score直後・早期誘導） -->
+  <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
   <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
   <!-- Phase 7-C Step 2-A: 費用目安サマリー -->
   <div class="res-cost-summary" id="res-cost-summary" style="display:none"></div>
@@ -1799,47 +1838,60 @@ function showResult(sp, pct) {
     }
   })();
 
-  // ===== Phase 16: 強化2段CTA（CVR最適化） =====
+  // ===== Phase 16 Sprint1: CTA生成（Top CTA + 下部CTA 二重配置） =====
   (function() {
-    var ctaBlock = document.getElementById('res-cta-block');
-    if (!ctaBlock) return;
-    if (!sp.hasPage || !sp.slug) { ctaBlock.style.display = 'none'; return; }
+    var routeId   = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey  = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
 
-    var speciesPageUrl = '../species/' + sp.slug + '.html';
-    var starterKitUrl  = speciesPageUrl + '#starter-kit-root';
-    var routeId = selectedRoute ? selectedRoute.id : 'all';
-    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
-
-    // ── teaser: 費用プレビューを取得 ──
-    var teaserHtml = '';
+    // ── FIX 2: teaser費用 with fallback ──────────────────────
     var initText = '', monthlyText = '';
-    if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
-      var TEASER_CATS = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
-      var cLow = 0, cHigh = 0, cnt = 0;
-      TEASER_CATS.forEach(function(cat) {
-        var p = (typeof getTierProduct === 'function') ? getTierProduct(equipKey, cat, 'budget') : null;
-        if (!p) return;
-        var pr = (p.priceRange || '').replace(/[¥,]/g, '');
-        var m = pr.match(/(\d+)[^\d]+(\d+)/);
-        if (m) { cLow += parseInt(m[1], 10); cHigh += parseInt(m[2], 10); cnt++; }
-      });
-      if (cnt >= 2) initText = '¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
-    }
+
+    // 優先1: PRODUCTSベース（getTierProduct）
+    try {
+      if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' &&
+          equipKey && EQUIPMENT_MAP[equipKey] && typeof getTierProduct === 'function') {
+        var TEASER_CATS = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+        var cLow = 0, cHigh = 0, cnt = 0;
+        TEASER_CATS.forEach(function(cat) {
+          var p = getTierProduct(equipKey, cat, 'budget');
+          if (!p) return;
+          var pr = (p.priceRange || '').replace(/[¥,]/g, '');
+          var m = pr.match(/(\d+)[^\d]+(\d+)/);
+          if (m) { cLow += parseInt(m[1], 10); cHigh += parseInt(m[2], 10); cnt++; }
+        });
+        if (cnt >= 2) initText = '¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
+      }
+    } catch(e) {}
+
+    // 優先2: MONTHLY_COST_MAP
     var monthlyCostData = equipKey && MONTHLY_COST_MAP[equipKey] ? MONTHLY_COST_MAP[equipKey] : null;
     monthlyText = monthlyCostData ? monthlyCostData.label : '';
 
-    if (initText || monthlyText) {
-      teaserHtml =
-        '<div class="res-cta-teaser">' +
-          '<div class="res-cta-teaser-title">この亀を飼う場合の目安</div>' +
-          '<div class="res-cta-teaser-row">' +
-            (initText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">初期費用</div><div class="res-cta-teaser-value">' + initText + '</div></div>' : '') +
-            (monthlyText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">月額目安</div><div class="res-cta-teaser-value">' + monthlyText + '</div></div>' : '') +
-          '</div>' +
-        '</div>';
+    // 優先3: routeId fallback（費用が全くない場合）
+    if (!initText && !monthlyText) {
+      var ROUTE_COST_FALLBACK = {
+        land:    { init: '¥25,000〜¥60,000', monthly: '¥1,000〜¥3,000' },
+        aquatic: { init: '¥18,000〜¥45,000', monthly: '¥1,500〜¥4,000' },
+        forest:  { init: '¥20,000〜¥50,000', monthly: '¥1,500〜¥3,500' },
+        exotic:  { init: '¥30,000〜¥80,000', monthly: '¥2,000〜¥6,000' },
+        all:     { init: '¥20,000〜¥60,000', monthly: '¥1,500〜¥5,000' },
+      };
+      var fb = ROUTE_COST_FALLBACK[routeId] || ROUTE_COST_FALLBACK['all'];
+      initText = fb.init;
+      monthlyText = fb.monthly;
     }
 
-    // ── scarcity: 候補2種以下 ──
+    // ── teaser HTML ──────────────────────────────────────────
+    var teaserHtml =
+      '<div class="res-cta-teaser">' +
+        '<div class="res-cta-teaser-title">この亀を飼う場合の目安</div>' +
+        '<div class="res-cta-teaser-row">' +
+          (initText    ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">初期費用</div><div class="res-cta-teaser-value">' + initText    + '</div></div>' : '') +
+          (monthlyText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">月額目安</div><div class="res-cta-teaser-value">' + monthlyText + '</div></div>' : '') +
+        '</div>' +
+      '</div>';
+
+    // ── scarcity ─────────────────────────────────────────────
     var scarcityHtml = '';
     if (_lastCandidateCount > 0 && _lastCandidateCount <= 2) {
       scarcityHtml =
@@ -1849,54 +1901,84 @@ function showResult(sp, pct) {
         '</div>';
     }
 
-    // ── CTA文言（案A: 具体的な費用・機材訴求） ──
-    var primaryLabel = (initText || monthlyText)
-      ? 'この亀の費用・必要機材を全て見る →'
-      : 'この亀の飼育難易度・必要設備を見る →';
+    // ── FIX 1+3: TOP CTA（score直後）────────────────────────
+    var topEl = document.getElementById('res-cta-top');
+    if (topEl) {
+      if (!sp.hasPage || !sp.slug) {
+        topEl.style.display = 'none';
+      } else {
+        var speciesPageUrl = '../species/' + sp.slug + '.html';
+        topEl.innerHTML =
+          '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
+            'この亀を飼う費用と必要機材を見る →' +
+          '</a>' +
+          '<div class="res-cta-top-sub">' +
+            (initText ? '初期費用 ' + initText + '　' : '') +
+            (monthlyText ? '月額 ' + monthlyText : '') +
+            '<br>ケージサイズ / UVB / 初期費用が3分で分かります' +
+          '</div>';
+        topEl.style.display = '';
+        // GA4: top CTA click
+        var topLink = document.getElementById('res-cta-top-link');
+        if (topLink) topLink.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+            species: sp.name, slug: sp.slug, cta_type: 'top',
+            has_teaser: true, candidate_count: _lastCandidateCount,
+          });
+        });
+      }
+    }
 
-    ctaBlock.innerHTML =
-      teaserHtml +
-      scarcityHtml +
-      '<a class="res-cta-primary" id="res-cta-primary" href="' + speciesPageUrl + '">' +
-        primaryLabel +
-      '</a>' +
-      '<a class="res-cta-secondary" id="res-cta-secondary" href="' + starterKitUrl + '">' +
-        '必要な飼育用品を今すぐ確認する' +
-      '</a>';
-    ctaBlock.style.display = '';
+    // ── 下部 CTA block（既存位置に維持）─────────────────────
+    var ctaBlock = document.getElementById('res-cta-block');
+    if (ctaBlock) {
+      if (!sp.hasPage || !sp.slug) {
+        ctaBlock.style.display = 'none';
+      } else {
+        var spUrl  = '../species/' + sp.slug + '.html';
+        var skUrl  = spUrl + '#starter-kit-root';
+        ctaBlock.innerHTML =
+          teaserHtml +
+          scarcityHtml +
+          '<a class="res-cta-primary" id="res-cta-primary" href="' + spUrl + '">' +
+            'この亀を飼う費用と必要機材を見る →' +
+          '</a>' +
+          '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
+            '必要機材をAmazonでまとめて見る' +
+          '</a>';
+        ctaBlock.style.display = '';
+        // GA4
+        var primBtn = document.getElementById('res-cta-primary');
+        if (primBtn) primBtn.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+            species: sp.name, slug: sp.slug, cta_type: 'primary',
+            has_teaser: true, candidate_count: _lastCandidateCount,
+          });
+        });
+        var secBtn = document.getElementById('res-cta-secondary');
+        if (secBtn) secBtn.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
+            species: sp.name, slug: sp.slug, cta_type: 'secondary',
+            equipment_key: equipKey || '',
+          });
+        });
+      }
+    }
 
-    // GA4: diagnosis_cta_view
+    // GA4: diagnosis_cta_view（Top CTAが表示されたタイミング）
     try {
       if (typeof ga4Event === 'function') {
         ga4Event('diagnosis_cta_view', {
-          species: sp.name,
-          slug: sp.slug,
-          has_teaser: !!(initText || monthlyText),
+          species: sp.name, slug: sp.slug || '',
+          has_teaser: true,
           has_scarcity: (_lastCandidateCount > 0 && _lastCandidateCount <= 2),
           candidate_count: _lastCandidateCount,
           equipment_key: equipKey || '',
+          init_cost: initText,
+          monthly_cost: monthlyText,
         });
       }
     } catch(e) {}
-
-    // GA4: primary click
-    var primBtn = document.getElementById('res-cta-primary');
-    if (primBtn) primBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
-        species: sp.name, slug: sp.slug, cta_type: 'primary',
-        has_teaser: !!(initText || monthlyText),
-        candidate_count: _lastCandidateCount,
-      });
-    });
-
-    // GA4: secondary click
-    var secBtn = document.getElementById('res-cta-secondary');
-    if (secBtn) secBtn.addEventListener('click', function() {
-      if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
-        species: sp.name, slug: sp.slug, cta_type: 'secondary',
-        equipment_key: equipKey || '',
-      });
-    });
   })();
 
   // 法規制
