@@ -309,6 +309,72 @@ function renderCostBox(picks, opts) {
 }
 
 /**
+ * Phase 17 Sprint3: CVRバッジ判定
+ * カテゴリ・tier・equipmentKeyから「クリックする理由」バッジを返す
+ */
+function getCvrBadge(item, equipmentKey) {
+  var cat = item.cat || '';
+  var tier = item.tier || 'budget';
+  var ek = equipmentKey || '';
+
+  // ── カテゴリ固有バッジ ──────────────────────────────────────
+  if (cat === 'filter') {
+    if (tier === 'budget')   return { icon: '💰', label: 'コスパ◎' };
+    if (tier === 'premium')  return { icon: '🤫', label: '静音設計' };
+    return { icon: '🧼', label: 'ニオイ対策' };
+  }
+  if (cat === 'lighting_uvb') {
+    if (tier === 'premium')  return { icon: '⚡', label: '高出力UVB' };
+    return { icon: '☀️', label: '必須アイテム' };
+  }
+  if (cat === 'lighting_basking') {
+    return { icon: '🔥', label: '必須アイテム' };
+  }
+  if (cat === 'food') {
+    if (tier === 'budget')   return { icon: '🔰', label: '初心者向け' };
+    if (tier === 'premium')  return { icon: '🌿', label: '高品質' };
+    return { icon: '🐢', label: '定番フード' };
+  }
+  if (cat === 'enclosure') {
+    if (tier === 'budget')   return { icon: '💰', label: 'コスパ◎' };
+    if (tier === 'premium')  return { icon: '🏆', label: '本格仕様' };
+    return { icon: '🔰', label: '初心者向け' };
+  }
+  if (cat === 'substrate') {
+    if (tier === 'premium')  return { icon: '🌱', label: '高保湿' };
+    return { icon: '💰', label: 'コスパ◎' };
+  }
+  if (cat === 'thermometer') {
+    return { icon: '📊', label: '管理の要' };
+  }
+  if (cat === 'heating') {
+    return { icon: '🌡️', label: '冬の必需品' };
+  }
+  if (cat === 'shelter') {
+    return { icon: '🏠', label: 'ストレス軽減' };
+  }
+  if (cat === 'supplements') {
+    return { icon: '💊', label: '健康維持' };
+  }
+
+  // ── equipmentKey 系統バッジ（上書き） ─────────────────────
+  var isAquatic  = ek.indexOf('aquatic') >= 0 || ek === 'japanese_pond';
+  var isTortoise = ek.indexOf('tortoise') >= 0;
+  var isBox      = ek === 'box_turtle';
+  var isForest   = ek === 'tortoise_forest';
+
+  if (isAquatic)  return { icon: '🐢', label: '水棲向け' };
+  if (isTortoise) return { icon: '🌿', label: 'リクガメ向け' };
+  if (isBox)      return { icon: '🍂', label: 'ハコガメ向け' };
+  if (isForest)   return { icon: '🌲', label: 'ヤマガメ向け' };
+
+  // ── fallback ───────────────────────────────────────────────
+  if (tier === 'budget')   return { icon: '💰', label: 'コスパ◎' };
+  if (tier === 'premium')  return { icon: '🏆', label: '本格仕様' };
+  return { icon: '🔰', label: '定番' };
+}
+
+/**
  * カード1枚のHTML
  */
 function renderSkCard(item, speciesName, equipmentKey) {
@@ -379,8 +445,15 @@ function renderSkCard(item, speciesName, equipmentKey) {
   var cardTierCls = item.tier === 'standard' ? ' sk-card--standard'
                  : item.tier === 'premium'  ? ' sk-card--premium'
                  : ' sk-card--budget';
+  // Phase 17 Sprint3: CVRバッジ
+  var cvrBadge = getCvrBadge(item, equipmentKey);
+  var cvrBadgeHtml = '<span class="sk-cvr-badge">' + cvrBadge.icon + ' ' + cvrBadge.label + '</span>';
+
   return '<div class="sk-card' + cardTierCls + '">' +
-    '<div class="sk-cat-label">' + catLabel + '</div>' +
+    '<div class="sk-cat-label-row">' +
+      '<div class="sk-cat-label">' + catLabel + '</div>' +
+      cvrBadgeHtml +
+    '</div>' +
     '<span class="sk-card-badge ' + tierCls + '">' + tierLabel + '</span>' +
     '<div class="sk-card-name">' + p.name + '</div>' +
     (p.rating ? '<div class="sk-card-rating">' + skStarRating(p.rating) + '</div>' : '') +
