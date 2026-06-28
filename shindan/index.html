@@ -357,6 +357,80 @@ body {
   line-height: 1.5;
   letter-spacing: .01em;
 }
+/* Phase 18-C: Compare Injection */
+.res-compare-inject {
+  margin: 14px 0;
+}
+.res-compare-inject-title {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.res-compare-inject-sub {
+  font-size: .78rem;
+  color: var(--parchment-dark);
+  margin-bottom: 12px;
+}
+.res-compare-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 520px) {
+  .res-compare-cards { grid-template-columns: 1fr; }
+}
+.res-compare-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 12px;
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.res-compare-card-name {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--parchment);
+  font-family: var(--font-display);
+}
+.res-compare-card-desc {
+  font-size: .76rem;
+  color: var(--parchment-dark);
+  line-height: 1.5;
+  flex: 1;
+}
+.res-compare-card-btn {
+  display: block;
+  padding: 7px 10px;
+  background: rgba(212,169,106,.12);
+  border: 1px solid rgba(212,169,106,.28);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 4px;
+}
+.res-compare-card-btn:hover { background: rgba(212,169,106,.22); }
+.res-compare-more {
+  display: block;
+  text-align: right;
+  font-size: .78rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: .02em;
+  margin-top: 2px;
+}
+.res-compare-more:hover { text-decoration: underline; }
+
 /* Phase 18-A: Revenue Optimization Box V2 */
 .res-rev-box {
   background: rgba(255,255,255,.04);
@@ -694,6 +768,8 @@ body {
       <span class="note-arrow">→</span>
     </a>
   </div>
+  <!-- Phase 18-C: Compare Injection -->
+  <div id="res-compare-inject" style="display:none"></div>
   <!-- Phase 7-C Step 2-A: 2段CTA -->
   <div class="res-cta-block" id="res-cta-block" style="display:none"></div>
   <div class="result-links" id="res-links"></div>
@@ -2055,6 +2131,185 @@ function showResult(sp, pct) {
     if (revSec) revSec.addEventListener('click', function() {
       if (typeof ga4Event === 'function') ga4Event('diagnosis_revenuebox_cta_click', {
         species: sp.name, slug: spSlug, cta_type: 'secondary', route: routeId,
+      });
+    });
+  })();
+
+  // ===== Phase 18-C: Compare Injection =====
+  (function() {
+    var cmpEl = document.getElementById('res-compare-inject');
+    if (!cmpEl) return;
+    var slug = sp.slug || '';
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var BASE = '../';
+
+    // ── スラッグ別マッピング ──────────────────────────────────
+    var COMPARE_MAP = {
+      // ── リクガメ ─────────────────────────────────────────
+      'russian-tortoise': [
+        { name: 'ヘルマンリクガメ', desc: '同じ乾燥系・丈夫で人気', url: BASE+'compare/hermann-vs-greek.html' },
+        { name: 'ギリシャリクガメ', desc: '地中海産・歴史ある飼育種', url: BASE+'compare/hermann-vs-greek.html' },
+        { name: '小型亀おすすめ',   desc: 'コンパクト種を比較',       url: BASE+'guides/small-best-turtles.html' },
+      ],
+      'hermann-tortoise': [
+        { name: 'ギリシャリクガメ', desc: '乾燥環境に強い地中海産',   url: BASE+'compare/hermann-vs-greek.html' },
+        { name: 'ロシアリクガメ',   desc: '小型で入門に最適',         url: BASE+'species/russian-tortoise.html' },
+        { name: '初心者向け亀',     desc: '初心者おすすめ比較',       url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      'greek-tortoise': [
+        { name: 'ヘルマンリクガメ', desc: '丈夫で初心者向き',         url: BASE+'compare/hermann-vs-greek.html' },
+        { name: 'ロシアリクガメ',   desc: 'コンパクト・飼いやすい',   url: BASE+'species/russian-tortoise.html' },
+        { name: '初心者向け亀',     desc: '初心者おすすめ比較',       url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      'elongated-tortoise': [
+        { name: 'ヘルマンリクガメ', desc: '丈夫で初心者向き',         url: BASE+'compare/hermann-vs-greek.html' },
+        { name: 'アカアシリクガメ', desc: '多湿系・雑食寄り',         url: BASE+'species/red-footed-tortoise.html' },
+        { name: '初心者向け亀',     desc: '初心者おすすめ比較',       url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      'red-footed-tortoise': [
+        { name: 'エロンガータ',     desc: '同じ多湿系・森林産',       url: BASE+'species/elongated-tortoise.html' },
+        { name: 'アカアシ系比較',   desc: '熱帯系リクガメの選び方',   url: BASE+'guides/beginner-best-turtles.html' },
+        { name: 'チェリーヘッド',   desc: 'アカアシの亜種・大型',     url: BASE+'species/cherry-head-tortoise.html' },
+      ],
+      'leopard-tortoise': [
+        { name: 'ケヅメリクガメ',   desc: 'アフリカ系大型・乾燥種',   url: BASE+'species/sulcata-tortoise.html' },
+        { name: 'セオレガメ',       desc: '同じアフリカ産',           url: BASE+'species/bell-hinge-back-tortoise.html' },
+        { name: '初心者向け亀',     desc: '入門向け比較ガイド',       url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      'sulcata-tortoise': [
+        { name: 'ヒョウモンガメ',   desc: '同じアフリカ系大型種',     url: BASE+'species/leopard-tortoise.html' },
+        { name: 'アルダブラ',       desc: '最大級・超大型',           url: BASE+'species/aldabra-tortoise.html' },
+        { name: '初心者向け亀',     desc: '入門向け比較ガイド',       url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      // ── 水棲ガメ（ニオイ系）───────────────────────────────
+      'musk-turtle': [
+        { name: 'カブトニオイガメ', desc: '大きめで存在感あり',       url: BASE+'compare/musk-vs-razorback.html' },
+        { name: 'ヒメニオイガメ',   desc: 'さらに小型・省スペース',   url: BASE+'species/hime-nioi-turtle.html' },
+        { name: '小型亀おすすめ',   desc: '小型水棲ガメ比較',         url: BASE+'guides/small-best-turtles.html' },
+      ],
+      'razorback-musk-turtle': [
+        { name: 'ニオイガメ',       desc: '定番・入門種',             url: BASE+'compare/musk-vs-razorback.html' },
+        { name: 'カブトニオイガメ', desc: '同系列・ユニークな形',     url: BASE+'compare/musk-vs-razorback.html' },
+        { name: '臭いが少ない亀',   desc: 'においが気になる方へ',     url: BASE+'guides/low-odor-turtles.html' },
+      ],
+      'hime-nioi-turtle': [
+        { name: 'ニオイガメ',       desc: '一回り大きい定番種',       url: BASE+'compare/musk-vs-razorback.html' },
+        { name: 'ミシシッピドロガメ', desc: '同サイズ帯・丸顔',       url: BASE+'species/mississippi-mud-turtle.html' },
+        { name: '小型亀おすすめ',   desc: '小型水棲ガメ比較',         url: BASE+'guides/small-best-turtles.html' },
+      ],
+      'mississippi-mud-turtle': [
+        { name: 'ニオイガメ',       desc: '同サイズ・ポピュラー種',   url: BASE+'compare/musk-vs-razorback.html' },
+        { name: 'ミスジドロガメ',   desc: '縞模様が特徴的',           url: BASE+'species/striped-mud-turtle.html' },
+        { name: '小型亀おすすめ',   desc: '小型水棲ガメ比較',         url: BASE+'guides/small-best-turtles.html' },
+      ],
+      // ── 水棲ガメ（チズ・マップ系）───────────────────────────
+      'mississippi-map-turtle': [
+        { name: 'ニセチズガメ',     desc: '同系・模様が違う',         url: BASE+'species/false-map-turtle.html' },
+        { name: 'クサガメ',         desc: '国産・定番水棲種',         url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: '臭いが少ない亀',   desc: 'においが少ない水棲種',     url: BASE+'guides/low-odor-turtles.html' },
+      ],
+      'false-map-turtle': [
+        { name: 'ミシシッピチズガメ', desc: '同系・やや大型',         url: BASE+'species/mississippi-map-turtle.html' },
+        { name: 'クサガメ',         desc: '国産・定番水棲種',         url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: '初心者向け亀',     desc: '入門向け比較',             url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      // ── 国産水棲ガメ ─────────────────────────────────────
+      'reeves-turtle': [
+        { name: 'ニホンイシガメ',   desc: '日本固有種・清流系',       url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: 'クサガメvsイシガメ', desc: '違いを徹底比較',         url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: '初心者向け亀',     desc: '入門向けおすすめ',         url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      'japanese-pond-turtle': [
+        { name: 'クサガメ',         desc: '同じ日本の水辺に生息',     url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: 'クサ vs イシ比較', desc: '国産2種を徹底比較',       url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: '臭いが少ない亀',   desc: 'においが少ない種',         url: BASE+'guides/low-odor-turtles.html' },
+      ],
+      // ── ハコガメ系 ───────────────────────────────────────
+      'three-toed-box-turtle': [
+        { name: 'イースタンハコガメ', desc: '同系・東部産ハコガメ',   url: BASE+'species/eastern-box-turtle.html' },
+        { name: '初心者向け亀',     desc: '入門向け比較',             url: BASE+'guides/beginner-best-turtles.html' },
+        { name: '小型亀おすすめ',   desc: '小型種の比較',             url: BASE+'guides/small-best-turtles.html' },
+      ],
+      'spotted-turtle': [
+        { name: 'ニホンイシガメ',   desc: '同サイズ・落ち着いた色',   url: BASE+'species/japanese-pond-turtle.html' },
+        { name: '小型亀おすすめ',   desc: '小型水棲ガメ比較',         url: BASE+'guides/small-best-turtles.html' },
+        { name: '臭いが少ない亀',   desc: 'においが少ない種',         url: BASE+'guides/low-odor-turtles.html' },
+      ],
+    };
+
+    // ── routeIdベースのfallback ──────────────────────────────
+    var ROUTE_FALLBACK = {
+      land:    [
+        { name: 'ヘルマンリクガメ', desc: '丈夫で初心者向き',         url: BASE+'compare/hermann-vs-greek.html' },
+        { name: 'ロシアリクガメ',   desc: 'コンパクト・省スペース',   url: BASE+'species/russian-tortoise.html' },
+        { name: '初心者向け亀比較', desc: '入門向けリクガメを比較',   url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      aquatic: [
+        { name: 'ニオイガメ',       desc: '省スペース・定番入門種',   url: BASE+'compare/musk-vs-razorback.html' },
+        { name: '小型亀おすすめ',   desc: '小型水棲ガメ比較',         url: BASE+'guides/small-best-turtles.html' },
+        { name: '臭いが少ない亀',   desc: 'においが気になる方へ',     url: BASE+'guides/low-odor-turtles.html' },
+      ],
+      forest:  [
+        { name: '三趾箱亀比較',     desc: 'ハコガメ系を比較',         url: BASE+'guides/beginner-best-turtles.html' },
+        { name: 'クサガメ',         desc: '国産水棲・定番種',         url: BASE+'compare/reeves-vs-japanese-pond.html' },
+        { name: '初心者向け亀',     desc: '入門向け比較',             url: BASE+'guides/beginner-best-turtles.html' },
+      ],
+      exotic:  [
+        { name: '初心者向け亀',     desc: '入門から始める選択肢',     url: BASE+'guides/beginner-best-turtles.html' },
+        { name: '小型亀おすすめ',   desc: '飼いやすい小型種',         url: BASE+'guides/small-best-turtles.html' },
+        { name: '臭いが少ない亀',   desc: 'においが少ない種',         url: BASE+'guides/low-odor-turtles.html' },
+      ],
+      all:     [
+        { name: '初心者向け亀',     desc: '入門向けおすすめ比較',     url: BASE+'guides/beginner-best-turtles.html' },
+        { name: '小型亀おすすめ',   desc: '小型種の比較',             url: BASE+'guides/small-best-turtles.html' },
+        { name: 'ヘルマン vs ギリシャ', desc: 'リクガメ人気2種比較', url: BASE+'compare/hermann-vs-greek.html' },
+      ],
+    };
+
+    var items = COMPARE_MAP[slug] || ROUTE_FALLBACK[routeId] || ROUTE_FALLBACK['all'];
+    if (!items || items.length === 0) return;
+
+    // ── HTML生成 ─────────────────────────────────────────────
+    var cards = items.map(function(item, idx) {
+      return '<div class="res-compare-card">' +
+        '<div class="res-compare-card-name">' + item.name + '</div>' +
+        '<div class="res-compare-card-desc">' + item.desc + '</div>' +
+        '<a class="res-compare-card-btn" href="' + item.url + '" data-idx="' + idx + '" target="_self">' +
+          '比較を見る' +
+        '</a>' +
+      '</div>';
+    }).join('');
+
+    cmpEl.innerHTML =
+      '<div class="res-compare-inject">' +
+        '<div class="res-compare-inject-title">この子とよく比較される亀</div>' +
+        '<div class="res-compare-inject-sub">迷っているなら違いを比べてみましょう</div>' +
+        '<div class="res-compare-cards">' + cards + '</div>' +
+        '<a class="res-compare-more" href="' + BASE + 'compare/" target="_self">もっと比較する →</a>' +
+      '</div>';
+    cmpEl.style.display = '';
+
+    // GA4: compare_injection_view
+    try {
+      if (typeof ga4Event === 'function') {
+        ga4Event('compare_injection_view', {
+          result_species: sp.name,
+          slug: slug,
+          route: routeId,
+          has_slug_map: !!(COMPARE_MAP[slug]),
+        });
+      }
+    } catch(e) {}
+
+    // GA4: compare_injection_click
+    cmpEl.querySelectorAll('.res-compare-card-btn').forEach(function(btn, idx) {
+      btn.addEventListener('click', function() {
+        if (typeof ga4Event === 'function') ga4Event('compare_injection_click', {
+          result_species: sp.name,
+          compare_target: items[idx] ? items[idx].name : '',
+          compare_url: items[idx] ? items[idx].url : '',
+          route: routeId,
+        });
       });
     });
   })();
