@@ -89,7 +89,7 @@ const PRODUCTS = {
     rakutenPrice: 5600,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.2,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   tank_90: {
@@ -109,7 +109,7 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   enclosure_kayuso_90: {
@@ -167,7 +167,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ガラスケージ 45cm 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   enclosure_wood_150: {
@@ -281,7 +281,7 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenConfidence: 4.5,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -357,7 +357,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'UVB LED ライト バー 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   uvb_t8_30w: {
@@ -435,7 +435,7 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
     rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_100w: {
@@ -455,7 +455,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -531,7 +531,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'HID ランプ 爬虫類 メタルハライド',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_ceramic_100w: {
@@ -551,7 +551,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_infrared_red: {
@@ -571,7 +571,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 バスキングランプ 75W 爬虫類',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -595,7 +595,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 30W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   heater_panel_45w: {
@@ -615,7 +615,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 45W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   heater_aqua_100w: {
@@ -673,7 +673,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 200W 亀',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermostat_digital: {
@@ -693,7 +693,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   heater_radiant_panel: {
@@ -749,7 +749,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 60W 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -829,7 +829,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '外掛け フィルター 爬虫類 亀',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   filter_sponge_dual: {
@@ -869,7 +869,7 @@ const PRODUCTS = {
     rakutenPrice: 24600,
     rakutenShop: 'ミナトワークス',
     rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   filter_fluval_fx: {
@@ -949,7 +949,7 @@ const PRODUCTS = {
     rakutenPrice: 350,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   substrate_coco: {
@@ -971,7 +971,7 @@ const PRODUCTS = {
     rakutenPrice: 1098,
     rakutenShop: '雑貨イズム',
     rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   substrate_sand_mix: {
@@ -1251,7 +1251,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '亀 浮島 ドック 水棲',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -1277,7 +1277,7 @@ const PRODUCTS = {
     rakutenPrice: 1470,
     rakutenShop: 'Palpito 楽天市場店',
     rakutenConfidence: 9.9,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermometer_aqua: {
@@ -1297,7 +1297,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水温計 デジタル 亀',
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -1337,7 +1337,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 温度計 非接触 爬虫類',
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermometer_pro_wifi: {
@@ -1375,7 +1375,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -1436,8 +1436,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'レプトミン テトラ 亀 餌',
-    rakutenConfidence: 3.5,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenConfidence: 3.9,
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_aqua_turtle_pellet: {
@@ -1457,7 +1457,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カメの主食 GEX 亀 フード',
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_box_turtle: {
@@ -1477,7 +1477,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ボックスタートル フード Zoo Med',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_dried_shrimp: {
@@ -1497,7 +1497,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '乾燥エビ 亀 おやつ ひかり',
     rakutenConfidence: 4.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_repashy_tortoise: {
@@ -1535,7 +1535,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ひかり タートル 亀 フード',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_grassland_salad: {
@@ -1578,7 +1578,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カルシウム パウダー D3 爬虫類',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -1602,7 +1602,7 @@ const PRODUCTS = {
     rakutenPrice: 508,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   supplement_repcal: {
@@ -1642,7 +1642,7 @@ const PRODUCTS = {
     rakutenPrice: 525,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-06-27',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   supplement_iodine: {
