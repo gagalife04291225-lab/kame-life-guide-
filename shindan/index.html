@@ -357,6 +357,117 @@ body {
   line-height: 1.5;
   letter-spacing: .01em;
 }
+/* Phase 18-A: Revenue Optimization Box V2 */
+.res-rev-box {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px;
+  padding: 20px 18px 18px;
+  margin: 18px 0 14px;
+}
+.res-rev-box-title {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.res-rev-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  margin-bottom: 18px;
+}
+.res-rev-metric {
+  background: rgba(255,255,255,.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.res-rev-metric-label {
+  font-size: .62rem;
+  color: var(--parchment-dark);
+  letter-spacing: .04em;
+  margin-bottom: 4px;
+}
+.res-rev-metric-value {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--parchment);
+  font-family: var(--font-display);
+  line-height: 1.3;
+}
+.res-rev-top3-title {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--parchment-dark);
+  margin-bottom: 8px;
+}
+.res-rev-top3-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.res-rev-top3-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .84rem;
+  color: var(--parchment);
+}
+.res-rev-top3-num {
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(212,169,106,.12);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.res-rev-cta-primary {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  background: linear-gradient(135deg,#c47a2a,#8f5f1e);
+  border-radius: 12px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .02em;
+  box-shadow: 0 4px 14px rgba(143,95,44,.35);
+  transition: opacity .15s;
+  -webkit-tap-highlight-color: transparent;
+  margin-bottom: 8px;
+}
+.res-rev-cta-primary:hover { opacity: .92; }
+.res-rev-cta-secondary {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  color: var(--parchment-dark);
+  font-family: var(--font-body);
+  font-size: .85rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-rev-cta-secondary:hover { background: rgba(255,255,255,.09); }
 .res-cta-block {
   display: flex;
   flex-direction: column;
@@ -545,6 +656,8 @@ body {
   <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
   <!-- Phase 7-C Step 2-A: emotion copy -->
   <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
+  <!-- Phase 18-A: Revenue Optimization Box V2 -->
+  <div id="res-rev-box" style="display:none"></div>
   <!-- PHASE 5: 寿命バナー -->
   <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
     <span class="lifespan-icon">⏳</span>
@@ -1837,6 +1950,113 @@ function showResult(sp, pct) {
     } else {
       copyEl.style.display = 'none';
     }
+  })();
+
+  // ===== Phase 18-A: Revenue Optimization Box V2 =====
+  (function() {
+    var revEl = document.getElementById('res-rev-box');
+    if (!revEl) return;
+
+    var routeId  = selectedRoute ? selectedRoute.id : 'all';
+    var diff     = (sp.difficulty || '').trim();
+    var sz       = (sp.size || '').toUpperCase();
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+    var spSlug   = sp.slug || '';
+    var spPage   = spSlug ? ('../species/' + spSlug + '.html') : null;
+    var skAnchor = spPage ? (spPage + '#starter-kit-root') : null;
+
+    // ── 飼いやすさ星評価 ────────────────────────────────────
+    function getEaseStars() {
+      if (diff.indexOf('入門') >= 0 && diff.indexOf('中級') < 0) return '★★★★☆';
+      if (diff.indexOf('入門〜中級') >= 0) return '★★★★☆';
+      if (diff === '中級' || diff.indexOf('中〜') >= 0) return '★★★☆☆';
+      if (diff.indexOf('上級') >= 0) return '★☆☆☆☆';
+      if (routeId === 'aquatic' && (sz === 'S' || sz === 'XS')) return '★★★★☆';
+      if (routeId === 'aquatic') return '★★★☆☆';
+      if (routeId === 'land') return '★★☆☆☆';
+      if (routeId === 'exotic') return '★☆☆☆☆';
+      return '★★★☆☆';
+    }
+
+    // ── 難易度ラベル ─────────────────────────────────────────
+    function getDiffLabel() {
+      if (diff.indexOf('入門') >= 0 && diff.indexOf('中級') < 0) return '初級';
+      if (diff.indexOf('入門〜中級') >= 0) return '初級〜中級';
+      if (diff === '中級' || diff.indexOf('中〜') >= 0) return '中級';
+      if (diff.indexOf('上級') >= 0) return '上級';
+      if (routeId === 'exotic') return '上級';
+      if (routeId === 'land') return '中級';
+      return '初級〜中級';
+    }
+
+    // ── 費用テキスト ─────────────────────────────────────────
+    var monthlyData = (equipKey && MONTHLY_COST_MAP[equipKey]) ? MONTHLY_COST_MAP[equipKey] : null;
+    var monthlyText = monthlyData ? monthlyData.label + '/月' : '¥1,500〜4,000/月';
+    var INIT_FALLBACK = {
+      land:    '¥25,000〜¥60,000', aquatic: '¥18,000〜¥45,000',
+      forest:  '¥20,000〜¥50,000', exotic:  '¥30,000〜¥80,000',
+      all:     '¥20,000〜¥60,000'
+    };
+    var initText = INIT_FALLBACK[routeId] || INIT_FALLBACK['all'];
+
+    // ── TOP3 必要品 ──────────────────────────────────────────
+    var TOP3 = {
+      land:    ['UVBライト', '飼育ケース（爬虫類用）', '床材（赤玉土・ヤシガラ等）'],
+      aquatic: ['水槽（45〜60cm）', 'フィルター', 'バスキングライト'],
+      forest:  ['UVBライト', '飼育ケース（爬虫類用）', 'フィルターまたはウォータードッシュ'],
+      exotic:  ['水槽（60cm以上）', '強力フィルター', 'ヒーター（水中）'],
+      all:     ['UVBライト', '飼育ケース', '床材またはフィルター']
+    };
+    var top3 = TOP3[routeId] || TOP3['all'];
+
+    // ── CTA href ─────────────────────────────────────────────
+    var primaryHref   = skAnchor || spPage || '#';
+    var secondaryHref = spPage || '#';
+
+    // ── HTML生成 ─────────────────────────────────────────────
+    revEl.innerHTML =
+      '<div class="res-rev-box">' +
+        '<div class="res-rev-box-title">この子を迎える前に知っておきたいこと</div>' +
+        '<div class="res-rev-metrics">' +
+          '<div class="res-rev-metric"><div class="res-rev-metric-label">飼いやすさ</div><div class="res-rev-metric-value">' + getEaseStars() + '</div></div>' +
+          '<div class="res-rev-metric"><div class="res-rev-metric-label">初期費用</div><div class="res-rev-metric-value">' + initText + '</div></div>' +
+          '<div class="res-rev-metric"><div class="res-rev-metric-label">維持コスト</div><div class="res-rev-metric-value">' + monthlyText + '</div></div>' +
+          '<div class="res-rev-metric"><div class="res-rev-metric-label">難易度</div><div class="res-rev-metric-value">' + getDiffLabel() + '</div></div>' +
+        '</div>' +
+        '<div class="res-rev-top3-title">まず必要なもの TOP3</div>' +
+        '<ul class="res-rev-top3-list">' +
+          top3.map(function(item, i) {
+            return '<li class="res-rev-top3-item"><span class="res-rev-top3-num">' + (i+1) + '</span>' + item + '</li>';
+          }).join('') +
+        '</ul>' +
+        '<a class="res-rev-cta-primary" id="res-rev-cta-primary" href="' + primaryHref + '">この子を迎える準備を始める</a>' +
+        '<a class="res-rev-cta-secondary" id="res-rev-cta-secondary" href="' + secondaryHref + '">必要なものを3分で確認</a>' +
+      '</div>';
+    revEl.style.display = '';
+
+    // GA4
+    try {
+      if (typeof ga4Event === 'function') {
+        ga4Event('diagnosis_revenuebox_view', {
+          species: sp.name, slug: spSlug,
+          route: routeId, equipment_key: equipKey || '',
+          diff_label: getDiffLabel(),
+        });
+      }
+    } catch(e) {}
+
+    var revPrim = document.getElementById('res-rev-cta-primary');
+    if (revPrim) revPrim.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_revenuebox_cta_click', {
+        species: sp.name, slug: spSlug, cta_type: 'primary', route: routeId,
+      });
+    });
+    var revSec = document.getElementById('res-rev-cta-secondary');
+    if (revSec) revSec.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') ga4Event('diagnosis_revenuebox_cta_click', {
+        species: sp.name, slug: spSlug, cta_type: 'secondary', route: routeId,
+      });
+    });
   })();
 
   // ===== Phase 16 Sprint1: CTA生成（Top CTA + 下部CTA 二重配置） =====
