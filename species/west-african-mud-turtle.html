@@ -56,17 +56,6 @@ nav.crumbs a{color:var(--accent);text-decoration:none;}
 .badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
 .badge-easy{background:#e8f5e9;color:#2e7d32;}.badge-mid{background:#fff8e1;color:#f57f17;}.badge-hard{background:#fce4ec;color:#c62828;}.badge-rec{background:var(--accent);color:#fff;}
 .scroll-hint{display:none;font-size:.75rem;color:#9aaa96;text-align:right;margin-top:4px;}
-.gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
-.gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;}
-.gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
-.gear-info{flex:1;min-width:0;}
-.gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
-.gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
-.gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
-.btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-.btn-amz:hover{background:var(--accent-dark);}
-.btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-.btn-rak:hover{background:#8c0000;}
 .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
 .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
 details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
@@ -119,7 +108,7 @@ footer a{color:var(--accent);text-decoration:none;}
 .species-nav-link .snl-icon{font-size:1.2rem;flex-shrink:0;}
 .species-nav-link .snl-sub{display:block;font-size:.72rem;font-weight:400;color:#8a7a60;margin-top:2px;}
 @media(max-width:520px){.species-nav-grid{grid-template-columns:1fr;}}
-@media(max-width:520px){header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}.gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}.scroll-hint{display:block;}}
+@media(max-width:520px){header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}.scroll-hint{display:block;}}
 </style>
 </head>
 <body>
@@ -236,80 +225,6 @@ footer a{color:var(--accent);text-decoration:none;}
   <script>
     mountStarterKit({ equipmentKey: 'semi_aquatic_medium', name: 'ヒメハコヨコクビガメ', difficulty: '中級', lifespan: '20〜40年' });
   </script>
-  <div class="gear-cards" style="display:none">
-    <div class="gear-card">
-      <div class="gear-icon">🏊</div>
-      <div class="gear-info">
-        <div class="gear-name">60〜90cm水槽</div>
-        <div class="gear-why">成体の甲長を考慮し、単独なら60cm、複数・成体なら90cm以上を。ガラス製が水質管理しやすい。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E6%B0%B4%E6%A7%BD+%E3%82%AC%E3%83%A9%E3%82%B9+60cm&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E6%B0%B4%E6%A7%BD+%E3%82%AC%E3%83%A9%E3%82%B9+60cm" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-    <div class="gear-card">
-      <div class="gear-icon">🌊</div>
-      <div class="gear-info">
-        <div class="gear-name">外部式フィルター（エーハイム500クラス以上）</div>
-        <div class="gear-why">肉食傾向の強い本種は水が汚れやすい。外部式は静音かつ強力で、60〜90cm水槽に適している。実飼育でも使用中。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E3%82%A8%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A0+%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%82%A8%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A0+%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-    <div class="gear-card">
-      <div class="gear-icon">🔆</div>
-      <div class="gear-info">
-        <div class="gear-name">バスキングライト（50W前後）</div>
-        <div class="gear-why">陸場を30℃前後に維持。本種は上陸頻度が比較的高いため、バスキングスポットの整備が重要。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0043B2AJQ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%83%9E%E3%83%AB%E3%82%AB%E3%83%B3+%E3%83%90%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%88+50W" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-    <div class="gear-card">
-      <div class="gear-icon">☀️</div>
-      <div class="gear-info">
-        <div class="gear-name">UVBライト（UVB 1.0〜2.0）</div>
-        <div class="gear-why">甲羅と骨の健康維持に必要。水棲種でもUVBは重要で、陸場での日光浴時に照射できるよう設置する。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5LQ/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%83%93%E3%83%90%E3%83%AA%E3%82%A2+%E3%82%B9%E3%83%91%E3%82%A4%E3%83%A9%E3%83%ABUVB" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-    <div class="gear-card">
-      <div class="gear-icon">🌡️</div>
-      <div class="gear-info">
-        <div class="gear-name">水温計・温湿度計</div>
-        <div class="gear-why">水温26〜28℃の維持を確認するために必須。デジタル式が読みやすく管理しやすい。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/s?k=%E6%B0%B4%E6%B8%A9%E8%A8%88+%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB&tag=kamelife09-22" target="_blank" rel="nofollow noopener">Amazonで探す</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E6%B0%B4%E6%B8%A9%E8%A8%88+%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-    <div class="gear-card">
-      <div class="gear-icon">🍃</div>
-      <div class="gear-info">
-        <div class="gear-name">水棲ガメ用人工飼料（カメプロス等）</div>
-        <div class="gear-why">主食として。肉食傾向が強いため冷凍エビ・赤虫・貝類・小魚との組み合わせが理想。</div>
-        <div class="gear-btns">
-          <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00E0GMQAM/?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%83%A1%E3%83%97%E3%83%AD%E3%82%B9" target="_blank" rel="nofollow noopener">楽天で探す</a>
-        </div>
-        <p class="pr-note">※アフィリエイトリンクを含みます</p>
-      </div>
-    </div>
-  </div>
 
   <h2>近似種との比較</h2>
   <p class="scroll-hint">← 横にスクロールできます</p>

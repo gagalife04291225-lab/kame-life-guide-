@@ -55,16 +55,7 @@
   .env-card{background:#fff;border-radius:12px;padding:18px 18px 16px;box-shadow:0 2px 8px rgba(13,31,26,.07);border-top:3px solid var(--forest);}
   .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
   .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}.env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
-  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
-  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
-  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}.gear-info{flex:1;min-width:0;}
-  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
-  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
-  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
-  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-  .btn-amz:hover{background:var(--accent-dark);}
-  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-  .btn-rak:hover{background:#8c0000;}.pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
+  .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
   .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
   details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
   details.faq summary{padding:16px 20px;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;-webkit-tap-highlight-color:transparent;}
@@ -107,7 +98,6 @@
   footer a{color:var(--accent);text-decoration:none;}.disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
   @media(max-width:520px){
     header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}
-    .gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
     .scroll-hint{display:block;}.inline-cta{flex-direction:column;text-align:center;}
     .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}.species-nav-grid{grid-template-columns:1fr;}
   }
@@ -273,44 +263,6 @@
   <h2>食事</h2>
   <p>コオロギ・デュビア・ミミズ・ゆで卵などの動物性タンパク質を週3〜4回与え、キノコ・果実（イチゴ・ブルーベリー）・葉野菜を副食として取り入れます。カルシウムパウダーを餌にダスティングして週2〜3回補給してください。市販の爬虫類用配合飼料も補助として利用できます。</p>
   <h2>推奨機材セット</h2>
-  <div class="gear-cards" style="display:none">
-      <div class="gear-card">
-        <div class="gear-icon">🌿</div>
-        <div class="gear-info">
-          <div class="gear-name">水苔・ヤシガラ土（床材）</div>
-          <div class="gear-why">湿度60〜75%を維持するため保湿性の高い床材が必須。5〜8cm厚く敷くと潜れる環境になり、カメが安心できる。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=爬虫類+水苔+ヤシガラ+床材&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/爬虫類+水苔+ヤシガラ+床材/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">🔆</div>
-        <div class="gear-info">
-          <div class="gear-name">UVB蛍光灯（フォレスト5%）</div>
-          <div class="gear-why">陸棲ハコガメにもUVBは必要。甲羅の健全な形成のためフォレスト5%を陸場に設置し6〜12ヶ月で交換。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B00JZFJ5LQ?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/UVBランプ+爬虫類+フォレスト/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">🪲</div>
-        <div class="gear-info">
-          <div class="gear-name">コオロギ・デュビア（生き餌）</div>
-          <div class="gear-why">雑食性の主食となる動物性タンパク源。カルシウムパウダーをダスティングして与える。週3〜4回が基本。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=コオロギ+爬虫類+餌&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/コオロギ+デュビア+爬虫類/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-  </div>
   <h2>よくあるトラブルQ&amp;A</h2>
   <div class="faq-list">
       <details class="faq">

@@ -66,17 +66,6 @@
   .env-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
   .env-value{font-size:1.15rem;font-weight:700;color:var(--forest);line-height:1.3;}
   .env-sub{font-size:.78rem;color:#6b7c70;margin-top:3px;line-height:1.5;}
-  .gear-cards{display:flex;flex-direction:column;gap:14px;margin-top:18px;}
-  .gear-card{background:#fff;border-radius:12px;display:flex;align-items:flex-start;gap:16px;padding:18px;box-shadow:0 2px 8px rgba(13,31,26,.07);border:1px solid #e4ddc9;position:relative;}
-  .gear-icon{font-size:1.8rem;flex-shrink:0;line-height:1;margin-top:2px;}
-  .gear-info{flex:1;min-width:0;}
-  .gear-name{font-weight:700;font-size:.97rem;color:var(--forest);margin-bottom:4px;}
-  .gear-why{font-size:.83rem;color:#5a6b60;line-height:1.65;margin-bottom:10px;}
-  .gear-btns{display:flex;gap:8px;flex-wrap:wrap;}
-  .btn-amz{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-  .btn-amz:hover{background:var(--accent-dark);}
-  .btn-rak{display:inline-block;background:#bf0000;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:7px;transition:background .2s;white-space:nowrap;min-width:110px;text-align:center;}
-  .btn-rak:hover{background:#8c0000;}
   .pr-note{font-size:.7rem;color:#b0a090;margin-top:8px;}
   .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
   details.faq{background:#fff;border-radius:10px;border:1px solid #e4ddc9;overflow:hidden;}
@@ -122,7 +111,6 @@
   .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
   @media(max-width:520px){
     header.hero h1{font-size:1.65rem;}.stat-item{padding:8px 14px;}.env-grid{grid-template-columns:1fr 1fr;}
-    .gear-card{flex-direction:column;}.gear-btns .btn-amz,.gear-btns .btn-rak{flex:1;text-align:center;}
     .scroll-hint{display:block;}.inline-cta{flex-direction:column;text-align:center;}
     .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}
     .species-nav-grid{grid-template-columns:1fr;}
@@ -293,68 +281,6 @@
   <div class="note-box"><strong>⛔ 与えてはいけない餌・状況</strong><br>
 配合飼料への急速な切り替えは拒食を招きます。金魚・メダカ以外の餌（硬い甲殻類・大型魚）は口腔内を傷つけるリスクがあります。水槽に手を入れると噛みつく個体もいるため、給餌時は注意してください。</div>
   <h2>推奨機材セット</h2>
-  <div class="gear-cards" style="display:none">
-      <div class="gear-card">
-        <div class="gear-icon">🐟</div>
-        <div class="gear-info">
-          <div class="gear-name">生き餌（メイン）— 餌用メダカ 生体</div>
-          <div class="gear-why">マタマタの主食。メダカは入手しやすく水質汚染が少ない。水槽に放して捕食させる方法が最もストレスが少ない。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=餌用メダカ+生体&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/餌用メダカ+生体/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">🐠</div>
-        <div class="gear-info">
-          <div class="gear-name">生き餌（補助）— 餌用金魚 生体</div>
-          <div class="gear-why">メダカの補助として使用。金魚はチアミナーゼの問題があるため、長期大量給餌は避け、メダカとのローテーション給餌を推奨。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=餌用金魚+生体&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/餌用金魚+生体/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">❄️</div>
-        <div class="gear-info">
-          <div class="gear-name">冷凍・代替餌 — 冷凍小魚・ワカサギ</div>
-          <div class="gear-why">冷凍小赤・冷凍ワカサギは生き餌が入手困難な場合の代替として使用。動かして捕食本能を刺激する必要あり。個体によっては慣れに時間がかかる。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=冷凍ワカサギ+爬虫類+餌&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/冷凍ワカサギ+爬虫類+餌/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">🔬</div>
-        <div class="gear-info">
-          <div class="gear-name">弱水流対応の外部フィルター</div>
-          <div class="gear-why">水質管理は重要だが水流を弱くする工夫が必要。出水口にスポンジを取り付けるか拡散ノズルを使用。生物濾過中心の大型外部フィルターが適切。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/dp/B0012UO6Q6?tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/外部フィルター+拡散+水棲/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-      <div class="gear-card">
-        <div class="gear-icon">🍂</div>
-        <div class="gear-info">
-          <div class="gear-name">ピートモス・腐葉土（水質調整）</div>
-          <div class="gear-why">弱酸性（pH5〜6.5）のブラックウォーター環境を作るために使用。ピートモスをフィルターに入れるか、腐葉土を少量使用してタンニンで酸性化する。</div>
-          <div class="gear-btns">
-            <a class="btn-amz" href="https://www.amazon.co.jp/s?k=ピートモス+爬虫類+ブラックウォーター&tag=kamelife09-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-            <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/ピートモス+ブラックウォーター+水槽/" target="_blank" rel="nofollow noopener">楽天で探す</a>
-          </div>
-          <p class="pr-note">※ アフィリエイトリンクを含みます</p>
-        </div>
-      </div>
-  </div>
   <h2>よくあるトラブルQ&amp;A</h2>
   <div class="faq-list">
       <details class="faq">

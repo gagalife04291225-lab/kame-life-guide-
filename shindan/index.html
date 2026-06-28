@@ -530,8 +530,7 @@ body {
     <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
     <div class="result-species-name" id="res-name" tabindex="-1"></div>
     <div class="result-latin" id="res-latin"></div>
-    <button class="btn-retry" id="btn-retry-top" style="margin-top:12px;width:auto;padding:10px 22px;font-size:.88rem;opacity:.8;">もう一度診断する</button>
-  </div>
+    </div>
   <div class="score-meter" id="score-meter" aria-label="相性スコア">
     <div class="score-pct"><span id="score-num">0</span><span class="score-pct-unit">%</span></div>
     <div class="score-label">相性スコア</div>
@@ -2196,7 +2195,6 @@ function resetToStart() {
   clearResultUrl();
 }
 document.getElementById('btn-retry').addEventListener('click', resetToStart);
-document.getElementById('btn-retry-top').addEventListener('click', resetToStart);
 
 // ===== シェアボタン（Web Share API + コピーfallback） =====
 document.getElementById('btn-share').addEventListener('click', function(){
