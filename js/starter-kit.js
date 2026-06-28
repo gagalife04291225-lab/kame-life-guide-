@@ -185,9 +185,9 @@ var SK_TIER_LABEL_PAGE = {
 
 // tier別 Amazon CTAボタン文言
 var SK_TIER_CTA = {
-  budget:   'まずは最低限で始める',
-  standard: '一番おすすめの構成を見る',
-  premium:  '理想の飼育環境を作る',
+  budget:   'Amazonで価格・在庫を見る',
+  standard: 'Amazonでおすすめ構成を見る',
+  premium:  'Amazonで本格セットを見る',
 };
 
 // 3段階タブ定義
@@ -682,6 +682,9 @@ function mountStarterKit(species, mountId) {
       if (typeof gtag === 'function') {
         // 既存イベント（維持）
         var _clickMeta = (_tabCtrl && _tabCtrl.getMeta) ? _tabCtrl.getMeta() : {};
+        // Fix E: _provider/_mode を最初に宣言（参照前に定義）
+        var _provider = a.dataset.provider || 'amazon';
+        var _mode = a.dataset.mode || (_provider === 'amazon' ? 'affiliate' : 'search');
         gtag('event', 'starter_kit_click', {
           species_name:       _skStr(a.dataset.species),
           species:            _skStr(a.dataset.species),
@@ -731,8 +734,6 @@ function mountStarterKit(species, mountId) {
           });
         }
         // Dual-affiliate unified click event (TASK 3 / Phase 13-B: vendor key removed, provider unified)
-        var _provider = a.dataset.provider || 'amazon';
-        var _mode = a.dataset.mode || (_provider === 'amazon' ? 'affiliate' : 'search');
         gtag('event', 'affiliate_click', {
           provider:       _provider,
           mode:           _mode,
