@@ -326,40 +326,94 @@ body {
   gap: 9px;
   margin-bottom: 16px;
 }
+/* Phase 16: CTA teaser */
+.res-cta-teaser {
+  background: rgba(196,154,90,.1);
+  border: 1px solid rgba(196,154,90,.28);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 4px;
+}
+.res-cta-teaser-title {
+  font-size: .66rem;
+  color: var(--accent-light);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.res-cta-teaser-row {
+  display: flex;
+  gap: 10px;
+}
+.res-cta-teaser-item {
+  flex: 1;
+}
+.res-cta-teaser-label {
+  font-size: .62rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.res-cta-teaser-value {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--parchment);
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+/* Phase 16: scarcity */
+.res-cta-scarcity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74,122,96,.15);
+  border: 1px solid rgba(74,122,96,.35);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: .8rem;
+  color: #8dcba0;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.res-cta-scarcity-icon { font-size: 1rem; flex-shrink: 0; }
+/* Phase 16: primary CTA 強化（15%拡大・コントラスト強化） */
 .res-cta-primary {
   display: block;
-  padding: 15px 18px;
-  background: linear-gradient(135deg, var(--accent), #7a4e22);
+  padding: 17px 20px;
+  background: linear-gradient(135deg, #c47a2a, #8f5f1e);
   border: none;
   border-radius: var(--radius);
-  color: var(--parchment);
+  color: #fff;
   font-family: var(--font-body);
-  font-size: .98rem;
+  font-size: 1.02rem;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  letter-spacing: .02em;
-  box-shadow: 0 3px 14px rgba(143,95,44,.35);
-  transition: opacity .15s, transform .12s;
+  letter-spacing: .025em;
+  box-shadow: 0 4px 18px rgba(143,95,44,.45);
+  transition: opacity .15s, transform .12s, box-shadow .15s;
   -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.res-cta-primary:hover  { opacity: .9; }
-.res-cta-primary:active { transform: scale(.98); }
+.res-cta-primary:hover  { opacity: .92; box-shadow: 0 6px 22px rgba(143,95,44,.55); }
+.res-cta-primary:active { transform: scale(.97); }
 .res-cta-secondary {
   display: block;
-  padding: 13px 18px;
+  padding: 14px 18px;
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1.5px solid rgba(255,255,255,.22);
   border-radius: var(--radius);
   color: var(--parchment-dark);
   font-family: var(--font-body);
-  font-size: .9rem;
+  font-size: .92rem;
   text-align: center;
   text-decoration: none;
-  transition: background .15s;
+  transition: background .15s, border-color .15s;
   -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
 }
-.res-cta-secondary:hover { background: rgba(255,255,255,.11); }
+.res-cta-secondary:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.32); }
 
 /* emotion copy */
 .res-emotion-copy {
@@ -533,6 +587,7 @@ var selectedRoute = null;
 var currentQuestionIndex = 0;
 var _viewedSteps = {};        // Phase 9-C: step view dedup
 var _diagnosisCompleted = false; // Phase 9-C: exit guard
+var _lastCandidateCount = 0; // Phase 16: scarcity message用
 var scores = {};
 var result = null;
 var resultScore = 0;
@@ -1613,6 +1668,7 @@ function calcResult() {
       return (a.sp.name || '').localeCompare(b.sp.name || '', 'ja');
     });
 
+    _lastCandidateCount = scored.length; // Phase 16: scarcity message用
     var best = scored.length > 0 ? scored[0].sp : null;
     if (!best) throw new Error('no species resolved');
 
@@ -1743,36 +1799,102 @@ function showResult(sp, pct) {
     }
   })();
 
-  // ===== Phase 7-C Step 2-A: 2段CTA =====
+  // ===== Phase 16: 強化2段CTA（CVR最適化） =====
   (function() {
     var ctaBlock = document.getElementById('res-cta-block');
     if (!ctaBlock) return;
     if (!sp.hasPage || !sp.slug) { ctaBlock.style.display = 'none'; return; }
+
     var speciesPageUrl = '../species/' + sp.slug + '.html';
     var starterKitUrl  = speciesPageUrl + '#starter-kit-root';
-    // Phase 9-B: CTA順序変更 & cta_type追加
-    var primaryLabel   = 'この亀を詳しく見る →';
-    var secondaryLabel = '必要な飼育用品を見る';
+    var routeId = selectedRoute ? selectedRoute.id : 'all';
+    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
+
+    // ── teaser: 費用プレビューを取得 ──
+    var teaserHtml = '';
+    var initText = '', monthlyText = '';
+    if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
+      var TEASER_CATS = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
+      var cLow = 0, cHigh = 0, cnt = 0;
+      TEASER_CATS.forEach(function(cat) {
+        var p = (typeof getTierProduct === 'function') ? getTierProduct(equipKey, cat, 'budget') : null;
+        if (!p) return;
+        var pr = (p.priceRange || '').replace(/[¥,]/g, '');
+        var m = pr.match(/(\d+)[^\d]+(\d+)/);
+        if (m) { cLow += parseInt(m[1], 10); cHigh += parseInt(m[2], 10); cnt++; }
+      });
+      if (cnt >= 2) initText = '¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
+    }
+    var monthlyCostData = equipKey && MONTHLY_COST_MAP[equipKey] ? MONTHLY_COST_MAP[equipKey] : null;
+    monthlyText = monthlyCostData ? monthlyCostData.label : '';
+
+    if (initText || monthlyText) {
+      teaserHtml =
+        '<div class="res-cta-teaser">' +
+          '<div class="res-cta-teaser-title">この亀を飼う場合の目安</div>' +
+          '<div class="res-cta-teaser-row">' +
+            (initText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">初期費用</div><div class="res-cta-teaser-value">' + initText + '</div></div>' : '') +
+            (monthlyText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">月額目安</div><div class="res-cta-teaser-value">' + monthlyText + '</div></div>' : '') +
+          '</div>' +
+        '</div>';
+    }
+
+    // ── scarcity: 候補2種以下 ──
+    var scarcityHtml = '';
+    if (_lastCandidateCount > 0 && _lastCandidateCount <= 2) {
+      scarcityHtml =
+        '<div class="res-cta-scarcity">' +
+          '<span class="res-cta-scarcity-icon">🎯</span>' +
+          '<span>候補が<strong>' + _lastCandidateCount + '種</strong>に絞られました。あなたへの適合度はかなり高いです。</span>' +
+        '</div>';
+    }
+
+    // ── CTA文言（案A: 具体的な費用・機材訴求） ──
+    var primaryLabel = (initText || monthlyText)
+      ? 'この亀の費用・必要機材を全て見る →'
+      : 'この亀の飼育難易度・必要設備を見る →';
+
     ctaBlock.innerHTML =
+      teaserHtml +
+      scarcityHtml +
       '<a class="res-cta-primary" id="res-cta-primary" href="' + speciesPageUrl + '">' +
         primaryLabel +
       '</a>' +
       '<a class="res-cta-secondary" id="res-cta-secondary" href="' + starterKitUrl + '">' +
-        secondaryLabel +
+        '必要な飼育用品を今すぐ確認する' +
       '</a>';
     ctaBlock.style.display = '';
-    // GA4
+
+    // GA4: diagnosis_cta_view
+    try {
+      if (typeof ga4Event === 'function') {
+        ga4Event('diagnosis_cta_view', {
+          species: sp.name,
+          slug: sp.slug,
+          has_teaser: !!(initText || monthlyText),
+          has_scarcity: (_lastCandidateCount > 0 && _lastCandidateCount <= 2),
+          candidate_count: _lastCandidateCount,
+          equipment_key: equipKey || '',
+        });
+      }
+    } catch(e) {}
+
+    // GA4: primary click
     var primBtn = document.getElementById('res-cta-primary');
     if (primBtn) primBtn.addEventListener('click', function() {
       if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
-        species: sp.name, slug: sp.slug, cta_type: 'primary'
+        species: sp.name, slug: sp.slug, cta_type: 'primary',
+        has_teaser: !!(initText || monthlyText),
+        candidate_count: _lastCandidateCount,
       });
     });
+
+    // GA4: secondary click
     var secBtn = document.getElementById('res-cta-secondary');
     if (secBtn) secBtn.addEventListener('click', function() {
       if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
         species: sp.name, slug: sp.slug, cta_type: 'secondary',
-        equipment_key: (sp.equipmentKey) || resolveEquipmentKey(selectedRoute ? selectedRoute.id : 'all', sp)
+        equipment_key: equipKey || '',
       });
     });
   })();
