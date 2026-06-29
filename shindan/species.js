@@ -559,7 +559,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'rare'
   },
-  { name: 'オウアチタチズガメ', latin: 'Graptemys ouachitensis', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス22cm）', cites: null, legal: null,
+  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス22cm）', cites: null, legal: null,
     reason: 'ミシシッピチズガメと並ぶ人気チズガメ。甲羅のキールがより鋭く、ミシシッピ川流域に生息。流水好みで水質管理が重要。オス・メスの体格差が大きいため飼育スペースの計画が必要。',
     specs: { '最大甲長': 'オス10cm/メス22cm', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '★★☆' },
     coreSpecs: { size: 'オス10cm/メス22cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
