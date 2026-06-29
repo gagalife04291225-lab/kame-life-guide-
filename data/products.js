@@ -1760,9 +1760,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_reptomin',         standard: 'food_tortoise',          premium: 'food_grassland_salad' },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
@@ -1776,9 +1773,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_tortoise',         standard: 'food_grassland_salad',   premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: 'supplement_iodine' },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 森林系リクガメ（エロンガータ・アカアシ・インプレッサ等）
@@ -1792,9 +1786,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_tortoise',         standard: 'food_repashy_tortoise',  premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_multivitamin',premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 半水棲・小型（ニオイガメ・ドロガメ・ミスクガメ等）
@@ -1807,9 +1798,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
@@ -1822,9 +1810,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
@@ -1835,9 +1820,6 @@ const EQUIPMENT_MAP = {
     substrate:        { budget: 'substrate_river_sand',  standard: 'substrate_river_sand',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 日本産イシガメ類（ニホンイシガメ・クサガメ等）
@@ -1850,9 +1832,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
@@ -1867,9 +1846,6 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_kamepros',         standard: 'food_box_turtle',        premium: 'food_repashy_tortoise' },
     supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
-    rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
   },
 
 };
