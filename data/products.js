@@ -1058,8 +1058,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'スファグナムモス 水苔 爬虫類',
   },
 
-  substrate_river_sand: {
-    id: 'substrate_river_sand',
+  substrate_sand_river: {
+    id: 'substrate_sand_river',
     name: '川砂（白砂）5kg',
     category: 'substrate',
     tier: 'budget',
@@ -1094,8 +1094,8 @@ const PRODUCTS = {
     rakutenSearchTerm: '爬虫類 床材 フォレスト ブレンド',
   },
 
-  substrate_cypress_mulch: {
-    id: 'substrate_cypress_mulch',
+  substrate_cypress: {
+    id: 'substrate_cypress',
     name: 'サイプレスマルチ（Zoo Med）',
     category: 'substrate',
     tier: 'premium',
@@ -1112,8 +1112,8 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle', 'advanced'],
   },
 
-  substrate_top_soil: {
-    id: 'substrate_top_soil',
+  substrate_soil_plain: {
+    id: 'substrate_soil_plain',
     name: '培養土（無肥料）5L',
     category: 'substrate',
     tier: 'budget',
@@ -1172,8 +1172,8 @@ const PRODUCTS = {
 
   // ── Task2 追加 ──
 
-  shelter_cork_bark: {
-    id: 'shelter_cork_bark',
+  shelter_bark_hide: {
+    id: 'shelter_bark_hide',
     name: 'コルクバーク（丸太）',
     category: 'shelter',
     tier: 'standard',
@@ -1190,8 +1190,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'コルクバーク 爬虫類 シェルター',
   },
 
-  shelter_humid_hide: {
-    id: 'shelter_humid_hide',
+  shelter_moist_hide: {
+    id: 'shelter_moist_hide',
     name: 'モイストハイド（湿潤シェルター）',
     category: 'shelter',
     tier: 'standard',
@@ -1226,8 +1226,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'スレート フラット シェルター 爬虫類',
   },
 
-  shelter_large_cave: {
-    id: 'shelter_large_cave',
+  shelter_cave_lg: {
+    id: 'shelter_cave_lg',
     name: 'ラージケーブシェルター',
     category: 'shelter',
     tier: 'standard',
@@ -1244,8 +1244,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'ケーブ シェルター 大型 爬虫類',
   },
 
-  shelter_premium_wood: {
-    id: 'shelter_premium_wood',
+  shelter_wood_premium: {
+    id: 'shelter_wood_premium',
     name: 'ウッドハイドハウス（プレミアム）',
     category: 'shelter',
     tier: 'premium',
@@ -1262,8 +1262,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'ウッドハイド シェルター 爬虫類 木製',
   },
 
-  shelter_aqua_dock: {
-    id: 'shelter_aqua_dock',
+  shelter_turtle_dock: {
+    id: 'shelter_turtle_dock',
     name: '水棲ガメ用ドック（浮島タイプ）',
     category: 'shelter',
     tier: 'budget',
@@ -1787,8 +1787,8 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_desert_t5',          premium: 'uvb_arcadia_t5_12' },
     lighting_basking: { budget: 'basking_halogen_50w',   standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
     heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45w',       premium: 'heater_radiant_panel' },
-    substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress_mulch' },
-    shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: 'shelter_premium_wood' },
+    substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress' },
+    shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: 'shelter_wood_premium' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_premium',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null },
@@ -1800,8 +1800,8 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_desert_t5',         standard: 'uvb_arcadia_t5_12',      premium: 'uvb_mvb_100' },
     lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150w',      premium: 'basking_hid_70w' },
     heating:          { budget: 'heater_panel_45w',      standard: 'heater_panel_60w',       premium: 'heater_radiant_panel' },
-    substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress_mulch' },
-    shelter:          { budget: 'shelter_medium',        standard: 'shelter_large_cave',     premium: 'shelter_premium_wood' },
+    substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress' },
+    shelter:          { budget: 'shelter_medium',        standard: 'shelter_cave_lg',     premium: 'shelter_wood_premium' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_herbs',   premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: 'supplement_iodine' },
@@ -1813,8 +1813,8 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
-    substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress_mulch' },
-    shelter:          { budget: 'shelter_small',         standard: 'shelter_cork_bark',      premium: 'shelter_humid_hide' },
+    substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress' },
+    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_gel',  premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_multivitamin',premium: null },
@@ -1849,7 +1849,7 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_90',               standard: 'tank_120_aqua',          premium: 'tank_120_aqua' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
-    substrate:        { budget: 'substrate_river_sand',  standard: 'substrate_river_sand',   premium: null },
+    substrate:        { budget: 'substrate_sand_river',  standard: 'substrate_sand_river',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
   },
@@ -1873,8 +1873,8 @@ const EQUIPMENT_MAP = {
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
-    substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress_mulch' },
-    shelter:          { budget: 'shelter_small',         standard: 'shelter_cork_bark',      premium: 'shelter_humid_hide' },
+    substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress' },
+    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
