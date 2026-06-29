@@ -240,7 +240,7 @@ land: [
 
 // ==================== 水棲ガメルート ====================
 aquatic: [
-  { name: 'ニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', recommendationPriority: 100, difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
+  { name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🔬', recommendationPriority: 100, difficulty: '入門', size: 'S（10〜14cm）', cites: null, legal: null,
     reason: '水棲ガメ入門の定番。最大14cm程度で30〜45cm水槽から飼育可能。威嚇時に臭いを出しますが慣れればほぼ無臭。お手頃価格で流通も安定。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '14cm', temp: '22〜28℃', lifespan: '20〜50年', diet: '雑食' },
