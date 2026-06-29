@@ -352,8 +352,8 @@ const PRODUCTS = {
     recommendedFor: ['advanced', 'tortoise_dry_large'],
   },
 
-  uvb_led_strip: {
-    id: 'uvb_led_strip',
+  uvb_led_bar: {
+    id: 'uvb_led_bar',
     name: 'UVB LED バー 60cm',
     category: 'lighting_uvb',
     tier: 'budget',
@@ -390,8 +390,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'UVB 蛍光管 T8 30W 爬虫類',
   },
 
-  uvb_zilla_t5: {
-    id: 'uvb_zilla_t5',
+  uvb_t5_desert_alt: {
+    id: 'uvb_t5_desert_alt',
     name: 'Zilla Desert 50 T5 UVB',
     category: 'lighting_uvb',
     tier: 'standard',
@@ -900,8 +900,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  filter_fluval_fx: {
-    id: 'filter_fluval_fx',
+  filter_canister_xl: {
+    id: 'filter_canister_xl',
     name: 'Fluval FX シリーズ',
     category: 'filter',
     tier: 'premium',
