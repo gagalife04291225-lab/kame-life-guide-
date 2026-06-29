@@ -514,6 +514,34 @@ function calcBundlePrice(picks) {
 }
 
 /**
+ * Phase 20-E: バンドル価格レンジ計算（低・高）
+ */
+function calcBundlePriceRange(picks) {
+  var low = 0, high = 0;
+  picks.forEach(function(item) {
+    if (item.product && item.product.priceRange) {
+      var r = parsePriceRange(item.product.priceRange);
+      low  += r.low  || 0;
+      high += r.high || r.low || 0;
+    }
+  });
+  return {
+    low:  Math.round(low  / 100) * 100,
+    high: Math.round(high / 100) * 100,
+  };
+}
+
+/**
+ * Phase 20-E: 節約額文字列（budget vs standard比較）
+ */
+function calcSavingsStr(thisLow, standardLow) {
+  if (!thisLow || !standardLow) return '';
+  var diff = standardLow - thisLow;
+  if (diff > 0) return fmtYen(Math.round(diff / 100) * 100) + 'お得';
+  return '';
+}
+
+/**
  * バンドルサマリーHTML生成（タブの上に表示）
  */
 function renderBundleSummary(tabData, speciesName) {
@@ -548,19 +576,41 @@ function renderBundleSummary(tabData, speciesName) {
     },
   ];
 
+    // Phase 20-E: standard tierの価格を先算出（savings基準）
+  var _stdPicks = tabData[1] ? tabData[1].picks : [];
+  var _stdRange = calcBundlePriceRange(_stdPicks);
+
   var cards = BUNDLES.map(function(b) {
-    var picks = tabData[b.idx] ? tabData[b.idx].picks : [];
-    var price = calcBundlePrice(picks);
-    var count = picks.length;
-    var priceStr = price > 0 ? fmtYen(price) + '〜' : '価格お問い合わせ';
+    var picks    = tabData[b.idx] ? tabData[b.idx].picks : [];
+    var range    = calcBundlePriceRange(picks);
+    var count    = picks.length;
+    var priceStr = range.low > 0
+      ? (range.high > range.low
+          ? fmtYen(range.low) + '〜' + fmtYen(range.high)
+          : fmtYen(range.low) + '〜')
+      : '価格お問い合わせ';
+    var savingsStr  = (b.idx === 0) ? calcSavingsStr(range.low, _stdRange.low) : '';
+    var savingsHtml = savingsStr
+      ? '<div class="sk-bundle-savings">💰 スタンダードより' + savingsStr + '</div>'
+      : '';
     var recBadge = b.recommended
       ? '<span class="sk-bundle-rec-badge">おすすめ</span>'
       : '';
 
+    // Phase 20-E: カテゴリプレビュー（最大4件 + 残数）
+    var previewTags = picks.slice(0, 4).map(function(item) {
+      return '<span class="sk-bundle-item-tag">' + _skDisplayCat(item.cat) + '</span>';
+    }).join('');
+    var moreTag = picks.length > 4
+      ? '<span class="sk-bundle-item-more">+' + (picks.length - 4) + '点</span>'
+      : '';
+    var itemsHtml = '<div class="sk-bundle-items">' + previewTags + moreTag + '</div>';
+
     return '<div class="sk-bundle-card ' + b.mod + (b.recommended ? ' sk-bundle-card--rec' : '') + '"' +
       ' data-bundle-tab="sk-panel-' + b.tabId + '"' +
       ' data-bundle-tier="' + b.tier + '"' +
-      ' data-bundle-price="' + price + '"' +
+      ' data-bundle-price="' + range.low + '"' +
+      ' data-bundle-price-high="' + range.high + '"' +
       ' data-bundle-count="' + count + '"' +
       ' data-species="' + (speciesName || '') + '">' +
       '<div class="sk-bundle-head">' +
@@ -568,18 +618,20 @@ function renderBundleSummary(tabData, speciesName) {
         '<span class="sk-bundle-label">' + b.label + recBadge + '</span>' +
       '</div>' +
       '<p class="sk-bundle-desc">' + b.desc + '</p>' +
+      itemsHtml +
       '<div class="sk-bundle-meta">' +
         '<span class="sk-bundle-price">' + priceStr + '</span>' +
         '<span class="sk-bundle-count">' + count + '点セット</span>' +
       '</div>' +
+      savingsHtml +
       '<button class="sk-bundle-cta" type="button"' +
         ' aria-label="' + b.label + 'の詳細を見る">' +
-        'この構成をまとめて揃える' +
+        'この構成をまとめて揃える →' +
       '</button>' +
     '</div>';
   }).join('');
 
-  return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド">' +
+  return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド"> role="region" aria-label="構成別セットガイド">' +
     '<p class="sk-bundle-eyebrow">まず構成を選んでください</p>' +
     '<div class="sk-bundle-grid">' + cards + '</div>' +
   '</div>';
@@ -693,6 +745,20 @@ function initSkTabs(root, species) {
           tab_type: meta.tab_type, selected_tier: meta.selected_tier,
           species: _skStr(species && species.name), page_path: _skPagePath(),
         });
+        // Phase 20-E: bundle_tier_switch
+        gtag('event', 'bundle_tier_switch', {
+          species:       _skStr(species && species.name),
+          bundle_tier:   meta.selected_tier || 'unknown',
+          equipment_key: _skStr(species && species.equipmentKey),
+          page_path:     _skPagePath(),
+          route:         _skRoute(),
+          source_page:   'species',
+        });
+        window.KAME_GA_DEBUG_LOG('bundle_tier_switch', {
+          species: _skStr(species && species.name),
+          bundle_tier: meta.selected_tier || 'unknown',
+          equipment_key: _skStr(species && species.equipmentKey),
+        });
       }
     });
   });
@@ -738,6 +804,18 @@ function mountStarterKit(species, mountId) {
 
       // GA4
       if (typeof gtag === 'function') {
+        // Phase 20-E: bundle_click (canonical)
+        gtag('event', 'bundle_click', {
+          species:          _skStr(sName),
+          bundle_tier:      tier,
+          equipment_key:    _skStr(species && species.equipmentKey),
+          estimated_price:  price,
+          product_count:    count,
+          page_path:        _skPagePath(),
+          route:            _skRoute(),
+          source_page:      'species',
+        });
+        // Legacy (backward compat)
         gtag('event', 'bundle_card_click', {
           species:         _skStr(sName),
           bundle_type:     tier,
@@ -747,8 +825,9 @@ function mountStarterKit(species, mountId) {
           route:           _skRoute(),
           source_page:     'species',
         });
-        window.KAME_GA_DEBUG_LOG('bundle_card_click', {
-          species: _skStr(sName), bundle_type: tier,
+        window.KAME_GA_DEBUG_LOG('bundle_click', {
+          species: _skStr(sName), bundle_tier: tier,
+          equipment_key: _skStr(species && species.equipmentKey),
           estimated_price: price, product_count: count,
         });
       }
@@ -770,6 +849,26 @@ function mountStarterKit(species, mountId) {
     window.KAME_GA_DEBUG_LOG('starter_kit_shown', {
       species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
       page_path: _skPagePath(),
+    });
+
+    // Phase 20-E: bundle_view — fired once on kit mount
+    var _bvBudget = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'budget'));
+    var _bvStd    = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'standard'));
+    var _bvPrem   = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'premium'));
+    gtag('event', 'bundle_view', {
+      species:              _skStr(species.name),
+      equipment_key:        _skStr(species.equipmentKey),
+      bundle_tier:          'all',
+      budget_price_low:     _bvBudget.low,
+      standard_price_low:   _bvStd.low,
+      premium_price_low:    _bvPrem.low,
+      page_path:            _skPagePath(),
+      route:                _skRoute(),
+      source_page:          'species',
+    });
+    window.KAME_GA_DEBUG_LOG('bundle_view', {
+      species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
+      budget_price_low: _bvBudget.low, standard_price_low: _bvStd.low,
     });
   }
 
