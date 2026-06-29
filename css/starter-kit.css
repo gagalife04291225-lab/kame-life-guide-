@@ -683,6 +683,58 @@
 .sk-bundle--premium  .sk-bundle-cta { background: #4a148c; }
 .sk-bundle--premium  .sk-bundle-cta:hover { background: #380f6a; }
 
+/* ─── Phase 20-E: Bundle item tags + savings ─────────────────
+   .sk-bundle-items  — category chip row
+   .sk-bundle-item-tag — individual chip
+   .sk-bundle-item-more — overflow count
+   .sk-bundle-savings — savings callout
+──────────────────────────────────────────────────────────── */
+
+.sk-bundle-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 8px 0 10px;
+}
+
+.sk-bundle-item-tag {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--forest, #2f4a3c);
+  background: rgba(47,74,60,.08);
+  border: 1px solid rgba(47,74,60,.18);
+  border-radius: 4px;
+  padding: 2px 7px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sk-bundle-item-more {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 700;
+  color: var(--moss, #4a6741);
+  background: transparent;
+  padding: 2px 4px;
+  line-height: 1.4;
+}
+
+.sk-bundle-savings {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #1b5e20;
+  background: #f1f8f1;
+  border: 1px solid rgba(27,94,32,.18);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 6px 0 10px;
+  letter-spacing: .01em;
+}
+
+
 /* ─── Rakuten CTA button ────────────────────────────────────
    Rendered only when product.rakutenUrl && rakutenStatus === "available"
    Default state: never rendered (no visual regression)
