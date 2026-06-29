@@ -3780,15 +3780,14 @@
 <nav class="mini-nav" aria-label="サイトナビゲーション">
   <div class="mini-nav-inner">
     <a href="./" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
-    <a href="./shindan/" class="mini-nav-link" style="opacity:.40;text-decoration:line-through;" title="メンテナンス中">診断</a>
+    <a href="./shindan/" class="mini-nav-link">診断</a>
     <a href="./species-list.html" class="mini-nav-link">種一覧</a>
     <a href="./compare/" class="mini-nav-link"
        aria-label="亀・リクガメ 比較一覧" title="比較ページへ">比較</a>
     <a href="./guides/" class="mini-nav-link"
        aria-label="亀の飼育ガイド一覧" title="飼育ガイドへ">ガイド</a>
     <a href="./shindan/" class="mini-nav-cta"
-       style="opacity:.40;pointer-events:none;cursor:default;" aria-disabled="true"
-       title="診断ツールはメンテナンス中です">🔧 メンテ中</a>
+       onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'homepage'})">30秒診断 →</a>
   </div>
 </nav>
 <header class="hero" role="banner">
@@ -3823,10 +3822,8 @@
     <div class="hero-cta-group">
       <a href="./shindan/"
          class="hero-cta-primary"
-         style="opacity:.45;cursor:default;pointer-events:none;"
-         aria-disabled="true"
-         title="診断ツールはメンテナンス中です">
-        🔧 診断ツール メンテナンス中
+         onclick="(typeof gtag==='function')&&gtag('event','hero_cta_click',{cta:'shindan',location:'hero'})">
+        🐢 100種対応の診断をはじめる
       </a>
       <a href="#popular-picks"
          class="hero-cta-secondary"
