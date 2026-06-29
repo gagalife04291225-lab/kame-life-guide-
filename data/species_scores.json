@@ -24,7 +24,7 @@
     "notes": "国内最流通・初心者No.1。臭いは水棲なので低め。smell38は意図的（臭腺あり・水換え必要）"
   },
   {
-    "slug": "hermanns-tortoise",
+    "slug": "hermann-tortoise",
     "species_name_ja": "ヘルマンリクガメ",
     "species_name_en": "Hermann's Tortoise",
     "category": "tortoise",
@@ -277,7 +277,7 @@
   },
   {
     "slug": "chinese-box-turtle",
-    "species_name_ja": "セマルハコガメ",
+    "species_name_ja": "チュウゴクセマルハコガメ",
     "species_name_en": "Chinese Box Turtle",
     "category": "box_turtle",
     "beginner": 50,
@@ -299,7 +299,7 @@
   },
   {
     "slug": "leopard-tortoise",
-    "species_name_ja": "ヒョウモンリクガメ",
+    "species_name_ja": "ヒョウモンガメ",
     "species_name_en": "Leopard Tortoise",
     "category": "tortoise",
     "beginner": 45,
@@ -408,7 +408,7 @@
     "notes": "沖縄固有。ニホンイシガメと並ぶ保全文脈。WC流通あり。Type11対象種"
   },
   {
-    "slug": "siebenrocks-snake-neck",
+    "slug": "siebenrocks-snake-necked-turtle",
     "species_name_ja": "ジーベンロックナガクビガメ",
     "species_name_en": "Siebenrock's Snake-necked Turtle",
     "category": "side_neck",
@@ -430,7 +430,7 @@
     "notes": "¥18,000〜と安価。独特の首でSEO空白地帯。activity75は動きが見やすい"
   },
   {
-    "slug": "chinese-softshell",
+    "slug": "chinese-softshell-turtle",
     "species_name_ja": "スッポン",
     "species_name_en": "Chinese Softshell Turtle",
     "category": "exotic",
