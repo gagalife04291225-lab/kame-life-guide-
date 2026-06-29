@@ -1,6 +1,6 @@
 [
   {
-    "slug": "mississippi-musk-turtle",
+    "slug": "musk-turtle",
     "species_name_ja": "ミシシッピニオイガメ",
     "species_name_en": "Mississippi Musk Turtle",
     "category": "aquatic",
@@ -15,7 +15,7 @@
     "monetization": 65,
     "authority": 55,
     "has_page": true,
-    "species_page_url": "/species/mississippi-musk-turtle.html",
+    "species_page_url": "/species/musk-turtle.html",
     "compare_urls": [
       "musk-vs-razorback"
     ],
