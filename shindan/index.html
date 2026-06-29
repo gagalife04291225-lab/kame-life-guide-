@@ -1295,7 +1295,9 @@ function renderEquipment(sp) {
       ga4Event('equipment_click', {
         species_name: a.dataset.species,
         category: a.dataset.cat,
-        asin: asinVal
+        asin: asinVal,
+        route: (selectedRoute || {}).id || 'unknown',
+        source_page: 'shindan',
       });
       // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
       if (isAmazonUrl(a.href)) {
@@ -1309,6 +1311,8 @@ function renderEquipment(sp) {
           asin:          asinVal,
           selected_tier: '',
           click_url:     a.href,
+          route:         (selectedRoute || {}).id || 'unknown',
+          source_page:   'shindan',
         });
       }
     });
@@ -1653,6 +1657,8 @@ function renderStarterKit(sp) {
       species:       sp.name,
       equipment_key: equipKey,
       card_count:    picks.length,
+      route:         (selectedRoute || {}).id || 'unknown',
+      source_page:   'shindan',
     });
   }
 
@@ -1668,6 +1674,8 @@ function renderStarterKit(sp) {
           asin:          a.dataset.asin,
           selected_tier: a.dataset.tier,
           equipment_key: equipKey,
+          route:         (selectedRoute || {}).id || 'unknown',
+          source_page:   'shindan',
         });
         // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
         if (isAmazonUrl(a.href)) {
@@ -1681,6 +1689,8 @@ function renderStarterKit(sp) {
             asin:          a.dataset.asin    || '',
             selected_tier: a.dataset.tier    || '',
             click_url:     a.href,
+            route:         (selectedRoute || {}).id || 'unknown',
+            source_page:   'shindan',
           });
         }
       }
@@ -1696,6 +1706,8 @@ function renderStarterKit(sp) {
         ga4Event('starter_kit_cta_click', {
           species_name:  sp.name,
           equipment_key: equipKey,
+          route:         (selectedRoute || {}).id || 'unknown',
+          source_page:   'shindan',
         });
         // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
         if (isAmazonUrl(ctaBtn.href)) {
@@ -1709,6 +1721,8 @@ function renderStarterKit(sp) {
             asin:          '',
             selected_tier: '',
             click_url:     ctaBtn.href,
+            route:         (selectedRoute || {}).id || 'unknown',
+            source_page:   'shindan',
           });
         }
       }
@@ -2460,7 +2474,7 @@ function showResult(sp, pct) {
       ec.classList.remove('ec-shown');
       setTimeout(function() { ec.classList.remove('ec-visible'); }, 280);
       if (typeof ga4Event === 'function') ga4Event('exit_capture_close', {
-        species: sp.name, slug: spSlug,
+        species: sp.name, slug: spSlug, route: (selectedRoute || {}).id || 'unknown',
       });
     });
 
@@ -2565,7 +2579,7 @@ function showResult(sp, pct) {
         // GA4: top CTA click
         var topLink = document.getElementById('res-cta-top-link');
         if (topLink) topLink.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_species_click', {
             species: sp.name, slug: sp.slug, cta_type: 'top',
             has_teaser: true, candidate_count: _lastCandidateCount,
           });
@@ -2594,7 +2608,7 @@ function showResult(sp, pct) {
         // GA4
         var primBtn = document.getElementById('res-cta-primary');
         if (primBtn) primBtn.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_species_click', {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_species_click', {
             species: sp.name, slug: sp.slug, cta_type: 'primary',
             has_teaser: true, candidate_count: _lastCandidateCount,
           });
@@ -2727,6 +2741,8 @@ function showResult(sp, pct) {
             asin:          sp.asin   || '',
             selected_tier: '',
             click_url:     spAmzLink.href,
+            route:         (selectedRoute || {}).id || 'unknown',
+            source_page:   'shindan',
           });
         }
       });
@@ -2750,6 +2766,8 @@ function showResult(sp, pct) {
         equipment_key: _eqKeyGa,
         difficulty:    sp.difficulty || '',
         has_page:      !!(sp.hasPage && sp.slug),
+        route_id:      _routeIdGa || 'unknown',
+        match_pct:     pct || 0,
       });
     }
   } catch(e) {}

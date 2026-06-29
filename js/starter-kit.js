@@ -63,6 +63,19 @@ function _skDisplayCat(cat) {
   return SK_DISPLAY_CAT_MAP[cat] || _skStr(cat);
 }
 
+/**
+ * 診断ルートをURL param ?r= から読み取る
+ * species page経由の場合、shindan が ?r=routeId を URLに書き込んでいる
+ * 非診断流入の場合は 'unknown' を返す
+ */
+function _skRoute() {
+  try {
+    var r = new URLSearchParams(window.location.search).get('r');
+    var VALID = { land: 1, aquatic: 1, forest: 1, exotic: 1, all: 1 };
+    return (r && VALID[r]) ? r : 'unknown';
+  } catch(e) { return 'unknown'; }
+}
+
 
 // ── Phase 10-D Step 2: GA4 Debug Panel ──────────────────────
 (function () {
@@ -657,6 +670,8 @@ function initSkTabs(root, species) {
           equipment_key:    _skStr(species && species.equipmentKey),
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
+          route:            _skRoute(),
+          source_page:      'species',
         });
         window.KAME_GA_DEBUG_LOG('starter_kit_tab', {
           tab_type: meta.tab_type, selected_tier: meta.selected_tier,
@@ -671,6 +686,8 @@ function initSkTabs(root, species) {
           equipment_key:    _skStr(species && species.equipmentKey),
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
+          route:            _skRoute(),
+          source_page:      'species',
         });
         window.KAME_GA_DEBUG_LOG('starter_kit_tier_click', {
           tab_type: meta.tab_type, selected_tier: meta.selected_tier,
@@ -727,6 +744,8 @@ function mountStarterKit(species, mountId) {
           estimated_price: price,
           product_count:   count,
           page_path:       _skPagePath(),
+          route:           _skRoute(),
+          source_page:     'species',
         });
         window.KAME_GA_DEBUG_LOG('bundle_card_click', {
           species: _skStr(sName), bundle_type: tier,
@@ -745,6 +764,8 @@ function mountStarterKit(species, mountId) {
       card_count:       essentialPicks.length,
       page_path:        _skPagePath(),
       affiliate_platform: 'amazon',
+      route:            _skRoute(),
+      source_page:      'species',
     });
     window.KAME_GA_DEBUG_LOG('starter_kit_shown', {
       species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
@@ -774,6 +795,8 @@ function mountStarterKit(species, mountId) {
           product_id:         _skStr(a.dataset.productId),
           page_path:          _skPagePath(),
           affiliate_platform: _provider || 'amazon',
+          route:              _skRoute(),
+          source_page:        'species',
         });
         // 既存イベント（維持）
         gtag('event', 'starter_kit_cta_click', {
@@ -789,6 +812,8 @@ function mountStarterKit(species, mountId) {
           click_url:          a.dataset.clickUrl   || a.href,
           page_path:          _skPagePath(),
           affiliate_platform: _provider || 'amazon',
+          route:              _skRoute(),
+          source_page:        'species',
         });
         // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
         if (isAmazonUrl(a.dataset.clickUrl || a.href)) {
@@ -807,6 +832,8 @@ function mountStarterKit(species, mountId) {
             click_url:          a.dataset.clickUrl   || a.href,
             page_path:          _skPagePath(),
             affiliate_platform: 'amazon',
+            route:              _skRoute(),
+            source_page:        'species',
           });
         }
         // Dual-affiliate unified click event (TASK 3 / Phase 13-B: vendor key removed, provider unified)
