@@ -178,8 +178,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  enclosure_wood_150: {
-    id: 'enclosure_wood_150',
+  enclosure_tortoise_150: {
+    id: 'enclosure_tortoise_150',
     name: '木製リクガメケージ 150cm',
     category: 'enclosure',
     tier: 'premium',
@@ -330,8 +330,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'Arcadia T5 HO 12% UVB 爬虫類',
   },
 
-  uvb_combo_mvb_100: {
-    id: 'uvb_combo_mvb_100',
+  uvb_mvb_100: {
+    id: 'uvb_mvb_100',
     name: 'MVB 自発光UVBランプ 100W',
     category: 'lighting_uvb',
     tier: 'premium',
@@ -526,8 +526,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'バスキングランプ 150W ダブル 爬虫類',
   },
 
-  basking_solar_raptor: {
-    id: 'basking_solar_raptor',
+  basking_hid_70w: {
+    id: 'basking_hid_70w',
     name: 'Solar Raptor HID 70W',
     category: 'lighting_basking',
     tier: 'premium',
@@ -878,8 +878,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'スポンジフィルター ダブル 亀 水槽',
   },
 
-  filter_canister_eheim_2217: {
-    id: 'filter_canister_eheim_2217',
+  filter_canister_premium: {
+    id: 'filter_canister_premium',
     name: 'EHEIM クラシック 2217',
     category: 'filter',
     tier: 'premium',
@@ -1796,9 +1796,9 @@ const EQUIPMENT_MAP = {
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
   tortoise_dry_large: {
-    enclosure:        { budget: 'enclosure_wood_90',     standard: 'enclosure_wood_120',     premium: 'enclosure_wood_150' },
-    lighting_uvb:     { budget: 'uvb_desert_t5',         standard: 'uvb_arcadia_t5_12',      premium: 'uvb_combo_mvb_100' },
-    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150w',      premium: 'basking_solar_raptor' },
+    enclosure:        { budget: 'enclosure_wood_90',     standard: 'enclosure_wood_120',     premium: 'enclosure_tortoise_150' },
+    lighting_uvb:     { budget: 'uvb_desert_t5',         standard: 'uvb_arcadia_t5_12',      premium: 'uvb_mvb_100' },
+    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150w',      premium: 'basking_hid_70w' },
     heating:          { budget: 'heater_panel_45w',      standard: 'heater_panel_60w',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress_mulch' },
     shelter:          { budget: 'shelter_medium',        standard: 'shelter_large_cave',     premium: 'shelter_premium_wood' },
@@ -1838,7 +1838,7 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_forest_t5',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
-    filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_eheim_2217' },
+    filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
     supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
@@ -1848,7 +1848,7 @@ const EQUIPMENT_MAP = {
   fully_aquatic: {
     enclosure:        { budget: 'tank_90',               standard: 'tank_120_aqua',          premium: 'tank_120_aqua' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
-    filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_eheim_2217' },
+    filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
     substrate:        { budget: 'substrate_river_sand',  standard: 'substrate_river_sand',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_pro_wifi' },
     food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
