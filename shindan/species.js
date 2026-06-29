@@ -383,7 +383,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis（旧称）', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
+  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
     reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
