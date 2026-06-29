@@ -236,8 +236,8 @@ const PRODUCTS = {
      LIGHTING_UVB（UVBライト）  9商品
      ══════════════════════════════════════════ */
 
-  uvb_t5_desert_std: {
-    id: 'uvb_t5_desert_std',
+  uvb_desert_t5: {
+    id: 'uvb_desert_t5',
     name: 'Zoo Med ReptiSun 10.0 UVB T5',
     category: 'lighting_uvb',
     tier: 'standard',
@@ -294,8 +294,8 @@ const PRODUCTS = {
 
   // ── Task2 追加 ──
 
-  uvb_t5_tropical_6: {
-    id: 'uvb_t5_tropical_6',
+  uvb_arcadia_t5_6: {
+    id: 'uvb_arcadia_t5_6',
     name: 'Arcadia T5 HO 6% UVB',
     category: 'lighting_uvb',
     tier: 'standard',
@@ -312,8 +312,8 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
   },
 
-  uvb_t5_desert_12: {
-    id: 'uvb_t5_desert_12',
+  uvb_arcadia_t5_12: {
+    id: 'uvb_arcadia_t5_12',
     name: 'Arcadia T5 HO 12% UVB',
     category: 'lighting_uvb',
     tier: 'premium',
@@ -508,8 +508,8 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
   },
 
-  basking_dual_150: {
-    id: 'basking_dual_150',
+  basking_dual_150w: {
+    id: 'basking_dual_150w',
     name: 'ダブルバスキングランプ 150W',
     category: 'lighting_basking',
     tier: 'premium',
@@ -610,8 +610,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  heater_panel_45: {
-    id: 'heater_panel_45',
+  heater_panel_45w: {
+    id: 'heater_panel_45w',
     name: 'パネルヒーター 45W',
     category: 'heating',
     tier: 'standard',
@@ -748,8 +748,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'ヒーティングコード 20W 爬虫類',
   },
 
-  heater_panel_60: {
-    id: 'heater_panel_60',
+  heater_panel_60w: {
+    id: 'heater_panel_60w',
     name: 'パネルヒーター 60W',
     category: 'heating',
     tier: 'standard',
@@ -1414,8 +1414,8 @@ const PRODUCTS = {
      FOOD（フード）  9商品
      ══════════════════════════════════════════ */
 
-  food_kamepros: {
-    id: 'food_kamepros',
+  food_aquatic_staple: {
+    id: 'food_aquatic_staple',
     name: 'カメプロス（テトラ）',
     category: 'food',
     tier: 'budget',
@@ -1432,8 +1432,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'カメプロス テトラ 亀 餌',
   },
 
-  food_tortoise: {
-    id: 'food_tortoise',
+  food_tortoise_staple: {
+    id: 'food_tortoise_staple',
     name: 'リクガメフード（Zoo Med）',
     category: 'food',
     tier: 'standard',
@@ -1452,8 +1452,8 @@ const PRODUCTS = {
 
   // ── Task2 追加 ──
 
-  food_reptomin: {
-    id: 'food_reptomin',
+  food_aquatic_premium: {
+    id: 'food_aquatic_premium',
     name: 'レプトミン（テトラ）',
     category: 'food',
     tier: 'budget',
@@ -1492,8 +1492,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  food_box_turtle: {
-    id: 'food_box_turtle',
+  food_box_turtle_omnivore: {
+    id: 'food_box_turtle_omnivore',
     name: 'ボックスタートルフード（Zoo Med）',
     category: 'food',
     tier: 'standard',
@@ -1532,8 +1532,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  food_repashy_tortoise: {
-    id: 'food_repashy_tortoise',
+  food_tortoise_gel: {
+    id: 'food_tortoise_gel',
     name: 'Repashy Veggie Burger（ゲル状フード）',
     category: 'food',
     tier: 'premium',
@@ -1570,8 +1570,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  food_grassland_salad: {
-    id: 'food_grassland_salad',
+  food_tortoise_herbs: {
+    id: 'food_tortoise_herbs',
     name: 'グラスランドサラダミックス（乾燥野草）',
     category: 'food',
     tier: 'premium',
@@ -1593,8 +1593,8 @@ const PRODUCTS = {
      旧 calcium カテゴリを拡張
      ══════════════════════════════════════════ */
 
-  calcium_powder: {
-    id: 'calcium_powder',
+  supplement_calcium_d3: {
+    id: 'supplement_calcium_d3',
     name: 'カルシウムパウダー（D3入り）',
     category: 'supplements',
     tier: 'budget',
@@ -1637,8 +1637,8 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-28',
   },
 
-  supplement_repcal: {
-    id: 'supplement_repcal',
+  supplement_calcium_plus: {
+    id: 'supplement_calcium_plus',
     name: 'Rep-Cal カルシウムサプリ',
     category: 'supplements',
     tier: 'standard',
@@ -1713,8 +1713,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'エレクトロライト 爬虫類 電解質',
   },
 
-  supplement_cuttlebone: {
-    id: 'supplement_cuttlebone',
+  supplement_mineral_block: {
+    id: 'supplement_mineral_block',
     name: 'カトルボーン（甲イカの骨）',
     category: 'supplements',
     tier: 'budget',
@@ -1784,64 +1784,64 @@ const EQUIPMENT_MAP = {
   // ── 乾燥系リクガメ（小〜中型：ロシア・ヘルマン・ギリシャ等）
   tortoise_dry_small: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_wood_90',      premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_desert_std',          premium: 'uvb_t5_desert_12' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_desert_t5',          premium: 'uvb_arcadia_t5_12' },
     lighting_basking: { budget: 'basking_halogen_50w',   standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
-    heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45',       premium: 'heater_radiant_panel' },
+    heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45w',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress_mulch' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: 'shelter_premium_wood' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_reptomin',         standard: 'food_tortoise',          premium: 'food_grassland_salad' },
-    supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: null },
+    food:             { budget: 'food_aquatic_premium',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' },
+    supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null },
   },
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
   tortoise_dry_large: {
     enclosure:        { budget: 'enclosure_wood_90',     standard: 'enclosure_tortoise_120',     premium: 'enclosure_tortoise_150' },
-    lighting_uvb:     { budget: 'uvb_t5_desert_std',         standard: 'uvb_t5_desert_12',      premium: 'uvb_mvb_100' },
-    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150',      premium: 'basking_hid_70w' },
-    heating:          { budget: 'heater_panel_45',      standard: 'heater_panel_60',       premium: 'heater_radiant_panel' },
+    lighting_uvb:     { budget: 'uvb_desert_t5',         standard: 'uvb_arcadia_t5_12',      premium: 'uvb_mvb_100' },
+    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150w',      premium: 'basking_hid_70w' },
+    heating:          { budget: 'heater_panel_45w',      standard: 'heater_panel_60w',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress_mulch' },
     shelter:          { budget: 'shelter_medium',        standard: 'shelter_large_cave',     premium: 'shelter_premium_wood' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_wifi' },
-    food:             { budget: 'food_tortoise',         standard: 'food_grassland_salad',   premium: null },
-    supplements:      { budget: 'calcium_powder',        standard: 'supplement_repcal',      premium: 'supplement_iodine' },
+    food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_herbs',   premium: null },
+    supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: 'supplement_iodine' },
   },
 
   // ── 森林系リクガメ（エロンガータ・アカアシ・インプレッサ等）
   tortoise_forest: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress_mulch' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_cork_bark',      premium: 'shelter_humid_hide' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_tortoise',         standard: 'food_repashy_tortoise',  premium: null },
-    supplements:      { budget: 'calcium_powder',        standard: 'supplement_multivitamin',premium: null },
+    food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_gel',  premium: null },
+    supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_multivitamin',premium: null },
   },
 
   // ── 半水棲・小型（ニオイガメ・ドロガメ・ミスクガメ等）
   semi_aquatic_small: {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
     heating:          { budget: 'thermostat',            standard: 'heater_aqua_100w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
-    supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
+    food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
+    supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
   semi_aquatic_medium: {
     enclosure:        { budget: 'tank_90',               standard: 'tank_90',                premium: 'tank_120_aqua' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
-    supplements:      { budget: 'calcium_powder',        standard: 'supplement_cuttlebone',  premium: null },
+    food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
+    supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
@@ -1851,7 +1851,7 @@ const EQUIPMENT_MAP = {
     filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
     substrate:        { budget: 'substrate_river_sand',  standard: 'substrate_river_sand',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
+    food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
   },
 
   // ── 日本産イシガメ類（ニホンイシガメ・クサガメ等）
@@ -1862,22 +1862,22 @@ const EQUIPMENT_MAP = {
     heating:          { budget: 'thermostat',            standard: 'heater_aqua_100w',       premium: null },
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: null },
-    food:             { budget: 'food_kamepros',         standard: 'food_reptomin',          premium: null },
-    supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
+    food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
+    supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
   box_turtle: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress_mulch' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_cork_bark',      premium: 'shelter_humid_hide' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
-    food:             { budget: 'food_kamepros',         standard: 'food_box_turtle',        premium: 'food_repashy_tortoise' },
-    supplements:      { budget: 'supplement_cuttlebone', standard: 'calcium_powder',         premium: null },
+    food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
+    supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
   },
 
 };
