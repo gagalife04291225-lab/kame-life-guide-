@@ -176,6 +176,99 @@ body {
 .step-dot.current { background: var(--parchment); transform: scale(1.4); }
 
 /* ===== PHASE 3: 確認モーダル ===== */
+/* Phase 18-D: Exit Capture Sticky Bar */
+#exit-capture {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(13,31,26,.96);
+  border-top: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom)) 16px;
+  transform: translateY(100%);
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+#exit-capture.ec-visible {
+  display: block;
+}
+#exit-capture.ec-shown {
+  transform: translateY(0);
+}
+.ec-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ec-text {
+  flex: 1;
+  min-width: 0;
+}
+.ec-text-main {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--parchment);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ec-text-sub {
+  font-size: .68rem;
+  color: var(--parchment-dark);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ec-btns {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.ec-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity .15s;
+}
+.ec-btn:hover { opacity: .85; }
+.ec-btn-primary {
+  background: linear-gradient(135deg,#c47a2a,#8f5f1e);
+  color: #fff;
+}
+.ec-btn-secondary {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--parchment-dark);
+}
+.ec-close {
+  background: none;
+  border: none;
+  color: var(--parchment-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
+  opacity: .7;
+  line-height: 1;
+}
+.ec-close:hover { opacity: 1; }
+@media (max-width: 480px) {
+  .ec-inner { flex-wrap: wrap; gap: 8px; }
+  .ec-text { width: 100%; }
+  .ec-btns { width: 100%; justify-content: stretch; }
+  .ec-btn { flex: 1; text-align: center; padding: 9px 8px; }
+}
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 100; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(4px); }
 .modal-overlay.open { display: flex; }
 .modal-box { background: #1a3028; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 28px 24px; max-width: 320px; width: 100%; text-align: center; }
@@ -2314,6 +2407,81 @@ function showResult(sp, pct) {
     });
   })();
 
+  // ===== Phase 18-D: Exit Capture Sticky Bar =====
+  (function() {
+    var ec         = document.getElementById('exit-capture');
+    var ecBtnSk    = document.getElementById('ec-btn-sk');
+    var ecBtnComp  = document.getElementById('ec-btn-compare');
+    var ecBtnGuide = document.getElementById('ec-btn-guide');
+    var ecClose    = document.getElementById('ec-close');
+    if (!ec) return;
+
+    var _ecClosed   = false;
+    var _ecShown    = false;
+    var _ecFired    = false;
+
+    // Starter Kit anchor を設定（sp.slug が存在すれば）
+    var spSlug = sp.slug || '';
+    var skHref = spSlug
+      ? ('../species/' + spSlug + '.html#starter-kit-root')
+      : '../guides/beginner-best-turtles.html';
+    if (ecBtnSk) ecBtnSk.href = skHref;
+
+    // スクロール35%で表示
+    function onScroll() {
+      if (_ecClosed || _ecShown) return;
+      var result = document.getElementById('screen-result');
+      if (!result) return;
+      var rect = result.getBoundingClientRect();
+      var resultH = result.offsetHeight;
+      if (resultH === 0) return;
+      var scrolled = -rect.top;
+      var pct = scrolled / resultH;
+      if (pct >= 0.35) {
+        _ecShown = true;
+        ec.classList.add('ec-visible');
+        requestAnimationFrame(function() {
+          ec.classList.add('ec-shown');
+        });
+        // GA4: exit_capture_view（初回のみ）
+        if (!_ecFired && typeof ga4Event === 'function') {
+          _ecFired = true;
+          ga4Event('exit_capture_view', {
+            species: sp.name, slug: spSlug, route: (selectedRoute || {}).id || '',
+          });
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // × 閉じる
+    if (ecClose) ecClose.addEventListener('click', function() {
+      _ecClosed = true;
+      ec.classList.remove('ec-shown');
+      setTimeout(function() { ec.classList.remove('ec-visible'); }, 280);
+      if (typeof ga4Event === 'function') ga4Event('exit_capture_close', {
+        species: sp.name, slug: spSlug,
+      });
+    });
+
+    // GA4 クリック
+    var btnDefs = [
+      { el: ecBtnSk,    type: 'starterkit' },
+      { el: ecBtnComp,  type: 'compare'    },
+      { el: ecBtnGuide, type: 'guide'      },
+    ];
+    btnDefs.forEach(function(d) {
+      if (!d.el) return;
+      d.el.addEventListener('click', function() {
+        if (typeof ga4Event === 'function') ga4Event('exit_capture_click', {
+          species: sp.name, slug: spSlug,
+          target_type: d.type,
+          route: (selectedRoute || {}).id || '',
+        });
+      });
+    });
+  })();
+
   // ===== Phase 16 Sprint1: CTA生成（Top CTA + 下部CTA 二重配置） =====
   (function() {
     var routeId   = selectedRoute ? selectedRoute.id : 'all';
@@ -2728,5 +2896,20 @@ if (!tryRestoreFromUrl()) {
   });
 })();
 </script>
+<!-- Phase 18-D: Exit Capture Sticky Bar -->
+<div id="exit-capture" role="complementary" aria-label="追加アクション">
+  <div class="ec-inner">
+    <div class="ec-text">
+      <div class="ec-text-main">まだ決めきれない？</div>
+      <div class="ec-text-sub">初心者向けTOP3や比較ページも見てみましょう</div>
+    </div>
+    <div class="ec-btns">
+      <a id="ec-btn-sk"      class="ec-btn ec-btn-primary"   href="#">準備を始める</a>
+      <a id="ec-btn-compare" class="ec-btn ec-btn-secondary" href="../compare/">比較する</a>
+      <a id="ec-btn-guide"   class="ec-btn ec-btn-secondary" href="../guides/beginner-best-turtles.html">初心者TOP3</a>
+    </div>
+    <button class="ec-close" id="ec-close" aria-label="閉じる">✕</button>
+  </div>
+</div>
 </body>
 </html>
