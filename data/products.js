@@ -146,8 +146,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'プラケース 60L 爬虫類 飼育',
   },
 
   enclosure_glass_45: {
@@ -202,8 +202,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'アクリル水槽 120cm 爬虫類',
   },
 
   enclosure_outdoor_panel: {
@@ -220,8 +220,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['outdoor', 'tortoise_dry_small'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'アウトドアケージ パネル 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -318,8 +318,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Arcadia T5 HO 12% UVB 爬虫類',
   },
 
   uvb_combo_mvb_100: {
@@ -374,8 +374,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'UVB 蛍光管 T8 30W 爬虫類',
   },
 
   uvb_zilla_t5: {
@@ -392,8 +392,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Zilla T5 Desert 50 UVB 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -414,8 +414,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'box_turtle', 'japanese_pond'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'バスキングランプ 50W 爬虫類',
   },
 
   basking_75w: {
@@ -632,8 +632,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '水中ヒーター 100W 亀 水槽',
   },
 
   thermostat: {
@@ -710,8 +710,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '輻射熱パネルヒーター 爬虫類 天井',
   },
 
   heater_cord_20w: {
@@ -728,8 +728,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_forest'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ヒーティングコード 20W 爬虫類',
   },
 
   heater_panel_60w: {
@@ -846,8 +846,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'スポンジフィルター ダブル 亀 水槽',
   },
 
   filter_canister_eheim_2217: {
@@ -922,8 +922,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ レプトフィルター 亀 フィルター',
   },
 
   /* ══════════════════════════════════════════
@@ -1008,8 +1008,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '草原系ブレンド床材 リクガメ',
   },
 
   substrate_sphagnum_moss: {
@@ -1026,8 +1026,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['box_turtle', 'tortoise_forest'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'スファグナムモス 水苔 爬虫類',
   },
 
   substrate_river_sand: {
@@ -1098,8 +1098,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '培養土 無肥料 爬虫類 リクガメ',
   },
 
   /* ══════════════════════════════════════════
@@ -1194,8 +1194,8 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'スレート フラット シェルター 爬虫類',
   },
 
   shelter_large_cave: {
@@ -1230,8 +1230,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_small', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'ウッドハイド シェルター 爬虫類 木製',
   },
 
   shelter_aqua_dock: {
@@ -1316,8 +1316,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'デジタル温度計 デュアルプローブ 爬虫類',
   },
 
   thermometer_infrared: {
@@ -1514,8 +1514,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['advanced', 'tortoise_forest'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'リパシー ベジーバーガー リクガメ',
   },
 
   food_hikari_turtle: {
@@ -1552,8 +1552,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: '乾燥野草 リクガメ グラスランドサラダ',
   },
 
   /* ══════════════════════════════════════════
@@ -1731,8 +1731,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
-    rakutenStatus: 'pending',
-    rakutenSearchTerm: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'スピルリナ パウダー 爬虫類 サプリ',
   },
 
 };
