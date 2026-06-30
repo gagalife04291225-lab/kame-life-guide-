@@ -442,14 +442,75 @@ body {
 }
 .res-cta-top-primary:hover  { opacity: .92; }
 .res-cta-top-primary:active { transform: scale(.97); }
+.res-cta-top-secondary {
+  display: block;
+  width: 100%;
+  margin-top: 9px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.24);
+  border-radius: 12px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-top-secondary:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.36); }
 .res-cta-top-sub {
-  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: .8rem;
   color: rgba(255,255,255,.78);
   text-align: center;
   line-height: 1.5;
   letter-spacing: .01em;
 }
+/* Phase 25-C: smart-badges（res-badges + res-barrier-badges 統合） */
+.smart-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.smart-badges .badges { margin-bottom: 0; }
+/* Phase 25-C: why-section（emotion-copy + why-block 統合カード） */
+.why-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.why-section:empty { display: none; }
+/* Phase 25-C: important-notice（lifespan + warn + legal + loss 統合） */
+.important-notice {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.important-notice-title {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--parchment-dark);
+  letter-spacing: .02em;
+}
+.important-notice .lifespan-banner,
+.important-notice .beginner-warn,
+.important-notice #res-legal,
+.important-notice #res-loss-block-wrap { margin-bottom: 0; }
+/* Phase 25-C: note-cta 縮小版 */
+.note-cta--compact {
+  padding: 10px 14px;
+  font-size: .85em;
+  opacity: .92;
+}
+.note-cta--compact .note-icon { font-size: .9em; }
 /* Phase 18-C: Compare Injection */
 .res-compare-inject {
   margin: 14px 0;
@@ -802,6 +863,7 @@ body {
 </section>
 
 <section id="screen-result" class="screen" role="main" aria-label="診断結果">
+  <!-- ════════ ABOVE FOLD ════════ -->
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
     <div id="res-match-badge-wrap"></div>
@@ -814,44 +876,55 @@ body {
     <div class="score-label">相性スコア</div>
     <div class="score-bar-wrap"><div class="score-bar-fill" id="score-bar" style="width:0%"></div></div>
   </div>
-  <!-- Phase 16 Sprint1: Top CTA（score直後・早期誘導） -->
-  <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
-  <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
-  <!-- Phase 7-C Step 2-A: 費用目安サマリー -->
-  <div class="res-cost-summary" id="res-cost-summary" style="display:none"></div>
-  <!-- Phase 7-C Step 2-A: 購入障壁除去バッジ -->
-  <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
-  <!-- Phase 7-C Step 2-A: emotion copy -->
-  <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
-  <!-- Phase 18-A: Revenue Optimization Box V2 -->
-  <div id="res-rev-box" style="display:none"></div>
-  <!-- PHASE 5: 寿命バナー -->
-  <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
-    <span class="lifespan-icon">⏳</span>
-    <div class="lifespan-text">寿命の目安：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
+  <!-- Phase 25-C: smart-badges（res-badges + res-barrier-badges 隣接統合） -->
+  <div class="smart-badges" id="smart-badges">
+    <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
+    <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
   </div>
-  <!-- PHASE 5: 初心者警告 -->
-  <div class="beginner-warn" id="beginner-warn" role="alert"></div>
-  <div id="res-legal" style="display:none" role="alert"></div>
+  <!-- Phase 25-C: 統合commerce CTA（旧res-cta-top。res-cost-summary/res-rev-boxを統合吸収） -->
+  <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
+  <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
+
+  <!-- ════════ MID FOLD ════════ -->
+  <!-- Phase 25-C: why-section（res-emotion-copy + res-why-block-wrap 隣接統合） -->
+  <div class="why-section" id="why-section">
+    <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
+    <div id="res-why-block-wrap"></div>
+  </div>
   <div class="result-card">
     <div class="result-card-title">おすすめのポイント</div>
     <p class="result-desc" id="res-reason"></p>
   </div>
-  <div id="res-why-block-wrap"></div>
-  <div id="res-loss-block-wrap"></div>
+  <!-- Phase 25-C: important-notice（lifespan + beginner-warn + res-legal + res-loss-block-wrap 統合） -->
+  <div class="important-notice" id="important-notice">
+    <div class="important-notice-title">⚠ 飼う前に知っておきたいこと</div>
+    <!-- PHASE 5: 寿命バナー -->
+    <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
+      <span class="lifespan-icon">⏳</span>
+      <div class="lifespan-text">寿命の目安：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
+    </div>
+    <!-- PHASE 5: 初心者警告 -->
+    <div class="beginner-warn" id="beginner-warn" role="alert"></div>
+    <div id="res-legal" style="display:none" role="alert"></div>
+    <div id="res-loss-block-wrap"></div>
+  </div>
   <div class="result-card">
     <div class="result-card-title">基本スペック</div>
     <div class="spec-grid" id="res-specs"></div>
   </div>
-  <!-- PHASE 6-B: おすすめ飼育セット（基本スペック直後） -->
+
+  <!-- ════════ COMMERCE ZONE ════════ -->
+  <!-- PHASE 6-B: おすすめ飼育セット -->
   <div id="starter-kit-section" style="display:none"></div>
-  <!-- PHASE 4: 機材推奨セクション -->
+  <!-- PHASE 4: 機材推奨セクション（レガシー・温存） -->
   <div class="result-card" id="equipment-section" style="display:none">
     <div class="result-card-title">はじめに揃えるもの</div>
     <div id="equipment-list"></div>
   </div>
-  <!-- PHASE 4: note.com誘導 -->
-  <div class="note-cta" id="note-cta" style="display:none">
+  <!-- Phase 18-C: Compare Injection -->
+  <div id="res-compare-inject" style="display:none"></div>
+  <!-- PHASE 4: note.com誘導（Phase 25-C: 視覚的に縮小） -->
+  <div class="note-cta note-cta--compact" id="note-cta" style="display:none">
     <a href="#" id="note-link" class="note-link" target="_blank" rel="noopener noreferrer">
       <span class="note-icon">📝</span>
       <div class="note-text">
@@ -861,9 +934,9 @@ body {
       <span class="note-arrow">→</span>
     </a>
   </div>
-  <!-- Phase 18-C: Compare Injection -->
-  <div id="res-compare-inject" style="display:none"></div>
-  <!-- Phase 7-C Step 2-A: 2段CTA -->
+
+  <!-- ════════ BOTTOM ════════ -->
+  <!-- Phase 25-C: 下部繰り返しCTA（旧res-cta-block。Top CTAと同一IIFEで同時生成・同一コピー） -->
   <div class="res-cta-block" id="res-cta-block" style="display:none"></div>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
@@ -2566,15 +2639,19 @@ function showResult(sp, pct) {
         topEl.style.display = 'none';
       } else {
         var speciesPageUrl = '../species/' + sp.slug + '.html';
+        var skUrlTop = speciesPageUrl + '#starter-kit-root';
         topEl.innerHTML =
-          '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
-            'この亀を飼う費用と必要機材を見る →' +
-          '</a>' +
+          scarcityHtml +
           '<div class="res-cta-top-sub">' +
             (initText ? '初期費用 ' + initText + '　' : '') +
             (monthlyText ? '月額 ' + monthlyText : '') +
-            '<br>ケージサイズ / UVB / 初期費用が3分で分かります' +
-          '</div>';
+          '</div>' +
+          '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
+            '必要な機材を見る →' +
+          '</a>' +
+          '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
+            'Amazon / 楽天で価格を見る' +
+          '</a>';
         topEl.style.display = '';
         // GA4: top CTA click
         var topLink = document.getElementById('res-cta-top-link');
@@ -2582,6 +2659,13 @@ function showResult(sp, pct) {
           if (typeof ga4Event === 'function') ga4Event('diagnosis_species_click', {
             species: sp.name, slug: sp.slug, cta_type: 'top',
             has_teaser: true, candidate_count: _lastCandidateCount,
+          });
+        });
+        var topLinkSec = document.getElementById('res-cta-top-link-sec');
+        if (topLinkSec) topLinkSec.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
+            species: sp.name, slug: sp.slug, cta_type: 'top_secondary',
+            equipment_key: equipKey || '',
           });
         });
       }
@@ -2599,10 +2683,10 @@ function showResult(sp, pct) {
           teaserHtml +
           scarcityHtml +
           '<a class="res-cta-primary" id="res-cta-primary" href="' + spUrl + '">' +
-            'この亀を飼う費用と必要機材を見る →' +
+            '必要な機材を見る →' +
           '</a>' +
           '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
-            '必要機材をAmazonでまとめて見る' +
+            'Amazon / 楽天で価格を見る' +
           '</a>';
         ctaBlock.style.display = '';
         // GA4
