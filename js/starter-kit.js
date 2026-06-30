@@ -490,7 +490,7 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
   }).join('');
 
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
-    (tabDef.id !== 'essential' ? ' hidden' : '') + '>' +
+    (tabDef.id !== 'comfort' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
@@ -656,10 +656,11 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // タブボタン
   var tabBtns = SK_TABS.map(function(tab, i) {
-    var extraCls = (tab.id === 'comfort') ? ' sk-tab-btn--recommended' : '';
-    return '<button class="sk-tab-btn' + (i === 0 ? ' sk-tab-btn--active' : '') + extraCls + '"' +
+    var isDefault = (tab.id === 'comfort');
+    var extraCls = isDefault ? ' sk-tab-btn--recommended' : '';
+    return '<button class="sk-tab-btn' + (isDefault ? ' sk-tab-btn--active' : '') + extraCls + '"' +
       ' data-target="sk-panel-' + tab.id + '"' +
-      ' role="tab" aria-selected="' + (i === 0 ? 'true' : 'false') + '">' +
+      ' role="tab" aria-selected="' + (isDefault ? 'true' : 'false') + '">' +
       tab.icon + ' ' + tab.label +
       (tab.id === 'comfort' ? '<span class="sk-tab-rec-badge">おすすめ</span>' : '') +
     '</button>';
@@ -696,7 +697,8 @@ function initSkTabs(root, species) {
     'sk-panel-advanced':  { tab_type: 'advanced',  selected_tier: 'premium' },
   };
   // 現在アクティブなtab状態をclosureで保持（click handler側で参照）
-  var _currentMeta = TAB_META['sk-panel-essential'];
+  // Phase 25-D: デフォルト表示タブをcomfort(推奨/standard)に変更したため、初期値もcomfortに整合
+  var _currentMeta = TAB_META['sk-panel-comfort'];
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var target = btn.dataset.target;
