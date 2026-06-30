@@ -47,6 +47,14 @@
     .env-grid{grid-template-columns:1fr 1fr;}
     .scroll-hint{display:block;}
   }
+  /* Phase 27-B: Cost Shock Box */
+  .cost-shock-box{background:rgba(232,122,106,.08);border:1px solid rgba(232,122,106,.32);border-radius:12px;padding:16px 18px;margin:18px 0 10px;}
+  .cost-shock-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .cost-shock-item{flex:1;min-width:140px;}
+  .cost-shock-label{font-size:.74rem;color:#a08070;margin-bottom:4px;}
+  .cost-shock-value{font-size:1.15rem;font-weight:700;color:var(--sp-accent);}
+  /* Phase 27-B: Urgency Copy */
+  .urgency-copy{font-size:.85rem;color:#c46a4a;background:rgba(232,122,106,.08);border-left:3px solid #c46a4a;padding:9px 14px;margin:0 0 14px;border-radius:4px;line-height:1.6;}
 </style>
 <link rel="stylesheet" href="../css/species.css">
 </head>
@@ -143,6 +151,20 @@
     </div>
   </div>
 </section>
+
+<div class="cost-shock-box">
+  <div class="cost-shock-row">
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">この亀を健康に育てる初期費用</div>
+      <div class="cost-shock-value">¥25,600〜¥58,500</div>
+    </div>
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">月額目安</div>
+      <div class="cost-shock-value">¥1,500〜¥4,000</div>
+    </div>
+  </div>
+</div>
+<p class="urgency-copy">⚠ 初心者が最初に失敗しやすいのはUVBと水質管理です。フィルターと水換えサイクルを後回しにすると、水が濁ってから慌てて買い足すことになりがちです。</p>
 
 <!-- Phase 7A Task 2-B: Starter Kit repositioned -->
 <link rel="stylesheet" href="../css/starter-kit.css">
@@ -252,6 +274,22 @@
       <details class="faq">
         <summary>水が臭う・濁る原因は？<span class="faq-tag tag-env">環境</span></summary>
         <div class="faq-body">水棲ガメは大量の排泄物を出すため、フィルターのみでは対応しきれないことがあります。週1回の部分換水（1/3〜1/2）と月1回のフィルター掃除を行い、水温が高い季節は頻度を増やしてください。</div>
+      </details>
+      <details class="faq">
+        <summary>初心者向けですか？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">はい。丈夫で適応力が高く、入門者にも飼いやすい水棲ガメです。ただし特定外来生物のため新規入手はできず、既飼育個体の継続飼育のみが可能です。</div>
+      </details>
+      <details class="faq">
+        <summary>体臭はありますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">カメ自体に強い体臭はありませんが、水質が悪化すると水槽全体が臭いやすくなります。定期的な換水とフィルター管理で気にならないレベルに保てます。</div>
+      </details>
+      <details class="faq">
+        <summary>寿命はどのくらいですか？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">適切な飼育下で30〜40年以上が目安です。長期的に付き合うことを前提に迎えてください。</div>
+      </details>
+      <details class="faq">
+        <summary>電気代はどのくらいかかりますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">水中ヒーター・フィルター・UVBランプを使う場合、月あたり概ね¥1,500〜4,000程度が目安です（季節・地域により変動します）。</div>
       </details>
     </div>
 
