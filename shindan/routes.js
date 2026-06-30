@@ -5,7 +5,7 @@
 const ROUTES = [
   {
     id: 'land', emoji: '🏔️', name: 'リクガメルート',
-    desc: 'ロシア・ヘルマン・ケヅメ・アカアシなど', qCount: 5,
+    desc: 'リクガメが気になる人向け（ロシア・ヘルマン・ケヅメなど）', qCount: 5,
     get species(){ return SPECIES.land; },
     questions: [
       { text: '飼育スペースはどのくらいを想定していますか？', choices: [
@@ -38,7 +38,7 @@ const ROUTES = [
   },
   {
     id: 'aquatic', emoji: '🏊', name: '水棲ガメルート',
-    desc: 'ニオイガメ・チズガメ・スライダーなど', qCount: 8,
+    desc: '水槽で飼いたい人向け（ニオイガメ・チズガメなど）', qCount: 8,
     get species(){ return SPECIES.aquatic; },
     questions: [
       { text: '水槽・水場のサイズはどのくらい用意できますか？', choices: [
@@ -86,7 +86,7 @@ const ROUTES = [
   },
   {
     id: 'forest', emoji: '🍂', name: 'ヤマガメ・ハコガメルート',
-    desc: 'スペングラー・ハコガメ・半水棲など', qCount: 5,
+    desc: '森や多湿環境の種が好きな人向け（スペングラー・ハコガメなど）', qCount: 5,
     get species(){ return SPECIES.forest; },
     questions: [
       { text: '温度・湿度の管理環境はどのくらい整えられますか？', choices: [
@@ -118,7 +118,7 @@ const ROUTES = [
   },
   {
     id: 'exotic', emoji: '🌀', name: 'マニアック・特殊ルート',
-    desc: 'ソフトシェル・汽水・曲頸類など', qCount: 4,
+    desc: 'レア種やマニア向け（スッポン・曲頸類など）', qCount: 4,
     get species(){ return SPECIES.exotic; },
     questions: [
       { text: '特に興味がある系統は？', choices: [
@@ -147,7 +147,7 @@ const ROUTES = [
   },
   {
     id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: '全100種・6問で総合マッチング', qCount: 6,
+    desc: 'まだ決めていない人向け（全100種・6問で診断）', qCount: 6,
     get species(){ return SPECIES.all; },
     questions: [
       { text: '飼育環境の主な環境タイプを選んでください。', choices: [
