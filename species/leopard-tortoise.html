@@ -56,6 +56,14 @@
     .end-cta{padding:28px 18px 24px;}.end-cta h3{font-size:1.25rem;}
     .species-nav-grid{grid-template-columns:1fr;}
   }
+  /* Phase 27-B: Cost Shock Box */
+  .cost-shock-box{background:rgba(212,160,64,.08);border:1px solid rgba(212,160,64,.32);border-radius:12px;padding:16px 18px;margin:18px 0 10px;}
+  .cost-shock-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .cost-shock-item{flex:1;min-width:140px;}
+  .cost-shock-label{font-size:.74rem;color:#a08868;margin-bottom:4px;}
+  .cost-shock-value{font-size:1.15rem;font-weight:700;color:var(--sp-accent);}
+  /* Phase 27-B: Urgency Copy */
+  .urgency-copy{font-size:.85rem;color:#a06a1a;background:rgba(212,160,64,.08);border-left:3px solid #a06a1a;padding:9px 14px;margin:0 0 14px;border-radius:4px;line-height:1.6;}
 </style>
 <link rel="stylesheet" href="../css/species.css">
 </head>
@@ -156,9 +164,23 @@
   </div>
 </section>
 
+<div class="cost-shock-box">
+  <div class="cost-shock-row">
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">この亀を健康に育てる初期費用</div>
+      <div class="cost-shock-value">¥46,000〜¥95,000</div>
+    </div>
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">月額目安</div>
+      <div class="cost-shock-value">¥2,000〜¥6,000</div>
+    </div>
+  </div>
+</div>
+<p class="urgency-copy">⚠ 最初の1か月で機材不足に気づく人が多い種です。豹柄の大型リクガメは食事管理と湿度コントロールがピラミッディングの分岐点になります。</p>
+
 <!-- Phase 7A Task 2-B: Starter Kit repositioned -->
 <link rel="stylesheet" href="../css/starter-kit.css">
-<div id="starter-kit-root"></div>
+<div id="starter-kit-root" class="sk-large-tortoise"></div>
 <script src="../data/products.js"></script>
 <script src="../js/starter-kit.js"></script>
 <script src="../js/analytics-funnel.js"></script>
@@ -235,6 +257,22 @@
       <details class="faq">
         <summary>乾草はどこで入手できますか？<span class="faq-tag tag-food">餌</span></summary>
         <div class="faq-body">ペットショップ・ホームセンター（牧草コーナー）・通販で入手できます。チモシー・オーチャードグラスが手に入りやすく、大袋での購入がコスト面で有利です。</div>
+      </details>
+      <details class="faq">
+        <summary>初心者向けですか？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">上級者向けです。最終的に40〜65cmに成長し、湿度管理・食事管理がピラミッディング予防の鍵になるため、ある程度の飼育経験が望ましい種です。</div>
+      </details>
+      <details class="faq">
+        <summary>臭いはありますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">大型種のため排泄量が多く、こまめな清掃を怠ると臭いが気になりやすいです。屋外飼育や換気の良い環境での管理が推奨されます。</div>
+      </details>
+      <details class="faq">
+        <summary>寿命はどのくらいですか？<span class="faq-tag tag-health">健康</span></summary>
+        <div class="faq-body">適切な飼育下で30〜80年が目安です。長期にわたる付き合いになることを前提に迎えてください。</div>
+      </details>
+      <details class="faq">
+        <summary>電気代はどのくらいかかりますか？<span class="faq-tag tag-env">環境</span></summary>
+        <div class="faq-body">大型ケージ・パネルヒーター・UVB等を含めると、月あたり概ね¥2,000〜6,000程度が目安です。屋外飼育時は保温設備のコストも加味してください。</div>
       </details>
   </div>
   <h2>関連ページ</h2>
