@@ -847,6 +847,7 @@ body {
   background: transparent;
   border-top: none;
   padding: 0;
+  margin-top: 4px;
   margin-bottom: 16px;
 }
 #screen-result .sk-inner { max-width: none; }
@@ -910,9 +911,6 @@ body {
 #screen-result .sk-disclaimer {
   color: var(--parchment-dark); /* was text-muted #5a7060: ~2.5:1 on dark bg */
   opacity: .65;
-}
-#screen-result .sk-section {
-  margin-top: 4px; /* small breath between res-cta-top and kit */
 }
 /* ===== /Phase 31-C2b theme overrides ===== */
 </style>
@@ -2758,7 +2756,7 @@ function showResult(sp, pct) {
         topEl.style.display = 'none';
       } else {
         var speciesPageUrl = '../species/' + sp.slug + '.html';
-        var skUrlTop = speciesPageUrl + '#starter-kit-root';
+        var skUrlTop = '#starter-kit-section'; /* Phase 31-C3: was off-page; kit is now inline */
         topEl.innerHTML =
           scarcityHtml +
           '<div class="res-cta-top-sub">' +
@@ -2769,7 +2767,7 @@ function showResult(sp, pct) {
             '必要な機材を見る →' +
           '</a>' +
           '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
-            'Amazon / 楽天で価格を見る' +
+            '機材セットを下で確認 ↓' +
           '</a>';
         topEl.style.display = '';
         // GA4: top CTA click
@@ -2797,7 +2795,7 @@ function showResult(sp, pct) {
         ctaBlock.style.display = 'none';
       } else {
         var spUrl  = '../species/' + sp.slug + '.html';
-        var skUrl  = spUrl + '#starter-kit-root';
+        var skUrl  = '#starter-kit-section'; /* Phase 31-C3: was off-page; kit is now inline */
         ctaBlock.innerHTML =
           teaserHtml +
           scarcityHtml +
@@ -2805,7 +2803,7 @@ function showResult(sp, pct) {
             '必要な機材を見る →' +
           '</a>' +
           '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
-            'Amazon / 楽天で価格を見る' +
+            '機材セットを上で確認 ↑' +
           '</a>';
         ctaBlock.style.display = '';
         // GA4
