@@ -65,6 +65,11 @@ function isAmazonUrl(url) {
   if (!url) return false;
   return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
 }
+// Phase 28-A: Rakuten URL 判定ヘルパー
+function isRakutenUrl(url) {
+  if (!url) return false;
+  return /rakuten\.co\.jp|hb\.afl\.rakuten/.test(url);
+}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -336,10 +341,13 @@ body {
 .cost-box-range { font-size: 1.05rem; font-weight: 700; color: var(--parchment); font-family: var(--font-display); }
 .cost-box-note  { font-size: .68rem; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
 /* Phase 7: まとめて見るCTAボタン */
-.sk-cta-wrap { padding: 4px 20px 20px; }
-.sk-cta-btn { display: block; width: 100%; padding: 13px 16px; background: linear-gradient(135deg, rgba(196,154,90,.25), rgba(74,122,96,.2)); border: 1.5px solid rgba(196,154,90,.5); border-radius: 10px; color: var(--parchment); font-size: .92rem; font-weight: 700; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s, border-color .15s; letter-spacing: .03em; }
+.sk-cta-wrap { padding: 4px 20px 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+.sk-cta-btn { display: block; flex: 1 1 150px; width: 100%; padding: 13px 16px; background: linear-gradient(135deg, rgba(196,154,90,.25), rgba(74,122,96,.2)); border: 1.5px solid rgba(196,154,90,.5); border-radius: 10px; color: var(--parchment); font-size: .92rem; font-weight: 700; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .15s, border-color .15s; letter-spacing: .03em; }
 .sk-cta-btn:hover { background: linear-gradient(135deg, rgba(196,154,90,.38), rgba(74,122,96,.32)); border-color: var(--accent-light); }
 .sk-cta-btn-arrow { margin-left: 6px; color: var(--accent-light); }
+/* Phase 28-A: Rakuten secondary CTA */
+.sk-cta-btn--secondary { background: rgba(255,255,255,.05); border: 1.5px solid rgba(255,255,255,.18); color: var(--parchment-dark); font-weight: 600; }
+.sk-cta-btn--secondary:hover { background: rgba(255,255,255,.1); border-color: var(--accent-light); }
 
 /* ===== PHASE 4: note.com誘導 ===== */
 .note-cta { margin-bottom: 16px; }
@@ -1633,10 +1641,16 @@ function renderStarterKit(sp) {
   // Phase 7: CTAボタン（Amazon検索へ）
   var ctaQuery = 'カメ 飼育セット ケージ UVB 温湿度計';
   var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife09-22';
+  // Phase 28-A: Rakuten検索CTA（楽天市場検索 + アフィリエイトリンク）
+  var rakutenTargetUrl = 'https://search.rakuten.co.jp/search/mall/' + encodeURIComponent(ctaQuery) + '/';
+  var rakutenCtaUrl = 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=' + encodeURIComponent(rakutenTargetUrl);
   var ctaHtml =
     '<div class="sk-cta-wrap">' +
       '<a class="sk-cta-btn" id="sk-cta-btn" href="' + ctaUrl + '" target="_blank" rel="noopener noreferrer sponsored">' +
-        'このセットをまとめて見る<span class="sk-cta-btn-arrow">→</span>' +
+        'Amazonでおすすめ機材を見る<span class="sk-cta-btn-arrow">→</span>' +
+      '</a>' +
+      '<a class="sk-cta-btn sk-cta-btn--secondary" id="sk-cta-btn-rakuten" href="' + rakutenCtaUrl + '" target="_blank" rel="noopener noreferrer sponsored">' +
+        '楽天で価格も比較する<span class="sk-cta-btn-arrow">→</span>' +
       '</a>' +
     '</div>';
 
@@ -1645,7 +1659,7 @@ function renderStarterKit(sp) {
       '<div class="sk-heading">はじめての飼育セット（5点）</div>' +
       costBoxHtml +
       '<div class="sk-scroll">' + cardsHtml + '</div>' +
-      '<div class="sk-disclaimer">※Amazonアソシエイトリンクを含みます</div>' +
+      '<div class="sk-disclaimer">※Amazon・楽天のアフィリエイトリンクを含みます</div>' +
       ctaHtml +
     '</div>';
 
@@ -1723,6 +1737,43 @@ function renderStarterKit(sp) {
             click_url:     ctaBtn.href,
             route:         (selectedRoute || {}).id || 'unknown',
             source_page:   'shindan',
+          });
+          // Phase 28-A: 統一affiliate_clickイベント
+          ga4Event('affiliate_click', {
+            source:        'amazon',
+            location:      'diagnosis_result',
+            species:       sp.name  || '',
+            species_slug:  sp.slug  || '',
+            equipment_key: equipKey || '',
+            click_url:     ctaBtn.href,
+            route:         (selectedRoute || {}).id || 'unknown',
+          });
+        }
+      }
+    });
+  }
+
+  // Phase 28-A: 楽天CTA ボタンGA4
+  var ctaBtnRakuten = document.getElementById('sk-cta-btn-rakuten');
+  if (ctaBtnRakuten) {
+    ctaBtnRakuten.addEventListener('click', function() {
+      if (typeof ga4Event === 'function') {
+        ga4Event('starter_kit_cta_click', {
+          species_name:  sp.name,
+          equipment_key: equipKey,
+          route:         (selectedRoute || {}).id || 'unknown',
+          source_page:   'shindan',
+          cta_source:    'rakuten',
+        });
+        if (isRakutenUrl(ctaBtnRakuten.href)) {
+          ga4Event('affiliate_click', {
+            source:        'rakuten',
+            location:      'diagnosis_result',
+            species:       sp.name  || '',
+            species_slug:  sp.slug  || '',
+            equipment_key: equipKey || '',
+            click_url:     ctaBtnRakuten.href,
+            route:         (selectedRoute || {}).id || 'unknown',
           });
         }
       }
