@@ -916,37 +916,14 @@ function mountStarterKit(species, mountId) {
           route:              _skRoute(),
           source_page:        'species',
         });
-        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
-        if (isAmazonUrl(a.dataset.clickUrl || a.href)) {
-          gtag('event', 'amazon_outbound_click', {
-            source:             'starter_kit',
-            species:            _skStr(a.dataset.species),
-            species_slug:       _skStr(a.dataset.species),
-            equipment_key:      _skStr(a.dataset.equipmentKey),
-            category:           _skStr(a.dataset.cat),
-            product_category:   _skStr(a.dataset.cat),
-            display_category:   a.dataset.displayCat || _skDisplayCat(a.dataset.cat),
-            product_id:         _skStr(a.dataset.productId),
-            asin:               a.dataset.asin       || null,
-            selected_tier:      _skStr(a.dataset.tier),
-            tab_type:           _clickMeta.tab_type  || 'unknown',
-            click_url:          a.dataset.clickUrl   || a.href,
-            page_path:          _skPagePath(),
-            affiliate_platform: 'amazon',
-            route:              _skRoute(),
-            source_page:        'species',
-          });
-        }
-        // Dual-affiliate unified click event (TASK 3 / Phase 13-B: vendor key removed, provider unified)
+        // Phase 28-C: 統一affiliate_clickイベント（canonical schema、amazon_outbound_clickとの二重発火を解消）
         gtag('event', 'affiliate_click', {
           provider:       _provider,
-          mode:           _mode,
-          product_id:     _skStr(a.dataset.productId),
-          species:        _skStr(a.dataset.species),
+          location:       'starter_kit',
+          category:       _skStr(a.dataset.cat) || 'unknown',
+          product_id:     _skStr(a.dataset.productId) || a.dataset.asin || '',
+          species_slug:   _skStr(a.dataset.species),
           tier:           _skStr(a.dataset.tier),
-          source_page:    _skPagePath(),
-          category:       _skStr(a.dataset.cat),
-          equipment_key:  _skStr(a.dataset.equipmentKey),
         });
         // Debug log: 1 entry per click (summary)
         window.KAME_GA_DEBUG_LOG('starter_kit_click', {
