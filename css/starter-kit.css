@@ -459,6 +459,27 @@
 .sk-card--premium .sk-card-btn:hover { background: #3e2852; }
 .sk-card--premium .sk-card-badge { letter-spacing: .03em; }
 
+/* Phase 27-B: Premium Tier Highlight — large tortoise pages only (sulcata/leopard) */
+/* Scoped strictly to .sk-large-tortoise to avoid affecting any other species page */
+.sk-large-tortoise .sk-card--premium {
+  position: relative;
+  border-color: #9a6edb;
+  box-shadow: 0 0 0 2px rgba(154,110,219,.18), 0 4px 16px rgba(106,27,154,.18);
+}
+.sk-large-tortoise .sk-card--premium::after {
+  content: '大型種におすすめ';
+  position: absolute;
+  top: -9px;
+  right: 10px;
+  background: #5c3d7a;
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: .02em;
+}
+
 /* ─── 4. 商品カード視認性改善 ──────────────────────────────── */
 
 /* transition はベースに配置（hover-out も自然に戻る） */
