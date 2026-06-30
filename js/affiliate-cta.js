@@ -44,6 +44,15 @@
     return 'unknown';
   }
 
+  /* ── placement → canonical location mapping (Phase 28-C) ── */
+  function placementToLocation(placement) {
+    switch (placement) {
+      case 'starterkit':  return 'starter_kit';
+      case 'comparison':  return 'compare_page';
+      default:            return 'species_page'; // sticky_cta / inline_product / result_page / unknown
+    }
+  }
+
   /* ── GA4 helper ───────────────────────────────────── */
   function _affPagePath() {
     return (typeof window !== 'undefined' && window.location && window.location.pathname)
@@ -52,20 +61,20 @@
 
   function fireAffiliateEvent(slug, labelText, productId, href, placement) {
     if (typeof gtag !== 'function') return;
-    gtag('event', 'affiliate_cta_click', {
-      species:            slug      || null,
-      cta_label:          labelText || null,
-      product_id:         productId || null,
-      destination:        href      || null,
-      placement:          placement || 'unknown',
-      page_path:          _affPagePath(),
-      affiliate_platform: 'amazon',
+    var location = placementToLocation(placement);
+    gtag('event', 'affiliate_click', {
+      provider:      'amazon',
+      location:      location,
+      category:      'unknown',
+      product_id:    productId || '',
+      species_slug:  slug      || '',
+      tier:          '',
     });
     if (typeof window.KAME_GA_DEBUG_LOG === 'function') {
-      window.KAME_GA_DEBUG_LOG('affiliate_cta_click', {
-        species: slug || null, cta_label: labelText || null,
-        product_id: productId || null, placement: placement || 'unknown',
-        page_path: _affPagePath(), affiliate_platform: 'amazon',
+      window.KAME_GA_DEBUG_LOG('affiliate_click', {
+        provider: 'amazon', location: location, category: 'unknown',
+        product_id: productId || '', species_slug: slug || '',
+        page_path: _affPagePath(),
       });
     }
   }
