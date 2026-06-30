@@ -893,6 +893,10 @@ body {
   <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
   <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
 
+  <!-- Phase 31-C1: Starter Kit promoted above why-section for earlier commerce exposure -->
+  <!-- PHASE 6-B: おすすめ飼育セット -->
+  <div id="starter-kit-section" style="display:none"></div>
+
   <!-- ════════ MID FOLD ════════ -->
   <!-- Phase 25-C: why-section（res-emotion-copy + res-why-block-wrap 隣接統合） -->
   <div class="why-section" id="why-section">
@@ -922,8 +926,6 @@ body {
   </div>
 
   <!-- ════════ COMMERCE ZONE ════════ -->
-  <!-- PHASE 6-B: おすすめ飼育セット -->
-  <div id="starter-kit-section" style="display:none"></div>
   <!-- Phase 25-G: equipment-section（レガシー機材推奨セクション）はStarter Kit V2と67%重複のため削除 -->
   <!-- Phase 18-C: Compare Injection -->
   <div id="res-compare-inject" style="display:none"></div>
@@ -1674,6 +1676,28 @@ function renderStarterKit(sp) {
       route:         (selectedRoute || {}).id || 'unknown',
       source_page:   'shindan',
     });
+  }
+
+  // ── Phase 31-C1: viewport visibility tracking ──────────────────────
+  // Fires starter_kit_visible only once when the kit enters the viewport.
+  // Separate from starter_kit_shown (which fires on render, even off-screen).
+  if ('IntersectionObserver' in window) {
+    var _skVisibleFired = false;
+    var _skObserver = new IntersectionObserver(function(entries) {
+      if (!_skVisibleFired && entries[0].isIntersecting) {
+        _skVisibleFired = true;
+        _skObserver.disconnect();
+        if (typeof ga4Event === 'function') {
+          ga4Event('starter_kit_visible', {
+            location:      'diagnosis_result',
+            species_slug:  sp.slug  || '',
+            route:         (selectedRoute || {}).id || 'unknown',
+            source_page:   'shindan',
+          });
+        }
+      }
+    }, { threshold: 0.2 });
+    _skObserver.observe(sec);
   }
 
   // カード個別クリックGA4
