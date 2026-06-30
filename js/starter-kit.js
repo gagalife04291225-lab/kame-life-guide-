@@ -631,7 +631,7 @@ function renderBundleSummary(tabData, speciesName) {
     '</div>';
   }).join('');
 
-  return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド"> role="region" aria-label="構成別セットガイド">' +
+  return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド">' +
     '<p class="sk-bundle-eyebrow">まず構成を選んでください</p>' +
     '<div class="sk-bundle-grid">' + cards + '</div>' +
   '</div>';
