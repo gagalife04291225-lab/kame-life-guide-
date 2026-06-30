@@ -78,7 +78,7 @@ const PRODUCTS = {
     priceRange: '¥3,000–8,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09TF6B5P4?tag=kamelife09-22',
     asin: 'B09TF6B5P4',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F59306%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F59306%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10092671%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: '水槽 60cm 亀',
     image: '/assets/products/placeholder.webp',
@@ -89,7 +89,7 @@ const PRODUCTS = {
     rakutenPrice: 5600,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.2,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   tank_90: {
@@ -100,13 +100,13 @@ const PRODUCTS = {
     priceRange: '¥8,000–18,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004J2G6XK?tag=kamelife09-22',
     asin: 'B004J2G6XK',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F59307%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: '水槽 90cm 亀',
     rakutenPrice: 16800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 7.7,
+    rakutenLastUpdated: '2026-06-30',
     image: '/assets/products/placeholder.webp',
     why: '中型水棲ガメの単独飼育や、幼体の複数飼育を始めるならこのサイズから',
     rating: 4.4,
@@ -172,8 +172,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'ガラスケージ 45cm 爬虫類',
     rakutenPrice: 8900,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 3.9,
+    rakutenLastUpdated: '2026-06-30',
     rakutenConfidence: 3.9,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -289,7 +289,7 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenConfidence: 4.5,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   // ── Task2 追加 ──
@@ -369,7 +369,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'UVB LED ライト バー 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   uvb_t8_30w: {
@@ -428,6 +428,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'バスキングランプ 50W 爬虫類',
+    rakutenConfidence: 5,
+    rakutenLastUpdated: '2026-06-30',
   },
 
   basking_75w: {
@@ -447,7 +449,7 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
     rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   basking_100w: {
@@ -467,7 +469,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   // ── Task2 追加 ──
@@ -539,11 +541,11 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['advanced', 'tortoise_dry_large'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F274538%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'HID ランプ 爬虫類 メタルハライド',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   basking_ceramic_100w: {
@@ -563,7 +565,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   basking_infrared_red: {
@@ -583,7 +585,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 バスキングランプ 75W 爬虫類',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   /* ══════════════════════════════════════════
@@ -607,7 +609,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 30W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   heater_panel_45: {
@@ -627,7 +629,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 45W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   heater_aqua_100w: {
@@ -646,6 +648,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 100W 亀 水槽',
+    rakutenConfidence: 5.9,
+    rakutenLastUpdated: '2026-06-30',
   },
 
   thermostat: {
@@ -685,7 +689,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 200W 亀',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   thermostat_digital: {
@@ -701,13 +705,13 @@ const PRODUCTS = {
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['advanced'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F247595%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
     rakutenPrice: 8800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.2,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 6.3,
+    rakutenLastUpdated: '2026-06-30',
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -765,7 +769,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 60W 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   /* ══════════════════════════════════════════
@@ -849,13 +853,13 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F44441%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: '外掛け フィルター 爬虫類 亀',
     rakutenPrice: 3280,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 3.2,
+    rakutenLastUpdated: '2026-06-30',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -886,7 +890,7 @@ const PRODUCTS = {
     priceRange: '¥18,000–28,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B002SGX79U?tag=kamelife09-22',
     asin: 'B002SGX79U',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2217-new%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2217-new%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fminatodenk%2Fi%2F10093001%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
@@ -897,7 +901,7 @@ const PRODUCTS = {
     rakutenPrice: 24600,
     rakutenShop: 'ミナトワークス',
     rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   filter_canister_xl: {
@@ -966,7 +970,7 @@ const PRODUCTS = {
     priceRange: '¥500–1,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0CJM4TL3Q?tag=kamelife09-22',
     asin: 'B0CJM4TL3Q',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F97957%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F97957%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10179240%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: '赤玉土 小粒 爬虫類',
     image: '/assets/products/placeholder.webp',
@@ -977,7 +981,7 @@ const PRODUCTS = {
     rakutenPrice: 350,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   substrate_coco: {
@@ -993,13 +997,13 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenUrl: null,
-    rakutenStatus: 'search', // Phase 28-HOTFIX: b-faith/hasukuchip5 not resolvable; merchant's current Rakuten/Yahoo slug differs (b-faith01), reverted to search fallback
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00tfofn.nhbnnfd1.g00tfofn.nhbno9c2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-faith%2Fhasukuchip5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fb-faith%2Fi%2F10001472%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available', // Phase 28-HOTFIX: b-faith/hasukuchip5 not resolvable; merchant's current Rakuten/Yahoo slug differs (b-faith01), reverted to search fallback
     rakutenSearchTerm: 'ヤシガラ 爬虫類 床材',
     rakutenPrice: 1098,
     rakutenShop: '雑貨イズム',
     rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   substrate_sand_mix: {
@@ -1275,13 +1279,13 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond', 'beginner'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F52366%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: '亀 浮島 ドック 水棲',
     rakutenPrice: 2180,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 3.2,
+    rakutenLastUpdated: '2026-06-30',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -1303,13 +1307,13 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenUrl: null,
-    rakutenStatus: 'search', // Phase 28-HOTFIX: palpito/0012-2 is mapped to wrong merchant (palpito sells women's apparel, not pet supplies); reverted to search fallback
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00uaxan.nhbnn474.g00uaxan.nhbno5bc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalpito%2F0012-2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpalpito%2Fi%2F10000133%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available', // Phase 28-HOTFIX: palpito/0012-2 is mapped to wrong merchant (palpito sells women's apparel, not pet supplies); reverted to search fallback
     rakutenSearchTerm: 'デジタル 温湿度計 爬虫類',
     rakutenPrice: 1470,
     rakutenShop: 'Palpito 楽天市場店',
     rakutenConfidence: 9.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   thermometer_aqua: {
@@ -1329,7 +1333,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水温計 デジタル 亀',
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   // ── Task2 追加 ──
@@ -1369,7 +1373,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 温度計 非接触 爬虫類',
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   thermometer_wifi: {
@@ -1407,7 +1411,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   /* ══════════════════════════════════════════
@@ -1469,7 +1473,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'レプトミン テトラ 亀 餌',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   food_aqua_turtle_pellet: {
@@ -1489,7 +1493,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カメの主食 GEX 亀 フード',
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   food_box_turtle_omnivore: {
@@ -1509,7 +1513,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ボックスタートル フード Zoo Med',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   food_dried_shrimp: {
@@ -1529,7 +1533,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '乾燥エビ 亀 おやつ ひかり',
     rakutenConfidence: 4.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   food_tortoise_gel: {
@@ -1567,7 +1571,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ひかり タートル 亀 フード',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   food_tortoise_herbs: {
@@ -1610,7 +1614,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カルシウム パウダー D3 爬虫類',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   // ── Task2 追加 ──
@@ -1628,13 +1632,13 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['outdoor', 'advanced'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F12443%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F12443%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10018518%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'カルシウム パウダー 爬虫類 サプリ',
     rakutenPrice: 508,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   supplement_calcium_plus: {
@@ -1668,13 +1672,13 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'box_turtle'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F79635%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F79635%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10137810%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'マルチビタミン 爬虫類 サプリ',
     rakutenPrice: 525,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-06-28',
+    rakutenLastUpdated: '2026-06-30',
   },
 
   supplement_iodine: {
