@@ -916,11 +916,7 @@ body {
   <!-- ════════ COMMERCE ZONE ════════ -->
   <!-- PHASE 6-B: おすすめ飼育セット -->
   <div id="starter-kit-section" style="display:none"></div>
-  <!-- PHASE 4: 機材推奨セクション（レガシー・温存） -->
-  <div class="result-card" id="equipment-section" style="display:none">
-    <div class="result-card-title">はじめに揃えるもの</div>
-    <div id="equipment-list"></div>
-  </div>
+  <!-- Phase 25-G: equipment-section（レガシー機材推奨セクション）はStarter Kit V2と67%重複のため削除 -->
   <!-- Phase 18-C: Compare Injection -->
   <div id="res-compare-inject" style="display:none"></div>
   <!-- PHASE 4: note.com誘導（Phase 25-C: 視覚的に縮小） -->
@@ -972,7 +968,7 @@ body {
 <!-- データファイル -->
 <script src="species.js"></script>
 <script src="routes.js"></script>
-<script src="equipment.js"></script>
+<!-- Phase 25-G: equipment.js削除（renderEquipment除去に伴い未使用化） -->
 <script src="../data/products.js"></script>
 <script>
 'use strict';
@@ -1320,77 +1316,8 @@ var NOTE_ARTICLES = {
   'ギリシャリクガメ':       'https://note.com/proper_bison2362',
 };
 
-// ===== PHASE 4: 機材推奨セクション描画 =====
-var EQUIP_CAT_LABELS = {
-  cage:      'ケージ',
-  uvb:       'UVB',
-  basking:   '保温',
-  substrate: '床材',
-  food:      'フード',
-  filter:    'フィルター'
-};
-
-function renderEquipment(sp) {
-  var sec = document.getElementById('equipment-section');
-  var list = document.getElementById('equipment-list');
-  list.innerHTML = '';
-
-  var eq = (typeof getEquipment === 'function') ? getEquipment(sp.name) : null;
-  if (!eq) { sec.style.display = 'none'; return; }
-
-  var hasAny = false;
-  var cats = ['cage', 'uvb', 'basking', 'substrate', 'food', 'filter'];
-  cats.forEach(function(cat) {
-    var item = eq[cat];
-    if (!item) return;
-    hasAny = true;
-    var asinHref = item.asin
-      ? 'https://www.amazon.co.jp/dp/' + item.asin + '?tag=kamelife09-22'
-      : null;
-    var row = document.createElement('div');
-    row.className = 'equipment-item';
-    row.innerHTML =
-      '<span class="equipment-cat">' + (EQUIP_CAT_LABELS[cat] || cat) + '</span>' +
-      '<span class="equipment-label">' + item.label + '</span>' +
-      (asinHref
-        ? '<a href="' + asinHref + '" class="equipment-link" target="_blank" rel="noopener noreferrer sponsored" data-cat="' + cat + '" data-species="' + sp.name + '">Amazon</a>'
-        : '<span class="equipment-na">—</span>');
-    list.appendChild(row);
-  });
-
-  sec.style.display = hasAny ? '' : 'none';
-
-  // GA4: 機材リンクのクリックイベント
-  list.querySelectorAll('.equipment-link').forEach(function(a) {
-    a.addEventListener('click', function() {
-      var asinVal = a.href.match(/\/dp\/([A-Z0-9]+)/)?.[1] || '';
-      // 既存イベント（維持）
-      ga4Event('equipment_click', {
-        species_name: a.dataset.species,
-        category: a.dataset.cat,
-        asin: asinVal,
-        route: (selectedRoute || {}).id || 'unknown',
-        source_page: 'shindan',
-      });
-      // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
-      if (isAmazonUrl(a.href)) {
-        ga4Event('amazon_outbound_click', {
-          source:        'diagnosis_equipment',
-          species:       a.dataset.species || '',
-          species_slug:  '',
-          equipment_key: '',
-          category:      a.dataset.cat    || '',
-          product_id:    '',
-          asin:          asinVal,
-          selected_tier: '',
-          click_url:     a.href,
-          route:         (selectedRoute || {}).id || 'unknown',
-          source_page:   'shindan',
-        });
-      }
-    });
-  });
-}
+// Phase 25-G: renderEquipment（レガシー機材推奨セクション）削除
+// Starter Kit V2と67%重複のため除去。equipment.js（EQUIP_CAT_LABELS/getEquipment/EQUIPMENT）も不要化。
 
 // ===== PHASE 4: note.com誘導描画 =====
 function renderNoteCta(sp) {
@@ -2860,8 +2787,7 @@ function showResult(sp, pct) {
   // ===== PHASE 5: 著者バッジ・寿命・初心者警告 =====
   try { renderPhase5(sp); } catch(e) { console.warn('[renderPhase5]', e); }
 
-  // ===== PHASE 4: 機材推奨セクション =====
-  try { renderEquipment(sp); } catch(e) { console.warn('[renderEquipment]', e); }
+  // Phase 25-G: renderEquipment呼び出し削除（Starter Kit V2と重複のため）
 
   // ===== PHASE 4: note.com誘導 =====
   try { renderNoteCta(sp); } catch(e) {}
