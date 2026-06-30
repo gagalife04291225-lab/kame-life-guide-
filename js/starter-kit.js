@@ -434,7 +434,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="affiliate"' +
-      ' data-click-url="' + p.rakutenUrl + '">楽天市場で見る</a>';
+      ' data-click-url="' + p.rakutenUrl + '">楽天で購入（ポイント還元）</a>';
   } else if (showRakSearch) {
     // CASE B\'(search): 楽天検索 → アウトラインセカンダリ
     rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten-search"' +
