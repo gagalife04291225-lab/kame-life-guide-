@@ -17,6 +17,19 @@
     --sp-to:#0d1518;
     --sp-accent:#9ab8d8;
   }
+  /* Phase 27-B: Cost Shock Box */
+  .cost-shock-box{background:rgba(154,184,216,.08);border:1px solid rgba(154,184,216,.28);border-radius:12px;padding:16px 18px;margin:18px 0 10px;}
+  .cost-shock-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .cost-shock-item{flex:1;min-width:140px;}
+  .cost-shock-label{font-size:.74rem;color:#8a93a8;margin-bottom:4px;}
+  .cost-shock-value{font-size:1.15rem;font-weight:700;color:var(--sp-accent);}
+  /* Phase 27-B: Urgency Copy */
+  .urgency-copy{font-size:.85rem;color:#d9a06a;background:rgba(217,160,106,.08);border-left:3px solid #d9a06a;padding:9px 14px;margin:0 0 14px;border-radius:4px;line-height:1.6;}
+  /* Phase 27-B: Compare CTA */
+  .compare-cta-block{background:rgba(154,184,216,.06);border:1px solid rgba(154,184,216,.2);border-radius:10px;padding:14px 16px;margin:18px 0;text-align:center;}
+  .compare-cta-title{font-size:.78rem;color:#8a93a8;margin-bottom:8px;}
+  .compare-cta-link{display:inline-block;color:var(--sp-accent);font-weight:700;text-decoration:none;font-size:.92rem;}
+  .compare-cta-link:hover{text-decoration:underline;}
 </style>
 <link rel="stylesheet" href="../css/species.css">
 </head>
@@ -200,6 +213,20 @@
 
     <h2>推奨機材セット</h2>
 
+    <div class="cost-shock-box">
+      <div class="cost-shock-row">
+        <div class="cost-shock-item">
+          <div class="cost-shock-label">この亀を健康に育てる初期費用</div>
+          <div class="cost-shock-value">¥30,000〜¥62,000</div>
+        </div>
+        <div class="cost-shock-item">
+          <div class="cost-shock-label">月額目安</div>
+          <div class="cost-shock-value">¥1,000〜¥3,000</div>
+        </div>
+      </div>
+    </div>
+    <p class="urgency-copy">⚠ 初心者が最初に失敗しやすいのはUVBと温度管理です。機材を後回しにすると、迎えてから慌てて買い足すことになりがちです。</p>
+
     <!-- Starter Kit V2 (Phase 7A / P1 restore) -->
     <link rel="stylesheet" href="../css/starter-kit.css">
     <div id="starter-kit-root"></div>
@@ -214,6 +241,11 @@
         monthlyCost: '¥1,000〜3,000'
       });
     </script>
+
+    <div class="compare-cta-block">
+      <div class="compare-cta-title">迷っているなら比較してみましょう</div>
+      <a href="../compare/hermann-vs-russian.html" class="compare-cta-link">ロシアリクガメ vs ヘルマンリクガメ 徹底比較 →</a>
+    </div>
 
     <h2>よくある質問</h2>
 
@@ -244,6 +276,34 @@
         <summary>ヘルマンリクガメとどちらが飼いやすいですか？</summary>
         <div class="faq-body">
           どちらも入門向けですが、ロシアリクガメの方がやや低温に強く、穴掘り本能が強い分ケージの工夫が必要です。ヘルマンリクガメはEU産CBの流通が安定しており、飼育実績が豊富なため情報を集めやすい利点があります。見た目の好みや入手しやすさで選んで問題ありません。どちらも飼育環境の基本（温度・UVB・草食）は共通です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>初心者向けですか？</summary>
+        <div class="faq-body">
+          はい。乾燥系リクガメの中でも特に丈夫で、温度・UVB・床材の基本さえ整えれば初めての方でも飼育しやすい入門種です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>臭いはありますか？</summary>
+        <div class="faq-body">
+          基本的に臭いは少なめです。排泄物をこまめに片付け、床材を定期交換すれば気になるほどの臭いにはなりにくい種です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>寿命はどのくらいですか？</summary>
+        <div class="faq-body">
+          適切な飼育下で40〜80年が目安です。長期的に付き合うことを前提に迎えてください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>電気代はどのくらいかかりますか？</summary>
+        <div class="faq-body">
+          UVBランプとバスキングライトを1日10〜12時間点灯する場合、月あたり概ね¥1,000〜2,000程度が目安です（地域・電力契約により変動します）。
         </div>
       </details>
 
