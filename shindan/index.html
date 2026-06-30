@@ -849,7 +849,7 @@ body {
   <p class="start-sub">カメライフガイド</p>
   <div class="species-count" aria-label="対応種数">100種対応</div>
   <div class="route-intro">
-    <div class="route-intro-label" id="route-cards-label">ルートをタップして診断スタート</div>
+    <div class="route-intro-label" id="route-cards-label">ルートをタップして30秒で診断スタート</div>
     <div class="route-cards" id="route-cards" role="list" aria-labelledby="route-cards-label"></div>
   </div>
 </section>
@@ -945,7 +945,7 @@ body {
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
     <button class="btn-retry" id="btn-retry">もう一度診断</button>
-    <button class="btn-share" id="btn-share">結果をシェア</button>
+    <button class="btn-share" id="btn-share">この結果をシェアする</button>
   </div>
   <div class="footer-note">
     ※ 本診断はカメライフガイドが独自に作成したものです。<br>
@@ -1624,7 +1624,7 @@ function renderStarterKit(sp) {
     var btnHtml = hasUrl
       ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
         ' data-cat="' + p.category + '" data-species="' + sp.name +
-        '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで詳細を見る</a>'
+        '" data-asin="' + (p.asin || '') + '" data-tier="' + item.tierLabel + '">Amazonで価格を見る</a>'
       : '<span class="sk-card-btn sk-card-btn--soon">' + (SK_CAT_LABELS[item.cat] || 'この商品') + 'は選定中です。飼育前に別途ご用意ください。</span>';
 
     return '<div class="sk-card">' +
@@ -2958,8 +2958,8 @@ if (!tryRestoreFromUrl()) {
       <div class="ec-text-sub">初心者向けTOP3や比較ページも見てみましょう</div>
     </div>
     <div class="ec-btns">
-      <a id="ec-btn-sk"      class="ec-btn ec-btn-primary"   href="#">準備を始める</a>
-      <a id="ec-btn-compare" class="ec-btn ec-btn-secondary" href="../compare/">比較する</a>
+      <a id="ec-btn-sk"      class="ec-btn ec-btn-primary"   href="#">必要なものを見る</a>
+      <a id="ec-btn-compare" class="ec-btn ec-btn-secondary" href="../compare/">他の種と比較する</a>
       <a id="ec-btn-guide"   class="ec-btn ec-btn-secondary" href="../guides/beginner-best-turtles.html">初心者TOP3</a>
     </div>
     <button class="ec-close" id="ec-close" aria-label="閉じる">✕</button>
