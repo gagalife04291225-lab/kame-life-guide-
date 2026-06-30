@@ -687,7 +687,8 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 /**
  * タブ切り替えイベント設定
  */
-function initSkTabs(root, species) {
+function initSkTabs(root, species, _ctx) {
+  var _srcPage = (_ctx && _ctx.sourcePage) || 'species';
   var btns = root.querySelectorAll('.sk-tab-btn');
   var panels = root.querySelectorAll('.sk-tab-panel');
   // tab_id → tab_type / selected_tier マップ
@@ -725,7 +726,7 @@ function initSkTabs(root, species) {
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
           route:            _skRoute(),
-          source_page:      'species',
+          source_page:      _srcPage,
         });
         window.KAME_GA_DEBUG_LOG('starter_kit_tab', {
           tab_type: meta.tab_type, selected_tier: meta.selected_tier,
@@ -741,7 +742,7 @@ function initSkTabs(root, species) {
           page_path:        _skPagePath(),
           affiliate_platform: 'amazon',
           route:            _skRoute(),
-          source_page:      'species',
+          source_page:      _srcPage,
         });
         window.KAME_GA_DEBUG_LOG('starter_kit_tier_click', {
           tab_type: meta.tab_type, selected_tier: meta.selected_tier,
@@ -754,7 +755,7 @@ function initSkTabs(root, species) {
           equipment_key: _skStr(species && species.equipmentKey),
           page_path:     _skPagePath(),
           route:         _skRoute(),
-          source_page:   'species',
+          source_page:      _srcPage,
         });
         window.KAME_GA_DEBUG_LOG('bundle_tier_switch', {
           species: _skStr(species && species.name),
@@ -772,10 +773,17 @@ function initSkTabs(root, species) {
  * DOMにマウント（後方互換維持 + V2拡張）
  * @param {{ equipmentKey, name, difficulty, lifespan, monthlyCost }} species
  * @param {string} [mountId]
+ * @param {{ sourcePage?: string, affiliateLocation?: string }} [analyticsCtx]
+ *   analyticsCtx.sourcePage       — GA4 source_page param (default: 'species')
+ *   analyticsCtx.affiliateLocation — GA4 location param in affiliate_click (default: 'starter_kit')
  */
-function mountStarterKit(species, mountId) {
+function mountStarterKit(species, mountId, analyticsCtx) {
   var rootId = mountId || 'starter-kit-root';
   var root = document.getElementById(rootId);
+  // Phase 31-C2a: analytics context — defaults preserve species-page behavior
+  var _ctx = analyticsCtx || {};
+  var _srcPage  = _ctx.sourcePage         || 'species';
+  var _affLoc   = _ctx.affiliateLocation   || 'starter_kit';
   if (!root) return;
   if (!species || !species.equipmentKey) { root.style.display = 'none'; return; }
 
@@ -783,7 +791,7 @@ function mountStarterKit(species, mountId) {
   if (!html) { root.style.display = 'none'; return; }
 
   root.innerHTML = html;
-  var _tabCtrl = initSkTabs(root, species);
+  var _tabCtrl = initSkTabs(root, species, _ctx);
 
   // ── Bundle card click: scroll-to-tab + GA4 ───────────────
   root.querySelectorAll('.sk-bundle-card').forEach(function(card) {
@@ -815,7 +823,7 @@ function mountStarterKit(species, mountId) {
           product_count:    count,
           page_path:        _skPagePath(),
           route:            _skRoute(),
-          source_page:      'species',
+          source_page:      _srcPage,
         });
         // Legacy (backward compat)
         gtag('event', 'bundle_card_click', {
@@ -825,7 +833,7 @@ function mountStarterKit(species, mountId) {
           product_count:   count,
           page_path:       _skPagePath(),
           route:           _skRoute(),
-          source_page:     'species',
+          source_page:      _srcPage,
         });
         window.KAME_GA_DEBUG_LOG('bundle_click', {
           species: _skStr(sName), bundle_tier: tier,
@@ -846,7 +854,7 @@ function mountStarterKit(species, mountId) {
       page_path:        _skPagePath(),
       affiliate_platform: 'amazon',
       route:            _skRoute(),
-      source_page:      'species',
+      source_page:      _srcPage,
     });
     window.KAME_GA_DEBUG_LOG('starter_kit_shown', {
       species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
@@ -866,7 +874,7 @@ function mountStarterKit(species, mountId) {
       premium_price_low:    _bvPrem.low,
       page_path:            _skPagePath(),
       route:                _skRoute(),
-      source_page:          'species',
+      source_page:      _srcPage,
     });
     window.KAME_GA_DEBUG_LOG('bundle_view', {
       species: _skStr(species.name), equipment_key: _skStr(species.equipmentKey),
@@ -897,7 +905,7 @@ function mountStarterKit(species, mountId) {
           page_path:          _skPagePath(),
           affiliate_platform: _provider || 'amazon',
           route:              _skRoute(),
-          source_page:        'species',
+          source_page:      _srcPage,
         });
         // 既存イベント（維持）
         gtag('event', 'starter_kit_cta_click', {
@@ -914,12 +922,12 @@ function mountStarterKit(species, mountId) {
           page_path:          _skPagePath(),
           affiliate_platform: _provider || 'amazon',
           route:              _skRoute(),
-          source_page:        'species',
+          source_page:      _srcPage,
         });
         // Phase 28-C: 統一affiliate_clickイベント（canonical schema、amazon_outbound_clickとの二重発火を解消）
         gtag('event', 'affiliate_click', {
           provider:       _provider,
-          location:       'starter_kit',
+          location:       _affLoc,
           category:       _skStr(a.dataset.cat) || 'unknown',
           product_id:     _skStr(a.dataset.productId) || a.dataset.asin || '',
           species_slug:   _skStr(a.dataset.species),
