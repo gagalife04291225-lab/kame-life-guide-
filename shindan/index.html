@@ -839,6 +839,60 @@ body {
 .res-loss-text { font-size: .83rem; color: var(--parchment-dark); line-height: 1.65; }
 .res-loss-text strong { color: var(--accent-light); }
 /* ===== /Phase 9-B ===== */
+
+/* Phase 31-C2b: starter-kit V2 theme overrides for dark shindan context
+   starter-kit.css assumes a light parchment background; these rules
+   restore the dark look expected inside #screen-result. */
+#screen-result .sk-section {
+  background: transparent;
+  border-top: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+#screen-result .sk-inner { max-width: none; }
+#screen-result .sk-heading-main {
+  font-size: .78rem;
+  color: var(--accent-light);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding: 20px 20px 0;
+}
+#screen-result .sk-card {
+  flex: 0 0 220px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--parchment);
+}
+#screen-result .sk-card-name { color: var(--parchment); }
+#screen-result .sk-card-why  { color: var(--parchment-dark); }
+#screen-result .sk-card-price { color: var(--accent-light); }
+#screen-result .sk-bundle-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  color: var(--parchment);
+}
+#screen-result .sk-bundle-label,
+#screen-result .sk-bundle-desc,
+#screen-result .sk-bundle-price { color: var(--parchment); }
+#screen-result .sk-tab-btn {
+  background: rgba(255,255,255,.07);
+  color: var(--parchment-dark);
+  border: 1px solid rgba(255,255,255,.14);
+}
+#screen-result .sk-tab-btn.sk-tab-btn--active {
+  background: var(--accent-light);
+  color: var(--forest);
+}
+#screen-result .sk-hint { color: var(--parchment-dark); }
+#screen-result .sk-cost-box {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+}
+#screen-result .sk-cost-label,
+#screen-result .sk-cost-sub { color: var(--accent-light); }
+#screen-result .sk-cost-value { color: var(--parchment); }
+/* ===== /Phase 31-C2b theme overrides ===== */
 </style>
 </head>
 <body>
@@ -979,7 +1033,10 @@ body {
 <script src="species.js"></script>
 <script src="routes.js"></script>
 <!-- Phase 25-G: equipment.js削除（renderEquipment除去に伴い未使用化） -->
+<!-- Phase 31-C2b: Starter Kit V2 assets — css before scripts, js after products.js -->
+<link rel="stylesheet" href="../css/starter-kit.css">
 <script src="../data/products.js"></script>
+<script src="../js/starter-kit.js"></script>
 <script>
 'use strict';
 
@@ -1569,7 +1626,65 @@ function starRating(r) {
 }
 
 /**
+ * Phase 31-C2b: Starter Kit V2 adapter for shindan result
+ * Bridges shindan sp object → mountStarterKit(V2) call.
+ * Keeps starter_kit_visible observer (V2 engine has no built-in viewport event).
+ */
+function renderStarterKitV2(sp) {
+  var sec = document.getElementById('starter-kit-section');
+  if (!sec) return;
+
+  // Build V2-compatible species object
+  var routeId  = selectedRoute ? selectedRoute.id : 'all';
+  var equipKey = sp.equipmentKey || resolveEquipmentKey(routeId, sp);
+  if (!equipKey) { sec.style.display = 'none'; return; }
+
+  var spV2 = {
+    equipmentKey: equipKey,
+    name:         sp.name       || '',
+    difficulty:   sp.difficulty || '',
+    lifespan:     LIFESPAN_DATA[sp.name] || '',
+    // monthlyCost omitted — V2 uses its own default (¥1,000〜3,000)
+  };
+
+  // Delegate all rendering + GA4 to V2 engine
+  if (typeof mountStarterKit !== 'function') {
+    console.warn('[renderStarterKitV2] mountStarterKit not loaded');
+    return;
+  }
+  mountStarterKit(spV2, 'starter-kit-section', {
+    sourcePage:         'shindan',
+    affiliateLocation:  'diagnosis_result',
+  });
+
+  // Reveal the section (mountStarterKit writes innerHTML but does not show the wrapper)
+  sec.style.display = '';
+
+  // starter_kit_visible: fires once when kit enters viewport
+  // V2 engine has no built-in viewport event; preserve from Phase 31-C1.
+  if ('IntersectionObserver' in window) {
+    var _skV2VisFired = false;
+    var _skV2Observer = new IntersectionObserver(function(entries) {
+      if (!_skV2VisFired && entries[0].isIntersecting) {
+        _skV2VisFired = true;
+        _skV2Observer.disconnect();
+        if (typeof ga4Event === 'function') {
+          ga4Event('starter_kit_visible', {
+            location:      'diagnosis_result',
+            species_slug:  sp.slug || '',
+            route:         (selectedRoute || {}).id || 'unknown',
+            source_page:   'shindan',
+          });
+        }
+      }
+    }, { threshold: 0.2 });
+    _skV2Observer.observe(sec);
+  }
+}
+
+/**
  * 診断結果画面にスターターキットを描画（Phase 6-C Task 2）
+ * @deprecated Phase 31-C2b: replaced by renderStarterKitV2. Kept for safety.
  */
 function renderStarterKit(sp) {
   var sec = document.getElementById('starter-kit-section');
@@ -2843,7 +2958,7 @@ function showResult(sp, pct) {
   try { renderNoteCta(sp); } catch(e) {}
 
   // ===== PHASE 6-B: おすすめ飼育セット =====
-  try { renderStarterKit(sp); } catch(e) { console.warn('[renderStarterKit]', e); }
+  try { renderStarterKitV2(sp); } catch(e) { console.warn('[renderStarterKitV2]', e); }
 
   // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
   var scoreMeter = document.getElementById('score-meter');
