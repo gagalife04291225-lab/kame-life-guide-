@@ -89,7 +89,7 @@ const PRODUCTS = {
     rakutenPrice: 5600,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.2,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   tank_90: {
@@ -100,12 +100,12 @@ const PRODUCTS = {
     priceRange: '¥8,000–18,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004J2G6XK?tag=kamelife09-22',
     asin: 'B004J2G6XK',
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F59307%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F59307%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: '水槽 90cm 亀',
     rakutenPrice: 16800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 7.7,
+    rakutenConfidence: 8.5,
     rakutenLastUpdated: '2026-06-29',
     image: '/assets/products/placeholder.webp',
     why: '中型水棲ガメや複数飼育に対応できる容量',
@@ -167,12 +167,12 @@ const PRODUCTS = {
     rating: 4.0,
     badge: null,
     recommendedFor: ['beginner', 'small_aquatic'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F49751%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F49751%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: 'ガラスケージ 45cm 爬虫類',
     rakutenPrice: 8900,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 3.9,
+    rakutenConfidence: 8.3,
     rakutenLastUpdated: '2026-06-29',
     rakutenConfidence: 3.9,
     rakutenLastUpdated: '2026-06-28',
@@ -236,8 +236,8 @@ const PRODUCTS = {
      LIGHTING_UVB（UVBライト）  9商品
      ══════════════════════════════════════════ */
 
-  uvb_t5_desert_std: {
-    id: 'uvb_t5_desert_std',
+  uvb_desert_t5: {
+    id: 'uvb_desert_t5',
     name: 'Zoo Med ReptiSun 10.0 UVB T5',
     category: 'lighting_uvb',
     tier: 'standard',
@@ -289,13 +289,13 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenConfidence: 4.5,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
 
-  uvb_t5_tropical_6: {
-    id: 'uvb_t5_tropical_6',
+  uvb_arcadia_t5_6: {
+    id: 'uvb_arcadia_t5_6',
     name: 'Arcadia T5 HO 6% UVB',
     category: 'lighting_uvb',
     tier: 'standard',
@@ -312,8 +312,8 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
   },
 
-  uvb_t5_desert_12: {
-    id: 'uvb_t5_desert_12',
+  uvb_arcadia_t5_12: {
+    id: 'uvb_arcadia_t5_12',
     name: 'Arcadia T5 HO 12% UVB',
     category: 'lighting_uvb',
     tier: 'premium',
@@ -369,7 +369,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'UVB LED ライト バー 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   uvb_t8_30w: {
@@ -428,8 +428,6 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'バスキングランプ 50W 爬虫類',
-    rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-06-29',
   },
 
   basking_75w: {
@@ -449,7 +447,7 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
     rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_100w: {
@@ -469,7 +467,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -510,8 +508,8 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
   },
 
-  basking_dual_150: {
-    id: 'basking_dual_150',
+  basking_dual_150w: {
+    id: 'basking_dual_150w',
     name: 'ダブルバスキングランプ 150W',
     category: 'lighting_basking',
     tier: 'premium',
@@ -530,7 +528,7 @@ const PRODUCTS = {
 
   basking_hid_70w: {
     id: 'basking_hid_70w',
-    name: 'Solar Raptor HID 70W',
+    name: 'ゼンスイ ソーラーラプター HIDランプ 70W',
     category: 'lighting_basking',
     tier: 'premium',
     priceRange: '¥12,000–20,000',
@@ -542,10 +540,11 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['advanced', 'tortoise_dry_large'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenStatus: 'available',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F274538%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenSearchTerm: 'HID ランプ 爬虫類 メタルハライド',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_ceramic_100w: {
@@ -565,7 +564,7 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   basking_infrared_red: {
@@ -585,7 +584,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 バスキングランプ 75W 爬虫類',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -609,11 +608,11 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 30W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
-  heater_panel_45: {
-    id: 'heater_panel_45',
+  heater_panel_45w: {
+    id: 'heater_panel_45w',
     name: 'パネルヒーター 45W',
     category: 'heating',
     tier: 'standard',
@@ -629,7 +628,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 45W 爬虫類',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   heater_aqua_100w: {
@@ -648,8 +647,6 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 100W 亀 水槽',
-    rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-29',
   },
 
   thermostat: {
@@ -689,7 +686,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 200W 亀',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermostat_digital: {
@@ -705,12 +702,12 @@ const PRODUCTS = {
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['advanced'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F247595%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F247595%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
     rakutenPrice: 8800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6.3,
+    rakutenConfidence: 8.2,
     rakutenLastUpdated: '2026-06-29',
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-06-28',
@@ -752,8 +749,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'ヒーティングコード 20W 爬虫類',
   },
 
-  heater_panel_60: {
-    id: 'heater_panel_60',
+  heater_panel_60w: {
+    id: 'heater_panel_60w',
     name: 'パネルヒーター 60W',
     category: 'heating',
     tier: 'standard',
@@ -769,7 +766,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'パネルヒーター 60W 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -853,12 +850,12 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F44441%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F44441%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: '外掛け フィルター 爬虫類 亀',
     rakutenPrice: 3280,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 3.2,
+    rakutenConfidence: 8.3,
     rakutenLastUpdated: '2026-06-29',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
@@ -901,12 +898,12 @@ const PRODUCTS = {
     rakutenPrice: 24600,
     rakutenShop: 'ミナトワークス',
     rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   filter_canister_xl: {
     id: 'filter_canister_xl',
-    name: 'Fluval FX シリーズ',
+    name: 'GEX メガパワー 6090 外部フィルター',
     category: 'filter',
     tier: 'premium',
     priceRange: '¥20,000–40,000',
@@ -918,7 +915,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenStatus: 'available',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F45364%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenSearchTerm: 'Fluval FX フィルター 亀 大型水槽',
   },
 
@@ -981,7 +979,7 @@ const PRODUCTS = {
     rakutenPrice: 350,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   substrate_coco: {
@@ -1003,7 +1001,7 @@ const PRODUCTS = {
     rakutenPrice: 1098,
     rakutenShop: '雑貨イズム',
     rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   substrate_sand_mix: {
@@ -1279,12 +1277,12 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond', 'beginner'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F52366%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F52366%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
     rakutenSearchTerm: '亀 浮島 ドック 水棲',
     rakutenPrice: 2180,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 3.2,
+    rakutenConfidence: 8.1,
     rakutenLastUpdated: '2026-06-29',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
@@ -1313,7 +1311,7 @@ const PRODUCTS = {
     rakutenPrice: 1470,
     rakutenShop: 'Palpito 楽天市場店',
     rakutenConfidence: 9.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermometer_aqua: {
@@ -1333,7 +1331,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水温計 デジタル 亀',
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -1373,12 +1371,12 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 温度計 非接触 爬虫類',
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   thermometer_wifi: {
     id: 'thermometer_wifi',
-    name: 'Wi-Fi 温湿度ロガー',
+    name: 'SwitchBot 温湿度計 WiFi対応',
     category: 'thermometer',
     tier: 'premium',
     priceRange: '¥4,000–10,000',
@@ -1390,7 +1388,8 @@ const PRODUCTS = {
     badge: 'Premium',
     recommendedFor: ['advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
+    rakutenStatus: 'available',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F264058%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenSearchTerm: 'WiFi 温湿度 ロガー 爬虫類',
   },
 
@@ -1411,7 +1410,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   /* ══════════════════════════════════════════
@@ -1473,7 +1472,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'レプトミン テトラ 亀 餌',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_aqua_turtle_pellet: {
@@ -1493,7 +1492,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カメの主食 GEX 亀 フード',
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_box_turtle_omnivore: {
@@ -1513,7 +1512,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ボックスタートル フード Zoo Med',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_dried_shrimp: {
@@ -1533,7 +1532,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '乾燥エビ 亀 おやつ ひかり',
     rakutenConfidence: 4.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_tortoise_gel: {
@@ -1571,7 +1570,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ひかり タートル 亀 フード',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   food_tortoise_herbs: {
@@ -1614,7 +1613,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カルシウム パウダー D3 爬虫類',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Task2 追加 ──
@@ -1638,7 +1637,7 @@ const PRODUCTS = {
     rakutenPrice: 508,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   supplement_calcium_plus: {
@@ -1678,7 +1677,7 @@ const PRODUCTS = {
     rakutenPrice: 525,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenLastUpdated: '2026-06-28',
   },
 
   supplement_iodine: {
@@ -1788,9 +1787,9 @@ const EQUIPMENT_MAP = {
   // ── 乾燥系リクガメ（小〜中型：ロシア・ヘルマン・ギリシャ等）
   tortoise_dry_small: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_wood_90',      premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_desert_std',          premium: 'uvb_t5_desert_12' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_desert_t5',          premium: 'uvb_arcadia_t5_12' },
     lighting_basking: { budget: 'basking_halogen_50w',   standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
-    heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45',       premium: 'heater_radiant_panel' },
+    heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45w',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: 'shelter_wood_premium' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
@@ -1801,9 +1800,9 @@ const EQUIPMENT_MAP = {
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
   tortoise_dry_large: {
     enclosure:        { budget: 'enclosure_wood_90',     standard: 'enclosure_tortoise_120',     premium: 'enclosure_tortoise_150' },
-    lighting_uvb:     { budget: 'uvb_t5_desert_std',         standard: 'uvb_t5_desert_12',      premium: 'uvb_mvb_100' },
-    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150',      premium: 'basking_hid_70w' },
-    heating:          { budget: 'heater_panel_45',      standard: 'heater_panel_60',       premium: 'heater_radiant_panel' },
+    lighting_uvb:     { budget: 'uvb_desert_t5',         standard: 'uvb_arcadia_t5_12',      premium: 'uvb_mvb_100' },
+    lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150w',      premium: 'basking_hid_70w' },
+    heating:          { budget: 'heater_panel_45w',      standard: 'heater_panel_60w',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_medium',        standard: 'shelter_cave_lg',     premium: 'shelter_wood_premium' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_wifi' },
@@ -1814,9 +1813,9 @@ const EQUIPMENT_MAP = {
   // ── 森林系リクガメ（エロンガータ・アカアシ・インプレッサ等）
   tortoise_forest: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
@@ -1827,7 +1826,7 @@ const EQUIPMENT_MAP = {
   // ── 半水棲・小型（ニオイガメ・ドロガメ・ミスクガメ等）
   semi_aquatic_small: {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
     heating:          { budget: 'thermostat',            standard: 'heater_aqua_100w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
@@ -1839,7 +1838,7 @@ const EQUIPMENT_MAP = {
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
   semi_aquatic_medium: {
     enclosure:        { budget: 'tank_90',               standard: 'tank_90',                premium: 'tank_120_aqua' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
@@ -1873,9 +1872,9 @@ const EQUIPMENT_MAP = {
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
   box_turtle: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
-    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
+    lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_arcadia_t5_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_forest_blend', premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
