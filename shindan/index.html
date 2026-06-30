@@ -852,7 +852,7 @@ body {
 #screen-result .sk-inner { max-width: none; }
 #screen-result .sk-heading-main {
   font-size: .78rem;
-  color: var(--accent-light);
+  color: #f4efe2; /* was var(--accent-light): gold on dark bg failed contrast */
   letter-spacing: .08em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -884,7 +884,15 @@ body {
   background: var(--accent-light);
   color: var(--forest);
 }
-#screen-result .sk-hint { color: var(--parchment-dark); }
+/* sk-hint: let starter-kit.css control bg (#f0faf2) and base color (#2f4a3c = forest).
+   Override only what differs from the light-page design. */
+#screen-result .sk-hint {
+  color: #2f4a3c; /* dark forest on light #f0faf2 bg — high contrast */
+}
+#screen-result .sk-hint strong {
+  color: #0d1f1a; /* deepest forest for 推奨セット — max emphasis */
+  font-weight: 700;
+}
 #screen-result .sk-cost-box {
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.1);
