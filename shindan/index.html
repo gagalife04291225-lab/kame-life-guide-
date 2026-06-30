@@ -900,6 +900,20 @@ body {
 #screen-result .sk-cost-label,
 #screen-result .sk-cost-sub { color: var(--accent-light); }
 #screen-result .sk-cost-value { color: var(--parchment); }
+/* Phase 31-C3: additional contrast + spacing fixes */
+#screen-result .sk-bundle-eyebrow {
+  color: var(--parchment-dark); /* was moss #4a6741: near-invisible on dark card */
+}
+#screen-result .sk-bundle-eyebrow::after {
+  color: var(--accent-light); /* was brown #8f5f2c: low contrast on dark card */
+}
+#screen-result .sk-disclaimer {
+  color: var(--parchment-dark); /* was text-muted #5a7060: ~2.5:1 on dark bg */
+  opacity: .65;
+}
+#screen-result .sk-section {
+  margin-top: 4px; /* small breath between res-cta-top and kit */
+}
 /* ===== /Phase 31-C2b theme overrides ===== */
 </style>
 </head>
