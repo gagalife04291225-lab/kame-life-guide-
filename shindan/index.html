@@ -1691,20 +1691,16 @@ function renderStarterKit(sp) {
           route:         (selectedRoute || {}).id || 'unknown',
           source_page:   'shindan',
         });
-        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
-        if (isAmazonUrl(a.href)) {
-          ga4Event('amazon_outbound_click', {
-            source:        'diagnosis_starterkit',
-            species:       a.dataset.species || sp.name,
-            species_slug:  sp.slug           || '',
-            equipment_key: equipKey          || '',
-            category:      a.dataset.cat     || '',
-            product_id:    '',
-            asin:          a.dataset.asin    || '',
-            selected_tier: a.dataset.tier    || '',
-            click_url:     a.href,
-            route:         (selectedRoute || {}).id || 'unknown',
-            source_page:   'shindan',
+        // Phase 28-C: 統一affiliate_clickイベント（canonical schema）
+        var _cardProvider = isAmazonUrl(a.href) ? 'amazon' : (isRakutenUrl(a.href) ? 'rakuten' : null);
+        if (_cardProvider) {
+          ga4Event('affiliate_click', {
+            provider:      _cardProvider,
+            location:      'diagnosis_result',
+            category:      a.dataset.cat || 'unknown',
+            product_id:    a.dataset.asin || '',
+            species_slug:  sp.slug || '',
+            tier:          a.dataset.tier || '',
           });
         }
       }
@@ -1723,30 +1719,15 @@ function renderStarterKit(sp) {
           route:         (selectedRoute || {}).id || 'unknown',
           source_page:   'shindan',
         });
-        // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+        // Phase 28-C: 統一affiliate_clickイベント（canonical schema、二重発火を解消）
         if (isAmazonUrl(ctaBtn.href)) {
-          ga4Event('amazon_outbound_click', {
-            source:        'diagnosis_starterkit_cta',
-            species:       sp.name     || '',
-            species_slug:  sp.slug     || '',
-            equipment_key: equipKey    || '',
-            category:      '',
-            product_id:    '',
-            asin:          '',
-            selected_tier: '',
-            click_url:     ctaBtn.href,
-            route:         (selectedRoute || {}).id || 'unknown',
-            source_page:   'shindan',
-          });
-          // Phase 28-A: 統一affiliate_clickイベント
           ga4Event('affiliate_click', {
-            source:        'amazon',
+            provider:      'amazon',
             location:      'diagnosis_result',
-            species:       sp.name  || '',
-            species_slug:  sp.slug  || '',
-            equipment_key: equipKey || '',
-            click_url:     ctaBtn.href,
-            route:         (selectedRoute || {}).id || 'unknown',
+            category:      'unknown',
+            product_id:    '',
+            species_slug:  sp.slug || '',
+            tier:          '',
           });
         }
       }
@@ -1767,13 +1748,12 @@ function renderStarterKit(sp) {
         });
         if (isRakutenUrl(ctaBtnRakuten.href)) {
           ga4Event('affiliate_click', {
-            source:        'rakuten',
+            provider:      'rakuten',
             location:      'diagnosis_result',
-            species:       sp.name  || '',
-            species_slug:  sp.slug  || '',
-            equipment_key: equipKey || '',
-            click_url:     ctaBtnRakuten.href,
-            route:         (selectedRoute || {}).id || 'unknown',
+            category:      'unknown',
+            product_id:    '',
+            species_slug:  sp.slug || '',
+            tier:          '',
           });
         }
       }
@@ -2788,23 +2768,18 @@ function showResult(sp, pct) {
   });
   if (sp.asin) {
     linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife09-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="noopener noreferrer">Amazon で関連商品を見る</a>';
-    // Phase 7-C Step 3-A: Amazon外部遷移統一イベント
+    // Phase 28-C: 統一affiliate_clickイベント（canonical schema）
     var spAmzLink = document.getElementById('sp-amazon-link');
     if (spAmzLink) {
       spAmzLink.addEventListener('click', function() {
         if (typeof ga4Event === 'function' && isAmazonUrl(spAmzLink.href)) {
-          ga4Event('amazon_outbound_click', {
-            source:        'diagnosis_amazon_link',
-            species:       sp.name   || '',
-            species_slug:  sp.slug   || '',
-            equipment_key: '',
-            category:      '',
-            product_id:    '',
-            asin:          sp.asin   || '',
-            selected_tier: '',
-            click_url:     spAmzLink.href,
-            route:         (selectedRoute || {}).id || 'unknown',
-            source_page:   'shindan',
+          ga4Event('affiliate_click', {
+            provider:      'amazon',
+            location:      'diagnosis_result',
+            category:      'unknown',
+            product_id:    sp.asin || '',
+            species_slug:  sp.slug || '',
+            tier:          '',
           });
         }
       });
