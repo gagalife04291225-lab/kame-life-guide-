@@ -51,6 +51,19 @@
     margin:48px 0 18px;padding-bottom:10px;
     border-bottom:1.5px solid #ddd5be;
   }
+  /* Phase 27-B: Cost Shock Box */
+  .cost-shock-box{background:#fff;border:1px solid rgba(168,200,120,.35);border-radius:12px;padding:16px 18px;margin:18px 0 10px;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .cost-shock-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .cost-shock-item{flex:1;min-width:140px;}
+  .cost-shock-label{font-size:.74rem;color:#7a8a72;margin-bottom:4px;}
+  .cost-shock-value{font-size:1.15rem;font-weight:700;color:var(--forest);}
+  /* Phase 27-B: Urgency Copy */
+  .urgency-copy{font-size:.85rem;color:#9a6a2a;background:#fff8ec;border-left:3px solid #d9a06a;padding:9px 14px;margin:0 0 14px;border-radius:4px;line-height:1.6;}
+  /* Phase 27-B: Compare CTA */
+  .compare-cta-block{background:#fff;border:1px solid rgba(168,200,120,.3);border-radius:10px;padding:14px 16px;margin:18px 0;text-align:center;box-shadow:0 1px 4px rgba(13,31,26,.06);}
+  .compare-cta-title{font-size:.78rem;color:#7a8a72;margin-bottom:8px;}
+  .compare-cta-link{display:inline-block;color:var(--forest);font-weight:700;text-decoration:none;font-size:.92rem;}
+  .compare-cta-link:hover{text-decoration:underline;}
   /* note-box */
   .note-box{background:#fff;border-left:4px solid var(--accent);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:.95rem;box-shadow:0 1px 4px rgba(13,31,26,.06);}
   /* 環境数値カード */
@@ -182,6 +195,20 @@
   </div>
 </section>
 
+<div class="cost-shock-box">
+  <div class="cost-shock-row">
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">この亀を健康に育てる初期費用</div>
+      <div class="cost-shock-value">¥30,000〜¥62,000</div>
+    </div>
+    <div class="cost-shock-item">
+      <div class="cost-shock-label">月額目安</div>
+      <div class="cost-shock-value">¥1,000〜¥3,000</div>
+    </div>
+  </div>
+</div>
+<p class="urgency-copy">⚠ 初心者が最初に失敗しやすいのはUVBと温度管理です。機材を後回しにすると、迎えてから慌てて買い足すことになりがちです。</p>
+
 <!-- Phase 7A Task 2-B: Starter Kit repositioned -->
 <link rel="stylesheet" href="../css/starter-kit.css">
 <div id="starter-kit-root"></div>
@@ -190,6 +217,12 @@
 <script>
   mountStarterKit({ equipmentKey: 'tortoise_dry_small', name: 'ヘルマンリクガメ（ニシ亜種）', difficulty: '中級', lifespan: '50〜80年' });
 </script>
+
+<div class="compare-cta-block">
+  <div class="compare-cta-title">迷っているなら比較してみましょう</div>
+  <a href="../compare/hermann-vs-russian.html" class="compare-cta-link">ヘルマンリクガメ vs ロシアリクガメ 徹底比較 →</a>
+</div>
+
 <nav class="crumbs">
   <div class="wrap">
     <a href="../index.html">カメライフガイド</a> ＞ <a href="../species-list.html">種一覧</a> ＞ ヘルマンリクガメ
@@ -288,6 +321,34 @@
         <summary>餌を急に食べなくなりました</summary>
         <div class="faq-body">
           最初にバスキングスポットの温度を確認してください。ホットスポットが33℃以上に達していないと消化器が正常に働かず食欲が落ちます。秋以降は季節性拒食（冬眠準備）の可能性もあります。2週間以上続く場合や体重減少がある場合は<a href="../trouble/not-eating.html" style="color:var(--accent-dark);">トラブルページ</a>を参照してください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>初心者向けですか？</summary>
+        <div class="faq-body">
+          中級者向けです。ロシアリクガメよりやや扱いに知識が必要ですが、EU産CBの流通が安定しており、飼育情報も豊富なため、基本を押さえれば初めての方でも十分飼育可能です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>臭いはありますか？</summary>
+        <div class="faq-body">
+          基本的に臭いは少なめです。排泄物のこまめな除去と床材の定期交換を行えば、室内飼育でも気になりにくい種です。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>寿命はどのくらいですか？</summary>
+        <div class="faq-body">
+          適切な飼育下で50〜80年が目安です。長期的に付き合うことを前提に迎えてください。
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary>電気代はどのくらいかかりますか？</summary>
+        <div class="faq-body">
+          UVBランプとバスキングライトを1日10〜12時間点灯する場合、月あたり概ね¥1,000〜2,000程度が目安です（地域・電力契約により変動します）。
         </div>
       </details>
 
