@@ -1538,12 +1538,12 @@ const PRODUCTS = {
 
   food_tortoise_gel: {
     id: 'food_tortoise_gel',
-    name: 'Repashy Veggie Burger（ゲル状フード）',
+    name: 'Repashy Veggie Burger 170g',
     category: 'food',
     tier: 'premium',
     priceRange: '¥2,000–4,500',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00TJ3O1HC?tag=kamelife09-22',
+    asin: 'B00TJ3O1HC',
     image: '/assets/products/placeholder.webp',
     why: '水で溶かしてゲル状にする高栄養フード。偏食ガメや療養中の個体に',
     rating: 4.7,
