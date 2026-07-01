@@ -1576,14 +1576,14 @@ const PRODUCTS = {
 
   food_tortoise_herbs: {
     id: 'food_tortoise_herbs',
-    name: 'グラスランドサラダミックス（乾燥野草）',
+    name: 'キョーリン マルベリックドライ 400g',
     category: 'food',
     tier: 'premium',
     priceRange: '¥1,500–3,500',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B09M2LVBYG?tag=kamelife09-22',
+    asin: 'B09M2LVBYG',
     image: '/assets/products/placeholder.webp',
-    why: '乾燥タンポポ・オオバコ・チモシー等のブレンド。野草採取が難しい冬季に',
+    why: '桑葉主体の植物葉フード。野草に近い繊維質で、野草採取が難しい冬季の補完食に最適',
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
