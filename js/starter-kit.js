@@ -201,9 +201,9 @@ var SK_TIER_LABEL_PAGE = {
 
 // tier別 Amazon CTAボタン文言
 var SK_TIER_CTA = {
-  budget:   'Amazonで価格・在庫を見る',
-  standard: 'Amazonでおすすめ構成を見る',
-  premium:  'Amazonで本格セットを見る',
+  budget:   'Amazonで最安値をチェック →',
+  standard: 'Amazonで購入候補を見る →',
+  premium:  'Amazonで本格セットを見る →',
 };
 
 // 3段階タブ定義
@@ -354,8 +354,9 @@ function getCvrBadge(item, equipmentKey) {
     return { icon: '🔰', label: '初心者向け' };
   }
   if (cat === 'substrate') {
-    if (tier === 'premium')  return { icon: '🌱', label: '高保湿' };
-    return { icon: '💰', label: 'コスパ◎' };
+    var isDryTortoise = ek.indexOf('tortoise_dry') >= 0;
+    if (tier === 'premium')  return isDryTortoise ? { icon: '🌿', label: '天然素材' } : { icon: '🌱', label: '高保湿' };
+    return isDryTortoise ? { icon: '🏜️', label: '乾燥環境向け' } : { icon: '💰', label: 'コスパ◎' };
   }
   if (cat === 'thermometer') {
     return { icon: '📊', label: '管理の要' };
@@ -447,10 +448,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="search"' +
       ' data-click-url="' + _rakSearchUrl + '">楽天でも探す</a>';
-  } else if (showRakPending) {
-    // CASE C: pending → Coming Soon badge（クリック不可・ARIA hidden）
-    rakutenBtn = '<span class="sk-card-btn--rakuten-soon" aria-hidden="true">楽天 準備中</span>';
-  }
+  } // Case C (pending): show Amazon only — rakutenBtn stays ''
   // CASE D: neither → rakutenBtn = '' (nothing rendered)
 
   var btn = amazonBtn + rakutenBtn;
@@ -594,7 +592,7 @@ function renderBundleSummary(tabData, speciesName) {
       ? '<div class="sk-bundle-savings">💰 スタンダードより' + savingsStr + '</div>'
       : '';
     var recBadge = b.recommended
-      ? '<span class="sk-bundle-rec-badge">おすすめ</span>'
+      ? '<span class="sk-bundle-rec-badge">⭐ 最もおすすめ</span>'
       : '';
 
     // Phase 20-E: カテゴリプレビュー（最大4件 + 残数）
@@ -675,10 +673,10 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
     '<div class="sk-inner">' +
       '<h2 class="sk-heading-main">' + heading + '</h2>' +
       costBoxHtml +
+      '<p class="sk-hint">💡 迷ったら <strong>推奨セット</strong> から始めるのがおすすめです</p>' +
       bundleSummaryHtml +
       '<div class="sk-tabs" role="tablist">' + tabBtns + '</div>' +
       panels +
-      '<p class="sk-hint">💡 迷ったら <strong>推奨セット</strong> から始めるのがおすすめです</p>' +
       '<p class="sk-disclaimer">※Amazonアソシエイトリンクを含みます　価格は目安です（変動あり）</p>' +
     '</div>' +
   '</section>';
