@@ -634,12 +634,12 @@ const PRODUCTS = {
 
   heater_aqua_100w: {
     id: 'heater_aqua_100w',
-    name: '水中ヒーター 100W',
+    name: 'GEX カメ元気 オートヒーター SH55',
     category: 'heating',
     tier: 'standard',
     priceRange: '¥1,500–3,500',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B07PD2PCMK?tag=kamelife09-22',
+    asin: 'B07PD2PCMK',
     image: '/assets/products/placeholder.webp',
     why: '水棲ガメの水温維持に必須。オートカットつきが安心',
     rating: 4.3,
@@ -942,12 +942,12 @@ const PRODUCTS = {
 
   filter_turtle_clean: {
     id: 'filter_turtle_clean',
-    name: 'カメ専用フィルター（テトラ）',
+    name: 'テトラ レプトフィルター 10i',
     category: 'filter',
     tier: 'standard',
     priceRange: '¥4,000–9,000',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B000NGQZU0?tag=kamelife09-22',
+    asin: 'B000NGQZU0',
     image: '/assets/products/placeholder.webp',
     why: 'カメ飼育専用設計。浅い水位でも稼働し物理・生物・化学の3段ろ過を実現',
     rating: 4.4,
