@@ -604,6 +604,36 @@ function renderBundleSummary(tabData, speciesName) {
       : '';
     var itemsHtml = '<div class="sk-bundle-items">' + previewTags + moreTag + '</div>';
 
+    // Phase 35-B2: quick-link CTA — first valid pick per tier
+    var _qlCopyMap = {
+      budget:   '最安構成をAmazonで見る →',
+      standard: 'おすすめ構成をAmazonで見る →',
+      premium:  '本格セットをAmazonで見る →',
+    };
+    var _qlPick = null;
+    for (var _qi = 0; _qi < picks.length; _qi++) {
+      var _qp = picks[_qi].product;
+      if (_qp && _qp.affiliateUrl && _qp.affiliateUrl !== '#') {
+        _qlPick = picks[_qi]; break;
+      }
+    }
+    var quickLinkHtml = _qlPick
+      ? '<a class="sk-bundle-quicklink sk-card-btn"' +
+          ' href="' + _qlPick.product.affiliateUrl + '"' +
+          ' target="_blank" rel="noopener noreferrer sponsored"' +
+          ' aria-label="' + b.label + 'をAmazonで見る"' +
+          ' data-cat="' + _qlPick.cat + '"' +
+          ' data-species="' + (speciesName || '') + '"' +
+          ' data-tier="' + b.tier + '"' +
+          ' data-asin="' + (_qlPick.product.asin || '') + '"' +
+          ' data-product-id="' + _qlPick.product.id + '"' +
+          ' data-display-cat="' + _skDisplayCat(_qlPick.cat) + '"' +
+          ' data-provider="amazon"' +
+          ' data-click-url="' + _qlPick.product.affiliateUrl + '">' +
+          (_qlCopyMap[b.tier] || 'Amazonで見る →') +
+        '</a>'
+      : '';
+
     return '<div class="sk-bundle-card ' + b.mod + (b.recommended ? ' sk-bundle-card--rec' : '') + '"' +
       ' data-bundle-tab="sk-panel-' + b.tabId + '"' +
       ' data-bundle-tier="' + b.tier + '"' +
@@ -626,6 +656,7 @@ function renderBundleSummary(tabData, speciesName) {
         ' aria-label="' + b.label + 'の詳細を見る">' +
         'この構成をまとめて揃える →' +
       '</button>' +
+      quickLinkHtml +
     '</div>';
   }).join('');
 
