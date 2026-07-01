@@ -718,12 +718,12 @@ const PRODUCTS = {
 
   heater_radiant_panel: {
     id: 'heater_radiant_panel',
-    name: '輻射熱パネルヒーター（天井設置）',
+    name: 'みどり商会 暖突 Lサイズ',
     category: 'heating',
     tier: 'premium',
     priceRange: '¥8,000–18,000',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00BBRG4YW?tag=kamelife09-22',
+    asin: 'B00BBRG4YW',
     image: '/assets/products/placeholder.webp',
     why: 'ケージ天井に取り付けて全体を均一に温めるタイプ。大型リクガメの広いケージで温度ムラが気になる人に',
     rating: 4.6,
