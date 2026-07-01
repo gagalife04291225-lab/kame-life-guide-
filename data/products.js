@@ -736,12 +736,12 @@ const PRODUCTS = {
 
   heater_cord_20w: {
     id: 'heater_cord_20w',
-    name: 'ヒーティングコード 20W',
+    name: 'ZOOMED レプティヒートケーブル 25W',
     category: 'heating',
     tier: 'budget',
     priceRange: '¥1,500–3,000',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B001OVBEEK?tag=kamelife09-22',
+    asin: 'B001OVBEEK',
     image: '/assets/products/placeholder.webp',
     why: 'ケージ側面・底面に這わせて使う万能タイプ。湿度の高い環境でも使用可',
     rating: 3.9,
