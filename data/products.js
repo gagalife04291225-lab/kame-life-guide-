@@ -1028,14 +1028,14 @@ const PRODUCTS = {
 
   substrate_grassland_mix: {
     id: 'substrate_grassland_mix',
-    name: '草原系ブレンド床材 5L',
+    name: 'GEX EXOTERRA デザートベース 細目 3L',
     category: 'substrate',
     tier: 'standard',
     priceRange: '¥1,500–3,500',
-    affiliateUrl: '#',
-    asin: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B08W314BWC?tag=kamelife09-22',
+    asin: 'B08W314BWC',
     image: '/assets/products/placeholder.webp',
-    why: '赤玉土・バーミキュライト・砂をブレンドした床材。地中海系リクガメの乾燥した環境に近づけたい人に',
+    why: '国産天然素材100%の細粒床材。通気性が高く地中海系リクガメの乾燥環境を再現しやすい。軽く掘れるため自然な行動も促しやすい',
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small'],
