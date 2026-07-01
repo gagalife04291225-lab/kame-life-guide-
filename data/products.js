@@ -214,23 +214,6 @@ const PRODUCTS = {
     rakutenSearchTerm: 'アクリル水槽 120cm 爬虫類',
   },
 
-  enclosure_outdoor_panel: {
-    id: 'enclosure_outdoor_panel',
-    name: 'アウトドアエンクロージャーパネル',
-    category: 'enclosure',
-    tier: 'standard',
-    priceRange: '¥8,000–20,000',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: '屋外飼育・日光浴スペースの仕切りに。DIY組み立て式',
-    rating: 4.1,
-    badge: null,
-    recommendedFor: ['outdoor', 'tortoise_dry_small'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'アウトドアケージ パネル 爬虫類',
-  },
 
   /* ══════════════════════════════════════════
      LIGHTING_UVB（UVBライト）  9商品
@@ -372,41 +355,7 @@ const PRODUCTS = {
     rakutenLastUpdated: '2026-06-30',
   },
 
-  uvb_t8_30w: {
-    id: 'uvb_t8_30w',
-    name: 'UVB T8 蛍光管 30W',
-    category: 'lighting_uvb',
-    tier: 'budget',
-    priceRange: '¥1,000–2,500',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: '低コストで入手しやすい旧来型。90cm以内のケージで有効',
-    rating: 3.6,
-    badge: 'Budget Pick',
-    recommendedFor: ['beginner', 'semi_aquatic_small'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'UVB 蛍光管 T8 30W 爬虫類',
-  },
 
-  uvb_t5_desert_alt: {
-    id: 'uvb_t5_desert_alt',
-    name: 'Zilla Desert 50 T5 UVB',
-    category: 'lighting_uvb',
-    tier: 'standard',
-    priceRange: '¥3,500–7,000',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: '乾燥系リクガメ向けのミドルレンジUVB。価格と出力のバランスが良く、定番品からの買い替えにも',
-    rating: 4.3,
-    badge: null,
-    recommendedFor: ['tortoise_dry_small'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zilla T5 Desert 50 UVB 爬虫類',
-  },
 
   /* ══════════════════════════════════════════
      LIGHTING_BASKING（バスキングライト）  9商品
@@ -1116,23 +1065,6 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle', 'advanced'],
   },
 
-  substrate_soil_plain: {
-    id: 'substrate_soil_plain',
-    name: '培養土（無肥料）5L',
-    category: 'substrate',
-    tier: 'budget',
-    priceRange: '¥300–800',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: 'ホームセンターで入手可能な最安値床材。無肥料タイプを選ぶこと',
-    rating: 3.7,
-    badge: 'Budget Pick',
-    recommendedFor: ['beginner'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '培養土 無肥料 爬虫類 リクガメ',
-  },
 
   /* ══════════════════════════════════════════
      SHELTER（シェルター）  8商品
@@ -1212,23 +1144,6 @@ const PRODUCTS = {
     rakutenSearchTerm: '湿潤 シェルター モイスト 爬虫類',
   },
 
-  shelter_slate_flat: {
-    id: 'shelter_slate_flat',
-    name: 'スレートフラットシェルター',
-    category: 'shelter',
-    tier: 'budget',
-    priceRange: '¥800–2,000',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: '薄型で低く這いつくばるタイプのカメに最適。上に乗ることもできる',
-    rating: 3.9,
-    badge: 'Budget Pick',
-    recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'スレート フラット シェルター 爬虫類',
-  },
 
   shelter_cave_lg: {
     id: 'shelter_cave_lg',
@@ -1753,23 +1668,6 @@ const PRODUCTS = {
     rakutenSearchTerm: '爬虫類 プロバイオティクス 腸内環境',
   },
 
-  supplement_spirulina: {
-    id: 'supplement_spirulina',
-    name: 'スピルリナパウダー',
-    category: 'supplements',
-    tier: 'standard',
-    priceRange: '¥800–2,000',
-    affiliateUrl: '#',
-    asin: null,
-    image: '/assets/products/placeholder.webp',
-    why: 'タンパク質・ミネラル・クロロフィルを含む天然サプリ。野菜に混ぜて与える',
-    rating: 4.3,
-    badge: null,
-    recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'スピルリナ パウダー 爬虫類 サプリ',
-  },
 
 };
 
