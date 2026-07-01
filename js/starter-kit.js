@@ -301,7 +301,7 @@ function renderCostBox(picks, opts) {
       '<div class="sk-cost-item">' +
         '<div class="sk-cost-label">初期費用目安</div>' +
         '<div class="sk-cost-value">' + costText + '</div>' +
-        '<div class="sk-cost-sub">必須セット合計</div>' +
+        '<div class="sk-cost-sub">推奨セット合計</div>' +
       '</div>' +
       '<div class="sk-cost-item">' +
         '<div class="sk-cost-label">月額維持費</div>' +
@@ -647,8 +647,8 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
     return { tab: tab, picks: picks };
   });
 
-  // Cost Box は必須セット(budget)のpicksで計算
-  var essentialPicks = tabData[0].picks;
+  // Cost Box は推奨セット(standard)のpicksで計算（Phase 32-A1b: default tab=comfortと一致）
+  var essentialPicks = tabData[1].picks;
   var costBoxHtml = renderCostBox(essentialPicks, opts);
 
   // Bundle Summary（タブ上部）
