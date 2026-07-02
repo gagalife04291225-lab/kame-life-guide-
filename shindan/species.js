@@ -904,7 +904,7 @@ forest: [
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.advanced||0)+(s.asia_box||0); },
     availability: 'common'
   },
-  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES I', legal: 'cites_i', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity"],
+  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES I', legal: 'cites_i', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "reference_only", "registration_required", "cb_only", "high_humidity"],
     reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。',
     specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
     coreSpecs: { size: '19cm', temp: '22〜26℃', lifespan: '20〜50年', diet: '雑食' },
@@ -913,7 +913,7 @@ forest: [
     slug: 'indochinese-box-turtle', hasPage: true,
     match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); },
-    availability: 'exclude'
+    availability: 'reference_only'
   },
   { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'unknown_hold', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity", "unknown_taxonomy"],
     reason: '甲羅の美しい模様が特徴のアジア産ハコガメ。モエギに次ぐ希少性で上級者向き。湿度と温度の精密管理が必要。',
