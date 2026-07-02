@@ -11,7 +11,7 @@
 'use strict';
 
 // ── Constants ──────────────────────────────────────────────────────────
-const ALLOWED_ORIGIN  = 'https://gagalife04291225-lab.github.io';
+const ALLOWED_ORIGIN  = 'https://kamelifeguide.com';
 const MAX_MSG_BYTES   = 500;   // message character limit
 const GEMINI_MODEL    = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';

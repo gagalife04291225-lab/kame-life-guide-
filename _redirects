@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects — Kame Life Guide (domain: kamelifeguide.com)
+/kame-life-guide-/*        /:splat        301
+/species/ouachita-map-turtle.html   /species/ouachita-map-turtle-sp.html   301
+# www -> apex is set at the Cloudflare dashboard, not here.

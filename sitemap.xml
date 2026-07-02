@@ -1,399 +1,643 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/</loc>
+    <loc>https://kamelifeguide.com/</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/shindan/</loc>
+    <loc>https://kamelifeguide.com/about-tete.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/cage-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species-list.html</loc>
+    <loc>https://kamelifeguide.com/cage-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/compare/</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/compare/elongated-vs-hermann.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/turtle-trouble-guide.html</loc>
+    <loc>https://kamelifeguide.com/compare/hermann-vs-greek.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/compare/hermann-vs-russian.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/ranking-beginner-top10.html</loc>
+    <loc>https://kamelifeguide.com/compare/musk-vs-razorback.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/beginner-best-turtles.html</loc>
+    <loc>https://kamelifeguide.com/compare/reeves-vs-japanese-pond.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/small-best-turtles.html</loc>
+    <loc>https://kamelifeguide.com/compare/three-toed-vs-gulf-coast.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/dish-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/low-odor-turtles.html</loc>
+    <loc>https://kamelifeguide.com/food-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-beginner.html</loc>
+    <loc>https://kamelifeguide.com/food-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-water-full.html</loc>
+    <loc>https://kamelifeguide.com/guide-arid.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-dry.html</loc>
+    <loc>https://kamelifeguide.com/guide-beginner.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-moist.html</loc>
+    <loc>https://kamelifeguide.com/guide-brackish.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-semi.html</loc>
+    <loc>https://kamelifeguide.com/guide-dry.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-arid.html</loc>
+    <loc>https://kamelifeguide.com/guide-japan.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-japan.html</loc>
+    <loc>https://kamelifeguide.com/guide-moist.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-brackish.html</loc>
+    <loc>https://kamelifeguide.com/guide-semi.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guide-softshell.html</loc>
+    <loc>https://kamelifeguide.com/guide-softshell.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/turtle-not-eating.html</loc>
+    <loc>https://kamelifeguide.com/guide-water-full.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/turtle-runny-nose.html</loc>
+    <loc>https://kamelifeguide.com/guides/beginner-best-turtles.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/beginner-top10-turtles.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/filter-guide.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/food-guide.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/low-odor-top10-turtles.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/guides/turtle-shell-white.html</loc>
+    <loc>https://kamelifeguide.com/guides/low-odor-turtles.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/real-setup-spenglers-leaf-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/real-setup-west-african-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/compare/hermann-vs-greek.html</loc>
+    <loc>https://kamelifeguide.com/guides/small-best-turtles.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/small-turtle-top10.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/compare/musk-vs-razorback.html</loc>
+    <loc>https://kamelifeguide.com/guides/temperature-guide.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/turtle-not-eating.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/compare/reeves-vs-japanese-pond.html</loc>
+    <loc>https://kamelifeguide.com/guides/turtle-runny-nose.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-best10.html</loc>
+    <loc>https://kamelifeguide.com/guides/turtle-shell-white.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/cage-best10.html</loc>
+    <loc>https://kamelifeguide.com/guides/turtle-trouble-guide.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/guides/uvb-light-guide.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/privacy.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/water-filter-best10.html</loc>
+    <loc>https://kamelifeguide.com/ranking-beginner-top10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-best10.html</loc>
+    <loc>https://kamelifeguide.com/real-setups/</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/shelter-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/food-best10.html</loc>
+    <loc>https://kamelifeguide.com/shelter-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-best10.html</loc>
+    <loc>https://kamelifeguide.com/shindan/</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/dish-best10.html</loc>
+    <loc>https://kamelifeguide.com/species-list.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/_template-monetized.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/african-helmeted-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/alabama-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/albino-chinese-softshell.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/aldabra-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/amazon-matamata.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/annulated-wood-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/asian-black-marsh-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/asian-leaf-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/bell-hinge-back-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/black-knobbed-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/blandings-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/bowsprit-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/brown-wood-turtle-manni.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/canton-reeves-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/carolina-diamondback-terrapin.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/chaco-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/cherry-head-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/russian-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/chinese-box-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/hermann-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/chinese-softshell-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/chinese-stripe-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/collier-snake-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/cumberland-slider.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/desert-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/eastern-box-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/eastern-long-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/greek-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/eastern-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/elongated-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/marginated-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/european-pond-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/false-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/florida-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/florida-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/florida-red-bellied-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/florida-softshell-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/sulcata-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/giant-musk-turtle-mx.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/giant-musk-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/greek-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/gulf-coast-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/hermann-dry-template.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/leopard-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/hermann-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/herrera-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/hilaire-side-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/hime-nioi-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/red-footed-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/hirase-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/home-hinge-back-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/iberian-greek-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/impressed-tortoise.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/pancake-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/indochinese-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/japanese-pond-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/musk-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/leopard-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/razorback-musk-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/loggerhead-musk-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/loggerhead-musk-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/malayan-box-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/reeves-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/marginated-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/japanese-pond-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/matamata.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/mccords-snake-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/mexican-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/mississippi-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/mississippi-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/yaeyama-pond-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/musk-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/narrow-bridged-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/nicaragua-wood-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/northern-diamondback-terrapin.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/northern-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/ornate-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/ornate-cuora.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/ornate-diamondback-terrapin.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/red-eared-slider.html</loc>
+    <loc>https://kamelifeguide.com/species/ouachita-map-turtle-sp.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/painted-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/yellow-bellied-slider.html</loc>
+    <loc>https://kamelifeguide.com/species/painted-wood-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/painted-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/pancake-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/peninsula-cooter.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/eastern-box-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/pig-nosed-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/pink-bellied-side-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/pink-bellied-template.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/three-toed-box-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/razorback-musk-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/chinese-box-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/red-cheeked-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/red-eared-slider.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/malayan-box-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/red-footed-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/spenglers-leaf-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/reeves-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/ringed-map-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/rio-grande-cooter.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/hirase-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/river-cooter.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/russian-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/scorpion-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/siebenrocks-snake-necked-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/matamata.html</loc>
+    <loc>https://kamelifeguide.com/species/smooth-softshell-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/spenglers-leaf-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/spiny-softshell-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/pig-nosed-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/spotted-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/stripe-necked-musk-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/spotted-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/striped-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/sulcata-tortoise.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/taiwan-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/three-striped-box-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/wood-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/three-toed-box-template.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/three-toed-box-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/west-african-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/white-lipped-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/painted-wood-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/wood-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/elongated-tortoise.html</loc>
+    <loc>https://kamelifeguide.com/species/yaeyama-pond-turtle.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/species/european-pond-turtle.html</loc>
+    <loc>https://kamelifeguide.com/species/yellow-bellied-slider.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/cage-review.html</loc>
+    <loc>https://kamelifeguide.com/species/yellow-mud-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/species/yellow-pond-turtle.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/substrate-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/substrate-review.html</loc>
+    <loc>https://kamelifeguide.com/substrate-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/trouble/</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/trouble/not-eating.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/trouble/runny-nose.html</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://kamelifeguide.com/trouble/swollen-eyes.html</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/shelter-review.html</loc>
+    <loc>https://kamelifeguide.com/uvb-light-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/uvb-light-review.html</loc>
+    <loc>https://kamelifeguide.com/uvb-light-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/food-review.html</loc>
+    <loc>https://kamelifeguide.com/water-filter-best10.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gagalife04291225-lab.github.io/kame-life-guide-/water-filter-review.html</loc>
+    <loc>https://kamelifeguide.com/water-filter-review.html</loc>
     <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 </urlset>
