@@ -2,10 +2,29 @@
 // routes.js - ルート定義・質問データ（PHASE 1 分離版）
 // 種データは species.js の SPECIES オブジェクトを参照
 
+
+// ── Phase Diag-2: 全ルート共通の追加質問（Q: 予算 / Q: 臭い・手間）──
+// 各choiceは排他タグ(値1)のみ加算。既存speciesのscore()は未知タグを無視するため採点無傷。
+// 実際の補正は index.html の finalScore() 内 budgetMult / odorMult で行う。
+const COMMON_QUESTIONS = [
+  { text: '初期費用はどれくらいまで許容できますか？', choices: [
+    { label: '〜1万円', scores: { budget_under10k: 1 } },
+    { label: '1〜3万円', scores: { budget_10_30k: 1 } },
+    { label: '3〜7万円', scores: { budget_30_70k: 1 } },
+    { label: '7万円以上', scores: { budget_over70k: 1 } }
+  ]},
+  { text: '臭い・掃除の手間をどこまで許容できますか？', choices: [
+    { label: '臭いは絶対に避けたい', scores: { odor_hate: 1 } },
+    { label: 'なるべく少ないほうがいい', scores: { odor_low: 1 } },
+    { label: '普通に掃除できる', scores: { odor_normal: 1 } },
+    { label: '気にしない', scores: { odor_ok: 1 } }
+  ]}
+];
+
 const ROUTES = [
   {
     id: 'land', emoji: '🏔️', name: 'リクガメルート',
-    desc: 'リクガメが気になる人向け（ロシア・ヘルマン・ケヅメなど）', qCount: 5,
+    desc: 'リクガメが気になる人向け（ロシア・ヘルマン・ケヅメなど）', qCount: 7,
     get species(){ return SPECIES.land; },
     questions: [
       { text: '飼育スペースはどのくらいを想定していますか？', choices: [
@@ -34,11 +53,11 @@ const ROUTES = [
         { label: 'なるべく小型・コンパクトな種を長く飼いたい', scores: { eu_cb: 0, charisma: 0, small_form: 3, asia_land: 0 } },
         { label: 'アジア産の独特な多湿環境の種を楽しみたい', scores: { eu_cb: 0, charisma: 0, small_form: 0, asia_land: 3 } }
       ]}
-    ]
+    ].concat(COMMON_QUESTIONS)
   },
   {
     id: 'aquatic', emoji: '🏊', name: '水棲ガメルート',
-    desc: '水槽で飼いたい人向け（ニオイガメ・チズガメなど）', qCount: 8,
+    desc: '水槽で飼いたい人向け（ニオイガメ・チズガメなど）', qCount: 10,
     get species(){ return SPECIES.aquatic; },
     questions: [
       { text: '水槽・水場のサイズはどのくらい用意できますか？', choices: [
@@ -82,11 +101,11 @@ const ROUTES = [
         { label: '亜熱帯・暖かい環境産が好き（北米南部・東南アジア等）', scores: { cool_climate: 0, warm_climate: 3, tropical_climate: 0 } },
         { label: '熱帯・高温多湿産が好き（中米・南米・アフリカ等）', scores: { cool_climate: 0, warm_climate: 0, tropical_climate: 3 } }
       ]}
-    ]
+    ].concat(COMMON_QUESTIONS)
   },
   {
     id: 'forest', emoji: '🍂', name: 'ヤマガメ・ハコガメルート',
-    desc: '森や多湿環境の種が好きな人向け（スペングラー・ハコガメなど）', qCount: 5,
+    desc: '森や多湿環境の種が好きな人向け（スペングラー・ハコガメなど）', qCount: 7,
     get species(){ return SPECIES.forest; },
     questions: [
       { text: '温度・湿度の管理環境はどのくらい整えられますか？', choices: [
@@ -114,11 +133,11 @@ const ROUTES = [
         { label: 'アジア産ハコガメ（セマル・マレー・モエギ等）', scores: { na_box: 0, asia_box: 3, ya_ma: 0 } },
         { label: 'ヤマガメ・イシガメ系（半水棲・森林棲）', scores: { na_box: 0, asia_box: 0, ya_ma: 3 } }
       ]}
-    ]
+    ].concat(COMMON_QUESTIONS)
   },
   {
     id: 'exotic', emoji: '🌀', name: 'マニアック・特殊ルート',
-    desc: 'レア種やマニア向け（スッポン・曲頸類など）', qCount: 4,
+    desc: 'レア種やマニア向け（スッポン・曲頸類など）', qCount: 6,
     get species(){ return SPECIES.exotic; },
     questions: [
       { text: '特に興味がある系統は？', choices: [
@@ -143,11 +162,11 @@ const ROUTES = [
         { label: '多少高価でも珍しい種を積極的に求めたい', scores: { accessible: 0, collector_grade: 3, ultra_rare: 0 } },
         { label: '価格を問わず国内屈指の希少種を目指す', scores: { accessible: 0, collector_grade: 0, ultra_rare: 3 } }
       ]}
-    ]
+    ].concat(COMMON_QUESTIONS)
   },
   {
     id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: 'まだ決めていない人向け（全100種・6問で診断）', qCount: 6,
+    desc: 'まだ決めていない人向け（全100種・8問で診断）', qCount: 8,
     get species(){ return SPECIES.all; },
     questions: [
       { text: '飼育環境の主な環境タイプを選んでください。', choices: [
@@ -180,6 +199,6 @@ const ROUTES = [
         { label: '爬虫類や魚の飼育経験あり', scores: { beginner: 1, intermediate: 3, advanced: 0 } },
         { label: 'カメ・爬虫類の本格的な飼育経験あり', scores: { beginner: 0, intermediate: 1, advanced: 3 } }
       ]}
-    ]
+    ].concat(COMMON_QUESTIONS)
   }
 ];
