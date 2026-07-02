@@ -11,7 +11,10 @@
 'use strict';
 
 // ── Constants ──────────────────────────────────────────────────────────
-const ALLOWED_ORIGIN  = 'https://kamelifeguide.com';
+const ALLOWED_ORIGINS = [
+  'https://kamelifeguide.com',                 // production (custom domain)
+  'https://gagalife04291225-lab.github.io',    // legacy GitHub Pages (remove after cutover)
+];
 const MAX_MSG_BYTES   = 500;   // message character limit
 const GEMINI_MODEL    = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
@@ -85,7 +88,7 @@ function validateIntent(raw) {
 function corsHeaders(origin) {
   // Restrict to the production site only.
   // Do NOT use '*' — this protects against cross-origin API key abuse.
-  const allowedOrigin = origin === ALLOWED_ORIGIN ? ALLOWED_ORIGIN : '';
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : '';
   return {
     'Access-Control-Allow-Origin':  allowedOrigin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -139,7 +142,7 @@ export default {
     // ── Origin guard ─────────────────────────────────────────────────
     // Allow requests with no Origin header only in local dev (wrangler dev).
     // In production, reject unknown origins.
-    if (origin && origin !== ALLOWED_ORIGIN) {
+    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
       return jsonError(403, 'forbidden_origin', 'Origin not allowed', origin);
     }
 
