@@ -2102,7 +2102,44 @@ function calcResult() {
       var legalMult = 1.0;
       if (sp.legal === 'conditional_invasive') legalMult = 0.25;
 
-      return raw * availMult * diffMult * legalMult;
+      // ── Phase Diag-2: budget 補正（初期費用はサイズ・水槽規模に比例）──
+      var budgetMult = 1.0;
+      var _sz = sp.size || '';
+      var _isXL = _sz.indexOf('XL') >= 0;
+      var _isL  = !_isXL && _sz.indexOf('L') >= 0;
+      var _isAquaticSp = (routeId === 'aquatic') || /水槽|水量/.test((sp.specs && sp.specs['水容量']) || '');
+      if (scores.budget_under10k) {
+        if (_isXL) budgetMult = 0.30;
+        else if (_isL) budgetMult = 0.55;
+        else if (_isAquaticSp && _sz.indexOf('M') >= 0) budgetMult = 0.85;
+      } else if (scores.budget_10_30k) {
+        if (_isXL) budgetMult = 0.50;
+        else if (_isL) budgetMult = 0.80;
+      } else if (scores.budget_30_70k) {
+        if (_isXL) budgetMult = 0.85;
+      }
+      // budget_over70k: 補正なし（プレミアム種・大型設備を許容）
+
+      // ── Phase Diag-2: odor / メンテ許容度 補正 ──
+      var odorMult = 1.0;
+      var _latin = sp.latin || '';
+      var _isSliderCooter = /Trachemys|Pseudemys|Chrysemys/.test(_latin); // スライダー・クーター系（高排泄量）
+      var _isBoxTurtle = /Terrapene|Cuora/.test(_latin);                   // ハコガメ系（低臭・陸棲）
+      var _isSmallForest = (routeId === 'forest') && _sz.indexOf('S') >= 0;
+      if (scores.odor_hate) {
+        if (_isSliderCooter) odorMult = 0.45;
+        else if (_isAquaticSp && _isXL) odorMult = 0.50;
+        else if (_isAquaticSp && _isL) odorMult = 0.60;
+        else if (_isAquaticSp) odorMult = 0.85;
+        if (_isBoxTurtle || _isSmallForest) odorMult = 1.15;
+      } else if (scores.odor_low) {
+        if (_isSliderCooter) odorMult = 0.70;
+        else if (_isAquaticSp && (_isXL || _isL)) odorMult = 0.78;
+        if (_isBoxTurtle || _isSmallForest) odorMult = 1.08;
+      }
+      // odor_normal / odor_ok: 補正なし
+
+      return raw * availMult * diffMult * legalMult * budgetMult * odorMult;
     }
 
     // ── Step 6: FIX F — safeFallback 強化 ──
