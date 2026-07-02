@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>ページが見つかりません | カメライフガイド</title>
+<link rel="canonical" href="https://kamelifeguide.com/404.html">
+<style>
+  :root{color-scheme:light}
+  body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+       background:#f4f7f4;color:#1f2d24;display:flex;min-height:100vh;align-items:center;justify-content:center}
+  .box{max-width:560px;padding:2.5rem 1.5rem;text-align:center}
+  .code{font-size:4.5rem;font-weight:800;color:#2f7a4d;line-height:1;margin:0}
+  h1{font-size:1.25rem;margin:.75rem 0 .5rem}
+  p{color:#4a5a51;line-height:1.7;margin:.25rem 0 1.75rem}
+  .links{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+  a.btn{display:inline-block;padding:.7rem 1.1rem;border-radius:999px;text-decoration:none;
+        font-weight:600;font-size:.95rem;background:#2f7a4d;color:#fff}
+  a.btn.alt{background:#fff;color:#2f7a4d;border:1px solid #cfe3d6}
+</style>
+</head>
+<body>
+  <main class="box">
+    <p class="code">404</p>
+    <h1>お探しのページは見つかりませんでした</h1>
+    <p>ページが移動または削除された可能性があります。<br>下のリンクからお探しください。</p>
+    <div class="links">
+      <a class="btn" href="/">トップへ戻る</a>
+      <a class="btn alt" href="/shindan/">かんたん種類診断</a>
+      <a class="btn alt" href="/species-list.html">種類一覧</a>
+    </div>
+  </main>
+  <!-- GA4 (tracks 404 hits) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config','G-QQTE5CVF3K');
+    gtag('event','page_not_found',{page_location:location.href,page_path:location.pathname});
+  </script>
+</body>
+</html>
