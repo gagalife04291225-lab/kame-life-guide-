@@ -66,8 +66,6 @@ kame-life-guide-/
 ├── privacy.html            # プライバシーポリシー
 ├── sitemap.xml             # サイトマップ
 ├── robots.txt              # クローラー制御
-├── netlify.toml            # Netlify 設定（現在は使用禁止、参照のみ）
-├── vercel.json             # Vercel 設定（現在は使用禁止、参照のみ）
 │
 ├── # ──── 引き継ぎ文書────
 ├── SHINDAN-SPEC.md         # 診断ツール仕様書・作業ルール
@@ -80,7 +78,7 @@ kame-life-guide-/
 
 ### デプロイ・ホスティング
 
-- **GitHub Pages のみ**。Netlify・Vercel は設定ファイルが残っているが**使用禁止**
+- **GitHub Pages のみ**。Netlify・Vercelは使用禁止。関連設定ファイルはPhase 34A-3で削除済み。
 - main ブランチへの push で自動デプロイ（約60秒待機が必要）
 - `.claude/settings.json` に `git push` 後の自動検証フックあり → push 後はデプロイ完了を待って WebFetch で検証する
 
@@ -177,7 +175,7 @@ guide-{habitat}.html        # ハビタット別飼育ガイド
 | 「小さい変更だから確認不要」 | 追跡 ID・GA4 は収益と分析に直結する。必ず確認する |
 | 「だいたい合ってるコントラスト」 | 数値で確認する。目視は信用しない |
 | 「追跡IDは後で確認」 | 収益に直結する。今確認する |
-| 「Netlify でも同じでは？」 | GitHub Pages のみ。設定ファイルは残っているが使用禁止 |
+| 「Netlify でも同じでは？」 | GitHub Pages のみ。Netlify・Vercelは使用禁止。関連設定ファイルはPhase 34A-3で削除済み。 |
 
 ---
 
