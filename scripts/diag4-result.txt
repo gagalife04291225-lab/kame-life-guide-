@@ -1,2 +1,0 @@
-[AccessKey-as-appId] HTTP=400 error=wrong_parameter items=0
-[AccessKey-no-affId] HTTP=400 error=wrong_parameter items=0
