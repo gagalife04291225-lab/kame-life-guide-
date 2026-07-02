@@ -1637,14 +1637,6 @@ var SK_CAT_LABELS = {
   supplements:      'サプリ',
 };
 
-function starRating(r) {
-  if (!r) return '';
-  var full  = Math.floor(r);
-  var half  = (r - full) >= 0.5 ? 1 : 0;
-  var empty = 5 - full - half;
-  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty) + ' ' + r.toFixed(1);
-}
-
 /**
  * Phase 31-C2b: Starter Kit V2 adapter for shindan result
  * Bridges shindan sp object → mountStarterKit(V2) call.
@@ -1768,8 +1760,7 @@ function renderStarterKit(sp) {
       '<div class="sk-cat-label">' + (SK_CAT_LABELS[item.cat] || item.cat) + '</div>' +
       '<span class="sk-card-badge ' + item.badgeCls + '">' + item.tierLabel + '</span>' +
       '<div class="sk-card-name">' + p.name + '</div>' +
-      (p.rating ? '<div class="sk-card-rating">' + starRating(p.rating) + '</div>' : '') +
-      '<div class="sk-card-price">' + p.priceRange + '</div>' +
+      '<div class="sk-card-price">' + p.priceRange + '<span class="sk-price-note">（目安）</span></div>' +
       (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
       btnHtml +
     '</div>';
@@ -1796,6 +1787,7 @@ function renderStarterKit(sp) {
       '<div class="sk-heading">はじめての飼育セット（5点）</div>' +
       costBoxHtml +
       '<div class="sk-scroll">' + cardsHtml + '</div>' +
+      '<p class="sk-cost-note">※表示価格は掲載時の目安です。価格・在庫は変動するため、最新情報は必ずリンク先の販売ページでご確認ください。</p>' +
       '<div class="sk-disclaimer">※Amazon・楽天のアフィリエイトリンクを含みます</div>' +
       ctaHtml +
     '</div>';
