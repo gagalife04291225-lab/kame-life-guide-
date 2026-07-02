@@ -219,14 +219,6 @@ var SK_CAT_ORDER = [
   'shelter', 'food', 'supplements'
 ];
 
-function skStarRating(r) {
-  if (!r) return '';
-  var full = Math.floor(r);
-  var half = (r - full) >= 0.5 ? 1 : 0;
-  var empty = 5 - full - half;
-  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty) + ' ' + r.toFixed(1);
-}
-
 /**
  * 指定tierのピックリスト生成
  */
@@ -467,8 +459,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
     '</div>' +
     '<span class="sk-card-badge ' + tierCls + '">' + tierLabel + '</span>' +
     '<div class="sk-card-name">' + p.name + '</div>' +
-    (p.rating ? '<div class="sk-card-rating">' + skStarRating(p.rating) + '</div>' : '') +
-    '<div class="sk-card-price">' + p.priceRange + '</div>' +
+    '<div class="sk-card-price">' + p.priceRange + '<span class="sk-price-note">（目安）</span></div>' +
     (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
     btn +
   '</div>';
