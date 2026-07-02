@@ -46,10 +46,32 @@
   .fbtn.active{background:var(--forest);border-color:var(--forest);color:var(--parchment);}
   .fbtn.active-diff{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
 
+  /* 検索ボックス */
+  .search-box{
+    width:100%;padding:11px 16px;border-radius:24px;
+    border:1.5px solid #d4c9a8;background:#fffdf7;
+    font-family:"Noto Serif JP",serif;font-size:.92rem;color:var(--forest-deep);
+    outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;
+  }
+  .search-box:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(212,169,106,.18);}
+  .search-box::placeholder{color:#a7b0a5;}
+
+  /* KLGクイックの選択色 */
+  .fbtn.active-klg{background:var(--accent);border-color:var(--accent);color:#3a2610;}
+
   /* 件数表示 */
-  .count-bar{padding:18px 0 6px;}
+  .count-bar{padding:18px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
   .count-text{font-size:.9rem;color:#6b7c70;}
   .count-num{font-weight:700;color:var(--forest);font-size:1.05rem;}
+  .sort-wrap{display:flex;align-items:center;gap:8px;}
+  .sort-label{font-size:.78rem;letter-spacing:.1em;color:var(--accent-dark);font-weight:700;}
+  .sort-sel{
+    font-family:"Noto Serif JP",serif;font-size:.84rem;color:var(--forest-deep);
+    padding:6px 30px 6px 12px;border-radius:16px;border:1.5px solid #d4c9a8;
+    background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath fill='%238f5f2c' d='M0 0l5 7 5-7z'/%3E%3C/svg%3E") no-repeat right 12px center;
+    cursor:pointer;outline:none;-webkit-appearance:none;appearance:none;
+  }
+  .sort-sel:focus{border-color:var(--accent);}
 
   /* 種カードグリッド */
   section.species-grid{padding:4px 0 60px;}
@@ -85,7 +107,9 @@
   }
   .sp-link:hover{background:var(--accent-dark);}
 
-  .no-result{text-align:center;padding:60px 0;color:#8a9389;font-size:1rem;}
+  .no-result{text-align:center;padding:52px 0 60px;color:#8a9389;font-size:.96rem;line-height:2;}
+  .no-result-emoji{font-size:2.2rem;margin-bottom:10px;}
+  .no-result-reset{margin-top:16px;padding:8px 22px;font-size:.86rem;}
 
   section.closing{background:var(--forest-deep);color:var(--parchment);padding:44px 0;}
   section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
@@ -125,24 +149,43 @@
 <div class="filter-bar">
   <div class="wrap">
     <div class="filter-group">
-      <div class="filter-label">カテゴリ</div>
-      <div class="filter-btns" id="cat-btns">
-        <button class="fbtn active" data-cat="all">すべて</button>
-        <button class="fbtn" data-cat="リクガメ">リクガメ</button>
-        <button class="fbtn" data-cat="水棲ガメ">水棲ガメ</button>
-        <button class="fbtn" data-cat="ヤマガメ・ハコガメ">ヤマガメ・ハコガメ</button>
-        <button class="fbtn" data-cat="スッポン・曲頸">スッポン・曲頸</button>
-        <button class="fbtn" data-cat="汽水">汽水テラピン</button>
-        <button class="fbtn" data-cat="日本産">日本産</button>
+      <input type="search" id="search-box" class="search-box" placeholder="種名・学名で検索（例：ニオイガメ / russian / Testudo）" autocomplete="off" aria-label="種名検索">
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">生息環境</div>
+      <div class="filter-btns" id="hab-btns">
+        <button class="fbtn active" data-hab="all">すべて</button>
+        <button class="fbtn" data-hab="水棲">水棲</button>
+        <button class="fbtn" data-hab="半水棲">半水棲</button>
+        <button class="fbtn" data-hab="陸棲">陸棲</button>
+        <button class="fbtn" data-hab="森林系">森林系</button>
       </div>
     </div>
     <div class="filter-group">
       <div class="filter-label">難易度</div>
       <div class="filter-btns" id="diff-btns">
         <button class="fbtn active-diff" data-diff="all">すべて</button>
-        <button class="fbtn" data-diff="入門">入門</button>
+        <button class="fbtn" data-diff="初心者向け">初心者向け</button>
         <button class="fbtn" data-diff="中級">中級</button>
         <button class="fbtn" data-diff="上級">上級</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">サイズ</div>
+      <div class="filter-btns" id="size-btns">
+        <button class="fbtn active" data-size="all">すべて</button>
+        <button class="fbtn" data-size="小型">小型</button>
+        <button class="fbtn" data-size="中型">中型</button>
+        <button class="fbtn" data-size="大型">大型</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">KLGクイック</div>
+      <div class="filter-btns" id="klg-btns">
+        <button class="fbtn" data-klg="lowOdor">低臭</button>
+        <button class="fbtn" data-klg="lowBudget">低予算</button>
+        <button class="fbtn" data-klg="compact">省スペース</button>
+        <button class="fbtn" data-klg="rare">レア種</button>
       </div>
     </div>
   </div>
@@ -151,13 +194,26 @@
 <div class="wrap">
   <div class="count-bar">
     <span class="count-text"><span class="count-num" id="count-num">98</span> 種 表示中</span>
+    <span class="sort-wrap">
+      <label for="sort-sel" class="sort-label">並び替え</label>
+      <select id="sort-sel" class="sort-sel">
+        <option value="popular">人気順</option>
+        <option value="beginner">初心者向け</option>
+        <option value="size">小型順</option>
+        <option value="odor">低臭順</option>
+      </select>
+    </span>
   </div>
 </div>
 
 <section class="species-grid">
   <div class="wrap">
     <div class="sp-grid" id="sp-grid"></div>
-    <div class="no-result" id="no-result" style="display:none">条件に一致する種が見つかりませんでした。</div>
+    <div class="no-result" id="no-result" style="display:none">
+      <div class="no-result-emoji" aria-hidden="true">🐢💤</div>
+      <p>条件に一致する種が見つかりませんでした。<br>検索語や絞り込みを少しゆるめてみてください。</p>
+      <button type="button" class="fbtn no-result-reset" id="reset-filters">条件をリセットする</button>
+    </div>
   </div>
 </section>
 
@@ -236,8 +292,49 @@ var ALL_SPECIES = [];
     if (seen[sp.name]) return;
     seen[sp.name] = true;
     var cat = CAT_OVERRIDE[sp.name] || ROUTE_CAT[route];
-    ALL_SPECIES.push({ sp: sp, cat: cat });
+    ALL_SPECIES.push({ sp: sp, cat: cat, route: route });
   });
+});
+
+// ---- 派生属性の付与（DB非改変・ヒューリスティック） ----
+
+// サイズ文字列から最大cmを抽出
+function maxCm(sizeStr) {
+  var nums = (String(sizeStr).match(/\d+/g) || []).map(Number);
+  return nums.length ? Math.max.apply(null, nums) : 0;
+}
+// 生息環境
+function habitatOf(item) {
+  var r = item.route, n = item.sp.name;
+  if (r === 'land') return '陸棲';
+  if (r === 'forest') return '森林系';
+  // aquatic / exotic：ニオイ・ドロ・ハコ系は半水棲、それ以外は水棲
+  if (/ニオイ|ドロ/.test(n)) return '半水棲';
+  return '水棲';
+}
+// 難易度ランク（初心者向け=0, 中級=1, 上級=2）
+function diffRank(d) {
+  if (/上級/.test(d)) return 2;
+  if (/入門/.test(d)) return 0;
+  return 1;
+}
+
+ALL_SPECIES.forEach(function(item, i) {
+  var sp = item.sp;
+  var cm = maxCm(sp.size);
+  item.origIndex = i;
+  item.maxCm = cm;
+  item.habitat = habitatOf(item);
+  item.diffRank = diffRank(sp.difficulty);
+  item.sizeClass = cm > 30 ? '大型' : cm >= 16 ? '中型' : '小型';
+  item.rare = sp.availability === 'rare';
+  // 低臭：床材飼育の陸棲・森林系（水質由来の臭気が少ない）
+  item.lowOdor = (item.route === 'land' || item.route === 'forest');
+  // 省スペース：最大20cm以下
+  item.compact = cm > 0 && cm <= 20;
+  // 低予算：入門〜中級かつ流通が安定（common）かつ小〜中型
+  item.lowBudget = /入門/.test(sp.difficulty) && sp.availability === 'common' && cm <= 25;
+  item.pop = sp.recommendationPriority || 0;
 });
 
 // バッジHTML
@@ -291,51 +388,124 @@ function renderCard(item) {
   '</div>';
 }
 
-// 初期描画
 var grid = document.getElementById('sp-grid');
-grid.innerHTML = ALL_SPECIES.map(renderCard).join('');
-document.getElementById('count-num').textContent = ALL_SPECIES.length;
+var countEl = document.getElementById('count-num');
+var noResultEl = document.getElementById('no-result');
 
-// フィルター状態
-var currentCat = 'all';
-var currentDiff = 'all';
+// フィルター/ソート状態
+var state = {
+  q: '',
+  hab: 'all',
+  diff: 'all',
+  size: 'all',
+  klg: {},        // { lowOdor:true, ... }
+  sort: 'popular'
+};
 
-function applyFilter() {
-  var cards = grid.querySelectorAll('.sp-card');
-  var visible = 0;
-  cards.forEach(function(card) {
-    var catOk = currentCat === 'all' || card.dataset.cat === currentCat;
-    var diff = card.dataset.diff;
-    var diffOk = true;
-    if (currentDiff === '入門')  diffOk = diff.indexOf('入門') >= 0;
-    if (currentDiff === '中級')  diffOk = diff.indexOf('中') >= 0;
-    if (currentDiff === '上級')  diffOk = diff.indexOf('上級') >= 0;
-    var show = catOk && diffOk;
-    card.style.display = show ? '' : 'none';
-    if (show) visible++;
-  });
-  document.getElementById('count-num').textContent = visible;
-  document.getElementById('no-result').style.display = visible === 0 ? '' : 'none';
+// 検索ハッシュ（種名・学名・slug＝英名代替 を小文字連結）
+function haystack(item) {
+  var sp = item.sp;
+  return (sp.name + ' ' + (sp.latin || '') + ' ' + (sp.slug || '')).toLowerCase();
 }
 
-// カテゴリボタン
-document.getElementById('cat-btns').addEventListener('click', function(e) {
-  var btn = e.target.closest('.fbtn');
-  if (!btn) return;
-  document.querySelectorAll('#cat-btns .fbtn').forEach(function(b){ b.classList.remove('active'); });
-  btn.classList.add('active');
-  currentCat = btn.dataset.cat;
-  applyFilter();
+function matches(item) {
+  if (state.q && haystack(item).indexOf(state.q) < 0) return false;
+  if (state.hab !== 'all' && item.habitat !== state.hab) return false;
+  if (state.diff !== 'all') {
+    var want = state.diff === '初心者向け' ? 0 : state.diff === '中級' ? 1 : 2;
+    if (item.diffRank !== want) return false;
+  }
+  if (state.size !== 'all' && item.sizeClass !== state.size) return false;
+  for (var tag in state.klg) {
+    if (state.klg[tag] && !item[tag]) return false;   // 選択タグはAND
+  }
+  return true;
+}
+
+function sortList(list) {
+  var s = state.sort;
+  return list.slice().sort(function(a, b) {
+    if (s === 'popular') return (b.pop - a.pop) || (a.origIndex - b.origIndex);
+    if (s === 'beginner') return (a.diffRank - b.diffRank) || (a.origIndex - b.origIndex);
+    if (s === 'size')     return (a.maxCm - b.maxCm) || (a.origIndex - b.origIndex);
+    if (s === 'odor')     return ((b.lowOdor?1:0) - (a.lowOdor?1:0)) || (a.origIndex - b.origIndex);
+    return a.origIndex - b.origIndex;
+  });
+}
+
+function render() {
+  var list = sortList(ALL_SPECIES.filter(matches));
+  grid.innerHTML = list.map(renderCard).join('');
+  countEl.textContent = list.length;
+  noResultEl.style.display = list.length === 0 ? '' : 'none';
+}
+
+// 初期描画
+render();
+
+// 検索（リアルタイム）
+document.getElementById('search-box').addEventListener('input', function(e) {
+  state.q = e.target.value.trim().toLowerCase();
+  render();
 });
 
-// 難易度ボタン
+// 単一選択チップ（生息環境 / サイズ）
+function singleSelect(containerId, attr, activeClass) {
+  document.getElementById(containerId).addEventListener('click', function(e) {
+    var btn = e.target.closest('.fbtn');
+    if (!btn) return;
+    this.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove(activeClass); });
+    btn.classList.add(activeClass);
+    state[attr] = btn.dataset[attr];
+    render();
+  });
+}
+singleSelect('hab-btns', 'hab', 'active');
+singleSelect('size-btns', 'size', 'active');
+
+// 難易度チップ（別の active クラス）
 document.getElementById('diff-btns').addEventListener('click', function(e) {
   var btn = e.target.closest('.fbtn');
   if (!btn) return;
-  document.querySelectorAll('#diff-btns .fbtn').forEach(function(b){ b.classList.remove('active-diff'); });
+  this.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('active-diff'); });
   btn.classList.add('active-diff');
-  currentDiff = btn.dataset.diff;
-  applyFilter();
+  state.diff = btn.dataset.diff;
+  render();
+});
+
+// KLGクイック（複数トグル）
+document.getElementById('klg-btns').addEventListener('click', function(e) {
+  var btn = e.target.closest('.fbtn');
+  if (!btn) return;
+  var tag = btn.dataset.klg;
+  var on = !btn.classList.contains('active-klg');
+  btn.classList.toggle('active-klg', on);
+  state.klg[tag] = on;
+  render();
+});
+
+// ソート
+document.getElementById('sort-sel').addEventListener('change', function(e) {
+  state.sort = e.target.value;
+  render();
+});
+
+// 空結果からのリセット
+document.getElementById('reset-filters').addEventListener('click', function() {
+  state.q = ''; state.hab = 'all'; state.diff = 'all'; state.size = 'all'; state.klg = {};
+  document.getElementById('search-box').value = '';
+  ['hab-btns','size-btns'].forEach(function(id) {
+    document.querySelectorAll('#' + id + ' .fbtn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.hab === 'all' || b.dataset.size === 'all');
+    });
+  });
+  document.querySelectorAll('#diff-btns .fbtn').forEach(function(b) {
+    b.classList.toggle('active-diff', b.dataset.diff === 'all');
+  });
+  document.querySelectorAll('#klg-btns .fbtn').forEach(function(b) {
+    b.classList.remove('active-klg');
+  });
+  render();
 });
 </script>
 
