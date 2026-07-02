@@ -761,7 +761,7 @@ forest: [
     score: function(s){ return (s.s_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); },
     availability: 'common'
   },
-  { name: 'ヒラセガメ', latin: 'Cuora mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ヒラセガメ', latin: 'Cuora mouhotii', emoji: '🪨', difficulty: '中〜上級', size: 'M（15〜18cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "cb_only", "high_humidity"],
     reason: '扁平な甲羅が特徴の東南アジア産ヤマガメ。夏の保冷管理と高湿度維持が重要。著者も飼育中で、落ち着いた性格が魅力。',
     specs: { '最大甲長': '18cm', 'タイプ': '森林棲', '温度': '20〜28℃', '難易度': '★★★' },
     coreSpecs: { size: '18cm', temp: '20〜28℃', lifespan: '30〜50年', diet: '雑食' },
@@ -871,7 +871,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'タイワンセマルハコガメ', latin: 'Cuora flavomarginata evelynae', emoji: '🟠', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'タイワンセマルハコガメ', latin: 'Cuora flavomarginata evelynae', emoji: '🟠', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "cb_only", "high_humidity"],
     reason: '甲羅の縁がオレンジ色に縁どられた美しい台湾産ハコガメ。CB個体は流通している。沖縄産は天然記念物で全く別扱い。必ずCB証明書を確認のこと。',
     specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },
@@ -882,7 +882,7 @@ forest: [
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.intermediate||0)+(s.asia_box||0); },
     availability: 'common'
   },
-  { name: 'マレーハコガメ', latin: 'Cuora amboinensis', emoji: '🌊', difficulty: '中〜上級', size: 'M（18〜20cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'マレーハコガメ', latin: 'Cuora amboinensis', emoji: '🌊', difficulty: '中〜上級', size: 'M（18〜20cm）', cites: 'CITES II', legal: 'cites_ii', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "iucn_en", "cb_only"],
     reason: '東南アジア広域に分布する半水棲のハコガメ。水場・陸場を行き来する。高温多湿を好みアジア的な雰囲気がある。',
     specs: { '最大甲長': '20cm', 'タイプ': '半水棲', '温度': '26〜30℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '26〜30℃', lifespan: '20〜50年', diet: '雑食' },
@@ -893,7 +893,7 @@ forest: [
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.asia_box||0); },
     availability: 'common'
   },
-  { name: 'チュウゴクセマルハコガメ', latin: 'Cuora flavomarginata', emoji: '🇨🇳', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'チュウゴクセマルハコガメ', latin: 'Cuora flavomarginata', emoji: '🇨🇳', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "cb_only"],
     reason: '中国本土産のセマルハコガメ。CB個体の流通がある。タイワン産と同様の管理で飼育できるが亜種の証明書をしっかり確認することが重要。',
     specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },
@@ -904,7 +904,7 @@ forest: [
     score: function(s){ return (s.semi_aquatic||0)+(s.m_size||0)+(s.advanced_env||0)+(s.advanced||0)+(s.asia_box||0); },
     availability: 'common'
   },
-  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'モエギハコガメ', latin: 'Cuora galbinifrons', emoji: '💚', difficulty: '上級', size: 'M（15〜19cm）', cites: 'CITES I', legal: 'cites_i', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity"],
     reason: '萌黄色の甲羅が美しいアジア産ハコガメ。流通量が限られ上級者向き。湿度高め・やや低めの温度管理が必要。',
     specs: { '最大甲長': '19cm', 'タイプ': '半陸棲', '温度': '22〜26℃', '難易度': '★★★' },
     coreSpecs: { size: '19cm', temp: '22〜26℃', lifespan: '20〜50年', diet: '雑食' },
@@ -913,9 +913,9 @@ forest: [
     slug: 'indochinese-box-turtle', hasPage: true,
     match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
     score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); },
-    availability: 'rare'
+    availability: 'exclude'
   },
-  { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'unknown_hold', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity", "unknown_taxonomy"],
     reason: '甲羅の美しい模様が特徴のアジア産ハコガメ。モエギに次ぐ希少性で上級者向き。湿度と温度の精密管理が必要。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '22〜27℃', '難易度': '★★★' },
     coreSpecs: { size: '20cm', temp: '22〜27℃', lifespan: '20〜50年', diet: '雑食' },
@@ -924,9 +924,9 @@ forest: [
     slug: 'ornate-cuora', hasPage: true,
     match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2; },
     score: function(s){ return (s.terrestrial||0)+(s.advanced||0)+(s.advanced_env||0)+(s.asia_box||0); },
-    availability: 'rare'
+    availability: 'exclude'
   },
-  { name: 'ミスジハコガメ', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ミスジハコガメ', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: false, commerceAllowed: false, riskFlags: ["cites_ii", "iucn_cr", "cb_only", "rare_trade"],
     reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。高価で流通が非常に少ない。CB個体を入手できれば本格的なアジアガメ飼育の頂点。',
     specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },
     coreSpecs: { size: '21cm', temp: '22〜27℃', lifespan: '20〜50年', diet: '雑食' },
@@ -935,7 +935,7 @@ forest: [
     slug: 'three-striped-box-turtle', hasPage: true,
     match: function(s){ return (s.semi_aquatic||0) >= 1 && (s.advanced||0) >= 3 && (s.advanced_env||0) >= 3; },
     score: function(s){ return (s.semi_aquatic||0)+(s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.asia_box||0); },
-    availability: 'rare'
+    availability: 'reference_only'
   },
   { name: 'ノコヘリマルガメ', latin: 'Cyclemys dentata', emoji: '🌿', difficulty: '中〜上級', size: 'M（20〜25cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '東南アジア産の半水棲ガメ。甲羅の縁が鋸歯状でノコギリのような独特の形状が特徴。若い個体はより水棲傾向が強く、成熟につれ陸棲傾向が増す興味深い種。CITES II。',
