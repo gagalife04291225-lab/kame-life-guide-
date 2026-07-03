@@ -45,7 +45,7 @@
       ],
       linked_failures: ["fail-overheat", "fail-escape"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "rakuten_pref",
-      affiliate: { amazon: null, rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://amzn.to/4p0SGUV", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://www.metalcontrol.work/entry/2022/08/16/194842", type: "blog", region: "JP" }],
       image: { path: null, license: null, author: null, ok: false },
       confidence: 9, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
@@ -70,7 +70,7 @@
       ],
       linked_failures: ["fail-egg-binding", "fail-escape"], linked_contested: ["contest-sand"],
       cta_enabled: true, cta_channel_hint: "rakuten_pref",
-      affiliate: { amazon: null, rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://amzn.to/4eKxFKU", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://tortoiseforum.org/threads/indoor-nesting-box-for-leopard.209010/", type: "forum", region: "US" }],
       image: { path: null, license: null, author: null, ok: false },
       confidence: 9, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
@@ -142,7 +142,7 @@
       ],
       linked_failures: ["fail-clamp-fire"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "amazon_pref",
-      affiliate: { amazon: null, rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://amzn.to/44Ie9IR", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://tortoiseforum.org/threads/basking-lamp-fixture-recomendations.192734/", type: "forum", region: "US" }],
       image: { path: null, license: null, author: null, ok: false },
       confidence: 9, unresolved: ["affiliate"], last_reviewed: "2026-07-03"
@@ -165,7 +165,7 @@
       ],
       linked_failures: ["fail-filter-intake"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "amazon_pref",
-      affiliate: { amazon: null, rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://amzn.to/4eGAqga", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "http://www.redearslider.com/forum/viewtopic.php?f=4&t=34009", type: "forum", region: "US" }],
       image: { path: null, license: null, author: null, ok: false },
       confidence: 9, unresolved: ["affiliate"], last_reviewed: "2026-07-03"
@@ -267,7 +267,7 @@
       ],
       linked_failures: [], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "amazon_pref",
-      affiliate: { amazon: null, rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://amzn.to/3RcHBDP", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://hachurui.jp/310", type: "blog", region: "JP" }],
       image: { path: null, license: null, author: null, ok: false },
       confidence: 8, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
