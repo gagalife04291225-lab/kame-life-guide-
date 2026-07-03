@@ -132,6 +132,18 @@
     return '<p class="evidence-line">実飼育の参考：<a href="' + esc(e.url) + '" target="_blank" rel="noopener nofollow">' + esc(e.type + " / " + (e.region || "")) + "</a></p>";
   }
 
+  /* ---------- owner photo (only when image.ok===true and path exists) ---------- */
+  function imageHtml(item) {
+    var im = item.image;
+    if (!im || im.ok !== true || !im.path) { return ""; }
+    var cap = im.caption ? '<figcaption class="card-photo-caption">' + esc(im.caption) + "</figcaption>" : "";
+    return '<figure class="card-photo">' +
+      '<img src="' + esc(im.path) + '" alt="' + esc(item.name_ja) + '（運営者の実飼育写真）"' +
+      ' width="900" height="1200" loading="lazy"' +
+      ' onerror="this.parentNode.style.display=\'none\'">' +
+      cap + "</figure>";
+  }
+
   /* ---------- full equipment card ---------- */
   function labelClass(l) { return "label label-" + l.toLowerCase(); }
   var LABEL_JA = { SAFE: "適正サイズなら常用可", CONDITIONAL: "条件付き — まず条件を確認", TEMPORARY: "一時利用のみ", UNSAFE: "推奨しません", UNKNOWN: "情報不足 — 要確認" };
@@ -151,8 +163,10 @@
 
     var cta = ctaHtml(item);
 
+    var photo = imageHtml(item);
+
     return '<article class="kid-card" id="' + esc(item.id) + '" data-buckets="' + esc((item.shell_buckets || []).join(",")) + '">' +
-      head + gauge + ks + toggle + detail + cta + "</article>";
+      photo + head + gauge + ks + toggle + detail + cta + "</article>";
   }
 
   /* ---------- dangerous card ---------- */
