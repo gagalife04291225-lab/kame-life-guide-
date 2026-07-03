@@ -51,19 +51,19 @@
       confidence: 9, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
     },
     {
-      id: "nest-tote-soil", name_ja: "深型衣装ケース＋黒土/川砂", category: "nesting",
+      id: "nest-tote-soil", name_ja: "深型衣装ケース＋黒土/川砂（産卵床・幼体〜ヤング単独飼育）", category: "nesting",
       turtle_type_tags: ["aquatic", "semi-aquatic", "box", "tortoise"],
       shell_min_cm: 6, shell_max_cm: 25, shell_buckets: ["M", "L", "XL"],
-      life_stage: ["adult"], adult_suitability: "yes", duration: "permanent",
+      life_stage: ["juvenile", "young", "adult"], adult_suitability: "yes", duration: "permanent",
       dim_external: { w: null, d: null, h: null, unit: "mm", src: null },
       dim_internal: { w: null, d: null, h: null, unit: "mm" },
-      dim_usable: { note: "床材を入れた実効深で判定。要確認", w: null, d: null, h: null },
+      dim_usable: { note: "産卵床は床材の実効深で、幼体〜ヤング飼育は底面積で判定。要確認", w: null, d: null, h: null },
       dim_confidence: "要確認",
       water_depth: null, substrate_depth: { min: "甲長×1〜1.5", rule: "後肢が底に当たらない深さ" },
       animal_count: "single",
       kscore: { swim: null, turn: 2, bask: null, shelter: 3, secure: 2, climate: 2 },
       drown_badge: false, safety_label: "SAFE",
-      conditions: ["用途は抱卵メスの産卵床に限定", "床材深＝甲長×1〜1.5以上"],
+      conditions: ["抱卵メスの産卵床、または幼体〜ヤングサイズの単独飼育向け", "成体の終生飼育・多頭飼育には不可", "床材深＝甲長×1〜1.5以上を確保"],
       risk_warnings: [
         { text: "深さ不足は産み渋り→卵詰まりの主因", sev: "high" },
         { text: "産卵期は徘徊が増え脱走リスク上昇", sev: "med" }
