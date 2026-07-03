@@ -226,10 +226,10 @@
       if (match) { shown++; }
     });
     if (groupNote) {
-      if (!bucket) { groupNote.textContent = "全ての代用品を確信度順に表示中。甲長を選ぶと絞り込めます。"; }
+      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、うちの子に合うものだけに絞れます。"; }
       else {
         var b = KID.buckets[bucket];
-        groupNote.textContent = "甲長 " + b.label + " に使える代用品：" + shown + "件。表示外は「サイズ非適合＝卒業/次に買う」対象です。";
+        groupNote.textContent = "甲長 " + b.label + " に今使えるもの：" + shown + "件。ここに出ていないものは「そろそろ卒業」か「次に買う」対象です。";
       }
     }
     var clear = document.getElementById("selector-clear");
