@@ -888,6 +888,88 @@
   }
   .hero-eeeat strong{color:rgba(201,169,107,.85);}
 
+
+  /* ===== Phase 36B: Real Photo Trust Grid ===== */
+  .rtg-section{
+    background:var(--parchment);
+    padding:46px 0 40px;
+    border-bottom:1px solid #ddd5be;
+  }
+  .rtg-wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+  .rtg-eyebrow{
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent-dark);font-weight:700;text-align:center;
+    margin-bottom:12px;display:block;
+  }
+  .rtg-heading{
+    font-family:'Playfair Display','Noto Serif JP',serif;
+    font-size:1.46rem;color:var(--forest);
+    text-align:center;margin:0 0 10px;line-height:1.4;
+  }
+  .rtg-sub{
+    font-size:.86rem;color:#6b7566;
+    text-align:center;margin:0 0 26px;line-height:1.7;
+  }
+  .rtg-grid{
+    display:flex;gap:14px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:4px 2px 16px;scrollbar-width:thin;
+  }
+  .rtg-card{
+    flex:0 0 66%;max-width:252px;
+    scroll-snap-align:start;
+    display:block;text-decoration:none;
+    background:#fff;border:1px solid #e2dac4;border-radius:14px;
+    overflow:hidden;box-shadow:0 1px 3px rgba(47,74,60,.08);
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .rtg-card:hover,.rtg-card:focus-visible{
+    transform:scale(1.03);
+    box-shadow:0 8px 22px rgba(47,74,60,.16);
+  }
+  .rtg-card:focus-visible{
+    outline:2px solid var(--accent-dark);outline-offset:3px;
+  }
+  .rtg-imgbox{
+    display:block;aspect-ratio:4/3;
+    background:#e7dfc9;overflow:hidden;
+  }
+  .rtg-imgbox img{width:100%;height:100%;object-fit:cover;display:block;}
+  .rtg-meta{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;padding:11px 13px;
+  }
+  .rtg-names{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .rtg-name{
+    font-size:.84rem;font-weight:700;color:var(--forest);line-height:1.3;
+  }
+  .rtg-latin{
+    font-size:.66rem;font-style:italic;color:#9a8f78;line-height:1.3;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .rtg-arrow{
+    flex:0 0 auto;color:var(--accent-dark);font-size:1rem;font-weight:700;
+    transition:transform .2s ease;
+  }
+  .rtg-card:hover .rtg-arrow{transform:translateX(3px);}
+  .rtg-credits{text-align:center;margin:6px 0 0;}
+  .rtg-credits a{
+    font-size:.72rem;color:#9a8f78;text-decoration:none;
+    letter-spacing:.04em;border-bottom:1px solid transparent;
+  }
+  .rtg-credits a:hover{color:var(--accent-dark);border-bottom-color:var(--accent-dark);}
+  @media(min-width:720px){
+    .rtg-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      overflow:visible;padding:0;
+    }
+    .rtg-card{flex:none;max-width:none;}
+  }
+  @media(min-width:1080px){
+    .rtg-grid{grid-template-columns:repeat(5,1fr);gap:16px;}
+  }
+
   /* ── Legacy classes (keep hidden) ── */
   .h3-eyebrow{display:none;}
   .h3-chips,.h3-chip{display:none;}
@@ -3481,6 +3563,168 @@
 <div class="hero-eeeat">
   <p>スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを<strong>実際に飼育中</strong>の筆者が、飼育経験をもとに執筆・監修しています。</p>
 </div>
+
+<!-- ===== Phase 36B: Real Photo Trust Grid ===== -->
+<section class="rtg-section" id="real-trust-grid" aria-label="実際に飼われている人気種をチェック">
+  <div class="rtg-wrap">
+    <span class="rtg-eyebrow">Real Turtle Photos</span>
+    <h2 class="rtg-heading">実際に飼われている人気種をチェック</h2>
+    <p class="rtg-sub">写真・特徴・飼育難易度をAIが比較して、<br>あなたに合う亀を見つけます。</p>
+    <div class="rtg-grid" role="list">
+      <a class="rtg-card" role="listitem" href="species/musk-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミシシッピニオイガメ',species_slug:'musk-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/mississippi-musk-turtle.webp"
+               alt="ミシシッピニオイガメ (Sternotherus odoratus) real photo"
+               width="800" height="600" loading="eager" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ミシシッピニオイガメ</span>
+            <span class="rtg-latin">Sternotherus odoratus</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/hermann-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ヘルマンリクガメ',species_slug:'hermann-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/hermanns-tortoise.webp"
+               alt="ヘルマンリクガメ (Testudo hermanni) real photo"
+               width="800" height="600" loading="eager" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ヘルマンリクガメ</span>
+            <span class="rtg-latin">Testudo hermanni</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/reeves-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'クサガメ',species_slug:'reeves-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/reeves-turtle.webp"
+               alt="クサガメ (Mauremys reevesii) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">クサガメ</span>
+            <span class="rtg-latin">Mauremys reevesii</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/japanese-pond-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ニホンイシガメ',species_slug:'japanese-pond-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/japanese-pond-turtle.webp"
+               alt="ニホンイシガメ (Mauremys japonica) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ニホンイシガメ</span>
+            <span class="rtg-latin">Mauremys japonica</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/razorback-musk-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'カブトニオイガメ',species_slug:'razorback-musk-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/razorback-musk-turtle.webp"
+               alt="カブトニオイガメ (Sternotherus carinatus) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">カブトニオイガメ</span>
+            <span class="rtg-latin">Sternotherus carinatus</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/russian-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ロシアリクガメ',species_slug:'russian-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/russian-tortoise.webp"
+               alt="ロシアリクガメ (Testudo horsfieldii) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ロシアリクガメ</span>
+            <span class="rtg-latin">Testudo horsfieldii</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/red-eared-slider.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカミミガメ',species_slug:'red-eared-slider'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/red-eared-slider.webp"
+               alt="アカミミガメ (Trachemys scripta elegans) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">アカミミガメ</span>
+            <span class="rtg-latin">Trachemys scripta elegans</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/sulcata-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ケヅメリクガメ',species_slug:'sulcata-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/sulcata-tortoise.webp"
+               alt="ケヅメリクガメ (Centrochelys sulcata) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ケヅメリクガメ</span>
+            <span class="rtg-latin">Centrochelys sulcata</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/red-footed-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカアシガメ',species_slug:'red-footed-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/red-footed-tortoise.webp"
+               alt="アカアシガメ (Chelonoidis carbonaria) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">アカアシガメ</span>
+            <span class="rtg-latin">Chelonoidis carbonaria</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/greek-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ギリシャリクガメ',species_slug:'greek-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/greek-tortoise.webp"
+               alt="ギリシャリクガメ (Testudo graeca) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ギリシャリクガメ</span>
+            <span class="rtg-latin">Testudo graeca</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+    </div>
+    <p class="rtg-credits"><a href="photo-credits.html">Photo Credits</a></p>
+  </div>
+</section>
 
 <!-- P0: Entry Cards — 3 user paths -->
 <section class="entry-cards">
