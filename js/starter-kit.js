@@ -269,6 +269,17 @@ function fmtYen(n) {
   return '¥' + n.toLocaleString('ja-JP');
 }
 
+var SK_MONTHLY_COST = {
+  semi_aquatic_small:  '¥1,000〜2,000',
+  semi_aquatic_medium: '¥1,500〜3,000',
+  fully_aquatic:       '¥2,500〜5,000',
+  box_turtle:          '¥2,000〜4,000',
+  tortoise_dry_small:  '¥2,000〜4,000',
+  tortoise_forest:     '¥3,000〜5,000',
+  tortoise_dry_large:  '¥5,000〜10,000',
+  japanese_pond:       '¥1,500〜3,000',
+};
+
 /**
  * Cost Box HTML 生成
  */
@@ -285,7 +296,7 @@ function renderCostBox(picks, opts) {
 
   var diff    = opts.difficulty || '—';
   var life    = opts.lifespan   || '—';
-  var monthly = opts.monthlyCost || '¥1,000〜3,000';
+  var monthly = opts.monthlyCost || SK_MONTHLY_COST[opts.equipmentKey] || '¥1,000〜3,000';
 
   return '<div class="sk-cost-box">' +
     '<div class="sk-cost-title">📊 飼育コスト早見表</div>' +
