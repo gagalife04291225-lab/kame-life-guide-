@@ -476,6 +476,67 @@ body {
   line-height: 1.5;
   letter-spacing: .01em;
 }
+/* Phase 40: まず買うべき3点 */
+.res-cta-top3 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.res-cta-top3-title {
+  font-size: .66rem;
+  color: var(--accent-light);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  text-align: center;
+}
+/* Phase 42: 安心文（まず買うべき3点の直下） */
+.res-cta-top3-reassure {
+  font-size: .78rem;
+  color: rgba(255,255,255,.68);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.res-cta-top3-item {
+  display: flex;
+  align-items: flex-start; /* Phase 42: 商品名の折り返しに対応 */
+  gap: 8px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: .82rem;
+  color: rgba(255,255,255,.92);
+}
+.res-cta-top3-num {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px; /* Phase 42: flex-start配置での縦位置補正 */
+  border-radius: 50%;
+  background: rgba(196,154,90,.32);
+  color: var(--accent-light);
+  font-size: .72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.res-cta-top3-cat {
+  flex-shrink: 0;
+  font-size: .68rem;
+  color: rgba(255,255,255,.55);
+  min-width: 48px;
+  margin-top: 2px; /* Phase 42: flex-start配置での縦位置補正 */
+}
+.res-cta-top3-name {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4; /* Phase 42: スマホでの可読性向上のため折り返し許可 */
+  word-break: break-word;
+}
 /* Phase 25-C: smart-badges（res-badges + res-barrier-badges 統合） */
 .smart-badges {
   display: flex;
@@ -2782,6 +2843,60 @@ function showResult(sp, pct) {
         '</div>';
     }
 
+    // ── Phase 41: 診断経験値からtierを決定 ──────────────────────
+    // beginner/intermediate/advanced(+expert) は routes.js の「飼育経験」設問でのみ
+    // 加点される累積スコア。最大値のディメンションでtierを判定し、同点・未回答時はbudgetへ。
+    function resolveTop3Tier(sc) {
+      sc = sc || {};
+      var beg = sc.beginner || 0;
+      var inter = sc.intermediate || 0;
+      var adv = (sc.advanced || 0) + (sc.expert || 0);
+      if (adv > inter && adv > beg) return 'premium';
+      if (inter > beg && inter >= adv) return 'standard';
+      return 'budget';
+    }
+    var top3Tier = resolveTop3Tier(scores);
+
+    // ── Phase 40/41: まず買うべき3点（経験値に応じてtierを自動選択） ──
+    var top3Html = '';
+    var top3Count = 0;
+    try {
+      if (typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey] && typeof getTierProduct === 'function') {
+        var TOP3_CAT_PRIORITY = ['enclosure', 'lighting_uvb', 'heating', 'filter', 'lighting_basking', 'substrate', 'thermometer', 'shelter', 'food', 'supplements'];
+        var TOP3_CAT_LABELS = {
+          enclosure: 'ケージ', lighting_uvb: 'UVB', lighting_basking: 'バスキング',
+          heating: '保温', filter: 'フィルター', substrate: '床材',
+          thermometer: '温度計', shelter: 'シェルター', food: 'フード', supplements: 'サプリ',
+        };
+        var top3Items = [];
+        for (var ti = 0; ti < TOP3_CAT_PRIORITY.length && top3Items.length < 3; ti++) {
+          var top3Cat = TOP3_CAT_PRIORITY[ti];
+          // getTierProduct自体がpremium→standard→budgetのフォールバックを内包している
+          var top3P = getTierProduct(equipKey, top3Cat, top3Tier);
+          if (top3P && top3P.name) {
+            top3Items.push({ cat: TOP3_CAT_LABELS[top3Cat] || top3Cat, name: top3P.name });
+          }
+        }
+        top3Count = top3Items.length;
+        if (top3Count > 0) {
+          var TOP3_TIER_LABEL = { standard: 'スタンダード', premium: 'プレミアム' };
+          var top3TitleSuffix = TOP3_TIER_LABEL[top3Tier] ? '（' + TOP3_TIER_LABEL[top3Tier] + '構成）' : '';
+          top3Html =
+            '<div class="res-cta-top3">' +
+              '<div class="res-cta-top3-title">まず買うべき' + top3Count + '点' + top3TitleSuffix + '</div>' +
+              '<div class="res-cta-top3-reassure">💡 迷ったらこの' + top3Count + '点から揃えればOK</div>' +
+              top3Items.map(function(it, idx) {
+                return '<div class="res-cta-top3-item">' +
+                  '<span class="res-cta-top3-num">' + (idx + 1) + '</span>' +
+                  '<span class="res-cta-top3-cat">' + it.cat + '</span>' +
+                  '<span class="res-cta-top3-name">' + it.name + '</span>' +
+                '</div>';
+              }).join('') +
+            '</div>';
+        }
+      }
+    } catch(e) {}
+
     // ── FIX 1+3: TOP CTA（score直後）────────────────────────
     var topEl = document.getElementById('res-cta-top');
     if (topEl) {
@@ -2796,11 +2911,14 @@ function showResult(sp, pct) {
             (initText ? '初期費用 ' + initText + '　' : '') +
             (monthlyText ? '月額 ' + monthlyText : '') +
           '</div>' +
-          '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
-            '必要な機材を見る →' +
+          top3Html +
+          // Phase 42: Starter Kit導線を1つだけ強化（primary style + 先頭配置）。
+          // 種の詳細ページへのリンクはsecondary styleへ格下げ（GA4のid/イベントは維持）。
+          '<a class="res-cta-top-primary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
+            'この亀に必要な飼育セットを見る' +
           '</a>' +
-          '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
-            '機材セットを下で確認 ↓' +
+          '<a class="res-cta-top-secondary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
+            '必要な機材を見る →' +
           '</a>';
         topEl.style.display = '';
         // GA4: top CTA click
@@ -2836,7 +2954,7 @@ function showResult(sp, pct) {
             '必要な機材を見る →' +
           '</a>' +
           '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
-            '機材セットを上で確認 ↑' +
+            'この亀に必要な飼育セットを見る ↑' +
           '</a>';
         ctaBlock.style.display = '';
         // GA4
@@ -2868,6 +2986,8 @@ function showResult(sp, pct) {
           equipment_key: equipKey || '',
           init_cost: initText,
           monthly_cost: monthlyText,
+          top3_count: top3Count, // Phase 40: 追加パラメータ（既存キーは変更なし）
+          top3_tier: top3Tier, // Phase 41: 追加パラメータ（既存キーは変更なし）
         });
       }
     } catch(e) {}
