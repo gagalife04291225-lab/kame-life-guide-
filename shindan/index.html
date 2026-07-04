@@ -1053,6 +1053,8 @@ body {
     <!-- PHASE 5: 初心者警告 -->
     <div class="beginner-warn" id="beginner-warn" role="alert"></div>
     <div id="res-legal" style="display:none" role="alert"></div>
+    <!-- Phase 46-E: 屋外飼育・多湿環境の飼育上注意（該当時のみ表示） -->
+    <div class="beginner-warn" id="husbandry-caution" role="alert"></div>
     <div id="res-loss-block-wrap"></div>
   </div>
   <div class="result-card">
@@ -1329,8 +1331,14 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
   if (_isAdv || _isXL) {
     return '\u7D4C\u9A13\u8C4A\u5BCC\u306A\u98FC\u80B2\u8005\u304C\u61A7\u308C\u308B\u4E0A\u7D1A\u8005\u5411\u3051\u306E\u7A2E\u3067\u3059\u3002\u8A2D\u5099\u30FB\u30B9\u30DA\u30FC\u30B9\u30FB\u9577\u671F\u8A08\u753B\u3092\u3057\u3063\u304B\u308A\u6E96\u5099\u3057\u3066\u304B\u3089\u8FCE\u3048\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u8A73\u7D30\u3092\u78BA\u8A8D\u3059\u308B\u3053\u3068\u3092\u304A\u3059\u3059\u3081\u3057\u307E\u3059\u3002';
   }
-  if (sp.cites) {
+  // Phase 46-E fix: \u300C\u5E0C\u5C11\u7A2E\u300D\u306F availability:'rare' \u7B49\u306E\u660E\u78BA\u306A\u30C7\u30FC\u30BF\u304C\u3042\u308B\u5834\u5408\u306E\u307F\u4F7F\u3046\u3002
+  // CITES\u6307\u5B9A\u306E\u6709\u7121\u3060\u3051\u3067\u306F\u5B9F\u969B\u306E\u6D41\u901A\u91CF\uFF08common/rare\uFF09\u3092\u8868\u3055\u306A\u3044\u305F\u3081\u3001
+  // sp.cites \u306E\u771F\u507D\u3060\u3051\u3067\u300C\u5E0C\u5C11\u7A2E\u300D\u3068\u8868\u73FE\u3057\u306A\u3044\u3088\u3046\u5206\u5C90\u3092\u5206\u96E2\u3057\u305F\u3002
+  if (sp.availability === 'rare') {
     return '\u6D41\u901A\u91CF\u304C\u9650\u3089\u308C\u305F\u5E0C\u5C11\u306A\u7A2E\u3067\u3059\u3002CB\u500B\u4F53\uFF08\u56FD\u5185\u7E41\u6B96\u500B\u4F53\uFF09\u3092\u5165\u624B\u3057\u3001\u9069\u5207\u306A\u66F8\u985E\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u98FC\u80B2\u3092\u958B\u59CB\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u3055\u3089\u306B\u8A73\u3057\u304F\u89E3\u8AAC\u3057\u3066\u3044\u307E\u3059\u3002';
+  }
+  if (sp.cites) {
+    return '\u6D41\u901A\u3084\u5165\u624B\u6761\u4EF6\u3092\u78BA\u8A8D\u3057\u305F\u3044\u7A2E\u3067\u3059\u3002CITES\u5BFE\u8C61\u306E\u305F\u3081\u3001CB\u500B\u4F53\uFF08\u56FD\u5185\u7E41\u6B96\u500B\u4F53\uFF09\u3067\u3042\u308B\u3053\u3068\u3084\u5FC5\u8981\u66F8\u985E\u3092\u8CFC\u5165\u524D\u306B\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u3055\u3089\u306B\u8A73\u3057\u304F\u89E3\u8AAC\u3057\u3066\u3044\u307E\u3059\u3002';
   }
   var _isBeg = (sp.difficulty || '').indexOf('\u5165\u9580') >= 0;
   if (_isBeg) {
@@ -1443,6 +1451,53 @@ function renderPhase5(sp) {
   } else {
     warn.innerHTML = '';
     warn.classList.remove('show');
+  }
+}
+
+// ===== Phase 46-E: 屋外飼育・多湿環境の飼育上注意 =====
+// Phase 46-D QAで「屋外飼育希望」「森林・多湿系」シナリオに体系的な注意文言が
+// 出ないことが判明したため追加。既存のUVB/温度スペック表示は変更せず、
+// 該当条件を満たす場合のみ独立した注意ブロックを表示する。
+function renderHusbandryCaution(sp) {
+  var el = document.getElementById('husbandry-caution');
+  if (!el) return;
+  var routeId = selectedRoute ? selectedRoute.id : 'all';
+  var msgs = [];
+
+  // 屋外飼育注意: land ルートで「120cm以上または屋外」を選択、
+  // または all ルートでリクガメ環境＋大型スペースを選択した場合
+  var isOutdoorCandidate =
+    (routeId === 'land' && (scores.large || 0) >= 3) ||
+    (routeId === 'all' && (scores.land_tortoise || 0) >= 3 && (scores.large || 0) >= 3);
+  if (isOutdoorCandidate) {
+    msgs.push(
+      '🌤️ <strong>屋外飼育を検討する場合：</strong>' +
+      '日本の気候は原産地と異なるため、寒暖差・梅雨・真夏日への対応が必要です。' +
+      '脱走防止柵や、カラス・ネコなど外敵からの対策も欠かせません。' +
+      '冬眠させるか、加温して通年活動させるかは種と地域によって判断が分かれます。' +
+      '屋外向きの種でも、天候によっては室内へ切り替える期間が必要で、通年屋外とは限りません。'
+    );
+  }
+
+  // 多湿環境注意: forest ルート、または all ルートで多湿環境を選択した場合
+  var isHumidCandidate =
+    (routeId === 'forest') ||
+    (routeId === 'all' && (scores.humid_env || 0) >= 3);
+  if (isHumidCandidate) {
+    msgs.push(
+      '💧 <strong>多湿環境の管理：</strong>' +
+      '湿度を保ちながら蒸れさせない通気バランスが必要です。' +
+      '床材が常に濡れた状態だとカビの原因になるため、部分的に乾燥するエリアを設け、' +
+      '床材は定期的に交換・管理してください。'
+    );
+  }
+
+  if (msgs.length) {
+    el.innerHTML = msgs.join('<br><br>');
+    el.classList.add('show');
+  } else {
+    el.innerHTML = '';
+    el.classList.remove('show');
   }
 }
 
@@ -2086,6 +2141,37 @@ function selectChoice(choice, clickedBtn) {
   }, 250);
 }
 
+// ===== Phase 46-E: allルート専用タグ互換展開 =====
+// all ルートの回答タグ（terrestrial/land_tortoise/aquatic/small/medium/large/
+// dry_env/humid_env/cool_env）は、land/aquatic/forest/exotic各ルート固有種の
+// score()/match()が参照するタグ（compact/dry/humid/small_tank/s_size等）と
+// ほとんど重複しない。そのため all ルートでは他ルート出身種の raw score が
+// 不当に0になりやすく、ルート固有タグと偶然重複する種（terrestrial等）だけが
+// 有利になっていた（Phase 46-D QA参照）。
+// 既存の各species score()/match()は書き換えず、ここで診断側が安全な範囲で
+// 互換タグを追加展開する（既存値がある場合は上書きせず、より高い値のみ採用）。
+function applyAllRouteTagCompat(s) {
+  function bump(key, val) { if (val > (s[key] || 0)) s[key] = val; }
+
+  var dryEnv = s.dry_env || 0, humidEnv = s.humid_env || 0, coolEnv = s.cool_env || 0;
+  if (dryEnv)   { bump('dry', dryEnv); bump('basic_env', dryEnv); }
+  if (humidEnv) {
+    bump('humid', humidEnv); bump('advanced_env', humidEnv);
+    bump('semi_aquatic', Math.floor(humidEnv / 2));
+    bump('tropical_climate', humidEnv); bump('warm_climate', Math.floor(humidEnv / 2));
+  }
+  if (coolEnv)  { bump('cooling', coolEnv); bump('cool_climate', coolEnv); }
+
+  var sm = s.small || 0, md = s.medium || 0, lg = s.large || 0;
+  if (sm) { bump('compact', sm); bump('small_tank', sm); bump('s_size', sm); bump('small_form', sm); }
+  if (md) { bump('medium_tank', md); bump('m_size', md); }
+  if (lg) { bump('large_tank', lg); }
+
+  if (s.land_tortoise) { bump('herbivore', Math.min(3, s.land_tortoise)); bump('dry', Math.min(2, s.land_tortoise)); }
+  if (s.terrestrial)   { bump('mainstream', 1); }
+  if (s.aquatic)       { bump('mainstream', Math.min(2, s.aquatic)); bump('maintenance', 1); }
+}
+
 // ===== 結果計算 =====
 function calcResult() {
   _diagnosisCompleted = true;
@@ -2094,6 +2180,11 @@ function calcResult() {
     if (fill) { fill.style.width = '100%'; fill.parentElement.setAttribute('aria-valuenow', 100); }
 
     var routeId = (selectedRoute || {}).id || '';
+
+    // Phase 46-E: allルートのみ、他ルート固有タグへの互換展開を適用
+    if (routeId === 'all') {
+      applyAllRouteTagCompat(scores);
+    }
 
     // ── Step 1: archive / redirect を完全除外 ──
     var candidates = (selectedRoute.species || []).filter(function(sp){
@@ -2340,45 +2431,11 @@ function showResult(sp, pct) {
     '<span class="badge badge-intermediate">' + sp.size + '</span>';
   if (sp.cites) badges.innerHTML += '<span class="badge badge-cites">' + sp.cites + '</span>';
 
-  // ===== Phase 7-C Step 2-A: 費用サマリー =====
-  (function() {
-    var costEl = document.getElementById('res-cost-summary');
-    if (!costEl) return;
-    var routeId = selectedRoute ? selectedRoute.id : 'all';
-    var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
-    // 初期費用: StarterKitの renderStarterKit が後で描画するので、
-    // PRODUCTS が使えるかどうかに関係なく equipmentKeyベースのteーブルから推定
-    var monthly = equipKey && MONTHLY_COST_MAP[equipKey] ? MONTHLY_COST_MAP[equipKey] : null;
-    // 初期費用は picks から計算（PRODUCTS依存）
-    var initCostText = '個体・設備により変動';
-    if (typeof PRODUCTS !== 'undefined' && typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
-      var PHASE7_CATS_COST = ['enclosure', 'lighting_uvb', 'lighting_basking', 'substrate', 'thermometer'];
-      var cLow = 0, cHigh = 0, cnt = 0;
-      PHASE7_CATS_COST.forEach(function(cat) {
-        var p = (typeof getTierProduct === 'function') ? getTierProduct(equipKey, cat, 'budget') : null;
-        if (!p) return;
-        var pr = (p.priceRange || '').replace(/[¥,]/g, '');
-        var m = pr.match(/(\d+)[^\d]+(\d+)/);
-        if (m) { cLow += parseInt(m[1],10); cHigh += parseInt(m[2],10); cnt++; }
-      });
-      if (cnt >= 2) {
-        initCostText = '約 ¥' + cLow.toLocaleString('ja-JP') + '〜' + cHigh.toLocaleString('ja-JP');
-      }
-    }
-    var monthlyText = monthly ? ('約 ' + monthly.label) : '個体・設備により変動';
-    costEl.innerHTML =
-      '<div class="res-cost-item">' +
-        '<div class="res-cost-item-label">初期費用目安</div>' +
-        '<div class="res-cost-item-value">' + initCostText + '</div>' +
-        '<div class="res-cost-item-note">機材セット（目安）</div>' +
-      '</div>' +
-      '<div class="res-cost-item">' +
-        '<div class="res-cost-item-label">月額維持費目安</div>' +
-        '<div class="res-cost-item-value">' + monthlyText + '</div>' +
-        '<div class="res-cost-item-note">電気代・フード等</div>' +
-      '</div>';
-    costEl.style.display = '';
-  })();
+  // Phase 7-C Step 2-A で追加された費用サマリー（#res-cost-summary）は、
+  // Phase 25-C で #res-cta-top / #res-cta-block の teaser 表示へ統合済み。
+  // 対象DOM要素は現在のHTMLに存在しないため、Phase 46-E で死コードとして削除した。
+  // 動作中の費用表示（初期費用・月額目安）は #res-cta-top / #res-cta-block 側で
+  // 引き続き描画される（本関数より後段のres-rev-box/res-cta-top生成ロジック参照）。
 
   // ===== Phase 7-C Step 2-A: 購入障壁除去バッジ =====
   (function() {
@@ -3132,6 +3189,9 @@ function showResult(sp, pct) {
   // ── 副次ブロック（失敗しても結果画面表示は影響なし）──
   // ===== PHASE 5: 著者バッジ・寿命・初心者警告 =====
   try { renderPhase5(sp); } catch(e) { console.warn('[renderPhase5]', e); }
+
+  // ===== Phase 46-E: 屋外飼育・多湿環境の飼育上注意 =====
+  try { renderHusbandryCaution(sp); } catch(e) { console.warn('[renderHusbandryCaution]', e); }
 
   // Phase 25-G: renderEquipment呼び出し削除（Starter Kit V2と重複のため）
 
