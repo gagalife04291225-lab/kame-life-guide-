@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kame-life-guide/research/products-master.schema.json",
+  "title": "Kame Life Guide - Research Products Master",
+  "description": "Phase 39-P1-Step3: schema for the 750-item research/candidate product master DB. This is NOT the production schema used by data/products.js. No URL fields are defined here on purpose - real affiliate URLs are only added when a candidate is individually verified and promoted to products.js (see docs/products-master-policy.md).",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "products"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "generated_at": { "type": "string", "format": "date" },
+    "products": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/product" }
+    }
+  },
+  "definitions": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category",
+        "subcategory",
+        "product_name",
+        "brand",
+        "use_case",
+        "target_species_type",
+        "tank_size",
+        "price_band",
+        "amazon_status",
+        "rakuten_status",
+        "priority_score",
+        "quality_score",
+        "revenue_score",
+        "availability_status",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^RM[0-9]{4}$",
+          "description": "Research-master ID namespace, distinct from production product.js ids (e.g. 'enclosure_wood_90'). Format RM0001.."
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "enclosure",
+            "lighting_uvb",
+            "lighting_basking",
+            "heating",
+            "filter",
+            "substrate",
+            "shelter",
+            "water_dish",
+            "food",
+            "supplements"
+          ],
+          "description": "Aligned with the category slugs already used in data/products.js, plus 'water_dish' which does not yet exist in production."
+        },
+        "subcategory": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Free-form subtype within category, e.g. enclosure: cage|tank, heating: heater|thermostat, lighting_uvb: t5|t8|compact|mvb|led."
+        },
+        "product_name": { "type": "string", "minLength": 1 },
+        "brand": { "type": "string", "minLength": 1 },
+        "use_case": { "type": "string", "minLength": 1 },
+        "target_species_type": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "description": "Free-form species/habitat tags. Where possible reuse EQUIPMENT_MAP keys from data/products.js (e.g. tortoise_dry_small, semi_aquatic_small, box_turtle) to ease future promotion."
+        },
+        "tank_size": {
+          "type": ["string", "null"],
+          "description": "Applicable tank/cage size context (e.g. '60cm'); null when not size-specific (e.g. food, supplements)."
+        },
+        "price_band": {
+          "type": "string",
+          "enum": ["budget", "standard", "premium", "unknown"],
+          "description": "'unknown' is valid at research stage before a real price has been confirmed."
+        },
+        "amazon_status": {
+          "type": "string",
+          "enum": ["pending", "search", "available"],
+          "description": "'pending' = not yet researched, 'search' = candidate identified but no confirmed product page, 'available' = a real, verified Amazon product page/ASIN exists. Mirrors rakutenStatus semantics already used in data/products.js."
+        },
+        "rakuten_status": {
+          "type": "string",
+          "enum": ["pending", "search", "available"]
+        },
+        "priority_score": { "type": "number", "minimum": 0, "maximum": 10 },
+        "quality_score": { "type": "number", "minimum": 0, "maximum": 10 },
+        "revenue_score": { "type": "number", "minimum": 0, "maximum": 10 },
+        "availability_status": {
+          "type": "string",
+          "enum": ["high", "medium", "low", "unknown"],
+          "description": "Japan-market availability confidence, roughly corresponding to the 日本入手性 column in equipment-db-750.csv."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
