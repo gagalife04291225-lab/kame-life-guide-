@@ -695,6 +695,29 @@
     outline-offset:2px;
   }
 
+  /* ── 案内人 entry link (Phase 46-B/C) ── */
+  .hero-annainin-link{
+    display:inline-block;
+    max-width:100%;
+    margin-top:14px;
+    font-family:"Hiragino Sans","Yu Gothic UI","Noto Sans JP",-apple-system,sans-serif;
+    font-size:.78rem;
+    line-height:1.6;
+    color:rgba(244,239,226,.72);
+    text-decoration:none;
+    border-bottom:1px solid rgba(212,169,106,.4);
+    padding-bottom:2px;
+    transition:color .18s ease,border-color .18s ease;
+  }
+  .hero-annainin-link:hover{
+    color:var(--accent-gold,#C9A96B);
+    border-color:var(--accent-gold,#C9A96B);
+  }
+  .hero-annainin-link:focus-visible{
+    outline:2px solid var(--accent-gold,#C9A96B);
+    outline-offset:2px;
+  }
+
   /* ── Stats strip (glassmorphism) ── */
   .hero-stats-strip{
     display:grid;
@@ -3535,6 +3558,12 @@
         人気種を見る <span aria-hidden="true">↓</span>
       </a>
     </div>
+
+    <!-- Phase 46-B/C: 案内人 entry link — quiet, below primary/secondary CTA -->
+    <a href="./annainin/" class="hero-annainin-link"
+       onclick="(typeof gtag==='function')&&gtag('event','homepage_annainin_entry_click',{location:'hero'})">
+      💬 亀選び・容器・機材で迷ったら、まず相談 <span aria-hidden="true">→</span>
+    </a>
 
   </div>
 
