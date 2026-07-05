@@ -892,6 +892,19 @@ body {
 .res-why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
 .res-why-list li { font-size: .88rem; color: var(--parchment-dark); line-height: 1.55; padding-left: 4px; }
 .res-why-list li::before { content: "✓ "; color: var(--accent-light); font-weight: 700; }
+/* Phase 47-A: 選ばれた理由（あなたに合う理由・注意点・比較優位） */
+.res-why-fit {
+  font-size: .88rem; color: var(--parchment-dark); line-height: 1.55; margin: 2px 0 12px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+.res-caution-title { font-size: .72rem; color: #c4a820; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+.res-caution-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 6px; }
+.res-caution-list li { font-size: .85rem; color: var(--parchment-dark); line-height: 1.5; padding-left: 4px; }
+.res-caution-list li::before { content: "⚠ "; color: #c4a820; font-weight: 700; }
+.res-why-edge {
+  font-size: .84rem; color: var(--accent-light); font-weight: 600; line-height: 1.5; margin: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .res-loss-block {
   background: rgba(196,154,90,.1); border: 1px solid rgba(196,154,90,.3);
   border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px;
@@ -1129,6 +1142,7 @@ var currentQuestionIndex = 0;
 var _viewedSteps = {};        // Phase 9-C: step view dedup
 var _diagnosisCompleted = false; // Phase 9-C: exit guard
 var _lastCandidateCount = 0; // Phase 16: scarcity message用
+var _lastRunnerUp = null; // Phase 47-A: 次点候補（他候補より向いている点の比較用）
 var scores = {};
 var result = null;
 var resultScore = 0;
@@ -1185,6 +1199,7 @@ function tryRestoreFromUrl() {
     result = sp;
     resultScore = 0;
     resultMaxScore = 1;
+    _lastRunnerUp = null; // Phase 47-A: URL復元時は次点候補データがないため比較優位はリセット
     showResult(sp, null);  // null = URL復元時はスコア非表示
     return true;
   } catch(e){ return false; }
@@ -1254,6 +1269,158 @@ var EMOTION_COPY_MAP = {
   'トウブハコガメ': '蝶番のある腹甲で完全に甲羅に閉じこもれる独特のガメ。長生きすることで知られ、50〜100年生きることもあります。',
   'キバラガメ': 'ミシシッピアカミミガメの近縁種で、耳の模様が黄色いのが特徴。新規購入・飼育が可能な種で、活発な泳ぎが見ていて楽しい。',
 };
+
+// ===== Phase 47-A: 診断結果の説明力強化 — 選ばれた理由 =====
+// 既存の difficulty / size / cites・legal / availability / scores（回答タグ）のみを使用し、
+// 新しい種データベースは追加しない。判定に使う値がない場合は無理に断定せず、
+// 回答条件から自然に補足できる範囲（初心者・省スペース・低予算・水換え負担・多湿・屋外）に留める。
+var _DIFF_RANK_MAP = { '入門': 0, '入門〜中級': 1, '中級': 2, '中〜上級': 3, '上級': 4 };
+function _rationaleSizeRank(sp) {
+  var sz = (sp && sp.size) || '';
+  if (sz.indexOf('XL') >= 0) return 4;
+  if (sz.indexOf('L') >= 0) return 3;
+  if (sz.indexOf('M') >= 0) return 2;
+  return 1; // S / XS / 不明
+}
+function _rationaleDiffRank(sp) {
+  var d = (sp && sp.difficulty) || '';
+  return _DIFF_RANK_MAP.hasOwnProperty(d) ? _DIFF_RANK_MAP[d] : 2;
+}
+function _rationaleIsLowOdor(sp, routeId) {
+  if (routeId !== 'aquatic') return true; // リクガメ・ヤマガメ・ハコガメ系は相対的に低臭
+  return _rationaleSizeRank(sp) <= 2; // 水棲は小〜中型のみ管理しやすい部類とみなす
+}
+
+// あなたに合う理由（最大2行・回答タグとの合致点を最大2つ抽出）
+function buildFitReasonText(sp, sc, routeId) {
+  sc = sc || {};
+  var diff = sp.difficulty || '';
+  var sizeRank = _rationaleSizeRank(sp);
+  var clauses = [];
+
+  if ((sc.beginner || 0) >= 2 && diff.indexOf('入門') >= 0) {
+    clauses.push('初心者向けの回答内容に合わせやすい、管理しやすい入門種です。');
+  } else if (((sc.advanced || 0) + (sc.expert || 0)) >= 2 && diff.indexOf('上級') >= 0) {
+    clauses.push('本格的な飼育経験を重視する回答に合う、経験者向けの候補です。');
+  }
+
+  var wantsCompact = (sc.compact || sc.small_tank || sc.s_size || sc.small || 0) >= 2;
+  var wantsSpacious = (sc.large || sc.large_tank || 0) >= 2;
+  if (clauses.length < 2 && wantsCompact && sizeRank <= 2) {
+    clauses.push('小型・省スペース希望に合わせやすいサイズ感です。');
+  } else if (clauses.length < 2 && wantsSpacious && sizeRank >= 3) {
+    clauses.push('広めの飼育スペースを想定した回答に合う体格です。');
+  }
+
+  if (clauses.length < 2 && (sc.odor_hate || sc.odor_low || 0) > 0 && _rationaleIsLowOdor(sp, routeId)) {
+    clauses.push('ニオイ・お手入れ負担を抑えたい回答に合う扱いやすさです。');
+  }
+
+  if (clauses.length < 2) {
+    if ((sc.budget_under10k || sc.budget_10_30k || 0) > 0 && sizeRank <= 2) {
+      clauses.push('予算を抑えたい回答に合わせやすい価格帯です。');
+    } else if ((sc.budget_over70k || 0) > 0) {
+      clauses.push('しっかり予算をかけたい回答に合う本格的な候補です。');
+    }
+  }
+
+  if (clauses.length < 2) {
+    if ((sc.humid_env || sc.humid || 0) >= 2) {
+      clauses.push('多湿環境を整えられるという回答に合った生態です。');
+    } else if ((sc.dry_env || sc.dry || 0) >= 2) {
+      clauses.push('乾燥中心の管理という回答に合った生態です。');
+    }
+  }
+
+  if (clauses.length === 0) {
+    clauses.push('今回の回答内容と種の特徴を照らし合わせて選びました。');
+  }
+  return clauses.slice(0, 2).join('');
+}
+
+// 注意するポイント（最大2点・法規制／難易度／飼育環境の注意を優先表示）
+function buildCautionPoints(sp, sc, routeId) {
+  sc = sc || {};
+  var points = [];
+
+  // 最優先: 購入・入手に関わる法的制約（既存res-legalボックスと重複しても、購入不可は最重要のため残す）
+  if (sp.legal === 'conditional_invasive') {
+    points.push('条件付特定外来生物のため新規購入はできません（既飼育個体のみ継続飼育可）。');
+  }
+
+  // Phase 46-E の屋外・多湿注意（renderHusbandryCaution）と同条件を短縮版で補足
+  // 回答条件から直接導かれる固有の注意のため、既存res-legalボックスと重複しがちな
+  // 一般的なCITES文言よりも優先して表示する。
+  if (points.length < 2) {
+    var isOutdoorCandidate =
+      (routeId === 'land' && (sc.large || 0) >= 3) ||
+      (routeId === 'all' && (sc.land_tortoise || 0) >= 3 && (sc.large || 0) >= 3);
+    var isHumidCandidate =
+      (routeId === 'forest') ||
+      (routeId === 'all' && (sc.humid_env || 0) >= 3);
+    if (isOutdoorCandidate) {
+      points.push('屋外飼育を検討する場合、気候差・脱走対策・冬眠管理が必要です。');
+    } else if (isHumidCandidate) {
+      points.push('多湿環境の管理には、蒸れを防ぐ通気とカビ対策が必要です。');
+    }
+  }
+
+  if (points.length < 2) {
+    var diff = sp.difficulty || '';
+    if (diff.indexOf('上級') >= 0 || _rationaleSizeRank(sp) >= 4) {
+      points.push('上級者向け・大型化する種のため、長期的な計画とスペースが必要です。');
+    } else if (_rationaleSizeRank(sp) === 3) {
+      points.push('成長すると大きめのサイズになるため、飼育スペースに余裕を持たせてください。');
+    }
+  }
+
+  if (points.length < 2 && sp.availability === 'rare') {
+    points.push('流通量が少ない希少種のため、入手までに時間がかかることがあります。');
+  }
+
+  if (points.length < 2 && (sc.odor_hate || 0) > 0 && !_rationaleIsLowOdor(sp, routeId)) {
+    points.push('ニオイ・お手入れ負担が比較的大きめの種です。水換え頻度にご注意ください。');
+  }
+
+  // 法規制の詳細は #res-legal ボックスで別途表示済みのため、他に注意点がない場合のみ補足する
+  if (points.length < 2 && sp.legal === 'cites_i') {
+    points.push('上級者向け・登録票の確認が必須な種です。');
+  } else if (points.length < 2 && sp.legal === 'unknown_hold') {
+    points.push('取り扱いに注意が必要な種のため、登録票の確認が必須です。');
+  } else if (points.length < 2 && sp.cites) {
+    points.push('CITES対象種のため、CB個体（国内繁殖）であることを購入前に確認してください。');
+  }
+
+  if (points.length === 0) {
+    points.push('飼育前に、温度・湿度など基本的な環境管理のポイントを確認しておきましょう。');
+  }
+  return points.slice(0, 2);
+}
+
+// 他候補より向いている点（1行・次点候補との比較を優先。データがなければ回答条件ベースの一般論に留める）
+function buildComparativeEdge(sp, runnerUp, sc, routeId) {
+  sc = sc || {};
+  if (runnerUp) {
+    if (_rationaleSizeRank(sp) < _rationaleSizeRank(runnerUp)) {
+      return '他候補より成長後のサイズが読みやすい点が向いています。';
+    }
+    if (_rationaleDiffRank(sp) < _rationaleDiffRank(runnerUp)) {
+      return '他候補より必要な経験値が少なく、始めやすい点が向いています。';
+    }
+    if (sp.availability === 'common' && runnerUp.availability === 'rare') {
+      return '他候補より流通が安定しており、入手しやすい点が向いています。';
+    }
+    if ((sc.odor_hate || sc.odor_low || 0) > 0 &&
+        _rationaleIsLowOdor(sp, routeId) && !_rationaleIsLowOdor(runnerUp, routeId)) {
+      return '水換え負担が軽い分、他候補より扱いやすい候補です。';
+    }
+  }
+  if ((sc.beginner || 0) >= 2) {
+    return '初心者向けの回答に対して、他候補より始めやすい候補です。';
+  }
+  return '今回の回答条件から、他候補より相性が高いと判断しました。';
+}
+
 // 難易度 / 法規 / サイズに応じた汎用テンプレート
 function buildEmotionCopy(sp, equipKey, pctArg) {
   // ── P0 Fix: pctArg を第3引数で受け取り、未定義でも安全に動作 ──
@@ -1271,31 +1438,22 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
     }
   } catch(e) {}
 
-  // ===== Phase 9-B: Why Matched Block =====
+  // ===== Phase 47-A: Why Matched Block\uFF08\u9078\u3070\u308C\u305F\u7406\u7531\uFF1A\u5408\u3046\u7406\u7531\u30FB\u6CE8\u610F\u70B9\u30FB\u6BD4\u8F03\u512A\u4F4D\uFF09 =====
   try {
     var _w2 = document.getElementById('res-why-block-wrap');
     if (_w2) {
-      var _diff = sp.difficulty || '';
-      var _reasons = [];
-      if (_diff.indexOf('\u5165\u9580') >= 0 || _diff.indexOf('\u521D\u5FC3') >= 0) {
-        _reasons.push('\u521D\u5FC3\u8005\u3067\u3082\u7BA1\u7406\u3057\u3084\u3059\u3044\u96E3\u6613\u5EA6');
-      } else if (_diff.indexOf('\u4E0A\u7D1A') >= 0) {
-        _reasons.push('\u98FC\u80B2\u7D4C\u9A13\u8005\u5411\u3051\u306E\u6311\u6226\u7684\u306A\u7A2E');
-      } else {
-        _reasons.push('\u98FC\u80B2\u30B9\u30DA\u30FC\u30B9\u306B\u5408\u3046');
-      }
-      _reasons.push('\u4E88\u7B97\u306B\u5408\u308F\u305B\u3084\u3059\u3044');
-      var _sz = (sp.size || '').toLowerCase();
-      if (_sz.indexOf('s') >= 0 || _sz.indexOf('\u5C0F') >= 0 || _sz.indexOf('10') >= 0 || _sz.indexOf('14') >= 0) {
-        _reasons.push('\u5C0F\u578B\u3067\u7701\u30B9\u30DA\u30FC\u30B9\u306B\u98FC\u80B2\u3067\u304D\u308B');
-      } else {
-        _reasons.push('\u751F\u614B\u304B\u3089\u9006\u7B97\u3057\u305F\u98FC\u80B2\u60C5\u5831\u304C\u63C3\u3063\u3066\u3044\u308B');
-      }
-      var _items = _reasons.slice(0,3).map(function(r){ return '<li>' + r + '</li>'; }).join('');
+      var _routeIdForReason = selectedRoute ? selectedRoute.id : 'all';
+      var _fitText = buildFitReasonText(sp, scores, _routeIdForReason);
+      var _cautionItems = buildCautionPoints(sp, scores, _routeIdForReason);
+      var _edgeText = buildComparativeEdge(sp, _lastRunnerUp, scores, _routeIdForReason);
+      var _cautionHtml = _cautionItems.map(function(p){ return '<li>' + p + '</li>'; }).join('');
       _w2.innerHTML =
         '<div class="res-why-block">' +
           '<div class="res-why-title">\u3042\u306A\u305F\u306B\u5411\u3044\u3066\u3044\u308B\u7406\u7531</div>' +
-          '<ul class="res-why-list">' + _items + '</ul>' +
+          '<p class="res-why-fit">' + _fitText + '</p>' +
+          '<div class="res-caution-title">\u6CE8\u610F\u3059\u308B\u30DD\u30A4\u30F3\u30C8</div>' +
+          '<ul class="res-caution-list">' + _cautionHtml + '</ul>' +
+          '<p class="res-why-edge">\uD83C\uDD9A ' + _edgeText + '</p>' +
         '</div>';
     }
   } catch(e) {}
@@ -2218,6 +2376,7 @@ function calcResult() {
         };
       }
       result = exoFallback;
+      _lastRunnerUp = null; // Phase 47-A: fallback経路では次点候補データがないため比較優位はリセット
       showResult(exoFallback, null);
       saveResultToUrl(routeId, exoFallback.name);
       return;
@@ -2378,6 +2537,7 @@ function calcResult() {
     });
 
     _lastCandidateCount = scored.length; // Phase 16: scarcity message用
+    _lastRunnerUp = scored.length > 1 ? scored[1].sp : null; // Phase 47-A: 次点候補（比較優位の算出用）
     var best = scored.length > 0 ? scored[0].sp : null;
     if (!best) throw new Error('no species resolved');
 
@@ -2406,6 +2566,7 @@ function calcResult() {
       match: function(){ return true; }, score: function(){ return 0; }
     };
     result = fallbackSp;
+    _lastRunnerUp = null; // Phase 47-A: fallback経路では次点候補データがないため比較優位はリセット
     showResult(fallbackSp, null);
   }
 }
