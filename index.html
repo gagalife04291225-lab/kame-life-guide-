@@ -3493,6 +3493,43 @@
     .h12-stats{ display:none; }
     .hero-cta-group{ margin-bottom:12px; }
   }</style>
+<style>
+/* ===== Phase 48-A: Homepage IA restructure additions ===== */
+
+/* Entry cards (Hero直下 3入口) — previously unstyled, now styled as cards */
+.entry-cards{padding:8px 0 46px;}
+.entry-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.entry-card{
+  display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+  background:#fff;border:1.5px solid #e4ddc9;border-radius:16px;padding:18px 16px;
+  transition:transform .15s,box-shadow .15s,border-color .15s;
+}
+.entry-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,31,26,.10);border-color:var(--accent);}
+.entry-card-icon{font-size:1.8rem;flex-shrink:0;line-height:1;}
+.entry-card-label{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.02rem;color:var(--forest);margin:0 0 3px;}
+.entry-card-sub{font-size:.82rem;color:#5a6b60;margin:0;line-height:1.5;}
+@media(max-width:760px){
+  .entry-cards-grid{grid-template-columns:1fr;}
+}
+
+/* New IA umbrella headings (亀を選ぶ / 飼育を始める) */
+.find-turtle-heading{padding:52px 0 4px;}
+
+/* "もっと見る" collapse wrapper — shared by 亀を選ぶ・飼育を始める・診断の流れ */
+details.ia-more{margin:0;}
+details.ia-more > summary.ia-more-summary{
+  max-width:760px;margin:18px auto 8px;padding:14px 20px;
+  cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:.96rem;
+  color:var(--accent-dark);background:#fff;border:1.5px solid #e4ddc9;border-radius:14px;
+  transition:border-color .15s,background .15s;
+}
+details.ia-more > summary.ia-more-summary::-webkit-details-marker{display:none;}
+details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);background:#fffbf3;}
+@media(max-width:480px){
+  details.ia-more > summary.ia-more-summary{font-size:.88rem;padding:12px 16px;margin:14px 20px 6px;}
+}
+</style>
 <body>
 
 <!-- Phase 13-A P0: Mini Navigation -->
@@ -3587,172 +3624,29 @@
   <div class="hero-scallop" aria-hidden="true"></div>
 
 </header>
-
 <!-- E-E-A-T ribbon: Hero直下でtrust強化 -->
 <div class="hero-eeeat">
   <p>スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを<strong>実際に飼育中</strong>の筆者が、飼育経験をもとに執筆・監修しています。</p>
 </div>
 
-<!-- ===== Phase 36B: Real Photo Trust Grid ===== -->
-<section class="rtg-section" id="real-trust-grid" aria-label="実際に飼われている人気種をチェック">
-  <div class="rtg-wrap">
-    <span class="rtg-eyebrow">Real Turtle Photos</span>
-    <h2 class="rtg-heading">実際に飼われている人気種をチェック</h2>
-    <p class="rtg-sub">写真・特徴・飼育難易度をAIが比較して、<br>あなたに合う亀を見つけます。</p>
-    <div class="rtg-grid" role="list">
-      <a class="rtg-card" role="listitem" href="species/musk-turtle.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミシシッピニオイガメ',species_slug:'musk-turtle'})">
-        <span class="rtg-imgbox">
-          <img loading="lazy" src="images/trust/mississippi-musk-turtle.webp"
-               alt="ミシシッピニオイガメ (Sternotherus odoratus) real photo"
-               width="800" height="600" loading="eager" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ミシシッピニオイガメ</span>
-            <span class="rtg-latin">Sternotherus odoratus</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/hermann-tortoise.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ヘルマンリクガメ',species_slug:'hermann-tortoise'})">
-        <span class="rtg-imgbox">
-          <img loading="lazy" src="images/trust/hermanns-tortoise.webp"
-               alt="ヘルマンリクガメ (Testudo hermanni) real photo"
-               width="800" height="600" loading="eager" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ヘルマンリクガメ</span>
-            <span class="rtg-latin">Testudo hermanni</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/reeves-turtle.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'クサガメ',species_slug:'reeves-turtle'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/reeves-turtle.webp"
-               alt="クサガメ (Mauremys reevesii) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">クサガメ</span>
-            <span class="rtg-latin">Mauremys reevesii</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/japanese-pond-turtle.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ニホンイシガメ',species_slug:'japanese-pond-turtle'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/japanese-pond-turtle.webp"
-               alt="ニホンイシガメ (Mauremys japonica) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ニホンイシガメ</span>
-            <span class="rtg-latin">Mauremys japonica</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/razorback-musk-turtle.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'カブトニオイガメ',species_slug:'razorback-musk-turtle'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/razorback-musk-turtle.webp"
-               alt="カブトニオイガメ (Sternotherus carinatus) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">カブトニオイガメ</span>
-            <span class="rtg-latin">Sternotherus carinatus</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/russian-tortoise.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ロシアリクガメ',species_slug:'russian-tortoise'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/russian-tortoise.webp"
-               alt="ロシアリクガメ (Testudo horsfieldii) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ロシアリクガメ</span>
-            <span class="rtg-latin">Testudo horsfieldii</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/red-eared-slider.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカミミガメ',species_slug:'red-eared-slider'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/red-eared-slider.webp"
-               alt="アカミミガメ (Trachemys scripta elegans) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">アカミミガメ</span>
-            <span class="rtg-latin">Trachemys scripta elegans</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/sulcata-tortoise.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ケヅメリクガメ',species_slug:'sulcata-tortoise'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/sulcata-tortoise.webp"
-               alt="ケヅメリクガメ (Centrochelys sulcata) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ケヅメリクガメ</span>
-            <span class="rtg-latin">Centrochelys sulcata</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/red-footed-tortoise.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカアシガメ',species_slug:'red-footed-tortoise'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/red-footed-tortoise.webp"
-               alt="アカアシガメ (Chelonoidis carbonaria) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">アカアシガメ</span>
-            <span class="rtg-latin">Chelonoidis carbonaria</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-      <a class="rtg-card" role="listitem" href="species/greek-tortoise.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ギリシャリクガメ',species_slug:'greek-tortoise'})">
-        <span class="rtg-imgbox">
-          <img src="images/trust/greek-tortoise.webp"
-               alt="ギリシャリクガメ (Testudo graeca) real photo"
-               width="800" height="600" loading="lazy" decoding="async">
-        </span>
-        <span class="rtg-meta">
-          <span class="rtg-names">
-            <span class="rtg-name">ギリシャリクガメ</span>
-            <span class="rtg-latin">Testudo graeca</span>
-          </span>
-          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
-        </span>
-      </a>
-    </div>
-    <p class="rtg-credits"><a href="photo-credits.html">Photo Credits</a></p>
+<!-- Phase 12-A Sprint 2-B: Emotional Hook -->
+<!-- HIDDEN: removed from homepage flow — P0 Hero Fix. Restore by removing hidden attr. -->
+<section class="emo-hook" aria-label="亀と長い時間を共にする" hidden>
+  <div class="emo-hook-cap-top" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="emo-hook-unit t-label-gold">年</span>
+    <p class="emo-hook-num reveal-soft reveal-soft--delay-1" aria-label="50年から100年">
+      50<em>〜</em>100
+    </p>
+    <p class="emo-hook-body reveal-soft reveal-soft--delay-2">
+      亀は、50年。種によっては100年以上生きる。
+    </p>
+    <p class="emo-hook-sub">
+      だから、焦って選ぶ必要はありません。<br>
+      あなたの暮らしに合う一匹を、静かに探しましょう。
+    </p>
   </div>
+  <div class="emo-hook-cap-bot" aria-hidden="true"></div>
 </section>
 
 <!-- P0: Entry Cards — 3 user paths -->
@@ -3767,7 +3661,7 @@
           <p class="entry-card-sub">30秒診断で相性の良い種を探す</p>
         </div>
       </a>
-      <a href="compare/hermann-vs-greek.html" class="entry-card"
+      <a href="compare/" class="entry-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'compare'})">
         <span class="entry-card-icon" aria-hidden="true">⚖️</span>
         <div>
@@ -3788,189 +3682,8 @@
 </section>
 
 
-<!-- Phase 12-A Sprint 2-B: Emotional Hook -->
-<!-- HIDDEN: removed from homepage flow — P0 Hero Fix. Restore by removing hidden attr. -->
-<section class="emo-hook" aria-label="亀と長い時間を共にする">
-  <div class="emo-hook-cap-top" aria-hidden="true"></div>
-  <div class="wrap">
-    <span class="emo-hook-unit t-label-gold">年</span>
-    <p class="emo-hook-num reveal-soft reveal-soft--delay-1" aria-label="50年から100年">
-      50<em>〜</em>100
-    </p>
-    <p class="emo-hook-body reveal-soft reveal-soft--delay-2">
-      亀は、50年。種によっては100年以上生きる。
-    </p>
-    <p class="emo-hook-sub">
-      だから、焦って選ぶ必要はありません。<br>
-      あなたの暮らしに合う一匹を、静かに探しましょう。
-    </p>
-  </div>
-  <div class="emo-hook-cap-bot" aria-hidden="true"></div>
-</section>
 
-<!-- Journey Preview (Phase 12-C) -->
-<section class="journey-preview" id="journey-preview">
-  <div class="wrap">
-    <span class="jp-eyebrow">How It Works</span>
-    <h2 class="jp-heading">答えるだけで、理想の亀にたどり着く。</h2>
-    <div class="jp-steps">
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">1</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 1</div>
-          <div class="jp-step-title">希望を選ぶ</div>
-          <p class="jp-step-copy">予算・部屋サイズ・臭いの不安を選ぶだけ</p>
-        </div>
-      </div>
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">2</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 2</div>
-          <div class="jp-step-title">条件で絞り込む</div>
-          <p class="jp-step-copy">100種以上から相性のいい候補を絞り込む</p>
-        </div>
-      </div>
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">3</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 3</div>
-          <div class="jp-step-title">候補を比較</div>
-          <p class="jp-step-copy">難易度・費用・手間を横並びで確認</p>
-        </div>
-      </div>
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">4</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 4</div>
-          <div class="jp-step-title">準備完了</div>
-          <p class="jp-step-copy">必要な機材をまとめて把握してスタート</p>
-        </div>
-      </div>
-
-    </div>
-    <p class="jp-payoff">迷っていた亀選びが、楽しみに変わる。</p>
-  </div>
-</section>
-
-<!-- Live Compare (Phase 12-D) -->
-<section class="live-compare" id="live-compare">
-  <div class="wrap">
-
-    <span class="lc-eyebrow">Compare Before You Commit</span>
-    <h2 class="lc-heading">飼う前に、違いを見抜く。</h2>
-    <p class="lc-sub">見た目が似ていても、飼いやすさはまったく違う。<br>人気の比較を、1分で確認。</p>
-
-    <div class="lc-grid">
-
-      <!-- Card 1: Hermann vs Greek -->
-      <a class="lc-card"
-         href="./compare/hermann-vs-greek.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'hermann_vs_greek'})">
-        <span class="lc-badge">初心者に人気</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">ヘルマン<br>リクガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">ギリシャ<br>リクガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 飼いやすい</span>
-            <span class="lc-metric-label">難易度</span>
-            <span class="lc-lose">○ やや難</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-lose">¥40,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-win">◎ ¥25,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ 少ない</span>
-            <span class="lc-metric-label">においリスク</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">ヘルマン vs ギリシャを比較する →</span>
-      </a>
-
-      <!-- Card 2: Musk vs Razorback -->
-      <a class="lc-card"
-         href="./compare/musk-vs-razorback.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'musk_vs_razorback'})">
-        <span class="lc-badge">Most Compared</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">ミシシッピ<br>ニオイガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">カブトニオイ<br>ガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 入門向き</span>
-            <span class="lc-metric-label">難易度</span>
-            <span class="lc-lose">初中級</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ ¥15,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-lose">¥20,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-tie">同等</span>
-            <span class="lc-metric-label">においリスク</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">ニオイガメ vs カブトを比較する →</span>
-      </a>
-
-      <!-- Card 3: Reeves vs Japanese Pond -->
-      <a class="lc-card"
-         href="./compare/reeves-vs-japanese-pond.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'reeves_vs_japanese_pond'})">
-        <span class="lc-badge">国産限定</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">クサガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">ニホン<br>イシガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 入手しやすい</span>
-            <span class="lc-metric-label">入手性</span>
-            <span class="lc-lose">希少</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ ¥15,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-lose">¥20,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-tie">同等</span>
-            <span class="lc-metric-label">飼いやすさ</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">クサガメ vs イシガメを比較する →</span>
-      </a>
-
-    </div>
-
-    <div class="lc-cta-wrap">
-      <a href="./compare/"
-         class="lc-cta"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_all_click',{event_category:'live_compare',event_label:'all_comparisons'})">
-        すべての比較を見る <span class="arrow">→</span>
-      </a>
-    </div>
-
-  </div>
-</section><!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
+<!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
 <section class="pc-section" id="problem-grid" aria-label="よくある4つの不安">
   <div class="wrap">
     <span class="pc-eyebrow-s2">よくある不安に答えます</span>
@@ -4205,6 +3918,15 @@
   </div>
 </section>
 
+
+<section class="find-turtle-heading">
+  <div class="wrap">
+    <div class="section-eyebrow">Find Your Turtle</div>
+    <h2 class="section-title">亀を選ぶ</h2>
+    <p class="section-note">暮らしのタイプ・人気種・比較から、あなたに合う一匹を探します。</p>
+  </div>
+</section>
+
 <!-- Phase 12-A Sprint 3-A: Species Universe (replaces Phase 11 Step 1D) -->
 <section class="su-section" id="popular-picks" aria-label="亀の世界を探索する">
   <div class="su-cap-top" aria-hidden="true"></div>
@@ -4308,107 +4030,584 @@
 
 
 
-<!-- Top Gear Picks (Phase 12 Patch) -->
-<section class="top-gear-picks" id="top-gear-picks">
+
+<details class="ia-more">
+<summary class="ia-more-summary">もっと見る（写真・人気ガイド・比較でさらに探す） ↓</summary>
+<section class="lead-in">
   <div class="wrap">
-    <span class="tg-eyebrow">Environment Essentials</span>
-    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
-    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
-    <div class="tg-grid">
+    <p>水槽の大きさ、ライトの強さ、床材の種類。カメの飼育で迷うことは尽きません。けれど、その答えのほとんどは「そのカメが野生でどう暮らしているか」の中にあります。乾いた草原を歩き回るリクガメと、薄暗い林の床に潜むヤマガメでは、必要なものがまるで違うからです。</p>
+    <p>このサイトでは、カメを<strong>暮らしのタイプ</strong>で分け、それぞれの生態から逆算して飼育環境と機材を考えていきます。難しい話を並べるのではなく、「なぜそれが必要なのか」が腑に落ちるように書いているつもりです。お迎えを迷っている方も、すでに一緒に暮らしている方も、気になるところから読んでみてください。</p>
+  </div>
+</section>
 
-      <a class="tg-card"
-         href="uvb-light-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">☀️</span>
-        <span class="tg-cat">UVBライト</span>
-        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
-        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
-        <span class="tg-cta">UVBランプ10選を見る <span class="tg-cta-arrow">→</span></span>
+<section class="discover" id="discover">
+  <div class="wrap">
+    <div class="section-eyebrow">Find by Habitat</div>
+    <h2 class="section-title">暮らしから探す</h2>
+    <p class="section-note">飼っている（迎えたい）カメの暮らしに近いタイプを選ぶと、必要な環境と機材の考え方がまとまっています。</p>
+
+    <div class="card-grid">
+
+      <a class="dcard" href="guide-water-full.html">
+        <div class="dc-eyebrow">Freshwater</div>
+        <h3>水棲・淡水ガメ</h3>
+        <p>一日の多くを水の中で過ごすカメ。泳げる水量と、甲羅を乾かす陸場の両立が健康の土台になります。</p>
+        <div class="dc-species">クサガメ・アカミミガメ・イシガメ など</div>
       </a>
 
-      <a class="tg-card"
-         href="water-filter-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">💧</span>
-        <span class="tg-cat">フィルター</span>
-        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
-        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
-        <span class="tg-cta">フィルター10選を見る <span class="tg-cta-arrow">→</span></span>
+      <a class="dcard" href="guide-brackish.html">
+        <div class="dc-eyebrow">Brackish</div>
+        <h3>汽水・水辺ガメ</h3>
+        <p>河口や塩性湿地に適応した、少し特殊な暮らしのカメ。水質と塩分の管理に専門的な配慮が要ります。</p>
+        <div class="dc-species">ダイヤモンドバックテラピン など</div>
       </a>
 
-      <a class="tg-card"
-         href="cage-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">🌡️</span>
-        <span class="tg-cat">保温器具</span>
-        <span class="tg-title">ヒーター・保温球<br>おすすめ10選</span>
-        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
-        <span class="tg-cta">保温器具10選を見る <span class="tg-cta-arrow">→</span></span>
+      <a class="dcard" href="guide-semi.html">
+        <div class="dc-eyebrow">Semi-aquatic</div>
+        <h3>半水棲ガメ</h3>
+        <p>泳ぐより水底を歩くのが得意なカメ。浅い水位と、登れる陸場・隠れ家がポイントになります。</p>
+        <div class="dc-species">ニオイガメ・ドロガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-moist.html">
+        <div class="dc-eyebrow">Forest Floor</div>
+        <h3>ヤマガメ・ハコガメ</h3>
+        <p>湿った林の床に暮らす森林性のカメ。湿度と隠れ家、浅い水場で「しっとりした林床」を再現します。</p>
+        <div class="dc-species">スペングラーヤマガメ・ヒラセガメ・ハコガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-dry.html">
+        <div class="dc-eyebrow">Arid Grassland</div>
+        <h3>乾燥系リクガメ</h3>
+        <p>乾いた草原を歩き回るリクガメ。広い床面積と強い光、草食メインの食事が暮らしの起点です。</p>
+        <div class="dc-species">ロシア・ヘルマン・ギリシャリクガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-arid.html">
+        <div class="dc-eyebrow">Humid Tropics</div>
+        <h3>多湿系リクガメ</h3>
+        <p>湿度のある暖かい環境を好む熱帯のリクガメ。広さに加え、適度な保湿が幼体期の健康を左右します。</p>
+        <div class="dc-species">アカアシ・エロンガータリクガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-softshell.html">
+        <div class="dc-eyebrow">Softshell &amp; Side-neck</div>
+        <h3>スッポン・ヘビクビガメ</h3>
+        <p>砂に潜るスッポンと、首を横に曲げる曲頸類。どちらも深水と強力なろ過が飼育の核心になります。</p>
+        <div class="dc-species">スパイニースッポン・ヘビクビガメ・ナガクビガメ など</div>
+      </a>
+
+      <a class="dcard" href="guide-japan.html">
+        <div class="dc-eyebrow">Japanese Native</div>
+        <h3>日本産カメ</h3>
+        <p>日本の清流と里山に生きる固有種。野外個体は採集禁止——CB個体を選ぶことが保全につながります。</p>
+        <div class="dc-species">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ など</div>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Phase 36B: Real Photo Trust Grid ===== -->
+<section class="rtg-section" id="real-trust-grid" aria-label="実際に飼われている人気種をチェック">
+  <div class="rtg-wrap">
+    <span class="rtg-eyebrow">Real Turtle Photos</span>
+    <h2 class="rtg-heading">実際に飼われている人気種をチェック</h2>
+    <p class="rtg-sub">写真・特徴・飼育難易度をAIが比較して、<br>あなたに合う亀を見つけます。</p>
+    <div class="rtg-grid" role="list">
+      <a class="rtg-card" role="listitem" href="species/musk-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミシシッピニオイガメ',species_slug:'musk-turtle'})">
+        <span class="rtg-imgbox">
+          <img loading="lazy" src="images/trust/mississippi-musk-turtle.webp"
+               alt="ミシシッピニオイガメ (Sternotherus odoratus) real photo"
+               width="800" height="600" loading="eager" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ミシシッピニオイガメ</span>
+            <span class="rtg-latin">Sternotherus odoratus</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/hermann-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ヘルマンリクガメ',species_slug:'hermann-tortoise'})">
+        <span class="rtg-imgbox">
+          <img loading="lazy" src="images/trust/hermanns-tortoise.webp"
+               alt="ヘルマンリクガメ (Testudo hermanni) real photo"
+               width="800" height="600" loading="eager" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ヘルマンリクガメ</span>
+            <span class="rtg-latin">Testudo hermanni</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/reeves-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'クサガメ',species_slug:'reeves-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/reeves-turtle.webp"
+               alt="クサガメ (Mauremys reevesii) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">クサガメ</span>
+            <span class="rtg-latin">Mauremys reevesii</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/japanese-pond-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ニホンイシガメ',species_slug:'japanese-pond-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/japanese-pond-turtle.webp"
+               alt="ニホンイシガメ (Mauremys japonica) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ニホンイシガメ</span>
+            <span class="rtg-latin">Mauremys japonica</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/razorback-musk-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'カブトニオイガメ',species_slug:'razorback-musk-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/razorback-musk-turtle.webp"
+               alt="カブトニオイガメ (Sternotherus carinatus) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">カブトニオイガメ</span>
+            <span class="rtg-latin">Sternotherus carinatus</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/russian-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ロシアリクガメ',species_slug:'russian-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/russian-tortoise.webp"
+               alt="ロシアリクガメ (Testudo horsfieldii) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ロシアリクガメ</span>
+            <span class="rtg-latin">Testudo horsfieldii</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/red-eared-slider.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカミミガメ',species_slug:'red-eared-slider'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/red-eared-slider.webp"
+               alt="アカミミガメ (Trachemys scripta elegans) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">アカミミガメ</span>
+            <span class="rtg-latin">Trachemys scripta elegans</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/sulcata-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ケヅメリクガメ',species_slug:'sulcata-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/sulcata-tortoise.webp"
+               alt="ケヅメリクガメ (Centrochelys sulcata) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ケヅメリクガメ</span>
+            <span class="rtg-latin">Centrochelys sulcata</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/red-footed-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'アカアシガメ',species_slug:'red-footed-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/red-footed-tortoise.webp"
+               alt="アカアシガメ (Chelonoidis carbonaria) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">アカアシガメ</span>
+            <span class="rtg-latin">Chelonoidis carbonaria</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/greek-tortoise.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ギリシャリクガメ',species_slug:'greek-tortoise'})">
+        <span class="rtg-imgbox">
+          <img src="images/trust/greek-tortoise.webp"
+               alt="ギリシャリクガメ (Testudo graeca) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ギリシャリクガメ</span>
+            <span class="rtg-latin">Testudo graeca</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+    </div>
+    <p class="rtg-credits"><a href="photo-credits.html">Photo Credits</a></p>
+  </div>
+</section>
+
+<section class="popular-guides" id="popular-species">
+  <div class="wrap">
+    <div class="section-eyebrow">Popular Species</div>
+    <h2 class="section-title">人気の亀ガイド</h2>
+    <p class="section-note">実飼育者が書いた、種別ガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
+    <div class="pg-grid">
+      <a href="species/russian-tortoise.html" class="pg-card">
+        <div class="pg-emoji">🏔️</div>
+        <div class="pg-name">ロシアリクガメ</div>
+        <div class="pg-latin">Testudo horsfieldii</div>
+        <p class="pg-desc">リクガメ入門の定番。60〜90cmケージから始められる乾燥系リクガメ。好奇心旺盛でなつきやすい。</p>
+        <div class="pg-cta">ロシアリクガメの飼育ガイドを読む →</div>
+      </a>
+      <a href="species/musk-turtle.html" class="pg-card">
+        <div class="pg-emoji">🔬</div>
+        <div class="pg-name">ニオイガメ</div>
+        <div class="pg-latin">Sternotherus odoratus</div>
+        <p class="pg-desc">水棲ガメ入門の定番。最大14cm・30cm水槽から。慣れれば臭いも少なく飼育しやすい小型種。</p>
+        <div class="pg-cta">ニオイガメの飼育ガイドを読む →</div>
+      </a>
+      <a href="species/three-toed-box-turtle.html" class="pg-card">
+        <div class="pg-emoji">📦</div>
+        <div class="pg-name">ミツユビハコガメ</div>
+        <div class="pg-latin">Terrapene carolina triunguis</div>
+        <p class="pg-desc">腹甲を完全に閉じる独自構造の北米産ハコガメ。雑食性で飼育食への移行がしやすい。著者も飼育中。</p>
+        <div class="pg-cta">ミツユビハコガメの飼育ガイドを読む →</div>
+      </a>
+      <a href="species/spenglers-leaf-turtle.html" class="pg-card">
+        <div class="pg-emoji">🌿</div>
+        <div class="pg-name">スペングラーヤマガメ</div>
+        <div class="pg-latin">Geoemyda spengleri</div>
+        <p class="pg-desc">湿った林床を好む小型ヤマガメ。高湿度環境と豊富な隠れ家が重要。マニア人気が高い。著者も飼育中。</p>
+        <div class="pg-cta">スペングラーヤマガメの飼育ガイドを読む →</div>
+      </a>
+      <a href="species/west-african-mud-turtle.html" class="pg-card">
+        <div class="pg-emoji">🌊</div>
+        <div class="pg-name">ヒメハコヨコクビガメ</div>
+        <div class="pg-latin">Pelusios castaneus</div>
+        <p class="pg-desc">水棲寄りだが陸場も使う西アフリカ産の曲頸類。丈夫さと個性的な姿が魅力で、ろ過と陸場設計が飼育の鍵。</p>
+        <div class="pg-cta">ヒメハコヨコクビガメの飼育ガイドを読む →</div>
+      </a>
+      <a href="species/reeves-turtle.html" class="pg-card">
+        <div class="pg-emoji">🇯🇵</div>
+        <div class="pg-name">クサガメ</div>
+        <div class="pg-latin">Mauremys reevesii</div>
+        <p class="pg-desc">日本で馴染み深い代表種。丈夫で適応力が高いが、成長後サイズも考慮したい。</p>
+        <div class="pg-cta">クサガメの飼育ガイドを読む →</div>
+      </a>
+    </div>
+    <a href="species-list.html" class="pg-all">98種別ガイドを全て見る →</a>
+  </div>
+</section>
+
+<!-- Live Compare (Phase 12-D) -->
+<section class="live-compare" id="live-compare">
+  <div class="wrap">
+
+    <span class="lc-eyebrow">Compare Before You Commit</span>
+    <h2 class="lc-heading">飼う前に、違いを見抜く。</h2>
+    <p class="lc-sub">見た目が似ていても、飼いやすさはまったく違う。<br>人気の比較を、1分で確認。</p>
+
+    <div class="lc-grid">
+
+      <!-- Card 1: Hermann vs Greek -->
+      <a class="lc-card"
+         href="./compare/hermann-vs-greek.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'hermann_vs_greek'})">
+        <span class="lc-badge">初心者に人気</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">ヘルマン<br>リクガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">ギリシャ<br>リクガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 飼いやすい</span>
+            <span class="lc-metric-label">難易度</span>
+            <span class="lc-lose">○ やや難</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-lose">¥40,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-win">◎ ¥25,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ 少ない</span>
+            <span class="lc-metric-label">においリスク</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">ヘルマン vs ギリシャを比較する →</span>
+      </a>
+
+      <!-- Card 2: Musk vs Razorback -->
+      <a class="lc-card"
+         href="./compare/musk-vs-razorback.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'musk_vs_razorback'})">
+        <span class="lc-badge">Most Compared</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">ミシシッピ<br>ニオイガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">カブトニオイ<br>ガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 入門向き</span>
+            <span class="lc-metric-label">難易度</span>
+            <span class="lc-lose">初中級</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ ¥15,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-lose">¥20,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-tie">同等</span>
+            <span class="lc-metric-label">においリスク</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">ニオイガメ vs カブトを比較する →</span>
+      </a>
+
+      <!-- Card 3: Reeves vs Japanese Pond -->
+      <a class="lc-card"
+         href="./compare/reeves-vs-japanese-pond.html"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'reeves_vs_japanese_pond'})">
+        <span class="lc-badge">国産限定</span>
+        <div class="lc-vs-strip">
+          <span class="lc-name">クサガメ</span>
+          <span class="lc-vs">vs</span>
+          <span class="lc-name right">ニホン<br>イシガメ</span>
+        </div>
+        <div class="lc-divider"></div>
+        <div class="lc-metrics">
+          <div class="lc-metric">
+            <span class="lc-win">◎ 入手しやすい</span>
+            <span class="lc-metric-label">入手性</span>
+            <span class="lc-lose">希少</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-win">◎ ¥15,000〜</span>
+            <span class="lc-metric-label">初期費用</span>
+            <span class="lc-lose">¥20,000〜</span>
+          </div>
+          <div class="lc-metric">
+            <span class="lc-tie">同等</span>
+            <span class="lc-metric-label">飼いやすさ</span>
+            <span class="lc-tie">同等</span>
+          </div>
+        </div>
+        <span class="lc-card-cta">クサガメ vs イシガメを比較する →</span>
+      </a>
+
+    </div>
+
+    <div class="lc-cta-wrap">
+      <a href="./compare/"
+         class="lc-cta"
+         onclick="(typeof gtag==='function')&&gtag('event','live_compare_all_click',{event_category:'live_compare',event_label:'all_comparisons'})">
+        すべての比較を見る <span class="arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+<section class="compare-engine" id="compare-engine">
+  <div class="wrap">
+    <div class="ce-eyebrow">Species Compare</div>
+    <h2 class="ce-heading">どの亀があなた向き？</h2>
+    <p class="ce-sub">初心者が迷いやすい代表種を、飼育難易度・匂い・初期費用で比較しました。</p>
+    <div class="scroll-hint-ce">← 横にスクロール</div>
+    <div class="ce-table-wrap">
+      <table class="ce-table">
+        <thead>
+          <tr>
+            <th>種名</th>
+            <th>難易度</th>
+            <th>匂い</th>
+            <th>初期費用</th>
+            <th>初心者向け</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              ミシシッピニオイガメ
+              <span class="ce-latin">Sternotherus odoratus</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥</span></td>
+            <td><span class="ce-badge best">◎</span></td>
+          </tr>
+          <tr>
+            <td>
+              ヘルマンリクガメ
+              <span class="ce-latin">Testudo hermanni</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥¥</span></td>
+            <td><span class="ce-badge good">○</span></td>
+          </tr>
+          <tr>
+            <td>
+              ミツユビハコガメ
+              <span class="ce-latin">Terrapene carolina triunguis</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥</span></td>
+            <td><span class="ce-badge caution">△</span></td>
+          </tr>
+          <tr>
+            <td>
+              スペングラーヤマガメ
+              <span class="ce-latin">Geoemyda spengleri</span>
+            </td>
+            <td>
+              <span class="ce-dots">
+                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+              </span>
+            </td>
+            <td>
+              <span class="ce-dots ce-smell">
+                <span class="ce-dot"></span><span class="ce-dot"></span>
+                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+              </span>
+            </td>
+            <td><span class="ce-cost">¥¥¥</span></td>
+            <td><span class="ce-badge hard">×</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ce-cta-box">
+      <p><strong>まだ迷っているなら、30秒診断が確実です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種以上からあなたに合う1種を提案します。</p>
+      <a href="./shindan/"
+         class="ce-cta-btn"
+         data-event="homepage_compare_diagnosis_click"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
+        30秒診断を始める →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Guide Links (Phase 11 Step 1G: Care Library) -->
+<section class="guide-links" id="guide-links">
+  <div class="wrap">
+    <span class="gl-eyebrow">Care Library</span>
+    <h2 class="gl-heading">選んだ後も、飼育で迷わせない。</h2>
+    <p class="gl-sub">水槽・床材・温度・食事。飼い始めてから必要になる知識を、飼育スタイル別に整理しています。</p>
+    <div class="gl-grid">
+
+      <a href="guides/beginner-top10-turtles.html" class="gl-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'beginner_top10'})">
+        <span class="gl-module-label">Care Module 01</span>
+        <span class="gl-icon">🐢</span>
+        <div class="gl-situation">はじめての1頭、どう選ぶ？</div>
+        <p class="gl-desc">難易度・費用・サイズの三軸で、初心者が後悔しにくい種をランキング形式で解説。</p>
+        <span class="gl-cta">初心者向け選び方を読む</span>
+      </a>
+
+      <a href="guides/small-best-turtles.html" class="gl-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'small_best'})">
+        <span class="gl-module-label">Care Module 02</span>
+        <span class="gl-icon">🔬</span>
+        <div class="gl-situation">スペースが限られている？</div>
+        <p class="gl-desc">30〜45cm水槽から飼える最大15cm以下の小型種を厳選。省スペース派に最適な3種を比較。</p>
+        <span class="gl-cta">小型種3選を見る</span>
+      </a>
+
+      <a href="guides/low-odor-turtles.html" class="gl-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'low_odor_best'})">
+        <span class="gl-module-label">Care Module 03</span>
+        <span class="gl-icon">🌿</span>
+        <div class="gl-situation">室内の臭いが心配？</div>
+        <p class="gl-desc">管理次第で臭いを抑えられる種と方法を解説。陸棲なら水の問題ごと解消できます。</p>
+        <span class="gl-cta">臭い対策ガイドを読む</span>
+      </a>
+
+      <!-- Phase 29-D: KID (Keeper Intelligence Database) CTA (single insertion) -->
+      <a href="kid/index.html" class="gl-card" style="grid-column:1/-1;"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'kid'})">
+        <span class="gl-module-label">Care Module 04</span>
+        <span class="gl-icon">📏</span>
+        <div class="gl-situation">飼育用品、サイズで失敗したくない？</div>
+        <p class="gl-desc">うちの子の甲長から「今使える／もう使えない／次に買う」を逆引き。実飼育者の失敗事例つき。安全判定を購入リンクより先に。</p>
+        <span class="gl-cta">KID（甲長逆引きDB）を見る</span>
       </a>
 
     </div>
   </div>
 </section>
 
-<!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
-<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要">
-  <div class="il-cap-top" aria-hidden="true"></div>
+</details>
 
+<section class="find-turtle-heading">
   <div class="wrap">
-    <!-- Header -->
-    <header class="il-header">
-      <span class="il-eyebrow">By The Numbers</span>
-      <h2 class="il-heading reveal-soft reveal-soft--delay-1">
-        静かな世界の裏には、<br><em>膨大なデータ</em>があります。
-      </h2>
-      <p class="il-sub">
-        100種以上の生体データ、飼育ページ、機材DB、比較システム。<br>
-        100種以上のデータと飼育ページの情報から、候補をご案内しています。
-      </p>
-    </header>
-
-    <!-- 5 stat cards -->
-    <div class="il-grid" role="list">
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">100<sup>+</sup></span>
-        <span class="il-card-title">Species<br>Profiles</span>
-        <span class="il-card-desc">100種以上の亀・リクガメの生体データを収録</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">98</span>
-        <span class="il-card-title">Care<br>Pages</span>
-        <span class="il-card-desc">実飼育者が執筆した個別飼育ページ</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">87</span>
-        <span class="il-card-title">Curated<br>Essentials</span>
-        <span class="il-card-desc">実使用ベースで厳選した飼育必需品データ</span>
-      </div>
-
-      <div class="il-card il-card--ai" role="listitem">
-        <span class="il-card-val il-card-val--label">診断</span>
-        <span class="il-card-title">Diagnosis<br>Engine</span>
-        <span class="il-card-desc">5ルート・約30秒で種と環境を提案</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val il-card-val--label">3-Tier</span>
-        <span class="il-card-title">Starter<br>Kits</span>
-        <span class="il-card-desc">予算別・種別に合わせて選んだ機材セット</span>
-      </div>
-
-    </div>
-
-    <!-- caption -->
-    <p class="il-caption">
-      データは実飼育者による監修のもと継続的に更新しています。
-    </p>
+    <div class="section-eyebrow">Get Started</div>
+    <h2 class="section-title">飼育を始める</h2>
+    <p class="section-note">初期費用の目安と、最初に揃えたい定番機材をまとめました。</p>
   </div>
-
-  <div class="il-cap-bot" aria-hidden="true"></div>
 </section>
 
 <!-- Cost Simulator (Phase 11 Step 1F: Budget Reality Check) -->
@@ -4517,6 +4716,141 @@
   </div>
   <div class="csim-cap-bot" aria-hidden="true"></div>
 </section>
+
+
+<!-- Top Gear Picks (Phase 12 Patch) -->
+<section class="top-gear-picks" id="top-gear-picks">
+  <div class="wrap">
+    <span class="tg-eyebrow">Environment Essentials</span>
+    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
+    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
+    <div class="tg-grid">
+
+      <a class="tg-card"
+         href="uvb-light-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">☀️</span>
+        <span class="tg-cat">UVBライト</span>
+        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
+        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
+        <span class="tg-cta">UVBランプ10選を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+      <a class="tg-card"
+         href="water-filter-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">💧</span>
+        <span class="tg-cat">フィルター</span>
+        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
+        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
+        <span class="tg-cta">フィルター10選を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+      <a class="tg-card"
+         href="cage-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">🌡️</span>
+        <span class="tg-cat">保温器具</span>
+        <span class="tg-title">ヒーター・保温球<br>おすすめ10選</span>
+        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
+        <span class="tg-cta">保温器具10選を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<details class="ia-more">
+<summary class="ia-more-summary">もっと見る（機材をすべて見る） ↓</summary>
+<section class="gear-index">
+  <div class="wrap">
+    <div class="section-eyebrow">Find by Gear</div>
+    <h2 class="section-title">機材から探す</h2>
+    <p class="section-note">機材ごとに、実在を確認した製品をベスト10で紹介しています。「野生の暮らしから逆算する」という視点はどのページにも通底しています。</p>
+
+    <div class="gcard-grid">
+      <a class="gcard" href="cage-best10.html"><span class="gc-label">ケージ・水槽</span><span class="gc-sub">床面積と水量を暮らしから選ぶ</span></a>
+      <a class="gcard" href="substrate-best10.html"><span class="gc-label">床材・砂</span><span class="gc-sub">保湿か水はけか、地面を再現する</span></a>
+      <a class="gcard" href="shelter-best10.html"><span class="gc-label">シェルター・浮島</span><span class="gc-sub">成体サイズで選ぶ隠れ家と陸場</span></a>
+      <a class="gcard" href="uvb-light-best10.html"><span class="gc-label">UVBライト</span><span class="gc-sub">種に合った強さで甲羅と骨を守る</span></a>
+      <a class="gcard" href="food-best10.html"><span class="gc-label">餌・フード</span><span class="gc-sub">食性に合わせた主食を選ぶ</span></a>
+      <a class="gcard" href="water-filter-best10.html"><span class="gc-label">フィルター</span><span class="gc-sub">水量と水位に合うろ過を選ぶ</span></a>
+      <a class="gcard" href="dish-best10.html"><span class="gc-label">水入れ・エサ入れ</span><span class="gc-sub">体が浸かれるサイズ選びが健康を左右する</span></a>
+    </div>
+  </div>
+</section>
+
+</details>
+
+<section class="trouble-hub">
+  <div class="wrap">
+    <div class="th-inner">
+      <div class="th-text">
+        <div class="section-eyebrow">Trouble Shooting</div>
+        <h2 class="section-title">カメのトラブル解決</h2>
+        <p>食べない、鼻水が出る、目が開かない——症状から原因と対処法を確認できます。</p>
+      </div>
+      <a href="guides/turtle-trouble-guide.html" class="th-link">トラブル早見表へ →</a>
+    </div>
+    <div class="th-tags">
+      <a href="guides/turtle-not-eating.html">🍃 餌を食べない</a>
+      <a href="guides/turtle-runny-nose.html">💧 鼻水・くしゃみ</a>
+      <a href="guides/turtle-shell-white.html">🐚 甲羅が白い・ぬめる</a>
+    </div>
+  </div>
+</section>
+
+
+<details class="ia-more">
+<summary class="ia-more-summary">診断の流れを見る（How it works） ↓</summary>
+<section class="journey-preview" id="journey-preview">
+  <div class="wrap">
+    <span class="jp-eyebrow">How It Works</span>
+    <h2 class="jp-heading">答えるだけで、理想の亀にたどり着く。</h2>
+    <div class="jp-steps">
+
+      <div class="jp-step">
+        <div class="jp-num" aria-hidden="true">1</div>
+        <div class="jp-step-body">
+          <div class="jp-step-label">Step 1</div>
+          <div class="jp-step-title">希望を選ぶ</div>
+          <p class="jp-step-copy">予算・部屋サイズ・臭いの不安を選ぶだけ</p>
+        </div>
+      </div>
+
+      <div class="jp-step">
+        <div class="jp-num" aria-hidden="true">2</div>
+        <div class="jp-step-body">
+          <div class="jp-step-label">Step 2</div>
+          <div class="jp-step-title">条件で絞り込む</div>
+          <p class="jp-step-copy">100種以上から相性のいい候補を絞り込む</p>
+        </div>
+      </div>
+
+      <div class="jp-step">
+        <div class="jp-num" aria-hidden="true">3</div>
+        <div class="jp-step-body">
+          <div class="jp-step-label">Step 3</div>
+          <div class="jp-step-title">候補を比較</div>
+          <p class="jp-step-copy">難易度・費用・手間を横並びで確認</p>
+        </div>
+      </div>
+
+      <div class="jp-step">
+        <div class="jp-num" aria-hidden="true">4</div>
+        <div class="jp-step-body">
+          <div class="jp-step-label">Step 4</div>
+          <div class="jp-step-title">準備完了</div>
+          <p class="jp-step-copy">必要な機材をまとめて把握してスタート</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="jp-payoff">迷っていた亀選びが、楽しみに変わる。</p>
+  </div>
+</section>
+</details>
 
 <!-- ═══════════════════════════════════════════════════════
      Phase 12-C: Turtle Readiness Score OS
@@ -4697,359 +5031,68 @@
   </div>
 </section>
 
-<!-- Guide Links (Phase 11 Step 1G: Care Library) -->
-<section class="guide-links" id="guide-links">
+
+<!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
+<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要">
+  <div class="il-cap-top" aria-hidden="true"></div>
+
   <div class="wrap">
-    <span class="gl-eyebrow">Care Library</span>
-    <h2 class="gl-heading">選んだ後も、飼育で迷わせない。</h2>
-    <p class="gl-sub">水槽・床材・温度・食事。飼い始めてから必要になる知識を、飼育スタイル別に整理しています。</p>
-    <div class="gl-grid">
+    <!-- Header -->
+    <header class="il-header">
+      <span class="il-eyebrow">By The Numbers</span>
+      <h2 class="il-heading reveal-soft reveal-soft--delay-1">
+        静かな世界の裏には、<br><em>膨大なデータ</em>があります。
+      </h2>
+      <p class="il-sub">
+        100種以上の生体データ、飼育ページ、機材DB、比較システム。<br>
+        100種以上のデータと飼育ページの情報から、候補をご案内しています。
+      </p>
+    </header>
 
-      <a href="guides/beginner-top10-turtles.html" class="gl-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'beginner_top10'})">
-        <span class="gl-module-label">Care Module 01</span>
-        <span class="gl-icon">🐢</span>
-        <div class="gl-situation">はじめての1頭、どう選ぶ？</div>
-        <p class="gl-desc">難易度・費用・サイズの三軸で、初心者が後悔しにくい種をランキング形式で解説。</p>
-        <span class="gl-cta">初心者向け選び方を読む</span>
-      </a>
+    <!-- 5 stat cards -->
+    <div class="il-grid" role="list">
 
-      <a href="guides/small-best-turtles.html" class="gl-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'small_best'})">
-        <span class="gl-module-label">Care Module 02</span>
-        <span class="gl-icon">🔬</span>
-        <div class="gl-situation">スペースが限られている？</div>
-        <p class="gl-desc">30〜45cm水槽から飼える最大15cm以下の小型種を厳選。省スペース派に最適な3種を比較。</p>
-        <span class="gl-cta">小型種3選を見る</span>
-      </a>
-
-      <a href="guides/low-odor-turtles.html" class="gl-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'low_odor_best'})">
-        <span class="gl-module-label">Care Module 03</span>
-        <span class="gl-icon">🌿</span>
-        <div class="gl-situation">室内の臭いが心配？</div>
-        <p class="gl-desc">管理次第で臭いを抑えられる種と方法を解説。陸棲なら水の問題ごと解消できます。</p>
-        <span class="gl-cta">臭い対策ガイドを読む</span>
-      </a>
-
-      <!-- Phase 29-D: KID (Keeper Intelligence Database) CTA (single insertion) -->
-      <a href="kid/index.html" class="gl-card" style="grid-column:1/-1;"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'kid'})">
-        <span class="gl-module-label">Care Module 04</span>
-        <span class="gl-icon">📏</span>
-        <div class="gl-situation">飼育用品、サイズで失敗したくない？</div>
-        <p class="gl-desc">うちの子の甲長から「今使える／もう使えない／次に買う」を逆引き。実飼育者の失敗事例つき。安全判定を購入リンクより先に。</p>
-        <span class="gl-cta">KID（甲長逆引きDB）を見る</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="lead-in">
-  <div class="wrap">
-    <p>水槽の大きさ、ライトの強さ、床材の種類。カメの飼育で迷うことは尽きません。けれど、その答えのほとんどは「そのカメが野生でどう暮らしているか」の中にあります。乾いた草原を歩き回るリクガメと、薄暗い林の床に潜むヤマガメでは、必要なものがまるで違うからです。</p>
-    <p>このサイトでは、カメを<strong>暮らしのタイプ</strong>で分け、それぞれの生態から逆算して飼育環境と機材を考えていきます。難しい話を並べるのではなく、「なぜそれが必要なのか」が腑に落ちるように書いているつもりです。お迎えを迷っている方も、すでに一緒に暮らしている方も、気になるところから読んでみてください。</p>
-  </div>
-</section>
-
-<section class="entry-nav">
-  <div class="wrap">
-    <div class="entry-nav-label">どこから探しますか？</div>
-    <div class="entry-nav-btns">
-      <a href="shindan/index.html">🐢 診断で探す</a>
-      <a href="species-list.html">📋 種一覧から探す</a>
-      <a href="#discover">🌿 生態から探す</a>
-      <a href="guides/turtle-trouble-guide.html">🚑 トラブル解決</a>
-      <a href="guides/beginner-top10-turtles.html">🐣 初心者TOP10を見る</a>
-      <a href="uvb-light-best10.html">🔧 機材を選ぶ</a>
-    </div>
-  </div>
-</section>
-
-<section class="discover" id="discover">
-  <div class="wrap">
-    <div class="section-eyebrow">Find by Habitat</div>
-    <h2 class="section-title">暮らしから探す</h2>
-    <p class="section-note">飼っている（迎えたい）カメの暮らしに近いタイプを選ぶと、必要な環境と機材の考え方がまとまっています。</p>
-
-    <div class="card-grid">
-
-      <a class="dcard" href="guide-water-full.html">
-        <div class="dc-eyebrow">Freshwater</div>
-        <h3>水棲・淡水ガメ</h3>
-        <p>一日の多くを水の中で過ごすカメ。泳げる水量と、甲羅を乾かす陸場の両立が健康の土台になります。</p>
-        <div class="dc-species">クサガメ・アカミミガメ・イシガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-brackish.html">
-        <div class="dc-eyebrow">Brackish</div>
-        <h3>汽水・水辺ガメ</h3>
-        <p>河口や塩性湿地に適応した、少し特殊な暮らしのカメ。水質と塩分の管理に専門的な配慮が要ります。</p>
-        <div class="dc-species">ダイヤモンドバックテラピン など</div>
-      </a>
-
-      <a class="dcard" href="guide-semi.html">
-        <div class="dc-eyebrow">Semi-aquatic</div>
-        <h3>半水棲ガメ</h3>
-        <p>泳ぐより水底を歩くのが得意なカメ。浅い水位と、登れる陸場・隠れ家がポイントになります。</p>
-        <div class="dc-species">ニオイガメ・ドロガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-moist.html">
-        <div class="dc-eyebrow">Forest Floor</div>
-        <h3>ヤマガメ・ハコガメ</h3>
-        <p>湿った林の床に暮らす森林性のカメ。湿度と隠れ家、浅い水場で「しっとりした林床」を再現します。</p>
-        <div class="dc-species">スペングラーヤマガメ・ヒラセガメ・ハコガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-dry.html">
-        <div class="dc-eyebrow">Arid Grassland</div>
-        <h3>乾燥系リクガメ</h3>
-        <p>乾いた草原を歩き回るリクガメ。広い床面積と強い光、草食メインの食事が暮らしの起点です。</p>
-        <div class="dc-species">ロシア・ヘルマン・ギリシャリクガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-arid.html">
-        <div class="dc-eyebrow">Humid Tropics</div>
-        <h3>多湿系リクガメ</h3>
-        <p>湿度のある暖かい環境を好む熱帯のリクガメ。広さに加え、適度な保湿が幼体期の健康を左右します。</p>
-        <div class="dc-species">アカアシ・エロンガータリクガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-softshell.html">
-        <div class="dc-eyebrow">Softshell &amp; Side-neck</div>
-        <h3>スッポン・ヘビクビガメ</h3>
-        <p>砂に潜るスッポンと、首を横に曲げる曲頸類。どちらも深水と強力なろ過が飼育の核心になります。</p>
-        <div class="dc-species">スパイニースッポン・ヘビクビガメ・ナガクビガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-japan.html">
-        <div class="dc-eyebrow">Japanese Native</div>
-        <h3>日本産カメ</h3>
-        <p>日本の清流と里山に生きる固有種。野外個体は採集禁止——CB個体を選ぶことが保全につながります。</p>
-        <div class="dc-species">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ など</div>
-      </a>
-
-
-    </div>
-  </div>
-</section>
-
-<section class="species-preview">
-  <div class="wrap">
-    <div class="sp-inner">
-      <div class="sp-text">
-        <div class="section-eyebrow">Species Index</div>
-        <h2 class="section-title">種一覧で探す</h2>
-        <p>迎えたい種名がわかっているなら、一覧から直接探せます。難易度・カテゴリ・法規制のバッジ付きで100種以上を並べています。</p>
+      <div class="il-card" role="listitem">
+        <span class="il-card-val">100<sup>+</sup></span>
+        <span class="il-card-title">Species<br>Profiles</span>
+        <span class="il-card-desc">100種以上の亀・リクガメの生体データを収録</span>
       </div>
-      <a href="species-list.html" class="sp-link">100種以上の一覧を見る →</a>
-    </div>
-  </div>
-</section>
 
-
-<section class="trouble-hub">
-  <div class="wrap">
-    <div class="th-inner">
-      <div class="th-text">
-        <div class="section-eyebrow">Trouble Shooting</div>
-        <h2 class="section-title">カメのトラブル解決</h2>
-        <p>食べない、鼻水が出る、目が開かない——症状から原因と対処法を確認できます。</p>
+      <div class="il-card" role="listitem">
+        <span class="il-card-val">98</span>
+        <span class="il-card-title">Care<br>Pages</span>
+        <span class="il-card-desc">実飼育者が執筆した個別飼育ページ</span>
       </div>
-      <a href="guides/turtle-trouble-guide.html" class="th-link">トラブル早見表へ →</a>
+
+      <div class="il-card" role="listitem">
+        <span class="il-card-val">87</span>
+        <span class="il-card-title">Curated<br>Essentials</span>
+        <span class="il-card-desc">実使用ベースで厳選した飼育必需品データ</span>
+      </div>
+
+      <div class="il-card il-card--ai" role="listitem">
+        <span class="il-card-val il-card-val--label">診断</span>
+        <span class="il-card-title">Diagnosis<br>Engine</span>
+        <span class="il-card-desc">5ルート・約30秒で種と環境を提案</span>
+      </div>
+
+      <div class="il-card" role="listitem">
+        <span class="il-card-val il-card-val--label">3-Tier</span>
+        <span class="il-card-title">Starter<br>Kits</span>
+        <span class="il-card-desc">予算別・種別に合わせて選んだ機材セット</span>
+      </div>
+
     </div>
-    <div class="th-tags">
-      <a href="guides/turtle-not-eating.html">🍃 餌を食べない</a>
-      <a href="guides/turtle-runny-nose.html">💧 鼻水・くしゃみ</a>
-      <a href="guides/turtle-shell-white.html">🐚 甲羅が白い・ぬめる</a>
-    </div>
+
+    <!-- caption -->
+    <p class="il-caption">
+      データは実飼育者による監修のもと継続的に更新しています。
+    </p>
   </div>
+
+  <div class="il-cap-bot" aria-hidden="true"></div>
 </section>
 
-<section class="popular-guides" id="popular-species">
-  <div class="wrap">
-    <div class="section-eyebrow">Popular Species</div>
-    <h2 class="section-title">人気の亀ガイド</h2>
-    <p class="section-note">実飼育者が書いた、種別ガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
-    <div class="pg-grid">
-      <a href="species/russian-tortoise.html" class="pg-card">
-        <div class="pg-emoji">🏔️</div>
-        <div class="pg-name">ロシアリクガメ</div>
-        <div class="pg-latin">Testudo horsfieldii</div>
-        <p class="pg-desc">リクガメ入門の定番。60〜90cmケージから始められる乾燥系リクガメ。好奇心旺盛でなつきやすい。</p>
-        <div class="pg-cta">ロシアリクガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/musk-turtle.html" class="pg-card">
-        <div class="pg-emoji">🔬</div>
-        <div class="pg-name">ニオイガメ</div>
-        <div class="pg-latin">Sternotherus odoratus</div>
-        <p class="pg-desc">水棲ガメ入門の定番。最大14cm・30cm水槽から。慣れれば臭いも少なく飼育しやすい小型種。</p>
-        <div class="pg-cta">ニオイガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/three-toed-box-turtle.html" class="pg-card">
-        <div class="pg-emoji">📦</div>
-        <div class="pg-name">ミツユビハコガメ</div>
-        <div class="pg-latin">Terrapene carolina triunguis</div>
-        <p class="pg-desc">腹甲を完全に閉じる独自構造の北米産ハコガメ。雑食性で飼育食への移行がしやすい。著者も飼育中。</p>
-        <div class="pg-cta">ミツユビハコガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/spenglers-leaf-turtle.html" class="pg-card">
-        <div class="pg-emoji">🌿</div>
-        <div class="pg-name">スペングラーヤマガメ</div>
-        <div class="pg-latin">Geoemyda spengleri</div>
-        <p class="pg-desc">湿った林床を好む小型ヤマガメ。高湿度環境と豊富な隠れ家が重要。マニア人気が高い。著者も飼育中。</p>
-        <div class="pg-cta">スペングラーヤマガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/west-african-mud-turtle.html" class="pg-card">
-        <div class="pg-emoji">🌊</div>
-        <div class="pg-name">ヒメハコヨコクビガメ</div>
-        <div class="pg-latin">Pelusios castaneus</div>
-        <p class="pg-desc">水棲寄りだが陸場も使う西アフリカ産の曲頸類。丈夫さと個性的な姿が魅力で、ろ過と陸場設計が飼育の鍵。</p>
-        <div class="pg-cta">ヒメハコヨコクビガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/reeves-turtle.html" class="pg-card">
-        <div class="pg-emoji">🇯🇵</div>
-        <div class="pg-name">クサガメ</div>
-        <div class="pg-latin">Mauremys reevesii</div>
-        <p class="pg-desc">日本で馴染み深い代表種。丈夫で適応力が高いが、成長後サイズも考慮したい。</p>
-        <div class="pg-cta">クサガメの飼育ガイドを読む →</div>
-      </a>
-    </div>
-    <a href="species-list.html" class="pg-all">98種別ガイドを全て見る →</a>
-  </div>
-</section>
-
-<section class="compare-engine" id="compare-engine">
-  <div class="wrap">
-    <div class="ce-eyebrow">Species Compare</div>
-    <h2 class="ce-heading">どの亀があなた向き？</h2>
-    <p class="ce-sub">初心者が迷いやすい代表種を、飼育難易度・匂い・初期費用で比較しました。</p>
-    <div class="scroll-hint-ce">← 横にスクロール</div>
-    <div class="ce-table-wrap">
-      <table class="ce-table">
-        <thead>
-          <tr>
-            <th>種名</th>
-            <th>難易度</th>
-            <th>匂い</th>
-            <th>初期費用</th>
-            <th>初心者向け</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              ミシシッピニオイガメ
-              <span class="ce-latin">Sternotherus odoratus</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥</span></td>
-            <td><span class="ce-badge best">◎</span></td>
-          </tr>
-          <tr>
-            <td>
-              ヘルマンリクガメ
-              <span class="ce-latin">Testudo hermanni</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥¥</span></td>
-            <td><span class="ce-badge good">○</span></td>
-          </tr>
-          <tr>
-            <td>
-              ミツユビハコガメ
-              <span class="ce-latin">Terrapene carolina triunguis</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥</span></td>
-            <td><span class="ce-badge caution">△</span></td>
-          </tr>
-          <tr>
-            <td>
-              スペングラーヤマガメ
-              <span class="ce-latin">Geoemyda spengleri</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥¥</span></td>
-            <td><span class="ce-badge hard">×</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="ce-cta-box">
-      <p><strong>まだ迷っているなら、30秒診断が確実です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種以上からあなたに合う1種を提案します。</p>
-      <a href="./shindan/"
-         class="ce-cta-btn"
-         data-event="homepage_compare_diagnosis_click"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
-        30秒診断を始める →
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="gear-index">
-  <div class="wrap">
-    <div class="section-eyebrow">Find by Gear</div>
-    <h2 class="section-title">機材から探す</h2>
-    <p class="section-note">機材ごとに、実在を確認した製品をベスト10で紹介しています。「野生の暮らしから逆算する」という視点はどのページにも通底しています。</p>
-
-    <div class="gcard-grid">
-      <a class="gcard" href="cage-best10.html"><span class="gc-label">ケージ・水槽</span><span class="gc-sub">床面積と水量を暮らしから選ぶ</span></a>
-      <a class="gcard" href="substrate-best10.html"><span class="gc-label">床材・砂</span><span class="gc-sub">保湿か水はけか、地面を再現する</span></a>
-      <a class="gcard" href="shelter-best10.html"><span class="gc-label">シェルター・浮島</span><span class="gc-sub">成体サイズで選ぶ隠れ家と陸場</span></a>
-      <a class="gcard" href="uvb-light-best10.html"><span class="gc-label">UVBライト</span><span class="gc-sub">種に合った強さで甲羅と骨を守る</span></a>
-      <a class="gcard" href="food-best10.html"><span class="gc-label">餌・フード</span><span class="gc-sub">食性に合わせた主食を選ぶ</span></a>
-      <a class="gcard" href="water-filter-best10.html"><span class="gc-label">フィルター</span><span class="gc-sub">水量と水位に合うろ過を選ぶ</span></a>
-      <a class="gcard" href="dish-best10.html"><span class="gc-label">水入れ・エサ入れ</span><span class="gc-sub">体が浸かれるサイズ選びが健康を左右する</span></a>
-    </div>
-  </div>
-</section>
 
 <section class="author">
   <div class="wrap">
@@ -5057,13 +5100,13 @@
       <div class="author-mark">T</div>
       <div>
         <h3>書いている人について</h3>
-        <p>このサイトを運営しているのは、実際にカメと暮らしている一人の愛好家です。スペングラーヤマガメ、ヒラセガメ、ミツユビハコガメなどを飼育しながら、国内外の論文や飼育記録、専門誌を自分で調べ、日々の観察とつき合わせて記事を書いています。机上の情報をまとめ直しただけの内容にはしたくない、という思いでやっています。</p>
-        <p>カメ一種一種の生態については、note でもう少し物語のかたちで書いています。生き物としてのカメに関心がある方は、よければそちらものぞいてみてください。</p>
+        <p>実際にスペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを飼育しながら、論文や飼育記録を自分で調べ、日々の観察とつき合わせて書いています。カメの生態をもっと物語として読みたい方は note もどうぞ。</p>
         <a class="note-link" href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note の記事を読む →</a>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Concierge Launch CTA (Phase 11 Step 1H) -->
 <section class="concierge-launch" id="concierge-launch">
   <div class="wrap">
@@ -5097,6 +5140,7 @@
 
   </div>
 </section>
+
 
 
 
