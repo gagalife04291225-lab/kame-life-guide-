@@ -860,6 +860,33 @@ body {
 }
 .res-cta-secondary:hover { background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.32); }
 
+/* Phase 47-B: 3択CTA共通パーツ（回答タイプ別ヘルパー文・第三CTA） */
+.res-cta-helper {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.res-cta-tertiary {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 2px;
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,.22);
+  border-radius: var(--radius);
+  color: var(--parchment-dark);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .15s, border-color .15s, color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.res-cta-tertiary:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.36); color: var(--parchment); }
+
 /* emotion copy */
 .res-emotion-copy {
   font-size: .88rem;
@@ -3041,15 +3068,9 @@ function showResult(sp, pct) {
       monthlyText = fb.monthly;
     }
 
-    // ── teaser HTML ──────────────────────────────────────────
-    var teaserHtml =
-      '<div class="res-cta-teaser">' +
-        '<div class="res-cta-teaser-title">この亀を飼う場合の目安</div>' +
-        '<div class="res-cta-teaser-row">' +
-          (initText    ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">初期費用</div><div class="res-cta-teaser-value">' + initText    + '</div></div>' : '') +
-          (monthlyText ? '<div class="res-cta-teaser-item"><div class="res-cta-teaser-label">月額目安</div><div class="res-cta-teaser-value">' + monthlyText + '</div></div>' : '') +
-        '</div>' +
-      '</div>';
+    // Phase 47-B: teaserHtml（旧下部CTAの費用再掲ブロック）は削除。
+    // 上部res-cta-top-subで同じinitText/monthlyTextを既に表示しており、
+    // 下部での再掲は重複のため廃止（#res-cta-teaser系CSSクラスは未使用化）。
 
     // ── scarcity ─────────────────────────────────────────────
     var scarcityHtml = '';
@@ -3115,6 +3136,49 @@ function showResult(sp, pct) {
       }
     } catch(e) {}
 
+    // ── Phase 47-B: 回答タイプ別CTA補助文 ──────────────────────
+    // 既存scoresタグ（beginner/budget_*/route/advanced等）のみを使用。新規データ追加なし。
+    function buildCtaHelperText(sc, rId) {
+      sc = sc || {};
+      if ((sc.beginner || 0) >= 2) {
+        return 'まずは飼い方と初期費用を確認しましょう。';
+      }
+      if ((sc.budget_under10k || sc.budget_10_30k || sc.budget_low || 0) > 0) {
+        return '買う前に初期費用を確認すると失敗しにくいです。';
+      }
+      if (rId === 'aquatic') {
+        return '水槽サイズとフィルター選びが最重要です。';
+      }
+      if (rId === 'forest' || (rId === 'all' && (sc.humid_env || 0) >= 3)) {
+        return '湿度管理と床材選びを先に確認しましょう。';
+      }
+      if ((sc.advanced || 0) >= 2 || (sc.expert || 0) >= 1 || (sc.budget_over70k || sc.budget_high || 0) > 0) {
+        return '設備構成まで見てから候補を絞りましょう。';
+      }
+      return 'まずは飼育環境と費用感を確認しましょう。';
+    }
+    var ctaHelperText = buildCtaHelperText(scores, routeId);
+
+    // ── Phase 47-B: 第三CTA（比較）のリンク先をルートごとに決定 ──
+    // 既存compare/配下のページのみを参照。新規比較ページは作成しない。
+    var ROUTE_COMPARE_HREF = {
+      land:    '../compare/hermann-vs-greek.html',
+      aquatic: '../compare/musk-vs-razorback.html',
+      forest:  '../compare/three-toed-vs-gulf-coast.html',
+      exotic:  '../compare/',
+      all:     '../compare/',
+    };
+    var compareHref = ROUTE_COMPARE_HREF[routeId] || '../compare/';
+
+    // ── Phase 47-B: GA4のresult_type（既存difficultyバッジ分類を流用） ──
+    function resolveResultType(spArg) {
+      var d = (spArg && spArg.difficulty) || '';
+      if (d.indexOf('上級') >= 0) return 'advanced';
+      if (d.indexOf('入門') >= 0) return 'beginner';
+      return 'intermediate';
+    }
+    var resultType = resolveResultType(sp);
+
     // ── FIX 1+3: TOP CTA（score直後）────────────────────────
     var topEl = document.getElementById('res-cta-top');
     if (topEl) {
@@ -3123,35 +3187,61 @@ function showResult(sp, pct) {
       } else {
         var speciesPageUrl = '../species/' + sp.slug + '.html';
         var skUrlTop = '#starter-kit-section'; /* Phase 31-C3: was off-page; kit is now inline */
+        // Phase 47-B: 結果直下CTAを3択に整理
+        // 第一CTA=種ページ（詳しい飼い方）／第二CTA=Starter Kit／第三CTA=比較ページ
         topEl.innerHTML =
           scarcityHtml +
+          '<div class="res-cta-helper">' + ctaHelperText + '</div>' +
           '<div class="res-cta-top-sub">' +
             (initText ? '初期費用 ' + initText + '　' : '') +
             (monthlyText ? '月額 ' + monthlyText : '') +
           '</div>' +
           top3Html +
-          // Phase 42: Starter Kit導線を1つだけ強化（primary style + 先頭配置）。
-          // 種の詳細ページへのリンクはsecondary styleへ格下げ（GA4のid/イベントは維持）。
-          '<a class="res-cta-top-primary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
-            'この亀に必要な飼育セットを見る' +
+          '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
+            '飼育環境・寿命・費用を詳しく見る' +
           '</a>' +
-          '<a class="res-cta-top-secondary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
-            '必要な機材を見る →' +
+          '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
+            '最初に必要な水槽・ライト・餌を見る' +
+          '</a>' +
+          '<a class="res-cta-tertiary" id="res-cta-top-link-cmp" href="' + compareHref + '">' +
+            '似た亀と迷う人はこちら' +
           '</a>';
         topEl.style.display = '';
-        // GA4: top CTA click
+        // GA4: 第一CTA（種ページ）— 旧イベントは維持しつつ新イベントを追加
         var topLink = document.getElementById('res-cta-top-link');
         if (topLink) topLink.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_species_click', {
-            species: sp.name, slug: sp.slug, cta_type: 'top',
-            has_teaser: true, candidate_count: _lastCandidateCount,
-          });
+          if (typeof ga4Event === 'function') {
+            ga4Event('diagnosis_species_click', {
+              species: sp.name, slug: sp.slug, cta_type: 'top',
+              has_teaser: true, candidate_count: _lastCandidateCount,
+            });
+            ga4Event('diagnosis_result_species_cta', {
+              species_id: sp.slug || '', species_name: sp.name, route: routeId,
+              difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'top',
+            });
+          }
         });
+        // GA4: 第二CTA（Starter Kit）— 旧イベントは維持しつつ新イベントを追加
         var topLinkSec = document.getElementById('res-cta-top-link-sec');
         if (topLinkSec) topLinkSec.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
-            species: sp.name, slug: sp.slug, cta_type: 'top_secondary',
-            equipment_key: equipKey || '',
+          if (typeof ga4Event === 'function') {
+            ga4Event('diagnosis_result_starterkit_click', {
+              species: sp.name, slug: sp.slug, cta_type: 'top_secondary',
+              equipment_key: equipKey || '',
+            });
+            ga4Event('diagnosis_result_starterkit_cta', {
+              species_id: sp.slug || '', species_name: sp.name, route: routeId,
+              difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'top',
+            });
+          }
+        });
+        // GA4: 第三CTA（比較）
+        var topLinkCmp = document.getElementById('res-cta-top-link-cmp');
+        if (topLinkCmp) topLinkCmp.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_compare_cta', {
+            species_id: sp.slug || '', species_name: sp.name, route: routeId,
+            difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'top',
+            compare_href: compareHref,
           });
         });
       }
@@ -3165,29 +3255,56 @@ function showResult(sp, pct) {
       } else {
         var spUrl  = '../species/' + sp.slug + '.html';
         var skUrl  = '#starter-kit-section'; /* Phase 31-C3: was off-page; kit is now inline */
+        // Phase 47-B: 下部CTAは上部と同じ3択構成。teaser/top3の再掲は上部と重複するため省略し、
+        // ヘルパー文とscarcityのみ残して簡潔にする。
         ctaBlock.innerHTML =
-          teaserHtml +
+          '<div class="res-cta-helper">' + ctaHelperText + '</div>' +
           scarcityHtml +
           '<a class="res-cta-primary" id="res-cta-primary" href="' + spUrl + '">' +
-            '必要な機材を見る →' +
+            '飼育環境・寿命・費用を詳しく見る' +
           '</a>' +
           '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
-            'この亀に必要な飼育セットを見る ↑' +
+            '最初に必要な水槽・ライト・餌を見る' +
+          '</a>' +
+          '<a class="res-cta-tertiary" id="res-cta-cmp" href="' + compareHref + '">' +
+            '似た亀と迷う人はこちら' +
           '</a>';
         ctaBlock.style.display = '';
-        // GA4
+        // GA4: 第一CTA（種ページ）— 旧イベントは維持しつつ新イベントを追加
         var primBtn = document.getElementById('res-cta-primary');
         if (primBtn) primBtn.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_species_click', {
-            species: sp.name, slug: sp.slug, cta_type: 'primary',
-            has_teaser: true, candidate_count: _lastCandidateCount,
-          });
+          if (typeof ga4Event === 'function') {
+            ga4Event('diagnosis_species_click', {
+              species: sp.name, slug: sp.slug, cta_type: 'primary',
+              has_teaser: true, candidate_count: _lastCandidateCount,
+            });
+            ga4Event('diagnosis_result_species_cta', {
+              species_id: sp.slug || '', species_name: sp.name, route: routeId,
+              difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'bottom',
+            });
+          }
         });
+        // GA4: 第二CTA（Starter Kit）— 旧イベントは維持しつつ新イベントを追加
         var secBtn = document.getElementById('res-cta-secondary');
         if (secBtn) secBtn.addEventListener('click', function() {
-          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_starterkit_click', {
-            species: sp.name, slug: sp.slug, cta_type: 'secondary',
-            equipment_key: equipKey || '',
+          if (typeof ga4Event === 'function') {
+            ga4Event('diagnosis_result_starterkit_click', {
+              species: sp.name, slug: sp.slug, cta_type: 'secondary',
+              equipment_key: equipKey || '',
+            });
+            ga4Event('diagnosis_result_starterkit_cta', {
+              species_id: sp.slug || '', species_name: sp.name, route: routeId,
+              difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'bottom',
+            });
+          }
+        });
+        // GA4: 第三CTA（比較）
+        var cmpBtn = document.getElementById('res-cta-cmp');
+        if (cmpBtn) cmpBtn.addEventListener('click', function() {
+          if (typeof ga4Event === 'function') ga4Event('diagnosis_result_compare_cta', {
+            species_id: sp.slug || '', species_name: sp.name, route: routeId,
+            difficulty: sp.difficulty || '', result_type: resultType, cta_position: 'bottom',
+            compare_href: compareHref,
           });
         });
       }
