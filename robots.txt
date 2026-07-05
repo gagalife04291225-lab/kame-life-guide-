@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /research/
 
 Sitemap: https://kamelifeguide.com/sitemap.xml
