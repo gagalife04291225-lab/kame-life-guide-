@@ -83,14 +83,28 @@
   .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .sp-card{
     background:#fff;border-radius:14px;border:1px solid #e4ddc9;
-    padding:18px 18px 16px;
+    padding:0 0 18px;
     box-shadow:0 2px 8px rgba(13,31,26,.06);
-    display:flex;flex-direction:column;gap:0;
+    display:flex;flex-direction:column;gap:0;overflow:hidden;
     transition:transform .14s,box-shadow .14s,border-color .14s;
   }
   .sp-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,31,26,.1);border-color:var(--accent);}
-  .sp-card-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-  .sp-emoji{font-size:1.6rem;line-height:1;flex-shrink:0;}
+  /* 写真サムネイル枠：4:3固定でCLS防止 */
+  .sp-photo{
+    position:relative;width:100%;aspect-ratio:4 / 3;
+    background:linear-gradient(155deg,#eef1ea 0%,#e0e5dc 100%);
+    overflow:hidden;
+  }
+  .sp-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  /* 写真がない種：絵文字を枠の中央に大きく表示（フォールバック） */
+  .sp-photo-fallback{
+    display:flex;align-items:center;justify-content:center;
+    width:100%;height:100%;font-size:3.2rem;line-height:1;
+    background:linear-gradient(155deg,#eef1ea 0%,#dfe4da 100%);
+  }
+  .sp-body{padding:16px 18px 0;display:flex;flex-direction:column;flex:1;}
+  .sp-card-top{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+  .sp-emoji{font-size:1.5rem;line-height:1;flex-shrink:0;}
   .sp-name-wrap{min-width:0;}
   .sp-name{font-weight:700;font-size:.95rem;color:var(--forest);line-height:1.3;}
   .sp-latin{font-style:italic;font-size:.72rem;color:#8a9389;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
@@ -102,10 +116,10 @@
   .spb-size{background:var(--parchment);color:var(--forest);border:1px solid #d4c9a8;}
   .spb-cites{background:#fffde7;color:#7d6608;border:1px solid #e8d84a;}
   .spb-invasive{background:#fff0f0;color:#b03a2e;border:1px solid #f5a9a0;}
-  .sp-reason{font-size:.78rem;color:#5a6b60;line-height:1.6;flex:1;margin-bottom:12px;
+  .sp-reason{font-size:.78rem;color:#5a6b60;line-height:1.6;flex:1;margin-bottom:14px;
     display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
   .sp-link{
-    display:block;text-align:center;padding:8px 12px;
+    display:block;text-align:center;padding:9px 12px;
     background:var(--forest);color:var(--parchment);text-decoration:none;
     border-radius:8px;font-size:.78rem;font-weight:700;
     transition:background .15s;margin-top:auto;
@@ -371,25 +385,42 @@ function guideLabel(sp) {
   return sp.links[0].label;
 }
 
-// カード生成
+// 実写サムネイルが配置済みの種slug（assets/species-photos/{slug}.webp）
+var PHOTO_SLUGS = {"african-helmeted-turtle":1,"alabama-map-turtle":1,"albino-chinese-softshell":1,"aldabra-tortoise":1,"amazon-matamata":1,"annulated-wood-turtle":1,"asian-black-marsh-turtle":1,"asian-leaf-turtle":1,"bell-hinge-back-tortoise":1,"black-knobbed-map-turtle":1,"blandings-turtle":1,"bowsprit-tortoise":1,"brown-wood-turtle-manni":1,"canton-reeves-turtle":1,"carolina-diamondback-terrapin":1,"chaco-tortoise":1,"cherry-head-tortoise":1,"chinese-box-turtle":1,"chinese-softshell-turtle":1,"chinese-stripe-necked-turtle":1,"collier-snake-necked-turtle":1,"cumberland-slider":1,"desert-box-turtle":1,"eastern-box-turtle":1,"eastern-long-necked-turtle":1,"eastern-mud-turtle":1,"elongated-tortoise":1,"european-pond-turtle":1,"false-map-turtle":1,"florida-box-turtle":1,"florida-mud-turtle":1,"florida-red-bellied-turtle":1,"florida-softshell-turtle":1,"giant-musk-turtle":1,"giant-musk-turtle-mx":1,"greek-tortoise":1,"gulf-coast-box-turtle":1,"hermann-tortoise":1,"herrera-mud-turtle":1,"hilaire-side-necked-turtle":1,"hime-nioi-turtle":1,"hirase-turtle":1,"home-hinge-back-tortoise":1,"iberian-greek-tortoise":1,"impressed-tortoise":1,"japanese-pond-turtle":1,"leopard-tortoise":1,"loggerhead-musk-turtle":1,"malayan-box-turtle":1,"marginated-tortoise":1,"matamata":1,"mexican-mud-turtle":1,"mississippi-map-turtle":1,"mississippi-mud-turtle":1,"musk-turtle":1,"narrow-bridged-mud-turtle":1,"nicaragua-wood-turtle":1,"northern-diamondback-terrapin":1,"northern-map-turtle":1,"ornate-box-turtle":1,"ornate-diamondback-terrapin":1,"ouachita-map-turtle":1,"ouachita-map-turtle-sp":1,"painted-turtle":1,"painted-wood-turtle":1,"pancake-tortoise":1,"peninsula-cooter":1,"pig-nosed-turtle":1,"pink-bellied-side-necked-turtle":1,"razorback-musk-turtle":1,"red-cheeked-mud-turtle":1,"red-eared-slider":1,"red-footed-tortoise":1,"reeves-turtle":1,"ringed-map-turtle":1,"rio-grande-cooter":1,"river-cooter":1,"russian-tortoise":1,"scorpion-mud-turtle":1,"smooth-softshell-turtle":1,"spenglers-leaf-turtle":1,"spiny-softshell-turtle":1,"spotted-turtle":1,"stripe-necked-musk-turtle":1,"striped-mud-turtle":1,"sulcata-tortoise":1,"taiwan-box-turtle":1,"three-toed-box-turtle":1,"west-african-mud-turtle":1,"white-lipped-mud-turtle":1,"wood-turtle":1,"yaeyama-pond-turtle":1,"yellow-bellied-slider":1,"yellow-mud-turtle":1,"yellow-pond-turtle":1};
+function hasPhoto(sp) { return !!(sp.slug && PHOTO_SLUGS[sp.slug]); }
+
+// 写真枠HTML（写真あり→img / なし→絵文字フォールバック）
+function photoBlock(sp) {
+  if (hasPhoto(sp)) {
+    return '<div class="sp-photo">' +
+      '<img src="assets/species-photos/' + sp.slug + '.webp" alt="' + sp.name + 'の写真"' +
+      ' width="800" height="600" loading="lazy"></div>';
+  }
+  return '<div class="sp-photo"><div class="sp-photo-fallback" aria-hidden="true">' + sp.emoji + '</div></div>';
+}
+
+// カード生成（写真 → 種名・学名 → バッジ → 説明 → 詳細リンク）
 function renderCard(item) {
   var sp = item.sp;
   var legal = legalBadge(sp);
   return '<div class="sp-card" data-cat="' + item.cat + '" data-diff="' + sp.difficulty + '">' +
-    '<div class="sp-card-top">' +
-      '<span class="sp-emoji" aria-hidden="true">' + sp.emoji + '</span>' +
-      '<div class="sp-name-wrap">' +
-        '<div class="sp-name">' + sp.name + '</div>' +
-        '<div class="sp-latin">' + sp.latin + '</div>' +
+    photoBlock(sp) +
+    '<div class="sp-body">' +
+      '<div class="sp-card-top">' +
+        '<span class="sp-emoji" aria-hidden="true">' + sp.emoji + '</span>' +
+        '<div class="sp-name-wrap">' +
+          '<div class="sp-name">' + sp.name + '</div>' +
+          '<div class="sp-latin">' + sp.latin + '</div>' +
+        '</div>' +
       '</div>' +
+      '<div class="sp-badges">' +
+        diffBadge(sp.difficulty) +
+        '<span class="spb spb-size">' + sp.size + '</span>' +
+        legal +
+      '</div>' +
+      '<p class="sp-reason">' + sp.reason + '</p>' +
+      '<a href="' + guideHref(sp) + '" class="sp-link">' + guideLabel(sp) + ' →</a>' +
     '</div>' +
-    '<div class="sp-badges">' +
-      diffBadge(sp.difficulty) +
-      '<span class="spb spb-size">' + sp.size + '</span>' +
-      legal +
-    '</div>' +
-    '<p class="sp-reason">' + sp.reason + '</p>' +
-    '<a href="' + guideHref(sp) + '" class="sp-link">' + guideLabel(sp) + ' →</a>' +
   '</div>';
 }
 
