@@ -140,6 +140,7 @@ body {
 .result-species-name { font-family: var(--font-display); font-size: clamp(1.8rem, 6vw, 2.4rem); color: var(--parchment); line-height: 1.2; margin-bottom: 4px; }
 .result-latin { font-size: .82rem; color: var(--text-muted); font-style: italic; margin-bottom: 20px; }
 .result-emoji { font-size: 64px; margin-bottom: 20px; display: block; }
+.result-photo { width: 168px; height: 168px; margin: 0 auto 20px; display: block; object-fit: cover; border-radius: 50%; border: 2px solid rgba(212,169,106,.55); box-shadow: 0 6px 20px rgba(0,0,0,.35); background: rgba(255,255,255,.04); }
 .result-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
 .result-card-title { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
 .result-desc { font-size: .92rem; line-height: 1.7; color: var(--parchment-dark); }
@@ -1057,6 +1058,7 @@ body {
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
     <div id="res-match-badge-wrap"></div>
+    <img id="res-photo" class="result-photo" alt="" hidden>
     <span class="result-emoji" id="res-emoji" aria-hidden="true">🐢</span>
     <div class="result-species-name" id="res-name" tabindex="-1"></div>
     <div class="result-latin" id="res-latin"></div>
@@ -2610,7 +2612,23 @@ function showResult(sp, pct) {
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
   document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
-  document.getElementById('res-emoji').textContent = sp.emoji;
+  // 実写写真: slug（一意キー）で紐付け。読み込み失敗時は絵文字にfallback
+  (function(){
+    var photo = document.getElementById('res-photo');
+    var emoji = document.getElementById('res-emoji');
+    emoji.textContent = sp.emoji;
+    if (sp.slug) {
+      photo.onload = function(){ photo.hidden = false; emoji.style.display = 'none'; };
+      photo.onerror = function(){ photo.hidden = true; emoji.style.display = 'block'; };
+      photo.alt = sp.name + 'の写真';
+      photo.hidden = true;
+      emoji.style.display = 'block';
+      photo.src = '../assets/species-photos/' + sp.slug + '.webp';
+    } else {
+      photo.hidden = true;
+      emoji.style.display = 'block';
+    }
+  })();
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
   document.getElementById('res-reason').textContent = sp.reason;
