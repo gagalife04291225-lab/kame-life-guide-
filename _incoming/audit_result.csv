@@ -1,0 +1,95 @@
+slug,検索学名,実際の学名,判定
+alabama-map-turtle,Graptemys pulchra,Graptemys pulchra,OK
+black-knobbed-map-turtle,Graptemys nigrinoda,Graptemys nigrinoda,OK
+false-map-turtle,Graptemys pseudogeographica,Graptemys pseudogeographica kohnii,OK(属一致)
+mississippi-map-turtle,Graptemys kohnii,Graptemys pseudogeographica kohnii,OK(属一致)
+northern-map-turtle,Graptemys geographica,Graptemys geographica,OK
+ouachita-map-turtle-sp,Graptemys ouachitensis,Graptemys ouachitensis,OK
+ringed-map-turtle,Graptemys oculifera,Graptemys oculifera,OK
+musk-turtle,Sternotherus odoratus,Sternotherus odoratus,OK
+razorback-musk-turtle,Sternotherus carinatus,Sternotherus carinatus,OK
+loggerhead-musk-turtle,Sternotherus minor,Sternotherus minor,OK
+stripe-necked-musk-turtle,Sternotherus peltifer,Sternotherus peltifer,OK
+hime-nioi-turtle,Sternotherus minor,Sternotherus minor,OK
+scorpion-mud-turtle,Kinosternon scorpioides,Kinosternon scorpioides,OK
+white-lipped-mud-turtle,Kinosternon leucostomum,Kinosternon leucostomum,OK
+striped-mud-turtle,Kinosternon baurii,Kinosternon baurii,OK
+yellow-mud-turtle,Kinosternon flavescens,Kinosternon flavescens,OK
+herrera-mud-turtle,Kinosternon herrerai,Kinosternon herrerai,OK
+mexican-mud-turtle,Kinosternon integrum,Kinosternon integrum,OK
+red-cheeked-mud-turtle,Kinosternon cruentatum,Kinosternon cruentatum,OK
+narrow-bridged-mud-turtle,Kinosternon angustipons,,NOT_FOUND
+eastern-mud-turtle,Kinosternon subrubrum subrubrum,Kinosternon subrubrum subrubrum,OK
+florida-mud-turtle,Kinosternon steindachneri,Kinosternon steindachneri,OK
+mississippi-mud-turtle,Kinosternon subrubrum hippocrepis,Kinosternon subrubrum hippocrepis,OK
+west-african-mud-turtle,Pelusios castaneus,Pelusios castaneus,OK
+eastern-box-turtle,Terrapene carolina carolina,Terrapene carolina carolina,OK
+florida-box-turtle,Terrapene carolina bauri,Terrapene carolina bauri,OK
+gulf-coast-box-turtle,Terrapene carolina major,Terrapene carolina major,OK
+three-toed-box-turtle,Terrapene carolina triunguis,Terrapene triunguis,OK(属一致)
+ornate-box-turtle,Terrapene ornata ornata,Terrapene ornata ornata,OK
+desert-box-turtle,Terrapene ornata luteola,Terrapene ornata luteola,OK
+aldabra-tortoise,Aldabrachelys gigantea,Aldabrachelys gigantea,OK
+sulcata-tortoise,Centrochelys sulcata,Centrochelys sulcata,OK
+leopard-tortoise,Stigmochelys pardalis,Stigmochelys pardalis,OK
+hermann-tortoise,Testudo hermanni,Testudo hermanni boettgeri,OK(属一致)
+greek-tortoise,Testudo graeca,Testudo graeca ibera,OK(属一致)
+iberian-greek-tortoise,Testudo graeca,Testudo graeca buxtoni,OK(属一致)
+russian-tortoise,Testudo horsfieldii,Testudo horsfieldii,OK
+marginated-tortoise,Testudo marginata,Testudo marginata,OK
+elongated-tortoise,Indotestudo elongata,Indotestudo elongata,OK
+impressed-tortoise,Manouria impressa,Manouria impressa,OK
+pancake-tortoise,Malacochersus tornieri,Malacochersus tornieri,OK
+red-footed-tortoise,Chelonoidis carbonarius,Chelonoidis carbonarius,OK
+cherry-head-tortoise,Chelonoidis carbonarius,Chelonoidis carbonarius,OK
+chaco-tortoise,Chelonoidis chilensis,Chelonoidis chilensis,OK
+bowsprit-tortoise,Chersina angulata,Chersina angulata,OK
+bell-hinge-back-tortoise,Kinixys belliana,Kinixys belliana,OK
+home-hinge-back-tortoise,Kinixys homeana,Kinixys homeana,OK
+river-cooter,Pseudemys concinna,Pseudemys concinna,OK
+peninsula-cooter,Pseudemys peninsularis,Pseudemys peninsularis,OK
+rio-grande-cooter,Pseudemys gorzugi,Pseudemys gorzugi,OK
+florida-red-bellied-turtle,Pseudemys nelsoni,Pseudemys nelsoni,OK
+red-eared-slider,Trachemys scripta elegans,Trachemys scripta elegans,OK
+yellow-bellied-slider,Trachemys scripta scripta,Trachemys scripta scripta,OK
+cumberland-slider,Trachemys scripta troostii,Trachemys scripta troostii,OK
+painted-turtle,Chrysemys picta,Chrysemys picta picta,OK(属一致)
+amazon-matamata,Chelus fimbriata,Chelus fimbriata,OK
+matamata,Chelus fimbriata,Chelus fimbriata,OK
+eastern-long-necked-turtle,Chelodina longicollis,Chelodina longicollis,OK
+collier-snake-necked-turtle,Chelodina colliei,Chelodina oblonga,OK(属一致)
+hilaire-side-necked-turtle,Phrynops hilarii,Phrynops hilarii,OK
+pink-bellied-side-necked-turtle,Emydura subglobosa,Emydura subglobosa,OK
+african-helmeted-turtle,Pelomedusa subrufa,Pelomedusa subrufa,OK
+chinese-softshell-turtle,Pelodiscus sinensis,Pelodiscus sinensis,OK
+albino-chinese-softshell,Pelodiscus sinensis,Pelodiscus sinensis,OK
+florida-softshell-turtle,Apalone ferox,Apalone ferox,OK
+spiny-softshell-turtle,Apalone spinifera,Apalone spinifera,OK
+smooth-softshell-turtle,Apalone mutica,Apalone mutica mutica,OK(属一致)
+pig-nosed-turtle,Carettochelys insculpta,Carettochelys insculpta,OK
+japanese-pond-turtle,Mauremys japonica,Mauremys japonica,OK
+reeves-turtle,Mauremys reevesii,Mauremys reevesii,OK
+canton-reeves-turtle,Mauremys nigricans,,NOT_FOUND
+yellow-pond-turtle,Mauremys mutica,Mauremys mutica,OK
+yaeyama-pond-turtle,Mauremys mutica,Mauremys mutica,OK
+chinese-stripe-necked-turtle,Mauremys sinensis,Mauremys sinensis,OK
+european-pond-turtle,Emys orbicularis,Emys orbicularis persica,OK(属一致)
+chinese-box-turtle,Cuora flavomarginata sinensis,Cuora flavomarginata evelynae,OK(属一致)
+taiwan-box-turtle,Cuora flavomarginata flavomarginata,Cuora flavomarginata flavomarginata,OK
+malayan-box-turtle,Cuora amboinensis,Cuora amboinensis,OK
+asian-leaf-turtle,Cyclemys dentata,Cyclemys dentata,OK
+asian-black-marsh-turtle,Siebenrockiella crassicollis,Siebenrockiella crassicollis,OK
+hirase-turtle,Cuora mouhotii,Cuora mouhotii,OK
+spenglers-leaf-turtle,Geoemyda spengleri,,NOT_FOUND
+spotted-turtle,Clemmys guttata,Clemmys guttata,OK
+wood-turtle,Glyptemys insculpta,Glyptemys insculpta,OK
+blandings-turtle,Emydoidea blandingii,Emydoidea blandingii,OK
+carolina-diamondback-terrapin,Malaclemys terrapin centrata,Malaclemys terrapin centrata,OK
+northern-diamondback-terrapin,Malaclemys terrapin terrapin,Malaclemys terrapin terrapin,OK
+ornate-diamondback-terrapin,Malaclemys terrapin macrospilota,Malaclemys terrapin macrospilota,OK
+annulated-wood-turtle,Rhinoclemmys annulata,Rhinoclemmys annulata,OK
+painted-wood-turtle,Rhinoclemmys pulcherrima,Rhinoclemmys pulcherrima rogerbarbouri,OK(属一致)
+brown-wood-turtle-manni,Rhinoclemmys pulcherrima,Rhinoclemmys pulcherrima rogerbarbouri,OK(属一致)
+nicaragua-wood-turtle,Rhinoclemmys funerea,Rhinoclemmys funerea,OK
+giant-musk-turtle,Staurotypus triporcatus,Staurotypus triporcatus,OK
+giant-musk-turtle-mx,Staurotypus triporcatus,Staurotypus triporcatus,OK
