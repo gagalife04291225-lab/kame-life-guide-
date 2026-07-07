@@ -1,0 +1,14 @@
+{
+  "name": "カメライフガイド",
+  "short_name": "カメライフ",
+  "description": "100種以上のカメ・リクガメの飼育情報と3分診断",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1f1a",
+  "theme_color": "#0d1f1a"
+}
