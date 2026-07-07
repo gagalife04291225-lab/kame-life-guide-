@@ -142,6 +142,21 @@ body {
 .result-emoji { font-size: 64px; margin-bottom: 20px; display: block; }
 .result-photo { width: 168px; height: 168px; margin: 0 auto 20px; display: block; object-fit: cover; border-radius: 50%; border: 2px solid rgba(212,169,106,.55); box-shadow: 0 6px 20px rgba(0,0,0,.35); background: rgba(255,255,255,.04); }
 .result-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+/* Phase 48: あなたに合う他の候補 */
+.res-runnerups { margin: 22px 0 8px; }
+.res-runnerups::before { content: "あなたに合う他の候補"; display: block; font-size: .95rem; font-weight: 600; color: var(--accent-light, #d4a96a); margin-bottom: 12px; letter-spacing: .02em; }
+.runnerup-card { display: flex; align-items: center; gap: 14px; padding: 12px 14px; margin-bottom: 10px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; text-decoration: none; color: inherit; transition: background .15s, transform .1s; }
+.runnerup-card:active { transform: scale(.99); }
+.runnerup-media { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 1px solid rgba(212,169,106,.4); background: rgba(255,255,255,.04); display: flex; align-items: center; justify-content: center; }
+.runnerup-photo { width: 100%; height: 100%; object-fit: cover; display: none; }
+.runnerup-emoji { font-size: 32px; line-height: 1; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.runnerup-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.runnerup-head { display: flex; align-items: center; gap: 8px; }
+.runnerup-rank { font-size: .72rem; font-weight: 700; color: var(--accent-light, #d4a96a); background: rgba(212,169,106,.14); padding: 2px 8px; border-radius: 999px; }
+.runnerup-diff { font-size: .72rem; color: var(--text-muted, #9fb0a5); }
+.runnerup-name { font-size: 1rem; font-weight: 600; color: var(--parchment, #f4efe2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.runnerup-desc { font-size: .78rem; color: var(--text-muted, #9fb0a5); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.runnerup-go { font-size: .78rem; color: var(--accent-light, #d4a96a); margin-top: 2px; }
 .result-card-title { font-size: .78rem; color: var(--accent-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
 .result-desc { font-size: .92rem; line-height: 1.7; color: var(--parchment-dark); }
 .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
@@ -1130,6 +1145,8 @@ body {
   <!-- ════════ BOTTOM ════════ -->
   <!-- Phase 25-C: 下部繰り返しCTA（旧res-cta-block。Top CTAと同一IIFEで同時生成・同一コピー） -->
   <div class="res-cta-block" id="res-cta-block" style="display:none"></div>
+  <!-- Phase 48: あなたに合う他の候補（2位・3位） -->
+  <section class="res-runnerups" id="res-runnerups" aria-label="あなたに合う他の候補" hidden></section>
   <div class="result-links" id="res-links"></div>
   <div class="btn-row">
     <button class="btn-retry" id="btn-retry">もう一度診断</button>
@@ -2588,7 +2605,7 @@ function calcResult() {
       cites:        best.cites || 'none'
     });
 
-    showResult(best, pct);
+    showResult(best, pct, scored.slice(1, 3).map(function(x){ return x.sp; }));
     saveResultToUrl(routeId, best.name);
 
   } catch(err) {
@@ -2608,7 +2625,7 @@ function calcResult() {
 }
 
 // ===== 結果表示 =====
-function showResult(sp, pct) {
+function showResult(sp, pct, runners) {
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
   document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
@@ -3531,6 +3548,95 @@ function showResult(sp, pct) {
       requestAnimationFrame(animCount);
     }, 100);
   }
+
+  // ── Phase 48: あなたに合う他の候補（2位・3位）──
+  // 既存の scored 配列から渡された runners を描画するだけ。scoreの再計算はしない。
+  renderRunnerUps(runners);
+}
+
+// 第2・第3候補カードを描画。runnersが空/未指定なら非表示。
+function renderRunnerUps(runners) {
+  var wrap = document.getElementById('res-runnerups');
+  if (!wrap) return;
+  // 毎回リセット（SPAで結果カードが使い回されるため）
+  wrap.innerHTML = '';
+  wrap.hidden = true;
+  if (!runners || !runners.length) return;
+
+  var frag = document.createDocumentFragment();
+  runners.forEach(function(sp, idx) {
+    if (!sp || !sp.name) return;
+    var rank = idx + 2; // 2位・3位
+    var card = document.createElement('a');
+    card.className = 'runnerup-card';
+    card.href = sp.slug ? ('../species/' + sp.slug + '.html') : '#';
+    card.setAttribute('data-rank', String(rank));
+    card.setAttribute('data-slug', sp.slug || '');
+
+    // 写真（slug基準・失敗時は絵文字fallback）
+    var media = document.createElement('div');
+    media.className = 'runnerup-media';
+    if (sp.slug) {
+      var img = document.createElement('img');
+      img.className = 'runnerup-photo';
+      img.alt = sp.name + 'の写真';
+      img.loading = 'lazy';
+      img.width = 88; img.height = 88;
+      var em = document.createElement('span');
+      em.className = 'runnerup-emoji';
+      em.setAttribute('aria-hidden', 'true');
+      em.textContent = sp.emoji || '🐢';
+      em.style.display = 'none';
+      img.onload = function(){ img.style.display = 'block'; em.style.display = 'none'; };
+      img.onerror = function(){ img.style.display = 'none'; em.style.display = 'flex'; };
+      img.src = '../assets/species-photos/' + sp.slug + '.webp';
+      media.appendChild(img);
+      media.appendChild(em);
+    } else {
+      var em2 = document.createElement('span');
+      em2.className = 'runnerup-emoji';
+      em2.setAttribute('aria-hidden', 'true');
+      em2.textContent = sp.emoji || '🐢';
+      em2.style.display = 'flex';
+      media.appendChild(em2);
+    }
+
+    // 本文
+    var body = document.createElement('div');
+    body.className = 'runnerup-body';
+    var rankLabel = '<span class="runnerup-rank">第' + rank + '候補</span>';
+    var name = '<span class="runnerup-name">' + escapeHtml(sp.name) + '</span>';
+    var diff = sp.difficulty ? '<span class="runnerup-diff">' + escapeHtml(sp.difficulty) + '</span>' : '';
+    var desc = sp.reason ? '<span class="runnerup-desc">' + escapeHtml(String(sp.reason).slice(0, 48)) + '</span>' : '';
+    body.innerHTML = '<span class="runnerup-head">' + rankLabel + diff + '</span>' + name + desc +
+                     '<span class="runnerup-go">種ページを見る →</span>';
+
+    card.appendChild(media);
+    card.appendChild(body);
+
+    // GA4: 候補カードのクリック計測（既存snake_case命名規則に整合）
+    card.addEventListener('click', function(){
+      if (typeof ga4Event === 'function') {
+        ga4Event('runnerup_click', {
+          rank: rank,
+          species_name: sp.name || '',
+          species_slug: sp.slug || '',
+          location: 'shindan_result'
+        });
+      }
+    });
+
+    frag.appendChild(card);
+  });
+
+  wrap.appendChild(frag);
+  wrap.hidden = false;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function(c){
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
 }
 
 // ===== 戻るボタン（モーダル付き） =====
