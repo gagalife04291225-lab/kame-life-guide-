@@ -672,6 +672,21 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
   var speciesName = opts.name || '';
   var heading = speciesName ? (speciesName + 'の飼育セットガイド') : '飼育セットガイド';
 
+  // ── 水質管理メッセージ（水棲・半水棲系のみ表示。リクガメには出さない） ──
+  var _ek = equipmentKey || '';
+  var _isAquaticKit = (_ek.indexOf('aquatic') >= 0) || (_ek === 'japanese_pond');
+  var _isTortoiseKit = (_ek.indexOf('tortoise') >= 0);
+  var waterCareHtml = '';
+  if (_isAquaticKit && !_isTortoiseKit) {
+    waterCareHtml =
+      '<div class="sk-watercare" style="margin:0 0 20px;padding:16px 18px;border-radius:12px;background:#eef7fb;border:1px solid #cfe6f0;">' +
+        '<div style="font-weight:700;font-size:15px;color:#1a5f7a;margin-bottom:8px;">💧 機材の前に：水質管理でいちばん大切なこと</div>' +
+        '<p style="margin:0 0 8px;font-size:13.5px;line-height:1.7;color:#333;">水棲ガメにとって最も理想的な水質管理は、<strong>毎日少量でも新しい水に交換すること</strong>です。水換えは、アンモニアや雑菌、臭いの原因を直接取り除ける、最も確実な方法です。</p>' +
+        '<p style="margin:0 0 8px;font-size:13.5px;line-height:1.7;color:#333;">フィルターは水換えの代わりになる道具ではなく、<strong>水換えの負担を減らし、水質を安定させる補助器具</strong>です。どんな高性能フィルターでも、水換えを完全になくすことはできません。</p>' +
+        '<p style="margin:0;font-size:13.5px;line-height:1.7;color:#333;">そのうえで、毎日の水換えが難しい方には、ろ過能力の高いフィルターがおすすめです。下記のセットを参考にしてください。</p>' +
+      '</div>';
+  }
+
   // 各タブのpicks生成
   var tabData = SK_TABS.map(function(tab) {
     var picks = generateKitByTier(equipmentKey, tab.tiers[0]);
@@ -705,6 +720,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
   return '<section class="sk-section" aria-label="' + heading + '">' +
     '<div class="sk-inner">' +
       '<h2 class="sk-heading-main">' + heading + '</h2>' +
+      waterCareHtml +
       costBoxHtml +
       '<p class="sk-hint">💡 迷ったら <strong>推奨セット</strong> から始めるのがおすすめです</p>' +
       bundleSummaryHtml +
