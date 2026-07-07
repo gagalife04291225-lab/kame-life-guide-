@@ -9,15 +9,25 @@
  各種について、iNaturalistから「その学名としてresearch grade承認された
  CC0/CC BYライセンスの画像」だけを取得し、種スラッグ名で保存する。
 
-【3つの安全装置（二度と間違えないため）】
- (1) 種名完全一致: 検索した学名とAPIが返す学名が一致する観察のみ採用
- (2) 出典を全記録: photo_credits.csv に 種/観察ID/撮影者/ライセンス/URL を保存
- (3) 取得後の自己照合: 保存した各画像の観察が本当にその学名か再確認し
-     不一致は MISMATCH として警告リストに出す
+【v2の変更点：亜種の画像使い回しを解消】
+ ・ハコガメ/ドロガメ/スライダー/ダイヤ等の亜種を「三名法(亜種名)」で検索
+ ・既に使った観察ID・画像URLを記録し、亜種どうしで同じ写真を掴まない
+ ・亜種名で0件のときだけ種名にフォールバック（その際も他ページと別画像を選ぶ）
+
+【4つの安全装置】
+ (1) 亜種名優先検索: 同じ種の亜種でも別画像を確実に取得
+ (2) 重複回避: USED_OBS / USED_PHOTO で使い回しを機械的に排除
+ (3) 出典を全記録: photo_credits.csv に 種/観察ID/撮影者/ライセンス/URL
+ (4) 取得後の自己照合: audit_result.csv に OK/MISMATCH/NOT_FOUND を記録
+
+【走らせた後に手動確認が要るもの（スクリプトの限界）】
+ ・albino-chinese-softshell : アルビノのCC画像は稀。通常個体が来たら手動差し替え
+ ・cherry-head-tortoise     : 学名がred-footedと同一。色変異なので要目視確認
+ ・hime-nioi-turtle         : loggerhead-muskと同種同名。ページ統合/削除を先に判断
 
 【使い方】
    pkg install python -y        # 未導入なら
-   python fetch_images.py       # 実行（全94種で15〜25分ほど）
+   python fetch_images.py       # 実行（全94種で15〜25分ほど・v2）
 
 【出力】
    species-photos/<slug>.jpg    # 各種の画像
@@ -48,16 +58,16 @@ SPECIES = [
     ("mexican-mud-turtle", "サラドロガメ", "Kinosternon integrum"),
     ("red-cheeked-mud-turtle", "ホオアカドロガメ", "Kinosternon cruentatum"),
     ("narrow-bridged-mud-turtle", "キンタロドロガメ", "Kinosternon angustipons"),
-    ("eastern-mud-turtle", "トウブドロガメ", "Kinosternon subrubrum"),
-    ("florida-mud-turtle", "フロリダドロガメ", "Kinosternon subrubrum"),
-    ("mississippi-mud-turtle", "ミシシッピドロガメ", "Kinosternon subrubrum"),
+    ("eastern-mud-turtle", "トウブドロガメ", "Kinosternon subrubrum subrubrum"),
+    ("florida-mud-turtle", "フロリダドロガメ", "Kinosternon steindachneri"),
+    ("mississippi-mud-turtle", "ミシシッピドロガメ", "Kinosternon subrubrum hippocrepis"),
     ("west-african-mud-turtle", "ニシアフリカドロガメ", "Pelusios castaneus"),
-    ("eastern-box-turtle", "トウブハコガメ", "Terrapene carolina"),
-    ("florida-box-turtle", "フロリダハコガメ", "Terrapene carolina"),
-    ("gulf-coast-box-turtle", "ガルフコーストハコガメ", "Terrapene carolina"),
-    ("three-toed-box-turtle", "ミツユビハコガメ", "Terrapene carolina"),
-    ("ornate-box-turtle", "ニシキハコガメ", "Terrapene ornata"),
-    ("desert-box-turtle", "サバクニシキハコガメ", "Terrapene ornata"),
+    ("eastern-box-turtle", "トウブハコガメ", "Terrapene carolina carolina"),
+    ("florida-box-turtle", "フロリダハコガメ", "Terrapene carolina bauri"),
+    ("gulf-coast-box-turtle", "ガルフコーストハコガメ", "Terrapene carolina major"),
+    ("three-toed-box-turtle", "ミツユビハコガメ", "Terrapene carolina triunguis"),
+    ("ornate-box-turtle", "ニシキハコガメ", "Terrapene ornata ornata"),
+    ("desert-box-turtle", "サバクニシキハコガメ", "Terrapene ornata luteola"),
     ("aldabra-tortoise", "アルダブラゾウガメ", "Aldabrachelys gigantea"),
     ("sulcata-tortoise", "ケヅメリクガメ", "Centrochelys sulcata"),
     ("leopard-tortoise", "ヒョウモンガメ", "Stigmochelys pardalis"),
@@ -79,9 +89,9 @@ SPECIES = [
     ("peninsula-cooter", "ペニンシュラクーター", "Pseudemys peninsularis"),
     ("rio-grande-cooter", "リオグランデクーター", "Pseudemys gorzugi"),
     ("florida-red-bellied-turtle", "フロリダアカハラガメ", "Pseudemys nelsoni"),
-    ("red-eared-slider", "ミシシッピアカミミガメ", "Trachemys scripta"),
-    ("yellow-bellied-slider", "キバラガメ", "Trachemys scripta"),
-    ("cumberland-slider", "カンバーランドキミミガメ", "Trachemys scripta"),
+    ("red-eared-slider", "ミシシッピアカミミガメ", "Trachemys scripta elegans"),
+    ("yellow-bellied-slider", "キバラガメ", "Trachemys scripta scripta"),
+    ("cumberland-slider", "カンバーランドキミミガメ", "Trachemys scripta troostii"),
     ("painted-turtle", "ニシキガメ", "Chrysemys picta"),
     ("amazon-matamata", "マタマタ", "Chelus fimbriata"),
     ("matamata", "マタマタ", "Chelus fimbriata"),
@@ -103,8 +113,8 @@ SPECIES = [
     ("yaeyama-pond-turtle", "ヤエヤマイシガメ", "Mauremys mutica"),
     ("chinese-stripe-necked-turtle", "ハナガメ", "Mauremys sinensis"),
     ("european-pond-turtle", "ヨーロッパヌマガメ", "Emys orbicularis"),
-    ("chinese-box-turtle", "セマルハコガメ", "Cuora flavomarginata"),
-    ("taiwan-box-turtle", "ヤエヤマ/タイワンセマルハコガメ", "Cuora flavomarginata"),
+    ("chinese-box-turtle", "セマルハコガメ", "Cuora flavomarginata sinensis"),
+    ("taiwan-box-turtle", "ヤエヤマ/タイワンセマルハコガメ", "Cuora flavomarginata flavomarginata"),
     ("malayan-box-turtle", "マレーハコガメ", "Cuora amboinensis"),
     ("asian-leaf-turtle", "アジアヤマガメ", "Cyclemys dentata"),
     ("asian-black-marsh-turtle", "クロヌマガメ", "Siebenrockiella crassicollis"),
@@ -113,9 +123,9 @@ SPECIES = [
     ("spotted-turtle", "キボシイシガメ", "Clemmys guttata"),
     ("wood-turtle", "モリイシガメ", "Glyptemys insculpta"),
     ("blandings-turtle", "ブランディングガメ", "Emydoidea blandingii"),
-    ("carolina-diamondback-terrapin", "カロリナダイヤモンドガメ", "Malaclemys terrapin"),
-    ("northern-diamondback-terrapin", "キタダイヤモンドガメ", "Malaclemys terrapin"),
-    ("ornate-diamondback-terrapin", "ニシキダイヤモンドガメ", "Malaclemys terrapin"),
+    ("carolina-diamondback-terrapin", "カロリナダイヤモンドガメ", "Malaclemys terrapin centrata"),
+    ("northern-diamondback-terrapin", "キタダイヤモンドガメ", "Malaclemys terrapin terrapin"),
+    ("ornate-diamondback-terrapin", "ニシキダイヤモンドガメ", "Malaclemys terrapin macrospilota"),
     ("annulated-wood-turtle", "クモノスヤマガメ", "Rhinoclemmys annulata"),
     ("painted-wood-turtle", "アカスジヤマガメ(ニシキマゲクビ)", "Rhinoclemmys pulcherrima"),
     ("brown-wood-turtle-manni", "マンヤマガメ", "Rhinoclemmys pulcherrima"),
@@ -128,42 +138,59 @@ OUTDIR = "species-photos"
 os.makedirs(OUTDIR, exist_ok=True)
 UA = {"User-Agent": "kame-life-guide-audit/1.0 (contact: TeTe)"}
 OK_LICENSES = {"cc0", "cc-by", "cc-by-sa"}  # 商用可の範囲。必要なら調整
+USED_OBS = set()   # 既に使った観察IDを記録し、亜種間での画像重複を防ぐ
+USED_PHOTO = set() # 既に使った画像URLも記録（種名フォールバック時の重複防止）
 
 def api_get(url):
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
 
-def find_photo(search_sci):
-    """学名でresearch grade+CC画像を検索。(観察ID, 実際の学名, 画像URL, 撮影者, ライセンス) を返す"""
-    # まず学名からtaxon_idを引く（同名誤認を防ぐ）
+def _search_taxon_id(search_sci):
     tq = urllib.parse.quote(search_sci)
-    tax = api_get(f"https://api.inaturalist.org/v1/taxa?q={tq}&rank=species,subspecies&per_page=5")
-    taxon_id = None
+    tax = api_get(f"https://api.inaturalist.org/v1/taxa?q={tq}&rank=species,subspecies&per_page=8")
     for t in tax.get("results", []):
         if t.get("name","").lower() == search_sci.lower():
-            taxon_id = t["id"]; break
-    if taxon_id is None and tax.get("results"):
-        # 完全一致がなければ先頭（ただし後で照合で弾く）
-        taxon_id = tax["results"][0]["id"]
-    if taxon_id is None:
-        return None
+            return t["id"]
+    if tax.get("results"):
+        return tax["results"][0]["id"]
+    return None
 
-    # その taxon の research grade + CCライセンス観察を検索
+def _obs_candidates(taxon_id):
     url = (f"https://api.inaturalist.org/v1/observations?taxon_id={taxon_id}"
            f"&quality_grade=research&photo_license=cc0,cc-by,cc-by-sa"
-           f"&order_by=votes&per_page=10")
-    obs = api_get(url)
-    for o in obs.get("results", []):
-        actual = (o.get("taxon") or {}).get("name","")
-        photos = o.get("photos") or []
-        if not photos: continue
-        p = photos[0]
-        purl = p.get("url","").replace("square","large")
-        lic = (p.get("license_code") or "").lower()
-        if lic not in OK_LICENSES: continue
-        author = (o.get("user") or {}).get("login","unknown")
-        return (o["id"], actual, purl, author, lic)
+           f"&order_by=votes&per_page=30")
+    return api_get(url).get("results", [])
+
+def find_photo(search_sci):
+    """学名(亜種名優先)でresearch grade+CC画像を検索。
+    既に使った観察/画像は避け、亜種間の使い回しを防ぐ。
+    亜種名で0件なら種名にフォールバックしつつ、他ページと別の画像を選ぶ。"""
+    tried = [search_sci]
+    parts = search_sci.split()
+    if len(parts) == 3:            # 亜種名 → 種名フォールバックを後ろに用意
+        tried.append(" ".join(parts[:2]))
+    for sci in tried:
+        taxon_id = _search_taxon_id(sci)
+        if taxon_id is None:
+            continue
+        for o in _obs_candidates(taxon_id):
+            if o["id"] in USED_OBS:
+                continue
+            actual = (o.get("taxon") or {}).get("name","")
+            photos = o.get("photos") or []
+            if not photos:
+                continue
+            p = photos[0]
+            purl = p.get("url","").replace("square","large")
+            if purl in USED_PHOTO:
+                continue
+            lic = (p.get("license_code") or "").lower()
+            if lic not in OK_LICENSES:
+                continue
+            author = (o.get("user") or {}).get("login","unknown")
+            USED_OBS.add(o["id"]); USED_PHOTO.add(purl)
+            return (o["id"], actual, purl, author, lic)
     return None
 
 def download(url, path):
