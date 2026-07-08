@@ -982,6 +982,194 @@
         "https://animaldiversity.org/accounts/Cuora_amboinensis/",
         "https://en.wikipedia.org/wiki/Chinese_box_turtle"
       ]
+    },
+    {
+      "slug": "reeves-turtle",
+      "wamei": "クサガメ",
+      "gakumei": "Mauremys reevesii",
+      "eimei": "Chinese (Three-keeled) Pond Turtle / Reeves' Turtle",
+      "koura": "背甲に3本の縦キール（Chinese three-keeled）。幼体はキール上に淡色の連続線、成長でキール・線とも不明瞭化し甲は一様褐色に。後縁は幼体で鋸歯状。",
+      "iro_moyou": "甲は褐色〜暗褐。オスは成熟に伴い暗化し、完全に黒くなる個体も（黒化・メラニズム）。頭・首に黄条。",
+      "tobu": "頭・首に黄色い筋模様。",
+      "size": "甲長最大約30cm（大型のメス）。",
+      "bunpu": "東アジア（中国中〜東部・台湾・朝鮮半島・日本）。日本では在来か移入か議論あり。",
+      "kondou_shu": [
+        {
+          "aite": "ニホンイシガメ (M. japonica)",
+          "kubetsu": "reevesiiは頭首に黄条＋3キール＋黒化する個体。japonicaは甲が扁平で黄土色・頭に黄条が乏しい。両種は交雑し二世代目も繁殖可能（遺伝子攪乱問題）。"
+        },
+        {
+          "aite": "カントンクサガメ (M. nigricans)",
+          "kubetsu": "reevesiiは中〜東アジア広域。nigricansは中国南部（広東・海南）固有の別種で、シームに沿った橙条・成体で頸部が赤みを帯びる。和名が紛らわしいが別種。"
+        },
+        {
+          "aite": "ハナガメ (M. sinensis)",
+          "kubetsu": "reevesiiとの雑種(sinensis×reevesii)が特定外来生物。sinensisは頭頸部に多数の細い黄緑条。"
+        }
+      ],
+      "houkisei": "CITES附属書III（中国が掲載）。日本では地域により在来性が議論。交雑個体（sinensis×reevesii等）は特定外来生物。",
+      "photo_hantei": "3本キール＋頭首の黄条。黒化個体は色でなくキールと頭部条で判断。幼体はキール上の淡色線。",
+      "photo_chuui": "japonicaとの雑種・黒化個体・nigricans（別種のカントンクサガメ）と混同注意。交雑個体が多く純血判定が難しい。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
+    },
+    {
+      "slug": "canton-reeves-turtle",
+      "wamei": "カントンクサガメ",
+      "gakumei": "Mauremys nigricans",
+      "eimei": "Chinese Red-necked Pond Turtle",
+      "koura": "背甲はややドーム状で、上から見ると中央より後方が最も幅広いやや角張った俵型。椎甲板にキール。左右の第12縁甲板間にほとんど切れ込みが入らない。",
+      "iro_moyou": "甲は灰褐〜褐〜暗褐〜黒と変異。甲板の継ぎ目（シーム）に沿って橙色の筋が入る個体も。成体は頸部が赤みを帯びる（red-necked）。",
+      "tobu": "成熟個体で頸部・頭部側面が赤〜橙色を帯びる（英名red-neckedの由来）。",
+      "size": "オス甲長約20cm、メス約24〜25cm。メスが大型。",
+      "bunpu": "中国南部（海南省・広東省・広西）・ベトナム北部（絶滅の可能性）。",
+      "kondou_shu": [
+        {
+          "aite": "クサガメ (M. reevesii)",
+          "kubetsu": "nigricansは中国南部固有の別種で、成体頸部が赤みを帯び、より角張った甲。reevesiiは東アジア広域＋3キールが明瞭＋頭首に黄条。和名『カントンクサガメ』だが学名はM. nigricansでreevesiiとは別種。"
+        }
+      ],
+      "houkisei": "CITES附属書III（中国）。IUCN絶滅危惧（EN/CR級）。",
+      "photo_hantei": "成体の赤みを帯びた頸部＋角張った俵型の甲＋シームの橙条。頭頸部が見えるカット。",
+      "photo_chuui": "★重要：本種の正しい学名は Mauremys nigricans。サイトが M. reevesii（クサガメの広東型）としているのは誤り。reevesiiとは別種。",
+      "unresolved": "★ページ修正要：canton-reeves-turtle.html の学名が M. reevesii（広東型）と誤記されている。正しくは M. nigricans（独立種）。監査時に『reevesiiの重複』と誤判定したが実際は学名取り違え。amazon-matamata/giant-musk-mx/hime-nioiと同じ修正対象。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
+    },
+    {
+      "slug": "japanese-pond-turtle",
+      "wamei": "ニホンイシガメ",
+      "gakumei": "Mauremys japonica",
+      "eimei": "Japanese Pond Turtle",
+      "koura": "背甲は平たく扁平で黄土色〜黄褐〜橙。幼体は3本のキールと後縁の鋸歯があるが成長で目立たなくなる。",
+      "iro_moyou": "甲は黄土〜橙褐。頭は地味で、reevesiiのような明瞭な黄条は乏しい。",
+      "tobu": "頭部は比較的地味。",
+      "size": "オス甲長約15cm、メス約25cm。",
+      "bunpu": "日本固有種（本州・四国・九州＋周辺島嶼）。遺伝的に東西2系統（中国地方で分岐）。",
+      "kondou_shu": [
+        {
+          "aite": "クサガメ (M. reevesii)",
+          "kubetsu": "japonicaは甲が扁平で黄土色・頭が地味。reevesiiは3キール明瞭＋頭首に黄条＋黒化個体あり。両種は交雑し雑種の遺伝子攪乱が保全上の問題。"
+        },
+        {
+          "aite": "ミナミイシガメ (M. mutica)",
+          "kubetsu": "japonicaは日本固有で甲が黄土色。muticaは頭側に淡黄条があり甲がより滑らか。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCN準絶滅危惧(NT)。日本固有種で水質悪化・護岸・交雑により減少。国内で保全上重要。",
+      "photo_hantei": "扁平で黄土色の甲＋地味な頭部。上からの甲＋頭部が見えるカット。幼体は『ゼニガメ』的な円い黄色甲。",
+      "photo_chuui": "reevesiiやその雑種と混同注意。日本固有種のため産地情報が裏付けになる。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
+    },
+    {
+      "slug": "yellow-pond-turtle",
+      "wamei": "ミナミイシガメ",
+      "gakumei": "Mauremys mutica",
+      "eimei": "Yellow Pond Turtle",
+      "koura": "背甲はやや扁平で滑らか、褐色〜黄褐。低いキール。",
+      "iro_moyou": "甲は褐〜黄褐。頭側面に眼後から伸びる明瞭な淡黄色の縦条（yellow pondの由来）。",
+      "tobu": "頭側面に幅広い淡黄条。",
+      "size": "甲長最大約19cm。",
+      "bunpu": "中国南部・台湾・ベトナム北部＋日本（南西諸島・移入）。",
+      "kondou_shu": [
+        {
+          "aite": "ヤエヤマイシガメ (M. mutica kami)",
+          "kubetsu": "同種の亜種。基亜種muticaは大陸・台湾/kamiは八重山諸島（石垣・西表）。分布と細部で区別。"
+        },
+        {
+          "aite": "ニホンイシガメ (M. japonica)",
+          "kubetsu": "muticaは頭側に明瞭な淡黄条。japonicaは甲が黄土色で頭が地味。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（要確認）。IUCN絶滅危惧。日本では南西諸島に自然分布(kami)＋本土に移入個体。",
+      "photo_hantei": "頭側面の明瞭な淡黄条＋やや扁平な滑らかな甲。頭部側面カット。",
+      "photo_chuui": "亜種kami（八重山）と基亜種の区別は分布。japonicaとの混同注意。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
+    },
+    {
+      "slug": "yaeyama-pond-turtle",
+      "wamei": "ヤエヤマイシガメ",
+      "gakumei": "Mauremys mutica kami",
+      "eimei": "Yaeyama Pond Turtle",
+      "koura": "muticaの亜種。やや扁平で滑らかな甲、低いキール。",
+      "iro_moyou": "頭側面に淡黄条。基亜種に準じる。",
+      "tobu": "頭側面に淡黄条。",
+      "size": "甲長最大約17〜19cm。",
+      "bunpu": "日本の八重山諸島（石垣島・西表島）。",
+      "kondou_shu": [
+        {
+          "aite": "ミナミイシガメ基亜種 (M. mutica mutica)",
+          "kubetsu": "同種の亜種。kamiは八重山諸島産/基亜種は大陸・台湾産。分布で区別、形態は酷似。"
+        }
+      ],
+      "houkisei": "CITES附属書II（M. mutica として）。八重山個体群は保全上重要。",
+      "photo_hantei": "頭側面の淡黄条＋八重山の産地情報。",
+      "photo_chuui": "基亜種と酷似、分布（八重山）が手がかり。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
+    },
+    {
+      "slug": "chinese-stripe-necked-turtle",
+      "wamei": "ハナガメ（タイワンハナガメ）",
+      "gakumei": "Mauremys sinensis",
+      "eimei": "Chinese Stripe-necked Turtle",
+      "koura": "背甲は褐色で低いキール。旧属Ocadia。",
+      "iro_moyou": "甲は褐色。最大の識別点は頭・頸部に走る多数の細く鮮やかな黄緑〜黄色の縦条（stripe-necked）。",
+      "tobu": "頭頸部に多数の細い黄条（属内で最も派手な首の縞）。",
+      "size": "甲長最大約25cm以上。イシガメ属で大きめ。",
+      "bunpu": "中国南部・台湾・ベトナム北部。日本へはペットとして輸入され野生化。",
+      "kondou_shu": [
+        {
+          "aite": "クサガメ (M. reevesii)",
+          "kubetsu": "sinensisは頭頸部に多数の細い黄条。reevesiiは頭首の黄条が太く少ない＋3キール。両種の雑種(sinensis×reevesii)が特定外来生物。"
+        },
+        {
+          "aite": "雑種各種",
+          "kubetsu": "sinensis×japonica、sinensis×mutica、sinensis×reevesii の雑種はいずれも特定外来生物。雑種は首の縞が太く数が少なくなる傾向。"
+        }
+      ],
+      "houkisei": "日本では特定外来生物（外来生物法）。その自然交雑種すべても特定外来生物。飼育・移動に規制。CITES III掲載（要確認）。IUCN絶滅危惧。",
+      "photo_hantei": "頭頸部の多数の細い黄条。頭頸部が見えるカットが決定的。",
+      "photo_chuui": "雑種が多く純血判定が難しい。首の縞が太く少ないと雑種の可能性。日本では特定外来生物のため取り扱い注意。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
+        "https://ja.wikipedia.org/wiki/カントンクサガメ",
+        "https://wildlifecommons.jp/mauremys-japonica/",
+        "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
+      ]
     }
   ]
 }
