@@ -27,8 +27,14 @@
       "size": "通常40〜45cm、最大背甲45cm・17kg超。淡水ガメ最大級。",
       "bunpu": "アマゾン川流域＋東ギアナ。ボリビア北・ペルー東・エクアドル東・コロンビア南東・ブラジル北〜中部。",
       "kondou_shu": [
-        {"aite": "オリノコマタマタ (Chelus orinocensis)", "kubetsu": "甲形=長方形(本種)/楕円(オリノコ)。腹甲=暗色(本種)/明色(オリノコ)。首下面=太い黒帯あり(本種)/なし(オリノコ)。分布=アマゾン(本種)/オリノコ・上部ネグロ(オリノコ)。甲だけでは判別不可、首下面カット必須。"},
-        {"aite": "\"High Red\"色型", "kubetsu": "ペルー産などの赤い個体は業界の色型ラベルで別種ではない。赤い=オリノコ種ではない。"}
+        {
+          "aite": "オリノコマタマタ (Chelus orinocensis)",
+          "kubetsu": "甲形=長方形(本種)/楕円(オリノコ)。腹甲=暗色(本種)/明色(オリノコ)。首下面=太い黒帯あり(本種)/なし(オリノコ)。分布=アマゾン(本種)/オリノコ・上部ネグロ(オリノコ)。甲だけでは判別不可、首下面カット必須。"
+        },
+        {
+          "aite": "\"High Red\"色型",
+          "kubetsu": "ペルー産などの赤い個体は業界の色型ラベルで別種ではない。赤い=オリノコ種ではない。"
+        }
       ],
       "houkisei": "IUCN軽度懸念(LC)、CITES未掲載。コロンビア・ベネズエラ・ブラジルが輸出禁止。コロンビアRed Listで準絶滅危惧。",
       "photo_hantei": "首・喉の下面が見えるカットで太い黒帯を確認できること。上からの甲写真のみでは同定不可。",
@@ -46,7 +52,10 @@
       "size": "アマゾン種と同等かやや小型。最大40cm前後。",
       "bunpu": "オリノコ川水系および上部ネグロ／ブランコ川水系。属内でこの水系に分布するのは本種。",
       "kondou_shu": [
-        {"aite": "マタマタ (Chelus fimbriata)", "kubetsu": "甲形=楕円(本種)/長方形。腹甲=明色(本種)/暗色。首下面=黒帯なし(本種)/太い黒帯あり。分布=オリノコ・上部ネグロ(本種)/アマゾン。2020年に独立した別種。"}
+        {
+          "aite": "マタマタ (Chelus fimbriata)",
+          "kubetsu": "甲形=楕円(本種)/長方形。腹甲=明色(本種)/暗色。首下面=黒帯なし(本種)/太い黒帯あり。分布=オリノコ・上部ネグロ(本種)/アマゾン。2020年に独立した別種。"
+        }
       ],
       "houkisei": "マタマタ属はCITES未掲載。原産国の輸出規制あり。※旧ページで誤ってCITES II掲載と記載されていたが誤り。",
       "photo_hantei": "首下面に黒帯が『ない』こと＋腹甲が明色であること。観察地がオリノコ水系であれば裏付けになる。",
@@ -64,7 +73,10 @@
       "size": "最大甲長37.9cm。ドロガメ科最大種。メスがオスより大型。",
       "bunpu": "メキシコ湾岸・カリブ海側（ベラクルス・タバスコ・チアパス・ユカタン・カンペチェ）〜ベリーズ・北東グアテマラ・西ホンジュラス。属内で大西洋側。",
       "kondou_shu": [
-        {"aite": "サルヴィンオオニオイガメ (Staurotypus salvinii)", "kubetsu": "サイズ=最大38cm(本種)/最大25cm(サルヴィン)。分布=大西洋岸(本種)/太平洋岸(サルヴィン)。両種とも3キールで外見酷似するが、本種が明確に大型。"}
+        {
+          "aite": "サルヴィンオオニオイガメ (Staurotypus salvinii)",
+          "kubetsu": "サイズ=最大38cm(本種)/最大25cm(サルヴィン)。分布=大西洋岸(本種)/太平洋岸(サルヴィン)。両種とも3キールで外見酷似するが、本種が明確に大型。"
+        }
       ],
       "houkisei": "CITES未掲載。生息地破壊・乱獲で減少傾向。",
       "photo_hantei": "3本キール＋大型（成体で30cm超）。サルヴィンとの区別は分布・サイズで。",
@@ -82,7 +94,10 @@
       "size": "最大甲長25cm（オスは最大21cm、メスがより大型）。オオニオイガメ属最小種。",
       "bunpu": "中米の太平洋岸（メキシコ南東部オアハカ東部・チアパス南部、グアテマラ南部、エルサルバドル南部）。属内で唯一太平洋側。",
       "kondou_shu": [
-        {"aite": "スジオオニオイガメ (Staurotypus triporcatus)", "kubetsu": "サイズ=最大25cm(本種)/最大38cm(スジオオ)。分布=太平洋岸(本種)/大西洋岸(スジオオ)。頭部の虫食い模様が本種の識別点。"}
+        {
+          "aite": "スジオオニオイガメ (Staurotypus triporcatus)",
+          "kubetsu": "サイズ=最大25cm(本種)/最大38cm(スジオオ)。分布=太平洋岸(本種)/大西洋岸(スジオオ)。頭部の虫食い模様が本種の識別点。"
+        }
       ],
       "houkisei": "CITES未掲載。原産国で流通停止、国内はほぼCB個体。",
       "photo_hantei": "3本キール＋小型（成体25cm以下）＋頭部の虫食い模様。分布が太平洋岸。",
@@ -100,8 +115,14 @@
       "size": "最大甲長13.5〜14cm。小型。",
       "bunpu": "アメリカ南東部（ジョージア州北西部を除く、フロリダ州南部を除く）。流れの緩やかな止水〜緩流域。",
       "kondou_shu": [
-        {"aite": "スジクビニオイガメ (Sternotherus peltifer)", "kubetsu": "本種は頸部に縦縞が入らない/peltiferは頸部に明瞭な筋状斑紋。本種はキール3本・ドーム状/peltiferは甲が扁平寄り。2017年にpeltiferは独立種化。"},
-        {"aite": "カブトニオイガメ (Sternotherus carinatus)", "kubetsu": "腹甲の喉甲板の有無で区別（本種にはある）。カブトは甲が三角形に高く隆起、本種はそこまで盛り上がらず横に広い。腹甲模様だけでは区別困難な場合あり。"}
+        {
+          "aite": "スジクビニオイガメ (Sternotherus peltifer)",
+          "kubetsu": "本種は頸部に縦縞が入らない/peltiferは頸部に明瞭な筋状斑紋。本種はキール3本・ドーム状/peltiferは甲が扁平寄り。2017年にpeltiferは独立種化。"
+        },
+        {
+          "aite": "カブトニオイガメ (Sternotherus carinatus)",
+          "kubetsu": "腹甲の喉甲板の有無で区別（本種にはある）。カブトは甲が三角形に高く隆起、本種はそこまで盛り上がらず横に広い。腹甲模様だけでは区別困難な場合あり。"
+        }
       ],
       "houkisei": "CITES未掲載。かつてワイルド大量流通、現在は国内CB中心。",
       "photo_hantei": "ドーム状の甲＋3キール＋頸部に縦縞なし＋巨頭傾向。腹甲に喉甲板があればカブトと区別。",
@@ -119,7 +140,10 @@
       "size": "最大甲長17.6cm。ニオイガメ属（Sternotherus）最大。",
       "bunpu": "米ルイジアナ全域と隣接するミシシッピ・アーカンソー・オクラホマ・テキサス。",
       "kondou_shu": [
-        {"aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)", "kubetsu": "本種は甲が三角形に高く隆起（カブト状）/minorはドーム状で横広。腹甲の喉甲板と甲の断面形状で区別。"}
+        {
+          "aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)",
+          "kubetsu": "本種は甲が三角形に高く隆起（カブト状）/minorはドーム状で横広。腹甲の喉甲板と甲の断面形状で区別。"
+        }
       ],
       "houkisei": "CITES未掲載。国内CB流通。",
       "photo_hantei": "甲が屋根状に高く隆起した三角シルエット（正面/側面カットが有効）。",
@@ -137,7 +161,10 @@
       "size": "15〜23cm（亜種差）。",
       "bunpu": "南ヨーロッパ地中海沿岸（スペイン東部〜トルコ西部）。岩がちな丘陵・地中海性植生。",
       "kondou_shu": [
-        {"aite": "ギリシャリクガメ (Testudo graeca)", "kubetsu": "ヘルマンは尾端にスパーあり・大腿部にスパー(結節)なし/グラエカは大腿部に結節(スパー)あり・尾端スパーなし。臀甲板の分割の有無も差。"}
+        {
+          "aite": "ギリシャリクガメ (Testudo graeca)",
+          "kubetsu": "ヘルマンは尾端にスパーあり・大腿部にスパー(結節)なし/グラエカは大腿部に結節(スパー)あり・尾端スパーなし。臀甲板の分割の有無も差。"
+        }
       ],
       "houkisei": "CITES II掲載。国内CB飼育可、輸入個体は附属書II証明が必要。",
       "photo_hantei": "尾端の角質スパー＋大腿部に結節がないこと＋黄黒コントラストの甲。",
@@ -155,13 +182,249 @@
       "size": "12〜18cm。",
       "bunpu": "米中南部（ミシシッピ川流域中心）。落葉樹林・草地。",
       "kondou_shu": [
-        {"aite": "トウブハコガメ (Terrapene carolina carolina)", "kubetsu": "本亜種は後肢3指・模様控えめ/基亜種carolinaは後肢4指・甲の模様が派手。"},
-        {"aite": "ガルフコーストハコガメ (Terrapene carolina major)", "kubetsu": "majorは最大亜種(18〜22cm)・多湿好み/本亜種はより小型。"}
+        {
+          "aite": "トウブハコガメ (Terrapene carolina carolina)",
+          "kubetsu": "本亜種は後肢3指・模様控えめ/基亜種carolinaは後肢4指・甲の模様が派手。"
+        },
+        {
+          "aite": "ガルフコーストハコガメ (Terrapene carolina major)",
+          "kubetsu": "majorは最大亜種(18〜22cm)・多湿好み/本亜種はより小型。"
+        }
       ],
       "houkisei": "CITES未掲載（属単位では一部規制議論あり）。国内CB流通。",
       "photo_hantei": "後肢の指が3本であること（後肢が写ったカットが有効）＋北米ハコガメの甲形。",
       "photo_chuui": "他の北米ハコガメ亜種と混同注意。指の数が決め手だが写真に後肢が写らないと判別困難。",
       "status": "confirmed"
+    },
+    {
+      "slug": "false-map-turtle",
+      "wamei": "ニセチズガメ",
+      "gakumei": "Graptemys pseudogeographica pseudogeographica",
+      "eimei": "False Map Turtle",
+      "koura": "背甲は褐色〜オリーブ。中央に明瞭なキール、各椎甲板後縁に低い突起。後縁は鋸歯状。地図状の黄線と暗色斑。最大甲長メス約25cm。",
+      "iro_moyou": "甲に地図状の黄線＋暗色スマッジ。幼体はキール・鋸歯が顕著。",
+      "tobu": "眼後斑は『ホッケースティック形』。首の縦縞が目に届く（三日月でブロックされない）。",
+      "size": "メス12〜27cm、オス9〜15cm。強い性的二型。",
+      "bunpu": "ミシシッピ川・ミズーリ川水系（オハイオ〜ミネソタ〜ダコタ〜南）。",
+      "kondou_shu": [
+        {
+          "aite": "ミシシッピチズガメ (G. p. kohnii)",
+          "kubetsu": "同種の亜種。false=眼後斑がホッケースティック形で首縞が目に届く。kohnii=眼後斑が三日月形で首縞が目に達しない。虹彩はkohniiが白い個体多い。"
+        },
+        {
+          "aite": "フトマユチズガメ (G. ouachitensis)",
+          "kubetsu": "ouachitaは眼後斑がより大きく長方形＋キールが高い。falseは眼後斑がホッケースティック形。"
+        },
+        {
+          "aite": "キタチズガメ (G. geographica)",
+          "kubetsu": "geographicaは眼後斑が小さくコブが控えめ。falseはキール突起がより明瞭。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
+      "photo_hantei": "頭部側面の眼後斑の形（ホッケースティック形）＋首縞が目に届くこと。頭部が写ったカット必須。",
+      "photo_chuui": "kohniiと外見酷似。眼後斑の形が決め手。上からの甲写真だけでは亜種判別不可。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/False_map_turtle",
+        "https://animaldiversity.org/accounts/Graptemys_pseudogeographica/",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/false-map-turtle.html",
+        "https://theturtleroom.org/species-profile/graptemys-pseudogeographica-pseudogeographica/"
+      ]
+    },
+    {
+      "slug": "mississippi-map-turtle",
+      "wamei": "ミシシッピチズガメ",
+      "gakumei": "Graptemys pseudogeographica kohnii",
+      "eimei": "Mississippi Map Turtle",
+      "koura": "背甲は褐色〜オリーブに地図状黄線、後縁は強く鋸歯状。キール突起あり。最大甲長メス約26cm。",
+      "iro_moyou": "甲に地図状模様。幼体は鮮やか。",
+      "tobu": "眼後に鮮黄色の『三日月形(reverse-crescent)』が目の後ろ〜下を弧を描いて囲み、首の縦縞が目に達しない。虹彩が白い個体が多い。",
+      "size": "メス最大約26cm、オス約15cm。強い性的二型。",
+      "bunpu": "ミシシッピ川本流と支流（イリノイ〜ルイジアナ）。和名は州でなく川に由来。",
+      "kondou_shu": [
+        {
+          "aite": "ニセチズガメ (G. p. pseudogeographica)",
+          "kubetsu": "同種の亜種。kohnii=眼後斑が三日月形で首縞が目に達しない・虹彩白い個体多い。false=眼後斑がホッケースティック形で首縞が目に届く。"
+        },
+        {
+          "aite": "フトマユチズガメ (G. ouachitensis)",
+          "kubetsu": "ouachitaは眼後斑が大きく長方形。kohniiは三日月形。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
+      "photo_hantei": "頭部側面で眼後の三日月斑＋首縞が目に達しないこと＋（あれば）白い虹彩。頭部カット必須。",
+      "photo_chuui": "ニセチズガメと同種の亜種で酷似。三日月形の眼後斑が決め手。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mississippi_map_turtle",
+        "https://www.petmd.com/reptile/species/mississippi-map-turtle",
+        "https://mdc.mo.gov/discover-nature/field-guide/northern-false-map-turtle",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/false-map-turtle.html"
+      ]
+    },
+    {
+      "slug": "northern-map-turtle",
+      "wamei": "キタチズガメ",
+      "gakumei": "Graptemys geographica",
+      "eimei": "Northern Map Turtle (Common Map Turtle)",
+      "koura": "背甲は広くやや低いキール。オリーブ〜灰褐色に黄・橙の細い地図状線（成長で退色、濡れると見える）。後縁は張り出し鋸歯状。腹甲は黄色で中央に暗色斑（加齢で消失）。",
+      "iro_moyou": "頭・首・四肢は暗緑に細い黄線。",
+      "tobu": "眼後に小さな卵形〜三角形の斑。眼後斑は小さく長方形ではない。",
+      "size": "メス18〜27cm、オス10〜16cm。極端な性的二型。メスは頭部が幅広い（貝食）。",
+      "bunpu": "南ケベック・オンタリオ〜北バーモント、五大湖〜ミシシッピ川水系。属内で最も北。",
+      "kondou_shu": [
+        {
+          "aite": "ニセチズガメ/ミシシッピチズガメ (G. pseudogeographica ssp.)",
+          "kubetsu": "geographicaは眼後斑が小さくキール突起が控えめ。false/kohniiは眼後斑がより大きく（ホッケースティック/三日月）キール突起が明瞭。"
+        },
+        {
+          "aite": "フトマユチズガメ (G. ouachitensis)",
+          "kubetsu": "ouachitaは眼後斑が大きく長方形＋キール高い。geographicaは眼後斑が小さい。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
+      "photo_hantei": "頭部の小さな眼後斑＋広くて低いキールの甲。頭部と甲の両方が分かるカット。",
+      "photo_chuui": "他チズガメと混同。眼後斑が小さいこと・キールが低いことが手がかり。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Northern_map_turtle",
+        "https://animaldiversity.org/accounts/Graptemys_geographica/",
+        "https://www.inaturalist.org/taxa/39858-Graptemys-geographica"
+      ]
+    },
+    {
+      "slug": "ouachita-map-turtle-sp",
+      "wamei": "フトマユチズガメ",
+      "gakumei": "Graptemys ouachitensis ouachitensis",
+      "eimei": "Ouachita Map Turtle",
+      "koura": "背甲は褐色〜オリーブに黄の地図状線、キールが高く各椎甲板に明瞭な突起。後縁は鋸歯状。",
+      "iro_moyou": "甲は地図状。",
+      "tobu": "眼後斑が大きく長方形（false/kohniiより大きい）。顎の上下に小さな黄斑（jaw spots）を持つことが多い。",
+      "size": "メス最大約24cm、オス約14cm。",
+      "bunpu": "ミシシッピ川水系西側中心。",
+      "kondou_shu": [
+        {
+          "aite": "ニセチズガメ (G. p. pseudogeographica)",
+          "kubetsu": "ouachitaは眼後斑が大きく長方形＋キール高い＋顎に黄斑。falseは眼後斑がホッケースティック形。"
+        },
+        {
+          "aite": "ミシシッピチズガメ (G. p. kohnii)",
+          "kubetsu": "ouachitaは眼後斑が大きい長方形。kohniiは三日月形で首縞が目に達しない。"
+        },
+        {
+          "aite": "サビーヌチズガメ (G. sabinensis)",
+          "kubetsu": "sabinensisは眼後斑がより小さい細い斑。ouachitaは大きい長方形。※サイトには非掲載種だが混同注意。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
+      "photo_hantei": "頭部側面の大きな長方形の眼後斑＋高いキール＋顎の黄斑。頭部カット必須。",
+      "photo_chuui": "false/kohniiと混同。眼後斑の大きさ・形（大きな長方形）が決め手。旧slug ouachita-map-turtle は本ページ(-sp)へのリダイレクト殻。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Graptemys",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/false-map-turtle.html",
+        "https://reptilesmagazine.com/map-turtles-emgraptemys-em-species/",
+        "https://theturtleroom.org/species-profile/graptemys-sabinensis/"
+      ]
+    },
+    {
+      "slug": "alabama-map-turtle",
+      "wamei": "アラバマチズガメ",
+      "gakumei": "Graptemys pulchra",
+      "eimei": "Alabama Map Turtle",
+      "koura": "背甲はオリーブ〜暗褐に黄の模様、中央キールに沿って暗色の背中線。後縁鋸歯状。",
+      "iro_moyou": "甲・頭に黄斑。頭部に幅広い眼間・眼後のブロッチ。",
+      "tobu": "広頭群(megacephalic clade)。メスは成長に伴い頭部が著しく巨大化し貝を砕く。眼後に大きなブロッチ。",
+      "size": "メスはオスの約2倍・体重10倍。メス大型・オス小型の極端な二型。",
+      "bunpu": "アラバマ州モービル湾水系（Mobile Bay drainage）。",
+      "kondou_shu": [
+        {
+          "aite": "クロコブチズガメ (G. nigrinoda)",
+          "kubetsu": "pulchraは広頭群でメス巨頭化・椎突起はコブ状だが黒く突出しない。nigrinodaはsawback群で椎甲板に黒いコブ状突起が明瞭・小頭。分布はどちらもモービル湾水系で重なる。"
+        },
+        {
+          "aite": "バーバーチズガメ等の広頭群",
+          "kubetsu": "pulchraはモービル湾水系固有。近縁の広頭群（barbouri/gibbonsi/pearlensis等）とは分布と頭部ブロッチ形状で区別。※これらはサイト非掲載。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
+      "photo_hantei": "メスの巨大な頭部＋眼後の大きなブロッチ＋モービル湾水系の分布。頭部カットが有効。",
+      "photo_chuui": "広頭群は互いに似る。分布（モービル湾水系）と頭部ブロッチが手がかり。nigrinodaとは椎突起の黒コブの有無で区別。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Graptemys",
+        "https://www.fws.gov/species/pearl-river-map-turtle-graptemys-pearlensis",
+        "https://reptilesmagazine.com/map-turtle-care-and-information/"
+      ]
+    },
+    {
+      "slug": "black-knobbed-map-turtle",
+      "wamei": "クロコブチズガメ",
+      "gakumei": "Graptemys nigrinoda",
+      "eimei": "Black-knobbed Map Turtle (Black-knobbed Sawback)",
+      "koura": "背甲はほぼ円形〜わずかに楕円で灰色寄り。第1〜4椎甲板に後方へ突き出す黒いコブ状突起（sawback）。各肋甲板に明るいリング模様。腹甲はピンク〜橙で縫合線のみ暗色。",
+      "iro_moyou": "皮膚は淡灰色に淡黄・クリームの縞。甲に黄〜クリームのリング。",
+      "tobu": "眼後に三日月形の斑。小頭（microcephalic）。",
+      "size": "メス最大約17cm前後、オス約7〜10cm。小〜中型。",
+      "bunpu": "アラバマ・ミシシッピのモービル湾水系（Cahaba/Tallapoosa/Coosa/Alabama川）。",
+      "kondou_shu": [
+        {
+          "aite": "ワモンチズガメ (G. oculifera)",
+          "kubetsu": "nigrinodaは椎突起が幅広くコブ状で黒。oculiferaは椎突起が側扁して棘状＋明るい(橙)リングがより鮮やか。分布もnigrinodaはモービル湾水系/oculiferaはパール川水系で異なる。"
+        },
+        {
+          "aite": "アラバマチズガメ (G. pulchra)",
+          "kubetsu": "nigrinodaはsawback群で黒コブ状突起・小頭。pulchraは広頭群でメス巨頭化・黒コブなし。分布は重なる。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。 IUCN準絶滅危惧(NT)。ミシシッピ州でendangered指定。",
+      "photo_hantei": "椎甲板の黒いコブ状突起＋肋甲板の明るいリング＋眼後の三日月斑。甲を斜めから見たカットが有効。",
+      "photo_chuui": "oculiferaと混同（sawback群）。椎突起がコブ状(nigrinoda)か棘状(oculifera)かが決め手。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Black-knobbed_map_turtle",
+        "https://msherps.com/turtles/black-knobbed-map-turtle/",
+        "https://theturtleroom.org/species-profile/graptemys-nigrinoda-nigrinoda/",
+        "https://www.researchgate.net/publication/263963927_Graptemys_oculifera"
+      ]
+    },
+    {
+      "slug": "ringed-map-turtle",
+      "wamei": "ワモンチズガメ",
+      "gakumei": "Graptemys oculifera",
+      "eimei": "Ringed Map Turtle (Ringed Sawback)",
+      "koura": "背甲に側扁した棘状の椎突起(sawback)。各肋甲板に太く鮮やかな橙〜黄の環(ring)模様が明瞭。後縁鋸歯状。",
+      "iro_moyou": "甲の橙リングがnigrinodaより太く鮮やか。",
+      "tobu": "眼後の斑。小頭。",
+      "size": "メス最大約22cm、オス約11cm。",
+      "bunpu": "ルイジアナ・ミシシッピのパール川・Bogue Chitto川水系（G. pearlensisと分布が一致）。",
+      "kondou_shu": [
+        {
+          "aite": "クロコブチズガメ (G. nigrinoda)",
+          "kubetsu": "oculiferaは椎突起が側扁した棘状＋橙リングが太く鮮やか。nigrinodaは椎突起が幅広いコブ状で黒。分布もoculiferaはパール川/nigrinodaはモービル湾で異なる。"
+        },
+        {
+          "aite": "キボシチズガメ (G. flavimaculata)",
+          "kubetsu": "oculiferaは明るいリング模様。flavimaculataは黒い椎骨＋各肋甲板に黄色いブロッチ（リングでなく塊）。※flavimaculataはサイト非掲載。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。 米国ESAでthreatened。IUCN危機(EN)。",
+      "photo_hantei": "側扁した棘状の椎突起＋肋甲板の太く鮮やかな橙リング。甲を斜め上から見たカットが有効。",
+      "photo_chuui": "nigrinodaと混同（sawback群）。棘状突起＋鮮やかな太リングが決め手。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Graptemys",
+        "https://www.researchgate.net/publication/263963927_Graptemys_oculifera",
+        "https://reptilesmagazine.com/map-turtle-care-and-information/",
+        "https://animaldiversity.org/accounts/Graptemys_flavimaculata/"
+      ]
     }
   ]
 }
