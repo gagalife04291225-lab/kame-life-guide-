@@ -1170,6 +1170,197 @@
         "https://wildlifecommons.jp/mauremys-japonica/",
         "https://www.pref.aichi.jp/uploaded/attachment/490530.pdf"
       ]
+    },
+    {
+      "slug": "greek-tortoise",
+      "wamei": "ギリシャリクガメ",
+      "gakumei": "Testudo graeca",
+      "eimei": "Greek Tortoise / Spur-thighed Tortoise",
+      "koura": "ドーム状の甲。後縁縁甲板はフレア（スカート状の張り出し）を持たないのが基本。大腿部に大きな結節（スパー）を持つ＝「spur-thighed」の由来。尾端に角質スパーを持たない（ヘルマンとの決定的識別点）。臀甲板（supracaudal）は通常一枚で分割されない。",
+      "iro_moyou": "地色は亜種・産地で極端に変異（黄・砂褐色〜ほぼ黒）。各甲板に中央斑（センター）とその周囲の黒縁を持つのが典型。西亜種は明るく点在斑、東亜種ibera はヘルマン様の黄地に黒斑。",
+      "tobu": "地中海リクガメ属の標準的な頭部。前肢は5爪・後肢4爪。",
+      "size": "亜種差が非常に大きい。西亜種は小型（甲長13〜18cm級）、東亜種ibera は大型で28cm超に達することもある。",
+      "bunpu": "北アフリカ（モロッコ〜リビア）、南欧（スペイン等）、東欧バルカン〜中東〜イラン。最大20亜種が記載され、現行で約10〜12亜種が有効。西亜種クレード（graeca, cyrenaica, marokkensis, nabeulensis, whitei等）と東亜種クレード（ibera）に大別される。",
+      "kondou_shu": [
+        {
+          "aite": "ヘルマンリクガメ (Testudo hermanni)",
+          "kubetsu": "graeca は大腿部に結節(スパー)あり・尾端スパーなし/ヘルマンは大腿部結節なし・尾端に角質スパーあり。臀甲板の分割の有無も差。"
+        },
+        {
+          "aite": "イベラギリシャリクガメ (Testudo graeca ibera)（本サイトの iberian-greek-tortoise ページ）",
+          "kubetsu": "ibera は graeca の東亜種であり、この greek-tortoise ページは種全体(sensu lato)の総称。両者は並列の別種ではなく包含関係。ibera は大型・トルコ〜コーカサス産・ヘルマン様の黄地に黒斑で robust。写真をどちらのページに割り当てるかは産地・亜種情報で判断する。"
+        },
+        {
+          "aite": "ロシアリクガメ (Testudo horsfieldii)",
+          "kubetsu": "horsfieldii は前肢が4爪(属内唯一)・腹甲蝶番なし・扁平で丸い甲。graeca は前肢5爪で大腿部にスパーを持つ。ただし東亜種 T. g. armeniaca は horsfieldii に酷似するため産地照合が必要。"
+        }
+      ],
+      "houkisei": "CITES II掲載（属レベルで Testudo spp. が附属書II）。EUでは域内取引に証明書要。日本国内CB飼育可、輸入個体は附属書II証明が必要。多亜種のため産地・亜種の同定が取引管理上も重要。",
+      "photo_hantei": "大腿部の結節(スパー)＋尾端スパーの欠如＋各甲板の中央斑を持つドーム甲。前肢5爪。総称ページのため特定亜種に限定しない。",
+      "photo_chuui": "①ヘルマンと混同されやすい（スパーの位置：大腿 vs 尾端が決め手）。②ibera(iberian-greekページ)との割り当て混同に注意。産地不明個体は亜種断定を避ける。③亜種間で色・サイズが極端に変異するため、色や大きさ単独で亜種を断定しない。異亜種間交雑個体も流通する。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "iberian-greek-tortoise",
+      "wamei": "イベラギリシャリクガメ",
+      "gakumei": "Testudo graeca ibera",
+      "eimei": "Asia Minor Tortoise / Ibera Greek Tortoise",
+      "koura": "ドーム状で robust（頑丈）な甲。後縁縁甲板のフレアは基本的に弱い。大腿部に発達した結節(スパー)を持つ。尾端スパーなし。臀甲板は通常一枚。西亜種より全体に大型・重厚。",
+      "iro_moyou": "最も典型的なのは『ヘルマン様』の黄地に黒のバーや斑。ただし変異が激しく、ほぼ全身黒〜ほぼ全身黄まで存在。北の個体群ほど暗色、南ほど明色の傾向。",
+      "tobu": "頭部はやや大きく頑丈。前肢5爪・後肢4爪。",
+      "size": "属内で大型の部類。雄15〜20cm、雄で28cm超・11インチ超の記録もあり、東ヘルマン(boettgeri)に匹敵するサイズになる個体も。",
+      "bunpu": "T. graeca の東亜種クレード。トルコ(小アジア)・コーカサス・バルカン東部・中東北部。ペット取引で最も普通に流通する『グリークトータス』。日本で『イベラ』と呼ばれるのはこの亜種。",
+      "kondou_shu": [
+        {
+          "aite": "ギリシャリクガメ 基亜種 (Testudo graeca graeca)",
+          "kubetsu": "graeca 基亜種は本来もっと小型・明色地に黒点で、飼育下では稀。ibera は大型・robust でヘルマン様の黄地黒斑。産地(トルコ〜コーカサス=ibera / 北アフリカ・イベリア=graeca系)が最も確実な区別。"
+        },
+        {
+          "aite": "ヘルマンリクガメ boettgeri (Testudo hermanni boettgeri)",
+          "kubetsu": "外見が酷似するがヘルマンは尾端に角質スパーあり・大腿部結節なし。ibera は逆(大腿部スパーあり・尾端スパーなし)。"
+        },
+        {
+          "aite": "アナムールギリシャ (T. g. anamurensis)",
+          "kubetsu": "anamurensis は ibera の地理的変異に降格された型。後縁縁甲板のフレアが顕著でフチゾリ(marginata)と紛らわしいが、産地(トルコ南岸)と大腿部スパーで区別。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Testudo spp.）。附属書II証明で取引可。日本国内CB飼育可。正式な亜種であり ibera 名は有効。",
+      "photo_hantei": "大腿部の発達した結節＋尾端スパーの欠如＋robust なドーム甲＋(典型は)黄地に黒斑。トルコ〜コーカサス産であること。",
+      "photo_chuui": "①ヘルマンboettgeriと酷似—スパーの位置で判定。②色変異が極端なため色単独で断定不可。③産地不明個体は graeca 基亜種や他亜種との判別が困難。iberaと確証できない個体を無理に採用しない。④交雑個体(ibera × terrestris 等)が多く流通する点に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "russian-tortoise",
+      "wamei": "ロシアリクガメ（ヨツユビリクガメ）",
+      "gakumei": "Testudo horsfieldii",
+      "eimei": "Russian / Horsfield's / Central Asian Tortoise",
+      "koura": "属内で唯一、前肢が4爪（他Testudoは前5・後4）＝『ヨツユビ』の由来で最も決定的な識別形質。腹甲に機能的な蝶番を持たない。甲は丸みのあるオーバルで、椎甲板に沿って明瞭に扁平＝低ドーム。後縁縁甲板はやや張り出す程度。",
+      "iro_moyou": "地色は明るい褐色〜黄緑〜オリーブで、大甲板に褐色〜黒斑。腹甲は各甲板に褐色〜黒のブロッチ、時に真っ黒。皮膚は黄褐色。中央斑パターンは graeca ほど明瞭でない。",
+      "tobu": "頭部は球状でやや大きい。四肢は掘削に適した頑丈な爪。前肢4爪。",
+      "size": "小〜中型。甲長13〜20cm、雌で23〜25cmに達することも。最大30cm級の報告。",
+      "bunpu": "中央アジアの乾燥草原・岩礫地・砂/ローム質ステップ。東イラン・アフガニスタン・トルクメニスタン・ウズベキスタン・タジキスタン・キルギス・南カザフスタン・新疆西端・パキスタン北西部。標高1500m超にも。亜種 kazachstanica / rustamovi / horsfieldii が認識される。",
+      "kondou_shu": [
+        {
+          "aite": "ギリシャリクガメ armeniaca亜種 (Testudo graeca armeniaca)",
+          "kubetsu": "armeniaca は黒灰褐色・球状頭部・丸い甲・扁平な椎甲板で horsfieldii に酷似。だが horsfieldii は前肢4爪、armeniaca(graeca群)は前肢5爪＋大腿部スパー。爪数と大腿部結節で確定。"
+        },
+        {
+          "aite": "ギリシャリクガメ (Testudo graeca) 一般",
+          "kubetsu": "horsfieldii は4爪・腹甲蝶番なし・低ドームの丸い甲。graeca は5爪・大腿部スパーあり・よりドーム状。"
+        },
+        {
+          "aite": "ヘルマンリクガメ (Testudo hermanni)",
+          "kubetsu": "horsfieldii は4爪・尾端スパーなし。ヘルマンは5爪・尾端に角質スパーあり。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Testudo spp.）。野生個体は輸送・順化時の高死亡率から1999年にEUが輸入禁止、2006年に解除。以後クオータ付きで流通。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
+      "photo_hantei": "前肢が4爪であること（最重要）＋低ドームの丸いオーバル甲＋腹甲蝶番の欠如＋明るい褐色〜オリーブ地。",
+      "photo_chuui": "①4爪は非常に有効だが、飼育下個体では爪の摩耗・欠損で数えにくい/完全に決定的でない場合があるため、甲形(低ドーム・丸型)と併せて判定。②graeca armeniaca が酷似するため、爪が数えられない写真では産地情報を重視。③『ロシア』は流通名で、実際は中央アジア広域産。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "marginated-tortoise",
+      "wamei": "フチゾリリクガメ",
+      "gakumei": "Testudo marginata",
+      "eimei": "Marginated Tortoise",
+      "koura": "後縁縁甲板が外側へ強くフレア（スカート/ベル状に張り出す）のが決定的識別形質＝『フチゾリ』の由来。雌雄ともにフレアするが雄でより顕著。甲は長楕円で中程度のドーム。臀甲板は通常一枚。属内最大の地中海種。",
+      "iro_moyou": "成体は強い黒色の甲にクリーム〜黄の中央部(アレオラ)。加齢で甲は一様な黒に近づく。各甲板に他Testudoのような明瞭な『中央斑』を持たないのが幼体識別の鍵。腹甲は淡黄地に黒の三角(シェブロン)が対で並ぶ。",
+      "tobu": "頭部は中サイズ、突出しない吻、上顎はフック状。頭部は黒、顎は黄〜灰。前肢5爪。",
+      "size": "地中海Testudo最大。雄は35cm(14インチ)超も、雌は25〜30cm(10〜12インチ)級。",
+      "bunpu": "バルカン・ギリシャ・アルバニア〜イタリア、サルデーニャ島(移入とされる)。岩がちな丘陵・草地・地中海性低木林、標高1500m超にも。",
+      "kondou_shu": [
+        {
+          "aite": "アナムールギリシャ (Testudo graeca anamurensis)",
+          "kubetsu": "anamurensis も後縁縁甲板が顕著にフレアし marginata と紛らわしい。だが anamurensis は graeca 群で大腿部にスパーを持ち、産地はトルコ南岸。marginata は大腿部スパーなし・腹甲に対の黒三角。"
+        },
+        {
+          "aite": "エジプトリクガメ (Testudo kleinmanni)（幼体腹甲の三角斑）",
+          "kubetsu": "marginata 幼体は腹甲に対(複数対)の暗色三角。kleinmanni も三角斑を持つが2つのみ。他Testudo幼体はこの三角を持たない。"
+        },
+        {
+          "aite": "その他 Testudo 幼体一般",
+          "kubetsu": "marginata 幼体は地色がクリーム〜ほぼ白(他は黄・褐・橙)で各甲板に中央斑がない。フレアは幼体では未発達なので腹甲の黒三角で判定。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Testudo spp.）。IUCNでは絶滅危惧とされていない(Least Concern相当)が附属書IIで取引管理。weissingeri(矮小型)・sarda等の提唱亜種は未承認。日本国内CB飼育可。",
+      "photo_hantei": "後縁縁甲板の強いフレア(スカート/ベル状)＋長楕円の黒い甲＋クリーム〜黄のアレオラ。成体では最も判別容易。幼体は腹甲の対の黒三角。",
+      "photo_chuui": "①飼育不良個体は色が抜けて淡色化しフレアも弱くなり、本来の phenotype と大きく異なる—淡色・低フレア個体を『別種/別型』と誤判定しない。②anamurensis(ギリシャ亜種)のフレア個体と混同注意。③幼体はフレア未発達のため甲形だけで判定せず腹甲三角を確認。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "red-footed-tortoise",
+      "wamei": "アカアシガメ",
+      "gakumei": "Chelonoidis carbonarius",
+      "eimei": "Red-footed Tortoise",
+      "koura": "黒に近い暗色の『パン(loaf)型』の甲で、各甲板中央に明色パッチ。成体の甲は細長いオーバルで側面がほぼ平行(雄は側面が内側にくびれることも)。アマゾン以南の型は前肢肘の内側に肥大した鱗(スパー)を持つ。",
+      "iro_moyou": "四肢は暗色地に鮮やかな鱗(淡黄〜鮮赤)—これが『アカアシ』の由来。頭部の鱗も淡黄〜赤〜橙で変異大。腹甲は淡黄が主体だが地域で模様が異なる。",
+      "tobu": "頭部の鱗は淡黄〜赤。北部型と南部型で腹甲模様・頭色に地域差。",
+      "size": "中型。平均甲長30cm(12インチ)前後、40cm(16インチ)超も。",
+      "bunpu": "南米北部〜中部(パナマ〜コロンビア〜ギアナ地域〜ブラジル〜ボリビア〜パラグアイ〜北アルゼンチン)。サバンナと隣接林。正式な亜種は記載されていない(単一種 carbonarius)が、5型以上の地域変異が知られ、うちアマゾン以南・東ブラジル産がcherry-headと呼ばれる。学術的にはアンデスを挟む East/West の隠蔽系統(cyt b約1.5%分岐, 3〜4mya)が認識されるが正式分割は未了。",
+      "kondou_shu": [
+        {
+          "aite": "キアシガメ (Chelonoidis denticulatus / Yellow-footed)",
+          "kubetsu": "アカアシは四肢鱗が赤〜橙、denticulatus は黄。頭部鱗色・頭部鱗の配置で判別。生態もアカアシはサバンナ寄り、キアシは湿潤林寄り。"
+        },
+        {
+          "aite": "チェリーヘッド(cherry-head)（本サイト cherry-head-tortoise ページ）",
+          "kubetsu": "cherry-head は独立種でも正式亜種でもなく、同一学名 carbonarius の地域色変異(主に東〜南東ブラジル産)。区別は産地＋高彩度の赤橙頭部＋小型傾向であって学名では割れない。写真割り当ては産地・色傾向で判断。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Chelonoidis carbonarius）。IUCN(コロンビア等)でVulnerable評価。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
+      "photo_hantei": "暗色のloaf型甲＋各甲板中央の明色パッチ＋四肢/頭部の赤〜橙鱗。中型。",
+      "photo_chuui": "①キアシガメ(denticulatus)と混同—四肢鱗の色(赤 vs 黄)で判別。②cherry-headページとの割り当て混同に注意：色の明るい通常アカアシが存在し、逆に黄色いcherry-headもいるため、色単独でcherry-headと断定しない。③学術上のEast/West隠蔽系統(アンデス軸)とペット用語のcherry-head(東ブラジル軸)は別概念—混同しない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "cherry-head-tortoise",
+      "wamei": "チェリーヘッドアカアシガメ",
+      "gakumei": "Chelonoidis carbonarius",
+      "eimei": "Cherry-head Red-footed Tortoise",
+      "koura": "アカアシガメと同一種のため甲の基本構造は同じ(暗色loaf型＋各甲板中央の明色パッチ)。cherry-headとされる型はコントラストが強く、甲の斑がより鮮やかな傾向。ただし決定的な甲形質はなく、アカアシの変異幅内。",
+      "iro_moyou": "頭部・四肢の鱗が高彩度の赤〜橙(『チェリー』の由来)になる傾向。ただし輸入群では赤・橙・黄・珊瑚・ピンクまで幅広く、名が期待させる鮮赤の頭は例外的な優良個体のみ。色は傾向であって絶対形質ではない。",
+      "tobu": "頭部鱗が鮮赤〜橙の傾向。ただし個体差大。",
+      "size": "小型傾向で20cm(8インチ)を超えることは稀とされるが、この差はアカアシ全体の正常サイズ範囲(10〜24インチ, 平均約12インチ)に収まる。小型は傾向であって決定形質ではない。",
+      "bunpu": "アカアシガメの地域変異型。主に東〜南東ブラジル、ボリビア/パラグアイのグランチャコにも。学術的な正式亜種名は持たない。",
+      "kondou_shu": [
+        {
+          "aite": "アカアシガメ (Chelonoidis carbonarius / 本サイト red-footed-tortoise ページ)",
+          "kubetsu": "同一学名・同一種。cherry-head は独立種でも正式亜種でもない地域色変異。区別は産地(東〜南東ブラジル)＋高彩度の赤橙頭部＋小型傾向で、学名や単独形態では割れない。"
+        },
+        {
+          "aite": "キアシガメ (Chelonoidis denticulatus)",
+          "kubetsu": "四肢鱗の色(cherry-headは赤橙, denticulatusは黄)と頭部鱗配置で区別。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Chelonoidis carbonarius として。cherry-head 独自の分類階級・学名はない）。IUCNでVulnerable評価(種として)。日本国内CB飼育可。",
+      "photo_hantei": "アカアシガメの形質＋高彩度の赤〜橙頭部/四肢＋(傾向として)小型・高コントラスト甲。ただし単独形質での断定は不可。",
+      "photo_chuui": "【最重要】①色が明るい＝cherry-head と機械判定してはいけない。彩度の高い通常アカアシが存在し、逆に黄色いcherry-headもいる。②red-footed-tortoiseページと同一学名のため画像使い回しリスクが高い—産地・色傾向の複合でのみ割り当て、確証なき個体は無理に採用しない。③学術上のEast/West隠蔽系統とペット用語cherry-headは地理軸が別概念。④分類は未確定—単一種carbonariusとして扱うのが現行標準。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "chaco-tortoise",
+      "wamei": "チャコリクガメ（アルゼンチンリクガメ）",
+      "gakumei": "Chelonoidis chilensis",
+      "eimei": "Chaco / Argentine / Patagonian Tortoise",
+      "koura": "低ドームのオーバル甲。項甲板(nuchal)を欠く。甲縁はやや鋸歯状で各甲板縁に色素の楔(wedge)。学名 chilensis は誤解を招く(チリには分布しない)。",
+      "iro_moyou": "地色は黄褐色〜暗褐色〜黒で、各甲板は tan の中心の周囲に黒〜暗色の成長輪。腹甲は一様な黄褐色。",
+      "tobu": "地中海リクガメ属に似た乾燥地型の頭部。",
+      "size": "成体18〜25cm(直線甲長)、最大43cmの記録。",
+      "bunpu": "グランチャコおよびMonteエコリージョン。北西アルゼンチン(北パタゴニアまで)・西パラグアイ・南西ボリビア。乾燥〜半乾燥の低木林・サバンナ・草地で巣穴を利用。単一種で現時点で有効な亜種はない。",
+      "kondou_shu": [
+        {
+          "aite": "旧 C. petersi / C. donosobarrosi（提唱された別種/亜種）",
+          "kubetsu": "Freiberg(1973)がチャコ型/パタゴニア型の表現型差から別種提唱したが、分子解析で遺伝的変異はほとんどなく、形態差は標高によるクライン変異として説明可能。正式にシノニム化・C. chilensis に統合済み。※TSAが現在も全ゲノムで種境界を再検証中で、将来分割の可能性は残る(未決着)。"
+        },
+        {
+          "aite": "アカアシ/キアシガメ (Chelonoidis carbonarius / denticulatus)",
+          "kubetsu": "chilensis は乾燥地性で四肢に赤/黄の鮮鱗を持たず、地味な黄褐色。項甲板を欠く点も差。carbonarius群は四肢に色鱗・湿潤〜サバンナ性。"
+        }
+      ],
+      "houkisei": "CITES II掲載（Chelonoidis chilensis）。IUCNでVulnerable。生息地劣化・密猟・違法取引が主要脅威。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
+      "photo_hantei": "低ドームのオーバル甲＋項甲板の欠如＋黄褐色地に各甲板の暗色成長輪＋一様な黄褐色腹甲。乾燥地型の地味な色。",
+      "photo_chuui": "①petersi/donosobarrosi 名の古い画像は全て C. chilensis と同一種として扱う(別種画像として分けない)。②carbonarius群(赤/黄アシ)との混同は四肢鱗の色で回避。③表現型が標高で連続変異するため、色・サイズで型を細分しない。",
+      "status": "confirmed"
     }
   ]
 }
