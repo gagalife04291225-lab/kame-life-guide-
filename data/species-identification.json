@@ -1590,6 +1590,105 @@
       ],
       "unresolved": "TTWG2021で単型化(旧亜種 ornata/luteola を統合)。desert-box-turtle(旧luteola)と同一種のため写真使い回しリスク大。両ページで同一個体を使わず産地を根拠とする。carolina群とは放射線の規則性・甲の扁平度で区別可だが派手なcarolinaとは紛らわしい。",
       "status": "confirmed"
+    },
+    {
+      "slug": "northern-diamondback-terrapin",
+      "wamei": "キタダイヤモンドガメ",
+      "gakumei": "Malaclemys terrapin terrapin",
+      "eimei": "Northern Diamondback Terrapin",
+      "koura": "各甲板に同心円状の溝(成長輪)が刻まれ、ひし形(diamond)模様を成す＝属名の由来。基亜種。背甲は灰〜褐〜黒。中央キール(リッジ)に沿って結節が出る個体もある。汽水性(北米で唯一、汽水に生息するカメ)。",
+      "iro_moyou": "背甲は灰色〜褐色〜黒で、各甲板の同心円模様が明瞭。皮膚は淡灰〜白っぽい地に黒の細かい斑点・条が散る(ダイヤモンドガメ共通の特徴)。頭部にも黒斑。",
+      "tobu": "頭部・四肢は淡色地に黒の斑点。上顎はやや反る。指に強い水掻き。",
+      "size": "顕著な性的二型。メス大型(甲長〜23cm)、オスは1/3ほど小型(〜14cm)。",
+      "bunpu": "米大西洋岸北部(マサチューセッツ州ケープコッド〜ノースカロライナ州ケープハッタラス付近)。塩性湿地・河口・汽水域。基亜種。",
+      "kondou_shu": [
+        {
+          "aite": "カロライナダイヤモンドガメ (Malaclemys terrapin centrata)",
+          "kubetsu": "centrataは甲がより滑らかで中央がやや凹み、同心円模様が明瞭/terrapinは中央キールに結節が出やすい。両者は酷似し写真での区別は困難。分布(北部=terrapin / ケープハッタラス以南=centrata)が主な手がかり。ただし形態亜種は分子系統と一致せず境界は不確実。"
+        },
+        {
+          "aite": "オルナータダイヤモンドガメ (Malaclemys terrapin macrospilota)",
+          "kubetsu": "macrospilotaは各甲板中央が橙〜黄で明色化＋背甲板に結節/terrapinは中央が明色化せず灰褐色主体。macrospilotaは識別容易。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Malaclemys terrapin 種全体、2013年掲載)。IUCN Vulnerable。米国では州により捕獲・所持規制(NJ等は商業採取停止)。国内CB流通。",
+      "photo_hantei": "各甲板の同心円(ひし形)模様＋淡色肌に黒の斑点・条＋灰褐色の甲。基亜種のため中央が橙黄に明色化しないこと。",
+      "photo_chuui": "①カロライナ(centrata)と酷似し写真単独では区別困難—産地(北部)を根拠とする。②形態で定義された7亜種は分子系統地理と一致せず、TTWGも改訂分類を未策定。亜種同定は本質的に不確実で、intergrade(交雑帯)も広範。産地不明個体を亜種断定しない。③『ダイヤモンドガメ』共通の肌の黒斑は他亜種と共通で亜種判別には使えない。",
+      "sources": [
+        "https://www.scseagrant.org/diamondback-terrapin/",
+        "https://www.iucnredlist.org/species/pdf/507698",
+        "https://conservewildlifenj.org/?species=malaclemys-terrapin-terrapin",
+        "https://www.inaturalist.org/taxa/39836-Malaclemys-terrapin",
+        "https://www.researchgate.net/publication/338981117_Malaclemys_terrapin_Diamondback_Terrapin_THE_IUCN_RED_LIST_OF_THREATENED_SPECIES"
+      ],
+      "unresolved": "形態で定義された歴史的7亜種は分子系統地理(Lamb & Avise 1992ほか)と一致せず、より少数の独立系統が示唆されるが、TTWGは改訂分類をまだ策定していない。したがってnorthern/carolina/ornateの亜種境界は分子的に支持されておらず、写真での亜種同定(特にnorthern vs carolina)は原理的に不確実。intergradeも広範。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "carolina-diamondback-terrapin",
+      "wamei": "カロライナダイヤモンドガメ",
+      "gakumei": "Malaclemys terrapin centrata",
+      "eimei": "Carolina Diamondback Terrapin",
+      "koura": "各甲板に同心円(ひし形)模様。背甲は基亜種terrapinより滑らかで、中央がやや凹む傾向。中央キールの結節は弱い。汽水性。",
+      "iro_moyou": "背甲は灰〜褐〜黒で同心円模様が明瞭。皮膚は淡灰〜白地に黒の斑点(ダイヤモンドガメ共通)。基亜種と外見上ほぼ区別できない。",
+      "tobu": "頭部・四肢は淡色地に黒斑。terrapinと同様。",
+      "size": "性的二型顕著。メス〜23cm、オス小型。",
+      "bunpu": "米大西洋岸(ノースカロライナ州ケープハッタラス付近〜フロリダ半島北部、南でtequestaと交雑)。バミューダ諸島の個体群もmtDNA上centrataに近い。塩性湿地・河口。",
+      "kondou_shu": [
+        {
+          "aite": "キタダイヤモンドガメ (Malaclemys terrapin terrapin)",
+          "kubetsu": "centrataは甲が滑らか・中央やや凹む/terrapinは中央キールに結節が出やすい。酷似し写真区別困難、産地(ハッタラス以南=centrata)が手がかり。"
+        },
+        {
+          "aite": "オルナータダイヤモンドガメ (Malaclemys terrapin macrospilota)",
+          "kubetsu": "macrospilotaは各甲板中央が橙〜黄で明色化＋結節/centrataは中央明色化せず同心円模様のみ。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Malaclemys terrapin 種全体、2013年掲載)。IUCN Vulnerable。フロリダ等で所持・採取規制。国内CB流通。",
+      "photo_hantei": "同心円(ひし形)模様＋滑らかで中央がやや凹む背甲＋淡色肌に黒斑＋中央が橙黄に明色化しないこと。",
+      "photo_chuui": "①基亜種northern(terrapin)と酷似し写真単独では区別ほぼ不可—産地(大西洋岸中〜南部)を根拠とする。②形態亜種が分子系統と不一致でTTWG改訂分類未策定—亜種同定は不確実、intergrade広範。③バミューダ個体群はcentrata近縁だが正式亜種未割当。",
+      "sources": [
+        "https://www.scseagrant.org/diamondback-terrapin/",
+        "https://www.iucnredlist.org/species/pdf/507698",
+        "https://www.researchgate.net/publication/338981117_Malaclemys_terrapin_Diamondback_Terrapin_THE_IUCN_RED_LIST_OF_THREATENED_SPECIES",
+        "https://www.inaturalist.org/taxa/39836-Malaclemys-terrapin",
+        "https://myfwc.com/wildlifehabitats/profiles/reptiles/freshwater-turtles/diamondback-terrapin/"
+      ],
+      "unresolved": "northernと同様、形態亜種centrataは分子系統地理と一致せず境界は分子的に支持されない(Lamb & Avise 1992)。northernとの写真区別は原理的に困難で産地依存。バミューダ個体群の由来(自然分散か人為か)は未決着だがmtDNA上centrata近縁。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "ornate-diamondback-terrapin",
+      "wamei": "オルナータダイヤモンドガメ",
+      "gakumei": "Malaclemys terrapin macrospilota",
+      "eimei": "Ornate Diamondback Terrapin",
+      "koura": "7亜種中で最も識別しやすい。各甲板の中央が橙〜黄で明色化し、背甲板(リッジ沿い)に結節(nodule)を持つ。黒地に橙黄の中央斑のコントラストが鮮やか＝『ornate(華麗)』の由来。汽水性。",
+      "iro_moyou": "背甲は黒地に各甲板中央が橙または黄。皮膚は白〜灰で、白い個体はピンクや青みを帯びることも。斑点は他亜種と共通。",
+      "tobu": "頭部・四肢は白〜灰地に黒斑。",
+      "size": "中型(甲長〜約23cm)。メス大型・オス小型の二型。",
+      "bunpu": "フロリダ半島のメキシコ湾岸側。パンハンドルでpileataと、フロリダ湾でrhizophorarumと交雑。フロリダ固有に近い。",
+      "kondou_shu": [
+        {
+          "aite": "キタ/カロライナダイヤモンドガメ (M. t. terrapin / centrata)",
+          "kubetsu": "macrospilotaは各甲板中央が橙黄に明色化＋結節/terrapin・centrataは中央明色化せず灰褐色の同心円模様のみ。macrospilotaは明色中央斑で識別容易。"
+        },
+        {
+          "aite": "ミシシッピダイヤモンドガメ (M. t. pileata)",
+          "kubetsu": "pileataは背甲後方のキールに結節が並び、頭頂が暗色。macrospilotaと湾岸パンハンドルで交雑し中間個体が出る。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Malaclemys terrapin 種全体、2013年掲載)。IUCN Vulnerable。フロリダで所持・採取規制、カニ罠の混獲対策(2023年〜漏斗開口規制)。国内CB流通。",
+      "photo_hantei": "黒地に各甲板中央の橙〜黄明色斑＋背甲板の結節＋白〜灰の肌。中央の明色斑が最も確実な決め手。",
+      "photo_chuui": "①中央が橙黄に明色化する点でnorthern/carolinaと区別可能(macrospilotaは7亜種中最も識別容易)。②ただしpileata・rhizophorarumとの交雑帯個体は中間的で亜種断定困難。③形態亜種全般が分子系統と不一致(TTWG改訂分類未策定)のため、明色斑があってもmacrospilotaと断定せず産地(フロリダ湾岸)を併用。",
+      "sources": [
+        "https://www.scseagrant.org/diamondback-terrapin/",
+        "https://www.mt-turtles.com/species/malaclemys-terrapin-macrospilota",
+        "https://www.iucnredlist.org/species/pdf/507698",
+        "https://www.inaturalist.org/taxa/39836-Malaclemys-terrapin",
+        "https://myfwc.com/wildlifehabitats/profiles/reptiles/freshwater-turtles/diamondback-terrapin/"
+      ],
+      "unresolved": "macrospilotaは明色中央斑で比較的識別しやすいが、形態で定義された7亜種は分子系統地理と一致せずTTWGは改訂分類を未策定。pileata・rhizophorarumとの交雑帯個体は亜種断定困難。明色斑のみでの断定は避け産地を併用すべき。",
+      "status": "confirmed"
     }
   ]
 }
