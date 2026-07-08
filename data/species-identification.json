@@ -36,10 +36,17 @@
           "kubetsu": "ペルー産などの赤い個体は業界の色型ラベルで別種ではない。赤い=オリノコ種ではない。"
         }
       ],
-      "houkisei": "IUCN軽度懸念(LC)、CITES未掲載。コロンビア・ベネズエラ・ブラジルが輸出禁止。コロンビアRed Listで準絶滅危惧。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Chelus fimbriataとしてorinocensisを含む形で掲載）。IUCN軽度懸念(LC)。コロンビア・ベネズエラ・ブラジルが輸出規制。コロンビアRed Listで準絶滅危惧。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "首・喉の下面が見えるカットで太い黒帯を確認できること。上からの甲写真のみでは同定不可。",
       "photo_chuui": "幼体(赤)と成体(黒)を別種扱いしない。オリノコ種との混同に注意。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S1055790320300956",
+        "https://en.wikipedia.org/wiki/Chelus_orinocensis",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9035145/"
+      ],
+      "unresolved": "2020年(Vargas-Ramírez et al.)にゲノム解析で従来単一種のマタマタがChelus fimbriata(アマゾン/Mahury水系)とChelus orinocensis(オリノコ/リオネグロ/エッセキボ水系)の2種に分割され、約1270万年前(後期中新世)に分岐と判明。エッセキボ・ブランコ川の個体は核DNAでorinocensis、mtDNAでfimbriata寄りの遺伝子浸透(introgression)を示し、水系境界での帰属が複雑。CITESは2023年発効でfimbriata名義でorinocensisも含め附属書II掲載。"
     },
     {
       "slug": "amazon-matamata",
@@ -57,10 +64,17 @@
           "kubetsu": "甲形=楕円(本種)/長方形。腹甲=明色(本種)/暗色。首下面=黒帯なし(本種)/太い黒帯あり。分布=オリノコ・上部ネグロ(本種)/アマゾン。2020年に独立した別種。"
         }
       ],
-      "houkisei": "マタマタ属はCITES未掲載。原産国の輸出規制あり。※旧ページで誤ってCITES II掲載と記載されていたが誤り。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Chelus fimbriata名義でorinocensisも含め掲載）。原産国(コロンビア・ベネズエラ)でペット取引向けに採取される。※旧ページで「CITES未掲載」または「II掲載」と記載の齟齬があったが、現行は2023年発効で附属書II掲載が正しい。",
       "photo_hantei": "首下面に黒帯が『ない』こと＋腹甲が明色であること。観察地がオリノコ水系であれば裏付けになる。",
       "photo_chuui": "アマゾン種と外見酷似。甲のみでは判別不可。slug名はamazonだが実体はオリノコ種。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chelus_orinocensis",
+        "https://www.sciencedirect.com/science/article/abs/pii/S1055790320300956",
+        "https://www.newsweek.com/new-bizarre-species-turtle-scientists-1500358",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+      ],
+      "unresolved": "Chelus orinocensis は2020年にC. fimbriataから分割された新種。slug名「amazon-matamata」だが、実体のorinocensisはオリノコ/リオネグロ/エッセキボ水系の種で、アマゾン水系の種はfimbriataの方——slug/和名と学名の分布がねじれている(和名オリノコマタマタは正しいがslugがamazon)。検収時にページの意図を再確認要。CITESは2023年発効でfimbriata名義に含めて附属書II掲載。"
     },
     {
       "slug": "giant-musk-turtle",
@@ -78,10 +92,16 @@
           "kubetsu": "サイズ=最大38cm(本種)/最大25cm(サルヴィン)。分布=大西洋岸(本種)/太平洋岸(サルヴィン)。両種とも3キールで外見酷似するが、本種が明確に大型。"
         }
       ],
-      "houkisei": "CITES未掲載。生息地破壊・乱獲で減少傾向。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Staurotypus triporcatus）。IUCNは評価あり。生息地破壊・乱獲で減少傾向。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "3本キール＋大型（成体で30cm超）。サルヴィンとの区別は分布・サイズで。",
       "photo_chuui": "サルヴィンと外見酷似。サイズが最大の識別点。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Staurotypus",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf",
+        "https://en.wikipedia.org/wiki/Sternotherus"
+      ],
+      "unresolved": "Staurotypus triporcatus は分類的に安定(属は2種triporcatus/salviniiのみ)。主な識別課題は同属salviniiとの類似で、サイズ(triporcatusが大型、最大37.9cm)と分布(triporcatus=大西洋岸、salvinii=太平洋岸)で区別。CITESは2023年発効で附属書II掲載となり、古い「未掲載」表記に注意。"
     },
     {
       "slug": "giant-musk-turtle-mx",
@@ -99,10 +119,16 @@
           "kubetsu": "サイズ=最大25cm(本種)/最大38cm(スジオオ)。分布=太平洋岸(本種)/大西洋岸(スジオオ)。頭部の虫食い模様が本種の識別点。"
         }
       ],
-      "houkisei": "CITES未掲載。原産国で流通停止、国内はほぼCB個体。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Staurotypus salvinii、Chiapas giant musk turtle）。原産国で流通規制、国内はほぼCB個体。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "3本キール＋小型（成体25cm以下）＋頭部の虫食い模様。分布が太平洋岸。",
       "photo_chuui": "スジオオニオイガメと外見酷似。サイズが最大の識別点。slug名はmxだが実体はサルヴィン(salvinii)。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Staurotypus",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf",
+        "https://en.wikipedia.org/wiki/Sternotherus"
+      ],
+      "unresolved": "Staurotypus salvinii は分類的に安定(属は2種のみ)。同属triporcatusとの識別はサイズ(salviniiが小型、最大25cm)・分布(salvinii=太平洋岸オアハカ/チアパス〜グアテマラ/エルサルバドル/ベリーズ)・頭部の虫食い模様で行う。slug名「mx」だが実体はsalvinii。CITESは2023年発効で附属書II掲載。"
     },
     {
       "slug": "loggerhead-musk-turtle",
@@ -124,10 +150,17 @@
           "kubetsu": "腹甲の喉甲板の有無で区別（本種にはある）。カブトは甲が三角形に高く隆起、本種はそこまで盛り上がらず横に広い。腹甲模様だけでは区別困難な場合あり。"
         }
       ],
-      "houkisei": "CITES未掲載。かつてワイルド大量流通、現在は国内CB中心。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Sternotherus spp.として属単位で掲載）。かつてワイルド大量流通、現在は国内CB中心。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "ドーム状の甲＋3キール＋頸部に縦縞なし＋巨頭傾向。腹甲に喉甲板があればカブトと区別。",
       "photo_chuui": "「ヒメニオイガメ」=本種と同一（S. minor minor）。旧hime-nioi-turtleページは本ページへ統合済み。カブトニオイガメ(carinatus)・スジクビ(peltifer)との混同に注意。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Loggerhead_musk_turtle",
+        "https://herpetologicalassociates.com/wp-content/uploads/2023/08/Sternotherus_minor_Loggerhead_Musk_Turtle.pdf",
+        "https://en.wikipedia.org/wiki/Sternotherus",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+      ],
+      "unresolved": "本ページ(S. minor minor=基亜種)は種Sternotherus minor全体を代表。「ヒメニオイガメ」(S. minor、種名)ページは本ページへリダイレクト統合済み。もう一方の亜種S. m. peltifer(スジクビ)は近年独立種S. peltiferとする説もあり(Wikipedia等はS. peltifer表記)、minorとpeltiferはアラバマ・西フロリダでintergrade。旧「S. minor×peltifer雑種」とされたintermediusは独立種S. intermediusに。CITESは2023年発効でSternotherus spp.として附属書II掲載。"
     },
     {
       "slug": "razorback-musk-turtle",
@@ -145,10 +178,16 @@
           "kubetsu": "本種は甲が三角形に高く隆起（カブト状）/minorはドーム状で横広。腹甲の喉甲板と甲の断面形状で区別。"
         }
       ],
-      "houkisei": "CITES未掲載。国内CB流通。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Sternotherus spp.として属単位で掲載）。国内CB流通。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "甲が屋根状に高く隆起した三角シルエット（正面/側面カットが有効）。",
       "photo_chuui": "ヒメニオイガメ(minor)と混同されやすい。甲の隆起の鋭さが決め手。",
-      "status": "confirmed"
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sternotherus",
+        "https://en.wikipedia.org/wiki/Loggerhead_musk_turtle",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+      ],
+      "unresolved": "Sternotherus carinatus は分類的に安定。屋根状の単一鋭キールが決定的で成体でも保たれる。幼体のminor(3キール)とはキール数、odoratus(低い甲)とは甲の高さで区別。CITESは2023年発効でSternotherus spp.として附属書II掲載となり、古い「未掲載」表記に注意。"
     },
     {
       "slug": "hermann-tortoise",
@@ -2913,6 +2952,72 @@
         "https://animal-world.com/encyclo/reptiles/turtles/OrnateWoodTurtle.php"
       ],
       "unresolved": "manniはR. pulcherrimaの亜種で最も鮮やかとされるが、色・模様が種内で地理的に連続変異(南ニカラグア個体は地味〜北コスタリカ個体は鮮やか)し、個体の亜種同定が困難、intergradeもある。分布記述も資料により幅がある(南ニカラグア〜北コスタリカ説とメキシコGuerrero/Oaxaca説が併存)。painted-wood/nicaragua-woodページとの画像使い回しリスクが最大。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "musk-turtle",
+      "wamei": "ミシシッピニオイガメ",
+      "gakumei": "Sternotherus odoratus",
+      "eimei": "Common / Eastern Musk Turtle (Stinkpot)",
+      "koura": "Kinosternidae(ニオイガメ属Sternotherus)。背甲は暗褐〜黒のドーム状で滑らかな楕円(幼体には3キールがあるが成長で消失し低く滑らかになる)。小型。悪臭を出す腺(『stinkpot』)。",
+      "iro_moyou": "背甲は暗褐〜黒(藻で緑がかることも)。腹甲は淡黄〜褐で小さく、蝶番が弱い。幼体の腹甲は黄〜クリームに黒スマッジ。",
+      "tobu": "【決定的特徴】黒〜暗褐色の頭部の両側に2本の明瞭な黄/白の条(眼の上下)＝odoratusの識別点。【もう一つの決定的特徴】あご(chin)と首(throat/neck)の両方に髭(barbel)がある＝属内でminor群はあごのみ、odoratusは首にもある。",
+      "size": "小型。甲長5〜13.7cm程度。",
+      "bunpu": "北米東部〜中部の広域(カナダ南部〜フロリダ〜テキサス東部)。ほぼあらゆる緩流・止水・湿地。ジェネラリスト。水底を歩き、水深9mでも見つかるが1m前後が普通。汽水は避ける。",
+      "kondou_shu": [
+        {
+          "aite": "ヒメニオイガメ/オオアタマヒメニオイガメ (Sternotherus minor)",
+          "kubetsu": "【重要】odoratusは頭部に2本の明瞭な黄/白条＋あごと首の両方に髭/minorは頭部が明色地に暗点(明瞭な条を欠く)＋あごのみに髭(首になし)＋3キール。頭部の条と髭の位置(首の有無)が決定的。"
+        },
+        {
+          "aite": "スジクビニオイガメ (Sternotherus minor peltifer)",
+          "kubetsu": "odoratusは頭部に2本の黄条＋首にも髭/peltiferは頭〜首側面に暗い縦条(stripe)＋あごのみに髭。髭の位置(首の有無)と条の色(黄=odoratus/暗=peltifer)で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（2023年発効、Sternotherus spp.として属単位で掲載）。IUCN低危険(Least Concern)。飼育の入門種として国内流通が多い。※古い資料は「CITES未掲載」と記載しているので注意。",
+      "photo_hantei": "暗褐〜黒の滑らかなドーム甲＋頭部両側の2本の明瞭な黄/白条＋あごと首の両方の髭＋小型。頭部の黄条と首の髭が決め手(頭頸部が写るカットが有効)。",
+      "photo_chuui": "①minor群(ヒメニオイ/スジクビ)との区別は頭部の条(明瞭な黄条=odoratus)と髭の位置(首にも髭=odoratus)—頭頸部を確認。②幼体は3キールがあり、他のニオイガメ幼体と紛らわしい—頭部の黄条で判断。③藻で甲が緑がかった個体を別種としない。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sternotherus",
+        "https://www.fws.gov/species/musk-turtle-sternotherus-odoratus",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/striped-necked-musk-turtle.html",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-necked-musk-turtle/index.php",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+      ],
+      "unresolved": "Sternotherus odoratus は分類的に安定した広域種。属Sternotherus自体はKinosternonの亜属とすべきという議論(Seidel et al.1986; Iverson 1991)があったが、後の研究(Iverson 1998, 2013)で属としての単系統性が支持された。頭部の2黄条＋首の髭は明瞭な識別形質で、minor群との区別は確実。CITESは2023年発効でSternotherus spp.として附属書II掲載。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "stripe-necked-musk-turtle",
+      "wamei": "スジクビニオイガメ",
+      "gakumei": "Sternotherus minor peltifer",
+      "eimei": "Stripe-necked Musk Turtle",
+      "koura": "Kinosternidae(ニオイガメ属)。S. minorの亜種peltifer(近年独立種S. peltiferとする説もあり)。背甲は褐色で隆起(ridged)し、幼体でキールが顕著、tan〜褐色に暗点。腹甲は小さく蝶番1つ。",
+      "iro_moyou": "背甲はtan〜褐色に暗色斑。腹甲はピンク〜黄。【識別】頭部は明褐色で、頭〜首の側面に暗い縦条(dark stripe)が主体(基亜種minorの点/斑に対し、peltiferは条が主)。",
+      "tobu": "頭部は明褐色に暗点＋頭〜首側面の暗い縦条が顕著。あご(chin)にのみ2本の髭(首にはない)＝minor群共通。オスは頭が大きい。",
+      "size": "小型。甲長7.5〜11.7cm(基亜種minorよりやや小さめ)。",
+      "bunpu": "米国南東部(主にアラバマ・ミシシッピ、周縁でジョージア・ルイジアナ、東テネシー〜ノースカロライナ・バージニアの北部水系)。河川とその支流。基亜種minorと南東アラバマ・西フロリダ・西ジョージアで分布が接しintergrade。",
+      "kondou_shu": [
+        {
+          "aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)",
+          "kubetsu": "【重要】同一種S. minorの別亜種。peltiferは頭〜首に暗い縦条が主体＋黄色い頭/minor(基亜種)は明色地に暗点/斑が主体＋暗タン色の頭＋巨頭傾向。条 vs 点の違いと頭色。両亜種はintergradeし中間個体は同定困難。"
+        },
+        {
+          "aite": "ミシシッピニオイガメ (Sternotherus odoratus)",
+          "kubetsu": "peltiferは頭〜首に暗い縦条＋あごのみに髭/odoratusは頭部に明瞭な2本の黄条＋あごと首の両方に髭。髭の位置(首の有無)と条の色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（2023年発効、Sternotherus spp.として属単位で掲載）。国内流通あり。※古い資料は「CITES未掲載」と記載しているので注意。",
+      "photo_hantei": "褐色で隆起した甲＋頭〜首側面の暗い縦条(stripe)＋明褐色の頭＋あごのみの髭＋小型。頭頸の暗い縦条が決め手(頭頸部が写るカットが有効)。",
+      "photo_chuui": "①基亜種minor(オオアタマヒメニオイ)と同一種の亜種違い—頭の模様(条=peltifer / 点・斑=minor)で区別するがintergradeが存在し中間個体は同定困難。loggerhead-musk(minor)ページとの画像使い回しに注意。②odoratusとは髭の位置(首の有無)で区別。③peltiferを独立種S. peltiferとする説もあり学名表記が揺れる。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sternotherus",
+        "https://en.wikipedia.org/wiki/Loggerhead_musk_turtle",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-necked-musk-turtle/index.php",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/striped-necked-musk-turtle.html",
+        "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+      ],
+      "unresolved": "peltifer の分類的地位が揺れる。従来S. minor peltifer(亜種、Tinkle & Webb 1955)とされるが、近年は独立種Sternotherus peltiferとする説(Wikipedia等)もある。基亜種minorとはアラバマ・西フロリダでintergradeし、中間個体の亜種同定が困難。かつてminor×peltifer雑種とされたintermediusは独立種S. intermediusに(〜2017)。CITESは2023年発効でSternotherus spp.として附属書II掲載。",
       "status": "confirmed"
     }
   ]
