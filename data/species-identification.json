@@ -1795,6 +1795,139 @@
       ],
       "unresolved": "Vamberger et al.(2020)がT. scripta 3亜種の分類学的区分に疑問を呈し、色・模様差は個体群レベルの可能性を示唆—troostiiの亜種としての独立性は分子的裏付けを欠く。elegansとの交雑・中間個体が多く写真での亜種判別は不確実。日本では条件付特定外来生物。",
       "status": "confirmed"
+    },
+    {
+      "slug": "river-cooter",
+      "wamei": "コウキバラガメ（リバークーター）",
+      "gakumei": "Pseudemys concinna",
+      "eimei": "River Cooter",
+      "koura": "高くドーム状の甲で、黒〜暗褐色地。緑・黄・褐・黒の複雑な模様。第2肋甲板に淡色の後ろ向き『C』字マークが出るのが特徴的（ただし個体・角度で不明瞭）。後縁はやや鋸歯。",
+      "iro_moyou": "背甲は緑黄褐黒の入り組んだ同心・渦巻模様。腹甲は黄〜橙で継ぎ目(seam)に沿って黒色素。老成individは暗色化。",
+      "tobu": "頭部に黄色の細条。眼後に赤帯を欠く(アカミミとの差)。",
+      "size": "大型。甲長23〜33cm、最大約44cm。メス16インチ・8〜11ポンドに達することも。",
+      "bunpu": "米南東部の河川。Pseudemys concinna(広義)。亜種 concinna 等。cooter類は同定困難で産地が最善の手がかり。",
+      "kondou_shu": [
+        {
+          "aite": "ペニンシュラクーター (Pseudemys peninsularis)",
+          "kubetsu": "concinnaは第2肋甲板の後ろ向きC字マーク＋複雑模様/peninsularisは甲に黄橙の線＋腹甲が無地の黄色。分類上peninsularisはconcinna/floridana群に含める説もあり近縁で紛らわしい。"
+        },
+        {
+          "aite": "ミシシッピアカミミガメ (Trachemys scripta elegans)",
+          "kubetsu": "concinna(クーター)は眼後赤帯を欠き大型・頭部条細かい/アカミミは眼後に赤帯。属が異なる(Pseudemys vs Trachemys)。"
+        },
+        {
+          "aite": "フロリダアカハラガメ (Pseudemys nelsoni)",
+          "kubetsu": "nelsoniは腹甲が橙赤＋甲に赤縦縞/concinnaは腹甲が黄橙で継ぎ目黒＋C字マーク。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern相当。国内流通あり。※アカミミ(条件付特定外来生物)とは別属で規制対象外だが、外見が水棲ガメとして混同されやすい。",
+      "photo_hantei": "第2肋甲板の後ろ向きC字マーク＋緑黄褐黒の複雑模様＋眼後赤帯の欠如＋腹甲の継ぎ目に沿う黒。C字マークが有効だが不明瞭な個体も多い。",
+      "photo_chuui": "①cooter類(Pseudemys)は経験者でも種同定が難しく、産地が最善の手がかり—写真単独での種断定は慎重に。②peninsularis/floridana と分類的に近縁で紛らわしい。③老成メラニズム個体は模様が消え同定困難。④アカミミ(Trachemys)と水棲ガメとして混同されやすいが眼後赤帯の有無で区別。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pseudemys",
+        "https://myfwc.com/wildlifehabitats/profiles/reptiles/freshwater-turtles/cooters/",
+        "http://www.nauti-lasscritters.com/cooters.html",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10376552/"
+      ],
+      "unresolved": "Pseudemys属は種間識別が困難で『経験ある生物学者でも難しく産地を知るのが最善』とされる。concinna/floridana/peninsularis の分類的境界が入れ子状で揺れる(peninsularis を floridana 亜種、floridana を concinna 亜種とする扱いが併存)。写真での種断定は産地情報なしには不確実。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "peninsula-cooter",
+      "wamei": "ペニンシュラクーター",
+      "gakumei": "Pseudemys peninsularis",
+      "eimei": "Peninsula Cooter",
+      "koura": "細長く中程度にドーム状の甲。暗褐色〜黒地に黄または橙の線模様。フロリダ半島固有。",
+      "iro_moyou": "背甲に黄〜橙の3本の細い線を含む線模様。腹甲は無地の黄色(赤くない)＝フロリダアカハラガメとの決定的差。頭部に黄条(『ヘアピン』状の模様が出る個体も)。",
+      "tobu": "頭部に黄色の線。眼後赤帯なし。",
+      "size": "中〜大型。甲長23〜33cm、最大約40cm・35ポンド。",
+      "bunpu": "フロリダ半島(固有)。coastal plain cooter(P. floridana)の亜種、あるいはfloridana自体をriver cooter(P. concinna)の亜種とする扱いもある。分類的地位が入れ子。",
+      "kondou_shu": [
+        {
+          "aite": "フロリダアカハラガメ (Pseudemys nelsoni)",
+          "kubetsu": "同じフロリダ産で酷似するが、peninsularisは腹甲が無地の黄色/nelsoniは腹甲が橙赤＋甲に赤縦縞。腹甲の色が最も確実な決め手。"
+        },
+        {
+          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "kubetsu": "peninsularisは黄橙の線＋腹甲無地黄/concinnaは第2肋甲板のC字マーク＋腹甲継ぎ目黒。近縁で分類上peninsularisをfloridana/concinna群に含める説あり。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern相当。国内流通あり。別属のためアカミミの外来生物法規制対象外。",
+      "photo_hantei": "黄橙の線模様＋無地の黄色腹甲(赤くないこと)＋フロリダ産。腹甲が無地黄色であることがnelsoniとの決め手。",
+      "photo_chuui": "①フロリダアカハラガメ(nelsoni)と同所的で酷似—腹甲の色(無地黄 vs 橙赤)と甲の赤縦縞の有無で区別。背側だけの写真では困難、腹甲か甲の縞を確認。②concinna/floridanaと分類的に近縁で境界が揺れる。③cooter類全般が同定困難で産地(フロリダ半島)を併用。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Peninsula_cooter",
+        "https://www.allturtles.com/cooter-turtles/",
+        "https://myfwc.com/wildlifehabitats/profiles/reptiles/freshwater-turtles/cooters/",
+        "https://forum.inaturalist.org/t/info-on-identifying-southern-us-turtles/20878"
+      ],
+      "unresolved": "分類的地位が入れ子で揺れる：peninsularis は coastal plain cooter(P. floridana)の亜種とされることがあり、その floridana 自体が river cooter(P. concinna)の亜種とされることもある。独立種 P. peninsularis 表記と亜種表記が併存。フロリダアカハラガメ(nelsoni)と同所・酷似し腹甲を見ないと判別困難。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "rio-grande-cooter",
+      "wamei": "リオグランデクーター",
+      "gakumei": "Pseudemys gorzugi",
+      "eimei": "Rio Grande Cooter / Western River Cooter",
+      "koura": "細長いオーバルで、高くはドーム状にならない甲。後縁は鋸歯状。tan〜オリーブ地に渦巻(whorl)・眼状斑(ocelli)・後ろ向きC字の複雑な暗色模様(幼体で明瞭、成体はメラニズムで不明瞭化)。",
+      "iro_moyou": "背甲はオリーブ〜褐色で同心/渦巻/眼状斑。腹甲は黄色で継ぎ目に沿い暗色斑。甲・腹甲に赤み(rubrivescence)が出ることも。頭部は幅広く黄〜赤条(側頭部に顕著な条＋分枝模様)。",
+      "tobu": "頭部は幅広、黄〜赤の側頭条と分枝模様。スペイン語名『Tortuga de Oreja Amarilla(黄色い耳のカメ)』。",
+      "size": "中〜大型。メス16〜37cm、オス10〜28.5cm。性的二型顕著。",
+      "bunpu": "リオグランデ(リオブラボ)/ペコス川水系(米テキサス・ニューメキシコ、メキシコのコアウイラ・ヌエボレオン・タマウリパス)。最西のクーター。単型・遺伝的に明確。",
+      "kondou_shu": [
+        {
+          "aite": "テキサスリバークーター (Pseudemys texana)",
+          "kubetsu": "gorzugiとtexanaは近縁で分布が接する。頭部模様・甲の眼状斑パターンで区別されるが酷似。産地(リオグランデ/ペコス水系=gorzugi)が手がかり。"
+        },
+        {
+          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "kubetsu": "元はconcinnaの亜種(1984)、1990年に独立種昇格。gorzugiはより西方(リオグランデ水系)・眼状斑が明瞭/concinnaは南東部河川。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Near Threatened(2010評価)。メキシコSEMARNAT・ニューメキシコ州でThreatened、テキサスで保全対象種。過剰採取(ペット取引)と河川改変が脅威。米ESA掲載は却下。国内流通は稀。",
+      "photo_hantei": "細長オーバルの鋸歯縁甲＋渦巻/眼状斑/C字の複雑模様＋幅広頭部の黄赤側頭条＋リオグランデ水系産。眼状斑が幼体で明瞭。",
+      "photo_chuui": "①成体はメラニズムで甲模様が不明瞭化—幼体の方が眼状斑で識別しやすい。②近縁のtexanaと酷似し産地(リオグランデ/ペコス)が手がかり。③cooter類全般が同定困難。④保全上重要種(NT)で野生採取個体の流通は問題含み。",
+      "sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_100_gorzugi_v1_2016.pdf",
+        "https://www.fws.gov/species/rio-grande-cooter-pseudemys-gorzugi",
+        "https://grokipedia.com/page/rio_grande_cooter",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11081133/",
+        "https://en.wikipedia.org/wiki/Pseudemys"
+      ],
+      "unresolved": "1984年にP. concinna gorzugi(亜種)として記載、1990年に独立種P. gorzugiへ昇格(当初異論あるも後の解析で確定)。近縁のP. texanaと形態的に酷似し産地依存。種内でニューメキシコ個体群とテキサス個体群の遺伝的分化(2集団)が近年の全ゲノム解析で示され、保全単位として区別が議論される。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "florida-red-bellied-turtle",
+      "wamei": "フロリダアカハラガメ（フロリダレッドベリー）",
+      "gakumei": "Pseudemys nelsoni",
+      "eimei": "Florida Red-bellied Cooter",
+      "koura": "黒く高くドーム状の甲。各甲板に赤〜橙黄の縦縞(vertical stripe)。後縁はやや鋸歯。",
+      "iro_moyou": "背甲は黒地に各甲板の赤〜橙黄の太い縦縞(3本の太い赤縞が目立つ)。腹甲は橙赤〜黄橙＝『アカハラ(red-bellied)』の由来で最大の識別点。頭部に黄条、上顎に矢じり(arrow)状の模様が出ることも。",
+      "tobu": "頭部に黄条。眼後赤帯なし。上顎の矢じり模様。",
+      "size": "中〜大型。甲長20〜30cm、最大約37.5cm。",
+      "bunpu": "フロリダ半島〜ジョージア南部。湖沼・湿地。Pseudemys nelsoni(単型)。",
+      "kondou_shu": [
+        {
+          "aite": "ペニンシュラクーター (Pseudemys peninsularis)",
+          "kubetsu": "同じフロリダ産で酷似。nelsoniは腹甲が橙赤＋甲に赤い太縦縞(3本の太い赤縞)/peninsularisは腹甲が無地の黄色＋甲は3本の細い黄縞。腹甲の色と縞の色/太さが決め手。"
+        },
+        {
+          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "kubetsu": "nelsoniは腹甲橙赤＋甲の赤縦縞＋高いドーム/concinnaは腹甲黄橙(継ぎ目黒)＋第2肋甲板のC字マーク。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern相当。国内流通あり。別属のためアカミミの外来生物法規制対象外。",
+      "photo_hantei": "黒く高いドーム甲＋各甲板の赤〜橙黄の太い縦縞(3本の太赤縞)＋橙赤の腹甲＋上顎の矢じり模様。腹甲の橙赤色が最も確実。",
+      "photo_chuui": "①ペニンシュラクーター(peninsularis)と同所・酷似—腹甲(橙赤 vs 無地黄)と縞(太赤 vs 細黄)で区別。背側のみの写真では困難、腹甲か縞の色を確認。②cooter類全般が同定困難で産地(フロリダ)を併用。③腹甲の赤みは個体変異があり幼体・老成で異なる。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pseudemys",
+        "https://myfwc.com/wildlifehabitats/profiles/reptiles/freshwater-turtles/cooters/",
+        "https://www.flickr.com/photos/kwray/17479234493",
+        "https://forum.inaturalist.org/t/info-on-identifying-southern-us-turtles/20878"
+      ],
+      "unresolved": "P. nelsoni は単型で分類的に安定。主な識別上の問題は同所的なペニンシュラクーター(peninsularis)との酷似で、腹甲の色(nelsoniは橙赤、peninsularisは無地黄)を見ないと背側だけでは判別困難。腹甲の赤みには個体・齢による変異がある。",
+      "status": "confirmed"
     }
   ]
 }
