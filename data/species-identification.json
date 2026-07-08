@@ -425,6 +425,355 @@
         "https://reptilesmagazine.com/map-turtle-care-and-information/",
         "https://animaldiversity.org/accounts/Graptemys_flavimaculata/"
       ]
+    },
+    {
+      "slug": "eastern-mud-turtle",
+      "wamei": "トウブドロガメ",
+      "gakumei": "Kinosternon subrubrum subrubrum",
+      "eimei": "Eastern (Southeastern) Mud Turtle",
+      "koura": "腹甲は大きく2つの可動ヒンジ(K字形)。背甲はドーム状で滑らか、褐色〜オリーブ〜黄褐〜黒。甲にストライプなし。第1椎甲板が第2縁甲板に接しない・第9縁甲板が背側に伸びない(属内の識別点)。",
+      "iro_moyou": "頭・首は褐色に淡色の縞や斑。顔は地味な傾向。",
+      "tobu": "下顎に髭状突起。",
+      "size": "甲長7〜12.5cm。小型。",
+      "bunpu": "米東部。浅い植生豊かな止水・小川・池・潮汐湿地。",
+      "kondou_shu": [
+        {
+          "aite": "ミスジドロガメ (K. baurii)",
+          "kubetsu": "bauriiは甲に3本の淡いストライプ＋頭部に鼻先まで届く2本の黄条。subrubrumは甲にストライプなし・頭条は鼻先に届かない。形態的に酷似し腹甲比率で分ける場合も。"
+        },
+        {
+          "aite": "ミシシッピドロガメ (K. s. hippocrepis)",
+          "kubetsu": "同種の亜種。eastern(subrubrum)は顔が地味/hippocrepisは顔・首に斑点が多い。"
+        },
+        {
+          "aite": "ミシシッピニオイガメ (Sternotherus odoratus)",
+          "kubetsu": "odoratusは腹甲が小さくヒンジ1つ・甲板間に皮膚が見える・胸甲板が四角い。subrubrumは腹甲大・ヒンジ2つ。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "腹甲の2ヒンジ(K字)＋甲にストライプがないこと。腹甲が見えるカットが有効。",
+      "photo_chuui": "baurii(3本条)・odoratus(1ヒンジ)と混同。亜種hippocrepisとは顔の斑点量で分ける。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
+        "https://theturtleroom.org/species-profile/kinosternon-baurii/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+      ]
+    },
+    {
+      "slug": "mississippi-mud-turtle",
+      "wamei": "ミシシッピドロガメ",
+      "gakumei": "Kinosternon subrubrum hippocrepis",
+      "eimei": "Mississippi Mud Turtle",
+      "koura": "subrubrumの亜種。腹甲2ヒンジ、背甲ドーム状で滑らか、ストライプなし。",
+      "iro_moyou": "顔・首に淡色の斑点(speckle)が多い傾向。",
+      "tobu": "下顎に髭状突起。",
+      "size": "甲長7〜12cm。",
+      "bunpu": "米中南部ミシシッピ川流域。",
+      "kondou_shu": [
+        {
+          "aite": "トウブドロガメ (K. s. subrubrum)",
+          "kubetsu": "同種の亜種。hippocrepisは顔・首の斑点が多い/subrubrumは顔が地味。"
+        },
+        {
+          "aite": "ミスジドロガメ (K. baurii)",
+          "kubetsu": "bauriiは甲に3ストライプ＋頭条が鼻先に届く。hippocrepisは甲にストライプなし。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "腹甲2ヒンジ＋顔・首の斑点。顔と腹甲が見えるカット。",
+      "photo_chuui": "亜種subrubrumと酷似、斑点量が手がかり。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
+        "https://theturtleroom.org/species-profile/kinosternon-baurii/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+      ]
+    },
+    {
+      "slug": "florida-mud-turtle",
+      "wamei": "フロリダドロガメ",
+      "gakumei": "Kinosternon subrubrum steindachneri",
+      "eimei": "Florida Mud Turtle",
+      "koura": "subrubrumの亜種(近年 K. steindachneri として独立種扱いする分類もある)。腹甲2ヒンジ、背甲ドーム状。",
+      "iro_moyou": "頭・首に淡色斑。",
+      "tobu": "下顎に髭状突起。",
+      "size": "甲長7〜12cm。",
+      "bunpu": "フロリダ半島。",
+      "kondou_shu": [
+        {
+          "aite": "トウブ/ミシシッピドロガメ (K. subrubrum ssp.)",
+          "kubetsu": "同種群の亜種。分布(フロリダ半島)で区別。形態は酷似。"
+        },
+        {
+          "aite": "ミスジドロガメ (K. baurii)",
+          "kubetsu": "分布が重なるフロリダで注意。bauriiは3ストライプ＋頭条が鼻先に届く。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "腹甲2ヒンジ＋フロリダ半島の分布。",
+      "photo_chuui": "K. steindachneri として独立種化する分類あり。bauriiと分布が重なる。",
+      "unresolved": "分類学的扱いが過渡期。旧来はK. subrubrum steindachneri(亜種)、近年の一部研究はK. steindachneri(独立種)。サイトは亜種表記。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
+        "https://theturtleroom.org/species-profile/kinosternon-baurii/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+      ]
+    },
+    {
+      "slug": "striped-mud-turtle",
+      "wamei": "ミスジドロガメ",
+      "gakumei": "Kinosternon baurii",
+      "eimei": "Striped Mud Turtle (Three-striped Mud Turtle)",
+      "koura": "腹甲2ヒンジ。背甲に3本の淡い縦ストライプ(個体・地域で不明瞭〜明瞭)。",
+      "iro_moyou": "甲に3条。",
+      "tobu": "頭部側面に2本の淡黄条(眼から後方へ、鼓膜の上下に1本ずつ)＋眼から鼻先(snout tip)まで届く条。この鼻先まで届く頭条が最大の識別点。",
+      "size": "甲長10〜12cm。小型。",
+      "bunpu": "米南東部(フロリダ〜バージニア)。ブラックウォーター等。",
+      "kondou_shu": [
+        {
+          "aite": "トウブドロガメ (K. subrubrum)",
+          "kubetsu": "bauriiは甲に3ストライプ＋頭条が鼻先まで届く。subrubrumは甲にストライプなし・頭条は鼻先に届かない。腹甲比率(PH/PL・FL/PL)でも分離可。"
+        },
+        {
+          "aite": "ミシシッピニオイガメ (Sternotherus odoratus)",
+          "kubetsu": "odoratusは腹甲小・ヒンジ1つ。bauriiは腹甲大・ヒンジ2つ＋頭条が明瞭。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "甲の3本ストライプ＋頭部の条が鼻先まで届くこと。頭部側面＋甲上面のカットが有効。",
+      "photo_chuui": "subrubrumと酷似。甲のストライプと『頭条が鼻先に届く』かが決め手。ストライプが薄い個体もいる。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
+        "https://theturtleroom.org/species-profile/kinosternon-baurii/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+      ]
+    },
+    {
+      "slug": "yellow-mud-turtle",
+      "wamei": "キイロドロガメ",
+      "gakumei": "Kinosternon flavescens",
+      "eimei": "Yellow Mud Turtle",
+      "koura": "腹甲2ヒンジ。背甲は幅広く滑らかで上面が平ら〜わずかに凹む(キールなし)。黄〜褐〜灰〜オリーブ。第1椎甲板の前縁が幅広く第2縁甲板に接する＋第9・第10縁甲板が周囲より高い(属内の決定的識別点)。",
+      "iro_moyou": "喉・頭側・首が鮮やかな黄色(種名flavescens=黄の由来)。",
+      "tobu": "首が長く喉が鮮黄。顎下に1〜2対の髭状突起。上顎がやや鉤状(特にオス)。",
+      "size": "オス最大約17cm、メス約15cm。",
+      "bunpu": "米中西部〜南西部(ネブラスカ〜テキサス〜アリゾナ)＋北東メキシコ。",
+      "kondou_shu": [
+        {
+          "aite": "トウブ/ミシシッピドロガメ (K. subrubrum ssp.)",
+          "kubetsu": "flavescensは第1椎甲板が第2縁甲板に接する＋喉が鮮黄。subrubrumは第1椎甲板が第2縁甲板に接しない・喉はそこまで黄色くない。"
+        }
+      ],
+      "houkisei": "CITES未掲載。ただしイリノイの亜種spooneri・ミズーリのflavescensは州レベルで絶滅危惧指定。",
+      "photo_hantei": "鮮黄色の喉・首＋第1椎甲板が第2縁甲板に接する甲構造。喉が見えるカット＋甲前部が有効。",
+      "photo_chuui": "subrubrum群と混同。喉の黄色さと甲板の接触関係が決め手。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
+        "https://theturtleroom.org/species-profile/kinosternon-baurii/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+      ]
+    },
+    {
+      "slug": "red-cheeked-mud-turtle",
+      "wamei": "ホオアカドロガメ",
+      "gakumei": "Kinosternon cruentatum",
+      "eimei": "Red-cheeked Mud Turtle",
+      "koura": "腹甲2ヒンジ。背甲は滑らかで鋸歯なし・キールなし・ドーム状でほぼ半球形。",
+      "iro_moyou": "頭・喉・四肢・尾に赤〜橙の斑が不規則に散る(種名cruentatum=血の意、赤斑の由来)。",
+      "tobu": "頭部に鮮やかな赤橙斑。オスの尾端にスパー。",
+      "size": "甲長約13〜17cm。オスがやや大型。",
+      "bunpu": "メキシコ南東部〜ベリーズ・グアテマラ・北エルサルバドル。",
+      "kondou_shu": [
+        {
+          "aite": "サソリドロガメ (K. scorpioides)",
+          "kubetsu": "cruentatumはキールが不明瞭〜なめらかで頭部赤橙斑。scorpioidesは背甲に3本の縦キールが明瞭。旧分類ではcruentatumはscorpioidesの亜種(K. s. cruentatum)だった。"
+        },
+        {
+          "aite": "シロクチドロガメ (K. leucostomum)",
+          "kubetsu": "leucostomumは頭部が黒く眼後2本の黄条・赤斑なし。cruentatumは赤橙斑が散る。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN軽度懸念。",
+      "photo_hantei": "頭部の赤橙斑＋なめらかなドーム甲。頭部カットが決定的。",
+      "photo_chuui": "scorpioidesと近縁で混同。赤橙斑の有無・キールの有無が手がかり。",
+      "unresolved": "分類学的過渡期。旧来はK. scorpioides cruentatum(scorpioidesの亜種)。2024年Hurtado-Gómezらの分子研究でcruentatumを独立種(full species)として認めることが支持された。サイトは独立種K. cruentatum表記で最新研究に整合するが、K. s. cruentatum表記のソースも多い。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://www.allturtles.com/scorpion-mud-turtle/",
+        "https://www.bfreebz.org/mud-turtles/",
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+      ]
+    },
+    {
+      "slug": "scorpion-mud-turtle",
+      "wamei": "サソリドロガメ",
+      "gakumei": "Kinosternon scorpioides",
+      "eimei": "Scorpion Mud Turtle",
+      "koura": "腹甲2ヒンジ＋小さなブリッジ。背甲は楕円で滑らか、タン〜オリーブ〜暗褐。背甲に3本の縦キール(leucostomumとの決定的識別点)。",
+      "iro_moyou": "頭・首に黄〜赤のvermiculation(虫食い模様、亜種で変異)。",
+      "tobu": "オスは尾が長く太く尾端に大きなスパー。",
+      "size": "甲長約16〜20cm。",
+      "bunpu": "メキシコ〜中米〜南米(広域)。",
+      "kondou_shu": [
+        {
+          "aite": "シロクチドロガメ (K. leucostomum)",
+          "kubetsu": "scorpioidesは背甲に3本の縦キール。leucostomumはキールが1本〜なめらかで頭部黒＋眼後黄条。"
+        },
+        {
+          "aite": "ホオアカドロガメ (K. cruentatum)",
+          "kubetsu": "scorpioidesは3キール明瞭。cruentatumはキール不明瞭＋頭部赤橙斑。旧分類でcruentatumはscorpioidesの亜種だった。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN軽度懸念。",
+      "photo_hantei": "背甲の3本キール＋尾端スパー(オス)。甲を斜めから見たカットが有効。",
+      "photo_chuui": "leucostomum・cruentatumと混同。3キールの有無が決め手。亜種が多く頭部色彩は変異大。",
+      "unresolved": "scorpioidesは近年複数種に分割された(cruentatum/albogulare/abaxillare等が独立種化、2024)。狭義K. scorpioidesの範囲が縮小している。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://www.allturtles.com/scorpion-mud-turtle/",
+        "https://www.bfreebz.org/mud-turtles/",
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+      ]
+    },
+    {
+      "slug": "white-lipped-mud-turtle",
+      "wamei": "シロクチドロガメ",
+      "gakumei": "Kinosternon leucostomum",
+      "eimei": "White-lipped Mud Turtle",
+      "koura": "腹甲2ヒンジ。背甲は暗褐でなめらか、ドーム状。明瞭な3キールはない(scorpioidesとの区別)。",
+      "iro_moyou": "頭部が黒く、眼の後方へ平行に走る2本の明瞭な黄条。上顎(唇)周りが淡色('white-lipped'の由来)。",
+      "tobu": "頭部黒＋眼後2黄条。",
+      "size": "甲長最大約17〜18cm。属内で大きめ。",
+      "bunpu": "メキシコ〜中米〜南米(コロンビア・エクアドル・ペルー)。K. scorpioidesと並び南米まで分布する数少ない種。",
+      "kondou_shu": [
+        {
+          "aite": "サソリドロガメ (K. scorpioides)",
+          "kubetsu": "leucostomumは背甲になめらか(3キールなし)＋頭部黒に眼後2黄条。scorpioidesは背甲に3縦キール明瞭。"
+        },
+        {
+          "aite": "オオアタマドロガメ/タバスコ (K. acutum)",
+          "kubetsu": "acutumは最小・腹甲が尖る。leucostomumはより大型・頭部の2黄条が明瞭。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "頭部の黒地に眼後2本の黄条＋なめらかな甲。頭部側面カットが決定的。",
+      "photo_chuui": "scorpioidesと混同。頭部の2黄条＋キールなしが決め手。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://www.allturtles.com/scorpion-mud-turtle/",
+        "https://www.bfreebz.org/mud-turtles/",
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+      ]
+    },
+    {
+      "slug": "narrow-bridged-mud-turtle",
+      "wamei": "オオアタマドロガメ",
+      "gakumei": "Kinosternon acutum",
+      "eimei": "Tabasco (Narrow-bridged) Mud Turtle",
+      "koura": "腹甲2ヒンジだがブリッジが狭い('narrow-bridged')。腹甲後部が尖る(種名acutum=鋭い、の由来)。背甲は暗褐。",
+      "iro_moyou": "頭・前肢に赤・黄・黒の模様。",
+      "tobu": "頭部に赤黄黒の斑。",
+      "size": "甲長最大約12〜13cm。属内で最小級。",
+      "bunpu": "メキシコ南東部(タバスコ・チアパス)〜ベリーズ・北グアテマラ。",
+      "kondou_shu": [
+        {
+          "aite": "シロクチドロガメ (K. leucostomum)",
+          "kubetsu": "acutumは最小＋腹甲後部が尖る＋ブリッジが狭い。leucostomumはより大型＋頭部の2黄条が明瞭。分布が重なる。"
+        },
+        {
+          "aite": "ホオアカドロガメ (K. cruentatum)",
+          "kubetsu": "acutumは腹甲が尖りブリッジ狭い。cruentatumは頭部赤橙斑が主体。"
+        }
+      ],
+      "houkisei": "CITES未掲載。",
+      "photo_hantei": "小型＋腹甲後部が尖る＋狭いブリッジ。腹甲が見えるカットが有効。",
+      "photo_chuui": "和名『オオアタマドロガメ』だが学名はK. acutum(タバスコドロガメ)。leucostomum等と混同注意。",
+      "unresolved": "和名の妥当性要確認。K. acutumは英名Tabasco/Narrow-bridged mud turtleで、『オオアタマドロガメ』の和名が本種に定着しているか流通名との対応を検収時に再確認。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://www.allturtles.com/scorpion-mud-turtle/",
+        "https://www.bfreebz.org/mud-turtles/",
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+      ]
+    },
+    {
+      "slug": "mexican-mud-turtle",
+      "wamei": "サラドロガメ",
+      "gakumei": "Kinosternon integrum",
+      "eimei": "Mexican Mud Turtle",
+      "koura": "腹甲2ヒンジ。背甲はドーム状で滑らか、褐色〜オリーブ。",
+      "iro_moyou": "頭・首に淡色の斑や網目。",
+      "tobu": "下顎に髭状突起。",
+      "size": "甲長最大約20cm。",
+      "bunpu": "メキシコ固有(太平洋斜面〜中央高地の広域)。",
+      "kondou_shu": [
+        {
+          "aite": "アレチドロガメ (K. hirtipes)",
+          "kubetsu": "integrumはメキシコ広域。hirtipesはメキシコ盆地等。両種の識別は腹甲・甲板比率と分布で。"
+        },
+        {
+          "aite": "バジャルタドロガメ (K. vogti)/チマルワカ (K. chimalhuaca)",
+          "kubetsu": "太平洋斜面で近縁種と分布が接する。integrumはより広域大型。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN軽度懸念。メキシコ固有。",
+      "photo_hantei": "メキシコ産の中型ドロガメで腹甲2ヒンジ。近縁種との区別は分布が主。",
+      "photo_chuui": "和名『サラドロガメ』。メキシコの近縁ドロガメ(vogti/chimalhuaca/hirtipes)と分布が接し外見が似る。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan",
+        "https://animaldiversity.org/accounts/Kinosternon_flavescens/"
+      ]
+    },
+    {
+      "slug": "herrera-mud-turtle",
+      "wamei": "ハーレラドロガメ",
+      "gakumei": "Kinosternon herrerai",
+      "eimei": "Herrera's Mud Turtle",
+      "koura": "腹甲2ヒンジ。背甲はドーム状で滑らか。",
+      "iro_moyou": "頭・首に淡色の斑。",
+      "tobu": "下顎に髭状突起。",
+      "size": "甲長最大約17cm。",
+      "bunpu": "メキシコ湾岸側(タマウリパス〜ベラクルス)の固有種。",
+      "kondou_shu": [
+        {
+          "aite": "サラドロガメ (K. integrum)",
+          "kubetsu": "herreraiは湾岸側の固有種。integrumは太平洋斜面〜中央高地。分布で区別。形態は近い。"
+        },
+        {
+          "aite": "キイロドロガメ (K. flavescens)",
+          "kubetsu": "分布が北東メキシコで接する。herreraiは甲板比率と分布で区別。"
+        }
+      ],
+      "houkisei": "CITES未掲載。メキシコ固有。",
+      "photo_hantei": "メキシコ湾岸側産の中型ドロガメで腹甲2ヒンジ。区別は分布が主。",
+      "photo_chuui": "integrum等メキシコ産ドロガメと外見が似る。分布(湾岸側)が手がかり。",
+      "unresolved": "種内・近縁種の形態的識別点の一次情報が乏しい。分布(メキシコ湾岸側固有)以外の決定的形態識別点を検収時に追加調査要。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kinosternon",
+        "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan"
+      ]
     }
   ]
 }
