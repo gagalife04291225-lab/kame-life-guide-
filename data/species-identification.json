@@ -2292,6 +2292,104 @@
       ],
       "unresolved": "Malacochersus tornieri は単型で形態的に唯一無二、識別上の混同はほぼない。法規制ステータスが2019年CoP18で附属書II→Iへ昇格し、IUCN評価もVulnerable(1996)からCritically Endangered(2019)へ変化しているため、古いソース(Appendix II/VU表記)との齟齬に注意。",
       "status": "confirmed"
+    },
+    {
+      "slug": "aldabra-tortoise",
+      "wamei": "アルダブラゾウガメ",
+      "gakumei": "Aldabrachelys gigantea",
+      "eimei": "Aldabra Giant Tortoise",
+      "koura": "世界最大級の陸生カメ。高く大きくドーム状の甲。灰褐〜灰黒色。首が非常に長い。単型属Aldabrachelys(旧Geochelone/Dipsochelys)の現生種。",
+      "iro_moyou": "甲は一様な灰褐〜灰黒色で派手な模様はない。皮膚は灰色。幼体は成長輪が明瞭。",
+      "tobu": "頭部は灰色で首が長い。【適応形質】鼻先(吻端)に集水用の鼻孔を持ち、乾季に葉の水滴を鼻から飲むことができる(数少ない鼻から飲水するカメ)。",
+      "size": "巨大。甲長最大約120cm級、体重250kg超も。ガラパゴスゾウガメと並ぶ現生最大級。",
+      "bunpu": "セーシェル(アルダブラ環礁)固有。UNESCO世界遺産の同環礁に10万個体超の単一野生個体群。モーリシャス・レユニオン・セーシェル中央諸島へは移入/再導入。マダガスカルには近縁の絶滅種。草原(platin)でtortoise turfを作るmega-grazer。",
+      "kondou_shu": [
+        {
+          "aite": "ガラパゴスゾウガメ (Chelonoidis niger complex)",
+          "kubetsu": "アルダブラは首が長く鼻先に集水鼻孔＋灰黒色ドーム/ガラパゴスは島ごとにドーム型とサドルバック(鞍型)型があり、産地(セーシェル vs ガラパゴス)で明確に区別。"
+        },
+        {
+          "aite": "ケヅメリクガメ (Centrochelys sulcata)",
+          "kubetsu": "アルダブラは更に巨大＋高ドーム＋灰黒色＋長い首＋鼻先集水鼻孔/sulcataは黄褐色扁平＋後肢大腿部に大きな角状スパー。スパーの有無とサイズ・色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(1975/07/01〜、Aldabrachelys gigantea)。IUCN Vulnerable(危急、分布極限＋気候変動脆弱性)。アルダブラ環礁は保護区(Aldabra Special Reserve)。CB個体が飼育・rewildingで流通。輸入に附属書II証明が必要。",
+      "photo_hantei": "巨大な灰黒色の高ドーム甲＋長い首＋鼻先の集水鼻孔＋セーシェル(アルダブラ)産。サイズ・色・鼻先の鼻孔が手がかり。",
+      "photo_chuui": "①ガラパゴスゾウガメと混同—産地(セーシェル vs ガラパゴス)と鼻先集水鼻孔で区別。②属名・種名が歴史的に混乱(Geochelone gigantea / Dipsochelys dussumieri / Aldabrachelys gigantea表記が併存)—古い画像の学名表記に注意。③飼育下の若齢個体は他の大型リクガメ幼体と紛らわしい—灰色の甲と将来の巨大化を念頭に。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Aldabra_giant_tortoise",
+        "https://en.wikipedia.org/wiki/Aldabrachelys",
+        "https://cites.org/eng/gallery/species/reptile/aldabra-giant-tortoise.html",
+        "https://animaldiversity.org/accounts/Dipsochelys_dussumieri/",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8931707/"
+      ],
+      "unresolved": "属名・種名が歴史的に混乱。Testudo gigantea Schweigger 1812を基に現在Aldabrachelys gigantea(ICZNがneotype指定で保全)、旧Geochelone (Aldabrachelys) gigantea、Dipsochelys dussumieri等の表記が文献に併存。4亜種(gigantea/arnoldi/hololissa/daudinii†)が認識されるがhololissa(セーシェルドーム型)・arnoldiの分類的独立性は議論があり、飼育個体の亜種帰属は不確実。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "elongated-tortoise",
+      "wamei": "エロンガータリクガメ",
+      "gakumei": "Indotestudo elongata",
+      "eimei": "Elongated / Yellow-headed Tortoise",
+      "koura": "【種の特徴】甲が扁平で細長い(長さが深さの2倍超)、椎甲部が平ら。前後縁がやや反り、幼体で強く鋸歯状・老成で弱まる。項甲板あり(細長い、稀に欠)。臀甲板は不分割でやや内曲。中型。",
+      "iro_moyou": "甲は黄褐色〜淡いカーキ地に、各甲板に不規則な暗色/黒の斑(blotch)。同心状の条(striation)が幼体〜若齢で明瞭。",
+      "tobu": "【識別に有効】通常は淡黄色の頭部(『Yellow-headed』の由来)。繁殖期にはオスの鼻孔周り・眼の周りがピンク〜赤に染まる。",
+      "size": "中型。甲長約30cm(最大36cm)、体重約3.5kg。オスは尾が大きく腹甲が凹む、メスは丸みがあり腹甲が平ら。",
+      "bunpu": "東南アジア〜南アジア一部(タイ・カンボジア・ラオス・ミャンマー・ベトナム・インド北東部等)。低〜中標高の落葉フタバガキ林・草地・竹林・二次林・丘陵常緑林。雑食のジェネラリスト。",
+      "kondou_shu": [
+        {
+          "aite": "フォルステンリクガメ (Indotestudo forstenii)/トラバンコアリクガメ (I. travancorica)",
+          "kubetsu": "同属で酷似。elongataは東南アジア〜インド北東部、forsteniiはスラウェシ、travancoricaはインド南西部。産地が主な区別だが形態が近く、分子(cyt b)でも判別困難とされる。"
+        },
+        {
+          "aite": "インプレッサムツアシガメ (Manouria impressa)",
+          "kubetsu": "elongataは甲板が凹まず淡黄頭＋細長い扁平甲/impressaは各甲板が明瞭に凹む(impressed)＋金褐色＋大腿部に単一円錐スパー。甲板の凹みの有無で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCN Critically Endangered(近絶滅種)。食用・伝統医薬用の乱獲が深刻。輸入に附属書II証明が必要。国内CB流通あり。",
+      "photo_hantei": "細長く扁平な甲(長さが深さの2倍超)＋黄褐色地の暗色斑＋淡黄色の頭部＋(繁殖期オスは)鼻/眼周りのピンク。細長い甲と淡黄頭が手がかり。",
+      "photo_chuui": "①同属のforstenii/travancoricaと酷似—産地でしか確実に分けられず、分子でも判別困難。産地不明個体を断定しない。②繁殖期以外は頭のピンクが出ないため、頭色は補助的形質。③インプレッサ(impressa)とは甲板の凹みの有無で区別。④近絶滅種で野生採取個体の流通は問題含み。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Elongated_tortoise",
+        "https://www.researchgate.net/publication/301886913_Indotestudo_elongata_Blyth_1854_-_Elongated_Tortoise_Yellow-headed_Tortoise_Yellow_Tortoise",
+        "https://thetortoiseproject.com/tortoise-species-of-the-world/",
+        "https://eol.org/pages/1056225",
+        "https://www.researchgate.net/publication/342476297_First_distribution_record_of_Elongated_Tortoise_Indotestudo_elongata_Blyth_1853_Reptilia_Testudines_Testudinidae_from_Bihar_India"
+      ],
+      "unresolved": "Indotestudo属(elongata/forstenii/travancorica)はミトコンドリアcyt b遺伝子で十分に判別できず、インド周辺の分類学的階級が未解決とされる(COIマーカーでも近縁種との種間分岐が小さい)。同属3種は形態的にも酷似し、産地情報なしでの写真同定は原理的に困難。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "impressed-tortoise",
+      "wamei": "インプレッサムツアシガメ",
+      "gakumei": "Manouria impressa",
+      "eimei": "Impressed Tortoise",
+      "koura": "【種の決定的特徴】各甲板が明瞭に凹む(concave/impressed/indented)＝名の由来で最大の識別点。甲は扁平で、前縁甲板が細長く、後縁縁甲板が強く鋸歯状。M. emysより扁平。",
+      "iro_moyou": "甲はhorn色(角質色)〜くすんだオレンジ〜金褐色で、各甲板の縁近くに暗色の斑(しばしば融合)。腹甲は淡黄で各甲板に周縁から放射する暗色模様。四肢は大きな重なる鱗で暗色、吻は淡色(特にメス)。",
+      "tobu": "吻は淡色。四肢は暗色の大きな鱗。【識別】後肢大腿部に単一の大きな円錐スパー＋尾に caudal spur(M. emysは房状スパー＋caudal spurなし)。",
+      "size": "中型。甲長最大28〜31cm。",
+      "bunpu": "東南アジアの山地(中国南部・タイ・ラオス・カンボジア・ベトナム・ミャンマー・マレーシア)。標高500〜1000mの山地熱帯林。キノコ食(fungivorous)で、水場でなく植生や露から水を得る。落葉/湿った土の下に潜む。",
+      "kondou_shu": [
+        {
+          "aite": "エミスムツアシガメ/アジアジャイアントリクガメ (Manouria emys)",
+          "kubetsu": "impressaは甲板が強く凹む＋大腿部に単一円錐スパー＋尾にcaudal spurあり＋小型/emysは甲板の凹みが弱い＋大腿部に房状(複数)スパー＋caudal spurなし＋アジア最大のリクガメで大型。スパーの形と甲板凹みで区別。"
+        },
+        {
+          "aite": "エロンガータリクガメ (Indotestudo elongata)",
+          "kubetsu": "impressaは各甲板が凹む＋金褐色＋大腿部円錐スパー/elongataは甲板が凹まず淡黄頭＋細長い扁平甲。甲板の凹みの有無が決め手。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCN Vulnerable(危急)。飼育が難しく(キノコ食・山地性)、野生採取・生息地劣化が脅威。輸入に附属書II証明が必要。",
+      "photo_hantei": "各甲板の明瞭な凹み(impressed)＋金褐色/horn色の甲＋強く鋸歯状の後縁＋大腿部の単一円錐スパー＋尾のcaudal spur。甲板の凹みが最も確実。",
+      "photo_chuui": "①M. emys(エミスムツアシガメ)幼体と酷似—甲板の凹みの強さ＋大腿スパーの形(単一円錐=impressa / 房状=emys)＋caudal spurの有無で区別。②甲板の凹みは光の当たり方で見えにくいことがある—斜光のカットが有効。③キノコ食の特殊種で飼育・撮影個体が少なく、CC写真が限られる。",
+      "sources": [
+        "https://www.allturtles.com/testudinidae/",
+        "https://www.tortoise.org/archives/impressa.html",
+        "https://www.biorxiv.org/content/10.1101/2025.03.10.642296.full.pdf",
+        "https://thetortoiseproject.com/tortoise-species-of-the-world/"
+      ],
+      "unresolved": "Manouria impressa は形態的に明瞭(甲板の凹み)だが、近縁のM. emys幼体との識別はスパー形状・凹みの強さに依存し、これらが不明瞭な写真では困難。生態(キノコ食・山地林)が特殊で研究・飼育例が少なく、識別形質の一次情報も限定的。",
+      "status": "confirmed"
     }
   ]
 }
