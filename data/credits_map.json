@@ -1,0 +1,674 @@
+[
+ {
+  "wamei": "アカアシリクガメ",
+  "gakumei": "Chelonoidis carbonarius",
+  "author": "filipeprates",
+  "obs": 253212433,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アカスジヤマガメ",
+  "gakumei": "Rhinoclemmys pulcherrima",
+  "author": "Sinaloa Silvestre",
+  "obs": 245150697,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "アジアコガシラドロガメ",
+  "gakumei": "Siebenrockiella crassicollis",
+  "author": "Rongrong Angkaew",
+  "obs": 33416889,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アフリカヨコクビガメ",
+  "gakumei": "Pelomedusa subrufa",
+  "author": "Ryan van Huyssteen",
+  "obs": 189944887,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アマゾンマタマタ",
+  "gakumei": "Chelus orinocensis",
+  "author": "Sheelagh Halsey",
+  "obs": 33275976,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アラバマチズガメ",
+  "gakumei": "Graptemys pulchra",
+  "author": "Dean Stavrides",
+  "obs": 137488405,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アルダブラゾウガメ",
+  "gakumei": "Aldabrachelys gigantea",
+  "author": "Matthew Morgan",
+  "obs": 201956010,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "アルビノシナスッポン",
+  "gakumei": "Pelodiscus sinensis",
+  "author": "Matt Muir",
+  "obs": 245665,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "イベラギリシャリクガメ",
+  "gakumei": "Testudo graeca",
+  "author": "Kostas Zontanos",
+  "obs": 10389032,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "インプレッサムツアシガメ",
+  "gakumei": "Manouria impressa",
+  "author": "Richard Fuller",
+  "obs": 32093760,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "エロンガータリクガメ",
+  "gakumei": "Indotestudo elongata",
+  "author": "Morten Ross",
+  "obs": 128874457,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "オオアタマドロガメ",
+  "gakumei": "Kinosternon acutum",
+  "author": "Annika Lindqvist",
+  "obs": 10285875,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "オオアタマヒメニオイガメ",
+  "gakumei": "Sternotherus minor",
+  "author": "John P Friel",
+  "obs": 3663150,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "オルナータダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin",
+  "author": "Simon Tonge",
+  "obs": 9822014,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "カブトニオイガメ",
+  "gakumei": "Sternotherus carinatus",
+  "author": "RJ Baltierra",
+  "obs": 87663730,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "カロリナダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin",
+  "author": "Simon Tonge",
+  "obs": 9822014,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "カントンクサガメ",
+  "gakumei": "Mauremys reevesii",
+  "author": "Samuele Papeschi",
+  "obs": 145422325,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "カンバーランドスライダー",
+  "gakumei": "Trachemys scripta",
+  "author": "Laura Clark",
+  "obs": 4571829,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ガルフコーストハコガメ",
+  "gakumei": "Terrapene carolina",
+  "author": "Michael Ellis",
+  "obs": 12051904,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "キイロドロガメ",
+  "gakumei": "Kinosternon flavescens",
+  "author": "Michelle W. （鍾偉瑋）",
+  "obs": 123193560,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "キタチズガメ",
+  "gakumei": "Graptemys geographica",
+  "author": "Donald Davesne",
+  "obs": 236382885,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "キタニシキハコガメ",
+  "gakumei": "Terrapene ornata",
+  "author": "RJ Baltierra",
+  "obs": 135081285,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "キバラガメ",
+  "gakumei": "Trachemys scripta",
+  "author": "Laura Clark",
+  "obs": 4571829,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "キボシイシガメ",
+  "gakumei": "Clemmys guttata",
+  "author": "Elspeth Pierce",
+  "obs": 10827515,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ギリシャリクガメ",
+  "gakumei": "Testudo graeca",
+  "author": "Kostas Zontanos",
+  "obs": 10389032,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "クサガメ",
+  "gakumei": "Mauremys reevesii",
+  "author": "Samuele Papeschi",
+  "obs": 145422325,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "クロコブチズガメ",
+  "gakumei": "Graptemys nigrinoda",
+  "author": "evangrimes",
+  "obs": 70357178,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ケヅメリクガメ",
+  "gakumei": "Centrochelys sulcata",
+  "author": "Sylvie",
+  "obs": 364258793,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "コウキバラガメ",
+  "gakumei": "Pseudemys concinna",
+  "author": "Jody Shugart",
+  "obs": 43419777,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "サソリドロガメ",
+  "gakumei": "Kinosternon scorpioides",
+  "author": "Carlos Ceballos",
+  "obs": 136905517,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "サラドロガメ",
+  "gakumei": "Kinosternon integrum",
+  "author": "Francisco Farriols Sarabia",
+  "obs": 16637098,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "サルヴィンオオニオイガメ",
+  "gakumei": "Staurotypus salvinii",
+  "author": "Juan Rafael Rodríguez Razgado",
+  "obs": 191693770,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "シロクチドロガメ",
+  "gakumei": "Kinosternon leucostomum",
+  "author": "Christine Loew",
+  "obs": 25908101,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スジオオニオイガメ",
+  "gakumei": "Staurotypus triporcatus",
+  "author": "Luis Mora",
+  "obs": 10658621,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スジクビニオイガメ",
+  "gakumei": "Sternotherus minor",
+  "author": "John P Friel",
+  "obs": 3663150,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スッポンモドキ",
+  "gakumei": "Carettochelys insculpta",
+  "author": "zr217",
+  "obs": 260796410,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スッポン（シナスッポン）",
+  "gakumei": "Pelodiscus sinensis",
+  "author": "Matt Muir",
+  "obs": 245665,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スパイニースッポン",
+  "gakumei": "Apalone spinifera",
+  "author": "Scott Loarie",
+  "obs": 7685918,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "スペングラーヤマガメ",
+  "gakumei": "Geoemyda spengleri",
+  "author": "Takaaki Hattori",
+  "obs": 119989784,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "スムーススッポン",
+  "gakumei": "Apalone mutica",
+  "author": "Eric Schmidt",
+  "obs": 144135002,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "セオレガメ（ホメアナ）",
+  "gakumei": "Kinixys homeana",
+  "author": "B. Phalan",
+  "obs": 9624630,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "セグロヘビクビガメ",
+  "gakumei": "Chelodina colliei",
+  "author": "Cal Wood",
+  "obs": 18513705,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ソリガメ",
+  "gakumei": "Chersina angulata",
+  "author": "Timothy Whitehead",
+  "obs": 70139906,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "タイワンセマルハコガメ",
+  "gakumei": "Cuora flavomarginata",
+  "author": "祐",
+  "obs": 373535988,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "チェリーヘッドアカアシリクガメ",
+  "gakumei": "Chelonoidis carbonarius",
+  "author": "filipeprates",
+  "obs": 253212433,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "チャコリクガメ",
+  "gakumei": "Chelonoidis chilensis",
+  "author": "Valentín Alfano",
+  "obs": 196135172,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "チュウゴクセマルハコガメ",
+  "gakumei": "Cuora flavomarginata",
+  "author": "祐",
+  "obs": 373535988,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "トウブドロガメ",
+  "gakumei": "Kinosternon subrubrum",
+  "author": "Jody Shugart",
+  "obs": 3721352,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "トウブハコガメ",
+  "gakumei": "Terrapene carolina",
+  "author": "Michael Ellis",
+  "obs": 12051904,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ニカラグアクジャクガメ",
+  "gakumei": "Rhinoclemmys pulcherrima",
+  "author": "Sinaloa Silvestre",
+  "obs": 245150697,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ニシキガメ",
+  "gakumei": "Chrysemys picta",
+  "author": "Melissa McMasters",
+  "obs": 13721465,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ニシキハコガメ（オルナータ）",
+  "gakumei": "Terrapene ornata",
+  "author": "evangrimes",
+  "obs": 47564503,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ニシキマゲクビガメ（ピンクベリー）",
+  "gakumei": "Emydura subglobosa",
+  "author": "mefisher",
+  "obs": 39029210,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ニセチズガメ",
+  "gakumei": "Graptemys pseudogeographica",
+  "author": "Sam Kieschnick",
+  "obs": 35213614,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ニホンイシガメ",
+  "gakumei": "Mauremys japonica",
+  "author": "mami_t_t",
+  "obs": 137018683,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ネンリンヤマガメ",
+  "gakumei": "Rhinoclemmys annulata",
+  "author": "John G. Phillips",
+  "obs": 15202503,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ノコヘリマルガメ",
+  "gakumei": "Cyclemys dentata",
+  "author": "Jay Paroline",
+  "obs": 377500046,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ノーザンダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin",
+  "author": "Simon Tonge",
+  "obs": 9822014,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ハナガメ",
+  "gakumei": "Mauremys sinensis",
+  "author": "Sandy Wolkenberg",
+  "obs": 49172194,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ハーレラドロガメ",
+  "gakumei": "Kinosternon herrerai",
+  "author": "Iván Cumpián",
+  "obs": 329002965,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "パンケーキリクガメ",
+  "gakumei": "Malacochersus tornieri",
+  "author": "Matt Pilkington",
+  "obs": 56152762,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヒメニオイガメ",
+  "gakumei": "Sternotherus depressus",
+  "author": "John P Friel",
+  "obs": 7666917,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヒメハコヨコクビガメ",
+  "gakumei": "Pelusios castaneus",
+  "author": "Marius Burger",
+  "obs": 148640915,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ヒョウモンガメ",
+  "gakumei": "Stigmochelys pardalis",
+  "author": "Marius Burger",
+  "obs": 139132469,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ヒラセガメ",
+  "gakumei": "Cuora mouhotii",
+  "author": "rohanmenzies",
+  "obs": 33787673,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヒラリーカエルガメ",
+  "gakumei": "Phrynops hilarii",
+  "author": "Adriana Machado",
+  "obs": 338493819,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "フチゾリリクガメ",
+  "gakumei": "Testudo marginata",
+  "author": "pavlaki1968",
+  "obs": 99549056,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "フトマユチズガメ",
+  "gakumei": "Graptemys ouachitensis",
+  "author": "Eric Schmidt",
+  "obs": 175862002,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "フロリダスッポン",
+  "gakumei": "Apalone ferox",
+  "author": "Jade Fortnash",
+  "obs": 86237959,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "フロリダドロガメ",
+  "gakumei": "Kinosternon steindachneri",
+  "author": "Cayman Lanzone",
+  "obs": 89981872,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "フロリダハコガメ",
+  "gakumei": "Terrapene bauri",
+  "author": "Michael Ellis",
+  "obs": 12051904,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "フロリダレッドベリータートル",
+  "gakumei": "Pseudemys nelsoni",
+  "author": "Josiah Londerée",
+  "obs": 266843264,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ブランディングガメ",
+  "gakumei": "Emydoidea blandingii",
+  "author": "evangrimes",
+  "obs": 47270014,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヘビクビガメ",
+  "gakumei": "Chelodina longicollis",
+  "author": "Dominic Williams",
+  "obs": 239609744,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヘルマンリクガメ",
+  "gakumei": "Testudo hermanni",
+  "author": "Kostas Zontanos",
+  "obs": 10389032,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ベルセオレガメ",
+  "gakumei": "Kinixys belliana",
+  "author": "Simon Tonge",
+  "obs": 9879873,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ペニンシュラクーター",
+  "gakumei": "Pseudemys peninsularis",
+  "author": "José Garrido",
+  "obs": 20260810,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ホオアカドロガメ",
+  "gakumei": "Kinosternon cruentatum",
+  "author": "Sebastián de Jesús Herrera Buenfil",
+  "obs": 69624645,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "マタマタ",
+  "gakumei": "Chelus fimbriata",
+  "author": "Rafael Bernhard",
+  "obs": 36913288,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "マレーハコガメ",
+  "gakumei": "Cuora amboinensis",
+  "author": "anguspritchard",
+  "obs": 177443925,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "マンヤマガメ",
+  "gakumei": "Rhinoclemmys pulcherrima",
+  "author": "Sinaloa Silvestre",
+  "obs": 245150697,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ミシシッピアカミミガメ",
+  "gakumei": "Trachemys scripta",
+  "author": "Laura Clark",
+  "obs": 4571829,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミシシッピチズガメ",
+  "gakumei": "Graptemys pseudogeographica",
+  "author": "Sam Kieschnick",
+  "obs": 35213614,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミシシッピドロガメ",
+  "gakumei": "Kinosternon subrubrum",
+  "author": "Jody Shugart",
+  "obs": 3721352,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミシシッピニオイガメ",
+  "gakumei": "Sternotherus odoratus",
+  "author": "Kevin Barnes",
+  "obs": 94521083,
+  "credited_license": "cc0"
+ },
+ {
+  "wamei": "ミスジドロガメ",
+  "gakumei": "Kinosternon baurii",
+  "author": "Matt Muir",
+  "obs": 1967042,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミツユビハコガメ",
+  "gakumei": "Terrapene carolina",
+  "author": "Michael Ellis",
+  "obs": 12051904,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミナミイシガメ",
+  "gakumei": "Mauremys mutica",
+  "author": "Toby Y",
+  "obs": 357419308,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "メキシカンジャイアントマスク",
+  "gakumei": "Staurotypus triporcatus",
+  "author": "Luis Mora",
+  "obs": 10658621,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "モリイシガメ",
+  "gakumei": "Glyptemys insculpta",
+  "author": "Chase Mathey",
+  "obs": 121868349,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヤエヤマイシガメ",
+  "gakumei": "Mauremys mutica",
+  "author": "Toby Y",
+  "obs": 357419308,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ヨーロッパヌマガメ",
+  "gakumei": "Emys orbicularis",
+  "author": "Mohammad Amin Ghaffari",
+  "obs": 298113621,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "リオグランデクーター",
+  "gakumei": "Pseudemys gorzugi",
+  "author": "Cole Wolf",
+  "obs": 5953136,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ロシアリクガメ",
+  "gakumei": "Testudo horsfieldii",
+  "author": "Alexander A. Fomichev",
+  "obs": 223896469,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ワモンチズガメ",
+  "gakumei": "Graptemys oculifera",
+  "author": "evangrimes",
+  "obs": 58654309,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ワモンチズガメ系",
+  "gakumei": "Graptemys ouachitensis",
+  "author": "Eric Schmidt",
+  "obs": 175862002,
+  "credited_license": "cc-by"
+ }
+]
