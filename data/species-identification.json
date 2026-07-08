@@ -2615,6 +2615,173 @@
       ],
       "unresolved": "従来単一種とされたPelomedusa subrufaは近年の分子研究で複数種(P. subrufa狭義, P. olivacea, P. galeata, P. neumanni等)に分割された種複合体。外見が酷似し、サイトのP. subrufa表記が広義(複合体全体)か狭義かで指す範囲が変わる。産地情報なしでの種同定は困難で、検収時にページの意図を再確認要。",
       "status": "confirmed"
+    },
+    {
+      "slug": "painted-turtle",
+      "wamei": "ニシキガメ",
+      "gakumei": "Chrysemys picta",
+      "eimei": "Painted Turtle",
+      "koura": "背甲は滑らかで扁平なオーバル、緑〜黒。縁甲板の外縁に赤い模様(marginata/belliiで顕著)。北米で最も広く分布するカメ。Emydidae(Deirochelyinae)。",
+      "iro_moyou": "背甲は緑〜黒地で、縁甲板や継ぎ目に沿って赤い模様。腹甲は黄色(亜種で無地〜赤＋暗色figureまで変異)。頭頸・四肢に黄と赤の条。",
+      "tobu": "頭部・首・四肢は暗色地に黄条、眼後に黄斑、首や脚に赤条。",
+      "size": "小〜中型。甲長10〜25cm(亜種差、belliiが最大で18cm超・記録25cm)。",
+      "bunpu": "北米最広分布(南カナダ〜北メキシコ、大陸横断)の緩流・池沼。3亜種(picta[東]/marginata[中部]/bellii[西])＋独立種化したdorsalis[南]。",
+      "kondou_shu": [
+        {
+          "aite": "ミナミニシキガメ (Chrysemys dorsalis)",
+          "kubetsu": "旧C. p. dorsalis(southern)は近年独立種C. dorsalisに昇格(TTWG2010暫定支持)。背甲正中に明瞭な赤/橙の縦条を持つ点でpicta群と区別。"
+        },
+        {
+          "aite": "アカミミガメ (Trachemys scripta)/クーター類 (Pseudemys)",
+          "kubetsu": "ニシキガメは甲が滑らかで扁平＋縁甲板の赤模様＋小型/アカミミは眼後赤帯、クーターは大型。属が異なる。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険(Least Concern)。日本では特定外来生物ではないが北米産水棲ガメとして流通。国内流通あり。",
+      "photo_hantei": "滑らかで扁平な緑〜黒の甲＋縁甲板/継ぎ目の赤い模様＋頭頸脚の黄赤条＋腹甲(亜種で無地黄〜赤figure)。縁の赤模様が手がかり。",
+      "photo_chuui": "①亜種(picta/marginata/bellii)は個体レベルの形態同定が困難で、分布中心部の個体でも確実に亜種帰属できないことが多い＋intergrade広範—産地不明個体を亜種断定しない。②dorsalis(独立種化、正中赤条)との区別は背甲正中条の有無。③本ページは種全体(C. picta総称)。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Painted_turtle",
+        "https://www.iucnredlist.org/species/pdf/97410447",
+        "https://tortoise.org/archives/chrysemy.html",
+        "https://www.inaturalist.org/taxa/39771-Chrysemys-picta",
+        "https://www.biorxiv.org/content/10.1101/2025.04.01.646645.full.pdf"
+      ],
+      "unresolved": "従来4亜種(picta/marginata/bellii/dorsalis)だが、Starkey et al.(2003)・TTWG(2010)によりdorsalis(southern)は独立種C. dorsalisへ暫定昇格(mtDNAで2クレード)。残るpicta/marginata/belliiは遺伝的変異が小さく個体群内変異が大きいため、平均は統計的に異なっても個体の形態的亜種同定が困難。belliiとmarginataのpictaに対する地位は要追加研究。intergradeも広範。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "wood-turtle",
+      "wamei": "モリイシガメ",
+      "gakumei": "Glyptemys insculpta",
+      "eimei": "Wood Turtle",
+      "koura": "【種の決定的特徴】各甲板がピラミッド状に隆起し、彫刻された(sculptured)ような粗い表面＝種小名insculptaの由来で最大の識別点。背甲は灰褐色。半陸生。旧Clemmys insculpta。",
+      "iro_moyou": "背甲は灰褐〜黄褐色で、各甲板に同心状の隆起線(成長輪)とピラミッド構造。腹甲は黄色で各甲板の外側後方に黒斑。首・脚の腹側がしばしば橙〜赤。",
+      "tobu": "頭部は暗色。首・四肢の腹側/内側が橙〜赤みを帯びる個体が多い。",
+      "size": "中型。甲長14〜20cm。",
+      "bunpu": "北米北東部(ノバスコシア〜ミネソタ〜バージニア)。浅く清冽な砂底の川とその周辺の陸域を行き来する半陸生。",
+      "kondou_shu": [
+        {
+          "aite": "ヌマイシガメ/ボグタートル (Glyptemys muhlenbergii)",
+          "kubetsu": "同属Glyptemys。wood(insculpta)は中型でピラミッド甲＋首脚の橙/bog(muhlenbergii)は超小型(甲長11cm以下)＋頭部側面に明橙斑。サイズと頭部斑で区別。"
+        },
+        {
+          "aite": "ブランディングガメ (Emydoidea blandingii)",
+          "kubetsu": "woodは甲がピラミッド状に彫刻＋扁平/blandingsは高いドーム甲＋明黄色の喉。甲形と喉色で区別。両種の交雑例も報告。"
+        },
+        {
+          "aite": "キボシイシガメ (Clemmys guttata)",
+          "kubetsu": "woodはピラミッド甲＋無斑/spottedは黒甲に黄水玉。斑の有無で明確に区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(1992年〜)。IUCN Endangered(危機)。生息地破壊・分断＋ペット採取で個体数激減。米国多州で保護。輸入に附属書II証明が必要。",
+      "photo_hantei": "各甲板のピラミッド状隆起＋彫刻されたような粗い甲表面＋灰褐色＋首脚の橙。ピラミッド甲が決定的。",
+      "photo_chuui": "①ピラミッド甲は他種と明確に異なる決定的形質だが、飼育不良のリクガメ等の病的ピラミッディングと混同しないよう、種(半陸生の川棲Emydidae)を確認。②bog turtle(muhlenbergii)とはサイズで区別。③保全種で野生採取個体の流通は問題含み—出所に留意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wood_turtle",
+        "https://animaldiversity.org/accounts/Glyptemys_insculpta/",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+        "https://www.vtherpatlas.org/herp-species-in-vermont/glyptemys-insculpta/",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6481842/"
+      ],
+      "unresolved": "旧Clemmys insculptaから、Clemmys属がparaphyleticと判明したためbog turtleと共にGlyptemys属へ移された(Holman & Fritz 2001; Feldman & Parham)。分類は安定。Blanding's turtleとの自然交雑個体(Harding 1999)が報告され、交雑個体の同定に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "spotted-turtle",
+      "wamei": "キボシイシガメ",
+      "gakumei": "Clemmys guttata",
+      "eimei": "Spotted Turtle",
+      "koura": "背甲は滑らかで扁平、黒色。【種の決定的特徴】黒い甲・頭部・四肢に散らばる黄色い水玉(spot)＝名の由来。Clemmys属の唯一の残存種(属は解体されguttataのみ残る)。小型。",
+      "iro_moyou": "背甲は黒く、各甲板に黄色の丸い斑点が数個ずつ散る(個体・齢で斑の数が変異、幼体は少なく加齢で増えることも)。頭部・首・四肢にも黄/橙の斑。腹甲は黄〜橙で黒斑。",
+      "tobu": "頭部は黒く黄/橙の斑点。眼の色や顔の橙斑に性差(オスは褐色眼・顎が褐、メスは橙眼・顎が黄)。",
+      "size": "小型。甲長8〜12cm程度。",
+      "bunpu": "北米東部(五大湖〜大西洋岸)の湿地・湿原・浅い水域。低温期に活発で夏は落ち葉下で夏眠。",
+      "kondou_shu": [
+        {
+          "aite": "モリイシガメ (Glyptemys insculpta)/ブランディングガメ (Emydoidea blandingii)",
+          "kubetsu": "spottedは黒甲に黄水玉＋小型/woodはピラミッド甲・無斑、blandingsは高ドーム甲＋明黄喉。黄水玉の有無で明確に区別。"
+        },
+        {
+          "aite": "ニシキハコガメ幼体等の斑を持つ種",
+          "kubetsu": "spottedは黒甲に境界明瞭な丸い黄斑＋腹甲に蝶番なし/ハコガメは腹甲に蝶番があり甲が高い。斑の型と腹甲構造で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(2013年〜)。IUCN Endangered(危機)。生息地喪失＋ペット採取で減少。米国多州で保護。輸入に附属書II証明が必要。",
+      "photo_hantei": "黒い滑らかな甲＋散在する境界明瞭な黄色い丸斑＋頭部/四肢の黄橙斑＋小型。黄水玉が決定的。",
+      "photo_chuui": "①黄水玉は決定的だが、幼体は斑が少ない/無斑に近い個体もあり、無斑個体をwood等と誤認しない(黒く滑らかな甲＋腹甲で判断)。②斑の数は個体・齢で大きく変異するため斑数で亜種等を分けない(亜種なし)。③保全種で野生採取個体の流通に留意。",
+      "sources": [
+        "https://animaldiversity.org/accounts/Glyptemys_insculpta/",
+        "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/glyptemys-insculpta",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4398433/"
+      ],
+      "unresolved": "Clemmys guttata は Clemmys 属の唯一の残存種で分類は安定(属がparaphyleticと判明しwood/bogはGlyptemys、blandingsはEmydoidea/Emysへ移動、guttataのみClemmysに残存)。亜種は認められない。黄斑数の個体変異が大きい点が主な識別上の注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "blandings-turtle",
+      "wamei": "ブランディングガメ",
+      "gakumei": "Emydoidea blandingii",
+      "eimei": "Blanding's Turtle",
+      "koura": "背甲は高くドーム状の細長いオーバル、暗色地に黄/淡色の点や短条が散る。半箱型に腹甲前葉が可動する(不完全な蝶番)。",
+      "iro_moyou": "背甲は黒〜暗褐色に黄色の細かい点・短条(vermiculation)。腹甲は黄色で各甲板に大きな暗色ブロッチ。【種の決定的特徴】喉と顎の下面が鮮やかな黄色(bright yellow throat/chin)。",
+      "tobu": "【識別】喉・顎の下面が明るい黄色＝最も確実な識別点。頭部上面は暗色。首がやや長い。",
+      "size": "中型。甲長18〜25cm。",
+      "bunpu": "北米中北部(五大湖周辺〜ネブラスカ、東部に隔離個体群)の湿地・浅い水域・草原。",
+      "kondou_shu": [
+        {
+          "aite": "モリイシガメ (Glyptemys insculpta)",
+          "kubetsu": "blandingsは高ドーム甲＋明黄色の喉＋腹甲前葉が可動/woodはピラミッド状に彫刻された扁平甲＋首脚の橙。喉色と甲形で区別。交雑例あり。"
+        },
+        {
+          "aite": "ヨーロッパヌマガメ (Emys orbicularis)",
+          "kubetsu": "近縁(近年blandingsをEmysに含める説)。blandingsは北米産＋明黄喉/orbicularisは欧州産＋黄点放射。産地で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(2013年〜)。IUCN Endangered(危機)。生息地喪失＋道路死＋ペット採取で減少。米国多州で保護。輸入に附属書II証明が必要。",
+      "photo_hantei": "高いドーム甲＋暗色地に黄点/短条＋明るい黄色の喉・顎＋腹甲の暗色ブロッチ。明黄色の喉が決定的(頭部下面が写るカットが有効)。",
+      "photo_chuui": "①明黄色の喉が決め手だが、喉下面が写らない背側だけのカットでは判別しにくい—頭部下面を確認。②属の分類が揺れる(Emydoidea blandingii と Emys blandingii が併存、近年Emysに含める説が有力)—学名検索時に両表記を考慮。③wood turtleとの交雑個体に注意。④保全種で出所に留意。",
+      "sources": [
+        "https://animaldiversity.org/accounts/Emydidae/classification/",
+        "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/glyptemys-insculpta",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+        "https://en.wikipedia.org/wiki/Wood_turtle",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6481842/"
+      ],
+      "unresolved": "属の分類が揺れる。近年の系統研究でEmydinae亜科が再編され、Clemmysをguttataに限定しEmysを4種(orbicularis/blandingii/trinacris/marmorata)に拡大する説では本種はEmys blandingii。従来のEmydoidea blandingii表記も広く残る。サイトのEmydoidea表記は妥当だが、Emys表記のソースも多い。wood turtleとの自然交雑も報告。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "european-pond-turtle",
+      "wamei": "ヨーロッパヌマガメ",
+      "gakumei": "Emys orbicularis",
+      "eimei": "European Pond Turtle",
+      "koura": "背甲は滑らかでややドーム状のオーバル、黒〜暗褐色。腹甲前葉に不完全な蝶番。Emys属の基準種。",
+      "iro_moyou": "背甲は黒〜暗褐色地に、黄色の細かい点や放射状の短条(各甲板から放射する黄点の線)。腹甲は黄〜暗色で変異。頭部・四肢も暗色地に黄点。",
+      "tobu": "頭部・首・四肢は暗色地に黄色の細かい斑点。",
+      "size": "中型。甲長12〜20cm(亜種・地域で変異)。",
+      "bunpu": "ヨーロッパ〜西アジア〜北アフリカの池沼・緩流・湿地。多数の亜種・系統(地域変異が大きい)。",
+      "kondou_shu": [
+        {
+          "aite": "ブランディングガメ (Emydoidea/Emys blandingii)",
+          "kubetsu": "近縁(blandingsをEmysに含める説)。orbicularisは欧州産＋黄点放射/blandingsは北米産＋明黄色の喉。産地と喉色で区別。"
+        },
+        {
+          "aite": "シチリアヌマガメ (Emys trinacris)",
+          "kubetsu": "trinacrisはシチリア島固有で近年orbicularisから分離された独立種。外見が酷似し産地(シチリア)と分子で区別。orbicularis広義には含めない。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険(Least Concern)だが欧州各国で在来種として保護され、地域個体群は減少。EUの生息地指令対象。国内流通は亜種・地域個体群として。",
+      "photo_hantei": "黒〜暗褐色の甲＋各甲板から放射する黄色の細点/短条＋頭部四肢の黄斑＋欧州産。放射する黄点が手がかり。",
+      "photo_chuui": "①亜種・地域個体群が非常に多く(色・サイズ変異大)、産地不明個体の亜種同定は困難—亜種を安易に断定しない。②シチリアヌマガメ(E. trinacris)が近年分離—シチリア産は別種。③blandingsを近年Emysに含める分類再編で属の範囲が変わる点に注意。",
+      "sources": [
+        "https://animaldiversity.org/accounts/Emydidae/classification/",
+        "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/glyptemys-insculpta",
+        "https://en.wikipedia.org/wiki/Wood_turtle",
+        "https://www.iucnredlist.org/species/pdf/97410447"
+      ],
+      "unresolved": "Emys orbicularis は多数の亜種・ミトコンドリア系統に分かれる複合的な種で、地域個体群の分類が流動的。近年シチリア個体群がEmys trinacrisとして独立種化。またEmydinae再編でEmys属にblandingii/marmorataを含める説があり、属の範囲・構成が文献で揺れる。産地不明個体の亜種・系統同定は不確実。",
+      "status": "confirmed"
     }
   ]
 }
