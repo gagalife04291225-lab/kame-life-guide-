@@ -1928,6 +1928,170 @@
       ],
       "unresolved": "P. nelsoni は単型で分類的に安定。主な識別上の問題は同所的なペニンシュラクーター(peninsularis)との酷似で、腹甲の色(nelsoniは橙赤、peninsularisは無地黄)を見ないと背側だけでは判別困難。腹甲の赤みには個体・齢による変異がある。",
       "status": "confirmed"
+    },
+    {
+      "slug": "chinese-softshell-turtle",
+      "wamei": "シナスッポン",
+      "gakumei": "Pelodiscus sinensis",
+      "eimei": "Chinese Softshell Turtle",
+      "koura": "背甲は扁平で角質の甲板(scute)を持たず、軟質の革状皮膚に覆われる。円形〜楕円で低平。吻はシュノーケル状に伸び、鼻孔に隔壁の隆起がある。首が長い。",
+      "iro_moyou": "背甲はオリーブ〜灰褐色で、幼体は小さな暗色斑や眼状斑。腹側(腹甲)は淡色〜白〜橙(幼体で橙が目立つ個体も)。頭頸に暗色の斑や条。",
+      "tobu": "吻が管状に長く伸び、鼻孔に側方の隆起。頭部に暗色斑。首が非常に長い。",
+      "size": "中型。背甲長20〜30cm級。",
+      "bunpu": "狭義P. sinensis(sensu stricto)は中国中〜東部・台湾・ベトナム(＋移入で日本・ハワイ・スペイン・ブラジル等)。ただしかつての広域『シナスッポン』は種複合体で、P. maackii(北方)・P. axenaria・P. parviformis・P. variegatus・P. huangshanensis等に分割が進行中。",
+      "kondou_shu": [
+        {
+          "aite": "ニホンスッポン (Pelodiscus japonicus)",
+          "kubetsu": "【重要】日本在来スッポンは近年独立種P. japonicusとされ、中国から養殖で持ち込まれ野外逸出した外来個体群が狭義P. sinensis。両者は外観での区別が非常に難しい。日本で撮影/捕獲された個体は在来japonicusの可能性が高く、シナスッポンsinensisと断定できない。"
+        },
+        {
+          "aite": "他のスッポン類 (Apalone spp. 等)",
+          "kubetsu": "Pelodiscusは鼻孔に隔壁隆起＋頭頸に斑/条。Apalone(北米)とは分布(アジア vs 北米)と細部で区別。フロリダスッポン(ferox)は遥かに大型でずんぐり。"
+        }
+      ],
+      "houkisei": "CITES未掲載(Pelodiscus sinensis)。IUCN Vulnerable(野生個体群)。食用・薬用に大量養殖され、放流個体の交雑が在来遺伝子プールを脅かす。日本では在来ニホンスッポン(P. japonicus)が環境省RL2020で情報不足(DD)＊P. sinensisとして記載。",
+      "photo_hantei": "軟質革状の扁平な甲(角質甲板なし)＋管状に伸びた吻＋鼻孔の隔壁隆起＋長い首。狭義sinensisは中国中東部・台湾・ベトナム産。",
+      "photo_chuui": "【最重要】①在来ニホンスッポン(P. japonicus)と外観で区別困難—日本産の写真をシナスッポンとして使うと誤り。産地が中国/台湾/ベトナム(または明示的に外来養殖由来)と確認できる個体に限る。②旧『P. sinensis』は種複合体で分割進行中(maackii/axenaria/parviformis/variegatus等)—広域の古い画像は別種の可能性。③養殖交雑個体は分類的に不明瞭。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_softshell_turtle",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1278",
+        "https://www.inaturalist.org/taxa/39570-Pelodiscus",
+        "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%83%E3%83%9D%E3%83%B3",
+        "https://herpetology.raindrop.jp/pelodiscus_japonicus"
+      ],
+      "unresolved": "Pelodiscus sinensis はかつて広域単一種とされたが種複合体で、P. maackii・P. axenaria・P. parviformis・P. variegatus(2019)・P. huangshanensis(2021)・P. shipian(2022)等への分割が進行中。日本在来スッポンは独立種P. japonicus(旧P. s. japonicus)として扱われ、外来の狭義P. sinensisと外観判別が困難。養殖放流による交雑系統も存在。サイトが外来sinensisを指すか在来japonicusを含むかで学名の妥当性が変わるため、ページ本文の意図を検収時に再確認要。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "albino-chinese-softshell",
+      "wamei": "アルビノシナスッポン",
+      "gakumei": "Pelodiscus sinensis",
+      "eimei": "Albino Chinese Softshell Turtle",
+      "koura": "シナスッポンと同一種の白化(アルビノ)個体。甲の基本構造は同じ(軟質革状・角質甲板なし・扁平)。色素欠乏で全体が白〜クリーム〜淡黄。",
+      "iro_moyou": "アルビノのため全身が白〜クリーム〜淡黄でメラニン由来の暗色斑を欠く。眼は赤〜ピンク。腹側は白〜淡橙。",
+      "tobu": "吻は管状に長く鼻孔に隔壁隆起(通常個体と同じ)。眼は赤い。",
+      "size": "中型。通常のシナスッポンと同等(背甲長20〜30cm級)。",
+      "bunpu": "野生分布はなく、養殖・繁殖由来のアルビノ個体としてペット流通。基となる種はP. sinensis(狭義)。",
+      "kondou_shu": [
+        {
+          "aite": "通常のシナスッポン (Pelodiscus sinensis)",
+          "kubetsu": "同一種。アルビノは色素欠乏で白〜淡黄＋赤い眼。形態・甲構造は通常個体と同じ。"
+        },
+        {
+          "aite": "他種のアルビノ/白化個体",
+          "kubetsu": "アルビノ個体は種同定が難しい(色・斑が失われる)。甲の軟質性・吻の形・鼻孔隆起でスッポン科と判別し、Pelodiscusの体型で推定するが、写真だけでの種確定は困難。"
+        }
+      ],
+      "houkisei": "CITES未掲載(P. sinensis)。アルビノ個体は養殖・CB由来でペット流通。IUCN評価は種(sinensis)としてVulnerable(野生個体群)。",
+      "photo_hantei": "白〜クリーム〜淡黄の軟質革状スッポン＋赤い眼＋管状の吻＋鼻孔隔壁隆起。P. sinensisのアルビノ表現型。",
+      "photo_chuui": "【手動確認要種】①アルビノのCC写真は非常に稀で、無理に埋めない。②色素欠乏で種の識別形質(斑・色)が失われるため、写真だけでP. sinensisアルビノと断定困難—他種アルビノや黄変個体との混同に注意。③通常シナスッポンの明るい個体を誤ってアルビノとしない(赤い眼の有無を確認)。④chinese-softshell-turtleページと同一学名のため画像使い回しリスク。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chinese_softshell_turtle",
+        "https://aquarium.co.jp/picturebook/pelodiscus-sinensis.html",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1278",
+        "https://www.inaturalist.org/taxa/39570-Pelodiscus"
+      ],
+      "unresolved": "アルビノはP. sinensisの色素変異で分類的階級を持たない。アルビノ個体のCCライセンス写真は極めて稀で、手動確認・無理に埋めない方針。色素欠乏により種の識別形質が失われ、写真からの種同定が原理的に困難。基種sinensis自体が種複合体で分割進行中の点はchinese-softshell-turtleと同じ。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "florida-softshell-turtle",
+      "wamei": "フロリダスッポン",
+      "gakumei": "Apalone ferox",
+      "eimei": "Florida Softshell Turtle",
+      "koura": "北米最大のスッポン。背甲は軟質革状・角質甲板なしで、長楕円・ずんぐりして厚みがある。暗オリーブ〜褐〜ほぼ黒。前縁の肥厚部に幅広く短い結節(tubercle)が三日月状に並ぶ(扁平半球状で、spinifera asperaの円錐状と異なる)。背面に縦列の凹凸。",
+      "iro_moyou": "暗オリーブ〜褐〜黒で、他のApaloneより暗色。幼体は不明瞭な暗色斑。眼から下顎基部にかけ黄〜赤の条が出ることがある。腹側は灰〜白。",
+      "tobu": "吻は豚鼻状(pig-like)に短く、鼻孔に側方隆起。眼から顎に黄赤条。前肢側面に短い結節。",
+      "size": "属内・新北区最大。メス最大甲長67cm、オス15〜32cmで顕著な性的二型(メスがオスの約2倍)。",
+      "bunpu": "米南東部(サウスカロライナ・ジョージア・アラバマ・フロリダ)。池沼・湖・湿地・時に汽水。亜種なし(単型)。",
+      "kondou_shu": [
+        {
+          "aite": "スパイニースッポン (Apalone spinifera)",
+          "kubetsu": "feroxは前縁結節が幅広く扁平半球状＋ずんぐり大型＋暗色/spiniferaは前縁に円錐状の棘＋眼状斑＋砂ペーパー状の甲。feroxは遥かに大型。"
+        },
+        {
+          "aite": "スムーススッポン (Apalone mutica)",
+          "kubetsu": "feroxは前縁に結節あり＋大型/muticaは前縁に棘/結節なし・平滑＋鼻孔が丸い(隔壁隆起なし)。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern(個体群安定)。国内流通あり。",
+      "photo_hantei": "ずんぐりした大型の暗色軟質甲＋前縁の幅広い扁平半球状結節＋豚鼻状の短い吻＋(あれば)眼〜顎の黄赤条。属内最大＝サイズも手がかり。",
+      "photo_chuui": "①spinifera・muticaと同じApaloneだが、feroxは前縁結節が扁平半球状＋遥かに大型＋暗色で区別可。②幼体は種間の差が小さく紛らわしい—前縁結節と鼻孔形状を確認。③軟質甲は損傷・角度で結節が見えにくいことがある。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Apalone",
+        "https://animaldiversity.org/accounts/Apalone_ferox/",
+        "https://grokipedia.com/page/Florida_softshell_turtle",
+        "https://www.tortoise.org/archives/apalone.html",
+        "https://www.activewild.com/florida-softshell-turtle/"
+      ],
+      "unresolved": "A. ferox は単型で分類的に安定。主な識別課題は同属spinifera/muticaとの幼体時の類似で、前縁結節の形状(扁平半球状 vs 円錐状 vs なし)と鼻孔形状を要確認。同所的なspinifera asperaとは結節形状で区別。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "spiny-softshell-turtle",
+      "wamei": "スパイニースッポン（トゲスッポン）",
+      "gakumei": "Apalone spinifera",
+      "eimei": "Spiny Softshell Turtle",
+      "koura": "背甲は円形で扁平・軟質革状(角質甲板なし)。前縁に棘状の突起(spine/円錐状tubercle)が並ぶ＝名の由来で最大の識別点。甲表面はサンドペーパー状にざらつく。鼻孔に隔壁の隆起(C字型の鼻孔)。",
+      "iro_moyou": "背甲はオリーブ〜淡褐色。幼体・オスは太い黒縁の眼状斑(ocelli)が甲中央側で大きく、甲の外縁は淡クリームで黒い内縁線。メス・老成は暗色の斑紋(mottling)になる。頭頸に黒縁の淡色条。",
+      "tobu": "吻が管状に長く、鼻孔に隔壁の縦隆起(septal ridge)＝muticaとの決定的差。頭頸に条。四肢に斑。",
+      "size": "中〜大型。メス大型(甲長〜43cm級)、オス小型で性的二型。",
+      "bunpu": "米国大半＋カナダ南部(オンタリオ・ケベック)＋メキシコ北東部(北西部を除く)。河川・運河・湖沼。5〜6亜種(aspera/emoryi/guadalupensis/pallida/spinifera等)。",
+      "kondou_shu": [
+        {
+          "aite": "スムーススッポン (Apalone mutica)",
+          "kubetsu": "spiniferaは前縁に棘＋甲がざらつく＋鼻孔に隔壁隆起/muticaは前縁に棘なし・平滑＋鼻孔が丸い(隔壁隆起なし)。鼻孔の形が決定的。"
+        },
+        {
+          "aite": "フロリダスッポン (Apalone ferox)",
+          "kubetsu": "spiniferaは前縁に円錐状の棘＋眼状斑/feroxは前縁結節が扁平半球状＋遥かに大型＋暗色ずんぐり。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern。国内流通あり。",
+      "photo_hantei": "前縁の棘状突起＋サンドペーパー状の甲＋(幼体/オス)黒縁の眼状斑＋鼻孔の隔壁隆起。前縁の棘と眼状斑が有効。",
+      "photo_chuui": "①muticaと酷似—前縁の棘の有無＋鼻孔の形(隔壁隆起=spinifera / 丸い=mutica)が決め手。背側だけでは棘の確認を。②メス・老成は眼状斑が消え斑紋化—幼体/オスの方が識別しやすい。③亜種が5〜6あり産地で細分されるが本ページは種レベル。",
+      "sources": [
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1274",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1276",
+        "https://en.wikipedia.org/wiki/Apalone",
+        "https://grokipedia.com/page/Apalone",
+        "https://animaldiversity.org/accounts/Apalone_mutica/"
+      ],
+      "unresolved": "5〜6亜種(aspera/emoryi/guadalupensis/pallida/spinifera)が産地で認識されるが本ページは種レベル。muticaとの区別は前縁の棘と鼻孔の隔壁隆起に依存し、これらが写らない写真では判別困難。メス・老成のメラニズムで眼状斑が失われる。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "smooth-softshell-turtle",
+      "wamei": "スムーススッポン",
+      "gakumei": "Apalone mutica",
+      "eimei": "Smooth Softshell Turtle",
+      "koura": "背甲は円形〜卵形で扁平・軟質革状。前縁に棘/結節がなく平滑(smooth)＝名の由来。甲表面はざらつかない。属内で最も滑らか。",
+      "iro_moyou": "メスは褐〜オリーブ地に不規則な暗褐色斑。オス・幼体は褐〜灰地に暗色の点や破線。頭側部に淡色の斑。spiniferaのような明瞭な眼状斑は持たない。",
+      "tobu": "【決定的】鼻孔が丸い(round nostril)＝隔壁の隆起(septal ridge)を持たない唯一のApalone。他のスッポンはC字型鼻孔。吻は管状。",
+      "size": "中型。メス16.5〜35.6cm、オス11.4〜17.8cmで性的二型。",
+      "bunpu": "米国中央〜南中部(ロッキー山脈以東)。砂底の河川を好む。2亜種。",
+      "kondou_shu": [
+        {
+          "aite": "スパイニースッポン (Apalone spinifera)",
+          "kubetsu": "【最重要】muticaは前縁に棘なし・平滑＋鼻孔が丸い(隔壁隆起なし)/spiniferaは前縁に棘＋甲がざらつく＋鼻孔に隔壁隆起。鼻孔の形(丸い=mutica)が最も確実。"
+        },
+        {
+          "aite": "フロリダスッポン (Apalone ferox)",
+          "kubetsu": "muticaは小〜中型・平滑・鼻孔丸い/feroxは大型ずんぐり・前縁結節あり・暗色。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN Least Concern。国内流通は稀。",
+      "photo_hantei": "前縁に棘/結節のない平滑な甲＋丸い鼻孔(隔壁隆起なし)＋明瞭な眼状斑を欠く。鼻孔が丸いことが属内で唯一の決定的形質。",
+      "photo_chuui": "①spiniferaと酷似し差は微妙—前縁の棘がなく平滑＋鼻孔が丸いことで区別。鼻孔が写る頭部アップが最有効。②眼状斑を欠く点でspinifera幼体/オスと区別できるが、spiniferaメス(斑紋化)とは紛らわしい。③軟質甲は角度で平滑/ざらつきが判別しにくい。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Smooth_softshell_turtle",
+        "https://animaldiversity.org/accounts/Apalone_mutica/",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1276",
+        "https://en.wikipedia.org/wiki/Apalone",
+        "https://www.tortoise.org/archives/apalone.html"
+      ],
+      "unresolved": "A. mutica は2亜種。spiniferaとの区別は前縁の棘の欠如と丸い鼻孔(隔壁隆起なし)に依存し、これらが写らない写真では判別困難。メラニズムのspiniferaメスとは特に紛らわしい。",
+      "status": "confirmed"
     }
   ]
 }
