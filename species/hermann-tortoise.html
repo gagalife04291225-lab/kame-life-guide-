@@ -88,6 +88,21 @@
     .stat-item{padding:8px 14px;font-size:.88rem;}
     .env-grid{grid-template-columns:1fr 1fr;}
     }
+    .scroll-hint{font-size:.78rem;color:#b0a080;margin-bottom:6px;}
+    .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;border-radius:12px;border:1px solid #e4ddc9;}
+    .compare-table{width:100%;min-width:580px;border-collapse:collapse;font-size:.87rem;background:#fff;}
+    .compare-table thead tr{background:var(--forest);color:var(--parchment);}
+    .compare-table th{padding:12px 14px;font-weight:700;text-align:left;font-size:.78rem;letter-spacing:.06em;white-space:nowrap;}
+    .compare-table th:first-child{border-radius:12px 0 0 0;}
+    .compare-table th:last-child{border-radius:0 12px 0 0;}
+    .compare-table td{padding:11px 14px;border-bottom:1px solid #f0e8d8;vertical-align:middle;white-space:nowrap;}
+    .compare-table tr:last-child td{border-bottom:none;}
+    .compare-table tr:nth-child(even) td{background:#faf6ef;}
+    .compare-table tr.recommended td{background:#fffbf0;}
+    .compare-table tr.recommended td:first-child{border-left:3px solid var(--accent);font-weight:700;}
+    .compare-table td a{color:var(--accent-dark);text-decoration:none;font-weight:700;}
+    .compare-table td a:hover{text-decoration:underline;}
+    .badge-this{background:#fff3cd;color:#8f6000;border:1px solid #d4a96a;}
 </style>
 <link rel="stylesheet" href="../css/species.css">
 <script type="application/ld+json">
@@ -400,14 +415,19 @@
         <div class="env-sub">乾燥系だが極端な乾燥は皮膚に悪影響。高湿度（70%超）は避ける</div>
       </div>
       <div class="env-card">
-        <div class="env-label">UVB指数</div>
-        <div class="env-value">UVB 10.0</div>
-        <div class="env-sub">乾燥草原の強い紫外線環境を再現。レプタイルUVB150クラスが目安</div>
+        <div class="env-label">UVB / UVI</div>
+        <div class="env-value">UVI 2.9〜4.5</div>
+        <div class="env-sub">地中海リクガメはFerguson Zone 3。砂漠用UVB（デザート10〜12%）をバスキング域に設置し、UVIメーターで実測するのが理想。6〜12ヶ月で交換</div>
       </div>
       <div class="env-card">
         <div class="env-label">推奨ケージサイズ</div>
         <div class="env-value">90cm〜</div>
         <div class="env-sub">成体には120cm幅以上が理想。よく歩き回るため床面積が重要</div>
+      </div>
+      <div class="env-card full">
+        <div class="env-label">床材の深さ</div>
+        <div class="env-value">5〜10cm</div>
+        <div class="env-sub">赤玉土（小粒）が定番。適度な排水性と保湿性のバランスが良く、潜り行動を許容できる深さを確保する。砂のみは誤食・感染リスクあり</div>
       </div>
     </div>
 
@@ -417,6 +437,42 @@
     <p>水は浅めの水入れを常設します。温浴（週1〜2回、30℃のぬるま湯で15分程度）は水分補給と排泄促進に効果的です。</p>
 
     <div class="care-first-note" style="margin:0 0 18px;padding:14px 16px;border-radius:10px;background:#f3f7ee;border:1px solid #d9e6c8;"><strong style="display:block;margin-bottom:6px;color:#5a7a1a;">💧 水入れは毎日清潔に</strong><span style="font-size:14px;line-height:1.7;color:#333;">リクガメも水入れで水を飲み、体を浸けます。水はすぐに汚れ、雑菌が繁殖しやすいので、毎日新しい水に替えて清潔に保つことが健康の基本です。</span></div>
+
+    <h2>ピラミッディングの予防</h2>
+    <p>甲板が重なるように盛り上がる現象で、主に<strong>カルシウム不足・タンパク過多・UVB不足・急速な成長・低すぎる湿度</strong>が複合的な原因とされています。幼体期（孵化〜3歳）に最も発生しやすく、一度変形した甲羅は元には戻りません。野草主体の食事・週2〜3回のカルシウムダスティング・Ferguson Zone 3に沿ったUVB・湿度40〜60%の維持・過剰給餌をしないことが予防の柱です。</p>
+
+    <h2>冬季の温度管理と冬眠</h2>
+    <p>冬眠させる場合は体重・健康状態を事前に確認し、5〜10℃の安定した環境（冷暗所・専用クーラーボックス等）で管理します。冬眠中は2週間に1回の体重確認が推奨され、体重が10%以上減少した場合は速やかに起こしてください。</p>
+    <p>初心者・幼体・体調不良の個体は<strong>冬眠させないことを推奨します</strong>。非冬眠飼育では通年20℃以上を維持し、冬季はバスキング時間を10〜12時間/日確保してください。夜間は15℃を下回らないようパネルヒーター等で補助します。</p>
+
+    <h2>地中海リクガメ 3種 + エロンガータ 比較表</h2>
+    <p class="scroll-hint">← 横にスクロールできます</p>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>種名</th><th>甲長</th><th>難易度</th><th>湿度</th><th>温度帯</th><th>食性</th><th>成長速度</th></tr>
+        </thead>
+        <tbody>
+          <tr class="recommended">
+            <td>ヘルマンリクガメ <span class="badge badge-this">このページ</span></td>
+            <td>15〜23cm</td><td>中級</td><td>40〜60%</td><td>22〜38℃</td><td>草食（野草主体）</td><td>年2〜4cm・15年で成体</td>
+          </tr>
+          <tr>
+            <td><a href="russian-tortoise.html">ロシアリクガメ</a></td>
+            <td>15〜20cm</td><td>入門〜中級</td><td>30〜50%</td><td>20〜38℃</td><td>草食（野草・野菜）</td><td>年1〜3cm・やや遅い</td>
+          </tr>
+          <tr>
+            <td><a href="greek-tortoise.html">ギリシャリクガメ</a></td>
+            <td>15〜25cm</td><td>中〜上級</td><td>40〜60%</td><td>22〜38℃</td><td>草食（野草・多様）</td><td>年2〜4cm・亜種差大</td>
+          </tr>
+          <tr>
+            <td><a href="elongated-tortoise.html">エロンガータリクガメ</a></td>
+            <td>25〜33cm</td><td>中〜上級</td><td>60〜80%</td><td>24〜35℃</td><td>草食（野草＋果実少量）</td><td>年2〜5cm・大型化注意</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   <h2>推奨機材セット</h2>
     <p>ヘルマンリクガメの飼育に必要な機材を、野生環境からの逆算でまとめます。</p>
     <link rel="stylesheet" href="../css/starter-kit.css">
