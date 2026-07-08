@@ -3019,6 +3019,201 @@
       ],
       "unresolved": "peltifer の分類的地位が揺れる。従来S. minor peltifer(亜種、Tinkle & Webb 1955)とされるが、近年は独立種Sternotherus peltiferとする説(Wikipedia等)もある。基亜種minorとはアラバマ・西フロリダでintergradeし、中間個体の亜種同定が困難。かつてminor×peltifer雑種とされたintermediusは独立種S. intermediusに(〜2017)。CITESは2023年発効でSternotherus spp.として附属書II掲載。",
       "status": "confirmed"
+    },
+    {
+      "slug": "asian-black-marsh-turtle",
+      "wamei": "アジアコガシラドロガメ",
+      "gakumei": "Siebenrockiella crassicollis",
+      "eimei": "Black Marsh Turtle / Smiling Terrapin",
+      "koura": "Geoemydidae。背甲は黒〜暗褐色で、椎甲板2-4がキノコ形/イチョウ葉形(近縁のフィリピンヤマガメと共有する形質)。後縁やや鋸歯、正中キール。中型。",
+      "iro_moyou": "ほぼ全身が黒〜暗褐色。頭部に白〜黄色の斑(眼の後方や側頭部)。腹甲も暗色。",
+      "tobu": "頭部は暗色地に白〜黄斑。口角が上がって見え『微笑むカメ(smiling terrapin)』と呼ばれる。頭がやや大きい(crassicollis=太い首)。",
+      "size": "小〜中型。甲長最大約20cm。",
+      "bunpu": "東南アジア(タイ・マレーシア・インドネシア・ベトナム・カンボジア等)。植生の多い緩流・止水を好む水生。仏教寺院で聖なるカメとして飼われることも。",
+      "kondou_shu": [
+        {
+          "aite": "スペングラーヤマガメ (Geoemyda spengleri)",
+          "kubetsu": "両種とも椎甲板2-4がキノコ/イチョウ葉形だが、crassicollisはほぼ全身黒＋水生＋中型/spengleriは小型(11cm以下)＋陸生＋葉状の褐色甲＋黒い腹甲。サイズ・生態・色で区別。"
+        },
+        {
+          "aite": "他の黒いドロガメ類/ヤマガメ類",
+          "kubetsu": "crassicollisは頭の白/黄斑＋『微笑む』口角＋キノコ形椎甲板で識別。全身黒でも頭部斑とイチョウ葉形椎甲板が手がかり。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(2005年〜、Siebenrockiella crassicollis)。IUCN Vulnerable(危急)。食用・ペット・放生用の採取が脅威。輸入に附属書II証明が必要。",
+      "photo_hantei": "ほぼ全身黒の甲＋頭部の白/黄斑＋『微笑む』口角＋キノコ/イチョウ葉形の椎甲板2-4＋水生。頭部斑と全身の黒さが手がかり。",
+      "photo_chuui": "①spengleriと椎甲板の形(キノコ/イチョウ葉形)を共有—サイズ(crassicollisは20cm、spengleriは11cm以下)・生態(水生 vs 陸生)・腹甲色で区別。②頭部の白/黄斑は個体変異があり、加齢で不明瞭化することも。③CITES II掲載の保全種で出所に留意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Black_marsh_turtle",
+        "https://www.researchgate.net/publication/299637397_Geoemyda_spengleri_Gmelin_1789_-_Black-Breasted_Leaf_Turtle",
+        "https://asianturtleprogram.org/native-turtle-species-in-vietnam/",
+        "https://iucn-tftsg.org/geoemyda-spengleri-047/"
+      ],
+      "unresolved": "Siebenrockiella は crassicollis と、旧Heosemys leytensis(フィリピンヤマガメ、現在Siebenrockiella (Panyaenemys) leytensis)の2種を含む。両者は椎甲板2-4のキノコ/イチョウ葉形という形質を共有し近縁とされる(Diesmos et al.2005ほか、ただしGeoemydaとの類縁は支持されない)。crassicollis自体は分類的に安定。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "asian-leaf-turtle",
+      "wamei": "ノコヘリマルガメ",
+      "gakumei": "Cyclemys dentata",
+      "eimei": "Asian Leaf Turtle / Brown Stream Terrapin",
+      "koura": "Geoemydidae(Cyclemys属=アジアの『葉ガメ』)。背甲は褐〜緑褐色で円〜長方形、葉に似る。後縁が鋸歯状(dentata=歯のある＝ノコヘリの由来、特に幼体〜若齢で顕著)。腹甲に可動の蝶番(成長で発達)。",
+      "iro_moyou": "背甲は褐〜緑褐色で葉状。腹甲は黄色地に暗色の放射条(黄腹群)。頭部に暗条や斑。",
+      "tobu": "頭部は褐色地に暗色/淡色の条。",
+      "size": "中型。甲長平均約25cm。",
+      "bunpu": "東南アジア〜南アジアの丘陵林の浅く緩やかな水域。成体は陸生寄り、幼体は水生。Cyclemys属は7種。",
+      "kondou_shu": [
+        {
+          "aite": "同属の他のCyclemys (oldhamii/enigmatica/fusca/gemeli/atripons/pulchristriata)",
+          "kubetsu": "【重要】Cyclemys7種は腹甲の色で2群(黄腹=atripons/dentata/pulchristriata、暗腹=enigmatica/fusca/gemeli/oldhamii)に大別され、種間識別が困難。dentataは黄腹群。産地＋腹甲色＋分子でないと種同定が難しい。"
+        },
+        {
+          "aite": "ハコガメ類 (Cuora)/他のヤマガメ",
+          "kubetsu": "Cyclemysは後縁が鋸歯状＋葉状甲＋腹甲の蝶番が不完全/Cuoraは腹甲が完全に閉じる蝶番。蝶番の完全さと後縁鋸歯で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Cyclemys spp.)。IUCN評価あり。食用・ペット・伝統医薬用に採取される。輸入に附属書II証明が必要。国内流通あり。",
+      "photo_hantei": "褐〜緑褐色の葉状甲＋後縁の鋸歯(特に幼体)＋黄色の腹甲に放射条＋腹甲の不完全な蝶番。後縁鋸歯と黄腹が手がかり。",
+      "photo_chuui": "①【同属種の識別困難】Cyclemys7種は外見が酷似し、腹甲色(黄腹/暗腹)で2群に分けるのが精一杯で種の断定には産地・分子が必要。暗腹群(oldhamii等)をdentataとしない。②後縁鋸歯は幼体で顕著だが老成で摩耗・不明瞭化。③かつてCyclemysとされた種の多くがCuora/Heosemys/Mauremys/Notochelysに移動—古い画像の学名に注意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cyclemys",
+        "https://www.fws.gov/species/asian-leaf-turtle-cyclemys-dentata",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6821855/",
+        "https://asianturtleprogram.org/native-turtle-species-in-vietnam/"
+      ],
+      "unresolved": "Cyclemys属は7種を含むが外見が酷似し、腹甲の色(黄腹群3種/暗腹群4種)でしか大別できず、種の識別には産地・分子データが必要。2008年(Fritz et al.)にenigmatica/fusca/gemeliが新記載されるなど分類が近年整理された。かつてCyclemysに置かれた多くの種(amboinensis/flavomarginata/mouhotti/trifasciata→Cuora、annandalii→Heosemys、annamensis→Mauremys、giebelii→Notochelys)が他属へ移動。dentata自体も広域で地理的変異があり同定に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "ouachita-map-turtle",
+      "wamei": "フトマユチズガメ",
+      "gakumei": "Graptemys ouachitensis",
+      "eimei": "Ouachita Map Turtle",
+      "koura": "Emydidae。背甲はオリーブ緑〜褐色のオーバルで、地図の道路網のような黄色い細線模様(map turtleの由来)＋低い正中キール＋後縁が鋸歯状。中型の河川棲。",
+      "iro_moyou": "背甲はオリーブ緑〜褐色に、各甲板の暗色スマッジと黄色い細線(map模様、幼体で鮮明・加齢で退色)。腹甲は鈍い黄色で縫合線が灰色。",
+      "tobu": "眼後に大きな黄色の長方形/楕円/三角の斑(postorbital blotch)＋あご・顎結合部・喉に4つの明黄斑＋白〜黄の眼(黒い横帯)。頭は細く鼻は突出しない。首・脚に細い黄条。",
+      "size": "中型で性的二型顕著。オス甲長16cm、メス26cm。",
+      "bunpu": "米国中部ミシシッピ川水系(ミネソタ〜テキサス東部、オハイオ〜カンザス)の大河川・三日月湖。流れのある清水域を好む。",
+      "kondou_shu": [
+        {
+          "aite": "ニセチズガメ (Graptemys pseudogeographica)",
+          "kubetsu": "【重要】ouachitensisはpseudogeographicaの亜種(G. p. ouachitensis)とする説と独立種とする説が併存。眼後斑の形(ouachitaは大きな長方形/楕円)＋あご・喉の4黄斑で区別されるが酷似し、両者の識別・分類が難しい。"
+        },
+        {
+          "aite": "他のGraptemys (チズガメ類全般)",
+          "kubetsu": "Graptemys属は種同定が難しい群。ouachitensisは低いキール＋眼後の大斑＋顔の黄斑で識別するが、産地と頭部模様の詳細が必要。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載(Graptemys全種、米国)。附属書IIIは輸出記録を要するが強い保護効果はない。IUCN低危険。国内流通あり。※他の北米Emydidae(wood/spotted等の附属書II)と異なり附属書IIIである点に注意。",
+      "photo_hantei": "オリーブ緑の甲＋地図状の黄色細線＋低い正中キール＋後縁鋸歯＋眼後の大きな黄斑＋あご/喉の4黄斑。眼後斑と顔の黄斑が手がかり。",
+      "photo_chuui": "①ニセチズガメ(pseudogeographica)と酷似し分類的にも亜種扱いと独立種扱いが併存—眼後斑の形と顔の黄斑で区別するが産地・頭部詳細が必要。②map模様は幼体で鮮明・加齢で退色するため、老成個体を別種としない。③Graptemys属は種同定困難な群で、写真だけの断定は慎重に。",
+      "sources": [
+        "https://iucn-tftsg.org/graptemys-ouachitensis-103/",
+        "https://animaldiversity.org/accounts/Graptemys_ouachitensis/",
+        "https://www.tn.gov/twra/wildlife/reptiles/turtle/ouachita-map-turtle.html",
+        "https://inherpatlas.org/species/graptemys_ouachitensis"
+      ],
+      "unresolved": "Graptemys ouachitensis の分類的地位が揺れる。独立種G. ouachitensis(Cagle 1953)とする説と、ニセチズガメの亜種G. pseudogeographica ouachitensisとする説が科学界で併存。かつて2亜種(ouachitensis/sabinensis)が認識されたが扱いも流動的。近縁のpseudogeographicaと酷似し、産地不明個体の種同定・亜種同定が困難。CITESはGraptemys全種が附属書III。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "pig-nosed-turtle",
+      "wamei": "スッポンモドキ",
+      "gakumei": "Carettochelys insculpta",
+      "eimei": "Pig-nosed / Fly River Turtle",
+      "koura": "【単型科・唯一無二】Carettochelyidae唯一の現生種。背甲は革状(scuteなし)でオリーブ〜灰色、周縁骨が発達し縁は硬い。表面に彫刻状の凹凸(insculpta=彫られた)。スッポン類に近縁だが甲は硬めのドーム状。",
+      "iro_moyou": "背甲はオリーブ褐〜暗灰色。腹側はクリーム〜白。幼体は縁がやや鋸歯状。",
+      "tobu": "【決定的特徴】鼻がブタのよう＝肉質に突出した吻の先端に鼻孔(シュノーケルに使う)。【もう一つの決定的特徴】四肢がウミガメのようなヒレ状(flipper)＝淡水ガメで唯一。",
+      "size": "大型。甲長最大約56cm、体重22.5kg。",
+      "bunpu": "オーストラリア北部(ノーザンテリトリー)＋ニューギニア南部の大河川・ラグーン・河口。高度に水生でヒレで『水中飛行』的に泳ぐ。産卵時のみ上陸。",
+      "kondou_shu": [
+        {
+          "aite": "スッポン類 (Trionychidae)",
+          "kubetsu": "スッポンモドキはヒレ状四肢＋豚鼻＋硬めのドーム革状甲/スッポンは扁平で柔らかい革状甲＋水かきのある指(ヒレでない)＋管状の吻。四肢(ヒレ vs 指)と甲形で区別。"
+        },
+        {
+          "aite": "ウミガメ類",
+          "kubetsu": "スッポンモドキはヒレ状四肢を持つが淡水産＋革状甲＋豚鼻/ウミガメは海産＋角質甲板のある硬甲。産地(淡水河川 vs 海)と甲・鼻で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCN Endangered/Vulnerable(評価により、近年Endangered)。1981-2011の30年で50%超の個体数減少。食用・卵・ペット取引の乱獲＋生息地喪失。インドネシアで保護されるが密輸多発(数万個体単位の押収例)。輸入に附属書II証明が必要で、私的飼育を禁じる国も多い。",
+      "photo_hantei": "豚のような肉質突出した鼻＋ウミガメ状のヒレ状四肢＋革状のオリーブ灰色ドーム甲＋大型。豚鼻とヒレで一目瞭然に識別可能。",
+      "photo_chuui": "①豚鼻＋ヒレ状四肢で他の全ての淡水ガメと明確に区別でき混同種はほぼない。②スッポン(柔甲＋管状吻＋指)とは四肢と鼻で区別。③CITES II＋近絶滅種で密輸が深刻—流通・撮影個体の出所に十分留意。亜種は認められない(Wells2002のcanniは無効)。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pig-nosed_turtle",
+        "https://animaldiversity.org/accounts/Carettochelys_insculpta/",
+        "https://www.researchgate.net/publication/279413842_Carettochelys_insculpta_Ramsay_1886_-_Pig-Nosed_Turtle_Fly_River_Turtle",
+        "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/carettochelys-insculpta",
+        "https://a-z-animals.com/animals/pig-nosed-turtle/"
+      ],
+      "unresolved": "Carettochelys insculpta は単型科・単型属の唯一無二の種で識別上の混同はほぼない。亜種は認められない(Wells 2002のC. i. canni亜種指定は命名法上有効な出版でなく、豪州個体群とニューギニア個体群の亜種としての差別化は未提示)。分子的には両個体群の地域判別が可能で密輸摘発に利用される。IUCN評価がVulnerable(2000)からEndangered寄りに更新されている点に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "spenglers-leaf-turtle",
+      "wamei": "スペングラーヤマガメ",
+      "gakumei": "Geoemyda spengleri",
+      "eimei": "Black-breasted Leaf Turtle / Vietnamese Leaf Turtle",
+      "koura": "Geoemydidae。世界最小級のカメ。背甲は褐色で葉に似る。椎甲板2-4がキノコ形/イチョウ葉形＋後縁が強く鋸歯状(前後縁とも棘状に尖る)＋3本のキール。陸生。",
+      "iro_moyou": "背甲は褐色〜黄褐色。腹甲が黒〜暗色(black-breasted=胸が黒いの由来)。頭部・体色は変異に富む。頭部側面に淡色条や斑。",
+      "tobu": "頭部は褐色で、側面に淡色(黄白)の条や眼後の斑。眼を独立して動かせる。吻はやや尖る。",
+      "size": "極小。甲長最大約10.7cm、体重90〜150g。世界最小級のカメの一つ。",
+      "bunpu": "中国南部(海南島含む)〜北ベトナムの山地林の林床(陸生、ほとんど水に入らない)。近縁にリュウキュウヤマガメ(Geoemyda japonica、琉球)。",
+      "kondou_shu": [
+        {
+          "aite": "リュウキュウヤマガメ (Geoemyda japonica)",
+          "kubetsu": "同属で近縁。spengleriは中国南部〜北ベトナム産/japonicaは琉球列島(沖縄・久米島・渡嘉敷)固有。産地で区別。両者はかつて亜種扱いだったが現在は別種で、形態にも差(japonicaがやや大型・色調差)。"
+        },
+        {
+          "aite": "アジアコガシラドロガメ (Siebenrockiella crassicollis)",
+          "kubetsu": "両種とも椎甲板2-4がキノコ/イチョウ葉形だが、spengleriは極小(11cm以下)＋陸生＋褐色葉状甲＋黒い腹甲/crassicollisは中型(20cm)＋水生＋ほぼ全身黒。サイズ・生態で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書III掲載(中国)＋Geoemydidaeの一部として国際規制。IUCN Endangered(危機、2018時点)。生きたペット取引で中国・ベトナムから多数輸出され個体群減少。輸入規制に留意。※当運営者(TeTe)はケージ実写真を保有する種。",
+      "photo_hantei": "極小の褐色葉状甲＋強い鋸歯状の前後縁＋キノコ/イチョウ葉形の椎甲板2-4＋黒い腹甲＋陸生。極小サイズと強い鋸歯縁が手がかり。",
+      "photo_chuui": "①リュウキュウヤマガメ(japonica)と近縁で酷似—産地(中国/北ベトナム vs 琉球)で区別。日本産の写真をspengleriとしない。②crassicollisと椎甲板形を共有—サイズ・生態・腹甲色で区別。③当運営者のケージ実写真が確定素材として利用可能(iNat写真より優先)。④CITES掲載＋Endangeredで出所に留意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Black-breasted_leaf_turtle",
+        "https://iucn-tftsg.org/geoemyda-spengleri-047/",
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_047_spengleri_v1_2010.pdf",
+        "https://www.researchgate.net/publication/299637397_Geoemyda_spengleri_Gmelin_1789_-_Black-Breasted_Leaf_Turtle",
+        "http://www.turtlepuddle.org/exotics/leaf.html"
+      ],
+      "unresolved": "Geoemyda属は現生2種(spengleri/japonica)＋化石種amamiensis。spengleriとjaponica(琉球)はかつてG. spengleriの亜種spengleri/japonicaとされたが、大規模標本比較(Yasukawa & Ota)で両者に相当な差があり独立種として扱うのが適切とされ、現在は別種。ただし単系統群を成す。spengleriは頭・甲の色彩変異が大きいが地理的変異の詳細は未解明。当運営者(TeTe)のケージ実写真が本種の確定素材。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "west-african-mud-turtle",
+      "wamei": "ヒメハコヨコクビガメ",
+      "gakumei": "Pelusios castaneus",
+      "eimei": "West African Mud Turtle / Swamp Terrapin",
+      "koura": "ヨコクビ亜目Pelomedusidae。背甲は褐色のドーム状オーバル。【属の決定的特徴】腹甲に蝶番(hinge)を持ち前葉が可動する(胸甲板と腹甲板の間)＝姉妹属Pelomedusa(蝶番なし)との決定的差。項甲板を欠きM1とM2が接する(Pelomedusidae共通)。",
+      "iro_moyou": "背甲は一様な褐色(CB個体で淡色〜ハイポの例も)。腹甲は淡色で、周縁に角ばった暗色図形のみ(中央部は無地に近い)。頭部に細く曲がりくねった網目模様(vermiculation)。",
+      "tobu": "頭部に細く曲がりくねった淡黄色の網目模様(vermiculation)＝唯一の明瞭な模様。あご下に髭。狭く楕円形の間喉甲板(intergular)＋非常に短い胸甲板。",
+      "size": "中型。メス最大約28cm、オス約25cm。",
+      "bunpu": "西・中央アフリカ(サバンナ主体だが森林・マングローブにも侵入)の流れ・池沼・湿地。乾季は泥中で夏眠。※セーシェルのP. seychellensisは遺伝解析で実はcastaneusと判明。",
+      "kondou_shu": [
+        {
+          "aite": "アフリカヨコクビガメ (Pelomedusa subrufa)",
+          "kubetsu": "【重要】castaneus(Pelusios)は腹甲に蝶番あり(前葉が可動)＋頭に網目模様/subrufa(Pelomedusa)は腹甲に蝶番なし(固定)。腹甲の蝶番の有無が属を分ける決定的識別点。"
+        },
+        {
+          "aite": "ヒガシアフリカドロガメ (Pelusios subniger)",
+          "kubetsu": "castaneusは頭に網目模様あり/subnigerは頭に模様なし＋『8の字』形の腹甲。頭の模様の有無で区別。両種とも腹甲に蝶番あり。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険(Least Concern)。安価で普通に流通する入門種。西アフリカから多数輸出＋CB繁殖も進む。",
+      "photo_hantei": "褐色のドーム甲＋腹甲の蝶番(前葉が可動)＋頭部の細い網目模様＋狭い楕円形の間喉甲板＋淡色腹甲(周縁のみ暗色図形)。腹甲の蝶番と頭の網目が決め手。",
+      "photo_chuui": "①アフリカヨコクビガメ(Pelomedusa)と混同—腹甲の蝶番の有無(Pelusios=あり/Pelomedusa=なし)が決定的。腹甲が写るカットで蝶番を確認。②P. subnigerとは頭の模様(castaneus=網目あり)で区別。③一様な褐色で個体変異(CB個体は淡色)があり色単独で判定しない。④セーシェル産『P. seychellensis』は実はcastaneus(別種でない)。",
+      "sources": [
+        "https://iucn-tftsg.org/pelusios-castaneus-095/",
+        "https://en.wikipedia.org/wiki/West_African_mud_turtle",
+        "https://theturtleroom.org/species-profile/pelusios-castaneus-castaneus/",
+        "https://reptilesmagazine.com/west-african-mud-turtle-care-sheet/",
+        "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3819"
+      ],
+      "unresolved": "Pelusios castaneus seychellensis(セーシェル)の分類が論争的。Bour(1983)らは近縁別種とするが、Stuckas et al.(2013)・Kindler et al.(2016)は歴史的に移入されたcastaneusのシノニム(=別種でない)とし、遺伝解析でlectotypeがcastaneusと確認された。TTWG(2014)は移入由来の亜種の可能性を保留。かつてP. chapiniがcastaneusの亜種とされた(1983年まで)経緯もあり、Pelusios属内の種・亜種境界は流動的。",
+      "status": "confirmed"
     }
   ]
 }
