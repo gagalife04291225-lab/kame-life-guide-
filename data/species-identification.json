@@ -2092,6 +2092,206 @@
       ],
       "unresolved": "A. mutica は2亜種。spiniferaとの区別は前縁の棘の欠如と丸い鼻孔(隔壁隆起なし)に依存し、これらが写らない写真では判別困難。メラニズムのspiniferaメスとは特に紛らわしい。",
       "status": "confirmed"
+    },
+    {
+      "slug": "sulcata-tortoise",
+      "wamei": "ケヅメリクガメ",
+      "gakumei": "Centrochelys sulcata",
+      "eimei": "African Spurred Tortoise / Sulcata",
+      "koura": "アフリカ最大・世界第3位のリクガメ。甲は黄褐色で扁平・幅広く、成長輪が明瞭。単型属Centrochelys。",
+      "iro_moyou": "甲は一様な黄褐色〜淡褐色で派手な模様はない。各甲板に明瞭な成長輪と溝。皮膚は黄褐色で厚い。腹甲は象牙色。",
+      "tobu": "頭部は黄褐色。【最大の識別点】後肢大腿部に2〜3本の大きな角状のスパー(拍車/距)＝『ケヅメ(蹴爪)』『spurred』の由来。前肢に大きな鱗。",
+      "size": "巨大。甲長最大約83cm、体重80〜100lb(36〜45kg)超。アフリカ本土最大。",
+      "bunpu": "サハラ砂漠南縁〜サヘルの乾燥サバンナ・砂漠縁。深い巣穴を掘る。多肉植物・草本食。",
+      "kondou_shu": [
+        {
+          "aite": "ヒョウモンガメ (Stigmochelys pardalis)",
+          "kubetsu": "sulcataは大腿部に大きな角状スパーあり＋一様な黄褐色＋扁平で幅広い甲/leopardは大腿スパーなし＋ヒョウ柄斑＋高いドーム。スパーの有無とヒョウ柄の有無が決定的。"
+        },
+        {
+          "aite": "ギリシャリクガメ (Testudo graeca)",
+          "kubetsu": "graecaも大腿部に結節(スパー)を持つが小型で、sulcataは遥かに大型＋スパーが大きく角状。混同されるがサイズで一目瞭然。"
+        },
+        {
+          "aite": "アルダブラゾウガメ (Aldabrachelys gigantea)",
+          "kubetsu": "sulcataは大腿スパー＋黄褐色扁平甲/アルダブラは更に巨大＋高いドーム＋灰黒色＋首が長く鼻先に集水用の鼻孔。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCNはVulnerable(危急)。ワシントン条約II類で輸入に証明が必要。国内CB流通は多いが、終生で巨大化するため飼育には広大なスペースを要する。",
+      "photo_hantei": "後肢大腿部の大きな角状スパー＋一様な黄褐色の扁平で幅広い甲＋明瞭な成長輪＋巨大サイズ。スパーが最も確実。",
+      "photo_chuui": "①ヒョウモンガメと混同されるがスパーの有無＋ヒョウ柄の有無で区別。②幼体はスパーが未発達で成長輪も少なく、他種幼体と紛らわしい—甲の一様な黄褐色と扁平さで判断。③ギリシャリクガメの大腿結節と混同しないよう、スパーの大きさ(角状)とサイズを確認。",
+      "sources": [
+        "https://a-z-animals.com/animals/leopard-tortoise/",
+        "https://www.allturtles.com/testudinidae/",
+        "https://www.mdpi.com/2076-2615/14/18/2664",
+        "https://tortoiseresourcecenter.com/tortoise-species-identification/",
+        "https://reptichip.com/blogs/reptitips/giant-decisions-sulcatas-vs-leopard-tortoises-which-is-the-right-pet-for-your-family"
+      ],
+      "unresolved": "Centrochelys sulcata は単型で分類的に安定。主な識別課題は幼体時のスパー未発達で、成体の角状大腿スパーが決め手。leopardとの混同はスパー/ヒョウ柄の有無で明確に区別可能。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "leopard-tortoise",
+      "wamei": "ヒョウモンガメ",
+      "gakumei": "Stigmochelys pardalis",
+      "eimei": "Leopard Tortoise",
+      "koura": "アフリカ第2位の大型リクガメ。高くドーム状の甲。単型属Stigmochelys(かつてGeochelone/Centrochelys/Psammobatesにも置かれた)。鋸歯は小型種より弱い。",
+      "iro_moyou": "黄〜tan地に黒〜褐色のヒョウ柄斑(blotch)＝名の由来。各甲板の斑は幼体で鮮明・境界明瞭、成体で分散・退色・崩れることが多い。模様は個体ごとに固有(指紋のよう)。",
+      "tobu": "頭部・四肢は黄褐色で、sulcataのような大腿部の大きなスパーを持たない。",
+      "size": "大型。甲長25〜45cm、大型個体で70cm・50kg超。エチオピア・ソマリアの個体は特に大型。メスが大型になることが多い。",
+      "bunpu": "東〜南アフリカ(スーダン〜南ケープ)のサバンナ・草原。放牧地的な半乾燥草地。穴は掘らない(既存の穴を利用)。",
+      "kondou_shu": [
+        {
+          "aite": "ケヅメリクガメ (Centrochelys sulcata)",
+          "kubetsu": "leopardはヒョウ柄斑＋高いドーム＋大腿スパーなし/sulcataは一様な黄褐色＋扁平＋大腿部に大きな角状スパー。スパーとヒョウ柄で決定的に区別。"
+        },
+        {
+          "aite": "インドホシガメ (Geochelone elegans)等の放射模様種",
+          "kubetsu": "leopardは黒い塊状の斑(blotch)/ホシガメは放射状の星型ライン。模様の型が異なる。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載。IUCNは低危険(Least Concern寄り)。米国は2000年、ハートウォーター病を媒介するダニ懸念で野生個体の輸入を禁止。以後はCB個体が流通。国内CB流通あり。",
+      "photo_hantei": "黄tan地の黒いヒョウ柄斑＋高いドーム甲＋大腿スパーの欠如。ヒョウ柄と高ドームが決め手。",
+      "photo_chuui": "①ケヅメリクガメとはスパー/ヒョウ柄の有無で区別。②旧2亜種(S. p. pardalis=南ア・ナミビア・暗色大型低ドーム / S. p. babcocki=広域・流通主力)の扱いは揺れ、近年は単一種で亜種を分けない説が支持される—産地不明の成体で亜種を断定しない。③幼体はヒョウ柄が鮮明だが成体で退色・分散するため、退色個体を別種としない。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Leopard_tortoise",
+        "https://reptilesmagazine.com/leopard-tortoise-care/",
+        "https://a-z-animals.com/animals/leopard-tortoise/",
+        "https://www.mdpi.com/2076-2615/14/18/2664",
+        "https://reptilesmagazine.com/leopard-tortoise-care-sheet/"
+      ],
+      "unresolved": "亜種の扱いが揺れる。従来 S. p. pardalis(南部)と S. p. babcocki(北部・広域)の2亜種とされたが、近年の遺伝研究は単一種で別亜種なしを支持する(A-Z Animals・IUCN準拠)。両亜種は交雑し可稔な子を作る。広い分布による地理的変異が大きく未記載亜種の可能性も指摘され、産地不明個体の亜種同定は不確実。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "bell-hinge-back-tortoise",
+      "wamei": "ベルセオレガメ",
+      "gakumei": "Kinixys belliana",
+      "eimei": "Bell's Hinge-back Tortoise",
+      "koura": "【属の決定的特徴】背甲の後半部に蝶番(hinge)を持ち、後方を下げて後肢・尾を守れる＝セオレ(背折れ)ガメ。Kinixysは背甲に蝶番を持つ唯一のカメ属。蝶番は孵化時になく成長で発達。bellはサバンナ性で甲は緩いドーム。",
+      "iro_moyou": "甲は黄褐色地に暗色の模様(各甲板に暗色斑や放射)。個体・産地で変異。パンケーキガメに似た暗褐色パターンを持つ個体も。",
+      "tobu": "頭部は黄褐色。前肢の爪数(4〜5)は近縁種の識別に関わる。",
+      "size": "小〜中型。甲長20〜22cm級。",
+      "bunpu": "狭義K. belliana(Gray,1830)はアンゴラ〜ブルンジのサバンナ。※Kindler et al.(2012)により旧広義bellianaから西部の nogueyi(4爪・西アフリカ)と東南部/マダガスカルの zombensis が独立種化。狭義bellianaに現在は亜種を認めない。",
+      "kondou_shu": [
+        {
+          "aite": "ホームセオレガメ (Kinixys homeana)",
+          "kubetsu": "【重要】bellはサバンナ性で甲が緩いドーム/homeは森林(雨林)性で背甲後縁が急角度で下方に落ち込み反り返る(steep posterior slope)。後縁の形が決定的。生態も対照的(サバンナ vs 雨林)。"
+        },
+        {
+          "aite": "ニシキヘリセオレガメ (K. nogueyi)/ザンベジセオレガメ (K. zombensis)",
+          "kubetsu": "旧belliana亜種で現在は独立種。nogueyiは前肢4爪・西アフリカ、bellianaは5爪でアンゴラ〜ブルンジ。産地と爪数で区別されるが酷似し、標本情報なしでは同定困難。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Kinixys spp.)。IUCN評価あり(種により危急〜危機)。野生採取・生息地劣化が脅威。輸入に附属書II証明が必要。",
+      "photo_hantei": "背甲後半の蝶番(セオレ構造)＋緩いドームの黄褐色甲＋暗色模様＋サバンナ産。蝶番の存在でKinixys属と判別し、緩いドーム(後縁が急落しない)でhomeと区別。",
+      "photo_chuui": "①ホームセオレ(homeana)と混同—後縁が急落・反り返るのがhome、緩いドームがbell。②旧広義bellianaが複数種に分割され(nogueyi/zombensis独立種化)、古い画像は別種の可能性—産地不明個体は狭義bellianaと断定しない。③蝶番は幼体で未発達なので、幼体では属判別に注意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise",
+        "https://www.researchgate.net/publication/249992487_Molecular_phylogeny_of_African_hinge-back_tortoises_Kinixys_Implications_for_phylogeography_and_taxonomy_Testudines_Testudinidae",
+        "https://tortoise.org/archives/kinixys.html",
+        "https://thetortoiseproject.com/tortoise-species-of-the-world/"
+      ],
+      "unresolved": "旧広義 K. belliana は3つの深く分岐したクレードの寄せ集めで、Kindler et al.(2012)が分割。狭義 K. belliana(Gray,1830)をアンゴラ〜ブルンジに限定し、西アフリカの4爪型を K. nogueyi、東南アフリカ/マダガスカルを K. zombensis(旧亜種domergueiを含む)として独立種化。サイトが狭義bellianaを指すか旧広義かで学名の範囲が変わるため検収時に再確認要。nogueyi/zombensis/spekii/lobatsiana/natalensis等の近縁種と産地なしでは同定困難。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "home-hinge-back-tortoise",
+      "wamei": "セオレガメ（ホメアナ）",
+      "gakumei": "Kinixys homeana",
+      "eimei": "Home's Hinge-back Tortoise",
+      "koura": "【属の特徴】背甲後半に蝶番を持つセオレガメ。【種の決定的特徴】背甲後縁が急角度で下方に落ち込み、後端が反り返る(steep/abrupt posterior slope)＝本種最大の識別点。森林(雨林)性クレードでK. erosaと近縁。",
+      "iro_moyou": "甲は褐色〜暗褐色で、各甲板に暗色の模様。雨林の林床でのカモフラージュ的な地味な色。",
+      "tobu": "頭部は褐色。",
+      "size": "小〜中型。甲長20cm級。",
+      "bunpu": "西アフリカの熱帯雨林(ナイジェリア〜コンゴ盆地西部等)。湿潤な林床。サバンナ性のbellと生態が対照的。",
+      "kondou_shu": [
+        {
+          "aite": "ベルセオレガメ (Kinixys belliana)",
+          "kubetsu": "【重要】homeは背甲後縁が急落・反り返る＋雨林性/bellは緩いドーム＋サバンナ性。後縁の急な落ち込みが決定的識別点。"
+        },
+        {
+          "aite": "モリセオレガメ (Kinixys erosa)",
+          "kubetsu": "erosaも雨林性で近縁。homeより大型で後縁縁甲板が鋸歯状に強く尖る傾向。両者は雨林性クレードで酷似し産地・後縁形状の詳細で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Kinixys spp.)。IUCNはVulnerable(危急)。雨林伐採・食用/ペット採取が脅威。輸入に附属書II証明が必要。",
+      "photo_hantei": "背甲後半の蝶番(セオレ構造)＋後縁が急角度で下方に落ち込み反り返る甲形＋暗褐色＋雨林産。急落する後縁が決め手。",
+      "photo_chuui": "①ベルセオレ(belliana)と混同—後縁が急落・反り返るのがhome、緩いドームがbell。側面からの写真で後縁形状を確認。②モリセオレ(erosa)とは雨林性クレードで酷似—後縁の鋸歯の強さと産地で区別。③蝶番は幼体で未発達。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise",
+        "https://www.researchgate.net/publication/249992487_Molecular_phylogeny_of_African_hinge-back_tortoises_Kinixys_Implications_for_phylogeography_and_taxonomy_Testudines_Testudinidae",
+        "https://tortoise.org/archives/kinixys.html",
+        "https://thetortoiseproject.com/tortoise-species-of-the-world/"
+      ],
+      "unresolved": "K. homeana は雨林性クレードでK. erosaと姉妹群。両者は形態的に酷似し、後縁縁甲板の鋸歯の強さ・産地で区別されるが、標本情報なしの写真では erosa との判別が難しい場合がある。サバンナ性のbelliana群とは後縁の急落で明確に区別可能。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "bowsprit-tortoise",
+      "wamei": "ソリガメ",
+      "gakumei": "Chersina angulata",
+      "eimei": "Angulate / Bowsprit Tortoise",
+      "koura": "甲はドーム状で細長く、側面が急。蝶番はない。背甲は5椎甲板・4対肋甲板・11対縁甲板・単一の臀甲板と単一の項甲板。単型属Chersina(近縁はHomopus=padloper)。",
+      "iro_moyou": "甲は淡褐色/黄と黒の混合で、各甲板の中心が黄〜橙赤でその中央に暗色斑、縁甲板に暗色の三角(angular=名の由来)。色は個体・産地で大きく変異(金褐色〜暗色)。腹甲は淡褐〜淡黄で黄橙赤の明色斑。",
+      "tobu": "頭部は小さく細い。【決定的特徴】腹甲前端の喉甲板(gular)が単一・分割されず前方に大きく突出する(bowsprit=船首斜檣に由来)。他のアフリカ産リクガメが喉甲板2枚なのに対し本種は1枚。オスで特に長い。前肢5爪・後肢4爪。",
+      "size": "中型(甲長最大35cm)。性的二型でオスがメスより大型(他の多くのリクガメと逆)。",
+      "bunpu": "南アフリカ(＋ナミビアにわずか)の沿岸低木林・半砂漠。南アで最も普通のリクガメの一つ。mtDNAで南部/西部の2系統。亜種なし。",
+      "kondou_shu": [
+        {
+          "aite": "他のアフリカ産リクガメ(Kinixys/Stigmochelys等)",
+          "kubetsu": "bowspritは腹甲前端の単一の突出する喉甲板(bowsprit)を持つ＝他種は喉甲板2枚。この単一喉甲板が決定的識別点。蝶番はない(Kinixysと区別)。"
+        },
+        {
+          "aite": "マダガスカル産の同名種(Angulated tortoise の混同)",
+          "kubetsu": "南アフリカのChersina angulataとマダガスカルのAngonoka(Astrochelys yniphora)等は英名や『angulated』表記で混同されうるが別属・別種。産地(南ア vs マダガスカル)で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(1975/07/01〜)。IUCNは低危険(Least Concern)。輸入に附属書II証明が必要。CITESは英名でd付きの『Angulated tortoise』を用いる。",
+      "photo_hantei": "腹甲前端の単一・突出する喉甲板(bowsprit)＋ドーム状で細長い甲＋各甲板中心の黄橙に暗色斑＋縁甲板の暗色三角。単一喉甲板が最も確実(腹側/前方からのカットが有効)。",
+      "photo_chuui": "①決定的形質の単一喉甲板は腹側または前方からのカットでないと写らない—背側のみの写真では判別困難。②色変異が非常に大きい(金褐色〜暗色)ため色単独で断定しない。③喉甲板の突出はオスで顕著、メス・幼体では控えめなので性差に注意。④名前の『angulated』でマダガスカル産種と混同しないよう産地(南ア/ナミビア)を確認。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Angulate_tortoise",
+        "https://iucn-tftsg.org/chersina-angulata-030/",
+        "https://animaldiversity.org/accounts/Chersina_angulata/",
+        "https://startortoises.net/angulate-tortoise.html",
+        "https://cites.org/eng/gallery/species/reptile/angulated-tortoise.html"
+      ],
+      "unresolved": "Chersina angulata は単型属・亜種なしだが、mtDNAで南部と西部の2つの明瞭な進化系統が示されており、将来の分類的再検討の可能性がある。和名は『アングロート(アオリ)リクガメ』『バウスプリットリクガメ』等が併存し流通名が一定しないため、ページ和名の実態を検収時に再確認要。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "pancake-tortoise",
+      "wamei": "パンケーキリクガメ",
+      "gakumei": "Malacochersus tornieri",
+      "eimei": "Pancake Tortoise",
+      "koura": "【一見して識別可能・唯一無二】甲が極めて薄く扁平で柔軟(flexible)＝『パンケーキ』の由来。甲骨の骨化が限定的で多数の開口を持ち軽量、薄い角質甲板に覆われる。この扁平・柔軟さは岩の割れ目(crevice)に潜り込む適応。単型属Malacochersus。",
+      "iro_moyou": "甲は褐色で、各甲板に変異に富む暗色の放射状ライン(岩場でのカモフラージュ)。腹甲は淡色。",
+      "tobu": "頭部・四肢は褐色。四肢は岩場を機敏に動くのに適す。",
+      "size": "小型。甲長最大約17.8cm(7インチ)、体重500g超えは稀。他のリクガメより軽量・機敏。",
+      "bunpu": "タンザニア・ケニアのサバンナの岩山・コピエ(kopje)の岩の割れ目。北ザンビアにも小個体群。半乾燥地。",
+      "kondou_shu": [
+        {
+          "aite": "他のリクガメ全般",
+          "kubetsu": "pancakeは甲が極端に扁平・柔軟で軽量＝他のリクガメは甲がドーム状で硬く重い。この扁平柔軟な甲で一目瞭然に区別できる(混同種はほぼない)。"
+        },
+        {
+          "aite": "スッポン類(軟らかい甲つながりの誤解)",
+          "kubetsu": "pancakeは陸生リクガメで甲板(scute)を持つ薄い硬甲/スッポンは水生で甲板を持たない革状皮膚。柔らかさの質が異なる。"
+        }
+      ],
+      "houkisei": "【要注意・最新】CITES附属書I掲載(2019年CoP18で附属書II→Iに昇格)。IUCN 2019でCRITICALLY ENDANGERED(近絶滅種)。ペット取引が最大の脅威。附属書I掲載により商業的国際取引は原則禁止で、繁殖個体でも厳格な規制。※古い資料はAppendix IIと記載しているので注意。",
+      "photo_hantei": "極端に扁平で薄い甲＋褐色地の暗色放射ライン＋小型軽量＋岩場の生息環境。扁平柔軟な甲で即座に識別可能。",
+      "photo_chuui": "①扁平柔軟な甲で他のリクガメと明確に区別でき混同種はほぼない。②法規制が2019年に附属書I(近絶滅種)へ昇格した点が最重要—古い画像・資料のAppendix II表記に引きずられない。③商業取引が厳しく規制されるため、流通・撮影個体の出所に留意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pancake_tortoise",
+        "https://iucn-tftsg.org/malacochersus-tornieri-107/",
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_107_tornieri_v1_2018.pdf",
+        "https://nationalzoo.si.edu/animals/african-pancake-tortoise",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7816999/"
+      ],
+      "unresolved": "Malacochersus tornieri は単型で形態的に唯一無二、識別上の混同はほぼない。法規制ステータスが2019年CoP18で附属書II→Iへ昇格し、IUCN評価もVulnerable(1996)からCritically Endangered(2019)へ変化しているため、古いソース(Appendix II/VU表記)との齟齬に注意。",
+      "status": "confirmed"
     }
   ]
 }
