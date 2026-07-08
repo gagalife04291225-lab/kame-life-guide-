@@ -1689,6 +1689,112 @@
       ],
       "unresolved": "macrospilotaは明色中央斑で比較的識別しやすいが、形態で定義された7亜種は分子系統地理と一致せずTTWGは改訂分類を未策定。pileata・rhizophorarumとの交雑帯個体は亜種断定困難。明色斑のみでの断定は避け産地を併用すべき。",
       "status": "confirmed"
+    },
+    {
+      "slug": "red-eared-slider",
+      "wamei": "ミシシッピアカミミガメ",
+      "gakumei": "Trachemys scripta elegans",
+      "eimei": "Red-eared Slider",
+      "koura": "扁平〜緩いドームの背甲で、緑〜オリーブ地に黄条模様。老成individは暗色化(メラニズム)し模様が不明瞭になる。上顎先端に切れ込み。世界最も普及・最も侵略的なカメ。",
+      "iro_moyou": "眼後に幅広い赤〜橙の帯(稀に黄)＝最大の識別点で『アカミミ』の由来。腹甲は黄色で各甲板に黒い眼状斑(眼のような環状斑)が多数。四肢・首に黄緑の条。",
+      "tobu": "眼の後方に赤〜橙の太い帯。頭部・四肢に細い黄条。",
+      "size": "中〜大型。メス大型(甲長25〜28cm)、オス小型。",
+      "bunpu": "米南部〜メキシコ極北部原産(アラバマ〜北メキシコ)。Trachemys scripta の温帯系統の一亜種。ペット由来で世界中に移入・定着(日本含む)。",
+      "kondou_shu": [
+        {
+          "aite": "キバラガメ (Trachemys scripta scripta)",
+          "kubetsu": "elegansは眼後に赤〜橙の太帯/scriptaは眼後に黄色の大きな縦長ブロッチ(赤帯なし)。腹甲もelegansは眼状斑多数、scriptaは暗色スマッジ少。"
+        },
+        {
+          "aite": "カンバーランドスライダー (Trachemys scripta troostii)",
+          "kubetsu": "elegansは眼後の帯が赤〜橙で幅広い/troostiiは眼後の条が黄色で細く、脚・首の条が幅広く本数少。両者は似るが眼後斑の色(赤 vs 黄)と幅で区別。"
+        },
+        {
+          "aite": "クーター類 (Pseudemys spp.)",
+          "kubetsu": "アカミミは眼後赤帯＋腹甲眼状斑。クーター(Pseudemys)は眼後赤帯を欠き、より大型で頭部条が細かい。属が異なる。"
+        }
+      ],
+      "houkisei": "CITES未掲載。ただし特定外来生物(日本)—2023年6月より『条件付特定外来生物』として飼育は可だが輸入・放出・販売・頒布が禁止。国内既飼育個体の終生飼養は可。※法規制は流通・飼育の要注意点。",
+      "photo_hantei": "眼後の幅広い赤〜橙帯＋緑地に黄条の甲＋(幼体〜若齢で)腹甲の黒い眼状斑。赤帯が最も確実。",
+      "photo_chuui": "①老成個体はメラニズムで赤帯・模様が不明瞭化し同定困難—若齢個体の頭部が最も確実。②キバラ(scripta)・カンバーランド(troostii)と同一学名(T. scripta)で亜種違い—眼後斑の色で区別するが交雑個体多数。③Vamberger et al.(2020)は3亜種の色差が分類群でなく個体群レベルの差の可能性を示唆—亜種同定は分子的に不確実。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Red-eared_slider",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/red-eared-slider/index.php",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1259",
+        "https://animaldiversity.org/accounts/Trachemys_scripta/",
+        "https://www.researchgate.net/figure/Comparison-of-coloration-and-pattern-of-the-three-subspecies-of-Trachemys-scripta-and-the_fig1_337925411",
+        "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html"
+      ],
+      "unresolved": "Vamberger et al.(2020)の分子研究がT. scripta 3亜種(elegans/scripta/troostii)の分類学的区分に疑問を呈し、顕著な色・模様差は分類群でなく個体群レベルの差を反映する可能性を示唆。眼後斑での亜種判別は表現型ベースで分子的裏付けを欠く。加えてelegans遺伝子のscripta個体群への侵入(交雑)が広範で純系個体が減少。CITESは未掲載だが日本では条件付特定外来生物。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "yellow-bellied-slider",
+      "wamei": "キバラガメ",
+      "gakumei": "Trachemys scripta scripta",
+      "eimei": "Yellow-bellied Slider",
+      "koura": "T. scripta の基亜種。背甲は他2亜種よりやや扁平度が低くドーム状で、表面に特徴的な皺(wrinkle)。緑〜オリーブ地に黄条。側面から見ると幅広い縦帯が出ることが多い。",
+      "iro_moyou": "眼後に大きな黄色の縦長ブロッチ(幼体・メスで最も明瞭)＝赤帯を欠くのが決め手。腹甲は黄色で丸い暗色スマッジが散る程度か無地。前肢前面に細い黄条。",
+      "tobu": "眼後に黄色の大ブロッチ(赤帯なし)。四肢・首に細く本数の多い黄条。",
+      "size": "中〜大型。甲長20〜30cm級。",
+      "bunpu": "米南東部(バージニア南部〜フロリダ北縁)。大西洋岸側。基亜種。",
+      "kondou_shu": [
+        {
+          "aite": "ミシシッピアカミミガメ (Trachemys scripta elegans)",
+          "kubetsu": "scriptaは眼後が黄色ブロッチ(赤帯なし)/elegansは眼後に赤〜橙の太帯。腹甲もscriptaはスマッジ少、elegansは眼状斑多数。ただしelegans移入による交雑個体が多く中間型に注意。"
+        },
+        {
+          "aite": "カンバーランドスライダー (Trachemys scripta troostii)",
+          "kubetsu": "scriptaは眼後が黄色の大ブロッチで頭頸の条が細く本数多い/troostiiは眼後の黄条が細く、脚・首の条が幅広く本数少。両者にintergradeなし(自然分布が接しない)とされる。"
+        }
+      ],
+      "houkisei": "CITES未掲載。日本では条件付特定外来生物(Trachemys scripta 種として、2023年6月〜)—飼育可・輸入/放出/販売/頒布禁止。国内既飼育個体の終生飼養可。",
+      "photo_hantei": "眼後の黄色大ブロッチ(赤帯の欠如)＋皺のあるやや高い甲＋腹甲のスマッジが少ない黄色。赤帯がないこと＋黄ブロッチが決め手。",
+      "photo_chuui": "①アカミミ(elegans)との最大の差は眼後斑の色(黄 vs 赤)—ただしelegans交雑個体は赤みを帯び中間的で断定困難。②同一学名(T. scripta)の亜種違いのため画像使い回しリスク大。③老成メラニズム個体は黄ブロッチも不明瞭化。④Vamberger et al.(2020)により亜種区分自体が分子的に不確実。",
+      "sources": [
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/yellow-bellied-slider/index.php",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1259",
+        "https://animaldiversity.org/accounts/Trachemys_scripta/",
+        "https://www.mass.gov/info-details/learn-about-red-eared-and-yellow-bellied-sliders",
+        "https://www.researchgate.net/figure/Comparison-of-coloration-and-pattern-of-the-three-subspecies-of-Trachemys-scripta-and-the_fig1_337925411",
+        "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html"
+      ],
+      "unresolved": "Vamberger et al.(2020)がT. scripta亜種区分に疑問を呈し色差は個体群レベルの可能性。elegans(アカミミ)移入・交雑によりバージニア等で純系scriptaが減少、intergrade個体が多数化。眼後斑での判別は表現型ベース。日本では条件付特定外来生物。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "cumberland-slider",
+      "wamei": "カンバーランドスライダー（カンバーランドキミミガメ）",
+      "gakumei": "Trachemys scripta troostii",
+      "eimei": "Cumberland Slider",
+      "koura": "T. scripta の一亜種。背甲は緑〜オリーブ地に黄条。アカミミに似た全体形。テネシー州カンバーランド川が基産地。",
+      "iro_moyou": "眼後に黄色の斜め条(oblique patch)—アカミミの赤帯より細く黄色い。脚・首・頭の条は幅広いが本数が少ない。腹甲は多くの甲板に中空の黒斑、大腿後面に黄黒の水平線。全体にアカミミより黄色みが少ない傾向。",
+      "tobu": "眼後に細い黄色の斜め条。頭頸の条は幅広く本数少。",
+      "size": "中型。甲長〜21cm前後。",
+      "bunpu": "米南東部内陸(バージニア南西部〜アラバマ、アパラチア山脈以西)。カンバーランド川・テネシー川水系。",
+      "kondou_shu": [
+        {
+          "aite": "ミシシッピアカミミガメ (Trachemys scripta elegans)",
+          "kubetsu": "troostiiは眼後の条が黄色で細い＋脚首の条が幅広く本数少/elegansは眼後が赤〜橙の太帯＋条が細く本数多い。最も似る組み合わせで、眼後斑の色(黄 vs 赤)が決め手。"
+        },
+        {
+          "aite": "キバラガメ (Trachemys scripta scripta)",
+          "kubetsu": "troostiiは眼後の黄条が細い斜め＋頭頸条が幅広い/scriptaは眼後が黄色の大ブロッチ＋頭頸条が細く本数多い。"
+        }
+      ],
+      "houkisei": "CITES未掲載。日本では条件付特定外来生物(Trachemys scripta 種として、2023年6月〜)—飼育可・輸入/放出/販売/頒布禁止。",
+      "photo_hantei": "眼後の細い黄色斜め条＋幅広く本数の少ない頭頸条＋腹甲の中空黒斑。アカミミの赤帯でないこと＋条の細さ・黄色さ。",
+      "photo_chuui": "①アカミミ(elegans)と酷似—眼後斑が赤なら elegans、細い黄条なら troostii。飼育下では両者の交雑・中間個体が多く断定困難。②同一学名(T. scripta)の3亜種で画像使い回しリスク最大。③Vamberger et al.(2020)により亜種区分自体が分子的に不確実で、troostiiの独立性も表現型ベース。産地不明個体を亜種断定しない。",
+      "sources": [
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/cumberland-slider/index.php",
+        "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1259",
+        "https://animaldiversity.org/accounts/Trachemys_scripta/",
+        "https://en.wikipedia.org/wiki/Red-eared_slider",
+        "https://www.researchgate.net/figure/Comparison-of-coloration-and-pattern-of-the-three-subspecies-of-Trachemys-scripta-and-the_fig1_337925411",
+        "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html"
+      ],
+      "unresolved": "Vamberger et al.(2020)がT. scripta 3亜種の分類学的区分に疑問を呈し、色・模様差は個体群レベルの可能性を示唆—troostiiの亜種としての独立性は分子的裏付けを欠く。elegansとの交雑・中間個体が多く写真での亜種判別は不確実。日本では条件付特定外来生物。",
+      "status": "confirmed"
     }
   ]
 }
