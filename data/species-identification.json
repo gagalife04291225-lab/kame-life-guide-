@@ -774,6 +774,214 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan"
       ]
+    },
+    {
+      "slug": "chinese-box-turtle",
+      "wamei": "チュウゴクセマルハコガメ",
+      "gakumei": "Cuora flavomarginata flavomarginata",
+      "eimei": "Yellow-margined Box Turtle",
+      "koura": "高くドーム状の背甲。暗褐〜黒で、椎甲板のキールに沿ってクリーム〜黄色の縦条。腹甲は黒く可動ヒンジで完全に閉じられる（箱化）。",
+      "iro_moyou": "甲は暗褐＋キールに黄条。頭頂は淡緑。",
+      "tobu": "頭頂が淡緑で、眼の後方から後ろへ伸びる黄色い線。頭下・四肢間はピンクがかる。",
+      "size": "甲長18〜20cm。",
+      "bunpu": "中国中部（長江流域）・台湾・日本（南西諸島＝石垣島等はevelynae亜種）。",
+      "kondou_shu": [
+        {
+          "aite": "タイワンセマルハコガメ (C. f. evelynae)",
+          "kubetsu": "同種の亜種。基亜種flavomarginataは中国・台湾/evelynaeは南西諸島（石垣・西表）。形態は酷似、分布と細部で区別。"
+        },
+        {
+          "aite": "ミスジハコガメ (C. trifasciata)",
+          "kubetsu": "flavomarginataはキールに1本の黄条。trifasciataは甲に3本の黒縦条。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 IUCNは絶滅危惧。Mauremys japonica等と交雑例。",
+      "photo_hantei": "高ドーム甲＋キールの黄条＋眼後の黄線。頭部と甲側面が見えるカット。",
+      "photo_chuui": "亜種evelynaeと酷似（分布で区別）。trifasciata（3黒条）と混同注意。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "taiwan-box-turtle",
+      "wamei": "タイワンセマルハコガメ",
+      "gakumei": "Cuora flavomarginata evelynae",
+      "eimei": "Ryukyu Yellow-margined Box Turtle",
+      "koura": "flavomarginataの亜種。高ドーム甲、キールに黄条、腹甲で箱化。",
+      "iro_moyou": "基亜種とほぼ同様。",
+      "tobu": "頭頂淡緑＋眼後の黄線。",
+      "size": "甲長18〜20cm。",
+      "bunpu": "日本の南西諸島（石垣島・西表島）。※和名『タイワン』だが学名evelynaeは琉球産。",
+      "kondou_shu": [
+        {
+          "aite": "チュウゴクセマルハコガメ (C. f. flavomarginata)",
+          "kubetsu": "同種の亜種。evelynaeは南西諸島産/基亜種は中国・台湾産。分布で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 日本の南西諸島個体群は国内天然記念物級の保護対象（要確認）。",
+      "photo_hantei": "高ドーム甲＋黄条＋南西諸島の産地情報。",
+      "photo_chuui": "和名『タイワン』だが学名evelynaeは琉球産で紛らわしい。基亜種と酷似。",
+      "unresolved": "和名『タイワンセマルハコガメ』と学名C. f. evelynae（琉球亜種）の対応が流通上ねじれている可能性。台湾産は基亜種flavomarginataのはず。検収時に和名の実態を再確認。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "indochinese-box-turtle",
+      "wamei": "モエギハコガメ",
+      "gakumei": "Cuora galbinifrons",
+      "eimei": "Indochinese (Flowerback) Box Turtle",
+      "koura": "高くドーム状の背甲。背甲に花柄状（flowerback）の複雑な明暗模様。腹甲で箱化。",
+      "iro_moyou": "甲に花柄模様（黄褐＋黒＋褐の斑）。",
+      "tobu": "頭は淡色に暗色の斑。",
+      "size": "甲長17〜19cm。",
+      "bunpu": "ベトナム・ラオス・中国南部・海南島の山地林。",
+      "kondou_shu": [
+        {
+          "aite": "アカスジハコガメ/オルナータ (C. ornata)",
+          "kubetsu": "ornataは近年galbinifronsから分割された種。分布（ornata=ベトナム北部・海南等）と甲模様の細部で区別。"
+        },
+        {
+          "aite": "ミスジハコガメ (C. trifasciata)",
+          "kubetsu": "galbinifronsは花柄模様。trifasciataは3本の黒縦条。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 IUCN絶滅危惧（CR近い）。乱獲で激減。",
+      "photo_hantei": "高ドーム甲＋花柄状の甲模様。甲上面が見えるカット。",
+      "photo_chuui": "ornata（旧同種）と混同。ハコガメ類の中でも花柄模様が識別点。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "ornate-cuora",
+      "wamei": "オルナータハコガメ",
+      "gakumei": "Cuora ornata",
+      "eimei": "Southern Vietnamese / Ornate Box Turtle",
+      "koura": "高ドーム甲、腹甲で箱化。galbinifrons群に近い花柄状模様。",
+      "iro_moyou": "甲に鮮やかな花柄模様。",
+      "tobu": "頭に模様。",
+      "size": "甲長17〜19cm。",
+      "bunpu": "ベトナム北部・海南島等（galbinifrons complex）。",
+      "kondou_shu": [
+        {
+          "aite": "モエギハコガメ (C. galbinifrons)",
+          "kubetsu": "ornataは近年galbinifrons complexから分割・独立種化。分布と甲模様の細部で区別。両者は近縁で外見が似る。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 近年記載の希少種。",
+      "photo_hantei": "高ドーム甲＋花柄模様。galbinifronsとの区別は分布と細部。",
+      "photo_chuui": "galbinifronsから分割された種で酷似。CC写真が乏しい可能性。",
+      "unresolved": "C. ornataの分類的地位・galbinifrons complex内の位置づけが文献で揺れる。独立種とする扱いとgalbinifronsの亜種/シノニムとする扱いが併存。検収時に最新の分類を再確認。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "three-striped-box-turtle",
+      "wamei": "ミスジハコガメ",
+      "gakumei": "Cuora trifasciata",
+      "eimei": "Chinese Three-striped Box Turtle (Golden Coin Turtle)",
+      "koura": "背甲は褐色でドーム状、3本の黒い縦条（種名trifasciata=3本条の由来）。腹甲で箱化。",
+      "iro_moyou": "甲に3黒条。頭は黄〜橙。",
+      "tobu": "頭部が黄色〜橙。",
+      "size": "甲長20cm前後。",
+      "bunpu": "中国南部（広東・広西・海南）・ベトナム北部・香港。",
+      "kondou_shu": [
+        {
+          "aite": "チュウゴクセマルハコガメ (C. flavomarginata)",
+          "kubetsu": "trifasciataは甲に3本の黒縦条＋頭が黄橙。flavomarginataはキールに1本の黄条＋頭頂淡緑。"
+        },
+        {
+          "aite": "ベトナムミスジ (C. cyclornata)",
+          "kubetsu": "近縁で近年分割。trifasciataは中国・海南/cyclornataはベトナム。極めて似るため産地が重要。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 『キンセンガメ（金銭亀）』として中華圏で薬用・観賞に高需要、最高値で取引されCuora属で最も乱獲された種。IUCN近絶滅（CR）。",
+      "photo_hantei": "甲の3本の黒縦条＋黄橙の頭部。甲上面と頭部が見えるカット。",
+      "photo_chuui": "cyclornata（ベトナム産の近縁種）と酷似、産地が決め手。高価ゆえ流通に注意。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "malayan-box-turtle",
+      "wamei": "マレーハコガメ",
+      "gakumei": "Cuora amboinensis",
+      "eimei": "Malayan (Southeast Asian) Box Turtle",
+      "koura": "ドーム状の背甲（亜種で甲形が変異、kamaroma=高ドーム/couro=扁平寄り）。腹甲で箱化。幼体は3キール、成長でドーム化。",
+      "iro_moyou": "甲は一様な暗オリーブ〜黒。",
+      "tobu": "頭は暗オリーブ〜黒に、各側3本の黄条（ハコガメ類で最も水棲）。",
+      "size": "甲長最大約20cm。",
+      "bunpu": "東南アジア低地熱帯（インドシナ〜インドネシア・フィリピン）。水田・湿地・池。属内で最も水棲。",
+      "kondou_shu": [
+        {
+          "aite": "他のCuora（flavomarginata等）",
+          "kubetsu": "amboinensisは頭部に3本の黄条＋一様な暗色甲＋強い水棲性。flavomarginata等はキールに黄条＋より陸棲。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括）。amboinensisはゼロクォータ対象外のII掲載。食用・ペットで年100万匹規模の輸出があった乱獲種。IUCN絶滅危惧。",
+      "photo_hantei": "頭部側面の3本の黄条＋一様な暗色ドーム甲。頭部カットが有効。",
+      "photo_chuui": "亜種が多く甲形が変異。頭の3黄条が属内での識別点。",
+      "unresolved": "",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
+    },
+    {
+      "slug": "hirase-turtle",
+      "wamei": "ヒラセガメ",
+      "gakumei": "Cuora mouhotii",
+      "eimei": "Keeled Box Turtle",
+      "koura": "背甲に強い3本のキール（keeled box turtleの由来）。後縁が鋸歯状。腹甲のヒンジは弱く、他のCuoraほど完全には箱化しない。Pyxidea属に分ける説もある。",
+      "iro_moyou": "甲は褐色。",
+      "tobu": "頭に暗色斑。",
+      "size": "甲長約18cm。",
+      "bunpu": "中国南部・ベトナム・ラオス・ミャンマー・インド北東部・ブータンの山地林。",
+      "kondou_shu": [
+        {
+          "aite": "他のCuora（galbinifrons等）",
+          "kubetsu": "mouhotiiは強い3キール＋鋸歯縁＋箱化が不完全。galbinifrons等はドーム状で完全に箱化。"
+        }
+      ],
+      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。",
+      "photo_hantei": "強い3本キール＋後縁の鋸歯。甲上面・後縁が見えるカット。",
+      "photo_chuui": "和名『ヒラセガメ』。Pyxidea mouhotiiとも表記。キールと鋸歯縁が識別点。",
+      "unresolved": "属の扱いが揺れる（Cuora mouhotii と Pyxidea mouhotii の両表記）。C. galbinifrons × C. mouhotii の自然交雑個体がC. serrataとして知られ、識別を難しくする。",
+      "status": "confirmed",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Asian_box_turtle",
+        "https://cites.org/eng/app/appendices.php",
+        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+      ]
     }
   ]
 }
