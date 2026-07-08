@@ -169,31 +169,45 @@
       "houkisei": "CITES II掲載。国内CB飼育可、輸入個体は附属書II証明が必要。",
       "photo_hantei": "尾端の角質スパー＋大腿部に結節がないこと＋黄黒コントラストの甲。",
       "photo_chuui": "ギリシャリクガメと混同されやすい。スパーの位置（尾端 vs 大腿）が決め手。",
+      "sources": [
+        "https://species.wikimedia.org/wiki/Testudo_graeca",
+        "http://www.britishcheloniagroup.org.uk/caresheets/identity",
+        "https://lafeber.com/vet/basic-information-sheet-mediterranean-tortoises/"
+      ],
+      "unresolved": "",
       "status": "confirmed"
     },
     {
       "slug": "three-toed-box-turtle",
       "wamei": "ミツユビハコガメ",
-      "gakumei": "Terrapene carolina triunguis",
+      "gakumei": "Terrapene mexicana triunguis",
       "eimei": "Three-toed Box Turtle",
-      "koura": "ドーム状の甲。可動式の腹甲ヒンジで完全に閉じる。北米ハコガメ（carolina）亜種の一つ。",
-      "iro_moyou": "甲は褐色〜オリーブで模様は控えめ。頭部・前肢に橙・黄の斑が出る個体が多い（特にオス）。",
-      "tobu": "後肢の指が3本（本亜種名の由来。他亜種は4本が多い）。",
-      "size": "12〜18cm。",
-      "bunpu": "米中南部（ミシシッピ川流域中心）。落葉樹林・草地。",
+      "koura": "ドーム状の甲で、可動式の腹甲ヒンジにより完全に閉じる。甲は褐色〜オリーブで模様は控えめ・やや細長い。TTWG2021で独立種 Terrapene mexicana の亜種に再分類（旧 T. carolina triunguis）。",
+      "iro_moyou": "甲は tan〜オリーブで暗色の縫合線と不明瞭な斑。腹甲は淡黄。頭部・前肢に橙・赤・黄の斑が出る個体が多く、オスは頭部が赤くなる個体もある。",
+      "tobu": "後肢の指が3本（本亜種名の由来。carolina群の他亜種は4本が多い）。頭部に橙〜赤斑。",
+      "size": "12〜18cm。carolinaと同程度かやや長く、甲はより細い。",
+      "bunpu": "米中南部（ミズーリ〜テキサス、南中部アラバマ）。落葉樹林・草地・復元プレーリー。独立種 T. mexicana（メキシコ・ユカタン亜種を含む）の米国産亜種。",
       "kondou_shu": [
         {
           "aite": "トウブハコガメ (Terrapene carolina carolina)",
-          "kubetsu": "本亜種は後肢3指・模様控えめ/基亜種carolinaは後肢4指・甲の模様が派手。"
+          "kubetsu": "本亜種は後肢3指・甲の模様控えめ・tan〜オリーブ地/基亜種carolinaは後肢4指・甲に橙黄の派手な放射模様。分布境界で交雑帯があり中間個体は同定困難。"
         },
         {
           "aite": "ガルフコーストハコガメ (Terrapene carolina major)",
-          "kubetsu": "majorは最大亜種(18〜22cm)・多湿好み/本亜種はより小型。"
+          "kubetsu": "majorは最大亜種(18cm超)・多湿好み・後縁がフレア/本亜種はより小型で後肢3指。"
         }
       ],
-      "houkisei": "CITES未掲載（属単位では一部規制議論あり）。国内CB流通。",
-      "photo_hantei": "後肢の指が3本であること（後肢が写ったカットが有効）＋北米ハコガメの甲形。",
-      "photo_chuui": "他の北米ハコガメ亜種と混同注意。指の数が決め手だが写真に後肢が写らないと判別困難。",
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19で採択・2023年2月23日発効）。輸入個体は附属書II証明が必要。国内CB流通。※分類は暫定的で、triunguis×carolinaの遺伝子浸透を理由に単一種とすべきとの反論(Fritz & Havaš)もあり未決着。",
+      "photo_hantei": "後肢の指が3本であること（後肢が写ったカットが最有効）＋控えめな模様のtan〜オリーブ甲＋橙赤斑の頭部。",
+      "photo_chuui": "①他の北米ハコガメ亜種と混同注意。指の数が決め手だが後肢が写らないと判別困難。②交雑帯個体は亜種断定不可—産地不明で中間的な個体は無理に採用しない。③旧学名 Terrapene carolina triunguis で流通・記載されている画像が多いので学名検索時に留意。",
+      "sources": [
+        "https://cnah.org/taxon.aspx?taxon=Terrapene_triunguis",
+        "https://pubmed.ncbi.nlm.nih.gov/23523575/",
+        "https://iucn-tftsg.org/terrapene-carolina-085/",
+        "https://animaldiversity.org/accounts/Terrapene_carolina/",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "TTWG2021で独立種 T. mexicana の亜種(T. m. triunguis)に暫定再分類(旧 T. carolina triunguis)。ただしtriunguis×carolinaの遺伝子浸透を理由に単一種とすべきとの反論(Fritz&Havaš2014)あり未決着。TTWGも『より完全な遺伝子サンプリングで見直す可能性』と留保。交雑帯個体は同定不可。旧学名での流通画像多数。",
       "status": "confirmed"
     },
     {
@@ -1198,6 +1212,14 @@
       "houkisei": "CITES II掲載（属レベルで Testudo spp. が附属書II）。EUでは域内取引に証明書要。日本国内CB飼育可、輸入個体は附属書II証明が必要。多亜種のため産地・亜種の同定が取引管理上も重要。",
       "photo_hantei": "大腿部の結節(スパー)＋尾端スパーの欠如＋各甲板の中央斑を持つドーム甲。前肢5爪。総称ページのため特定亜種に限定しない。",
       "photo_chuui": "①ヘルマンと混同されやすい（スパーの位置：大腿 vs 尾端が決め手）。②ibera(iberian-greekページ)との割り当て混同に注意。産地不明個体は亜種断定を避ける。③亜種間で色・サイズが極端に変異するため、色や大きさ単独で亜種を断定しない。異亜種間交雑個体も流通する。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Greek_tortoise",
+        "https://species.wikimedia.org/wiki/Testudo_graeca",
+        "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9363490/",
+        "http://www.britishcheloniagroup.org.uk/caresheets/identity"
+      ],
+      "unresolved": "T. graeca は最大20亜種が記載され有効亜種数が資料により10〜12と揺れる。本ページは種全体(sensu lato)の総称。iberian-greek-tortoiseページ(ibera亜種)との写真割り当ては産地・亜種情報に依存し、産地不明個体は亜種断定不可。",
       "status": "confirmed"
     },
     {
@@ -1227,6 +1249,13 @@
       "houkisei": "CITES II掲載（Testudo spp.）。附属書II証明で取引可。日本国内CB飼育可。正式な亜種であり ibera 名は有効。",
       "photo_hantei": "大腿部の発達した結節＋尾端スパーの欠如＋robust なドーム甲＋(典型は)黄地に黒斑。トルコ〜コーカサス産であること。",
       "photo_chuui": "①ヘルマンboettgeriと酷似—スパーの位置で判定。②色変異が極端なため色単独で断定不可。③産地不明個体は graeca 基亜種や他亜種との判別が困難。iberaと確証できない個体を無理に採用しない。④交雑個体(ibera × terrestris 等)が多く流通する点に注意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Greek_tortoise",
+        "https://species.wikimedia.org/wiki/Testudo_graeca_ibera",
+        "https://www.hermannihaven.com/extras",
+        "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/"
+      ],
+      "unresolved": "本サイトの『iberian』はイベリア半島産(基亜種graeca)ではなく東亜種 T. g. ibera(トルコ〜コーカサス)を指す。日本の流通名『イベラ』に対応。ibera×terrestris等の交雑個体が多く流通し、産地不明個体の亜種同定は困難。",
       "status": "confirmed"
     },
     {
@@ -1256,6 +1285,14 @@
       "houkisei": "CITES II掲載（Testudo spp.）。野生個体は輸送・順化時の高死亡率から1999年にEUが輸入禁止、2006年に解除。以後クオータ付きで流通。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
       "photo_hantei": "前肢が4爪であること（最重要）＋低ドームの丸いオーバル甲＋腹甲蝶番の欠如＋明るい褐色〜オリーブ地。",
       "photo_chuui": "①4爪は非常に有効だが、飼育下個体では爪の摩耗・欠損で数えにくい/完全に決定的でない場合があるため、甲形(低ドーム・丸型)と併せて判定。②graeca armeniaca が酷似するため、爪が数えられない写真では産地情報を重視。③『ロシア』は流通名で、実際は中央アジア広域産。",
+      "sources": [
+        "https://www.tortoise.org/archives/russ.html",
+        "https://a-z-animals.com/animals/russian-tortoise/",
+        "https://wildtortoise.weebly.com/horsfields.html",
+        "https://www.gbif.org/species/2441514",
+        "http://www.britishcheloniagroup.org.uk/caresheets/identity"
+      ],
+      "unresolved": "前肢4爪は最有効形質だが飼育下では爪の摩耗/欠損で数えにくく完全に決定的でない場合がある。亜種 kazachstanica/rustamovi/horsfieldii あり。T. g. armeniaca が酷似するため爪不明の写真は産地重視。",
       "status": "confirmed"
     },
     {
@@ -1285,6 +1322,13 @@
       "houkisei": "CITES II掲載（Testudo spp.）。IUCNでは絶滅危惧とされていない(Least Concern相当)が附属書IIで取引管理。weissingeri(矮小型)・sarda等の提唱亜種は未承認。日本国内CB飼育可。",
       "photo_hantei": "後縁縁甲板の強いフレア(スカート/ベル状)＋長楕円の黒い甲＋クリーム〜黄のアレオラ。成体では最も判別容易。幼体は腹甲の対の黒三角。",
       "photo_chuui": "①飼育不良個体は色が抜けて淡色化しフレアも弱くなり、本来の phenotype と大きく異なる—淡色・低フレア個体を『別種/別型』と誤判定しない。②anamurensis(ギリシャ亜種)のフレア個体と混同注意。③幼体はフレア未発達のため甲形だけで判定せず腹甲三角を確認。",
+      "sources": [
+        "https://www.hermannihaven.com/testudo-marginata",
+        "https://www.hermannihaven.com/t-marginata-care-sheet",
+        "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8181&epi=11",
+        "http://www.britishcheloniagroup.org.uk/caresheets/identity"
+      ],
+      "unresolved": "提唱亜種 weissingeri(矮小型)・sarda は未承認。飼育不良個体は淡色化・低フレア化し本来のphenotypeと大きく異なる。T. g. anamurensis のフレア個体と混同注意。",
       "status": "confirmed"
     },
     {
@@ -1310,6 +1354,14 @@
       "houkisei": "CITES II掲載（Chelonoidis carbonarius）。IUCN(コロンビア等)でVulnerable評価。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
       "photo_hantei": "暗色のloaf型甲＋各甲板中央の明色パッチ＋四肢/頭部の赤〜橙鱗。中型。",
       "photo_chuui": "①キアシガメ(denticulatus)と混同—四肢鱗の色(赤 vs 黄)で判別。②cherry-headページとの割り当て混同に注意：色の明るい通常アカアシが存在し、逆に黄色いcherry-headもいるため、色単独でcherry-headと断定しない。③学術上のEast/West隠蔽系統(アンデス軸)とペット用語のcherry-head(東ブラジル軸)は別概念—混同しない。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Red-footed_tortoise",
+        "https://iucn-tftsg.org/wp-content/uploads/file/Articles/Vargas-Ramirez_etal_2010a.pdf",
+        "https://onlinelibrary.wiley.com/doi/10.1111/mec.17052",
+        "https://species.wikimedia.org/wiki/Chelonoidis",
+        "https://cites.org/eng/taxonomy/term/4613"
+      ],
+      "unresolved": "正式な亜種は未記載(単一種carbonarius)。学術的にはアンデスを挟むEast/West隠蔽系統(cyt b約1.5%,3〜4mya,遺伝子流動ゼロ:Vargas-Ramirez2010,Mol.Ecol.2023)が分類学的認識に値するとされるが正式分割は未了。この学術系統(アンデス軸)とペット用語cherry-head(東ブラジル軸)は別概念。",
       "status": "confirmed"
     },
     {
@@ -1335,6 +1387,14 @@
       "houkisei": "CITES II掲載（Chelonoidis carbonarius として。cherry-head 独自の分類階級・学名はない）。IUCNでVulnerable評価(種として)。日本国内CB飼育可。",
       "photo_hantei": "アカアシガメの形質＋高彩度の赤〜橙頭部/四肢＋(傾向として)小型・高コントラスト甲。ただし単独形質での断定は不可。",
       "photo_chuui": "【最重要】①色が明るい＝cherry-head と機械判定してはいけない。彩度の高い通常アカアシが存在し、逆に黄色いcherry-headもいる。②red-footed-tortoiseページと同一学名のため画像使い回しリスクが高い—産地・色傾向の複合でのみ割り当て、確証なき個体は無理に採用しない。③学術上のEast/West隠蔽系統とペット用語cherry-headは地理軸が別概念。④分類は未確定—単一種carbonariusとして扱うのが現行標準。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Red-footed_tortoise",
+        "https://tortoiseturtle.com/cherry-head-red-foot-tortoise/",
+        "https://www.tortoiseknowledge.com/cherry-head-tortoise-vs-red-foot/",
+        "https://tortoiselove.weebly.com/types-of-red-foot-tortoises.html",
+        "https://tortoiseforum.org/threads/cherry-head-vs-redfoot.12262/"
+      ],
+      "unresolved": "cherry-headは独立種でも正式亜種でもなく、同一学名 Chelonoidis carbonarius の地域色変異(名称に正式な分類階級なし)。red-footed-tortoiseページと同一学名のため画像使い回しリスク最大。色・小型は傾向であって絶対形質でなく(彩度高い通常個体/黄色いcherry-headが存在)、産地(東〜南東ブラジル)との複合でのみ割り当て可。手動確認必須種。",
       "status": "confirmed"
     },
     {
@@ -1360,6 +1420,175 @@
       "houkisei": "CITES II掲載（Chelonoidis chilensis）。IUCNでVulnerable。生息地劣化・密猟・違法取引が主要脅威。日本国内CB飼育可、輸入個体は附属書II証明が必要。",
       "photo_hantei": "低ドームのオーバル甲＋項甲板の欠如＋黄褐色地に各甲板の暗色成長輪＋一様な黄褐色腹甲。乾燥地型の地味な色。",
       "photo_chuui": "①petersi/donosobarrosi 名の古い画像は全て C. chilensis と同一種として扱う(別種画像として分けない)。②carbonarius群(赤/黄アシ)との混同は四肢鱗の色で回避。③表現型が標高で連続変異するため、色・サイズで型を細分しない。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chaco_tortoise",
+        "https://www.herpconbio.org/Volume_17/Issue_3/Amavet_etal_2022.pdf",
+        "https://turtlesurvival.org/genetics/chaco-tortoise/",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4636419/",
+        "https://www.learnaboutnature.com/reptiles/tortoises/chaco-tortoise/"
+      ],
+      "unresolved": "旧 C. petersi / C. donosobarrosi は分子解析で遺伝差が乏しく形態差は標高クライン変異として C. chilensis にシノニム化・統合済み。ただしTSAが全ゲノムで種境界を再検証中(Monte/Dry Chacoの2系統がmtで示唆)で将来分割の可能性は残る(未決着)。旧2名の画像は同一種として扱う。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "eastern-box-turtle",
+      "wamei": "トウブハコガメ",
+      "gakumei": "Terrapene carolina carolina",
+      "eimei": "Eastern Box Turtle / Woodland Box Turtle",
+      "koura": "高くドーム状の甲で、可動式腹甲ヒンジにより完全に閉じる。common box turtle (Terrapene carolina) の基亜種。後肢の指は通常4本。",
+      "iro_moyou": "褐色の甲に橙または黄の派手で変異に富む放射・斑紋模様（北米ハコガメの中でも装飾的）。模様の量・色は個体差が非常に大きい。オスの虹彩は赤い個体が多い。",
+      "tobu": "頭部・四肢に黄橙の斑。オスは虹彩が赤いことが多い。後肢4指。",
+      "size": "甲長約12〜15cm（約15×10cm）。",
+      "bunpu": "米東部（メイン州南部〜フロリダ北部、ニューヨーク・ミシガン、西はイリノイ南部・ケンタッキー・テネシー・ミシシッピ/アラバマ北部）。落葉樹林。歴史的にカナダ南部オンタリオにも。",
+      "kondou_shu": [
+        {
+          "aite": "ミツユビハコガメ (Terrapene mexicana triunguis)",
+          "kubetsu": "carolinaは後肢4指・派手な放射模様/triunguisは後肢3指・模様控えめなtan〜オリーブ甲。"
+        },
+        {
+          "aite": "フロリダハコガメ (Terrapene carolina bauri)",
+          "kubetsu": "bauriは甲に明瞭な線状(放射)模様＋頭部に2本の明色ストライプ/carolinaは斑・放射が不規則で頭部ストライプは顕著でない。"
+        },
+        {
+          "aite": "ガルフコーストハコガメ (Terrapene carolina major)",
+          "kubetsu": "majorは最大・後縁がフレア・全体に地味/carolinaはより小型で派手。交雑帯で中間個体多数。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19採択・2023年2月23日発効）。輸入に附属書II証明が必要。米国では州により保護・取引規制あり。国内CB流通。",
+      "photo_hantei": "高いドーム甲＋橙黄の派手な放射/斑模様＋後肢4指＋(オスは)赤い虹彩。北米ハコガメの装飾的な基亜種。",
+      "photo_chuui": "①亜種間で模様が極端に変異し、交雑帯個体は同定不能なほど多様—産地不明で中間的な個体は亜種断定しない。②bauri(明瞭な線模様＋頭部2ストライプ)との区別に頭部・模様パターンを確認。③後肢が写ると指数で triunguis と区別可能。",
+      "sources": [
+        "https://iucn-tftsg.org/terrapene-carolina-085/",
+        "https://animaldiversity.org/accounts/Terrapene_carolina/",
+        "https://www.fs.usda.gov/database/feis/animals/reptile/teca/all.html",
+        "https://www.researchgate.net/publication/291009442_Terrapene_carolina_Linnaeus_1758_-_Eastern_Box_Turtle_Common_Box_Turtle",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "carolina群は交雑帯(southeast)で亜種同定が不能なほど中間個体が出る。産地不明で中間的な個体は亜種断定しない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "gulf-coast-box-turtle",
+      "wamei": "ガルフコーストハコガメ",
+      "gakumei": "Terrapene carolina major",
+      "eimei": "Gulf Coast Box Turtle",
+      "koura": "北米ハコガメ carolina 群で最大の亜種。ドーム状の甲で、後縁縁甲板がやや外側へフレア（張り出す）傾向。可動腹甲ヒンジで完全閉鎖。",
+      "iro_moyou": "全体に地味・暗色で模様は不明瞭なことが多い（carolina基亜種より装飾が乏しい）。成体は褐色〜黒っぽく、淡色斑が控えめ。",
+      "tobu": "頭部は暗色地に淡色斑。オスで頭部が白っぽくなる個体も。後肢4指。",
+      "size": "carolina群最大。甲長約18cm（〜22cm級・約18×12cm）。",
+      "bunpu": "米メキシコ湾岸（フロリダ西部〜ルイジアナ南部の沿岸域）。湿地・沿岸林など多湿環境を好む。",
+      "kondou_shu": [
+        {
+          "aite": "トウブハコガメ (Terrapene carolina carolina)",
+          "kubetsu": "majorは最大・後縁フレア・地味/carolinaはより小型で派手な放射模様。"
+        },
+        {
+          "aite": "フロリダハコガメ (Terrapene carolina bauri)",
+          "kubetsu": "bauriは明瞭な線模様＋頭部2ストライプ・小型/majorは大型・地味・後縁フレア。分布が隣接し交雑帯あり。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19・2023年2月23日発効）。輸入に附属書II証明が必要。国内CB流通。",
+      "photo_hantei": "carolina群で最大サイズ＋後縁縁甲板のフレア＋地味で不明瞭な模様の暗色甲＋後肢4指。",
+      "photo_chuui": "①後縁フレアは marginata(フチゾリリクガメ)と語感が紛らわしいが別科・別属（ハコガメは腹甲ヒンジで完全閉鎖、リクガメは不可）。②地味なため他亜種との模様比較が難しく、サイズと産地(湾岸)を併用。③交雑帯個体に注意。",
+      "sources": [
+        "https://iucn-tftsg.org/terrapene-carolina-085/",
+        "https://animaldiversity.org/accounts/Terrapene_carolina/",
+        "https://www.backyardnature.net/n/a/box-turt.htm",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "Martin et al.の解析で major は bauri と共に系統的に未解決とされる。地味なため模様での亜種区別が難しくサイズ・産地(湾岸)を併用。交雑帯個体に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "florida-box-turtle",
+      "wamei": "フロリダハコガメ",
+      "gakumei": "Terrapene carolina bauri",
+      "eimei": "Florida Box Turtle",
+      "koura": "ドーム状で可動腹甲ヒンジにより完全閉鎖。甲は暗褐色地に明瞭な黄色の線状（放射）模様が特徴的。小型。",
+      "iro_moyou": "暗褐色〜黒の甲に、鮮やかな黄色の細い放射線が各甲板に走る（北米ハコガメの中でも線が明瞭）。腹甲にも線模様。頭部に2本の明瞭な黄色ストライプ。",
+      "tobu": "頭部に2本の黄色ストライプ（本亜種の重要識別点）。後肢は3指のことが多い。",
+      "size": "小型。甲長約11cm（約11×8cm）。",
+      "bunpu": "フロリダ半島およびフロリダキーズの一部。※種階級は未解決：本サイトは独立種 Terrapene bauri 表記、TTWG2021 は carolina 亜種 (T. c. bauri)。Butler et al.(2011)等 bauri を独立種とする説もあり、Martin et al. も bauri/major は解析で未解決とする。識別データは TTWG2021 準拠の三名法を採用し、種階級は両論併記。",
+      "kondou_shu": [
+        {
+          "aite": "トウブハコガメ (Terrapene carolina carolina)",
+          "kubetsu": "bauriは細く明瞭な黄色放射線＋頭部2ストライプ＋小型/carolinaは不規則な橙黄斑・頭部ストライプ顕著でない・やや大型。"
+        },
+        {
+          "aite": "ガルフコーストハコガメ (Terrapene carolina major)",
+          "kubetsu": "bauriは小型・線模様明瞭/majorは大型・地味・後縁フレア。分布隣接で交雑帯あり。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19・2023年2月23日発効）。輸入に附属書II証明が必要。国内CB流通。※種階級(独立種 bauri か carolina 亜種か)は未解決。",
+      "photo_hantei": "暗色甲に鮮やかな黄色の細い放射線＋頭部の2本の黄色ストライプ＋小型。頭部ストライプが最も確実。",
+      "photo_chuui": "①頭部2ストライプと細い放射線が決め手だが、carolina基亜種にも放射模様の派手な個体がおり甲だけでは紛らわしい—頭部パターンを確認。②旧独立種表記 Terrapene bauri での画像も多いので学名検索時に留意。③交雑帯個体に注意。",
+      "sources": [
+        "https://iucn-tftsg.org/terrapene-carolina-085/",
+        "https://animaldiversity.org/accounts/Terrapene_carolina/",
+        "https://www.researchgate.net/publication/291009442_Terrapene_carolina_Linnaeus_1758_-_Eastern_Box_Turtle_Common_Box_Turtle",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "種階級が未解決。本サイトは独立種 Terrapene bauri 表記、TTWG2021は carolina 亜種(T. c. bauri)。Butler et al.(2011)等 bauri 独立種説、Martin et al.も bauri/major は解析未解決とする。識別データはTTWG2021準拠の三名法を採用し種階級は両論併記。旧独立種表記の画像も多い。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "desert-box-turtle",
+      "wamei": "サバクニシキハコガメ（デザートボックスタートル）",
+      "gakumei": "Terrapene ornata",
+      "eimei": "Desert Box Turtle",
+      "koura": "ドーム状で可動腹甲ヒンジにより完全閉鎖。ornata の乾燥地個体群。TTWG2021 で旧亜種 luteola は単型 Terrapene ornata のシノニムに統合され、亜種階級は無効化された。",
+      "iro_moyou": "暗色地に黄〜クリームの放射状線が各甲板に密に走る（ornata 型の放射模様）。乾燥地個体群は線がより多く・細かい傾向とされるが、遺伝的差は小さく形態差は見かけ上のものとされる。",
+      "tobu": "頭部・四肢に黄斑。ornata型。",
+      "size": "小型。甲長約10〜15cm。",
+      "bunpu": "米南西部（西テキサス・南アリゾナ・ニューメキシコ）〜メキシコ北部（チワワ・ソノラ）の乾燥草原・砂漠草原。旧 T. o. luteola の分布域。",
+      "kondou_shu": [
+        {
+          "aite": "キタニシキハコガメ (Terrapene ornata、旧 T. o. ornata)",
+          "kubetsu": "両者ともTTWG2021では同一の単型種 Terrapene ornata。旧分類で luteola(乾燥地)と ornata(プレーリー)に分けられたが、分子解析で差は小さく統合済み。本サイトは desert(旧luteola)/ornate(旧ornata)を別ページで扱うが、分類上は同一種の地域個体群。区別は分布(乾燥地南西部 vs 中西部プレーリー)と放射線の密度傾向のみで、確実な形態的境界はない。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19・2023年2月23日発効）。輸入に附属書II証明が必要。国内CB流通。※旧亜種 luteola はTTWG2021で単型 T. ornata に統合され無効。",
+      "photo_hantei": "ornata型の密な黄放射線＋乾燥地(南西部)産。ただしornateページ(旧ornata)と同一種のため、写真単独では確実に区別できない。",
+      "photo_chuui": "【重要】①desert(旧luteola)とornate(旧ornata)は同一種 Terrapene ornata で、TTWG2021では亜種すら分けない。写真の使い回しリスクが極めて高い—両ページに同じ個体画像を割り当てないよう、産地情報(南西部乾燥地 vs 中西部プレーリー)を根拠にする以外に確実な区別は不可。②旧学名 Terrapene ornata luteola での画像も多い。③無理に別個体を割り当てられない場合は分布注記で運用する。",
+      "sources": [
+        "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+        "https://pubmed.ncbi.nlm.nih.gov/23523575/",
+        "https://www.boxturtles.com/north-american-box-turtles/",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "旧亜種 luteola はTTWG2021で単型 T. ornata のシノニムに統合され無効化。ornate-box-turtle(旧ornata)と分類上同一種で、亜種すら分けない。写真使い回しリスク極大—両ページで同一個体を割り当てず、産地(南西部乾燥地 vs 中西部プレーリー)を唯一の根拠とする。確実な形態境界なし。旧学名 T. o. luteola の画像も多い。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "ornate-box-turtle",
+      "wamei": "キタニシキハコガメ（オルナータ）",
+      "gakumei": "Terrapene ornata",
+      "eimei": "Ornate Box Turtle",
+      "koura": "ドーム状で可動腹甲ヒンジにより完全閉鎖。carolina群と異なり甲がやや扁平で、プレーリー性。TTWG2021で単型（旧亜種 ornata/luteola を統合）。",
+      "iro_moyou": "暗褐色〜黒の甲に、黄〜クリームの放射状線が各甲板から広がる明瞭な模様（carolina群の不規則斑と異なり、放射パターンが規則的）。腹甲にも放射線。",
+      "tobu": "頭部・四肢に黄斑。オスは前肢内側の鱗が赤みを帯び、虹彩が緑〜黄の個体も。",
+      "size": "小型。甲長約10〜15cm。",
+      "bunpu": "米中西部〜グレートプレーンズ（テキサス〜サウスダコタ南部、東はイリノイ等）の樹木のない平原・草原。旧 T. o. ornata の分布域を含む単型種全体。",
+      "kondou_shu": [
+        {
+          "aite": "サバクニシキハコガメ (Terrapene ornata、旧 T. o. luteola)",
+          "kubetsu": "同一の単型種 Terrapene ornata。desert(旧luteola)とは分布(乾燥地南西部)と放射線密度傾向で語られるのみで、TTWG2021では亜種も分けない。確実な形態境界なし。"
+        },
+        {
+          "aite": "トウブハコガメ (Terrapene carolina carolina)",
+          "kubetsu": "ornataは規則的な放射線・やや扁平・プレーリー性/carolinaは不規則な橙黄斑・高いドーム・森林性。属は同じだが別種。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19・2023年2月23日発効）。輸入に附属書II証明が必要。国内CB流通。",
+      "photo_hantei": "規則的な黄放射線模様＋やや扁平の甲＋中西部プレーリー産。carolina群の不規則斑とは模様パターンで区別。",
+      "photo_chuui": "【重要】①desert-box-turtle(旧luteola)と同一種 Terrapene ornata—写真使い回しリスク大。両ページで同一個体を使わないよう産地を根拠に。②carolina群とは放射線の規則性・甲の扁平度で区別できるが、模様の派手なcarolinaとは紛らわしい—頭部・甲形も併用。",
+      "sources": [
+        "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+        "https://pubmed.ncbi.nlm.nih.gov/23523575/",
+        "https://www.boxturtles.com/north-american-box-turtles/",
+        "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
+      ],
+      "unresolved": "TTWG2021で単型化(旧亜種 ornata/luteola を統合)。desert-box-turtle(旧luteola)と同一種のため写真使い回しリスク大。両ページで同一個体を使わず産地を根拠とする。carolina群とは放射線の規則性・甲の扁平度で区別可だが派手なcarolinaとは紛らわしい。",
       "status": "confirmed"
     }
   ]
