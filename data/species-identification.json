@@ -2390,6 +2390,231 @@
       ],
       "unresolved": "Manouria impressa は形態的に明瞭(甲板の凹み)だが、近縁のM. emys幼体との識別はスパー形状・凹みの強さに依存し、これらが不明瞭な写真では困難。生態(キノコ食・山地林)が特殊で研究・飼育例が少なく、識別形質の一次情報も限定的。",
       "status": "confirmed"
+    },
+    {
+      "slug": "eastern-long-necked-turtle",
+      "wamei": "ヘビクビガメ（トウブナガクビガメ）",
+      "gakumei": "Chelodina longicollis",
+      "eimei": "Eastern Long-necked / Snake-necked Turtle",
+      "koura": "曲頸亜目Chelidae。甲は扁平なオーバルで暗褐〜黒。首を横に折り畳んで甲の縁に収める(ヨコ/ナガクビ)。Chelodina亜属(Group B)の基準種。前肢4爪、腹甲で喉甲板(gular)が接触。",
+      "iro_moyou": "背甲は暗褐〜黒褐色で縫合線が黒く縁取られる。腹甲は淡黄で各甲板の継ぎ目が黒い(黒縁のパターン)。",
+      "tobu": "【属の特徴】首が非常に長く(甲長の約半分)、ヘビのよう。頭部・首は上面が暗色、下面が淡色。危険時に臭腺から悪臭を放つ。",
+      "size": "中型。甲長約25cm。",
+      "bunpu": "東オーストラリア(クイーンズランド〜ビクトリア・南オーストラリア東部)の湖沼・湿地・緩流。乾季に陸を移動し休眠することも。",
+      "kondou_shu": [
+        {
+          "aite": "マッコードナガクビガメ (Chelodina mccordi)",
+          "kubetsu": "両種ともChelodina亜属(Group B)で首が長い。longicollisは東豪州産で腹甲の黒縁が明瞭/mccordiはインドネシア・ロティ島固有でより淡色。産地が主な区別。"
+        },
+        {
+          "aite": "ジーベンロックナガクビガメ (Chelodina rugosa)",
+          "kubetsu": "longicollisは頭が細めで腹甲黒縁/rugosa(旧siebenrocki)はMacrochelodina/Chelydera群で頭が幅広く首がさらに長く腹甲が狭い。頭幅と腹甲で区別。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険。豪州は野生生物輸出を厳格に規制(在来種の商業輸出禁止)するため、流通個体はCB由来。国内流通あり。",
+      "photo_hantei": "非常に長い首(甲長の約半分)＋扁平な暗褐〜黒のオーバル甲＋腹甲の黒縁パターン＋前肢4爪＋東豪州産。長い首と腹甲黒縁が手がかり。",
+      "photo_chuui": "①同属のmccordi/rugosaと混同—産地(東豪州)と頭幅・腹甲パターンで区別。②首を収めた状態では長さが分からないため、伸ばしたカットや腹甲が有効。③『ヘビクビ』はChelodina属の総称的和名でもあり、種の特定には学名確認を。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chelodina",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796373/",
+        "https://www.researchgate.net/publication/290831281_Chelodina_mccordi_Rhodin_1994_-_Roti_Island_Snake-Necked_Turtle_McCord's_Snake-Necked_Turtle_Kura-Kura_Rote",
+        "https://www.nature.com/articles/s41598-019-42310-x.pdf"
+      ],
+      "unresolved": "Chelodina属は命名法・亜属構成が複雑(Chelodina/Chelydera/Macrochelodina/Macrodiremysの分け方が文献で揺れ、ミトゲノム解析が従来のアロザイム分類と一部矛盾)。longicollis自体は安定だが、novaeguineaeとの自然交雑がクイーンズランド中部沿岸で報告されており、交雑個体の同定に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "mccords-snake-necked-turtle",
+      "wamei": "マッコードナガクビガメ",
+      "gakumei": "Chelodina mccordi",
+      "eimei": "Roti Island / McCord's Snake-necked Turtle",
+      "koura": "曲頸亜目Chelidae、Chelodina亜属(Group B)。甲は扁平なオーバル。longicollisに似るがより小型で色が淡い傾向。前肢4爪、喉甲板接触。",
+      "iro_moyou": "背甲は淡褐〜灰褐色。腹甲は淡色。longicollisより全体に明色の傾向。",
+      "tobu": "首が長い(Chelodina亜属の特徴)。頭部は比較的幅広く頑丈(亜種で差)。",
+      "size": "中型。甲長17cm前後で性成熟。longicollisよりやや小型。",
+      "bunpu": "インドネシア・ロティ(ロテ)島固有(＋近縁のティモール個体群)。水田・灌漑水路・湿地。極めて限定的な分布。",
+      "kondou_shu": [
+        {
+          "aite": "トウブナガクビガメ (Chelodina longicollis)",
+          "kubetsu": "mccordiはロティ島固有で淡色・小型/longicollisは東豪州産で腹甲黒縁が明瞭・やや大型。産地が決定的(mccordiは島嶼固有)。"
+        },
+        {
+          "aite": "ティモールナガクビガメ (Chelodina timorensis / C. m. timorensis)",
+          "kubetsu": "ティモール個体群は亜種timorensisとも独立種C. timorensisともされ分類未確定。ロティ産mccordiと近縁で酷似、産地(ロティ vs ティモール)で区別。"
+        }
+      ],
+      "houkisei": "【要注意】CITES附属書II掲載(2005年1月〜)。※2013年CoP16で米国が附属書Iへの昇格を提案したが採択されず、現在も附属書IIのまま。ただし2013年6月以降インドネシアは野生個体の輸出ゼロ枠。IUCN Critically Endangered(近絶滅種)—ペット乱獲で野生では商業的にほぼ絶滅。インドネシア国内保護種。",
+      "photo_hantei": "長い首＋扁平で淡色のオーバル甲＋小型＋ロティ島固有。longicollisより淡色・小型。ただし近絶滅種で流通個体はCB。",
+      "photo_chuui": "①longicollis・ティモール個体群と酷似—産地でしか確実に分けられない。②近絶滅種で野生ではほぼ絶滅、流通・撮影個体はほぼ全てCB由来—野生写真は極めて稀。③亜種(mccordi/roteensis)＋ティモール個体群の分類が未決着で、写真の亜種同定は不確実。④保全上最重要種のため出所に留意。",
+      "sources": [
+        "https://www.iucnredlist.org/species/pdf/123814575",
+        "https://iucn-tftsg.org/chelodina-mccordi/",
+        "https://cites.org/eng/gallery/species/reptile/Chelodina_mccordi.html",
+        "https://annamiticus.com/2013/02/21/cites-cop16-record-number-of-tortoises-and-freshwater-turtles-on-the-agenda/",
+        "https://iopscience.iop.org/article/10.1088/1755-1315/948/1/012021/pdf"
+      ],
+      "unresolved": "3亜種(mccordi[西ロティ]/roteensis[東ロティ]/timorensis[ティモール])が記載されるが、進行中の遺伝研究はロティに1タクソン(mccordi)・ティモールに1タクソン(timorensis、種レベルの可能性)の2つのみを示唆し、亜種構成が未決着。ティモール個体群はC. mccordi timorensis(Kuchling et al.2007)とC. timorensis(McCord et al.2007、数ヶ月早く記載)の名が競合。CITESステータスは附属書II(2013年のI昇格提案は不採択)で、古い『Appendix I』誤情報に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "siebenrocks-snake-necked-turtle",
+      "wamei": "ジーベンロックナガクビガメ",
+      "gakumei": "Chelodina rugosa",
+      "eimei": "Northern / Siebenrock's Snake-necked Turtle",
+      "koura": "曲頸亜目Chelidae、Chelydera(旧Macrochelodina)群。甲は大きく扁平なオーバル、暗褐色。頭が幅広く首が非常に長い。腹甲がChelodina亜属より狭い。前肢4爪、喉甲板接触。",
+      "iro_moyou": "背甲は暗褐〜黒褐色。腹甲は淡黄。",
+      "tobu": "【群の特徴】頭部が幅広く扁平＋首がさらに長い(Chelydera/Macrochelodina群はChelodina亜属より頭広・首長・腹甲狭)。",
+      "size": "中〜大型。甲長最大約35cm。",
+      "bunpu": "オーストラリア北部＋ニューギニア。ニューギニア産が亜種siebenrocki。緩流・氾濫原・湿地。乾季に泥中で休眠。",
+      "kondou_shu": [
+        {
+          "aite": "トウブナガクビガメ (Chelodina longicollis)",
+          "kubetsu": "rugosaは頭が幅広く首がさらに長く腹甲が狭い(Chelydera群)/longicollisは頭が細めで腹甲が広い(Chelodina亜属)。頭幅と腹甲幅で区別。"
+        },
+        {
+          "aite": "同群の C. burrungandjii / C. expansa",
+          "kubetsu": "同じChelydera/Macrochelodina群で酷似。rugosaはburrungandjiiとアーネムランドで交雑し可稔な子を作る。頭骨・産地の詳細で区別され、標本情報なしでは同定困難。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険(LC)/TFTSG草案でNear Threatened。豪州は在来種の商業輸出を規制。国内流通個体はCB由来。",
+      "photo_hantei": "幅広い頭部＋非常に長い首＋大きく扁平な暗褐色甲＋狭い腹甲＋豪州北部/ニューギニア産。頭幅と首の長さが手がかり。",
+      "photo_chuui": "①【命名法が複雑】本種はかつてsiebenrocki→rugosa→oblonga→再びrugosaと学名が二転三転。C. siebenrockiはC. rugosaのシノニム。サイトはMacrochelodina rugosa表記だが現在はChelodina (Chelydera) rugosaとされる—学名検索時に旧名(siebenrocki/oblonga/Macrochelodina)も考慮。②同群のburrungandjii/expansaと酷似し交雑個体もあり、産地なしでは同定困難。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Northern_snake-necked_turtle",
+        "https://www.researchgate.net/publication/261604332_Chelodina_oblonga_Gray_1841_-_Northern_Snake-Necked_Turtle",
+        "https://www.researchgate.net/publication/258374477_Chelodina_burrungandjii_Thomson_Kennett_and_Georges_2000_-_Sandstone_Snake-Necked_Turtle",
+        "https://www.nature.com/articles/s41598-019-42310-x.pdf"
+      ],
+      "unresolved": "命名法が極めて複雑：長年C. rugosa Ogilby 1890とされたが、C. oblonga Gray 1841のホロタイプが本種と判明しoblongaへの変更が提案され、その後ミトゲノム解析でホロタイプの帰属が疑問視されoblongaはnomen dubium化、rugosaが復活。siebenrockiはrugosaのシノニム(ニューギニア個体群)。属/亜属もMacrochelodina/Chelodina(Chelydera)で揺れる。burrungandjiiとの交雑・浸透あり。サイトのMacrochelodina rugosa表記と現行Chelodina rugosaの齟齬を検収時に確認。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "collier-snake-necked-turtle",
+      "wamei": "セグロヘビクビガメ",
+      "gakumei": "Chelodina colliei",
+      "eimei": "Oblong / Collie's Snake-necked Turtle",
+      "koura": "曲頸亜目Chelidae。単型亜属Macrodiremys(分子系統で他のChelodinaと独立)。甲は細長いオーバル(oblong)で扁平、暗褐〜黒。首が長い。前肢4爪、喉甲板接触。",
+      "iro_moyou": "背甲は暗褐〜黒褐色〜灰黒色で背側が暗い(和名『セグロ』に対応)。腹甲は淡色。",
+      "tobu": "首が長い。頭部は中庸。",
+      "size": "中〜大型。甲長最大約31cm。",
+      "bunpu": "西オーストラリア南西部(パース周辺の河川・湿地)の固有種。分子系統でChelodina属内で独立した位置(旧Group C相当、亜属Macrodiremys)。",
+      "kondou_shu": [
+        {
+          "aite": "トウブナガクビガメ (Chelodina longicollis)",
+          "kubetsu": "collieiは西豪州南西部固有＋細長い甲(oblong)＋亜属Macrodiremys/longicollisは東豪州＋亜属Chelodina。産地(西豪州 vs 東豪州)で明確に区別。"
+        },
+        {
+          "aite": "ジーベンロックナガクビガメ (Chelodina rugosa)",
+          "kubetsu": "両者とも首が長いが、collieiは西豪州南西部固有・細長い甲/rugosaは豪州北部・頭が幅広い。産地と甲形で区別。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険寄り。豪州は在来種の商業輸出を規制。国内流通個体はCB由来。",
+      "photo_hantei": "細長いオーバル(oblong)の暗色甲＋背側が特に暗い(セグロ)＋長い首＋西豪州南西部(パース周辺)産。産地と細長い甲が手がかり。",
+      "photo_chuui": "①他のChelodina(longicollis/rugosa)と混同—産地(西豪州南西部固有)と細長い甲形で区別。②歴史的にChelodina oblongaの名が本種(西豪州産)に誤用された経緯があり(oblongaは実際は北部種)、古い資料の学名混乱に注意。現行はC. colliei。③亜属Macrodiremysで分子的に独立した系統。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chelodina",
+        "https://en.wikipedia.org/wiki/Northern_snake-necked_turtle",
+        "https://www.nature.com/articles/s41598-019-42310-x.pdf",
+        "https://www.researchgate.net/publication/261604332_Chelodina_oblonga_Gray_1841_-_Northern_Snake-Necked_Turtle"
+      ],
+      "unresolved": "C. colliei は単型亜属Macrodiremysに置かれ分子系統で他のChelodinaと独立するが、ミトゲノム解析は従来の亜属配置と一部矛盾し属内系統は未完全確定。歴史的にChelodina oblongaの名が本種(西豪州産)に長く誤用された(oblongaのホロタイプ帰属問題)経緯があり、旧文献の学名は信頼性に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "hilaire-side-necked-turtle",
+      "wamei": "ヒラリーカエルガメ",
+      "gakumei": "Phrynops hilarii",
+      "eimei": "Hilaire's Side-necked / Toadhead Turtle",
+      "koura": "曲頸亜目Chelidae(南米系統)。甲はオーバルで扁平、最大約40cm。暗褐〜オリーブ〜灰色で黄色い縁取り。首を横に折る(ヨコクビ)。",
+      "iro_moyou": "背甲は暗褐/オリーブ/灰色に黄縁。腹甲は淡色で暗色斑(『spot-bellied』とも)。",
+      "tobu": "【識別に有効】頭部が大きく平ら、灰〜オリーブ。鼻先(吻端)から眼を通り後頭部まで走る太い黒条が顕著。顎の下に2本の髭(chin barbel、二色)。吻が尖る。",
+      "size": "大型のカエルガメ。甲長最大約40cm、体重約5kg。",
+      "bunpu": "南米(ブラジル南部サンタカタリーナ/リオグランデドスル〜ウルグアイ〜アルゼンチン中部、パラグアイ/ボリビアにも?)。水草の多い流れ・湖沼・湿地の軟底。",
+      "kondou_shu": [
+        {
+          "aite": "他のPhrynops/南米ヨコクビ類 (Mesoclemmys等)",
+          "kubetsu": "hilariiは頭部の太い黒条(吻〜眼〜後頭)＋2本のあご髭＋大型/近縁種は条や髭の有無・頭形で区別。頭部の黒条が有効。"
+        },
+        {
+          "aite": "アフリカヨコクビガメ (Pelomedusa subrufa)",
+          "kubetsu": "hilariiは南米Chelidaeで大型＋頭部黒条＋あご髭2本/Pelomedusaはアフリカ・別科Pelomedusidaeで小型・頭部条なし。科・産地・サイズで区別。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険。国内流通あり(南米産ヨコクビとして)。",
+      "photo_hantei": "大きく平らな頭部＋吻端から眼を通り後頭部までの太い黒条＋2本のあご髭＋オーバル扁平甲(黄縁)＋南米産。頭部の黒条とあご髭が決め手。",
+      "photo_chuui": "①頭部の太い黒条とあご髭が識別の要—頭部が写るカットが有効。②他の南米ヨコクビ類(Mesoclemmys/Acanthochelys等)と混同しうる—頭部条の型を確認。③『カエルガメ(toadhead)』は南米ヨコクビの総称的和名でもあり、種特定には学名確認を。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Phrynops_hilarii",
+        "https://www.fws.gov/species/hilaires-side-necked-turtle-phrynops-hilarii",
+        "https://theturtlesource.com/argentine-side-necked-turtle/",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12359128/"
+      ],
+      "unresolved": "Phrynops hilarii は比較的安定した種だが、南米Chelidae(Phrynops/Mesoclemmys/Ranacephala等)は分類再編が続く群で、近縁属との境界や属内種の識別が文献で更新される。頭部黒条・あご髭は有効な識別形質だが、近縁種との詳細な区別は頭骨・分布に依存する。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "pink-bellied-side-necked-turtle",
+      "wamei": "ニシキマゲクビガメ（ピンクベリー）",
+      "gakumei": "Emydura subglobosa",
+      "eimei": "Pink-bellied / Red-bellied Short-necked Turtle",
+      "koura": "曲頸亜目Chelidae(豪州系統)。甲はベージュ〜栗褐〜スレート灰のオーバルで扁平。首は短め(マゲクビ=short-neck、Chelodinaの長首と異なる)。",
+      "iro_moyou": "【決定的特徴】腹甲が白〜ピンク〜鮮赤/橙＝名の由来('pink/red-bellied')。特に優良個体は鮮赤。皮膚は灰色で成長に伴い赤/橙の斑が増える。幼体は縁甲板外縁に白/黄/橙のリング。",
+      "tobu": "頭部は灰〜オリーブ緑で、両側に2本の明瞭な黄条＋目の後方に赤斑。首は短め。",
+      "size": "中型。甲長約25cm前後。",
+      "bunpu": "ニューギニア(南部)＋オーストラリア北端(ケープヨーク)。河川・湖沼。バスキングをあまりしない。",
+      "kondou_shu": [
+        {
+          "aite": "他のEmydura類 (E. macquarii等)",
+          "kubetsu": "subglobosaは腹甲がピンク〜赤＋頭部の黄条/E. macquarii等は腹甲が白〜黄で赤みが弱い。腹甲の赤みと頭部黄条が手がかり。"
+        },
+        {
+          "aite": "ナガクビガメ類 (Chelodina spp.)",
+          "kubetsu": "subglobosaは首が短い(マゲクビ)＋腹甲ピンク赤/Chelodinaは首が非常に長い(ナガクビ)。首の長さで明確に区別。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険。CB繁殖が確立し流通は珍しくない。国内流通あり。",
+      "photo_hantei": "ピンク〜赤/橙の腹甲＋頭部両側の2本の黄条＋短めの首＋(幼体は)縁甲板外縁のリング。腹甲の赤みと頭部黄条が決め手。",
+      "photo_chuui": "①腹甲の赤みは個体・齢で変異(幼体〜若齢で鮮明、白〜淡ピンクの個体も)—背側だけでは他のEmyduraと紛らわしく腹甲を確認。②hypo等の品種(モルフ)個体が流通し色が通常と異なる。③首の長さでChelodina(ナガクビ)と明確に区別できる。",
+      "sources": [
+        "https://reptilesmagazine.com/pink-bellied-side-necked-turtle-care-sheet/",
+        "https://www.biorxiv.org/content/10.1101/2021.06.24.449536.full.pdf",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9387794/",
+        "https://theturtlesource.com/argentine-side-necked-turtle/"
+      ],
+      "unresolved": "Emydura subglobosa は比較的安定。腹甲の赤み・頭部黄条は有効な識別形質だが、Emydura属内(macquarii種群等)は地域個体群・亜種の扱いが流動的で、産地不明個体の種内同定は不確実。飼育下の色彩モルフ(hypo等)が通常の色パターンから外れる点に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "african-helmeted-turtle",
+      "wamei": "アフリカヨコクビガメ",
+      "gakumei": "Pelomedusa subrufa",
+      "eimei": "African Helmeted Turtle / Marsh Terrapin",
+      "koura": "【別科】ヨコクビ亜目Pelomedusidae(Chelidaeとは別科)。甲は扁平でオーバル、褐〜緑褐色。首を横に折って甲に収める。腹甲に蝶番はない。",
+      "iro_moyou": "背甲は褐〜緑褐色でやや扁平。腹甲は黄〜クリーム色で、暗色の継ぎ目や大きな暗色スマッジが出ることも。",
+      "tobu": "頭部は褐〜オリーブ。あご下に2本の髭(barbel)。首を横に折る。",
+      "size": "小型。甲長15〜21cm(最大32.5cmの記録)。",
+      "bunpu": "サブサハラアフリカ広域＋南イエメン。淡水〜滞水の池沼・湿地(marsh)。乾季に泥中で休眠。雑食。",
+      "kondou_shu": [
+        {
+          "aite": "ヒラリーカエルガメ (Phrynops hilarii)等の南米ヨコクビ",
+          "kubetsu": "Pelomedusaはアフリカ・Pelomedusidaeで小型・頭部条なし/南米ヨコクビ(Chelidae)は大型で頭部に黒条やあご髭が目立つ。科・産地・サイズで区別。"
+        },
+        {
+          "aite": "アフリカヨコクビガメ属の別種 (Pelomedusa複合体)",
+          "kubetsu": "従来単一種P. subrufaとされたが近年複数種に分割された(P. olivacea, P. galeata等)。外見が酷似し、産地・頭骨で区別されるが写真だけの種同定は困難。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険(非危急)。安価で普通に流通する入門種。国内流通あり。",
+      "photo_hantei": "扁平な褐〜緑褐色のオーバル甲＋黄/クリームの腹甲(蝶番なし)＋あご下2本の髭＋首を横に折る＋小型。アフリカ産の小型ヨコクビ。",
+      "photo_chuui": "①【種複合体】従来P. subrufa単一種とされたが近年 P. olivacea/galeata 等複数種に分割—外見が酷似し産地なしでは種同定困難。サイトのP. subrufa表記は広義の可能性。②南米ヨコクビ(Phrynops等)とは科・産地で区別。③普通種で個体変異が大きく、腹甲のスマッジ量等は種判別に使いにくい。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/African_helmeted_turtle",
+        "https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/african-side-necked-turtles-pelomedusidae",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12359128/",
+        "https://theturtlesource.com/argentine-side-necked-turtle/"
+      ],
+      "unresolved": "従来単一種とされたPelomedusa subrufaは近年の分子研究で複数種(P. subrufa狭義, P. olivacea, P. galeata, P. neumanni等)に分割された種複合体。外見が酷似し、サイトのP. subrufa表記が広義(複合体全体)か狭義かで指す範囲が変わる。産地情報なしでの種同定は困難で、検収時にページの意図を再確認要。",
+      "status": "confirmed"
     }
   ]
 }
