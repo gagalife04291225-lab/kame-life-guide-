@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "purpose": "種・亜種の識別特徴データ。写真選別（qc_filter等）が混同種の区別点と写真判定基準を参照するための機械可読データ。写真を選ぶ前に、まず本データで識別特徴を確定させる。",
+    "schema_version": "1.0",
+    "fields": {
+      "slug": "リポジトリのファイル名（species/<slug>.html）",
+      "wamei": "和名",
+      "gakumei": "学名（三名法。亜種は subspecies まで）",
+      "eimei": "英名",
+      "kab, iro_moyou, tobu, size, bunpu": "識別のための形態・分布記述",
+      "kondou_shu": "混同されやすい種と、その区別点（配列）",
+      "houkisei": "CITES・国内外の法規制の正確な状態",
+      "photo_hantei": "写真選別で正しい種だと判定するために『写真に何が写っている必要があるか』",
+      "photo_chuui": "写真選別で取り違えを起こしやすい注意点",
+      "status": "confirmed=学術照合済 / draft=未照合"
+    }
+  },
+  "species": [
+    {
+      "slug": "matamata",
+      "wamei": "マタマタ（アマゾンマタマタ）",
+      "gakumei": "Chelus fimbriata",
+      "eimei": "Amazon Matamata",
+      "koura": "黒〜褐色のごつごつした背甲。縁が鋸歯状。背面に3列のほぼ平行なコブ。側面が平行〜わずかに狭まる長方形の甲形。腹甲は小さく退縮し四肢が横から見える。落ち葉・樹皮への擬態。",
+      "iro_moyou": "成体は暗色。幼体はサーモンピンク〜赤褐色に黒/緑のまだら（成長で暗色化）。頭頸部下面に太い黒帯。",
+      "tobu": "平たい三角形。幅広い口、長い管状の鼻、小さな目、多数の突起、両側の肉質ヒダ。首にも突起とヒダ。",
+      "size": "通常40〜45cm、最大背甲45cm・17kg超。淡水ガメ最大級。",
+      "bunpu": "アマゾン川流域＋東ギアナ。ボリビア北・ペルー東・エクアドル東・コロンビア南東・ブラジル北〜中部。",
+      "kondou_shu": [
+        {"aite": "オリノコマタマタ (Chelus orinocensis)", "kubetsu": "甲形=長方形(本種)/楕円(オリノコ)。腹甲=暗色(本種)/明色(オリノコ)。首下面=太い黒帯あり(本種)/なし(オリノコ)。分布=アマゾン(本種)/オリノコ・上部ネグロ(オリノコ)。甲だけでは判別不可、首下面カット必須。"},
+        {"aite": "\"High Red\"色型", "kubetsu": "ペルー産などの赤い個体は業界の色型ラベルで別種ではない。赤い=オリノコ種ではない。"}
+      ],
+      "houkisei": "IUCN軽度懸念(LC)、CITES未掲載。コロンビア・ベネズエラ・ブラジルが輸出禁止。コロンビアRed Listで準絶滅危惧。",
+      "photo_hantei": "首・喉の下面が見えるカットで太い黒帯を確認できること。上からの甲写真のみでは同定不可。",
+      "photo_chuui": "幼体(赤)と成体(黒)を別種扱いしない。オリノコ種との混同に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "amazon-matamata",
+      "wamei": "オリノコマタマタ",
+      "gakumei": "Chelus orinocensis",
+      "eimei": "Orinoco Matamata",
+      "koura": "凹凸の多い背甲だが、アマゾン種より丸みのある楕円形。3列のコブと鋸歯状の縁は共通。",
+      "iro_moyou": "腹甲は明色。頭頸部下面に太い黒帯が入らない（アマゾン種との最大の識別点）。",
+      "tobu": "マタマタ属共通。平たい三角形、管状の鼻、肉質ヒダ。",
+      "size": "アマゾン種と同等かやや小型。最大40cm前後。",
+      "bunpu": "オリノコ川水系および上部ネグロ／ブランコ川水系。属内でこの水系に分布するのは本種。",
+      "kondou_shu": [
+        {"aite": "マタマタ (Chelus fimbriata)", "kubetsu": "甲形=楕円(本種)/長方形。腹甲=明色(本種)/暗色。首下面=黒帯なし(本種)/太い黒帯あり。分布=オリノコ・上部ネグロ(本種)/アマゾン。2020年に独立した別種。"}
+      ],
+      "houkisei": "マタマタ属はCITES未掲載。原産国の輸出規制あり。※旧ページで誤ってCITES II掲載と記載されていたが誤り。",
+      "photo_hantei": "首下面に黒帯が『ない』こと＋腹甲が明色であること。観察地がオリノコ水系であれば裏付けになる。",
+      "photo_chuui": "アマゾン種と外見酷似。甲のみでは判別不可。slug名はamazonだが実体はオリノコ種。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "giant-musk-turtle",
+      "wamei": "スジオオニオイガメ",
+      "gakumei": "Staurotypus triporcatus",
+      "eimei": "Mexican Giant Musk Turtle",
+      "koura": "背甲に明瞭な3本のキール。褐色〜黒〜緑。腹甲は黄色で十字状に縮小。オオニオイガメ属最大種。",
+      "iro_moyou": "甲は緑〜黒〜褐色、甲板の縫合線が黄色。",
+      "tobu": "大型の頭。",
+      "size": "最大甲長37.9cm。ドロガメ科最大種。メスがオスより大型。",
+      "bunpu": "メキシコ湾岸・カリブ海側（ベラクルス・タバスコ・チアパス・ユカタン・カンペチェ）〜ベリーズ・北東グアテマラ・西ホンジュラス。属内で大西洋側。",
+      "kondou_shu": [
+        {"aite": "サルヴィンオオニオイガメ (Staurotypus salvinii)", "kubetsu": "サイズ=最大38cm(本種)/最大25cm(サルヴィン)。分布=大西洋岸(本種)/太平洋岸(サルヴィン)。両種とも3キールで外見酷似するが、本種が明確に大型。"}
+      ],
+      "houkisei": "CITES未掲載。生息地破壊・乱獲で減少傾向。",
+      "photo_hantei": "3本キール＋大型（成体で30cm超）。サルヴィンとの区別は分布・サイズで。",
+      "photo_chuui": "サルヴィンと外見酷似。サイズが最大の識別点。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "giant-musk-turtle-mx",
+      "wamei": "サルヴィンオオニオイガメ",
+      "gakumei": "Staurotypus salvinii",
+      "eimei": "Pacific Coast Giant Musk Turtle",
+      "koura": "背甲に3本のキール。ややドーム状で、上から見ると中央より後方が最も幅広い細長い楕円形。腹甲は十字状に縮小しカミツキガメ的な体型。",
+      "iro_moyou": "体色は黒〜淡い黄色みと産地で多様。頭部に虫食い状の不規則模様。",
+      "tobu": "頭部に虫食い状の不規則模様が識別点。口を開けて威嚇。",
+      "size": "最大甲長25cm（オスは最大21cm、メスがより大型）。オオニオイガメ属最小種。",
+      "bunpu": "中米の太平洋岸（メキシコ南東部オアハカ東部・チアパス南部、グアテマラ南部、エルサルバドル南部）。属内で唯一太平洋側。",
+      "kondou_shu": [
+        {"aite": "スジオオニオイガメ (Staurotypus triporcatus)", "kubetsu": "サイズ=最大25cm(本種)/最大38cm(スジオオ)。分布=太平洋岸(本種)/大西洋岸(スジオオ)。頭部の虫食い模様が本種の識別点。"}
+      ],
+      "houkisei": "CITES未掲載。原産国で流通停止、国内はほぼCB個体。",
+      "photo_hantei": "3本キール＋小型（成体25cm以下）＋頭部の虫食い模様。分布が太平洋岸。",
+      "photo_chuui": "スジオオニオイガメと外見酷似。サイズが最大の識別点。slug名はmxだが実体はサルヴィン(salvinii)。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "loggerhead-musk-turtle",
+      "wamei": "オオアタマヒメニオイガメ（ヒメニオイガメ）",
+      "gakumei": "Sternotherus minor minor",
+      "eimei": "Common Loggerhead Musk Turtle",
+      "koura": "背甲はドーム状に盛り上がり、上から見ると細長い楕円形。椎甲板・肋甲板に計3本のキール（老成個体では不明瞭化）。椎甲板・肋甲板の後部が後方甲板の前部と重なる。",
+      "iro_moyou": "背甲は褐色〜黄褐色〜暗褐色に黒斑・筋模様。腹甲はピンク〜薄黄〜黄褐色。頭部に斑点または大型斑紋。頸部に縦縞が入らない。",
+      "tobu": "頭部が大型で、英名Loggerhead通り巨頭化する個体が多い。下顎先端にのみ髭状突起。",
+      "size": "最大甲長13.5〜14cm。小型。",
+      "bunpu": "アメリカ南東部（ジョージア州北西部を除く、フロリダ州南部を除く）。流れの緩やかな止水〜緩流域。",
+      "kondou_shu": [
+        {"aite": "スジクビニオイガメ (Sternotherus peltifer)", "kubetsu": "本種は頸部に縦縞が入らない/peltiferは頸部に明瞭な筋状斑紋。本種はキール3本・ドーム状/peltiferは甲が扁平寄り。2017年にpeltiferは独立種化。"},
+        {"aite": "カブトニオイガメ (Sternotherus carinatus)", "kubetsu": "腹甲の喉甲板の有無で区別（本種にはある）。カブトは甲が三角形に高く隆起、本種はそこまで盛り上がらず横に広い。腹甲模様だけでは区別困難な場合あり。"}
+      ],
+      "houkisei": "CITES未掲載。かつてワイルド大量流通、現在は国内CB中心。",
+      "photo_hantei": "ドーム状の甲＋3キール＋頸部に縦縞なし＋巨頭傾向。腹甲に喉甲板があればカブトと区別。",
+      "photo_chuui": "「ヒメニオイガメ」=本種と同一（S. minor minor）。旧hime-nioi-turtleページは本ページへ統合済み。カブトニオイガメ(carinatus)・スジクビ(peltifer)との混同に注意。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "razorback-musk-turtle",
+      "wamei": "カブトニオイガメ",
+      "gakumei": "Sternotherus carinatus",
+      "eimei": "Razorback Musk Turtle",
+      "koura": "背甲が三角形に高く隆起し、頂点に向かって屋根状（カブト状）。単一の顕著なキール。老成でも比較的シャープ。",
+      "iro_moyou": "褐色〜灰褐色に暗色斑。頭部に暗色の斑点。",
+      "tobu": "中型の頭。下顎に髭状突起。",
+      "size": "最大甲長17.6cm。ニオイガメ属（Sternotherus）最大。",
+      "bunpu": "米ルイジアナ全域と隣接するミシシッピ・アーカンソー・オクラホマ・テキサス。",
+      "kondou_shu": [
+        {"aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)", "kubetsu": "本種は甲が三角形に高く隆起（カブト状）/minorはドーム状で横広。腹甲の喉甲板と甲の断面形状で区別。"}
+      ],
+      "houkisei": "CITES未掲載。国内CB流通。",
+      "photo_hantei": "甲が屋根状に高く隆起した三角シルエット（正面/側面カットが有効）。",
+      "photo_chuui": "ヒメニオイガメ(minor)と混同されやすい。甲の隆起の鋭さが決め手。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "hermann-tortoise",
+      "wamei": "ヘルマンリクガメ",
+      "gakumei": "Testudo hermanni",
+      "eimei": "Hermann's Tortoise",
+      "koura": "ドーム状の甲。黄と黒のコントラストが明瞭。尾端に角質のスパー（爪状突起）を持つ（グラエカ等との識別点）。",
+      "iro_moyou": "ヒガシ亜種(boettgeri)は明るく黒黄コントラスト明瞭・最大23cm。ニシ亜種(hermanni)は小型で黒っぽい・最大18cm。",
+      "tobu": "地中海リクガメ属の標準的な頭部。",
+      "size": "15〜23cm（亜種差）。",
+      "bunpu": "南ヨーロッパ地中海沿岸（スペイン東部〜トルコ西部）。岩がちな丘陵・地中海性植生。",
+      "kondou_shu": [
+        {"aite": "ギリシャリクガメ (Testudo graeca)", "kubetsu": "ヘルマンは尾端にスパーあり・大腿部にスパー(結節)なし/グラエカは大腿部に結節(スパー)あり・尾端スパーなし。臀甲板の分割の有無も差。"}
+      ],
+      "houkisei": "CITES II掲載。国内CB飼育可、輸入個体は附属書II証明が必要。",
+      "photo_hantei": "尾端の角質スパー＋大腿部に結節がないこと＋黄黒コントラストの甲。",
+      "photo_chuui": "ギリシャリクガメと混同されやすい。スパーの位置（尾端 vs 大腿）が決め手。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "three-toed-box-turtle",
+      "wamei": "ミツユビハコガメ",
+      "gakumei": "Terrapene carolina triunguis",
+      "eimei": "Three-toed Box Turtle",
+      "koura": "ドーム状の甲。可動式の腹甲ヒンジで完全に閉じる。北米ハコガメ（carolina）亜種の一つ。",
+      "iro_moyou": "甲は褐色〜オリーブで模様は控えめ。頭部・前肢に橙・黄の斑が出る個体が多い（特にオス）。",
+      "tobu": "後肢の指が3本（本亜種名の由来。他亜種は4本が多い）。",
+      "size": "12〜18cm。",
+      "bunpu": "米中南部（ミシシッピ川流域中心）。落葉樹林・草地。",
+      "kondou_shu": [
+        {"aite": "トウブハコガメ (Terrapene carolina carolina)", "kubetsu": "本亜種は後肢3指・模様控えめ/基亜種carolinaは後肢4指・甲の模様が派手。"},
+        {"aite": "ガルフコーストハコガメ (Terrapene carolina major)", "kubetsu": "majorは最大亜種(18〜22cm)・多湿好み/本亜種はより小型。"}
+      ],
+      "houkisei": "CITES未掲載（属単位では一部規制議論あり）。国内CB流通。",
+      "photo_hantei": "後肢の指が3本であること（後肢が写ったカットが有効）＋北米ハコガメの甲形。",
+      "photo_chuui": "他の北米ハコガメ亜種と混同注意。指の数が決め手だが写真に後肢が写らないと判別困難。",
+      "status": "confirmed"
+    }
+  ]
+}
