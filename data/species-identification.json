@@ -2782,6 +2782,138 @@
       ],
       "unresolved": "Emys orbicularis は多数の亜種・ミトコンドリア系統に分かれる複合的な種で、地域個体群の分類が流動的。近年シチリア個体群がEmys trinacrisとして独立種化。またEmydinae再編でEmys属にblandingii/marmorataを含める説があり、属の範囲・構成が文献で揺れる。産地不明個体の亜種・系統同定は不確実。",
       "status": "confirmed"
+    },
+    {
+      "slug": "annulated-wood-turtle",
+      "wamei": "ネンリンヤマガメ",
+      "gakumei": "Rhinoclemmys annulata",
+      "eimei": "Brown Wood Turtle",
+      "koura": "Geoemydidae(Rhinoclemmydinae)。中型で雨林の林床性(陸生)。背甲は卵形〜四角、ドーム状で、【識別】黄色い低く広い正中キール(vertebral keel)を持つ。各甲板に成長輪(annulata=『輪のある』の由来)。後縁鋸歯。単型(亜種なし)。",
+      "iro_moyou": "背甲は麦わら黄褐色〜ほぼ黒まで個体変異が大きいが、正中キールが黄色く目立つことが多い。【決定的特徴】腹甲がほぼ全体黒〜暗褐色で、周縁のみ黄色。頭部側面に淡白/黄の条。",
+      "tobu": "頭部は鈍いオリーブ〜褐色地に淡白/黄の側頭条。上顎がやや鉤状。吻がやや突出。",
+      "size": "中型。甲長最大約22.6cm(メス)、オス20cm。",
+      "bunpu": "中米カリブ海側(ホンジュラス〜北コロンビア)＋太平洋側(パナマ東部〜エクアドル)の雨林。エクアドルでは乾燥林にも。海抜0〜920m。ほぼ草食(シダ食)で種子散布者。",
+      "kondou_shu": [
+        {
+          "aite": "アカスジヤマガメ (Rhinoclemmys pulcherrima)",
+          "kubetsu": "【重要】annulataは腹甲がほぼ全体黒＋黄色の正中キール＋雨林の陸生/pulcherrimaは腹甲が黄色＋暗色blotch＋頭部の橙赤条＋半陸生。腹甲の色(黒 vs 黄)が決定的。両種は姉妹群だが別種。"
+        },
+        {
+          "aite": "他のRhinoclemmys (funerea=クロヤマガメ等)",
+          "kubetsu": "annulataは陸生・黄キール/funerea(black wood turtle)は半水生でより大型(35cm)・全身黒。生態とサイズで区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Rhinoclemmys spp.)。IUCN Near Threatened。輸入に附属書II証明が必要。国内流通あり。",
+      "photo_hantei": "卵形〜四角のドーム甲＋黄色の低く広い正中キール＋ほぼ全体黒い腹甲(周縁のみ黄)＋頭部の淡白/黄側頭条。腹甲の黒さと黄キールが決め手。",
+      "photo_chuui": "①pulcherrima(アカスジ)と混同—腹甲の色(annulata=黒 / pulcherrima=黄＋橙赤)が決定的。背側だけでなく腹甲を確認。②背甲色が麦わら黄褐色〜黒まで個体変異が大きく、色単独で判定しない(正中キールと腹甲で判断)。③単型(亜種なし)なので亜種を分けない。",
+      "sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.123.annulata.v1.2023.pdf",
+        "https://iucn-tftsg.org/rhinoclemmys-annulata-123/",
+        "https://www.reptilesofecuador.com/rhinoclemmys_annulata.html",
+        "https://en.wikipedia.org/wiki/Rhinoclemmys",
+        "https://theturtlehub.com/genus/rhinoclemmys/"
+      ],
+      "unresolved": "R. annulata は単型(亜種なし)で分類は安定し、pulcherrimaの姉妹群(Spinks et al.2004ほか複数の分子研究で支持)。背甲色の個体変異が大きく過去に亜種提案もあったが、この変異は多くの個体群に現れるため亜種は認められない。属全体はCallopsis/Chelopus等への再分類提案の歴史があるが現行はRhinoclemmys。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "painted-wood-turtle",
+      "wamei": "アカスジヤマガメ",
+      "gakumei": "Rhinoclemmys pulcherrima",
+      "eimei": "Painted / Ornate Wood Turtle",
+      "koura": "Geoemydidae。中型で半陸生。背甲は褐色で正中キール＋後縁鋸歯＋成長輪があり粗い外観。北部個体は扁平で幅広、南部個体はドーム状で細い(地理的変異)。本ページは種全体(4亜種)の総称。",
+      "iro_moyou": "背甲は褐色地に、亜種・産地で変異する模様(橙黄の渦巻や眼状斑=ocelli)。腹甲は黄色で中央に暗色のblotchまたはstripe(連続する正中線)。頭部は褐〜緑褐色に橙〜赤の条(『アカスジ/painted』の由来)。",
+      "tobu": "頭部は小さく、褐〜緑褐色地に橙〜赤の条。顎縁は細かく鋸歯状。",
+      "size": "中型。メス最大20cm、オス18cm。北で扁平広甲、南でドーム状。",
+      "bunpu": "太平洋岸メキシコ(ソノラ以南)〜コスタリカ/パナマ。雨林・浅い川・低木林。半陸生(乾燥に耐え水から離れることも)。4亜種(pulcherrima/incisa/manni/rogerbarbouri)。",
+      "kondou_shu": [
+        {
+          "aite": "ニカラグアクジャクガメ (R. pulcherrima incisa)/マンヤマガメ (R. pulcherrima manni)",
+          "kubetsu": "【重要】incisa・manniは本種pulcherrimaの亜種で同一種。本ページ(pulcherrima)は種全体の総称。3ページ(painted/nicaragua/brown-wood-manni)は同一種の亜種違いのため画像使い回しリスクが極めて高い。亜種の区別は産地＋模様傾向(manniが最も鮮やか)で、色は連続変異し断定困難。"
+        },
+        {
+          "aite": "ネンリンヤマガメ (Rhinoclemmys annulata)",
+          "kubetsu": "pulcherrimaは腹甲が黄色＋橙赤の頭条/annulataは腹甲がほぼ黒＋黄キール。腹甲の色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Rhinoclemmys spp.)。IUCN未評価/低危険。鮮やかさ(特にmanni)ゆえペット取引で乱獲される。輸入に附属書II証明が必要。国内流通あり。",
+      "photo_hantei": "褐色の甲＋正中キール＋後縁鋸歯＋頭部の橙赤条＋腹甲が黄色で暗色blotch/stripe。頭部の橙赤条と黄腹甲が手がかり。種全体のため特定亜種に限定しない。",
+      "photo_chuui": "①【使い回しリスク最大】nicaragua(incisa)・manniと同一種の亜種違い—3ページで同一個体画像を割り当てない。亜種の区別は産地＋模様傾向のみで、色が連続変異するため写真での亜種断定は困難。②annulataとは腹甲の色で区別。③亜種名を伴う画像(manni等)が『pulcherrima』として広く流通するため学名検索時に亜種混在に注意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Painted_wood_turtle",
+        "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=1257",
+        "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/",
+        "https://reptilesmagazine.com/captive-care-and-breeding-of-the-central-american-ornate-wood-turtle/",
+        "https://iucn-tftsg.org/wp-content/uploads/file/Articles/Ernst_1978.pdf"
+      ],
+      "unresolved": "R. pulcherrima は4亜種(pulcherrima/incisa/manni/rogerbarbouri)を持つ多型種で、色・甲形が地理的に連続変異(北で扁平広甲、南でドーム状；南ニカラグア個体は地味、北コスタリカ個体は鮮やか)し、個体の亜種同定が困難でintergradeもある。属全体はCallopsisへの再分類提案(Ernst 1978)の歴史あり。本ページ(種全体)とincisa/manniページ(亜種)の画像割り当てが最大の使い回しリスク。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "nicaragua-wood-turtle",
+      "wamei": "ニカラグアクジャクガメ",
+      "gakumei": "Rhinoclemmys pulcherrima incisa",
+      "eimei": "Honduras / Incised Wood Turtle",
+      "koura": "R. pulcherrimaの亜種incisa。甲の基本構造は種と同じ(褐色＋正中キール＋後縁鋸歯＋成長輪、半陸生)。亜種incisaは中米北部個体群。",
+      "iro_moyou": "背甲は褐色で、pulcherrima種の模様(橙黄斑や眼状斑)を持つが、incisaは基亜種manniより模様がやや控えめな傾向(ただし連続変異)。腹甲は黄色に暗色blotch/stripe。頭部に橙赤条。",
+      "tobu": "頭部は褐〜緑褐色に橙赤条(pulcherrima種共通)。",
+      "size": "中型。pulcherrima種と同等(甲長〜20cm)。",
+      "bunpu": "エルサルバドル・グアテマラ・ニカラグア・ホンジュラス・南メキシコ(中米北部)。pulcherrima種の一亜種。",
+      "kondou_shu": [
+        {
+          "aite": "アカスジヤマガメ基亜種/マンヤマガメ (R. p. pulcherrima / R. p. manni)",
+          "kubetsu": "【重要】いずれもR. pulcherrimaの亜種で同一種。incisaは中米北部産で模様がやや控えめ傾向/manniは南ニカラグア産で最も鮮やか(渦巻＋眼状斑＋赤腹甲)。区別は産地＋模様傾向のみで色は連続変異、写真断定は困難。"
+        },
+        {
+          "aite": "ネンリンヤマガメ (Rhinoclemmys annulata)",
+          "kubetsu": "incisa(pulcherrima)は腹甲が黄色＋橙赤頭条/annulataは腹甲がほぼ黒＋黄キール。腹甲の色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Rhinoclemmys spp.)。輸入に附属書II証明が必要。国内流通あり。",
+      "photo_hantei": "pulcherrima種の形質(褐色甲＋正中キール＋橙赤頭条＋黄腹甲)＋中米北部産。ただし亜種incisaと種・他亜種の写真区別は困難。",
+      "photo_chuui": "①【使い回しリスク最大】painted-wood(種)・brown-wood-manni(manni亜種)と同一種の亜種違い—3ページで同一個体画像を割り当てない。②incisaと他亜種の区別は産地＋模様傾向のみで、色が連続変異するため写真だけでの亜種断定は不可。産地情報が不可欠。③和名『ニカラグアクジャクガメ』が学名incisa(ホンジュラス/Incised wood turtle)と流通名でねじれる可能性—検収時に和名の実態を再確認。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Painted_wood_turtle",
+        "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=1257",
+        "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/",
+        "https://www.fws.gov/species/incised-wood-turtle-rhinoclemmys-pulcherrima-incisa",
+        "https://iucn-tftsg.org/wp-content/uploads/file/Articles/Ernst_1978.pdf"
+      ],
+      "unresolved": "incisaはR. pulcherrimaの亜種で、種内の色・甲形が地理的に連続変異するため個体の亜種同定が困難、intergradeもある。和名『ニカラグアクジャクガメ』と学名R. p. incisa(英名Honduras/Incised wood turtle、分布は中米北部)の対応が流通名でねじれる可能性があり、ページの意図を検収時に再確認要。painted-wood/brown-wood-manniページとの画像使い回しリスク大。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "brown-wood-turtle-manni",
+      "wamei": "マンヤマガメ",
+      "gakumei": "Rhinoclemmys pulcherrima manni",
+      "eimei": "Central American / Ornate Wood Turtle (manni)",
+      "koura": "R. pulcherrimaの亜種manni。甲の基本構造は種と同じ(褐色＋正中キール＋後縁鋸歯＋成長輪、半陸生)。亜種manniは南ニカラグア〜北コスタリカ個体群で、pulcherrima種の中で最も色鮮やか。",
+      "iro_moyou": "【亜種の特徴】背甲に橙〜黄の渦巻(swirl)＋黒い眼状斑(ocelli)が鮮やかに入り、腹甲にピンク/赤の色みが乗る個体が多い＝pulcherrima4亜種中で最も華麗。ただし個体変異があり南ニカラグア個体は地味なことも。頭部に橙赤条。",
+      "tobu": "頭部は褐〜緑褐色に橙〜赤の条(pulcherrima種共通、manniで鮮やかな傾向)。",
+      "size": "中型。pulcherrima種と同等(甲長〜20cm)。",
+      "bunpu": "南ニカラグア〜北コスタリカ(＋資料によりメキシコGuerrero/Oaxacaとするものもあり分布記述に幅)。pulcherrima種の一亜種で、ペット取引で最も人気・流通。",
+      "kondou_shu": [
+        {
+          "aite": "アカスジヤマガメ基亜種/ニカラグアクジャクガメ (R. p. pulcherrima / R. p. incisa)",
+          "kubetsu": "【重要】いずれもR. pulcherrimaの亜種で同一種。manniは南ニカラグア〜北コスタリカ産で最も鮮やか(渦巻＋眼状斑＋赤腹甲)/incisaは中米北部産で模様やや控えめ。区別は産地＋鮮やかさの傾向のみで色は連続変異、写真断定は困難。"
+        },
+        {
+          "aite": "ネンリンヤマガメ (Rhinoclemmys annulata)",
+          "kubetsu": "manni(pulcherrima)は腹甲が黄色＋赤み＋橙赤頭条/annulataは腹甲がほぼ黒＋黄キール。腹甲の色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載(Rhinoclemmys spp.)。最も鮮やかで人気のためペット取引の需要が高く乱獲圧。輸入に附属書II証明が必要。国内流通あり。",
+      "photo_hantei": "橙黄の渦巻＋黒い眼状斑が鮮やかな褐色甲＋腹甲の赤み＋橙赤頭条＋南ニカラグア〜北コスタリカ産。鮮やかな渦巻＋眼状斑がmanniの目安だが、他亜種・種との連続変異に注意。",
+      "photo_chuui": "①【使い回しリスク最大】painted-wood(種)・nicaragua-wood(incisa)と同一種の亜種違い—3ページで同一個体画像を割り当てない。②manniは最も鮮やかな傾向だが、南ニカラグア個体は地味なこともあり、鮮やかさ単独で断定しない。産地＋模様の複合で判断。③『manni』の鮮やかな個体画像が種名pulcherrimaとして広く流通—亜種混在に注意。",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Painted_wood_turtle",
+        "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/",
+        "https://reptilesmagazine.com/captive-care-and-breeding-of-the-central-american-ornate-wood-turtle/",
+        "https://www.fws.gov/species/central-american-wood-turtle-rhinoclemmys-pulcherrima-manni",
+        "https://animal-world.com/encyclo/reptiles/turtles/OrnateWoodTurtle.php"
+      ],
+      "unresolved": "manniはR. pulcherrimaの亜種で最も鮮やかとされるが、色・模様が種内で地理的に連続変異(南ニカラグア個体は地味〜北コスタリカ個体は鮮やか)し、個体の亜種同定が困難、intergradeもある。分布記述も資料により幅がある(南ニカラグア〜北コスタリカ説とメキシコGuerrero/Oaxaca説が併存)。painted-wood/nicaragua-woodページとの画像使い回しリスクが最大。",
+      "status": "confirmed"
     }
   ]
 }
