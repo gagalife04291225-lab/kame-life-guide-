@@ -14,7 +14,7 @@ const COMMON_QUESTIONS = [
     { label: '7万円以上', scores: { budget_over70k: 1 } }
   ]},
   { text: '臭い・掃除の手間をどこまで許容できますか？', choices: [
-    { label: '臭いは絶対に避けたい', scores: { odor_hate: 1 } },
+    { label: '臭いが気になりにくい種類がいい', scores: { odor_hate: 1 } },
     { label: 'なるべく少ないほうがいい', scores: { odor_low: 1 } },
     { label: '普通に掃除できる', scores: { odor_normal: 1 } },
     { label: '気にしない', scores: { odor_ok: 1 } }
