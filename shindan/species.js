@@ -339,8 +339,8 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'キバラガメ', latin: 'Trachemys scripta scripta', emoji: '💛', difficulty: '入門', size: 'M（17〜27cm）', cites: null, legal: null,
-    reason: 'アカミミガメの近縁種で耳が黄色い。泳ぎが活発で観察が楽しい。アカミミガメと違い特定外来生物ではなく新規購入・飼育が可能。',
+  { name: 'キバラガメ', latin: 'Trachemys scripta scripta', emoji: '💛', difficulty: '入門', size: 'M（17〜27cm）', cites: null, legal: 'conditional_invasive',
+    reason: 'アカミミガメ（Trachemys scripta）の亜種。2023年6月より種全体が条件付特定外来生物に指定され、新規の購入・販売・輸入・野外放出が禁止。既に飼育中の個体は終生飼養できるが、これから入手することはできない。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '27cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
@@ -348,7 +348,7 @@ aquatic: [
     slug: 'yellow-bellied-slider', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
-    availability: 'common'
+    availability: 'rare'
   },
   { name: 'ミシシッピアカミミガメ', latin: 'Trachemys scripta elegans', emoji: '🔴', difficulty: '入門', size: 'L（20〜30cm）', cites: null, legal: 'conditional_invasive',
     reason: '【条件付特定外来生物】新規購入・販売は禁止ですが、既に飼育中の場合は継続飼育・少数無償譲渡が可能。野外への放流は厳禁。責任ある飼育が求められます。',
@@ -603,8 +603,8 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.mud_lover||0)+(s.observational||0)+(s.na_water||0)+(s.warm_climate||0)+(s.mainstream||0); },
     availability: 'common'
   },
-  { name: 'カンバーランドスライダー', latin: 'Trachemys scripta troostii', emoji: '🌿', difficulty: '入門', size: 'M（18〜28cm）', cites: null, legal: null,
-    reason: 'キバラガメと同じスライダー系の一亜種。テネシー川流域原産で、腹甲の赤みが特徴的。キバラガメよりやや色彩が渋く、入門者向けの丈夫で飼育しやすい水棲ガメ。',
+  { name: 'カンバーランドスライダー', latin: 'Trachemys scripta troostii', emoji: '🌿', difficulty: '入門', size: 'M（18〜28cm）', cites: null, legal: 'conditional_invasive',
+    reason: 'アカミミガメ（Trachemys scripta）の亜種。2023年6月より種全体が条件付特定外来生物に指定され、新規の購入・販売・輸入・野外放出が禁止。既に飼育中の個体は終生飼養できるが、これから入手することはできない。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60〜90cm', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '28cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（幼体肉食寄り）' },
     extraSpecs: { tankSize: '60〜90cm' },
@@ -612,7 +612,7 @@ aquatic: [
     slug: 'cumberland-slider', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 1 && (s.active||0) >= 2; },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
-    availability: 'common'
+    availability: 'rare'
   },
   { name: 'キタチズガメ', latin: 'Graptemys geographica', emoji: '🗾', difficulty: '中級', size: 'M（オス10cm/メス28cm）', cites: null, legal: null,
     reason: 'チズガメ属の基本種。甲羅に地図状の模様が入る美麗種で、オス・メスで体格差が大きい。水質管理が重要で、適切なフィルターと水温管理ができる中級者向け。',
