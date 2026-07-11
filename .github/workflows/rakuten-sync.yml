@@ -153,7 +153,7 @@ jobs:
             const fs = require("fs");
             const a = JSON.parse(fs.readFileSync("rakuten-image-audit.json", "utf8"));
             const ALLOWED = ["httpStatus","contentType","topLevelKeys","detectedItemsKey",
-                             "detectedItemsType","apiErrorCode","apiErrorMessage",
+                             "detectedItemsType","apiErrorCode","apiErrorMessage","errorObjectKeys",
                              "reportedCount","candidateCount"];
             const summary = {
               testedProductCount: a.testedProductCount,
