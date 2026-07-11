@@ -72,6 +72,8 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large'],
+    rakutenConfidence: 5.7,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   tank_60: {
@@ -93,7 +95,7 @@ const PRODUCTS = {
     rakutenPrice: 5600,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.2,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   tank_90: {
@@ -104,13 +106,13 @@ const PRODUCTS = {
     priceRange: '¥8,000–18,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004J2G6XK?tag=kamelife09-22',
     asin: 'B004J2G6XK',
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/59905/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店、90×30×36cm一致)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店、90×30×36cm一致)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'コトブキ工芸 KC-ワイド900 水槽',
     rakutenPrice: 16800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 5.2,
+    rakutenLastUpdated: '2026-07-11',
     image: '/assets/products/placeholder.webp',
     why: '中型水棲ガメの単独飼育や、幼体の複数飼育を始めるならこのサイズから',
     rating: 4.4,
@@ -178,8 +180,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'GEX EXOTERRA グラステラリウム 4545',
     rakutenPrice: 8900,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 4.9,
+    rakutenLastUpdated: '2026-07-11',
     rakutenConfidence: 3.9,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -347,8 +349,8 @@ const PRODUCTS = {
     priceRange: '¥1,500–3,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00BF91Q1W?tag=kamelife09-22',
     asin: 'B00BF91Q1W',
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/168087/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA レプタイルUVB100 26W',
     image: '/assets/products/placeholder.webp',
     why: '小型ケージや補助UVBとして使いやすいコンパクトタイプ',
@@ -357,8 +359,8 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenPrice: 2200,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6.5,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 5.6,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -394,13 +396,13 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/168089/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA レプタイルUVB150 26W', // Phase 39-P1: 旧値はArcadia表記で商品名(GEX)と不整合だったため自身の商品名に修正
     rakutenPrice: 3200,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6.5,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 7.6,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B07BBMVJ6H)の実商品をweb_searchで確認したところ「GEX EXOTERRA ソーラーグローUV 80W
@@ -418,8 +420,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'GEX EXOTERRA ソーラーグローUV 80W',
     rakutenPrice: 9800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 6.3,
+    rakutenLastUpdated: '2026-07-11',
     image: '/assets/products/placeholder.webp',
     why: 'UVB＋バスキング一体型。ランプ1本で照明コストを削減できる上級者向け',
     rating: 4.4,
@@ -444,7 +446,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'UVB LED ライト バー 爬虫類',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -489,8 +491,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'バスキングランプ 50W 爬虫類',
-    rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 4.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   basking_75w: {
@@ -501,8 +503,8 @@ const PRODUCTS = {
     priceRange: '¥800–2,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004LE7HWK?tag=kamelife09-22',
     asin: 'B004LE7HWK',
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/65646/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA サングロー バスキングスポットランプ 75W',
     image: '/assets/products/placeholder.webp',
     why: '標準的な60〜90cmケージのホットスポット形成に最適',
@@ -511,8 +513,8 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
     rakutenPrice: 1300,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 5.2,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   basking_100w: {
@@ -531,8 +533,8 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
-    rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 4.9,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -574,6 +576,8 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
+    rakutenConfidence: 5.2,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B00E0GLQPI)の実商品をweb_searchで確認したところ「GEX EXOTERRA サングロー
@@ -594,6 +598,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA サングロー バスキングスポットランプ 150W',
+    rakutenConfidence: 5.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B0858Y7XJX)の実商品をweb_searchで確認したところ「ゼンスイ ソラリウムセット
@@ -615,8 +621,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ゼンスイ ソラリウムセット メタルハライド',
-    rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 3.5,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   basking_ceramic_100w: {
@@ -635,8 +641,8 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
-    rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 7.2,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   basking_infrared_red: {
@@ -656,7 +662,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 バスキングランプ 75W 爬虫類',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -732,13 +738,13 @@ const PRODUCTS = {
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_dry_small'],
-    rakutenUrl: 'https://item.rakuten.co.jp/discountaqua/10001493/', // Phase 39-P5: 実商品ページ確認済み(株式会社ディスカウントアクア)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(株式会社ディスカウントアクア)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'みどり商会 ピタリ適温プラス 1号',
     rakutenPrice: 2800,
     rakutenShop: '株式会社ディスカウントアクア',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 6.5,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   heater_panel_45: {
@@ -754,13 +760,13 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_forest'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/49921/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'みどり商会 ピタリ適温プラス 2号',
     rakutenPrice: 4200,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 6.8,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   heater_aqua_100w: {
@@ -780,7 +786,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '水中ヒーター 100W 亀 水槽',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P3: ASIN(B00BKULMIS)の実商品をweb_searchで特定できず、ブランド不明の汎用品だったため
@@ -869,8 +875,8 @@ const PRODUCTS = {
     rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
     rakutenPrice: 8800,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 5.7,
+    rakutenLastUpdated: '2026-07-11',
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -888,13 +894,13 @@ const PRODUCTS = {
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/44177/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店、Lサイズ一致)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店、Lサイズ一致)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'みどり商会 暖突 Lサイズ',
     rakutenPrice: 12000,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6.5,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 5.2,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   heater_cord_20w: {
@@ -913,6 +919,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'Zoo Med レプティヒートケーブル 25W', // Phase 39-P6: ワット数不一致(20W→25W)も含め商品名に統一
+    rakutenConfidence: 5.9,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   heater_panel_60: {
@@ -931,8 +939,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'みどり商会 ピタリ適温プラス 3号',
-    rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 7,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -985,13 +993,13 @@ const PRODUCTS = {
     priceRange: '¥1,500–4,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0012UO6Q6?tag=kamelife09-22',
     asin: 'B0012UO6Q6',
-    rakutenUrl: 'https://item.rakuten.co.jp/rayon/29892/', // Phase 39-P5: 実商品ページ確認済み(レヨンベールアクア楽天市場店)
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F12725%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10023700%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be', // Phase 39-P5: 実商品ページ確認済み(レヨンベールアクア楽天市場店)
     rakutenStatus: 'available',
     rakutenSearchTerm: 'テトラ オートワンタッチフィルター AT-50',
-    rakutenPrice: 2480,
-    rakutenShop: 'レヨンベールアクア楽天市場店',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenPrice: 2095,
+    rakutenShop: 'charm 楽天市場店',
+    rakutenConfidence: 9.3,
+    rakutenLastUpdated: '2026-07-11',
     image: '/assets/products/placeholder.webp',
     why: '小型水棲ガメの水質維持に。カメは水を汚しやすいため必須',
     rating: 4.1,
@@ -1007,13 +1015,13 @@ const PRODUCTS = {
     priceRange: '¥8,000–20,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004FZ99HG?tag=kamelife09-22',
     asin: 'B004FZ99HG',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2213%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2213%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fminatodenk%2Fi%2F10093005%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'EHEIM クラシック 2213 外部フィルター',
-    rakutenPrice: 12800,
+    rakutenPrice: 14920,
     rakutenShop: 'ミナトワークス',
-    rakutenConfidence: 8.6,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 8.8,
+    rakutenLastUpdated: '2026-07-11',
     image: '/assets/products/placeholder.webp',
     why: '水量の多い大型水槽向け。ろ過能力が高く水換え頻度を削減',
     rating: 4.5,
@@ -1029,13 +1037,13 @@ const PRODUCTS = {
     priceRange: '¥15,000–35,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07F42H865?tag=kamelife09-22',
     asin: 'B07F42H865',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2215%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00plman.nhbnn536.g00plman.nhbnoef3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fminatodenk%2Feheim-2215%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fminatodenk%2Fi%2F10093006%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'EHEIM クラシック 2215 外部フィルター',
-    rakutenPrice: 17800,
+    rakutenPrice: 21630,
     rakutenShop: 'ミナトワークス',
-    rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-06-29',
+    rakutenConfidence: 9.1,
+    rakutenLastUpdated: '2026-07-11',
     image: '/assets/products/placeholder.webp',
     why: '大型半水棲・完全水棲ガメの90cm以上水槽に対応',
     rating: 4.7,
@@ -1064,7 +1072,7 @@ const PRODUCTS = {
     rakutenPrice: 3280,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -1106,7 +1114,7 @@ const PRODUCTS = {
     rakutenPrice: 24600,
     rakutenShop: 'ミナトワークス',
     rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   filter_canister_xl: {
@@ -1122,9 +1130,13 @@ const PRODUCTS = {
     rating: 4.8,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F45364%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F45364%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10045248%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenSearchTerm: 'GEX メガパワー 6090 外部フィルター', // Phase 39-P1: 旧値はFluval表記で商品名(GEX)と不整合だったため自身の商品名に修正
+    rakutenPrice: 7726,
+    rakutenShop: 'charm 楽天市場店',
+    rakutenConfidence: 9.4,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   filter_submersible_medium: {
@@ -1140,13 +1152,13 @@ const PRODUCTS = {
     rating: 4.2,
     badge: null,
     recommendedFor: ['semi_aquatic_medium'],
-    rakutenUrl: 'https://item.rakuten.co.jp/vicsystore/gr-e99h52o5hh/', // Phase 39-P5: 実商品ページ確認済み(vicsystore)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(vicsystore)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX AQUA FILTER e-ROKA PF701',
     rakutenPrice: 4800,
     rakutenShop: 'vicsystore',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 7.9,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   filter_turtle_clean: {
@@ -1207,10 +1219,10 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Budget Pick',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
-    rakutenPrice: 350,
+    rakutenPrice: 300,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   substrate_coco: {
@@ -1232,7 +1244,7 @@ const PRODUCTS = {
     rakutenPrice: 1098,
     rakutenShop: '雑貨イズム',
     rakutenConfidence: 8.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   substrate_sand_mix: {
@@ -1269,13 +1281,13 @@ const PRODUCTS = {
     rating: 4.2,
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/332240/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null, // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA テラリウムソイル 4kg',
     rakutenPrice: 2200,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenConfidence: 5.7,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -1454,6 +1466,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'スドー ロックシェルターSP ML',
+    rakutenConfidence: 5.7,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -1555,7 +1569,7 @@ const PRODUCTS = {
     rakutenPrice: 2180,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-06-28',
   },
@@ -1662,7 +1676,7 @@ const PRODUCTS = {
     rakutenPrice: 1470,
     rakutenShop: 'Palpito 楽天市場店',
     rakutenConfidence: 9.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   thermometer_aqua: {
@@ -1681,8 +1695,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'INKBIRD 水温計 Bluetooth',
-    rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 3.5,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -1703,6 +1717,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'シンワ測定 デジタル温度計 73117',
+    rakutenConfidence: 7.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   thermometer_infrared: {
@@ -1722,7 +1738,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: '赤外線 温度計 非接触 爬虫類',
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B0CZ42FLXM)の実商品をweb_searchで確認したところ「INKBIRD WiFi温度計湿度計
@@ -1744,6 +1760,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'INKBIRD WiFi 温湿度計 IBS-TH3',
+    rakutenConfidence: 5.9,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   thermometer_analog: {
@@ -1763,7 +1781,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   /* ══════════════════════════════════════════
@@ -1786,6 +1804,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カメプロス キョーリン 亀 餌', // Phase 39-P1: ブランド表記修正に伴い検索語も修正
+    rakutenConfidence: 7.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B0DF2SJMCJ)の実商品をweb_searchで確認したところ「Vivaria取扱 Rep-Cal
@@ -1827,7 +1847,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'レプトミン テトラ 亀 餌',
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   food_aqua_turtle_pellet: {
@@ -1847,7 +1867,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'カメの主食 GEX 亀 フード',
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B0F6JWRMSL)の実商品をweb_searchで確認したところ「Vivaria取扱 Rep-Cal
@@ -1930,7 +1950,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'ひかり タートル 亀 フード',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   food_tortoise_herbs: {
@@ -2005,6 +2025,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'Mazuri Tortoise Diet リクガメ フード',
+    rakutenConfidence: 6.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   /* ══════════════════════════════════════════
@@ -2029,7 +2051,7 @@ const PRODUCTS = {
     rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA カルシウム ビタミンD3 90g',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // ── Task2 追加 ──
@@ -2053,7 +2075,7 @@ const PRODUCTS = {
     rakutenPrice: 508,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B09YYPLCV3)の実商品をweb_searchで確認したところ「GEX EXOTERRA カルシウム+
@@ -2075,6 +2097,8 @@ const PRODUCTS = {
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA カルシウム ビタミンD3 40g',
+    rakutenConfidence: 7.3,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   supplement_multivitamin: {
@@ -2090,13 +2114,13 @@ const PRODUCTS = {
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'box_turtle'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F79635%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10137810%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA マルチビタミン 30g',
     rakutenPrice: 525,
     rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-07-01',
+    rakutenConfidence: 5.9,
+    rakutenLastUpdated: '2026-07-11',
   },
 
   // Phase 39-P4: ASIN(B09M65FBTD)の実商品をweb_searchで確認したところ「テトラ レプトセイフ カメの水つくり
