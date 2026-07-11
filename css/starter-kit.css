@@ -968,14 +968,21 @@
   min-height: 44px;            /* タップ領域 44px 確保 */
   padding: 4px 2px;
   cursor: pointer;
+  position: relative;         /* 絶対配置inputの基準（カード左上への飛び出し防止） */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
 .sk-card-check-input {
   position: absolute;
   width: 1px; height: 1px;
-  opacity: 0;
-  pointer-events: none;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+  /* opacity/pointer-eventsは使わず、clipで隠す＝フォーカス到達性を確実に維持 */
 }
 .sk-card-check-box {
   flex: 0 0 auto;
