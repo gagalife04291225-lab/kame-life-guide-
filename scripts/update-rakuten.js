@@ -146,6 +146,115 @@ function rakutenSearch(searchTerm, maxItems) {
   });
 }
 
+// ─── Diagnostic fetch (audit mode only) ──────────────────────
+// Same request as rakutenSearch(), but captures transport-level facts so an
+// empty result can be explained: HTTP status, content-type, top-level key
+// NAMES, API error code/message, and which items key (if any) is present.
+// Never stores: the request URL, Authorization header, any Secret value,
+// or the full response body.
+function rakutenSearchDiagnostic(searchTerm, maxItems) {
+  return new Promise(function(resolve) {
+    const params = new URLSearchParams({
+      applicationId: APP_ID,
+      accessKey:     ACCESS_KEY,
+      affiliateId:   AFFILIATE_ID,
+      keyword:       searchTerm,
+      hits:          String(maxItems || 10),
+      sort:          '-reviewCount',
+      imageFlag:     '1',
+      availability:  '1',
+    });
+    const options = {
+      hostname: RAKUTEN_API_HOST,
+      path:     RAKUTEN_API_PATH + '?' + params.toString(),
+      method:   'GET',
+      headers:  {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + ACCESS_KEY,
+        'Origin': 'https://kamelifeguide.com',
+        'Referer': 'https://kamelifeguide.com/',
+      },
+    };
+    const req = https.request(options, function(res) {
+      let data = '';
+      res.on('data', function(chunk) { data += chunk; });
+      res.on('end', function() {
+        const diag = {
+          httpStatus:        res.statusCode || null,
+          contentType:       (res.headers && res.headers['content-type']) || null,
+          topLevelKeys:      [],
+          detectedItemsKey:  null,
+          detectedItemsType: null,
+          apiErrorCode:      null,
+          apiErrorMessage:   null,
+          reportedCount:     null,
+        };
+        let parsed = null;
+        try {
+          parsed = JSON.parse(data);
+        } catch (e) {
+          // Body was not JSON. Record the fact only — never the body itself.
+          diag.apiErrorCode = 'NON_JSON_RESPONSE';
+          diag.apiErrorMessage = redact('JSON parse failed: ' + e.message);
+          return resolve({ parsed: null, diag: diag });
+        }
+
+        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+          diag.topLevelKeys = Object.keys(parsed);   // key NAMES only
+        } else {
+          diag.topLevelKeys = [];
+          diag.detectedItemsType = Array.isArray(parsed) ? 'array' : typeof parsed;
+        }
+
+        // Rakuten error shapes: {error, error_description} or {code, message}
+        if (parsed && (parsed.error || parsed.code || parsed.error_description)) {
+          diag.apiErrorCode    = redact(String(parsed.error || parsed.code || ''));
+          diag.apiErrorMessage = redact(String(parsed.error_description || parsed.message || ''));
+        }
+
+        // Which items key is present? (Items / items / item)
+        const ITEM_KEYS = ['Items', 'items', 'item'];
+        for (let i = 0; i < ITEM_KEYS.length; i++) {
+          const k = ITEM_KEYS[i];
+          if (parsed && Object.prototype.hasOwnProperty.call(parsed, k)) {
+            diag.detectedItemsKey  = k;
+            diag.detectedItemsType = Array.isArray(parsed[k]) ? 'array' : typeof parsed[k];
+            break;
+          }
+        }
+
+        // Count-related fields, if any
+        const COUNT_KEYS = ['count', 'hits', 'pageCount', 'page', 'first', 'last'];
+        const counts = {};
+        COUNT_KEYS.forEach(function(k) {
+          if (parsed && typeof parsed[k] === 'number') counts[k] = parsed[k];
+        });
+        if (Object.keys(counts).length) diag.reportedCount = counts;
+
+        resolve({ parsed: parsed, diag: diag });
+      });
+    });
+    req.on('error', function(e) {
+      resolve({ parsed: null, diag: {
+        httpStatus: null, contentType: null, topLevelKeys: [],
+        detectedItemsKey: null, detectedItemsType: null,
+        apiErrorCode: 'REQUEST_ERROR', apiErrorMessage: redact(e.message),
+        reportedCount: null,
+      }});
+    });
+    req.setTimeout(10000, function() {
+      req.destroy();
+      resolve({ parsed: null, diag: {
+        httpStatus: null, contentType: null, topLevelKeys: [],
+        detectedItemsKey: null, detectedItemsType: null,
+        apiErrorCode: 'TIMEOUT', apiErrorMessage: 'Request timeout',
+        reportedCount: null,
+      }});
+    });
+    req.end();
+  });
+}
+
 // ─── Scoring ─────────────────────────────────────────────────
 function scoreCandidate(item, product) {
   const price       = item.itemPrice || 0;
@@ -385,16 +494,37 @@ async function auditImages() {
 
     await sleep(1100);  // Respect Rakuten API rate limit
 
-    let apiResult;
-    try {
-      apiResult = await rakutenSearch(searchKeyword, AUDIT_MAX_CANDIDATES);
-    } catch (e) {
-      audit.errors.push({ productId: productId, error: redact(e.message) });
-      console.log('[image-audit] API error: ' + productId + ' — ' + redact(e.message));
-      continue;
+    // Diagnostic fetch: capture transport-level facts so an empty result
+    // can be explained instead of silently yielding zero candidates.
+    const probe = await rakutenSearchDiagnostic(searchKeyword, AUDIT_MAX_CANDIDATES);
+    const diag = probe.diag;
+    const parsed = probe.parsed;
+
+    // Record failure reasons explicitly.
+    if (diag.httpStatus !== null && diag.httpStatus !== 200) {
+      audit.errors.push({
+        productId: productId,
+        error: 'HTTP_' + diag.httpStatus,
+        apiErrorCode: diag.apiErrorCode,
+        apiErrorMessage: diag.apiErrorMessage,
+      });
+    } else if (diag.apiErrorCode) {
+      audit.errors.push({
+        productId: productId,
+        error: 'API_ERROR',
+        apiErrorCode: diag.apiErrorCode,
+        apiErrorMessage: diag.apiErrorMessage,
+      });
     }
 
-    const items = (apiResult && Array.isArray(apiResult.Items)) ? apiResult.Items : [];
+    // Resolve the items array from whichever key the API actually used.
+    let items = [];
+    if (parsed && diag.detectedItemsKey && Array.isArray(parsed[diag.detectedItemsKey])) {
+      items = parsed[diag.detectedItemsKey];
+    } else if (parsed && diag.httpStatus === 200 && !diag.apiErrorCode) {
+      audit.errors.push({ productId: productId, error: 'ITEMS_KEY_NOT_FOUND' });
+    }
+
     const candidates = items.slice(0, AUDIT_MAX_CANDIDATES).map(function(entry) {
       // Rakuten wraps each hit as { Item: {...} } in some versions; handle both.
       const item = (entry && entry.Item) ? entry.Item : entry;
@@ -410,11 +540,23 @@ async function auditImages() {
       productId:      productId,
       registeredName: product.name || null,
       searchKeyword:  searchKeyword,
+      // Diagnostics (no URL, no headers, no secrets, no full body)
+      httpStatus:        diag.httpStatus,
+      contentType:       diag.contentType,
+      topLevelKeys:      diag.topLevelKeys,      // key NAMES only
+      detectedItemsKey:  diag.detectedItemsKey,
+      detectedItemsType: diag.detectedItemsType,
+      apiErrorCode:      diag.apiErrorCode,
+      apiErrorMessage:   diag.apiErrorMessage,
+      reportedCount:     diag.reportedCount,
       candidateCount: candidates.length,
       candidates:     candidates,
     });
     audit.testedProductCount++;
-    console.log('[image-audit] ' + productId + ' — candidates: ' + candidates.length);
+    console.log('[image-audit] ' + productId +
+                ' — http=' + diag.httpStatus +
+                ' itemsKey=' + (diag.detectedItemsKey || 'NONE') +
+                ' candidates: ' + candidates.length);
   }
 
   audit.detectedImageFields = Array.from(imageFieldsSeen);
