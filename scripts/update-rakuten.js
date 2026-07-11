@@ -206,8 +206,13 @@ function rakutenSearchDiagnostic(searchTerm, maxItems) {
           diag.detectedItemsType = Array.isArray(parsed) ? 'array' : typeof parsed;
         }
 
-        // Rakuten error shapes: {error, error_description} or {code, message}
-        if (parsed && (parsed.error || parsed.code || parsed.error_description)) {
+        // Rakuten error shapes:
+        //   {error, error_description} | {code, message} | {errors:[{code,message}...]}
+        if (parsed && Array.isArray(parsed.errors) && parsed.errors.length) {
+          const e0 = parsed.errors[0] || {};
+          diag.apiErrorCode    = redact(String(e0.code || e0.error || e0.type || ''));
+          diag.apiErrorMessage = redact(String(e0.message || e0.error_description || e0.detail || ''));
+        } else if (parsed && (parsed.error || parsed.code || parsed.error_description)) {
           diag.apiErrorCode    = redact(String(parsed.error || parsed.code || ''));
           diag.apiErrorMessage = redact(String(parsed.error_description || parsed.message || ''));
         }
