@@ -168,6 +168,20 @@ jobs:
             const out = "## Rakuten image audit diagnostics\n\n```json\n" +
                         JSON.stringify(summary, null, 2) + "\n```\n";
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, out);
+
+            // Also emit as workflow notice annotations, which ARE retrievable
+            // through api.github.com (check-run annotations). Chunked because
+            // a single annotation message has a length limit.
+            const compact = JSON.stringify(summary);
+            const CHUNK = 900;
+            const total = Math.ceil(compact.length / CHUNK);
+            for (let i = 0; i < total; i++) {
+              const part = compact.slice(i * CHUNK, (i + 1) * CHUNK)
+                                  .replace(/%/g, "%25")
+                                  .replace(/\r/g, "%0D")
+                                  .replace(/\n/g, "%0A");
+              console.log("::notice title=RAKUTEN_DIAG_" + (i + 1) + "_OF_" + total + "::" + part);
+            }
             console.log("Diagnostic summary published (no secrets, no URLs, no full body).");
           '
 
