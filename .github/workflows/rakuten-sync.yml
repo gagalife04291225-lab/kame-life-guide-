@@ -12,6 +12,16 @@ on:
         default: 'false'
         type: choice
         options: ['true', 'false']
+      audit_images:
+        description: 'Image audit mode (read-only: no write, no commit, no push)'
+        required: false
+        default: false
+        type: boolean
+      audit_product_ids:
+        description: 'Optional: comma-separated product IDs to audit (overrides default set)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -30,7 +40,12 @@ jobs:
         with:
           node-version: '22'
 
+      # ── Normal daily sync (unchanged behaviour) ──────────────
+      # Skipped entirely when audit_images is true.
       - name: Run Rakuten sync
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          github.event.inputs.audit_images != 'true'
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
@@ -39,6 +54,9 @@ jobs:
 
       - name: Check for changes
         id: diff
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          github.event.inputs.audit_images != 'true'
         run: |
           if git diff --quiet data/products.js; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -49,10 +67,84 @@ jobs:
           fi
 
       - name: Commit and push
-        if: steps.diff.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        if: >-
+          (github.event_name != 'workflow_dispatch' ||
+           github.event.inputs.audit_images != 'true') &&
+          steps.diff.outputs.changed == 'true' &&
+          github.event.inputs.dry_run != 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/products.js
           git commit -m "chore: auto update rakuten prices [$(date -u +%Y-%m-%d)]"
           git push
+
+      # ── Image audit mode (read-only investigation) ───────────
+      # Runs ONLY on manual dispatch with audit_images=true.
+      # Never writes data/products.js, never commits, never pushes.
+      - name: Run Rakuten image audit (read-only)
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.audit_images == 'true'
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          AUDIT_IMAGES: 'true'
+          AUDIT_PRODUCT_IDS: ${{ github.event.inputs.audit_product_ids }}
+        run: node scripts/update-rakuten.js
+
+      # Safety net: prove products.js was not touched by the audit.
+      # Fails the run if the audit ever modified tracked files.
+      - name: Verify products.js untouched by audit
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.audit_images == 'true'
+        run: |
+          if git diff --quiet data/products.js; then
+            echo "OK: data/products.js unchanged by audit."
+          else
+            echo "FATAL: audit modified data/products.js — this must never happen."
+            git diff --stat data/products.js
+            exit 1
+          fi
+
+      # Independent secret scan of the generated artifact (defense in depth).
+      # Prints a verdict ONLY — never the secret values, never the matched line.
+      - name: Scan artifact for secret leakage
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.audit_images == 'true'
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            const s = fs.readFileSync("rakuten-image-audit.json", "utf8");
+            const tokens = ["applicationId","accessKey","affiliateId","Authorization","Bearer",
+                            "RAKUTEN_APP_ID","RAKUTEN_ACCESS_KEY","RAKUTEN_AFFILIATE_ID"];
+            const hits = tokens.filter(t => s.includes(t));
+            const vals = [process.env.RAKUTEN_APP_ID, process.env.RAKUTEN_ACCESS_KEY,
+                          process.env.RAKUTEN_AFFILIATE_ID].filter(Boolean);
+            const leaked = vals.filter(v => s.includes(v)).length;
+            if (hits.length || leaked) {
+              console.error("FATAL: secret leakage detected in artifact.");
+              if (hits.length) console.error("  Forbidden tokens: " + hits.join(", "));
+              if (leaked)      console.error("  Secret values found: " + leaked);
+              process.exit(1);
+            }
+            console.log("OK: no secret values detected");
+          '
+
+      - name: Upload audit artifact
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.audit_images == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rakuten-image-audit
+          path: rakuten-image-audit.json
+          retention-days: 7
+          if-no-files-found: error
