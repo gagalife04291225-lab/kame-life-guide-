@@ -402,9 +402,10 @@ function renderSkCard(item, speciesName, equipmentKey) {
                 : item.tier === 'premium' ? 'sk-badge-premium'
                 : 'sk-badge-standard';
   var hasUrl = p.affiliateUrl && p.affiliateUrl !== '#';
-  var tierCtaText = (SK_TIER_CTA[item.tier] || 'Amazonで価格・在庫を見る');
+  // Phase 36: 役割が分かるAmazon文言に統一（tier別の販促文言から、機能明示の文言へ）
+  var amazonCtaText = 'Amazonで在庫・価格を見る →';
 
-  // Amazon CTA (unchanged)
+  // Amazon CTA
   var amazonBtn = hasUrl
     ? '<a class="sk-card-btn" href="' + p.affiliateUrl + '" target="_blank" rel="noopener noreferrer sponsored"' +
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
@@ -412,7 +413,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="amazon"' +
-      ' data-click-url="' + p.affiliateUrl + '">' + tierCtaText + '</a>'
+      ' data-click-url="' + p.affiliateUrl + '">' + amazonCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
 
   // ── Rakuten CTA: TASK 2 Dual CTA UX (CASE A/B/C/D) ──────────
@@ -438,7 +439,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="affiliate"' +
-      ' data-click-url="' + p.rakutenUrl + '">楽天で購入（ポイント還元）</a>';
+      ' data-click-url="' + p.rakutenUrl + '">楽天で価格・ポイントを見る →</a>';
   } else if (showRakSearch) {
     // CASE B\'(search): 楽天検索 → アウトラインセカンダリ
     rakutenBtn = '<a class="sk-card-btn sk-card-btn--rakuten-search"' +
@@ -450,7 +451,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
       ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
       ' data-provider="rakuten" data-mode="search"' +
-      ' data-click-url="' + _rakSearchUrl + '">楽天でも探す</a>';
+      ' data-click-url="' + _rakSearchUrl + '">楽天で商品を探す →</a>';
   } // Case C (pending): show Amazon only — rakutenBtn stays ''
   // CASE D: neither → rakutenBtn = '' (nothing rendered)
 
@@ -463,7 +464,19 @@ function renderSkCard(item, speciesName, equipmentKey) {
   var cvrBadge = getCvrBadge(item, equipmentKey);
   var cvrBadgeHtml = '<span class="sk-cvr-badge">' + cvrBadge.icon + ' ' + cvrBadge.label + '</span>';
 
-  return '<div class="sk-card' + cardTierCls + '">' +
+  // Phase 36: 購入確認チェック行（「確認済み」であって「購入済み」ではない）
+  // hasUrl または 楽天導線が無い(URLなし)商品でもチェックUI自体は表示（外部リンク未クリックでも手動確認できる）
+  var _chkId = 'sk-chk-' + (equipmentKey || 'x') + '-' + (item.tier || 't') + '-' + p.id;
+  var checkHtml =
+    '<label class="sk-card-check" for="' + _chkId + '">' +
+      '<input type="checkbox" class="sk-card-check-input" id="' + _chkId + '"' +
+        ' data-sk-check="1">' +
+      '<span class="sk-card-check-box" aria-hidden="true"></span>' +
+      '<span class="sk-card-check-text">Amazon・楽天で確認済み</span>' +
+    '</label>';
+
+  return '<div class="sk-card' + cardTierCls + '"' +
+    ' data-sk-product="' + p.id + '" data-sk-tier="' + (item.tier || 'standard') + '">' +
     '<div class="sk-cat-label-row">' +
       '<div class="sk-cat-label">' + catLabel + '</div>' +
       cvrBadgeHtml +
@@ -473,6 +486,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
     '<div class="sk-card-price">' + p.priceRange + '<span class="sk-price-note">（目安）</span></div>' +
     (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
     btn +
+    checkHtml +
   '</div>';
 }
 
@@ -489,9 +503,20 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
     return renderSkCard(item, speciesName, equipmentKey);
   }).join('');
 
+  // Phase 36: 購入確認の進捗表示（初期0 / n商品）。JS側でチェック連動して更新。
+  var _n = picks.length;
+  var progressHtml =
+    '<div class="sk-progress" data-sk-progress data-sk-total="' + _n + '"' +
+      ' role="status" aria-live="polite">' +
+      '<span class="sk-progress-text">購入確認：<span class="sk-progress-done">0</span> / ' +
+        _n + '商品</span>' +
+      '<span class="sk-progress-complete" hidden>✓ 必要商品をすべて確認しました</span>' +
+    '</div>';
+
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
     (tabDef.id !== 'comfort' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
+    progressHtml +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
 }
@@ -606,34 +631,14 @@ function renderBundleSummary(tabData, speciesName) {
       : '';
     var itemsHtml = '<div class="sk-bundle-items">' + previewTags + moreTag + '</div>';
 
-    // Phase 35-B2: quick-link CTA — first valid pick per tier
-    var _qlCopyMap = {
-      budget:   '最安構成をAmazonで見る →',
-      standard: 'おすすめ構成をAmazonで見る →',
-      premium:  '本格セットをAmazonで見る →',
-    };
-    var _qlPick = null;
-    for (var _qi = 0; _qi < picks.length; _qi++) {
-      var _qp = picks[_qi].product;
-      if (_qp && _qp.affiliateUrl && _qp.affiliateUrl !== '#') {
-        _qlPick = picks[_qi]; break;
-      }
-    }
-    var quickLinkHtml = _qlPick
-      ? '<a class="sk-bundle-quicklink sk-card-btn"' +
-          ' href="' + _qlPick.product.affiliateUrl + '"' +
-          ' target="_blank" rel="noopener noreferrer sponsored"' +
-          ' aria-label="' + b.label + 'をAmazonで見る"' +
-          ' data-cat="' + _qlPick.cat + '"' +
-          ' data-species="' + (speciesName || '') + '"' +
-          ' data-tier="' + b.tier + '"' +
-          ' data-asin="' + (_qlPick.product.asin || '') + '"' +
-          ' data-product-id="' + _qlPick.product.id + '"' +
-          ' data-display-cat="' + _skDisplayCat(_qlPick.cat) + '"' +
-          ' data-provider="amazon"' +
-          ' data-click-url="' + _qlPick.product.affiliateUrl + '">' +
-          (_qlCopyMap[b.tier] || 'Amazonで見る →') +
-        '</a>'
+    // Phase 36: 主CTA — 商品数連動文言。0件時はCTA非表示。
+    // 旧quick-link CTA（1商品へ直リンクし「構成」表示と不一致）は誤解を招くため撤去。
+    var ctaHtml = count > 0
+      ? '<button class="sk-bundle-cta" type="button"' +
+          ' data-bundle-panel="sk-panel-' + b.tabId + '"' +
+          ' aria-label="' + b.label + 'の必要な' + count + '商品を確認する">' +
+          '必要な' + count + '商品を確認する →' +
+        '</button>'
       : '';
 
     return '<div class="sk-bundle-card ' + b.mod + (b.recommended ? ' sk-bundle-card--rec' : '') + '"' +
@@ -654,11 +659,7 @@ function renderBundleSummary(tabData, speciesName) {
         '<span class="sk-bundle-count">' + count + '点セット</span>' +
       '</div>' +
       savingsHtml +
-      '<button class="sk-bundle-cta" type="button"' +
-        ' aria-label="' + b.label + 'の詳細を見る">' +
-        'この構成をまとめて揃える →' +
-      '</button>' +
-      quickLinkHtml +
+      ctaHtml +
     '</div>';
   }).join('');
 
@@ -853,15 +854,28 @@ function mountStarterKit(species, mountId, analyticsCtx) {
       var btn = root.querySelector('.sk-tab-btn[data-target="' + targetPanelId + '"]');
       if (btn) btn.click();
 
-      // Smooth-scroll to tabs
+      // Smooth-scroll to tabs（未対応環境でも後続処理を止めない）
       var tabsEl = root.querySelector('.sk-tabs');
-      if (tabsEl) {
-        tabsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (tabsEl && typeof tabsEl.scrollIntoView === 'function') {
+        try { tabsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
       }
 
       // GA4
       if (typeof gtag === 'function') {
-        // Phase 20-E: bundle_click (canonical)
+        // Phase 36: 新規 — バンドル(構成)を開いた計測。既存イベント設計に整合。
+        gtag('event', 'starter_kit_bundle_open', {
+          species:          _skStr(sName),
+          equipment_key:    _skStr(species && species.equipmentKey),
+          tier:             tier,
+          bundle_item_count: count,
+          source_page:      _srcPage,
+          page_path:        _skPagePath(),
+        });
+        window.KAME_GA_DEBUG_LOG('starter_kit_bundle_open', {
+          species: _skStr(sName), tier: tier,
+          bundle_item_count: count, source_page: _srcPage,
+        });
+        // Phase 20-E: bundle_click (canonical) — 維持
         gtag('event', 'bundle_click', {
           species:          _skStr(sName),
           bundle_tier:      tier,
@@ -929,9 +943,48 @@ function mountStarterKit(species, mountId, analyticsCtx) {
     });
   }
 
+  // ── Phase 36: 購入確認チェックリスト制御 ────────────────────
+  // 進捗表示を更新（パネル単位）。localStorage永続化はしない（セッション内のみ）。
+  function _skUpdateProgress(panel) {
+    if (!panel) return;
+    var prog = panel.querySelector('[data-sk-progress]');
+    if (!prog) return;
+    var total = parseInt(prog.getAttribute('data-sk-total'), 10) || 0;
+    var done = panel.querySelectorAll('.sk-card-check-input:checked').length;
+    var doneEl = prog.querySelector('.sk-progress-done');
+    if (doneEl) doneEl.textContent = String(done);
+    var completeEl = prog.querySelector('.sk-progress-complete');
+    var allDone = (total > 0 && done >= total);
+    if (completeEl) {
+      if (allDone) completeEl.removeAttribute('hidden');
+      else completeEl.setAttribute('hidden', '');
+    }
+    prog.classList.toggle('sk-progress--complete', allDone);
+  }
+  // カードの確認済み表示を反映
+  function _skSetConfirmed(card, confirmed) {
+    if (!card) return;
+    var input = card.querySelector('.sk-card-check-input');
+    if (input && input.checked !== confirmed) input.checked = confirmed;
+    card.classList.toggle('sk-card--confirmed', !!confirmed);
+    var panel = card.closest('.sk-tab-panel');
+    _skUpdateProgress(panel);
+  }
+  // チェックボックス手動操作
+  root.querySelectorAll('.sk-card-check-input').forEach(function(input) {
+    input.addEventListener('change', function() {
+      var card = input.closest('.sk-card');
+      _skSetConfirmed(card, input.checked);
+    });
+  });
+
   // クリックトラッキング
   root.querySelectorAll('.sk-card-btn[href]').forEach(function(a) {
     a.addEventListener('click', function() {
+      // Phase 36: Amazon/楽天クリックで該当商品を自動「確認済み」に
+      // （リンク自体は無効化せず、従来どおり新しいタブで開く）
+      var _card = a.closest('.sk-card');
+      if (_card) _skSetConfirmed(_card, true);
       if (typeof gtag === 'function') {
         // 既存イベント（維持）
         var _clickMeta = (_tabCtrl && _tabCtrl.getMeta) ? _tabCtrl.getMeta() : {};

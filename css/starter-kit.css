@@ -926,3 +926,120 @@
     margin-top: 8px;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   Phase 36: 購入確認チェックリスト & 進捗表示
+   既存の緑系（#2f4a3c / #2e7d32 / #e8f0e8）を流用。新規色は追加しない。
+   「確認済み」であり「購入済み」ではない — 控えめな完了表示。
+   ══════════════════════════════════════════════════════════ */
+
+/* 進捗表示（パネル上部） */
+.sk-progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 4px 0 10px;
+  padding: 7px 11px;
+  background: #f4f7f4;
+  border: 1px solid #d8e2d8;
+  border-radius: 7px;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #2f4a3c;
+  line-height: 1.4;
+}
+.sk-progress-done { font-variant-numeric: tabular-nums; }
+.sk-progress-complete {
+  color: #2e7d32;
+  font-weight: 700;
+}
+.sk-progress--complete {
+  background: #e8f0e8;
+  border-color: #2e7d32;
+}
+
+/* 商品カードのチェック操作 */
+.sk-card-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  min-height: 44px;            /* タップ領域 44px 確保 */
+  padding: 4px 2px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.sk-card-check-input {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sk-card-check-box {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b8b0a0;
+  border-radius: 5px;
+  background: #fff;
+  transition: background .15s, border-color .15s;
+  position: relative;
+}
+.sk-card-check-box::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 6px; height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform .12s;
+}
+.sk-card-check-input:checked + .sk-card-check-box {
+  background: #2e7d32;
+  border-color: #2e7d32;
+}
+.sk-card-check-input:checked + .sk-card-check-box::after {
+  transform: rotate(45deg) scale(1);
+}
+.sk-card-check-input:focus-visible + .sk-card-check-box {
+  outline: 2px solid #2f4a3c;
+  outline-offset: 2px;
+}
+.sk-card-check-text {
+  font-size: .74rem;
+  font-weight: 600;
+  color: #6a6152;
+  line-height: 1.3;
+}
+.sk-card-check-input:checked ~ .sk-card-check-text {
+  color: #2e7d32;
+}
+
+/* 確認済みカード — 控えめな完了表示（カード全体を「購入済み」風にしない） */
+.sk-card--confirmed {
+  border-color: #cfe0cf;
+}
+.sk-card--confirmed::before {
+  content: '確認済み';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 1px 7px;
+  background: #e8f0e8;
+  color: #2e7d32;
+  font-size: .62rem;
+  font-weight: 700;
+  border-radius: 99px;
+  letter-spacing: .02em;
+  z-index: 1;
+}
+.sk-card { position: relative; }
+
+/* 360px 幅対応 — 文字切れ・はみ出し防止 */
+@media (max-width: 380px) {
+  .sk-progress { font-size: .76rem; padding: 6px 9px; }
+  .sk-card-check-text { font-size: .71rem; }
+}
