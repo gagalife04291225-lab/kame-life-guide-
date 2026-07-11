@@ -138,6 +138,39 @@ jobs:
             console.log("OK: no secret values detected");
           '
 
+      # Emit a Secret-free diagnostic summary to the job summary so it is
+      # readable via the GitHub API (api.github.com), which does not require
+      # access to the artifact blob storage host.
+      # Runs AFTER the secret scan, so anything printed here is already verified
+      # to be free of credentials. Only the whitelisted diagnostic fields are
+      # emitted — never the full API response, never any URL, never a secret.
+      - name: Publish diagnostic summary
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.audit_images == 'true'
+        run: |
+          node -e '
+            const fs = require("fs");
+            const a = JSON.parse(fs.readFileSync("rakuten-image-audit.json", "utf8"));
+            const ALLOWED = ["httpStatus","contentType","topLevelKeys","detectedItemsKey",
+                             "detectedItemsType","apiErrorCode","apiErrorMessage",
+                             "reportedCount","candidateCount"];
+            const summary = {
+              testedProductCount: a.testedProductCount,
+              detectedImageFields: a.detectedImageFields,
+              errors: a.errors,
+              results: (a.results || []).map(r => {
+                const o = { productId: r.productId };
+                ALLOWED.forEach(k => { o[k] = (r[k] === undefined ? null : r[k]); });
+                return o;
+              }),
+            };
+            const out = "## Rakuten image audit diagnostics\n\n```json\n" +
+                        JSON.stringify(summary, null, 2) + "\n```\n";
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, out);
+            console.log("Diagnostic summary published (no secrets, no URLs, no full body).");
+          '
+
       - name: Upload audit artifact
         if: >-
           github.event_name == 'workflow_dispatch' &&
