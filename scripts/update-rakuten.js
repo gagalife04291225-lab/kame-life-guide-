@@ -30,6 +30,37 @@ const CONFIDENCE_THRESHOLD = 8.0;
 const RAKUTEN_API_HOST = 'openapi.rakuten.co.jp';
 const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20220601';
 
+// ─── Image Audit Mode (read-only investigation) ───────────────
+// Enabled ONLY via env AUDIT_IMAGES=true (workflow_dispatch input).
+// This mode NEVER writes products.js, NEVER commits, NEVER pushes.
+// It queries the Rakuten API for a small fixed product set and dumps
+// non-secret response fields to a JSON artifact for schema discovery.
+const AUDIT_IMAGES = process.env.AUDIT_IMAGES === 'true';
+const AUDIT_OUT_PATH = path.resolve(process.cwd(), 'rakuten-image-audit.json');
+const AUDIT_MAX_CANDIDATES = 5;
+
+// Product IDs under audit (fixed default set, owner-approved).
+// Suspect set = previously flagged as possible mislinks.
+// Control set = known-good comparison items.
+// All 10 IDs are verified to exist in data/products.js.
+// Overridable via AUDIT_PRODUCT_IDS (comma-separated) without code change;
+// when that env var is empty, exactly these 10 products are processed.
+const AUDIT_SUSPECT_IDS = [
+  'filter_canister_xl',
+  'filter_canister_large',
+  'filter_canister_medium',
+  'basking_halogen_35w',
+  'food_aqua_turtle_pellet',
+  'supplement_mineral_block',
+];
+const AUDIT_CONTROL_IDS = [
+  'tank_60',
+  'filter_canister_premium',
+  'food_aquatic_premium',
+  'uvb_t5_desert_std',
+];
+
+
 // Category keyword guards (reject items clearly in wrong category)
 const CATEGORY_GUARDS = {
   lighting_uvb:     ['UVB', '紫外線', 'ランプ', 'ライト', 'T5', 'T8'],
@@ -255,6 +286,173 @@ function sleep(ms) {
   return new Promise(function(resolve) { setTimeout(resolve, ms); });
 }
 
+// ─── Image Audit (read-only; never writes products.js) ───────
+// Extracts ONLY the whitelisted fields below. Full API responses are
+// never dumped, and no secret (appId/accessKey/affiliateId/Authorization)
+// is ever written to logs or the artifact.
+//
+// SECURITY: affiliateUrl and itemUrl are NEVER stored in full.
+// A Rakuten affiliateUrl embeds the Affiliate ID (and tracking params) in
+// its path/query, so persisting it would leak an affiliate credential into
+// the artifact. We store only existence flags and the parsed host.
+function safeHost(u) {
+  if (typeof u !== 'string' || u.length === 0) return null;
+  try {
+    return new URL(u).host || null;   // host only — no path, no query
+  } catch (e) {
+    return null;                      // unparseable → null (never raw string)
+  }
+}
+
+function extractAuditFields(item) {
+  // Whitelist. Fields absent from the Rakuten response resolve to null.
+  const pick = function(k) {
+    return (item && item[k] !== undefined && item[k] !== '') ? item[k] : null;
+  };
+  const rawAffiliateUrl = (item && typeof item.affiliateUrl === 'string') ? item.affiliateUrl : '';
+  const rawItemUrl      = (item && typeof item.itemUrl === 'string')      ? item.itemUrl      : '';
+
+  return {
+    itemName:         pick('itemName'),
+    itemCode:         pick('itemCode'),
+    itemPrice:        pick('itemPrice'),
+    shopName:         pick('shopName'),
+    mediumImageUrls:  pick('mediumImageUrls'),
+    smallImageUrls:   pick('smallImageUrls'),
+    imageUrl:         pick('imageUrl'),
+    jan:              pick('jan'),
+    brand:            pick('brand'),
+    manufacturer:     pick('manufacturer'),
+    modelNumber:      pick('modelNumber'),
+    postageFlag:      pick('postageFlag'),
+    reviewCount:      pick('reviewCount'),
+    // Minimized URL info — never the full strings.
+    hasAffiliateUrl:  rawAffiliateUrl.length > 0,
+    affiliateHost:    safeHost(rawAffiliateUrl),
+    hasItemUrl:       rawItemUrl.length > 0,
+  };
+}
+
+// Redact any secret that could appear in an error string (defense in depth).
+function redact(str) {
+  let s = String(str == null ? '' : str);
+  [APP_ID, ACCESS_KEY, AFFILIATE_ID].forEach(function(sec) {
+    if (sec) s = s.split(sec).join('***REDACTED***');
+  });
+  // Strip credential-bearing query params if a URL ever leaks into a message
+  s = s.replace(/(applicationId|accessKey|affiliateId)=[^&\s]*/gi, '$1=***REDACTED***');
+  s = s.replace(/Bearer\s+[A-Za-z0-9._-]+/g, 'Bearer ***REDACTED***');
+  return s;
+}
+
+async function auditImages() {
+  validateSecrets();
+  console.log('[image-audit] READ-ONLY mode. products.js will NOT be modified.');
+
+  const { products } = loadProducts();
+
+  // Allow explicit override of the product set without editing code.
+  const override = (process.env.AUDIT_PRODUCT_IDS || '').trim();
+  const requested = override
+    ? override.split(',').map(function(s) { return s.trim(); }).filter(Boolean)
+    : AUDIT_SUSPECT_IDS.concat(AUDIT_CONTROL_IDS);
+
+  const audit = {
+    executedAt: new Date().toISOString(),
+    apiVersion: RAKUTEN_API_PATH,
+    testedProductCount: 0,
+    detectedImageFields: [],
+    results: [],
+    errors: [],
+  };
+
+  const imageFieldsSeen = new Set();
+
+  for (const productId of requested) {
+    const product = products[productId];
+    if (!product) {
+      // Do NOT guess a replacement ID — report and move on.
+      audit.errors.push({ productId: productId, error: 'PRODUCT_ID_NOT_FOUND_IN_products.js' });
+      console.log('[image-audit] MISSING ID (not substituted): ' + productId);
+      continue;
+    }
+
+    const searchKeyword = product.rakutenSearchTerm || product.name || '';
+    if (!searchKeyword) {
+      audit.errors.push({ productId: productId, error: 'NO_SEARCH_KEYWORD' });
+      continue;
+    }
+
+    await sleep(1100);  // Respect Rakuten API rate limit
+
+    let apiResult;
+    try {
+      apiResult = await rakutenSearch(searchKeyword, AUDIT_MAX_CANDIDATES);
+    } catch (e) {
+      audit.errors.push({ productId: productId, error: redact(e.message) });
+      console.log('[image-audit] API error: ' + productId + ' — ' + redact(e.message));
+      continue;
+    }
+
+    const items = (apiResult && Array.isArray(apiResult.Items)) ? apiResult.Items : [];
+    const candidates = items.slice(0, AUDIT_MAX_CANDIDATES).map(function(entry) {
+      // Rakuten wraps each hit as { Item: {...} } in some versions; handle both.
+      const item = (entry && entry.Item) ? entry.Item : entry;
+      const picked = extractAuditFields(item);
+      // Record which image-bearing fields actually exist in the live response
+      ['mediumImageUrls', 'smallImageUrls', 'imageUrl'].forEach(function(f) {
+        if (picked[f]) imageFieldsSeen.add(f);
+      });
+      return picked;
+    });
+
+    audit.results.push({
+      productId:      productId,
+      registeredName: product.name || null,
+      searchKeyword:  searchKeyword,
+      candidateCount: candidates.length,
+      candidates:     candidates,
+    });
+    audit.testedProductCount++;
+    console.log('[image-audit] ' + productId + ' — candidates: ' + candidates.length);
+  }
+
+  audit.detectedImageFields = Array.from(imageFieldsSeen);
+
+  const serialized = JSON.stringify(audit, null, 2);
+
+  // ── Post-generation secret scan (defense in depth) ──────────
+  // Fail hard if any credential-ish token or an actual Secret value
+  // ended up in the artifact. Secret VALUES are never printed — only a verdict.
+  const FORBIDDEN_TOKENS = [
+    'applicationId', 'accessKey', 'affiliateId',
+    'Authorization', 'Bearer',
+    'RAKUTEN_APP_ID', 'RAKUTEN_ACCESS_KEY', 'RAKUTEN_AFFILIATE_ID',
+  ];
+  const hitTokens = FORBIDDEN_TOKENS.filter(function(t) {
+    return serialized.indexOf(t) !== -1;
+  });
+  const secretValues = [APP_ID, ACCESS_KEY, AFFILIATE_ID].filter(Boolean);
+  const leakedSecretCount = secretValues.filter(function(v) {
+    return serialized.indexOf(v) !== -1;
+  }).length;
+
+  if (hitTokens.length > 0 || leakedSecretCount > 0) {
+    // Report token NAMES only; never the values, never the offending content.
+    console.error('[FATAL][image-audit] Secret scan FAILED.');
+    if (hitTokens.length) console.error('  Forbidden tokens present: ' + hitTokens.join(', '));
+    if (leakedSecretCount) console.error('  Secret values detected in artifact: ' + leakedSecretCount);
+    process.exit(3);   // Do not write the artifact.
+  }
+  console.log('OK: no secret values detected');
+
+  fs.writeFileSync(AUDIT_OUT_PATH, serialized, 'utf8');
+  console.log('[image-audit] Wrote artifact JSON (products.js untouched).');
+  console.log('[image-audit] Tested: ' + audit.testedProductCount +
+              ' | Image fields detected: ' + (audit.detectedImageFields.join(', ') || 'NONE') +
+              ' | Errors: ' + audit.errors.length);
+}
+
 // ─── Main ─────────────────────────────────────────────────────
 async function main() {
   validateSecrets();
@@ -388,7 +586,17 @@ async function main() {
   console.log('[rakuten-sync] Done — ' + new Date().toISOString());
 }
 
-main().catch(function(e) {
-  console.error('[FATAL]', e.message);
-  process.exit(1);
-});
+// ─── Entry point ──────────────────────────────────────────────
+// AUDIT_IMAGES=true routes to auditImages() and NEVER reaches main(),
+// so the products.js writeFileSync path is structurally unreachable.
+if (AUDIT_IMAGES) {
+  auditImages().catch(function(e) {
+    console.error('[FATAL][image-audit]', redact(e.message));
+    process.exit(1);
+  });
+} else {
+  main().catch(function(e) {
+    console.error('[FATAL]', e.message);
+    process.exit(1);
+  });
+}
