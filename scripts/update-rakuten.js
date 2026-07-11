@@ -188,6 +188,7 @@ function rakutenSearchDiagnostic(searchTerm, maxItems) {
           apiErrorCode:      null,
           apiErrorMessage:   null,
           reportedCount:     null,
+          errorObjectKeys:   null,
         };
         let parsed = null;
         try {
@@ -209,9 +210,17 @@ function rakutenSearchDiagnostic(searchTerm, maxItems) {
         // Rakuten error shapes:
         //   {error, error_description} | {code, message} | {errors:[{code,message}...]}
         if (parsed && Array.isArray(parsed.errors) && parsed.errors.length) {
-          const e0 = parsed.errors[0] || {};
-          diag.apiErrorCode    = redact(String(e0.code || e0.error || e0.type || ''));
-          diag.apiErrorMessage = redact(String(e0.message || e0.error_description || e0.detail || ''));
+          const e0 = parsed.errors[0];
+          if (e0 && typeof e0 === 'object') {
+            // Unknown shape: record the KEY NAMES, and stringify the first
+            // error object (redacted) so the failure reason is visible.
+            diag.errorObjectKeys = Object.keys(e0);
+            diag.apiErrorCode    = redact(String(e0.code || e0.error || e0.type || e0.name || ''));
+            diag.apiErrorMessage = redact(JSON.stringify(e0)).slice(0, 300);
+          } else {
+            diag.apiErrorCode    = 'ERRORS_ARRAY_NON_OBJECT';
+            diag.apiErrorMessage = redact(String(e0)).slice(0, 200);
+          }
         } else if (parsed && (parsed.error || parsed.code || parsed.error_description)) {
           diag.apiErrorCode    = redact(String(parsed.error || parsed.code || ''));
           diag.apiErrorMessage = redact(String(parsed.error_description || parsed.message || ''));
@@ -553,6 +562,7 @@ async function auditImages() {
       detectedItemsType: diag.detectedItemsType,
       apiErrorCode:      diag.apiErrorCode,
       apiErrorMessage:   diag.apiErrorMessage,
+      errorObjectKeys:   diag.errorObjectKeys,
       reportedCount:     diag.reportedCount,
       candidateCount: candidates.length,
       candidates:     candidates,
