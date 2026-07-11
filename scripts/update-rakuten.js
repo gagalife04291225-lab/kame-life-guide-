@@ -26,6 +26,11 @@ const PRODUCTS_PATH = path.resolve(__dirname, '../data/products.js');
 // Confidence threshold to upgrade search → available
 const CONFIDENCE_THRESHOLD = 8.0;
 
+// Failure policy for the daily sync.
+// A broken API must fail the workflow, not quietly write zero changes.
+const MAX_SERVER_RETRIES  = 2;   // 5xx only
+const MAX_PRODUCT_FAILURES = 5;  // non-fatal per-product failures tolerated
+
 // Rakuten Ichiba Item Search API endpoint (2026 migration)
 const RAKUTEN_API_HOST = 'openapi.rakuten.co.jp';
 const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20220601';
@@ -103,6 +108,76 @@ function loadProducts() {
 }
 
 // ─── Rakuten API fetch ────────────────────────────────────────
+// ─── API error taxonomy ───────────────────────────────────────
+// A typed error so callers can distinguish "no results" from "API is broken".
+// FATAL kinds must abort the whole sync — silently writing zero updates while
+// the API rejects every request is what previously masked a month-long outage.
+function ApiError(kind, httpStatus, code, message, meta) {
+  const e = new Error(kind + (httpStatus ? ' (HTTP ' + httpStatus + ')' : '') +
+                      (code ? ' [' + code + ']' : '') + (message ? ': ' + message : ''));
+  e.name        = 'ApiError';
+  e.kind        = kind;          // AUTH | RATE_LIMIT | SERVER | BAD_RESPONSE | API_ERROR | NETWORK
+  e.httpStatus  = httpStatus || null;
+  e.apiCode     = code || null;
+  e.apiMessage  = message || null;
+  e.meta        = meta || null;  // shape info only — never raw bodies
+  e.fatal       = (kind === 'AUTH');   // 401/403 → stop immediately
+  return e;
+}
+
+// Safely describe an unknown error payload WITHOUT storing it.
+// Records only: type, array-ness, key names, string length. Never the values.
+function describeErrorPayload(v) {
+  if (v === null || v === undefined) return { type: 'absent' };
+  if (typeof v === 'string')  return { type: 'string', length: v.length };
+  if (Array.isArray(v)) {
+    const head = v.length ? v[0] : null;
+    return {
+      type: 'array',
+      length: v.length,
+      firstElementType: head === null ? 'null' : (Array.isArray(head) ? 'array' : typeof head),
+      firstElementKeys: (head && typeof head === 'object' && !Array.isArray(head))
+        ? Object.keys(head) : null,
+    };
+  }
+  if (typeof v === 'object') return { type: 'object', keys: Object.keys(v) };
+  return { type: typeof v };
+}
+
+// Pull an error code/message out of any of the shapes Rakuten may return.
+// Official spec (400/404/429/500/503): {error, error_description}
+// Observed on 403 (undocumented): {errors: ...}
+function extractApiError(parsed) {
+  if (!parsed || typeof parsed !== 'object') return { code: null, message: null };
+  if (parsed.error || parsed.error_description) {
+    return {
+      code: String(parsed.error || ''),
+      message: String(parsed.error_description || ''),
+    };
+  }
+  const errs = parsed.errors;
+  if (errs) {
+    if (Array.isArray(errs) && errs.length && errs[0] && typeof errs[0] === 'object') {
+      const e0 = errs[0];
+      return {
+        code: String(e0.code || e0.error || e0.type || e0.reason || ''),
+        message: String(e0.message || e0.error_description || e0.detail || e0.description || ''),
+      };
+    }
+    if (typeof errs === 'object' && !Array.isArray(errs)) {
+      return {
+        code: String(errs.code || errs.error || errs.type || ''),
+        message: String(errs.message || errs.error_description || errs.detail || ''),
+      };
+    }
+    if (typeof errs === 'string') return { code: null, message: errs };
+  }
+  return { code: null, message: null };
+}
+
+// ─── Rakuten API fetch (validated) ────────────────────────────
+// Rejects with a typed ApiError on any non-success condition, so that a broken
+// API can never be mistaken for "no products matched".
 function rakutenSearch(searchTerm, maxItems) {
   return new Promise(function(resolve, reject) {
     const params = new URLSearchParams({
@@ -130,17 +205,85 @@ function rakutenSearch(searchTerm, maxItems) {
       let data = '';
       res.on('data', function(chunk) { data += chunk; });
       res.on('end', function() {
-        try {
-          resolve(JSON.parse(data));
-        } catch(e) {
-          reject(new Error('JSON parse failed: ' + e.message));
+        const status      = res.statusCode || 0;
+        const contentType = (res.headers && res.headers['content-type']) || '';
+
+        // 1) HTTP status gate — never swallow a failed request.
+        if (status === 401 || status === 403) {
+          let parsed = null;
+          try { parsed = JSON.parse(data); } catch (e) { /* shape unknown */ }
+          const info  = extractApiError(parsed);
+          const shape = parsed && typeof parsed === 'object'
+            ? { topLevelKeys: Object.keys(parsed),
+                errorsShape: describeErrorPayload(parsed.errors) }
+            : { topLevelKeys: [], errorsShape: { type: 'non-object' } };
+          return reject(ApiError('AUTH', status,
+            redact(info.code || ''), redact((info.message || '').slice(0, 200)), shape));
         }
+        if (status === 429) {
+          const retryAfter = (res.headers && res.headers['retry-after']) || null;
+          return reject(ApiError('RATE_LIMIT', status, 'too_many_requests',
+            retryAfter ? ('retry-after=' + retryAfter) : null, null));
+        }
+        if (status >= 500) {
+          return reject(ApiError('SERVER', status, null, null, null));
+        }
+        if (status < 200 || status > 299) {
+          let parsed = null;
+          try { parsed = JSON.parse(data); } catch (e) { /* ignore */ }
+          const info = extractApiError(parsed);
+          return reject(ApiError('API_ERROR', status,
+            redact(info.code || ''), redact((info.message || '').slice(0, 200)), null));
+        }
+
+        // 2) content-type gate
+        if (contentType && contentType.indexOf('json') === -1) {
+          return reject(ApiError('BAD_RESPONSE', status, 'NON_JSON_CONTENT_TYPE',
+            redact(String(contentType)), null));
+        }
+
+        // 3) JSON parse gate
+        let parsed;
+        try {
+          parsed = JSON.parse(data);
+        } catch (e) {
+          return reject(ApiError('BAD_RESPONSE', status, 'JSON_PARSE_FAILED',
+            redact(e.message), null));
+        }
+
+        // 4) HTTP 200 but the body carries an error structure → still an error.
+        if (parsed && typeof parsed === 'object' && (parsed.error || parsed.errors)) {
+          const info  = extractApiError(parsed);
+          const shape = { topLevelKeys: Object.keys(parsed),
+                          errorsShape: describeErrorPayload(parsed.errors) };
+          return reject(ApiError('API_ERROR', status,
+            redact(info.code || 'ERROR_IN_200_BODY'),
+            redact((info.message || '').slice(0, 200)), shape));
+        }
+
+        // 5) Distinguish a genuine empty result from a malformed response.
+        //    Official success bodies always carry Items (array) plus count/hits.
+        const hasItems = parsed && Object.prototype.hasOwnProperty.call(parsed, 'Items');
+        if (!hasItems) {
+          return reject(ApiError('BAD_RESPONSE', status, 'ITEMS_KEY_NOT_FOUND',
+            null, { topLevelKeys: (parsed && typeof parsed === 'object')
+                                  ? Object.keys(parsed) : [] }));
+        }
+        if (!Array.isArray(parsed.Items)) {
+          return reject(ApiError('BAD_RESPONSE', status, 'ITEMS_NOT_ARRAY',
+            null, { itemsType: typeof parsed.Items }));
+        }
+
+        // Success. Items may legitimately be empty → NO_RESULT is the caller's call.
+        resolve(parsed);
       });
     });
-    req.on('error', reject);
+    req.on('error', function(e) {
+      reject(ApiError('NETWORK', null, 'REQUEST_ERROR', redact(e.message), null));
+    });
     req.setTimeout(10000, function() {
       req.destroy();
-      reject(new Error('Request timeout for: ' + searchTerm));
+      reject(ApiError('NETWORK', null, 'TIMEOUT', 'Request timeout', null));
     });
     req.end();
   });
@@ -632,8 +775,13 @@ async function main() {
     searchFallback: 0,
     skipped: Object.keys(products).length - targets.length,
     changed: [],
+    failed: [],
+    noResult: 0,
   };
 
+  // Set when the API itself is broken (auth/rate-limit/too many failures).
+  // While non-null, products.js must not be written and the run must fail.
+  let apiFailure = null;
   let currentSrc = src;
 
   for (const [productId, product] of targets) {
@@ -647,16 +795,68 @@ async function main() {
     await sleep(1100);  // Stay within Rakuten API rate limits
 
     let apiResult;
-    try {
-      apiResult = await rakutenSearch(searchTerm, 10);
-    } catch(e) {
-      console.log('[WARN] API error for ' + productId + ': ' + e.message);
+    let attempt = 0;
+    for (;;) {
+      try {
+        apiResult = await rakutenSearch(searchTerm, 10);
+        break;                                   // success
+      } catch (e) {
+        // AUTH (401/403): the credentials or the request itself are being
+        // rejected. Every subsequent product would fail identically — abort now
+        // rather than "succeeding" with zero updates.
+        if (e.kind === 'AUTH') {
+          console.error('[FATAL] Rakuten API rejected the request — aborting sync.');
+          console.error('  httpStatus : ' + e.httpStatus);
+          console.error('  apiCode    : ' + (e.apiCode || '(none)'));
+          console.error('  apiMessage : ' + (e.apiMessage || '(none)'));
+          if (e.meta) console.error('  shape      : ' + JSON.stringify(e.meta));
+          console.error('  NOTE: products.js was NOT modified.');
+          apiFailure = { kind: e.kind, httpStatus: e.httpStatus,
+                         apiCode: e.apiCode, apiMessage: e.apiMessage, meta: e.meta };
+          break;
+        }
+        // RATE_LIMIT: do not hammer the API. Stop the run.
+        if (e.kind === 'RATE_LIMIT') {
+          console.error('[FATAL] Rate limited by Rakuten API — aborting sync.');
+          console.error('  ' + (e.apiMessage || 'retry-after not provided'));
+          apiFailure = { kind: e.kind, httpStatus: e.httpStatus,
+                         apiCode: e.apiCode, apiMessage: e.apiMessage, meta: null };
+          break;
+        }
+        // SERVER (5xx): transient. Retry up to MAX_SERVER_RETRIES.
+        if (e.kind === 'SERVER' && attempt < MAX_SERVER_RETRIES) {
+          attempt++;
+          console.log('[RETRY] ' + productId + ' — HTTP ' + e.httpStatus +
+                      ' (attempt ' + attempt + '/' + MAX_SERVER_RETRIES + ')');
+          await sleep(2000 * attempt);
+          continue;
+        }
+        // Everything else (BAD_RESPONSE / API_ERROR / NETWORK / exhausted 5xx):
+        // count it, and fail the run if too many products are affected.
+        console.error('[ERROR] ' + productId + ' — ' + e.message);
+        report.failed.push(productId + ' (' + (e.kind || 'UNKNOWN') + ')');
+        break;
+      }
+    }
+    if (apiFailure) break;          // fatal: stop iterating products
+    if (!apiResult) {
+      // This product failed but was not fatal — move on.
+      if (report.failed.length > MAX_PRODUCT_FAILURES) {
+        console.error('[FATAL] Too many product failures (' + report.failed.length +
+                      ') — aborting sync.');
+        apiFailure = { kind: 'TOO_MANY_FAILURES', httpStatus: null,
+                       apiCode: null, apiMessage: null, meta: null };
+        break;
+      }
       continue;
     }
 
+    // Reaching here means: HTTP 200, JSON, no error structure, Items is an array.
+    // An empty array is therefore a genuine "no products matched" — not a failure.
     const items = (apiResult.Items || []).map(function(i) { return i.Item || i; });
     if (!items.length) {
       console.log('[NO_RESULT] ' + productId);
+      report.noResult++;
       continue;
     }
 
@@ -711,6 +911,22 @@ async function main() {
     console.log('[OK] ' + productId + ' score=' + bestScore + ' status=' + updates.rakutenStatus);
   }
 
+  // ── API failure gate ───────────────────────────────────────
+  // If the API rejected us, products.js must NOT be touched and the workflow
+  // must FAIL. Previously a 403 produced zero updates and exited 0, which made
+  // a month-long outage look like a series of successful no-op runs.
+  if (apiFailure) {
+    console.error('\n=== Rakuten Sync FAILED ===');
+    console.error('Reason:      ' + apiFailure.kind);
+    if (apiFailure.httpStatus) console.error('HTTP status: ' + apiFailure.httpStatus);
+    if (apiFailure.apiCode)    console.error('API code:    ' + apiFailure.apiCode);
+    if (apiFailure.apiMessage) console.error('API message: ' + apiFailure.apiMessage);
+    if (apiFailure.meta)       console.error('Shape:       ' + JSON.stringify(apiFailure.meta));
+    console.error('products.js: NOT modified.');
+    console.error('[rakuten-sync] Aborted — ' + new Date().toISOString());
+    process.exit(1);           // fail the workflow
+  }
+
   // Write only if changed
   if (report.updated > 0) {
     // Final sanity check: verify output is valid JS
@@ -736,6 +952,12 @@ async function main() {
   console.log('Available:      ' + report.available);
   console.log('Search fallback:' + report.searchFallback);
   console.log('Skipped:        ' + report.skipped);
+  console.log('No result:      ' + report.noResult);
+  console.log('Failed:         ' + report.failed.length);
+  if (report.failed.length) {
+    console.log('\nFailed products:');
+    report.failed.forEach(function(l) { console.log('  - ' + l); });
+  }
   if (report.changed.length) {
     console.log('\nChanged products:');
     report.changed.forEach(function(l) { console.log('  - ' + l); });
