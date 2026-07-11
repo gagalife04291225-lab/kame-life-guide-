@@ -33,7 +33,7 @@ const MAX_PRODUCT_FAILURES = 5;  // non-fatal per-product failures tolerated
 
 // Rakuten Ichiba Item Search API endpoint (2026 migration)
 const RAKUTEN_API_HOST = 'openapi.rakuten.co.jp';
-const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20220601';
+const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20260701';
 
 // ─── Image Audit Mode (read-only investigation) ───────────────
 // Enabled ONLY via env AUDIT_IMAGES=true (workflow_dispatch input).
@@ -196,9 +196,8 @@ function rakutenSearch(searchTerm, maxItems) {
       method:   'GET',
       headers:  {
         'Accept': 'application/json',
-        'Authorization': 'Bearer ' + ACCESS_KEY,
-        'Origin': 'https://kamelifeguide.com',
-        'Referer': 'https://kamelifeguide.com/',
+        'Origin': 'https://gagalife04291225-lab.github.io',
+        'Referer': 'https://gagalife04291225-lab.github.io/',
       },
     };
     const req = https.request(options, function(res) {
@@ -313,9 +312,8 @@ function rakutenSearchDiagnostic(searchTerm, maxItems) {
       method:   'GET',
       headers:  {
         'Accept': 'application/json',
-        'Authorization': 'Bearer ' + ACCESS_KEY,
-        'Origin': 'https://kamelifeguide.com',
-        'Referer': 'https://kamelifeguide.com/',
+        'Origin': 'https://gagalife04291225-lab.github.io',
+        'Referer': 'https://gagalife04291225-lab.github.io/',
       },
     };
     const req = https.request(options, function(res) {
