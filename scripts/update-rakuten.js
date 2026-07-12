@@ -621,6 +621,50 @@ async function auditImages() {
     ? override.split(',').map(function(s) { return s.trim(); }).filter(Boolean)
     : AUDIT_SUSPECT_IDS.concat(AUDIT_CONTROL_IDS);
 
+  // ── Optional single-product search-term override (read-only) ──────
+  // Lets an operator test a candidate search term that is NOT YET saved in
+  // products.js against the live API, without ever writing it to the file.
+  // Reached only from auditImages(), which itself only runs when
+  // AUDIT_IMAGES==='true' (see entry point at the bottom of this file) —
+  // so this code path is structurally unreachable from the normal sync.
+  // Strictly scoped: exactly one valid productId, non-blank, length-capped.
+  const AUDIT_SEARCH_TERM_MAX_LEN = 200;
+  const rawOverride = process.env.AUDIT_SEARCH_TERM || '';
+  let searchTermOverride = null;
+
+  if (rawOverride.trim().length > 0) {
+    // Strip control/newline characters — this value is echoed into logs
+    // and was supplied via a workflow_dispatch text input (untrusted).
+    const sanitized = rawOverride
+      .replace(/[\r\n\t\x00-\x1F\x7F]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (requested.length !== 1) {
+      console.error('[FATAL][image-audit] AUDIT_SEARCH_TERM requires exactly one ' +
+                    'audit_product_ids entry (got ' + requested.length + ').');
+      process.exit(4);
+    }
+    if (!sanitized) {
+      console.error('[FATAL][image-audit] AUDIT_SEARCH_TERM is blank after sanitization.');
+      process.exit(4);
+    }
+    if (sanitized.length > AUDIT_SEARCH_TERM_MAX_LEN) {
+      console.error('[FATAL][image-audit] AUDIT_SEARCH_TERM exceeds ' +
+                    AUDIT_SEARCH_TERM_MAX_LEN + ' characters (' + sanitized.length + ').');
+      process.exit(4);
+    }
+    if (!products[requested[0]]) {
+      console.error('[FATAL][image-audit] AUDIT_SEARCH_TERM given but productId not found ' +
+                    'in products.js: ' + requested[0]);
+      process.exit(4);
+    }
+
+    searchTermOverride = sanitized;
+    console.log('[image-audit] Search term override requested for ' + requested[0] +
+                ' — will NOT be saved to products.js.');
+  }
+
   const audit = {
     executedAt: new Date().toISOString(),
     apiVersion: RAKUTEN_API_PATH,
@@ -641,7 +685,9 @@ async function auditImages() {
       continue;
     }
 
-    const searchKeyword = product.rakutenSearchTerm || product.name || '';
+    const storedSearchTerm = product.rakutenSearchTerm || product.name || '';
+    const usingOverride    = searchTermOverride !== null && productId === requested[0];
+    const searchKeyword    = usingOverride ? searchTermOverride : storedSearchTerm;
     if (!searchKeyword) {
       audit.errors.push({ productId: productId, error: 'NO_SEARCH_KEYWORD' });
       continue;
@@ -692,9 +738,11 @@ async function auditImages() {
     });
 
     audit.results.push({
-      productId:      productId,
-      registeredName: product.name || null,
-      searchKeyword:  searchKeyword,
+      productId:            productId,
+      registeredName:       product.name || null,
+      storedSearchTerm:     storedSearchTerm || null,
+      searchKeyword:        searchKeyword,
+      searchTermOverridden: usingOverride,
       // Diagnostics (no URL, no headers, no secrets, no full body)
       httpStatus:        diag.httpStatus,
       contentType:       diag.contentType,
@@ -710,7 +758,10 @@ async function auditImages() {
     });
     audit.testedProductCount++;
     console.log('[image-audit] ' + productId +
-                ' — http=' + diag.httpStatus +
+                ' — storedTerm="' + storedSearchTerm + '"' +
+                ' usedTerm="' + searchKeyword + '"' +
+                ' overridden=' + usingOverride +
+                ' http=' + diag.httpStatus +
                 ' itemsKey=' + (diag.detectedItemsKey || 'NONE') +
                 ' candidates: ' + candidates.length);
   }

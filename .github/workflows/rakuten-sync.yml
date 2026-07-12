@@ -22,6 +22,11 @@ on:
         required: false
         default: ''
         type: string
+      audit_search_term:
+        description: '監査対象1商品の楽天検索語を一時的に上書きする。data/products.jsには保存しない。audit_images=true かつ audit_product_ids が1件のときのみ有効。'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -92,6 +97,7 @@ jobs:
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           AUDIT_IMAGES: 'true'
           AUDIT_PRODUCT_IDS: ${{ github.event.inputs.audit_product_ids }}
+          AUDIT_SEARCH_TERM: ${{ github.event.inputs.audit_search_term }}
         run: node scripts/update-rakuten.js
 
       # Safety net: prove products.js was not touched by the audit.
