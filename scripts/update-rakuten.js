@@ -521,11 +521,16 @@ function patchProductInSource(src, productId, updates) {
 
   // Fields we are allowed to modify
   const ALLOWED_FIELDS = [
-    'rakutenUrl', 'rakutenStatus', 'rakutenSearchTerm',
+    'rakutenUrl', 'rakutenStatus', 'rakutenSearchTerm', 'rakutenItemCode',
     'rakutenPrice', 'rakutenShop', 'rakutenConfidence', 'rakutenLastUpdated',
   ];
 
-  // Update or add each field
+  // Update or add each field.
+  // IDEMPOTENCY: a field may already appear MORE THAN ONCE in the block
+  // (legacy corruption from the previous append-on-miss logic). JS object
+  // literals are last-wins, so a stale trailing copy would silently shadow
+  // the fresh value. We therefore remove EVERY existing occurrence first,
+  // then insert exactly one. This makes duplicates structurally impossible.
   ALLOWED_FIELDS.forEach(function(field) {
     if (!(field in updates)) return;
     const val = updates[field];
@@ -533,13 +538,12 @@ function patchProductInSource(src, productId, updates) {
                 : (typeof val === 'number') ? String(val)
                 : '\'' + String(val).replace(/'/g, "\\'") + '\'';
 
-    const fieldPattern = new RegExp('    ' + field + ': (?:null|\'[^\']*\'|\\d+(?:\\.\\d+)?),');
-    if (fieldPattern.test(block)) {
-      block = block.replace(fieldPattern, '    ' + field + ': ' + jsVal + ',');
-    } else {
-      // Field doesn't exist yet — insert before closing brace
-      block = block.replace(/(\n  },)/, '\n    ' + field + ': ' + jsVal + ',$1');
-    }
+    // Remove ALL existing lines for this field (any value form, any trailing comment)
+    const killAll = new RegExp('^    ' + field + ':[^\\n]*\\n', 'gm');
+    block = block.replace(killAll, '');
+
+    // Insert exactly one occurrence before the closing brace
+    block = block.replace(/(\n  },)/, '\n    ' + field + ': ' + jsVal + ',$1');
   });
 
   return src.slice(0, startIdx) + block + src.slice(blockEnd);
@@ -934,22 +938,33 @@ async function main() {
       // Promote to available — only when BOTH score and commission URL exist
       updates.rakutenStatus     = 'available';
       updates.rakutenUrl        = affiliateUrl;
+      updates.rakutenItemCode   = bestItem.itemCode || null;
       updates.rakutenPrice      = bestItem.itemPrice;
       updates.rakutenShop       = bestItem.shopName || '';
       updates.rakutenConfidence = bestScore;
       report.available++;
       console.log('[PROMOTED] ' + productId + ' affiliateUrl=' + affiliateUrl.slice(0,40) + '...');
     } else if (bestScore >= CONFIDENCE_THRESHOLD && !affiliateUrl) {
-      // Good score but no commission URL — keep search, log for monitoring
+      // Good score but no commission URL — keep search, log for monitoring.
+      // IDEMPOTENCY: clear the commerce fields too. Leaving a stale price/shop
+      // from a previous 'available' run makes the record self-contradictory
+      // (search CTA shown, yet an old price still persisted in the data).
       updates.rakutenStatus     = 'search';
       updates.rakutenUrl        = null;
+      updates.rakutenItemCode   = null;
+      updates.rakutenPrice      = null;
+      updates.rakutenShop       = null;
       updates.rakutenConfidence = bestScore;
       report.searchFallback++;
       console.log('[NO_AFF_URL] ' + productId + ' score=' + bestScore + ' no affiliateUrl returned');
     } else {
-      // Below threshold — keep search fallback
+      // Below threshold — keep search fallback.
+      // IDEMPOTENCY: same as above — demotion must clear commerce fields.
       updates.rakutenStatus     = 'search';
       updates.rakutenUrl        = null;
+      updates.rakutenItemCode   = null;
+      updates.rakutenPrice      = null;
+      updates.rakutenShop       = null;
       updates.rakutenConfidence = bestScore;
       report.searchFallback++;
     }
