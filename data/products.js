@@ -855,12 +855,12 @@ const PRODUCTS = {
 
   thermostat_digital: {
     id: 'thermostat_digital',
-    name: 'デジタルサーモスタット（プログラム式）',
+    name: 'GEX EXOTERRA タイマーサーモ RTT-1',
     category: 'heating',
     tier: 'premium',
     priceRange: '¥6,000–15,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B0CG93Z4VW?tag=kamelife09-22',
-    asin: 'B0CG93Z4VW',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00JGLKPFE?tag=kamelife09-22',
+    asin: 'B00JGLKPFE',
     image: '/assets/products/placeholder.webp',
     why: '昼夜の温度スケジュールを自動制御。複数機器の同時管理に対応',
     rating: 4.7,
@@ -868,7 +868,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'デジタル サーモスタット 爬虫類',
+    rakutenSearchTerm: 'GEX エキゾテラ タイマーサーモ RTT-1',
     rakutenPrice: 8800,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.7,
@@ -2031,7 +2031,7 @@ const PRODUCTS = {
 
   calcium_no_d3: {
     id: 'calcium_no_d3',
-    name: 'カルシウムパウダー（D3なし）',
+    name: 'GEX EXOTERRA カルシウム 90g（D3なし）',
     category: 'supplements',
     tier: 'budget',
     priceRange: '¥600–1,500',
@@ -2044,7 +2044,7 @@ const PRODUCTS = {
     recommendedFor: ['outdoor', 'advanced'],
     rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F12443%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10018518%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
-    rakutenSearchTerm: 'カルシウム パウダー 爬虫類 サプリ',
+    rakutenSearchTerm: 'GEX エキゾテラ カルシウム 90g 爬虫類',
     rakutenPrice: 508,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8,
