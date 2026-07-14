@@ -118,8 +118,6 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
-    rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-06-28',
   },
 
   // Phase 39-P4: ASIN(B09DNYMXTP)の実商品をweb_searchで確認したところ「SANKO パンテオン ブラック BK9045」
@@ -182,8 +180,6 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 4.9,
     rakutenLastUpdated: '2026-07-13',
-    rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-06-28',
   },
 
   // Phase 39-P4: ASIN(B09DP2X997)の実商品をweb_searchで確認したところ「SANKO パンテオン カノン ホワイト
@@ -877,8 +873,6 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-07-13',
-    rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-06-28',
   },
 
   heater_radiant_panel: {
@@ -1073,8 +1067,6 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-07-13',
-    rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-28',
   },
 
   filter_sponge_dual: {
@@ -1570,8 +1562,6 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-07-13',
-    rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-06-28',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
