@@ -1345,23 +1345,6 @@ const PRODUCTS = {
   // standard/premiumの2ティアで同一商品が重複していたため、EQUIPMENT_MAP側の参照は外し
   // （tortoise_forest / box_turtle の substrate.standard を null 化 → budgetへフォールバック）、
   // 本エントリはデータとして保持のみ行う。
-  substrate_forest_blend: {
-    id: 'substrate_forest_blend',
-    name: 'GEX EXOTERRA フォレストバーク 8.8L',
-    category: 'substrate',
-    tier: 'standard',
-    priceRange: '¥1,200–4,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B07PGZN9CF?tag=kamelife09-22',
-    asin: 'B07PGZN9CF',
-    image: '/assets/products/placeholder.webp',
-    why: '天然ベイマツ樹皮の崩れにくい床材。森林性ハコガメの生息環境に近づけたい人に',
-    rating: 4.4,
-    badge: null,
-    recommendedFor: ['box_turtle', 'tortoise_forest'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX EXOTERRA フォレストバーク 8.8L',
-  },
 
   substrate_cypress: {
     id: 'substrate_cypress',
