@@ -560,7 +560,7 @@ const PRODUCTS = {
     id: 'basking_halogen_50w',
     name: 'GEX EXOTERRA サングロー バスキングスポットランプ 50W',
     category: 'lighting_basking',
-    tier: 'budget',
+    tier: 'standard',
     priceRange: '¥600–2,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0043B3ZJ0?tag=kamelife09-22',
     asin: 'B0043B3ZJ0',
@@ -2230,7 +2230,7 @@ const EQUIPMENT_MAP = {
   semi_aquatic_small: {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
-    lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
+    lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
     heating:          { budget: 'thermostat_kotobuki_hydra', standard: 'heater_aqua_100w',    premium: 'thermostat_digital' }, // Phase 39-P3: thermostat(ブランド不明)→国内コトブキ実商品に差し替え
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
@@ -2276,7 +2276,7 @@ const EQUIPMENT_MAP = {
   box_turtle: {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
-    lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: null },
+    lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
