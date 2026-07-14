@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>カメライフガイド｜亀診断であなたに合う亀がわかる</title>
 <link rel="canonical" href="https://kamelifeguide.com/">
-<meta name="description" content="100種以上のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
+<meta name="description" content="100種のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
 
 <!-- OGP -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kamelifeguide.com/">
 <meta property="og:site_name" content="カメライフガイド">
 <meta property="og:title" content="カメライフガイド｜亀診断であなたに合う亀がわかる">
-<meta property="og:description" content="100種以上のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
+<meta property="og:description" content="100種のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
 <meta property="og:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
 <meta property="og:image:width" content="900">
 <meta property="og:image:height" content="738">
@@ -21,7 +21,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="カメライフガイド｜亀診断であなたに合う亀がわかる">
-<meta name="twitter:description" content="100種以上のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
+<meta name="twitter:description" content="100種のカメ・リクガメから、飼育難易度・サイズ・予算・暮らし方をもとに診断。初心者向け比較、種別ガイド、飼育機材までまとめてわかるカメ飼育プラットフォーム。">
 <meta name="twitter:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
 
 <!-- JSON-LD structured data -->
@@ -79,11 +79,11 @@
        → starter_kit_shown
        → starter_kit_click (affiliate_click)
 
-     AI CONCIERGE FUNNEL: TEMPORARILY DISABLED
-       ai_concierge_view → ai_concierge_start
-       → ai_concierge_answer × 4
-       → ai_concierge_result
-       → ai_concierge_cta_click
+     SHINDAN FUNNEL: TEMPORARILY DISABLED
+       shindan_funnel_view → shindan_funnel_start
+       → shindan_funnel_answer × 4
+       → shindan_funnel_result
+       → shindan_funnel_cta_click
        → starter_kit_shown
        → affiliate_click
 
@@ -2754,7 +2754,7 @@
     .gl-heading{font-size:1.3rem;}
     .gl-card{padding:22px 18px 20px;border-radius:16px;}
   }
-  /* ===== Phase 11 Step 1H: Concierge Launch CTA ===== */
+  /* ===== Phase 11 Step 1H: Launch CTA CTA ===== */
 
   /* ── ce-cta-box (compare-engine内CTA) ── */
   .ce-cta-box{
@@ -2784,15 +2784,15 @@
   }
   .ce-cta-btn:hover{background:#e0c089;transform:translateY(-1px);}
 
-  /* ── concierge-launch (page-bottom final CTA) ── */
-  section.concierge-launch{
+  /* ── launch-cta (page-bottom final CTA) ── */
+  section.launch-cta{
     background:var(--forest-deep);
     padding:88px 0 80px;
     text-align:center;
     position:relative;
     overflow:hidden;
   }
-  section.concierge-launch::before{
+  section.launch-cta::before{
     content:"";
     position:absolute;inset:0;
     background:
@@ -2800,7 +2800,7 @@
       radial-gradient(ellipse 60% 50% at 75% 10%,rgba(212,169,106,.09) 0%,transparent 55%);
     pointer-events:none;
   }
-  section.concierge-launch .wrap{position:relative;z-index:1;}
+  section.launch-cta .wrap{position:relative;z-index:1;}
   .cl-eyebrow{
     display:inline-flex;align-items:center;gap:7px;
     background:rgba(212,169,106,.12);
@@ -2898,7 +2898,7 @@
   .cl-secondary::after{content:" →";opacity:.7;}
   /* mobile */
   @media(max-width:680px){
-    section.concierge-launch{padding:64px 0 60px;}
+    section.launch-cta{padding:64px 0 60px;}
     .cl-heading{font-size:1.6rem;}
     .cl-cta-primary{font-size:1rem;padding:16px 36px;}
     .cl-chips{gap:7px;}
@@ -3218,8 +3218,8 @@
     .il-header{ margin-bottom:28px; }
     /* Cost Sim */
     section.cost-sim{ padding:48px 0 52px; }
-    /* Concierge Launch */
-    section.concierge-launch,
+    /* Launch CTA */
+    section.launch-cta,
     .cl-section{ padding:48px 0 52px; }
     /* Guide links */
     #guide-links{ padding:44px 0 48px; }
@@ -3343,7 +3343,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
     <!-- Sub copy -->
     <p class="h12-support">
-      100種以上の亀データから、飼育スペース・経験・初期費用・臭いや掃除の許容度などをもとに、あなたに合う1種を探します。
+      100種の亀データから、飼育スペース・経験・初期費用・臭いや掃除の許容度などをもとに、あなたに合う1種を探します。
     </p>
 
     <!-- Emotional closing (desktop only) -->
@@ -3602,7 +3602,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
     <!-- Bottom explore link -->
     <div class="su-explore">
       <a href="species-list.html" class="su-explore-link">
-        すべての種を見る（100種以上） <span aria-hidden="true">↗</span>
+        すべての種を見る（100種） <span aria-hidden="true">↗</span>
       </a>
     </div>
 
@@ -3696,7 +3696,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   <div class="rtg-wrap">
     <span class="rtg-eyebrow">Real Turtle Photos</span>
     <h2 class="rtg-heading">実際に飼われている人気種をチェック</h2>
-    <p class="rtg-sub">写真・特徴・飼育難易度をAIが比較して、<br>あなたに合う亀を見つけます。</p>
+    <p class="rtg-sub">写真・特徴・飼育難易度を並べて比較して、<br>あなたに合う亀を見つけます。</p>
     <div class="rtg-grid" role="list">
       <a class="rtg-card" role="listitem" href="species/musk-turtle.html"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミシシッピニオイガメ',species_slug:'musk-turtle'})">
@@ -3902,7 +3902,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         <div class="pg-cta">クサガメの飼育ガイドを読む →</div>
       </a>
     </div>
-    <a href="species-list.html" class="pg-all">98種別ガイドを全て見る →</a>
+    <a href="species-list.html" class="pg-all">100種別ガイドを全て見る →</a>
   </div>
 </section>
 
@@ -4122,7 +4122,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       </table>
     </div>
     <div class="ce-cta-box">
-      <p><strong>まだ迷っているなら、30秒診断が確実です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種以上からあなたに合う1種を提案します。</p>
+      <p><strong>まだ迷っているなら、30秒診断が確実です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種からあなたに合う1種を提案します。</p>
       <a href="./shindan/"
          class="ce-cta-btn"
          data-event="homepage_compare_diagnosis_click"
@@ -4403,7 +4403,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         <div class="jp-step-body">
           <div class="jp-step-label">Step 2</div>
           <div class="jp-step-title">条件で絞り込む</div>
-          <p class="jp-step-copy">100種以上から相性のいい候補を絞り込む</p>
+          <p class="jp-step-copy">100種から相性のいい候補を絞り込む</p>
         </div>
       </div>
 
@@ -4629,7 +4629,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         静かな世界の裏には、<br><em>膨大なデータ</em>があります。
       </h2>
       <p class="il-sub">
-        100種以上の生体データ・飼育ページ・機材DB・比較システムをもとに、候補をご案内しています。
+        100種の生体データ・飼育ページ・機材DB・比較システムをもとに、候補をご案内しています。
       </p>
     </header>
 
@@ -4639,7 +4639,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       <div class="il-card" role="listitem">
         <span class="il-card-val">100<sup>+</sup></span>
         <span class="il-card-title">Species<br>Profiles</span>
-        <span class="il-card-desc">100種以上の亀・リクガメの生体データを収録</span>
+        <span class="il-card-desc">100種の亀・リクガメの生体データを収録</span>
       </div>
 
       <div class="il-card" role="listitem">
@@ -4691,8 +4691,8 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   </div>
 </section>
 
-<!-- Concierge Launch CTA (Phase 11 Step 1H) -->
-<section class="concierge-launch" id="concierge-launch">
+<!-- Launch CTA CTA (Phase 11 Step 1H) -->
+<section class="launch-cta" id="launch-cta">
   <div class="wrap">
 
     <div class="cl-eyebrow">あなたに合う亀診断</div>
@@ -4703,12 +4703,12 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
     </h2>
     <p class="cl-sub">
       予算・スペース・臭いの不安を入力するだけ。<br>
-      100種以上から、あなたの条件に合う一匹を提案します。
+      100種から、あなたの条件に合う一匹を提案します。
     </p>
 
     <div class="cl-chips" aria-label="サービスの特徴">
       <span class="cl-chip">30秒で完了</span>
-      <span class="cl-chip">100種以上から提案</span>
+      <span class="cl-chip">100種から提案</span>
       <span class="cl-chip">費用・臭い・サイズも考慮</span>
     </div>
 
@@ -4716,7 +4716,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       <a href="./shindan/"
          class="cl-cta-primary"
          data-event="homepage_hero_primary_click"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_launch_cta_click',{event_category:'concierge_launch',event_label:'primary_cta'});(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'launch_section'})">
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_launch_cta_click',{event_category:'launch_cta',event_label:'primary_cta'});(typeof gtag==='function')&&gtag('event','homepage_hero_primary_click',{event_category:'hero',event_label:'launch_section'})">
         30秒診断を始める <span class="cl-arrow">→</span>
       </a>
       <a href="species-list.html" class="cl-secondary">種一覧から探す</a>
@@ -4730,7 +4730,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
 <footer>
   <div class="wrap">
-    <p>カメライフガイド｜運営：亀好きさん（実飼育者）｜<a href="about-tete.html" style="color:var(--accent);">運営者について</a>｜<a href="privacy.html" style="color:var(--accent);">プライバシーポリシー</a></p>
+    <p>カメライフガイド｜運営：TeTe（実飼育者）｜<a href="about-tete.html" style="color:var(--accent);">運営者について</a>｜<a href="privacy.html" style="color:var(--accent);">プライバシーポリシー</a></p>
     <p class="disclaimer">
       当サイトは、Amazon.co.jpアソシエイト・プログラムおよび楽天アフィリエイトの参加者です。当サイトのリンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。掲載する商品の仕様・価格・在庫は変更される場合がありますので、購入前に販売ページで最新情報を必ずご確認ください。飼育方法は種・個体・環境によって異なります。本サイトの情報は一般的な目安であり、お迎えする種の専門情報もあわせてご確認ください。
     </p>

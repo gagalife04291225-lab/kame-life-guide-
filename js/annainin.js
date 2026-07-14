@@ -102,7 +102,7 @@
   var CONNECTORS = {
     diagnosis: { label: '亀診断をはじめる', href: '../shindan/index.html' },
     starterKit: { label: '診断結果から機材セットを見る', href: '../shindan/index.html' },
-    speciesList: { label: '種類一覧を見る（98種）', href: '../species-list.html' },
+    speciesList: { label: '種類一覧を見る（100種）', href: '../species-list.html' },
     comparePage: { label: '種類を比較する', href: '../compare/index.html' },
     kid: { label: '容器チェック（KID）を見る', href: '../kid/index.html' }
   };
@@ -295,7 +295,7 @@
         ? '一例として、' + names + 'はデータベース内で入門向けの評価が高い種類です。'
         : '暮らし方によっておすすめは変わります。';
       return {
-        reply: lede + 'ただし「おすすめ」は飼育スペース・予算・臭いへの許容度によって変わるため、診断ツールで具体的な条件を入れると、98種の中からあなたに合う種類を絞り込めます。種類一覧を眺めながら比較するのもおすすめです。',
+        reply: lede + 'ただし「おすすめ」は飼育スペース・予算・臭いへの許容度によって変わるため、診断ツールで具体的な条件を入れると、100種の中からあなたに合う種類を絞り込めます。種類一覧を眺めながら比較するのもおすすめです。',
         quickReplies: ['診断してみる', '種類一覧を見る'],
         linkedFeatures: [CONNECTORS.diagnosis, CONNECTORS.speciesList]
       };

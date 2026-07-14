@@ -230,14 +230,14 @@ a.rank-list-name:hover { color: var(--moss); text-decoration: underline; }
 
 /* ═══════════════════════════════════════════════════════════════════════
    Phase 12-A Sprint 1 — Foundation Layer
-   AI Turtle Concierge Design System
-   Brand: Ancient Guide Concierge — premium / warm intelligence / quiet confidence
+   Kame Life Guide Design System
+   Brand: Kame Life Guide — premium / warm intelligence / quiet confidence
    Scope: Tokens only. No structural changes.
 ═══════════════════════════════════════════════════════════════════════ */
 
 /* ── 1. Design Tokens ──────────────────────────────────────────────── */
 :root {
-  /* Brand palette — AI Concierge OS */
+  /* Brand palette — Kame Life Guide */
   --bg-primary:    #081411;
   --bg-secondary:  #10241d;
   --accent-gold:   #C9A96B;

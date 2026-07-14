@@ -189,7 +189,7 @@
     var urg = ({ emergency_vet: "疑わしければ爬虫類対応の動物病院へ", monitor: "経過観察", adjust_setup: "環境を調整" })[f.urgency] || "";
     var owner = "";
     if (f.owner_note_flag && f.owner_note) {
-      owner = '<div class="owner-note"><span class="on-tag">運営者亀好きさんの実体験</span>' + esc(f.owner_note) + "</div>";
+      owner = '<div class="owner-note"><span class="on-tag">運営者TeTeの実体験</span>' + esc(f.owner_note) + "</div>";
     }
     return '<div class="fail-card" id="' + esc(f.id) + '"><div class="fail-head"><h3>' + esc(f.title_ja) +
       '</h3><span class="sev ' + sevCls + '">' + esc(sevTxt) + "</span></div>" +
