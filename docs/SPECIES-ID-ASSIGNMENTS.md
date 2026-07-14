@@ -1,6 +1,6 @@
 # 種識別データ 配布用プロンプト（各担当AIへ）
 
-このファイルは `docs/SPECIES-ID-WORKORDER.md` の実行版です。TeTe が各担当AIに、下記の該当セクションをコピペして渡します。
+このファイルは `docs/SPECIES-ID-WORKORDER.md` の実行版です。亀好きさん が各担当AIに、下記の該当セクションをコピペして渡します。
 Claude が既に2属（Graptemys 7種・Kinosternon 11種）を `data/species-identification.json` に confirmed で入れています。**それを見本として同じ品質・同じスキーマで書いてください。**
 
 ---
@@ -32,7 +32,7 @@ Claude が既に2属（Graptemys 7種・Kinosternon 11種）を `data/species-id
 対象slug: reeves-turtle(Mauremys reevesii), canton-reeves-turtle(M. reevesii 広東型), japanese-pond-turtle(M. japonica), yellow-pond-turtle(M. mutica), yaeyama-pond-turtle(M. mutica kami), chinese-stripe-necked-turtle(M. sinensis)
 
 注意点:
-- **reeves と canton-reeves は同一学名 M. reevesii**。canton-reeves は「広東型」系統で分類上は同種。両ページの差別化 or 統合可否を `unresolved` に所見を書く（最終判断はClaude/TeTe）。
+- **reeves と canton-reeves は同一学名 M. reevesii**。canton-reeves は「広東型」系統で分類上は同種。両ページの差別化 or 統合可否を `unresolved` に所見を書く（最終判断はClaude/亀好きさん）。
 - yellow-pond(M. mutica) と yaeyama-pond(M. mutica kami) は種と亜種。相互一貫で。
 - **CITES III の記載漏れに注意**：M. reevesii・M. sinensis は CITES 附属書III掲載（要一次確認）。japonica(ニホンイシガメ)は非CITESだが国内で保全上重要。
 - 交雑（japonica × reevesii 等）にも触れる。

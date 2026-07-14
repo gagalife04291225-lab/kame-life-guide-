@@ -72,7 +72,7 @@
       cta_enabled: true, cta_channel_hint: "rakuten_pref",
       affiliate: { amazon: "https://amzn.to/4eKxFKU", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://tortoiseforum.org/threads/indoor-nesting-box-for-leopard.209010/", type: "forum", region: "US" }],
-      image: { path: "../assets/kid/nest-tote-soil-530l.webp", license: "owner", author: "TeTe", caption: "実際に運営者が使用している天馬530Lです。幼体〜ヤングサイズの単独飼育例として掲載しています。成体の終生飼育・多頭飼育には適していません。", ok: true },
+      image: { path: "../assets/kid/nest-tote-soil-530l.webp", license: "owner", author: "亀好きさん", caption: "実際に運営者が使用している天馬530Lです。幼体〜ヤングサイズの単独飼育例として掲載しています。成体の終生飼育・多頭飼育には適していません。", ok: true },
       confidence: 9, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
     },
     {

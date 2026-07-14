@@ -368,7 +368,7 @@ faq-tagクラス: `tag-env`（環境）/ `tag-health`（健康）/ `tag-food`（
 </section>
 
 <footer>
-  カメライフガイド｜運営：TeTe（実飼育者）｜note｜プライバシーポリシー
+  カメライフガイド｜運営：亀好きさん（実飼育者）｜note｜プライバシーポリシー
   ※ アソシエイト免責文
 </footer>
 ```
