@@ -1,0 +1,391 @@
+{
+  "slug": "spenglers-leaf-turtle",
+  "name": "スペングラーヤマガメ",
+  "latin": "Geoemyda spengleri",
+  "keeperExperience": {
+    "hasExperience": true,
+    "individuals": 4,
+    "years": 7,
+    "note": "運営者が4頭を7年飼育。個体差・季節変動・成長を通して観察できる年数と頭数。日本語圏で最も濃い飼育記録のひとつ。"
+  },
+  "researchStatus_species": {
+    "value": "partially_studied",
+    "provenance": "expert_consensus",
+    "note": "分類・形態は研究されている。飼育下の食性・行動については、専門家間でも見解が分かれている。"
+  },
+  "limitations": {
+    "missingData": [
+      "diet_in_captivity",
+      "activity_pattern",
+      "handling_response",
+      "lifespan"
+    ],
+    "note": "飼育下の適正な食性が確立していない。寿命も『約25年（正確なデータは不明）』とされるのみ。"
+  },
+  "adultSize": {
+    "value": {
+      "min": 10,
+      "max": 13
+    },
+    "unit": "cm",
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "researchStatus": "established",
+    "note": "甲長11.5cm（Wikipedia）/ 約13cm（コジマ）。メスの方が大型。"
+  },
+  "minFloorArea": {
+    "minimumRecommended": 0.27,
+    "idealRecommended": 0.4,
+    "unit": "sqm",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "60cmクラス以上の水槽・衣装ケース（AllAbout）。60×45cm = 0.27㎡ を最低ラインとする。",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70101/"
+    ]
+  },
+  "tempRange": {
+    "value": {
+      "min": 22,
+      "max": 27
+    },
+    "basking": {
+      "min": 27,
+      "max": 30
+    },
+    "unit": "C",
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "researchStatus": "established",
+    "caution": "★この種で最も死因になる項目★ 高温に弱い。日本の夏が最大の関門。長期飼育者は『ベビーを過保護に室内飼育していると、夏場に室内温度が上昇した際に死亡することがあった』と報告している。エアコン・冷却ファンによる冷却が必要。『寒さには割と強いが、暑さに弱い所があるので夏場の管理にコツが要る』",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70101/",
+      "https://note.com/ikimonooki/n/nc0ff66dcebdc"
+    ]
+  },
+  "humidity": {
+    "value": {
+      "min": 70,
+      "max": 85
+    },
+    "unit": "percent",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "乾燥に弱い。朝夜の霧吹き。腐葉土・ヤシガラ土を甲高程度の深さで敷く。"
+  },
+  "waterRequirement": {
+    "preferredDepth": null,
+    "maximumDepth": null,
+    "escapeNeeded": true,
+    "unit": "cm",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "陸生が強いが水にもよく入る。『水深は甲高の半分程度』『出入りしやすい浅い容器』『溺れない様に』。甲高が不明なため cm 値を確定できない。",
+    "_todo": "★要記入★ 実際の水深（cm）。甲高の実測値があれば算出できる",
+    "sources": [
+      "https://ja.wikipedia.org/wiki/スペングラーヤマガメ"
+    ]
+  },
+  "enclosureType": {
+    "value": "both",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "note/ikimonooki"
+    },
+    "independentSources": 1,
+    "researchStatus": "uncertain",
+    "conflict": "室内飼育が一般的とされるが、実飼育者は屋外飼育の記録を残している。同飼育者は『ベビーを過保護に室内飼育していると夏場に死亡することがあった』とも書いており、室内=安全とは言えない。夏の高温対策という観点では、風通しの良い屋外が有利な場合がある。",
+    "sources": [
+      "https://note.com/ikimonooki/n/nc0ff66dcebdc"
+    ]
+  },
+  "winterStrategy": {
+    "value": "heated_year_round",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "冬は保温が必要。冬眠させる飼育法の記載は見つからなかった。『寒さには割と強い』という飼育者の報告があるため、極端な保温は不要と思われる。"
+  },
+  "commitment": {
+    "value": 25,
+    "unit": "years",
+    "provenance": "estimated",
+    "independentSources": 1,
+    "researchStatus": "unstudied",
+    "note": "約25年（コジマ）。ただし同資料が『正確なデータは不明』と明記している。実際の寿命は分かっていない。"
+  },
+  "diet": {
+    "value": "carnivore_leaning_omnivore",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "independentSources": 3,
+    "researchStatus": "uncertain",
+    "keeperPractice": "運営者は4頭を7年、イエコオロギとミルワームをカルシウム剤でダスティングして与え、健康に維持している。動物質への食いつきは常に良く、いつでもガツガツ食べる。",
+    "conflict": "★実飼育で見解が割れている★ 爬虫類専門医は『環境が整っていれば葉野菜中心で足り、動物質にすぐ飛びつくのは環境不良のサイン』とする。しかし運営者（4頭7年）は虫を主食とし、食いつきは常に良く、長期にわたり健康を維持している。『食いつきの良さ=環境不良』は、少なくとも一部の飼育では当てはまらない。複数の成立する飼育方法があり、どちらかが唯一の正解ではない。",
+    "caution": "★安全★ 虫（コオロギ・ミルワーム）はよく食べ、問題も報告されていない。一方でピンクマウスは、複数の飼育者から消化不良による死亡例が報告されている。『動物質OK』と『ピンクマウスOK』は別問題。虫とピンクマウスでは消化負荷が異なる。哺乳類を与える必要はなく、リスクの低い虫を中心にするのが無難。",
+    "_excluded": "petpi.jp『植物性の餌を主食としています』— 同記事は『美しい青い鱗を持つ』『水を飲むことで体を温めています』と事実誤認を含むため除外。",
+    "sources": [
+      "https://www.crested-vet.com/breeding_course_1",
+      "https://allabout.co.jp/gm/gc/70101/",
+      "https://note.com/ikimonooki/n/nc0ff66dcebdc"
+    ]
+  },
+  "feedingCue": {
+    "value": [
+      "smell",
+      "humidityTrigger",
+      "movement"
+    ],
+    "provenance": "expert_opinion",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "『採食は臭いによるところが大きいようなので匂いの強いものを好む傾向が強い』『給餌の前に霧吹きして湿度を上げると食欲が増すので、給餌前にはできるだけ霧吹きをしよう』（爬虫類専門医）。『普段はのんびりしているが、餌の昆虫類を見つけるとすばやく追いかけて捕食する』（鳥羽水族館）",
+    "practical": "給餌前の霧吹きは実用的。キノコ（マイタケ・シメジ）も好む。食が細い時はバナナ・イチジク・マンゴーなど甘い匂いのするもの。",
+    "sources": [
+      "https://www.crested-vet.com/breeding_course_1",
+      "https://aquarium.co.jp/picturebook/geoemyda-spengleri.html"
+    ],
+    "keeperNote": "運営者の4頭は動物質への反応が常に良く、いつでも食べる。『食いつきが環境の良し悪しの指標になる』という説とは、少なくともこの4頭では一致しない。"
+  },
+  "tempTolerance": {
+    "value": "narrow_asymmetric",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "note": "高温に極端に弱く、低温には比較的強い。非対称な耐性。単純な narrow/wide では表現できない。"
+  },
+  "diseaseResilience": {
+    "value": "low",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "note": "WC個体が中心で輸入時の状態が悪いことが多い。原虫類の駆虫が必要な場合がある。『状態が落ちるとほとんどの場合助からない』。ベビーは特に脆い。"
+  },
+  "feedingDifficulty": {
+    "value": "high",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "note": "配合飼料には餌付くが積極的ではない。個体選びと立ち上げが最大の関門。『癖のあるカメであるため飼育にはかなりのテクニックを要する』（爬虫類専門医）。消化不良（食滞）に弱い。"
+  },
+  "envSensitivity": {
+    "value": "high",
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "note": "夏の高温、乾燥、消化不良——いずれも死に直結する。"
+  },
+  "normalBehavior": {
+    "value": "昼行性で、日中に活動する。ただし多くの時間は腐葉土や隠れ家に潜っており、1時間見ていてもたまに顔を出す程度。餌（虫）を見つけるとすばやく動く。手に乗せても落ち着いている。",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "researchStatus": "established",
+    "goodSigns": [
+      "首を持ち上げて周囲を伺う",
+      "シェルターの上に乗る",
+      "虫への反応が良い",
+      "手に乗せても落ち着く"
+    ],
+    "abnormalSigns": [
+      "一日中出歩いて隠れない → 高温を避けようとしている可能性。ケージ温度を確認",
+      "ぐったりしている → 非常に危険。この状態からの回復は難しい",
+      "虫への食いつきが落ちる → 状態低下のサイン"
+    ],
+    "note": "★正常が分かれば異常が分かる★ 『隠れて見えない』のは正常。『一日中歩き回る』のが異常。多くの飼育者が逆に捉えて、隠れている個体を心配し、出歩く個体を『元気』と誤解する。",
+    "sources": [
+      "https://note.com/ikimonooki/n/nc0ff66dcebdc"
+    ]
+  },
+  "activity": {
+    "value": [
+      "diurnal"
+    ],
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "researchStatus": "established",
+    "note": "運営者の観察では昼に活発。"
+  },
+  "concealment": {
+    "value": "high",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "observationBasis": "ケージの前で1時間観察して、たまに顔を出す程度。多くの時間は腐葉土や隠れ家に潜っている。",
+    "researchStatus": "established",
+    "note": "★正常な状態★ 隠れているのが通常。姿が見えないことを心配する必要はない。逆に一日中出歩いている場合は、高温を避けようとしている可能性があり、要注意（normalBehavior 参照）。"
+  },
+  "displayExperience": {
+    "value": [
+      "hunting"
+    ],
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "note": "虫を素早く追う姿が最も印象的。普段は潜っているぶん、捕食時の動きの俊敏さが際立つ。",
+    "_todo": "他の行動を追加可能（落ち葉を歩く・顔を出す等）"
+  },
+  "appeal": {
+    "value": [
+      "quiet_observation",
+      "collector"
+    ],
+    "provenance": "estimated",
+    "note": "『トカゲに似た生態』『トゲトゲしい体』。マニア人気が高い。"
+  },
+  "handling": {
+    "biteRisk": {
+      "value": "low",
+      "provenance": "keeper_observation",
+      "source": {
+        "keeper": "亀好きさん",
+        "individuals": 4,
+        "years": 7
+      },
+      "note": "運営者の4頭は、手に乗せても噛みつくことはない。嘴は刃物状だが、飼育下で咬傷の問題は起きていない。"
+    },
+    "tamePotential": {
+      "value": "medium_high",
+      "provenance": "keeper_observation",
+      "source": {
+        "keeper": "亀好きさん",
+        "individuals": 4,
+        "years": 7
+      },
+      "note": "★時間軸に注意★ 7年かけて慣れ、寄ってくることがある。ただし『最初から人懐こい』のではなく、長期の飼育で徐々に慣れた結果。臆病・神経質とされる通説とは異なるが、短期間での馴れは期待しない方がよい。",
+      "conflict": "一般には臆病で神経質、ハンドリング向きではないとされる。運営者の実飼育（4頭7年）では、落ち着いて手に乗り、慣れて寄ってくる。通説と実飼育で差がある。個体差・飼育年数・立ち上げの成否が影響している可能性がある。"
+    },
+    "stress": {
+      "value": "low",
+      "provenance": "keeper_observation",
+      "source": {
+        "keeper": "亀好きさん",
+        "individuals": 4,
+        "years": 7
+      },
+      "note": "手に乗せても嫌がらず落ち着いている。ただしこれは7年飼育した個体での観察。導入直後のWC個体は別と考えるべき。"
+    }
+  },
+  "odorRisk": {
+    "wellManaged": "low",
+    "neglected": "high",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "note": "普段は気にならないが、手を抜くと臭う。腐葉土床材の管理次第。こまめに手入れすれば無臭に近いが、放置すると一気に臭う振れ幅の大きいタイプ。"
+  },
+  "maintenance": {
+    "assumes": "60cm水槽・腐葉土床材・1頭飼育・霧吹き朝夜",
+    "weeklyMinutes": 90,
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "note": "1頭あたり週1〜2時間（霧吹き・床材交換・給餌）。中央値として90分を採用。霧吹きが毎日必要なため、水棲種より手間がかかる。"
+  },
+  "cost": {
+    "animalPrice": {
+      "value": {
+        "min": 80000,
+        "max": 200000
+      },
+      "unit": "JPY",
+      "provenance": "keeper_observation",
+      "source": {
+        "keeper": "note/ikimonooki",
+        "year": 2025
+      },
+      "researchStatus": "established",
+      "conflict": "2020年の記事では25,000〜35,000円（爬虫類大図鑑）。2025年の飼育者記録では8万〜20万円。CITES掲載により流通が激減し高騰した。古い価格情報がネット上に多数残っているため注意。",
+      "note": "オスの方が高価。『特にオスは死にやすい傾向があるためか、価格が高くなることが多い』"
+    },
+    "minimumSetup": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★ 冷却設備を含めるかで大きく変わる"
+    },
+    "idealSetup": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★"
+    },
+    "monthly": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★ 夏季の空調費が無視できない"
+    }
+  },
+  "legal": {
+    "cites": {
+      "value": "II",
+      "provenance": "official"
+    },
+    "iucn": {
+      "value": "EN",
+      "provenance": "official",
+      "note": "生息地の破壊、食用・ペット用の乱獲により生息数が激減。"
+    },
+    "domesticRegulation": {
+      "value": "none",
+      "provenance": "official"
+    }
+  },
+  "tradeStatus": {
+    "value": "mostlyWC",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "caution": "★重要★ 主に野生個体が流通し、CB個体は稀。『販売されるものは野生個体であり、さらに癖のあるカメであるため飼育にはかなりのテクニックを要する』（爬虫類専門医）。WC個体は立ち上げが別次元に難しく、個体選びが飼育の成否を分ける。",
+    "note": "ロカリティあり（ベトナム産・ハイナン産等）。CITES掲載後は流通が大幅減少。",
+    "sources": [
+      "https://ja.wikipedia.org/wiki/スペングラーヤマガメ",
+      "https://www.crested-vet.com/breeding_course_1"
+    ]
+  },
+  "availability": {
+    "value": "rare",
+    "provenance": "keeper_consensus",
+    "note": "CITES掲載により流通が大幅減少。価格が高騰している。"
+  },
+  "supplementation": {
+    "value": "dusting_required",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "note": "運営者は虫にカルシウム剤をダスティングして与えている。虫を主食にする場合、Ca:P比の偏りを補正するダスティングは必須。"
+  },
+  "favoriteBehavior": {
+    "value": "虫を見つけると、普段ののんびりした様子からは想像できない速さで追いかけて捕食する。",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "亀好きさん",
+      "individuals": 4,
+      "years": 7
+    },
+    "note": "★このサイトの価値★ 潜って動かない種という印象が、給餌の瞬間に覆る。この落差が飼育の面白さ。"
+  }
+}

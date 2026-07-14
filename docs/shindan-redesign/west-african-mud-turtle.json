@@ -1,0 +1,325 @@
+{
+  "slug": "west-african-mud-turtle",
+  "name": "ヒメハコヨコクビガメ",
+  "latin": "Pelusios nanus",
+  "keeperExperience": {
+    "hasExperience": true,
+    "individuals": 2,
+    "years": 2,
+    "note": "運営者が2頭を2年飼育し、産卵まで確認。2頭・2年のため個体差や長期の寿命は断定できないが、野生の繁殖生態が未研究の種で産卵に至った記録は一次情報として価値が高い。",
+    "caveat": "2頭・2年の観察であることを、keeper_observation を書く際に必ず明示する。『この種は』ではなく『うちの2頭では』と書く。"
+  },
+  "researchStatus_species": {
+    "value": "unstudied",
+    "provenance": "expert_opinion",
+    "independentSources": 1,
+    "note": "★特筆★ ショップが『そもそも野生での生態状況もほとんど知られていない』『繁殖生態も知られていないので繁殖難易度が計りかねない』と明記している。野生下の生態がほぼ未研究の種。",
+    "editorNote": "この事実自体を種ページに書くべき。飼育情報の多くは、日本を含む飼育者が試行錯誤で得たもの。運営者の飼育記録が、この種にとって一次情報として機能する。",
+    "sources": [
+      "https://ameblo.jp/sperare2109/entry-12713398164.html"
+    ]
+  },
+  "limitations": {
+    "missingData": [
+      "wild_ecology",
+      "breeding_in_wild",
+      "lifespan",
+      "social_behavior",
+      "activity_pattern"
+    ],
+    "note": "野生下の生態がほとんど知られていない。寿命15〜25年という記載も根拠不明。"
+  },
+  "adultSize": {
+    "value": {
+      "min": 8,
+      "max": 12
+    },
+    "unit": "cm",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "uncertain",
+    "conflict": "曲頸亜目最小種。コンゴ民主共和国 Kahemba 産の『カヘンバドワーフ』は特に小型で、ペア2匹合わせて200gを切る。ロカリティによりサイズが異なり、単一の範囲で表現しづらい。",
+    "sources": [
+      "https://ameblo.jp/sperare2109/entry-12713398164.html"
+    ]
+  },
+  "minFloorArea": {
+    "minimumRecommended": 0.35,
+    "idealRecommended": 0.5,
+    "unit": "sqm",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "60〜90cmクラス以上（AllAbout）/ 90cm以上（レプスキ）。『比較的活発に動き回る種のようなので、床面積は広くとりたい』。小型だが床面積は必要。",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70686/",
+      "https://repsuki.com/about_rep/92843/"
+    ]
+  },
+  "waterRequirement": {
+    "preferredDepth": 14,
+    "maximumDepth": 20,
+    "escapeNeeded": true,
+    "unit": "cm",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "caution": "★安全上の最重要項目★ 水深を深くすると溺れる。複数の飼育者が独立に同じ失敗を報告している。『水深を25cmくらいにしていたら、水底をケンケンしているような感じで溺れかけているのを観察できたため、水深は浅めで飼育しています』。もう1名の飼育者も同様の経験をブログに記載し、コメントで一致。実際の飼育水深は13〜15cm。",
+    "note": "★重要★ ただし『25cmで溺れる』のは逃げ場がなかった可能性がある。流木・浅瀬・陸場があれば結果は変わりうる。maximumDepth の 20cm は安全側に見積もった推定値であり、実証されていない。escapeNeeded=true が本質。",
+    "_todo": "運営者の実飼育での水深とレイアウト（陸場・流木の有無）",
+    "sources": [
+      "https://pets.tana.cc/2014-01-20-pelusios-nanus/",
+      "https://allabout.co.jp/gm/gc/70686/"
+    ]
+  },
+  "tempRange": {
+    "value": {
+      "min": 24,
+      "max": 28
+    },
+    "basking": {
+      "min": 32,
+      "max": 35
+    },
+    "unit": "C",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "uncertain",
+    "conflict": "『20〜28℃に保温』（AllAbout）/『水温24〜28℃、バスキング32〜35℃』（レプスキ）。一方、長期飼育者は冬期に意図的に水温10〜18℃まで下げている（winterStrategy 参照）。通年高温維持と季節変動を持たせる方針で分かれる。",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70686/",
+      "https://repsuki.com/about_rep/92843/"
+    ]
+  },
+  "winterStrategy": {
+    "value": "cooling_for_breeding",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "pets.tana.cc",
+      "individuals": 3,
+      "location": "東京"
+    },
+    "independentSources": 1,
+    "researchStatus": "uncertain",
+    "note": "★v1のhibernation 3分類では表現できなかった項目★ 冬眠ではなく、繁殖のための能動的な温度操作。長期飼育者はザンビア北部の年間気温を参考に、水温10〜18℃（夜間10℃・日中18℃）、飼育容器内は夜間12℃・日中23℃で管理。9〜16時のみ保温球で25℃設定。水中ヒーターは使わない。『意図的に夜間と日中の気温差を10度くらいつけています』。この管理でオスが顕著に発情したと報告。餌は13℃でも普通に食べる。",
+    "alternatives": [
+      "heated_year_round（通年24〜28℃維持。繁殖を狙わない場合）"
+    ],
+    "_todo": "運営者は産卵まで確認している。どの winterStrategy を採ったか。これは繁殖の再現に直結する",
+    "sources": [
+      "https://pets.tana.cc/2014-01-20-pelusios-nanus/"
+    ]
+  },
+  "humidity": {
+    "value": null,
+    "provenance": "unstudied",
+    "note": "水棲種のため湿度管理の記述が乏しい。『乾季保湿に注意』（レプスキ）とあるのみ。"
+  },
+  "enclosureType": {
+    "value": "indoor",
+    "provenance": "keeper_consensus",
+    "independentSources": 2
+  },
+  "commitment": {
+    "value": 20,
+    "unit": "years",
+    "provenance": "estimated",
+    "independentSources": 1,
+    "researchStatus": "unstudied",
+    "note": "15〜25年（レプスキ）。根拠不明。野生下の生態がほとんど知られていないため、実際の寿命は分かっていない。"
+  },
+  "diet": {
+    "value": "omnivore_carnivore_leaning",
+    "provenance": "keeper_consensus",
+    "independentSources": 3,
+    "researchStatus": "established",
+    "note": "『肉食傾向が強く、淡水魚の肉などから餌付けるといい』（AllAbout）。ただし配合飼料への餌付きは良く、ショップ出品個体も『レプトミンなどの配合飼料に餌付いております』。長期飼育者は『カメプロスの浮上性大ステックを1匹に5粒ほど』を朝1回。",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70686/",
+      "https://pets.tana.cc/2014-01-20-pelusios-nanus/",
+      "https://ameblo.jp/sperare2109/entry-12713398164.html"
+    ]
+  },
+  "feedingCue": {
+    "value": [
+      "movement",
+      "smell"
+    ],
+    "provenance": "keeper_observation",
+    "independentSources": 1,
+    "researchStatus": "uncertain",
+    "note": "『餌前で大騒ぎしている』（ショップの飼育風景）。低温下（13℃）でも普通に食べるという報告があり、温度が食欲のトリガーになりにくい可能性がある。",
+    "_todo": "運営者は『餌を見つけると泳いで寄ってくる』と述べている。視覚か嗅覚か。これを確定させたい"
+  },
+  "tempTolerance": {
+    "value": "wide",
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "pets.tana.cc",
+      "individuals": 3
+    },
+    "independentSources": 1,
+    "note": "冬期に水温10℃、飼育容器内12℃まで下げても『13℃くらいですが普通に食べます』。低温耐性が高い。高温側の耐性は不明。"
+  },
+  "diseaseResilience": {
+    "value": "medium",
+    "provenance": "expert_opinion",
+    "researchStatus": "uncertain",
+    "caution": "『流通が少なく、そもそも野生での生態状況もほとんど知られていない為、輸入直後は立ち上げなどに苦労する場合がある』（ショップ）。国内で状態を仕上げた個体は安定する。購入時に『餌付いているか』の確認が重要。"
+  },
+  "feedingDifficulty": {
+    "value": "low",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "note": "配合飼料に餌付く。低温下でも食べる。ただし輸入直後の立ち上げは別問題。"
+  },
+  "envSensitivity": {
+    "value": "medium",
+    "provenance": "estimated"
+  },
+  "socialTolerance": {
+    "value": null,
+    "provenance": "unstudied",
+    "researchStatus": "uncertain",
+    "conflict": "『他のヨコクビガメ同様、気が荒い個体が多いと思われるので、複数飼育は避けた方が無難』（AllAbout・**推測形で書かれている**）。一方、長期飼育者は3匹を同一環境で飼育し繁殖を目指している。ショップもペアで出品している。実際に複数飼育している例が複数ある。",
+    "_todo": "★要記入★ 運営者はペア飼育で産卵まで確認している。この対立を解決できる一次情報を持っている",
+    "sources": [
+      "https://allabout.co.jp/gm/gc/70686/"
+    ]
+  },
+  "normalBehavior": {
+    "value": null,
+    "provenance": "keeper_observation",
+    "_todo": "★最重要・要記入★ 断片：『オスは日のバスキング以外は、ずっと交尾を狙って水中待機している』（繁殖期のオス）/『水換えをしたばかりなのにバスキングばかりして』（ショップ）。正常な1日の行動が分かれば、異常は差分で分かる",
+    "sources": [
+      "https://pets.tana.cc/2014-01-20-pelusios-nanus/"
+    ]
+  },
+  "activity": {
+    "value": [
+      "diurnal"
+    ],
+    "provenance": "keeper_observation",
+    "source": {
+      "keeper": "pets.tana.cc"
+    },
+    "independentSources": 1,
+    "researchStatus": "uncertain",
+    "note": "バスキングをする=昼行性と推定。ただし明示的な記述ではない。",
+    "_todo": "運営者の観察と一致するか"
+  },
+  "concealment": {
+    "value": null,
+    "provenance": "unstudied",
+    "_todo": "★要記入★ 水棲種なので水中で見えるはずだが、『比較的活発に動き回る』（AllAbout・推測形）以外の情報がない"
+  },
+  "displayExperience": {
+    "value": null,
+    "candidates": [
+      "swimming",
+      "basking",
+      "feeding",
+      "courtship"
+    ],
+    "provenance": "unstudied",
+    "_todo": "★要記入★"
+  },
+  "appeal": {
+    "value": [
+      "quiet_observation",
+      "collector",
+      "interactive"
+    ],
+    "provenance": "estimated",
+    "note": "『子犬のような顔つきですが小さな扁平の甲羅に真っ黒な瞳でなんとも言えぬ可愛いカメ』（ショップ）。曲頸亜目最小種という希少性。"
+  },
+  "handling": {
+    "biteRisk": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★ 『気が荒い個体が多いと思われる』（推測形）以外に情報がない"
+    },
+    "tamePotential": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★ 運営者の『餌を見つけると泳いで寄ってくる』は tamePotential: high の可能性"
+    },
+    "stress": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★"
+    }
+  },
+  "odorRisk": {
+    "wellManaged": null,
+    "neglected": null,
+    "provenance": "unstudied",
+    "_todo": "★要記入★ 水棲・低水位のため水量が少なく汚れやすいはず。ニオイガメ同様に『管理すれば無臭、サボると一気に臭う』構造と推測されるが、実感が必要"
+  },
+  "maintenance": {
+    "assumes": null,
+    "weeklyMinutes": null,
+    "provenance": "unstudied",
+    "_todo": "★要記入★"
+  },
+  "cost": {
+    "animalPrice": {
+      "value": {
+        "min": 20000,
+        "max": 70000
+      },
+      "unit": "JPY",
+      "provenance": "keeper_consensus",
+      "researchStatus": "uncertain",
+      "conflict": "2〜4万円（レプスキ）。一方、ブリーダー出品で『♂1♀2の3匹で210,000円』という例もあり、個体・ロカリティ・CB個体かで大きく変動。カヘンバドワーフは希少。",
+      "sources": [
+        "https://repsuki.com/about_rep/92843/"
+      ]
+    },
+    "minimumSetup": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★"
+    },
+    "idealSetup": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★"
+    },
+    "monthly": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要記入★"
+    }
+  },
+  "legal": {
+    "cites": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要検証★ CITES掲載の記述が資料に見つからない。Pelusios nanus の附属書掲載状況を要確認"
+    },
+    "iucn": {
+      "value": null,
+      "provenance": "unstudied",
+      "_todo": "★要検証★"
+    },
+    "domesticRegulation": {
+      "value": "none",
+      "provenance": "estimated"
+    }
+  },
+  "tradeStatus": {
+    "value": "mixed",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "note": "WC・CB（独CB等）の両方が流通。ショップは『2019独CB』『コンゴー産ペア』などと明記して販売している。『人工飼料餌付いてます』と明記されることが多く、餌付き済み個体を選べる。",
+    "sources": [
+      "https://blogtag.ameba.jp/news/ヒメハコヨコクビガメ"
+    ]
+  },
+  "availability": {
+    "value": "rare",
+    "provenance": "keeper_consensus",
+    "note": "『入荷数は少ない種』『日本に初めて入ってきたのは2009年ごろ』（ショップ）。"
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "sulcata-tortoise",
+  "name": "ケヅメリクガメ",
+  "latin": "Centrochelys sulcata",
+
+  "keeperExperience": {
+    "hasExperience": false,
+    "note": "運営者の実飼育記録はありません。本ページは専門資料と長期飼育者の記録をもとに作成しています。"
+  },
+
+  "researchStatus_species": {
+    "value": "well_studied",
+    "provenance": "expert_consensus",
+    "note": "野生下の生態・飼育下の問題（結石・ピラミッディング）ともに知見が蓄積している。ただし『飼育に必要な最小面積』については、根拠のある数値が見当たらない。"
+  },
+
+  "limitations": {
+    "missingData": ["minimum_floor_area", "setup_cost", "maintenance_time"],
+    "note": "★重要★ 必要な広さについて、信頼できる資料の間でも見解が3倍以上ちがう（6畳〜20畳）。いずれも根拠が示されていない。設備費用も、屋外・DIY前提の種であるため一般的な機材価格では算出できない。"
+  },
+
+  "adultSize": {
+    "value": { "min": 60, "max": 80 },
+    "unit": "cm",
+    "provenance": "expert_consensus",
+    "independentSources": 4,
+    "researchStatus": "established",
+    "note": "最大甲長83cmの記録あり。体重40〜100kg。国内流通は5cm前後の幼体が中心。",
+    "sources": [
+      "https://ccep-official.jp/tortoise-size/",
+      "https://www.exoticpetguide.org/guide/ケヅメリクガメ/"
+    ]
+  },
+
+  "growthRate": {
+    "value": "4年で30cm超",
+    "provenance": "keeper_observation",
+    "source": { "keeper": "kezumeriku.com", "individuals": 1, "years": 10, "location": "静岡" },
+    "independentSources": 2,
+    "researchStatus": "established",
+    "caution": "★この種で最も飼育破綻を招く要因★ 成長が速い。『大吉は4年ほどで30cmを超えました』（10年飼育者の実測）。『3年ほどで甲長30cmを超える』（別資料）。手のひらサイズの幼体を迎えた数年後に、飼育スペースが足りなくなる。",
+    "sources": ["https://kezumeriku.com/my-first-post/"]
+  },
+
+  "minFloorArea": {
+    "minimumRecommended": null,
+    "idealRecommended": null,
+    "unit": "sqm",
+    "provenance": "unstudied",
+    "researchStatus": "uncertain",
+    "conflict": "★未解決・診断のハードフィルタに必須★ 資料間で3倍以上ちがい、いずれも根拠が示されていない。『6畳程度の部屋ならば丸まる明け渡したほうが正解』（爬虫類大図鑑）/『室内でケージ飼いをするなら最低でも20畳』（ikimonolove）/『横幅が体長の5倍、奥行きで体長の3倍以上。70cm個体なら350×210cm = 7.35㎡』（WORIVER・計算式のみで実証なし）/『数畳分の乾燥したスペース』（rikugame.kai-kata）",
+    "certainLowerBound": {
+      "value": "90cmケージでは足りない",
+      "provenance": "expert_consensus",
+      "independentSources": 5,
+      "note": "確実に言えるのはこれだけ。幼体（〜20cm）は90cmケージ可。成体は不可能。"
+    },
+    "_todo": "★要判断★ 根拠のない数字を診断のハードフィルタに使えば、診断そのものが嘘になる。実測ベースの値が要る。甲長70cmの個体が方向転換できる最小面積は何㎡か。",
+    "sources": [
+      "https://hachurui-japan.com/92/.html",
+      "https://ikimonolove.com/how-to-raise-and-what-to-be-careful-of-for-spurred-tortoises/",
+      "https://woriver.com/17147/"
+    ]
+  },
+
+  "tempRange": {
+    "value": { "min": 28, "max": 32 },
+    "unit": "C",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "暑さに強く寒さに弱い。夜間・冬季は保温必須。温度勾配を作り、個体が自分で選べるようにする。"
+  },
+
+  "humidity": {
+    "value": { "min": 30, "max": 50 },
+    "unit": "percent",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "乾燥地帯原産。意図的な加湿は不要。『冬場の乾燥する時期には水飲み場を置くのは有効』『梅雨時の湿度が高い時期はカビの発生に注意』（10年飼育者）",
+    "sources": ["https://kezumeriku.com/ケヅメリクガメを飼育するのに必要な設備器具/"]
+  },
+
+  "waterRequirement": {
+    "preferredDepth": null,
+    "maximumDepth": null,
+    "escapeNeeded": true,
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "researchStatus": "uncertain",
+    "conflict": "★興味深い対立★ 多くの資料が『全身が浸かる水容器を常設』とする（WORIVER・You Reptiles）。一方、10年飼育者は『我が家の大吉が水を飲んでいるところを見た記憶はありません。ケージに住んでいた小さい頃も、カメ小屋にいる今も。だから今も水飲み場はありません』と記録している。ただし同飼育者も『個体による差もありますし、食事だけでは水分が足りないときの事を考えて、ケージ生活の時は水飲み用の器を置いた方が無難だと思います』と付け加えている。",
+    "note": "★書き方の指針★ 水入れの設置は推奨する。ただし『飲まない個体が普通にいる』という事実も書く。飲まない=異常ではない。水分は主に餌（野草・野菜）から摂る。",
+    "sources": [
+      "https://kezumeriku.com/ケヅメリクガメを飼育するのに必要な設備器具/",
+      "https://woriver.com/17147/"
+    ]
+  },
+
+  "enclosureType": {
+    "value": "outdoor_required_adult",
+    "provenance": "expert_consensus",
+    "independentSources": 5,
+    "researchStatus": "established",
+    "note": "幼体（〜20cm）は室内90cmケージ可。成体は屋外または専用スペース。幼体の屋外飼育はカラス等の天敵リスクあり。冬季は屋内退避が必要で、屋内にも広いスペースが要る。",
+    "caution": "『理想は庭付きの一軒家』『通常の一軒家であれば、1階はケヅメリクガメが歩き回っても問題ないスペースにするくらいの覚悟が必要』（ikimonolove）。掘るのが得意で、フェンスを押しのけて脱走する。囲いは地面に深く埋め込む。",
+    "sources": [
+      "https://www.youreptiles.com/2023/06/17/about_sulucata_tortoise/",
+      "https://ikimonolove.com/how-to-raise-and-what-to-be-careful-of-for-spurred-tortoises/"
+    ]
+  },
+
+  "winterStrategy": {
+    "value": "heated_year_round",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "冬眠しない。『野生下で冬眠しないカメは、飼育下でも冬眠しませんし、できません』（爬虫類大図鑑）。冬季は屋内退避＋保温。冬の保温コストが大きい。",
+    "sources": ["https://hachurui-japan.com/92/.html"]
+  },
+
+  "commitment": {
+    "value": 50,
+    "unit": "years",
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "researchStatus": "uncertain",
+    "conflict": "30〜50年（WORIVER）/ 70年以上（You Reptiles）/ 飼育下100年説（爬虫類大図鑑・出典不明）。下限の30〜50年でも人生の大半を占める。",
+    "note": "『場合によっては子に、あるいは孫に相続しながら飼育する覚悟が必要』という表現が複数の資料に出てくる。"
+  },
+
+  "diet": {
+    "value": "herbivore",
+    "provenance": "expert_consensus",
+    "independentSources": 4,
+    "researchStatus": "established",
+    "note": "草・干草が食事の80〜85%。低タンパク・高繊維。野草・野菜・リクガメフード。",
+    "caution": "★健康被害が確立している★ 高タンパクの餌を与え続けると、背甲の変形（ピラミッディング）や膀胱結石を起こす。結石は『かなり大きくならないと発見できず、開腹手術でしか治療できない』。カルシウムの与えすぎ・脱水も結石の原因。『ケヅメリクガメは特に結石ができやすいカメ』（10年飼育者・実体験）",
+    "sources": [
+      "https://www.exoticpetguide.org/guide/ケヅメリクガメ/",
+      "https://kezumeriku.com/my-first-post/"
+    ]
+  },
+
+  "feedingCue": {
+    "value": null,
+    "provenance": "unstudied",
+    "note": "食欲旺盛で、特別なトリガーは報告されていない。"
+  },
+
+  "tempTolerance": {
+    "value": "asymmetric_heat_tolerant",
+    "provenance": "expert_consensus",
+    "independentSources": 2,
+    "note": "暑さに強く、寒さに弱い。スペングラーとは逆方向の非対称性。",
+    "_schema_note": "★v2の穴★ tempTolerance の narrow/moderate/wide では、この『どちら側に弱いか』を表現できない。スペングラー（高温に弱い）とケヅメ（低温に弱い）が、同じ moderate になってしまう。"
+  },
+  "diseaseResilience": {
+    "value": "medium",
+    "provenance": "expert_consensus",
+    "independentSources": 3,
+    "note": "丈夫だが膀胱結石が非常に多い。原因は高タンパク・脱水・カルシウム過剰。"
+  },
+  "feedingDifficulty": {
+    "value": "low",
+    "provenance": "keeper_consensus",
+    "independentSources": 3,
+    "note": "食欲旺盛。餌付きに困らない。問題はむしろ『何を与えないか』。"
+  },
+  "envSensitivity": {
+    "value": "low",
+    "provenance": "expert_consensus",
+    "note": "環境変化には強い。"
+  },
+
+  "normalBehavior": {
+    "value": "よく歩き回る。穴を掘る（納得いくまで掘り、大きな穴が4〜5か所できることもある）。草を食む。",
+    "provenance": "keeper_consensus",
+    "independentSources": 3,
+    "researchStatus": "established",
+    "note": "野生下では夜明けと夕暮れに最も活動的。深さ3mの巣穴を掘って暑さ寒さをしのぐ。",
+    "abnormalSigns": "食べる量・食べ方の変化。『経験上、季節が変わってきて、気づかないうちにケージの温度が低くなっていることがある』（10年飼育者）。食欲低下は温度低下のサインであることが多い。",
+    "_todo": "運営者の飼育経験がないため、日常的な観察ポイントは長期飼育者からの引用にとどまる",
+    "sources": [
+      "https://kezumeriku.com/my-first-post/",
+      "https://www.exoticpetguide.org/guide/ケヅメリクガメ/"
+    ]
+  },
+
+  "activity": {
+    "value": ["crepuscular"],
+    "provenance": "peer_reviewed",
+    "independentSources": 1,
+    "researchStatus": "established",
+    "note": "野生下では夜明けと夕暮れに最も活動的。",
+    "sources": ["https://www.exoticpetguide.org/guide/ケヅメリクガメ/"]
+  },
+
+  "concealment": {
+    "value": "low",
+    "provenance": "keeper_consensus",
+    "independentSources": 2,
+    "researchStatus": "established",
+    "note": "活発でよく歩き回る。隠れる時間は短い。ただし穴掘りは激しい。"
+  },
+
+  "displayExperience": {
+    "value": ["grazing", "digging", "walking"],
+    "provenance": "keeper_consensus",
+    "independentSources": 3,
+    "note": "草を食む・穴を掘る・歩き回る。"
+  },
+
+  "appeal": {
+    "value": ["interactive", "majestic", "active"],
+    "provenance": "keeper_consensus",
+    "independentSources": 3,
+    "note": "人懐っこいという記述が複数。『飼い主の足音を覚え、近づくと寄ってくる』『頭や首をなでられるのを楽しむ』『犬や猫のようなスキンシップを取ることが可能』"
+  },
+
+  "handling": {
+    "biteRisk":      { "value": "none",   "provenance": "keeper_consensus", "independentSources": 2, "note": "噛み癖はない。ただし『ぶつかってくる力は強力。家具を壊すこともある』" },
+    "tamePotential": { "value": "high",   "provenance": "keeper_consensus", "independentSources": 3 },
+    "stress":        { "value": "low",    "provenance": "estimated" }
+  },
+
+  "odorRisk": {
+    "wellManaged": "low",
+    "neglected": "medium",
+    "provenance": "estimated",
+    "independentSources": 1,
+    "researchStatus": "uncertain",
+    "note": "草食性で水場が小さいため、水棲種に比べれば臭いは少ない。ただし糞量が多く『屋外飼育であれば自然に分解されやすいが、屋内の場合はこまめな掃除と衛生管理が不可欠』（ikimonolove）。屋内飼育での実感を書いた資料が乏しい。"
+  },
+
+  "maintenance": {
+    "assumes": null,
+    "weeklyMinutes": null,
+    "provenance": "unstudied",
+    "researchStatus": "uncertain",
+    "note": "★算出不能★ 幼体（室内ケージ）と成体（屋外）で作業内容が別物。標準構成を定義できない。餌の量だけでも桁が違う。",
+    "_schema_note": "★v2の穴★ 成長で飼育形態が根本的に変わる種を、単一の maintenance で表現できない。ライフステージ別に持つ必要があるかもしれない。"
+  },
+
+  "cost": {
+    "animalPrice": {
+      "value": { "min": 30000, "max": 100000 },
+      "unit": "JPY",
+      "provenance": "keeper_consensus",
+      "independentSources": 2,
+      "note": "幼体3万円前後。40cm超で10万円超。大型個体は数十万円。里親募集に出ることも多く、これ自体が飼育破綻の証拠。",
+      "sources": ["https://hachurui-japan.com/92/.html"]
+    },
+    "minimumSetup": { "value": null, "provenance": "unstudied" },
+    "idealSetup":   { "value": null, "provenance": "unstudied" },
+    "monthly":      { "value": null, "provenance": "unstudied" },
+    "note": "★算出不能★ 成体の設備（屋外の囲い・保温小屋・冬季の屋内スペース）は一般的な機材価格では見積もれない。DIY前提の種。『機材を買えば済む』という他種と同じ枠で費用を出すこと自体が誤解を招く。",
+    "_schema_note": "★v2の穴★ 市販機材で完結しない種の費用を、products.js ベースの Starter Kit で表現できない。"
+  },
+
+  "legal": {
+    "cites": { "value": "II", "provenance": "official" },
+    "iucn":  { "value": "EN", "provenance": "official", "note": "絶滅危惧種。野生個体の輸出枠は0頭。" },
+    "domesticRegulation": { "value": "none", "provenance": "official", "note": "飼育許可は不要。" }
+  },
+
+  "tradeStatus": {
+    "value": "mostlyCB",
+    "provenance": "official",
+    "independentSources": 3,
+    "researchStatus": "established",
+    "note": "野生個体の輸出は禁止。国内流通は全てCB。『WC個体の生息地からの輸出は禁じられていますのでご注意ください。みなさんが手にいれることができるのは、CB個体になります』（10年飼育者）"
+  },
+
+  "availability": {
+    "value": "common",
+    "provenance": "keeper_consensus",
+    "note": "幼体の流通は多い。ただし成体の引き取り手を探す里親募集も多い。"
+  }
+}
