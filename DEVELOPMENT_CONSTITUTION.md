@@ -1,7 +1,7 @@
 # KAME LIFE GUIDE — Development Constitution
 
 - **Version:** 2.0
-- **Status:** DRAFT（本文完成・F1/F2 確認待ち。批准・公開は未）
+- **Status:** DRAFT（本文完成。F1=CONFIRMED / F2=CONFIRMED。批准・公開は Owner 承認待ち）
 - **Last Updated:** 2026-07-16
 - **Supersedes:** CLAUDE.md（開発運用ルール部分）／ SHINDAN-SPEC.md（作業ルール・GitHub API鉄則部分）
 - **Conforms To:** MANIFEST.md ＞ AGENTS.md（`gagalife04291225-lab/ai-company-os`）
@@ -234,7 +234,9 @@ Template   qa_snapshot_template / species-template
 - §7.3-R2: Cloudflare は DNS 管理等に関与する可能性はあるが、**コンテンツ配信基盤ではない**（現時点で判明している事実のみ記載。DNS 事業者の断定は行わ MUST NOT）。
 
 ### 7.4 Domain & Canonical URL
-- §7.4-R1: 配信ドメイン `kamelifeguide.com` は確定済み。正規URL（canonical）の最終形（www/apex の正規化方向）は 【CONFIRM_REQUIRED: F2】。確定まで各文書の canonical 記述を断定しては MUST NOT。
+- §7.4-R1: 正規URL（canonical）は **`https://kamelifeguide.com/`（apex / non-www / HTTPS）** に確定する MUST（F2=CONFIRMED, 2026-07-16）。全ページの canonical・og:url は本値に一致 MUST。
+- §7.4-R2（証拠）: F2監査により、canonical 165件・sitemap 158URL・robots.txt・`CNAME`・内部リンクのすべてが `https://kamelifeguide.com`（apex / non-www / https）で統一され、`http` / `www.` / `github.io` の混在ゼロを確認済み。noindex の作業ページ（review.html / review2.html）は sitemap 除外で適切。
+- §7.4-R3（リポジトリ外の残確認）: GitHub Pages の「Enforce HTTPS」設定、及び `www` → apex のライブ・リダイレクト挙動は Search Console / GitHub Pages 設定での確認事項であり、リポジトリ監査の範囲外。これらは canonical の確定値を変えるものでは MUST NOT。
 
 ### 7.5 Publishing & Verification
 - §7.5-R1: push 後は自動検証フック（`.claude/settings.json`）の指示に従い、デプロイ完了を待って対象ページを検証 MUST。

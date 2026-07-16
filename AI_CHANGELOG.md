@@ -15,3 +15,15 @@
 - **Approver:** TeTe（"go" 指示）
 - **Conforms:** Constitution v2.0
 - **備考:** F1（デプロイ経路）・F2（正規URL）は【CONFIRM_REQUIRED】として保留。批准（Status: ACTIVE 化）と既存文書の書換え（Phase 2 以降）は F1/F2 確定後に実施する。
+
+---
+
+## [2026-07-16] F2（正規URL）正式批准（Migration P2c）
+
+- **Actor:** Claude Code（実装） / TeTe（承認）
+- **Change:** `DEVELOPMENT_CONSTITUTION.md` §7.4 の【CONFIRM_REQUIRED: F2】を解除し、canonical = `https://kamelifeguide.com/`（apex / non-www / HTTPS）を確定記載。Status を F2=CONFIRMED へ更新。
+- **Reason:** F2監査（読み取り専用）で、canonical 165件・sitemap 158URL・robots・CNAME・内部リンクが全て `https://kamelifeguide.com`（apex/non-www/https）で統一され、http/www/github.io 混在ゼロ、❌修正必須ゼロを確認したため。
+- **PR/Commit:** branch `claude/readme-test-line-9tbkht`（本コミット）
+- **Approver:** TeTe（P2c 指示）
+- **Conforms:** Constitution v2.0
+- **備考:** GitHub Pages「Enforce HTTPS」設定と www→apex ライブ挙動はリポジトリ外の残確認（§7.4-R3）。canonical 確定値には影響しない。
