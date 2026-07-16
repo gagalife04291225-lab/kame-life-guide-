@@ -127,6 +127,28 @@ function applyEffective(scored){
   });
 }
 
+// ---- hybrid (Candidate3): H = alpha*rel + (1-alpha)*abs, over the selected set ----
+// method-definition.md Candidate3: rel = min-max; abs = r/max (min not subtracted).
+// alpha = raw-relative weight; (1-alpha) = raw-absolute-ratio retention. range0 -> 1.
+const HYBRID_ALPHA = 0.5;
+function applyHybrid(scored, alpha){
+  const raws = scored.map(x => x.f.raw);
+  const mn = Math.min.apply(null, raws);
+  const mx = Math.max.apply(null, raws);
+  const range = mx - mn;
+  scored.forEach(x => {
+    let rel, abs;
+    if (range === 0){ rel = 1; abs = 1; }
+    else {
+      rel = (x.f.raw - mn) / range;
+      abs = (mx > 0) ? (x.f.raw / mx) : rel;
+    }
+    const H = alpha * rel + (1 - alpha) * abs;
+    x.f.norm = H;
+    x.f.fs = H * x.f.availMult * x.f.diffMult * x.f.legalMult * x.f.budgetMult * x.f.odorMult;
+  });
+}
+
 // ---- full calcResult reproduction, parameterized by method ----
 function evaluate(routeId, answers, method){
   const route = routeById[routeId];
@@ -165,8 +187,9 @@ function evaluate(routeId, answers, method){
   if (!pool || pool.length===0){ pool=candidates; poolType='candidates'; }
   var scored = pool.map(sp => { const f=finalScore(sp, scores); return { sp, f }; });
 
-  // === effective insertion point: after order-decision score fixed, before ordering ===
+  // === insertion point: after order-decision score fixed, before ordering ===
   if (method === 'effective') applyEffective(scored);
+  else if (method === 'hybrid') applyHybrid(scored, HYBRID_ALPHA);
 
   // sort + tie-break: IDENTICAL for both methods (unchanged)
   scored.sort((a,b) => {
@@ -224,13 +247,18 @@ function fmtTop(t){
 const results = [];
 let n_top1_changed=0, n_order_changed=0, n_top3set_changed=0, n_pool_mismatch=0, n_tie_up=0, n_tie_down=0, n_same=0;
 
-console.log('=== Phase2 Step6 — Variable-A: none vs effective (Golden18) ===');
+// compare none vs TARGET method (default 'effective' for Step6 reproducibility)
+const _mi = process.argv.indexOf('--method');
+const TARGET = (_mi >= 0 && process.argv[_mi+1]) ? process.argv[_mi+1] : 'effective';
+const TLABEL = TARGET.padEnd(9);
+
+console.log(`=== Phase2 Variable-A: none vs ${TARGET} (Golden18) ===`);
 console.log('route species counts:', ['land','aquatic','forest','exotic','all'].map(k => k+'='+(SPECIES[k]||[]).length).join(' '));
 console.log('');
 
 for (const c of CASES){
   const N = evaluate(c.route, c.ans, 'none');
-  const E = evaluate(c.route, c.ans, 'effective');
+  const E = evaluate(c.route, c.ans, TARGET);
 
   // integrity: effective must NOT change pool selection / match / 足切り (07 §7)
   const poolSame = (N.poolType===E.poolType) && (N.poolSize===E.poolSize) && (N.matchedCount===E.matchedCount);
@@ -262,10 +290,10 @@ for (const c of CASES){
 
   console.log('──────────────────────────────────────────');
   console.log(`${c.id} [${c.route}] ${c.purpose}`);
-  console.log(`  pool: none=${N.poolType}(${N.poolSize}) effective=${E.poolType}(${E.poolSize}) matched none=${N.matchedCount}/eff=${E.matchedCount}  poolSame=${poolSame}`);
-  console.log(`  tieMembers: none=${N.tieMembers} effective=${E.tieMembers}`);
+  console.log(`  pool: none=${N.poolType}(${N.poolSize}) ${TARGET}=${E.poolType}(${E.poolSize}) matched none=${N.matchedCount}/tgt=${E.matchedCount}  poolSame=${poolSame}`);
+  console.log(`  tieMembers: none=${N.tieMembers} ${TARGET}=${E.tieMembers}`);
   console.log(`  none      : ${N.top3.map(fmtTop).join('  ||  ')}`);
-  console.log(`  effective : ${E.top3.map(fmtTop).join('  ||  ')}`);
+  console.log(`  ${TLABEL}: ${E.top3.map(fmtTop).join('  ||  ')}`);
   console.log(`  => VERDICT: ${verdict}`);
 
   results.push({
@@ -280,7 +308,7 @@ for (const c of CASES){
 }
 
 console.log('──────────────────────────────────────────');
-console.log('=== SUMMARY (none vs effective) ===');
+console.log(`=== SUMMARY (none vs ${TARGET}) ===`);
 console.log(`cases total            : ${CASES.length}`);
 console.log(`SAME (no order/tie chg): ${n_same}`);
 console.log(`TOP1 changed           : ${n_top1_changed}`);
