@@ -552,6 +552,36 @@ document.getElementById('reset-filters').addEventListener('click', function() {
   });
   render();
 });
+
+// 探索ハブからのディープリンク: 既存フィルターをURLパラメータで適用（新ロジック・新フィルターなし）
+// URLパラメータが無ければ何もしない（既存の初期表示を一切変えない）。
+(function applyUrlFilters() {
+  var p = new URLSearchParams(location.search);
+  if (Array.from(p.keys()).length === 0) return;
+  function setSingle(containerId, attr, activeClass, val) {
+    if (!val) return;
+    var matched = false;
+    document.querySelectorAll('#' + containerId + ' .fbtn').forEach(function(b) {
+      var on = b.dataset[attr] === val;
+      b.classList.toggle(activeClass, on);
+      if (on) matched = true;
+    });
+    if (matched) state[attr] = val;
+  }
+  setSingle('hab-btns', 'hab', 'active', p.get('hab'));
+  setSingle('size-btns', 'size', 'active', p.get('size'));
+  setSingle('diff-btns', 'diff', 'active-diff', p.get('diff'));
+  var klg = p.get('klg');
+  if (klg) klg.split(',').forEach(function(tag) {
+    var b = document.querySelector('#klg-btns .fbtn[data-klg="' + tag + '"]');
+    if (b) { b.classList.add('active-klg'); state.klg[tag] = true; }
+  });
+  var sort = p.get('sort');
+  if (sort) { var sel = document.getElementById('sort-sel'); if (sel) { sel.value = sort; state.sort = sort; } }
+  var q = p.get('q');
+  if (q) { var sb = document.getElementById('search-box'); if (sb) sb.value = q; state.q = q.toLowerCase(); }
+  render();
+})();
 </script>
 
 <!-- SEO: 静的種別ページリンク（クローラー向け） -->
