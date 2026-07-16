@@ -86,7 +86,9 @@ kame-life-guide-/
 
 ### デプロイ・ホスティング
 
-- **GitHub Pages のみ**。Netlify・Vercelは使用禁止。関連設定ファイルはPhase 34A-3で削除済み。
+- **GitHub Pages が本番配信基盤**（カスタムドメイン `kamelifeguide.com`）。Netlify・Vercel は使用禁止。
+- リポジトリ直下の `CNAME`（`kamelifeguide.com`）と `.nojekyll`（Jekyll 無効化）が現行の GitHub Pages 構成要素。
+- Cloudflare 用の `_headers` / `_redirects` はリポジトリに存在するが、**GitHub Pages では利用されない**（無効な残置ファイル）。Cloudflare は DNS 管理等に関与する可能性はあるが、コンテンツ配信基盤ではない。
 - main ブランチへの push で自動デプロイ（約60秒待機が必要）
 - `.claude/settings.json` に `git push` 後の自動検証フックあり → push 後はデプロイ完了を待って WebFetch で検証する
 
@@ -181,7 +183,7 @@ guide-{habitat}.html        # ハビタット別飼育ガイド
 | 「小さい変更だから確認不要」 | 追跡 ID・GA4 は収益と分析に直結する。必ず確認する |
 | 「だいたい合ってるコントラスト」 | 数値で確認する。目視は信用しない |
 | 「追跡IDは後で確認」 | 収益に直結する。今確認する |
-| 「Netlify でも同じでは？」 | GitHub Pages のみ。Netlify・Vercelは使用禁止。関連設定ファイルはPhase 34A-3で削除済み。 |
+| 「Netlify でも同じでは？」 | GitHub Pages が本番配信基盤。Netlify・Vercel は使用禁止。（Cloudflare 用 `_headers`/`_redirects` はリポジトリに存在するが GitHub Pages では利用されない） |
 
 ---
 

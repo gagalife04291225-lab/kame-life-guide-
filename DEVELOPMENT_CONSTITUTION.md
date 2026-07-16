@@ -222,15 +222,23 @@ Template   qa_snapshot_template / species-template
 ## Chapter 7 — Deployment
 
 ### 7.1 Source of Truth
-- §7.1-R1: 本番デプロイ経路は 【CONFIRM_REQUIRED: F1】。確定するまで本節を推測で記述しては MUST NOT。
-- §7.1-R2（証拠メモ・非確定）: リポジトリには Cloudflare Pages 用 `_headers`/`_redirects` と CNAME `kamelifeguide.com`、及び `.nojekyll` が存在する。これは事実の記録であり、正式なデプロイ経路の断定では**ない**。
+- §7.1-R1: 本番コンテンツの配信は **GitHub Pages（PF-1 リポジトリからのブランチ直デプロイ）** による MUST。
+- §7.1-R2: カスタムドメインは `kamelifeguide.com`（リポジトリ直下の `CNAME` で設定）MUST。
+- §7.1-R3（証拠 / F1=CONFIRMED 2026-07-16）: 配信経路の根拠は DNS 実データ — apex A レコードが GitHub Pages 公式IP（`185.199.108–111.153`）と完全一致し、`www` は `gagalife04291225-lab.github.io` への CNAME。Cloudflare によるコンテンツ配信は確認されない。
 
-### 7.2 Domain & Canonical URL
-- §7.2-R1: 正規URL（canonical）は 【CONFIRM_REQUIRED: F2】。確定まで各文書の canonical 記述を更新しては MUST NOT。
+### 7.2 GitHub Pages 構成要素
+- §7.2-R1: `CNAME`（`kamelifeguide.com`）と `.nojekyll`（Jekyll 無効化）は GitHub Pages の現行構成要素として維持 MUST。
 
-### 7.3 Publishing & Verification
-- §7.3-R1: push 後は自動検証フック（`.claude/settings.json`）の指示に従い、デプロイ完了を待って対象ページを検証 MUST。
-- §7.3-R2: 公開は RO-1 が最終決定 MUST（Invariant I1）。
+### 7.3 Cloudflare / 残置ファイルの扱い
+- §7.3-R1: `_headers` / `_redirects` はリポジトリに存在するが、Cloudflare Pages 専用形式であり **GitHub Pages では利用されない**。GitHub Pages を配信基盤とする限り、これらに依存しては MUST NOT。
+- §7.3-R2: Cloudflare は DNS 管理等に関与する可能性はあるが、**コンテンツ配信基盤ではない**（現時点で判明している事実のみ記載。DNS 事業者の断定は行わ MUST NOT）。
+
+### 7.4 Domain & Canonical URL
+- §7.4-R1: 配信ドメイン `kamelifeguide.com` は確定済み。正規URL（canonical）の最終形（www/apex の正規化方向）は 【CONFIRM_REQUIRED: F2】。確定まで各文書の canonical 記述を断定しては MUST NOT。
+
+### 7.5 Publishing & Verification
+- §7.5-R1: push 後は自動検証フック（`.claude/settings.json`）の指示に従い、デプロイ完了を待って対象ページを検証 MUST。
+- §7.5-R2: 公開は RO-1 が最終決定 MUST（Invariant I1）。
 
 ---
 
