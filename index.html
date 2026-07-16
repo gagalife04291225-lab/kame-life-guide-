@@ -3256,18 +3256,20 @@
 <style>
 /* ===== Phase 48-A: Homepage IA restructure additions ===== */
 
-/* Entry cards (Hero直下 3入口) — previously unstyled, now styled as cards */
+/* Entry cards (Hero直下 2入口) — 🐢診断 / 🌿探索 */
 .entry-cards{padding:8px 0 46px;}
-.entry-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.entry-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 .entry-card{
   display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
   background:#fff;border:1.5px solid #e4ddc9;border-radius:16px;padding:18px 16px;
   transition:transform .15s,box-shadow .15s,border-color .15s;
 }
 .entry-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,31,26,.10);border-color:var(--accent);}
+.entry-card--primary{border-color:var(--accent);background:linear-gradient(180deg,#fffaf1,#fff);}
 .entry-card-icon{font-size:1.8rem;flex-shrink:0;line-height:1;}
 .entry-card-label{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.02rem;color:var(--forest);margin:0 0 3px;}
 .entry-card-sub{font-size:.82rem;color:#5a6b60;margin:0;line-height:1.5;}
+.entry-card-cta{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:700;color:var(--forest);}
 @media(max-width:760px){
   .entry-cards-grid{grid-template-columns:1fr;}
 }
@@ -3409,28 +3411,22 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 <section class="entry-cards">
   <div class="wrap">
     <div class="entry-cards-grid">
-      <a href="./shindan/" class="entry-card"
+      <a href="./shindan/" class="entry-card entry-card--primary"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'shindan'})">
         <span class="entry-card-icon" aria-hidden="true">🐢</span>
         <div>
-          <p class="entry-card-label">初めて飼う</p>
-          <p class="entry-card-sub">30秒診断で相性の良い種を探す</p>
+          <p class="entry-card-label">初めて亀を飼う</p>
+          <p class="entry-card-sub">安心して飼い始められるよう、あなたに合った種類をご案内します。</p>
+          <span class="entry-card-cta">診断を始める <span aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a href="compare/" class="entry-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'compare'})">
-        <span class="entry-card-icon" aria-hidden="true">⚖️</span>
+      <a href="species-list.html" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'explore'})">
+        <span class="entry-card-icon" aria-hidden="true">🌿</span>
         <div>
-          <p class="entry-card-label">比較したい</p>
-          <p class="entry-card-sub">種ごとの違いを並べて確認</p>
-        </div>
-      </a>
-      <a href="guides/turtle-trouble-guide.html" class="entry-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'guides'})">
-        <span class="entry-card-icon" aria-hidden="true">📖</span>
-        <div>
-          <p class="entry-card-label">もう飼っている</p>
-          <p class="entry-card-sub">飼育トラブル・ガイドを見る</p>
+          <p class="entry-card-label">いろいろな亀を見てみる</p>
+          <p class="entry-card-sub">気になる種類を見比べながら、あなたにぴったりの亀を探してみましょう。</p>
+          <span class="entry-card-cta">一覧を見る <span aria-hidden="true">→</span></span>
         </div>
       </a>
     </div>
