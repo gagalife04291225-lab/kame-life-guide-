@@ -129,6 +129,16 @@
   .no-result{text-align:center;padding:52px 0 60px;color:#8a9389;font-size:.96rem;line-height:2;}
   .no-result-emoji{font-size:2.2rem;margin-bottom:10px;}
   .no-result-reset{margin-top:16px;padding:8px 22px;font-size:.86rem;}
+  /* Phase4: loop-back 2-door hub (診断 / 探索) */
+  .loopback{padding:30px 0 6px;text-align:center;}
+  .loopback-head{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.2rem;color:var(--forest);margin:0 0 16px;}
+  .loopback-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:620px;margin:0 auto;}
+  .loopback-card{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:var(--forest);background:#fff;border:1.5px solid #e4ddc9;border-radius:14px;padding:18px 16px;font-weight:700;font-size:.98rem;transition:transform .15s,box-shadow .15s,border-color .15s;}
+  .loopback-card:hover,.loopback-card:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,26,.10);border-color:var(--accent);outline:none;}
+  .loopback-card--primary{border-color:var(--accent);background:linear-gradient(180deg,#fffaf1,#fff);}
+  .loopback-icon{font-size:1.3rem;line-height:1;}
+  .loopback-note{font-size:.8rem;color:#4a5a50;margin:14px 0 0;}
+  @media(max-width:520px){.loopback-cards{grid-template-columns:1fr;}}
 
   section.closing{background:var(--forest-deep);color:var(--parchment);padding:44px 0;}
   section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
@@ -170,7 +180,7 @@
 
 <nav class="crumbs">
   <div class="wrap">
-    <a href="index.html">カメライフガイド</a> ＞ 種一覧
+    <a href="index.html">カメライフガイド</a> ＞ <a href="explore.html">いろいろな亀を見てみる</a> ＞ 種一覧
   </div>
 </nav>
 
@@ -242,6 +252,25 @@
       <p>条件に一致する種が見つかりませんでした。<br>検索語や絞り込みを少しゆるめてみてください。</p>
       <button type="button" class="fbtn no-result-reset" id="reset-filters">条件をリセットする</button>
     </div>
+  </div>
+</section>
+
+<section class="loopback" aria-label="次はこちらから">
+  <div class="wrap">
+    <p class="loopback-head">次はこちらからどうぞ。</p>
+    <div class="loopback-cards">
+      <a class="loopback-card loopback-card--primary" href="./shindan/"
+         onclick="(typeof gtag==='function')&&gtag('event','specieslist_loopback_click',{to:'shindan'})">
+        <span class="loopback-icon" aria-hidden="true">🐢</span>
+        <span>あなたに合う亀を診断する</span>
+      </a>
+      <a class="loopback-card" href="./explore.html"
+         onclick="(typeof gtag==='function')&&gtag('event','specieslist_loopback_click',{to:'explore'})">
+        <span class="loopback-icon" aria-hidden="true">🌿</span>
+        <span>別の特徴から探してみる</span>
+      </a>
+    </div>
+    <p class="loopback-note">あなたのペースで、気になる亀を見つけてください。</p>
   </div>
 </section>
 
@@ -552,6 +581,36 @@ document.getElementById('reset-filters').addEventListener('click', function() {
   });
   render();
 });
+
+// 探索ハブからのディープリンク: 既存フィルターをURLパラメータで適用（新ロジック・新フィルターなし）
+// URLパラメータが無ければ何もしない（既存の初期表示を一切変えない）。
+(function applyUrlFilters() {
+  var p = new URLSearchParams(location.search);
+  if (Array.from(p.keys()).length === 0) return;
+  function setSingle(containerId, attr, activeClass, val) {
+    if (!val) return;
+    var matched = false;
+    document.querySelectorAll('#' + containerId + ' .fbtn').forEach(function(b) {
+      var on = b.dataset[attr] === val;
+      b.classList.toggle(activeClass, on);
+      if (on) matched = true;
+    });
+    if (matched) state[attr] = val;
+  }
+  setSingle('hab-btns', 'hab', 'active', p.get('hab'));
+  setSingle('size-btns', 'size', 'active', p.get('size'));
+  setSingle('diff-btns', 'diff', 'active-diff', p.get('diff'));
+  var klg = p.get('klg');
+  if (klg) klg.split(',').forEach(function(tag) {
+    var b = document.querySelector('#klg-btns .fbtn[data-klg="' + tag + '"]');
+    if (b) { b.classList.add('active-klg'); state.klg[tag] = true; }
+  });
+  var sort = p.get('sort');
+  if (sort) { var sel = document.getElementById('sort-sel'); if (sel) { sel.value = sort; state.sort = sort; } }
+  var q = p.get('q');
+  if (q) { var sb = document.getElementById('search-box'); if (sb) sb.value = q; state.q = q.toLowerCase(); }
+  render();
+})();
 </script>
 
 <!-- SEO: 静的種別ページリンク（クローラー向け） -->
