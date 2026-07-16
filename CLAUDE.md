@@ -4,6 +4,8 @@
 > Primary company rules: **MANIFEST.md** / **AGENTS.md**
 > （リポジトリ: `gagalife04291225-lab/ai-company-os`。優先順位: MANIFEST > AGENTS > 本ファイル）
 > This document contains **only project-specific rules**.
+>
+> **Conforms-to: Development Constitution v2.0**（本ファイルは Procedure 層。上位の憲法に準拠する）
 
 あなたはカメ・爬虫類の専門コンテンツ制作エージェントです。
 会社共通の規範（正直・検証義務・Issue運用・セキュリティ等）は AI Company OS の MANIFEST.md / AGENTS.md に従い、
@@ -281,6 +283,11 @@ note記事、カメライフガイドのHTML記事を書く時。
 会社共通の行動規範は **AGENTS.md §2（operating principles）** に統合済み。ここでは再定義しない。
 Project固有の補足: 作業提案前に「今すぐ必要か」をTeTeに確認する（本プロジェクトは優先度P0案件が常在するため）。
 
+### 成果物の出力形式（Constitution B ルール）
+
+- 成果物（設計書・レポート・監査結果・ドキュメント等、ユーザーへ渡すもの）は、原則 **1 つのコピー可能なコードブロック**で出力する。
+- 短い通常会話・確認のやり取りは対象外。
+
 ---
 
 ## Git・デプロイ操作
@@ -293,7 +300,7 @@ git add <ファイル名>
 git commit -m "fix: ○○の説明を修正"
 
 # 2. push（必ず -u origin <branch>）
-git push -u origin main
+git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 push は Automation 限定
 
 # 3. 60秒待ってデプロイ確認（自動フックが促す）
 # WebFetch で変更ページを確認する
@@ -306,9 +313,19 @@ git push -u origin main
 ### ブランチ運用
 
 - **main**: 本番ブランチ。GitHub Pages から直接デプロイされる
-- 機能追加は原則 main 直接（小規模静的サイトのため）
-- **注**: これは AGENTS.md §4（main直接push禁止）に対する **Project-001の明示的例外**（TeTe承認済みの確立運用）。
-  例外の範囲はこのリポジトリのみ。大規模変更・高リスク変更ではブランチ+PRを使う
+- Git 運用は **Development Constitution v2.0 Chapter 3 / Chapter 4** に準拠する。すべての変更は以下の 4 経路のいずれかに属すること。
+
+| 経路 | ブランチ | push | PR |
+|------|----------|------|-----|
+| ① Claude Code on the Web | `claude/<topic>-<id>` | 指定ブランチへ | PR 経由（Merge は Owner） |
+| ② Automation（rakuten-sync） | main 直 | `data/products.js` 限定で main 直 push | なし |
+| ③ 人手作業 | `edit/<topic>` | ブランチ（main 例外可） | 任意 |
+| ④ 緊急修正 | `hotfix/<issue>` | 即 push 可 | 事後 PR で記録 |
+
+- **main（default／protected branch）への直接 push は Automation（②）の限定スコープのみ許可**。①③④は原則 PR 経由（④は事後 PR）。
+- push 前に `git status` で差分を確認し、宣言 Scope 外のファイルを変更していないこと（Scope Lock）。
+- Merge は Owner のみが実施する（Constitution Invariant I1）。
+- **注**: これは AGENTS.md §4（main直接push禁止）に対する Project-001 の運用であり、憲法 §1.3-R3 により **Automation の限定スコープ及び緊急修正の事後PRのみ**に縮小して継承する。
 
 ---
 
