@@ -111,6 +111,27 @@ const AVAIL_ORDER={'common':0,'rare':1,'archive':2};
 function diffOrder(sp){ var d=sp.difficulty||''; for(var k in DIFF_ORDER){ if(d===k) return DIFF_ORDER[k]; } return 99; }
 function round6(x){ return Math.round(x*1e6)/1e6; }
 
+// ---- Variable-B tie-break comparators (applied ONLY when finalScore is tied) ----
+// Does NOT touch fs primary key, raw, normalize, multipliers, pool, match, H, Golden18.
+// 'A' = current production chain (recPri -> avail -> diff -> name); reproduces Phase1 Stable.
+// 'E' = composite: insert raw (higher match first) before name.
+// 'B' = availability-first: avail -> recPri -> diff -> name.
+function tieBreakCompare(a, b, mode){
+  const recPri = x => (x.sp.recommendationPriority||0);
+  const availO = x => (AVAIL_ORDER[x.sp.availability]!==undefined?AVAIL_ORDER[x.sp.availability]:1);
+  const byRecPri = () => recPri(b)-recPri(a);           // desc
+  const byAvail  = () => availO(a)-availO(b);           // common first
+  const byDiff   = () => diffOrder(a.sp)-diffOrder(b.sp); // easy first
+  const byRaw    = () => b.f.raw-a.f.raw;               // desc (higher raw match first)
+  const byName   = () => (a.sp.name||'').localeCompare(b.sp.name||'','ja');
+  let chain;
+  if (mode==='E')      chain=[byRecPri, byAvail, byDiff, byRaw, byName];
+  else if (mode==='B') chain=[byAvail, byRecPri, byDiff, byName];
+  else                 chain=[byRecPri, byAvail, byDiff, byName]; // 'A' (default = current)
+  for (const f of chain){ const r=f(); if (r!==0) return r; }
+  return 0;
+}
+
 // ---- effective normalization (min-max over the selected candidate set) ----
 // 07-effective-method-definition-v1.0.md: (raw - min)/(max - min); range==0 -> 1;
 // single candidate -> 1 (covered by range==0). Applied to the ORDER-DECISION score
@@ -150,7 +171,8 @@ function applyHybrid(scored, alpha){
 }
 
 // ---- full calcResult reproduction, parameterized by method ----
-function evaluate(routeId, answers, method){
+function evaluate(routeId, answers, method, tiebreak){
+  tiebreak = tiebreak || 'A';
   const route = routeById[routeId];
   const scores = aggregate(route, answers);
   if (routeId==='all') applyAllRouteTagCompat(scores);
@@ -193,14 +215,8 @@ function evaluate(routeId, answers, method){
 
   // sort + tie-break: IDENTICAL for both methods (unchanged)
   scored.sort((a,b) => {
-    if (b.f.fs!==a.f.fs) return b.f.fs-a.f.fs;
-    var pa=(a.sp.recommendationPriority||0), pb=(b.sp.recommendationPriority||0);
-    if (pb!==pa) return pb-pa;
-    var aa=AVAIL_ORDER[a.sp.availability]!==undefined?AVAIL_ORDER[a.sp.availability]:1;
-    var ab=AVAIL_ORDER[b.sp.availability]!==undefined?AVAIL_ORDER[b.sp.availability]:1;
-    if (aa!==ab) return aa-ab;
-    if (diffOrder(a.sp)!==diffOrder(b.sp)) return diffOrder(a.sp)-diffOrder(b.sp);
-    return (a.sp.name||'').localeCompare(b.sp.name||'','ja');
+    if (b.f.fs!==a.f.fs) return b.f.fs-a.f.fs;   // fs primary key: unchanged
+    return tieBreakCompare(a, b, tiebreak);       // Variable-B: tie-break only
   });
   const top = scored.slice(0,3).map(x => ({
     name:x.sp.name, avail:x.sp.availability, diff:x.sp.difficulty, legal:x.sp.legal||null, size:x.sp.size,
@@ -212,7 +228,8 @@ function evaluate(routeId, answers, method){
   fsList.forEach(v => { tieGroups[v]=(tieGroups[v]||0)+1; });
   const tieMembers = Object.values(tieGroups).filter(c => c>1).reduce((a,c)=>a+c,0);
   const fullOrder = scored.map(x => x.sp.name);
-  return { scores, beginner_mode, matchedCount:matched.length, poolType, poolSize:pool.length, top3:top, tieMembers, fullOrder };
+  const fullFs = scored.map(x => round6(x.f.fs));
+  return { scores, beginner_mode, matchedCount:matched.length, poolType, poolSize:pool.length, top3:top, tieMembers, fullOrder, fullFs };
 }
 
 // ---- Golden18 cases (verbatim from dryrun; NOT modified) ----
@@ -242,6 +259,59 @@ function fmtTop(t){
   if (!t || t.raw===undefined) return (t&&t.name)||'-';
   const normStr = t.norm!==null && t.norm!==undefined ? ` norm=${t.norm}` : '';
   return `${t.name} | raw=${t.raw}${normStr} => fs=${t.fs} [${t.avail}/${t.diff}/${t.legal}/${t.size}]`;
+}
+
+// ========================================================================
+// Variable-B tie-break comparison mode (--vb): none fixed, compare A vs E vs B
+// ========================================================================
+if (process.argv.includes('--vb')){
+  console.log('=== Phase2 Step11 — Variable-B tie-break: A(current) vs E(composite) vs B(avail-first) ===');
+  console.log('fixed: method=none (Variable-A adopted). fs primary key unchanged; only tie-break varies.');
+  console.log('');
+  let e_diff=0, b_diff=0, e_top1=0, b_top1=0, fsSeq_mismatch=0, pool_mismatch=0;
+  const flagged = { 'GS-LAND-02':null, 'GS-ALL-03':null };
+  for (const c of CASES){
+    const A = evaluate(c.route, c.ans, 'none', 'A');
+    const E = evaluate(c.route, c.ans, 'none', 'E');
+    const B = evaluate(c.route, c.ans, 'none', 'B');
+    // integrity: tie-break may reorder ONLY within equal-fs groups -> sorted fs sequence identical
+    const fsA=JSON.stringify(A.fullFs), fsE=JSON.stringify(E.fullFs), fsB=JSON.stringify(B.fullFs);
+    if (fsA!==fsE || fsA!==fsB) fsSeq_mismatch++;
+    if (!(A.poolType===E.poolType && A.poolType===B.poolType && A.poolSize===E.poolSize && A.poolSize===B.poolSize)) pool_mismatch++;
+    const t3 = r => r.top3.map(t=>t.name).join(' > ');
+    const eOrderDiff = JSON.stringify(A.fullOrder)!==JSON.stringify(E.fullOrder);
+    const bOrderDiff = JSON.stringify(A.fullOrder)!==JSON.stringify(B.fullOrder);
+    const eTop1Diff = A.top3[0] && E.top3[0] && A.top3[0].name!==E.top3[0].name;
+    const bTop1Diff = A.top3[0] && B.top3[0] && A.top3[0].name!==B.top3[0].name;
+    if (eOrderDiff) e_diff++; if (bOrderDiff) b_diff++;
+    if (eTop1Diff) e_top1++; if (bTop1Diff) b_top1++;
+    // Top1 fs-tie group size (was Top1 decided by tie-break at all?)
+    const top1fs = A.fullFs[0];
+    const top1GroupSize = A.fullFs.filter(v=>v===top1fs).length;
+    console.log('──────────────────────────────────────────');
+    console.log(`${c.id} [${c.route}]  Top1-fs-tie-group=${top1GroupSize}`);
+    console.log(`  A(current): ${t3(A)}`);
+    console.log(`  E(composite): ${t3(E)}   ${eOrderDiff?'[order differs from A]':'[= A]'} ${eTop1Diff?'[TOP1 CHANGED]':''}`);
+    console.log(`  B(avail-1st): ${t3(B)}   ${bOrderDiff?'[order differs from A]':'[= A]'} ${bTop1Diff?'[TOP1 CHANGED]':''}`);
+    if (c.id in flagged) flagged[c.id]={A:t3(A),E:t3(E),B:t3(B),eOrderDiff,bOrderDiff,eTop1Diff,bTop1Diff,top1GroupSize};
+  }
+  console.log('──────────────────────────────────────────');
+  console.log('=== SUMMARY (Variable-B tie-break, none fixed) ===');
+  console.log(`cases total                 : ${CASES.length}`);
+  console.log(`E differs from A (any order) : ${e_diff}   (TOP1 changed: ${e_top1})`);
+  console.log(`B differs from A (any order) : ${b_diff}   (TOP1 changed: ${b_top1})`);
+  console.log(`fs-sequence mismatch (must 0): ${fsSeq_mismatch}   (non-tie order preserved if 0)`);
+  console.log(`POOL mismatch (must 0)       : ${pool_mismatch}`);
+  console.log('');
+  console.log('Flagged (name-decided-Top1 suspects):');
+  for (const k of Object.keys(flagged)){
+    const f=flagged[k]; if(!f){ console.log(`  ${k}: not found`); continue; }
+    console.log(`  ${k}: Top1-fs-tie-group=${f.top1GroupSize}  A/E/B Top1 change: E=${f.eTop1Diff} B=${f.bTop1Diff}`);
+    console.log(`     A: ${f.A}`);
+    console.log(`     E: ${f.E}`);
+    console.log(`     B: ${f.B}`);
+  }
+  process.exit(0);
 }
 
 const results = [];
