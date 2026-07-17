@@ -3291,6 +3291,48 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 @media(max-width:480px){
   details.ia-more > summary.ia-more-summary{font-size:.88rem;padding:12px 16px;margin:14px 20px 6px;}
 }
+
+/* ===== Phase5-D: Sticky Diagnosis CTA 復旧（CSS不足のみ・JS非変更） ===== */
+/* JSは #sticky-diagnosis-cta にスクロール300pxで .visible を付与する（既存・変更なし）。
+   CSS未定義のため画面に出ていなかった。ここで固定表示スタイルを定義して復旧する。 */
+#sticky-diagnosis-cta{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:200;                 /* 上部 .mini-nav と同tier（画面上部/下部で非重複） */
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px)); /* iOS安全領域 */
+  background:rgba(13,18,16,0.96);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(212,169,106,0.28);
+  box-shadow:0 -6px 24px rgba(0,0,0,.28);
+  transform:translateY(120%);opacity:0;pointer-events:none; /* 既定は隠す */
+  transition:transform .28s ease,opacity .28s ease;
+}
+#sticky-diagnosis-cta.visible{transform:translateY(0);opacity:1;pointer-events:auto;}
+.sticky-cta-left{display:flex;align-items:center;gap:10px;min-width:0;}
+.sticky-emoji{font-size:1.6rem;line-height:1;flex-shrink:0;}
+.sticky-copy{min-width:0;}
+.sticky-main{font-size:.92rem;font-weight:700;color:var(--parchment);line-height:1.25;}
+.sticky-sub{font-size:.72rem;color:var(--accent);letter-spacing:.04em;}
+.sticky-btn{
+  flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:12px 20px;                 /* 十分なタップ領域 */
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#12160c;font-weight:800;font-size:.9rem;white-space:nowrap;
+  text-decoration:none;border-radius:999px;
+  box-shadow:0 3px 12px rgba(176,124,63,.4);
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .12s ease,opacity .15s ease;
+}
+.sticky-btn:hover{opacity:.94;}
+.sticky-btn:active{transform:scale(.97);}
+@media(max-width:480px){
+  #sticky-diagnosis-cta{padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));}
+  .sticky-main{font-size:.85rem;}
+  .sticky-sub{font-size:.68rem;}
+  .sticky-btn{padding:11px 15px;font-size:.84rem;}
+  .sticky-emoji{font-size:1.4rem;}
+}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
