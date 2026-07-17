@@ -79,10 +79,26 @@ function _skRoute() {
 
 // ── Phase 10-D Step 2: GA4 Debug Panel ──────────────────────
 (function () {
+  // Phase5-E: 本番ホストでは ?debug_ga=1 / ?ga_debug=1 が付いても絶対に有効化しない。
+  // 有効化は「開発ホスト（localhost / 127.0.0.1 / LAN 等）」に限定する allowlist 方式。
+  // これにより本番ドメイン（kamelifeguide.com）や github.io 等の公開ホストでは
+  // クエリの有無に関わらずパネルは生成されない。
+  var _host = (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
+  var _isDevHost = (
+    _host === 'localhost' ||
+    _host === '127.0.0.1' ||
+    _host === '::1' ||
+    _host === '0.0.0.0' ||
+    /\.local$/.test(_host) ||                     // *.local（開発）
+    /^192\.168\./.test(_host) ||                  // LAN
+    /^10\./.test(_host) ||                         // LAN
+    /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(_host)  // LAN 172.16〜172.31
+  );
   var _debugEnabled = (
-    typeof window !== 'undefined' &&
-    /[?&]debug_ga=1/.test(window.location.search) ||
-    /[?&]ga_debug=1/.test(window.location.search)
+    _isDevHost && (
+      /[?&]debug_ga=1/.test(window.location.search) ||
+      /[?&]ga_debug=1/.test(window.location.search)
+    )
   );
 
   if (!_debugEnabled) {
