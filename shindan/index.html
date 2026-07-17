@@ -1179,8 +1179,22 @@ body {
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- データファイル -->
-<script src="species.js"></script>
+<!-- perf(shindan): species.js は初回ロードせず、診断開始時に遅延読み込みする（下記 loadSpecies）。routes.js の route.species は getter のため species.js 非依存で先に読める。 -->
 <script src="routes.js"></script>
+<script>
+window.loadSpecies = function () {
+  if (window.__speciesPromise) return window.__speciesPromise;
+  if (window.SPECIES) return (window.__speciesPromise = Promise.resolve());
+  window.__speciesPromise = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = 'species.js';
+    s.onload = function () { resolve(); };
+    s.onerror = function () { window.__speciesPromise = null; reject(new Error('species.js load failed')); };
+    document.head.appendChild(s);
+  });
+  return window.__speciesPromise;
+};
+</script>
 <!-- Phase 25-G: equipment.js削除（renderEquipment除去に伴い未使用化） -->
 <!-- Phase 31-C2b: Starter Kit V2 assets — css before scripts, js after products.js -->
 <link rel="stylesheet" href="../css/starter-kit.css">
@@ -2263,6 +2277,7 @@ function initStart() {
 
 // ===== 診断開始 =====
 function startQuizWithRoute(id) {
+  if (window.loadSpecies) { window.loadSpecies().catch(function(){}); } // perf: 診断開始時に species.js を先読み（回答中にバックグラウンド取得）
   selectedRoute = ROUTES.find(function(r){ return r.id === id; });
   currentQuestionIndex = 0;
   scores = {};
@@ -2347,7 +2362,8 @@ function selectChoice(choice, clickedBtn) {
     if (currentQuestionIndex < selectedRoute.questions.length) {
       showQuestion();
     } else {
-      calcResult();
+      // perf: 結果計算(SPECIES使用)の直前で species.js のロード完了を保証（Race Condition防止・二重読込なし）
+      (window.loadSpecies ? window.loadSpecies() : Promise.resolve()).then(calcResult);
     }
   }, 250);
 }
@@ -3721,9 +3737,17 @@ function openTwitter(text, url) {
 }
 
 // ===== 初期化（URL復元対応） =====
-if (!tryRestoreFromUrl()) {
-  initStart();
-}
+(function(){
+  var _p = new URLSearchParams(location.search);
+  if (_p.get('r') && _p.get('s') && window.loadSpecies) {
+    // 結果直リンク(URL復元)は SPECIES が必要 → 先読みしてから復元
+    window.loadSpecies().then(function(){ if (!tryRestoreFromUrl()) initStart(); })
+                        .catch(function(){ initStart(); });
+  } else {
+    // 通常表示：URLパラメータ無し → tryRestoreFromUrl は SPECIES 非アクセスで false を返す
+    if (!tryRestoreFromUrl()) initStart();
+  }
+})();
 
 // Phase 9-C: abandonment tracking
 (function() {
