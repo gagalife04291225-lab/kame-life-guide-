@@ -436,6 +436,26 @@ body {
   white-space: nowrap;
 }
 
+/* Phase5-B: 用品ゾーン導入見出し（信頼コンテンツ → 用品への自然な橋渡し） */
+.commerce-lead {
+  margin: 30px 0 14px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(196,154,90,.28);
+}
+.commerce-lead-title {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--parchment);
+  letter-spacing: .02em;
+  margin-bottom: 7px;
+}
+.commerce-lead-desc {
+  font-size: .87rem;
+  line-height: 1.75;
+  color: rgba(244,239,226,.86);
+}
+
 /* 2段CTA */
 .res-cta-top {
   margin: 16px 0 20px;
@@ -1088,15 +1108,10 @@ body {
     <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
     <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
   </div>
-  <!-- Phase 25-C: 統合commerce CTA（旧res-cta-top。res-cost-summary/res-rev-boxを統合吸収） -->
-  <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
-  <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
-
-  <!-- Phase 31-C1: Starter Kit promoted above why-section for earlier commerce exposure -->
-  <!-- PHASE 6-B: おすすめ飼育セット -->
-  <div id="starter-kit-section" style="display:none"></div>
-
-  <!-- ════════ MID FOLD ════════ -->
+  <!-- ════════ TRUST CONTENT（まず診断に納得してもらう）════════ -->
+  <!-- Phase5-B: 収益要素（Starter Kit / Revenue CTA）を信頼コンテンツの下へ移動。
+       「診断に納得 → 必要な用品を紹介」という自然な情報設計に再構成。
+       各ブロックはIDでJSが中身を差し込むため、DOM順の入れ替えのみでロジック非変更。 -->
   <!-- Phase 25-C: why-section（res-emotion-copy + res-why-block-wrap 隣接統合） -->
   <div class="why-section" id="why-section">
     <div class="res-emotion-copy" id="res-emotion-copy" style="display:none"></div>
@@ -1105,6 +1120,10 @@ body {
   <div class="result-card">
     <div class="result-card-title">おすすめのポイント</div>
     <p class="result-desc" id="res-reason"></p>
+  </div>
+  <div class="result-card">
+    <div class="result-card-title">基本スペック</div>
+    <div class="spec-grid" id="res-specs"></div>
   </div>
   <!-- Phase 25-C: important-notice（lifespan + beginner-warn + res-legal + res-loss-block-wrap 統合） -->
   <div class="important-notice" id="important-notice">
@@ -1121,12 +1140,21 @@ body {
     <div class="beginner-warn" id="husbandry-caution" role="alert"></div>
     <div id="res-loss-block-wrap"></div>
   </div>
-  <div class="result-card">
-    <div class="result-card-title">基本スペック</div>
-    <div class="spec-grid" id="res-specs"></div>
-  </div>
 
-  <!-- ════════ COMMERCE ZONE ════════ -->
+  <!-- ════════ COMMERCE ZONE（納得したあとに必要な用品を紹介）════════ -->
+  <!-- Phase5-B: 「必要になる飼育用品」導入見出し。診断結果への納得のあとに用品導線を置く -->
+  <div class="commerce-lead" id="commerce-lead">
+    <div class="commerce-lead-title">必要になる飼育用品</div>
+    <p class="commerce-lead-desc">この子をむかえるときに、はじめに用意しておきたい飼育用品をまとめました。まずは下の「まず買うべき」から揃えると失敗が少なくなります。</p>
+  </div>
+  <!-- Phase 31-C1→Phase5-B: Starter Kit を信頼コンテンツの下（用品ゾーンの先頭）へ配置 -->
+  <!-- PHASE 6-B: おすすめ飼育セット -->
+  <div id="starter-kit-section" style="display:none"></div>
+  <!-- Phase 25-C→Phase5-B: 統合commerce CTA（旧res-cta-top）。Starter Kit の下へ配置 -->
+  <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
+  <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
+
+  <!-- ════════ BOTTOM（レビュー・比較・関連）════════ -->
   <!-- Phase 25-G: equipment-section（レガシー機材推奨セクション）はStarter Kit V2と67%重複のため削除 -->
   <!-- Phase 18-C: Compare Injection -->
   <div id="res-compare-inject" style="display:none"></div>
