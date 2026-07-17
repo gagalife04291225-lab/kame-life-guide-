@@ -408,7 +408,7 @@ function habitatOf(item) {
   var r = item.route, n = item.sp.name;
   if (r === 'land') return '陸棲';
   if (r === 'forest') return '森林系';
-  // aquatic / exotic：ニオイ・ドロ・ハコ系は半水棲、それ以外は水棲
+  // aquatic / exotic：ニオイ・ドロ・ハコガメ系は半水棲、それ以外は水棲
   if (/ニオイ|ドロ/.test(n)) return '半水棲';
   return '水棲';
 }
