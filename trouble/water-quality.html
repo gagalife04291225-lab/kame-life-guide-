@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カメの水槽が汚い・臭う｜水質悪化のサインと対処法｜カメライフガイド</title>
+<meta name="description" content="水棲ガメの水槽が濁る・臭う・ぬめる・コケが増える——水質悪化のサインで考えられる原因、確認、ろ過と水換えの立て直し方、そして皮膚病や甲羅トラブルを防ぐ予防法を解説します。">
+<link rel="canonical" href="https://kamelifeguide.com/trouble/water-quality.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="カメの水槽が汚い・臭う｜水質悪化のサインと対処法｜カメライフガイド">
+<meta property="og:description" content="水棲ガメの水槽が濁る・臭う・ぬめる・コケが増える——水質悪化のサインで考えられる原因、確認、ろ過と水換えの立て直し方、そして皮膚病や甲羅トラブルを防ぐ予防法を解説します。">
+<meta property="og:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --accent-dark:#8f5f2c;
+    --danger:#c0392b;
+    --danger-light:#fdf0ef;
+    --caution:#e67e22;
+    --caution-light:#fef9f3;
+    --safe:#2d6a4f;
+    --safe-light:#edf7f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Noto Serif JP",serif;color:var(--forest-deep);background:var(--parchment);line-height:1.85;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  header.hero{
+    background:var(--forest-deep);color:var(--parchment);
+    padding:58px 0 50px;text-align:center;
+  }
+  header.hero .eyebrow{
+    font-family:"Playfair Display",serif;font-style:italic;
+    letter-spacing:.04em;color:var(--accent);font-size:1rem;margin-bottom:14px;
+  }
+  header.hero .urgency-tag{
+    display:inline-block;background:var(--caution);color:#fff;
+    font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:20px;
+    margin-bottom:18px;letter-spacing:.06em;
+  }
+  header.hero h1{
+    font-family:"Playfair Display",serif;font-weight:700;
+    font-size:2rem;line-height:1.3;margin-bottom:18px;
+  }
+  header.hero p.lead{font-size:1rem;color:#d9e0d6;max-width:580px;margin:0 auto;}
+
+  nav.crumbs{background:var(--forest);color:#cdd8cc;font-size:.86rem;padding:11px 0;text-align:center;}
+  nav.crumbs a{color:var(--accent);text-decoration:none;}
+  nav.crumbs a:hover{text-decoration:underline;}
+
+  /* 記事本文共通 */
+  .article{padding:44px 0 20px;}
+  .article p{font-size:1rem;margin-bottom:18px;line-height:1.9;}
+  .article h2{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:1.45rem;color:var(--forest);
+    margin:44px 0 18px;
+    padding-bottom:10px;
+    border-bottom:1.5px solid #ddd5be;
+  }
+  .article h3{
+    font-size:1.05rem;font-weight:700;color:var(--forest);margin:28px 0 12px;
+  }
+
+  /* 注意ボックス */
+  .note-box{
+    background:#fff;border-left:4px solid var(--accent);
+    padding:18px 22px;margin:24px 0;
+    border-radius:0 8px 8px 0;font-size:.95rem;
+    box-shadow:0 1px 4px rgba(13,31,26,.06);
+  }
+  .note-box strong{color:var(--accent-dark);}
+
+  /* 警告ボックス */
+  .alert-box{
+    background:var(--danger-light);border-left:4px solid var(--danger);
+    padding:18px 22px;margin:24px 0;
+    border-radius:0 8px 8px 0;font-size:.95rem;
+    box-shadow:0 1px 4px rgba(192,57,43,.08);
+  }
+  .alert-box strong{color:var(--danger);}
+  .alert-box ul{margin:10px 0 0 1.2em;}
+  .alert-box li{margin-bottom:6px;font-size:.93rem;}
+
+  /* 安心ボックス */
+  .safe-box{
+    background:var(--safe-light);border-left:4px solid var(--safe);
+    padding:18px 22px;margin:24px 0;
+    border-radius:0 8px 8px 0;font-size:.95rem;
+  }
+  .safe-box strong{color:var(--safe);}
+
+  /* チェックリスト */
+  .checklist{
+    background:#fff;border-radius:12px;
+    padding:22px 24px;margin:22px 0;
+    box-shadow:0 2px 8px rgba(13,31,26,.07);
+  }
+  .checklist-title{
+    font-weight:700;font-size:.88rem;
+    color:var(--accent-dark);letter-spacing:.1em;
+    text-transform:uppercase;margin-bottom:14px;
+  }
+  .cl-item{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:10px 0;border-bottom:1px solid #f0ebe0;
+  }
+  .cl-item:last-child{border-bottom:none;padding-bottom:0;}
+  .cl-num{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--forest);color:var(--parchment);
+    font-size:.78rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;margin-top:1px;
+  }
+  .cl-text{font-size:.93rem;line-height:1.7;}
+  .cl-sub{font-size:.82rem;color:#6b7c70;margin-top:2px;}
+
+  /* 原因カード */
+  .cause-list{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+  .cause-card{
+    background:#fff;border-radius:12px;
+    padding:20px 22px;
+    box-shadow:0 2px 8px rgba(13,31,26,.07);
+    border-left:4px solid #e4ddc9;
+  }
+  .cause-card.high{border-left-color:var(--danger);}
+  .cause-card.mid{border-left-color:var(--caution);}
+  .cause-card.low{border-left-color:#f1c40f;}
+  .cause-card h3{margin:0 0 8px;font-size:1rem;}
+  .cause-card p{font-size:.91rem;margin:0;color:#4a5a50;line-height:1.75;}
+  .cause-tag{
+    display:inline-block;font-size:.7rem;font-weight:700;
+    padding:2px 9px;border-radius:10px;margin-bottom:6px;
+  }
+  .cause-tag.high{background:var(--danger-light);color:var(--danger);}
+  .cause-tag.mid{background:var(--caution-light);color:var(--caution);}
+  .cause-tag.low{background:#fefde8;color:#7d6608;}
+
+  /* 機材カード */
+  .gear-section{padding:0 0 12px;}
+  .gear-cards{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
+  .gear-card{
+    background:#fff;border-radius:12px;
+    display:flex;align-items:center;gap:16px;
+    padding:16px 18px;
+    box-shadow:0 1px 6px rgba(13,31,26,.07);
+    border:1px solid #e4ddc9;
+  }
+  .gear-emoji{font-size:1.6rem;flex-shrink:0;}
+  .gear-info{flex:1;min-width:0;}
+  .gear-name{font-weight:700;font-size:.95rem;color:var(--forest);margin-bottom:3px;}
+  .gear-desc{font-size:.82rem;color:#5a6b60;line-height:1.6;}
+  .gear-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+  .btn-amz{
+    display:inline-block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:.82rem;
+    padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;
+  }
+  .btn-amz:hover{background:var(--accent-dark);}
+  .btn-rak{
+    display:inline-block;background:#bf0000;color:#fff;
+    text-decoration:none;font-weight:700;font-size:.82rem;
+    padding:8px 16px;border-radius:7px;transition:background .2s;white-space:nowrap;
+  }
+  .btn-rak:hover{background:#8c0000;}
+
+  /* 種別リンク */
+  .species-links{
+    display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;
+  }
+  .sp-btn{
+    display:inline-block;background:#fff;border:1.5px solid #d4c9a8;
+    color:var(--forest);text-decoration:none;
+    font-size:.88rem;font-weight:700;
+    padding:10px 18px;border-radius:24px;
+    transition:border-color .15s,background .15s;
+  }
+  .sp-btn:hover{border-color:var(--accent);background:#fffbf3;}
+
+  /* 診断CTA */
+  .shindan-cta{
+    background:var(--forest-deep);border-radius:14px;
+    padding:28px 26px;margin:40px 0 0;color:var(--parchment);
+    text-align:center;
+  }
+  .shindan-cta p{color:#d9e0d6;font-size:.95rem;margin-bottom:18px;}
+  .shindan-cta a{
+    display:inline-block;background:var(--accent);color:#fff;
+    text-decoration:none;font-weight:700;font-size:1rem;
+    padding:14px 32px;border-radius:10px;transition:background .2s;
+  }
+  .shindan-cta a:hover{background:var(--accent-dark);}
+
+  /* closing */
+  section.closing{background:var(--forest-deep);color:var(--parchment);padding:48px 0;margin-top:56px;}
+  section.closing h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--accent);margin-bottom:14px;text-align:center;}
+  section.closing p{font-size:.96rem;color:#d9e0d6;text-align:center;margin-bottom:20px;}
+  .hub-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hub-links a{background:var(--forest);color:var(--parchment);text-decoration:none;font-size:.88rem;padding:9px 18px;border-radius:22px;border:1px solid #3d5a4b;transition:background .18s;}
+  .hub-links a:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+
+  footer{background:#08130f;color:#7d8c81;text-align:center;font-size:.78rem;padding:24px 0;line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
+
+  @media(max-width:520px){
+    header.hero h1{font-size:1.65rem;}
+    .gear-card{flex-direction:column;align-items:flex-start;}
+    .gear-btns{width:100%;}
+    .btn-amz,.btn-rak{flex:1;text-align:center;}
+  }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0d1f1a">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQTE5CVF3K"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQTE5CVF3K');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "水質悪化のサイン",
+      "description": "水棲ガメの水槽が濁る・臭う・ぬめる・コケが増える——水質悪化のサインで考えられる原因、確認、ろ過と水換えの立て直し方、そして皮膚病や甲羅トラブルを防ぐ予防法を解説します。",
+      "author": {
+        "@type": "Person",
+        "name": "亀好きさん",
+        "description": "Japanese turtle keeper with 17 turtles and real husbandry experience."
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "カメライフガイド"
+      },
+      "mainEntityOfPage": "https://kamelifeguide.com/trouble/water-quality.html",
+      "inLanguage": "ja",
+      "image": "https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg",
+      "dateModified": "2026-07-17"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "カメライフガイド",
+          "item": "https://kamelifeguide.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "トラブル解決",
+          "item": "https://kamelifeguide.com/trouble/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "水質悪化のサイン",
+          "item": "https://kamelifeguide.com/trouble/water-quality.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "水換えはどのくらいの頻度で行いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ろ過能力や頭数で変わりますが、水棲ガメは汚しやすいため、部分換水を定期的に行い、汚れたら全換水します。「臭う・濁る前に」が目安です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "フィルターがあれば水換えは不要ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。フィルターは有機物の分解を助けますが、老廃物を完全には除去できません。ろ過と定期的な水換えの両方が必要です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "水が緑（コケ）になります。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "光の当てすぎや栄養過多（残餌）が原因のことが多いです。餌の量を見直し、換水し、必要なら照明時間やレイアウトを調整してください。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Trouble Shooting</div>
+    <span class="urgency-tag">⚠ 要観察</span>
+    <h1>水槽の水が汚い・臭う｜水質悪化のサインと対処</h1>
+    <p class="lead">水が濁る、臭う、ぬめる、コケが増える——水質の悪化は、水棲ガメの皮膚病・シェルロット・目のトラブルの引き金になります。悪化のサインと立て直し方を解説します。</p>
+  </div>
+</header>
+
+<nav class="crumbs">
+  <div class="wrap">
+    <a href="../index.html">カメライフガイド</a> ＞ <a href="index.html">トラブル解決</a> ＞ 水質悪化のサイン
+  </div>
+</nav>
+
+<div class="article">
+  <div class="wrap">
+
+    <p>水質悪化そのものは病気ではありませんが、放置すると感染症や皮膚・甲羅・目のトラブルの背景要因になります。「なんとなく水が悪い」を早めに立て直すことが、多くのトラブル予防につながります。</p>
+
+    <div class="note-box">
+      <strong>まず確認すること：</strong>水の濁り・におい・ぬめり・コケの増加は水質悪化のサインです。あわせて、亀に皮膚・甲羅・目の異変が出ていないかも確認してください。
+    </div>
+
+    <h2>考えられる原因</h2>
+    <div class="cause-list">
+      <div class="cause-card high">
+        <span class="cause-tag high">ろ過</span>
+        <h3>ろ過能力の不足</h3>
+        <p>水棲ガメは水を汚しやすく、フィルターの能力が飼育量に足りていないと一気に悪化します。</p>
+      </div>
+      <div class="cause-card high">
+        <span class="cause-tag high">給餌</span>
+        <h3>餌の食べ残し・与えすぎ</h3>
+        <p>残餌はアンモニアの発生源。水を汚す最大の原因の一つです。</p>
+      </div>
+      <div class="cause-card mid">
+        <span class="cause-tag mid">換水</span>
+        <h3>水換え不足</h3>
+        <p>ろ過だけでは老廃物を除去しきれず、定期的な水換えが必要です。</p>
+      </div>
+      <div class="cause-card low">
+        <span class="cause-tag low">過密</span>
+        <h3>過密飼育</h3>
+        <p>頭数や糞量に対して水量・ろ過が不足しがちです。</p>
+      </div>
+    </div>
+
+    <h2>自宅で確認できること</h2>
+    <div class="checklist">
+      <div class="checklist-title">この順番でチェックしてください</div>
+      <div class="cl-item">
+        <div class="cl-num">1</div>
+        <div class="cl-text">水の濁り・におい・ぬめり・コケを確認する<div class="cl-sub">悪化のわかりやすいサイン。</div></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">2</div>
+        <div class="cl-text">フィルターの能力・目詰まりを確認する<div class="cl-sub">飼育量に足りているか、メンテはされているか。</div></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">3</div>
+        <div class="cl-text">餌の食べ残しの有無を確認する<div class="cl-sub">残餌は最大の汚れ要因。</div></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">4</div>
+        <div class="cl-text">水換えの頻度を見直す<div class="cl-sub">ろ過だけに頼っていないか。</div></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-num">5</div>
+        <div class="cl-text">亀に皮膚・甲羅・目の異変が出ていないか<div class="cl-sub">水質悪化の影響が出ていないか。</div></div>
+      </div>
+    </div>
+
+    <h2>応急としてできること</h2>
+    <p>部分〜全換水で水をリセットし、フィルターを見直し（能力アップ・メンテナンス）、餌は食べ残さない量に調整します。</p>
+    <div class="safe-box">
+      <strong>ポイント：</strong>すでに亀に皮膚や目の症状が出ている場合は、水質改善とあわせて各症状の記事も確認し、改善しなければ早めに爬虫類対応の動物病院へ相談してください。
+    </div>
+
+    <h2>動物病院へ行く目安</h2>
+    <div class="alert-box">
+      <strong>以下に該当する場合は、早めに爬虫類対応の動物病院へ相談してください：</strong>
+      <ul>
+        <li>水質を改善しても皮膚のただれ・甲羅の異常・目の腫れが続く</li>
+        <li>元気・食欲の低下を伴う</li>
+      </ul>
+    </div>
+
+    <h2>予防方法</h2>
+    <p>飼育量に見合ったろ過を用意し、食べ残さない量の給餌を心がけます。</p>
+    <p>定期的な水換えを習慣にし、ろ過だけに頼らないようにします。</p>
+    <p>バスキングで甲羅を乾かす環境を整え、過密飼育を避けます。</p>
+
+    <h2>関連する飼育機材</h2>
+    <div class="gear-section">
+      <div class="gear-cards">
+        <div class="gear-card">
+          <div class="gear-emoji">🌊</div>
+          <div class="gear-info">
+            <div class="gear-name">水槽用フィルター</div>
+            <div class="gear-desc">水質維持の要。飼育量に合った強めのろ過が水棲ガメには有効です。</div>
+          </div>
+          <div class="gear-btns"><a class="btn-amz" href="../water-filter-review.html" style="background:var(--forest);">フィルターの選び方へ</a></div>
+        </div>
+        <div class="gear-card">
+          <div class="gear-emoji">⚙️</div>
+          <div class="gear-info">
+            <div class="gear-name">フィルターランキング</div>
+            <div class="gear-desc">方式別（外部・投げ込み等）の比較をまとめています。</div>
+          </div>
+          <div class="gear-btns"><a class="btn-amz" href="../water-filter-best10.html" style="background:var(--forest);">フィルターランキングへ</a></div>
+        </div>
+        <div class="gear-card">
+          <div class="gear-emoji">🍽</div>
+          <div class="gear-info">
+            <div class="gear-name">エサ皿・給餌グッズ</div>
+            <div class="gear-desc">食べ残しを減らす給餌は水質維持に直結します。</div>
+          </div>
+          <div class="gear-btns"><a class="btn-amz" href="../dish-best10.html" style="background:var(--forest);">水入れ・エサ皿へ</a></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>種別ページで飼育環境を確認する</h2>
+    <div class="species-links">
+      <a href="../species/musk-turtle.html" class="sp-btn">🔬 ニオイガメ</a>
+      <a href="../species/red-eared-slider.html" class="sp-btn">🐢 アカミミガメ</a>
+      <a href="../species/mississippi-map-turtle.html" class="sp-btn">🗺 ミシシッピチズガメ</a>
+      <a href="../species-list.html" class="sp-btn">全種一覧（100種以上）→</a>
+    </div>
+
+    <h2>よくある質問</h2>
+    <h3>水換えはどのくらいの頻度で行いますか？</h3>
+    <p>ろ過能力や頭数で変わりますが、水棲ガメは汚しやすいため、部分換水を定期的に行い、汚れたら全換水します。「臭う・濁る前に」が目安です。</p>
+    <h3>フィルターがあれば水換えは不要ですか？</h3>
+    <p>いいえ。フィルターは有機物の分解を助けますが、老廃物を完全には除去できません。ろ過と定期的な水換えの両方が必要です。</p>
+    <h3>水が緑（コケ）になります。</h3>
+    <p>光の当てすぎや栄養過多（残餌）が原因のことが多いです。餌の量を見直し、換水し、必要なら照明時間やレイアウトを調整してください。</p>
+
+    <h2>まとめ</h2>
+    <p>水質悪化は、多くの病気の背景になります。ろ過・給餌量・水換えの3点を立て直せば、水は安定します。すでに亀に皮膚・甲羅・目の症状が出ている場合は、水質改善とあわせて各症状を確認し、改善しなければ早めに爬虫類対応の動物病院へ相談してください。</p>
+
+    <div class="shindan-cta">
+      <p>今の飼育環境が合っているか不安な方、これから飼う種を選びたい方は診断ツールをどうぞ。</p>
+      <a href="../shindan/index.html">🐢 あなたに合う亀を診断する（100種）</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>ほかのトラブルと飼育ガイド</h2>
+    <p>気になる症状や飼育環境から探せます。</p>
+    <div class="hub-links">
+      <a href="index.html">← トラブル一覧</a>
+      <a href="water-mold.html">水カビ病</a>
+      <a href="shell-rot.html">シェルロット</a>
+      <a href="../water-filter-review.html">フィルター選び</a>
+      <a href="../water-filter-best10.html">フィルターランキング</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>カメライフガイド｜運営：亀好きさん（実飼育者）｜<a href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note</a>｜<a href="../privacy.html">プライバシーポリシー</a></p>
+    <p class="disclaimer">掲載する情報は一般的な飼育知識の目安であり、医療的な診断・治療の代替となるものではありません。症状が続く場合や緊急サインに該当する場合は、必ず爬虫類対応の動物病院を受診してください。当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して商品が購入された場合、運営者が紹介料を受け取ることがあります。</p>
+  </div>
+</footer>
+
+</body>
+</html>
