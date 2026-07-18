@@ -73,7 +73,7 @@ Template   qa_snapshot_template / species-template
 ### 2.2 Actor Mapping（可変層）
 - §2.2-R1: Role への Actor 割当は Appendix B の Actor Mapping 表でのみ管理 MUST。AI の追加・変更時は当該表のみ更新 MUST、本文を改訂しては MUST NOT。
 - §2.2-R2: 1 Role に複数 Actor を割当て MAY。その場合 **Lead Actor を 1 つ指定** MUST（指示の一次窓口）。
-- §2.2-R3: 現行割当（2026-07）— Owner=**TeTe**、Architect/PM=ChatGPT、Implementer=Claude Code、Reviewer/Auditor=ChatGPT、Automation=rakuten-sync Bot。
+- §2.2-R3: 現行割当（2026-07）— Owner=**亀好きさん**、Architect/PM=ChatGPT、Implementer=Claude Code、Reviewer/Auditor=ChatGPT、Automation=rakuten-sync Bot。
 
 ### 2.3 AI責務マトリクス（RACI+）
 - §2.3-R1: 各活動の責任は次に従う MUST。
@@ -283,7 +283,7 @@ Template   qa_snapshot_template / species-template
 
 | Role | Current Actor | Lead |
 |------|---------------|------|
-| RO-1 Project Owner | TeTe | ○ |
+| RO-1 Project Owner | 亀好きさん | ○ |
 | RO-2 Architect / PM | ChatGPT | ○ |
 | RO-3 Implementer | Claude Code | ○ |
 | RO-4 Reviewer / Auditor | ChatGPT（自著物は RO-1/RO-3 へ移譲） | ○ |
@@ -303,3 +303,32 @@ MANIFEST.md ／ AGENTS.md ／ CLAUDE.md ／ SHINDAN-SPEC.md ／ SHINDAN-SPECIES.
 > - ファイル更新は 認証付きGET で SHA 取得 → base64 エンコード → PUT で更新。
 > - Termux では作業ディレクトリに `/tmp` を用いず `~/` を用いる。
 > - ヒアドキュメントが不可な環境では、内容を分割して書き込む。
+
+---
+
+## Chapter 8 — Naming, Branding & Improvement Policy（恒久 Addendum・2026-07 亀好きさん承認）
+
+> 恒久ルール。全レビュー・実装・改善提案の基準として適用する。CLAUDE.md の
+> 「サイト名称・ブランディング憲法」「改善方針」と一体で運用する。
+
+### 8.1 Public Display Name（公開表示名）
+- 公開サイト上での運営者表示は **すべて「亀好きさん」に統一** する。
+- 禁止表記：`Tete` / `TeTe` / `tete` / その他 Tete 系。
+- 対象：公開UI・記事・プロフィール・見出し・紹介文・CTA・案内文など、
+  ユーザーの目に触れる表示すべて。
+
+### 8.2 Internal Identifiers（内部識別子は不変）
+- ファイル名・URL・slug・画像ファイル名・内部変数・既存ID は **互換性維持のため変更しない**
+  （例：`about-tete.html` / `tete-profile.webp` / `assets/tete/` / `id="tete"`）。
+- 変更するのは **表示名のみ**。技術的識別子には手を触れない。
+
+### 8.3 No-Rename Invariant（改名再提案の禁止）
+- 「Teteに戻す」「ファイル名も変更」「URLも変更」等の提案は **恒久的に禁止**。
+- Invariant として Chapter 2.6 と同格に扱い、レビューでも前提とする。
+
+### 8.4 Improvement Policy（完成度を磨くフェーズ）
+- 現フェーズは「新機能を増やす」ではなく **「完成度を磨く」**。新機能追加は原則非優先。
+- 優先順位：①第一印象 ②ブランド強化 ③実写写真の充実 ④HP適切な簡素化 ⑤信頼性・品質の継続向上。
+- 改善提案は UX / UI / ブランド / 写真品質 / 導線 / 可読性 / 操作性 / 信頼性 を優先し、
+  **既存資産を磨く**ことを基本とする。
+- ホームページ戦略は **「Rebuild」ではなく「Re-orchestrate」**（既存資産を活かして完成度を高める）。
