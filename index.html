@@ -308,6 +308,18 @@
     line-height:1.7;
   }
   footer a{color:var(--accent);text-decoration:none;}
+  /* Phase5-F: フッター法務リンクのタップ領域拡大（WCAG 2.5.8）。
+     HTML/文言/URLは非変更。inline-block＋縦paddingで押せる高さを確保。
+     ｜区切りは各リンクの外側テキストのため、横paddingでも相互に重ならない。 */
+  footer .wrap p a{
+    display:inline-block;
+    padding:14px 4px;
+    line-height:1.2;
+    vertical-align:middle;
+  }
+  @media(max-width:480px){
+    footer .wrap p a{padding:13px 4px;}
+  }
   .disclaimer{
     font-size:.76rem;
     color:#9aa89d;
