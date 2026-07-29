@@ -1,0 +1,85 @@
+name: "99 Bootstrap Labels (setup)"
+
+# 一度だけ実行してラベルを作成する（Secret不要・GITHUB_TOKEN のみ）。
+# 実運用パイプラインではない。PHASE_0.5 ⑤ の全ラベルを冪等に作成する。
+on:
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Create labels (idempotent)
+        run: |
+          set -e
+          create() { gh label create "$1" --repo "${{ github.repository }}" --color "$2" --description "$3" --force; }
+          # type:
+          create "type:idea" "fbca04" "企画の種"
+          create "type:plan" "fbca04" "企画"
+          create "type:script" "fbca04" "脚本"
+          create "type:asset" "fbca04" "画像/音声等アセット"
+          create "type:video" "fbca04" "動画"
+          create "type:qa" "fbca04" "品質チェック"
+          create "type:review" "fbca04" "レビュー(CD/ブランド)"
+          create "type:ops" "fbca04" "運用"
+          create "type:cost" "fbca04" "コスト"
+          create "type:incident" "fbca04" "障害"
+          create "type:improvement" "fbca04" "改善"
+          create "type:brand-violation" "b60205" "ブランド違反"
+          create "type:constitution" "5319e7" "憲法改訂"
+          # status:
+          create "status:todo" "ededed" "未着手"
+          create "status:in-progress" "0e8a16" "作業中"
+          create "status:blocked" "b60205" "ブロック"
+          create "status:waiting-owner" "fef2c0" "人間ゲート待ち"
+          create "status:done" "0e8a16" "完了"
+          create "status:rejected" "e99695" "却下"
+          # stage:
+          create "stage:idea" "c5def5" "工程:企画の種"
+          create "stage:planning" "c5def5" "工程:企画中(承認で付与)"
+          create "stage:script" "c5def5" "工程:脚本"
+          create "stage:image" "c5def5" "工程:画像(Phase2.1+)"
+          create "stage:video" "c5def5" "工程:動画(Phase2.2+)"
+          create "stage:qa" "c5def5" "工程:品質チェック"
+          create "stage:review" "c5def5" "工程:レビュー(Phase2+)"
+          create "stage:ready" "c5def5" "工程:Ready Package生成済み"
+          create "stage:published" "0e8a16" "工程:オーナー投稿済み"
+          create "stage:analytics" "c5def5" "工程:分析(Phase5+)"
+          create "stage:improvement" "c5def5" "工程:改善(Phase5+)"
+          # priority:
+          create "priority:P0" "b60205" "即時"
+          create "priority:P1" "d93f0b" "今週"
+          create "priority:P2" "fbca04" "バックログ"
+          # department:
+          create "department:strategy" "d4c5f9" ""
+          create "department:production" "d4c5f9" ""
+          create "department:quality" "d4c5f9" ""
+          create "department:brand" "d4c5f9" ""
+          create "department:distribution" "d4c5f9" ""
+          create "department:analytics" "d4c5f9" ""
+          create "department:infra" "d4c5f9" ""
+          create "department:audit" "d4c5f9" ""
+          # quality:
+          create "quality:pass" "0e8a16" "合格"
+          create "quality:reject" "b60205" "不合格"
+          create "quality:needs-fix" "e99695" "要修正(差戻し)"
+          # cost:
+          create "cost:free" "0e8a16" "無料枠内"
+          create "cost:near-limit" "fbca04" "無料枠残少"
+          create "cost:paid-proposed" "d93f0b" "有料化提案(要オーナー決裁)"
+          # risk:
+          create "risk:low" "c2e0c6" ""
+          create "risk:medium" "fbca04" ""
+          create "risk:high" "d93f0b" ""
+          create "risk:critical" "b60205" ""
+          # automation:
+          create "automation:auto" "1d76db" "自動実行対象"
+          create "automation:manual-gate" "fef2c0" "人間ゲート"
+          create "automation:halted" "b60205" "緊急停止対象"
+          echo "labels created."
