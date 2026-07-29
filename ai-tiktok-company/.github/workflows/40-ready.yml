@@ -1,0 +1,36 @@
+name: "40 Ready Package (投稿)"
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  ready:
+    if: github.event.label.name == 'stage:ready'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは AI TikTok Company の投稿担当です。prompts/publisher.md を Read して従ってください。
+            **実際の投稿はしません**（投稿は人間ゲート＝オーナー）。
+            対象 Issue 番号: ${{ github.event.issue.number }}
+
+            手順:
+            1) gh issue view ${{ github.event.issue.number }} --comments で台本と qa-to-ready JSON を取得する。
+            2) Ready Package を作る: キャプション2案 / ハッシュタグ群 / 投稿時間案。
+               TikTok の文字数・ハッシュタグ数の上限は ※要検証 として推測で断定しない。
+            3) ready-to-owner JSON を含む Ready Package を gh issue comment で投稿する。
+            4) gh issue edit ${{ github.event.issue.number }} --add-label "status:waiting-owner"
+            これで Sprint 1 の自動工程は完了。オーナーが確認・投稿後 stage:published を付ける。
+          claude_args: |
+            --max-turns 10
+            --allowedTools Bash,Read

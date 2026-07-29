@@ -1,0 +1,41 @@
+name: "00 Idea (CEO)"
+
+# 手動起動でテーマから Idea Issue を作る。オーナーが stage:planning を付けると企画へ進む。
+on:
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: "動画テーマ"
+        required: true
+        type: string
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  idea:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは AI TikTok Company の CEO です。
+            まず prompts/ceo.md を Read してあなたの役割契約を把握してください。
+            次に、以下のテーマから Idea Issue の本文を作り、gh で Issue を作成してください。
+
+            テーマ: ${{ github.event.inputs.theme }}
+
+            手順:
+            1) prompts/ceo.md に従い Idea 本文(Markdown)を作る。
+            2) gh issue create でタイトルと本文を作成し、ラベル type:idea,stage:idea,department:strategy を付ける。
+               例) gh issue create --title "<タイトル>" --body "<本文>" --label "type:idea,stage:idea,department:strategy"
+            3) 作成した Issue 番号を最後に出力する。
+            事実の需要根拠が無い場合は demand_source を unknown と明記し、推測で measured としないこと。
+          claude_args: |
+            --max-turns 8
+            --allowedTools Bash,Read

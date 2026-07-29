@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "qa -> ready payload (Sprint 1: CD/review は未実装のため QA 単独)",
+  "type": "object",
+  "required": ["final_ref", "tech_score", "factuality", "issues"],
+  "additionalProperties": false,
+  "properties": {
+    "final_ref": { "type": "string" },
+    "tech_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "factuality": { "type": "string", "enum": ["pass", "fail"] },
+    "issues": { "type": "array", "items": { "type": "string" } }
+  }
+}

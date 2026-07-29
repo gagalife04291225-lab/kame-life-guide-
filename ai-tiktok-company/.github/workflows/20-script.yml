@@ -1,0 +1,36 @@
+name: "20 Script (脚本)"
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  script:
+    if: github.event.label.name == 'stage:script'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは AI TikTok Company の脚本担当です。prompts/scriptwriter.md を Read して従ってください。
+            対象 Issue 番号: ${{ github.event.issue.number }}
+
+            手順:
+            1) gh issue view ${{ github.event.issue.number }} --comments で最新の plan-to-script JSON を取得する。
+               （差戻し quality:needs-fix がある場合は QA の修正指示も読み、反映する）
+            2) 品質ゲート G1(事実性:出典+確信度) / G2(文体) / G3(整合) / G4(尺±10%) を満たす台本を作る。
+            3) 台本(人間可読) + ```json の script-to-qa ペイロードを gh issue comment で投稿する。
+            4) gh issue edit ${{ github.event.issue.number }} --remove-label "stage:script" --add-label "stage:qa"
+               （quality:needs-fix ラベルが付いていれば --remove-label "quality:needs-fix" も付ける）
+            事実未確認は断定せず「※要検証」と書くこと。
+          claude_args: |
+            --max-turns 12
+            --allowedTools Bash,Read

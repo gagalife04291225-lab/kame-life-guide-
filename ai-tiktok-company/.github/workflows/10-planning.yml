@@ -1,0 +1,35 @@
+name: "10 Planning (企画)"
+
+# オーナーが stage:planning ラベルを付けたら起動（Idea 承認ゲート）。
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  planning:
+    if: github.event.label.name == 'stage:planning'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは AI TikTok Company の企画担当です。prompts/planner.md を Read して従ってください。
+            対象 Issue 番号: ${{ github.event.issue.number }}
+
+            手順:
+            1) gh issue view ${{ github.event.issue.number }} --comments で Idea 本文と経緯を読む。
+            2) contracts/plan-to-script.schema.json に準拠した企画仕様を作る（カニバリ確認・尺・ターゲット・訴求）。
+            3) 成果物(人間可読の企画 + ```json の plan-to-script ペイロード)を gh issue comment で投稿する。
+            4) gh issue edit ${{ github.event.issue.number }} --remove-label "stage:planning" --add-label "stage:script"
+            需要が unknown のまま断定しないこと（※要検証と明記）。
+          claude_args: |
+            --max-turns 10
+            --allowedTools Bash,Read

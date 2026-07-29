@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "idea -> plan payload",
+  "type": "object",
+  "required": ["theme", "demand_source", "differentiation"],
+  "additionalProperties": false,
+  "properties": {
+    "theme": { "type": "string" },
+    "demand_source": { "type": "string", "enum": ["measured", "predicted", "unknown"] },
+    "differentiation": { "type": "string" }
+  }
+}

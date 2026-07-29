@@ -1,0 +1,41 @@
+name: "30 QA (品質管理)"
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  qa:
+    if: github.event.label.name == 'stage:qa'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは AI TikTok Company の品質管理(QA)担当です。prompts/qa.md を Read して従ってください。
+            対象 Issue 番号: ${{ github.event.issue.number }}
+
+            手順:
+            1) gh issue view ${{ github.event.issue.number }} --comments で台本と script-to-qa JSON を取得する。
+            2) 各事実主張に CLAIM/SOURCE/CONFIDENCE/DOUBT/RECONCILE を適用。事実性が fail なら不合格。
+            3) 技術品質を100点満点で採点（Sprint1で未実装の項目は N/A と明記し比例配分）。
+            4) qa-to-ready JSON を含む採点結果を gh issue comment で投稿する。
+            5) 判定に応じてラベル操作:
+               - 合格(tech_score>=80 かつ factuality=pass):
+                 gh issue edit ... --remove-label "stage:qa" --add-label "stage:ready" --add-label "quality:pass"
+               - 不合格: 過去コメントで自分の不合格回数を数える。
+                 * 3回未満: gh issue edit ... --remove-label "stage:qa" --add-label "quality:needs-fix" --add-label "stage:script"
+                 * 3回目: gh issue edit ... --remove-label "stage:qa" --add-label "status:waiting-owner" --add-label "risk:high"
+                   （差戻さず停止しオーナーへ委ねる。無限ループ防止）
+            迷ったら差戻す（憲法: 正確性 ＞ 再生数）。
+          claude_args: |
+            --max-turns 12
+            --allowedTools Bash,Read
