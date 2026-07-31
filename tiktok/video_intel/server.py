@@ -72,7 +72,7 @@ a{color:var(--ac)}
 <h2>改善提案（AI Director / ルールエンジン）</h2>
 <pre id="sug">上の表の行をクリックすると表示されます</pre>
 
-<h2>OSSランキング（実測値のみ）</h2>
+<p class="note"><a href="/research">→ ODIN Research Dashboard（会社全体の状態）</a></p>\n<h2>OSSランキング（実測値のみ）</h2>
 <div class="row"><input id="cat" placeholder="カテゴリ（空欄=全件）"><button onclick="oss()">表示</button></div>
 <div class="wrap"><table id="o"><thead></thead><tbody></tbody></table></div>
 
@@ -121,6 +121,70 @@ async function oss(){
 load(); oss();
 </script></body></html>"""
 
+def research_page(o):
+    """Phase18 Research Dashboard（依存ゼロ・単一HTML）"""
+    K, X, S, O, B = o["knowledge"], o["experiments"], o["statistics"], o["oss"], o["benchmark"]
+    def pct(v): return "—（判定不能）" if v is None else "%.1f%%" % v
+    cards = [
+        ("知識数（確定）", K["knowledge"]), ("仮説数", K["hypothesis"]),
+        ("否定済み知識", K["refuted"]), ("実験数", X["total"]),
+        ("成功率", pct(X["success_rate_pct"])), ("失敗率", pct(X["failure_rate_pct"])),
+        ("統計成立数", S["established"]), ("判定不能数", S["undecidable"]),
+        ("採用OSS候補", O["adopt"]), ("保留OSS", O["hold"]), ("除外OSS", O["reject"]),
+        ("Evidence 総数", o["evidence"]["total"]),
+        ("デザイン資産", o["design"]["assets"]), ("会社の記憶", o["memory"]["total"]),
+        ("解析済み動画", o["data"]["videos"]), ("実績付き動画", o["data"]["videos_with_outcome"]),
+    ]
+    cd = "".join('<div class="card"><div class="k">%s</div><div class="v">%s</div></div>'
+                 % (html.escape(str(a)), html.escape(str(b))) for a, b in cards)
+    lw = "".join("<li><b>%s</b> — %s：%s</li>" % (html.escape(w["repo"]), html.escape(w["license"] or ""),
+                                                  html.escape(w["note"])) for w in O["license_warnings"]) \
+         or "<li>警告なし</li>"
+    bs = "".join("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
+        html.escape(s["source"]), "可" if s["reachable"] else "<b>不可</b>",
+        html.escape(str(s["http"])), "必要" if s["requires_key"] else "不要") for s in B["sources"])
+    lr = "".join("<li>[%s] <b>%s</b> %s — %s <span class=note>(%s)</span></li>" % (
+        html.escape(r["kind"]), html.escape(r["id"]), html.escape(r["title"]),
+        html.escape(str(r["status"])), html.escape(str(r["at"]))) for r in o["latest_research"]) or "<li>なし</li>"
+    uh = "".join("<li><span class=note>%s</span> <b>%s</b>: %s — %s</li>" % (
+        html.escape(str(h["at"])), html.escape(h["id"]), html.escape(h["title"]),
+        html.escape(str(h["status"]))) for h in o["update_history"]) or "<li>なし</li>"
+    sr = "".join("<li>%s — PASS %d / FAIL %d</li>" % (html.escape(str(r["reviewed_at"])), r["passed"], r["failed"])
+                 for r in o["self_reviews"]) or "<li>未実施</li>"
+    suf = o["data"]["sufficiency"]
+    return """<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ODIN Research Dashboard</title><style>
+:root{--bg:#0d1f1a;--fg:#f4efe2;--ac:#d4a96a;--line:#2f4a3c;--warn:#e0705c}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,"Noto Sans JP",sans-serif;margin:0;padding:24px}
+h1{color:var(--ac);border-bottom:2px solid var(--ac);padding-bottom:10px;margin-top:0}
+h2{color:var(--ac);font-size:17px;margin-top:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.03)}
+.card .k{font-size:12px;color:#c9c2b0}.card .v{font-size:26px;color:var(--ac);font-weight:700;margin-top:4px}
+table{border-collapse:collapse;width:100%%;font-size:13px}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:var(--line)}
+ul{line-height:1.8;font-size:13.5px}
+pre{background:#06100d;padding:14px;border-radius:10px;overflow-x:auto;font-size:12px}
+.note{color:#c9c2b0;font-size:12px}
+a{color:var(--ac)}
+</style></head><body>
+<h1>ODIN Research Dashboard <span class=note>%s</span></h1>
+<p class="note">推測は表示しない。判定できないものは「判定不能」と出す。 / <a href="/">解析ダッシュボードへ</a></p>
+<h2>会社の状態</h2><div class="grid">%s</div>
+<h2>ライセンス警告</h2><ul>%s</ul>
+<h2>競合監視（Benchmark）— 観測 %d件（実測 %d / 未取得 %d）</h2>
+<table><thead><tr><th>ソース</th><th>到達</th><th>HTTP</th><th>APIキー</th></tr></thead><tbody>%s</tbody></table>
+<h2>最新研究</h2><ul>%s</ul>
+<h2>更新履歴（デザイン資産）</h2><ul>%s</ul>
+<h2>自己監査の履歴</h2><ul>%s</ul>
+<h2>データ充足</h2><pre>%s</pre>
+</body></html>""" % (html.escape(o["generated_at"]), cd, lw,
+                      B["observations"], B["measured"], B["unavailable"], bs, lr, uh, sr,
+                      html.escape(json.dumps(suf, ensure_ascii=False, indent=2)))
+
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
 
@@ -155,7 +219,8 @@ class H(BaseHTTPRequestHandler):
                 if not rows:
                     return self._send(404, "text/plain; charset=utf-8", "見つかりません")
                 p = director.plan(rows[0], topic=rows[0].get("label") or "",
-                                  sufficiency=db.data_sufficiency(con))
+                                  sufficiency=db.data_sufficiency(con),
+                                  con=con, sha1=rows[0].get("sha1"))
                 return self._send(200, "text/plain; charset=utf-8",
                                   json.dumps(p, ensure_ascii=False, indent=2))
             if u.path == "/api/compare":
@@ -164,6 +229,15 @@ class H(BaseHTTPRequestHandler):
                 res = stats.compare_groups(a, b)
                 return self._send(200, "text/plain; charset=utf-8",
                                   json.dumps(res, ensure_ascii=False, indent=2))
+            if u.path == "/api/company":
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import company as CO
+                return self._send(200, "application/json; charset=utf-8",
+                                  json.dumps(CO.overview(con), ensure_ascii=False))
+            if u.path == "/research":
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import company as CO
+                return self._send(200, "text/html; charset=utf-8", research_page(CO.overview(con)))
             if u.path.startswith("/export."):
                 ext = u.path.split(".")[-1]
                 rows = db.query(con, q.get("where", ["1=1"])[0], (), 5000, "duration_sec")

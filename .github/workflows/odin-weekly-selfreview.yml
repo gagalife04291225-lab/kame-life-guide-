@@ -1,0 +1,86 @@
+name: ODIN Weekly Self Review
+
+# Phase17: 毎週、自分自身を監査する。
+#   推測混入 / 統計不足 / 古い知識 / 重複知識 / ライセンス違反 /
+#   OSS更新漏れ / Evidence欠落 / 未取得の放置
+# 問題があれば **修正案つきで** Issue を作る。
+# 完全無料（GitHub Actions 無料枠 + 標準 GITHUB_TOKEN のみ。LLM APIは呼ばない）。
+
+on:
+  schedule:
+    - cron: "0 22 * * 0"     # 毎週月曜 07:00 JST（= 日曜 22:00 UTC）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  self-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: 依存（必須3つのみ）
+        run: pip install --quiet numpy imageio-ffmpeg Pillow
+
+      - name: 競合監視の到達可否を更新（Phase12）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/odin
+          PYTHONPATH=tiktok python3 - <<'PY'
+          import sys, os
+          sys.path.insert(0, "tiktok"); sys.path.insert(0, "tiktok/video_intel")
+          from video_intel import db as DB
+          import benchmark_dept as BD
+          con = DB.connect("tiktok/research/titan.db")
+          r = BD.run_all(con)
+          print("観測ソース %d / GitHub観測 %d件" % (len(r["sources"]), r["github_repos_observed"]))
+          open("/tmp/odin/benchmark.md", "w", encoding="utf-8").write(BD.render(con))
+          PY
+
+      - name: 自己監査を実行（Phase17）
+        run: |
+          PYTHONPATH=tiktok python3 - <<'PY'
+          import sys, json
+          sys.path.insert(0, "tiktok"); sys.path.insert(0, "tiktok/video_intel")
+          from video_intel import db as DB
+          import self_review as SR, company as CO
+          con = DB.connect("tiktok/research/titan.db")
+          rep = SR.review(con)
+          md = SR.render(rep) + "\n---\n\n" + CO.render(con) + "\n---\n\n" + \
+               open("/tmp/odin/benchmark.md", encoding="utf-8").read()
+          open("/tmp/odin/review.md", "w", encoding="utf-8").write(md)
+          # FAIL があるとき、または修正案があるときだけ通知する
+          open("/tmp/odin/notify", "w").write("1" if (rep["failed"] or rep["fixes"]) else "0")
+          print(md[:4000])
+          PY
+
+      - name: 問題があれば Issue で通知
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$(cat /tmp/odin/notify)" != "1" ]; then
+            echo "健全。Issueは作らない"; exit 0
+          fi
+          TITLE="ODIN Self Review: 自己監査結果 ($(date +%Y-%m-%d))"
+          BODY=$(python3 -c "import json;print(json.dumps(open('/tmp/odin/review.md',encoding='utf-8').read()[:60000]))")
+          curl -sS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/issues" \
+            -d "{\"title\":\"$TITLE\",\"body\":$BODY,\"labels\":[\"odin\",\"self-review\"]}" \
+            -o /tmp/odin/issue.json -w "HTTP %{http_code}\n"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odin-weekly-selfreview
+          path: /tmp/odin/
+          if-no-files-found: ignore

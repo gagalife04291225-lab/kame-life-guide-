@@ -21,6 +21,7 @@ Claude Code などの MCP クライアントから TITAN の解析機能を直�
 """
 import sys, os, json
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from video_intel import engine, db, stats, director
 from video_intel.oss import rank as ossrank
@@ -55,6 +56,21 @@ TOOLS = [
          inputSchema=dict(type="object", properties=dict(category=dict(type="string")))),
     dict(name="odin_data_sufficiency",
          description="AI Directorが提案を出してよいかを判定する。データ不足なら提案は保留される。",
+         inputSchema=dict(type="object", properties={})),
+    dict(name="odin_company_overview",
+         description="会社全体の状態（知識数/実験数/成功率/統計成立数/判定不能数/OSS/ライセンス警告/最新研究）。",
+         inputSchema=dict(type="object", properties={})),
+    dict(name="odin_knowledge",
+         description="知識レコードの一覧。『知識』は統計的裏づけとEvidenceを持つものだけ。満たさないものは仮説。",
+         inputSchema=dict(type="object", properties=dict(status=dict(type="string"), category=dict(type="string")))),
+    dict(name="odin_experiments",
+         description="実験の一覧と判定（採用/却下/保留/判定不能）。",
+         inputSchema=dict(type="object", properties={})),
+    dict(name="odin_memory_check",
+         description="これから行う変更が、過去に失敗・却下した記憶と衝突しないか照会する。行動前に必ず呼ぶ。",
+         inputSchema=dict(type="object", required=["proposal"], properties=dict(proposal=dict(type="string")))),
+    dict(name="odin_self_review",
+         description="自己監査を実行する（推測混入/統計不足/古い知識/重複/ライセンス/OSS更新/Evidence欠落/未取得放置）。",
          inputSchema=dict(type="object", properties={})),
     dict(name="titan_oss_rank",
          description="調査済みOSSを実測値のみでランキングする。カテゴリで絞り込み可。",
@@ -105,6 +121,25 @@ def call(name, args):
         return dict(coverage=C.coverage(reg["repos"]), repos=sorted(rows, key=lambda r: -r["stars"])[:40])
     if name == "odin_data_sufficiency":
         con = db.connect(DB); r = db.data_sufficiency(con); con.close(); return r
+    if name == "odin_company_overview":
+        import company as CO
+        con = db.connect(DB); r = CO.overview(con); con.close(); return r
+    if name == "odin_knowledge":
+        import knowledge_engine as KE
+        con = db.connect(DB)
+        r = dict(summary=KE.stats_summary(con),
+                 records=KE.list_records(con, args.get("status"), args.get("category")))
+        con.close(); return r
+    if name == "odin_experiments":
+        import experiment_engine as XE
+        con = db.connect(DB)
+        r = dict(summary=XE.summary(con), experiments=XE.list_all(con)); con.close(); return r
+    if name == "odin_memory_check":
+        import memory_engine as ME
+        con = db.connect(DB); r = ME.check_before_action(con, args["proposal"]); con.close(); return r
+    if name == "odin_self_review":
+        import self_review as SR
+        con = db.connect(DB); r = SR.review(con); con.close(); return r
     if name == "titan_oss_rank":
         return ossrank.rank(args.get("category"), int(args.get("top", 20)))
     raise ValueError("unknown tool: %s" % name)

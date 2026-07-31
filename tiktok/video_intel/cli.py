@@ -152,6 +152,88 @@ def cmd_improvement(a):
         for r in db.get_improvements(con):
             print("- %s → %s : %s" % (r["sha1_from"][:8], r["sha1_to"][:8], r["change"]))
 
+# ── ODIN v2.0 ─────────────────────────────────────────────
+def _v2():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+def cmd_kn(a):
+    _v2(); import knowledge_engine as KE
+    con = db.connect(a.db)
+    if a.add:
+        r = KE.add(con, a.add, a.category, a.claim or a.add,
+                   video_ids=(a.videos.split(",") if a.videos else None),
+                   source_docs=(a.docs.split(",") if a.docs else None),
+                   force_hypothesis=a.hypothesis)
+        print("登録: %s status=%s confidence=%s Evidence=%s" % (r["kid"], r["status"], r["confidence"], r["evidence_id"]))
+        if r["downgrade_reasons"]:
+            print("  仮説に落ちた理由: " + " / ".join(r["downgrade_reasons"]))
+        return
+    if a.refute:
+        print(KE.refute(con, a.refute, a.reason or "自己監査による否定")); return
+    print(KE.render(con))
+
+def cmd_ex(a):
+    _v2(); import experiment_engine as XE
+    con = db.connect(a.db)
+    if a.design:
+        eid = XE.design(con, a.design, a.hypothesis or a.design, a.variable or a.metric,
+                        a.metric, a.direction, a.group_a, a.group_b, a.outcome)
+        print("設計: %s" % eid)
+        if a.run:
+            r = XE.run(con, eid)
+            print("実行: %s → %s  %s" % (r["eid"], r["verdict"], r["note"]))
+        return
+    if a.run_eid:
+        r = XE.run(con, a.run_eid)
+        print("%s → %s  n=%d/%d  %s" % (r["eid"], r["verdict"], r["n_a"], r["n_b"], r["note"])); return
+    print(XE.render(con))
+
+def cmd_benchmark(a):
+    _v2(); import benchmark_dept as BD
+    con = db.connect(a.db)
+    if a.run:
+        BD.run_all(con)
+    print(BD.render(con))
+
+def cmd_design(a):
+    _v2(); import design_lab as DL
+    con = db.connect(a.db)
+    if a.seed:
+        print("初期投入: %d件" % DL.seed(con)); return
+    if a.set_key:
+        print(DL.update(con, a.set_key, a.value, a.reason)); return
+    print(DL.render(con))
+
+def cmd_memory(a):
+    _v2(); import memory_engine as ME
+    con = db.connect(a.db)
+    if a.check:
+        r = ME.check_before_action(con, a.check)
+        print(r["verdict"])
+        for c in r["conflicts"]:
+            print("  ⚠ %s [%s] %s（類似 %.2f / 共通句『%s』）" % (
+                c["mid"], c["kind_ja"], c["title"], c["similarity"], c.get("common_phrase") or "-"))
+        print("  " + r["note"]); return
+    if a.add:
+        print("記録:", ME.remember(con, a.kind, a.add, a.detail or a.add,
+                                   source_docs=[a.doc] if a.doc else None)); return
+    print(ME.render(con))
+
+def cmd_review(a):
+    _v2(); import self_review as SR
+    con = db.connect(a.db)
+    rep = SR.review(con)
+    print(SR.render(rep))
+    if a.out:
+        open(a.out, "w", encoding="utf-8").write(SR.render(rep)); print("保存: %s" % a.out)
+
+def cmd_dashboard(a):
+    _v2(); import company as CO
+    con = db.connect(a.db)
+    print(CO.render(con))
+    if a.out:
+        open(a.out, "w", encoding="utf-8").write(CO.render(con)); print("保存: %s" % a.out)
+
 def cmd_serve(a):
     from video_intel import server
     server.serve(a.port, a.db)
@@ -204,6 +286,32 @@ def main():
     p = sub.add_parser("improvement")
     p.add_argument("--from", dest="from_sha"); p.add_argument("--to", dest="to_sha")
     p.add_argument("--change"); p.set_defaults(fn=cmd_improvement)
+
+    p = sub.add_parser("kn"); p.add_argument("--add"); p.add_argument("--category", default="編集テンポ")
+    p.add_argument("--claim"); p.add_argument("--videos"); p.add_argument("--docs")
+    p.add_argument("--hypothesis", action="store_true")
+    p.add_argument("--refute"); p.add_argument("--reason"); p.set_defaults(fn=cmd_kn)
+
+    p = sub.add_parser("ex"); p.add_argument("--design"); p.add_argument("--hypothesis")
+    p.add_argument("--variable"); p.add_argument("--metric", default="longest_static_sec")
+    p.add_argument("--direction", default="decrease", choices=["increase", "decrease"])
+    p.add_argument("--group-a", dest="group_a", default="1=1")
+    p.add_argument("--group-b", dest="group_b", default="1=0")
+    p.add_argument("--outcome"); p.add_argument("--run", action="store_true")
+    p.add_argument("--run-eid", dest="run_eid"); p.set_defaults(fn=cmd_ex)
+
+    p = sub.add_parser("benchmark"); p.add_argument("--run", action="store_true"); p.set_defaults(fn=cmd_benchmark)
+
+    p = sub.add_parser("design"); p.add_argument("--seed", action="store_true")
+    p.add_argument("--set", dest="set_key"); p.add_argument("--value"); p.add_argument("--reason")
+    p.set_defaults(fn=cmd_design)
+
+    p = sub.add_parser("memory"); p.add_argument("--check"); p.add_argument("--add")
+    p.add_argument("--kind", default="failure_factor"); p.add_argument("--detail"); p.add_argument("--doc")
+    p.set_defaults(fn=cmd_memory)
+
+    p = sub.add_parser("review"); p.add_argument("--out"); p.set_defaults(fn=cmd_review)
+    p = sub.add_parser("dashboard"); p.add_argument("--out"); p.set_defaults(fn=cmd_dashboard)
 
     p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=8765); p.set_defaults(fn=cmd_serve)
 

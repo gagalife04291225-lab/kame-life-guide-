@@ -11,7 +11,7 @@ TITAN AI Director — 解析結果から診断と改善提案を生成する。
 しきい値の出所: tiktok/DESIGN-SYSTEM.md（さらにその根拠は research/RESEARCH-REPORT.md）
 LLMを使いたい場合は ollama が入っていれば narrative() が文章化する。無ければ箇条書きのまま。
 """
-import json, shutil, subprocess
+import json, shutil, subprocess, os, sys
 
 # ルール: (id, 判定関数, 重大度, 指摘, 改善指示, 根拠)
 RULES = [
@@ -96,7 +96,26 @@ def diagnose(m):
                          not any(h["severity"] == "BLOCKER" for h in hits) else "要修正"),
                 note="スコアは DESIGN-SYSTEM v1.0 の数値要件からの減点方式。BLOCKERが1つでもあれば公開不可。")
 
-def plan(m, topic="カメの誤解 #N", sufficiency=None):
+def diagnose_with_evidence(con, m, sha1=None):
+    """Phase16: 指摘1件ずつに Evidence ID を付ける。
+    **Evidence の無い提案は返さない。** 付けられない指摘は落とす。"""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import evidence as EV
+    import memory_engine as ME
+    d = diagnose(m)
+    sha1 = sha1 or m.get("sha1")
+    if sha1:
+        d["findings"] = EV.attach_to_findings(con, d["findings"], sha1, m)
+    d["findings"] = [f for f in d["findings"] if f.get("evidence_id")]
+    # Phase15: 修正案が過去の失敗・却下と衝突しないか照会する
+    for f in d["findings"]:
+        chk = ME.check_before_action(con, f.get("fix") or "")
+        f["memory_check"] = dict(verdict=chk["verdict"],
+                                 conflicts=[c["mid"] + " " + c["title"] for c in chk["conflicts"]])
+    d["evidence_policy"] = "すべての指摘に Evidence ID を付与済み。根拠のない提案は返さない。"
+    return d
+
+def plan(m, topic="カメの誤解 #N", sufficiency=None, con=None, sha1=None):
     """企画〜投稿計画を生成する。
 
     **Phase7 のゲート**: sufficiency が与えられ、かつ不足している場合は
@@ -106,7 +125,7 @@ def plan(m, topic="カメの誤解 #N", sufficiency=None):
     ただし `quality`（診断）は常に返す。診断は実測値としきい値の照合であって、
     予測ではないから。この区別が ODIN の設計上の核心。
     """
-    d = diagnose(m)
+    d = diagnose_with_evidence(con, m, sha1) if con is not None else diagnose(m)
     if sufficiency is not None and not sufficiency.get("sufficient"):
         return dict(
             topic=topic,
