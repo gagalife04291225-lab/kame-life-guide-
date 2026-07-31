@@ -1,0 +1,117 @@
+[
+  {
+    "label": "tiktok-01-v3-ds.mp4",
+    "file": "tiktok-01-v3-ds.mp4",
+    "duration_sec": 41.4,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "aspect_9_16": true,
+    "frames_analyzed": 1242,
+    "cuts": {
+      "count": 25,
+      "per_10sec": 6.04,
+      "times": [
+        1.0,
+        1.9,
+        2.1,
+        3.3,
+        5.1,
+        6.3,
+        7.9,
+        9.73,
+        11.53,
+        13.53,
+        15.13,
+        16.93,
+        17.13,
+        18.73,
+        20.53,
+        22.13,
+        23.93,
+        25.53,
+        27.33,
+        29.13,
+        30.93,
+        32.33,
+        34.73,
+        36.53,
+        38.73
+      ]
+    },
+    "shot_length": {
+      "n": 26,
+      "mean": 1.592,
+      "median": 1.8,
+      "variance": 0.302,
+      "stdev": 0.549,
+      "min": 0.2,
+      "max": 2.667,
+      "over_2sec_ratio_pct": 11.5
+    },
+    "screen_change": {
+      "significant_change_frames": 77,
+      "per_sec": 1.86,
+      "longest_static_run_sec": 1.5
+    },
+    "motion": {
+      "mean_frame_diff": 1.27,
+      "median_frame_diff": 0.64,
+      "zoom_ring_center_ratio": 2.898,
+      "zoom_interpretation": "周辺優位（ズーム/スケール変化あり）"
+    },
+    "caption_bands": {
+      "share_pct_top_to_bottom": [
+        5.4,
+        35.9,
+        27.4,
+        30.9,
+        0.5
+      ],
+      "dominant_band": 2,
+      "note": "画面を縦5分割し、エッジ密度の分布から文字・図の存在位置を推定。1=最上部, 5=最下部"
+    },
+    "color": {
+      "mean_rgb": [
+        20.2,
+        38.8,
+        31.9
+      ],
+      "mean_hex": "#14261f",
+      "mean_brightness_0_255": 30.3,
+      "mean_contrast_stdev": 17.6,
+      "mean_saturation_0_1": 0.535
+    },
+    "opening": {
+      "first_0_5s": {
+        "frames": 15,
+        "mean_change": 1.47,
+        "max_change": 2.89,
+        "cuts": 0,
+        "significant_changes": 1
+      },
+      "first_1s": {
+        "frames": 30,
+        "mean_change": 2.11,
+        "max_change": 19.26,
+        "cuts": 0,
+        "significant_changes": 2
+      },
+      "first_3s": {
+        "frames": 90,
+        "mean_change": 2.58,
+        "max_change": 29.86,
+        "cuts": 3,
+        "significant_changes": 31
+      }
+    },
+    "not_measured": [
+      "ナレーション速度（音声解析 未対応）",
+      "BGMテンポ/BPM（音声解析 未対応）",
+      "SE使用箇所・効果音（音声解析 未対応）",
+      "実写/CG/AI生成の割合（分類モデル未導入。目視分類で補完すること）",
+      "驚き・笑いの位置、感情変化（意味理解が必要。人手アノテーション必須）",
+      "離脱ポイント（TikTok Analytics の保持率グラフからのみ取得可能）"
+    ]
+  }
+]
