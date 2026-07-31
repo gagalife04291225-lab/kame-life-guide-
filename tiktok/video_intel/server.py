@@ -154,7 +154,8 @@ class H(BaseHTTPRequestHandler):
                 rows = db.query(con, "v.sha1=?", (q.get("sha1", [""])[0],), 1, "duration_sec")
                 if not rows:
                     return self._send(404, "text/plain; charset=utf-8", "見つかりません")
-                p = director.plan(rows[0], topic=rows[0].get("label") or "")
+                p = director.plan(rows[0], topic=rows[0].get("label") or "",
+                                  sufficiency=db.data_sufficiency(con))
                 return self._send(200, "text/plain; charset=utf-8",
                                   json.dumps(p, ensure_ascii=False, indent=2))
             if u.path == "/api/compare":

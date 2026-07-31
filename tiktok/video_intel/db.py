@@ -44,6 +44,15 @@ CREATE TABLE IF NOT EXISTS outcomes (
 CREATE TABLE IF NOT EXISTS metrics (
   sha1 TEXT, key TEXT, value REAL, PRIMARY KEY (sha1, key)
 );
+CREATE TABLE IF NOT EXISTS knowledge (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sha1 TEXT, kind TEXT, text TEXT, evidence TEXT, confidence TEXT, created_at TEXT
+);
+CREATE TABLE IF NOT EXISTS improvements (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sha1_from TEXT, sha1_to TEXT, change TEXT, metric_deltas TEXT, created_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_kn    ON knowledge(sha1, kind);
 CREATE INDEX IF NOT EXISTS idx_dur   ON videos(duration_sec);
 CREATE INDEX IF NOT EXISTS idx_genre ON videos(genre);
 """
@@ -128,3 +137,67 @@ def query(con, where="1=1", params=(), limit=100, order="duration_sec"):
            "FROM videos v LEFT JOIN outcomes o ON v.sha1=o.sha1 "
            "WHERE %s ORDER BY %s LIMIT ?" % (where, order))
     return [dict(r) for r in con.execute(sql, list(params)+[limit])]
+
+
+# ── 知識DB（Phase5: 成功要因 / 失敗要因 / 改善履歴） ─────────────────
+
+KINDS = ("success_factor", "failure_factor", "note", "hypothesis")
+
+def add_knowledge(con, sha1, kind, text, evidence=None, confidence="中", created_at="1970-01-01"):
+    """成功要因・失敗要因を記録する。
+    evidence には**実測値または統計結果**を入れる。感想は入れない。"""
+    if kind not in KINDS:
+        raise ValueError("kind は %s のいずれか" % (KINDS,))
+    con.execute("INSERT INTO knowledge (sha1,kind,text,evidence,confidence,created_at) VALUES (?,?,?,?,?,?)",
+                (sha1, kind, text, evidence, confidence, created_at))
+    con.commit()
+
+def get_knowledge(con, sha1=None, kind=None):
+    w, p = ["1=1"], []
+    if sha1: w.append("sha1=?"); p.append(sha1)
+    if kind: w.append("kind=?"); p.append(kind)
+    return [dict(r) for r in con.execute(
+        "SELECT * FROM knowledge WHERE %s ORDER BY id DESC" % " AND ".join(w), p)]
+
+TRACKED = ["duration_sec", "cuts", "cuts_per_10sec", "shot_median", "shot_variance",
+           "over_2sec_ratio_pct", "change_per_sec", "longest_static_sec", "mean_frame_diff",
+           "zoom_events", "brightness", "contrast", "open_0_5s_change", "open_3s_cuts", "loop_gap"]
+
+def add_improvement(con, sha1_from, sha1_to, change, created_at="1970-01-01"):
+    """改善履歴。指標の差分を自動計算して保存する（何をしたら何が動いたかを残す）"""
+    a = con.execute("SELECT * FROM videos WHERE sha1=?", (sha1_from,)).fetchone()
+    b = con.execute("SELECT * FROM videos WHERE sha1=?", (sha1_to,)).fetchone()
+    if not a or not b:
+        raise ValueError("対象の動画がDBにありません")
+    d = {}
+    for k in TRACKED:
+        va, vb = a[k], b[k]
+        if isinstance(va, (int, float)) and isinstance(vb, (int, float)):
+            d[k] = dict(before=va, after=vb, delta=round(vb - va, 4))
+    con.execute("INSERT INTO improvements (sha1_from,sha1_to,change,metric_deltas,created_at) VALUES (?,?,?,?,?)",
+                (sha1_from, sha1_to, change, json.dumps(d, ensure_ascii=False), created_at))
+    con.commit()
+    return d
+
+def get_improvements(con):
+    rows = []
+    for r in con.execute("SELECT * FROM improvements ORDER BY id"):
+        r = dict(r); r["metric_deltas"] = json.loads(r["metric_deltas"]); rows.append(r)
+    return rows
+
+def data_sufficiency(con, min_videos=10, min_outcomes=5):
+    """Phase7 のゲート: データが足りているかを判定する。
+    足りていなければ AI Director は提案を出さない。"""
+    n_v = con.execute("SELECT COUNT(*) FROM videos").fetchone()[0]
+    n_o = con.execute("SELECT COUNT(DISTINCT sha1) FROM outcomes").fetchone()[0]
+    ok = (n_v >= min_videos and n_o >= min_outcomes)
+    missing = []
+    if n_v < min_videos:
+        missing.append("解析済み動画が %d本（必要 %d本）" % (n_v, min_videos))
+    if n_o < min_outcomes:
+        missing.append("実績データ付き動画が %d本（必要 %d本）" % (n_o, min_outcomes))
+    return dict(sufficient=ok, videos=n_v, videos_with_outcome=n_o,
+                required=dict(videos=min_videos, outcomes=min_outcomes),
+                missing=missing,
+                note=("データ十分。提案生成を許可する。" if ok else
+                      "**データ不足。台本・投稿戦略の提案は行わない。** 解析と実績登録を先に行うこと。"))

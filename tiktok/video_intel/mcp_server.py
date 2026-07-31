@@ -47,6 +47,15 @@ TOOLS = [
     dict(name="titan_diagnose",
          description="解析済み動画の改善提案を返す（DESIGN-SYSTEM v1.0のしきい値によるルールエンジン）。",
          inputSchema=dict(type="object", required=["sha1"], properties=dict(sha1=dict(type="string")))),
+    dict(name="odin_research_report",
+         description="Research Departmentの日次レポートを生成する（新着OSS評価・ライセンス確認・現行構成との比較）。",
+         inputSchema=dict(type="object", properties={})),
+    dict(name="odin_oss_capabilities",
+         description="OSSのWindows/Docker/GPU/CPU/Python/CLI/API対応と保守状況・導入難易度を返す。topics由来の導出であり実行検証ではない。",
+         inputSchema=dict(type="object", properties=dict(category=dict(type="string")))),
+    dict(name="odin_data_sufficiency",
+         description="AI Directorが提案を出してよいかを判定する。データ不足なら提案は保留される。",
+         inputSchema=dict(type="object", properties={})),
     dict(name="titan_oss_rank",
          description="調査済みOSSを実測値のみでランキングする。カテゴリで絞り込み可。",
          inputSchema=dict(type="object", properties=dict(
@@ -76,10 +85,26 @@ def call(name, args):
     if name == "titan_diagnose":
         con = db.connect(DB)
         rows = db.query(con, "v.sha1=?", (args["sha1"],), 1, "duration_sec")
+        suf = db.data_sufficiency(con)
         con.close()
         if not rows:
             return dict(error="該当する動画がDBにありません")
-        return director.plan(rows[0], topic=rows[0].get("label") or "")
+        return director.plan(rows[0], topic=rows[0].get("label") or "", sufficiency=suf)
+    if name == "odin_research_report":
+        from research_dept import daily_report
+        md, data = daily_report()
+        return dict(markdown=md, adopt=data["adopt"], test=data["test"],
+                    hold=data["hold"], rejected=len(data["reject"]))
+    if name == "odin_oss_capabilities":
+        from oss import capabilities as C
+        reg = ossrank.load()
+        rows = [C.enrich(r) for r in reg["repos"]]
+        cat = args.get("category")
+        if cat:
+            rows = [r for r in rows if cat in r["category"]]
+        return dict(coverage=C.coverage(reg["repos"]), repos=sorted(rows, key=lambda r: -r["stars"])[:40])
+    if name == "odin_data_sufficiency":
+        con = db.connect(DB); r = db.data_sufficiency(con); con.close(); return r
     if name == "titan_oss_rank":
         return ossrank.rank(args.get("category"), int(args.get("top", 20)))
     raise ValueError("unknown tool: %s" % name)

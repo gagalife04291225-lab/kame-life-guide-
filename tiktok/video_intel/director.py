@@ -96,11 +96,31 @@ def diagnose(m):
                          not any(h["severity"] == "BLOCKER" for h in hits) else "要修正"),
                 note="スコアは DESIGN-SYSTEM v1.0 の数値要件からの減点方式。BLOCKERが1つでもあれば公開不可。")
 
-def plan(m, topic="カメの誤解 #N"):
-    """企画〜投稿計画までの雛形を、実測に基づく数値入りで生成する"""
+def plan(m, topic="カメの誤解 #N", sufficiency=None):
+    """企画〜投稿計画を生成する。
+
+    **Phase7 のゲート**: sufficiency が与えられ、かつ不足している場合は
+    台本・編集方針・字幕・CTA・投稿戦略を **生成しない**。
+    データが足りないのに戦略を出すことは、推測を事実として渡すことになるため。
+
+    ただし `quality`（診断）は常に返す。診断は実測値としきい値の照合であって、
+    予測ではないから。この区別が ODIN の設計上の核心。
+    """
     d = diagnose(m)
+    if sufficiency is not None and not sufficiency.get("sufficient"):
+        return dict(
+            topic=topic,
+            generation="withheld",
+            reason="データ不足のため台本・編集方針・字幕・CTA・投稿戦略は生成しない",
+            missing=sufficiency.get("missing"),
+            required=sufficiency.get("required"),
+            note=("診断（quality）は実測値としきい値の照合なので提示する。"
+                  "戦略の生成は統計的裏づけが必要なため保留する。"),
+            quality=d,
+        )
     return dict(
         topic=topic,
+        generation="allowed",
         structure=["1 フック前半 0-1.0s（何の動画かを画で示す＋テロップ1行目）",
                    "2 フック後半 -1.9s（同じ被写体へ寄る／ハードカット）",
                    "3 否定 -3.3s", "4 実演 -6.3s", "5 視覚的証明 -15s",

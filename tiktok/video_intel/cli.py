@@ -111,6 +111,47 @@ def cmd_oss(a):
     sys.argv = ["rank"] + ([a.category] if a.category else [])
     R.main()
 
+def cmd_research(a):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from research_dept import daily_report
+    md, _ = daily_report()
+    print(md)
+    if a.out:
+        open(a.out, "w", encoding="utf-8").write(md); print("保存: %s" % a.out)
+
+def cmd_caps(a):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from oss import capabilities as C
+    sys.argv = ["caps"] + ([a.category] if a.category else [])
+    C.main()
+
+def cmd_sufficiency(a):
+    con = db.connect(a.db)
+    r = db.data_sufficiency(con)
+    print(json.dumps(r, ensure_ascii=False, indent=2))
+
+def cmd_knowledge(a):
+    con = db.connect(a.db)
+    if a.add:
+        db.add_knowledge(con, a.sha1, a.kind, a.add, a.evidence, a.confidence,
+                         datetime.date.today().isoformat())
+        print("記録しました")
+    for k in db.get_knowledge(con, a.sha1, a.kind if a.add is None else None):
+        print("[%s] %s\n    根拠: %s（確度 %s）" % (k["kind"], k["text"], k["evidence"], k["confidence"]))
+
+def cmd_improvement(a):
+    con = db.connect(a.db)
+    if a.from_sha and a.to_sha:
+        d = db.add_improvement(con, a.from_sha, a.to_sha, a.change or "",
+                               datetime.date.today().isoformat())
+        print("改善履歴を記録:")
+        for k, v in d.items():
+            if v["delta"]:
+                print("  %-22s %s → %s (%+.3f)" % (k, v["before"], v["after"], v["delta"]))
+    else:
+        for r in db.get_improvements(con):
+            print("- %s → %s : %s" % (r["sha1_from"][:8], r["sha1_to"][:8], r["change"]))
+
 def cmd_serve(a):
     from video_intel import server
     server.serve(a.port, a.db)
@@ -152,6 +193,18 @@ def main():
     p.set_defaults(fn=cmd_export)
 
     p = sub.add_parser("oss"); p.add_argument("category", nargs="?"); p.set_defaults(fn=cmd_oss)
+    p = sub.add_parser("research"); p.add_argument("--out"); p.set_defaults(fn=cmd_research)
+    p = sub.add_parser("caps"); p.add_argument("category", nargs="?"); p.set_defaults(fn=cmd_caps)
+    p = sub.add_parser("sufficiency"); p.set_defaults(fn=cmd_sufficiency)
+
+    p = sub.add_parser("knowledge"); p.add_argument("--sha1"); p.add_argument("--kind")
+    p.add_argument("--add"); p.add_argument("--evidence"); p.add_argument("--confidence", default="中")
+    p.set_defaults(fn=cmd_knowledge)
+
+    p = sub.add_parser("improvement")
+    p.add_argument("--from", dest="from_sha"); p.add_argument("--to", dest="to_sha")
+    p.add_argument("--change"); p.set_defaults(fn=cmd_improvement)
+
     p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=8765); p.set_defaults(fn=cmd_serve)
 
     a = ap.parse_args()

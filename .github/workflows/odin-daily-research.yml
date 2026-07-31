@@ -1,0 +1,152 @@
+name: ODIN Daily Research
+
+# Research Department の日次自動実行。
+#   1. OSS新着調査（直近14日の新規リポジトリ）
+#   2. 既存レジストリの更新監視（star/更新日の変化）
+#   3. 採用候補の評価（ライセンス・GPU必須・保守状況で自動除外）
+#   4. 既存構成との比較（**現行より優れている場合のみ**候補として提案）
+#   5. 更新レポート生成 → 変化があれば Issue 通知
+#
+# 完全無料: GitHub Actions 無料枠 + 標準の GITHUB_TOKEN のみ。LLM API は呼ばない。
+
+on:
+  schedule:
+    - cron: "0 21 * * *"      # 毎日 06:00 JST（= 21:00 UTC 前日）
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 1) OSS新着調査＋更新監視
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/odin
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.parse, datetime, time
+          REG = "tiktok/video_intel/oss/registry.json"
+          reg = json.load(open(REG, encoding="utf-8"))
+          known = {r["full_name"]: r for r in reg["repos"]}
+
+          TOPICS = ["video-processing","scene-detection","ocr","speech-recognition","subtitles",
+                    "pose-estimation","object-detection","face-recognition","audio-analysis",
+                    "vector-database","mcp-server","ai-agents","computer-vision","whisper",
+                    "image-processing","video-summarization","embeddings","data-visualization"]
+
+          def api(url):
+              req = urllib.request.Request(url, headers={
+                  "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+                  "Accept": "application/vnd.github+json", "User-Agent": "odin-research"})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return json.load(r)
+
+          since = (datetime.date.today() - datetime.timedelta(days=14)).isoformat()
+          new_repos, updates = [], []
+
+          for t in TOPICS:
+              # (a) 新着
+              q = "topic:%s stars:>300 created:>%s" % (t, since)
+              try:
+                  data = api("https://api.github.com/search/repositories?q=%s&sort=stars&per_page=10"
+                             % urllib.parse.quote(q))
+              except Exception as e:
+                  print("skip new/%s: %s" % (t, e)); data = {"items": []}
+              for it in data.get("items", []):
+                  if it["full_name"] in known or it.get("archived"):
+                      continue
+                  new_repos.append(dict(
+                      full_name=it["full_name"], category=t, stars=it["stargazers_count"],
+                      forks=it["forks_count"], issues=it["open_issues_count"],
+                      updated=it["updated_at"][:10], created=it["created_at"][:10],
+                      lang=it.get("language"), archived=False,
+                      license=(it.get("license") or {}).get("key"),
+                      topics=it.get("topics") or [], url=it["html_url"],
+                      desc=(it.get("description") or "")[:160]))
+                  known[it["full_name"]] = new_repos[-1]
+              # (b) 既存の更新監視（同トピックの上位を取り直して star 変化を見る）
+              q2 = "topic:%s stars:>3000" % t
+              try:
+                  d2 = api("https://api.github.com/search/repositories?q=%s&sort=stars&per_page=10"
+                           % urllib.parse.quote(q2))
+              except Exception as e:
+                  print("skip upd/%s: %s" % (t, e)); d2 = {"items": []}
+              for it in d2.get("items", []):
+                  old = known.get(it["full_name"])
+                  if not old or "stars" not in old:
+                      continue
+                  ds = it["stargazers_count"] - old["stars"]
+                  if abs(ds) >= 500 or (old.get("archived") is False and it.get("archived")):
+                      updates.append(dict(full_name=it["full_name"], star_delta=ds,
+                                          stars=it["stargazers_count"],
+                                          now_archived=bool(it.get("archived"))))
+              time.sleep(1)          # search API のレート制限に配慮
+
+          json.dump(new_repos, open("/tmp/odin/new.json", "w"), ensure_ascii=False, indent=1)
+          json.dump(updates, open("/tmp/odin/updates.json", "w"), ensure_ascii=False, indent=1)
+          print("新着 %d件 / 変化 %d件" % (len(new_repos), len(updates)))
+          PY
+
+      - name: 2) 採用候補の評価と現行構成との比較
+        run: |
+          python3 - <<'PY'
+          import json, sys, datetime
+          sys.path.insert(0, "tiktok/video_intel")
+          from research_dept import daily_report
+
+          new = json.load(open("/tmp/odin/new.json", encoding="utf-8"))
+          upd = json.load(open("/tmp/odin/updates.json", encoding="utf-8"))
+          today = datetime.date.today().isoformat()
+
+          md, data = daily_report(new if new else None, today=today)
+          extra = []
+          if upd:
+              extra += ["", "## 既存OSSの変化（star ±500以上 / アーカイブ化）", "",
+                        "| repo | star変化 | 現在 | アーカイブ |", "|------|---------|------|-----------|"]
+              for u in sorted(upd, key=lambda x: -abs(x["star_delta"]))[:20]:
+                  extra.append("| %s | %+d | %d | %s |" % (
+                      u["full_name"], u["star_delta"], u["stars"], "★はい" if u["now_archived"] else "いいえ"))
+          if not new:
+              extra += ["", "> 直近14日の新着候補は **0件**。レジストリ全体の再点検結果を上に示す。"]
+          md = md + "\n".join(extra) + "\n"
+          open("/tmp/odin/report.md", "w", encoding="utf-8").write(md)
+
+          # 通知が必要か: 採用候補 or 比較検証対象 or 重要な変化があるときだけ
+          notify = bool(data["adopt"] or data["test"] or upd or new)
+          open("/tmp/odin/notify", "w").write("1" if notify else "0")
+          print(md[:3000])
+          PY
+
+      - name: 3) 変化があれば Issue で通知
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$(cat /tmp/odin/notify)" != "1" ]; then
+            echo "変化なし。Issueは作らない"; exit 0
+          fi
+          TITLE="ODIN Research: 日次OSS調査 ($(date +%Y-%m-%d))"
+          BODY=$(python3 -c "import json;print(json.dumps(open('/tmp/odin/report.md',encoding='utf-8').read()[:60000]))")
+          curl -sS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/issues" \
+            -d "{\"title\":\"$TITLE\",\"body\":$BODY,\"labels\":[\"odin\",\"research\"]}" \
+            -o /tmp/odin/issue.json -w "HTTP %{http_code}\n"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odin-daily-research
+          path: /tmp/odin/
+          if-no-files-found: ignore
