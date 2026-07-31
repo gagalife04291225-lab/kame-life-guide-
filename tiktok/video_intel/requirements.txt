@@ -1,0 +1,25 @@
+# TITAN 必須依存（これだけで全機能が動く。GPU不要・追加課金なし）
+numpy>=1.26
+imageio-ffmpeg>=0.5
+Pillow>=10.0
+
+# ── 任意依存（入れなくても動く。入れると測定できる項目が増える）──────────
+# 入れない場合、該当指標は None を返し not_measured に理由が残る。
+#
+# OCR（字幕文字数・字幕テキスト）  ※ tesseract 本体も別途必要
+# pytesseract>=0.3.10
+#
+# ASR（ナレーション速度・発話区間）
+# faster-whisper>=1.0
+#
+# 姿勢・表情・視線（Apache-2.0）
+# mediapipe>=0.10
+#
+# 物体/動物/人物検出
+#   ★ ultralytics は AGPL-3.0（実測）。WebUIなどネットワーク越しに提供すると
+#     ソース公開義務が発生しうる。社内研究用途に限定するか、
+#     商用ライセンス取得、または Apache-2.0 の代替（mediapipe 等）を使うこと。
+# ultralytics>=8.3
+#
+# 動画取得（TikTok/YouTubeの利用規約を必ず遵守すること）
+# yt-dlp>=2025.1
