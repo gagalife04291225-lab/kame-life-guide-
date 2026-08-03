@@ -142,7 +142,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'SANKO パンテオン ブラック BK9045',
+    rakutenSearchTerm: 'パンテオン ケージ 9045',
   },
 
   // ── Task2 追加 ──
@@ -263,7 +263,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'リクガメ 小屋 木製',
+    rakutenSearchTerm: 'リクガメ ケージ 木製',
   },
 
   enclosure_wood_120_generic: {
@@ -378,7 +378,7 @@ const PRODUCTS = {
     asin: 'B09T96TPHJ',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'アルカディア T5 UVB',
+    rakutenSearchTerm: '爬虫類 UVB T5',
     image: '/assets/products/placeholder.webp',
     why: '森林・湿潤系ガメに向く中強度UVB。発色が自然で観察用としても見やすい',
     rating: 4.5,
@@ -474,7 +474,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'アルカディア T5 デザート',
+    rakutenSearchTerm: '爬虫類 T5 UVB ライト',
   },
 
 
@@ -712,7 +712,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'インテンスバスキングスポット',
+    rakutenSearchTerm: 'EXOTERRA インテンス バスキングスポットランプ',
   },
 
   basking_exoterra_halogen: {
@@ -730,7 +730,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'エキゾテラ ハロゲン バスキング',
+    rakutenSearchTerm: 'EXOTERRA ハロゲン バスキングスポットランプ',
   },
 
   basking_arcadia_deep_heat_projector: {
@@ -748,7 +748,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ディープヒートプロジェクター 爬虫類',
+    rakutenSearchTerm: 'ディープヒートプロジェクター',
   },
 
   /* ══════════════════════════════════════════
@@ -951,7 +951,7 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_forest'],
-    rakutenSearchTerm: 'ヒーティングケーブル 爬虫類', // Phase 39-P6: ワット数不一致(20W→25W)も含め商品名に統一
+    rakutenSearchTerm: 'ヒートケーブル 保温', // Phase 39-P6: ワット数不一致(20W→25W)も含め商品名に統一
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -1019,7 +1019,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '調光式 サーモスタット 爬虫類',
+    rakutenSearchTerm: '爬虫類 サーモスタット 温度',
   },
 
   /* ══════════════════════════════════════════
@@ -1222,7 +1222,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'レプトフィルター テトラ',
+    rakutenSearchTerm: 'テトラ 亀 フィルター',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -1242,7 +1242,7 @@ const PRODUCTS = {
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'フルーバル 外部フィルター',
+    rakutenSearchTerm: 'フルーバル FX6',
   },
 
   /* ══════════════════════════════════════════
@@ -1356,7 +1356,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX EXOTERRA デザートベース 細目 3L', // Phase 39-P6: 商品名変更に伴い検索語も統一
+    rakutenSearchTerm: 'エキゾテラ デザートベース', // Phase 39-P6: 商品名変更に伴い検索語も統一
   },
 
   substrate_sphagnum_moss: {
@@ -1394,7 +1394,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '大磯砂 水槽',
+    rakutenSearchTerm: '大磯砂',
   },
 
   // Phase 39-P2: このASIN(B07PGZN9CF)はsubstrate_cypressと完全に同一の実商品（GEX EXOTERRA フォレストバーク8.8L）で
@@ -1413,7 +1413,7 @@ const PRODUCTS = {
     asin: 'B07PGZN9CF',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'フォレストバーク 爬虫類', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
+    rakutenSearchTerm: 'フォレストバーク', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
     image: '/assets/products/placeholder.webp',
     why: '天然ベイマツ樹皮の崩れにくい床材。高い保湿・調湿効果で森林系リクガメやハコガメに向き、チップが大きく通気性も保ちやすい', // Phase 39-P6: 3文→2文に統一
     rating: 4.6,
@@ -1456,7 +1456,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'プランテーションソイル',
+    rakutenSearchTerm: 'プランテーション ソイル',
   },
 
 
@@ -1522,7 +1522,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'コルクバーク 爬虫類',
+    rakutenSearchTerm: 'コルクバーク',
   },
 
   shelter_moist_hide: {
@@ -1625,7 +1625,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'エキゾテラ レプタイルケイブ',
+    rakutenSearchTerm: 'レプタイルケイブ',
   },
 
   shelter_sanko_rock: {
@@ -1947,7 +1947,7 @@ const PRODUCTS = {
     recommendedFor: ['box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'レップカル シータートルフード',
+    rakutenSearchTerm: 'ビバリア シータートルフード',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-07-01',
   },
@@ -2272,7 +2272,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 プロバイオティクス 腸内環境',
+    rakutenSearchTerm: '爬虫類 乳酸菌 サプリ',
   },
 
 
