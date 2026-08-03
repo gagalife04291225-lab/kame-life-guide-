@@ -846,10 +846,14 @@ async function main() {
   const { src, products } = loadProducts();
   const today = new Date().toISOString().slice(0, 10);
 
-  // Collect candidates: status === "search" or "available"
+  // Collect candidates: status === "search" / "available" / "pending"
+  // pending は「楽天に該当商品の在庫が無い」ため CTA を出していない商品。
+  // 対象から外すと在庫が復活しても永久に気付けないので、問い合わせ自体は行い
+  // 昇格はせずログにだけ残す（下の PENDING_HIT を参照）。
   const targets = Object.entries(products).filter(function(entry) {
     const p = entry[1];
-    return p && (p.rakutenStatus === 'search' || p.rakutenStatus === 'available');
+    return p && (p.rakutenStatus === 'search' || p.rakutenStatus === 'available' ||
+                 p.rakutenStatus === 'pending');
   });
 
   console.log('[rakuten-sync] Targets: ' + targets.length);
@@ -862,6 +866,7 @@ async function main() {
     changed: [],
     failed: [],
     demoted: [],
+    pendingHits: [],
     noResult: 0,
   };
 
@@ -964,6 +969,17 @@ async function main() {
       continue;
     }
 
+    // pending は自動昇格させない（該当商品が無いことを人が確認して付けた状態）。
+    // 在庫が戻った可能性だけをログに出し、判断は人に残す。
+    if (product.rakutenStatus === 'pending') {
+      if (bestScore >= CONFIDENCE_THRESHOLD) {
+        console.log('[PENDING_HIT] ' + productId + ' score=' + bestScore +
+                    ' — 楽天に候補あり。実商品かを確認して search へ戻すか判断すること');
+        report.pendingHits.push(productId + ' (' + bestScore + ')');
+      }
+      continue;
+    }
+
     const updates = { rakutenLastUpdated: today };
     const prevStatus = product.rakutenStatus;
 
@@ -1055,7 +1071,12 @@ async function main() {
   console.log('Skipped:        ' + report.skipped);
   console.log('No result:      ' + report.noResult);
   console.log('Demoted:        ' + report.demoted.length);
+  console.log('Pending hits:   ' + report.pendingHits.length);
   console.log('Failed:         ' + report.failed.length);
+  if (report.pendingHits.length) {
+    console.log('\nPending products with a Rakuten candidate (在庫復活の可能性・要目視確認):');
+    report.pendingHits.forEach(function(l) { console.log('  - ' + l); });
+  }
   if (report.demoted.length) {
     console.log('\nDemoted products (在庫確認できず価格/URLをクリア):');
     report.demoted.forEach(function(l) { console.log('  - ' + l); });

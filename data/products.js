@@ -244,8 +244,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'beginner'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'リクガメ 飼育セット ケージ',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Zoo Med ReptiHabitat リクガメ',
   },
 
   enclosure_tortoise_house_zm: {
@@ -262,8 +262,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'リクガメ ケージ 木製',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Zoo Med Tortoise House',
   },
 
   enclosure_wood_120_generic: {
@@ -377,8 +377,8 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09T96TPHJ?tag=kamelife09-22',
     asin: 'B09T96TPHJ',
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 UVB T5',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Arcadia T5 HO 6% UVB',
     image: '/assets/products/placeholder.webp',
     why: '森林・湿潤系ガメに向く中強度UVB。発色が自然で観察用としても見やすい',
     rating: 4.5,
@@ -473,8 +473,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 T5 UVB ライト',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Arcadia ProT5 Kit Desert 12%',
   },
 
 
@@ -711,8 +711,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'beginner'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'EXOTERRA インテンス バスキングスポットランプ',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'エキゾテラ インテンスバスキングスポット',
   },
 
   basking_exoterra_halogen: {
@@ -729,8 +729,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'EXOTERRA ハロゲン バスキングスポットランプ',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'エキゾテラ ハロゲンバスキングスポット',
   },
 
   basking_arcadia_deep_heat_projector: {
@@ -747,8 +747,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'ディープヒートプロジェクター',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Arcadia Deep Heat Projector',
   },
 
   /* ══════════════════════════════════════════
@@ -1018,8 +1018,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 サーモスタット 温度',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Habistat Dimming Thermostat',
   },
 
   /* ══════════════════════════════════════════
@@ -1221,8 +1221,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'テトラ 亀 フィルター',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'テトラ レプトフィルター 10i',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -1241,8 +1241,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'フルーバル FX6',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Fluval FX6 外部フィルター',
   },
 
   /* ══════════════════════════════════════════
@@ -1394,7 +1394,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '大磯砂',
+    rakutenSearchTerm: '水作 大磯砂',
   },
 
   // Phase 39-P2: このASIN(B07PGZN9CF)はsubstrate_cypressと完全に同一の実商品（GEX EXOTERRA フォレストバーク8.8L）で
@@ -1412,8 +1412,8 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07PGZN9CF?tag=kamelife09-22',
     asin: 'B07PGZN9CF',
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'フォレストバーク', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'エキゾテラ フォレストバーク 8.8L', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
     image: '/assets/products/placeholder.webp',
     why: '天然ベイマツ樹皮の崩れにくい床材。高い保湿・調湿効果で森林系リクガメやハコガメに向き、チップが大きく通気性も保ちやすい', // Phase 39-P6: 3文→2文に統一
     rating: 4.6,
@@ -1437,8 +1437,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 床材 土',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'Arcadia EarthMix 床材',
   },
 
   substrate_exoterra_plantation_soil: {
@@ -1455,8 +1455,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'プランテーション ソイル',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'エキゾテラ プランテーションソイル',
   },
 
 
@@ -1683,8 +1683,8 @@ const PRODUCTS = {
     badge: null,
     recommendedFor: ['beginner'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 水入れ 皿',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'SANKO レプタイルディッシュ',
   },
 
   /* ══════════════════════════════════════════
@@ -1727,7 +1727,7 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium', 'fully_aquatic'],
-    rakutenSearchTerm: '水温計 デジタル 水槽',
+    rakutenSearchTerm: 'INKBIRD 水温計',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -1946,8 +1946,8 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['box_turtle'],
     rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenSearchTerm: 'ビバリア シータートルフード',
+    rakutenStatus: 'pending',
+    rakutenSearchTerm: 'ビバリア レップカル シータートルフード',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-07-01',
   },
