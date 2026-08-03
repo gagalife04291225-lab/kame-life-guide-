@@ -73,7 +73,10 @@ const CATEGORY_GUARDS = {
   filter:           ['フィルター', 'ポンプ', 'ろ過'],
   enclosure:        ['ケージ', '水槽', 'ケース', '爬虫類'],
   substrate:        ['床材', '土', 'サンド', 'マット', 'バーク', 'マルチ'],
-  heating:          ['ヒーター', '保温', 'パネル'],
+  // 'サーモ' はサーモスタット用。heating カテゴリにはサーモスタット商品が
+  // 含まれるが、商品名に「ヒーター/保温/パネル」を含まないため全候補が
+  // ガードで落ちていた（例: コトブキ工芸 ヒュドラサーモ HT-330XD）
+  heating:          ['ヒーター', '保温', 'パネル', 'サーモ'],
   shelter:          ['シェルター', '隠れ家', 'コルク'],
   food:             ['フード', '餌', 'エサ', 'ペレット'],
   supplements:      ['カルシウム', 'サプリ', 'ビタミン'],
@@ -549,6 +552,32 @@ function patchProductInSource(src, productId, updates) {
   return src.slice(0, startIdx) + block + src.slice(blockEnd);
 }
 
+// ─── Stale commerce data demotion ────────────────────────────
+// API は availability=1（在庫あり商品のみ）で問い合わせているため、
+// 「該当なし(NO_RESULT)」「全候補がガードで却下(REJECTED)」は
+// 『いま買える該当商品が楽天に無い』ことを意味する。
+// このとき過去に取得した価格・アフィリエイトURLを残したままにすると、
+// 在庫切れ・販売終了の商品にリンクし、古い価格を表示し続けることになる。
+// そこで商用フィールドを持つ商品だけを search CTA に降格し、値をクリアする。
+// （商用フィールドを持たない商品は何も書かないので、日々の差分は増えない）
+function demoteStaleCommerce(src, productId, product, today, report, reason) {
+  const hasCommerce =
+    product.rakutenUrl != null || product.rakutenPrice != null ||
+    product.rakutenItemCode != null || product.rakutenShop != null;
+  if (!hasCommerce) return src;
+
+  console.log('[DEMOTED] ' + productId + ' — ' + reason + ': 在庫確認できず価格/URLをクリア');
+  report.demoted.push(productId + ' (' + reason + ')');
+  return patchProductInSource(src, productId, {
+    rakutenStatus:     'search',
+    rakutenUrl:        null,
+    rakutenItemCode:   null,
+    rakutenPrice:      null,
+    rakutenShop:       null,
+    rakutenLastUpdated: today,
+  });
+}
+
 // ─── Rate limiter (Rakuten API: 1 req/sec safe) ───────────────
 function sleep(ms) {
   return new Promise(function(resolve) { setTimeout(resolve, ms); });
@@ -829,6 +858,7 @@ async function main() {
     skipped: Object.keys(products).length - targets.length,
     changed: [],
     failed: [],
+    demoted: [],
     noResult: 0,
   };
 
@@ -910,6 +940,7 @@ async function main() {
     if (!items.length) {
       console.log('[NO_RESULT] ' + productId);
       report.noResult++;
+      currentSrc = demoteStaleCommerce(currentSrc, productId, product, today, report, 'NO_RESULT');
       continue;
     }
 
@@ -926,6 +957,7 @@ async function main() {
 
     if (!bestItem) {
       console.log('[REJECTED] All candidates failed guards: ' + productId);
+      currentSrc = demoteStaleCommerce(currentSrc, productId, product, today, report, 'REJECTED');
       continue;
     }
 
@@ -992,7 +1024,9 @@ async function main() {
   }
 
   // Write only if changed
-  if (report.updated > 0) {
+  // 降格(demote)だけが起きた回も currentSrc は書き換わっているので、
+  // report.updated だけを見ると変更を取りこぼす
+  if (report.updated > 0 || report.demoted.length > 0) {
     // Final sanity check: verify output is valid JS
     try {
       const vm = require('vm');
@@ -1017,7 +1051,12 @@ async function main() {
   console.log('Search fallback:' + report.searchFallback);
   console.log('Skipped:        ' + report.skipped);
   console.log('No result:      ' + report.noResult);
+  console.log('Demoted:        ' + report.demoted.length);
   console.log('Failed:         ' + report.failed.length);
+  if (report.demoted.length) {
+    console.log('\nDemoted products (在庫確認できず価格/URLをクリア):');
+    report.demoted.forEach(function(l) { console.log('  - ' + l); });
+  }
   if (report.failed.length) {
     console.log('\nFailed products:');
     report.failed.forEach(function(l) { console.log('  - ' + l); });

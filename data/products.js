@@ -46,7 +46,7 @@ const PRODUCTS = {
     asin: 'B00BF91SU6',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX EXOTERRA グラステラリウム 9030',
+    rakutenSearchTerm: 'グラステラリウム 9030',
     image: '/assets/products/placeholder.webp',
     why: '両開きフロントドアで管理しやすいガラス製ケージ。リクガメに必要な広さを確保できる定番サイズ',
     rating: 4.3,
@@ -110,7 +110,7 @@ const PRODUCTS = {
     priceRange: '¥8,000–18,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004J2G6XK?tag=kamelife09-22',
     asin: 'B004J2G6XK',
-    rakutenSearchTerm: 'コトブキ工芸 KC-ワイド900 水槽',
+    rakutenSearchTerm: '水槽 90cm 亀',
     image: '/assets/products/placeholder.webp',
     why: '中型水棲ガメの単独飼育や、幼体の複数飼育を始めるならこのサイズから',
     rating: 4.4,
@@ -162,7 +162,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'プラケース 60L 爬虫類 飼育',
+    rakutenSearchTerm: '飼育ケース 特大 爬虫類',
   },
 
   enclosure_glass_45: {
@@ -178,7 +178,7 @@ const PRODUCTS = {
     rating: 4.0,
     badge: null,
     recommendedFor: ['beginner', 'small_aquatic'],
-    rakutenSearchTerm: 'GEX EXOTERRA グラステラリウム 4545',
+    rakutenSearchTerm: 'グラステラリウム 4545',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -225,7 +225,7 @@ const PRODUCTS = {
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'コトブキ工芸 アクアリスト KC-1200LT 120cm ガラス水槽', // Phase 39-P6: 「アクリル水槽」は誤り(実際はガラス製)だったため商品名に統一
+    rakutenSearchTerm: '水槽 120cm ガラス', // Phase 39-P6: 「アクリル水槽」は誤り(実際はガラス製)だったため商品名に統一
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -245,7 +245,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ReptiHabitat 40Gallon Zoo Med リクガメ',
+    rakutenSearchTerm: 'リクガメ 飼育セット ケージ',
   },
 
   enclosure_tortoise_house_zm: {
@@ -263,7 +263,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med Tortoise House リクガメ ケージ',
+    rakutenSearchTerm: 'リクガメ 小屋 木製',
   },
 
   enclosure_wood_120_generic: {
@@ -281,7 +281,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '木製ケージ 120 60 爬虫類 リクガメ',
+    rakutenSearchTerm: '爬虫類 木製ケージ 120cm',
   },
 
   tank_120_gex: {
@@ -299,7 +299,7 @@ const PRODUCTS = {
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX 120cm ガラス水槽 亀',
+    rakutenSearchTerm: 'GEX 水槽 120cm',
   },
 
 
@@ -317,7 +317,7 @@ const PRODUCTS = {
     asin: 'B00JZFJ5R0',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med ReptiSun 10.0 T5',
+    rakutenSearchTerm: 'ズーメッド レプティサン 10.0',
     image: '/assets/products/placeholder.webp',
     why: 'UV指数の高い乾燥系・リクガメ用UVBランプ。カルシウム代謝に必須',
     rating: 4.7,
@@ -335,7 +335,7 @@ const PRODUCTS = {
     asin: 'B00JZFJ5LQ',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med ReptiSun 5.0 T5',
+    rakutenSearchTerm: 'ズーメッド レプティサン 5.0',
     image: '/assets/products/placeholder.webp',
     why: '森林・半水棲ガメ向けのUVBランプ。適度なUV量でビタミンD3生成',
     rating: 4.6,
@@ -378,7 +378,7 @@ const PRODUCTS = {
     asin: 'B09T96TPHJ',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Arcadia T5 6% UVB 爬虫類',
+    rakutenSearchTerm: 'アルカディア T5 UVB',
     image: '/assets/products/placeholder.webp',
     why: '森林・湿潤系ガメに向く中強度UVB。発色が自然で観察用としても見やすい',
     rating: 4.5,
@@ -474,7 +474,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Arcadia ProT5 Kit Desert 12% UVB',
+    rakutenSearchTerm: 'アルカディア T5 デザート',
   },
 
 
@@ -569,7 +569,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ハロゲン バスキングランプ 35W 爬虫類',
+    rakutenSearchTerm: 'ハロゲン バスキング 爬虫類',
   },
 
   // Phase 39-P2: このASIN(B0043B3ZJ0)はGEX EXOTERRA サングローバスキングスポットランプ50W（標準白熱球）であり
@@ -712,7 +712,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Exo Terra Intense Basking Spot バスキングランプ',
+    rakutenSearchTerm: 'インテンスバスキングスポット',
   },
 
   basking_exoterra_halogen: {
@@ -730,7 +730,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Exo Terra ハロゲン バスキングスポット',
+    rakutenSearchTerm: 'エキゾテラ ハロゲン バスキング',
   },
 
   basking_arcadia_deep_heat_projector: {
@@ -748,7 +748,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_large', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Arcadia Deep Heat Projector 爬虫類',
+    rakutenSearchTerm: 'ディープヒートプロジェクター 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -887,7 +887,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ニッソー プロテクトPROヒーター 200W',
+    rakutenSearchTerm: '水中ヒーター 200W 亀',
     rakutenConfidence: 5.9,
     rakutenLastUpdated: '2026-07-01',
   },
@@ -951,7 +951,7 @@ const PRODUCTS = {
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_forest'],
-    rakutenSearchTerm: 'Zoo Med レプティヒートケーブル 25W', // Phase 39-P6: ワット数不一致(20W→25W)も含め商品名に統一
+    rakutenSearchTerm: 'ヒーティングケーブル 爬虫類', // Phase 39-P6: ワット数不一致(20W→25W)も含め商品名に統一
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -1001,7 +1001,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ニッソー 爬虫類 サーモスタット',
+    rakutenSearchTerm: 'ニッソー サーモスタット',
   },
 
   thermostat_habistat_dimming: {
@@ -1019,7 +1019,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Habistat Dimming Thermostat 爬虫類',
+    rakutenSearchTerm: '調光式 サーモスタット 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -1135,7 +1135,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'スポンジフィルター ダブル 亀 水槽',
+    rakutenSearchTerm: 'スポンジフィルター 亀',
   },
 
   filter_canister_premium: {
@@ -1222,7 +1222,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'テトラ レプトフィルター 亀 フィルター',
+    rakutenSearchTerm: 'レプトフィルター テトラ',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -1242,7 +1242,7 @@ const PRODUCTS = {
     recommendedFor: ['fully_aquatic', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Fluval FX6 外部フィルター',
+    rakutenSearchTerm: 'フルーバル 外部フィルター',
   },
 
   /* ══════════════════════════════════════════
@@ -1305,7 +1305,7 @@ const PRODUCTS = {
     asin: 'B06XC8YK4Y',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 床材 砂 ミックス',
+    rakutenSearchTerm: '爬虫類 床材 砂',
     image: '/assets/products/placeholder.webp',
     why: '乾燥系リクガメの穿孔行動を促す自然に近い床材',
     rating: 4.2,
@@ -1374,7 +1374,7 @@ const PRODUCTS = {
     recommendedFor: ['box_turtle', 'tortoise_forest'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'スファグナムモス 水苔 爬虫類',
+    rakutenSearchTerm: 'ミズゴケ 水苔',
   },
 
   // Phase 39-P4: ASIN(B00XVP3TPO)の実商品をweb_searchで確認したところ「水作 大磯砂 2.4kg」であり、
@@ -1394,7 +1394,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '水作 大磯砂 2.4kg',
+    rakutenSearchTerm: '大磯砂 水槽',
   },
 
   // Phase 39-P2: このASIN(B07PGZN9CF)はsubstrate_cypressと完全に同一の実商品（GEX EXOTERRA フォレストバーク8.8L）で
@@ -1413,7 +1413,7 @@ const PRODUCTS = {
     asin: 'B07PGZN9CF',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX EXOTERRA フォレストバーク 8.8L', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
+    rakutenSearchTerm: 'フォレストバーク 爬虫類', // Phase 39-P6: 「Zoo Med サイプレスマルチ」は誤り(ブランド不一致)だったため商品名に統一
     image: '/assets/products/placeholder.webp',
     why: '天然ベイマツ樹皮の崩れにくい床材。高い保湿・調湿効果で森林系リクガメやハコガメに向き、チップが大きく通気性も保ちやすい', // Phase 39-P6: 3文→2文に統一
     rating: 4.6,
@@ -1438,7 +1438,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Arcadia EarthMix 床材 爬虫類',
+    rakutenSearchTerm: '爬虫類 床材 土',
   },
 
   substrate_exoterra_plantation_soil: {
@@ -1456,7 +1456,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Exo Terra Plantation Soil 床材',
+    rakutenSearchTerm: 'プランテーションソイル',
   },
 
 
@@ -1479,7 +1479,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'スドー ロックシェルターSP S',
+    rakutenSearchTerm: 'スドー ロックシェルターSP',
   },
 
   shelter_medium: {
@@ -1522,7 +1522,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'コルクバーク 爬虫類 シェルター',
+    rakutenSearchTerm: 'コルクバーク 爬虫類',
   },
 
   shelter_moist_hide: {
@@ -1540,7 +1540,7 @@ const PRODUCTS = {
     recommendedFor: ['box_turtle', 'tortoise_forest'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '湿潤 シェルター モイスト 爬虫類',
+    rakutenSearchTerm: 'ウェットシェルター 爬虫類',
   },
 
 
@@ -1582,7 +1582,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ウッドハイド シェルター 爬虫類 木製',
+    rakutenSearchTerm: '爬虫類 シェルター 木製',
   },
 
   shelter_turtle_dock: {
@@ -1625,7 +1625,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Exo Terra Reptile Cave シェルター',
+    rakutenSearchTerm: 'エキゾテラ レプタイルケイブ',
   },
 
   shelter_sanko_rock: {
@@ -1643,7 +1643,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'semi_aquatic_small'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'SANKO ロックシェルター 爬虫類',
+    rakutenSearchTerm: 'ロックシェルター 爬虫類',
   },
 
   /* ══════════════════════════════════════════
@@ -1666,7 +1666,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med Repti Ramp Bowl 水入れ',
+    rakutenSearchTerm: '亀 水入れ スロープ',
   },
 
   waterdish_sanko_dish: {
@@ -1684,7 +1684,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'SANKO レプタイルディッシュ 水入れ',
+    rakutenSearchTerm: '爬虫類 水入れ 皿',
   },
 
   /* ══════════════════════════════════════════
@@ -1727,7 +1727,7 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium', 'fully_aquatic'],
-    rakutenSearchTerm: 'INKBIRD 水温計 Bluetooth',
+    rakutenSearchTerm: '水温計 デジタル 水槽',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -1878,7 +1878,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large', 'tortoise_forest'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Rep-Cal リクガメフード ビバリア',
+    rakutenSearchTerm: 'ビバリア レップカル リクガメフード',
   },
 
   // ── Task2 追加 ──
@@ -1947,7 +1947,7 @@ const PRODUCTS = {
     recommendedFor: ['box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Rep-Cal シータートルフード ビバリア',
+    rakutenSearchTerm: 'レップカル シータートルフード',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-07-01',
   },
@@ -1992,7 +1992,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced', 'tortoise_forest'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'リパシー ベジバーガー リクガメ',
+    rakutenSearchTerm: 'ベジバーガー 爬虫類',
   },
 
   food_hikari_turtle: {
@@ -2033,7 +2033,7 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '乾燥野草 リクガメ グラスランドサラダ',
+    rakutenSearchTerm: 'マルベリックドライ',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -2053,7 +2053,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ReptoMin テトラ 亀 餌',
+    rakutenSearchTerm: 'レプトミン テトラ',
   },
 
   food_mazuri_aquatic: {
@@ -2071,7 +2071,7 @@ const PRODUCTS = {
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Mazuri Aquatic Turtle Diet 亀 フード',
+    rakutenSearchTerm: 'mazuri 淡水ガメ',
   },
 
   food_mazuri_tortoise: {
@@ -2236,7 +2236,7 @@ const PRODUCTS = {
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'エレクトロライト 爬虫類 電解質',
+    rakutenSearchTerm: '爬虫類 サプリメント 電解質',
   },
 
   supplement_mineral_block: {
@@ -2254,7 +2254,7 @@ const PRODUCTS = {
     recommendedFor: ['beginner', 'tortoise_forest', 'box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'カトルボーン 甲イカ 亀 カルシウム',
+    rakutenSearchTerm: 'カトルボーン',
   },
 
   supplement_probiotics: {
