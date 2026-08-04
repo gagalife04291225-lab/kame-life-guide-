@@ -383,17 +383,6 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
-    reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
-    specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
-    coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
-    extraSpecs: { tankSize: '60cm〜' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: 'ouachita-map-turtle', hasPage: true,
-    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.intermediate||0) >= 1; },
-    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
-    availability: 'common'
-  },
   { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', recommendationPriority: 70, difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
     reason: '日本固有種で国内CBの流通も確立。温帯産で夏の高温管理が重要。クサガメより清水を好む傾向がある。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '18〜27℃', '難易度': '★★☆' },
