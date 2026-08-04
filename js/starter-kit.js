@@ -50,11 +50,14 @@ var SK_DISPLAY_CAT_MAP = {
   enclosure:        'ケージ',
   lighting_uvb:     'UVBライト',
   lighting_basking: 'バスキングライト',
+  lighting_fixture: '灯具・ソケット',
   heating:          '保温器具',
   filter:           'フィルター',
+  water_care:       '水質調整',
   substrate:        '床材',
   thermometer:      '温湿度計',
   shelter:          'シェルター',
+  water_dish:       '水入れ',
   food:             'フード',
   supplements:      'サプリメント',
 };
@@ -229,10 +232,12 @@ var SK_TABS = [
   { id: 'advanced',  label: '上級セット',   icon: '🏆', desc: '余裕が出てきたら揃えたい本格装備', tiers: ['premium'] },
 ];
 
+// lighting_fixture は電球（lighting_uvb / lighting_basking）の直後に置く。
+// 電球単体では点灯できず、灯具とセットで初めて機能するため。
 var SK_CAT_ORDER = [
-  'enclosure', 'lighting_uvb', 'lighting_basking',
-  'heating', 'filter', 'substrate', 'thermometer',
-  'shelter', 'food', 'supplements'
+  'enclosure', 'lighting_uvb', 'lighting_basking', 'lighting_fixture',
+  'heating', 'filter', 'water_care', 'substrate', 'thermometer',
+  'shelter', 'water_dish', 'food', 'supplements'
 ];
 
 /**

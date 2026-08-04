@@ -1690,6 +1690,27 @@ const PRODUCTS = {
     rakutenSearchTerm: 'SANKO レプタイルディッシュ',
   },
 
+  // 2026-08-04 追加: 既存の water_dish 2件はいずれも ASIN 未選定（affiliateUrl: '#'）で
+  // 購入導線が無く、EQUIPMENT_MAP からも参照されていなかった。
+  // リクガメ・ハコガメでは水入れは必須のため、実在確認済みの商品を追加して配線する。
+  waterdish_exoterra_l: {
+    id: 'waterdish_exoterra_l',
+    name: 'GEX EXOTERRA ウォーターディッシュ L PT2803',
+    category: 'water_dish',
+    tier: 'budget',
+    priceRange: '¥900–1,800',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00E0GLY96?tag=kamelife09-22',
+    asin: 'B00E0GLY96',
+    image: '/assets/products/placeholder.webp',
+    why: 'W21×D17×H5cmで、リクガメが体を浸けられる大きさ。倒れにくい形状で、内側の段差が小さな個体の溺れを防ぐ',
+    rating: null,
+    badge: null,
+    recommendedFor: ['tortoise_dry_small', 'tortoise_forest', 'box_turtle'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'エキゾテラ ウォーターディッシュ',
+  },
+
   /* ══════════════════════════════════════════
      THERMOMETER（温湿度計）  6商品
      ══════════════════════════════════════════ */
@@ -2278,6 +2299,92 @@ const PRODUCTS = {
     rakutenSearchTerm: '爬虫類 乳酸菌 サプリ',
   },
 
+  /* ══════════════════════════════════════════
+     LIGHTING_FIXTURE（灯具・ソケット）  2商品
+     2026-08-04 新設。UVB球・バスキング球は「電球のみ」の商品であり、
+     灯具（ソケット）が別途必要。診断は電球を提案しながら灯具を
+     一覧に出していなかったため、届いた初日に点灯できない構成だった。
+     ASIN はいずれも web_search で amazon.co.jp の商品ページを確認済み。
+     ══════════════════════════════════════════ */
+
+  fixture_clip_stand: {
+    id: 'fixture_clip_stand',
+    name: 'GEX EXOTERRA クリップスタンド グロースタンド（口金E26）',
+    category: 'lighting_fixture',
+    tier: 'budget',
+    priceRange: '¥2,000–3,500',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00A913GTC?tag=kamelife09-22',
+    asin: 'B00A913GTC',
+    image: '/assets/products/placeholder.webp',
+    why: 'アームが動くのでバスキングスポットの位置を後から調整できる。耐熱セラミックソケットで100Wまでの電球に対応',
+    rating: null,
+    badge: null,
+    recommendedFor: ['beginner'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'エキゾテラ クリップスタンド グロースタンド',
+  },
+
+  fixture_light_dome_18: {
+    id: 'fixture_light_dome_18',
+    name: 'GEX EXOTERRA ライトドーム 18cm PT2057',
+    category: 'lighting_fixture',
+    tier: 'standard',
+    priceRange: '¥3,000–5,000',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B083D2WFZN?tag=kamelife09-22',
+    asin: 'B083D2WFZN',
+    image: '/assets/products/placeholder.webp',
+    why: '反射傘で光と熱を一点に集められる灯具。口金E26で白熱球150W・UV球26Wまで対応し、電球に直接触れにくい構造',
+    rating: null,
+    badge: null,
+    recommendedFor: ['beginner', 'tortoise_dry_small', 'tortoise_dry_large'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'エキゾテラ ライトドーム 18cm',
+  },
+
+  /* ══════════════════════════════════════════
+     WATER_CARE（水質調整）  2商品
+     2026-08-04 新設。水棲・半水棲は水換えが日常作業になるが、
+     水道水の塩素を中和する用品が一覧に無かった。
+     ══════════════════════════════════════════ */
+
+  water_conditioner_turtle_250: {
+    id: 'water_conditioner_turtle_250',
+    name: 'テトラ レプトセイフ カメの水つくり 250ml',
+    category: 'water_care',
+    tier: 'budget',
+    priceRange: '¥600–1,200',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B093CYM21X?tag=kamelife09-22',
+    asin: 'B093CYM21X',
+    image: '/assets/products/placeholder.webp',
+    why: 'カメ用に作られた水質調整剤。水道水の塩素・クロラミン・重金属を中和する。メーカーはカメの表皮を保護する成分の配合を明記している',
+    rating: null,
+    badge: null,
+    recommendedFor: ['beginner', 'semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ レプトセイフ カメの水つくり',
+  },
+
+  water_conditioner_turtle_500: {
+    id: 'water_conditioner_turtle_500',
+    name: 'テトラ レプトセイフ カメの水つくり 500ml',
+    category: 'water_care',
+    tier: 'standard',
+    priceRange: '¥1,000–2,000',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B09M65FBTD?tag=kamelife09-22',
+    asin: 'B09M65FBTD',
+    image: '/assets/products/placeholder.webp',
+    why: '250mlと同じ中身の大容量。水量の多い60cm以上の水槽で水換え頻度が高くなる場合はこちらが割安',
+    rating: null,
+    badge: null,
+    recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ レプトセイフ カメの水つくり 500ml',
+  },
+
 
 };
 
@@ -2298,9 +2405,11 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_wood_90',      premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_desert_std',          premium: 'uvb_t5_desert_12' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' }, // Phase 39-P2: basking_halogen_50wはbasking_50wとASIN重複(誤ラベル)のため差し替え
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'heater_panel_30w',      standard: 'heater_panel_45',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: null }, // Phase 39-P4: shelter_cave_lgはサイズ不一致(要再選定)のため外し、standardへフォールバック
+    water_dish:       { budget: 'waterdish_exoterra_l',  standard: null,                     premium: null },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_premium',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null },
@@ -2311,9 +2420,11 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_wood_90',     standard: 'enclosure_tortoise_120',     premium: null }, // Phase 39-P4: enclosure_tortoise_150はサイズ不一致(要再選定)のため外し、standardへフォールバック
     lighting_uvb:     { budget: 'uvb_t5_desert_std',         standard: 'uvb_t5_desert_12',      premium: 'uvb_mvb_100' },
     lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150',      premium: 'basking_hid_70w' },
+    lighting_fixture: { budget: 'fixture_light_dome_18', standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'heater_panel_45',      standard: 'heater_panel_60',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_medium',        standard: null,     premium: null }, // Phase 39-P4: shelter_cave_lgはサイズ不一致(要再選定)のため外し、budgetへフォールバック
+    water_dish:       { budget: 'waterdish_exoterra_l',  standard: null,                     premium: null },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_herbs',   premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null }, // Phase 39-P4: supplement_iodineは誤ASIN(水質調整剤)のため外し、standardへフォールバック
@@ -2324,9 +2435,11 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
+    water_dish:       { budget: 'waterdish_exoterra_l',  standard: null,                     premium: null },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_gel',  premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_multivitamin',premium: null },
@@ -2337,8 +2450,10 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'thermostat_kotobuki_hydra', standard: 'heater_aqua_100w',    premium: 'thermostat_digital' }, // Phase 39-P3: thermostat(ブランド不明)→国内コトブキ実商品に差し替え
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
+    water_care:       { budget: 'water_conditioner_turtle_250', standard: 'water_conditioner_turtle_500', premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
@@ -2349,8 +2464,10 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_90',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
+    water_care:       { budget: 'water_conditioner_turtle_250', standard: 'water_conditioner_turtle_500', premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
@@ -2361,6 +2478,7 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_90',               standard: 'tank_120_aqua',          premium: 'tank_120_aqua' },
     heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
+    water_care:       { budget: 'water_conditioner_turtle_250', standard: 'water_conditioner_turtle_500', premium: null },
     substrate:        { budget: 'substrate_sand_river',  standard: 'substrate_sand_river',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
@@ -2371,8 +2489,10 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'thermostat_kotobuki_hydra', standard: 'heater_aqua_100w',    premium: 'thermostat_digital' }, // Phase 39-P3: thermostat(ブランド不明)→国内コトブキ実商品に差し替え
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
+    water_care:       { budget: 'water_conditioner_turtle_250', standard: 'water_conditioner_turtle_500', premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
@@ -2383,10 +2503,13 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
+    lighting_fixture: { budget: 'fixture_clip_stand',    standard: 'fixture_light_dome_18',  premium: null },
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
+    water_care:       { budget: 'water_conditioner_turtle_250', standard: 'water_conditioner_turtle_500', premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
+    water_dish:       { budget: 'waterdish_exoterra_l',  standard: null,                     premium: null },
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },

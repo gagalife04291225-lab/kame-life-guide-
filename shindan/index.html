@@ -1892,9 +1892,9 @@ function selectKitProducts(equipmentKey) {
   var isV2 = !Array.isArray(EQUIPMENT_MAP[equipmentKey]);
 
   var CAT_ORDER = [
-    'enclosure', 'lighting_uvb', 'lighting_basking',
-    'heating', 'filter', 'substrate', 'thermometer',
-    'shelter', 'food', 'supplements'
+    'enclosure', 'lighting_uvb', 'lighting_basking', 'lighting_fixture',
+    'heating', 'filter', 'water_care', 'substrate', 'thermometer',
+    'shelter', 'water_dish', 'food', 'supplements'
   ];
 
   var TIER_LABEL = { budget: 'コスパ重視', standard: 'まずはこれ', premium: '本格派' };
@@ -2008,11 +2008,14 @@ var SK_CAT_LABELS = {
   enclosure:        '飼育ケージ',
   lighting_uvb:     'UVBライト',
   lighting_basking: 'バスキングライト',
+  lighting_fixture: '灯具・ソケット',
   heating:          '保温器具',
   filter:           'フィルター',
+  water_care:       '水質調整',
   substrate:        '床材',
   thermometer:      '温湿度計',
   shelter:          'シェルター',
+  water_dish:       '水入れ',
   food:             'フード',
   supplements:      'サプリ',
 };
