@@ -861,13 +861,16 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small', 'japanese_pond'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/247595/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    // 2026-08-03: heating カテゴリガードの不備で 2026-07-04 以降 1か月間
+    // 一度も更新されず、非アフィリエイトURLと古い価格(¥4,125)を表示し続けていた。
+    // ガード修正後の再取得ではスコア7.0（昇格閾値8.0未満）だったため search に戻す。
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'コトブキ工芸 ヒュドラサーモ HT-330XD',
-    rakutenPrice: 4125,
-    rakutenShop: 'charm 楽天市場店',
+    rakutenPrice: null,
+    rakutenShop: null,
     rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-07-04',
+    rakutenLastUpdated: '2026-08-03',
   },
 
   // ── Task2 追加 ──
