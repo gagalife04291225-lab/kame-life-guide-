@@ -34,13 +34,14 @@
 
 ---
 
-## 毎月（月初・約30分）→ 詳細は [MONTHLY_REVIEW.md](MONTHLY_REVIEW.md)
+## 毎月（月初・約35分）→ 詳細は [MONTHLY_REVIEW.md](MONTHLY_REVIEW.md)
 
 1. ASPレポートから Amazon / 楽天報酬を入力
 2. GSC・GA4 をカテゴリ別・前月比で集計
 3. EPC（確定報酬 ÷ affiliate_click）を category / provider 別に算出
 4. 当月の改善結果（P0の Before→After）を集計
-5. 月次レポート化 → 高EPCカテゴリを翌月の重点に決定
+5. **楽天同期ログを確認**（`Failed` / `Demoted` / `Pending hits` の3行だけ）。在庫切れ・検索語の不具合はここに出る
+6. 月次レポート化 → 高EPCカテゴリを翌月の重点に決定
 
 ---
 

@@ -1,6 +1,6 @@
 # 月次レビュー手順（MONTHLY REVIEW）
 
-> KAME LIFE GUIDE 運営ドキュメント｜毎月初・約30分
+> KAME LIFE GUIDE 運営ドキュメント｜毎月初・約35分
 > 関連: [KPI.md](KPI.md) ・ [WEEKLY_REVIEW.md](WEEKLY_REVIEW.md) ・ [DECISION_RULE.md](DECISION_RULE.md) ・ [OPERATIONS_MANUAL.md](OPERATIONS_MANUAL.md)
 
 **原則：推測しない。実測値のみでレポート化する。前月比（MoM）で見る。**
@@ -34,6 +34,20 @@
 ### 改善結果
 - 当月に着手した P0 ページの Before → After（順位 / CTR）
 
+### 楽天同期ログ（在庫・価格の異常検知）
+
+`data/products.js` は毎日3時（JST）の Rakuten Price Sync が更新している。**この同期は失敗しても静かに続くため、月に一度ログを見ないと異常に気付けない。**
+
+見る場所：GitHub → Actions → **Rakuten Price Sync** → 直近の実行 → `sync` ジョブ → **Run Rakuten sync** ステップ。末尾の `=== Rakuten Sync Report ===` にある次の3行だけを記録する。
+
+| ログ行 | 意味 | 0件でなかったときの対応 |
+|--------|------|------------------------|
+| `Failed` | 楽天APIがその商品の問い合わせを拒否した | 商品IDの `rakutenSearchTerm` を確認する。**半角1文字の単語**（例：末尾の `S`）はAPIが `wrong_parameter` で弾く |
+| `Demoted` | 在庫が確認できなくなり、価格とアフィリエイトURLを自動クリアした | その商品は楽天で買えなくなった可能性が高い。Amazon側の在庫も確認し、必要なら代替商品を検討する |
+| `Pending hits` | `pending`（楽天に無いと判断した商品）に候補が出た | 候補が**本当に同じ商品か**を目視で確認してから `search` に戻す。自動では昇格しない |
+
+補足：楽天APIは `availability=1`（在庫あり商品のみ）で問い合わせている。したがって「該当なし」は**その検索語では買える商品に到達できていない**ことを意味する。`No result` の件数が前月から大きく増えていたら、検索語ではなく実際の流通が変わった可能性を疑う。
+
 ---
 
 ## カテゴリ定義（URLパターン｜GSC・GA4共通）
@@ -51,13 +65,14 @@
 
 ---
 
-## 2. レビュー手順（30分）
+## 2. レビュー手順（35分）
 
 1. （5分）ASPレポートから Amazon / 楽天の当月報酬を記録シートに入力
 2. （10分）GSC・GA4 から上記数値を収集（カテゴリ別・前月比）
 3. （5分）EPC を category / provider 別に算出（確定報酬 ÷ affiliate_click）
 4. （5分）当月の改善結果（P0の Before→After）を集計
-5. （5分）所見と翌月の重点1〜2テーマを決定 → 次章レポートに記載
+5. （5分）楽天同期ログの `Failed` / `Demoted` / `Pending hits` を記録（対応は前章の表に従う）
+6. （5分）所見と翌月の重点1〜2テーマを決定 → 次章レポートに記載
 
 ---
 
@@ -74,6 +89,7 @@
 - 診断開始：___ ／ 診断完了率：___%
 - affiliate_click：___（Amazon ___ / 楽天 ___）
 - 報酬：Amazon ___円 / 楽天 ___円 ／ EPC ___円/click
+- 楽天同期：Failed ___件 / Demoted ___件 / Pending hits ___件（0件が正常）
 
 ## カテゴリ別 検索（Click / CTR / 順位）
 | カテゴリ | Click | CTR | 平均順位 | MoM |
