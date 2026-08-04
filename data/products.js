@@ -81,13 +81,14 @@ const PRODUCTS = {
 
   tank_60: {
     id: 'tank_60',
-    name: '水槽 60cm規格',
+    // 2026-08-04 ASIN照合: 実商品は GEX マリーナ MR600BKST-N（W60xD30xH36）。汎用名を実商品名に是正
+    name: 'GEX マリーナ ガラス水槽 MR600BKST-N 60cm',
     category: 'enclosure',
     tier: 'budget',
     priceRange: '¥3,000–8,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09TF6B5P4?tag=kamelife09-22',
     asin: 'B09TF6B5P4',
-    rakutenSearchTerm: '水槽 60cm 亀',
+    rakutenSearchTerm: 'GEX マリーナ 60cm 水槽',
     image: '/assets/products/placeholder.webp',
     why: '小型水棲ガメの基本飼育容器。水換えしやすい横長タイプ',
     rating: 4.1,
@@ -447,14 +448,17 @@ const PRODUCTS = {
 
   uvb_led_bar: {
     id: 'uvb_led_bar',
-    name: 'UVB LED バー 60cm',
+    // 2026-08-04: ASIN(B08W2ZMX45)の実商品は「ゼンスイ マイクロン＋マイクロUV LEDセット」
+    // （灯具込みの小型LEDセット）で、旧名称の「60cmバー」は形状もサイズも事実と異なっていた。
+    // ゼンスイのバータイプ（UVLEDbar200）は別商品・別ASIN。id は互換性維持で変更しない。
+    name: 'ゼンスイ マイクロン＋マイクロUV LEDセット（灯具同梱）',
     category: 'lighting_uvb',
     tier: 'budget',
     priceRange: '¥2,500–5,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B08W2ZMX45?tag=kamelife09-22',
     asin: 'B08W2ZMX45',
     image: '/assets/products/placeholder.webp',
-    why: '省電力で長寿命のLEDタイプ。初心者の入門用に手頃',
+    why: '発熱の少ないLEDのUVB。灯具が同梱されているので別途ソケットは不要。小型ケージ向き',
     rating: 3.7,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
@@ -662,7 +666,8 @@ const PRODUCTS = {
 
   basking_ceramic_100w: {
     id: 'basking_ceramic_100w',
-    name: 'セラミックヒートランプ 100W（夜間用）',
+    // 2026-08-04 ASIN照合: 実商品は SURD セラミックヒーター 100W（ライトカバー付き）
+    name: 'SURD セラミックヒートランプ 100W（カバー付き・夜間用）',
     category: 'lighting_basking',
     tier: 'standard',
     priceRange: '¥1,500–3,500',
@@ -670,7 +675,7 @@ const PRODUCTS = {
     asin: 'B0BMKZGZQ1',
     rakutenSearchTerm: 'セラミックヒートランプ 100W 爬虫類',
     image: '/assets/products/placeholder.webp',
-    why: '光を出さずに熱だけ供給。夜間加温・視覚刺激なしで自然なサイクルを維持',
+    why: '光を出さずに熱だけを放つので夜間の保温に使える。カバーが付属し、点灯中の球にカメが直接触れにくい',
     rating: 4.4,
     badge: null,
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
@@ -1088,7 +1093,7 @@ const PRODUCTS = {
 
   filter_canister_large: {
     id: 'filter_canister_large',
-    name: 'EHEIM クラシック 2215 外部フィルター', // Phase 39-P2: 旧名は汎用表記。楽天URL(minatodenk/eheim-2215)が示す実商品名に修正
+    name: 'EHEIM クラシックフィルター 2215（ろ材付きセット）', // Phase 39-P2: 旧名は汎用表記。楽天URL(minatodenk/eheim-2215)が示す実商品名に修正
     category: 'filter',
     tier: 'premium',
     priceRange: '¥15,000–35,000',
@@ -1096,7 +1101,7 @@ const PRODUCTS = {
     asin: 'B002OCNJXM',
     rakutenSearchTerm: 'EHEIM クラシック 2215 外部フィルター',
     image: '/assets/products/placeholder.webp',
-    why: '大型半水棲・完全水棲ガメの90cm以上水槽に対応',
+    why: '60〜90cm水槽（57〜157L）向けの外部フィルター。高性能ろ材（サブストラットプロ・メック）が付属し、買い足さずに始められる',
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
@@ -1113,7 +1118,8 @@ const PRODUCTS = {
 
   filter_hang_on: {
     id: 'filter_hang_on',
-    name: '外掛け式フィルター',
+    // 2026-08-04 ASIN照合: 実商品は GEX 簡単ラクラクパワーフィルター M（45cm以下用・4.4W）
+    name: 'GEX 簡単ラクラクパワーフィルター M（45cm以下）',
     category: 'filter',
     tier: 'budget',
     priceRange: '¥2,000–5,000',
@@ -1124,7 +1130,7 @@ const PRODUCTS = {
     rating: 3.8,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenSearchTerm: '外掛け フィルター 爬虫類 亀',
+    rakutenSearchTerm: 'GEX ラクラクパワーフィルター',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -1154,7 +1160,9 @@ const PRODUCTS = {
 
   filter_canister_premium: {
     id: 'filter_canister_premium',
-    name: 'EHEIM クラシック 2217',
+    // 2026-08-04 ASIN照合: ASIN(B002SGX79U)は 2217-NEW の 50Hz（東日本）用モデル。
+    // 西日本の60Hz機は別ASIN(B002SGRDF4)のため、誤購入を防げるよう周波数を明記する
+    name: 'EHEIM クラシックフィルター 2217-NEW（50Hz・東日本用）',
     category: 'filter',
     tier: 'premium',
     priceRange: '¥18,000–28,000',
@@ -1162,7 +1170,7 @@ const PRODUCTS = {
     asin: 'B002SGX79U',
     rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
-    why: '外部フィルターの定番モデル。ろ過能力と静音性が高く、長期間使い続けるユーザーが多い',
+    why: '外部フィルターの定番モデル。ろ過能力と静音性が高く、長期間使い続けるユーザーが多い。50Hz（東日本）専用モデルのため、西日本では60Hz機を選ぶこと',
     rating: 4.9,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
@@ -1311,7 +1319,8 @@ const PRODUCTS = {
 
   substrate_sand_mix: {
     id: 'substrate_sand_mix',
-    name: '砂・土ミックス床材',
+    // 2026-08-04 ASIN照合: 実商品は GEX エキゾテラ デザートソイル 2kg
+    name: 'GEX EXOTERRA デザートソイル 2kg',
     category: 'substrate',
     tier: 'standard',
     priceRange: '¥1,000–3,000',
@@ -1319,7 +1328,7 @@ const PRODUCTS = {
     asin: 'B06XC8YK4Y',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 床材 砂',
+    rakutenSearchTerm: 'エキゾテラ デザートソイル',
     image: '/assets/products/placeholder.webp',
     why: '乾燥系リクガメの穿孔行動を促す自然に近い床材',
     rating: 4.2,
@@ -1523,14 +1532,15 @@ const PRODUCTS = {
 
   shelter_bark_hide: {
     id: 'shelter_bark_hide',
-    name: 'コルクバーク（丸太）',
+    // 2026-08-04 ASIN照合: 実商品は Zoo Med 天然コルクバーク ラウンド ミディアム 3パック
+    name: 'Zoo Med 天然コルクバーク ラウンド M（3パック）',
     category: 'shelter',
     tier: 'standard',
     priceRange: '¥1,500–4,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B01F654UHM?tag=kamelife09-22',
     asin: 'B01F654UHM',
     image: '/assets/products/placeholder.webp',
-    why: '自然素材のシェルター。湿度を保持しカメが潜り込みやすい形状',
+    why: '樹皮そのままの隠れ家。丸みのある内側にカメが体を寄せられる。3個入りなので複数のケージに分けて使える',
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
@@ -1728,18 +1738,19 @@ const PRODUCTS = {
 
   thermometer_digital: {
     id: 'thermometer_digital',
-    name: 'デジタル温湿度計',
+    // 2026-08-04 ASIN照合: 実商品は ThermoPro TP-49（家庭用の室内温湿度計）
+    name: 'ThermoPro TP-49 デジタル温湿度計',
     category: 'thermometer',
     tier: 'budget',
     priceRange: '¥1,500–3,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07TYN8584?tag=kamelife09-22',
     asin: 'B07TYN8584',
     image: '/assets/products/placeholder.webp',
-    why: '温度・湿度の同時監視が可能。設置場所の環境管理に必須',
+    why: '画面が大きく数値を読み取りやすい室内用の温湿度計。爬虫類専用品ではないが、ケージ周辺の環境把握には十分',
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenSearchTerm: 'デジタル 温湿度計 爬虫類',
+    rakutenSearchTerm: 'ThermoPro TP-49 温湿度計',
     rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00uaxan.nhbnn474.g00uaxan.nhbno5bc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalpito%2F0012-2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpalpito%2Fi%2F10000133%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
     rakutenItemCode: 'palpito:10000133',
@@ -1799,14 +1810,15 @@ const PRODUCTS = {
 
   thermometer_infrared: {
     id: 'thermometer_infrared',
-    name: '非接触型赤外線温度計',
+    // 2026-08-04 ASIN照合: 実商品は測定範囲0〜100℃の非接触温度計（料理用途の汎用品）
+    name: '非接触型赤外線温度計（測定範囲 0〜100℃）',
     category: 'thermometer',
     tier: 'standard',
     priceRange: '¥2,000–5,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09VCJP5SK?tag=kamelife09-22',
     asin: 'B09VCJP5SK',
     image: '/assets/products/placeholder.webp',
-    why: 'カメに触れずに体表温度や床材温度を瞬時に測定。バスキング調整に活用',
+    why: 'バスキングスポットの表面温度を触らずに測れる。測定範囲は0〜100℃なので、氷点下の計測には使えない',
     rating: 4.6,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_large', 'advanced'],
@@ -1969,7 +1981,11 @@ const PRODUCTS = {
   // 併せて「昆虫・果実成分配合」の記述は未確認のため、確認できる範囲の説明に変更
   food_box_turtle_omnivore: {
     id: 'food_box_turtle_omnivore',
-    name: 'Rep-Cal シータートルフード 340g（ビバリア取扱）',
+    // 2026-08-04: ASIN(B0F6JWRMSL)の日本語商品名は「ビバリア レップカル ハコガメフード 340g」。
+    // Amazonの英語表記が "Sea Turtle Food" のため「シータートル」と誤記されていたが、
+    // 実際は Box Turtle 用。EQUIPMENT_MAP でも box_turtle の standard に割り当てられており、
+    // 用途の割当自体は正しかったので名称のみ是正する。
+    name: 'ビバリア レップカル ハコガメフード 340g',
     category: 'food',
     tier: 'standard',
     priceRange: '¥1,500–3,000',
@@ -2294,14 +2310,19 @@ const PRODUCTS = {
 
   supplement_probiotics: {
     id: 'supplement_probiotics',
-    name: '爬虫類用プロバイオティクス',
+    // 2026-08-04: ASIN(B01BXVIHRM)の実商品は「ジェックス カメ元気 プロバイオフード 180g」で、
+    // サプリメントではなく善玉菌配合のカメ用フード。旧名称「爬虫類用プロバイオティクス」は
+    // 商品の性格を誤って伝えていたため是正。
+    // 本エントリは EQUIPMENT_MAP から参照されておらずデータ保持のみ。
+    // カテゴリを food へ移すかは要判断のため supplements のまま残している。
+    name: 'GEX カメ元気 プロバイオフード 180g',
     category: 'supplements',
     tier: 'premium',
     priceRange: '¥2,500–6,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B01BXVIHRM?tag=kamelife09-22',
     asin: 'B01BXVIHRM',
     image: '/assets/products/placeholder.webp',
-    why: '腸内細菌叢を整え消化吸収を促進。拒食回復期や繁殖個体の栄養管理に',
+    why: '善玉菌を配合したカメ用の主食。メーカーはユッカによる水の消臭効果とカルシウム・ビタミンD3の配合を挙げている',
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['advanced'],
