@@ -309,7 +309,12 @@ const PRODUCTS = {
 
   uvb_t5_desert_std: {
     id: 'uvb_t5_desert_std',
-    name: 'Zoo Med ReptiSun 10.0 UVB T5',
+    // 2026-08-04: ASIN(B00JZFJ5R0)の実商品をweb_searchで確認したところ
+    // 「ビバリア スパイラルUVB デザート 26W」（口金E26・スパイラル球）であり、
+    // 旧名称の Zoo Med ReptiSun 10.0 T5（直管）とはメーカー・形状・口金いずれも異なっていた。
+    // 同じASINは shindan/equipment.js 側では当初から正しくビバリア製として登録されている。
+    // id の 't5' は内部識別子のため互換性維持で変更しない。
+    name: 'ビバリア スパイラルUVB デザート 26W',
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
@@ -317,9 +322,9 @@ const PRODUCTS = {
     asin: 'B00JZFJ5R0',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ズーメッド レプティサン 10.0',
+    rakutenSearchTerm: 'ビバリア スパイラルUVB デザート',
     image: '/assets/products/placeholder.webp',
-    why: 'UV指数の高い乾燥系・リクガメ用UVBランプ。カルシウム代謝に必須',
+    why: '乾燥系リクガメ向けの高UVBランプ。口金E26のスパイラル球なので、クリップスタンドやライトドームに取り付けて使う。有効照射距離は約50cm',
     rating: 4.7,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
@@ -327,7 +332,10 @@ const PRODUCTS = {
 
   uvb_t5_forest_std: {
     id: 'uvb_t5_forest_std',
-    name: 'Zoo Med ReptiSun 5.0 UVB T5',
+    // 2026-08-04: ASIN(B00JZFJ5LQ)の実商品は「ビバリア スパイラルUVB フォレスト 26W」
+    // （口金E26・スパイラル球）。旧名称の Zoo Med ReptiSun 5.0 T5 とは別商品だったため是正。
+    // uvb_t5_desert_std と同じ経緯。id は互換性維持で変更しない。
+    name: 'ビバリア スパイラルUVB フォレスト 26W',
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
@@ -335,9 +343,9 @@ const PRODUCTS = {
     asin: 'B00JZFJ5LQ',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ズーメッド レプティサン 5.0',
+    rakutenSearchTerm: 'ビバリア スパイラルUVB フォレスト',
     image: '/assets/products/placeholder.webp',
-    why: '森林・半水棲ガメ向けのUVBランプ。適度なUV量でビタミンD3生成',
+    why: '森林性・半水棲ガメ向けの中強度UVBランプ。口金E26のスパイラル球で、クリップスタンドやライトドームに取り付けて使う',
     rating: 4.6,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'semi_aquatic_small', 'box_turtle'],
@@ -370,17 +378,20 @@ const PRODUCTS = {
 
   uvb_t5_tropical_6: {
     id: 'uvb_t5_tropical_6',
-    name: 'Arcadia T5 HO 6% UVB',
+    // 2026-08-04: ASIN(B09T96TPHJ)の実商品は「Arcadia Pro T5 UVB 照明キット 24W フォレスト」で、
+    // ランプ単体ではなく灯具（ProT5本体）が同梱のキット。実売も2.6万円前後で、
+    // 旧表記の価格帯(¥4,000–8,000)とは大きく乖離していたため名称・価格帯とも是正。
+    name: 'Arcadia ProT5 UVB 照明キット 24W フォレスト（灯具同梱）',
     category: 'lighting_uvb',
     tier: 'standard',
-    priceRange: '¥4,000–8,000',
+    priceRange: '¥25,000–30,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B09T96TPHJ?tag=kamelife09-22',
     asin: 'B09T96TPHJ',
     rakutenUrl: null,
     rakutenStatus: 'pending',
-    rakutenSearchTerm: 'Arcadia T5 HO 6% UVB',
+    rakutenSearchTerm: 'Arcadia ProT5 UVB キット',
     image: '/assets/products/placeholder.webp',
-    why: '森林・湿潤系ガメに向く中強度UVB。発色が自然で観察用としても見やすい',
+    why: '直管T5の照射ユニット一式。灯具が同梱なので別途ソケットは不要。照射面が広く、ケージ全体にムラなくUVBを行き渡らせたい場合に選ぶ',
     rating: 4.5,
     badge: null,
     recommendedFor: ['tortoise_forest', 'box_turtle'],
