@@ -1,7 +1,8 @@
 /* ============================================================
    カメライフガイド キッズ版 (kids/index.html)
    - ふりがな表示の切り替え (localStorage に保存)
-   - カメクイズ 5問
+   - カメクイズ 6問
+   ふりがなはモノルビ（漢字1字ごと）で書く。
    ============================================================ */
 (function () {
   'use strict';
@@ -34,54 +35,64 @@
   /* ---------- クイズ ---------- */
   var QUESTIONS = [
     {
-      q: 'カメの<ruby>甲羅<rt>こうら</rt></ruby>は、<ruby>脱<rt>ぬ</rt></ruby>ぐことができる？',
+      q: 'カメの <ruby>甲<rt>こう</rt>羅<rt>ら</rt></ruby>は ぬげる？',
       choices: [
-        '<ruby>脱<rt>ぬ</rt></ruby>げる。<ruby>服<rt>ふく</rt></ruby>のようなもの',
-        '<ruby>脱<rt>ぬ</rt></ruby>げない。<ruby>体<rt>からだ</rt></ruby>の<ruby>一部<rt>いちぶ</rt></ruby>だから',
-        '<ruby>夏<rt>なつ</rt></ruby>だけ<ruby>脱<rt>ぬ</rt></ruby>げる'
+        'ぬげる。<ruby>服<rt>ふく</rt></ruby>の ような もの',
+        'ぬげない。<ruby>体<rt>からだ</rt></ruby>と くっついて いる',
+        '<ruby>夏<rt>なつ</rt></ruby>だけ ぬげる'
       ],
       answer: 1,
-      why: '<ruby>甲羅<rt>こうら</rt></ruby>は<ruby>背骨<rt>せぼね</rt></ruby>やあばら<ruby>骨<rt>ぼね</rt></ruby>とくっついていて、<ruby>体<rt>からだ</rt></ruby>の<ruby>一部<rt>いちぶ</rt></ruby>です。だからぶつけると<ruby>痛<rt>いた</rt></ruby>いのです。'
+      why: '<ruby>甲<rt>こう</rt>羅<rt>ら</rt></ruby>は カメの <ruby>体<rt>からだ</rt></ruby>と くっついて います。<ruby>中<rt>なか</rt></ruby>には <ruby>背<rt>せ</rt>骨<rt>ぼね</rt></ruby>も あります。だから ぶつけると いたいです。'
     },
     {
-      q: 'カメは<ruby>自分<rt>じぶん</rt></ruby>の<ruby>力<rt>ちから</rt></ruby>で<ruby>体<rt>からだ</rt></ruby>をあたためられる？',
+      q: 'カメは <ruby>自<rt>じ</rt>分<rt>ぶん</rt></ruby>で <ruby>体<rt>からだ</rt></ruby>を あたためられる？',
       choices: [
-        'あたためられない。<ruby>日<rt>ひ</rt></ruby>なたなどが<ruby>必要<rt>ひつよう</rt></ruby>',
-        'いつでも<ruby>自分<rt>じぶん</rt></ruby>であたためられる',
-        '<ruby>寝<rt>ね</rt></ruby>ているときだけあたためられる'
+        'あたためられない。<ruby>日<rt>ひ</rt></ruby>なたなどが いる',
+        'いつでも <ruby>自<rt>じ</rt>分<rt>ぶん</rt></ruby>で あたためられる',
+        'ねて いる ときだけ あたためられる'
       ],
       answer: 0,
-      why: 'まわりがさむいとカメの<ruby>体<rt>からだ</rt></ruby>もつめたくなります。だから<ruby>甲羅干<rt>こうらぼ</rt></ruby>しをしたり、<ruby>人間<rt>にんげん</rt></ruby>があたたかい<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>用意<rt>ようい</rt></ruby>したりします。'
+      why: 'まわりが さむいと、カメの <ruby>体<rt>からだ</rt></ruby>も つめたく なります。だから <ruby>日<rt>ひ</rt></ruby>なたに <ruby>出<rt>で</rt></ruby>たり、<ruby>人<rt>ひと</rt></ruby>が あたたかい <ruby>場<rt>ば</rt>所<rt>しょ</rt></ruby>を つくったり します。'
     },
     {
-      q: 'カメをさわったあと、まずすることは？',
+      q: 'カメが <ruby>食<rt>た</rt></ruby>べる ものは？',
       choices: [
-        'おやつを<ruby>食<rt>た</rt></ruby>べる',
-        'カメにキスをする',
-        '<ruby>石<rt>せっ</rt></ruby>けんで<ruby>手<rt>て</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>う'
+        'どの カメも <ruby>同<rt>おな</rt></ruby>じ ものを <ruby>食<rt>た</rt></ruby>べる',
+        'しゅるいに よって ちがう',
+        '<ruby>人<rt>ひと</rt></ruby>の おかしを <ruby>食<rt>た</rt></ruby>べる'
+      ],
+      answer: 1,
+      why: '<ruby>草<rt>くさ</rt></ruby>や <ruby>野<rt>や</rt></ruby>さいを <ruby>食<rt>た</rt></ruby>べる カメ、<ruby>虫<rt>むし</rt></ruby>や <ruby>魚<rt>さかな</rt></ruby>を <ruby>食<rt>た</rt></ruby>べる カメ、りょうほう <ruby>食<rt>た</rt></ruby>べる カメが います。<ruby>飼<rt>か</rt></ruby>う <ruby>前<rt>まえ</rt></ruby>に しらべます。'
+    },
+    {
+      q: 'カメを さわった あとは どうする？',
+      choices: [
+        'おやつを <ruby>食<rt>た</rt></ruby>べる',
+        'カメに キスを する',
+        'せっけんで <ruby>手<rt>て</rt></ruby>を あらう'
       ],
       answer: 2,
-      why: 'カメや<ruby>水<rt>みず</rt></ruby>には、おなかをこわす<ruby>菌<rt>きん</rt></ruby>がいることがあります。さわったら、かならず<ruby>石<rt>せっ</rt></ruby>けんで<ruby>手<rt>て</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>いましょう。'
+      why: 'カメや <ruby>水<rt>みず</rt></ruby>には、おなかを こわす ばいきんが いる ことが あります。さわったら かならず <ruby>手<rt>て</rt></ruby>を あらいます。'
     },
     {
-      q: '<ruby>飼<rt>か</rt></ruby>えなくなったカメを、<ruby>近<rt>ちか</rt></ruby>くの<ruby>池<rt>いけ</rt></ruby>に<ruby>逃<rt>に</rt></ruby>がしてもいい？',
+      q: '<ruby>飼<rt>か</rt></ruby>えなく なった カメを <ruby>池<rt>いけ</rt></ruby>に にがして いい？',
       choices: [
-        'ダメ。おうちの<ruby>人<rt>ひと</rt></ruby>やお<ruby>店<rt>みせ</rt></ruby>に<ruby>相談<rt>そうだん</rt></ruby>する',
-        'いい。<ruby>自然<rt>しぜん</rt></ruby>のほうがカメも<ruby>喜<rt>よろこ</rt></ruby>ぶ',
-        '<ruby>大<rt>おお</rt></ruby>きい<ruby>池<rt>いけ</rt></ruby>ならいい'
+        'だめ。おうちの <ruby>人<rt>ひと</rt></ruby>や お<ruby>店<rt>みせ</rt></ruby>に そうだんする',
+        'いい。そとの ほうが カメも よろこぶ',
+        '<ruby>大<rt>おお</rt></ruby>きい <ruby>池<rt>いけ</rt></ruby>なら いい'
       ],
       answer: 0,
-      why: 'もともといなかったカメが<ruby>増<rt>ふ</rt></ruby>えると、そこにすむ<ruby>生<rt>い</rt></ruby>きものがこまります。<ruby>種類<rt>しゅるい</rt></ruby>によっては<ruby>法律<rt>ほうりつ</rt></ruby>で<ruby>禁止<rt>きんし</rt></ruby>されています。'
+      why: 'もとから すんで いた <ruby>生<rt>い</rt></ruby>きものが こまります。にがしては いけない、と きめられて いる カメも います。'
     },
     {
-      q: 'カメを<ruby>飼<rt>か</rt></ruby>いはじめるとき、いちばん<ruby>大切<rt>たいせつ</rt></ruby>なことは？',
+      q: 'カメを <ruby>飼<rt>か</rt></ruby>いはじめる とき、いちばん <ruby>大<rt>たい</rt>切<rt>せつ</rt></ruby>な ことは？',
       choices: [
-        '<ruby>友<rt>とも</rt></ruby>だちより<ruby>先<rt>さき</rt></ruby>に<ruby>飼<rt>か</rt></ruby>うこと',
-        '<ruby>最後<rt>さいご</rt></ruby>までお<ruby>世話<rt>せわ</rt></ruby>できるか、おうちの<ruby>人<rt>ひと</rt></ruby>と<ruby>考<rt>かんが</rt></ruby>えること',
-        'いちばん<ruby>安<rt>やす</rt></ruby>いカメを<ruby>選<rt>えら</rt></ruby>ぶこと'
+        'ともだちより <ruby>先<rt>さき</rt></ruby>に <ruby>飼<rt>か</rt></ruby>う こと',
+        'おうちの <ruby>人<rt>ひと</rt></ruby>と いっしょに かんがえる こと',
+        'いちばん やすい カメを えらぶ こと'
       ],
       answer: 1,
-      why: 'カメは<ruby>何十年<rt>なんじゅうねん</rt></ruby>も<ruby>生<rt>い</rt></ruby>きるなかまがいます。<ruby>飼<rt>か</rt></ruby>いはじめる<ruby>前<rt>まえ</rt></ruby>に、おうちの<ruby>人<rt>ひと</rt></ruby>とよく<ruby>話<rt>はな</rt></ruby>しあうことがいちばん<ruby>大切<rt>たいせつ</rt></ruby>です。'
+      why: 'カメは <ruby>何<rt>なん</rt>十<rt>じゅう</rt>年<rt>ねん</rt></ruby>も <ruby>生<rt>い</rt></ruby>きる なかまが います。<ruby>飼<rt>か</rt></ruby>いはじめる <ruby>前<rt>まえ</rt></ruby>に、おうちの <ruby>人<rt>ひと</rt></ruby>と よく はなす ことが いちばん <ruby>大<rt>たい</rt>切<rt>せつ</rt></ruby>です。'
     }
   ];
 
@@ -103,7 +114,7 @@
 
     var progress = document.createElement('p');
     progress.className = 'k-q-progress';
-    progress.textContent = 'だい ' + (current + 1) + ' もん / ' + QUESTIONS.length + ' もん';
+    progress.textContent = 'だい ' + (current + 1) + ' もん（ぜんぶで ' + QUESTIONS.length + ' もん）';
     box.appendChild(progress);
 
     var qText = document.createElement('p');
@@ -158,12 +169,12 @@
   }
 
   function renderResult() {
-    var medal = score === QUESTIONS.length ? '🏆' : (score >= 3 ? '🥈' : '🐢');
+    var medal = score === QUESTIONS.length ? '🏆' : (score >= 4 ? '🥈' : '🐢');
     var message = score === QUESTIONS.length
       ? 'ぜんもん せいかい！ カメはかせだね。'
-      : (score >= 3
-        ? 'よくできました！ まちがえたところを もういちど<ruby>読<rt>よ</rt></ruby>んでみよう。'
-        : 'もういちど <ruby>上<rt>うえ</rt></ruby>から<ruby>読<rt>よ</rt></ruby>んでみよう。きっと できるようになります。');
+      : (score >= 4
+        ? 'よく できました！ まちがえた ところを もう いちど <ruby>読<rt>よ</rt></ruby>んで みよう。'
+        : 'もう いちど <ruby>上<rt>うえ</rt></ruby>から <ruby>読<rt>よ</rt></ruby>んで みよう。きっと できる ように なります。');
 
     box.innerHTML =
       '<div class="k-q-result">' +
@@ -175,7 +186,7 @@
     var retry = document.createElement('button');
     retry.type = 'button';
     retry.className = 'k-btn';
-    retry.textContent = 'もういちど ちょうせんする';
+    retry.textContent = 'もう いちど ちょうせんする';
     retry.addEventListener('click', function () {
       current = 0;
       score = 0;
