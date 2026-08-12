@@ -1614,7 +1614,9 @@
     font-weight:700;
     letter-spacing:.20em;
     text-transform:uppercase;
-    color:rgba(201,169,107,.60);
+    /* 旧 rgba(201,169,107,.60) は白地に対し 1.59:1 で AA 未達。
+       同系のゴールドを暗くして 5.04:1 に引き上げる（01〜05 共通） */
+    color:#8a6a24;
   }
   .pc-card-s2-icon{
     font-size:1.60rem;
@@ -1680,6 +1682,17 @@
     margin-top:12px;
     letter-spacing:.03em;
   }
+  /* 05 は「不安」ではなく Kids への導線カード。全幅で1行使う */
+  .pc-card-s2--kids{
+    grid-column:1/-1;
+    text-decoration:none;color:inherit;
+    /* グラデーションだけだと背景色が transparent のままになり、
+       コントラスト計算が親要素に抜ける。実色を必ず併記する */
+    background-color:#fffaf1;
+    background-image:linear-gradient(180deg,#fffaf1,#fff);
+    border-color:rgba(201,169,107,.55);
+  }
+  .pc-card-s2--kids .pc-card-s2-hint{font-weight:700;color:#2f4a3c;}
   @media(max-width:760px){
     .pc-grid-s2{grid-template-columns:repeat(2,1fr);}
   }
@@ -3268,9 +3281,31 @@
 <style>
 /* ===== Phase 48-A: Homepage IA restructure additions ===== */
 
-/* Entry cards (Hero直下 2入口) — 🐢診断 / 🌿探索 */
+/* Kids「カメふしぎ島」バナー（Hero直下・E-E-A-Tリボンの次） */
+.kids-band{width:min(1120px,92vw);margin:22px auto 0;}
+.kids-band-link{
+  display:block;text-decoration:none;border-radius:18px;overflow:hidden;
+  background:#2f4a3c;box-shadow:0 8px 26px rgba(20,45,32,.18);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.kids-band-link:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(20,45,32,.24);}
+.kids-band-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+.kids-band-link img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;}
+/* 画像内に文字が焼き込まれているため、CTA は本物のテキストで別に置く */
+.kids-band-cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:14px 18px;
+  background:#d4a96a;color:#20301f;
+  font-size:18px;font-weight:800;line-height:1.5;text-align:center;
+}
+.kids-band-link:hover .kids-band-cta{background:#e0bb84;}
+.kids-band-note{width:min(1120px,92vw);margin:8px auto 0;font-size:.84rem;color:#4d5f54;text-align:right;}
+@media(min-width:720px){.kids-band-cta{font-size:20px;min-height:64px;}}
+@media(prefers-reduced-motion:reduce){.kids-band-link{transition:none;}.kids-band-link:hover{transform:none;}}
+
+/* Entry cards (Hero直下 3入口) — 🐢診断 / 🌿探索 / 🧒キッズ */
 .entry-cards{padding:8px 0 46px;}
-.entry-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.entry-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .entry-card{
   display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
   background:#fff;border:1.5px solid #e4ddc9;border-radius:16px;padding:18px 16px;
@@ -3282,6 +3317,10 @@
 .entry-card-label{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.02rem;color:var(--forest);margin:0 0 3px;}
 .entry-card-sub{font-size:.82rem;color:#5a6b60;margin:0;line-height:1.5;}
 .entry-card-cta{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:700;color:var(--forest);}
+@media(max-width:980px){
+  .entry-cards-grid{grid-template-columns:repeat(2,1fr);}
+  .entry-card--kids{grid-column:1/-1;}
+}
 @media(max-width:760px){
   .entry-cards-grid{grid-template-columns:1fr;}
 }
@@ -3441,6 +3480,17 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   <p><strong>実際の飼育経験</strong>と、公的機関・専門文献・信頼できる長期飼育情報をもとに記事を作成・更新しています。飼育していない種は、資料にもとづく情報であることを明記しています。</p>
 </div>
 
+<!-- Kids「カメふしぎ島」バナー — Hero → E-E-A-Tリボン → ここ → entry-cards -->
+<div class="kids-band">
+  <a class="kids-band-link" href="kids/index.html"
+     onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'hero_band'})">
+    <img src="assets/kids/kids-hero-fushigijima.webp" width="1600" height="800"
+         alt="" loading="eager" decoding="async">
+    <span class="kids-band-cta">カメふしぎ島へ行く <span aria-hidden="true">→</span></span>
+  </a>
+</div>
+<p class="kids-band-note">お子さま向けページです（ふりがな付き）</p>
+
 <!-- Phase 12-A Sprint 2-B: Emotional Hook -->
 <!-- HIDDEN: removed from homepage flow — P0 Hero Fix. Restore by removing hidden attr. -->
 <section class="emo-hook" aria-label="亀と長い時間を共にする" hidden>
@@ -3483,6 +3533,15 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
           <span class="entry-card-cta">一覧を見る <span aria-hidden="true">→</span></span>
         </div>
       </a>
+      <a href="kids/index.html" class="entry-card entry-card--kids"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'kids'})">
+        <span class="entry-card-icon" aria-hidden="true">🧒</span>
+        <div>
+          <p class="entry-card-label">子どもと一緒に読む</p>
+          <p class="entry-card-sub">ふりがな付きのキッズページ。お子さまだけでも読める言葉で書いています。</p>
+          <span class="entry-card-cta">カメふしぎ島へ行く <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
     </div>
 
     <!-- Phase 46-B/C -> 48-C: 案内人 entry link — moved out of hero, below the 3 entry cards -->
@@ -3498,11 +3557,11 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
 
 <!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
-<section class="pc-section" id="problem-grid" aria-label="よくある4つの不安">
+<section class="pc-section" id="problem-grid" aria-label="よくある5つの不安">
   <div class="wrap">
     <span class="pc-eyebrow-s2">よくある不安に答えます</span>
     <h2 class="pc-heading-s2 reveal-soft reveal-soft--delay-1">
-      飼う前に知っておきたい、<em>4つのこと。</em>
+      飼う前に知っておきたい、<em>5つのこと。</em>
     </h2>
     <div class="pc-grid-s2">
 
@@ -3537,6 +3596,15 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         <p class="pc-card-s2-body">亀は長寿。だから相性を見て選ぶことが大切です。</p>
         <p class="pc-card-s2-hint">ライフスタイルに合った種を診断が提案します</p>
       </div>
+
+      <a href="kids/index.html" class="pc-card-s2 pc-card-s2--kids reveal-soft reveal-soft--delay-4"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'problem_grid'})">
+        <span class="pc-card-s2-num">05</span>
+        <span class="pc-card-s2-icon" aria-hidden="true">🧒</span>
+        <p class="pc-card-s2-q">子どもが「カメ飼いたい」と言い出した？</p>
+        <p class="pc-card-s2-body">まずはお子さま自身に、カメがどんな生きものか知ってもらうところから。ふりがな付きのキッズページを用意しています。</p>
+        <p class="pc-card-s2-hint">カメふしぎ島へ行く →</p>
+      </a>
 
     </div>
 
