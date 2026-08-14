@@ -1,0 +1,644 @@
+@charset "UTF-8";
+/* ============================================================
+   カメライフガイド キッズ版 (小学1〜4年生向け)
+   - 大きい文字・丸いかたち・高コントラスト
+   - ふりがな切り替え対応
+   - コントラスト比は全て WCAG AA (4.5:1) 以上を数値確認済み
+   ============================================================ */
+
+:root{
+  --k-bg:        #fffbf0;  /* クリーム背景 */
+  --k-card:      #ffffff;
+  --k-ink:       #1e3a2f;  /* 本文 (対クリーム 11.94:1) */
+  --k-ink-soft:  #5a6b5f;  /* 補助文字 (対クリーム 5.48:1) */
+  --k-green:     #2f7a4f;  /* ボタン (白文字 5.23:1) */
+  --k-forest:    #2f4a3c;  /* ブランド緑 (クリーム文字 9.38:1) */
+  --k-deep:      #0d1f1a;
+  --k-yellow:    #e8a33d;
+  --k-yellow-bg: #ffe9b8;
+  --k-green-bg:  #e8f4e4;
+  --k-red:       #c2412b;  /* 白文字 5.14:1 */
+  --k-red-ink:   #7a2e1e;  /* 対薄赤 8.46:1 */
+  --k-red-bg:    #fff0ec;
+  --k-radius:    20px;
+  --k-shadow:    0 4px 0 rgba(30,58,47,.14);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--k-bg);
+  color:var(--k-ink);
+  font-family:"M PLUS Rounded 1c","Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  font-size:20px;
+  line-height:2.05;
+  letter-spacing:.02em;
+  -webkit-text-size-adjust:100%;
+}
+
+.k-wrap{width:min(760px,92vw);margin-inline:auto}
+
+/* ---------- ふりがな ---------- */
+ruby rt{
+  font-size:.58em;
+  font-weight:400;
+  color:var(--k-ink-soft);
+  letter-spacing:0;
+}
+body.no-furigana ruby rt{display:none}
+
+/* ---------- 上部リンク ---------- */
+.k-top{padding:14px 0 0}
+.k-top a{
+  display:inline-block;
+  color:var(--k-forest);
+  text-decoration:none;
+  font-weight:700;
+  font-size:16px;
+  padding:8px 4px;
+}
+.k-top a:hover,.k-top a:focus{text-decoration:underline}
+
+/* ---------- ヒーロー ---------- */
+.k-hero{
+  background:var(--k-forest);
+  color:var(--k-bg);
+  border-radius:var(--k-radius);
+  margin:14px auto 0;
+  padding:34px 26px 30px;
+  width:min(760px,92vw);
+  text-align:center;
+}
+.k-hero .k-emoji{font-size:52px;line-height:1;display:block;margin-bottom:8px}
+.k-hero h1{
+  font-size:clamp(26px,6.4vw,38px);
+  line-height:1.65;
+  margin:0 0 14px;
+  font-weight:800;
+}
+.k-hero p{margin:0 auto;max-width:32em;font-size:19px;line-height:2.05}
+.k-hero ruby rt{color:#cfe0d4}
+
+/* ---------- ふりがなトグル ---------- */
+.k-furigana-bar{
+  width:min(760px,92vw);
+  margin:16px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.k-furigana-bar span{font-size:16px;color:var(--k-ink-soft);font-weight:700}
+#furigana-toggle{
+  font-family:inherit;
+  font-size:18px;
+  font-weight:800;
+  color:var(--k-ink);
+  background:var(--k-yellow-bg);
+  border:3px solid var(--k-yellow);
+  border-radius:999px;
+  padding:10px 22px;
+  cursor:pointer;
+  min-height:48px;
+}
+#furigana-toggle:hover{background:#ffdf9c}
+#furigana-toggle:focus-visible{outline:4px solid var(--k-green);outline-offset:3px}
+
+/* ---------- セクション ---------- */
+.k-sec{margin:44px auto 0}
+.k-sec h2{
+  font-size:clamp(21px,4.8vw,27px);
+  line-height:1.7;
+  margin:0 0 6px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.k-sec h2 .n{
+  flex:0 0 auto;
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--k-green);
+  color:#fff;
+  font-size:20px;
+  display:grid;place-items:center;
+}
+.k-lead{margin:0 0 20px;color:var(--k-ink-soft);font-size:18px;line-height:2}
+
+/* ---------- カード ---------- */
+.k-cards{display:grid;gap:16px}
+@media(min-width:620px){.k-cards.two{grid-template-columns:1fr 1fr}}
+
+.k-card{
+  background:var(--k-card);
+  border:3px solid var(--k-green-bg);
+  border-radius:var(--k-radius);
+  padding:22px 20px;
+  box-shadow:var(--k-shadow);
+}
+.k-card h3{
+  margin:0 0 8px;
+  font-size:21px;
+  line-height:1.75;
+  font-weight:800;
+  display:flex;align-items:center;gap:10px;
+}
+.k-card h3 .ico{font-size:30px;line-height:1}
+.k-card p{margin:0;font-size:19px;line-height:2.05}
+.k-card p + p{margin-top:10px}
+
+/* やくそくリスト */
+.k-promise{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:p}
+.k-promise li{
+  counter-increment:p;
+  background:var(--k-card);
+  border:3px solid var(--k-yellow-bg);
+  border-radius:var(--k-radius);
+  padding:20px 20px 20px 66px;
+  position:relative;
+  box-shadow:var(--k-shadow);
+  font-size:19px;
+  line-height:2.05;
+}
+.k-promise li::before{
+  content:counter(p);
+  position:absolute;left:16px;top:18px;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--k-yellow);color:var(--k-ink);
+  font-weight:800;font-size:18px;
+  display:grid;place-items:center;
+}
+.k-promise b{display:block;font-size:21px;margin-bottom:6px}
+
+/* だめカード */
+.k-dont{
+  background:var(--k-red-bg);
+  border:3px solid #f3c4b8;
+  border-radius:var(--k-radius);
+  padding:22px 20px;
+  color:var(--k-red-ink);
+  box-shadow:var(--k-shadow);
+}
+.k-dont h3{
+  margin:0 0 8px;font-size:21px;font-weight:800;line-height:1.75;
+  display:flex;align-items:center;gap:10px;color:var(--k-red-ink);
+}
+.k-dont h3 .ico{font-size:28px}
+.k-dont p{margin:0;font-size:19px;line-height:2.05;color:var(--k-red-ink)}
+.k-dont p + p{margin-top:10px}
+.k-dont ruby rt{color:#96503f}
+
+/* ---------- クイズ ---------- */
+.k-quiz{
+  background:var(--k-card);
+  border:3px solid var(--k-green-bg);
+  border-radius:var(--k-radius);
+  padding:24px 20px;
+  box-shadow:var(--k-shadow);
+}
+.k-q-progress{font-size:16px;font-weight:800;color:var(--k-green);margin:0 0 8px}
+.k-q-text{font-size:22px;font-weight:800;line-height:1.85;margin:0 0 18px}
+.k-q-choices{display:grid;gap:12px}
+.k-q-choices button{
+  font-family:inherit;font-size:19px;font-weight:700;line-height:1.8;
+  text-align:left;
+  color:var(--k-ink);
+  background:var(--k-bg);
+  border:3px solid var(--k-green-bg);
+  border-radius:16px;
+  padding:16px 18px;
+  cursor:pointer;
+  min-height:56px;
+}
+.k-q-choices button:hover:not(:disabled){border-color:var(--k-green);background:var(--k-green-bg)}
+.k-q-choices button:focus-visible{outline:4px solid var(--k-green);outline-offset:3px}
+.k-q-choices button:disabled{cursor:default}
+.k-q-choices button.correct{background:var(--k-green-bg);border-color:var(--k-green)}
+.k-q-choices button.wrong{background:var(--k-red-bg);border-color:#f3c4b8}
+.k-q-feedback{
+  margin:18px 0 0;padding:16px 18px;border-radius:16px;
+  background:var(--k-green-bg);font-size:19px;line-height:2.05;
+}
+.k-q-feedback.ng{background:var(--k-red-bg);color:var(--k-red-ink)}
+.k-q-feedback.ng ruby rt{color:#96503f}
+.k-q-feedback b{display:block;margin-bottom:6px;font-size:20px}
+.k-btn{
+  font-family:inherit;font-size:19px;font-weight:800;
+  color:#fff;background:var(--k-green);
+  border:none;border-radius:999px;
+  padding:14px 30px;margin-top:18px;
+  cursor:pointer;min-height:52px;
+  box-shadow:0 4px 0 #1f5636;
+}
+.k-btn:hover{background:#276641}
+.k-btn:focus-visible{outline:4px solid var(--k-yellow);outline-offset:3px}
+.k-q-result{text-align:center}
+.k-q-result .score{font-size:30px;font-weight:800;margin:10px 0;display:block}
+.k-q-result .medal{font-size:56px;line-height:1;display:block}
+
+/* ---------- もっと知りたい ---------- */
+.k-links{display:grid;gap:14px}
+@media(min-width:620px){.k-links{grid-template-columns:1fr 1fr}}
+.k-link{
+  display:block;
+  background:var(--k-card);
+  border:3px solid var(--k-green-bg);
+  border-radius:var(--k-radius);
+  padding:20px;
+  text-decoration:none;
+  color:var(--k-ink);
+  box-shadow:var(--k-shadow);
+  min-height:48px;
+}
+.k-link:hover,.k-link:focus{border-color:var(--k-green);background:var(--k-green-bg)}
+.k-link b{display:flex;align-items:center;gap:10px;font-size:20px;line-height:1.75;margin-bottom:6px}
+.k-link b .ico{font-size:28px}
+.k-link span{font-size:17px;color:var(--k-ink-soft);line-height:1.9;display:block}
+
+/* ---------- おうちの方へ ---------- */
+.k-parent{
+  background:var(--k-green-bg);
+  border-radius:var(--k-radius);
+  padding:26px 22px;
+  margin-top:46px;
+}
+.k-parent h2{font-size:21px;margin:0 0 10px;font-weight:800;line-height:1.7}
+.k-parent p{margin:0 0 12px;font-size:16px;line-height:1.95}
+.k-parent p:last-child{margin-bottom:0}
+.k-parent a{color:var(--k-forest);font-weight:700}
+
+/* ---------- フッター ---------- */
+.k-footer{
+  background:var(--k-forest);
+  color:var(--k-bg);
+  margin-top:50px;
+  padding:30px 0 34px;
+}
+.k-footer p{margin:0 0 10px;font-size:17px;line-height:2}
+.k-footer p:last-child{margin-bottom:0}
+.k-footer a{color:#ffe9b8;font-weight:700;display:inline-block;padding:7px 2px}
+/* 濃色背景ではふりがなが沈むため明色に上書き（本文色に対し 7.05:1） */
+.k-footer ruby rt{color:#cfe0d4}
+
+/* ---------- モーション配慮 ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+/* ============================================================
+   カメふしぎ島 — 複数ページ共通ナビ（MULTI PAGE BUILD-1）
+   ・島のちず / 現在地 / もどる・つぎへ
+   ・固定配置にしない。本文の流れの中に置く
+   ============================================================ */
+
+/* ---------- 島のちず ----------
+   スマホでは丸だけを並べる。場所の名前は下の .k-here に大きく出す。
+   ラベルを8列に詰めると折り返して崩れるため、600px以上でのみ表示する。 */
+.k-map{
+  width:min(760px,92vw);
+  margin:14px auto 0;
+  background:var(--k-green-bg);
+  border-radius:var(--k-radius);
+  padding:12px 6px 10px;
+}
+.k-map-title{
+  margin:0 0 6px;
+  font-size:14px;
+  font-weight:700;
+  color:#2b4a39;            /* 対 #e8f4e4 で 7.4:1 */
+  text-align:center;
+  letter-spacing:.04em;
+}
+.k-map-list{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:relative;
+}
+/* 島をつなぐ道。丸の中心（上から26px）に一本通す */
+.k-map-list::before{
+  content:"";
+  position:absolute;
+  left:22px;right:22px;top:26px;
+  height:3px;
+  background:#b8d0c0;
+  border-radius:2px;
+  z-index:0;
+}
+.k-map-list li{flex:1 1 0;min-width:0;display:flex;justify-content:center}
+.k-stop{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  width:100%;       /* li いっぱいに広げて当たり判定を最大化する */
+  min-width:38px;   /* 360px でも8個が1行に収まる幅 */
+  min-height:48px;  /* たての当たり判定は 48px 確保する */
+  padding:8px 0 4px;
+  text-decoration:none;
+  color:#2b4a39;
+  border-radius:12px;
+}
+a.k-stop:hover,a.k-stop:focus-visible{background:rgba(255,255,255,.85)}
+a.k-stop:focus-visible{outline:3px solid var(--k-green);outline-offset:2px}
+.k-dot{
+  width:26px;height:26px;border-radius:50%;
+  background:#ffffff;
+  border:2px solid #7d9a88;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;line-height:1;
+  color:#2b4a39;
+}
+/* まだ行っていない場所は道の色に近づけて、行ける場所と区別する */
+span.k-stop .k-dot{border-color:#b8d0c0;color:#4f6a5a}
+.k-stop-no{display:none}            /* スマホでは名前を出さない */
+/* 今いる場所 */
+.k-stop[aria-current="page"] .k-dot{
+  width:36px;height:36px;font-size:15px;
+  background:var(--k-green);
+  border-color:var(--k-forest);
+  color:#ffffff;
+  box-shadow:0 0 0 4px rgba(47,122,79,.22);
+}
+/* 通った場所 */
+.k-stop.is-done .k-dot{background:var(--k-yellow-bg);border-color:var(--k-yellow)}
+.k-stop.is-done .k-dot::after{content:"✓";color:#7a5410;font-size:15px}  /* 対 #ffe9b8 5.6:1 */
+.k-stop.is-done .k-dot .k-dot-n{display:none}
+
+/* 画面が広いときだけ場所の名前も出す */
+@media(min-width:600px){
+  .k-map-list::before{top:30px}
+  .k-stop-no{display:block;font-size:12px;font-weight:700;color:#3d5c4b;white-space:nowrap}
+  span.k-stop .k-stop-no{color:#4f6a5a}
+}
+
+/* 今いる場所の名前 */
+.k-here{
+  width:min(760px,92vw);
+  margin:10px auto 0;
+  text-align:center;
+  font-size:17px;
+  font-weight:700;
+  color:#2f4a3c;
+}
+.k-here .num{
+  display:inline-block;
+  background:var(--k-forest);
+  color:var(--k-bg);
+  border-radius:999px;
+  padding:2px 12px;
+  margin-right:8px;
+  font-size:15px;
+}
+
+/* ---------- もどる / つぎへ ---------- */
+.k-nav{
+  width:min(760px,92vw);
+  margin:26px auto 0;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.k-nav a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:64px;
+  padding:14px 18px;
+  border-radius:var(--k-radius);
+  text-decoration:none;
+  font-weight:800;
+  font-size:18px;
+  line-height:1.5;
+  box-shadow:var(--k-shadow);
+}
+.k-nav .next{
+  background:var(--k-green);
+  color:#ffffff;                 /* 5.23:1 */
+  justify-content:center;
+  text-align:center;
+}
+.k-nav .prev{
+  background:#ffffff;
+  color:var(--k-forest);         /* 9.06:1 */
+  border:2px solid #cfe0d4;
+  justify-content:center;
+  text-align:center;
+}
+.k-nav .home{
+  background:var(--k-yellow-bg);
+  color:#5a3d09;                 /* 対 #ffe9b8 8.0:1 */
+  justify-content:center;
+  text-align:center;
+  font-size:17px;
+}
+.k-nav a:focus-visible{outline:3px solid var(--k-yellow);outline-offset:3px}
+.k-nav .arrow{font-size:20px;line-height:1}
+.k-nav .lbl{font-size:14px;font-weight:700;opacity:.92;display:block}
+@media(min-width:600px){
+  .k-nav{grid-template-columns:1fr 1fr}
+  .k-nav .solo{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+/* ---------- p1 の入口バンド ---------- */
+.k-entry-band{width:min(760px,92vw);margin:14px auto 0}
+.k-entry-band img{
+  display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:var(--k-radius);
+  box-shadow:0 4px 0 rgba(30,58,47,.16);
+}
+
+/* ---------- 「カメって こんな 生きもの」5項目 ---------- */
+.k-basic{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:12px;
+}
+.k-basic li{
+  background:var(--k-card);
+  border-radius:var(--k-radius);
+  box-shadow:var(--k-shadow);
+  padding:16px 18px 18px;
+  font-size:19px;
+  line-height:1.95;
+}
+/* flex にすると ruby が別の要素として扱われ、見出しが変な位置で折れる。
+   block のままにして、アイコンだけ inline-block で並べる。
+   本文中の <b>は虫類</b> まで block にしないよう、見出しだけを指す */
+.k-basic .ttl{
+  display:block;
+  font-size:20px;
+  color:var(--k-forest);
+  margin-bottom:4px;
+  line-height:1.75;
+}
+.k-basic .ico{
+  display:inline-block;
+  font-size:24px;
+  line-height:1;
+  margin-right:8px;
+  vertical-align:-2px;
+}
+
+/* ============================================================
+   実写・事実カード・六角形の目印
+   （B0「ほんものの カメを 見る」／B1「もようが ひらく」用）
+   ============================================================ */
+
+/* ---------- 実写 ---------- */
+.k-photo{margin:0 0 16px}
+.k-photo img{
+  width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;
+  border:1px solid #d8d2c4;border-radius:2px;
+}
+.k-photo figcaption{font-size:15px;color:var(--k-ink-soft);margin-top:8px;line-height:1.8}
+
+/* ---------- ほんとうの はなし（事実カード） ---------- */
+.k-fact{
+  background:#fff;border:3px solid var(--k-green-bg);border-radius:var(--k-radius);
+  padding:18px 20px;box-shadow:var(--k-shadow);margin:0 0 16px;
+}
+.k-fact>b{
+  display:flex;align-items:center;gap:8px;font-size:17px;color:var(--k-green);
+  margin-bottom:10px;line-height:1.7;
+}
+.k-fact p{margin:0;font-size:19px;line-height:1.95}
+.k-fact p+p{margin-top:12px}
+
+/* ---------- おはなし区間の目印＝六角形 ---------- */
+.k-hexrow{margin:0 0 16px}
+.k-hexsvg{width:100%;height:auto;max-height:110px;display:block}
+.hx-line{fill:var(--k-green-bg);stroke:var(--k-green);stroke-width:2.5}
+.k-hexmini{
+  display:inline-block;width:20px;height:22px;background:var(--k-green);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);vertical-align:-4px;
+}
+.k-rule{background:var(--k-green-bg);border-radius:var(--k-radius);padding:18px 20px;margin:0}
+.k-rule p{margin:0;font-size:18px;line-height:1.95}
+.k-sec h2 .n.hex{
+  border-radius:0;
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+}
+
+/* ============================================================
+   説明の絵（各項目に1枚）
+   ・本文の上に置く。横に並べると 360px で1行8文字になるため縦積み
+   ・16:9。aspect-ratio 指定で画像が来る前も高さが確定する（CLS 0）
+   ============================================================ */
+.k-illust{margin:0 0 12px}
+.k-illust img{
+  display:block;width:100%;height:auto;
+  aspect-ratio:16/9;object-fit:cover;
+  border-radius:14px;
+  background:#eef3ea;
+}
+/* 絵が届くまでの仮枠。絵コンテの内容をそのまま表示する */
+.k-illust .ph{
+  aspect-ratio:16/9;
+  border:2px dashed #7d9a88;
+  border-radius:14px;
+  background:#f2f7ef;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:4px;padding:12px 14px;
+}
+.k-illust .ph .no{
+  font-size:12px;font-weight:800;letter-spacing:.08em;
+  color:#3d5c4b;                 /* 対 #f2f7ef 6.4:1 */
+}
+.k-illust .ph .cut{
+  font-size:15px;font-weight:700;line-height:1.6;
+  color:#1e3a2f;
+}
+.k-illust figcaption{
+  font-size:14px;color:var(--k-ink-soft);margin-top:6px;line-height:1.7;
+}
+
+/* ============================================================
+   ゾーン（しめった もり／みずべ／かわいた ばしょ）
+   BUILD-2 で preview/extra-final.css から移植。数値は変更していない
+   ============================================================ */
+
+/* ゾーンの地色 */
+.k-zone{border-radius:var(--k-radius);padding:14px 16px;margin-top:28px}
+#mori   {background:#eef5e9}
+#mizube {background:#eef4f7}
+#kawaita{background:#f7f2e8}
+
+/* ゾーンの中の いま どこ */
+.k-dots{display:flex;gap:8px;margin:0 0 10px}
+.k-dots span{width:12px;height:12px;border-radius:50%;background:#c3cfc0}
+.k-dots span.on{background:var(--k-green)}
+
+/* ゾーンの帯（風景） */
+.k-banner{margin:0 0 12px}
+.k-banner img{
+  width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;
+  border-radius:20px;box-shadow:var(--k-shadow);
+}
+@media(min-width:720px){.k-banner img{max-height:320px}}
+
+/* 発見をうながす文 */
+.k-find{font-size:18px;line-height:2;margin:0 0 10px;color:var(--k-ink)}
+
+/* びっくり話 */
+.k-wow{
+  background:#fff;border:3px dashed var(--k-yellow);border-radius:var(--k-radius);
+  padding:16px 18px;margin:0 0 12px;
+}
+.k-wow-h{font-size:19px;font-weight:800;line-height:1.8;margin:0 0 10px;color:var(--k-ink)}
+.k-wow-h span{margin-right:4px}
+.k-wow p{font-size:19px;line-height:1.95;margin:0}
+.k-wow p+p{margin-top:10px}
+.k-wow-q{color:var(--k-ink-soft)}
+
+/* 足を見る → 考える ミニ問題 */
+.k-mini{
+  background:#fff;border:3px solid var(--k-green-bg);border-radius:var(--k-radius);
+  padding:20px;box-shadow:var(--k-shadow);
+}
+.k-lookrow{background:var(--k-yellow-bg);border-radius:14px;padding:14px;margin:0 0 14px}
+.k-lookrow img{width:120px;height:auto;background:#fff;border-radius:10px;display:block;margin:0 auto 10px}
+.k-lookrow p{margin:0;font-size:19px;line-height:1.95}
+.k-mini .k-q{font-size:20px;font-weight:800;line-height:1.85;margin:0 0 14px}
+.k-mini button{
+  display:block;width:100%;font-family:inherit;font-size:19px;font-weight:700;
+  line-height:1.8;text-align:left;color:var(--k-ink);background:var(--k-bg);
+  border:3px solid var(--k-green-bg);border-radius:16px;padding:13px 18px;
+  min-height:56px;cursor:pointer;margin-bottom:12px;
+}
+.k-mini button:last-of-type{margin-bottom:0}
+.k-mini button:hover{border-color:var(--k-green);background:var(--k-green-bg)}
+.k-mini button:focus-visible{outline:4px solid var(--k-green);outline-offset:3px}
+.k-mini button[disabled]{cursor:default;opacity:1}
+
+/* 答えたあとにだけ出る */
+.k-reveal{margin-top:16px;padding-top:16px;border-top:3px solid var(--k-green-bg)}
+.k-reveal[hidden]{display:none}
+.k-res{font-size:20px;font-weight:800;margin:0 0 10px;line-height:1.8}
+.k-reveal p{font-size:19px;line-height:1.95;margin:0 0 12px}
+.k-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.k-compare figure{margin:0;text-align:center}
+.k-compare img{width:100%;height:auto;background:#fff;border-radius:12px;display:block}
+.k-compare figcaption{font-size:17px;line-height:1.8;margin-top:6px}
+.k-caution{font-size:17px!important;color:var(--k-ink-soft);margin-bottom:0!important}
+
+/* ゴールの補足リンク行 */
+.k-fact .k-note{font-size:17px;color:var(--k-ink-soft);margin-top:12px;line-height:1.9}
+.k-fact .k-note a{color:var(--k-green);font-weight:700}
