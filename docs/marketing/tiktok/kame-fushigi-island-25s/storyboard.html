@@ -134,7 +134,7 @@
 
   /* ---------- 上端のプログレスバー ---------- */
   #progress{
-    position:absolute;left:0;top:0;height:8px;
+    position:absolute;left:0;top:0;height:12px;
     background:var(--accent);width:0;
   }
 
@@ -217,7 +217,7 @@ const CUTS = [
          下端 = 1070 + (88×1.25+34)×2 + 14 = 1372px でセーフエリア内。
          at/inDur を詰めて不透明度100%到達を 0.77秒 → 0.26秒 にする。 */
       { text: '息子が[[カメ]]を\n連れて帰ってきた。', cls: 'xl', size: 88,
-        top: 1070, at: 0.10, inDur: 0.16, out: 3.4 }
+        top: 1044, at: 0.10, inDur: 0.16, out: 3.4 }
     ]
   },
   {
@@ -235,10 +235,10 @@ const CUTS = [
     captions: []
   },
   {
-    id: 'c2', start: 3.2, end: 7.3,
+    id: 'c2a', start: 3.2, end: 5.30,
     src: 'photos/02-parent-child-phone.jpg',
-    note: '3〜7秒／親子でスマホをのぞく',
-    focus: '50% 38%', zoom: [1.06, 1.16],
+    note: '3.2〜5.3秒／親子でスマホをのぞく',
+    focus: '50% 38%', zoom: [1.06, 1.11],
     captions: [
       { text: '何を食べる？',            cls: 'lg', top: 300, at: 3.55, out: 7.3 },
       { text: 'どんな場所で暮らす？',     cls: 'lg', top: 434, at: 4.55, out: 7.3 },
@@ -246,12 +246,27 @@ const CUTS = [
     ]
   },
   {
-    id: 'c3', start: 7.1, end: 11.3,
+    id: 'c2b', start: 5.30, end: 7.3, xfade: 0,
+    src: 'photos/02-parent-child-phone.jpg',
+    note: '5.3〜7.3秒／スマホの手元へ寄る（同じ写真のパンチイン）',
+    focus: '50% 38%', origin: '30% 62%', zoom: [1.24, 1.18],
+    captions: []
+  },
+  {
+    id: 'c3a', start: 7.1, end: 9.20,
     src: 'photos/03-searching.jpg',
-    note: '7〜11秒／検索している雰囲気 → カメふしぎ島へ',
-    focus: '46% 46%', zoom: [1.14, 1.02],
+    note: '7.1〜9.2秒／検索している雰囲気',
+    focus: '46% 46%', zoom: [1.14, 1.06],
     captions: [
-      { text: 'でも、せっかくなら——',   cls: 'lg', top: 1180, at: 7.35, out: 9.15 },
+      { text: 'でも、せっかくなら——',   cls: 'lg', top: 1180, at: 7.35, out: 9.15 }
+    ]
+  },
+  {
+    id: 'c3b', start: 9.20, end: 11.3, xfade: 0,
+    src: 'photos/03-searching.jpg',
+    note: '9.2〜11.3秒／二人の表情へ寄る。テロップが替わる 9.25 と同じ位置で画も切る',
+    focus: '46% 46%', origin: '52% 38%', zoom: [1.26, 1.14],
+    captions: [
       { text: '親子で[[調べてみよう。]]', cls: 'xl', top: 1160, at: 9.25, out: 11.3 }
     ]
   },
@@ -272,33 +287,47 @@ const CUTS = [
   {
     id: 'c4b', start: 12.6, end: 14.25,
     src: '../../../../assets/kids/bg-mori.webp',
-    note: '11〜17秒②／しめった もり',
-    focus: '50% 50%', zoom: [1.18, 1.08],
+    note: '11〜17秒②／しめった もり（ハコガメが左端で切れるので左へ寄せる）',
+    focus: '34% 50%', zoom: [1.18, 1.08],
     captions: [ { text: '[[探す]] 🔍', cls: 'lg', top: 1240, at: 12.85, out: 14.25 } ]
   },
   {
     id: 'c4c', start: 14.1, end: 15.75,
     src: '../../../../assets/kids/bg-mizube.webp',
-    note: '11〜17秒③／みずべ',
-    focus: '50% 52%', zoom: [1.08, 1.18],
+    note: '11〜17秒③／みずべ（甲羅干しのカメが右端で切れるので右へ寄せる）',
+    focus: '72% 52%', zoom: [1.08, 1.18],
     captions: [ { text: '[[くらべる]] 🐢', cls: 'lg', top: 1240, at: 14.35, out: 15.75 } ]
   },
   {
     id: 'c4d', start: 15.6, end: 17.3,
     src: '../../../../assets/kids/bg-kawaita.webp',
-    note: '11〜17秒④／かわいた ばしょ',
-    focus: '50% 48%', zoom: [1.18, 1.08],
+    note: '11〜17秒④／かわいた ばしょ（リクガメが右端で切れるので右へ寄せる）',
+    focus: '56% 48%', zoom: [1.18, 1.08],
     captions: [ { text: '[[考える]] 💡', cls: 'lg', top: 1240, at: 15.85, out: 17.3 } ]
   },
 
   {
-    id: 'c5', start: 17.1, end: 22.2,
+    id: 'c5a', start: 17.1, end: 18.90,
     src: 'photos/05-family-smile.jpg',
-    note: '17〜22秒／親子が笑顔でスマホを見る',
-    focus: '50% 40%', zoom: [1.04, 1.14],
+    note: '17.1〜18.9秒／親子が笑顔',
+    focus: '50% 40%', zoom: [1.04, 1.10],
     captions: [
-      { text: '拾ってきたカメが、\n[[学びのきっかけ]]になった。', cls: 'lg', top: 1130, at: 17.5, out: 22.2 }
+      { text: '拾ってきたカメが、\n[[学びのきっかけ]]になった。', cls: 'lg', top: 1104, at: 17.5, out: 22.2 }
     ]
+  },
+  {
+    id: 'c5b', start: 18.90, end: 20.55, xfade: 0,
+    src: 'photos/04-alt-smile.jpg',
+    note: '18.9〜20.55秒／別アングル（予備として置いていた写真を投入）',
+    focus: '50% 40%', zoom: [1.12, 1.05],
+    captions: []
+  },
+  {
+    id: 'c5c', start: 20.55, end: 22.2, xfade: 0,
+    src: 'photos/05-family-smile.jpg',
+    note: '20.55〜22.2秒／表情へ寄って締める',
+    focus: '50% 40%', origin: '58% 44%', zoom: [1.10, 1.20],
+    captions: []
   },
   {
     id: 'c6', start: 22.0, end: 25.0,
