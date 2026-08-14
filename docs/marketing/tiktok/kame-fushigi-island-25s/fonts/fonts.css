@@ -1,0 +1,29 @@
+/* fetch-fonts.mjs が自動生成。直接編集しない。 */
+@font-face{
+  font-family:'M PLUS Rounded 1c';
+  font-style:normal;
+  font-weight:700;
+  font-display:block;
+  src:url('mplus-rounded-1c-700.woff2') format('woff2');
+}
+@font-face{
+  font-family:'M PLUS Rounded 1c';
+  font-style:normal;
+  font-weight:800;
+  font-display:block;
+  src:url('mplus-rounded-1c-800.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans JP';
+  font-style:normal;
+  font-weight:400;
+  font-display:block;
+  src:url('noto-sans-jp-400.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Noto Sans JP';
+  font-style:normal;
+  font-weight:700;
+  font-display:block;
+  src:url('noto-sans-jp-700.woff2') format('woff2');
+}

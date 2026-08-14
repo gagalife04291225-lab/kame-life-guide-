@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>カメふしぎ島 TikTok 25秒｜KAME LIFE GUIDE</title>
+<!-- フォントは同梱（fetch-fonts.mjs が生成）。
+     書き出し用の Chromium は外部ネットワークに出られないため、
+     Google Fonts を実行時に読み込ませてはいけない。 -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  /* ============================================================
+     カメふしぎ島 TikTok 動画（9:16 / 1080x1920 / 25秒 / 30fps）
+     - CSS アニメーションは使わない。全フレームを JS の applyFrame(t)
+       で決定的に描くため、Playwright から1コマずつ正確にシークできる。
+     ============================================================ */
+  :root{
+    --forest-deep:#0d1f1a;
+    --forest:#2f4a3c;
+    --parchment:#f4efe2;
+    --accent:#d4a96a;
+    --k-yellow:#e8a33d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000;overflow:hidden}
+  body{display:grid;place-items:center;min-height:100vh}
+
+  #stage{
+    position:relative;
+    width:1080px;height:1920px;
+    overflow:hidden;
+    background:var(--forest-deep);
+    transform-origin:top left;
+  }
+
+  /* ---------- 映像レイヤー ---------- */
+  .cut{
+    position:absolute;inset:0;
+    opacity:0;
+    will-change:opacity;
+  }
+  .cut .frame{
+    position:absolute;inset:0;
+    will-change:transform;
+    transform-origin:center center;
+  }
+  .cut img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  /* 写真が未配置のときのプレースホルダー */
+  .cut .ph{
+    position:absolute;inset:0;
+    display:none;
+    place-content:start center;justify-items:center;align-content:start;
+    background:
+      radial-gradient(120% 90% at 30% 20%, #3f6a52 0%, #22402f 55%, #0d1f1a 100%);
+    color:#f4efe2;
+    font-family:"Noto Sans JP",sans-serif;
+    text-align:center;
+    padding:120px 80px;
+  }
+  .cut.missing .ph{display:grid}
+  .cut.missing img{visibility:hidden}
+  .ph b{display:block;font-size:44px;letter-spacing:.04em;margin-bottom:24px;color:var(--accent)}
+  .ph span{display:block;font-size:34px;line-height:1.7;opacity:.85}
+
+  /* ---------- グレーディング（可読性確保） ---------- */
+  #grade{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(to bottom, rgba(13,31,26,.55) 0%, rgba(13,31,26,0) 26%),
+      linear-gradient(to top,   rgba(13,31,26,.62) 0%, rgba(13,31,26,0) 34%);
+  }
+  #scrim{position:absolute;inset:0;pointer-events:none;background:var(--forest-deep);opacity:0}
+
+  /* ---------- テロップ ---------- */
+  #captions{position:absolute;inset:0;pointer-events:none}
+  .cap{
+    position:absolute;
+    left:72px;width:836px;           /* TikTok の右側 UI を避ける安全域 */
+    font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
+    font-weight:800;
+    color:#fff;
+    line-height:1.42;
+    letter-spacing:.01em;
+    /* 自動折り返しは禁止。改行は文言中の \n だけで制御する
+       （自動折り返しさせると「連れて帰ってき／た。」のように割れる） */
+    white-space:pre;
+    opacity:0;
+    will-change:opacity,transform;
+    text-shadow:
+      0 4px 18px rgba(13,31,26,.85),
+      0 2px 6px rgba(13,31,26,.9),
+      0 0 2px rgba(13,31,26,.9);
+    -webkit-text-stroke:8px var(--forest-deep);
+    paint-order:stroke fill;
+  }
+  /* サイズは「1行の最大文字数 × font-size ≦ 836px」で決めている。
+     文言を長くするときは必ずこの計算をやり直すこと。 */
+  .cap.xl{font-size:82px;line-height:1.34}   /* 最長「親子で調べてみよう。」10字 = 820px */
+  .cap.lg{font-size:66px}                    /* 最長「学びのきっかけになった。」12字 = 792px */
+  .cap.md{font-size:58px}
+  .cap.sm{font-size:44px;font-weight:700;-webkit-text-stroke:6px var(--forest-deep)}
+  .cap.center{text-align:center}
+  .cap.chip{
+    -webkit-text-stroke:0;
+    text-shadow:0 3px 12px rgba(13,31,26,.5);
+    background:rgba(13,31,26,.82);
+    border:4px solid var(--accent);
+    border-radius:999px;
+    padding:18px 40px;
+    width:auto;
+    font-size:58px;
+    line-height:1.2;
+  }
+  .cap .accent{color:var(--k-yellow)}
+
+  /* ---------- エンドカード ---------- */
+  #endcard{
+    position:absolute;left:0;right:0;top:0;bottom:0;
+    display:grid;place-content:center;justify-items:center;
+    gap:26px;text-align:center;opacity:0;
+    font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
+    padding-bottom:180px;
+  }
+  /* 入口の写真は空と海が明るいので、文字の下に必ず暗い面を敷いて
+     コントラストを固定する（#f4efe2 on #12241e = 14.1:1）。 */
+  #endcard::before{
+    content:"";position:absolute;left:50%;top:50%;
+    width:1300px;height:1100px;transform:translate(-50%,-54%);
+    background:radial-gradient(50% 50% at 50% 50%,
+      rgba(18,36,30,.92) 0%, rgba(18,36,30,.80) 42%,
+      rgba(18,36,30,.42) 68%, rgba(18,36,30,0) 100%);
+    z-index:-1;
+  }
+  #endcard .mark{font-size:150px;line-height:1}
+  #endcard .title{
+    font-size:112px;font-weight:800;color:#fff;letter-spacing:.02em;
+    -webkit-text-stroke:10px var(--forest-deep);paint-order:stroke fill;
+    text-shadow:0 6px 24px rgba(13,31,26,.8);
+  }
+  #endcard .rule{width:220px;height:6px;background:var(--accent);border-radius:3px}
+  #endcard .sub{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:38px;font-weight:700;color:var(--parchment);
+    letter-spacing:.22em;
+    text-shadow:0 3px 14px rgba(13,31,26,.9);
+  }
+  #endcard .url{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:34px;font-weight:700;color:var(--forest-deep);
+    background:var(--accent);border-radius:999px;padding:16px 42px;
+    letter-spacing:.02em;
+  }
+
+  /* ---------- プレビュー用（?play=1）---------- */
+  #hud{
+    position:fixed;left:12px;bottom:12px;z-index:99;
+    font:600 13px/1.4 ui-monospace,monospace;color:#9fe3bd;
+    background:rgba(0,0,0,.6);padding:6px 10px;border-radius:6px;display:none;
+  }
+  body.preview #hud{display:block}
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+<div id="hud"></div>
+
+<script>
+/* ================================================================
+   タイムライン定義 — テロップ文言・尺・素材はすべてここだけを触る
+   t は秒。DURATION = 25.0s
+   ================================================================ */
+const DURATION = 25.0;
+
+/* 写真素材（photos/ に配置）。未配置のカットは自動でプレースホルダー表示。 */
+const CUTS = [
+  {
+    id: 'c1', start: 0.0, end: 3.4,
+    src: 'photos/01-turtle-case.jpg',
+    note: '0〜3秒／透明ケースのカメを大きく見せる',
+    /* カメはフレーム右下寄り → そこへ寄せて緩やかに引く */
+    focus: '68% 82%', zoom: [1.34, 1.18],
+    captions: [
+      { text: '息子がカメを\n連れて帰ってきた。', cls: 'xl', top: 1120, at: 0.35, out: 3.4 }
+    ]
+  },
+  {
+    id: 'c2', start: 3.2, end: 7.3,
+    src: 'photos/02-parent-child-phone.jpg',
+    note: '3〜7秒／親子でスマホをのぞく',
+    focus: '50% 38%', zoom: [1.06, 1.16],
+    captions: [
+      { text: '何を食べる？',        cls: 'lg', top: 300, at: 3.55, out: 7.3 },
+      { text: 'どんな場所で暮らす？', cls: 'lg', top: 420, at: 4.55, out: 7.3 },
+      { text: 'そもそも何ガメ？',     cls: 'lg', top: 540, at: 5.55, out: 7.3 }
+    ]
+  },
+  {
+    id: 'c3', start: 7.1, end: 11.3,
+    src: 'photos/03-searching.jpg',
+    note: '7〜11秒／検索している雰囲気 → カメふしぎ島へ',
+    focus: '46% 46%', zoom: [1.14, 1.02],
+    captions: [
+      { text: 'でも、せっかくなら——', cls: 'lg', top: 1180, at: 7.35, out: 9.15 },
+      { text: '親子で調べてみよう。',   cls: 'xl', top: 1140, at: 9.25, out: 11.3 }
+    ]
+  },
+
+  /* --- 11〜17秒／カメふしぎ島の各エリア（1.5秒ずつ4枚） --- */
+  {
+    id: 'c4a', start: 11.1, end: 12.75,
+    src: '../../../../assets/kids/kids-hero-fushigijima.webp',
+    note: '11〜17秒①／カメふしぎ島',
+    focus: '50% 45%', zoom: [1.10, 1.20],
+    captions: [ { text: '見る 👀', cls: 'chip', left: 72, top: 1240, at: 11.35, out: 12.75 } ]
+  },
+  {
+    id: 'c4b', start: 12.6, end: 14.25,
+    src: '../../../../assets/kids/bg-mori.webp',
+    note: '11〜17秒②／しめった もり',
+    focus: '50% 50%', zoom: [1.18, 1.08],
+    captions: [ { text: '探す 🔍', cls: 'chip', left: 72, top: 1240, at: 12.85, out: 14.25 } ]
+  },
+  {
+    id: 'c4c', start: 14.1, end: 15.75,
+    src: '../../../../assets/kids/bg-mizube.webp',
+    note: '11〜17秒③／みずべ',
+    focus: '50% 52%', zoom: [1.08, 1.18],
+    captions: [ { text: 'くらべる 🐢', cls: 'chip', left: 72, top: 1240, at: 14.35, out: 15.75 } ]
+  },
+  {
+    id: 'c4d', start: 15.6, end: 17.3,
+    src: '../../../../assets/kids/bg-kawaita.webp',
+    note: '11〜17秒④／かわいた ばしょ',
+    focus: '50% 48%', zoom: [1.18, 1.08],
+    captions: [ { text: '考える 💡', cls: 'chip', left: 72, top: 1240, at: 15.85, out: 17.3 } ]
+  },
+
+  {
+    id: 'c5', start: 17.1, end: 22.2,
+    src: 'photos/05-family-smile.jpg',
+    note: '17〜22秒／親子が笑顔でスマホを見る',
+    focus: '50% 40%', zoom: [1.04, 1.14],
+    captions: [
+      { text: '拾ってきたカメが、\n学びのきっかけになった。', cls: 'lg', top: 1140, at: 17.5, out: 22.2 }
+    ]
+  },
+  {
+    id: 'c6', start: 22.0, end: 25.0,
+    src: '../../../../assets/kids/bg-island-entry.webp',
+    note: '22〜25秒／カメふしぎ島の入口（エンドカード）',
+    focus: '50% 50%', zoom: [1.14, 1.05],
+    captions: []
+  }
+];
+
+const XFADE = 0.32;        // カット間クロスディゾルブ
+const ENDCARD_AT = 22.25;  // エンドカード出現
+
+/* ================================================================
+   ビルド
+   ================================================================ */
+const stage = document.getElementById('stage');
+const nodes = [];
+
+for (const cut of CUTS) {
+  const el = document.createElement('div');
+  el.className = 'cut';
+  el.id = cut.id;
+
+  const frame = document.createElement('div');
+  frame.className = 'frame';
+
+  const img = document.createElement('img');
+  img.src = cut.src;
+  img.alt = '';
+  img.style.objectPosition = cut.focus;
+  img.addEventListener('error', () => el.classList.add('missing'));
+
+  const ph = document.createElement('div');
+  ph.className = 'ph';
+  ph.innerHTML = '<b>PHOTO 未配置</b><span>' + cut.note + '<br>' + cut.src + '</span>';
+
+  frame.appendChild(img);
+  frame.appendChild(ph);
+  el.appendChild(frame);
+  stage.appendChild(el);
+
+  nodes.push({ cut, el, frame });
+}
+
+const grade = document.createElement('div');
+grade.id = 'grade';
+stage.appendChild(grade);
+
+const capLayer = document.createElement('div');
+capLayer.id = 'captions';
+stage.appendChild(capLayer);
+
+const capNodes = [];
+for (const cut of CUTS) {
+  for (const c of cut.captions) {
+    const el = document.createElement('div');
+    el.className = 'cap ' + (c.cls || 'md');
+    el.textContent = c.text;
+    el.style.top = c.top + 'px';
+    if (c.left != null) el.style.left = c.left + 'px';
+    capLayer.appendChild(el);
+    capNodes.push({ c, el });
+  }
+}
+
+const endcard = document.createElement('div');
+endcard.id = 'endcard';
+endcard.innerHTML =
+  '<div class="mark">🐢</div>' +
+  '<div class="title">カメふしぎ島</div>' +
+  '<div class="rule"></div>' +
+  '<div class="sub">KAME LIFE GUIDE</div>' +
+  '<div class="url">kamelifeguide.com/kids/</div>';
+stage.appendChild(endcard);
+
+const scrim = document.createElement('div');
+scrim.id = 'scrim';
+stage.appendChild(scrim);
+
+/* ================================================================
+   フレーム描画
+   ================================================================ */
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const easeOutCubic = p => 1 - Math.pow(1 - p, 3);
+const lerp = (a, b, p) => a + (b - a) * p;
+
+/** カットの不透明度：イン/アウトを XFADE でクロスさせる */
+function cutOpacity(cut, t) {
+  if (t <= cut.start - XFADE || t >= cut.end) return 0;
+  let o = 1;
+  if (t < cut.start) o = Math.min(o, (t - (cut.start - XFADE)) / XFADE);
+  if (t > cut.end - XFADE) o = Math.min(o, (cut.end - t) / XFADE);
+  return clamp(o, 0, 1);
+}
+
+function applyFrame(t) {
+  t = clamp(t, 0, DURATION);
+
+  for (const { cut, el, frame } of nodes) {
+    const o = cutOpacity(cut, t);
+    el.style.opacity = o.toFixed(4);
+    if (o > 0) {
+      const p = clamp((t - cut.start) / (cut.end - cut.start), 0, 1);
+      const s = lerp(cut.zoom[0], cut.zoom[1], p);
+      frame.style.transform = 'scale(' + s.toFixed(4) + ')';
+    }
+  }
+
+  for (const { c, el } of capNodes) {
+    const IN = 0.42, OUT = 0.26;
+    let o = 0, dy = 26;
+    if (t >= c.at && t <= c.out) {
+      const pi = clamp((t - c.at) / IN, 0, 1);
+      const e = easeOutCubic(pi);
+      o = e;
+      dy = lerp(26, 0, e);
+      if (t > c.out - OUT) o = Math.min(o, (c.out - t) / OUT);
+    }
+    el.style.opacity = clamp(o, 0, 1).toFixed(4);
+    el.style.transform = 'translateY(' + dy.toFixed(2) + 'px)';
+  }
+
+  // エンドカード
+  const ep = clamp((t - ENDCARD_AT) / 0.55, 0, 1);
+  const ee = easeOutCubic(ep);
+  endcard.style.opacity = ee.toFixed(4);
+  endcard.style.transform = 'translateY(' + lerp(30, 0, ee).toFixed(2) + 'px) scale(' + lerp(0.96, 1, ee).toFixed(4) + ')';
+
+  // 最後の 0.25 秒でわずかに沈める（ループ耐性）
+  scrim.style.opacity = (t > DURATION - 0.25 ? (t - (DURATION - 0.25)) / 0.25 * 0.35 : 0).toFixed(4);
+}
+
+window.__seek = applyFrame;
+window.__duration = DURATION;
+applyFrame(0);
+
+/* ---------------- プレビュー再生（?play=1） ---------------- */
+const params = new URLSearchParams(location.search);
+if (params.get('play') === '1') {
+  document.body.classList.add('preview');
+  const hud = document.getElementById('hud');
+  // 画面に収める
+  const fit = () => {
+    const k = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+    stage.style.transform = 'scale(' + k + ')';
+    stage.style.position = 'absolute';
+    stage.style.left = ((window.innerWidth - 1080 * k) / 2) + 'px';
+    stage.style.top = ((window.innerHeight - 1920 * k) / 2) + 'px';
+  };
+  fit(); window.addEventListener('resize', fit);
+
+  let t0 = performance.now();
+  const tick = now => {
+    const t = ((now - t0) / 1000) % DURATION;
+    applyFrame(t);
+    hud.textContent = t.toFixed(2) + 's / ' + DURATION.toFixed(2) + 's';
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+</script>
+</body>
+</html>
