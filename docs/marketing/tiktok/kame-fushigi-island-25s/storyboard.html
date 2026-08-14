@@ -78,7 +78,8 @@
   #captions{position:absolute;inset:0;pointer-events:none}
   .cap{
     position:absolute;
-    left:72px;width:836px;           /* TikTok の右側 UI を避ける安全域 */
+    /* セーフエリアは tiktok/DESIGN-SYSTEM.md v1.0 の保守値 x:86〜950 / y:288〜1382 に合わせる */
+    left:86px;width:836px;
     font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
     font-weight:800;
     color:#fff;
@@ -147,11 +148,14 @@
     letter-spacing:.22em;
     text-shadow:0 3px 14px rgba(13,31,26,.9);
   }
-  #endcard .url{
-    font-family:"Noto Sans JP",sans-serif;
-    font-size:34px;font-weight:700;color:var(--forest-deep);
-    background:var(--accent);border-radius:999px;padding:16px 42px;
-    letter-spacing:.02em;
+  /* CTA。URL のベタ書きはタップできず、TikTok から外部へ出る唯一の経路
+     （プロフィールの bio リンク）を案内しないため流入が計測できない。
+     詳細は ../red-eared-slider-family-video-evaluation.md の監査結果。 */
+  #endcard .cta{
+    font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
+    font-size:44px;font-weight:800;color:var(--forest-deep);
+    background:var(--accent);border-radius:999px;padding:20px 46px;
+    letter-spacing:.02em;white-space:nowrap;
   }
 
   /* ---------- プレビュー用（?play=1）---------- */
@@ -181,8 +185,9 @@ const CUTS = [
     id: 'c1', start: 0.0, end: 3.4,
     src: 'photos/01-turtle-case.jpg',
     note: '0〜3秒／透明ケースのカメを大きく見せる',
-    /* カメはフレーム右下寄り → そこへ寄せて緩やかに引く */
-    focus: '68% 82%', zoom: [1.34, 1.18],
+    /* カメだけに寄って始まり、引いて親子を入れる。
+       origin はカバー切り抜き後の画面内でカメがいる位置（実測 72% / 84%）。 */
+    focus: '50% 50%', origin: '72% 84%', zoom: [2.30, 1.30],
     captions: [
       { text: '息子がカメを\n連れて帰ってきた。', cls: 'xl', top: 1120, at: 0.35, out: 3.4 }
     ]
@@ -215,28 +220,28 @@ const CUTS = [
     src: '../../../../assets/kids/kids-hero-fushigijima.webp',
     note: '11〜17秒①／カメふしぎ島',
     focus: '50% 45%', zoom: [1.10, 1.20],
-    captions: [ { text: '見る 👀', cls: 'chip', left: 72, top: 1240, at: 11.35, out: 12.75 } ]
+    captions: [ { text: '見る 👀', cls: 'chip', left: 86, top: 1240, at: 11.35, out: 12.75 } ]
   },
   {
     id: 'c4b', start: 12.6, end: 14.25,
     src: '../../../../assets/kids/bg-mori.webp',
     note: '11〜17秒②／しめった もり',
     focus: '50% 50%', zoom: [1.18, 1.08],
-    captions: [ { text: '探す 🔍', cls: 'chip', left: 72, top: 1240, at: 12.85, out: 14.25 } ]
+    captions: [ { text: '探す 🔍', cls: 'chip', left: 86, top: 1240, at: 12.85, out: 14.25 } ]
   },
   {
     id: 'c4c', start: 14.1, end: 15.75,
     src: '../../../../assets/kids/bg-mizube.webp',
     note: '11〜17秒③／みずべ',
     focus: '50% 52%', zoom: [1.08, 1.18],
-    captions: [ { text: 'くらべる 🐢', cls: 'chip', left: 72, top: 1240, at: 14.35, out: 15.75 } ]
+    captions: [ { text: 'くらべる 🐢', cls: 'chip', left: 86, top: 1240, at: 14.35, out: 15.75 } ]
   },
   {
     id: 'c4d', start: 15.6, end: 17.3,
     src: '../../../../assets/kids/bg-kawaita.webp',
     note: '11〜17秒④／かわいた ばしょ',
     focus: '50% 48%', zoom: [1.18, 1.08],
-    captions: [ { text: '考える 💡', cls: 'chip', left: 72, top: 1240, at: 15.85, out: 17.3 } ]
+    captions: [ { text: '考える 💡', cls: 'chip', left: 86, top: 1240, at: 15.85, out: 17.3 } ]
   },
 
   {
@@ -273,6 +278,9 @@ for (const cut of CUTS) {
 
   const frame = document.createElement('div');
   frame.className = 'frame';
+  // ズームの基準点。scale() は要素の中心を基準に拡大するため、
+  // object-position（focus）だけでは寄り先を指定できない。
+  frame.style.transformOrigin = cut.origin || 'center center';
 
   const img = document.createElement('img');
   img.src = cut.src;
@@ -320,7 +328,7 @@ endcard.innerHTML =
   '<div class="title">カメふしぎ島</div>' +
   '<div class="rule"></div>' +
   '<div class="sub">KAME LIFE GUIDE</div>' +
-  '<div class="url">kamelifeguide.com/kids/</div>';
+  '<div class="cta">プロフィールのリンクから 👆</div>';
 stage.appendChild(endcard);
 
 const scrim = document.createElement('div');

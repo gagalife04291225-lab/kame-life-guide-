@@ -6,21 +6,22 @@
 - 台本・文言・注意点 → `script.md`
 - 素材の生成条件 → `../red-eared-slider-family-concept.md`
 
-## 1. 写真を置く
+## 1. 写真
 
-`photos/` に4枚。ファイル名は固定。
+`photos/` に配置済み（5枚・コミット済み）。差し替えるときは同じファイル名で上書きする。
 
 ```
-photos/01-turtle-case.jpg          0〜3秒   透明ケースのカメ
-photos/02-parent-child-phone.jpg   3〜7秒   親子でスマホをのぞく
-photos/03-searching.jpg            7〜11秒  検索している
+photos/01-turtle-case.jpg          0〜3秒   カメに寄って始まるカット
+photos/02-parent-child-phone.jpg   3〜7秒   母がスマホを指す
+photos/03-searching.jpg            7〜11秒  親子でのぞき込む
+photos/04-alt-smile.jpg            予備（未使用）
 photos/05-family-smile.jpg         17〜22秒 親子が笑顔
 ```
 
-9:16 に近い縦長が望ましい。横長でも中央基準で切り抜かれる（寄せ位置は `CUTS` の `focus` で調整可）。
+9:16 より横長の写真は中央基準で左右が切り落とされる。
 写真が無いカットは「PHOTO 未配置」と表示されるだけで、書き出しは通る。
 
-11〜17秒と22〜25秒は `assets/kids/` の既存画像を使うので、用意するものは無い。
+11〜17秒と22〜25秒は `assets/kids/` の既存画像を使う。
 
 ## 2. 準備（初回のみ）
 
@@ -64,6 +65,17 @@ storyboard.html?play=1
 ```js
 { text: '何を食べる？', cls: 'lg', top: 300, at: 3.55, out: 7.3 }
 ```
+
+映像の寄り・引きは同じ `CUTS` の各カットで指定する。
+
+```js
+focus: '50% 50%',        // 切り抜き位置（object-position）
+origin: '72% 84%',       // ズームの基準点（transform-origin）。省略時は中心
+zoom: [2.30, 1.30],      // 開始倍率 → 終了倍率
+```
+
+`scale()` は要素の中心を基準に拡大するので、**寄り先を変えたいときは `focus` ではなく
+`origin` を動かす**。`focus` は切り抜き位置しか変えられない。
 
 - `text` … 改行は `\n`。**自動折り返しはしない**ので、改行位置は自分で決める
 - `cls`  … `xl`(82px) / `lg`(66px) / `md`(58px) / `sm`(44px) / `chip`(58px・角丸の札)
