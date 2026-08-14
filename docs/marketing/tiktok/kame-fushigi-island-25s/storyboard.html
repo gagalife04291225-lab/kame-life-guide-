@@ -74,48 +74,69 @@
   }
   #scrim{position:absolute;inset:0;pointer-events:none;background:var(--forest-deep);opacity:0}
 
-  /* ---------- テロップ ---------- */
+  /* ---------- テロップ ----------
+     参考動画（既存のカメライフガイド版）に合わせた形式。
+     1行＝1枚の濃緑プレート。プレート下端に金のアンダーライン。
+     強調語だけ金。プレート地で可読性を確保するので白フチは使わない。
+     色は参考動画からの実測（プレート #0e1811 前後 / 金 #d4a96a）。 */
   #captions{position:absolute;inset:0;pointer-events:none}
   .cap{
     position:absolute;
-    /* セーフエリアは tiktok/DESIGN-SYSTEM.md v1.0 の保守値 x:86〜950 / y:288〜1382 に合わせる */
-    left:86px;width:836px;
-    font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
-    font-weight:800;
-    color:#fff;
-    line-height:1.42;
-    letter-spacing:.01em;
-    /* 自動折り返しは禁止。改行は文言中の \n だけで制御する
-       （自動折り返しさせると「連れて帰ってき／た。」のように割れる） */
-    white-space:pre;
+    /* セーフエリアは tiktok/DESIGN-SYSTEM.md v1.0 の保守値 x:86〜950 / y:288〜1382 */
+    left:86px;
+    display:flex;flex-direction:column;align-items:flex-start;gap:14px;
     opacity:0;
     will-change:opacity,transform;
-    text-shadow:
-      0 4px 18px rgba(13,31,26,.85),
-      0 2px 6px rgba(13,31,26,.9),
-      0 0 2px rgba(13,31,26,.9);
-    -webkit-text-stroke:8px var(--forest-deep);
-    paint-order:stroke fill;
   }
-  /* サイズは「1行の最大文字数 × font-size ≦ 836px」で決めている。
+  .plate{
+    position:relative;
+    background:rgba(13,22,17,.88);
+    border-radius:18px;
+    padding:14px 34px 20px;
+    font-family:"Noto Sans JP",sans-serif;
+    font-weight:900;
+    color:#fff;
+    line-height:1.25;
+    letter-spacing:.01em;
+    white-space:pre;           /* 自動折り返しは禁止。改行は \n だけで制御する */
+    box-shadow:0 8px 28px rgba(0,0,0,.34);
+  }
+  .plate::after{               /* 金のアンダーライン */
+    content:"";position:absolute;left:20px;right:20px;bottom:8px;
+    height:5px;border-radius:3px;background:var(--accent);
+  }
+  .plate .em{color:var(--accent)}
+
+  /* サイズは「1行の最大文字数 × font-size ＋ 左右パディング68px ≦ 864px」で決めている。
      文言を長くするときは必ずこの計算をやり直すこと。 */
-  .cap.xl{font-size:82px;line-height:1.34}   /* 最長「親子で調べてみよう。」10字 = 820px */
-  .cap.lg{font-size:66px}                    /* 最長「学びのきっかけになった。」12字 = 792px */
-  .cap.md{font-size:58px}
-  .cap.sm{font-size:44px;font-weight:700;-webkit-text-stroke:6px var(--forest-deep)}
-  .cap.center{text-align:center}
-  .cap.chip{
-    -webkit-text-stroke:0;
-    text-shadow:0 3px 12px rgba(13,31,26,.5);
-    background:rgba(13,31,26,.82);
-    border:4px solid var(--accent);
+  .cap.xl .plate{font-size:76px}   /* 最長「親子で調べてみよう。」10字 = 760+68 = 828px */
+  .cap.lg .plate{font-size:64px}   /* 最長「学びのきっかけになった。」12字 = 768+68 = 836px */
+  .cap.md .plate{font-size:56px}
+  .cap.sm .plate{font-size:42px;font-weight:700}
+
+  /* ---------- 左上のブランドチップ ---------- */
+  #brandchip{
+    position:absolute;left:52px;top:70px;
+    display:flex;align-items:center;gap:16px;
+    background:rgba(13,22,17,.80);
+    border:3px solid rgba(212,169,106,.85);
     border-radius:999px;
-    padding:18px 40px;
-    width:auto;
-    font-size:58px;
-    line-height:1.2;
+    padding:12px 30px 12px 14px;
+    font-family:"Noto Sans JP",sans-serif;
+    font-weight:700;font-size:34px;color:var(--parchment);
+    letter-spacing:.04em;
   }
-  .cap .accent{color:var(--k-yellow)}
+  #brandchip .dot{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--accent);
+    display:grid;place-items:center;font-size:26px;line-height:1;
+  }
+
+  /* ---------- 上端のプログレスバー ---------- */
+  #progress{
+    position:absolute;left:0;top:0;height:8px;
+    background:var(--accent);width:0;
+  }
 
   /* ---------- エンドカード ---------- */
   #endcard{
@@ -189,7 +210,7 @@ const CUTS = [
        origin はカバー切り抜き後の画面内でカメがいる位置（実測 72% / 84%）。 */
     focus: '50% 50%', origin: '72% 84%', zoom: [2.30, 1.30],
     captions: [
-      { text: '息子がカメを\n連れて帰ってきた。', cls: 'xl', top: 1120, at: 0.35, out: 3.4 }
+      { text: '息子が[[カメ]]を\n連れて帰ってきた。', cls: 'xl', top: 1100, at: 0.35, out: 3.4 }
     ]
   },
   {
@@ -198,9 +219,9 @@ const CUTS = [
     note: '3〜7秒／親子でスマホをのぞく',
     focus: '50% 38%', zoom: [1.06, 1.16],
     captions: [
-      { text: '何を食べる？',        cls: 'lg', top: 300, at: 3.55, out: 7.3 },
-      { text: 'どんな場所で暮らす？', cls: 'lg', top: 420, at: 4.55, out: 7.3 },
-      { text: 'そもそも何ガメ？',     cls: 'lg', top: 540, at: 5.55, out: 7.3 }
+      { text: '何を食べる？',            cls: 'lg', top: 300, at: 3.55, out: 7.3 },
+      { text: 'どんな場所で暮らす？',     cls: 'lg', top: 434, at: 4.55, out: 7.3 },
+      { text: 'そもそも[[何ガメ]]？',     cls: 'lg', top: 568, at: 5.55, out: 7.3 }
     ]
   },
   {
@@ -209,8 +230,8 @@ const CUTS = [
     note: '7〜11秒／検索している雰囲気 → カメふしぎ島へ',
     focus: '46% 46%', zoom: [1.14, 1.02],
     captions: [
-      { text: 'でも、せっかくなら——', cls: 'lg', top: 1180, at: 7.35, out: 9.15 },
-      { text: '親子で調べてみよう。',   cls: 'xl', top: 1140, at: 9.25, out: 11.3 }
+      { text: 'でも、せっかくなら——',   cls: 'lg', top: 1180, at: 7.35, out: 9.15 },
+      { text: '親子で[[調べてみよう。]]', cls: 'xl', top: 1160, at: 9.25, out: 11.3 }
     ]
   },
 
@@ -220,28 +241,28 @@ const CUTS = [
     src: '../../../../assets/kids/kids-hero-fushigijima.webp',
     note: '11〜17秒①／カメふしぎ島',
     focus: '50% 45%', zoom: [1.10, 1.20],
-    captions: [ { text: '見る 👀', cls: 'chip', left: 86, top: 1240, at: 11.35, out: 12.75 } ]
+    captions: [ { text: '[[見る]] 👀', cls: 'lg', top: 1240, at: 11.35, out: 12.75 } ]
   },
   {
     id: 'c4b', start: 12.6, end: 14.25,
     src: '../../../../assets/kids/bg-mori.webp',
     note: '11〜17秒②／しめった もり',
     focus: '50% 50%', zoom: [1.18, 1.08],
-    captions: [ { text: '探す 🔍', cls: 'chip', left: 86, top: 1240, at: 12.85, out: 14.25 } ]
+    captions: [ { text: '[[探す]] 🔍', cls: 'lg', top: 1240, at: 12.85, out: 14.25 } ]
   },
   {
     id: 'c4c', start: 14.1, end: 15.75,
     src: '../../../../assets/kids/bg-mizube.webp',
     note: '11〜17秒③／みずべ',
     focus: '50% 52%', zoom: [1.08, 1.18],
-    captions: [ { text: 'くらべる 🐢', cls: 'chip', left: 86, top: 1240, at: 14.35, out: 15.75 } ]
+    captions: [ { text: '[[くらべる]] 🐢', cls: 'lg', top: 1240, at: 14.35, out: 15.75 } ]
   },
   {
     id: 'c4d', start: 15.6, end: 17.3,
     src: '../../../../assets/kids/bg-kawaita.webp',
     note: '11〜17秒④／かわいた ばしょ',
     focus: '50% 48%', zoom: [1.18, 1.08],
-    captions: [ { text: '考える 💡', cls: 'chip', left: 86, top: 1240, at: 15.85, out: 17.3 } ]
+    captions: [ { text: '[[考える]] 💡', cls: 'lg', top: 1240, at: 15.85, out: 17.3 } ]
   },
 
   {
@@ -250,7 +271,7 @@ const CUTS = [
     note: '17〜22秒／親子が笑顔でスマホを見る',
     focus: '50% 40%', zoom: [1.04, 1.14],
     captions: [
-      { text: '拾ってきたカメが、\n学びのきっかけになった。', cls: 'lg', top: 1140, at: 17.5, out: 22.2 }
+      { text: '拾ってきたカメが、\n[[学びのきっかけ]]になった。', cls: 'lg', top: 1130, at: 17.5, out: 22.2 }
     ]
   },
   {
@@ -308,18 +329,47 @@ const capLayer = document.createElement('div');
 capLayer.id = 'captions';
 stage.appendChild(capLayer);
 
+/** 文言を1行ずつプレートに割る。[[…]] で囲んだ部分は金の強調になる。 */
+function buildPlates(text) {
+  return text.split('\n').map(line => {
+    const plate = document.createElement('div');
+    plate.className = 'plate';
+    for (const part of line.split(/(\[\[[^\]]*\]\])/)) {
+      if (!part) continue;
+      if (part.startsWith('[[')) {
+        const em = document.createElement('span');
+        em.className = 'em';
+        em.textContent = part.slice(2, -2);
+        plate.appendChild(em);
+      } else {
+        plate.appendChild(document.createTextNode(part));
+      }
+    }
+    return plate;
+  });
+}
+
 const capNodes = [];
 for (const cut of CUTS) {
   for (const c of cut.captions) {
     const el = document.createElement('div');
     el.className = 'cap ' + (c.cls || 'md');
-    el.textContent = c.text;
+    for (const plate of buildPlates(c.text)) el.appendChild(plate);
     el.style.top = c.top + 'px';
     if (c.left != null) el.style.left = c.left + 'px';
     capLayer.appendChild(el);
     capNodes.push({ c, el });
   }
 }
+
+const brandchip = document.createElement('div');
+brandchip.id = 'brandchip';
+brandchip.innerHTML = '<span class="dot">🐢</span>カメライフガイド';
+stage.appendChild(brandchip);
+
+const progress = document.createElement('div');
+progress.id = 'progress';
+stage.appendChild(progress);
 
 const endcard = document.createElement('div');
 endcard.id = 'endcard';
@@ -378,7 +428,12 @@ function applyFrame(t) {
     el.style.transform = 'translateY(' + dy.toFixed(2) + 'px)';
   }
 
-  // エンドカード
+  // 上端のプログレスバー
+  progress.style.width = (t / DURATION * 1080).toFixed(1) + 'px';
+
+  // エンドカード（出たらブランドチップは引っ込める。二重表示になるため）
+  brandchip.style.opacity = (t < ENDCARD_AT - 0.2 ? 1 : 0).toFixed(2);
+
   const ep = clamp((t - ENDCARD_AT) / 0.55, 0, 1);
   const ee = easeOutCubic(ep);
   endcard.style.opacity = ee.toFixed(4);

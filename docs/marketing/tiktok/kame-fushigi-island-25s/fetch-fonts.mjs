@@ -40,7 +40,7 @@ const TEXT = [...new Set([...(ASCII + HIRAGANA + KATAKANA + PUNCT + FULLWIDTH + 
 // ---------- 取得対象 ----------
 const TARGETS = [
   { family: 'M PLUS Rounded 1c', weights: [700, 800], slug: 'mplus-rounded-1c' },
-  { family: 'Noto Sans JP',      weights: [400, 700], slug: 'noto-sans-jp' }
+  { family: 'Noto Sans JP',      weights: [400, 700, 900], slug: 'noto-sans-jp' }
 ];
 
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
