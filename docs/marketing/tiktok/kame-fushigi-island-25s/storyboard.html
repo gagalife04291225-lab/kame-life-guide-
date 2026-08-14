@@ -238,9 +238,14 @@ const CUTS = [
   /* --- 11〜17秒／カメふしぎ島の各エリア（1.5秒ずつ4枚） --- */
   {
     id: 'c4a', start: 11.1, end: 12.75,
-    src: '../../../../assets/kids/kids-hero-fushigijima.webp',
-    note: '11〜17秒①／カメふしぎ島',
-    focus: '50% 45%', zoom: [1.10, 1.20],
+    /* kids-hero-fushigijima.webp は画像に「カメふしぎ島」等の文字が焼き込まれており、
+       9:16 に切り抜くと文字が必ず途中で切れる。島の絵で文字が入っていないのは
+       bg-island-entry.webp だけなので、こちらを使う（22秒のエンドカードと同じ絵に
+       なるが、9秒離れており、エンドカード側は暗いスクリムが乗るので「入口に戻る」
+       構成として成立する）。 */
+    src: '../../../../assets/kids/bg-island-entry.webp',
+    note: '11〜17秒①／カメふしぎ島の全景',
+    focus: '50% 45%', zoom: [1.04, 1.14],
     captions: [ { text: '[[見る]] 👀', cls: 'lg', top: 1240, at: 11.35, out: 12.75 } ]
   },
   {
