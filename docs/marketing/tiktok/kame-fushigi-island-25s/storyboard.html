@@ -202,16 +202,37 @@ const DURATION = 25.0;
 
 /* 写真素材（photos/ に配置）。未配置のカットは自動でプレースホルダー表示。 */
 const CUTS = [
+  /* --- 0〜3.4秒／同じ写真を3カットに割る ---
+     絵コンテの「透明ケースのカメを大きく見せる」を保ったまま、
+     冒頭3秒のカット数を 0 → 2 にする（DESIGN-SYSTEM Y3 の要件）。
+     素材は 1023×1537 でカバー後 1278px 相当あるため、寄り引きだけで
+     追加素材なしに3つの画角が作れる。3カットともハードカット（xfade 0）。 */
   {
-    id: 'c1', start: 0.0, end: 3.4,
+    id: 'c1a', start: 0.0, end: 1.05, xfade: 0,
     src: 'photos/01-turtle-case.jpg',
-    note: '0〜3秒／透明ケースのカメを大きく見せる',
-    /* カメだけに寄って始まり、引いて親子を入れる。
-       origin はカバー切り抜き後の画面内でカメがいる位置（実測 72% / 84%）。 */
-    focus: '50% 50%', origin: '72% 84%', zoom: [2.30, 1.30],
+    note: '0〜1.05秒／カメだけに寄る（origin はカバー切り抜き後のカメの位置・実測）',
+    focus: '50% 50%', origin: '72% 84%', zoom: [2.30, 2.10],
     captions: [
-      { text: '息子が[[カメ]]を\n連れて帰ってきた。', cls: 'xl', top: 1100, at: 0.35, out: 3.4 }
+      /* 動画全体のフック。9字行の上限は (864-68)/9 = 88.4px なので 88px まで使い切る。
+         下端 = 1070 + (88×1.25+34)×2 + 14 = 1372px でセーフエリア内。
+         at/inDur を詰めて不透明度100%到達を 0.77秒 → 0.26秒 にする。 */
+      { text: '息子が[[カメ]]を\n連れて帰ってきた。', cls: 'xl', size: 88,
+        top: 1070, at: 0.10, inDur: 0.16, out: 3.4 }
     ]
+  },
+  {
+    id: 'c1b', start: 1.05, end: 2.05, xfade: 0,
+    src: 'photos/01-turtle-case.jpg',
+    note: '1.05〜2.05秒／息子の顔へ寄る',
+    focus: '50% 50%', origin: '62% 40%', zoom: [1.70, 1.60],
+    captions: []
+  },
+  {
+    id: 'c1c', start: 2.05, end: 3.4, xfade: 0,
+    src: 'photos/01-turtle-case.jpg',
+    note: '2.05〜3.4秒／引いて親子とケースを入れる',
+    focus: '50% 50%', origin: '50% 50%', zoom: [1.32, 1.22],
+    captions: []
   },
   {
     id: 'c2', start: 3.2, end: 7.3,
@@ -288,7 +309,12 @@ const CUTS = [
   }
 ];
 
-const XFADE = 0.32;        // カット間クロスディゾルブ
+/* カット間クロスディゾルブ。
+   0.32秒は長すぎて、無関係な絵どうしが二重露光で重なる汚れたコマが出ていた
+   （母子の顔が3人分に見える／リクガメが顔に焼き込まれる等）。
+   場面転換は3フレーム相当の 0.10 秒。同じ写真の中での寄り引きは
+   カットごとに xfade: 0 を指定して完全なハードカットにする。 */
+const XFADE = 0.10;
 const ENDCARD_AT = 22.25;  // エンドカード出現
 
 /* ================================================================
@@ -359,7 +385,12 @@ for (const cut of CUTS) {
   for (const c of cut.captions) {
     const el = document.createElement('div');
     el.className = 'cap ' + (c.cls || 'md');
-    for (const plate of buildPlates(c.text)) el.appendChild(plate);
+    for (const plate of buildPlates(c.text)) {
+      // size を指定するとクラスの既定サイズを上書きできる。
+      // 「1行の最大文字数 × size + 68 ≦ 864」を必ず自分で確かめること。
+      if (c.size) plate.style.fontSize = c.size + 'px';
+      el.appendChild(plate);
+    }
     el.style.top = c.top + 'px';
     if (c.left != null) el.style.left = c.left + 'px';
     capLayer.appendChild(el);
@@ -397,12 +428,15 @@ const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
 const easeOutCubic = p => 1 - Math.pow(1 - p, 3);
 const lerp = (a, b, p) => a + (b - a) * p;
 
-/** カットの不透明度：イン/アウトを XFADE でクロスさせる */
+/** カットの不透明度：イン/アウトをクロスさせる。
+ *  cut.xfade で1カットずつ上書きでき、0 ならハードカット。 */
 function cutOpacity(cut, t) {
-  if (t <= cut.start - XFADE || t >= cut.end) return 0;
+  const xf = cut.xfade != null ? cut.xfade : XFADE;
+  if (t >= cut.end || t <= cut.start - xf) return 0;
+  if (xf <= 0) return t >= cut.start ? 1 : 0;
   let o = 1;
-  if (t < cut.start) o = Math.min(o, (t - (cut.start - XFADE)) / XFADE);
-  if (t > cut.end - XFADE) o = Math.min(o, (cut.end - t) / XFADE);
+  if (t < cut.start) o = Math.min(o, (t - (cut.start - xf)) / xf);
+  if (t > cut.end - xf) o = Math.min(o, (cut.end - t) / xf);
   return clamp(o, 0, 1);
 }
 
@@ -420,7 +454,10 @@ function applyFrame(t) {
   }
 
   for (const { c, el } of capNodes) {
-    const IN = 0.42, OUT = 0.26;
+    // 立ち上がりは既定 0.24 秒。冒頭フックだけ inDur でさらに詰めている
+    // （0.42秒だと不透明度100%到達が 0.77秒になり、離脱判定の最も厳しい
+    //   帯で文字が読めない状態になっていた）。
+    const IN = c.inDur != null ? c.inDur : 0.24, OUT = 0.26;
     let o = 0, dy = 26;
     if (t >= c.at && t <= c.out) {
       const pi = clamp((t - c.at) / IN, 0, 1);
