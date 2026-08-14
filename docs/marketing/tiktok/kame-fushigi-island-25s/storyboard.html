@@ -109,7 +109,7 @@
 
   /* サイズは「1行の最大文字数 × font-size ＋ 左右パディング68px ≦ 864px」で決めている。
      文言を長くするときは必ずこの計算をやり直すこと。 */
-  .cap.xl .plate{font-size:76px}   /* 最長「親子で調べてみよう。」10字 = 760+68 = 828px */
+  .cap.xl .plate{font-size:76px}   /* 最長「一緒に調べてみよう。」10字 = 760+68 = 828px */
   .cap.lg .plate{font-size:64px}   /* 最長「学びのきっかけになった。」12字 = 768+68 = 836px */
   .cap.md .plate{font-size:56px}
   .cap.sm .plate{font-size:42px;font-weight:700}
@@ -147,14 +147,18 @@
     padding-bottom:180px;
   }
   /* 入口の写真は空と海が明るいので、文字の下に必ず暗い面を敷いて
-     コントラストを固定する（#f4efe2 on #12241e = 14.1:1）。 */
-  #endcard::before{
-    content:"";position:absolute;left:50%;top:50%;
-    width:1300px;height:1100px;transform:translate(-50%,-54%);
-    background:radial-gradient(50% 50% at 50% 50%,
-      rgba(18,36,30,.92) 0%, rgba(18,36,30,.80) 42%,
-      rgba(18,36,30,.42) 68%, rgba(18,36,30,0) 100%);
-    z-index:-1;
+     コントラストを固定する（#f4efe2 on #12241e = 14.1:1）。
+     #endcard の擬似要素に z-index:-1 で置くと、積層文脈の都合で
+     写真より後ろに回って効かなくなる。独立した要素として
+     #endcard の直前に置き、不透明度を同じ値で動かす。 */
+  /* radial-gradient は実効アルファが指定どおりに出ず（実測で 0.63 指定に対し
+     約 0.12 しか乗らなかった）、暗面がほぼ効いていなかった。確実に効く単色にする。
+     0.72 は「実際の書き出しから地の色を実測し、文字が乗る帯の最悪点で
+     #f4efe2 が 7.39:1（AAA）を保つ」ことから決めた値（.68 では 6.80:1 で AAA に届かなかった）。 */
+  #endscrim{
+    position:absolute;inset:0;
+    background:rgba(13,25,20,.72);
+    opacity:0;pointer-events:none;
   }
   #endcard .mark{font-size:150px;line-height:1}
   #endcard .title{
@@ -169,9 +173,14 @@
     letter-spacing:.22em;
     text-shadow:0 3px 14px rgba(13,31,26,.9);
   }
-  /* CTA。URL のベタ書きはタップできず、TikTok から外部へ出る唯一の経路
-     （プロフィールの bio リンク）を案内しないため流入が計測できない。
-     詳細は ../red-eared-slider-family-video-evaluation.md の監査結果。 */
+  /* CTA。TikTok でタップできるのはプロフィールのウェブサイト欄だけで、
+     動画内の文字・キャプション・コメントの URL はすべてタップできない。
+     そのウェブサイト欄が使えるかはアカウント種別によるが、本リポジトリからは
+     確認できない（未確認）。「プロフィールのリンクから」は欄が無い場合に
+     嘘になるため、常に真である「検索」を採用している。
+     ウェブサイト欄が使えることを確認できたら、下の文言を
+     「プロフィールのリンクから 👆」に戻すと GA4 で流入を計測できる。
+     根拠: ../red-eared-slider-family-video-evaluation.md の監査結果。 */
   #endcard .cta{
     font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;
     font-size:44px;font-weight:800;color:var(--forest-deep);
@@ -267,45 +276,43 @@ const CUTS = [
     note: '9.2〜11.3秒／二人の表情へ寄る。テロップが替わる 9.25 と同じ位置で画も切る',
     focus: '46% 46%', origin: '52% 38%', zoom: [1.26, 1.14],
     captions: [
-      { text: '親子で[[調べてみよう。]]', cls: 'xl', top: 1160, at: 9.25, out: 11.3 }
+      { text: '一緒に[[調べてみよう。]]', cls: 'xl', top: 1160, at: 9.25, out: 11.3 }
     ]
   },
 
-  /* --- 11〜17秒／カメふしぎ島の各エリア（1.5秒ずつ4枚） --- */
+  /* --- 11.1〜17.3秒／「一緒に」の4カット ---
+     もとは assets/kids/ の島のイラスト4枚だったが、親子の写真の流れの中に
+     突然イラストが挟まって何を見せられているのか分からない、という指摘を受けて
+     全部を親子写真に差し替えた。同じ5枚を寄り先を変えて使い回している。
+     顔 → スマホ → カメ → 顔 の順で、見る対象が変わっていくようにした。 */
   {
-    id: 'c4a', start: 11.1, end: 12.75,
-    /* kids-hero-fushigijima.webp は画像に「カメふしぎ島」等の文字が焼き込まれており、
-       9:16 に切り抜くと文字が必ず途中で切れる。島の絵で文字が入っていないのは
-       bg-island-entry.webp だけなので、こちらを使う（22秒のエンドカードと同じ絵に
-       なるが、9秒離れており、エンドカード側は暗いスクリムが乗るので「入口に戻る」
-       構成として成立する）。 */
-    src: '../../../../assets/kids/bg-island-entry.webp',
-    note: '11〜17秒①／カメふしぎ島の全景',
-    focus: '50% 45%', zoom: [1.04, 1.14],
-    captions: [ { text: '[[見る]] 👀', cls: 'lg', top: 1240, at: 11.35, out: 12.75 } ]
+    id: 'c4a', start: 11.10, end: 12.75,
+    src: 'photos/03-searching.jpg',
+    note: '11.1〜12.75秒／二人の顔に寄る（一緒に 見る）',
+    focus: '50% 40%', origin: '50% 34%', zoom: [1.55, 1.45],
+    captions: [ { text: '一緒に [[見る]] 👀', cls: 'lg', top: 1240, at: 11.35, out: 12.75 } ]
   },
   {
-    id: 'c4b', start: 12.6, end: 14.25,
-    src: '../../../../assets/kids/bg-mori.webp',
-    note: '11〜17秒②／しめった もり（ハコガメが左端で切れるので左へ寄せる）',
-    focus: '34% 50%', zoom: [1.18, 1.08],
-    captions: [ { text: '[[探す]] 🔍', cls: 'lg', top: 1240, at: 12.85, out: 14.25 } ]
+    id: 'c4b', start: 12.60, end: 14.25, xfade: 0,
+    src: 'photos/02-parent-child-phone.jpg',
+    note: '12.6〜14.25秒／スマホの手元に寄る（一緒に 探す）',
+    focus: '50% 38%', origin: '30% 66%', zoom: [1.85, 1.70],
+    captions: [ { text: '一緒に [[探す]] 🔍', cls: 'lg', top: 1240, at: 12.85, out: 14.25 } ]
   },
   {
-    id: 'c4c', start: 14.1, end: 15.75,
-    src: '../../../../assets/kids/bg-mizube.webp',
-    note: '11〜17秒③／みずべ（甲羅干しのカメが右端で切れるので右へ寄せる）',
-    focus: '72% 52%', zoom: [1.08, 1.18],
-    captions: [ { text: '[[くらべる]] 🐢', cls: 'lg', top: 1240, at: 14.35, out: 15.75 } ]
+    id: 'c4c', start: 14.10, end: 15.75, xfade: 0,
+    src: 'photos/01-turtle-case.jpg',
+    note: '14.1〜15.75秒／ケースのカメに寄る（一緒に くらべる）',
+    focus: '50% 50%', origin: '72% 84%', zoom: [2.05, 1.90],
+    captions: [ { text: '一緒に [[くらべる]] 🐢', cls: 'lg', top: 1240, at: 14.35, out: 15.75 } ]
   },
   {
-    id: 'c4d', start: 15.6, end: 17.3,
-    src: '../../../../assets/kids/bg-kawaita.webp',
-    note: '11〜17秒④／かわいた ばしょ（リクガメが右端で切れるので右へ寄せる）',
-    focus: '56% 48%', zoom: [1.18, 1.08],
-    captions: [ { text: '[[考える]] 💡', cls: 'lg', top: 1240, at: 15.85, out: 17.3 } ]
+    id: 'c4d', start: 15.60, end: 17.30, xfade: 0,
+    src: 'photos/04-alt-smile.jpg',
+    note: '15.6〜17.3秒／二人の顔（一緒に 考える）',
+    focus: '50% 40%', origin: '52% 38%', zoom: [1.50, 1.38],
+    captions: [ { text: '一緒に [[考える]] 💡', cls: 'lg', top: 1240, at: 15.85, out: 17.3 } ]
   },
-
   {
     id: 'c5a', start: 17.1, end: 18.90,
     src: 'photos/05-family-smile.jpg',
@@ -436,6 +443,10 @@ const progress = document.createElement('div');
 progress.id = 'progress';
 stage.appendChild(progress);
 
+const endscrim = document.createElement('div');
+endscrim.id = 'endscrim';
+stage.appendChild(endscrim);
+
 const endcard = document.createElement('div');
 endcard.id = 'endcard';
 endcard.innerHTML =
@@ -443,7 +454,7 @@ endcard.innerHTML =
   '<div class="title">カメふしぎ島</div>' +
   '<div class="rule"></div>' +
   '<div class="sub">KAME LIFE GUIDE</div>' +
-  '<div class="cta">プロフィールのリンクから 👆</div>';
+  '<div class="cta">「カメライフガイド」で けんさく</div>';
 stage.appendChild(endcard);
 
 const scrim = document.createElement('div');
@@ -507,6 +518,7 @@ function applyFrame(t) {
 
   const ep = clamp((t - ENDCARD_AT) / 0.55, 0, 1);
   const ee = easeOutCubic(ep);
+  endscrim.style.opacity = ee.toFixed(4);
   endcard.style.opacity = ee.toFixed(4);
   endcard.style.transform = 'translateY(' + lerp(30, 0, ee).toFixed(2) + 'px) scale(' + lerp(0.96, 1, ee).toFixed(4) + ')';
 

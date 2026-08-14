@@ -33,7 +33,7 @@ const KATAKANA    = range('ァ', 'ヶ') + 'ヽヾ・ー';
 const PUNCT       = '。、「」『』（）〔〕【】！？〜～—―…‥：；・／＼＆＋－＝％＃＠＊　“”‘’';
 const FULLWIDTH   = range('０', '９') + range('Ａ', 'Ｚ') + range('ａ', 'ｚ');
 /** テロップ・エンドカードで使う漢字（storyboard.html の文言と対応） */
-const KANJI       = '息子連帰何食場所暮親調見探考拾学島';
+const KANJI       = '息子連帰何食場所暮親調見探考拾学島一緒';
 
 const TEXT = [...new Set([...(ASCII + HIRAGANA + KATAKANA + PUNCT + FULLWIDTH + KANJI)])].join('');
 
