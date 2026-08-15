@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-KAME LIFE GUIDE / TikTok 実写素材版「その容器、まだ使える？」
+KAME LIFE GUIDE / TikTok 実写素材版「カメふしぎ島」（こども向けページの告知）
 
 オーナー提供の写真5枚から TikTok 用縦動画を生成する。
 テロップの配色・形状は**オーナーの参考動画から実測した値**に合わせる。
@@ -11,8 +11,22 @@ KAME LIFE GUIDE / TikTok 実写素材版「その容器、まだ使える？」
   本文文字       #f4efe2 ／ 強調ボックス内の文字は暗色
   レイアウト     左上に角丸バッジ、テロップは画面下寄り（縦の約65〜80%）にボックスで重ねる
 
-誘導先: https://kamelifeguide.com/kid/index.html
-        （「その容器、うちの子にまだ使える？｜甲長で選ぶ亀の飼育用品」）
+誘導先: https://kamelifeguide.com/kids/index.html
+        （「カメふしぎ島へ ようこそ｜こどもの カメずかん」）
+
+  ※ リポジトリには紛らわしい2つのパスがある。取り違えないこと。
+      kid/index.html   … 大人向けツール「その容器、うちの子にまだ使える？」
+      kids/index.html  … こども向け「カメふしぎ島」← 提供写真のスマホ画面はこちら
+
+台本の根拠（すべてリポジトリ内の実在ページから）:
+  「甲羅は ぬげない」        kids/fushigi.html の5つのふしぎの1つ
+  「漢字ぜんぶに ふりがな」  kids/index.html の JSON-LD「すべての漢字にふりがなを振ったカメのページ」
+  「商品リンクなし」          kids/chuui.html「このページには商品を買うリンクはありません」
+
+**「川で捕まえてきた」設定は使わない。**
+  kids/chuui.html が「そとの カメを 持って かえる」を"やってはいけない4つ"の1つとして
+  子どもに教えているため、それを肯定する動画は自社の教育方針と矛盾する。
+  本動画は「もう家にいるカメ」を前提にしている。
 
 出力:
   tiktok/tiktok-kid-container.mp4      完成動画（そのまま投稿可）
@@ -26,7 +40,7 @@ import imageio_ffmpeg
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 UPLOAD = "/root/.claude/uploads/721c8ebe-8b98-5c8f-a670-248644c164b5"
-OUT = os.path.join(HERE, "tiktok-kid-container.mp4")
+OUT = os.path.join(HERE, "tiktok-kids-fushigijima.mp4")
 CAPCUT = os.path.join(HERE, "capcut")
 FONT = "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf"
 
@@ -53,27 +67,28 @@ IMAGES = [                          # 提供順（物語順）
 # ── 台本（style: dark / amber / plain）────────────────────
 CUTS = [
     dict(img=0, dur=4.6, lines=[
-        dict(t="その容器、",         size=72, style="dark",  at=0.10),
-        dict(t="まだ使える？",       size=72, style="amber", at=0.95),
+        dict(t="この子のこと、",     size=72, style="dark",  at=0.10),
+        dict(t="どこまで知ってる？", size=66, style="amber", at=0.95),
     ]),
     dict(img=1, dur=4.4, lines=[
-        dict(t="大きさの目安は",     size=66, style="dark",  at=0.10),
-        dict(t="甲長で決まる",       size=72, style="amber", at=0.95),
+        dict(t="カメには",           size=72, style="dark",  at=0.10),
+        dict(t="ふしぎが たくさん",  size=68, style="amber", at=0.95),
     ]),
     dict(img=2, dur=4.4, lines=[
-        dict(t="調べてみたら",       size=66, style="dark",  at=0.10),
-        dict(t="もう卒業サイズ",     size=72, style="amber", at=0.95),
+        dict(t="甲羅は ぬげない",    size=70, style="dark",  at=0.10),
+        dict(t="知ってた？",         size=72, style="amber", at=0.95),
     ]),
     dict(img=3, dur=4.6, lines=[
-        dict(t="甲長を入れるだけで", size=62, style="dark",  at=0.10),
-        dict(t="使える・卒業・NG が分かる", size=56, style="amber", at=0.95),
+        dict(t="こどもが 自分で読める", size=60, style="dark",  at=0.10),
+        dict(t="漢字ぜんぶに ふりがな", size=60, style="amber", at=0.95),
     ]),
     dict(img=4, dur=5.5, lines=[
-        dict(t="トロ舟・衣装ケース・素焼き鉢まで", size=34, style="plain", at=0.10),
+        dict(t="こども向けページ「カメふしぎ島」", size=34, style="plain", at=0.10),
         dict(t="「カメライフガイド」で検索",       size=58, style="amber", at=0.55),
-        dict(t="無料・登録不要でサイズを確認",     size=32, style="plain", at=1.30),
+        dict(t="無料・登録不要／商品リンクなし",   size=32, style="plain", at=1.30),
     ]),
 ]
+
 DUR = sum(c["dur"] for c in CUTS)
 XF = 0.35                            # クロスディゾルブ
 
@@ -210,7 +225,7 @@ def export_capcut():
     os.makedirs(CAPCUT, exist_ok=True)
     for i, n in enumerate(IMAGES, 1):
         load_bg(n).save(os.path.join(CAPCUT, "cut%02d.png" % i))
-    L = ["# CapCut用 テロップ台本 — その容器、まだ使える？", "",
+    L = ["# CapCut用 テロップ台本 — カメふしぎ島", "",
          "素材: `cut01.png` 〜 `cut05.png`（1080x1920 に変換済み）",
          "総尺: **%.1f秒** ／ 1080x1920 / 30fps" % DUR, "",
          "## 共通設定", "",
@@ -238,9 +253,9 @@ def export_capcut():
                 {"dark": "暗色ボックス", "amber": "強調ボックス", "plain": "白文字のみ"}[ln["style"]], sz))
         acc += c["dur"]
     L += ["", "## 投稿時の設定（案）", "",
-          "- キャプション: その容器、うちの子にまだ使える？ 甲長で確認できます🐢",
-          "- ハッシュタグ: #カメ #亀 #ミドリガメ #アカミミガメ #飼育 #カメライフガイド",
-          "- 誘導先: https://kamelifeguide.com/kid/index.html", "",
+          "- キャプション: カメのふしぎ、こどもが自分で読めるページを作りました🐢 ぜんぶの漢字にふりがな付き",
+          "- ハッシュタグ: #カメ #亀 #こども #自由研究 #親子 #カメライフガイド",
+          "- 誘導先: https://kamelifeguide.com/kids/index.html", "",
           "## 注意", "",
           "- 音声は入れていません。CapCut でナレーションまたはBGM（80〜100BPM）を追加してください。",
           "- 画面右側と下部はTikTokのUIが重なるため、テロップは中央〜下寄り（下端1500px）に固定しています。"]
