@@ -1,0 +1,96 @@
+name: Kame TTS Narration
+
+# カメライフガイド — 日本語ナレーション合成（実験）
+#
+# 目的: 自作動画8本すべてに音声トラックが無い（ffprobe実測）。TikTokは音声ありが
+#   事実上の標準のため、Edge TTS（無料・APIキー不要・日本語音声あり）で
+#   ナレーションを付け、品質を実測して採否を判断する。
+#
+# なぜ Actions か: 本セッション環境から Edge TTS のエンドポイントへは到達できない
+#   （HTTP 000 実測）。ランナーは別ネットワークなので到達できる
+#   （同手法を画像生成で実証済み）。
+#
+# 完全無料: GitHub Actions 無料枠のみ。課金APIは使わない。
+#
+# 注意: これは品質評価のための実験であり、公開用の確定版ではない。
+#   Edge TTS の商用利用可否は未確認（要確認事項）。本採用前に必ず確認すること。
+
+on:
+  push:
+    branches:
+      - claude/ai-tiktok-oss-architecture-u6xkun
+    paths:
+      - "tools/tts/**"
+      - ".github/workflows/kame-tts.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  narrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 前提の確認（ffmpeg / 到達性）
+        run: |
+          echo "=== ffmpeg / ffprobe ==="
+          ffmpeg  -version | head -1
+          ffprobe -version | head -1
+          echo "=== Edge TTS エンドポイントへの到達性 ==="
+          for u in "https://speech.platform.bing.com" "https://api.msedgeservices.com"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$u" || echo ERR)
+            echo "  $code  $u"
+          done
+
+      - name: edge-tts を導入
+        run: |
+          python3 -m pip install --quiet --upgrade pip
+          python3 -m pip install --quiet edge-tts
+          python3 -c "import edge_tts; print('edge-tts OK')"
+
+      - name: 日本語ナレーションを合成して多重化
+        run: |
+          python3 tools/tts/make_narration.py tools/tts/narration-01.json
+
+      - name: 生成物の実測（音声トラックの有無を確認）
+        if: always()
+        run: |
+          echo "=== 出力の確認 ==="
+          ls -la tiktok/voiced/ 2>/dev/null || echo "(出力なし)"
+          for f in tiktok/voiced/*.mp4; do
+            [ -e "$f" ] || continue
+            echo "--- $f ---"
+            ffprobe -v error -show_entries stream=codec_type,codec_name,duration \
+                    -of default=noprint_wrappers=1 "$f"
+          done
+
+      - name: 生成物をコミット
+        if: always()
+        run: |
+          git config user.name  "kame-tts-bot"
+          git config user.email "kame-tts-bot@users.noreply.github.com"
+          git add tiktok/voiced/ || true
+          if git diff --cached --quiet; then
+            echo "コミットする生成物なし"
+            exit 0
+          fi
+          COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
+          git commit -m "chore(tts): 日本語ナレーション付き動画 ${COUNT} ファイルを生成（実験） [skip ci]"
+          for i in 1 2 3 4; do
+            if git push origin HEAD:"${GITHUB_REF_NAME}"; then echo "push 成功"; break; fi
+            echo "push 失敗、リトライ ${i}"; sleep $((2 ** i))
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kame-voiced-videos
+          path: tiktok/voiced/
+          if-no-files-found: ignore
