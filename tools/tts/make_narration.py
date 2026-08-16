@@ -26,6 +26,16 @@ MAX_RATE_STEPS = ["+0%", "+10%", "+20%", "+30%", "+40%"]
 OVERRUN_TOLERANCE = 0.15          # 秒。これ以下の超過は許容する
 
 
+def require_tools():
+    """ffmpeg/ffprobe の欠落は分かりにくい例外になるため、先に明示的に落とす。
+    （ubuntu-latest には ffprobe が同梱されていないことを実測で確認済み）"""
+    missing = [t for t in ("ffmpeg", "ffprobe") if shutil.which(t) is None]
+    if missing:
+        print(f"必要なコマンドが見つからない: {', '.join(missing)}")
+        print("  → ランナーでは `sudo apt-get install -y ffmpeg` で導入すること")
+        sys.exit(1)
+
+
 def ffprobe_duration(path):
     r = subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
@@ -120,6 +130,7 @@ async def main():
     cfg = json.load(open(cfg_path, encoding="utf-8"))
     video, total = cfg["video"], float(cfg["total_sec"])
 
+    require_tools()
     if not os.path.exists(video):
         print(f"元動画が見つからない: {video}")
         sys.exit(1)

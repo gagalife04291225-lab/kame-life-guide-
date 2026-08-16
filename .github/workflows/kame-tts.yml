@@ -38,11 +38,23 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 前提の確認（ffmpeg / 到達性）
+      - name: ffmpeg / ffprobe を確保する
+        # 注: ubuntu-latest に ffprobe は同梱されていない（実測: FileNotFoundError）。
+        #     また `ffmpeg -version | head -1` と書くとパイプ先の head が 0 を返すため
+        #     欠落を見逃す。command -v で存在そのものを検査する。
         run: |
-          echo "=== ffmpeg / ffprobe ==="
+          if ! command -v ffprobe >/dev/null 2>&1 || ! command -v ffmpeg >/dev/null 2>&1; then
+            echo "ffmpeg/ffprobe が無いため導入する"
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+          command -v ffmpeg
+          command -v ffprobe
           ffmpeg  -version | head -1
           ffprobe -version | head -1
+
+      - name: Edge TTS への到達性を確認
+        run: |
           echo "=== Edge TTS エンドポイントへの到達性 ==="
           for u in "https://speech.platform.bing.com" "https://api.msedgeservices.com"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$u" || echo ERR)
