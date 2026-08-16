@@ -4,9 +4,7 @@
     "id": "nanami",
     "output": "tiktok/voiced/tiktok-promo-akamimi-nanami.mp4",
     "segments": 5,
-    "warnings": [
-      "seg01 超過 +0.70s (slot 4.6s, rate +16%): ミシシッピアカミミガメ。条件付特定外来生物です"
-    ]
+    "warnings": []
   },
   {
     "voice": "ja-JP-KeitaNeural",
