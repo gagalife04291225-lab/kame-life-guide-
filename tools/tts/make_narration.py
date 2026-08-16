@@ -22,7 +22,10 @@ import sys, os, json, glob, shutil, asyncio, subprocess
 
 OUT_DIR = "tiktok/voiced"
 TMP_DIR = "/tmp/kame_tts"
-MAX_RATE_STEPS = ["+0%", "+10%", "+20%", "+30%", "+40%"]
+# 話速の上限は +16% まで。試作v1で +40% まで許したところ全体が早口になり、
+# 「速度で尺に押し込む」誤った解決をしていた。上限を下げ、収まらない場合は
+# WARN として残し、原稿側を短くして直す（根本原因を直す）。
+MAX_RATE_STEPS = ["+0%", "+8%", "+16%"]
 OVERRUN_TOLERANCE = 0.15          # 秒。これ以下の超過は許容する
 
 
