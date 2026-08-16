@@ -1,0 +1,16 @@
+[
+  {
+    "voice": "ja-JP-NanamiNeural",
+    "id": "nanami",
+    "output": "tiktok/voiced/tiktok-01-v3-ds-nanami.mp4",
+    "segments": 14,
+    "warnings": []
+  },
+  {
+    "voice": "ja-JP-KeitaNeural",
+    "id": "keita",
+    "output": "tiktok/voiced/tiktok-01-v3-ds-keita.mp4",
+    "segments": 14,
+    "warnings": []
+  }
+]
