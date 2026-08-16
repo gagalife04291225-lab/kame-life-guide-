@@ -68,8 +68,16 @@ jobs:
           python3 -c "import edge_tts; print('edge-tts OK')"
 
       - name: 日本語ナレーションを合成して多重化
+        # tools/tts/narration-*.json をすべて処理する。1本失敗しても残りは続行し、
+        # 最後にまとめて失敗を返す（部分的な成果物は残す）。
         run: |
-          python3 tools/tts/make_narration.py tools/tts/narration-01.json
+          rc=0
+          for f in tools/tts/narration-*.json; do
+            echo "::group::$f"
+            python3 tools/tts/make_narration.py "$f" || rc=1
+            echo "::endgroup::"
+          done
+          exit $rc
 
       - name: 生成物の実測（音声トラックの有無を確認）
         if: always()

@@ -1,0 +1,42 @@
+{
+  "video": "tiktok/tiktok-promo-akamimi.mp4",
+  "total_sec": 24.4,
+  "note": "テロップ文言のみを音声化。新しい事実主張は追加しない。規制の記述は compare/painted-vs-red-eared-slider.html に準拠。",
+  "voices": [
+    {
+      "id": "nanami",
+      "voice": "ja-JP-NanamiNeural"
+    },
+    {
+      "id": "keita",
+      "voice": "ja-JP-KeitaNeural"
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "slot": 4.8,
+      "text": "このカメ、実はもう新しく飼えません"
+    },
+    {
+      "start": 4.8,
+      "slot": 4.6,
+      "text": "ミシシッピアカミミガメ。条件付特定外来生物です"
+    },
+    {
+      "start": 9.4,
+      "slot": 4.8,
+      "text": "でも、今いる子は終生飼育できます"
+    },
+    {
+      "start": 14.2,
+      "slot": 4.8,
+      "text": "正しい飼い方は、カメライフガイド"
+    },
+    {
+      "start": 19.0,
+      "slot": 5.4,
+      "text": "カメライフガイドで検索。無料、登録不要"
+    }
+  ]
+}

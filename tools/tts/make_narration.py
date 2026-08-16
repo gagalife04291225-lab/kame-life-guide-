@@ -156,8 +156,9 @@ async def main():
         report.append({"voice": vo["voice"], "id": vo["id"], "output": out if ok else None,
                        "segments": len(clips), "warnings": warns})
 
-    # 実測レポートを残す（隠さない）
-    with open(os.path.join(OUT_DIR, "narration-report.json"), "w", encoding="utf-8") as f:
+    # 実測レポートを残す（隠さない）。原稿ごとに別ファイルにして上書きを防ぐ。
+    tag = os.path.splitext(os.path.basename(cfg_path))[0]
+    with open(os.path.join(OUT_DIR, f"report-{tag}.json"), "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
     print("=== まとめ ===")
