@@ -3,31 +3,14 @@
     "voice": "ja-JP-NanamiNeural",
     "id": "nanami",
     "output": "tiktok/voiced/tiktok-01-v3-ds-nanami.mp4",
-    "segments": 17,
-    "warnings": [
-      "seg00 超過 +0.48s (slot 1.9s, rate +40%): カメの甲羅、脱げると思ってた？",
-      "seg01 超過 +0.42s (slot 1.4s, rate +40%): それ、間違いです。",
-      "seg05 超過 +0.37s (slot 1.6s, rate +40%): 甲羅と一体化しています。",
-      "seg06 超過 +0.98s (slot 1.8s, rate +40%): その数、およそ五十から六十個。",
-      "seg08 超過 +0.20s (slot 3.4s, rate +40%): すぐ内側に肺。心臓も内臓もあります。",
-      "seg12 超過 +1.43s (slot 1.4s, rate +40%): 知ってた？コメントで教えて。",
-      "seg13 超過 +0.79s (slot 2.4s, rate +40%): 甲羅は背骨と肋骨。脱げません。",
-      "seg14 超過 +0.70s (slot 1.8s, rate +40%): 保存して、飼う前に見返して。"
-    ]
+    "segments": 14,
+    "warnings": []
   },
   {
     "voice": "ja-JP-KeitaNeural",
     "id": "keita",
     "output": "tiktok/voiced/tiktok-01-v3-ds-keita.mp4",
-    "segments": 17,
-    "warnings": [
-      "seg00 超過 +0.36s (slot 1.9s, rate +40%): カメの甲羅、脱げると思ってた？",
-      "seg01 超過 +0.45s (slot 1.4s, rate +40%): それ、間違いです。",
-      "seg05 超過 +0.20s (slot 1.6s, rate +40%): 甲羅と一体化しています。",
-      "seg06 超過 +0.72s (slot 1.8s, rate +40%): その数、およそ五十から六十個。",
-      "seg12 超過 +1.10s (slot 1.4s, rate +40%): 知ってた？コメントで教えて。",
-      "seg13 超過 +0.41s (slot 2.4s, rate +40%): 甲羅は背骨と肋骨。脱げません。",
-      "seg14 超過 +0.50s (slot 1.8s, rate +40%): 保存して、飼う前に見返して。"
-    ]
+    "segments": 14,
+    "warnings": []
   }
 ]
