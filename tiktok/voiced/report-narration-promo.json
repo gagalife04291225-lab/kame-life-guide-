@@ -1,16 +1,9 @@
 [
   {
-    "voice": "ja-JP-NanamiNeural",
-    "id": "nanami",
-    "output": "tiktok/voiced/tiktok-promo-akamimi-nanami.mp4",
-    "segments": 5,
-    "warnings": []
-  },
-  {
     "voice": "ja-JP-KeitaNeural",
     "id": "keita",
-    "output": "tiktok/voiced/tiktok-promo-akamimi-keita.mp4",
-    "segments": 5,
+    "output": "tiktok/voiced/tiktok-promo-v2-keita.mp4",
+    "segments": 8,
     "warnings": []
   }
 ]
