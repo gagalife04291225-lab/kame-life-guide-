@@ -5,7 +5,7 @@
     "output": "tiktok/voiced/tiktok-30s-v3-keita.mp4",
     "segments": 10,
     "warnings": [
-      "seg08 超過 +0.38s (slot 1.4s, rate +16%): 保存してね"
+      "seg08 超過 +0.38s (slot 1.4s, rate +16%): 保存して"
     ]
   }
 ]
