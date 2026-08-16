@@ -1,0 +1,33 @@
+{
+  "backend": "pollinations",
+  "note": "カメライフガイド ブランド色: 深い森緑 #0d1f1a / #2f4a3c, 琥珀 #d4a96a, 生成紙色 #f4efe2。英語プロンプトの方がモデルの追従が良いため英語で記述。まず3枚で動作検証してから拡張する。",
+  "images": [
+    {
+      "id": "guide-ishigame",
+      "path": "assets/generated/guide-ishigame.png",
+      "prompt": "Warm editorial illustration of a Japanese pond turtle (Nihon-ishigame) basking on a mossy river stone beside clear shallow water, soft morning light filtering through leaves, deep forest-green and amber color palette, gentle painterly watercolor texture, calm and trustworthy mood, no text, no watermark",
+      "width": 1200,
+      "height": 800,
+      "seed": 7,
+      "model": "flux"
+    },
+    {
+      "id": "kids-mori-bg",
+      "path": "assets/generated/kids-mori-bg.png",
+      "prompt": "Children's storybook painterly illustration, a friendly gentle cartoon turtle exploring a lush green Japanese forest, soft dappled sunlight, mossy stones and ferns, cozy warm watercolor texture, deep forest green and amber palette, wide landscape composition, whimsical and kind, no text, no watermark",
+      "width": 1280,
+      "height": 720,
+      "seed": 21,
+      "model": "flux"
+    },
+    {
+      "id": "tiktok-cut-curious",
+      "path": "assets/generated/tiktok-cut-curious.png",
+      "prompt": "Vertical poster illustration of a cute curious turtle looking up, minimal warm background in deep forest green with soft amber accents, generous clean empty space at the top and bottom for captions, storybook editorial style, soft light, no text, no watermark",
+      "width": 1080,
+      "height": 1920,
+      "seed": 33,
+      "model": "flux"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+name: Kame Image Gen
+
+# カメライフガイド — 無料の画像自動生成
+#
+# 目的: Claude のセッション環境からは外部の無料画像サービスへ到達できない
+#   （egress ブロック: HTTP 000）。GitHub Actions のランナーは別ネットワークなので、
+#   ランナー上でフリーの画像 API（既定: Pollinations・鍵不要・無料）を呼び、
+#   生成画像をリポジトリへ自動コミットする。
+#
+# 完全無料: GitHub Actions 無料枠 + 標準の GITHUB_TOKEN のみ。課金 API は使わない。
+#
+# 起動:
+#   1. tools/image-gen/prompts.json を push すると自動起動（このブランチ限定）
+#   2. Actions 画面から手動実行（workflow_dispatch）も可
+#
+# ループ防止: 生成物のコミットは [skip ci] を付け、かつ GITHUB_TOKEN による push は
+#   仕様上さらなる workflow を起動しない（二重の安全策）。
+
+on:
+  push:
+    branches:
+      - claude/ai-tiktok-oss-architecture-u6xkun
+    paths:
+      - "tools/image-gen/prompts.json"
+      - "tools/image-gen/generate.py"
+      - ".github/workflows/kame-image-gen.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 外部到達性チェック（ランナーから無料APIへ届くか）
+        run: |
+          echo "=== ランナーからの到達性 ==="
+          for u in \
+            "https://image.pollinations.ai/" \
+            "https://huggingface.co/" ; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 25 "$u" || echo "ERR")
+            echo "  $code  $u"
+          done
+
+      - name: 画像を生成
+        run: |
+          python3 tools/image-gen/generate.py tools/image-gen/prompts.json
+
+      - name: 生成物をコミット
+        run: |
+          git config user.name  "kame-image-bot"
+          git config user.email "kame-image-bot@users.noreply.github.com"
+          git add assets/generated/ || true
+          if git diff --cached --quiet; then
+            echo "コミットする生成物なし（生成に失敗した可能性）"
+            exit 0
+          fi
+          COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
+          git commit -m "chore(images): 自動生成 ${COUNT} ファイルを更新 [skip ci]"
+          # 起動時のブランチへそのまま push
+          for i in 1 2 3 4; do
+            if git push origin HEAD:"${GITHUB_REF_NAME}"; then
+              echo "push 成功"; break
+            fi
+            echo "push 失敗、リトライ ${i}"; sleep $((2 ** i))
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kame-generated-images
+          path: assets/generated/
+          if-no-files-found: ignore
