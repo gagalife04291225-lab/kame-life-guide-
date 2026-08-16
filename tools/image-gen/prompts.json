@@ -29,5 +29,6 @@
       "seed": 33,
       "model": "flux"
     }
-  ]
+  ],
+  "_trigger_test": 1
 }
