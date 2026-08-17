@@ -1336,9 +1336,15 @@
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記15〜28cm。外部未検証"
+    "value": 30,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG: 西側系統<25cm・東側系統≤30cm（例外的に46cmの記録）。国内流通はイベラ系（東側）中心",
+    "sources": [
+     "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+     "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -1347,8 +1353,14 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "VU（絶滅危惧II類）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -1377,6 +1389,65 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "uvb": {
+     "value": "Ferguson Zone 3（強UVB帯）・T5 HO 10〜12%管が基本",
+     "verification": "LIKELY",
+     "provenance": "manufacturer_primary",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "Zone表はZoo Med一次資料",
+      "jp_note": "特定製品は照度表確認まで断定しない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://zoomed.com/wp-content/uploads/Powersun_Instrct_U.S_5-18.pdf"
+     ]
+    },
+    "brumation": {
+     "value": "冬眠の可否は系統差が大きい",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "亜種・系統の見極めと健康管理が国内初心者には難しい",
+      "jp_note": "国内初心者は通年加温・冬眠なしを推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ]
+    },
+    "humidity_pct": {
+     "value": "乾燥系（梅雨〜夏の蒸れが最大リスク）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "地中海性気候と日本の梅雨の湿度差",
+      "jp_note": "通気最優先・乾燥系床材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "90〜120cm級（床面積優先）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "イベラ系は大きめに育つ",
+      "jp_note": "90cm開始・120cm推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ]
+    }
    }
   },
   {
@@ -3403,9 +3474,15 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 27.3,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "メス273mm・オス117mm（USGS/TFTSG）。雌雄差2倍超",
+    "sources": [
+     "https://www.usgs.gov/publications/graptemys-pulchra-baur-1893-alabama-map-turtle",
+     "https://iucn-tftsg.org/graptemys-pulchra-072/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -3414,8 +3491,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "NT（準絶滅危惧・2011年評価）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/graptemys-pulchra-072/"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -3445,6 +3527,77 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "オス60cm規格可・メス90〜120cm規格必須",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "雌雄差2倍超のサイズ記録を国内規格へ換算",
+      "jp_note": "メスを迎えるなら最初から90cm以上を計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.usgs.gov/publications/graptemys-pulchra-baur-1893-alabama-map-turtle",
+      "https://iucn-tftsg.org/graptemys-pulchra-072/"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "遊泳型。深めの水＋水流＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "河川性の遊泳種",
+      "jp_note": "水流ポンプとろ過強化。止水を嫌う"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/graptemys-pulchra-072/"
+     ]
+    },
+    "basking": {
+     "value": "甲羅干し依存が強い属。陸場＋バスキング＋UVB必須",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "チズガメ属共通の強いバスキング習性",
+      "jp_note": "国内のバスキングランプで実現可能"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/graptemys-pulchra-072/"
+     ]
+    },
+    "diet": {
+     "value": "メスは貝食特化（雄・幼体は雑食）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "北米の餌貝は国内入手不可",
+      "jp_note": "タニシ・カワニナ＋配合飼料で再構成"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.usgs.gov/publications/graptemys-pulchra-baur-1893-alabama-map-turtle"
+     ]
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -4392,9 +4545,15 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 19.8,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "最大記録198mm（Conant & Collins 1991）。TFTSG 2015種アカウントは種群全体で115〜235mm",
+    "sources": [
+     "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/woodland-box-turtle/index.php",
+     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -4403,8 +4562,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "VU（A2bcde+4bcde・2011年評価）※カロリナハコガメ種群としての評価",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -4432,6 +4596,66 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "60〜80",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "梅雨は好条件・冬は過乾燥",
+      "jp_note": "冬は加湿。蒸れ（高温×無換気）は回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ],
+     "note": "同種（Terrapene carolina）三ツユビ亜種のcare値を亜種間で共有"
+    },
+    "brumation": {
+     "value": "野生では冬眠する温帯種（飼育下は選択制）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "冬眠管理は健康リスクが高い",
+      "jp_note": "国内初心者は加温して冬眠なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/",
+      "https://www.mass.gov/info-details/eastern-box-turtle"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "浅い水場を常設（全身が浸かる深さで足りる）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "浅水設計は国内器具で可能",
+      "jp_note": "大きめの浅い水入れ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "室内90〜120cm級。温帯種のため春〜秋は屋外囲いも選択肢",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "海外推奨床面積を国内ケージ規格へ換算",
+      "jp_note": "90cm開始・成体は120cm推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    }
    }
   },
   {
@@ -4458,9 +4682,14 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 23.5,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG 2015: 亜種majorの雄で23.5cm（カロリナハコガメ群最大）",
+    "sources": [
+     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -4469,8 +4698,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "VU（A2bcde+4bcde・2011年評価）※カロリナハコガメ種群としての評価",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -4498,6 +4732,62 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "最大亜種のため成体は120cm級推奨（90cmは亜成体まで）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "群最大亜種のサイズを国内規格へ換算",
+      "jp_note": "120cm級の床面積を計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ]
+    },
+    "brumation": {
+     "value": "南部沿岸分布のため冬眠必須ではない",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "日本の冬は分布域より寒い",
+      "jp_note": "加温して冬眠なしが基本"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ]
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "water_depth_cm": {
+     "value": "浅く広い水場（ハコガメ中では水辺依存が強い）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "湾岸低湿地の生息環境",
+      "jp_note": "水場は広めに"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ]
+    }
    }
   },
   {
@@ -4524,9 +4814,14 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 18.7,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "最大記録187mm（Pritchard 1980・TFTSG 2015種アカウント経由）。通常は11〜15cm",
+    "sources": [
+     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -4535,8 +4830,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "VU（A2bcde+4bcde・2011年評価）※カロリナハコガメ種群としての評価（bauriは近年独立種扱い）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -4564,6 +4864,50 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "70〜90",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "フロリダの湿潤環境由来・既存ページ記載と一致",
+      "jp_note": "梅雨は好条件。蒸れは回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ]
+    },
+    "brumation": {
+     "value": "冬眠させない（フロリダ産・加温越冬）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "分布域に日本の冬の寒さが存在しない",
+      "jp_note": "無加温室（10℃前後）は低すぎる"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "90cm級から（床材厚敷き＋浅い水場）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "小型ハコガメの床面積を国内規格へ換算",
+      "jp_note": "90cm級"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    }
    }
   },
   {
@@ -5645,7 +5989,12 @@
    },
    "max_shell_length_cm": {
     "value": null,
-    "verification": "UNPROVEN"
+    "verification": "UNPROVEN",
+    "note": "平均30cm級・40cm超の報告あり。最大記録は資料間で40〜60cmと差が大きく確定不能（conflictとして保持）",
+    "sources": [
+     "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -5654,8 +6003,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "NE（世界評価は未評価・地域的減少の報告あり）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -5683,6 +6037,62 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "湿潤熱帯・亜熱帯産で分布域に日本の冬の寒さがない",
+      "jp_note": "通年加温。冬の保温コストを購入前に試算"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+     ]
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "乾燥に弱いことは資料が一致するが数値の確定資料は乏しい",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "enclosure_jp": {
+     "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "30cm超の活動的な種の床面積を国内規格へ換算",
+      "jp_note": "120cm超の床面積を前提に計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+     ]
+    },
+    "diet": {
+     "value": "雑食（葉野菜中心＋果実＋動物質少量）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "果実許容型のリクガメ。国内流通の野菜・果物で構成可能",
+      "jp_note": "葉野菜中心に果実を副食で"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+     ]
+    }
    }
   },
   {
