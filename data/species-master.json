@@ -415,6 +415,34 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "brumation": {
+     "value": "亜熱帯産。本州の冬は加温が安全",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "水中ヒーター"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "cautions": {
+     "value": [
+      "野外に放さない・逃がさない（在来個体群攪乱・国内外来問題）"
+     ],
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "逸走防止を徹底"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -2290,6 +2318,32 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "45〜60cm規格で終生飼育可",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "小型種"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "water_depth_cm": {
+     "value": "浅め＋足がかり",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -2437,6 +2491,32 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "water_depth_cm": {
+     "value": "浅め＋足がかり",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "ドロガメ共通"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "enclosure_jp": {
+     "value": "60cm開始・余裕があれば90cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -3407,6 +3487,32 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "オス60cm可・メス90cm推奨",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "雌雄差前提"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "basking": {
+     "value": "バスキング依存強（陸場＋ランプ＋UVB必須）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -4038,6 +4144,43 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "成体は120cm級以上＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "特にメスの大型化前提で計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "substrate": {
+     "value": "細かい砂（潜行習性）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "角のないレイアウト"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": "冬は水中ヒーター保温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -4364,7 +4507,47 @@
    "wamei_aliases": [
     "メキシコオオニオイガメ",
     "ミツウネオオニオイガメ"
-   ]
+   ],
+   "care": {
+    "enclosure_jp": {
+     "value": "単独で120cm級",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "小型ニオイガメと混同しない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "cautions": {
+     "value": [
+      "気性が非常に強く単独飼育原則"
+     ],
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "中米産・通年加温",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "水中ヒーター"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
+   }
   },
   {
    "slug": "giant-musk-turtle-mx",
@@ -4438,7 +4621,47 @@
    "wamei_aliases": [
     "メキシカンジャイアントマスクタートル",
     "サルビンオオニオイガメ"
-   ]
+   ],
+   "care": {
+    "enclosure_jp": {
+     "value": "単独で90cm水槽基準",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "混泳不可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "cautions": {
+     "value": [
+      "気性が強く単独飼育原則"
+     ],
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "中米産・通年加温",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "水中ヒーター"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
+   }
   },
   {
    "slug": "three-toed-box-turtle",
@@ -5120,6 +5343,32 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "乾燥寄り（草原種・多湿系ハコガメと逆）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "梅雨の蒸れが最大リスク・通気最優先"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "野生では冬眠（飼育下は選択制）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "国内初心者は加温して冬眠なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -5253,7 +5502,44 @@
    },
    "wamei_aliases": [
     "モンホットハコガメ"
-   ]
+   ],
+   "care": {
+    "air_temp_c": {
+     "value": "涼しめ（山地林・夏は冷やす系）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "夏は通気・遮光・冷房"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "humidity_pct": {
+     "value": "高め（梅雨は好条件）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "蒸れは回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": "国内は加温越冬が安全"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
+   }
   },
   {
    "slug": "taiwan-box-turtle",
@@ -5553,6 +5839,32 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "water_depth_cm": {
+     "value": "ハコガメ中で最も水棲寄り（広めの水場）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "陸場も必須"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "通年加温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -6457,6 +6769,34 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "「小型のまま」を前提にしない（通常のアカアシ水準で計画）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "最終サイズの確定資料なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
+     ]
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "通年加温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -7678,6 +8018,44 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "water_depth_cm": {
+     "value": "浅め（首を伸ばして呼吸できる深さ）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "遊泳空間より底面積"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "diet": {
+     "value": "魚食・活餌中心（餌コスト大）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "国内で小魚を安定調達"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "南米熱帯産・通年26℃前後",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "ヒーター必須"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -7993,6 +8371,34 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "brumation": {
+     "value": "乾季休眠は飼育下で再現不要。日本の冬は通年加温",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "水中ヒーター必須"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/pelomedusa-subrufa/"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "60cm開始・成体90cm推奨",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "国内規格換算"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -8209,6 +8615,34 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "幼体60cm可・成体は120cm級＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "最終サイズ前提の設備計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Pseudemys_nelsoni/"
+     ]
+    },
+    "diet": {
+     "value": "成体は草食傾向（水草・葉野菜主食へ）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "小松菜・水草"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -8990,6 +9424,32 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "高め（林床性・梅雨は好条件）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "蒸れ回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "加温越冬"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
