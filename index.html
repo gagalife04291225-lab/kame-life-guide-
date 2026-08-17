@@ -1696,6 +1696,15 @@
   @media(max-width:760px){
     .pc-grid-s2{grid-template-columns:repeat(2,1fr);}
   }
+  /* Care Module 05 の下に置く「おうちの方へ」への副リンク */
+  .gl-sub-link{
+    grid-column:1/-1;margin:-4px 0 0;text-align:right;font-size:.86rem;
+  }
+  .gl-sub-link a{
+    display:inline-block;padding:8px 4px;min-height:44px;line-height:1.6;
+    color:#2f4a3c;font-weight:700;text-decoration:none;
+  }
+  .gl-sub-link a:hover{text-decoration:underline;}
   @media(max-width:480px){
     .pc-grid-s2{grid-template-columns:1fr;gap:10px;}
     .pc-card-s2{padding:22px 18px 20px;}
@@ -4500,9 +4509,13 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         <span class="gl-module-label">Care Module 05</span>
         <span class="gl-icon">🐢</span>
         <div class="gl-situation">お子さんが亀に興味を持った？</div>
-        <p class="gl-desc">お子さん自身が読めるページ。全漢字ふりがな付きで、甲羅のひみつ・何を食べるか・飼う前の5つの約束・カメクイズ。商品リンクは一切なし。おうちの方への案内つき。</p>
-        <span class="gl-cta">こども向けページを見る</span>
+        <p class="gl-desc">お子さん自身が読める「カメふしぎ島」。全漢字ふりがな付きの8ページで、森・水辺・かわいた場所をめぐりながら、カメの体と暮らしを見くらべます。最後はカメクイズ。商品リンクは一切ありません。</p>
+        <span class="gl-cta">カメふしぎ島へ行く →</span>
       </a>
+      <p class="gl-sub-link">
+        <a href="kids/otona.html"
+           onclick="(typeof gtag==='function')&&gtag('event','site_kids_click',{from:'guide_module_otona'})">保護者の方へ ── 「おうちの方へ」を読む →</a>
+      </p>
 
     </div>
   </div>
