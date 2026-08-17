@@ -137,8 +137,8 @@ land: [
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); },
     availability: 'common'
   },
-  { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES II。国内流通は希少。',
+  { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES I', legal: 'cites_i',
+    reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES I（附属書I）へ移行済みで野生個体の商業目的の国際取引は原則禁止。国内流通は希少。',
     specs: { '最大甲長': '18cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '25〜34℃' },
     coreSpecs: { size: '18cm', temp: '25〜34℃', lifespan: '20〜30年', diet: '草食（野草・乾草中心）' },
     extraSpecs: {},
@@ -295,7 +295,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'スジクビニオイガメ', latin: 'Sternotherus minor peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: null, legal: null,
+  { name: 'スジクビニオイガメ', latin: 'Sternotherus minor peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
     reason: '首と頭部に細かいストライプが走る美しいニオイガメ系の小型種。国内CB流通が確認されており、マニアに人気。小型水槽で観察を楽しめる。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     coreSpecs: { size: '11cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
@@ -570,9 +570,9 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'メキシカンジャイアントマスク', latin: 'Staurotypus triporcatus', emoji: '🦕', difficulty: '上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: null,
-    reason: 'メキシコ・中米産の大型ドロガメ科。スジオオニオイガメの近縁でさらに大型。3本の明確なキールを持ち噛みつき力が非常に強い。素手での取り扱い厳禁。本格マニア向けの希少種。',
-    specs: { '最大甲長': '40cm（メス）', '水槽サイズ': '90cm〜', '水温': '25〜30℃', '難易度': '★★★' },
+  { name: 'サルヴィンオオニオイガメ', latin: 'Staurotypus salvinii', emoji: '🦕', difficulty: '上級', size: 'L（20〜25cm）', cites: 'CITES II', legal: null,
+    reason: '太平洋岸（メキシコ〜エルサルバドル）産の大型ドロガメ科。スジオオニオイガメ（大西洋岸・最大38cm）より小型で最大25cm前後。3本のキールを持ち噛みつき力が非常に強く素手での取り扱い厳禁。流通名メキシカンジャイアントマスクタートル。',
+    specs: { '最大甲長': '25cm（メス）', '水槽サイズ': '90cm〜', '水温': '25〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '40cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '雑食（肉食寄り）' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
@@ -669,7 +669,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フロリダドロガメ', latin: 'Kinosternon subrubrum steindachneri', emoji: '🌴', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
+  { name: 'フロリダドロガメ', latin: 'Kinosternon steindachneri', emoji: '🌴', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
     reason: 'ミシシッピドロガメの南部亜種。フロリダ産CB流通あり。とんぶり市2025出品記録確認。温和で入門者にも向く小型ドロガメ。腹甲に赤みが入る個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30〜45cm', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食' },
@@ -680,7 +680,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.mud_lover||0)+(s.observational||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'オオアタマヒメニオイガメ', latin: 'Sternotherus minor minor', emoji: '🔬', difficulty: '入門〜中級', size: 'S（10〜14cm）', cites: null, legal: null,
+  { name: 'オオアタマヒメニオイガメ', latin: 'Sternotherus minor minor', emoji: '🔬', difficulty: '入門〜中級', size: 'S（10〜14cm）', cites: 'CITES II', legal: null,
     reason: 'ヒメニオイガメの基亜種で頭部が大きくなる。国内CB・輸入CB流通あり。とんぶり市2025出品「2024CB・2025CB」確認。小型で飼育しやすくニオイガメ入門者に人気。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30〜45cm', '水温': '22〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '14cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
@@ -1139,7 +1139,7 @@ exotic: [
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.collector_grade||0); },
     availability: 'common'
   },
-  { name: 'スジオオニオイガメ', latin: 'Staurotypus salvinii', emoji: '💪', difficulty: '上級', size: 'L（25〜38cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'スジオオニオイガメ', latin: 'Staurotypus triporcatus', emoji: '💪', difficulty: '上級', size: 'L（25〜38cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'ドロガメ科最大クラス。噛みつき力が極めて強く素手での取り扱い厳禁。CITES II。大型ドロガメ系の究極形として国内での飼育者もいる本格マニア向き種。',
     specs: { '最大甲長': '38cm（メス）', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '38cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '雑食' },

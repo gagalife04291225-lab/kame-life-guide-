@@ -115,6 +115,10 @@ def main():
             warns.append("WARN SHINDAN-SPECIES.md に %s の行なし" % wamei)
         for w, r in hits:
             if sci["verification"] in ("CONFIRMED", "LIKELY"):
+                if "×" in r["gakumei"]:
+                    warns.append("WARN MD:%s は交雑個体の行だが、species.jsでは同じ和名が %s に使われている（和名衝突）"
+                                 % (w, sci["value"]))
+                    continue
                 if binomial(sci["value"]).split()[0:2] != binomial(r["gakumei"]).split()[0:2]:
                     mismatch("MD:" + w, "学名", sci["value"], r["gakumei"])
             if cit["verification"] == "CONFIRMED":
@@ -155,7 +159,7 @@ def main():
                     mismatch(page, "環境省RL", env["value"], "準絶滅危惧（旧RL表記が残存）")
             # RL/IUCN のラベルなし表記（ページ内にどちらのラベルも無い場合のみ）
             if re.search(r"準絶滅危惧|絶滅危惧", raw) \
-               and "環境省" not in raw and "IUCN" not in raw:
+               and "環境省" not in raw and "IUCN" not in raw and "レッドリスト" not in raw:
                 warns.append("WARN %s: 保全表記があるが 環境省/IUCN のどちらの評価か明記なし" % page)
 
     print("=== validate_species: master %d種を照合 ===" % len(master))

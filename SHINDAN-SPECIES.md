@@ -21,8 +21,8 @@
 | スジクビヒメニオイガメ | Sternotherus minor | S | 中級 | CITES II | 国内CB確認済み |
 | オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | CITES II | 国内CB人気種 |
 | ハーレラドロガメ | Kinosternon herrerai | M | 上級 | CITES II | ザラアシドロガメとは別種 |
-| スジオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 噛みつき力が非常に強い |
-| ジャイアントマスクタートル | Staurotypus triporcatus | L | 上級 | CITES II | オオニオイガメ属最大種 |
+| スジオオニオイガメ（メキシコオオニオイガメ） | Staurotypus triporcatus | L | 上級 | CITES II | オオニオイガメ属最大種・噛みつき力が非常に強い |
+| サルヴィンオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 太平洋岸産・スジオオより小型（最大25cm前後） |
 | シロクチドロガメ | Kinosternon leucostomum | M | 上級 | CITES II | 白い口周りが特徴 |
 
 ---
@@ -45,7 +45,7 @@
 | ペニンシュラクーター | Pseudemys peninsularis | L | 中級 | なし | フロリダ半島産 |
 | リバークーター | Pseudemys concinna | L | 中級 | なし | 北米河川産 |
 | キボシヌマガメ | Emys orbicularis（ウクライナ産） | M | 中級 | なし | 国内CB確認済み |
-| ブランディングガメ | Emydoidea blandingii | M | 上級 | なし | 黄色い喉元・国内CB確認 |
+| ブランディングガメ | Emydoidea blandingii | M | 上級 | CITES II | 黄色い喉元・国内CB確認・CoP16（2013）掲載 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
 | ハナガメ | Mauremys sinensis | M | −（新規飼育不可） | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
 
@@ -70,7 +70,7 @@
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
-| キボシイシガメ | Clemmys guttata | S | 中級 | なし | 黒甲羅に黄水玉 |
+| キボシイシガメ | Clemmys guttata | S | 中級 | CITES II | 黒甲羅に黄水玉・CoP16（2013）掲載 |
 | モリイシガメ | Glyptemys insculpta | M | 中〜上級 | なし | 橙色の模様・低温好む |
 | ミツユビハコガメ | Terrapene carolina triunguis | M | 中〜上級 | CITES II | 後ろ脚3本指 |
 | トウブハコガメ | Terrapene carolina carolina | M | 中〜上級 | CITES II | 国内CB盛ん |
@@ -122,7 +122,7 @@
 | ケヅメリクガメ（スルカタ） | Centrochelys sulcata | XL | 上級 | CITES II | 成体30〜100kg・6畳以上必要 |
 | チャコリクガメ | Chelonoidis chilensis | M | 上級 | CITES II | 南米乾燥地帯産 |
 | ベルセオレガメ | Kinixys belliana | M | 上級 | CITES II | ヒンジバック・WC多い |
-| ソマリアリクガメ（エジプトリクガメ） | Testudo kleinmanni | S | 上級 | CITES II | 世界最小級 |
+| ソマリアリクガメ（エジプトリクガメ） | Testudo kleinmanni | S | 上級 | CITES I | 世界最小級・1995年に附属書Iへ |
 | アルダブラゾウガメ | Aldabrachelys gigantea | XL | 上級 | CITES II | 個人飼育は国内最高難度 |
 
 ---
@@ -135,7 +135,7 @@
 | アマゾンマタマタ | Chelus orinocensis | L | 上級 | CITES II | オリノコ川水系産 |
 | ニシキマゲクビガメ（ピンクベリー） | Emydura subglobosa | M | 中〜上級 | なし | 曲頸類入門として人気 |
 | ヘビクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
-| ニシキヘビクビガメ | Chelodina mccordi | M | 上級 | なし | 美しい甲羅模様 |
+| ニシキヘビクビガメ（マッコードナガクビガメ） | Chelodina mccordi | M | 上級 | CITES II | 2005年掲載・野生個体は輸出ゼロ枠。附属書Iではない |
 | ジーベンロックナガクビガメ | Macrochelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
 | パーケリーナガクビガメ | Chelodina parkeri | L | 上級 | なし | EUCB流通・色抜け個体美しい |
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
@@ -168,7 +168,7 @@
 | フロリダスッポン | Apalone ferox | L | 上級 | 砂底必須・ストレスに弱い・CITES II（2023）  |
 | スムーススッポン | Apalone mutica | L | 上級 | 砂底必須・CITES II（2023）  |
 | スパイニースッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須・CITES II（2023）  |
-| スッポンモドキ | Carettochelys insculpta | XL | 上級 | 26〜30℃高水温必要 |
+| スッポンモドキ | Carettochelys insculpta | XL | 上級 | 26〜30℃高水温必要・CITES II |
 
 ---
 

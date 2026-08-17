@@ -29,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種中57種を登録済み。残りはリスク順に追加"
+  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records）"
  },
  "species": [
   {
@@ -967,8 +967,9 @@
    "wamei": "フロリダドロガメ",
    "scientific_name": {
     "value": "Kinosternon steindachneri",
-    "verification": "NEEDS_REVIEW",
-    "note": "TTWG(2017)は独立種として受理（Bourque2012/Iverson2013）。USFWS等は亜種表記が残存。サイト内でも species.js=亜種表記 / SHINDAN-SPECIES.md=独立種で不一致。TTWGチェックリスト原典確認後に確定"
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "note": "TTWG(2017)が独立種として受理。内部正典（修正済み学名表）とも一致。species.jsの亜種表記は今回修正済み"
    },
    "english_name": {
     "value": null,
@@ -1568,8 +1569,9 @@
    "wamei": "オオアタマドロガメ",
    "scientific_name": {
     "value": "Kinosternon acutum",
-    "verification": "NEEDS_REVIEW",
-    "note": "実体不一致の疑い: 和名オオアタマドロガメ・slug narrow-bridged・大頭の記述は Claudius angustatus を示唆する一方、記載学名は K. acutum（英名Tabasco mud turtle）。ヒメハコと同型の混同の可能性。owner確認＋外部照合が必要。なおどちらの場合もCoP19でCITES II掲載域内"
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "note": "種の実体はK. acutumで確定的（同定データの形態・分布・サイズ記述が一貫し、英名narrow-bridged mud turtleはacutumの別名でslugとも整合）。残る論点は和名『オオアタマドロガメ』の妥当性のみ（Claudius angustatusの和名の可能性・要外部図鑑確認）"
    },
    "english_name": {
     "value": null,
@@ -2884,9 +2886,16 @@
    "page": "species/giant-musk-turtle.html",
    "wamei": "スジオオニオイガメ",
    "scientific_name": {
-    "value": "Staurotypus salvinii",
-    "verification": "NEEDS_REVIEW",
-    "note": "和名⇔学名の対応がサイト内で三つ巴（species.js=salvinii/ページ本文=triporcatus/-mxページh1=サルヴィン）。owner確認要"
+    "value": "Staurotypus triporcatus",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-17",
+    "provenance": "expert_consensus",
+    "institution": "ja.wikipedia個別記事＋サイト内同定データ・種ページ一致",
+    "sources": [
+     "https://ja.wikipedia.org/wiki/スジオオニオイガメ",
+     "https://ja.wikipedia.org/wiki/サルヴィンオオニオイガメ"
+    ],
+    "note": "js/MDにあった和名⇔学名の逆転を2026-08-17に解消"
    },
    "english_name": {
     "value": null,
@@ -2940,16 +2949,27 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
-   }
+   },
+   "wamei_aliases": [
+    "メキシコオオニオイガメ",
+    "ミツウネオオニオイガメ"
+   ]
   },
   {
    "slug": "giant-musk-turtle-mx",
    "page": "species/giant-musk-turtle-mx.html",
-   "wamei": "メキシカンジャイアントマスクタートル",
+   "wamei": "サルヴィンオオニオイガメ",
    "scientific_name": {
-    "value": "Staurotypus triporcatus",
-    "verification": "NEEDS_REVIEW",
-    "note": "同上（-mxページのh1はサルヴィンオオニオイガメ・本文学名はsalvinii）"
+    "value": "Staurotypus salvinii",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-17",
+    "provenance": "expert_consensus",
+    "institution": "同上",
+    "sources": [
+     "https://ja.wikipedia.org/wiki/スジオオニオイガメ",
+     "https://ja.wikipedia.org/wiki/サルヴィンオオニオイガメ"
+    ],
+    "note": "最大25cm前後・太平洋岸。js側の名称・サイズも修正済み"
    },
    "english_name": {
     "value": null,
@@ -3003,7 +3023,11 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
-   }
+   },
+   "wamei_aliases": [
+    "メキシカンジャイアントマスクタートル",
+    "サルビンオオニオイガメ"
+   ]
   },
   {
    "slug": "three-toed-box-turtle",
@@ -3774,7 +3798,9 @@
     },
     "since": {
      "value": "2023-02-23",
-     "verification": "UNPROVEN"
+     "verification": "LIKELY",
+     "note": "CoP19採択の標準発効日。通知原文確認は次フェーズ",
+     "last_verified": "2026-08-17"
     }
    },
    "domestic_law": {
@@ -4038,6 +4064,2837 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "aldabra-tortoise",
+   "page": "species/aldabra-tortoise.html",
+   "wamei": "アルダブラゾウガメ",
+   "scientific_name": {
+    "value": "Aldabrachelys gigantea",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "sulcata-tortoise",
+   "page": "species/sulcata-tortoise.html",
+   "wamei": "ケヅメリクガメ",
+   "scientific_name": {
+    "value": "Centrochelys sulcata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "red-footed-tortoise",
+   "page": "species/red-footed-tortoise.html",
+   "wamei": "アカアシリクガメ",
+   "scientific_name": {
+    "value": "Chelonoidis carbonarius",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "cherry-head-tortoise",
+   "page": "species/cherry-head-tortoise.html",
+   "wamei": "チェリーヘッドアカアシリクガメ",
+   "scientific_name": {
+    "value": "Chelonoidis carbonarius",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "chaco-tortoise",
+   "page": "species/chaco-tortoise.html",
+   "wamei": "チャコリクガメ",
+   "scientific_name": {
+    "value": "Chelonoidis chilensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "bowsprit-tortoise",
+   "page": "species/bowsprit-tortoise.html",
+   "wamei": "ソリガメ",
+   "scientific_name": {
+    "value": "Chersina angulata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "elongated-tortoise",
+   "page": "species/elongated-tortoise.html",
+   "wamei": "エロンガータリクガメ",
+   "scientific_name": {
+    "value": "Indotestudo elongata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "bell-hinge-back-tortoise",
+   "page": "species/bell-hinge-back-tortoise.html",
+   "wamei": "ベルセオレガメ",
+   "scientific_name": {
+    "value": "Kinixys belliana",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "home-hinge-back-tortoise",
+   "page": "species/home-hinge-back-tortoise.html",
+   "wamei": "セオレガメ（ホメアナ）",
+   "scientific_name": {
+    "value": "Kinixys homeana",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "impressed-tortoise",
+   "page": "species/impressed-tortoise.html",
+   "wamei": "インプレッサムツアシガメ",
+   "scientific_name": {
+    "value": "Manouria impressa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "leopard-tortoise",
+   "page": "species/leopard-tortoise.html",
+   "wamei": "ヒョウモンガメ",
+   "scientific_name": {
+    "value": "Stigmochelys pardalis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "iberian-greek-tortoise",
+   "page": "species/iberian-greek-tortoise.html",
+   "wamei": "イベラギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca ibera",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "marginated-tortoise",
+   "page": "species/marginated-tortoise.html",
+   "wamei": "フチゾリリクガメ",
+   "scientific_name": {
+    "value": "Testudo marginata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "archive-testudo-kleinmanni",
+   "page": null,
+   "wamei": "エジプトリクガメ",
+   "scientific_name": {
+    "value": "Testudo kleinmanni",
+    "verification": "CONFIRMED",
+    "note": "診断ではarchive（案内しない）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4665",
+      "https://cites.org/sites/default/files/eng/cop/09/prop/E09-Prop-45_Testudo.PDF"
+     ],
+     "note": "CoP9で附属書IIからIへ移行",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "1995-02-16",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "wamei_aliases": [
+    "ソマリアリクガメ"
+   ]
+  },
+  {
+   "slug": "pancake-tortoise",
+   "page": "species/pancake-tortoise.html",
+   "wamei": "パンケーキリクガメ",
+   "scientific_name": {
+    "value": "Malacochersus tornieri",
+    "verification": "LIKELY",
+    "note": "サイトは従来II表記だったため今回Iへ修正",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "IUCN/TFTSG",
+     "sources": [
+      "https://www.iucnredlist.org/species/pdf/508210",
+      "https://iucn-tftsg.org/malacochersus-tornieri-107/"
+     ],
+     "note": "附属書I（CoP18で移行とされる。発効日は通知原文で要確認）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "archive-geochelone-elegans",
+   "page": null,
+   "wamei": "インドホシガメ",
+   "scientific_name": {
+    "value": "Geochelone elegans",
+    "verification": "LIKELY",
+    "note": "診断除外済み（archive）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "archive-geochelone-platynota",
+   "page": null,
+   "wamei": "ビルマホシガメ",
+   "scientific_name": {
+    "value": "Geochelone platynota",
+    "verification": "LIKELY",
+    "note": "診断除外済み（archive）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "archive-pyxis-arachnoides",
+   "page": null,
+   "wamei": "マダガスカルクモノスガメ",
+   "scientific_name": {
+    "value": "Pyxis arachnoides",
+    "verification": "LIKELY",
+    "note": "診断除外済み（archive）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "spotted-turtle",
+   "page": "species/spotted-turtle.html",
+   "wamei": "キボシイシガメ",
+   "scientific_name": {
+    "value": "Clemmys guttata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/米国提案",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-29.pdf",
+      "https://tortoiseforum.org/threads/all-turtle-proposals-at-cites-approved.66771/"
+     ],
+     "note": "CoP16（2013）採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "blandings-turtle",
+   "page": "species/blandings-turtle.html",
+   "wamei": "ブランディングガメ",
+   "scientific_name": {
+    "value": "Emydoidea blandingii",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/米国提案",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-30.pdf"
+     ],
+     "note": "CoP16（2013）採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "wood-turtle",
+   "page": "species/wood-turtle.html",
+   "wamei": "モリイシガメ",
+   "scientific_name": {
+    "value": "Glyptemys insculpta",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "species.js既存表記IIと一致。掲載回次の原典確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "mccords-snake-necked-turtle",
+   "page": "species/mccords-snake-necked-turtle.html",
+   "wamei": "マッコードナガクビガメ",
+   "scientific_name": {
+    "value": "Chelodina mccordi",
+    "verification": "CONFIRMED",
+    "note": "CLAUDE.mdの『マッコード=CITES I』は誤り（要owner修正・附属書IIが正）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/IUCN",
+     "sources": [
+      "https://cites.org/eng/gallery/species/reptile/Chelodina_mccordi.html",
+      "https://www.iucnredlist.org/species/pdf/123814575"
+     ],
+     "note": "2005年1月掲載・野生個体はインドネシア輸出ゼロ枠（2013〜）。附属書Iではない",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2005-01-12",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "wamei_aliases": [
+    "ニシキヘビクビガメ"
+   ]
+  },
+  {
+   "slug": "pig-nosed-turtle",
+   "page": "species/pig-nosed-turtle.html",
+   "wamei": "スッポンモドキ",
+   "scientific_name": {
+    "value": "Carettochelys insculpta",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "IUCN-TFTSG",
+     "sources": [
+      "https://iucn-tftsg.org/carettochelys-insculpta-009/"
+     ],
+     "note": "附属書II",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "matamata",
+   "page": "species/matamata.html",
+   "wamei": "マタマタ",
+   "scientific_name": {
+    "value": "Chelus fimbriata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "内部照合記録（2023年発効・orinocensis含む）。原文再確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "amazon-matamata",
+   "page": "species/amazon-matamata.html",
+   "wamei": "アマゾンマタマタ",
+   "scientific_name": {
+    "value": "Chelus orinocensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "同上",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "pink-bellied-side-necked-turtle",
+   "page": "species/pink-bellied-side-necked-turtle.html",
+   "wamei": "ニシキマゲクビガメ",
+   "scientific_name": {
+    "value": "Emydura subglobosa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "eastern-long-necked-turtle",
+   "page": "species/eastern-long-necked-turtle.html",
+   "wamei": "ヘビクビガメ",
+   "scientific_name": {
+    "value": "Chelodina longicollis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "collier-snake-necked-turtle",
+   "page": "species/collier-snake-necked-turtle.html",
+   "wamei": "セグロヘビクビガメ",
+   "scientific_name": {
+    "value": "Chelodina colliei",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "UNPROVEN"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "siebenrocks-snake-necked-turtle",
+   "page": "species/siebenrocks-snake-necked-turtle.html",
+   "wamei": "ジーベンロックナガクビガメ",
+   "scientific_name": {
+    "value": "Macrochelodina rugosa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "UNPROVEN"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "hilaire-side-necked-turtle",
+   "page": "species/hilaire-side-necked-turtle.html",
+   "wamei": "ヒラリーカエルガメ",
+   "scientific_name": {
+    "value": "Phrynops hilarii",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "UNPROVEN"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "african-helmeted-turtle",
+   "page": "species/african-helmeted-turtle.html",
+   "wamei": "アフリカヨコクビガメ",
+   "scientific_name": {
+    "value": "Pelomedusa subrufa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "painted-turtle",
+   "page": "species/painted-turtle.html",
+   "wamei": "ニシキガメ",
+   "scientific_name": {
+    "value": "Chrysemys picta",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "river-cooter",
+   "page": "species/river-cooter.html",
+   "wamei": "コウキバラガメ",
+   "scientific_name": {
+    "value": "Pseudemys concinna",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "rio-grande-cooter",
+   "page": "species/rio-grande-cooter.html",
+   "wamei": "リオグランデクーター",
+   "scientific_name": {
+    "value": "Pseudemys gorzugi",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "florida-red-bellied-turtle",
+   "page": "species/florida-red-bellied-turtle.html",
+   "wamei": "フロリダレッドベリータートル",
+   "scientific_name": {
+    "value": "Pseudemys nelsoni",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "peninsula-cooter",
+   "page": "species/peninsula-cooter.html",
+   "wamei": "ペニンシュラクーター",
+   "scientific_name": {
+    "value": "Pseudemys peninsularis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "european-pond-turtle",
+   "page": "species/european-pond-turtle.html",
+   "wamei": "ヨーロッパヌマガメ",
+   "scientific_name": {
+    "value": "Emys orbicularis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "chinese-softshell-turtle",
+   "page": "species/chinese-softshell-turtle.html",
+   "wamei": "スッポン（シナスッポン）",
+   "scientific_name": {
+    "value": "Pelodiscus sinensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "albino-chinese-softshell",
+   "page": "species/albino-chinese-softshell.html",
+   "wamei": "アルビノシナスッポン",
+   "scientific_name": {
+    "value": "Pelodiscus sinensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "spenglers-leaf-turtle",
+   "page": "species/spenglers-leaf-turtle.html",
+   "wamei": "スペングラーヤマガメ",
+   "scientific_name": {
+    "value": "Geoemyda spengleri",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "note": "CoP16最終決定文書に明記（野生商業輸出ゼロ枠）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "asian-leaf-turtle",
+   "page": "species/asian-leaf-turtle.html",
+   "wamei": "ノコヘリマルガメ",
+   "scientific_name": {
+    "value": "Cyclemys dentata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "note": "CoP16でCyclemys spp.一括掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "asian-black-marsh-turtle",
+   "page": "species/asian-black-marsh-turtle.html",
+   "wamei": "アジアコガシラドロガメ",
+   "scientific_name": {
+    "value": "Siebenrockiella crassicollis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "species.js既存表記IIと一致。掲載回次の原典確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "annulated-wood-turtle",
+   "page": "species/annulated-wood-turtle.html",
+   "wamei": "ネンリンヤマガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys annulata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "CoP19でRhinoclemmys属掲載とされる。採択原文の確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "painted-wood-turtle",
+   "page": "species/painted-wood-turtle.html",
+   "wamei": "アカスジヤマガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys pulcherrima",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "CoP19でRhinoclemmys属掲載とされる。採択原文の確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "nicaragua-wood-turtle",
+   "page": "species/nicaragua-wood-turtle.html",
+   "wamei": "ニカラグアクジャクガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys pulcherrima incisa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "CoP19でRhinoclemmys属掲載とされる。採択原文の確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "brown-wood-turtle-manni",
+   "page": "species/brown-wood-turtle-manni.html",
+   "wamei": "マンヤマガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys pulcherrima manni",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "CoP19でRhinoclemmys属掲載とされる。採択原文の確認は次フェーズ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "hime-nioi-turtle",
+   "page": null,
+   "wamei": "ヒメニオイガメ",
+   "scientific_name": {
+    "value": "Sternotherus depressus",
+    "verification": "LIKELY",
+    "note": "ページはnoindex運用／該当HTMLはnoindexスタブのためページ照合対象外",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "note": "CoP19属単位掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "loggerhead-musk-turtle",
+   "page": "species/loggerhead-musk-turtle.html",
+   "wamei": "オオアタマヒメニオイガメ",
+   "scientific_name": {
+    "value": "Sternotherus minor minor",
+    "verification": "LIKELY",
+    "note": "SHINDAN-SPECIES.mdでは同じ和名が交雑個体（carinatus×minor）に使われており和名衝突あり（owner整理要）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "note": "CoP19属単位掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "stripe-necked-musk-turtle",
+   "page": "species/stripe-necked-musk-turtle.html",
+   "wamei": "スジクビニオイガメ",
+   "scientific_name": {
+    "value": "Sternotherus minor peltifer",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "note": "CoP19属単位掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
+   }
+  },
+  {
+   "slug": "ouachita-map-turtle",
+   "page": null,
+   "wamei": "フトマユチズガメ",
+   "scientific_name": {
+    "value": "Graptemys ouachitensis",
+    "verification": "LIKELY",
+    "note": "noindexリダイレクトスタブ。species.jsに-spと重複エントリあり（要整理）／該当HTMLはnoindexスタブのためページ照合対象外",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "米国（連邦官報）",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf"
+     ],
+     "note": "Graptemys属一括附属書III",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN"
    }
   }
  ]
