@@ -13,7 +13,8 @@
 | カブトニオイガメ | Sternotherus carinatus | M | 入門 | CITES II | 気性がやや荒い |
 | ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | CITES II | トウブドロガメの亜種 |
 | サラドロガメ | Kinosternon integrum | M | 中級 | CITES II | 国内CB流通増加中 |
-| ホオアカドロガメ | Kinosternon cruentatum | M | 中級 | CITES II | 頬が赤い・温和 |
+| ホオアカドロガメ | Kinosternon scorpioides cruentatum | M | 中級 | CITES II | 頬が赤い・温和。TTWG第9版(2021)ではサソリドロガメの亜種 |
+| ハナナガドロガメ | Kinosternon acutum | S | 中級 | CITES II | 旧表記オオアタマドロガメ・タバスコドロガメとも（標準和名へ2026-08修正） |
 | フロリダドロガメ | Kinosternon steindachneri | S | 中級 | CITES II | ミスジドロガメとは別種 |
 | ミスジドロガメ | Kinosternon baurii | S | 中級 | CITES II | 甲羅に3本の筋 |
 | キイロドロガメ | Kinosternon flavescens | M | 中級 | CITES II | 腹甲が黄みがかる |

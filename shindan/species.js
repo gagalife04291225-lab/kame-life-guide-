@@ -16,9 +16,9 @@ land: [
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.beginner||0)+(s.herbivore||0)+(s.eu_cb||0); },
     availability: 'common'
   },
-  { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', recommendationPriority: 95, difficulty: '中級', size: 'S〜M（10〜23cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ヘルマンリクガメ', latin: 'Testudo hermanni', emoji: '🌿', recommendationPriority: 95, difficulty: '中級', size: 'S〜M（西亜種〜18cm・東亜種〜28cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'EU産CBの流通が豊富でコンディションが安定。やや湿度のある地中海環境を好み、ロシアリクガメより扱いやすいと評価する飼育者も多い。最も人気の高い地中海系リクガメ。',
-    specs: { '最大甲長': '23cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
+    specs: { '最大甲長': '28cm（東亜種）', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
     coreSpecs: { size: '23cm', temp: '25〜30℃', lifespan: '50〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
@@ -306,7 +306,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ホオアカドロガメ', latin: 'Kinosternon cruentatum', emoji: '🔴', difficulty: '中級', size: 'M（13〜15cm）', cites: 'CITES II', legal: null,
+  { name: 'ホオアカドロガメ', latin: 'Kinosternon scorpioides cruentatum', emoji: '🔴', difficulty: '中級', size: 'M（13〜15cm）', cites: 'CITES II', legal: null,
     reason: '頬の赤みが特徴的なメキシコ〜中米産のドロガメ。温和な性格で45cm水槽から飼育可能。国内CB流通が増加しており入手しやすくなっている。',
     specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '15cm', temp: '24〜29℃', lifespan: '15〜30年', diet: '雑食' },
@@ -658,7 +658,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.asia_water||0)+(s.tropical_climate||0)+(s.collector||0)+(s.beauty||0); },
     availability: 'common'
   },
-  { name: 'オオアタマドロガメ', latin: 'Kinosternon acutum', emoji: '🐢', difficulty: '中級', size: 'S（11〜14cm）', cites: 'CITES II', legal: null,
+  { name: 'ハナナガドロガメ', latin: 'Kinosternon acutum', emoji: '🐢', difficulty: '中級', size: 'S（11〜14cm）', cites: 'CITES II', legal: null,
     reason: '頭部が大きく独特の迫力があるドロガメ。グアテマラ〜メキシコ原産。かめぢから2023年10月EUCB入荷・完売記録あり。丈夫で飼育しやすいが水質管理が重要。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '45cm〜', '水温': '24〜30℃', '難易度': '★★☆' },
     coreSpecs: { size: '14cm', temp: '24〜30℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },

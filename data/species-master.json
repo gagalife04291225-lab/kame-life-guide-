@@ -1159,9 +1159,15 @@
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "NEEDS_REVIEW",
-    "note": "資料間で対立: 通常14〜17cm・記録22〜24cm・T.h.boettgeri♀28〜30cmの記述が併存。亜種別に整理して確定する（conflictとして保持）"
+    "value": 28,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "資料対立は亜種差で解決(2026-08-17): 西亜種T. h. hermanniはおおむね18cm以下・東亜種boettgeriは最大28cm級。国内流通は東亜種系中心",
+    "sources": [
+     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_059_hermanni_v1_2011.pdf",
+     "https://lafeber.com/vet/basic-information-sheet-hermanns-tortoise/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -2429,9 +2435,15 @@
    "page": "species/red-cheeked-mud-turtle.html",
    "wamei": "ホオアカドロガメ",
    "scientific_name": {
-    "value": "Kinosternon cruentatum",
-    "verification": "NEEDS_REVIEW",
-    "note": "scorpioides複合群の分類が係争的（独立種/亜種）。内部正典はcruentatum"
+    "value": "Kinosternon scorpioides cruentatum",
+    "verification": "LIKELY",
+    "note": "TTWG第9版(2021)・ITIS・GBIF・USFWSはサソリドロガメの亜種 K. s. cruentatum として扱う。独立種とする見解も過去にあり分類は流動的。従来の種扱い(K. cruentatum)から2026-08-17に修正",
+    "sources": [
+     "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=949779",
+     "https://www.gbif.org/species/9209971",
+     "https://www.fws.gov/species/red-cheeked-mud-turtle-kinosternon-scorpioides-cruentatum"
+    ],
+    "last_verified": "2026-08-17"
    },
    "english_name": {
     "value": null,
@@ -3075,12 +3087,16 @@
   {
    "slug": "narrow-bridged-mud-turtle",
    "page": "species/narrow-bridged-mud-turtle.html",
-   "wamei": "オオアタマドロガメ",
+   "wamei": "ハナナガドロガメ",
    "scientific_name": {
     "value": "Kinosternon acutum",
     "verification": "LIKELY",
     "last_verified": "2026-08-17",
-    "note": "種の実体はK. acutumで確定的（同定データの形態・分布・サイズ記述が一貫し、英名narrow-bridged mud turtleはacutumの別名でslugとも整合）。残る論点は和名『オオアタマドロガメ』の妥当性のみ（Claudius angustatusの和名の可能性・要外部図鑑確認）"
+    "note": "標準和名はハナナガドロガメ（ja.wikipedia・ミズガメ図鑑一致）。旧表記オオアタマドロガメの使用実績は外部で確認できなかったため2026-08-17に表示名を修正",
+    "sources": [
+     "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8A%E3%83%8A%E3%82%AC%E3%83%89%E3%83%AD%E3%82%AC%E3%83%A1",
+     "https://www.sauria.info/pb/turtles/detail.php?id=1229119343"
+    ]
    },
    "english_name": {
     "value": null,
@@ -3168,7 +3184,11 @@
      "last_verified": "2026-08-17",
      "sources": []
     }
-   }
+   },
+   "wamei_aliases": [
+    "オオアタマドロガメ（当サイト旧表記・使用実績確認できず）",
+    "タバスコドロガメ"
+   ]
   },
   {
    "slug": "red-eared-slider",
@@ -6606,7 +6626,12 @@
    "scientific_name": {
     "value": "Cuora ornata",
     "verification": "NEEDS_REVIEW",
-    "note": "『Cuora ornata』は現行のCuora属13種の学名に見当たらず、実在しない学名の可能性が高い。実体がC. picturata/C. bourreti系なら両種はCoP18で附属書I。実体確定まで公開情報の学名は要注意"
+    "note": "調査結果(2026-08-17): 『Cuora ornata』はTTWG承認のCuora属13種に存在せず、和名『オルナータハコガメ』の国内流通・文献での使用実績も確認できなかった（Web検索ヒットなし）。実在しない種名の可能性が高い。英名Ornate Box Turtleは北米のTerrapene ornata（別種・サイト内キタニシキハコガメ）。候補のC. picturata（和名カンボジアモエギハコガメ・CiNii文献あり）とC. bourretiはCoP18でCITES I。ページには実体未確認の警告を掲示済み。削除・統合はOwner判断待ち",
+    "sources": [
+     "https://cir.nii.ac.jp/crid/1522262181035075584",
+     "https://en.wikipedia.org/wiki/Cuora"
+    ],
+    "last_verified": "2026-08-17"
    },
    "english_name": {
     "value": null,
