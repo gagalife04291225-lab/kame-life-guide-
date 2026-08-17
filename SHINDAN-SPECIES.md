@@ -8,18 +8,18 @@
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
-| ニオイガメ | Sternotherus odoratus | S | 入門 | なし | 英名コモンムスクタートル |
-| ヒメニオイガメ | Sternotherus depressus | S | 入門 | なし | 最小クラス |
-| カブトニオイガメ | Sternotherus carinatus | M | 入門 | なし | 気性がやや荒い |
+| ニオイガメ | Sternotherus odoratus | S | 入門 | CITES II | 英名コモンムスクタートル |
+| ヒメニオイガメ | Sternotherus depressus | S | 入門 | CITES II | 最小クラス |
+| カブトニオイガメ | Sternotherus carinatus | M | 入門 | CITES II | 気性がやや荒い |
 | ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | なし | トウブドロガメの亜種 |
 | サラドロガメ | Kinosternon integrum | M | 中級 | なし | 国内CB流通増加中 |
 | ホオアカドロガメ | Kinosternon cruentatum | M | 中級 | なし | 頬が赤い・温和 |
 | フロリダドロガメ | Kinosternon steindachneri | S | 中級 | なし | ミスジドロガメとは別種 |
 | ミスジドロガメ | Kinosternon baurii | S | 中級 | なし | 甲羅に3本の筋 |
 | キイロドロガメ | Kinosternon flavescens | M | 中級 | なし | 腹甲が黄みがかる |
-| スジクビニオイガメ | Sternotherus minor peltifer | S | 中級 | なし | 国内CB確認済み |
-| スジクビヒメニオイガメ | Sternotherus minor | S | 中級 | なし | 国内CB確認済み |
-| オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | なし | 国内CB人気種 |
+| スジクビニオイガメ | Sternotherus minor peltifer | S | 中級 | CITES II | 国内CB確認済み |
+| スジクビヒメニオイガメ | Sternotherus minor | S | 中級 | CITES II | 国内CB確認済み |
+| オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | CITES II | 国内CB人気種 |
 | ハーレラドロガメ | Kinosternon herrerai | M | 上級 | なし | ザラアシドロガメとは別種 |
 | スジオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 噛みつき力が非常に強い |
 | ジャイアントマスクタートル | Staurotypus triporcatus | L | 上級 | なし | オオニオイガメ属最大種 |
@@ -31,13 +31,13 @@
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
-| クサガメ | Mauremys reevesii | M | 入門 | なし | 外来起源説あり・放流厳禁 |
+| クサガメ | Mauremys reevesii | M | 入門 | CITES III | 外来起源説あり・放流厳禁 |
 | キバラガメ | Trachemys scripta scripta | M | 入門 | なし | アカミミガメの近縁 |
 | ペインテッドタートル | Chrysemys picta | M | 入門 | なし | 赤黄のラインが美しい |
 | ミシシッピアカミミガメ | Trachemys scripta elegans | L | 入門 | なし | 条件付特定外来・新規購入不可 |
-| ニホンイシガメ | Mauremys japonica | M | 中級 | なし | 日本固有種・国内CB流通 |
+| ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
 | ミナミイシガメ | Mauremys mutica | M | 中級 | なし | 国内CB流通 |
-| ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | なし | 台湾・中国南部・八重山産 |
+| ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | 台湾・中国南部・八重山産 |
 | カントンクサガメ | Mauremys reevesii（広東型） | M | 中級 | なし | 国内CB確認済み |
 | ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | なし | EUCB流通・やや低温好む |
 | カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 耳の後ろが黄色 |

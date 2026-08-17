@@ -1,0 +1,810 @@
+{
+ "_meta": {
+  "name": "KAME LIFE GUIDE species master（FACT-CHECK正本）",
+  "schema": "docs/shindan-redesign/SCHEMA-v2.md を継承（provenance 8型・conflict/caution分離）",
+  "version": "1.0",
+  "created": "2026-08-17",
+  "principles": [
+   "分からないことは分からないと書く。空欄を推測で埋めない",
+   "verification は種単位ではなく項目単位に付ける",
+   "本ファイルは照合基準（validator が参照）。表示HTMLの自動生成元にはしない",
+   "環境省レッドリストとIUCNは別のリストとして必ず分けて記録する"
+  ],
+  "verification_levels": {
+   "CONFIRMED": "公的一次資料で確認済み（sources必須）",
+   "LIKELY": "複数の独立資料が一致するが原典確認が残る",
+   "UNPROVEN": "未検証。値を採用しない",
+   "NEEDS_REVIEW": "変化した可能性があり再確認が必要"
+  },
+  "common_rules": {
+   "taimen_sales": {
+    "value": "爬虫類の販売は事業所での現物確認＋対面説明が義務（動物愛護管理法・全種共通）",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/nature/dobutsu/aigo/1_law/trader.html"
+    ],
+    "last_verified": "2026-08-17"
+   }
+  },
+  "coverage": "105種中10種（第1バッチ）。残りはリスク順に追加する"
+ },
+ "species": [
+  {
+   "slug": "japanese-pond-turtle",
+   "page": "species/japanese-pond-turtle.html",
+   "wamei": "ニホンイシガメ",
+   "scientific_name": {
+    "value": "Mauremys japonica",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局/環境省",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf",
+     "https://www.env.go.jp/press/press_03312.html"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": "Japanese Pond Turtle",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "複数資料で一致。原典確認は未了",
+    "last_verified": "2026-08-17"
+   },
+   "distribution": {
+    "value": "日本固有（本州・四国・九州ほか）",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "institution": "環境省系DB",
+    "sources": [
+     "https://ikilog.biodic.go.jp/rl_rdb/a/952.html"
+    ],
+    "note": "RDB本文での最終確認未了",
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記♂13・♀20cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "絶滅危惧II類（VU）",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "環境省",
+     "sources": [
+      "https://www.env.go.jp/press/press_03312.html"
+     ],
+     "note": "第5次レッドリスト（2026-03-17公表）でNTから引き上げ",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "旧内部記載はNT。現行評価の確認要"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "note": "CoP16採択・2013-06-12発効。野生個体の商業目的輸出はゼロ枠",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "採集は自治体条例で制限の場合あり（条例別の確認未了）"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "yaeyama-pond-turtle",
+   "page": "species/yaeyama-pond-turtle.html",
+   "wamei": "ヤエヤマイシガメ",
+   "scientific_name": {
+    "value": "Mauremys mutica kami",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/content/900522993.pdf"
+    ],
+    "note": "ミナミイシガメの亜種",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": "八重山諸島（石垣・西表・与那国）が自然分布",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/content/900522993.pdf"
+    ],
+    "note": "宮古島等では国内外来種として問題化",
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記15〜20cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "第5次RLでのミナミイシガメの扱い未確認"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "note": "種Mauremys muticaとして附属書II（ゼロ枠の適用外であることをCoP16文書で確認）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "note": "初掲載年の原典確認未了"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "west-african-mud-turtle",
+   "page": "species/west-african-mud-turtle.html",
+   "wamei": "ヒメハコヨコクビガメ",
+   "scientific_name": {
+    "value": "Pelusios nanus",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "USFWS/GBIF＋運営者確定(2026-08-17)",
+    "sources": [
+     "https://www.fws.gov/species/african-dwarf-mud-turtle-pelusios-nanus",
+     "https://www.gbif.org/species/2442288",
+     "https://www.inaturalist.org/taxa/40129-Pelusios-nanus"
+    ],
+    "note": "サイト実体種は運営者が確定。分類はLaurent,1956",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": "African Dwarf Mud Turtle",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "USFWS",
+    "sources": [
+     "https://www.fws.gov/species/african-dwarf-mud-turtle-pelusios-nanus",
+     "https://www.gbif.org/species/2442288",
+     "https://www.inaturalist.org/taxa/40129-Pelusios-nanus"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "distribution": {
+    "value": "アンゴラ・コンゴ民主共和国・ザンビア（マラウイを含む資料もある）",
+    "verification": "LIKELY",
+    "provenance": "official",
+    "institution": "USFWS/GBIF",
+    "sources": [
+     "https://www.fws.gov/species/african-dwarf-mud-turtle-pelusios-nanus",
+     "https://www.gbif.org/species/2442288",
+     "https://www.inaturalist.org/taxa/40129-Pelusios-nanus"
+    ],
+    "note": "マラウイの扱いが資料間で異なる",
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": 12,
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "sources": [
+     "https://www.fws.gov/species/african-dwarf-mud-turtle-pelusios-nanus",
+     "https://www.gbif.org/species/2442288",
+     "https://www.inaturalist.org/taxa/40129-Pelusios-nanus"
+    ],
+    "note": "曲頸亜目最小種。ロカリティ差あり（Kahemba産は特に小型）",
+    "last_verified": "2026-08-17"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "現行附属書全文での最終確認未了",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "根拠のある寿命記録が見つかっていない（不明を不明として扱う）"
+   },
+   "care_notes": {
+    "value": "水深は浅く（実飼育13〜15cm）逃げ場必須。深水で溺れかけの複数報告",
+    "verification": "LIKELY",
+    "provenance": "keeper_consensus",
+    "sources": [
+     "docs/shindan-redesign/west-african-mud-turtle.json"
+    ],
+    "note": "独立2飼育者の一致",
+    "last_verified": "2026-08-17"
+   }
+  },
+  {
+   "slug": "reeves-turtle",
+   "page": "species/reeves-turtle.html",
+   "wamei": "クサガメ",
+   "scientific_name": {
+    "value": "Mauremys reevesii",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局/USFWS",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4560",
+     "https://www.fws.gov/sites/default/files/documents/Ecological-Risk-Screening-Summary-Reeves-Turtle.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": "Reeves' Turtle",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "USFWS",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/Ecological-Risk-Screening-Summary-Reeves-Turtle.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "在来/移入起源の議論があるため分布記述は要精査"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記♂15・♀25cm超。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "外来起源説との関係でRL上の扱い要確認"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCNアカウント存在は確認。カテゴリー未読"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4560",
+      "https://www.fws.gov/sites/default/files/documents/Ecological-Risk-Screening-Summary-Reeves-Turtle.pdf"
+     ],
+     "note": "中国による附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "russian-tortoise",
+   "page": "species/russian-tortoise.html",
+   "wamei": "ロシアリクガメ",
+   "scientific_name": {
+    "value": "Testudo horsfieldii",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4664"
+    ],
+    "note": "Agrionemys horsfieldiiをシノニム/別属扱いとする体系もある",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記15〜25cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "hermann-tortoise",
+   "page": "species/hermann-tortoise.html",
+   "wamei": "ヘルマンリクガメ",
+   "scientific_name": {
+    "value": "Testudo hermanni",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4663"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": "Hermann's Tortoise",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "last_verified": "2026-08-17"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記15〜22cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "greek-tortoise",
+   "page": "species/greek-tortoise.html",
+   "wamei": "ギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4664",
+     "https://cites.org/eng/taxonomy/term/4663"
+    ],
+    "note": "科単位掲載の対象として確認。種別taxonomyページの個別確認は未了",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記15〜28cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "musk-turtle",
+   "page": "species/musk-turtle.html",
+   "wamei": "ミシシッピニオイガメ",
+   "scientific_name": {
+    "value": "Sternotherus odoratus",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局/USFWS",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "Common Musk Turtle / Eastern Musk Turtle等の併存"
+   },
+   "distribution": {
+    "value": "北米東部の淡水域（属の分布として）",
+    "verification": "LIKELY",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-31.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記8〜14cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS/CITES事務局",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "note": "CoP19で属単位（Sternotherus spp.）掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "razorback-musk-turtle",
+   "page": "species/razorback-musk-turtle.html",
+   "wamei": "カブトニオイガメ",
+   "scientific_name": {
+    "value": "Sternotherus carinatus",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局/USFWS",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "distribution": {
+    "value": "北米（属の分布として）",
+    "verification": "LIKELY",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-31.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記10〜15cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS/CITES事務局",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "note": "CoP19で属単位（Sternotherus spp.）掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
+     ],
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "podocnemis-unifilis",
+   "page": null,
+   "wamei": "モンキヨコクビガメ",
+   "scientific_name": {
+    "value": "Podocnemis unifilis",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "CITES事務局",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4602"
+    ],
+    "note": "種ページ未作成（ランキング・診断マスターにのみ登場。診断マスターでの和名はヌマヨコクビガメ）",
+    "last_verified": "2026-08-17"
+   },
+   "english_name": {
+    "value": "Yellow-spotted River Turtle",
+    "verification": "LIKELY",
+    "provenance": "official",
+    "institution": "CITES事務局",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4602"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "distribution": {
+    "value": "南米",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "国別の分布詳細は未確認",
+    "last_verified": "2026-08-17"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "サイト表記25〜45cm。外部未検証"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4602"
+     ],
+     "note": "掲載事実は内部資料・種ページ存在と整合するが、附属書原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  }
+ ]
+}
