@@ -5416,8 +5416,14 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 86,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG 2020: 雄の直甲長最大86.0cm・曲甲長101cm・雌57.8cm・体重100kg超。従来ページの「90cm超（直甲長）」は記録超過のため修正",
+    "sources": [
+     "https://iucn-tftsg.org/wp-content/uploads/crm.5.110.sulcata.v1.2020.pdf"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -5426,8 +5432,14 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "VU（1996年評価）・TFTSG暫定EN（2013）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "レッドリスト本体の直接確認はegress制限で未了。TFTSG 2020アカウントの記載に依拠",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/crm.5.110.sulcata.v1.2020.pdf"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -7718,8 +7730,16 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 10.7,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG種アカウント2010: 成体67.4〜107.1mm・最大記録107mm。複数独立ソースの一致で確認（PDF直接取得はegress制限で未了）",
+    "sources": [
+     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_047_spengleri_v1_2010.pdf",
+     "https://www.iucnredlist.org/species/pdf/2929166",
+     "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8063&epi=11"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -7728,8 +7748,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "EN（A2cd+4cd・2018年評価/2020年公表）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://www.iucnredlist.org/species/pdf/2929166"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
