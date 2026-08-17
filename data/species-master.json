@@ -29,7 +29,77 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records）"
+  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records）",
+  "schema_version": "1.1",
+  "care_schema": {
+   "purpose": "海外知見を検証し日本の環境・法規・商品事情へ再構成するための飼育データ層。105ページへの手入力はせず、本ファイルを唯一の飼育条件正本とする",
+   "fields": [
+    "water_temp_c",
+    "air_temp_c",
+    "basking_temp_c",
+    "uvb",
+    "humidity_pct",
+    "water_depth_cm",
+    "enclosure_jp",
+    "substrate",
+    "diet",
+    "brumation",
+    "juvenile_notes",
+    "cautions"
+   ],
+   "item_shape": {
+    "value": "数値/文字列",
+    "verification": "CONFIRMED|LIKELY|UNPROVEN|NEEDS_REVIEW",
+    "provenance": "SCHEMA-v2の8型",
+    "sources": [],
+    "japan_fit": {
+     "judgment": "ok_as_is（そのまま適用可）|adjust_for_japan（日本向け調整要）|not_recommended_jp（日本では非推奨）|UNPROVEN",
+     "basis": "判定根拠（日本の夏の高温多湿/冬の室温低下/梅雨/住宅スペース/水槽規格/電源用品/法規制/入手性）",
+     "jp_note": "日本での具体的な運用"
+    }
+   },
+   "enclosure_jp_standard": "日本の一般流通規格（30/45/60/90/120cm水槽・60/90cmケージ）へ必ず換算して記録する",
+   "source_criteria": {
+    "priority": [
+     "学術文献・査読誌",
+     "公的機関（USFWS/環境省等）",
+     "IUCN-TFTSG種アカウント（CRM）",
+     "動物園・保全機関の飼育マニュアル（AZA/EAZA等）",
+     "専門団体・専門書（TTWG/DGHT等）",
+     "メーカー一次仕様（UVB照度表等）",
+     "長期飼育者の一致した経験（keeper_consensus・独立2名以上）"
+    ],
+    "rules": [
+     "海外飼育者の経験談はkeeper系provenanceで記録し確定事実と区別する",
+     "そのまま転載しない。日本適合判定（japan_fit）を必ず併記する",
+     "ショップ記事・Wikipedia単独でCONFIRMEDにしない",
+     "矛盾はconflictとして残し多数決で潰さない"
+    ]
+   },
+   "equipment_policy": {
+    "principle": "飼育条件→必要性能→条件を満たす国内流通品の順で選定する。売りたい商品から飼育方法を逆算しない",
+    "flow": [
+     "masterのcare値から必要商品カテゴリと性能要件を確定",
+     "data/products.js（楽天API自動更新済み87商品）とshindan/equipment.js（実在確認済みASIN）から要件を満たす候補を抽出",
+     "満たす商品が無いカテゴリは掲載しない（無理に埋めない）"
+    ],
+    "amazon": "PA-APIは2026-05-15廃止済み。現行正式はCreators API（要販売実績）。現サイトは価格を表示しない静的リンク（/dp/ASIN/?tag=kamelife09-22）のため規約上APIなしで適法。価格自動化を行う場合のみCreators API申請",
+    "rakuten": "楽天ウェブサービス IchibaItem Search 20260701版で rakuten-sync.yml が稼働中（週次で価格・在庫をdata/products.jsへ自動反映、Secret redaction実装済み）。この既存経路を飼育データ層からも再利用する"
+   },
+   "priority_top10": [
+    "musk-turtle",
+    "razorback-musk-turtle",
+    "spenglers-leaf-turtle",
+    "west-african-mud-turtle",
+    "three-toed-box-turtle",
+    "russian-tortoise",
+    "hermann-tortoise",
+    "reeves-turtle",
+    "japanese-pond-turtle",
+    "sulcata-tortoise"
+   ],
+   "priority_basis": "GSC90日実測の需要（S/A群・Opportunity TOP10）＋実飼育3種＋法規制/安全リスク（sulcataの大型化警告等）"
+  }
  },
  "species": [
   {
@@ -292,6 +362,164 @@
     ],
     "note": "独立2飼育者の一致",
     "last_verified": "2026-08-17"
+   },
+   "care": {
+    "water_temp_c": {
+     "value": "24〜28（実飼育27〜28）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "国内の水中ヒーターで維持容易",
+      "jp_note": "サーモ付きヒーターで26〜28℃"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "basking_temp_c": {
+     "value": "32〜35",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "国内バスキングランプで実現可能",
+      "jp_note": "小型ランプで陸場32℃前後"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "13〜15（浅く・逃げ場必須）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "深水で溺れかけの複数報告がある安全上の最重要項目",
+      "jp_note": "水深は浅く、流木・浅瀬の逃げ場を必ず設置"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "60cm水槽から可・推奨90cm（推奨床面積0.35㎡は60cm規格0.18㎡を上回る）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "海外推奨面積と日本の60cm規格の間に差。実飼育はペア60cmらんちゅう水槽で産卵実績",
+      "jp_note": "開始は60cm可。活発な種のため余裕があれば90cmへ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "brumation": {
+     "value": "繁殖狙いは冬季冷却（10〜18℃）/ 通年加温も可",
+     "verification": "LIKELY",
+     "provenance": "keeper_observation",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "冬季冷却は日本の無加温室でむしろ実現しやすい",
+      "jp_note": "初心者は通年24〜28℃。繁殖狙いのみ段階的冷却"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "lifespan_note": {
+     "value": "寿命は根拠のある記録なし（15〜25年説は根拠不明）",
+     "verification": "LIKELY",
+     "provenance": "unstudied",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "不明を不明と書く方針",
+      "jp_note": "「不明」と明記する"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "cautions": {
+     "value": [
+      "水深事故（最重要）",
+      "野生生態がほぼ未研究の種"
+     ],
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/west-african-mud-turtle.json"
+     ]
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "水中ヒーター＋サーモ",
+     "浅場を作るレイアウト材",
+     "小型バスキングランプ",
+     "フィルター（60cm対応）"
+    ],
+    "根拠": "care.water_temp_c / water_depth_cm / basking_temp_c",
+    "選定": "products.jsの60cm帯フィルター・ヒーターから要件適合品"
    }
   },
   {
@@ -4182,6 +4410,163 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "air_temp_c": {
+     "value": "28〜32",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "冬の日本は屋外不可・大空間の加温が必要",
+      "jp_note": "成体は加温付き屋外シェルター＋冬季の保温計画が前提。電気代を含めて事前試算"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "humidity_pct": {
+     "value": "30〜50",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "日本の梅雨〜夏は恒常的に上回る",
+      "jp_note": "通気を最優先。幼体期の飼育環境は蒸れさせない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "成体は屋外飼育場が必須（甲長60〜80cm・室内ケージ規格では終生飼育不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "not_recommended_jp",
+      "basis": "日本の一般住宅・集合住宅では終生飼育のスペース確保が極めて困難（6畳以上＋庭）",
+      "jp_note": "購入前警告を最優先で表示。飼えるのは庭付き戸建て＋長期計画のある飼育者のみ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "diet": {
+     "value": "草食（牧草・野草中心）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "チモシー等の牧草は国内で安定入手可能",
+      "jp_note": "牧草・野草中心＋リクガメフード補助"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "冬季の大空間加温が日本での最大コスト",
+      "jp_note": "冬眠させない。加温設備の容量設計が必須"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "juvenile_notes": {
+     "value": "成長が極端に速い（4年で30cm超の実測）",
+     "verification": "LIKELY",
+     "provenance": "keeper_observation",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "幼体販売サイズから急成長する事実の周知が重要",
+      "jp_note": "ベビーで買っても数年で60cm水槽を超える"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "穴掘りで脱走・基礎破損",
+      "成体30〜100kg級"
+     ],
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "日本の庭の柵・ブロック塀で対策が必要",
+      "jp_note": "掘削対策（柵の地中埋込）"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/sulcata-tortoise.json"
+     ]
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "basking_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "大出力保温（冬）",
+     "屋外飼育場",
+     "UVB（大型ケージ対応）"
+    ],
+    "根拠": "care.enclosure_jp / air_temp_c",
+    "選定": "要件を満たす国内流通品が乏しいカテゴリ（大型ケージ）は自作前提を明記し無理に商品を当てない"
    }
   },
   {
@@ -6327,6 +6712,161 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "air_temp_c": {
+     "value": "22〜27",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "日本の夏は室温が上限27℃を大きく超える（keeper実飼育でも夏の高温対策が最大課題）",
+      "jp_note": "夏季は保冷（エアコン/冷却）が事実上必須。冬は保温で通年22〜27℃帯を維持"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "humidity_pct": {
+     "value": "70〜85",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "梅雨〜夏は自然に達するが冬の日本屋内は過乾燥",
+      "jp_note": "冬季は加湿（湿らせた床材・ミスティング）が必要。蒸れ（高温×多湿×無換気）は別途回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠させない）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "保温飼育は日本の屋内環境でそのまま実行可能",
+      "jp_note": "通年保温・冬眠なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "diet": {
+     "value": "肉食寄り雑食（活餌反応が強い・給餌難度高）",
+     "verification": "LIKELY",
+     "provenance": "keeper_observation",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "海外記述の餌昆虫は国内流通品で代替する必要",
+      "jp_note": "国内で常時入手できるコオロギ・デュビア等を軸にローテーション。人工飼料への餌付きは個体差大"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "病気耐性が低くWC個体中心の流通（tradeStatus=mostlyWC）",
+      "環境変化に敏感",
+      "隠れて過ごす時間が長く観察型の飼育"
+     ],
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjust_for_japan",
+      "basis": "国内CB選択が最重要の実務判断",
+      "jp_note": "国内CBを選ぶ。導入直後は触らない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "basking_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": "浅い水入れ（全身が浸かる浅場）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "浅水設計は日本の器具でそのまま可能",
+      "jp_note": "タッパー等の浅い水場で足りる"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "60cmケージ〜（床面積優先・高さ不要）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "60cm規格は国内標準",
+      "jp_note": "60cm爬虫類ケージ＋深い床材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    },
+    "substrate": {
+     "value": "腐葉土・ヤシガラ等を深く・湿らせて",
+     "verification": "LIKELY",
+     "provenance": "keeper_observation",
+     "japan_fit": {
+      "judgment": "ok_as_is",
+      "basis": "国内で入手容易な床材で構成可能",
+      "jp_note": "ヤシガラ＋腐葉土ミックスを深めに"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "docs/shindan-redesign/spenglers-leaf-turtle.json"
+     ]
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "保冷手段（夏）",
+     "保温（冬）",
+     "深床材",
+     "浅い水入れ"
+    ],
+    "根拠": "care.air_temp_c / substrate / water_depth_cm",
+    "選定": "data/products.js・equipment.jsの該当カテゴリから要件適合品のみ"
    }
   },
   {
