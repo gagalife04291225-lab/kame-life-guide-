@@ -83,7 +83,7 @@ GSC90日実測の需要 + 実飼育 + 法規制/安全リスクで選定:
 - japan_fit の最終判定（特に not_recommended_jp の掲載トーン）
 - keeper 経験の妥当性判断（デマ除外の最終判断）
 - 商品候補の採用可否（要件適合でも品質・入手性の実感）
-- NEEDS_REVIEW の実体確認（Cuora ornata 等）
+- NEEDS_REVIEW の実体確認（Cuora ornata は2026-08-17に実在しない種名と判定・Owner承認で削除済み）
 
 ## 7. 105種完成までの実装計画
 

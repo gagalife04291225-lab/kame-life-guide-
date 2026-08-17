@@ -208,7 +208,6 @@ const SPECIES_EQUIPMENT_MAP = {
   'マレーハコガメ':              '_box_asia',
   'チュウゴクセマルハコガメ':    '_box_asia',
   'モエギハコガメ':              '_box_asia',
-  'オルナータハコガメ':          '_box_asia',
   'ミスジハコガメ':              '_box_asia',
   'ミスジハコガメ（希少コレクション）': '_box_asia',
   // スッポン系

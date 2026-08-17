@@ -915,17 +915,6 @@ forest: [
     score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); },
     availability: 'reference_only'
   },
-  { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'unknown_hold', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity", "unknown_taxonomy"],
-    reason: '甲羅の美しい模様が特徴のアジア産ハコガメ。モエギに次ぐ希少性で上級者向き。湿度と温度の精密管理が必要。',
-    specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '22〜27℃', '難易度': '★★★' },
-    coreSpecs: { size: '20cm', temp: '22〜27℃', lifespan: '20〜50年', diet: '雑食' },
-    extraSpecs: {},
-    links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
-    slug: 'ornate-cuora', hasPage: true,
-    match: function(s){ return (s.terrestrial||0) >= 2 && (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2; },
-    score: function(s){ return (s.terrestrial||0)+(s.advanced||0)+(s.advanced_env||0)+(s.asia_box||0); },
-    availability: 'exclude'
-  },
   { name: 'ミスジハコガメ', latin: 'Cuora trifasciata', emoji: '🏆', difficulty: '上級', size: 'M（17〜21cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: false, commerceAllowed: false, riskFlags: ["cites_ii", "iucn_cr", "cb_only", "rare_trade"],
     reason: '3本のラインが走る甲羅が特徴のアジア産超希少ハコガメ。高価で流通が非常に少ない。CB個体を入手できれば本格的なアジアガメ飼育の頂点。',
     specs: { '最大甲長': '21cm', 'タイプ': '半水棲', '温度': '22〜27℃', '難易度': '★★★' },

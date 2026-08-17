@@ -20,12 +20,12 @@ Claude が既に2属（Graptemys 7種・Kinosternon 11種）を `data/species-id
 ---
 
 ## 担当A（ハコガメ類 Cuora — 7種）★難所：亜種取り違え多発
-対象slug: chinese-box-turtle(Cuora flavomarginata), taiwan-box-turtle(C. flavomarginata evelynae), indochinese-box-turtle(C. galbinifrons), three-striped-box-turtle(C. trifasciata), malayan-box-turtle(C. amboinensis), hirase-turtle(C. mouhotii), ornate-cuora(C. ornata)
+対象slug: chinese-box-turtle(Cuora flavomarginata), taiwan-box-turtle(C. flavomarginata evelynae), indochinese-box-turtle(C. galbinifrons), three-striped-box-turtle(C. trifasciata), malayan-box-turtle(C. amboinensis), hirase-turtle(C. mouhotii)
 
 注意点:
 - **CITESが厳格**。Cuora属の多くは附属書II、trifasciata(ミスジハコガメ)は特に厳格（CoP19以降の扱い・附属書I相当の議論）。必ず一次確認。
 - chinese-box(flavomarginata) と taiwan-box(flavomarginata evelynae) は**同種の亜種**。区別点を相互一貫で。
-- ornate-cuora(C. ornata) は近年 C. galbinifrons から分割された種。分類経緯を `unresolved`/`houkisei` に。
+- 【削除済 2026-08-17】ornate-cuora(C. ornata) は実在しない種名と判定されOwner承認で削除（「galbinifronsから分割」の旧記載も誤り）。
 - 識別軸: 甲のヒンジ・頭部斑紋・背甲の色帯。
 
 ## 担当B（イシガメ類 Mauremys — 6種）★難所：重複ページ問題あり

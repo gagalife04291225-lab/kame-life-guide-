@@ -95,7 +95,6 @@
 | ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea） |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
 | モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I | CoP19で附属書Iへ移行・萌黄色の甲羅 |
-| オルナータハコガメ | Cuora ornata | M | 上級 | CITES II | 美しい模様 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
 | モンホットハコガメ | Cuora mouhotii | M | 上級 | CITES II | 東南アジア産 |
 | ミスジハコガメ | Cuora trifasciata | M | 上級 | CITES II | 高価・流通少 |

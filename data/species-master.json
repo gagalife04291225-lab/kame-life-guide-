@@ -6620,67 +6620,6 @@
    }
   },
   {
-   "slug": "ornate-cuora",
-   "page": "species/ornate-cuora.html",
-   "wamei": "オルナータハコガメ",
-   "scientific_name": {
-    "value": "Cuora ornata",
-    "verification": "NEEDS_REVIEW",
-    "note": "調査結果(2026-08-17): 『Cuora ornata』はTTWG承認のCuora属13種に存在せず、和名『オルナータハコガメ』の国内流通・文献での使用実績も確認できなかった（Web検索ヒットなし）。実在しない種名の可能性が高い。英名Ornate Box Turtleは北米のTerrapene ornata（別種・サイト内キタニシキハコガメ）。候補のC. picturata（和名カンボジアモエギハコガメ・CiNii文献あり）とC. bourretiはCoP18でCITES I。ページには実体未確認の警告を掲示済み。削除・統合はOwner判断待ち",
-    "sources": [
-     "https://cir.nii.ac.jp/crid/1522262181035075584",
-     "https://en.wikipedia.org/wiki/Cuora"
-    ],
-    "last_verified": "2026-08-17"
-   },
-   "english_name": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
-   },
-   "distribution": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
-   },
-   "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
-   },
-   "conservation": {
-    "env_redlist": {
-     "value": "対象外（日本産種ではない）",
-     "verification": "CONFIRMED",
-     "last_verified": "2026-08-17"
-    },
-    "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
-    }
-   },
-   "cites": {
-    "appendix": {
-     "value": null,
-     "verification": "NEEDS_REVIEW",
-     "note": "実体種が未確定のため附属書を確定できない（II〜Iの幅）"
-    },
-    "since": {
-     "value": null,
-     "verification": "UNPROVEN"
-    }
-   },
-   "domestic_law": {
-    "value": null,
-    "verification": "UNPROVEN"
-   },
-   "lifespan": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
-   }
-  },
-  {
    "slug": "chinese-stripe-necked-turtle",
    "page": "species/chinese-stripe-necked-turtle.html",
    "wamei": "ハナガメ",
