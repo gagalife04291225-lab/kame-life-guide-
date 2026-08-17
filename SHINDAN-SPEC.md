@@ -55,6 +55,7 @@
 | ロシアリクガメ | Testudo (Agrionemys) horsfieldii |
 | アカアシリクガメ | Chelonoidis carbonarius |
 | ヒョウモンガメ | Stigmochelys pardalis |
+| ヒメハコヨコクビガメ | Pelusios nanus（castaneus/castanoides/Elseya schultzei は誤記として2026-08修正済み。castaneusは別種ニシアフリカハコヨコクビガメ） |
 
 ---
 

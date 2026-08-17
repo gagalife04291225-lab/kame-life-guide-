@@ -141,7 +141,7 @@
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |
 | セウネハコヨコクビガメ | Pelusios castaneus | M | 上級 | なし | 西アフリカ産 |
 | アフリカヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | サハラ以南広域 |
-| ヒメハコヨコクビガメ | Pelusios castanoides | M | 上級 | なし | 腹甲に蝶番あり |
+| ヒメハコヨコクビガメ | Pelusios nanus | S | 上級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
 | ヌマヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型 |
 | ブランディルカブトガメ | Peltocephalus dumerilianus | L | 上級 | なし | アマゾン産・大型 |
 | インプレッサムツアシガメ | Manouria impressa | M | 上級 | CITES II | 高湿度低温・極めて難しい |

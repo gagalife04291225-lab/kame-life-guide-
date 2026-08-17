@@ -66,7 +66,7 @@ Malaclemys(3): northern-diamondback(M. terrapin terrapin), carolina-diamondback(
 Rhinoclemmys(4): painted-wood(R. pulcherrima), brown-wood-manni(R. p. manni), nicaragua-wood(R. p. incisa), annulated-wood(R. annulata)
 Apalone/Pelodiscus(5): florida-softshell(A. ferox), smooth-softshell(A. mutica), spiny-softshell(A. spinifera), chinese-softshell(Pelodiscus sinensis), albino-chinese-softshell(P. sinensis アルビノ)
 Sternotherus(2): musk-turtle(S. odoratus), stripe-necked-musk-turtle(S. minor peltifer) ※loggerhead/razorback済
-単独: african-helmeted(Pelomedusa subrufa), west-african-mud(Pelusios castaneus), asian-black-marsh(Siebenrockiella crassicollis), asian-leaf(Cyclemys dentata), blandings(Emydoidea blandingii), european-pond(Emys orbicularis), hilaire-side-necked(Phrynops hilarii), pink-bellied-side-necked済, spenglers-leaf済, spotted(Clemmys guttata), wood(Glyptemys insculpta), pig-nosed(Carettochelys insculpta)
+単独: african-helmeted(Pelomedusa subrufa), west-african-mud(Pelusios nanus ※2026-08修正。掲載写真は近縁種P. castaneusでキャプション明記済み), asian-black-marsh(Siebenrockiella crassicollis), asian-leaf(Cyclemys dentata), blandings(Emydoidea blandingii), european-pond(Emys orbicularis), hilaire-side-necked(Phrynops hilarii), pink-bellied-side-necked済, spenglers-leaf済, spotted(Clemmys guttata), wood(Glyptemys insculpta), pig-nosed(Carettochelys insculpta)
 
 注意点:
 - **mccords-snake-necked(C. mccordi)は附属書I（CITES最厳格）**。siebenrocks(Macrochelodina rugosa)は学名の属変更(Chelodina rugosaとも)に注意。
