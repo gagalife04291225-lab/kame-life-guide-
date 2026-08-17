@@ -78,7 +78,7 @@
 | フロリダハコガメ | Terrapene bauri | M | 中〜上級 | CITES II | 放射状模様 |
 | キタニシキハコガメ | Terrapene ornata ornata | M | 中〜上級 | CITES II | 乾燥気味の環境 |
 | ミナミニシキハコガメ | Terrapene ornata luteola | M | 中〜上級 | CITES II | 砂漠〜半乾燥地帯産 |
-| タイワンセマルハコガメ | Cuora flavomarginata evelynae | M | 中〜上級 | CITES II | 沖縄産は天然記念物で別種 |
+| タイワンセマルハコガメ | Cuora flavomarginata flavomarginata | M | 中〜上級 | CITES II | 台湾産基亜種。八重山産の亜種evelynae（ヤエヤマセマルハコガメ）は天然記念物・飼育不可 |
 | チュウゴクセマルハコガメ | Cuora flavomarginata | M | 中〜上級 | CITES II | 中国産 |
 | スッポン（シナスッポン） | Pelodiscus sinensis | L | 中〜上級 | なし | 砂底必須 |
 | アルビノシナスッポン | Pelodiscus sinensis（アルビノ） | L | 中〜上級 | なし | 白〜黄みがかった体色 |

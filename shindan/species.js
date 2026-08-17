@@ -438,10 +438,10 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.bottom_dweller||0)+(s.sa_water||0)+(s.tropical_climate||0); },
     availability: 'common'
   },
-  { name: 'ペニンシュラクーター', latin: 'Pseudemys peninsularis', emoji: '🏊', difficulty: '中級', size: 'L（25〜37cm）', cites: null, legal: null,
+  { name: 'ペニンシュラクーター', latin: 'Pseudemys peninsularis', emoji: '🏊', difficulty: '中級', size: 'L（25〜40cm）', cites: null, legal: null,
     reason: 'フロリダ半島産の大型スライダー系。活発な泳ぎと草食傾向で90cm以上の水槽が必要。大きくなる種を飼いたい中級者向け。',
-    specs: { '最大甲長': '37cm（メス）', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
-    coreSpecs: { size: '37cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
+    specs: { '最大甲長': '40cm（メス）', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
+    coreSpecs: { size: '40cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'peninsula-cooter', hasPage: true,
@@ -871,7 +871,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'タイワンセマルハコガメ', latin: 'Cuora flavomarginata evelynae', emoji: '🟠', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "cb_only", "high_humidity"],
+  { name: 'タイワンセマルハコガメ', latin: 'Cuora flavomarginata flavomarginata', emoji: '🟠', difficulty: '中〜上級', size: 'M（14〜18cm）', cites: 'CITES II', legal: 'cites_ii_cb_only', recommendable: true, commerceAllowed: true, riskFlags: ["cites_ii", "cb_only", "high_humidity"],
     reason: '甲羅の縁がオレンジ色に縁どられた美しい台湾産ハコガメ。CB個体は流通している。沖縄産は天然記念物で全く別扱い。必ずCB証明書を確認のこと。',
     specs: { '最大甲長': '18cm', 'タイプ': '半水棲', '温度': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '18cm', temp: '24〜29℃', lifespan: '20〜50年', diet: '雑食' },

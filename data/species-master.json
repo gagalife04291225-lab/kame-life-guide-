@@ -2616,9 +2616,15 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 17,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "最大17cm前後（Reptiles of Ecuador等）。コロンビア個体群研究に20cm超の値もあり資料差をconflictとして保持",
+    "sources": [
+     "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913",
+     "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8016&epi=11"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -2665,6 +2671,64 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "water_temp_c": {
+     "value": "24以上（25℃設定推奨）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "既存ページFAQと一致",
+      "jp_note": "サーモ付き水中ヒーター必須"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913"
+     ]
+    },
+    "brumation": {
+     "value": "heated_year_round（冬眠不可）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "中米〜南米熱帯低地産",
+      "jp_note": "通年加温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "深くしすぎない（足がかり・浅瀬必須）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "ドロガメ属共通の弱遊泳性",
+      "jp_note": "流木・浅瀬を設置"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "60cm水槽から・余裕があれば90cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "属最大級のサイズを国内規格へ換算",
+      "jp_note": "60cm開始可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913"
+     ]
+    }
    }
   },
   {
@@ -2888,6 +2952,40 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "成体（メス25〜28cm級）は90cm以上＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "国内水槽規格への換算",
+      "jp_note": "60cm規格では終生飼育不可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "野外放流は法律違反",
+      "屋外飼育は逸走防止措置が前提",
+      "長寿（20〜40年）で終生飼育計画必須"
+     ],
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "環境省の規制内容",
+      "jp_note": "既飼育個体の継続飼育・無償譲渡は可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+     ]
+    }
    }
   },
   {
@@ -4035,9 +4133,15 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 23,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "種として: オス約13cm・メス平均19cm・最大23cm超の記録（北米で最大級の雌雄差）",
+    "sources": [
+     "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+     "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -4076,6 +4180,48 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "water_salinity": {
+     "value": "汽水（人工海水で塩分0.5〜1.5%目安）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "塩性湿地・河口の専門種。淡水単独の長期飼育はトラブル報告",
+      "jp_note": "機材は汽水（塩分）対応品を選ぶ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Malaclemys_terrapin/"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "メスは90cm以上＋乾ける陸場",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "雌雄差と遊泳性を国内規格へ換算",
+      "jp_note": "メス前提で90cm以上"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Malaclemys_terrapin/"
+     ]
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": "冬は水中ヒーター保温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -5114,13 +5260,15 @@
    "page": "species/taiwan-box-turtle.html",
    "wamei": "タイワンセマルハコガメ",
    "scientific_name": {
-    "value": "Cuora flavomarginata evelynae",
+    "value": "Cuora flavomarginata flavomarginata",
     "verification": "LIKELY",
     "last_verified": "2026-08-17",
     "provenance": "official",
     "sources": [
-     "https://cites.org"
-    ]
+     "https://iucn-tftsg.org/cuora-flavomarginata-035/",
+     "https://www.gbif.org/species/10994254"
+    ],
+    "note": "従来の evelynae 表記は誤り。evelynae（Ernst & Lovich 1990）は琉球（八重山）産亜種＝ヤエヤマセマルハコガメの学名で、タイワンセマルは基亜種。TFTSG 035 は3亜種（flavomarginata=台湾 / sinensis=中国大陸 / evelynae=琉球）を認める"
    },
    "english_name": {
     "value": null,
@@ -5133,9 +5281,14 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 19,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG 035: 種として甲長190mmまで",
+    "sources": [
+     "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -5144,8 +5297,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "EN（A1cd+2cd・2000年評価）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -5170,6 +5328,50 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "70〜90",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "既存ページFAQ・飼育資料と一致。梅雨は好条件",
+      "jp_note": "蒸れ（高温×無換気）は回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    },
+    "brumation": {
+     "value": "原産地では冷涼期あり（飼育下は選択制）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "冬眠管理の難しさ",
+      "jp_note": "国内初心者は加温して冬眠なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "浅い水場を常設",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "半陸棲",
+      "jp_note": "体が浸かれる浅い水入れ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    }
    }
   },
   {
@@ -5183,7 +5385,8 @@
     "provenance": "official",
     "sources": [
      "https://cites.org"
-    ]
+    ],
+    "note": "中国大陸個体群は亜種 sinensis とされることがある（有効性に議論）"
    },
    "english_name": {
     "value": null,
@@ -5196,9 +5399,14 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 19,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "TFTSG 035: 種として甲長190mmまで",
+    "sources": [
+     "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -5207,8 +5415,13 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "EN（A1cd+2cd・2000年評価）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ],
+     "last_verified": "2026-08-17"
     }
    },
    "cites": {
@@ -5233,6 +5446,50 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "70〜90",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "既存ページFAQ・飼育資料と一致。梅雨は好条件",
+      "jp_note": "蒸れ（高温×無換気）は回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    },
+    "brumation": {
+     "value": "原産地では冷涼期あり（飼育下は選択制）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "冬眠管理の難しさ",
+      "jp_note": "国内初心者は加温して冬眠なし"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "浅い水場を常設",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "半陸棲",
+      "jp_note": "体が浸かれる浅い水入れ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/cuora-flavomarginata-035/"
+     ]
+    }
    }
   },
   {
@@ -5421,13 +5678,61 @@
     }
    },
    "domestic_law": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": "国際希少野生動植物種（種の保存法）。CITES附属書I移行（2023-02-23発効）に伴い国内の譲渡・販売には登録票が必要",
+    "verification": "LIKELY",
+    "provenance": "official",
+    "sources": [
+     "https://www5.city.kyoto.jp/zoo/animals/c_galbinifrons",
+     "https://www.env.go.jp/nature/kisho/kisei/species/trade/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "air_temp_c": {
+     "value": "22〜26（高温に弱い）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "冷涼湿潤な山地林の種。日本の夏は大きく超える",
+      "jp_note": "夏はエアコン等の冷房前提（スペングラー型）"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www5.city.kyoto.jp/zoo/animals/c_galbinifrons"
+     ]
+    },
+    "humidity_pct": {
+     "value": "80〜90",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "山地林の高湿度。梅雨は好条件",
+      "jp_note": "冬は加湿。蒸れは回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www5.city.kyoto.jp/zoo/animals/c_galbinifrons"
+     ]
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
@@ -7924,8 +8229,15 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 40.3,
+    "verification": "LIKELY",
+    "provenance": "official",
+    "note": "メスで最大40.3cm・オスは35cm未満。従来サイト記載の上限37cmは記録未満のため40cmへ修正",
+    "sources": [
+     "https://www.iucnredlist.org/species/pdf/97427004",
+     "https://animaldiversity.org/accounts/Pseudemys_peninsularis/"
+    ],
+    "last_verified": "2026-08-17"
    },
    "conservation": {
     "env_redlist": {
@@ -7958,6 +8270,62 @@
    "lifespan": {
     "value": null,
     "verification": "UNPROVEN"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "幼体60cm可・成体メスは120cm級以上＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "メス40cm級の遊泳種を国内規格へ換算",
+      "jp_note": "購入前に最終サイズの設備計画"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Pseudemys_peninsularis/"
+     ]
+    },
+    "diet": {
+     "value": "成体は草食傾向が強い（水草・葉野菜主食へ移行）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "クーター属の食性変化",
+      "jp_note": "小松菜・水草を主食に"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Pseudemys_peninsularis/"
+     ]
+    },
+    "basking": {
+     "value": "甲羅干しを好む（乾ける陸場＋ランプ＋UVB必須）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "遊泳・日光浴型",
+      "jp_note": "国内機材で実現可能"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Pseudemys_peninsularis/"
+     ]
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "provenance": null,
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": "冬は水中ヒーター保温"
+     },
+     "last_verified": "2026-08-17",
+     "sources": []
+    }
    }
   },
   {
