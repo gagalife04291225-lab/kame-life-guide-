@@ -262,7 +262,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', recommendationPriority: 96, difficulty: '入門', size: 'S（10〜12cm）', cites: null, legal: null,
+  { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', recommendationPriority: 96, difficulty: '入門', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
     reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜26℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '20〜26℃', lifespan: '15〜30年', diet: '雑食' },
@@ -273,7 +273,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ミスジドロガメ', latin: 'Kinosternon baurii', emoji: '〰️', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: null, legal: null,
+  { name: 'ミスジドロガメ', latin: 'Kinosternon baurii', emoji: '〰️', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
     reason: '甲羅に3本の明瞭な筋が走る美しいドロガメ。小型で飼育しやすく温和な性格。ニオイガメと並ぶ小型水棲ガメ入門の選択肢。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
@@ -306,7 +306,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.observational||0)+(s.intermediate||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ホオアカドロガメ', latin: 'Kinosternon cruentatum', emoji: '🔴', difficulty: '中級', size: 'M（13〜15cm）', cites: null, legal: null,
+  { name: 'ホオアカドロガメ', latin: 'Kinosternon cruentatum', emoji: '🔴', difficulty: '中級', size: 'M（13〜15cm）', cites: 'CITES II', legal: null,
     reason: '頬の赤みが特徴的なメキシコ〜中米産のドロガメ。温和な性格で45cm水槽から飼育可能。国内CB流通が増加しており入手しやすくなっている。',
     specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '15cm', temp: '24〜29℃', lifespan: '15〜30年', diet: '雑食' },
@@ -471,7 +471,7 @@ aquatic: [
     score: function(s){ return (s.ambush||0)+(s.advanced||0)*1.5+(s.large_tank||0)+(s.sa_water||0)+(s.tropical_climate||0)+Math.floor((s.budget_high||0)*0.5); },
     availability: 'common'
   },
-  { name: 'サラドロガメ', latin: 'Kinosternon integrum', emoji: '🟤', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+  { name: 'サラドロガメ', latin: 'Kinosternon integrum', emoji: '🟤', difficulty: '中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
     reason: 'メキシコ固有のドロガメ。甲長20cm程度と国内流通するドロガメ属では大型。温和な性格で60cm水槽から飼育できる。国内CB流通が増加中。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '24〜29℃', lifespan: '15〜30年', diet: '雑食' },
@@ -504,7 +504,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.active||0)+(s.mainstream||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'キイロドロガメ', latin: 'Kinosternon flavescens', emoji: '💛', difficulty: '中級', size: 'M（10〜14cm）', cites: null, legal: null,
+  { name: 'キイロドロガメ', latin: 'Kinosternon flavescens', emoji: '💛', difficulty: '中級', size: 'M（10〜14cm）', cites: 'CITES II', legal: null,
     reason: '腹甲が黄みがかる個性的なドロガメ。テキサス〜イリノイ産。小型で管理しやすく、ドロガメ系コレクションの1種として人気。流通確認済み。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     coreSpecs: { size: '14cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
@@ -515,7 +515,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ハーレラドロガメ', latin: 'Kinosternon herrerai', emoji: '🔸', difficulty: '上級', size: 'M（14〜16cm）', cites: null, legal: null,
+  { name: 'ハーレラドロガメ', latin: 'Kinosternon herrerai', emoji: '🔸', difficulty: '上級', size: 'M（14〜16cm）', cites: 'CITES II', legal: null,
     reason: 'メキシコ・ベラクルス州に限定分布する希少なドロガメ。ザラアシドロガメとは別種。専門店からのCB入荷が確認されており、希少ドロガメを集めるマニア向き。',
     specs: { '最大甲長': '16cm', '水槽サイズ': '45cm〜', '水温': '24〜29℃', '難易度': '★★★' },
     coreSpecs: { size: '16cm', temp: '24〜29℃', lifespan: '15〜30年', diet: '雑食' },
@@ -526,7 +526,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
   },
-  { name: 'シロクチドロガメ', latin: 'Kinosternon leucostomum', emoji: '⬜', difficulty: '上級', size: 'M（15〜17cm）', cites: null, legal: null,
+  { name: 'シロクチドロガメ', latin: 'Kinosternon leucostomum', emoji: '⬜', difficulty: '上級', size: 'M（15〜17cm）', cites: 'CITES II', legal: null,
     reason: '白い口周りが特徴の中米産ドロガメ。ぶりくらでCB出品確認済み。ドロガメ属の中でも比較的大型で存在感がある。上級者の希少種コレクション向き。',
     specs: { '最大甲長': '17cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '17cm', temp: '24〜30℃', lifespan: '15〜30年', diet: '雑食' },
@@ -592,7 +592,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.beginner||0)+(s.beauty||0)+(s.active||0)+(s.asia_water||0)+(s.cool_climate||0)+(s.mainstream||0); },
     availability: 'common'
   },
-  { name: 'トウブドロガメ', latin: 'Kinosternon subrubrum subrubrum', emoji: '🌊', difficulty: '入門', size: 'S（9〜12cm）', cites: null, legal: null,
+  { name: 'トウブドロガメ', latin: 'Kinosternon subrubrum subrubrum', emoji: '🌊', difficulty: '入門', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
     reason: 'ニオイガメと並ぶ入門向けの小型ドロガメ。北米東部の湿地・沼地に生息し、30〜45cm水槽から飼育可能。水陸両用で活発に動く姿が愛らしい。比較的温和で初心者にも向く。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30〜45cm', '水温': '22〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
@@ -658,7 +658,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.asia_water||0)+(s.tropical_climate||0)+(s.collector||0)+(s.beauty||0); },
     availability: 'common'
   },
-  { name: 'オオアタマドロガメ', latin: 'Kinosternon acutum', emoji: '🐢', difficulty: '中級', size: 'S（11〜14cm）', cites: null, legal: null,
+  { name: 'オオアタマドロガメ', latin: 'Kinosternon acutum', emoji: '🐢', difficulty: '中級', size: 'S（11〜14cm）', cites: 'CITES II', legal: null,
     reason: '頭部が大きく独特の迫力があるドロガメ。グアテマラ〜メキシコ原産。かめぢから2023年10月EUCB入荷・完売記録あり。丈夫で飼育しやすいが水質管理が重要。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '45cm〜', '水温': '24〜30℃', '難易度': '★★☆' },
     coreSpecs: { size: '14cm', temp: '24〜30℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },
@@ -669,7 +669,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フロリダドロガメ', latin: 'Kinosternon subrubrum steindachneri', emoji: '🌴', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: null, legal: null,
+  { name: 'フロリダドロガメ', latin: 'Kinosternon subrubrum steindachneri', emoji: '🌴', difficulty: '入門〜中級', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
     reason: 'ミシシッピドロガメの南部亜種。フロリダ産CB流通あり。とんぶり市2025出品記録確認。温和で入門者にも向く小型ドロガメ。腹甲に赤みが入る個体が多い。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30〜45cm', '水温': '22〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食' },
@@ -1128,7 +1128,7 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.budget_max||0)+(s.advanced||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'common'
   },
-  { name: 'サソリドロガメ', latin: 'Kinosternon scorpioides', emoji: '🦂', difficulty: '上級', size: 'L（17〜27cm）', cites: null, legal: null,
+  { name: 'サソリドロガメ', latin: 'Kinosternon scorpioides', emoji: '🦂', difficulty: '上級', size: 'L（17〜27cm）', cites: 'CITES II', legal: null,
     reason: 'ドロガメ属最大種。中南米広域に分布し複数の亜種が知られる。噛みつき力が非常に強く取り扱いに注意が必要。大型ドロガメ系の迫力と個性を楽しみたいマニア向き。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '27cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '雑食' },

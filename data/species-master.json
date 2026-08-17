@@ -8,13 +8,14 @@
    "分からないことは分からないと書く。空欄を推測で埋めない",
    "verification は種単位ではなく項目単位に付ける",
    "本ファイルは照合基準（validator が参照）。表示HTMLの自動生成元にはしない",
-   "環境省レッドリストとIUCNは別のリストとして必ず分けて記録する"
+   "環境省レッドリストとIUCNは別のリストとして必ず分けて記録する",
+   "和名は primary（wamei）＋ wamei_aliases で管理し、無理に一名称へ統一しない"
   ],
   "verification_levels": {
    "CONFIRMED": "公的一次資料で確認済み（sources必須）",
    "LIKELY": "複数の独立資料が一致するが原典確認が残る",
    "UNPROVEN": "未検証。値を採用しない",
-   "NEEDS_REVIEW": "変化した可能性があり再確認が必要"
+   "NEEDS_REVIEW": "変化した可能性・分類の係争・実体不一致の疑いがあり再確認が必要"
   },
   "common_rules": {
    "taimen_sales": {
@@ -28,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種中10種（第1バッチ）。残りはリスク順に追加する"
+  "coverage": "105種中21種（第1バッチ10＋Kinosternon属11）。残りはリスク順に追加"
  },
  "species": [
   {
@@ -804,6 +805,832 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   }
+  },
+  {
+   "slug": "eastern-mud-turtle",
+   "page": "species/eastern-mud-turtle.html",
+   "wamei": "トウブドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon subrubrum subrubrum",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ],
+    "note": "基亜種。種としてのK. subrubrumはCoP19提案の20種に含まれる"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "mississippi-mud-turtle",
+   "page": "species/mississippi-mud-turtle.html",
+   "wamei": "ミシシッピドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon subrubrum hippocrepis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ],
+    "note": "K. subrubrumの亜種"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "florida-mud-turtle",
+   "page": "species/florida-mud-turtle.html",
+   "wamei": "フロリダドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon steindachneri",
+    "verification": "NEEDS_REVIEW",
+    "note": "TTWG(2017)は独立種として受理（Bourque2012/Iverson2013）。USFWS等は亜種表記が残存。サイト内でも species.js=亜種表記 / SHINDAN-SPECIES.md=独立種で不一致。TTWGチェックリスト原典確認後に確定"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "striped-mud-turtle",
+   "page": "species/striped-mud-turtle.html",
+   "wamei": "ミスジドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon baurii",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "red-cheeked-mud-turtle",
+   "page": "species/red-cheeked-mud-turtle.html",
+   "wamei": "ホオアカドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon cruentatum",
+    "verification": "NEEDS_REVIEW",
+    "note": "scorpioides複合群の分類が係争的（独立種/亜種）。内部正典はcruentatum"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "mexican-mud-turtle",
+   "page": "species/mexican-mud-turtle.html",
+   "wamei": "サラドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon integrum",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "yellow-mud-turtle",
+   "page": "species/yellow-mud-turtle.html",
+   "wamei": "キイロドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon flavescens",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "herrera-mud-turtle",
+   "page": "species/herrera-mud-turtle.html",
+   "wamei": "ハーレラドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon herrerai",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "white-lipped-mud-turtle",
+   "page": "species/white-lipped-mud-turtle.html",
+   "wamei": "シロクチドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon leucostomum",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "scorpion-mud-turtle",
+   "page": "species/scorpion-mud-turtle.html",
+   "wamei": "サソリドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon scorpioides",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "institution": "CITES CoP19提案文書（属の種一覧）",
+    "sources": [
+     "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "wamei_aliases": [
+    "スコーピオンマッドタートル"
+   ]
+  },
+  {
+   "slug": "narrow-bridged-mud-turtle",
+   "page": "species/narrow-bridged-mud-turtle.html",
+   "wamei": "オオアタマドロガメ",
+   "scientific_name": {
+    "value": "Kinosternon acutum",
+    "verification": "NEEDS_REVIEW",
+    "note": "実体不一致の疑い: 和名オオアタマドロガメ・slug narrow-bridged・大頭の記述は Claudius angustatus を示唆する一方、記載学名は K. acutum（英名Tabasco mud turtle）。ヒメハコと同型の混同の可能性。owner確認＋外部照合が必要。なおどちらの場合もCoP19でCITES II掲載域内"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/カナダ政府CoP19結果/IISD-ENB",
+     "sources": [
+      "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html",
+      "https://enb.iisd.org/convention-international-trade-endangered-species-wild-fauna-flora-cites-cop19-daily-report-23nov2022"
+     ],
+     "note": "CoP19 Prop.29採択（属単位 Kinosternon spp.。K. cora と K. vogti のみ附属書I）。12ヶ月遅延付き採択",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-11-25",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "カナダ政府CoP19結果",
+     "sources": [
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
    }
   }
  ]

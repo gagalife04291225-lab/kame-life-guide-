@@ -11,19 +11,19 @@
 | ニオイガメ | Sternotherus odoratus | S | 入門 | CITES II | 英名コモンムスクタートル |
 | ヒメニオイガメ | Sternotherus depressus | S | 入門 | CITES II | 最小クラス |
 | カブトニオイガメ | Sternotherus carinatus | M | 入門 | CITES II | 気性がやや荒い |
-| ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | なし | トウブドロガメの亜種 |
-| サラドロガメ | Kinosternon integrum | M | 中級 | なし | 国内CB流通増加中 |
-| ホオアカドロガメ | Kinosternon cruentatum | M | 中級 | なし | 頬が赤い・温和 |
-| フロリダドロガメ | Kinosternon steindachneri | S | 中級 | なし | ミスジドロガメとは別種 |
-| ミスジドロガメ | Kinosternon baurii | S | 中級 | なし | 甲羅に3本の筋 |
-| キイロドロガメ | Kinosternon flavescens | M | 中級 | なし | 腹甲が黄みがかる |
+| ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | CITES II | トウブドロガメの亜種 |
+| サラドロガメ | Kinosternon integrum | M | 中級 | CITES II | 国内CB流通増加中 |
+| ホオアカドロガメ | Kinosternon cruentatum | M | 中級 | CITES II | 頬が赤い・温和 |
+| フロリダドロガメ | Kinosternon steindachneri | S | 中級 | CITES II | ミスジドロガメとは別種 |
+| ミスジドロガメ | Kinosternon baurii | S | 中級 | CITES II | 甲羅に3本の筋 |
+| キイロドロガメ | Kinosternon flavescens | M | 中級 | CITES II | 腹甲が黄みがかる |
 | スジクビニオイガメ | Sternotherus minor peltifer | S | 中級 | CITES II | 国内CB確認済み |
 | スジクビヒメニオイガメ | Sternotherus minor | S | 中級 | CITES II | 国内CB確認済み |
 | オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | CITES II | 国内CB人気種 |
-| ハーレラドロガメ | Kinosternon herrerai | M | 上級 | なし | ザラアシドロガメとは別種 |
+| ハーレラドロガメ | Kinosternon herrerai | M | 上級 | CITES II | ザラアシドロガメとは別種 |
 | スジオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 噛みつき力が非常に強い |
 | ジャイアントマスクタートル | Staurotypus triporcatus | L | 上級 | なし | オオニオイガメ属最大種 |
-| シロクチドロガメ | Kinosternon leucostomum | M | 上級 | なし | 白い口周りが特徴 |
+| シロクチドロガメ | Kinosternon leucostomum | M | 上級 | CITES II | 白い口周りが特徴 |
 
 ---
 
