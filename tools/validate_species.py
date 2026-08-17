@@ -93,9 +93,10 @@ def main():
                 if e["cites"] != want:
                     mismatch("species.js:" + slug, "CITES", want, e["cites"])
             mx = sp["max_shell_length_cm"]
-            if mx.get("verification") in ("CONFIRMED", "LIKELY") and e["max_cl"]:
+            # CONFIRMEDのみ・±1cmの許容（表記の丸め差を誤検出しないため）
+            if mx.get("verification") == "CONFIRMED" and e["max_cl"] and mx.get("value"):
                 got = re.search(r"(\d+)", e["max_cl"])
-                if got and int(got.group(1)) != int(mx["value"]):
+                if got and abs(int(got.group(1)) - round(float(mx["value"]))) > 1:
                     mismatch("species.js:" + slug, "最大甲長",
                              "%scm" % mx["value"], e["max_cl"])
         elif sp.get("page"):
@@ -157,6 +158,24 @@ def main():
             if env.get("verification") == "CONFIRMED" and env.get("value", "").startswith("絶滅危惧II類"):
                 if "準絶滅危惧" in raw:
                     mismatch(page, "環境省RL", env["value"], "準絶滅危惧（旧RL表記が残存）")
+            # --- care照合（自動修正なし・検出のみ）---
+            care = sp.get("care", {})
+            wt = care.get("water_temp_c", {})
+            if isinstance(wt, dict) and wt.get("verification") in ("CONFIRMED", "LIKELY") \
+               and isinstance(wt.get("value"), str):
+                mrange = re.search(r"(\d+)〜(\d+)", wt["value"])
+                prange = re.search(r"水温[^0-9]{0,20}(\d+)〜(\d+)℃", raw)
+                if mrange and prange:
+                    mlo, mhi = int(mrange.group(1)), int(mrange.group(2))
+                    plo, phi = int(prange.group(1)), int(prange.group(2))
+                    if phi < mlo or plo > mhi:  # レンジが全く重ならない場合のみ
+                        mismatch(page, "水温", wt["value"], "%d〜%d℃" % (plo, phi))
+            wd = care.get("water_depth_cm", {})
+            if isinstance(wd, dict) and wd.get("verification") in ("CONFIRMED", "LIKELY") \
+               and isinstance(wd.get("value"), str) and "浅" in wd["value"]:
+                if "甲長の2〜3倍" in raw:
+                    mismatch(page, "水深", "浅め（care準拠）", "「甲長の2〜3倍」の深水推奨が残存")
+
             # RL/IUCN のラベルなし表記（ページ内にどちらのラベルも無い場合のみ）
             if re.search(r"準絶滅危惧|絶滅危惧", raw) \
                and "環境省" not in raw and "IUCN" not in raw and "レッドリスト" not in raw:

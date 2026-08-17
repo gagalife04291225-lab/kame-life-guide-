@@ -29,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records）",
+  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records・careブロック10種=TOP10完了）",
   "schema_version": "1.1",
   "care_schema": {
    "purpose": "海外知見を検証し日本の環境・法規・商品事情へ再構成するための飼育データ層。105ページへの手入力はせず、本ファイルを唯一の飼育条件正本とする",
@@ -53,7 +53,7 @@
     "provenance": "SCHEMA-v2の8型",
     "sources": [],
     "japan_fit": {
-     "judgment": "ok_as_is（そのまま適用可）|adjust_for_japan（日本向け調整要）|not_recommended_jp（日本では非推奨）|UNPROVEN",
+     "judgment": "same_as_source（そのまま適用可）|adjusted_for_japan（日本向け調整）|not_recommended_jp（日本では非推奨）|UNPROVEN",
      "basis": "判定根拠（日本の夏の高温多湿/冬の室温低下/梅雨/住宅スペース/水槽規格/電源用品/法規制/入手性）",
      "jp_note": "日本での具体的な運用"
     }
@@ -136,9 +136,14 @@
     "last_verified": "2026-08-17"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記♂13・♀20cm。外部未検証"
+    "value": 20,
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "sources": [
+     "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8072&epi=11"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "♀最大201.8mm・♂145.4mm"
    },
    "conservation": {
     "env_redlist": {
@@ -190,6 +195,152 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "water_temp_c": {
+     "value": "低水温への耐性が高い（5℃でも活動記録）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "日本原産種で国内気候にそのまま適合",
+      "jp_note": "無加温飼育が可能な地域が多い。ただし急変は避ける"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.hetterrarium.com/a-50760468/chelonian-care/mauremys-japonica-japanese-pondturtle-care/"
+     ]
+    },
+    "basking_temp_c": {
+     "value": "27〜29",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "強すぎるバスキングは不要"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.hetterrarium.com/a-50760468/chelonian-care/mauremys-japonica-japanese-pondturtle-care/"
+     ]
+    },
+    "brumation": {
+     "value": "池底で越冬する冬眠適性の高い種",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "在来種のため日本の屋外環境が原産環境",
+      "jp_note": "屋外飼育では自然越冬も選択肢。屋内は加温でも可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8072&epi=11",
+      "https://www.hetterrarium.com/a-50760468/chelonian-care/mauremys-japonica-japanese-pondturtle-care/"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "水カビ病予防に清浄な水と広い陸場（サイト既存方針と一致）",
+      "絶滅危惧II類（VU）・必ず国内CBを入手"
+     ],
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "採集はしない。国内CBのみ"
+     },
+     "last_verified": "2026-08-17"
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "enclosure_jp": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "60cm〜が通説"
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": "♂最大約14.5cm・♀最大約20.2cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "文献実測値",
+      "jp_note": "メスはひと回り大きくなる前提で"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8072&epi=11"
+     ]
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "ろ過（清浄水質・filter）",
+     "広い陸場（shelter/レイアウト）",
+     "弱〜中バスキング"
+    ],
+    "候補": "products.js filter帯・B0043B2AJQ",
+    "保留": "なし"
    }
   },
   {
@@ -369,7 +520,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "国内の水中ヒーターで維持容易",
       "jp_note": "サーモ付きヒーターで26〜28℃"
      },
@@ -383,7 +534,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "国内バスキングランプで実現可能",
       "jp_note": "小型ランプで陸場32℃前後"
      },
@@ -397,7 +548,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "深水で溺れかけの複数報告がある安全上の最重要項目",
       "jp_note": "水深は浅く、流木・浅瀬の逃げ場を必ず設置"
      },
@@ -411,7 +562,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "海外推奨面積と日本の60cm規格の間に差。実飼育はペア60cmらんちゅう水槽で産卵実績",
       "jp_note": "開始は60cm可。活発な種のため余裕があれば90cmへ"
      },
@@ -425,7 +576,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_observation",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "冬季冷却は日本の無加温室でむしろ実現しやすい",
       "jp_note": "初心者は通年24〜28℃。繁殖狙いのみ段階的冷却"
      },
@@ -439,7 +590,7 @@
      "verification": "LIKELY",
      "provenance": "unstudied",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "不明を不明と書く方針",
       "jp_note": "「不明」と明記する"
      },
@@ -501,7 +652,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "",
       "jp_note": ""
      },
@@ -553,9 +704,14 @@
     "note": "在来/移入起源の議論があるため分布記述は要精査"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記♂15・♀25cm超。外部未検証"
+    "value": 24,
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "sources": [
+     "https://www.iucnredlist.org/species/pdf/97431862"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "♀最大24cm・♂は11cmを超えることは稀"
    },
    "conservation": {
     "env_redlist": {
@@ -595,6 +751,141 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "brumation": {
+     "value": "野生個体群は10月下旬〜3月に冬眠（陸上・水中の両方の越冬地を利用）",
+     "verification": "CONFIRMED",
+     "provenance": "peer_reviewed",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "日本の気候でも屋外越冬は伝統的に行われるが失敗例もある",
+      "jp_note": "屋内飼育は加温で冬眠なしが安全。屋外冬眠は成体・健康個体・経験者のみ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9495146/"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "成体（特にメス）は水の汚れと臭いが急速に強まる（サイト実飼育メモと一致）",
+      "野外放流厳禁（外来起源説）"
+     ],
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "水換え頻度を成長に応じて引き上げる"
+     },
+     "last_verified": "2026-08-17"
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "basking_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "enclosure_jp": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "♀は25cm級になるため終生は90cm水槽が通説。確定換算は次回"
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": "メスはオス（最大約11cm）の倍以上の24cm級に育つ。性別で終生設備が大きく変わる",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "IUCNレッドリスト種アカウントの実測値",
+      "jp_note": "メス前提で設備を計画する"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.iucnredlist.org/species/pdf/97431862"
+     ]
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "強めのろ過（成体メス・filter上位）",
+     "水中ヒーター（屋内加温時）",
+     "広い陸場"
+    ],
+    "候補": "products.js filter上位帯（外部式）",
+    "保留": "なし"
    }
   },
   {
@@ -622,9 +913,14 @@
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記15〜25cm。外部未検証"
+    "value": 20,
+    "verification": "LIKELY",
+    "provenance": "keeper_consensus",
+    "sources": [
+     "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "12〜20cm"
    },
    "conservation": {
     "env_redlist": {
@@ -663,6 +959,150 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "basking_temp_c": {
+     "value": "30〜32",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "バスキングランプ50W帯から調整"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+     ]
+    },
+    "uvb": {
+     "value": "Ferguson Zone 3（UVI 2.9〜7.4）。T5 HO 10〜12%を推奨距離で",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "強UVB帯。国内の低出力コンパクト球では不足の可能性",
+      "jp_note": "T5 HO管の採用を基本に。現行サイト推奨のスパイラル26WはZone3適合をメーカー照度表で確認するまで保留"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptilecentre.com/blogs/reptile-blog/which-ferguson-zone-are-mediterranean-tortoises",
+      "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+     ]
+    },
+    "brumation": {
+     "value": "原産地では冬眠する種",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "国内の初心者には冬眠失敗リスクが高い",
+      "jp_note": "初心者は通年加温・冬眠なし。冬眠は経験者のみ計画的に"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+     ]
+    },
+    "cautions": {
+     "value": [
+      "穴掘り・登はんによる脱走が多い種"
+     ],
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "柵の高さと角の補強・床の掘削対策"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+     ]
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "enclosure_jp": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "90cmケージ〜が通説。海外推奨面積の確定換算は次回"
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "T5 HO 10〜12% UVB（Zone3）",
+     "バスキング50W帯",
+     "乾燥系床材",
+     "保温（冬）"
+    ],
+    "候補": "B0043B0AU2（バスキング50W）/B00I0MM9MC（赤玉土）",
+    "保留": "Zone3適合UVB（スパイラル26Wは照度表確認まで掲載保留）"
    }
   },
   {
@@ -692,8 +1132,8 @@
    },
    "max_shell_length_cm": {
     "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記15〜22cm。外部未検証"
+    "verification": "NEEDS_REVIEW",
+    "note": "資料間で対立: 通常14〜17cm・記録22〜24cm・T.h.boettgeri♀28〜30cmの記述が併存。亜種別に整理して確定する（conflictとして保持）"
    },
    "conservation": {
     "env_redlist": {
@@ -732,6 +1172,142 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "basking_temp_c": {
+     "value": "32前後",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "ランプ直下32℃・勾配を作る"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ]
+    },
+    "uvb": {
+     "value": "Ferguson Zone 3（UVI 2.9〜7.4）。T5 HO 10〜12%を甲羅上30〜40cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "強UVB帯。設置距離と器具選定が重要",
+      "jp_note": "T5 HO基本。スパイラル型のZone3適合は照度表確認まで保留"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptilecentre.com/blogs/reptile-blog/which-ferguson-zone-are-mediterranean-tortoises",
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ]
+    },
+    "brumation": {
+     "value": "成体は4〜5ヶ月の冬眠が可能（幼体は3〜4年目から短期で段階導入）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "国内では冬眠なし飼育も定着しており失敗リスクを避けられる",
+      "jp_note": "初心者は冬眠なし。冬眠させる場合は段階導入と温度管理"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.testudoalbino.com/testudo-hermanni.php"
+     ]
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "water_depth_cm": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "enclosure_jp": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "地中海性の草食・高繊維が通説。一次確認は次回"
+    },
+    "juvenile_notes": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "cautions": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "T5 HO 10〜12% UVB（Zone3）",
+     "バスキング（直下32℃）",
+     "高繊維フード補助"
+    ],
+    "候補": "B0DF2SJMCJ（リクガメフード）ほか_land_dry一式",
+    "保留": "同上（Zone3 UVB）"
    }
   },
   {
@@ -834,9 +1410,14 @@
     "last_verified": "2026-08-17"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記8〜14cm。外部未検証"
+    "value": 14,
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "sources": [
+     "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=1269"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "最大直甲長137mm（USGS）。14cmは切上げ表記"
    },
    "conservation": {
     "env_redlist": {
@@ -880,6 +1461,146 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "water_depth_cm": {
+     "value": "浅め＋足がかり必須（底を歩く種。低い隠れ家・水面に届く足場を好む。幼体は特に浅く）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "公的機関・地域ハープ協会の生態記録（bottom walker・低い隙間を好む）に基づく設計",
+      "jp_note": "45〜60cm水槽で水深は立ち上がって呼吸できる高さから。流木・アクセサリで足場を作る"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=1269",
+      "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/stinkpot/index.php"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "終生45〜60cm水槽",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "最大甲長13.7cmの小型種。国内45/60cm規格がそのまま適合",
+      "jp_note": "45cm開始→60cmで終生"
+     },
+     "last_verified": "2026-08-17"
+    },
+    "cautions": {
+     "value": [
+      "威嚇時に臭腺から分泌（英名stinkpotの由来）。頻繁なハンドリングを避ける"
+     ],
+     "verification": "LIKELY",
+     "provenance": "official",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "むやみに持ち上げない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=1269"
+     ]
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "海外一次アンカー未取得。次回TFTSG odoratusアカウントで確認"
+    },
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "basking_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "uvb": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "森林・水棲系＝弱UVB帯とみられるが照度資料未確認"
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "肉食寄り雑食が通説だが一次資料未確認"
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": "幼体期は30〜45cm水槽・特に浅い水深から",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "小型幼体の溺れ防止",
+      "jp_note": "足がつく水深＋足場"
+     },
+     "last_verified": "2026-08-17"
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "水中ヒーター＋サーモ（heating）",
+     "45〜60cm対応フィルター（filter）",
+     "足場・隠れ家（shelter）",
+     "弱めUVB（lighting_uvb）"
+    ],
+    "候補": "products.js heating/filter帯・equipment.js B00JZFJ5LQ（フォレスト26W）/B0012UO6Q6（AT-50）",
+    "保留": "UVB照度帯の一次確認"
    }
   },
   {
@@ -912,9 +1633,15 @@
     "last_verified": "2026-08-17"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "サイト表記10〜15cm。外部未検証"
+    "value": 15,
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "sources": [
+     "https://animaldiversity.org/accounts/Sternotherus_carinatus/",
+     "https://www.allturtles.com/razor-back-musk-turtle/"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "ニオイガメ属最大"
    },
    "conservation": {
     "env_redlist": {
@@ -958,6 +1685,163 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "care": {
+    "water_temp_c": {
+     "value": "23〜26",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "国内の水中ヒーターで維持容易",
+      "jp_note": "サーモ付きヒーターで24〜26℃"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html"
+     ]
+    },
+    "air_temp_c": {
+     "value": "24〜28",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "室温＋保温球で調整"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html"
+     ]
+    },
+    "basking_temp_c": {
+     "value": "28〜32",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "小型バスキングランプで可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html"
+     ]
+    },
+    "uvb": {
+     "value": "コンパクト5%クラス（弱め・水面上に設置）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "国内流通のフォレスト系UVBが該当帯",
+      "jp_note": "ビバリア フォレスト26W等の森林・水棲用帯"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html"
+     ]
+    },
+    "enclosure_jp": {
+     "value": "単独60cm水槽・ペア90cm（海外24インチ/36インチ推奨が国内規格へほぼ一致）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "24in≒60cm・36in≒90cmで日本の規格とそのまま対応",
+      "jp_note": "60cm規格で終生可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html",
+      "https://www.allturtles.com/razor-back-musk-turtle/"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "幼体は浅く・成長に応じて深く（常に足場・上陸手段を確保）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "流木で水面までの経路を作る"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.exotic-pets.co.uk/razorback-musk-turtle.html"
+     ]
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": "ミシシッピニオイガメより一回り大型化する（最大約15cm・属最大）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "終生サイズを見込んで60cmを用意"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://animaldiversity.org/accounts/Sternotherus_carinatus/",
+      "https://www.allturtles.com/razor-back-musk-turtle/"
+     ]
+    },
+    "cautions": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "水中ヒーター＋サーモ",
+     "60cm対応フィルター",
+     "バスキングランプ低出力",
+     "弱めUVB"
+    ],
+    "候補": "同上＋B0043B2AJQ（バスキング30W）",
+    "保留": "なし"
    }
   },
   {
@@ -3281,9 +4165,14 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 16.5,
+    "verification": "LIKELY",
+    "provenance": "keeper_consensus",
+    "sources": [
+     "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+    ],
+    "last_verified": "2026-08-17",
+    "note": "通常11〜15cm・記録約16.5cm"
    },
    "conservation": {
     "env_redlist": {
@@ -3321,6 +4210,162 @@
     "value": null,
     "verification": "UNPROVEN",
     "note": "外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "60〜80（日中51%を下回らせない）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "梅雨〜夏の日本はそのまま適合するが、暖房期の屋内は過乾燥",
+      "jp_note": "冬は加湿（湿らせた床材・水苔シェルター）。ただし蒸れ（高温×無換気）は回避"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/",
+      "https://dubiaroaches.com/blogs/turtle-care/three-toed-box-turtle-care-sheet"
+     ]
+    },
+    "basking_temp_c": {
+     "value": "29〜31",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "低〜中出力のバスキングランプで可"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/",
+      "https://dubiaroaches.com/blogs/turtle-care/three-toed-box-turtle-care-sheet"
+     ]
+    },
+    "air_temp_c": {
+     "value": "クール側21〜24",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "日本の夏はクール側の維持が課題（スペングラーほどではない）",
+      "jp_note": "猛暑期は風通し・遮光・保冷を検討"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    },
+    "uvb": {
+     "value": "T5 6%クラス／ReptiSun 5.0相当（森林種・Ferguson Zone1〜2帯）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "国内でも同帯の製品が流通",
+      "jp_note": "設置距離はメーカー照度表に従う"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    },
+    "brumation": {
+     "value": "冬眠は選択制（設備があれば可）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "失敗リスクがあるため国内では初心者に勧めない",
+      "jp_note": "初心者は加温して冬眠なし。冬眠させる場合は健康チェックと温度管理を前提に"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/",
+      "https://dubiaroaches.com/blogs/turtle-care/three-toed-box-turtle-care-sheet"
+     ]
+    },
+    "water_depth_cm": {
+     "value": "浅い水場を常設（全身が浸かる深さで足りる）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "大きめの浅い水入れ"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+     ]
+    },
+    "enclosure_jp": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "海外は屋外飼育・大型囲い推奨が主流。国内ケージ規格への確定換算は次回"
+    },
+    "water_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "substrate": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     },
+     "note": "深い保湿床材が通説・構成の一次確認は次回"
+    },
+    "diet": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "juvenile_notes": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    },
+    "cautions": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "japan_fit": {
+      "judgment": "UNPROVEN",
+      "basis": "",
+      "jp_note": ""
+     }
+    }
+   },
+   "equipment_requirements": {
+    "必須": [
+     "保湿床材（substrate）",
+     "浅い大型水入れ（water_dish）",
+     "T5 6%クラスUVB",
+     "低出力バスキング",
+     "湿度計（thermometer）"
+    ],
+    "候補": "products.js substrate/water_dish/thermometer帯・ヤシガラ系B005J94WEM",
+    "保留": "T5 6%管の国内適合製品の特定"
    }
   },
   {
@@ -4417,7 +5462,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "冬の日本は屋外不可・大空間の加温が必要",
       "jp_note": "成体は加温付き屋外シェルター＋冬季の保温計画が前提。電気代を含めて事前試算"
      },
@@ -4431,7 +5476,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "日本の梅雨〜夏は恒常的に上回る",
       "jp_note": "通気を最優先。幼体期の飼育環境は蒸れさせない"
      },
@@ -4459,7 +5504,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "チモシー等の牧草は国内で安定入手可能",
       "jp_note": "牧草・野草中心＋リクガメフード補助"
      },
@@ -4473,7 +5518,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "冬季の大空間加温が日本での最大コスト",
       "jp_note": "冬眠させない。加温設備の容量設計が必須"
      },
@@ -4487,7 +5532,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_observation",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "幼体販売サイズから急成長する事実の周知が重要",
       "jp_note": "ベビーで買っても数年で60cm水槽を超える"
      },
@@ -4504,7 +5549,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "日本の庭の柵・ブロック塀で対策が必要",
       "jp_note": "掘削対策（柵の地中埋込）"
      },
@@ -6719,7 +7764,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "日本の夏は室温が上限27℃を大きく超える（keeper実飼育でも夏の高温対策が最大課題）",
       "jp_note": "夏季は保冷（エアコン/冷却）が事実上必須。冬は保温で通年22〜27℃帯を維持"
      },
@@ -6733,7 +7778,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "梅雨〜夏は自然に達するが冬の日本屋内は過乾燥",
       "jp_note": "冬季は加湿（湿らせた床材・ミスティング）が必要。蒸れ（高温×多湿×無換気）は別途回避"
      },
@@ -6747,7 +7792,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "保温飼育は日本の屋内環境でそのまま実行可能",
       "jp_note": "通年保温・冬眠なし"
      },
@@ -6761,7 +7806,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_observation",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "海外記述の餌昆虫は国内流通品で代替する必要",
       "jp_note": "国内で常時入手できるコオロギ・デュビア等を軸にローテーション。人工飼料への餌付きは個体差大"
      },
@@ -6779,7 +7824,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "adjust_for_japan",
+      "judgment": "adjusted_for_japan",
       "basis": "国内CB選択が最重要の実務判断",
       "jp_note": "国内CBを選ぶ。導入直後は触らない"
      },
@@ -6820,7 +7865,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "浅水設計は日本の器具でそのまま可能",
       "jp_note": "タッパー等の浅い水場で足りる"
      },
@@ -6834,7 +7879,7 @@
      "verification": "LIKELY",
      "provenance": "expert_consensus",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "60cm規格は国内標準",
       "jp_note": "60cm爬虫類ケージ＋深い床材"
      },
@@ -6848,7 +7893,7 @@
      "verification": "LIKELY",
      "provenance": "keeper_observation",
      "japan_fit": {
-      "judgment": "ok_as_is",
+      "judgment": "same_as_source",
       "basis": "国内で入手容易な床材で構成可能",
       "jp_note": "ヤシガラ＋腐葉土ミックスを深めに"
      },
