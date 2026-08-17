@@ -22,7 +22,7 @@
 | オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | CITES II | 国内CB人気種 |
 | ハーレラドロガメ | Kinosternon herrerai | M | 上級 | CITES II | ザラアシドロガメとは別種 |
 | スジオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 噛みつき力が非常に強い |
-| ジャイアントマスクタートル | Staurotypus triporcatus | L | 上級 | なし | オオニオイガメ属最大種 |
+| ジャイアントマスクタートル | Staurotypus triporcatus | L | 上級 | CITES II | オオニオイガメ属最大種 |
 | シロクチドロガメ | Kinosternon leucostomum | M | 上級 | CITES II | 白い口周りが特徴 |
 
 ---
@@ -32,21 +32,22 @@
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | クサガメ | Mauremys reevesii | M | 入門 | CITES III | 外来起源説あり・放流厳禁 |
-| キバラガメ | Trachemys scripta scripta | M | 入門 | なし | アカミミガメの近縁 |
+| キバラガメ | Trachemys scripta scripta | M | 入門 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | ペインテッドタートル | Chrysemys picta | M | 入門 | なし | 赤黄のラインが美しい |
 | ミシシッピアカミミガメ | Trachemys scripta elegans | L | 入門 | なし | 条件付特定外来・新規購入不可 |
 | ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
-| ミナミイシガメ | Mauremys mutica | M | 中級 | なし | 国内CB流通 |
+| ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
 | ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | 台湾・中国南部・八重山産 |
-| カントンクサガメ | Mauremys reevesii（広東型） | M | 中級 | なし | 国内CB確認済み |
+| カントンクサガメ | Mauremys reevesii（広東型） | M | 中級 | CITES III | 国内CB確認済み |
 | ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | なし | EUCB流通・やや低温好む |
-| カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 耳の後ろが黄色 |
+| カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | クーター | Pseudemys spp. | L | 中級 | なし | 大型化・90cm水槽必要 |
 | ペニンシュラクーター | Pseudemys peninsularis | L | 中級 | なし | フロリダ半島産 |
 | リバークーター | Pseudemys concinna | L | 中級 | なし | 北米河川産 |
 | キボシヌマガメ | Emys orbicularis（ウクライナ産） | M | 中級 | なし | 国内CB確認済み |
 | ブランディングガメ | Emydoidea blandingii | M | 上級 | なし | 黄色い喉元・国内CB確認 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
+| ハナガメ | Mauremys sinensis | M | −（新規飼育不可） | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
 
 ---
 
@@ -54,14 +55,14 @@
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
-| ミシシッピチズガメ | Graptemys pseudogeographica kohni | M | 中級 | 入門として最も流通量多い |
-| ニセチズガメ | Graptemys pseudogeographica | M | 中級 | ミシシッピに近縁 |
-| フトマユチズガメ | Graptemys ouachitensis | M | 中級 | 眉のような模様 |
-| クロコブチズガメ | Graptemys nigrinoda | M | 中〜上級 | 黒いコブ状キール |
-| テキサスチズガメ | Graptemys versa | M | 中〜上級 | テキサス限定水系 |
-| ワモンチズガメ | Graptemys oculifera | M | 上級 | 輪っか状の美麗模様 |
-| キマダラチズガメ | Graptemys flavimaculata | M | 上級 | 黄色斑点・希少 |
-| サビーンチズガメ | Graptemys sabinensis | M | 上級 | 流通極めて少ない |
+| ミシシッピチズガメ | Graptemys pseudogeographica kohni | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
+| ニセチズガメ | Graptemys pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
+| フトマユチズガメ | Graptemys ouachitensis | M | 中級 | 眉のような模様・CITES III（米国・2006） |
+| クロコブチズガメ | Graptemys nigrinoda | M | 中〜上級 | 黒いコブ状キール・CITES III（米国・2006） |
+| テキサスチズガメ | Graptemys versa | M | 中〜上級 | テキサス限定水系・CITES III（米国・2006） |
+| ワモンチズガメ | Graptemys oculifera | M | 上級 | 輪っか状の美麗模様・CITES III（米国・2006） |
+| キマダラチズガメ | Graptemys flavimaculata | M | 上級 | 黄色斑点・希少・CITES III（米国・2006） |
+| サビーンチズガメ | Graptemys sabinensis | M | 上級 | 流通極めて少ない・CITES III（米国・2006） |
 
 ---
 
@@ -90,9 +91,9 @@
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | スペングラーヤマガメ | Geoemyda spengleri | S | 中〜上級 | CITES II | 夏の保冷管理が最大課題 |
-| ヒラセガメ | Pyxidea mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅 |
+| ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea） |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
-| モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES II | 萌黄色の甲羅 |
+| モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I | CoP19で附属書Iへ移行・萌黄色の甲羅 |
 | オルナータハコガメ | Cuora ornata | M | 上級 | CITES II | 美しい模様 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
 | モンホットハコガメ | Cuora mouhotii | M | 上級 | CITES II | 東南アジア産 |
@@ -152,11 +153,11 @@
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
-| ノーザンダイヤモンドバックテラピン | Malaclemys terrapin terrapin | M | 上級 | 基亜種・ダークグレー |
-| カロリナダイヤモンドバックテラピン | Malaclemys terrapin centrata | M | 上級 | 最も美しいとも言われる |
-| オルナータダイヤモンドバックテラピン | Malaclemys terrapin macrospilota | M | 上級 | 派手な模様・国内CB盛ん |
-| テキサスダイヤモンドバックテラピン | Malaclemys terrapin littoralis | M | 上級 | 渋い色合い |
-| その他の亜種（マングローブ等） | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない |
+| ノーザンダイヤモンドバックテラピン | Malaclemys terrapin terrapin | M | 上級 | 基亜種・ダークグレー・CITES II（2013）  |
+| カロリナダイヤモンドバックテラピン | Malaclemys terrapin centrata | M | 上級 | 最も美しいとも言われる・CITES II（2013）  |
+| オルナータダイヤモンドバックテラピン | Malaclemys terrapin macrospilota | M | 上級 | 派手な模様・国内CB盛ん・CITES II（2013）  |
+| テキサスダイヤモンドバックテラピン | Malaclemys terrapin littoralis | M | 上級 | 渋い色合い・CITES II（2013）  |
+| その他の亜種（マングローブ等） | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない・CITES II（2013）  |
 
 ---
 
@@ -164,9 +165,9 @@
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
-| フロリダスッポン | Apalone ferox | L | 上級 | 砂底必須・ストレスに弱い |
-| スムーススッポン | Apalone mutica | L | 上級 | 砂底必須 |
-| スパイニースッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須 |
+| フロリダスッポン | Apalone ferox | L | 上級 | 砂底必須・ストレスに弱い・CITES II（2023）  |
+| スムーススッポン | Apalone mutica | L | 上級 | 砂底必須・CITES II（2023）  |
+| スパイニースッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須・CITES II（2023）  |
 | スッポンモドキ | Carettochelys insculpta | XL | 上級 | 26〜30℃高水温必要 |
 
 ---

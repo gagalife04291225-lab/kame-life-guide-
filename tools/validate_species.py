@@ -118,9 +118,27 @@ def main():
                 if binomial(sci["value"]).split()[0:2] != binomial(r["gakumei"]).split()[0:2]:
                     mismatch("MD:" + w, "学名", sci["value"], r["gakumei"])
             if cit["verification"] == "CONFIRMED":
-                want = "なし" if cit["value"] == "not_listed" else cites_label(cit["value"])
-                if r["cites"] != want:
-                    mismatch("MD:" + w, "CITES", want, r["cites"])
+                if cit["value"] == "not_listed":
+                    # 「なし」または備考列運用（CITES列が無い表）を許容
+                    if "CITES" in r["cites"]:
+                        mismatch("MD:" + w, "CITES", "なし", r["cites"])
+                else:
+                    want = cites_label(cit["value"])
+                    # CITES列が無い表では備考列(c[5])にCITES表記が入るため部分一致で照合
+                    if want not in r["cites"]:
+                        mismatch("MD:" + w, "CITES", want, r["cites"])
+
+        # --- 国内規制（species.js の legal と master の domestic_law）---
+        law = sp.get("domestic_law", {})
+        if e and law.get("verification") == "CONFIRMED" and law.get("value"):
+            lv = law["value"]
+            js_raw = open(os.path.join(ROOT, "shindan", "species.js"), encoding="utf-8").read()
+            m = re.search(r"\{ name: '%s'.*?legal: ('([^']*)'|null)" % re.escape(e["name"]), js_raw, re.S)
+            js_legal = m.group(2) if m and m.group(2) else None
+            if lv.startswith("条件付特定外来") and js_legal != "conditional_invasive":
+                mismatch("species.js:" + slug, "国内規制", "conditional_invasive", js_legal)
+            if lv.startswith("特定外来生物") and js_legal not in ("unknown_hold", "designated_invasive"):
+                mismatch("species.js:" + slug, "国内規制", "診断除外相当（特定外来）", js_legal)
 
         # --- species/<slug>.html ---
         page = sp.get("page")

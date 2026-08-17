@@ -755,7 +755,7 @@
           "kubetsu": "acutumは腹甲が尖りブリッジ狭い。cruentatumは頭部赤橙斑が主体。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II。記載学名K. acutumならKinosternon属一括掲載（CoP19）、実体がClaudius angustatusの場合も同じくCoP19で附属書II掲載のため、いずれでもII。",
       "photo_hantei": "小型＋腹甲後部が尖る＋狭いブリッジ。腹甲が見えるカットが有効。",
       "photo_chuui": "和名『オオアタマドロガメ』だが学名はK. acutum(タバスコドロガメ)。leucostomum等と混同注意。",
       "unresolved": "和名の妥当性要確認。K. acutumは英名Tabasco/Narrow-bridged mud turtleで、『オオアタマドロガメ』の和名が本種に定着しているか流通名との対応を検収時に再確認。",
@@ -2086,7 +2086,7 @@
           "kubetsu": "spiniferaは前縁に円錐状の棘＋眼状斑/feroxは前縁結節が扁平半球状＋遥かに大型＋暗色ずんぐり。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN Least Concern。国内流通あり。",
+      "houkisei": "CITES附属書II（CoP19でApalone属一括掲載・附属書I亜種を除く）。IUCN Least Concern。国内流通あり。",
       "photo_hantei": "前縁の棘状突起＋サンドペーパー状の甲＋(幼体/オス)黒縁の眼状斑＋鼻孔の隔壁隆起。前縁の棘と眼状斑が有効。",
       "photo_chuui": "①muticaと酷似—前縁の棘の有無＋鼻孔の形(隔壁隆起=spinifera / 丸い=mutica)が決め手。背側だけでは棘の確認を。②メス・老成は眼状斑が消え斑紋化—幼体/オスの方が識別しやすい。③亜種が5〜6あり産地で細分されるが本ページは種レベル。",
       "sources": [

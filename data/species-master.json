@@ -29,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種中21種（第1バッチ10＋Kinosternon属11）。残りはリスク順に追加"
+  "coverage": "105種中57種を登録済み。残りはリスク順に追加"
  },
  "species": [
   {
@@ -1621,6 +1621,2413 @@
      ],
      "note": "12ヶ月遅延実施の発効日。CITES通知原文での最終確認未了",
      "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "red-eared-slider",
+   "page": "species/red-eared-slider.html",
+   "wamei": "ミシシッピアカミミガメ",
+   "scientific_name": {
+    "value": "Trachemys scripta elegans",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "yellow-bellied-slider",
+   "page": "species/yellow-bellied-slider.html",
+   "wamei": "キバラガメ",
+   "scientific_name": {
+    "value": "Trachemys scripta scripta",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "cumberland-slider",
+   "page": "species/cumberland-slider.html",
+   "wamei": "カンバーランドスライダー",
+   "scientific_name": {
+    "value": "Trachemys scripta troostii",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "mississippi-map-turtle",
+   "page": "species/mississippi-map-turtle.html",
+   "wamei": "ミシシッピチズガメ",
+   "scientific_name": {
+    "value": "Graptemys pseudogeographica kohni",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "false-map-turtle",
+   "page": "species/false-map-turtle.html",
+   "wamei": "ニセチズガメ",
+   "scientific_name": {
+    "value": "Graptemys pseudogeographica pseudogeographica",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ],
+    "note": "基亜種（ニセチズガメ）"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "ouachita-map-turtle-sp",
+   "page": "species/ouachita-map-turtle-sp.html",
+   "wamei": "フトマユチズガメ",
+   "scientific_name": {
+    "value": "Graptemys ouachitensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "black-knobbed-map-turtle",
+   "page": "species/black-knobbed-map-turtle.html",
+   "wamei": "クロコブチズガメ",
+   "scientific_name": {
+    "value": "Graptemys nigrinoda",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "ringed-map-turtle",
+   "page": "species/ringed-map-turtle.html",
+   "wamei": "ワモンチズガメ",
+   "scientific_name": {
+    "value": "Graptemys oculifera",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "northern-map-turtle",
+   "page": "species/northern-map-turtle.html",
+   "wamei": "キタチズガメ",
+   "scientific_name": {
+    "value": "Graptemys geographica",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "alabama-map-turtle",
+   "page": "species/alabama-map-turtle.html",
+   "wamei": "アラバマチズガメ",
+   "scientific_name": {
+    "value": "Graptemys pulchra",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "graptemys-versa",
+   "page": null,
+   "wamei": "テキサスチズガメ",
+   "scientific_name": {
+    "value": "Graptemys versa",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "graptemys-flavimaculata",
+   "page": null,
+   "wamei": "キマダラチズガメ",
+   "scientific_name": {
+    "value": "Graptemys flavimaculata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "米国がGraptemys属一括で附属書III掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2006-06-14",
+     "verification": "LIKELY",
+     "last_verified": "2026-08-17"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "spiny-softshell-turtle",
+   "page": "species/spiny-softshell-turtle.html",
+   "wamei": "スパイニースッポン",
+   "scientific_name": {
+    "value": "Apalone spinifera",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+     "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "CoP19でApalone spp.掲載（附属書I亜種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "smooth-softshell-turtle",
+   "page": "species/smooth-softshell-turtle.html",
+   "wamei": "スムーススッポン",
+   "scientific_name": {
+    "value": "Apalone mutica",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+     "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "CoP19でApalone spp.掲載（附属書I亜種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "florida-softshell-turtle",
+   "page": "species/florida-softshell-turtle.html",
+   "wamei": "フロリダスッポン",
+   "scientific_name": {
+    "value": "Apalone ferox",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+     "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "CoP19でApalone spp.掲載（附属書I亜種を除く）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "northern-diamondback-terrapin",
+   "page": "species/northern-diamondback-terrapin.html",
+   "wamei": "ノーザンダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin terrapin",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種Malaclemys terrapinを附属書II掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "carolina-diamondback-terrapin",
+   "page": "species/carolina-diamondback-terrapin.html",
+   "wamei": "カロリナダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin centrata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種Malaclemys terrapinを附属書II掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "ornate-diamondback-terrapin",
+   "page": "species/ornate-diamondback-terrapin.html",
+   "wamei": "オルナータダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin macrospilota",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種Malaclemys terrapinを附属書II掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "giant-musk-turtle",
+   "page": "species/giant-musk-turtle.html",
+   "wamei": "スジオオニオイガメ",
+   "scientific_name": {
+    "value": "Staurotypus salvinii",
+    "verification": "NEEDS_REVIEW",
+    "note": "和名⇔学名の対応がサイト内で三つ巴（species.js=salvinii/ページ本文=triporcatus/-mxページh1=サルヴィン）。owner確認要"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "CoP19でsalvinii・triporcatusとも附属書II掲載",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "giant-musk-turtle-mx",
+   "page": "species/giant-musk-turtle-mx.html",
+   "wamei": "メキシカンジャイアントマスクタートル",
+   "scientific_name": {
+    "value": "Staurotypus triporcatus",
+    "verification": "NEEDS_REVIEW",
+    "note": "同上（-mxページのh1はサルヴィンオオニオイガメ・本文学名はsalvinii）"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "同上",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "three-toed-box-turtle",
+   "page": "species/three-toed-box-turtle.html",
+   "wamei": "ミツユビハコガメ",
+   "scientific_name": {
+    "value": "Terrapene carolina triunguis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "eastern-box-turtle",
+   "page": "species/eastern-box-turtle.html",
+   "wamei": "トウブハコガメ",
+   "scientific_name": {
+    "value": "Terrapene carolina carolina",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "gulf-coast-box-turtle",
+   "page": "species/gulf-coast-box-turtle.html",
+   "wamei": "ガルフコーストハコガメ",
+   "scientific_name": {
+    "value": "Terrapene carolina major",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "florida-box-turtle",
+   "page": "species/florida-box-turtle.html",
+   "wamei": "フロリダハコガメ",
+   "scientific_name": {
+    "value": "Terrapene bauri",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "ornate-box-turtle",
+   "page": "species/ornate-box-turtle.html",
+   "wamei": "キタニシキハコガメ",
+   "scientific_name": {
+    "value": "Terrapene ornata ornata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "desert-box-turtle",
+   "page": "species/desert-box-turtle.html",
+   "wamei": "ミナミニシキハコガメ",
+   "scientific_name": {
+    "value": "Terrapene ornata luteola",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Terrapene属は附属書II（T. coahuilaのみ附属書I・サイト非掲載）。USFWS掲載表と整合。附属書原文の個別確認は継続／今セッションの検索結果に属名の明示なし。USFWS掲載表原文での確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "hirase-turtle",
+   "page": "species/hirase-turtle.html",
+   "wamei": "ヒラセガメ",
+   "scientific_name": {
+    "value": "Cuora mouhotii",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org"
+    ],
+    "note": "旧属名 Pyxidea mouhotii。現行はCuora属。SHINDAN-SPECIES.mdに同一種が『モンホットハコガメ（Cuora mouhotii）』として二重登録されている（要整理・owner判断）"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "内部照合（2026-03-05発効版を過去確認との内部記録）",
+     "note": "Cuora属一括II＋主要種野生ゼロ枠。附属書原文の再確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "wamei_aliases": [
+    "モンホットハコガメ"
+   ]
+  },
+  {
+   "slug": "taiwan-box-turtle",
+   "page": "species/taiwan-box-turtle.html",
+   "wamei": "タイワンセマルハコガメ",
+   "scientific_name": {
+    "value": "Cuora flavomarginata evelynae",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "内部照合（2026-03-05発効版を過去確認との内部記録）",
+     "note": "Cuora属一括II＋主要種野生ゼロ枠。附属書原文の再確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "chinese-box-turtle",
+   "page": "species/chinese-box-turtle.html",
+   "wamei": "チュウゴクセマルハコガメ",
+   "scientific_name": {
+    "value": "Cuora flavomarginata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "内部照合（2026-03-05発効版を過去確認との内部記録）",
+     "note": "Cuora属一括II＋主要種野生ゼロ枠。附属書原文の再確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "malayan-box-turtle",
+   "page": "species/malayan-box-turtle.html",
+   "wamei": "マレーハコガメ",
+   "scientific_name": {
+    "value": "Cuora amboinensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "内部照合（2026-03-05発効版を過去確認との内部記録）",
+     "note": "Cuora属一括II＋主要種野生ゼロ枠。附属書原文の再確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "three-striped-box-turtle",
+   "page": "species/three-striped-box-turtle.html",
+   "wamei": "ミスジハコガメ",
+   "scientific_name": {
+    "value": "Cuora trifasciata",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "内部照合（2026-03-05発効版を過去確認との内部記録）",
+     "note": "Cuora属一括II＋主要種野生ゼロ枠。附属書原文の再確認は次バッチ",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "indochinese-box-turtle",
+   "page": "species/indochinese-box-turtle.html",
+   "wamei": "モエギハコガメ",
+   "scientific_name": {
+    "value": "Cuora galbinifrons",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "I",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS/カナダ政府CoP19結果",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+     ],
+     "note": "CoP19でII→Iへ移行（コンセンサス採択）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "ornate-cuora",
+   "page": "species/ornate-cuora.html",
+   "wamei": "オルナータハコガメ",
+   "scientific_name": {
+    "value": "Cuora ornata",
+    "verification": "NEEDS_REVIEW",
+    "note": "『Cuora ornata』は現行のCuora属13種の学名に見当たらず、実在しない学名の可能性が高い。実体がC. picturata/C. bourreti系なら両種はCoP18で附属書I。実体確定まで公開情報の学名は要注意"
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "実体種が未確定のため附属書を確定できない（II〜Iの幅）"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "chinese-stripe-necked-turtle",
+   "page": "species/chinese-stripe-necked-turtle.html",
+   "wamei": "ハナガメ",
+   "scientific_name": {
+    "value": "Mauremys sinensis",
+    "verification": "LIKELY",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": []
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "附属書III（中国）の可能性。原文確認要"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": "特定外来生物（2016年指定。許可なく飼育・保管・運搬・輸入・販売・購入不可。ニホンイシガメ・ミナミイシガメ・クサガメとの交雑種も指定対象）",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "institution": "環境省",
+    "sources": [
+     "https://www.env.go.jp/nature/intro/4document/data/sentei/10/mat03.pdf"
+    ],
+    "last_verified": "2026-08-17"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "yellow-pond-turtle",
+   "page": "species/yellow-pond-turtle.html",
+   "wamei": "ミナミイシガメ",
+   "scientific_name": {
+    "value": "Mauremys mutica",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+     ],
+     "note": "CoP16文書で附属書II（ゼロ枠適用外）を確認",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   }
+  },
+  {
+   "slug": "canton-reeves-turtle",
+   "page": "species/canton-reeves-turtle.html",
+   "wamei": "カントンクサガメ",
+   "scientific_name": {
+    "value": "Mauremys reevesii（広東型）",
+    "verification": "LIKELY",
+    "note": "広東型は種内変異/地域個体群であり独立taxonではない",
+    "last_verified": "2026-08-17",
+    "provenance": "official",
+    "sources": [
+     "https://cites.org/eng/taxonomy/term/4560"
+    ]
+   },
+   "english_name": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-17"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "III",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4560"
+     ],
+     "note": "種M. reevesiiとして附属書III（中国）",
+     "last_verified": "2026-08-17"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
     }
    },
    "domestic_law": {

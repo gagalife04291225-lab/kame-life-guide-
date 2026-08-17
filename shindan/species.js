@@ -361,7 +361,7 @@ aquatic: [
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.beginner||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: null, legal: null,
+  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: 'CITES III', legal: null,
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -372,7 +372,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ニセチズガメ', latin: 'Graptemys pseudogeographica pseudogeographica', emoji: '🗺️', difficulty: '中級', size: 'M（オス12cm/メス22cm）', cites: null, legal: null,
+  { name: 'ニセチズガメ', latin: 'Graptemys pseudogeographica pseudogeographica', emoji: '🗺️', difficulty: '中級', size: 'M（オス12cm/メス22cm）', cites: 'CITES III', legal: null,
     reason: 'ミシシッピチズガメの基亜種。背中のキールがより目立ち観察の楽しさがある。チズガメを一通り揃えたい中級者向け。',
     specs: { '最大甲長': '22cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '22cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -383,7 +383,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
+  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: 'CITES III', legal: null,
     reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -416,7 +416,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.intermediate||0)+(s.observational||0)+(s.japan_native||0)+(s.bottom_dweller||0)+(s.asia_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ミナミイシガメ', latin: 'Mauremys mutica', emoji: '🍃', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+  { name: 'ミナミイシガメ', latin: 'Mauremys mutica', emoji: '🍃', difficulty: '中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: null,
     reason: '台湾・中国南部産のイシガメ属。国内CB流通あり。ニホンイシガメよりやや高温を好む傾向。コンパクトで管理しやすい。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '22〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '22〜29℃', lifespan: '15〜30年', diet: '雑食' },
@@ -493,7 +493,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.eu_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'カントンクサガメ', latin: 'Mauremys reevesii（広東型）', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: null, legal: null,
+  { name: 'カントンクサガメ', latin: 'Mauremys reevesii（広東型）', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: 'CITES III', legal: null,
     reason: 'クサガメの広東産地個体群。黄みがかった体色や明確な産地証明が魅力。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -537,7 +537,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.advanced||0)+(s.observational||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
   },
-  { name: 'クロコブチズガメ', latin: 'Graptemys nigrinoda', emoji: '⚫', difficulty: '中〜上級', size: 'M（オス10cm/メス18cm）', cites: null, legal: null,
+  { name: 'クロコブチズガメ', latin: 'Graptemys nigrinoda', emoji: '⚫', difficulty: '中〜上級', size: 'M（オス10cm/メス18cm）', cites: 'CITES III', legal: null,
     reason: '背中キールの黒いコブが印象的なチズガメ。ぶりくらCB出品確認済み。チズガメ属の中でも個性的な外見で、コレクション性が高い中上級種。',
     specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '18cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -548,7 +548,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.large_tank||0)*0.8+(s.maintenance||0)+(s.advanced||0)*1.2+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ワモンチズガメ', latin: 'Graptemys oculifera', emoji: '🔵', difficulty: '上級', size: 'M（オス9cm/メス18cm）', cites: null, legal: null,
+  { name: 'ワモンチズガメ', latin: 'Graptemys oculifera', emoji: '🔵', difficulty: '上級', size: 'M（オス9cm/メス18cm）', cites: 'CITES III', legal: null,
     reason: '目の後方に輪状の美麗模様が入るチズガメ屈指の美種。ぶりくら2025出品リスト記載。水質への敏感さと飼育難度から上級者向きだが所有する価値は高い。',
     specs: { '最大甲長': '18cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★★' },
     coreSpecs: { size: '18cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -559,7 +559,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.advanced||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'rare'
   },
-  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス22cm）', cites: null, legal: null,
+  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス22cm）', cites: 'CITES III', legal: null,
     reason: 'ミシシッピチズガメと並ぶ人気チズガメ。甲羅のキールがより鋭く、ミシシッピ川流域に生息。流水好みで水質管理が重要。オス・メスの体格差が大きいため飼育スペースの計画が必要。',
     specs: { '最大甲長': 'オス10cm/メス22cm', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '★★☆' },
     coreSpecs: { size: 'オス10cm/メス22cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
@@ -570,7 +570,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'メキシカンジャイアントマスク', latin: 'Staurotypus triporcatus', emoji: '🦕', difficulty: '上級', size: 'L（30〜40cm）', cites: null, legal: null,
+  { name: 'メキシカンジャイアントマスク', latin: 'Staurotypus triporcatus', emoji: '🦕', difficulty: '上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: null,
     reason: 'メキシコ・中米産の大型ドロガメ科。スジオオニオイガメの近縁でさらに大型。3本の明確なキールを持ち噛みつき力が非常に強い。素手での取り扱い厳禁。本格マニア向けの希少種。',
     specs: { '最大甲長': '40cm（メス）', '水槽サイズ': '90cm〜', '水温': '25〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '40cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '雑食（肉食寄り）' },
@@ -581,8 +581,8 @@ aquatic: [
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'rare'
   },
-  { name: 'ハナガメ', latin: 'Mauremys sinensis', emoji: '🌸', difficulty: '入門〜中級', size: 'M（20〜25cm）', cites: null, legal: null,
-    reason: '首のストライプが美しい東・東南アジア産の中型水棲ガメ。クサガメと近縁だが首筋の模様が鮮やかで観賞価値が高い。丈夫で飼育しやすく入門者にも向く。国内CBの流通もある。',
+  { name: 'ハナガメ', latin: 'Mauremys sinensis', emoji: '🌸', difficulty: '入門〜中級', size: 'M（20〜25cm）', cites: null, legal: 'unknown_hold',
+    reason: '【特定外来生物】2016年に指定され、許可なく飼育・販売・購入・輸入はできない（ニホンイシガメ等との交雑種も指定対象）。首のストライプが美しい東・東南アジア産の中型水棲ガメだが、現在は新規飼育が原則不可のため診断では案内しない。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60〜90cm', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60〜90cm' },
@@ -614,7 +614,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.beginner||0)+(s.mainstream||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'rare'
   },
-  { name: 'キタチズガメ', latin: 'Graptemys geographica', emoji: '🗾', difficulty: '中級', size: 'M（オス10cm/メス28cm）', cites: null, legal: null,
+  { name: 'キタチズガメ', latin: 'Graptemys geographica', emoji: '🗾', difficulty: '中級', size: 'M（オス10cm/メス28cm）', cites: 'CITES III', legal: null,
     reason: 'チズガメ属の基本種。甲羅に地図状の模様が入る美麗種で、オス・メスで体格差が大きい。水質管理が重要で、適切なフィルターと水温管理ができる中級者向け。',
     specs: { '最大甲長': 'オス10cm/メス28cm', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '★★☆' },
     coreSpecs: { size: 'オス10cm/メス28cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
@@ -625,7 +625,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0)+(s.bottom_dweller||0); },
     availability: 'common'
   },
-  { name: 'テキサスチズガメ', latin: 'Graptemys versa', emoji: '⭐', difficulty: '中〜上級', size: 'S（オス7cm/メス12cm）', cites: null, legal: null,
+  { name: 'テキサスチズガメ', latin: 'Graptemys versa', emoji: '⭐', difficulty: '中〜上級', size: 'S（オス7cm/メス12cm）', cites: 'CITES III', legal: null,
     reason: 'チズガメ属で最小クラスの小型種。テキサス州グアダルーペ川水系固有種。コンパクトな体格と美しい甲羅模様が人気。流水を好み酸素豊富な水質が必要な上級向け種。',
     specs: { '最大甲長': 'オス7cm/メス12cm', '水槽サイズ': '45〜60cm', '水温': '20〜26℃', '難易度': '★★★' },
     coreSpecs: { size: 'オス7cm/メス12cm', temp: '20〜26℃', lifespan: '15〜20年', diet: '雑食（軟体動物・昆虫中心）' },
@@ -636,7 +636,7 @@ aquatic: [
     score: function(){ return -9999; },
     availability: 'archive'
   },
-  { name: 'アラバマチズガメ', latin: 'Graptemys pulchra', emoji: '💎', difficulty: '中〜上級', size: 'M（オス10cm/メス25cm）', cites: null, legal: null,
+  { name: 'アラバマチズガメ', latin: 'Graptemys pulchra', emoji: '💎', difficulty: '中〜上級', size: 'M（オス10cm/メス25cm）', cites: 'CITES III', legal: null,
     reason: 'アラバマ州・フロリダ州西部の河川系に生息するチズガメ。メスの甲幅が特に広くなる大型個体が魅力。水質・酸素量への要求が高く、本格的な水棲ガメ飼育を楽しみたい上級者向け。',
     specs: { '最大甲長': 'オス10cm/メス25cm', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '★★★' },
     coreSpecs: { size: 'オス10cm/メス25cm', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
@@ -963,7 +963,7 @@ forest: [
 
 // ==================== マニアック・特殊ルート ====================
 exotic: [
-  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: null, legal: null,
+  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: 'CITES II', legal: null,
     reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
     specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '50cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
@@ -974,7 +974,7 @@ exotic: [
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
-  { name: 'スムーススッポン', latin: 'Apalone mutica', emoji: '🫧', difficulty: '上級', size: 'L（25〜45cm）', cites: null, legal: null,
+  { name: 'スムーススッポン', latin: 'Apalone mutica', emoji: '🫧', difficulty: '上級', size: 'L（25〜45cm）', cites: 'CITES II', legal: null,
     reason: 'スパイニースッポンよりキールが目立たない滑らかな甲羅を持つ。砂底必須・水流弱め。スッポン属の中でも温和な個体が多い。',
     specs: { '最大甲長': '45cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '45cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
@@ -985,7 +985,7 @@ exotic: [
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0); },
     availability: 'rare'
   },
-  { name: 'フロリダスッポン', latin: 'Apalone ferox', emoji: '🐊', difficulty: '上級', size: 'L（35〜60cm）', cites: null, legal: null,
+  { name: 'フロリダスッポン', latin: 'Apalone ferox', emoji: '🐊', difficulty: '上級', size: 'L（35〜60cm）', cites: 'CITES II', legal: null,
     reason: 'スッポン属最大種のひとつ。非常に攻撃的で飼育難度が高い。本格的なソフトシェル飼育に挑戦したい経験者向け。',
     specs: { '最大甲長': '60cm（メス）', '水槽サイズ': '120cm〜', '底床': '細かい砂必須', '水温': '25〜30℃' },
     coreSpecs: { size: '60cm（メス）', temp: '25〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
@@ -1029,7 +1029,7 @@ exotic: [
     score: function(s){ return (s.softshell||0)+(s.intermediate||0)+(s.budget_high||0)+(s.collector_grade||0); },
     availability: 'common'
   },
-  { name: 'ノーザンダイヤモンドバックテラピン', latin: 'Malaclemys terrapin terrapin', emoji: '💎', difficulty: '上級', size: 'M（15〜23cm）', cites: null, legal: null,
+  { name: 'ノーザンダイヤモンドバックテラピン', latin: 'Malaclemys terrapin terrapin', emoji: '💎', difficulty: '上級', size: 'M（15〜23cm）', cites: 'CITES II', legal: null,
     reason: '汽水（海水と淡水の混合）で飼育する北米唯一の汽水ガメ。独特の菱形模様が美しく専門的な塩分管理が必要。ディープなマニア向き。',
     specs: { '最大甲長': '23cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     coreSpecs: { size: '23cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
@@ -1040,7 +1040,7 @@ exotic: [
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
-  { name: 'カロリナダイヤモンドバックテラピン', latin: 'Malaclemys terrapin centrata', emoji: '💠', difficulty: '上級', size: 'M（13〜21cm）', cites: null, legal: null,
+  { name: 'カロリナダイヤモンドバックテラピン', latin: 'Malaclemys terrapin centrata', emoji: '💠', difficulty: '上級', size: 'M（13〜21cm）', cites: 'CITES II', legal: null,
     reason: '最も美しいとも言われるダイヤモンドバックテラピンの亜種。甲羅の同心円模様が見事。国内CB流通が盛んになっている。',
     specs: { '最大甲長': '21cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     coreSpecs: { size: '21cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
@@ -1051,7 +1051,7 @@ exotic: [
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.collector_grade||0); },
     availability: 'rare'
   },
-  { name: 'オルナータダイヤモンドバックテラピン', latin: 'Malaclemys terrapin macrospilota', emoji: '🔶', difficulty: '上級', size: 'M（13〜20cm）', cites: null, legal: null,
+  { name: 'オルナータダイヤモンドバックテラピン', latin: 'Malaclemys terrapin macrospilota', emoji: '🔶', difficulty: '上級', size: 'M（13〜20cm）', cites: 'CITES II', legal: null,
     reason: 'フロリダ産の派手な模様を持つダイヤモンドバックテラピンの亜種。国内CB流通が盛ん（アクアスペース2024年入荷確認）。汽水管理が必要だが亜種中で最も流通が多い。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '塩分濃度': '0.5〜1.0%', '水温': '20〜28℃' },
     coreSpecs: { size: '20cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '雑食' },
