@@ -32,7 +32,7 @@
 ```
 kame-life-guide-/
 ├── index.html              # サイトトップ（ハビタット別入口・診断ツール導線）
-├── species-list.html       # 81種一覧（絞り込みフィルター付き）
+├── species-list.html       # 種一覧（絞り込みフィルター付き）
 │
 ├── # ──── ハビタット別飼育ガイド（guide-*.html）────
 ├── guide-dry.html          # 乾燥系リクガメ（ロシア・ヘルマン・ギリシャ等）
@@ -63,7 +63,7 @@ kame-life-guide-/
 ├── shindan/
 │   ├── index.html          # 診断 UI（フルインライン CSS・JS）
 │   ├── routes.js           # 5 ルートの質問データ
-│   ├── species.js          # 全種データ（81種・ match/score 関数付き）
+│   ├── species.js          # 全種データ（103種・ match/score 関数付き）
 │   └── equipment.js        # 種別推奨機材 ASIN マップ
 │
 ├── # ──── 共有 CSS（css/）────
@@ -122,15 +122,17 @@ kame-life-guide-/
 
 ### 亀診断ツール（shindan/）
 
-5 ルート構成、81種収録：
+5 ルート構成、103種収録（all は land/aquatic/forest/exotic の連結）：
 
 | ルート ID | 名前 | 問数 |
 |---------|------|-----|
-| `land` | リクガメルート | 5問 |
-| `aquatic` | 水棲ガメルート | 8問 |
-| `mountain` / `box` | ヤマガメ・ハコガメルート | 4問 |
-| `special` | マニアック・特殊ルート | 3問 |
-| `all` | 全カテゴリルート | 6問 |
+| `land` | リクガメルート | 7問 |
+| `aquatic` | 水棲ガメルート | 10問 |
+| `forest` | ヤマガメ・ハコガメルート | 7問 |
+| `exotic` | マニアック・特殊ルート | 6問 |
+| `all` | 全カテゴリルート | 8問 |
+
+※ 問数は全ルート共通の追加2問（予算・臭い/手間）込み。
 
 各種は `match(scores)` と `score(scores)` 関数を持つ。`equipment.js` の ASIN は `web_search` で実在確認済み。
 
@@ -336,7 +338,7 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 | ファイル | 用途 |
 |---------|------|
 | `SHINDAN-SPEC.md` | 診断ツールの仕様・ルート設計・法規制対応・GitHub API 鉄則・作業ルール |
-| `SHINDAN-SPECIES.md` | 全81種のデータ管理（学名・CITES・難易度・備考） |
+| `SHINDAN-SPECIES.md` | 全種データ管理（103種・学名・CITES・難易度・備考） |
 | `CLAUDE.md`（本ファイル） | AI アシスタント向けコードベース全体解説 |
 
 **コンテキストが切れた場合は `SHINDAN-SPEC.md` と `SHINDAN-SPECIES.md` を読めば作業を継続できる。**
