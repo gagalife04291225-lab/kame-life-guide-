@@ -33,6 +33,13 @@
 | ❓ 全カテゴリ（all） | 8問 | 全種から総合診断 |
 
 ※ 全ルート末尾に共通2問（予算・臭い/手間）を含む問数。
+※ さらに全ルート共通で Readiness Gate 2問（住まい・世話体制）が続く（TRUST-1）。
+   Gate の回答は readinessAnswers に分離集計され、種ランキング（scores / Phase1 Stable / Phase2 none・effective・Golden18）へは一切加算されない。
+   判定（ルール方式・点数ではない）: 各回答を ok / warn(未整備) / blocker(飼育の前提が現状ない) に分類。
+   budget_under10k は warn 扱い（blockerに数えない＝予算回答をCの決定打にしない）。
+   C(飼わない提案) = blocker 2つ（住まいの前提なし × 世話の継続手段なし）の同時成立のみ。単一回答では成立しない。
+   B(条件付き) = blocker 1つ、または warn 2つ以上 / A = blocker 0 かつ warn 1つ以下。
+   C結果画面には商品リンクを置かない。
 
 ---
 

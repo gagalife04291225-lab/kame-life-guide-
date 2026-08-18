@@ -202,3 +202,25 @@ const ROUTES = [
     ].concat(COMMON_QUESTIONS)
   }
 ];
+
+// ── TRUST-1: Readiness Gate（種を推薦する前に「今カメを飼える状態か」を確認する追加質問）──
+// この質問の回答は index.html 側の readinessAnswers にのみ集計され、
+// 種のランキング経路（scores / Phase1 Stable / Phase2 none・effective・Golden18）には一切影響しない。
+// ROUTES 内の questions には追加しないこと（Golden18 ハーネスが questions 配列長に依存するため）。
+// kind の意味（点数ではなくルール分類）:
+//   ok      = 準備が整っている
+//   warn    = 未整備・未確認（解消可能な準備不足）
+//   blocker = 飼育の前提が現状ない（重大な障害）
+const READINESS_QUESTIONS = [
+  { id: 'housing', text: '住まいと同居する人の状況を教えてください', choices: [
+    { label: 'ペット可の住まいで、同居する人の同意もある', kind: 'ok' },
+    { label: '自分の判断で飼える住まいに住んでいる', kind: 'ok' },
+    { label: 'ペット可か未確認、または同居する人とまだ相談していない', kind: 'warn' },
+    { label: 'ペット不可、または同意を得られていない', kind: 'blocker' }
+  ]},
+  { id: 'care', text: '旅行や急な入院のとき、世話を頼める人や預け先はありますか？', choices: [
+    { label: 'いる（家族・友人・ペットホテルなど）', kind: 'ok' },
+    { label: '今はいないが、探すつもり', kind: 'warn' },
+    { label: 'いない・考えたことがなかった', kind: 'blocker' }
+  ]}
+];
