@@ -33,6 +33,9 @@
 | ❓ 全カテゴリ（all） | 8問 | 全種から総合診断 |
 
 ※ 全ルート末尾に共通2問（予算・臭い/手間）を含む問数。
+※ さらに全ルート共通で Readiness Gate 2問（住まい・世話体制）が続く（TRUST-1）。
+   Gate の回答は readinessAnswers に分離集計され、種ランキング（scores / Phase1 Stable / Phase2 none・effective・Golden18）へは一切加算されない。
+   判定: リスク点 = Gate2問のrisk(各0〜2)合計 + budget_under10k(+1)。C(飼わない提案)=4点以上 / B(条件付き)=2〜3点 / A=0〜1点。単一回答ではCにならない。C結果画面には商品リンクを置かない。
 
 ---
 

@@ -122,6 +122,25 @@ body {
 #screen-quiz { gap: 0; }
 .quiz-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
 .btn-back { background: none; border: 1px solid rgba(255,255,255,.18); color: var(--parchment); border-radius: 8px; padding: 8px 14px; font-size: .85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; flex-shrink: 0; }
+
+/* ── TRUST-1: Readiness Gate ── */
+#screen-gate-stop { align-items: center; justify-content: center; text-align: left; }
+.gate-stop-inner { max-width: 560px; margin: 0 auto; padding: 32px 20px 48px; }
+.gate-stop-label { font-size: .8rem; letter-spacing: .12em; color: var(--accent-light, #d4a96a); margin-bottom: 10px; }
+.gate-stop-title { font-family: 'Noto Serif JP', serif; font-size: 1.45rem; line-height: 1.5; margin-bottom: 16px; }
+.gate-stop-lead { font-size: .95rem; line-height: 1.9; opacity: .92; margin-bottom: 22px; }
+.gate-stop-gaps { border: 1px solid rgba(212,169,106,.4); border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; }
+.gate-stop-gaps-title { font-weight: 700; font-size: .9rem; margin-bottom: 8px; color: var(--accent-light, #d4a96a); }
+.gate-stop-gaps ul { margin: 0; padding-left: 1.2em; }
+.gate-stop-gaps li { font-size: .9rem; line-height: 1.8; }
+.gate-stop-note { font-size: .8rem; opacity: .7; line-height: 1.7; margin-bottom: 24px; }
+.gate-stop-actions { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+.gate-stop-link { display: block; text-align: center; padding: 13px 16px; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; color: var(--parchment); text-decoration: none; font-size: .92rem; }
+.gate-stop-link:active { opacity: .75; }
+.gate-notice { margin: 14px 16px 0; border: 1px solid rgba(212,169,106,.45); border-radius: 12px; padding: 14px 16px; font-size: .87rem; line-height: 1.8; }
+.gate-notice-title { font-weight: 700; margin-bottom: 6px; color: var(--accent-light, #d4a96a); }
+.gate-notice ul { margin: 0 0 6px; padding-left: 1.2em; }
+.gate-notice-tail { opacity: .8; font-size: .82rem; margin: 0; }
 .btn-back:active { opacity: .7; }
 .progress-wrap { flex: 1; }
 .progress-label { font-size: .78rem; color: var(--text-muted); margin-bottom: 6px; }
@@ -1088,7 +1107,27 @@ body {
   <div class="choices" id="choices" role="group" aria-labelledby="question-text"></div>
 </section>
 
+<!-- TRUST-1: Readiness Gate C判定画面（種を推薦しない・商品リンクを置かない） -->
+<section id="screen-gate-stop" class="screen" role="main" aria-label="診断結果（準備の確認）">
+  <div class="gate-stop-inner">
+    <p class="gate-stop-label">診断結果</p>
+    <h2 class="gate-stop-title">今は飼わない方がいいかもしれません</h2>
+    <p class="gate-stop-lead">回答を拝見する限り、いま亀を迎えると、亀にもあなたにも負担が大きくなりそうです。亀は数十年生きる生き物です。準備が整ってからでも、亀は待っていてくれます。</p>
+    <div class="gate-stop-gaps">
+      <p class="gate-stop-gaps-title">先に整えたい準備</p>
+      <ul id="gate-stop-gap-list"></ul>
+    </div>
+    <p class="gate-stop-note">このページには商品の紹介やリンクを置いていません。準備が整ったら、もう一度診断してください。</p>
+    <div class="gate-stop-actions">
+      <a class="gate-stop-link" href="../before-keeping.html">「飼う前に考えてほしいこと」を読む</a>
+      <button class="btn-retry" id="btn-gate-retry" type="button">最初からやり直す</button>
+    </div>
+  </div>
+</section>
+
 <section id="screen-result" class="screen" role="main" aria-label="診断結果">
+  <!-- TRUST-1: B判定（条件付き）の準備不足通知。ランキング・種の表示には影響しない -->
+  <div id="gate-notice" class="gate-notice" hidden role="note"></div>
   <!-- ════════ ABOVE FOLD ════════ -->
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
@@ -1255,6 +1294,9 @@ var resultScore = 0;
 var resultMaxScore = 0;
 var answerHistory = [];
 var toastTimer = null;
+// TRUST-1 Readiness Gate 状態（scores とは完全分離。ランキング経路へは加算しない）
+var readinessAnswers = [];
+var gateIndex = 0;
 
 // ===== 画面切替 =====
 function show(id) {
@@ -2323,6 +2365,10 @@ function startQuizWithRoute(id) {
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
+  readinessAnswers = [];
+  gateIndex = 0;
+  var _gn = document.getElementById('gate-notice');
+  if (_gn) { _gn.hidden = true; _gn.innerHTML = ''; }
   // GA4: 診断開始
   ga4Event('shindan_start', { route_id: id, route_name: selectedRoute.name });
   show('screen-quiz');
@@ -2343,7 +2389,7 @@ function showQuestion() {
       });
     }
   }
-  var total = route.questions.length;
+  var total = route.questions.length + (typeof READINESS_QUESTIONS !== 'undefined' ? READINESS_QUESTIONS.length : 0);
   var pct = Math.round((currentQuestionIndex / total) * 100);
 
   // プログレスバー更新
@@ -2402,16 +2448,145 @@ function selectChoice(choice, clickedBtn) {
     currentQuestionIndex++;
     if (currentQuestionIndex < selectedRoute.questions.length) {
       showQuestion();
+    } else if (typeof READINESS_QUESTIONS !== 'undefined' && gateIndex < READINESS_QUESTIONS.length) {
+      // TRUST-1: 種の推薦前に Readiness Gate（飼える状態かの確認）へ
+      showGateQuestion();
     } else {
-      // perf: 結果計算(SPECIES使用)の直前で species.js のロード完了を保証（Race Condition防止・二重読込なし）
-      // perf: 結果計算(SPECIES)＋Starter Kit(PRODUCTS/starter-kit)のロード完了を保証してから結果表示。
-      // species失敗=ランキング不可(元から破綻)。結果資産失敗はcatchで握り、結果種は必ず表示(Starter Kitのみ劣化)。
-      (window.loadSpecies ? window.loadSpecies() : Promise.resolve())
-        .then(function(){ return window.loadResultAssets ? window.loadResultAssets().catch(function(){}) : Promise.resolve(); })
-        .then(calcResult)
-        .catch(function(){});
+      finishQuiz();
     }
   }, 250);
+}
+
+// ===== TRUST-1: Readiness Gate =====
+// 判定仕様:
+//   リスク点 = 追加2問の risk（各0〜2）の合計 + 既存回答 budget_under10k（+1）
+//   C「今は飼わない方がいいかもしれません」: 4点以上（単一回答の最大は2点のため、単一回答ではCにならない）
+//   B「条件付き」: 2〜3点（通常の種診断へ進み、不足している準備を結果冒頭に表示）
+//   A「飼育可能」: 0〜1点（従来どおり）
+// readinessAnswers は scores と分離されており、種ランキング（Phase1 Stable / Phase2）へ影響しない。
+function showGateQuestion() {
+  var route = selectedRoute;
+  var q = READINESS_QUESTIONS[gateIndex];
+  var routeLen = route.questions.length;
+  var total = routeLen + READINESS_QUESTIONS.length;
+  var idx = routeLen + gateIndex;
+  if (!_viewedSteps[idx]) {
+    _viewedSteps[idx] = true;
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_step_view', { step: idx + 1, question_id: (route.id || '') + '_gate_q' + (gateIndex + 1) });
+    }
+  }
+  var pct = Math.round((idx / total) * 100);
+  document.getElementById('progress-label').textContent = (idx + 1) + ' / ' + total;
+  var fill = document.getElementById('progress-fill');
+  fill.style.width = pct + '%';
+  fill.parentElement.setAttribute('aria-valuenow', pct);
+  var dotsWrap = document.getElementById('step-dots');
+  if (dotsWrap) {
+    dotsWrap.innerHTML = '';
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'step-dot' + (i < idx ? ' done' : i === idx ? ' current' : '');
+      dot.setAttribute('aria-hidden', 'true');
+      dotsWrap.appendChild(dot);
+    }
+  }
+  document.getElementById('route-badge').textContent = route.emoji + ' ' + route.name;
+  var qt = document.getElementById('question-text');
+  qt.textContent = q.text;
+  qt.focus();
+  var container = document.getElementById('choices');
+  container.innerHTML = '';
+  q.choices.forEach(function(choice) {
+    var btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice.label;
+    btn.addEventListener('click', function(){ selectGateChoice(choice, this); });
+    container.appendChild(btn);
+  });
+}
+
+function selectGateChoice(choice, clickedBtn) {
+  var allBtns = document.querySelectorAll('.choice-btn');
+  allBtns.forEach(function(b){ b.disabled = true; });
+  if (clickedBtn) clickedBtn.classList.add('selected');
+  setTimeout(function(){
+    if (typeof ga4Event === 'function') {
+      ga4Event('shindan_answer_select', {
+        step: selectedRoute.questions.length + gateIndex + 1,
+        question_id: (selectedRoute ? selectedRoute.id : '') + '_gate_q' + (gateIndex + 1),
+        answer_id: choice.label || ''
+      });
+    }
+    readinessAnswers.push({ q: READINESS_QUESTIONS[gateIndex].id, risk: choice.risk || 0, label: choice.label });
+    gateIndex++;
+    if (gateIndex < READINESS_QUESTIONS.length) {
+      showGateQuestion();
+    } else {
+      finishQuiz();
+    }
+  }, 250);
+}
+
+function computeReadiness() {
+  var points = 0;
+  var gaps = [];
+  readinessAnswers.forEach(function(a){
+    points += a.risk || 0;
+    if (a.q === 'housing' && a.risk >= 1) gaps.push('住まいのペット可否の確認と、同居する人の同意');
+    if (a.q === 'care' && a.risk >= 1) gaps.push('留守中（旅行・急用）に世話を頼める人や預け先の確保');
+  });
+  if ((scores.budget_under10k || 0) > 0) {
+    points += 1;
+    gaps.push('初期費用の見直し（ケージ・保温・照明などの機材一式は1万円を超えることが多いです）');
+  }
+  var verdict = points >= 4 ? 'C' : points >= 2 ? 'B' : 'A';
+  return { verdict: verdict, points: points, gaps: gaps };
+}
+
+function finishQuiz() {
+  var rv = computeReadiness();
+  if (typeof ga4Event === 'function') {
+    ga4Event('readiness_gate_result', { verdict: rv.verdict, risk_points: rv.points, route_id: selectedRoute ? selectedRoute.id : '' });
+  }
+  if (rv.verdict === 'C') {
+    renderGateStop(rv);
+    return;
+  }
+  // perf: 結果計算(SPECIES使用)の直前で species.js のロード完了を保証（Race Condition防止・二重読込なし）
+  // perf: 結果計算(SPECIES)＋Starter Kit(PRODUCTS/starter-kit)のロード完了を保証してから結果表示。
+  // species失敗=ランキング不可(元から破綻)。結果資産失敗はcatchで握り、結果種は必ず表示(Starter Kitのみ劣化)。
+  (window.loadSpecies ? window.loadSpecies() : Promise.resolve())
+    .then(function(){ return window.loadResultAssets ? window.loadResultAssets().catch(function(){}) : Promise.resolve(); })
+    .then(calcResult)
+    .then(function(){ if (rv.verdict === 'B') renderGateNotice(rv); })
+    .catch(function(){});
+}
+
+// C判定: 種を推薦せず、商品リンクを一切置かない専用画面を表示する
+function renderGateStop(rv) {
+  _diagnosisCompleted = true;
+  var list = document.getElementById('gate-stop-gap-list');
+  if (list) {
+    list.innerHTML = '';
+    rv.gaps.forEach(function(g){
+      var li = document.createElement('li');
+      li.textContent = g;
+      list.appendChild(li);
+    });
+  }
+  show('screen-gate-stop');
+}
+
+// B判定: 通常の種診断結果の冒頭に「先に整えたい準備」を表示する（ランキングは変更しない）
+function renderGateNotice(rv) {
+  var box = document.getElementById('gate-notice');
+  if (!box) return;
+  var html = '<p class="gate-notice-title">始める前に、先に整えたい準備があります</p><ul>';
+  rv.gaps.forEach(function(g){ html += '<li>' + g + '</li>'; });
+  html += '</ul><p class="gate-notice-tail">準備を整えてからお迎えすると、亀にもあなたにも無理がありません。</p>';
+  box.innerHTML = html;
+  box.hidden = false;
 }
 
 // ===== Phase 46-E: allルート専用タグ互換展開 =====
@@ -3727,6 +3902,8 @@ document.getElementById('modal-ok').addEventListener('click', function(){
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
+  readinessAnswers = [];
+  gateIndex = 0;
   show('screen-start');
 });
 document.getElementById('modal-quit').addEventListener('click', function(e){
@@ -3742,10 +3919,16 @@ function resetToStart() {
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
+  readinessAnswers = [];
+  gateIndex = 0;
+  var gn = document.getElementById('gate-notice');
+  if (gn) { gn.hidden = true; gn.innerHTML = ''; }
   show('screen-start');
   clearResultUrl();
 }
 document.getElementById('btn-retry').addEventListener('click', resetToStart);
+var _btnGateRetry = document.getElementById('btn-gate-retry');
+if (_btnGateRetry) _btnGateRetry.addEventListener('click', resetToStart);
 
 // ===== シェアボタン（Web Share API + コピーfallback） =====
 document.getElementById('btn-share').addEventListener('click', function(){
