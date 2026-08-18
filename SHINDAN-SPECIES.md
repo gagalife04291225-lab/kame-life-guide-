@@ -38,7 +38,7 @@
 | ミシシッピアカミミガメ | Trachemys scripta elegans | L | 入門 | なし | 条件付特定外来・新規購入不可 |
 | ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
 | ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
-| ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | 台湾・中国南部・八重山産 |
+| ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | ミナミイシガメの亜種。国内では八重山諸島に分布（種全体の台湾・中国南部分布は基亜種） |
 | カントンクサガメ | Mauremys reevesii（広東型） | M | 中級 | CITES III | 国内CB確認済み |
 | ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | なし | EUCB流通・やや低温好む |
 | カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 条件付特定外来（種として指定）・新規購入不可 |
