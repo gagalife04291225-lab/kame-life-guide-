@@ -2458,11 +2458,14 @@ function selectChoice(choice, clickedBtn) {
 }
 
 // ===== TRUST-1: Readiness Gate =====
-// 判定仕様:
-//   リスク点 = 追加2問の risk（各0〜2）の合計 + 既存回答 budget_under10k（+1）
-//   C「今は飼わない方がいいかもしれません」: 4点以上（単一回答の最大は2点のため、単一回答ではCにならない）
-//   B「条件付き」: 2〜3点（通常の種診断へ進み、不足している準備を結果冒頭に表示）
-//   A「飼育可能」: 0〜1点（従来どおり）
+// 判定仕様（点数ではなくルール方式）:
+//   各回答を ok / warn（未整備・解消可能） / blocker（飼育の前提が現状ない）に分類する。
+//   既存回答 budget_under10k（予算〜1万円）は warn として扱う。blocker には数えない
+//   （予算回答は種絞り込み用の設問であり、「飼うな」という強い判定の決定打にはしない）。
+//   C「今は飼わない方がいいかもしれません」: blocker が2つ
+//     ＝「住まいの前提がない」×「世話の継続手段がない」の同時成立のみ。単一回答では成立しない。
+//   B「条件付き」: blocker が1つ、または warn が2つ以上（種は推薦し、不足準備を結果冒頭に表示）
+//   A「飼育可能」: blocker が0 かつ warn が1つ以下（従来どおり）
 // readinessAnswers は scores と分離されており、種ランキング（Phase1 Stable / Phase2）へ影響しない。
 function showGateQuestion() {
   var route = selectedRoute;
@@ -2518,7 +2521,7 @@ function selectGateChoice(choice, clickedBtn) {
         answer_id: choice.label || ''
       });
     }
-    readinessAnswers.push({ q: READINESS_QUESTIONS[gateIndex].id, risk: choice.risk || 0, label: choice.label });
+    readinessAnswers.push({ q: READINESS_QUESTIONS[gateIndex].id, kind: choice.kind || 'ok', label: choice.label });
     gateIndex++;
     if (gateIndex < READINESS_QUESTIONS.length) {
       showGateQuestion();
@@ -2529,25 +2532,29 @@ function selectGateChoice(choice, clickedBtn) {
 }
 
 function computeReadiness() {
-  var points = 0;
+  var blockers = 0;
+  var warns = 0;
   var gaps = [];
   readinessAnswers.forEach(function(a){
-    points += a.risk || 0;
-    if (a.q === 'housing' && a.risk >= 1) gaps.push('住まいのペット可否の確認と、同居する人の同意');
-    if (a.q === 'care' && a.risk >= 1) gaps.push('留守中（旅行・急用）に世話を頼める人や預け先の確保');
+    if (a.kind === 'blocker') blockers += 1;
+    if (a.kind === 'warn') warns += 1;
+    if (a.q === 'housing' && a.kind === 'blocker') gaps.push('飼育できる住まい、または同居する人の同意（現状では飼育の前提が整っていません）');
+    if (a.q === 'housing' && a.kind === 'warn') gaps.push('住まいのペット可否の確認と、同居する人との相談');
+    if (a.q === 'care' && a.kind === 'blocker') gaps.push('留守中（旅行・急用）に世話を頼める人や預け先の確保');
+    if (a.q === 'care' && a.kind === 'warn') gaps.push('世話を頼める人・預け先のあてを見つけておくこと');
   });
   if ((scores.budget_under10k || 0) > 0) {
-    points += 1;
+    warns += 1;
     gaps.push('初期費用の見直し（ケージ・保温・照明などの機材一式は1万円を超えることが多いです）');
   }
-  var verdict = points >= 4 ? 'C' : points >= 2 ? 'B' : 'A';
-  return { verdict: verdict, points: points, gaps: gaps };
+  var verdict = blockers >= 2 ? 'C' : (blockers === 1 || warns >= 2) ? 'B' : 'A';
+  return { verdict: verdict, blockers: blockers, warns: warns, gaps: gaps };
 }
 
 function finishQuiz() {
   var rv = computeReadiness();
   if (typeof ga4Event === 'function') {
-    ga4Event('readiness_gate_result', { verdict: rv.verdict, risk_points: rv.points, route_id: selectedRoute ? selectedRoute.id : '' });
+    ga4Event('readiness_gate_result', { verdict: rv.verdict, blockers: rv.blockers, warns: rv.warns, route_id: selectedRoute ? selectedRoute.id : '' });
   }
   if (rv.verdict === 'C') {
     renderGateStop(rv);
