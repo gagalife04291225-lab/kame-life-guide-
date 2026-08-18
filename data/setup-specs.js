@@ -58,6 +58,9 @@ const SETUP_SPECS = {
   reeves: {
     label: 'クサガメ（中型半水棲）',
     equipmentKey: 'semi_aquatic_medium',
+    // guide-japan.html は site-policy.html で「商品リンクを置いていないページ」（保全に関わるため）と
+    // 公開約束しているため、このセットアップは選定条件のみ表示し商品リンクを描画しない。
+    noLinks: true,
     categories: [
       { cat: 'enclosure', need: 'must', tier: 'standard', altTier: 'premium',
         note: '成体メス（25cm）には90cm以上。幼体から見越して選ぶ',
@@ -118,10 +121,10 @@ const SETUP_SPECS = {
     ],
     extras: [
       { productId: 'shelter_turtle_dock', need: 'must', note: '乾ける浮島。塩水に強い樹脂製' },
+      { productId: 'hydrometer_tetra', need: 'must', label: '比重計',
+        note: '汽水管理の基本計器。比重1.005〜1.015の維持に。±0.001目盛・汽水測定対応（販売元表記）' },
     ],
-    missing: [
-      { label: '比重計', spec: '汽水管理の基本計器。比重1.005〜1.015を測れる観賞魚用ボーメ計/屈折計' },
-    ],
+    missing: [],
   },
 
   softshell: {
@@ -140,10 +143,12 @@ const SETUP_SPECS = {
       { cat: 'lighting_uvb', need: 'optional', tier: 'budget',
         note: '浮かんで日光浴する程度。優先度は水質・砂に劣る' },
     ],
-    extras: [],
+    extras: [
+      { productId: 'substrate_bottom_sand', need: 'must',
+        note: '角のない細目の天然砂を8cm以上。皮膚が弱いため大磯砂・砂利は不可' },
+    ],
     missing: [
-      { label: '床材（細かい川砂）', spec: '角のない細目の川砂を8cm以上。皮膚が弱いため大磯砂・砂利は不可' },
-      { label: '脱走防止フタ', spec: '力が強く脱走名人。全面を確実に固定できるフタ' },
+      { label: '脱走防止フタ', spec: '力が強く脱走名人。全面を確実に固定できるフタ（条件を満たすメーカー品を確認中）' },
     ],
   },
 
@@ -160,9 +165,12 @@ const SETUP_SPECS = {
         note: '26〜30℃の高水温を安定維持' },
       { cat: 'thermometer', need: 'must', tier: 'budget', note: '高水温管理のため必須' },
     ],
-    extras: [],
+    extras: [
+      { productId: 'substrate_bottom_sand', need: 'must',
+        note: '細かい天然砂を薄く敷き、落ち葉と合わせて止水の底を作る' },
+    ],
     missing: [
-      { label: '床材（細砂）と落ち葉', spec: '細かい砂＋アク抜き済み広葉樹の落ち葉。タンニンで弱酸性の止水を作る' },
+      { label: '落ち葉（アク抜き済み広葉樹）', spec: 'タンニンで弱酸性の水を作る。園芸用の未処理落ち葉は農薬リスクがあるため不可' },
     ],
   },
 
@@ -252,4 +260,4 @@ const SETUP_SPECS = {
 };
 
 // EQUIPMENT_MAP に無いが setup-specs から参照する既存商品IDの一覧（検証用）
-const SETUP_SPECS_EXTRA_IDS = ['shelter_turtle_dock', 'waterdish_sanko_dish', 'waterdish_zoomed_ramp_bowl'];
+const SETUP_SPECS_EXTRA_IDS = ['shelter_turtle_dock', 'waterdish_sanko_dish', 'waterdish_zoomed_ramp_bowl', 'substrate_bottom_sand', 'hydrometer_tetra'];

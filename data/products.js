@@ -2280,7 +2280,47 @@ const PRODUCTS = {
     rakutenSearchTerm: '爬虫類 プロバイオティクス 腸内環境',
   },
 
+  /* ══════════════════════════════════════════
+     SETUP EXTRAS（飼育環境図の用品導線・Phase 2 追加）
+     ══════════════════════════════════════════ */
 
+  // web_searchで実在確認（スドー公式サイト・2026-08-18）。底棲魚向けの角の取れた
+  // 細粒天然砂で、スッポン・マタマタの潜行用底床の条件（細かい・角がない・水槽用）に適合。
+  // AmazonのASINは未確認のため既存規約どおり affiliateUrl null（楽天検索のみ）。価格は推測せず未記載。
+  substrate_bottom_sand: {
+    id: 'substrate_bottom_sand',
+    name: 'スドー ボトムサンド 5kg',
+    category: 'substrate',
+    tier: 'standard',
+    priceRange: null,
+    affiliateUrl: null,
+    asin: null,
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'スドー ボトムサンド 5kg',
+    image: '/assets/products/placeholder.webp',
+    why: '角の取れた細粒の天然砂。砂に潜る種の皮膚を傷つけにくく、水槽用として流通が安定',
+    recommendedFor: ['fully_aquatic', 'semi_aquatic_medium'],
+  },
+
+  // web_searchで実在確認（スペクトラムブランズジャパン公式・Amazon実ページ B004EIAQMG・2026-08-18）。
+  // ±0.001目盛の海水用比重計で、専門店の商品表記に「汽水を測定可能」とあることを確認。
+  // 目盛り下限の数値仕様は公式未記載のため why には断定を書かない。
+  hydrometer_tetra: {
+    id: 'hydrometer_tetra',
+    name: 'テトラ ハイドロメーター（比重計）',
+    category: 'accessory',
+    tier: 'standard',
+    priceRange: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B004EIAQMG?tag=kamelife09-22',
+    asin: 'B004EIAQMG',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ ハイドロメーター 比重計',
+    image: '/assets/products/placeholder.webp',
+    why: '±0.001目盛で比重と塩分濃度を同時に読める定番比重計。汽水測定に対応（販売元表記）',
+    recommendedFor: ['semi_aquatic_medium'],
+  },
 };
 
 // ─────────────────────────────────────────────

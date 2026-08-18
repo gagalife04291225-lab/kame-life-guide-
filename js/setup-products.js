@@ -38,17 +38,19 @@
     } catch (e) { return null; }
   }
 
-  function buyButtons(p) {
+  function buyButtons(p, pos) {
     var html = '';
-    if (p.affiliateUrl) {
-      html += '<a href="' + esc(p.affiliateUrl) + '" target="_blank" rel="nofollow sponsored noopener" style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#2f4a3c;color:#f4efe2;text-decoration:none;margin-right:8px;">Amazonで見る</a>';
+    // GA4計測用のdata属性（正典 affiliate_click スキーマに対応。Phase 28-C 準拠）
+    var da = ' data-product-id="' + esc(p.id) + '" data-cat="' + esc(p.category) + '" data-tier="' + esc(p.tier || '') + '" data-pos="' + esc(pos || 'primary') + '"';
+    if (p.affiliateUrl && p.affiliateUrl !== '#') {
+      html += '<a href="' + esc(p.affiliateUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="amazon"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#2f4a3c;color:#f4efe2;text-decoration:none;margin-right:8px;">Amazonで見る</a>';
     }
     try {
       if (p.rakutenStatus === 'available' && p.rakutenUrl) {
-        html += '<a href="' + esc(p.rakutenUrl) + '" target="_blank" rel="nofollow sponsored noopener" style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で見る</a>';
+        html += '<a href="' + esc(p.rakutenUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で見る</a>';
       } else if (typeof getRakutenSearchUrl === 'function' && p.rakutenStatus === 'search') {
         var u = getRakutenSearchUrl(p);
-        if (u) html += '<a href="' + esc(u) + '" target="_blank" rel="nofollow sponsored noopener" style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で探す</a>';
+        if (u) html += '<a href="' + esc(u) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で探す</a>';
       }
     } catch (e) {}
     return html;
@@ -62,10 +64,10 @@
     if (note) h += '<div style="font-size:.8rem;opacity:.85;line-height:1.7;margin-bottom:6px;">' + esc(note) + '</div>';
     if (primary) {
       h += '<div style="font-size:.85rem;margin-bottom:6px;">候補: ' + esc(primary.name) + (primary.priceRange ? '<span style="opacity:.6;font-size:.75rem;">（' + esc(primary.priceRange) + '）</span>' : '') + '</div>';
-      h += '<div>' + buyButtons(primary) + '</div>';
+      h += '<div>' + buyButtons(primary, 'primary') + '</div>';
     }
     if (alt && (!primary || alt.id !== primary.id)) {
-      h += '<div style="font-size:.78rem;opacity:.8;margin-top:6px;">代替候補: ' + esc(alt.name) + '　' + buyButtons(alt) + '</div>';
+      h += '<div style="font-size:.78rem;opacity:.8;margin-top:6px;">代替候補: ' + esc(alt.name) + '　' + buyButtons(alt, 'alt') + '</div>';
     }
     if (avoid) h += '<div style="font-size:.76rem;color:#a05252;margin-top:6px;">避けたい仕様: ' + esc(avoid) + '</div>';
     h += '</div>';
@@ -73,19 +75,27 @@
   }
 
   function render(box, spec) {
+    // noLinks: 商品候補・アフィリエイトリンクを置かないページ用（site-policy.html の
+    // 「商品リンクを置いていないページ」に該当するガイド。選定条件のみ表示する）。
+    var noLinks = !!spec.noLinks;
     var h = '<div style="border:1.5px solid rgba(138,133,112,.35);border-radius:12px;padding:16px 18px;margin:6px 0 26px;">';
-    h += '<p style="font-weight:700;font-size:.95rem;margin:0 0 2px;">この飼育環境を作るための用品候補</p>';
-    h += '<p style="font-size:.74rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズを根拠に選んだ候補です（広告リンクを含みます）。価格・仕様は必ず販売ページでご確認ください。</p>';
+    h += '<p style="font-weight:700;font-size:.95rem;margin:0 0 2px;">' + (noLinks ? 'この飼育環境を作るための用品の選び方' : 'この飼育環境を作るための用品候補') + '</p>';
+    if (noLinks) {
+      h += '<p style="font-size:.74rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズの選び方の目安です。このページには方針として商品リンクを置いていません（<a href="site-policy.html" style="color:inherit;">このサイトの情報について</a>）。</p>';
+    } else {
+      h += '<p style="font-size:.74rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズを根拠に選んだ候補です（広告リンクを含みます）。価格・仕様は必ず販売ページでご確認ください。</p>';
+    }
     if (spec.pageNote) h += '<p style="font-size:.78rem;line-height:1.7;margin:0 0 4px;color:#7a5b2e;">' + esc(spec.pageNote) + '</p>';
 
     spec.categories.forEach(function (c) {
-      var p = resolveProduct(spec.equipmentKey, c.cat, c.tier);
-      var alt = c.altTier ? resolveProduct(spec.equipmentKey, c.cat, c.altTier) : null;
+      var p = noLinks ? null : resolveProduct(spec.equipmentKey, c.cat, c.tier);
+      var alt = (noLinks || !c.altTier) ? null : resolveProduct(spec.equipmentKey, c.cat, c.altTier);
       h += row(CAT_LABEL[c.cat] || c.cat, c.need, c.note, p, alt, c.avoid);
     });
     (spec.extras || []).forEach(function (x) {
       var p = PRODUCTS[x.productId];
-      if (p) h += row(CAT_LABEL[p.category] || '関連用品', x.need, x.note, p, null, null);
+      if (noLinks) h += row(x.label || (p && CAT_LABEL[p.category]) || '関連用品', x.need, x.note, null, null, null);
+      else if (p) h += row(x.label || CAT_LABEL[p.category] || '関連用品', x.need, x.note, p, null, null);
     });
     (spec.missing || []).forEach(function (m) {
       h += row(m.label, 'must', m.spec + '（適切な候補を選定中のため、条件のみ記載しています）', null, null, null);
@@ -93,6 +103,33 @@
     h += '</div>';
     box.innerHTML = h;
     box.hidden = false;
+
+    // GA4: 正典 affiliate_click（Phase 28-C 統一スキーマ）。リスナーはコンテナ毎に1つ。
+    // 静的リンク用トラッカー（affiliate-track-static.js）はガイドページに未読込のため二重計測なし。
+    // 計測が失敗してもリンク遷移は妨げない（preventDefaultしない・try/catchで握る）。
+    if (!box.__kameTracked) {
+      box.__kameTracked = true;
+      var setupId = box.getAttribute('data-setup') || '';
+      var eqKey = spec.equipmentKey || '';
+      box.addEventListener('click', function (e) {
+        try {
+          var a = e.target && e.target.closest ? e.target.closest('a[data-retailer]') : null;
+          if (!a || !box.contains(a)) return;
+          if (typeof gtag !== 'function') return;
+          gtag('event', 'affiliate_click', {
+            provider:      a.getAttribute('data-retailer') || '',
+            location:      'setup_products',
+            category:      a.getAttribute('data-cat') || 'unknown',
+            product_id:    a.getAttribute('data-product-id') || '',
+            species_slug:  '',
+            tier:          a.getAttribute('data-tier') || '',
+            setup_id:      setupId,
+            equipment_key: eqKey,
+            link_position: a.getAttribute('data-pos') || '',
+          });
+        } catch (err) {}
+      });
+    }
   }
 
   function init() {
