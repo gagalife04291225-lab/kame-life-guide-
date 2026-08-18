@@ -92,8 +92,8 @@
 | スペングラーヤマガメ | Geoemyda spengleri | S | 中〜上級 | CITES II | 夏の保冷管理が最大課題 |
 | ヒラセガメ | Pyxidea mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅 |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
-| モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES II | 萌黄色の甲羅 |
-| オルナータハコガメ | Cuora ornata | M | 上級 | CITES II | 美しい模様 |
+| モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I（CoP19昇格） | 萌黄色の甲羅・診断結果からは除外（参考掲載のみ） |
+| オルナータハコガメ | Cuora ornata | M | 上級 | CITES II | 美しい模様・診断除外中（availability:exclude）・学名は実在未確認のため要再検証 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
 | モンホットハコガメ | Cuora mouhotii | M | 上級 | CITES II | 東南アジア産 |
 | ミスジハコガメ | Cuora trifasciata | M | 上級 | CITES II | 高価・流通少 |
@@ -176,9 +176,11 @@
 | 種名 | 理由 |
 |---|---|
 | ホシガメ（インド） | CITES I・商業輸入不可 |
-| パンケーキリクガメ | CITES I・商業輸入不可 |
-| マッコードナガクビガメ | CITES I・商業輸入不可 |
+| パンケーキリクガメ | CITES I（CoP18昇格）・商業輸入不可 |
+| モエギハコガメ | CITES I（CoP19昇格）・商業輸入不可 |
 | ワニガメ | 特定外来生物・飼育禁止 |
 | カミツキガメ | 特定外来生物・飼育禁止 |
 | リュウキュウヤマガメ | 国指定天然記念物・一般飼育禁止 |
 | 沖縄産セマルハコガメ | 国指定天然記念物・一般飼育禁止 |
+
+※ マッコードナガクビガメは CITES II（CITES I ではない）のため除外リストから外し、CB個体のみ流通の希少種（availability: rare）として exotic ルートに掲載している。

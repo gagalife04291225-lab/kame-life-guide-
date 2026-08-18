@@ -137,16 +137,16 @@ land: [
     score: function(s){ return (s.large||0)+(s.humid||0)+(s.advanced||0)+(s.asia_land||0); },
     availability: 'common'
   },
-  { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES II。国内流通は希少。',
+  { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES I', legal: 'cites_i',
+    reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES I（附属書I）のため商業取引は禁止。飼育には登録票の確認が必須。',
     specs: { '最大甲長': '18cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '25〜34℃' },
     coreSpecs: { size: '18cm', temp: '25〜34℃', lifespan: '20〜30年', diet: '草食（野草・乾草中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
     slug: 'pancake-tortoise', hasPage: true,
-    match: function(s){ return (s.compact||0) >= 2 && (s.dry||0) >= 2 && (s.advanced||0) >= 1; },
-    score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.collector||0)+(s.ultra_rare||0)+(s.charisma||0); },
-    availability: 'rare'
+    match: function(){ return false; }, // CITES I（CoP18で附属書I昇格）— 診断結果からは除外・参考掲載のみ
+    score: function(){ return -9999; },
+    availability: 'archive'
   },
   { name: 'インドホシガメ', latin: 'Geochelone elegans', emoji: '⭐', difficulty: '上級', size: 'M（20〜30cm）', cites: 'CITES I', legal: 'cites_i',
     reason: '放射状の美しい模様が宝石のように輝くリクガメ。インド・パキスタン・スリランカ原産。CITES I・商業取引禁止。現在流通する個体は国内CBのみで、乾燥と温度管理の高い技術が必要。',
@@ -381,17 +381,6 @@ aquatic: [
     slug: 'false-map-turtle', hasPage: true,
     match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 1 && (s.intermediate||0) >= 1; },
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
-    availability: 'common'
-  },
-  { name: 'フトマユチズガメ', latin: 'Graptemys ouachitensis', emoji: '🎭', difficulty: '中級', size: 'M（オス12cm/メス20cm）', cites: null, legal: null,
-    reason: '目の後方に特徴的な眉のような模様がある美しいチズガメ。チズガメ類の中で最も気性が穏やかとも言われる。中級者が2種目として選ぶのにも最適。',
-    specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
-    coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
-    extraSpecs: { tankSize: '60cm〜' },
-    links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
-    slug: 'ouachita-map-turtle', hasPage: true,
-    match: function(s){ return (s.medium_tank||0) >= 2 && (s.maintenance||0) >= 2 && (s.intermediate||0) >= 1; },
-    score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.observational||0)+(s.intermediate||0)+(s.beauty||0)+(s.bottom_dweller||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
   { name: 'ニホンイシガメ', latin: 'Mauremys japonica', emoji: '🌸', recommendationPriority: 70, difficulty: '中級', size: 'M（13〜20cm）', cites: null, legal: null,
@@ -911,8 +900,8 @@ forest: [
     extraSpecs: {},
     links: [{ label: 'ヤマガメ・ハコガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'indochinese-box-turtle', hasPage: true,
-    match: function(s){ return (s.advanced||0) >= 2 && (s.advanced_env||0) >= 2 && (s.cooling||0) >= 1; },
-    score: function(s){ return (s.advanced||0)+(s.advanced_env||0)+(s.cooling||0)+(s.m_size||0)+(s.asia_box||0); },
+    match: function(){ return false; }, // CITES I（CoP19で附属書I昇格）— 診断結果からは除外・参考掲載のみ
+    score: function(){ return -9999; },
     availability: 'reference_only'
   },
   { name: 'オルナータハコガメ', latin: 'Cuora ornata', emoji: '🎨', difficulty: '上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'unknown_hold', recommendable: false, commerceAllowed: false, riskFlags: ["cites_i", "exclude_from_recommendation", "cb_only", "high_humidity", "unknown_taxonomy"],
@@ -1159,7 +1148,7 @@ exotic: [
     slug: 'mccords-snake-necked-turtle', hasPage: true,
     match: function(s){ return (s.snakeneck||0) >= 2 && (s.budget_max||0) >= 1; },
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); },
-    availability: 'common'
+    availability: 'rare'
   },
   { name: 'セグロヘビクビガメ', latin: 'Chelodina colliei', emoji: '🦎', difficulty: '中〜上級', size: 'M（22〜28cm）', cites: null, legal: null,
     reason: '西オーストラリア・コリー川産の曲頸類。首が長くヘビのように動かす独特のシルエットが魅力。国内流通あり。ヘビクビガメ（Chelodina longicollis）と並ぶ人気の曲頸類。',
