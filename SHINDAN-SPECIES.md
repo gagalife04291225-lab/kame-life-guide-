@@ -85,7 +85,9 @@
 
 ---
 
-## ヤマガメ・ハコガメ（アジア・中南米系）（12種）
+## ヤマガメ・ハコガメ（アジア・中南米系）（11種）
+
+※「オルナータハコガメ（Cuora ornata）」は実在しない学名だったため削除済み。オルナータ＝ニシキハコガメ（Terrapene ornata）は北米ハコガメの項（キタニシキ・ミナミニシキ）で管理する。
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
@@ -93,7 +95,6 @@
 | ヒラセガメ | Pyxidea mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅 |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
 | モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I（CoP19昇格） | 萌黄色の甲羅・診断結果からは除外（参考掲載のみ） |
-| オルナータハコガメ | Cuora ornata | M | 上級 | CITES II | 美しい模様・診断除外中（availability:exclude）・学名は実在未確認のため要再検証 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
 | モンホットハコガメ | Cuora mouhotii | M | 上級 | CITES II | 東南アジア産 |
 | ミスジハコガメ | Cuora trifasciata | M | 上級 | CITES II | 高価・流通少 |

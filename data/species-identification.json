@@ -920,34 +920,7 @@
         "https://en.wikipedia.org/wiki/Chinese_box_turtle"
       ]
     },
-    {
-      "slug": "ornate-cuora",
-      "wamei": "オルナータハコガメ",
-      "gakumei": "Cuora ornata",
-      "eimei": "Southern Vietnamese / Ornate Box Turtle",
-      "koura": "高ドーム甲、腹甲で箱化。galbinifrons群に近い花柄状模様。",
-      "iro_moyou": "甲に鮮やかな花柄模様。",
-      "tobu": "頭に模様。",
-      "size": "甲長17〜19cm。",
-      "bunpu": "ベトナム北部・海南島等（galbinifrons complex）。",
-      "kondou_shu": [
-        {
-          "aite": "モエギハコガメ (C. galbinifrons)",
-          "kubetsu": "ornataは近年galbinifrons complexから分割・独立種化。分布と甲模様の細部で区別。両者は近縁で外見が似る。"
-        }
-      ],
-      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 近年記載の希少種。",
-      "photo_hantei": "高ドーム甲＋花柄模様。galbinifronsとの区別は分布と細部。",
-      "photo_chuui": "galbinifronsから分割された種で酷似。CC写真が乏しい可能性。",
-      "unresolved": "C. ornataの分類的地位・galbinifrons complex内の位置づけが文献で揺れる。独立種とする扱いとgalbinifronsの亜種/シノニムとする扱いが併存。検収時に最新の分類を再確認。",
-      "status": "confirmed",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Asian_box_turtle",
-        "https://cites.org/eng/app/appendices.php",
-        "https://animaldiversity.org/accounts/Cuora_amboinensis/",
-        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
-      ]
-    },
+    
     {
       "slug": "three-striped-box-turtle",
       "wamei": "ミスジハコガメ",

@@ -20,7 +20,7 @@
 ファイル名：shindan/index.html
 設計：B案（ジャンル別ルート選択式）
 ルート数：5ルート
-収録種：104種（land 21・aquatic 43・forest 21・exotic 19 / all はこの4ルートの連結）
+収録種：103種（land 21・aquatic 43・forest 20・exotic 19 / all はこの4ルートの連結）
 
 ### 5つのルート
 
