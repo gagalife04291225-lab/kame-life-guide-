@@ -19,13 +19,13 @@ Claude が既に2属（Graptemys 7種・Kinosternon 11種）を `data/species-id
 
 ---
 
-## 担当A（ハコガメ類 Cuora — 6種）★難所：亜種取り違え多発
+## 担当A（ハコガメ類 Cuora — 7種）★難所：亜種取り違え多発
 対象slug: chinese-box-turtle(Cuora flavomarginata), taiwan-box-turtle(C. flavomarginata evelynae), indochinese-box-turtle(C. galbinifrons), three-striped-box-turtle(C. trifasciata), malayan-box-turtle(C. amboinensis), hirase-turtle(C. mouhotii)
-※ ornate-cuora は「C. ornata」という実在しない学名に基づく架空エントリだったため削除済み（ページはキタニシキハコガメ ornate-box-turtle.html へリダイレクト）。C. galbinifrons から分割されたのは C. bourreti と C. picturata であり、「C. ornata」ではない。
 
 注意点:
 - **CITESが厳格**。Cuora属の多くは附属書II、trifasciata(ミスジハコガメ)は特に厳格（CoP19以降の扱い・附属書I相当の議論）。必ず一次確認。
 - chinese-box(flavomarginata) と taiwan-box(flavomarginata evelynae) は**同種の亜種**。区別点を相互一貫で。
+- 【削除済 2026-08-17】ornate-cuora(C. ornata) は実在しない種名と判定されOwner承認で削除（「galbinifronsから分割」の旧記載も誤り）。
 - 識別軸: 甲のヒンジ・頭部斑紋・背甲の色帯。
 
 ## 担当B（イシガメ類 Mauremys — 6種）★難所：重複ページ問題あり
@@ -66,7 +66,7 @@ Malaclemys(3): northern-diamondback(M. terrapin terrapin), carolina-diamondback(
 Rhinoclemmys(4): painted-wood(R. pulcherrima), brown-wood-manni(R. p. manni), nicaragua-wood(R. p. incisa), annulated-wood(R. annulata)
 Apalone/Pelodiscus(5): florida-softshell(A. ferox), smooth-softshell(A. mutica), spiny-softshell(A. spinifera), chinese-softshell(Pelodiscus sinensis), albino-chinese-softshell(P. sinensis アルビノ)
 Sternotherus(2): musk-turtle(S. odoratus), stripe-necked-musk-turtle(S. minor peltifer) ※loggerhead/razorback済
-単独: african-helmeted(Pelomedusa subrufa), west-african-mud(Pelusios castaneus), asian-black-marsh(Siebenrockiella crassicollis), asian-leaf(Cyclemys dentata), blandings(Emydoidea blandingii), european-pond(Emys orbicularis), hilaire-side-necked(Phrynops hilarii), pink-bellied-side-necked済, spenglers-leaf済, spotted(Clemmys guttata), wood(Glyptemys insculpta), pig-nosed(Carettochelys insculpta)
+単独: african-helmeted(Pelomedusa subrufa), west-african-mud(Pelusios nanus ※2026-08修正。掲載写真は近縁種P. castaneusでキャプション明記済み), asian-black-marsh(Siebenrockiella crassicollis), asian-leaf(Cyclemys dentata), blandings(Emydoidea blandingii), european-pond(Emys orbicularis), hilaire-side-necked(Phrynops hilarii), pink-bellied-side-necked済, spenglers-leaf済, spotted(Clemmys guttata), wood(Glyptemys insculpta), pig-nosed(Carettochelys insculpta)
 
 注意点:
 - **mccords-snake-necked(C. mccordi)は附属書I（CITES最厳格）**。siebenrocks(Macrochelodina rugosa)は学名の属変更(Chelodina rugosaとも)に注意。
