@@ -63,8 +63,14 @@ jobs:
         with:
           node-version: '22'
 
+      # sharp はリポジトリ外に入れる（作業ツリーを汚さないため）
       - name: Install image toolchain
-        run: npm install --no-save sharp
+        run: |
+          mkdir -p "$RUNNER_TEMP/imgtools"
+          cd "$RUNNER_TEMP/imgtools"
+          npm init -y >/dev/null
+          npm install sharp
+          echo "NODE_PATH=$RUNNER_TEMP/imgtools/node_modules" >> "$GITHUB_ENV"
 
       # 差し込み位置の事前確認。ページ側の準備ができていなければここで止める。
       - name: Pre-flight (check insertion points)
@@ -91,7 +97,7 @@ jobs:
           SLUG: ${{ inputs.slug }}
         run: |
           node -e '
-            const sharp = require("sharp");
+            const sharp = require(process.env.NODE_PATH + "/sharp");
             const f = `assets/species-photos/${process.env.SLUG}.webp`;
             sharp(f).metadata().then(m => {
               if (m.format !== "webp" || m.width !== 800 || m.height !== 600) {
@@ -137,7 +143,9 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add -A
+          git add "assets/species-photos/${SLUG}.webp" \
+                  "species/${SLUG}.html" \
+                  photo-credits.html species-list.html
           git commit -m "feat(photo): add verified photo for ${JP_NAME} (${EXPECTED_TAXON})"
           git push -u origin "$BRANCH"
           gh pr create \
