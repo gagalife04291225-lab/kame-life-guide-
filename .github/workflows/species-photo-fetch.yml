@@ -1,0 +1,167 @@
+name: Species Photo Fetch
+
+# 種ページ用の実写写真を、出典（Wikimedia Commons / iNaturalist）から取得して
+# 検証・加工・実装し、PR を作るワークフロー。
+#
+# カメライフガイドの写真方針をコードで強制する:
+#   - ライセンスは CC BY / CC BY-SA / CC0 / PD のみ（NC・ND は失敗）
+#   - 期待する学名（亜種まで）と出典側の同定が一致しなければ失敗
+#   - 800×600 webp に統一し、作者・出典・ライセンスを photo-credits.html に記録
+#
+# main への直接 push はしない（Development Constitution 準拠）。必ず PR を作る。
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: '出典'
+        required: true
+        type: choice
+        options: ['commons', 'inaturalist']
+      ref:
+        description: 'Commons のファイル名（例: File:Hermanni boettgeri Pag.jpg）または iNaturalist の観察ID・URL'
+        required: true
+        type: string
+      slug:
+        description: '対象の種ページ slug（例: golden-greek-tortoise）'
+        required: true
+        type: string
+      expected_taxon:
+        description: '期待する学名（亜種まで。例: Testudo graeca terrestris）※不一致なら失敗します'
+        required: true
+        type: string
+      jp_name:
+        description: '写真クレジットに載せる和名（例: ゴールデンギリシャリクガメ）'
+        required: true
+        type: string
+      photo_index:
+        description: 'iNaturalist の観察に複数枚ある場合の採用番号（0始まり）'
+        required: false
+        default: '0'
+        type: string
+      dry_run:
+        description: '検証だけ行い、コミット・PRを作らない'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install image toolchain
+        run: npm install --no-save sharp
+
+      # 差し込み位置の事前確認。ページ側の準備ができていなければここで止める。
+      - name: Pre-flight (check insertion points)
+        env:
+          SLUG: ${{ inputs.slug }}
+          SELF_TEST: 'true'
+        run: node scripts/fetch-species-photo.mjs
+
+      - name: Fetch, verify and apply photo
+        env:
+          SOURCE: ${{ inputs.source }}
+          REF: ${{ inputs.ref }}
+          SLUG: ${{ inputs.slug }}
+          EXPECTED_TAXON: ${{ inputs.expected_taxon }}
+          JP_NAME: ${{ inputs.jp_name }}
+          PHOTO_INDEX: ${{ inputs.photo_index }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node scripts/fetch-species-photo.mjs
+
+      # 生成物が規格どおりか（800×600 webp）を独立に検証する。
+      - name: Verify output image
+        if: ${{ !inputs.dry_run }}
+        env:
+          SLUG: ${{ inputs.slug }}
+        run: |
+          node -e '
+            const sharp = require("sharp");
+            const f = `assets/species-photos/${process.env.SLUG}.webp`;
+            sharp(f).metadata().then(m => {
+              if (m.format !== "webp" || m.width !== 800 || m.height !== 600) {
+                console.error(`FATAL: 規格違反 ${m.format} ${m.width}x${m.height}`);
+                process.exit(1);
+              }
+              console.log(`OK: ${f} ${m.format} ${m.width}x${m.height}`);
+            });
+          '
+
+      # 宣言した範囲の外を触っていないことを確認する（Scope Lock）。
+      - name: Verify change scope
+        if: ${{ !inputs.dry_run }}
+        env:
+          SLUG: ${{ inputs.slug }}
+        run: |
+          ALLOWED="assets/species-photos/${SLUG}.webp species/${SLUG}.html photo-credits.html species-list.html"
+          CHANGED=$(git status --porcelain | awk '{print $2}')
+          echo "変更: $CHANGED"
+          for f in $CHANGED; do
+            case " $ALLOWED " in
+              *" $f "*) ;;
+              *) echo "FATAL: 想定外のファイルが変更されました: $f"; exit 1 ;;
+            esac
+          done
+          echo "OK: 変更は宣言した範囲内です"
+
+      - name: Create branch and pull request
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLUG: ${{ inputs.slug }}
+          JP_NAME: ${{ inputs.jp_name }}
+          EXPECTED_TAXON: ${{ inputs.expected_taxon }}
+          SOURCE: ${{ inputs.source }}
+          REF: ${{ inputs.ref }}
+        run: |
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "変更がありません（同じ写真が既に入っている可能性があります）。"
+            exit 0
+          fi
+          BRANCH="photo/${SLUG}-$(date -u +%Y%m%d%H%M)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "feat(photo): add verified photo for ${JP_NAME} (${EXPECTED_TAXON})"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "写真追加: ${JP_NAME}（${EXPECTED_TAXON}）" \
+            --body "$(printf '%s\n' \
+              "## 概要" \
+              "" \
+              "\`species/${SLUG}.html\` に実写写真を追加しました（Species Photo Fetch ワークフローによる自動生成）。" \
+              "" \
+              "- 対象: ${JP_NAME}（\`${EXPECTED_TAXON}\`）" \
+              "- 出典: ${SOURCE} / \`${REF}\`" \
+              "" \
+              "## 自動で通した検証" \
+              "" \
+              "- ライセンスが CC BY / CC BY-SA / CC0 / PD のいずれかであること（NC・ND は失敗）" \
+              "- 出典側の同定が指定した学名と一致すること（亜種まで）" \
+              "- 出力画像が 800×600 webp であること" \
+              "- 変更が対象ページ・画像・photo-credits.html・species-list.html の範囲内であること" \
+              "" \
+              "## 人の目で見てほしいところ" \
+              "" \
+              "- 写真の見栄え（トリミング位置・明るさ・被写体の見え方）" \
+              "- クレジット表記が出典ページの記載と合っているか" \
+              "" \
+              "🤖 Generated with [Claude Code](https://claude.com/claude-code)")"
