@@ -49,6 +49,11 @@ permissions:
   contents: write
   pull-requests: write
 
+# 同じ種ページに対する同時実行を防ぐ（ブランチ名の衝突・取り違え対策）。
+concurrency:
+  group: species-photo-${{ inputs.slug }}
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

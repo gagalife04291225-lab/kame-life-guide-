@@ -99,6 +99,11 @@ async function getJson(url) {
 
 const stripTags = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 
+// 出典側の文字列（作者名など）をそのままHTMLに入れない。
+const escHtml = (s) => String(s ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
 async function fromCommons() {
   let title = REF.replace(/^https?:\/\/[^/]+\/wiki\//, '');
   title = decodeURIComponent(title).replace(/_/g, ' ');
@@ -161,7 +166,9 @@ async function fromINaturalist() {
     sourceExtra: `観察 ${id}`,
     imageUrl: large,
     taxonFound: taxon.name || '',
-    taxonHaystack: [obs.species_guess, taxon.preferred_common_name].filter(Boolean),
+    // species_guess（投稿者の自由記入）は根拠にしない。コミュニティ同定 taxon.name のみで判定する。
+    taxonHaystack: [],
+    taxonRank: taxon.rank || '',
     place: obs.place_guess || '',
   };
 }
@@ -172,12 +179,12 @@ function patchSpeciesPage(meta, lic) {
   if (!fs.existsSync(file)) fail(`種ページが見つかりません: species/${SLUG}.html`);
   let s = fs.readFileSync(file, 'utf8');
 
-  const alt = `${JP_NAME || SLUG}の生体写真`;
+  const alt = escHtml(`${JP_NAME || SLUG}の生体写真`);
   const figure =
     '<div class="species-photo">\n' +
     '  <figure>\n' +
     `    <img src="../assets/species-photos/${SLUG}.webp" width="800" height="600" loading="lazy" alt="${alt}">\n` +
-    `    <figcaption>Photo by ${meta.author} / <a href="${meta.sourceUrl}" target="_blank" rel="noopener nofollow">${meta.sourceLabel}</a>` +
+    `    <figcaption>Photo by ${escHtml(meta.author)} / <a href="${escHtml(meta.sourceUrl)}" target="_blank" rel="noopener nofollow">${escHtml(meta.sourceLabel)}</a>` +
     ` — <a href="${lic.url}" target="_blank" rel="noopener nofollow">${lic.label}</a></figcaption>\n` +
     '  </figure>\n' +
     '</div>\n';
@@ -217,10 +224,10 @@ function patchPhotoCredits(meta, lic) {
   const already = new RegExp(`<span class="pc-latin">${EXPECTED_TAXON}</span>`);
   const item =
     '  <div class="pc-item">\n' +
-    `    <div class="pc-head"><span class="pc-jp">${JP_NAME || SLUG}</span><span class="pc-latin">${EXPECTED_TAXON}</span></div>\n` +
+    `    <div class="pc-head"><span class="pc-jp">${escHtml(JP_NAME || SLUG)}</span><span class="pc-latin">${escHtml(EXPECTED_TAXON)}</span></div>\n` +
     '    <dl class="pc-dl">\n' +
-    `      <div><dt>作者</dt><dd>${meta.author}</dd></div>\n` +
-    `      <div><dt>出典</dt><dd><a href="${meta.sourceUrl}" target="_blank" rel="noopener nofollow">${meta.sourceLabel}（${meta.sourceExtra}）</a></dd></div>\n` +
+    `      <div><dt>作者</dt><dd>${escHtml(meta.author)}</dd></div>\n` +
+    `      <div><dt>出典</dt><dd><a href="${escHtml(meta.sourceUrl)}" target="_blank" rel="noopener nofollow">${escHtml(meta.sourceLabel)}（${escHtml(meta.sourceExtra)}）</a></dd></div>\n` +
     `      <div><dt>ライセンス</dt><dd><a href="${lic.url}" target="_blank" rel="noopener nofollow">${lic.label}</a></dd></div>\n` +
     '    </dl>\n' +
     '  </div>\n';
@@ -295,6 +302,11 @@ const lic = normalizeLicense(meta.licenseRaw);
 if (!lic.allowed) fail(`このライセンスでは掲載できません: ${lic.reason}\n  カメライフガイドは CC BY / CC BY-SA / CC0 / PD のみを使用します。`);
 ok(`ライセンス可: ${lic.label}`);
 assertTaxon(meta.taxonFound, meta.taxonHaystack);
+// 三名法（亜種まで）を求めたなら、iNaturalist 側も亜種ランクで同定されていること。
+if (meta.kind === 'inaturalist' && EXPECTED_TAXON.trim().split(/\s+/).length >= 3 && meta.taxonRank !== 'subspecies') {
+  fail(`iNaturalist の同定ランクが "${meta.taxonRank || '不明'}" です（期待: subspecies）。` +
+       '亜種まで同定された観察だけを使う方針のため中止します。');
+}
 
 if (!meta.author || /記載なし/.test(meta.author)) {
   fail('作者名を取得できませんでした。帰属表示ができないため中止します。');
@@ -314,6 +326,18 @@ const { createRequire } = await import('node:module');
 const requireCjs = createRequire(import.meta.url);
 const sharp = requireCjs(env('SHARP_PATH') || 'sharp');
 const outPath = path.join(ROOT, 'assets', 'species-photos', `${SLUG}.webp`);
+const srcMeta = await sharp(buf).metadata();
+ok(`元画像の寸法 ${srcMeta.width}×${srcMeta.height}`);
+if (!srcMeta.width || !srcMeta.height) fail('元画像の寸法を取得できませんでした。');
+if (srcMeta.width < 800 || srcMeta.height < 600) {
+  fail(`元画像が小さすぎます（${srcMeta.width}×${srcMeta.height}）。` +
+       '800×600 に引き伸ばすと画質が落ちるため中止します。より大きい写真を選んでください。');
+}
+const ratio = srcMeta.width / srcMeta.height;
+if (ratio < 0.9 || ratio > 2.2) {
+  console.log(`  ! 縦横比 ${ratio.toFixed(2)} は 4:3 から離れています。中央を切り出すため、` +
+              '被写体が切れていないか PR で必ず目視確認してください。');
+}
 const out = await sharp(buf).resize(800, 600, { fit: 'cover', position: 'centre' }).webp({ quality: 88 }).toBuffer();
 if (!DRY_RUN) fs.writeFileSync(outPath, out);
 ok(`800×600 webp を書き出し（${Math.round(out.length / 1024)} KB）${DRY_RUN ? ' ※DRY_RUNのため未保存' : ''}`);
