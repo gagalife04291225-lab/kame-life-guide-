@@ -63,8 +63,49 @@ console.log(`■ 条件: research grade / CC BY・CC BY-SA・CC0 / large が 800
             (wantsSubspecies ? ' / 同定ランク subspecies' : ''));
 console.log('■ このモードはファイルを一切変更しません。\n');
 
+// ── 1段目: 学名から taxon ID を完全一致で確定する ──────────────
+// 学名をそのまま観察検索に渡すと、iNaturalist が属レベルまで拾って
+// 別種が混ざる（例: Geoemyda spengleri で Geoemyda japonica が返る）。
+// 先に taxon を一意に確定し、そのIDで観察を引く。
+const tq = new URL('https://api.inaturalist.org/v1/taxa');
+tq.searchParams.set('q', EXPECTED_TAXON);
+tq.searchParams.set('per_page', '30');
+tq.searchParams.set('locale', 'en');
+
+const tRes = await fetch(tq, { headers: { 'User-Agent': UA } });
+if (!tRes.ok) fail(`iNaturalist の taxa 取得に失敗しました（HTTP ${tRes.status}）`);
+const tData = await tRes.json();
+
+const matched = (tData?.results || []).filter((t) => {
+  if (t.name !== EXPECTED_TAXON) return false;        // 学名の完全一致だけ
+  if (t.is_active === false) return false;             // 廃止された taxon は使わない
+  if (wantsSubspecies && t.rank !== 'subspecies') return false;
+  return true;
+});
+
+if (matched.length === 0) {
+  console.error(`  候補になった taxon: ${(tData?.results || []).slice(0, 8).map((t) => `${t.name}(${t.rank})`).join(' / ') || 'なし'}`);
+  fail(`"${EXPECTED_TAXON}" に完全一致する taxon が iNaturalist に見つかりません。\n` +
+       '  綴りを確認するか、現行分類で使われている名前かを見直してください。');
+}
+if (matched.length > 1) {
+  console.error('  該当した taxon:');
+  for (const t of matched) console.error(`    id=${t.id} ${t.name} (${t.rank})`);
+  fail(`"${EXPECTED_TAXON}" に完全一致する taxon が ${matched.length} 件あり、1つに絞れません。\n` +
+       '  取り違えると別の分類群の写真を選ぶことになるため中止します。');
+}
+
+const taxon = matched[0];
+console.log(`▼ taxon を確定しました`);
+console.log(`  taxon id   : ${taxon.id}`);
+console.log(`  taxon.name : ${taxon.name}`);
+console.log(`  taxon.rank : ${taxon.rank}`);
+console.log(`  観察数     : ${taxon.observations_count ?? '不明'}`);
+console.log(`  ページ     : https://www.inaturalist.org/taxa/${taxon.id}\n`);
+
+// ── 2段目: 確定した taxon ID で観察を引く ──────────────────────
 const q = new URL('https://api.inaturalist.org/v1/observations');
-q.searchParams.set('taxon_name', EXPECTED_TAXON);
+q.searchParams.set('taxon_id', String(taxon.id));
 q.searchParams.set('quality_grade', 'research');
 q.searchParams.set('photos', 'true');
 q.searchParams.set('photo_license', 'cc-by,cc-by-sa,cc0');
@@ -83,9 +124,11 @@ const reject = { taxon: 0, rank: 0, license: 0, author: 0, size: 0, dims: 0 };
 const hits = [];
 
 for (const obs of results) {
-  const taxon = obs.taxon || {};
-  if ((taxon.name || '') !== EXPECTED_TAXON) { reject.taxon++; continue; }
-  if (wantsSubspecies && taxon.rank !== 'subspecies') { reject.rank++; continue; }
+  // 二重ゲート: taxon ID で引いた後も、観察ごとに学名とランクを再確認する。
+  // taxon_id 検索は下位分類群（亜種など）の観察も含むため。
+  const ot = obs.taxon || {};
+  if ((ot.name || '') !== EXPECTED_TAXON) { reject.taxon++; continue; }
+  if (wantsSubspecies && ot.rank !== 'subspecies') { reject.rank++; continue; }
 
   const author = obs.user?.name || obs.user?.login || '';
   if (!author) { reject.author++; continue; }
@@ -116,8 +159,8 @@ for (const obs of results) {
 
   hits.push({
     id: obs.id,
-    taxonName: taxon.name,
-    rank: taxon.rank || '(不明)',
+    taxonName: ot.name,
+    rank: ot.rank || '(不明)',
     author,
     login: obs.user?.login || '',
     lic: picked.lic,
