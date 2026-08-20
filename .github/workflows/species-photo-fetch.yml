@@ -13,26 +13,37 @@ name: Species Photo Fetch
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: '動作モード（search = 候補を探すだけ。ファイルは一切変更しません）'
+        required: true
+        default: 'fetch'
+        type: choice
+        options: ['fetch', 'search']
       source:
         description: '出典'
         required: true
         type: choice
         options: ['commons', 'inaturalist']
       ref:
-        description: 'Commons のファイル名（例: File:Hermanni boettgeri Pag.jpg）または iNaturalist の観察ID・URL'
-        required: true
+        description: 'Commons のファイル名（例: File:Hermanni boettgeri Pag.jpg）または iNaturalist の観察ID・URL ※search では未使用'
+        required: false
         type: string
       slug:
-        description: '対象の種ページ slug（例: golden-greek-tortoise）'
-        required: true
+        description: '対象の種ページ slug（例: golden-greek-tortoise）※search では未使用'
+        required: false
         type: string
       expected_taxon:
         description: '期待する学名（亜種まで。例: Testudo graeca terrestris）※不一致なら失敗します'
         required: true
         type: string
       jp_name:
-        description: '写真クレジットに載せる和名（例: ゴールデンギリシャリクガメ）'
-        required: true
+        description: '写真クレジットに載せる和名（例: ゴールデンギリシャリクガメ）※search では未使用'
+        required: false
+        type: string
+      max_results:
+        description: 'search のときに出す候補の最大数（既定 5）'
+        required: false
+        default: '5'
         type: string
       photo_index:
         description: 'iNaturalist の観察に複数枚ある場合の採用番号（0始まり）'
@@ -51,7 +62,7 @@ permissions:
 
 # 同じ種ページに対する同時実行を防ぐ（ブランチ名の衝突・取り違え対策）。
 concurrency:
-  group: species-photo-${{ inputs.slug }}
+  group: species-photo-${{ inputs.slug || inputs.expected_taxon }}
   cancel-in-progress: false
 
 jobs:
@@ -68,8 +79,17 @@ jobs:
         with:
           node-version: '22'
 
+      # ── search: 候補を探すだけ。ここから先の書き込み系ステップは全て skip される ──
+      - name: Search photo candidates (read-only)
+        if: ${{ inputs.mode == 'search' }}
+        env:
+          EXPECTED_TAXON: ${{ inputs.expected_taxon }}
+          MAX_RESULTS: ${{ inputs.max_results }}
+        run: node scripts/search-species-photo.mjs
+
       # sharp はリポジトリ外に入れる（作業ツリーを汚さないため）
       - name: Install image toolchain
+        if: ${{ inputs.mode != 'search' }}
         run: |
           mkdir -p "$RUNNER_TEMP/imgtools"
           cd "$RUNNER_TEMP/imgtools"
@@ -80,12 +100,14 @@ jobs:
 
       # 差し込み位置の事前確認。ページ側の準備ができていなければここで止める。
       - name: Pre-flight (check insertion points)
+        if: ${{ inputs.mode != 'search' }}
         env:
           SLUG: ${{ inputs.slug }}
           SELF_TEST: 'true'
         run: node scripts/fetch-species-photo.mjs
 
       - name: Fetch, verify and apply photo
+        if: ${{ inputs.mode != 'search' }}
         env:
           SOURCE: ${{ inputs.source }}
           REF: ${{ inputs.ref }}
@@ -98,7 +120,7 @@ jobs:
 
       # 生成物が規格どおりか（800×600 webp）を独立に検証する。
       - name: Verify output image
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode != 'search' && !inputs.dry_run }}
         env:
           SLUG: ${{ inputs.slug }}
         run: |
@@ -116,7 +138,7 @@ jobs:
 
       # 宣言した範囲の外を触っていないことを確認する（Scope Lock）。
       - name: Verify change scope
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode != 'search' && !inputs.dry_run }}
         env:
           SLUG: ${{ inputs.slug }}
         run: |
@@ -132,7 +154,7 @@ jobs:
           echo "OK: 変更は宣言した範囲内です"
 
       - name: Create branch and pull request
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode != 'search' && !inputs.dry_run }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLUG: ${{ inputs.slug }}
