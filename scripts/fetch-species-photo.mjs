@@ -225,25 +225,98 @@ function patchSpeciesPage(meta, lic) {
   return file;
 }
 
-function patchPhotoCredits(meta, lic) {
+// ── 出典の重複チェック（C-2）────────────────────────────────
+// 同じ観察・同じファイルを別の種ページに使うと、出典の同定とページの
+// 学名が食い違う。同じ種ページの差し替えだけは許可する。
+const normUrl = (u) => {
+  try { return decodeURIComponent(String(u)).replace(/_/g, ' ').trim().toLowerCase(); }
+  catch { return String(u).replace(/_/g, ' ').trim().toLowerCase(); }
+};
+
+function pageSourceUrls(html) {
+  const re = /https:\/\/(?:www\.inaturalist\.org\/observations\/\d+|commons\.wikimedia\.org\/wiki\/[^"']+)/g;
+  return (html.match(re) || []);
+}
+
+function assertSourceNotUsedElsewhere(meta) {
+  const dir = path.join(ROOT, 'species');
+  const want = normUrl(meta.sourceUrl);
+  const used = [];
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.html')) continue;
+    const slug = f.slice(0, -5);
+    if (slug === SLUG) continue; // 同じ種ページの差し替えは許可
+    const html = fs.readFileSync(path.join(dir, f), 'utf8');
+    if (pageSourceUrls(html).some((u) => normUrl(u) === want)) used.push(slug);
+  }
+  if (used.length) {
+    console.error('  すでに使用中の種ページ:', used.map((x) => `species/${x}.html`).join(' / '));
+    fail('この出典は別の種ページで既に使われています。\n' +
+         '  1つの観察・1つのファイルは1個体・1同定なので、複数の種に使うと\n' +
+         '  出典の同定とページの学名が食い違います。別の写真を選んでください。\n' +
+         `  出典: ${meta.sourceUrl}`);
+  }
+  ok('この出典を使っている他の種ページはありません');
+}
+
+// 差し替え前に、いまページが載せている出典URLを控える（C-1 で使う）。
+function currentSourceUrl() {
+  const f = path.join(ROOT, 'species', `${SLUG}.html`);
+  if (!fs.existsSync(f)) return null;
+  const block = fs.readFileSync(f, 'utf8').match(/<div class="species-photo">[\s\S]{0,1400}/);
+  if (!block) return null;
+  return pageSourceUrls(block[0])[0] || null;
+}
+
+function patchPhotoCredits(meta, lic, oldSourceUrl) {
   const file = path.join(ROOT, 'photo-credits.html');
   let s = fs.readFileSync(file, 'utf8');
 
-  const already = new RegExp(`<span class="pc-latin">${EXPECTED_TAXON}</span>`);
-  const item =
-    '  <div class="pc-item">\n' +
-    `    <div class="pc-head"><span class="pc-jp">${escHtml(JP_NAME || SLUG)}</span><span class="pc-latin">${escHtml(EXPECTED_TAXON)}</span></div>\n` +
+  const dl =
     '    <dl class="pc-dl">\n' +
     `      <div><dt>作者</dt><dd>${escHtml(meta.author)}</dd></div>\n` +
     `      <div><dt>出典</dt><dd><a href="${escHtml(meta.sourceUrl)}" target="_blank" rel="noopener nofollow">${escHtml(meta.sourceLabel)}（${escHtml(meta.sourceExtra)}）</a></dd></div>\n` +
     `      <div><dt>ライセンス</dt><dd><a href="${lic.url}" target="_blank" rel="noopener nofollow">${lic.label}</a></dd></div>\n` +
-    '    </dl>\n' +
+    '    </dl>\n';
+  const item =
+    '  <div class="pc-item">\n' +
+    `    <div class="pc-head"><span class="pc-jp">${escHtml(JP_NAME || SLUG)}</span><span class="pc-latin">${escHtml(EXPECTED_TAXON)}</span></div>\n` +
+    dl +
     '  </div>\n';
 
-  if (already.test(s)) {
-    ok('photo-credits.html に既存エントリがあるため追加しませんでした（内容確認を推奨）');
+  // ── C-1: 既存エントリがあるなら、作者・出典・ライセンスを新しい写真のものに更新する ──
+  // 学名だけを鍵にすると同じ学名の別エントリを取り違えるので、
+  // まず「差し替え前にページが載せていた出典URL」で特定し、無ければ学名で探す。
+  const blocks = [];
+  const re = /  <div class="pc-item">\n(?:(?!  <div class="pc-item">)[\s\S])*?  <\/div>\n/g;
+  let m;
+  while ((m = re.exec(s)) !== null) blocks.push({ text: m[0], start: m.index, end: m.index + m[0].length });
+
+  const latinTag = `<span class="pc-latin">${escHtml(EXPECTED_TAXON)}</span>`;
+  const byLatin = blocks.filter((b) => b.text.includes(latinTag));
+  const byUrl = oldSourceUrl
+    ? blocks.filter((b) => pageSourceUrls(b.text).some((u) => normUrl(u) === normUrl(oldSourceUrl)))
+    : [];
+
+  let target = null;
+  const both = byUrl.filter((b) => byLatin.includes(b));
+  if (both.length === 1) target = both[0];
+  else if (byUrl.length === 1) target = byUrl[0];
+  else if (byLatin.length === 1) target = byLatin[0];
+  else if (byLatin.length > 1) {
+    fail(`photo-credits.html に "${EXPECTED_TAXON}" のエントリが ${byLatin.length} 件あり、` +
+         'どれを更新すべきか特定できません。手作業で整理してから再実行してください。');
+  }
+
+  if (target) {
+    const updated = target.text.replace(/    <dl class="pc-dl">\n[\s\S]*?    <\/dl>\n/, dl);
+    if (updated === target.text) fail('photo-credits.html の既存エントリを更新できませんでした（構造が想定と異なります）。');
+    s = s.slice(0, target.start) + updated + s.slice(target.end);
+    if (!DRY_RUN) fs.writeFileSync(file, s);
+    ok('photo-credits.html の既存エントリを新しい作者・出典・ライセンスに更新しました');
     return file;
   }
+
   const anchor = '\n  <p class="pc-note">';
   if (!s.includes(anchor)) fail('photo-credits.html の追記位置（pc-note）が見つかりません。');
   s = s.replace(anchor, '\n' + item + anchor);
@@ -339,6 +412,9 @@ if (meta.kind === 'commons') {
   console.log('  ! Commons は同定の構造化データを持ちません。この写真は要目視確認です。');
 }
 
+// 同じ出典を別の種ページで使い回していないか（C-2）。書き込み前に確認する。
+assertSourceNotUsedElsewhere(meta);
+
 if (!meta.author || /記載なし/.test(meta.author)) {
   fail('作者名を取得できませんでした。帰属表示ができないため中止します。');
 }
@@ -375,7 +451,9 @@ ok(`800×600 webp を書き出し（${Math.round(out.length / 1024)} KB）${DRY_
 
 // HTML 反映
 console.log('\n▼ ページ反映');
-const touched = [patchSpeciesPage(meta, lic), patchPhotoCredits(meta, lic), patchSpeciesList()];
+// 差し替え前の出典URLを控えてからページを書き換える（photo-credits の特定に使う）。
+const oldSourceUrl = currentSourceUrl();
+const touched = [patchSpeciesPage(meta, lic), patchPhotoCredits(meta, lic, oldSourceUrl), patchSpeciesList()];
 
 console.log('\n▼ 完了');
 console.log('  更新:', touched.map((f) => path.relative(ROOT, f)).join(', '));
