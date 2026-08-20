@@ -157,7 +157,7 @@ const SPECIES_EQUIPMENT_MAP = {
   'アルダブラゾウガメ':          '_land_large',
   // 水棲小型
   'ニオイガメ':                  '_aquatic_small',
-  'ヒメニオイガメ':              '_aquatic_small',
+  'ヒラタニオイガメ':            '_aquatic_small',
   'ミシシッピドロガメ':          '_aquatic_small',
   'ミスジドロガメ':              '_aquatic_small',
   'カブトニオイガメ':            '_aquatic_small',

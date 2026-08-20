@@ -9,7 +9,7 @@
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | ニオイガメ | Sternotherus odoratus | S | 入門 | CITES II | 英名コモンムスクタートル |
-| ヒメニオイガメ | Sternotherus depressus | S | 入門 | CITES II | 最小クラス |
+| ヒラタニオイガメ | Sternotherus depressus | S | 上級 | CITES II | アラバマ州固有・IUCN CR・米国ESA Threatened。和名を2026-08修正（旧「ヒメニオイガメ」は S. minor の和名） |
 | カブトニオイガメ | Sternotherus carinatus | M | 入門 | CITES II | 気性がやや荒い |
 | ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | CITES II | トウブドロガメの亜種 |
 | サラドロガメ | Kinosternon integrum | M | 中級 | CITES II | 国内CB流通増加中 |
@@ -18,9 +18,9 @@
 | フロリダドロガメ | Kinosternon steindachneri | S | 中級 | CITES II | ミスジドロガメとは別種 |
 | ミスジドロガメ | Kinosternon baurii | S | 中級 | CITES II | 甲羅に3本の筋 |
 | キイロドロガメ | Kinosternon flavescens | M | 中級 | CITES II | 腹甲が黄みがかる |
-| スジクビニオイガメ | Sternotherus minor peltifer | S | 中級 | CITES II | 国内CB確認済み |
-| スジクビヒメニオイガメ | Sternotherus minor | S | 中級 | CITES II | 国内CB確認済み |
-| オオアタマヒメニオイガメ | Sternotherus carinatus×minor | S〜M | 中級 | CITES II | 国内CB人気種 |
+| スジクビニオイガメ | Sternotherus peltifer | S | 中級 | CITES II | 国内CB確認済み。Scott et al.(2018)で独立種化 |
+| スジクビヒメニオイガメ | Sternotherus peltifer | S | 中級 | CITES II | スジクビニオイガメの別称（同一種） |
+| オオアタマヒメニオイガメ | Sternotherus minor | S〜M | 中級 | CITES II | 国内CB人気種。旧表記 carinatus×minor は誤記（2026-08修正） |
 | ハーレラドロガメ | Kinosternon herrerai | M | 上級 | CITES II | ザラアシドロガメとは別種 |
 | スジオオニオイガメ（メキシコオオニオイガメ） | Staurotypus triporcatus | L | 上級 | CITES II | オオニオイガメ属最大種・噛みつき力が非常に強い |
 | サルヴィンオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 太平洋岸産・スジオオより小型（最大25cm前後） |
@@ -76,7 +76,7 @@
 | ミツユビハコガメ | Terrapene carolina triunguis | M | 中〜上級 | CITES II | 後ろ脚3本指 |
 | トウブハコガメ | Terrapene carolina carolina | M | 中〜上級 | CITES II | 国内CB盛ん |
 | ガルフコーストハコガメ | Terrapene carolina major | M〜L | 中〜上級 | CITES II | ハコガメ最大亜種 |
-| フロリダハコガメ | Terrapene bauri | M | 中〜上級 | CITES II | 放射状模様 |
+| フロリダハコガメ | Terrapene carolina bauri | M | 中〜上級 | CITES II | 放射状模様・carolinaの亜種 |
 | キタニシキハコガメ | Terrapene ornata ornata | M | 中〜上級 | CITES II | 乾燥気味の環境 |
 | ミナミニシキハコガメ | Terrapene ornata luteola | M | 中〜上級 | CITES II | 砂漠〜半乾燥地帯産 |
 | タイワンセマルハコガメ | Cuora flavomarginata flavomarginata | M | 中〜上級 | CITES II | 台湾産基亜種。八重山産の亜種evelynae（ヤエヤマセマルハコガメ）は天然記念物・飼育不可 |
@@ -123,7 +123,7 @@
 | ヒョウモンガメ | Stigmochelys pardalis | L | 上級 | CITES II | 豹柄模様 |
 | ケヅメリクガメ（スルカタ） | Centrochelys sulcata | XL | 上級 | CITES II | 成体30〜100kg・6畳以上必要 |
 | チャコリクガメ | Chelonoidis chilensis | M | 上級 | CITES II | 南米乾燥地帯産 |
-| ベルセオレガメ | Kinixys belliana | M | 上級 | CITES II | ヒンジバック・WC多い |
+| ベルセオレガメ | Kinixys belliana | M | 上級 | CITES II | ヒンジバック・WC多い・狭義はアンゴラ〜ブルンジ（nogueyi/zombensisは別種） |
 | ソマリアリクガメ（エジプトリクガメ） | Testudo kleinmanni | S | 上級 | CITES I | 世界最小級・1995年に附属書Iへ |
 | アルダブラゾウガメ | Aldabrachelys gigantea | XL | 上級 | CITES II | 個人飼育は国内最高難度 |
 
@@ -143,7 +143,7 @@
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |
 | セウネハコヨコクビガメ | Pelusios castaneus | M | 上級 | なし | 西アフリカ産 |
-| アフリカヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | サハラ以南広域 |
+| アフリカヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
 | ヒメハコヨコクビガメ | Pelusios nanus | S | 上級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
 | ヌマヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型 |
 | ブランディルカブトガメ | Peltocephalus dumerilianus | L | 上級 | なし | アマゾン産・大型 |
