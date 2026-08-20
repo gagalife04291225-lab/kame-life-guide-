@@ -49,6 +49,11 @@ permissions:
   contents: write
   pull-requests: write
 
+# 同じ種ページに対する同時実行を防ぐ（ブランチ名の衝突・取り違え対策）。
+concurrency:
+  group: species-photo-${{ inputs.slug }}
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -63,8 +68,15 @@ jobs:
         with:
           node-version: '22'
 
+      # sharp はリポジトリ外に入れる（作業ツリーを汚さないため）
       - name: Install image toolchain
-        run: npm install --no-save sharp
+        run: |
+          mkdir -p "$RUNNER_TEMP/imgtools"
+          cd "$RUNNER_TEMP/imgtools"
+          npm init -y >/dev/null
+          npm install sharp
+          echo "NODE_PATH=$RUNNER_TEMP/imgtools/node_modules" >> "$GITHUB_ENV"
+          echo "SHARP_PATH=$RUNNER_TEMP/imgtools/node_modules/sharp" >> "$GITHUB_ENV"
 
       # 差し込み位置の事前確認。ページ側の準備ができていなければここで止める。
       - name: Pre-flight (check insertion points)
@@ -91,7 +103,7 @@ jobs:
           SLUG: ${{ inputs.slug }}
         run: |
           node -e '
-            const sharp = require("sharp");
+            const sharp = require(process.env.SHARP_PATH || "sharp");
             const f = `assets/species-photos/${process.env.SLUG}.webp`;
             sharp(f).metadata().then(m => {
               if (m.format !== "webp" || m.width !== 800 || m.height !== 600) {
@@ -133,11 +145,19 @@ jobs:
             echo "変更がありません（同じ写真が既に入っている可能性があります）。"
             exit 0
           fi
+          # Commons は同定の構造化データを持たない。レビュー観点が変わるので明示する。
+          if [ "$SOURCE" = "commons" ]; then
+            SOURCE_NOTE="**要目視確認**: Wikimedia Commons は同定の構造化データを持ちません。カテゴリでの照合までは自動で行いましたが、写っている個体が \`${EXPECTED_TAXON}\` であることは人の目で確認してください。"
+          else
+            SOURCE_NOTE="iNaturalist のコミュニティ同定（\`taxon.name\`・同定ランク）で照合済みです。"
+          fi
           BRANCH="photo/${SLUG}-$(date -u +%Y%m%d%H%M)"
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add -A
+          git add "assets/species-photos/${SLUG}.webp" \
+                  "species/${SLUG}.html" \
+                  photo-credits.html species-list.html
           git commit -m "feat(photo): add verified photo for ${JP_NAME} (${EXPECTED_TAXON})"
           git push -u origin "$BRANCH"
           gh pr create \
@@ -156,11 +176,13 @@ jobs:
               "" \
               "- ライセンスが CC BY / CC BY-SA / CC0 / PD のいずれかであること（NC・ND は失敗）" \
               "- 出典側の同定が指定した学名と一致すること（亜種まで）" \
+              "  - ${SOURCE_NOTE}" \
               "- 出力画像が 800×600 webp であること" \
               "- 変更が対象ページ・画像・photo-credits.html・species-list.html の範囲内であること" \
               "" \
               "## 人の目で見てほしいところ" \
               "" \
+              "- 写っている個体が \`${EXPECTED_TAXON}\` で間違いないか（識別形質が見えているか）" \
               "- 写真の見栄え（トリミング位置・明るさ・被写体の見え方）" \
               "- クレジット表記が出典ページの記載と合っているか" \
               "" \

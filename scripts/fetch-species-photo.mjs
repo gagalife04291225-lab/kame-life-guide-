@@ -99,6 +99,11 @@ async function getJson(url) {
 
 const stripTags = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 
+// 出典側の文字列（作者名など）をそのままHTMLに入れない。
+const escHtml = (s) => String(s ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
 async function fromCommons() {
   let title = REF.replace(/^https?:\/\/[^/]+\/wiki\//, '');
   title = decodeURIComponent(title).replace(/_/g, ' ');
@@ -122,6 +127,11 @@ async function fromCommons() {
   const objectName = stripTags(meta.ObjectName?.value);
   const description = stripTags(meta.ImageDescription?.value);
 
+  // description（利用者が書いた自由文）は同定の根拠にしない。
+  // 「本種は Testudo hermanni。Testudo graeca terrestris とは異なる」のような
+  // 比較のための言及だけで一致してしまうため。
+  if (description) console.log('  説明文    : (照合には使いません)', description.slice(0, 80));
+
   return {
     kind: 'commons',
     author: artist,
@@ -131,7 +141,10 @@ async function fromCommons() {
     sourceExtra: title,
     imageUrl: info.thumburl || info.url,
     taxonFound: '',
-    taxonHaystack: [...cats, objectName, description, title],
+    // カテゴリは Commons で最も同定に近い構造化情報。ファイル名・ObjectName は
+    // 補助でしかないので、亜種の判定には使わない（taxonCats を参照）。
+    taxonHaystack: [...cats, objectName, title],
+    taxonCats: cats,
     place: stripTags(meta.ObjectName?.value) || '',
   };
 }
@@ -161,7 +174,9 @@ async function fromINaturalist() {
     sourceExtra: `観察 ${id}`,
     imageUrl: large,
     taxonFound: taxon.name || '',
-    taxonHaystack: [obs.species_guess, taxon.preferred_common_name].filter(Boolean),
+    // species_guess（投稿者の自由記入）は根拠にしない。コミュニティ同定 taxon.name のみで判定する。
+    taxonHaystack: [],
+    taxonRank: taxon.rank || '',
     place: obs.place_guess || '',
   };
 }
@@ -172,18 +187,19 @@ function patchSpeciesPage(meta, lic) {
   if (!fs.existsSync(file)) fail(`種ページが見つかりません: species/${SLUG}.html`);
   let s = fs.readFileSync(file, 'utf8');
 
-  const alt = `${JP_NAME || SLUG}の生体写真`;
+  const alt = escHtml(`${JP_NAME || SLUG}の生体写真`);
   const figure =
     '<div class="species-photo">\n' +
     '  <figure>\n' +
     `    <img src="../assets/species-photos/${SLUG}.webp" width="800" height="600" loading="lazy" alt="${alt}">\n` +
-    `    <figcaption>Photo by ${meta.author} / <a href="${meta.sourceUrl}" target="_blank" rel="noopener nofollow">${meta.sourceLabel}</a>` +
+    `    <figcaption>Photo by ${escHtml(meta.author)} / <a href="${escHtml(meta.sourceUrl)}" target="_blank" rel="noopener nofollow">${escHtml(meta.sourceLabel)}</a>` +
     ` — <a href="${lic.url}" target="_blank" rel="noopener nofollow">${lic.label}</a></figcaption>\n` +
     '  </figure>\n' +
     '</div>\n';
 
   const pending = /<div class="photo-pending">[\s\S]*?<\/div>\n/;
-  const existing = /<div class="species-photo">[\s\S]*?<\/div>\n<\/div>\n|<div class="species-photo">[\s\S]*?<\/figure>\n<\/div>\n/;
+  // figure で明示的に閉じる。<div>だけを目印にすると後続の別ブロックまで飲み込む。
+  const existing = /<div class="species-photo">\s*<figure>[\s\S]*?<\/figure>\s*<\/div>\n/;
 
   if (pending.test(s)) {
     s = s.replace(pending, figure);
@@ -216,10 +232,10 @@ function patchPhotoCredits(meta, lic) {
   const already = new RegExp(`<span class="pc-latin">${EXPECTED_TAXON}</span>`);
   const item =
     '  <div class="pc-item">\n' +
-    `    <div class="pc-head"><span class="pc-jp">${JP_NAME || SLUG}</span><span class="pc-latin">${EXPECTED_TAXON}</span></div>\n` +
+    `    <div class="pc-head"><span class="pc-jp">${escHtml(JP_NAME || SLUG)}</span><span class="pc-latin">${escHtml(EXPECTED_TAXON)}</span></div>\n` +
     '    <dl class="pc-dl">\n' +
-    `      <div><dt>作者</dt><dd>${meta.author}</dd></div>\n` +
-    `      <div><dt>出典</dt><dd><a href="${meta.sourceUrl}" target="_blank" rel="noopener nofollow">${meta.sourceLabel}（${meta.sourceExtra}）</a></dd></div>\n` +
+    `      <div><dt>作者</dt><dd>${escHtml(meta.author)}</dd></div>\n` +
+    `      <div><dt>出典</dt><dd><a href="${escHtml(meta.sourceUrl)}" target="_blank" rel="noopener nofollow">${escHtml(meta.sourceLabel)}（${escHtml(meta.sourceExtra)}）</a></dd></div>\n` +
     `      <div><dt>ライセンス</dt><dd><a href="${lic.url}" target="_blank" rel="noopener nofollow">${lic.label}</a></dd></div>\n` +
     '    </dl>\n' +
     '  </div>\n';
@@ -295,6 +311,34 @@ if (!lic.allowed) fail(`このライセンスでは掲載できません: ${lic.
 ok(`ライセンス可: ${lic.label}`);
 assertTaxon(meta.taxonFound, meta.taxonHaystack);
 
+// 三名法（亜種まで）を求めたときは、出典側でも亜種として同定されていること。
+const wantsSubspecies = EXPECTED_TAXON.trim().split(/\s+/).length >= 3;
+
+if (wantsSubspecies && meta.kind === 'inaturalist' && meta.taxonRank !== 'subspecies') {
+  fail(`iNaturalist の同定ランクが "${meta.taxonRank || '不明'}" です（期待: subspecies）。` +
+       '亜種まで同定された観察だけを使う方針のため中止します。');
+}
+
+if (wantsSubspecies && meta.kind === 'commons') {
+  // Commons には同定ランクの構造化データが無い。カテゴリが最も同定に近いので、
+  // 亜種を求めた場合はカテゴリでの一致を必須にする。
+  // ファイル名・ObjectName・説明文は、いずれも書き手の自由文なので根拠にしない。
+  const want = normTaxon(EXPECTED_TAXON);
+  const catHit = (meta.taxonCats || []).map(normTaxon).some((c) => c === want || c.includes(want));
+  if (!catHit) {
+    console.error('  期待した学名  :', EXPECTED_TAXON);
+    console.error('  カテゴリ      :', (meta.taxonCats || []).join(' / ') || '(なし)');
+    fail('Commons のカテゴリに亜種名が見つかりません。\n' +
+         '  Commons は同定の構造化データを持たないため、亜種を指定した場合は\n' +
+         `  Category:${EXPECTED_TAXON} 相当のカテゴリが付いた写真だけを使います。`);
+  }
+  ok(`カテゴリで亜種を確認: ${EXPECTED_TAXON}`);
+}
+
+if (meta.kind === 'commons') {
+  console.log('  ! Commons は同定の構造化データを持ちません。この写真は要目視確認です。');
+}
+
 if (!meta.author || /記載なし/.test(meta.author)) {
   fail('作者名を取得できませんでした。帰属表示ができないため中止します。');
 }
@@ -307,8 +351,24 @@ if (!res.ok) fail(`画像の取得に失敗しました（HTTP ${res.status}）`
 const buf = Buffer.from(await res.arrayBuffer());
 ok(`元画像 ${Math.round(buf.length / 1024)} KB`);
 
-const { default: sharp } = await import('sharp');
+// ESM の import は NODE_PATH を参照しないため、CJS の require で解決する。
+// （sharp をリポジトリ外に置いているので、明示パスを渡せるようにしておく）
+const { createRequire } = await import('node:module');
+const requireCjs = createRequire(import.meta.url);
+const sharp = requireCjs(env('SHARP_PATH') || 'sharp');
 const outPath = path.join(ROOT, 'assets', 'species-photos', `${SLUG}.webp`);
+const srcMeta = await sharp(buf).metadata();
+ok(`元画像の寸法 ${srcMeta.width}×${srcMeta.height}`);
+if (!srcMeta.width || !srcMeta.height) fail('元画像の寸法を取得できませんでした。');
+if (srcMeta.width < 800 || srcMeta.height < 600) {
+  fail(`元画像が小さすぎます（${srcMeta.width}×${srcMeta.height}）。` +
+       '800×600 に引き伸ばすと画質が落ちるため中止します。より大きい写真を選んでください。');
+}
+const ratio = srcMeta.width / srcMeta.height;
+if (ratio < 0.9 || ratio > 2.2) {
+  console.log(`  ! 縦横比 ${ratio.toFixed(2)} は 4:3 から離れています。中央を切り出すため、` +
+              '被写体が切れていないか PR で必ず目視確認してください。');
+}
 const out = await sharp(buf).resize(800, 600, { fit: 'cover', position: 'centre' }).webp({ quality: 88 }).toBuffer();
 if (!DRY_RUN) fs.writeFileSync(outPath, out);
 ok(`800×600 webp を書き出し（${Math.round(out.length / 1024)} KB）${DRY_RUN ? ' ※DRY_RUNのため未保存' : ''}`);
