@@ -251,7 +251,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'ヒラタニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', recommendationPriority: 98, difficulty: '上級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
+  { name: 'ヒラタニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', difficulty: '上級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
     reason: '甲羅が強く扁平になるニオイガメ属の小型種。米国アラバマ州ブラックウォーリアー川上流域だけに分布する固有種で、IUCNは近絶滅種（CR）、米国は絶滅危惧種法で保護している。流通はほとんどなく、実際に迎えられる機会はまずない。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★★' },
     coreSpecs: { size: '11cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
