@@ -71,6 +71,7 @@ jobs:
           npm init -y >/dev/null
           npm install sharp
           echo "NODE_PATH=$RUNNER_TEMP/imgtools/node_modules" >> "$GITHUB_ENV"
+          echo "SHARP_PATH=$RUNNER_TEMP/imgtools/node_modules/sharp" >> "$GITHUB_ENV"
 
       # 差し込み位置の事前確認。ページ側の準備ができていなければここで止める。
       - name: Pre-flight (check insertion points)
@@ -97,7 +98,7 @@ jobs:
           SLUG: ${{ inputs.slug }}
         run: |
           node -e '
-            const sharp = require(process.env.NODE_PATH + "/sharp");
+            const sharp = require(process.env.SHARP_PATH || "sharp");
             const f = `assets/species-photos/${process.env.SLUG}.webp`;
             sharp(f).metadata().then(m => {
               if (m.format !== "webp" || m.width !== 800 || m.height !== 600) {

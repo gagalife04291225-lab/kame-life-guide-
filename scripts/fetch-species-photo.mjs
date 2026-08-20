@@ -183,7 +183,8 @@ function patchSpeciesPage(meta, lic) {
     '</div>\n';
 
   const pending = /<div class="photo-pending">[\s\S]*?<\/div>\n/;
-  const existing = /<div class="species-photo">[\s\S]*?<\/div>\n<\/div>\n|<div class="species-photo">[\s\S]*?<\/figure>\n<\/div>\n/;
+  // figure で明示的に閉じる。<div>だけを目印にすると後続の別ブロックまで飲み込む。
+  const existing = /<div class="species-photo">\s*<figure>[\s\S]*?<\/figure>\s*<\/div>\n/;
 
   if (pending.test(s)) {
     s = s.replace(pending, figure);
@@ -307,7 +308,11 @@ if (!res.ok) fail(`画像の取得に失敗しました（HTTP ${res.status}）`
 const buf = Buffer.from(await res.arrayBuffer());
 ok(`元画像 ${Math.round(buf.length / 1024)} KB`);
 
-const { default: sharp } = await import('sharp');
+// ESM の import は NODE_PATH を参照しないため、CJS の require で解決する。
+// （sharp をリポジトリ外に置いているので、明示パスを渡せるようにしておく）
+const { createRequire } = await import('node:module');
+const requireCjs = createRequire(import.meta.url);
+const sharp = requireCjs(env('SHARP_PATH') || 'sharp');
 const outPath = path.join(ROOT, 'assets', 'species-photos', `${SLUG}.webp`);
 const out = await sharp(buf).resize(800, 600, { fit: 'cover', position: 'centre' }).webp({ quality: 88 }).toBuffer();
 if (!DRY_RUN) fs.writeFileSync(outPath, out);
