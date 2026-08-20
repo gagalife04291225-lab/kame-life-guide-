@@ -94,7 +94,7 @@ land: [
     availability: 'common'
   },
   { name: 'ベルセオレガメ', latin: 'Kinixys belliana', emoji: '🔒', difficulty: '上級', size: 'M（15〜25cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'ヒンジバック（背甲後部が可動する）という独特の構造を持つアフリカ産リクガメ。WC個体が多く状態管理が難しい。CB個体を入手できれば中型で飼いやすい。',
+    reason: 'ヒンジバック（背甲後部が可動する）という独特の構造を持つアフリカ産リクガメ。狭義の本種はアンゴラ〜ブルンジに分布する。WC個体が多く状態管理が難しい。CB個体を入手できれば中型で飼いやすい。',
     specs: { '最大甲長': '25cm', '主な食事': '野草・野菜・昆虫少量', '水容量': '水入れ', '温度': '26〜32℃' },
     coreSpecs: { size: '25cm', temp: '26〜32℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
@@ -251,16 +251,16 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mainstream||0)+(s.mud_lover||0)+(s.na_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'ヒメニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', recommendationPriority: 98, difficulty: '入門', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
-    reason: '国内流通する最小クラスの水棲ガメ。扁平な体型が特徴でニオイガメより更に小さく、30cm水槽から飼育可能。穏やかで飼いやすい。',
-    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★☆☆' },
+  { name: 'ヒラタニオイガメ', latin: 'Sternotherus depressus', emoji: '🔭', recommendationPriority: 98, difficulty: '上級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
+    reason: '甲羅が強く扁平になるニオイガメ属の小型種。米国アラバマ州ブラックウォーリアー川上流域だけに分布する固有種で、IUCNは近絶滅種（CR）、米国は絶滅危惧種法で保護している。流通はほとんどなく、実際に迎えられる機会はまずない。',
+    specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★★' },
     coreSpecs: { size: '11cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,
-    slug: 'hime-nioi-turtle', hasPage: true,
+    slug: null, hasPage: false,
     match: function(s){ return (s.small_tank||0) >= 3 && (s.observational||0) >= 1; },
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.na_water||0)+(s.cool_climate||0); },
-    availability: 'common'
+    availability: 'rare'
   },
   { name: 'ミシシッピドロガメ', latin: 'Kinosternon subrubrum hippocrepis', emoji: '🌿', recommendationPriority: 96, difficulty: '入門', size: 'S（10〜12cm）', cites: 'CITES II', legal: null,
     reason: '10cm程度の超小型種。陸上に上がる習性があるためシェルターと陸場の確保が必要。ニオイガメより温和な個体が多い。',
@@ -295,7 +295,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'スジクビニオイガメ', latin: 'Sternotherus minor peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
+  { name: 'スジクビニオイガメ', latin: 'Sternotherus peltifer', emoji: '🎗️', difficulty: '中級', size: 'S（8〜11cm）', cites: 'CITES II', legal: null,
     reason: '首と頭部に細かいストライプが走る美しいニオイガメ系の小型種。国内CB流通が確認されており、マニアに人気。小型水槽で観察を楽しめる。',
     specs: { '最大甲長': '11cm', '水槽サイズ': '30cm〜', '水温': '20〜27℃', '難易度': '★★☆' },
     coreSpecs: { size: '11cm', temp: '20〜27℃', lifespan: '15〜30年', diet: '雑食' },
@@ -669,8 +669,8 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.mud_lover||0)+(s.observational||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'オオアタマヒメニオイガメ', latin: 'Sternotherus minor minor', emoji: '🔬', difficulty: '入門〜中級', size: 'S（10〜14cm）', cites: 'CITES II', legal: null,
-    reason: 'ヒメニオイガメの基亜種で頭部が大きくなる。国内CB・輸入CB流通あり。とんぶり市2025出品「2024CB・2025CB」確認。小型で飼育しやすくニオイガメ入門者に人気。',
+  { name: 'オオアタマヒメニオイガメ', latin: 'Sternotherus minor', emoji: '🔬', difficulty: '入門〜中級', size: 'S（10〜14cm）', cites: 'CITES II', legal: null,
+    reason: '「ヒメニオイガメ」と同じ種で、頭部が大きくなる。国内CB・輸入CB流通あり。とんぶり市2025出品「2024CB・2025CB」確認。小型で飼育しやすくニオイガメ入門者に人気。',
     specs: { '最大甲長': '14cm', '水槽サイズ': '30〜45cm', '水温': '22〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '14cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30〜45cm' },
@@ -838,7 +838,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.m_size||0)+(s.intermediate||0)+(s.advanced_env||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'フロリダハコガメ', latin: 'Terrapene bauri', emoji: '🌴', recommendationPriority: 75, difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'フロリダハコガメ', latin: 'Terrapene carolina bauri', emoji: '🌴', recommendationPriority: 75, difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'フロリダ産の小型ハコガメ。甲羅に放射状の美しい模様がある。他のハコガメより小さく、50cm程度のケージでも飼育可能。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '15cm', temp: '23〜29℃', lifespan: '20〜50年', diet: '雑食' },
@@ -1063,7 +1063,7 @@ exotic: [
     availability: 'common'
   },
   { name: 'アフリカヨコクビガメ', latin: 'Pelomedusa subrufa', emoji: '🌍', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: null, legal: null,
-    reason: 'サハラ以南に広く分布する曲頸類。比較的安価で入手しやすくなっている。横に首を曲げる独特の行動が面白い。水棲傾向が強い。',
+    reason: 'アフリカ南部〜東部に分布する曲頸類。比較的安価で入手しやすくなっている。横に首を曲げる独特の行動が面白い。水棲傾向が強い。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '25cm', temp: '24〜29℃', lifespan: '20〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },

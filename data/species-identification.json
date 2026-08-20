@@ -133,13 +133,13 @@
     {
       "slug": "loggerhead-musk-turtle",
       "wamei": "オオアタマヒメニオイガメ（ヒメニオイガメ）",
-      "gakumei": "Sternotherus minor minor",
+      "gakumei": "Sternotherus minor",
       "eimei": "Common Loggerhead Musk Turtle",
       "koura": "背甲はドーム状に盛り上がり、上から見ると細長い楕円形。椎甲板・肋甲板に計3本のキール（老成個体では不明瞭化）。椎甲板・肋甲板の後部が後方甲板の前部と重なる。",
       "iro_moyou": "背甲は褐色〜黄褐色〜暗褐色に黒斑・筋模様。腹甲はピンク〜薄黄〜黄褐色。頭部に斑点または大型斑紋。頸部に縦縞が入らない。",
       "tobu": "頭部が大型で、英名Loggerhead通り巨頭化する個体が多い。下顎先端にのみ髭状突起。",
       "size": "最大甲長13.5〜14cm。小型。",
-      "bunpu": "アメリカ南東部（ジョージア州北西部を除く、フロリダ州南部を除く）。流れの緩やかな止水〜緩流域。",
+      "bunpu": "アメリカ南東部。フロリダ州北部、ジョージア州(アパラチア山脈の東側)、アラバマ州南東部。フロリダ州南部・ジョージア州北西部には分布しない。テネシー州など内陸側の水系に分布するのは S. peltifer であり本種ではない。流れの緩やかな止水〜緩流域。",
       "kondou_shu": [
         {
           "aite": "スジクビニオイガメ (Sternotherus peltifer)",
@@ -152,7 +152,7 @@
       ],
       "houkisei": "CITES附属書II掲載（2023年発効、Sternotherus spp.として属単位で掲載）。かつてワイルド大量流通、現在は国内CB中心。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "ドーム状の甲＋3キール＋頸部に縦縞なし＋巨頭傾向。腹甲に喉甲板があればカブトと区別。",
-      "photo_chuui": "「ヒメニオイガメ」=本種と同一（S. minor minor）。旧hime-nioi-turtleページは本ページへ統合済み。カブトニオイガメ(carinatus)・スジクビ(peltifer)との混同に注意。",
+      "photo_chuui": "「ヒメニオイガメ」=本種と同一（S. minor）。旧hime-nioi-turtleページは本ページへ統合済み。カブトニオイガメ(carinatus)・スジクビ(peltifer)との混同に注意。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Loggerhead_musk_turtle",
@@ -160,7 +160,7 @@
         "https://en.wikipedia.org/wiki/Sternotherus",
         "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
       ],
-      "unresolved": "本ページ(S. minor minor=基亜種)は種Sternotherus minor全体を代表。「ヒメニオイガメ」(S. minor、種名)ページは本ページへリダイレクト統合済み。もう一方の亜種S. m. peltifer(スジクビ)は近年独立種S. peltiferとする説もあり(Wikipedia等はS. peltifer表記)、minorとpeltiferはアラバマ・西フロリダでintergrade。旧「S. minor×peltifer雑種」とされたintermediusは独立種S. intermediusに。CITESは2023年発効でSternotherus spp.として附属書II掲載。"
+      "unresolved": "分類は2026-08に整理済み。Scott et al.(2018) が S. m. minor / S. m. peltifer を独立種へ昇格し S. intermedius を記載、TTWG(2021) が暫定受け入れ、IUCNレッドリストが2025年に S. minor(LC) / S. peltifer(DD) / S. intermedius(DD) を3種として個別評価した。よって S. minor は亜種を持たない単型種であり三名法は使わない。「ヒメニオイガメ」(S. minor) ページは本ページへリダイレクト統合済みで、両者は同じ種を指す。S. intermedius は当サイト未掲載。CITESは2023年発効で Sternotherus spp. として附属書II掲載のため、種が分かれても附属書は変わらない。"
     },
     {
       "slug": "razorback-musk-turtle",
@@ -174,7 +174,7 @@
       "bunpu": "米ルイジアナ全域と隣接するミシシッピ・アーカンソー・オクラホマ・テキサス。",
       "kondou_shu": [
         {
-          "aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)",
+          "aite": "オオアタマヒメニオイガメ (Sternotherus minor)",
           "kubetsu": "本種は甲が三角形に高く隆起（カブト状）/minorはドーム状で横広。腹甲の喉甲板と甲の断面形状で区別。"
         }
       ],
@@ -920,7 +920,6 @@
         "https://en.wikipedia.org/wiki/Chinese_box_turtle"
       ]
     },
-    
     {
       "slug": "three-striped-box-turtle",
       "wamei": "ミスジハコガメ",
@@ -1520,7 +1519,7 @@
       "iro_moyou": "暗褐色〜黒の甲に、鮮やかな黄色の細い放射線が各甲板に走る（北米ハコガメの中でも線が明瞭）。腹甲にも線模様。頭部に2本の明瞭な黄色ストライプ。",
       "tobu": "頭部に2本の黄色ストライプ（本亜種の重要識別点）。後肢は3指のことが多い。",
       "size": "小型。甲長約11cm（約11×8cm）。",
-      "bunpu": "フロリダ半島およびフロリダキーズの一部。※種階級は未解決：本サイトは独立種 Terrapene bauri 表記、TTWG2021 は carolina 亜種 (T. c. bauri)。Butler et al.(2011)等 bauri を独立種とする説もあり、Martin et al. も bauri/major は解析で未解決とする。識別データは TTWG2021 準拠の三名法を採用し、種階級は両論併記。",
+      "bunpu": "フロリダ半島およびフロリダキーズの一部。※本サイトは TTWG に合わせ carolina の亜種 (T. c. bauri) として扱う(2026-08統一)。独立種 Terrapene bauri とする説(Butler et al. 2011 等)もあるが、TTWG・IUCN・Reptile Database・ITIS・USFWS はいずれも亜種扱い。",
       "kondou_shu": [
         {
           "aite": "トウブハコガメ (Terrapene carolina carolina)",
@@ -1540,7 +1539,7 @@
         "https://www.researchgate.net/publication/291009442_Terrapene_carolina_Linnaeus_1758_-_Eastern_Box_Turtle_Common_Box_Turtle",
         "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
       ],
-      "unresolved": "種階級が未解決。本サイトは独立種 Terrapene bauri 表記、TTWG2021は carolina 亜種(T. c. bauri)。Butler et al.(2011)等 bauri 独立種説、Martin et al.も bauri/major は解析未解決とする。識別データはTTWG2021準拠の三名法を採用し種階級は両論併記。旧独立種表記の画像も多い。",
+      "unresolved": "種階級は学界で完全決着していないが、本サイトは TTWG・IUCN・Reptile Database・ITIS・USFWS に合わせ carolina の亜種 (T. c. bauri) で統一した(2026-08)。独立種 Terrapene bauri とする説(Butler et al. 2011 等)は少数説で、IUCNは2025年時点でも Terrapene carolina を単一種として評価し bauri の単独評価を持たない。Martin et al. は bauri/major を解析未解決とする。旧・独立種表記の画像も多い。",
       "status": "confirmed"
     },
     {
@@ -2605,7 +2604,7 @@
       "iro_moyou": "背甲は褐〜緑褐色でやや扁平。腹甲は黄〜クリーム色で、暗色の継ぎ目や大きな暗色スマッジが出ることも。",
       "tobu": "頭部は褐〜オリーブ。あご下に2本の髭(barbel)。首を横に折る。",
       "size": "小型。甲長15〜21cm(最大32.5cmの記録)。",
-      "bunpu": "サブサハラアフリカ広域＋南イエメン。淡水〜滞水の池沼・湿地(marsh)。乾季に泥中で休眠。雑食。",
+      "bunpu": "【狭義】南部アンゴラ・ナミビア〜ボツワナ・コンゴ民主共和国〜タンザニア・マラウイ。ザンビア・モザンビークにも分布する可能性が高い。南アフリカは北東部(リンポポ州)にわずかに及ぶ。マダガスカルは移入。淡水〜滞水の池沼・湿地(marsh)。乾季に泥中で休眠。雑食。※旧・広義(サブサハラ広域＋南イエメン)はPelomedusa複合体全体の範囲。南イエメンに分布するのはP. barbata。",
       "kondou_shu": [
         {
           "aite": "ヒラリーカエルガメ (Phrynops hilarii)等の南米ヨコクビ",
@@ -2943,7 +2942,7 @@
           "kubetsu": "【重要】odoratusは頭部に2本の明瞭な黄/白条＋あごと首の両方に髭/minorは頭部が明色地に暗点(明瞭な条を欠く)＋あごのみに髭(首になし)＋3キール。頭部の条と髭の位置(首の有無)が決定的。"
         },
         {
-          "aite": "スジクビニオイガメ (Sternotherus minor peltifer)",
+          "aite": "スジクビニオイガメ (Sternotherus peltifer)",
           "kubetsu": "odoratusは頭部に2本の黄条＋首にも髭/peltiferは頭〜首側面に暗い縦条(stripe)＋あごのみに髭。髭の位置(首の有無)と条の色(黄=odoratus/暗=peltifer)で区別。"
         }
       ],
@@ -2963,16 +2962,16 @@
     {
       "slug": "stripe-necked-musk-turtle",
       "wamei": "スジクビニオイガメ",
-      "gakumei": "Sternotherus minor peltifer",
+      "gakumei": "Sternotherus peltifer",
       "eimei": "Stripe-necked Musk Turtle",
-      "koura": "Kinosternidae(ニオイガメ属)。S. minorの亜種peltifer(近年独立種S. peltiferとする説もあり)。背甲は褐色で隆起(ridged)し、幼体でキールが顕著、tan〜褐色に暗点。腹甲は小さく蝶番1つ。",
+      "koura": "Kinosternidae(ニオイガメ属)。独立種 S. peltifer（旧 S. minor peltifer）。背甲は褐色で隆起(ridged)し、幼体でキールが顕著、tan〜褐色に暗点。腹甲は小さく蝶番1つ。",
       "iro_moyou": "背甲はtan〜褐色に暗色斑。腹甲はピンク〜黄。【識別】頭部は明褐色で、頭〜首の側面に暗い縦条(dark stripe)が主体(基亜種minorの点/斑に対し、peltiferは条が主)。",
       "tobu": "頭部は明褐色に暗点＋頭〜首側面の暗い縦条が顕著。あご(chin)にのみ2本の髭(首にはない)＝minor群共通。オスは頭が大きい。",
       "size": "小型。甲長7.5〜11.7cm(基亜種minorよりやや小さめ)。",
       "bunpu": "米国南東部(主にアラバマ・ミシシッピ、周縁でジョージア・ルイジアナ、東テネシー〜ノースカロライナ・バージニアの北部水系)。河川とその支流。基亜種minorと南東アラバマ・西フロリダ・西ジョージアで分布が接しintergrade。",
       "kondou_shu": [
         {
-          "aite": "オオアタマヒメニオイガメ (Sternotherus minor minor)",
+          "aite": "オオアタマヒメニオイガメ (Sternotherus minor)",
           "kubetsu": "【重要】同一種S. minorの別亜種。peltiferは頭〜首に暗い縦条が主体＋黄色い頭/minor(基亜種)は明色地に暗点/斑が主体＋暗タン色の頭＋巨頭傾向。条 vs 点の違いと頭色。両亜種はintergradeし中間個体は同定困難。"
         },
         {
@@ -2990,7 +2989,7 @@
         "https://www.tn.gov/twra/wildlife/reptiles/turtle/striped-necked-musk-turtle.html",
         "https://www.fws.gov/sites/default/files/documents/OLE%20Public%20Bulletin%20-%20Changes%20to%20CITES%20Species%20Listings%201-13-2023.pdf"
       ],
-      "unresolved": "peltifer の分類的地位が揺れる。従来S. minor peltifer(亜種、Tinkle & Webb 1955)とされるが、近年は独立種Sternotherus peltiferとする説(Wikipedia等)もある。基亜種minorとはアラバマ・西フロリダでintergradeし、中間個体の亜種同定が困難。かつてminor×peltifer雑種とされたintermediusは独立種S. intermediusに(〜2017)。CITESは2023年発効でSternotherus spp.として附属書II掲載。",
+      "unresolved": "分類は2026-08に整理済み。Scott et al.(2018) が S. minor peltifer を独立種 Sternotherus peltifer へ昇格させ、TTWG(2021) が暫定受け入れ、IUCNレッドリストが2025年に S. peltifer(DD) を単独評価した。よって三名法は使わない。基亜種であった S. minor とはアラバマ・西フロリダで分布が接し intergrade するため、中間個体の同定は難しい。かつて S. minor × peltifer の雑種とされた intermedius は独立種 S. intermedius として記載済み（当サイト未掲載）。CITESは2023年発効で Sternotherus spp. として附属書II掲載のため、種が分かれても附属書は変わらない。",
       "status": "confirmed"
     },
     {

@@ -170,16 +170,16 @@
  {
   "slug": "loggerhead-musk-turtle",
   "reason": "B_S.minor亜種使い回し",
-  "gakumei": "Sternotherus minor minor",
+  "gakumei": "Sternotherus minor",
   "binomial": "Sternotherus minor",
-  "trinomial": "Sternotherus minor minor"
+  "trinomial": null
  },
  {
   "slug": "stripe-necked-musk-turtle",
   "reason": "B_使い回し",
-  "gakumei": "Sternotherus minor peltifer",
-  "binomial": "Sternotherus minor",
-  "trinomial": "Sternotherus minor peltifer"
+  "gakumei": "Sternotherus peltifer",
+  "binomial": "Sternotherus peltifer",
+  "trinomial": null
  },
  {
   "slug": "yaeyama-pond-turtle",

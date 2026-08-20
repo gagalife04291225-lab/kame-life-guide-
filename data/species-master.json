@@ -5682,13 +5682,16 @@
    "page": "species/florida-box-turtle.html",
    "wamei": "フロリダハコガメ",
    "scientific_name": {
-    "value": "Terrapene bauri",
+    "value": "Terrapene carolina bauri",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17",
+    "last_verified": "2026-08-20",
     "provenance": "official",
     "sources": [
-     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-    ]
+     "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=208596",
+     "https://www.fws.gov/species/florida-box-turtle-terrapene-carolina-bauri",
+     "https://www.gbif.org/species/6156922"
+    ],
+    "note": "TTWG チェックリスト・IUCNレッドリスト・Reptile Database・ITIS・USFWS がいずれも Terrapene carolina の亜種として扱う。独立種 Terrapene bauri とする説（Butler et al. 2011 等）もあるが少数説"
    },
    "english_name": {
     "value": null,
@@ -5717,7 +5720,7 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": "VU（A2bcde+4bcde・2011年評価）※カロリナハコガメ種群としての評価（bauriは近年独立種扱い）",
+     "value": "VU（A2bcde+4bcde・2011年評価）※カロリナハコガメ（Terrapene carolina）全体としての評価。亜種 bauri の単独評価はない",
      "verification": "LIKELY",
      "provenance": "official",
      "sources": [
@@ -7668,8 +7671,15 @@
     "verification": "UNPROVEN"
    },
    "distribution": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": "アンゴラ〜ブルンジのサバンナ・草原・林縁。※Kinixys belliana 狭義の範囲",
+    "verification": "LIKELY",
+    "provenance": "academic",
+    "note": "Kindler et al.(2012) により旧・広義 belliana から K. nogueyi（西アフリカ）と K. zombensis（東南アフリカ・マダガスカル）が独立種化。狭義 belliana はアンゴラ〜ブルンジに限定される",
+    "sources": [
+     "https://reptile-database.reptarium.cz/species?genus=Kinixys&species=nogueyi",
+     "https://reptile-database.reptarium.cz/species?genus=Kinixys&species=zombensis"
+    ],
+    "last_verified": "2026-08-20"
    },
    "max_shell_length_cm": {
     "value": null,
@@ -9535,8 +9545,14 @@
     "verification": "UNPROVEN"
    },
    "distribution": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": "南部アンゴラ・ナミビア〜ボツワナ・コンゴ民主共和国〜タンザニア・マラウイ。ザンビア・モザンビークにも分布する可能性が高い。南アフリカは北東部（リンポポ州）にわずかに及ぶ。マダガスカルは移入。※Pelomedusa subrufa 狭義の範囲",
+    "verification": "LIKELY",
+    "provenance": "academic",
+    "note": "Petzold et al.(2014) による Pelomedusa 改訂後の狭義の分布。旧・広義（アフリカ全域＋アラビア半島南部）とは範囲が異なる",
+    "sources": [
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5993023/"
+    ],
+    "last_verified": "2026-08-20"
    },
    "max_shell_length_cm": {
     "value": null,
@@ -10989,12 +11005,12 @@
   {
    "slug": "hime-nioi-turtle",
    "page": null,
-   "wamei": "ヒメニオイガメ",
+   "wamei": "ヒラタニオイガメ",
    "scientific_name": {
     "value": "Sternotherus depressus",
     "verification": "LIKELY",
-    "note": "ページはnoindex運用／該当HTMLはnoindexスタブのためページ照合対象外",
-    "last_verified": "2026-08-17"
+    "note": "和名は Sternotherus depressus に対応する『ヒラタニオイガメ』。旧「ヒメニオイガメ」は Sternotherus minor の和名であり取り違えだった（2026-08修正）。slug hime-nioi-turtle は S. minor 側のリダイレクトページとして残るため、本種は診断のページリンクを持たない",
+    "last_verified": "2026-08-20"
    },
    "english_name": {
     "value": null,
@@ -11015,8 +11031,15 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "CR（近絶滅種）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "アラバマ州ブラックウォーリアー川上流域の固有種。米国絶滅危惧種法では1987年より Threatened",
+     "sources": [
+      "https://www.fws.gov/species/flattened-musk-turtle-sternotherus-depressus",
+      "https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.105823/Sternotherus_depressus"
+     ],
+     "last_verified": "2026-08-20"
     }
    },
    "cites": {
@@ -11051,10 +11074,15 @@
    "page": "species/loggerhead-musk-turtle.html",
    "wamei": "オオアタマヒメニオイガメ",
    "scientific_name": {
-    "value": "Sternotherus minor minor",
+    "value": "Sternotherus minor",
     "verification": "LIKELY",
-    "note": "SHINDAN-SPECIES.mdでは同じ和名が交雑個体（carinatus×minor）に使われており和名衝突あり（owner整理要）",
-    "last_verified": "2026-08-17"
+    "note": "Scott et al.(2018) が S. m. minor / S. m. peltifer を独立種へ昇格し S. intermedius を記載。IUCNレッドリストは2025年に S. minor(LC) / S. peltifer(DD) / S. intermedius(DD) を3種として個別評価。S. minor は亜種を持たないため三名法は使わない",
+    "last_verified": "2026-08-20",
+    "provenance": "official",
+    "sources": [
+     "https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.1312001/Sternotherus_intermedius",
+     "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-necked-musk-turtle/index.php"
+    ]
    },
    "english_name": {
     "value": null,
@@ -11075,8 +11103,14 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "LC（軽度懸念・2025年評価）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "Brown, Welc & van Dijk 2025 による Sternotherus minor の評価",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/ChelonianConservationNews/Chelonian_Conservation_News.3.Dec2025.pdf"
+     ],
+     "last_verified": "2026-08-20"
     }
    },
    "cites": {
@@ -11137,9 +11171,15 @@
    "page": "species/stripe-necked-musk-turtle.html",
    "wamei": "スジクビニオイガメ",
    "scientific_name": {
-    "value": "Sternotherus minor peltifer",
+    "value": "Sternotherus peltifer",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17"
+    "last_verified": "2026-08-20",
+    "provenance": "official",
+    "note": "Scott et al.(2018) が S. minor peltifer を独立種へ昇格。IUCNレッドリストは2025年に S. peltifer(DD) を単独評価",
+    "sources": [
+     "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-necked-musk-turtle/index.php",
+     "https://georgiabiodiversity.org/portal/profile?group=reptiles&es_id=449841"
+    ]
    },
    "english_name": {
     "value": null,
@@ -11160,8 +11200,14 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "DD（データ不足・2025年評価）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "Brown & Welc 2025 による Sternotherus peltifer の評価",
+     "sources": [
+      "https://iucn-tftsg.org/wp-content/uploads/file/ChelonianConservationNews/Chelonian_Conservation_News.3.Dec2025.pdf"
+     ],
+     "last_verified": "2026-08-20"
     }
    },
    "cites": {
