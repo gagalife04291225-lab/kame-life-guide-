@@ -127,6 +127,11 @@ async function fromCommons() {
   const objectName = stripTags(meta.ObjectName?.value);
   const description = stripTags(meta.ImageDescription?.value);
 
+  // description（利用者が書いた自由文）は同定の根拠にしない。
+  // 「本種は Testudo hermanni。Testudo graeca terrestris とは異なる」のような
+  // 比較のための言及だけで一致してしまうため。
+  if (description) console.log('  説明文    : (照合には使いません)', description.slice(0, 80));
+
   return {
     kind: 'commons',
     author: artist,
@@ -136,7 +141,10 @@ async function fromCommons() {
     sourceExtra: title,
     imageUrl: info.thumburl || info.url,
     taxonFound: '',
-    taxonHaystack: [...cats, objectName, description, title],
+    // カテゴリは Commons で最も同定に近い構造化情報。ファイル名・ObjectName は
+    // 補助でしかないので、亜種の判定には使わない（taxonCats を参照）。
+    taxonHaystack: [...cats, objectName, title],
+    taxonCats: cats,
     place: stripTags(meta.ObjectName?.value) || '',
   };
 }
@@ -302,10 +310,33 @@ const lic = normalizeLicense(meta.licenseRaw);
 if (!lic.allowed) fail(`このライセンスでは掲載できません: ${lic.reason}\n  カメライフガイドは CC BY / CC BY-SA / CC0 / PD のみを使用します。`);
 ok(`ライセンス可: ${lic.label}`);
 assertTaxon(meta.taxonFound, meta.taxonHaystack);
-// 三名法（亜種まで）を求めたなら、iNaturalist 側も亜種ランクで同定されていること。
-if (meta.kind === 'inaturalist' && EXPECTED_TAXON.trim().split(/\s+/).length >= 3 && meta.taxonRank !== 'subspecies') {
+
+// 三名法（亜種まで）を求めたときは、出典側でも亜種として同定されていること。
+const wantsSubspecies = EXPECTED_TAXON.trim().split(/\s+/).length >= 3;
+
+if (wantsSubspecies && meta.kind === 'inaturalist' && meta.taxonRank !== 'subspecies') {
   fail(`iNaturalist の同定ランクが "${meta.taxonRank || '不明'}" です（期待: subspecies）。` +
        '亜種まで同定された観察だけを使う方針のため中止します。');
+}
+
+if (wantsSubspecies && meta.kind === 'commons') {
+  // Commons には同定ランクの構造化データが無い。カテゴリが最も同定に近いので、
+  // 亜種を求めた場合はカテゴリでの一致を必須にする。
+  // ファイル名・ObjectName・説明文は、いずれも書き手の自由文なので根拠にしない。
+  const want = normTaxon(EXPECTED_TAXON);
+  const catHit = (meta.taxonCats || []).map(normTaxon).some((c) => c === want || c.includes(want));
+  if (!catHit) {
+    console.error('  期待した学名  :', EXPECTED_TAXON);
+    console.error('  カテゴリ      :', (meta.taxonCats || []).join(' / ') || '(なし)');
+    fail('Commons のカテゴリに亜種名が見つかりません。\n' +
+         '  Commons は同定の構造化データを持たないため、亜種を指定した場合は\n' +
+         `  Category:${EXPECTED_TAXON} 相当のカテゴリが付いた写真だけを使います。`);
+  }
+  ok(`カテゴリで亜種を確認: ${EXPECTED_TAXON}`);
+}
+
+if (meta.kind === 'commons') {
+  console.log('  ! Commons は同定の構造化データを持ちません。この写真は要目視確認です。');
 }
 
 if (!meta.author || /記載なし/.test(meta.author)) {
