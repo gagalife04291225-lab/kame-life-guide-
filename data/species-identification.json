@@ -1544,7 +1544,7 @@
     },
     {
       "slug": "desert-box-turtle",
-      "wamei": "サバクニシキハコガメ（デザートボックスタートル）",
+      "wamei": "ミナミニシキハコガメ",
       "gakumei": "Terrapene ornata",
       "eimei": "Desert Box Turtle",
       "koura": "ドーム状で可動腹甲ヒンジにより完全閉鎖。ornata の乾燥地個体群。TTWG2021 で旧亜種 luteola は単型 Terrapene ornata のシノニムに統合され、亜種階級は無効化された。",
@@ -1572,7 +1572,7 @@
     },
     {
       "slug": "ornate-box-turtle",
-      "wamei": "キタニシキハコガメ（オルナータ）",
+      "wamei": "キタニシキハコガメ",
       "gakumei": "Terrapene ornata",
       "eimei": "Ornate Box Turtle",
       "koura": "ドーム状で可動腹甲ヒンジにより完全閉鎖。carolina群と異なり甲がやや扁平で、プレーリー性。TTWG2021で単型（旧亜種 ornata/luteola を統合）。",
@@ -1582,7 +1582,7 @@
       "bunpu": "米中西部〜グレートプレーンズ（テキサス〜サウスダコタ南部、東はイリノイ等）の樹木のない平原・草原。旧 T. o. ornata の分布域を含む単型種全体。",
       "kondou_shu": [
         {
-          "aite": "サバクニシキハコガメ (Terrapene ornata、旧 T. o. luteola)",
+          "aite": "ミナミニシキハコガメ (Terrapene ornata、旧 T. o. luteola)",
           "kubetsu": "同一の単型種 Terrapene ornata。desert(旧luteola)とは分布(乾燥地南西部)と放射線密度傾向で語られるのみで、TTWG2021では亜種も分けない。確実な形態境界なし。"
         },
         {
