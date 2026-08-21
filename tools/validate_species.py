@@ -6,6 +6,7 @@ species-master.json（FACT-CHECK正本）と、サイト内の種データの照
   shindan/species.js   … latin / cites / 最大甲長
   SHINDAN-SPECIES.md   … 学名列 / CITES列
   species/<slug>.html  … 学名の記載 / 保全表記のラベル
+  master 内部        … scientific_name.rank の語彙・学名の一意性
 
 原則:
   ・検出のみ。**自動修正は絶対にしない。**
@@ -180,6 +181,55 @@ def main():
             if re.search(r"準絶滅危惧|絶滅危惧", raw) \
                and "環境省" not in raw and "IUCN" not in raw and "レッドリスト" not in raw:
                 warns.append("WARN %s: 保全表記があるが 環境省/IUCN のどちらの評価か明記なし" % page)
+
+    # --- scientific_name.rank の一意性検査（2026-08 追加）---
+    # 既存の照合には手を触れず、集合としての整合だけを見る。
+    RANK_VOCAB = ("species", "subspecies", "regional_form", "variety")
+
+    def rank_of(sp):
+        """rank 未指定なら value の語数から推論する（value が一意な場合のみ有効）"""
+        r = sp["scientific_name"].get("rank")
+        if r:
+            return r, True
+        v = binomial(sp["scientific_name"].get("value") or "")
+        return ("subspecies" if len(v.split()) >= 3 else "species"), False
+
+    groups = {}
+    for sp in master:
+        val = sp["scientific_name"].get("value")
+        if not val:
+            continue
+        rank, explicit = rank_of(sp)
+        # E3: 語彙外の rank
+        if rank not in RANK_VOCAB:
+            mismatch("master:" + sp["wamei"], "rank", "/".join(RANK_VOCAB), rank)
+            continue
+        # W2: 学名欄に日本語の括弧が混入
+        if re.search(r"[（(][^)）]*[ぁ-んァ-ヶ一-龠]", val):
+            warns.append("WARN master:%s 学名欄に日本語が混入しています: %s" % (sp["wamei"], val))
+        groups.setdefault(binomial(val), []).append((sp, rank, explicit))
+
+    for val, members in sorted(groups.items()):
+        if len(members) == 1:
+            continue
+        # W1: value が重複しているのに rank を省略しているメンバーがいる
+        implicit = [sp["wamei"] for sp, _, ex in members if not ex]
+        if implicit:
+            warns.append("WARN 学名 %s が重複しています。rank を明示してください: %s"
+                         % (val, " / ".join(implicit)))
+        # E1 / E2: 重複を認めない rank が2件以上
+        for kind in ("species", "subspecies"):
+            same = [sp["wamei"] for sp, r, _ in members if r == kind]
+            if len(same) > 1:
+                mismatch("master:" + val, "学名重複",
+                         "rank=%s は1件のみ" % kind, " / ".join(same))
+        # E4: 同一 (value, rank) 内で slug が重複
+        for kind in RANK_VOCAB:
+            slugs = [sp["slug"] for sp, r, _ in members if r == kind]
+            dup = sorted({x for x in slugs if slugs.count(x) > 1})
+            if dup:
+                mismatch("master:" + val, "slug重複",
+                         "rank=%s 内で一意" % kind, " / ".join(dup))
 
     print("=== validate_species: master %d種を照合 ===" % len(master))
     for i in issues:
