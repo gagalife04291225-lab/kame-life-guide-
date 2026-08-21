@@ -63,7 +63,7 @@ kame-life-guide-/
 ├── shindan/
 │   ├── index.html          # 診断 UI（フルインライン CSS・JS）
 │   ├── routes.js           # 5 ルートの質問データ
-│   ├── species.js          # 全種データ（103種・ match/score 関数付き）
+│   ├── species.js          # 全種データ（108種・ match/score 関数付き）
 │   └── equipment.js        # 種別推奨機材 ASIN マップ
 │
 ├── # ──── 共有 CSS（css/）────
@@ -122,7 +122,7 @@ kame-life-guide-/
 
 ### 亀診断ツール（shindan/）
 
-5 ルート構成、103種収録（all は land/aquatic/forest/exotic の連結）：
+5 ルート構成、108種収録（all は land/aquatic/forest/exotic の連結）：
 
 | ルート ID | 名前 | 問数 |
 |---------|------|-----|
@@ -338,7 +338,7 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 | ファイル | 用途 |
 |---------|------|
 | `SHINDAN-SPEC.md` | 診断ツールの仕様・ルート設計・法規制対応・GitHub API 鉄則・作業ルール |
-| `SHINDAN-SPECIES.md` | 全種データ管理（103種・学名・CITES・難易度・備考） |
+| `SHINDAN-SPECIES.md` | 全種データ管理（126行・学名・CITES・難易度・備考。species.js より広い参照表） |
 | `CLAUDE.md`（本ファイル） | AI アシスタント向けコードベース全体解説 |
 
 **コンテキストが切れた場合は `SHINDAN-SPEC.md` と `SHINDAN-SPECIES.md` を読めば作業を継続できる。**

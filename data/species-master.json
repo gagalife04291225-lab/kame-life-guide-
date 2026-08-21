@@ -29,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "105種のspecies.js全エントリをmaster管理下に登録済み（107 records・careブロック10種=TOP10完了）",
+  "coverage": "108種のspecies.js全エントリをmaster管理下に登録済み（110 records・careブロック10種=TOP10完了）",
   "schema_version": "1.1",
   "care_schema": {
    "purpose": "海外知見を検証し日本の環境・法規・商品事情へ再構成するための飼育データ層。105ページへの手入力はせず、本ファイルを唯一の飼育条件正本とする",
@@ -6825,7 +6825,7 @@
     "value": "Mauremys reevesii",
     "rank": "regional_form",
     "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない 学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。",
+    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。",
     "last_verified": "2026-08-17",
     "provenance": "official",
     "sources": [
@@ -11286,6 +11286,504 @@
      },
      "last_verified": "2026-08-17",
      "sources": []
+    }
+   }
+  },
+  {
+   "slug": "western-painted-turtle",
+   "page": "species/western-painted-turtle.html",
+   "wamei": "セイブニシキガメ",
+   "scientific_name": {
+    "value": "Chrysemys picta bellii",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　亜種は個体の形態のみでの同定が難しく、分布境界では intergrade が広く知られる。",
+    "sources": [
+     "https://www.inaturalist.org/taxa/51728-Chrysemys-picta-bellii"
+    ],
+    "last_verified": "2026-08-21"
+   },
+   "english_name": {
+    "value": "Western Painted Turtle",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続（親種 Chrysemys picta と同じ扱い）",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "brumation": {
+     "value": "温帯種・野生では冬眠（国内初心者は加温が安全）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Chrysemys picta bellii の care 値は親種 Chrysemys picta のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "eastern-painted-turtle",
+   "page": "species/eastern-painted-turtle.html",
+   "wamei": "トウブニシキガメ",
+   "scientific_name": {
+    "value": "Chrysemys picta picta",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　亜種は個体の形態のみでの同定が難しく、分布境界では intergrade が広く知られる。",
+    "sources": [
+     "https://www.inaturalist.org/taxa/51727-Chrysemys-picta-picta"
+    ],
+    "last_verified": "2026-08-21"
+   },
+   "english_name": {
+    "value": "Eastern Painted Turtle",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "not_listed",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "note": "非掲載の悉皆確認は附属書原文で継続（親種 Chrysemys picta と同じ扱い）",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "brumation": {
+     "value": "温帯種・野生では冬眠（国内初心者は加温が安全）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Chrysemys picta picta の care 値は親種 Chrysemys picta のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "mississippi-diamondback-terrapin",
+   "page": "species/mississippi-diamondback-terrapin.html",
+   "wamei": "ミシシッピダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin pileata",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　形態にもとづく亜種区分は分子系統と一致しないことが知られており、亜種境界そのものが再検討の途中にある。",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39841-Malaclemys-terrapin-pileata"
+    ],
+    "last_verified": "2026-08-21"
+   },
+   "english_name": {
+    "value": "Mississippi Diamondback Terrapin",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種 Malaclemys terrapin を附属書II掲載。亜種も同掲載の対象",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "water_salinity": {
+     "value": "汽水（人工海水0.5〜1.5%目安）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "塩分対応機材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin pileata の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "メスは90cm以上",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin pileata の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "texas-diamondback-terrapin",
+   "page": "species/texas-diamondback-terrapin.html",
+   "wamei": "テキサスダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin littoralis",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　形態にもとづく亜種区分は分子系統と一致しないことが知られており、亜種境界そのものが再検討の途中にある。",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39839-Malaclemys-terrapin-littoralis"
+    ],
+    "last_verified": "2026-08-21"
+   },
+   "english_name": {
+    "value": "Texas Diamondback Terrapin",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS/カナダ政府",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種 Malaclemys terrapin を附属書II掲載。亜種も同掲載の対象",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "water_salinity": {
+     "value": "汽水（人工海水0.5〜1.5%目安）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "塩分対応機材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin littoralis の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "メスは90cm以上",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-17",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin littoralis の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "tunisian-greek-tortoise",
+   "page": "species/tunisian-greek-tortoise.html",
+   "wamei": "チュニジアギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca nabeulensis",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　独立亜種として扱うか Testudo graeca の地域変異に含めるかは資料により分かれる。",
+    "sources": [
+     "https://www.inaturalist.org/taxa/540655-Testudo-graeca-nabeulensis"
+    ],
+    "last_verified": "2026-08-21"
+   },
+   "english_name": {
+    "value": "Tunisian Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "uvb": {
+     "value": "Ferguson Zone 3（強UVB帯）・T5 HO 10〜12%管が基本",
+     "verification": "LIKELY",
+     "provenance": "manufacturer_primary",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "Zone表はZoo Med一次資料",
+      "jp_note": "特定製品は照度表確認まで断定しない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://zoomed.com/wp-content/uploads/Powersun_Instrct_U.S_5-18.pdf"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "冬眠の可否は系統差が大きい",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "亜種・系統の見極めと健康管理が国内初心者には難しい",
+      "jp_note": "国内初心者は通年加温・冬眠なしを推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "humidity_pct": {
+     "value": "乾燥系（梅雨〜夏の蒸れが最大リスク）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "地中海性気候と日本の梅雨の湿度差",
+      "jp_note": "通気最優先・乾燥系床材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "90〜120cm級（床面積優先）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "イベラ系は大きめに育つ",
+      "jp_note": "90cm開始・120cm推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
     }
    }
   }

@@ -3186,6 +3186,178 @@
       ],
       "unresolved": "Pelusios castaneus seychellensis(セーシェル)の分類が論争的。Bour(1983)らは近縁別種とするが、Stuckas et al.(2013)・Kindler et al.(2016)は歴史的に移入されたcastaneusのシノニム(=別種でない)とし、遺伝解析でlectotypeがcastaneusと確認された。TTWG(2014)は移入由来の亜種の可能性を保留。かつてP. chapiniがcastaneusの亜種とされた(1983年まで)経緯もあり、Pelusios属内の種・亜種境界は流動的。",
       "status": "confirmed"
+    },
+    {
+      "slug": "western-painted-turtle",
+      "wamei": "セイブニシキガメ",
+      "gakumei": "Chrysemys picta bellii",
+      "eimei": "Western Painted Turtle",
+      "koura": "背甲は滑らかで扁平なオーバル。ニシキガメ4亜種のなかで最大に育ち、甲長25cmの記録がある。背甲中央に淡色の縦条が出る個体が多い。甲板の継ぎ目は互い違いにずれる（picta 亜種のように一列に揃わない）。",
+      "iro_moyou": "背甲は緑〜オリーブ〜黒地に、縁甲板と継ぎ目に沿った赤い模様。腹甲は赤〜橙地に、腹甲のほぼ全面へ広がる大きな暗色の figure を持つのが本亜種最大の識別点。",
+      "tobu": "頭部・首・四肢は暗色地に黄条、眼後に黄斑、首や脚に赤条。",
+      "size": "ニシキガメ亜種で最大。甲長18〜25cm（メス）。",
+      "bunpu": "カナダ南部（ブリティッシュコロンビア〜オンタリオ西部）〜米中西部・北西部。ニシキガメ4亜種で最も北・西に分布する。",
+      "kondou_shu": [
+        {
+          "aite": "トウブニシキガメ (Chrysemys picta picta)",
+          "kubetsu": "picta は甲板の継ぎ目が左右一列に揃い、腹甲がほとんど無地の黄色。bellii は継ぎ目がずれ、腹甲全面に大きな暗色figureを持つ。腹甲が最も確実な区別点だが、背甲だけの写真では判定できない。"
+        },
+        {
+          "aite": "ニシキガメ（種全体・Chrysemys picta）",
+          "kubetsu": "同一種。本ページは bellii 亜種のページであり、種全体のページは painted-turtle。両ページで同一個体を使わないこと。"
+        },
+        {
+          "aite": "ミナミニシキガメ (Chrysemys dorsalis)",
+          "kubetsu": "dorsalis は背甲正中に明瞭な赤/橙の縦条を持ち、独立種として扱われる。bellii の淡色縦条より明瞭で幅広い。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本では特定外来生物に指定されていない。",
+      "photo_hantei": "滑らかで扁平な緑〜黒の甲＋縁甲板/継ぎ目の赤模様＋腹甲全面に広がる大きな暗色figure。カナダ南部〜米中西部・北西部産であること。",
+      "photo_chuui": "①腹甲が写っていない写真では bellii と断定できない—産地を根拠とする。②painted-turtle（種全体）・eastern-painted-turtle と写真の使い回しリスクあり。3ページで別個体・別産地を使うこと。③亜種間の intergrade が広範で、分布境界の個体は亜種帰属できないことが多い。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/51728-Chrysemys-picta-bellii",
+        "https://www.iucnredlist.org/species/pdf/97410447"
+      ],
+      "unresolved": "ニシキガメの残る3亜種（picta/marginata/bellii）は遺伝的変異が小さく、個体単位の形態的亜種同定が困難。bellii の marginata・picta に対する地位は要追加研究。intergrade も広範。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: ミネソタ州）に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "eastern-painted-turtle",
+      "wamei": "トウブニシキガメ",
+      "gakumei": "Chrysemys picta picta",
+      "eimei": "Eastern Painted Turtle",
+      "koura": "背甲は滑らかで扁平なオーバル。ニシキガメ4亜種で最小。背甲の甲板（椎甲板と肋甲板）の継ぎ目が左右一列にまっすぐ揃うのは本亜種だけの特徴。",
+      "iro_moyou": "背甲はオリーブ〜黒地に、縁甲板と継ぎ目に沿った赤い模様。腹甲は模様のほとんどない淡黄色で、bellii の大きな暗色figureとは対照的。",
+      "tobu": "頭部・首・四肢は暗色地に黄条、眼後に黄斑、首や脚に赤条。",
+      "size": "ニシキガメ亜種で最小。甲長13〜18cm。",
+      "bunpu": "米大西洋岸（ノバスコシア〜ジョージア州）。ニシキガメの基亜種。",
+      "kondou_shu": [
+        {
+          "aite": "セイブニシキガメ (Chrysemys picta bellii)",
+          "kubetsu": "bellii は甲板の継ぎ目が互い違いにずれ、腹甲全面に大きな暗色figureを持ち、より大型。picta は継ぎ目が一列に揃い腹甲がほぼ無地の黄色。"
+        },
+        {
+          "aite": "ニシキガメ（種全体・Chrysemys picta）",
+          "kubetsu": "同一種。本ページは picta 基亜種のページであり、種全体のページは painted-turtle。両ページで同一個体を使わないこと。"
+        },
+        {
+          "aite": "ミナミニシキガメ (Chrysemys dorsalis)",
+          "kubetsu": "dorsalis は背甲正中に明瞭な赤/橙の縦条を持ち、独立種として扱われる。picta には正中条がない。"
+        }
+      ],
+      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本では特定外来生物に指定されていない。",
+      "photo_hantei": "背甲の甲板の継ぎ目が左右一列にまっすぐ揃うこと＋縁甲板/継ぎ目の赤模様＋ほぼ無地の淡黄色の腹甲。米大西洋岸産であること。",
+      "photo_chuui": "①甲板の並びは本亜種の有力な手がかりだが、斜め・側面からの写真では判定できない—産地を根拠とする。②painted-turtle（種全体）・western-painted-turtle と写真の使い回しリスクあり。3ページで別個体・別産地を使うこと。③marginata との intergrade 帯が広く、境界の個体は亜種帰属できない。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/51727-Chrysemys-picta-picta",
+        "https://www.iucnredlist.org/species/pdf/97410447"
+      ],
+      "unresolved": "ニシキガメの残る3亜種（picta/marginata/bellii）は遺伝的変異が小さく、個体単位の形態的亜種同定が困難。picta と marginata の intergrade 帯は広い。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: コネチカット州）に依拠しており、標本による検証ではない。複数個体が写る写真のため、個体ごとに同定が保証されるものではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "mississippi-diamondback-terrapin",
+      "wamei": "ミシシッピダイヤモンドバックテラピン",
+      "gakumei": "Malaclemys terrapin pileata",
+      "eimei": "Mississippi Diamondback Terrapin",
+      "koura": "各甲板に同心円（ひし形）模様。中央キールの結節はやや発達する傾向。汽水性。",
+      "iro_moyou": "背甲は灰〜褐〜黒で同心円模様が明瞭。縁甲板の外縁が橙〜黄に縁取られる個体が多いとされる。皮膚は淡灰〜白地に黒の斑点（ダイヤモンドガメ共通）。",
+      "tobu": "頭部・四肢は淡色地に黒斑。頭頂が暗色になる個体が多いとされる（pileata = 「帽子をかぶった」の意）。",
+      "size": "性的二型顕著。オス約13cm、メス平均19cm・最大23cm超の記録。",
+      "bunpu": "米メキシコ湾岸（フロリダ州西部ウォルトン郡付近〜ルイジアナ州）。塩性湿地・河口。タイプ産地はルイジアナ州ニューオーリンズ。",
+      "kondou_shu": [
+        {
+          "aite": "テキサスダイヤモンドバックテラピン (Malaclemys terrapin littoralis)",
+          "kubetsu": "littoralis は分布の西端（テキサス沿岸）で、より白っぽい個体が多いとされる。両者は湾岸で連続的に分布し中間個体が多い。写真での区別は困難で産地が最も確実。"
+        },
+        {
+          "aite": "オルナータダイヤモンドバックテラピン (Malaclemys terrapin macrospilota)",
+          "kubetsu": "macrospilota は各甲板中央が橙〜黄で明色化する。pileata は中央明色化せず同心円模様のみ。分布はフロリダ湾岸で接する。"
+        },
+        {
+          "aite": "ノーザンダイヤモンドバックテラピン (Malaclemys terrapin terrapin)",
+          "kubetsu": "terrapin は大西洋岸北部。分布が完全に離れており、産地で区別する。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Malaclemys terrapin 種全体、2013年CoP16で掲載）。IUCN Vulnerable（種としての評価）。米国の州により所持・採取規制あり。国内CB流通。",
+      "photo_hantei": "同心円（ひし形）模様＋淡色肌に黒斑＋甲板中央が橙黄に明色化しないこと。メキシコ湾岸（フロリダ西部〜ルイジアナ）産であること。",
+      "photo_chuui": "①隣接亜種 littoralis・macrospilota と連続的に分布し、写真単独では区別ほぼ不可—産地を根拠とする。②形態亜種が分子系統と一致せず亜種境界は再検討中—亜種同定は不確実、intergrade 広範。③既存のテラピン4ページ（northern/carolina/ornate/texas）と写真の使い回しリスクあり。5ページで別個体・別産地を使うこと。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39841-Malaclemys-terrapin-pileata",
+        "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+        "https://www.iucnredlist.org/species/pdf/507698"
+      ],
+      "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: ルイジアナ州）に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "texas-diamondback-terrapin",
+      "wamei": "テキサスダイヤモンドバックテラピン",
+      "gakumei": "Malaclemys terrapin littoralis",
+      "eimei": "Texas Diamondback Terrapin",
+      "koura": "各甲板に同心円（ひし形）模様。中央キールの結節はやや発達する傾向。汽水性。",
+      "iro_moyou": "背甲は灰〜褐で同心円模様。皮膚は淡灰〜白地に黒の斑点で、亜種のなかでは全体に白っぽい個体が多いとされる。縁甲板の外縁が橙〜黄に縁取られる。",
+      "tobu": "頭部・四肢は淡色地に黒斑。斑点が細かく散る個体が多いとされる。",
+      "size": "性的二型顕著。オス約13cm、メス平均19cm・最大23cm超の記録。",
+      "bunpu": "米テキサス州沿岸〜ルイジアナ州西部。ダイヤモンドバックテラピンの分布の西端にあたる。塩性湿地・河口。",
+      "kondou_shu": [
+        {
+          "aite": "ミシシッピダイヤモンドバックテラピン (Malaclemys terrapin pileata)",
+          "kubetsu": "pileata は湾岸中部（フロリダ西部〜ルイジアナ）。両者は湾岸で連続的に分布し中間個体が多い。写真での区別は困難で産地が最も確実。"
+        },
+        {
+          "aite": "オルナータダイヤモンドバックテラピン (Malaclemys terrapin macrospilota)",
+          "kubetsu": "macrospilota は各甲板中央が橙〜黄で明色化する。littoralis は中央明色化せず同心円模様のみ。分布は大きく離れる。"
+        },
+        {
+          "aite": "ノーザンダイヤモンドバックテラピン (Malaclemys terrapin terrapin)",
+          "kubetsu": "terrapin は大西洋岸北部。分布が完全に離れており、産地で区別する。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Malaclemys terrapin 種全体、2013年CoP16で掲載）。IUCN Vulnerable（種としての評価）。米国の州により所持・採取規制あり。国内CB流通。",
+      "photo_hantei": "同心円（ひし形）模様＋淡色肌に黒斑＋甲板中央が橙黄に明色化しないこと。テキサス州沿岸産であること。",
+      "photo_chuui": "①隣接亜種 pileata と連続的に分布し、写真単独では区別ほぼ不可—産地を根拠とする。②形態亜種が分子系統と一致せず亜種境界は再検討中—亜種同定は不確実、intergrade 広範。③既存のテラピン4ページ（northern/carolina/ornate/mississippi）と写真の使い回しリスクあり。5ページで別個体・別産地を使うこと。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39839-Malaclemys-terrapin-littoralis",
+        "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+        "https://www.iucnredlist.org/species/pdf/507698"
+      ],
+      "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: テキサス州）に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "tunisian-greek-tortoise",
+      "wamei": "チュニジアギリシャリクガメ",
+      "gakumei": "Testudo graeca nabeulensis",
+      "eimei": "Tunisian Tortoise",
+      "koura": "ドーム状だが Testudo graeca のなかでは小型にとどまる。大腿部に結節（スパー）を持ち、尾端スパーはない（ヘルマンとの区別点）。臀甲板は通常一枚。",
+      "iro_moyou": "黄色みの強い明るい地色に、各甲板の中央へ黒の斑が入る。イベラ亜種のような全身暗色型はまれとされる。",
+      "tobu": "頭部は小さめ。前肢5爪・後肢4爪。",
+      "size": "Testudo graeca の亜種で最小級。オス甲長13cm以下、メス16.5cm以下とされる。",
+      "bunpu": "チュニジア北東部（Nabeul 周辺がタイプ産地）〜東部アルジェリアの乾燥低地・海岸性低木林。サルデーニャ島など地中海島嶼部には人為的に持ち込まれた個体群が知られる。",
+      "kondou_shu": [
+        {
+          "aite": "イベラギリシャリクガメ (Testudo graeca ibera)",
+          "kubetsu": "ibera は東亜種クレード（トルコ〜コーカサス）で20〜30cmと大型・robust。nabeulensis は北アフリカ産で13〜17cmと小型。最終サイズと産地が最も確実な区別点。"
+        },
+        {
+          "aite": "ギリシャリクガメ 基亜種 (Testudo graeca graeca)",
+          "kubetsu": "graeca 基亜種は北アフリカ〜イベリア半島。nabeulensis とは分布が接し、独立亜種として扱うか graeca の地域変異に含めるかは資料により分かれる。"
+        },
+        {
+          "aite": "ヘルマンリクガメ (Testudo hermanni)",
+          "kubetsu": "ヘルマンは尾端に角質スパーがあり大腿部結節がない。nabeulensis は逆（大腿部スパーあり・尾端スパーなし）。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Testudinidae 科単位掲載、附属書I種を除く）。附属書II証明で取引可。日本国内CB飼育可。",
+      "photo_hantei": "小型（成体でも13〜17cm）＋大腿部の結節＋尾端スパーの欠如＋黄色みの強い地色に黒斑。チュニジア〜東部アルジェリア産であること。",
+      "photo_chuui": "①イベラ亜種と幼体では区別困難—最終サイズと産地を根拠とする。②Testudo graeca は亜種間の交雑個体が多く流通し、産地不明個体の亜種同定は困難。nabeulensis と確証できない個体を採用しない。③サルデーニャ等の移入個体群は原産地個体群と系統が完全には一致しない可能性があり、写真の産地を明記すること。④greek-tortoise / iberian-greek-tortoise / golden-greek-tortoise と写真の使い回しリスクあり。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/540655-Testudo-graeca-nabeulensis",
+        "https://cites.org/eng/taxonomy/term/4664"
+      ],
+      "unresolved": "本亜種を独立亜種として扱うか Testudo graeca の地域変異に含めるかは資料により見解が分かれる。TTWG Checklist 本文は未確認。流通個体には亜種間交雑が含まれることが知られ、産地不明個体の亜種同定は困難。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: チュニジア＝タイプ産地の国）に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
     }
   ]
 }
