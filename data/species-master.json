@@ -99,6 +99,20 @@
     "sulcata-tortoise"
    ],
    "priority_basis": "GSC90日実測の需要（S/A群・Opportunity TOP10）＋実飼育3種＋法規制/安全リスク（sulcataの大型化警告等）"
+  },
+  "scientific_name_rank": {
+   "purpose": "同一の学名を複数レコードが持つ場合に、それが二重登録なのか、意図した地域型・品種なのかを区別する",
+   "field": "scientific_name.rank（任意）",
+   "vocabulary": {
+    "species": "種。value は二名法。value の重複は認めない",
+    "subspecies": "現行有効な亜種。value は三名法。value の重複は認めない",
+    "regional_form": "分類階級を持たない産地型・地域型。value は親の学名と同一になるため重複を認める",
+    "variety": "品種・色変・流通上の呼び分け。value は親の学名と同一になるため重複を認める"
+   },
+   "inference": "rank 省略時は value の語数から推論する（2語=species / 3語=subspecies）。ただしこの推論は value が一意な場合にのみ有効。value が重複するグループでは全メンバーに rank を明示すること",
+   "parent_taxon": "親の学名は value から導出できる（括弧を除去した二名法部分）ため、独立フィールドは持たない",
+   "no_parent_record": "regional_form / variety の親にあたる種のレコードが master に存在しないことは正常とみなす（地域型のみを掲載する構成があるため）",
+   "added": "2026-08"
   }
  },
  "species": [
@@ -707,6 +721,7 @@
    "wamei": "クサガメ",
    "scientific_name": {
     "value": "Mauremys reevesii",
+    "rank": "species",
     "verification": "CONFIRMED",
     "provenance": "official",
     "institution": "CITES事務局/USFWS",
@@ -5806,6 +5821,7 @@
    "wamei": "キタニシキハコガメ",
    "scientific_name": {
     "value": "Terrapene ornata",
+    "rank": "regional_form",
     "verification": "LIKELY",
     "last_verified": "2026-08-20",
     "provenance": "academic",
@@ -5900,6 +5916,7 @@
    "wamei": "ミナミニシキハコガメ",
    "scientific_name": {
     "value": "Terrapene ornata",
+    "rank": "regional_form",
     "verification": "LIKELY",
     "last_verified": "2026-08-20",
     "provenance": "academic",
@@ -6805,9 +6822,10 @@
    "page": "species/canton-reeves-turtle.html",
    "wamei": "カントンクサガメ",
    "scientific_name": {
-    "value": "Mauremys reevesii（広東型）",
+    "value": "Mauremys reevesii",
+    "rank": "regional_form",
     "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない",
+    "note": "広東型は種内変異/地域個体群であり独立taxonではない 学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。",
     "last_verified": "2026-08-17",
     "provenance": "official",
     "sources": [
@@ -7200,6 +7218,7 @@
    "wamei": "アカアシリクガメ",
    "scientific_name": {
     "value": "Chelonoidis carbonarius",
+    "rank": "species",
     "verification": "LIKELY",
     "last_verified": "2026-08-17"
    },
@@ -7325,6 +7344,7 @@
    "wamei": "チェリーヘッドアカアシリクガメ",
    "scientific_name": {
     "value": "Chelonoidis carbonarius",
+    "rank": "variety",
     "verification": "LIKELY",
     "last_verified": "2026-08-17"
    },
@@ -10136,6 +10156,7 @@
    "wamei": "スッポン（シナスッポン）",
    "scientific_name": {
     "value": "Pelodiscus sinensis",
+    "rank": "species",
     "verification": "LIKELY",
     "last_verified": "2026-08-17"
    },
@@ -10216,6 +10237,7 @@
    "wamei": "アルビノシナスッポン",
    "scientific_name": {
     "value": "Pelodiscus sinensis",
+    "rank": "variety",
     "verification": "LIKELY",
     "last_verified": "2026-08-17"
    },
