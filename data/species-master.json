@@ -1961,8 +1961,8 @@
     "sources": [
      "https://cites.org/eng/taxonomy/term/4602"
     ],
-    "note": "種ページ未作成（ランキング・診断マスターにのみ登場。診断マスターでの和名はヌマヨコクビガメ）",
-    "last_verified": "2026-08-17"
+    "note": "種ページ未作成（ランキング・診断マスターにのみ登場）。和名は鳥羽水族館・京都市動物園等の表記に合わせモンキヨコクビガメで統一（2026-08）。別名テレケイヨコクビガメ",
+    "last_verified": "2026-08-20"
    },
    "english_name": {
     "value": "Yellow-spotted River Turtle",
@@ -5805,13 +5805,15 @@
    "page": "species/ornate-box-turtle.html",
    "wamei": "キタニシキハコガメ",
    "scientific_name": {
-    "value": "Terrapene ornata ornata",
+    "value": "Terrapene ornata",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17",
-    "provenance": "official",
+    "last_verified": "2026-08-20",
+    "provenance": "academic",
     "sources": [
-     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-    ]
+     "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+     "https://cnah.org/taxon.aspx?taxon=Terrapene_ornata"
+    ],
+    "note": "TTWG(2021) が旧亜種 ornata / luteola を統合し Terrapene ornata を単型種とした（Martin et al. 2021 の分子データ＋Minx 1996 の形態）。TFTSG種アカウントおよび SSAR 標準名リスト第9版(2025) も同扱い。よって三名法は使わない。TTWG はより網羅的な遺伝サンプリングでの再改訂の可能性を留保している。和名キタ／ミナミは現行の亜種ではなく、Terrapene ornata の産地型を指す日本語上の呼び分け。"
    },
    "english_name": {
     "value": null,
@@ -5897,13 +5899,15 @@
    "page": "species/desert-box-turtle.html",
    "wamei": "ミナミニシキハコガメ",
    "scientific_name": {
-    "value": "Terrapene ornata luteola",
+    "value": "Terrapene ornata",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17",
-    "provenance": "official",
+    "last_verified": "2026-08-20",
+    "provenance": "academic",
     "sources": [
-     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-    ]
+     "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+     "https://cnah.org/taxon.aspx?taxon=Terrapene_ornata"
+    ],
+    "note": "TTWG(2021) が旧亜種 ornata / luteola を統合し Terrapene ornata を単型種とした（Martin et al. 2021 の分子データ＋Minx 1996 の形態）。TFTSG種アカウントおよび SSAR 標準名リスト第9版(2025) も同扱い。よって三名法は使わない。TTWG はより網羅的な遺伝サンプリングでの再改訂の可能性を留保している。和名キタ／ミナミは現行の亜種ではなく、Terrapene ornata の産地型を指す日本語上の呼び分け。"
    },
    "english_name": {
     "value": null,

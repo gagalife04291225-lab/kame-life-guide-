@@ -849,7 +849,7 @@ forest: [
     score: function(s){ return (s.terrestrial||0)+(s.s_size||0)+(s.intermediate||0)+(s.na_box||0); },
     availability: 'common'
   },
-  { name: 'キタニシキハコガメ', latin: 'Terrapene ornata ornata', emoji: '💎', difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'キタニシキハコガメ', latin: 'Terrapene ornata', emoji: '💎', difficulty: '中〜上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '甲羅に黄色のニシキ模様が入る美しいハコガメ。乾燥気味の環境を好み草食傾向が強い。北米ハコガメの中でも個性的な一種。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '23〜30℃', '難易度': '★★☆' },
     coreSpecs: { size: '15cm', temp: '23〜30℃', lifespan: '20〜50年', diet: '雑食' },
@@ -926,8 +926,8 @@ forest: [
     score: function(s){ return (s.semi_aquatic||0)+(s.intermediate||0)+(s.m_size||0)+(s.tropical_climate||0)+(s.asia_water||0)+(s.ya_ma||0)+(s.humid_env||0); },
     availability: 'common'
   },
-  { name: 'ニシキハコガメ（オルナータ）', latin: 'Terrapene ornata luteola', emoji: '🏵️', difficulty: '上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'テキサス州〜メキシコに分布するニシキハコガメの亜種。乾燥耐性が高く放射状の美しい甲羅模様が特徴。乾燥系環境を好むハコガメで、キタニシキハコガメよりさらに乾燥に強い。CITES II。',
+  { name: 'ミナミニシキハコガメ', latin: 'Terrapene ornata', emoji: '🏵️', difficulty: '上級', size: 'M（11〜15cm）', cites: 'CITES II', legal: 'cites_ii',
+    reason: 'テキサス州〜メキシコに分布するニシキハコガメの南部個体群（旧・亜種 luteola）。乾燥耐性が高く放射状の美しい甲羅模様が特徴。乾燥系環境を好むハコガメで、キタニシキハコガメよりさらに乾燥に強い。CITES II。',
     specs: { '最大甲長': '15cm', 'タイプ': '陸棲', '温度': '22〜32℃', '難易度': '★★★' },
     coreSpecs: { size: '15cm', temp: '22〜32℃', lifespan: '30〜50年', diet: '雑食（昆虫・果実・草）' },
     extraSpecs: {},

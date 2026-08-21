@@ -89,8 +89,8 @@
 | トウブハコガメ | Terrapene carolina carolina | M | 中〜上級 | CITES II | 国内CB盛ん |
 | ガルフコーストハコガメ | Terrapene carolina major | M〜L | 中〜上級 | CITES II | ハコガメ最大亜種 |
 | フロリダハコガメ | Terrapene carolina bauri | M | 中〜上級 | CITES II | 放射状模様・carolinaの亜種 |
-| キタニシキハコガメ | Terrapene ornata ornata | M | 中〜上級 | CITES II | 乾燥気味の環境 |
-| ミナミニシキハコガメ | Terrapene ornata luteola | M | 中〜上級 | CITES II | 砂漠〜半乾燥地帯産 |
+| キタニシキハコガメ | Terrapene ornata | M | 中〜上級 | CITES II | 乾燥気味の環境。TTWG2021で亜種統合・単型種。和名は産地型の呼び分け |
+| ミナミニシキハコガメ | Terrapene ornata | M | 中〜上級 | CITES II | 砂漠〜半乾燥地帯産。旧亜種 luteola はTTWG2021で統合され無効。和名は産地型の呼び分け |
 | タイワンセマルハコガメ | Cuora flavomarginata flavomarginata | M | 中〜上級 | CITES II | 台湾産基亜種。八重山産の亜種evelynae（ヤエヤマセマルハコガメ）は天然記念物・飼育不可 |
 | チュウゴクセマルハコガメ | Cuora flavomarginata | M | 中〜上級 | CITES II | 中国産 |
 | スッポン（シナスッポン） | Pelodiscus sinensis | L | 中〜上級 | なし | 砂底必須 |
@@ -168,7 +168,7 @@
 | セウネハコヨコクビガメ | Pelusios castaneus | M | 上級 | なし | 西アフリカ産 |
 | アフリカヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
 | ヒメハコヨコクビガメ | Pelusios nanus | S | 上級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
-| ヌマヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型 |
+| モンキヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型。別名テレケイヨコクビガメ。「ヌマヨコクビガメ」は Pelomedusa subrufa の和名なので本種には使わない |
 | ブランディルカブトガメ | Peltocephalus dumerilianus | L | 上級 | なし | アマゾン産・大型 |
 | インプレッサムツアシガメ | Manouria impressa | M | 上級 | CITES II | 高湿度低温・極めて難しい |
 
