@@ -659,16 +659,18 @@
           "kubetsu": "leucostomumは頭部が黒く眼後2本の黄条・赤斑なし。cruentatumは赤橙斑が散る。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN軽度懸念。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。輸入個体には書類が必要だが、国内CB個体の飼育・購入に許可や登録は不要。IUCN軽度懸念（種 Kinosternon scorpioides としての評価）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "頭部の赤橙斑＋なめらかなドーム甲。頭部カットが決定的。",
       "photo_chuui": "scorpioidesと近縁で混同。赤橙斑の有無・キールの有無が手がかり。",
-      "unresolved": "【2026-08-22 記録・未解決】データ層間で学名表記が矛盾している。species-master.json / shindan/species.js / SHINDAN-SPECIES.md / species/red-cheeked-mud-turtle.html の4層はいずれも三名法 Kinosternon scorpioides cruentatum（サソリドロガメの亜種）を採用しているのに対し、本ファイルの gakumei のみ独立種 Kinosternon cruentatum を採用している。本フィールドにあった「サイトは独立種K. cruentatum表記で最新研究に整合する」という記述はサイトの実態と一致しないため撤回する。分類の経緯: 従来は K. s. cruentatum（TTWG第9版 2021・ITIS・GBIF・USFWS）。2024年 Hurtado-Gómez et al. の分子研究が cruentatum の独立種化を支持したとされるが、本記録の作成時点で当該論文本文および TTWG 第10版（2025）本文には到達できておらず、根拠を実物で確認できていない。したがって今回は学名を変更せず、矛盾の存在のみを記録する。解消条件: 一次資料（Hurtado-Gómez et al. 2024 本文）または TTWG 2025 チェックリスト本文を確認したうえで、4層＋本ファイルを同時に片方の表記へ統一する。片側だけを直さない。なお本フィールドの houkisei は「CITES未掲載」と記載しているが、master は CoP19 Prop.29（Kinosternon spp. 属単位・附属書II）を一次資料付きで CONFIRMED としており、これも矛盾している。houkisei の修正は今回のスコープ外として残す。",
+      "unresolved": "【2026-08-22 記録・未解決】データ層間で学名表記が矛盾している。species-master.json / shindan/species.js / SHINDAN-SPECIES.md / species/red-cheeked-mud-turtle.html の4層はいずれも三名法 Kinosternon scorpioides cruentatum（サソリドロガメの亜種）を採用しているのに対し、本ファイルの gakumei のみ独立種 Kinosternon cruentatum を採用している。本フィールドにあった「サイトは独立種K. cruentatum表記で最新研究に整合する」という記述はサイトの実態と一致しないため撤回する。分類の経緯: 従来は K. s. cruentatum（TTWG第9版 2021・ITIS・GBIF・USFWS）。2024年 Hurtado-Gómez et al. の分子研究が cruentatum の独立種化を支持したとされるが、本記録の作成時点で当該論文本文および TTWG 第10版（2025）本文には到達できておらず、根拠を実物で確認できていない。したがって今回は学名を変更せず、矛盾の存在のみを記録する。解消条件: 一次資料（Hurtado-Gómez et al. 2024 本文）または TTWG 2025 チェックリスト本文を確認したうえで、4層＋本ファイルを同時に片方の表記へ統一する。片側だけを直さない。なお本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.29（Kinosternon spp. 属単位・附属書II、附属書I は K. cora と K. vogti のみ）と USFWS のカメ類CITES掲載表（2024年5月版）で附属書II掲載を確認したため、2026-08-22 に附属書II掲載へ修正した。これは学名の矛盾とは別件で、CITES の掲載区分は全層（master / 本ファイル / 公開ページ / SHINDAN-SPECIES.md / species.js）で一致している。発効日そのものは master の cites.since が LIKELY（CITES通知原文での最終確認が未了）のままである。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://www.allturtles.com/scorpion-mud-turtle/",
         "https://www.bfreebz.org/mud-turtles/",
-        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
