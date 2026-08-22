@@ -68,10 +68,10 @@
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
-| ミシシッピチズガメ | Graptemys pseudogeographica kohni | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
+| ミシシッピチズガメ | Graptemys pseudogeographica kohnii | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
 | キタチズガメ | Graptemys geographica | M | 中級 | メスは28cmと大型・CITES III（米国・2006） |
 | アラバマチズガメ | Graptemys pulchra | M | 中〜上級 | 雌雄差が大きい・CITES III（米国・2006） |
-| ニセチズガメ | Graptemys pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
+| ニセチズガメ | Graptemys pseudogeographica pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
 | フトマユチズガメ | Graptemys ouachitensis | M | 中級 | 眉のような模様・CITES III（米国・2006） |
 | クロコブチズガメ | Graptemys nigrinoda | M | 中〜上級 | 黒いコブ状キール・CITES III（米国・2006） |
 | テキサスチズガメ | Graptemys versa | M | 中〜上級 | テキサス限定水系・CITES III（米国・2006） |
@@ -123,17 +123,19 @@
 
 ---
 
-## リクガメ系（24種）
+## リクガメ系（26種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | ロシアリクガメ | Testudo (Agrionemys) horsfieldii | M | 中級 | CITES II | 入門の定番 |
 | ヘルマンリクガメ | Testudo hermanni | M | 中級 | CITES II | EUCB流通豊富。流通の主体は東亜種 T. h. boettgeri |
-| ヘルマンリクガメ（ニシ） | Testudo hermanni hermanni | M | 中級 | CITES II | 小型・黄みが強い |
+| ヒガシヘルマンリクガメ | Testudo hermanni boettgeri | M | 中級 | CITES II | ヘルマンの東亜種・大型側。国内流通の主流 |
+| ニシヘルマンリクガメ | Testudo hermanni hermanni | S〜M | 中級 | CITES II | ヘルマンの基亜種・小型側。腹甲の連続黒帯が識別点 |
 | ロシアリクガメ（カラーモルフ） | Testudo horsfieldii（色変個体） | M | 中級 | CITES II | 種は同一 |
 | ギリシャリクガメ | Testudo graeca | M | 中〜上級 | CITES II | 亜種多数・産地確認必須 |
 | イベラギリシャリクガメ | Testudo graeca ibera | M | 中〜上級 | CITES II | ギリシャリクガメの亜種・大型化 |
 | チュニジアギリシャリクガメ | Testudo graeca nabeulensis | S | 中〜上級 | CITES II | ギリシャリクガメの亜種・最小級・冬眠させない系統 |
+| ゴールデンギリシャリクガメ | Testudo graeca terrestris | S〜M | 中〜上級 | CITES II | ギリシャリクガメの中東亜種・明色小型。冬眠させない管理が基本 |
 | フチゾリリクガメ | Testudo marginata | M | 中〜上級 | CITES II | 後部甲羅が反り返る |
 | オオフチゾリリクガメ | Testudo marginata marginata | M〜L | 中〜上級 | CITES II | 最大亜種 |
 | エロンガータリクガメ | Indotestudo elongata | M | 中〜上級 | CITES II | 高温多湿好む |
@@ -164,7 +166,7 @@
 | ヘビクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
 | セグロヘビクビガメ | Chelodina colliei | M | 中〜上級 | なし | 西オーストラリア産・旧学名 C. oblonga |
 | マッコードナガクビガメ | Chelodina mccordi | M | 上級 | CITES II | 2005年掲載・野生個体は輸出ゼロ枠。附属書Iではない |
-| ジーベンロックナガクビガメ | Macrochelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
+| ジーベンロックナガクビガメ | Chelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
 | パーケリーナガクビガメ | Chelodina parkeri | L | 上級 | なし | EUCB流通・色抜け個体美しい |
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |

@@ -29,7 +29,7 @@
     "last_verified": "2026-08-17"
    }
   },
-  "coverage": "108種のspecies.js全エントリをmaster管理下に登録済み（110 records・careブロック10種=TOP10完了）",
+  "coverage": "111種のspecies.js全エントリをmaster管理下に登録済み（113 records・careブロック10種=TOP10完了）",
   "schema_version": "1.1",
   "care_schema": {
    "purpose": "海外知見を検証し日本の環境・法規・商品事情へ再構成するための飼育データ層。105ページへの手入力はせず、本ファイルを唯一の飼育条件正本とする",
@@ -2452,7 +2452,7 @@
    "scientific_name": {
     "value": "Kinosternon scorpioides cruentatum",
     "verification": "LIKELY",
-    "note": "TTWG第9版(2021)・ITIS・GBIF・USFWSはサソリドロガメの亜種 K. s. cruentatum として扱う。独立種とする見解も過去にあり分類は流動的。従来の種扱い(K. cruentatum)から2026-08-17に修正",
+    "note": "TTWG第9版(2021)・ITIS・GBIF・USFWSはサソリドロガメの亜種 K. s. cruentatum として扱う。独立種とする見解も過去にあり分類は流動的。従来の種扱い(K. cruentatum)から2026-08-17に修正　【2026-08-22 記録】data/species-identification.json のみ独立種 Kinosternon cruentatum を採用しており、本レコードと矛盾している。根拠（Hurtado-Gómez et al. 2024 本文 / TTWG 2025 本文）を確認できるまでどちらの表記へも統一せず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
     "sources": [
      "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=949779",
      "https://www.gbif.org/species/9209971",
@@ -3516,14 +3516,15 @@
    "page": "species/mississippi-map-turtle.html",
    "wamei": "ミシシッピチズガメ",
    "scientific_name": {
-    "value": "Graptemys pseudogeographica kohni",
+    "value": "Graptemys pseudogeographica kohnii",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17",
+    "last_verified": "2026-08-22",
     "provenance": "official",
     "sources": [
      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-    ]
+    ],
+    "note": "亜種小名の原綴は kohnii（Baur, 1890）。TTWG・GBIF・NatureServe・USFWS いずれも kohnii を用いる。kohni は Mertens(1934) 以降に流布した異綴で、サイト内表記を kohnii に統一した（2026-08-22）。"
    },
    "english_name": {
     "value": null,
@@ -6825,7 +6826,7 @@
     "value": "Mauremys reevesii",
     "rank": "regional_form",
     "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。",
+    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。　【2026-08-22 記録】data/species-identification.json は同 slug に独立種 Mauremys nigricans（Reptile Database・TTWG・CITES附属書II）を採っており、本レコード（M. reevesii 広東型・CITES附属書III）と食い違っている。和名『カントンクサガメ』が2実体に使われていることが原因で、どちらを採るかで CITES区分・ページ本文・掲載写真がまとめて変わる。学名のみの機械的統一はせず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
     "last_verified": "2026-08-17",
     "provenance": "official",
     "sources": [
@@ -9418,9 +9419,10 @@
    "page": "species/siebenrocks-snake-necked-turtle.html",
    "wamei": "ジーベンロックナガクビガメ",
    "scientific_name": {
-    "value": "Macrochelodina rugosa",
+    "value": "Chelodina rugosa",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17"
+    "last_verified": "2026-08-22",
+    "note": "属名を Macrochelodina から Chelodina へ修正（2026-08-22）。TTWG・Reptile Database は Macrochelodina を Chelodina の亜属として扱い、有効な属名は Chelodina（Chelodina (Macrochelodina) rugosa と表記される）。種小名は未決着：C. rugosa Ogilby 1890 が長年使われたのち C. oblonga Gray 1841 への変更が提案され、その後 oblonga のホロタイプ帰属が疑問視されて nomen dubium 化し rugosa が復活した経緯がある。TTWG系は北部種を oblonga、南西部種を colliei とする一方、WA博物館・iNaturalist は北部種を rugosa、南西部種を oblonga とする。サイトは南西部種を colliei、北部種を rugosa としており種小名の系統は混在したままなので、TTWG第10版(2025)本文を確認できるまで種小名は変更しない。"
    },
    "english_name": {
     "value": null,
@@ -11784,6 +11786,369 @@
       "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
      ],
      "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "eastern-hermann-tortoise",
+   "page": "species/eastern-hermann-tortoise.html",
+   "wamei": "ヒガシヘルマンリクガメ",
+   "scientific_name": {
+    "value": "Testudo hermanni boettgeri",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "ヘルマンリクガメ（Testudo hermanni）の東側亜種 Testudo hermanni boettgeri (Mojsisovits, 1889)。ページ本文は TTWG チェックリスト（2021・2025）と Reptile Database の双方が有効亜種として扱うとしているが、本セッションでは両一次資料の本文に到達できていないため CONFIRMED にはしない。",
+    "sources": [],
+    "last_verified": "2026-08-22"
+   },
+   "english_name": {
+    "value": "Eastern Hermann's Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-22"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664"
+     ],
+     "note": "リクガメ科（Testudinidae）の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-22"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "basking_temp_c": {
+     "value": "32前後",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "ランプ直下32℃・勾配を作る"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ],
+     "note": "亜種 Testudo hermanni boettgeri の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "uvb": {
+     "value": "Ferguson Zone 3（UVI 2.9〜7.4）。T5 HO 10〜12%を甲羅上30〜40cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "強UVB帯。設置距離と器具選定が重要",
+      "jp_note": "T5 HO基本。スパイラル型のZone3適合は照度表確認まで保留"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptilecentre.com/blogs/reptile-blog/which-ferguson-zone-are-mediterranean-tortoises",
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ],
+     "note": "亜種 Testudo hermanni boettgeri の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "成体は4〜5ヶ月の冬眠が可能（幼体は3〜4年目から短期で段階導入）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "国内では冬眠なし飼育も定着しており失敗リスクを避けられる",
+      "jp_note": "初心者は冬眠なし。冬眠させる場合は段階導入と温度管理"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.testudoalbino.com/testudo-hermanni.php"
+     ],
+     "note": "亜種 Testudo hermanni boettgeri の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "western-hermann-tortoise",
+   "page": "species/western-hermann-tortoise.html",
+   "wamei": "ニシヘルマンリクガメ",
+   "scientific_name": {
+    "value": "Testudo hermanni hermanni",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "ヘルマンリクガメ（Testudo hermanni）の基亜種 Testudo hermanni hermanni (Gmelin, 1789)。ページ本文は TTWG チェックリスト（2021・2025）と Reptile Database の双方が有効亜種として扱うとしているが、本セッションでは両一次資料の本文に到達できていないため CONFIRMED にはしない。",
+    "sources": [],
+    "last_verified": "2026-08-22"
+   },
+   "english_name": {
+    "value": "Western Hermann's Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-22"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664"
+     ],
+     "note": "リクガメ科（Testudinidae）の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-22"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "basking_temp_c": {
+     "value": "32前後",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "ランプ直下32℃・勾配を作る"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ],
+     "note": "亜種 Testudo hermanni hermanni の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "uvb": {
+     "value": "Ferguson Zone 3（UVI 2.9〜7.4）。T5 HO 10〜12%を甲羅上30〜40cm",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "強UVB帯。設置距離と器具選定が重要",
+      "jp_note": "T5 HO基本。スパイラル型のZone3適合は照度表確認まで保留"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.reptilecentre.com/blogs/reptile-blog/which-ferguson-zone-are-mediterranean-tortoises",
+      "https://reptilesupply.com/blogs/tortoise-care-sheets/how-to-care-for-your-hermann-s-tortoise"
+     ],
+     "note": "亜種 Testudo hermanni hermanni の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "成体は4〜5ヶ月の冬眠が可能（幼体は3〜4年目から短期で段階導入）",
+     "verification": "LIKELY",
+     "provenance": "keeper_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "国内では冬眠なし飼育も定着しており失敗リスクを避けられる",
+      "jp_note": "初心者は冬眠なし。冬眠させる場合は段階導入と温度管理"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://www.testudoalbino.com/testudo-hermanni.php"
+     ],
+     "note": "亜種 Testudo hermanni hermanni の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "golden-greek-tortoise",
+   "page": "species/golden-greek-tortoise.html",
+   "wamei": "ゴールデンギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca terrestris",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "ギリシャリクガメ（Testudo graeca）の中東亜種 Testudo graeca terrestris (Forskål, 1775)。「ゴールデンギリシャ」「アラブギリシャ」は流通名で分類名ではない。ページ本文は TTWG チェックリスト（2021）がギリシャリクガメに10亜種を認め terrestris をその東側グループの一つとするとしているが、本セッションでは同チェックリスト本文に到達できていないため CONFIRMED にはしない。Testudo graeca は亜種の区切りに資料間の相違が大きく、floweri / anamurensis 等の名は terrestris または ibera のシノニムとして整理されている。",
+    "sources": [],
+    "last_verified": "2026-08-22"
+   },
+   "english_name": {
+    "value": "Golden Greek Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は流通名に由来する。一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-22"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664"
+     ],
+     "note": "リクガメ科（Testudinidae）の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-22"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "uvb": {
+     "value": "Ferguson Zone 3（強UVB帯）・T5 HO 10〜12%管が基本",
+     "verification": "LIKELY",
+     "provenance": "manufacturer_primary",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "Zone表はZoo Med一次資料",
+      "jp_note": "特定製品は照度表確認まで断定しない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://zoomed.com/wp-content/uploads/Powersun_Instrct_U.S_5-18.pdf"
+     ],
+     "note": "亜種 Testudo graeca terrestris の care 値は親種 Testudo graeca のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "冬眠の可否は系統差が大きい",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "亜種・系統の見極めと健康管理が国内初心者には難しい",
+      "jp_note": "国内初心者は通年加温・冬眠なしを推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca terrestris の care 値は親種 Testudo graeca のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "humidity_pct": {
+     "value": "乾燥系（梅雨〜夏の蒸れが最大リスク）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "地中海性気候と日本の梅雨の湿度差",
+      "jp_note": "通気最優先・乾燥系床材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+     ],
+     "note": "亜種 Testudo graeca terrestris の care 値は親種 Testudo graeca のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "90〜120cm級（床面積優先）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "イベラ系は大きめに育つ",
+      "jp_note": "90cm開始・120cm推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca terrestris の care 値は親種 Testudo graeca のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
     }
    }
   }
