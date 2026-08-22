@@ -35,13 +35,15 @@
 
 ---
 
-## 水棲ガメ・ヌマガメ系（20種）
+## 水棲ガメ・ヌマガメ系（22種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | クサガメ | Mauremys reevesii | M | 入門 | CITES III | 外来起源説あり・放流厳禁 |
 | キバラガメ | Trachemys scripta scripta | M | 入門 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | ニシキガメ | Chrysemys picta | M | 入門 | なし | 赤黄のラインが美しい。別称ペインテッドタートル |
+| セイブニシキガメ | Chrysemys picta bellii | M | 入門 | なし | ニシキガメの亜種・4亜種で最大・腹甲全面に暗色模様 |
+| トウブニシキガメ | Chrysemys picta picta | S | 入門 | なし | ニシキガメの基亜種・4亜種で最小・甲板の継ぎ目が一列 |
 | ミシシッピアカミミガメ | Trachemys scripta elegans | L | 入門 | なし | 条件付特定外来・新規購入不可 |
 | ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
 | ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
@@ -121,7 +123,7 @@
 
 ---
 
-## リクガメ系（23種）
+## リクガメ系（24種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
@@ -131,6 +133,7 @@
 | ロシアリクガメ（カラーモルフ） | Testudo horsfieldii（色変個体） | M | 中級 | CITES II | 種は同一 |
 | ギリシャリクガメ | Testudo graeca | M | 中〜上級 | CITES II | 亜種多数・産地確認必須 |
 | イベラギリシャリクガメ | Testudo graeca ibera | M | 中〜上級 | CITES II | ギリシャリクガメの亜種・大型化 |
+| チュニジアギリシャリクガメ | Testudo graeca nabeulensis | S | 中〜上級 | CITES II | ギリシャリクガメの亜種・最小級・冬眠させない系統 |
 | フチゾリリクガメ | Testudo marginata | M | 中〜上級 | CITES II | 後部甲羅が反り返る |
 | オオフチゾリリクガメ | Testudo marginata marginata | M〜L | 中〜上級 | CITES II | 最大亜種 |
 | エロンガータリクガメ | Indotestudo elongata | M | 中〜上級 | CITES II | 高温多湿好む |
@@ -174,13 +177,14 @@
 
 ---
 
-## 汽水ガメ（5種）
+## 汽水ガメ（6種）
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
 | ノーザンダイヤモンドバックテラピン | Malaclemys terrapin terrapin | M | 上級 | 基亜種・ダークグレー・CITES II（2013）  |
 | カロリナダイヤモンドバックテラピン | Malaclemys terrapin centrata | M | 上級 | 最も美しいとも言われる・CITES II（2013）  |
 | オルナータダイヤモンドバックテラピン | Malaclemys terrapin macrospilota | M | 上級 | 派手な模様・国内CB盛ん・CITES II（2013）  |
+| ミシシッピダイヤモンドバックテラピン | Malaclemys terrapin pileata | M | 上級 | メキシコ湾岸産・頭頂が暗色・CITES II（2013）  |
 | テキサスダイヤモンドバックテラピン | Malaclemys terrapin littoralis | M | 上級 | 渋い色合い・CITES II（2013）  |
 | その他の亜種（マングローブ等） | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない・CITES II（2013）  |
 

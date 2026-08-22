@@ -280,6 +280,13 @@
   "credited_license": "cc-by"
  },
  {
+  "wamei": "セイブニシキガメ",
+  "gakumei": "Chrysemys picta bellii",
+  "author": "Liren Varghese",
+  "obs": 313016781,
+  "credited_license": "cc-by"
+ },
+ {
   "wamei": "セオレガメ（ホメアナ）",
   "gakumei": "Kinixys homeana",
   "author": "B. Phalan",
@@ -329,10 +336,31 @@
   "credited_license": "cc-by"
  },
  {
+  "wamei": "チュニジアギリシャリクガメ",
+  "gakumei": "Testudo graeca nabeulensis",
+  "author": "Bob",
+  "obs": 150958944,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "テキサスダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin littoralis",
+  "author": "Brian Dickerson",
+  "obs": 16368456,
+  "credited_license": "cc0"
+ },
+ {
   "wamei": "トウブドロガメ",
   "gakumei": "Kinosternon subrubrum",
   "author": "Jody Shugart",
   "obs": 3721352,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "トウブニシキガメ",
+  "gakumei": "Chrysemys picta picta",
+  "author": "Doug Brush",
+  "obs": 15916328,
   "credited_license": "cc-by"
  },
  {
@@ -354,6 +382,13 @@
   "gakumei": "Chrysemys picta",
   "author": "Melissa McMasters",
   "obs": 13721465,
+  "credited_license": "cc-by"
+ },
+ {
+  "wamei": "ミシシッピダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin pileata",
+  "author": "evangrimes",
+  "obs": 78293334,
   "credited_license": "cc-by"
  },
  {
