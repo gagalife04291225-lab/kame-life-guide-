@@ -503,7 +503,7 @@
           "kubetsu": "odoratusは腹甲が小さくヒンジ1つ・甲板間に皮膚が見える・胸甲板が四角い。subrubrumは腹甲大・ヒンジ2つ。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "腹甲の2ヒンジ(K字)＋甲にストライプがないこと。腹甲が見えるカットが有効。",
       "photo_chuui": "baurii(3本条)・odoratus(1ヒンジ)と混同。亜種hippocrepisとは顔の斑点量で分ける。",
       "unresolved": "",
@@ -512,7 +512,9 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
         "https://theturtleroom.org/species-profile/kinosternon-baurii/",
-        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
@@ -535,7 +537,7 @@
           "kubetsu": "bauriiは甲に3ストライプ＋頭条が鼻先に届く。hippocrepisは甲にストライプなし。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "腹甲2ヒンジ＋顔・首の斑点。顔と腹甲が見えるカット。",
       "photo_chuui": "亜種subrubrumと酷似、斑点量が手がかり。",
       "unresolved": "",
@@ -544,7 +546,9 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
         "https://theturtleroom.org/species-profile/kinosternon-baurii/",
-        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
@@ -567,7 +571,7 @@
           "kubetsu": "分布が重なるフロリダで注意。bauriiは3ストライプ＋頭条が鼻先に届く。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "腹甲2ヒンジ＋フロリダ半島の分布。",
       "photo_chuui": "K. steindachneri として独立種化する分類あり。bauriiと分布が重なる。",
       "unresolved": "分類学的扱いが過渡期。旧来はK. subrubrum steindachneri(亜種)、近年の一部研究はK. steindachneri(独立種)。サイトは亜種表記。",
@@ -576,7 +580,9 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
         "https://theturtleroom.org/species-profile/kinosternon-baurii/",
-        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
@@ -599,7 +605,7 @@
           "kubetsu": "odoratusは腹甲小・ヒンジ1つ。bauriiは腹甲大・ヒンジ2つ＋頭条が明瞭。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "甲の3本ストライプ＋頭部の条が鼻先まで届くこと。頭部側面＋甲上面のカットが有効。",
       "photo_chuui": "subrubrumと酷似。甲のストライプと『頭条が鼻先に届く』かが決め手。ストライプが薄い個体もいる。",
       "unresolved": "",
@@ -608,7 +614,9 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
         "https://theturtleroom.org/species-profile/kinosternon-baurii/",
-        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
@@ -627,7 +635,7 @@
           "kubetsu": "flavescensは第1椎甲板が第2縁甲板に接する＋喉が鮮黄。subrubrumは第1椎甲板が第2縁甲板に接しない・喉はそこまで黄色くない。"
         }
       ],
-      "houkisei": "CITES未掲載。ただしイリノイの亜種spooneri・ミズーリのflavescensは州レベルで絶滅危惧指定。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。ただしイリノイの亜種spooneri・ミズーリのflavescensは州レベルで絶滅危惧指定。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "鮮黄色の喉・首＋第1椎甲板が第2縁甲板に接する甲構造。喉が見えるカット＋甲前部が有効。",
       "photo_chuui": "subrubrum群と混同。喉の黄色さと甲板の接触関係が決め手。",
       "unresolved": "",
@@ -636,7 +644,9 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1267",
         "https://theturtleroom.org/species-profile/kinosternon-baurii/",
-        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php"
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/striped-mud-turtle/index.php",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ]
     },
     {
@@ -662,15 +672,14 @@
       "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。輸入個体には書類が必要だが、国内CB個体の飼育・購入に許可や登録は不要。IUCN軽度懸念（種 Kinosternon scorpioides としての評価）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "頭部の赤橙斑＋なめらかなドーム甲。頭部カットが決定的。",
       "photo_chuui": "scorpioidesと近縁で混同。赤橙斑の有無・キールの有無が手がかり。",
-      "unresolved": "【2026-08-22 記録・未解決】データ層間で学名表記が矛盾している。species-master.json / shindan/species.js / SHINDAN-SPECIES.md / species/red-cheeked-mud-turtle.html の4層はいずれも三名法 Kinosternon scorpioides cruentatum（サソリドロガメの亜種）を採用しているのに対し、本ファイルの gakumei のみ独立種 Kinosternon cruentatum を採用している。本フィールドにあった「サイトは独立種K. cruentatum表記で最新研究に整合する」という記述はサイトの実態と一致しないため撤回する。分類の経緯: 従来は K. s. cruentatum（TTWG第9版 2021・ITIS・GBIF・USFWS）。2024年 Hurtado-Gómez et al. の分子研究が cruentatum の独立種化を支持したとされるが、本記録の作成時点で当該論文本文および TTWG 第10版（2025）本文には到達できておらず、根拠を実物で確認できていない。したがって今回は学名を変更せず、矛盾の存在のみを記録する。解消条件: 一次資料（Hurtado-Gómez et al. 2024 本文）または TTWG 2025 チェックリスト本文を確認したうえで、4層＋本ファイルを同時に片方の表記へ統一する。片側だけを直さない。なお本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.29（Kinosternon spp. 属単位・附属書II、附属書I は K. cora と K. vogti のみ）と USFWS のカメ類CITES掲載表（2024年5月版）で附属書II掲載を確認したため、2026-08-22 に附属書II掲載へ修正した。これは学名の矛盾とは別件で、CITES の掲載区分は全層（master / 本ファイル / 公開ページ / SHINDAN-SPECIES.md / species.js）で一致している。発効日そのものは master の cites.since が LIKELY（CITES通知原文での最終確認が未了）のままである。",
+      "unresolved": "【2026-08-22 記録・未解決】データ層間で学名表記が矛盾している。species-master.json / shindan/species.js / SHINDAN-SPECIES.md / species/red-cheeked-mud-turtle.html の4層はいずれも三名法 Kinosternon scorpioides cruentatum（サソリドロガメの亜種）を採用しているのに対し、本ファイルの gakumei のみ独立種 Kinosternon cruentatum を採用している。本フィールドにあった「サイトは独立種K. cruentatum表記で最新研究に整合する」という記述はサイトの実態と一致しないため撤回する。分類の経緯: 従来は K. s. cruentatum（TTWG第9版 2021・ITIS・GBIF・USFWS）。2024年 Hurtado-Gómez et al. の分子研究が cruentatum の独立種化を支持したとされるが、本記録の作成時点で当該論文本文および TTWG 第10版（2025）本文には到達できておらず、根拠を実物で確認できていない。したがって今回は学名を変更せず、矛盾の存在のみを記録する。解消条件: 一次資料（Hurtado-Gómez et al. 2024 本文）または TTWG 2025 チェックリスト本文を確認したうえで、4層＋本ファイルを同時に片方の表記へ統一する。片側だけを直さない。なお本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.29（Kinosternon spp. 属単位・附属書II、附属書I は K. cora と K. vogti のみ）で 附属書II掲載を確認したため、2026-08-22 に附属書II掲載へ修正した。USFWS のカメ類CITES掲載表（2024年5月版）は米国産種の一覧のため本種は載らず、出典からは外した。これは学名の矛盾とは別件で、CITES の掲載区分は全層（master / 本ファイル / 公開ページ / SHINDAN-SPECIES.md / species.js）で一致している。発効日そのものは master の cites.since が LIKELY（CITES通知原文での最終確認が未了）のままである。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://www.allturtles.com/scorpion-mud-turtle/",
         "https://www.bfreebz.org/mud-turtles/",
         "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle",
-        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf",
-        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
@@ -693,7 +702,7 @@
           "kubetsu": "scorpioidesは3キール明瞭。cruentatumはキール不明瞭＋頭部赤橙斑。旧分類でcruentatumはscorpioidesの亜種だった。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN軽度懸念。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。IUCN軽度懸念。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "背甲の3本キール＋尾端スパー(オス)。甲を斜めから見たカットが有効。",
       "photo_chuui": "leucostomum・cruentatumと混同。3キールの有無が決め手。亜種が多く頭部色彩は変異大。",
       "unresolved": "scorpioidesは近年複数種に分割された(cruentatum/albogulare/abaxillare等が独立種化、2024)。狭義K. scorpioidesの範囲が縮小している。",
@@ -702,7 +711,8 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://www.allturtles.com/scorpion-mud-turtle/",
         "https://www.bfreebz.org/mud-turtles/",
-        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
@@ -725,7 +735,7 @@
           "kubetsu": "acutumは最小・腹甲が尖る。leucostomumはより大型・頭部の2黄条が明瞭。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "頭部の黒地に眼後2本の黄条＋なめらかな甲。頭部側面カットが決定的。",
       "photo_chuui": "scorpioidesと混同。頭部の2黄条＋キールなしが決め手。",
       "unresolved": "",
@@ -734,7 +744,8 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://www.allturtles.com/scorpion-mud-turtle/",
         "https://www.bfreebz.org/mud-turtles/",
-        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
@@ -757,7 +768,7 @@
           "kubetsu": "acutumは腹甲が尖りブリッジ狭い。cruentatumは頭部赤橙斑が主体。"
         }
       ],
-      "houkisei": "CITES未掲載。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "小型＋腹甲後部が尖る＋狭いブリッジ。腹甲が見えるカットが有効。",
       "photo_chuui": "和名『オオアタマドロガメ』だが学名はK. acutum(タバスコドロガメ)。leucostomum等と混同注意。",
       "unresolved": "和名の妥当性要確認。K. acutumは英名Tabasco/Narrow-bridged mud turtleで、『オオアタマドロガメ』の和名が本種に定着しているか流通名との対応を検収時に再確認。",
@@ -766,7 +777,8 @@
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://www.allturtles.com/scorpion-mud-turtle/",
         "https://www.bfreebz.org/mud-turtles/",
-        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle"
+        "https://www.researchgate.net/publication/381973945_Morphometric_Variation_in_the_Red-Cheeked_Mud_Turtle",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
@@ -789,7 +801,7 @@
           "kubetsu": "太平洋斜面で近縁種と分布が接する。integrumはより広域大型。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN軽度懸念。メキシコ固有。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。IUCN軽度懸念。メキシコ固有。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "メキシコ産の中型ドロガメで腹甲2ヒンジ。近縁種との区別は分布が主。",
       "photo_chuui": "和名『サラドロガメ』。メキシコの近縁ドロガメ(vogti/chimalhuaca/hirtipes)と分布が接し外見が似る。",
       "unresolved": "",
@@ -797,7 +809,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
         "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan",
-        "https://animaldiversity.org/accounts/Kinosternon_flavescens/"
+        "https://animaldiversity.org/accounts/Kinosternon_flavescens/",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
@@ -820,14 +833,15 @@
           "kubetsu": "分布が北東メキシコで接する。herreraiは甲板比率と分布で区別。"
         }
       ],
-      "houkisei": "CITES未掲載。メキシコ固有。",
+      "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。メキシコ固有。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "メキシコ湾岸側産の中型ドロガメで腹甲2ヒンジ。区別は分布が主。",
       "photo_chuui": "integrum等メキシコ産ドロガメと外見が似る。分布(湾岸側)が手がかり。",
       "unresolved": "種内・近縁種の形態的識別点の一次情報が乏しい。分布(メキシコ湾岸側固有)以外の決定的形態識別点を検収時に追加調査要。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
-        "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan"
+        "https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2244&context=wnan",
+        "https://cites.org/sites/default/files/documents/E-CoP19-Prop-29_0.pdf"
       ]
     },
     {
