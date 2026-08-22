@@ -3281,13 +3281,13 @@
       ],
       "houkisei": "CITES附属書II掲載（Malaclemys terrapin 種全体、2013年CoP16で掲載）。IUCN Vulnerable（種としての評価）。米国の州により所持・採取規制あり。国内CB流通。",
       "photo_hantei": "同心円（ひし形）模様＋淡色肌に黒斑＋甲板中央が橙黄に明色化しないこと。メキシコ湾岸（フロリダ西部〜ルイジアナ）産であること。",
-      "photo_chuui": "①隣接亜種 littoralis・macrospilota と連続的に分布し、写真単独では区別ほぼ不可—産地を根拠とする。②形態亜種が分子系統と一致せず亜種境界は再検討中—亜種同定は不確実、intergrade 広範。③既存のテラピン4ページ（northern/carolina/ornate/texas）と写真の使い回しリスクあり。5ページで別個体・別産地を使うこと。",
+      "photo_chuui": "①隣接亜種 littoralis・macrospilota と連続的に分布し、写真単独では区別ほぼ不可—産地を根拠とする。②形態亜種が分子系統と一致せず亜種境界は再検討中—亜種同定は不確実、intergrade 広範。③既存のテラピン4ページ（northern/carolina/ornate/texas）と写真の使い回しリスクあり。5ページで別個体・別産地を使うこと。④本ページの写真は位置情報が非公開の観察のため、産地による亜種の裏づけがない点に留意する。",
       "sources": [
         "https://www.inaturalist.org/taxa/39841-Malaclemys-terrapin-pileata",
         "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
         "https://www.iucnredlist.org/species/pdf/507698"
       ],
-      "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: ルイジアナ州）に依拠しており、標本による検証ではない。",
+      "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。当該観察は保護対象種のため位置情報が公開されておらず、産地による裏づけは取れていない。",
       "status": "confirmed"
     },
     {
