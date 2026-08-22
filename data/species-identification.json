@@ -2041,7 +2041,7 @@
           "kubetsu": "feroxは前縁に結節あり＋大型/muticaは前縁に棘/結節なし・平滑＋鼻孔が丸い(隔壁隆起なし)。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN Least Concern(個体群安定)。国内流通あり。",
+      "houkisei": "CITES附属書II掲載（2023年発効、CoP19 Prop.32 で Apalone spp. が附属書IIIから附属書IIへ移行。附属書I は亜種 Apalone spinifera atra のみ）。IUCN Least Concern(個体群安定)。国内流通あり。※古い資料は「CITES未掲載」と記載しているので注意。CoP19以前も附属書IIIに掲載されており、「未掲載」であった時期はない。",
       "photo_hantei": "ずんぐりした大型の暗色軟質甲＋前縁の幅広い扁平半球状結節＋豚鼻状の短い吻＋(あれば)眼〜顎の黄赤条。属内最大＝サイズも手がかり。",
       "photo_chuui": "①spinifera・muticaと同じApaloneだが、feroxは前縁結節が扁平半球状＋遥かに大型＋暗色で区別可。②幼体は種間の差が小さく紛らわしい—前縁結節と鼻孔形状を確認。③軟質甲は損傷・角度で結節が見えにくいことがある。",
       "sources": [
@@ -2049,9 +2049,11 @@
         "https://animaldiversity.org/accounts/Apalone_ferox/",
         "https://grokipedia.com/page/Florida_softshell_turtle",
         "https://www.tortoise.org/archives/apalone.html",
-        "https://www.activewild.com/florida-softshell-turtle/"
+        "https://www.activewild.com/florida-softshell-turtle/",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ],
-      "unresolved": "A. ferox は単型で分類的に安定。主な識別課題は同属spinifera/muticaとの幼体時の類似で、前縁結節の形状(扁平半球状 vs 円錐状 vs なし)と鼻孔形状を要確認。同所的なspinifera asperaとは結節形状で区別。",
+      "unresolved": "A. ferox は単型で分類的に安定。主な識別課題は同属spinifera/muticaとの幼体時の類似で、前縁結節の形状(扁平半球状 vs 円錐状 vs なし)と鼻孔形状を要確認。同所的なspinifera asperaとは結節形状で区別。　【2026-08-22 追記】CITES: 本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.32（Apalone spp. を附属書IIIから附属書IIへ移行、附属書I は亜種 Apalone spinifera atra のみ）と USFWS のカメ類CITES掲載表（2024年5月版）で附属書II掲載を確認したため附属書II掲載へ修正した。発効日そのものは master の cites.since が UNPROVEN のままで、当サイトでは「2023年発効」以上に細かくは断定しない。",
       "status": "confirmed"
     },
     {
@@ -2074,7 +2076,7 @@
           "kubetsu": "spiniferaは前縁に円錐状の棘＋眼状斑/feroxは前縁結節が扁平半球状＋遥かに大型＋暗色ずんぐり。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN Least Concern。国内流通あり。",
+      "houkisei": "CITES附属書II掲載（2023年発効、CoP19 Prop.32 で Apalone spp. が附属書IIIから附属書IIへ移行。附属書I は亜種 Apalone spinifera atra のみ）。IUCN Least Concern。国内流通あり。※古い資料は「CITES未掲載」と記載しているので注意。CoP19以前も附属書IIIに掲載されており、「未掲載」であった時期はない。",
       "photo_hantei": "前縁の棘状突起＋サンドペーパー状の甲＋(幼体/オス)黒縁の眼状斑＋鼻孔の隔壁隆起。前縁の棘と眼状斑が有効。",
       "photo_chuui": "①muticaと酷似—前縁の棘の有無＋鼻孔の形(隔壁隆起=spinifera / 丸い=mutica)が決め手。背側だけでは棘の確認を。②メス・老成は眼状斑が消え斑紋化—幼体/オスの方が識別しやすい。③亜種が5〜6あり産地で細分されるが本ページは種レベル。",
       "sources": [
@@ -2082,9 +2084,12 @@
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1276",
         "https://en.wikipedia.org/wiki/Apalone",
         "https://grokipedia.com/page/Apalone",
-        "https://animaldiversity.org/accounts/Apalone_mutica/"
+        "https://animaldiversity.org/accounts/Apalone_mutica/",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+        "https://cites.org/eng/taxonomy/term/4674"
       ],
-      "unresolved": "5〜6亜種(aspera/emoryi/guadalupensis/pallida/spinifera)が産地で認識されるが本ページは種レベル。muticaとの区別は前縁の棘と鼻孔の隔壁隆起に依存し、これらが写らない写真では判別困難。メス・老成のメラニズムで眼状斑が失われる。",
+      "unresolved": "5〜6亜種(aspera/emoryi/guadalupensis/pallida/spinifera)が産地で認識されるが本ページは種レベル。muticaとの区別は前縁の棘と鼻孔の隔壁隆起に依存し、これらが写らない写真では判別困難。メス・老成のメラニズムで眼状斑が失われる。　【2026-08-22 追記】CITES: 本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.32（Apalone spp. を附属書IIIから附属書IIへ移行、附属書I は亜種 Apalone spinifera atra のみ）と USFWS のカメ類CITES掲載表（2024年5月版）で附属書II掲載を確認したため附属書II掲載へ修正した。発効日そのものは master の cites.since が UNPROVEN のままで、当サイトでは「2023年発効」以上に細かくは断定しない。　なお附属書I はメキシコ・クアトロシエネガス固有の亜種 Apalone spinifera atra のみで、本ページが扱う種レベルの Apalone spinifera は附属書IIである。亜種 atra は当サイト未掲載。",
       "status": "confirmed"
     },
     {
@@ -2107,7 +2112,7 @@
           "kubetsu": "muticaは小〜中型・平滑・鼻孔丸い/feroxは大型ずんぐり・前縁結節あり・暗色。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN Least Concern。国内流通は稀。",
+      "houkisei": "CITES附属書II掲載（2023年発効、CoP19 Prop.32 で Apalone spp. が附属書IIIから附属書IIへ移行。附属書I は亜種 Apalone spinifera atra のみ）。IUCN Least Concern。国内流通は稀。※古い資料は「CITES未掲載」と記載しているので注意。CoP19以前も附属書IIIに掲載されており、「未掲載」であった時期はない。",
       "photo_hantei": "前縁に棘/結節のない平滑な甲＋丸い鼻孔(隔壁隆起なし)＋明瞭な眼状斑を欠く。鼻孔が丸いことが属内で唯一の決定的形質。",
       "photo_chuui": "①spiniferaと酷似し差は微妙—前縁の棘がなく平滑＋鼻孔が丸いことで区別。鼻孔が写る頭部アップが最有効。②眼状斑を欠く点でspinifera幼体/オスと区別できるが、spiniferaメス(斑紋化)とは紛らわしい。③軟質甲は角度で平滑/ざらつきが判別しにくい。",
       "sources": [
@@ -2115,9 +2120,11 @@
         "https://animaldiversity.org/accounts/Apalone_mutica/",
         "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1276",
         "https://en.wikipedia.org/wiki/Apalone",
-        "https://www.tortoise.org/archives/apalone.html"
+        "https://www.tortoise.org/archives/apalone.html",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
       ],
-      "unresolved": "A. mutica は2亜種。spiniferaとの区別は前縁の棘の欠如と丸い鼻孔(隔壁隆起なし)に依存し、これらが写らない写真では判別困難。メラニズムのspiniferaメスとは特に紛らわしい。",
+      "unresolved": "A. mutica は2亜種。spiniferaとの区別は前縁の棘の欠如と丸い鼻孔(隔壁隆起なし)に依存し、これらが写らない写真では判別困難。メラニズムのspiniferaメスとは特に紛らわしい。　【2026-08-22 追記】CITES: 本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.32（Apalone spp. を附属書IIIから附属書IIへ移行、附属書I は亜種 Apalone spinifera atra のみ）と USFWS のカメ類CITES掲載表（2024年5月版）で附属書II掲載を確認したため附属書II掲載へ修正した。発効日そのものは master の cites.since が UNPROVEN のままで、当サイトでは「2023年発効」以上に細かくは断定しない。",
       "status": "confirmed"
     },
     {
