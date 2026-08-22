@@ -450,12 +450,26 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 
 要差し替え（基準に抵触）:
 
-| slug | 理由 |
-|------|------|
-| `ornate-box-turtle` | 後肢の足先に出血。負傷しているように見える個体 |
-| `spiny-softshell-turtle` | 乾いた地面に2個体が四肢を投げ出して伏せ、生死が判断できない |
-| `scorpion-mud-turtle` | 腹甲のみ・仰向け。頭も四肢も見えず生死が判断できない |
-| `florida-mud-turtle` | 甲羅のみを真上から撮影。頭も四肢も写っていない |
+**4件すべて差し替え済み**（PR #34 / commit e9f3b23）。旧写真（出血個体・2個体伏せ・
+腹甲のみ・甲羅のみ）はリポジトリから消えており、再監査で基準抵触は0件だった。
+差し替え後の写真・出典・ライセンスは下記のとおり全層で一致している。
+
+| slug | 差し替え後の出典 | 作者 | ライセンス |
+|------|------------------|------|-----------|
+| `ornate-box-turtle` | iNaturalist 観察 93671651 | Catherine C. Galley | CC BY 4.0 |
+| `spiny-softshell-turtle` | iNaturalist 観察 30120195 | Rachel Stringham | CC BY 4.0 |
+| `scorpion-mud-turtle` | iNaturalist 観察 63998380 | Hugo Hulsberg | CC0 1.0 |
+| `florida-mud-turtle` | iNaturalist 観察 60847369 | mark-groeneveld | CC BY 4.0 |
+
+残る確認事項:
+
+- `florida-mud-turtle` は頭部のクローズアップで、識別点（腹甲2ヒンジ）が写っていない。
+  背甲が無地（bauriiの3本条線がない）ことから steindachneri と整合するが、
+  「識別点が写っていること」という採用基準は満たしきれていない。構図としても
+  枯れ枝が顔を横切る。基準違反ではないため差し替えは保留し、亀好きさんの判断を待つ。
+- `spiny-softshell-turtle` は背側からの構図で、mutica との決め手である前縁の棘と
+  鼻孔の隔壁隆起を画像上で確認できない。甲のサンドペーパー状の質感は spinifera と
+  整合。同定は iNaturalist のコミュニティ同定に依拠している。
 
 亀好きさんの判断待ち:
 
