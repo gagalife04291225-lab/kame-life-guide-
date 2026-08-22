@@ -113,10 +113,12 @@
  },
  {
   "wamei": "カントンクサガメ",
-  "gakumei": "Mauremys reevesii",
-  "author": "Samuele Papeschi",
-  "obs": 145422325,
-  "credited_license": "cc-by"
+  "gakumei": "Mauremys nigricans",
+  "author": "Greg Hume",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Kwangtung_Turtle_(Mauremys_nigricans).JPG"
  },
  {
   "wamei": "カンバーランドスライダー",

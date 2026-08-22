@@ -6823,30 +6823,44 @@
    "page": "species/canton-reeves-turtle.html",
    "wamei": "カントンクサガメ",
    "scientific_name": {
-    "value": "Mauremys reevesii",
-    "rank": "regional_form",
-    "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。　【2026-08-22 記録】data/species-identification.json は同 slug に独立種 Mauremys nigricans（Reptile Database・TTWG・CITES附属書II）を採っており、本レコード（M. reevesii 広東型・CITES附属書III）と食い違っている。和名『カントンクサガメ』が2実体に使われていることが原因で、どちらを採るかで CITES区分・ページ本文・掲載写真がまとめて変わる。学名のみの機械的統一はせず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
-    "last_verified": "2026-08-17",
+    "value": "Mauremys nigricans",
+    "rank": "species",
+    "verification": "CONFIRMED",
     "provenance": "official",
+    "note": "【2026-08-22 実体決定】従来は「クサガメ M. reevesii の広東型（regional_form）」としていたが、和名カントンクサガメは独立種 Mauremys nigricans（旧 Chinemys nigricans）の標準和名であり、国内流通（ぶりくら・専門店の国内CB）も本種を指すことを確認したため、全層を M. nigricans へ統一した。「クサガメ広東産地個体群」という商流は外部資料で確認できなかった。",
     "sources": [
-     "https://cites.org/eng/taxonomy/term/4560"
-    ]
+     "https://www.fws.gov/species/chinese-red-necked-turtle-mauremys-nigricans",
+     "https://iucn-tftsg.org/mauremys-nigricans-068/",
+     "https://ja.wikipedia.org/wiki/カントンクサガメ"
+    ],
+    "last_verified": "2026-08-22"
    },
    "english_name": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": "Chinese Red-necked Turtle",
+    "verification": "CONFIRMED",
+    "provenance": "official",
+    "sources": [
+     "https://www.fws.gov/species/chinese-red-necked-turtle-mauremys-nigricans"
+    ],
+    "last_verified": "2026-08-22"
    },
    "distribution": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": "中国南部（広東省・広西チワン族自治区・海南省）。ベトナム北部の個体群は絶滅した可能性",
+    "verification": "LIKELY",
+    "sources": [
+     "https://iucn-tftsg.org/mauremys-nigricans-068/",
+     "https://ja.wikipedia.org/wiki/カントンクサガメ"
+    ],
+    "last_verified": "2026-08-22"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 25,
+    "verification": "LIKELY",
+    "note": "オス約20cm・メス約25cm（性的二型）",
+    "sources": [
+     "https://ja.wikipedia.org/wiki/カントンクサガメ"
+    ],
+    "last_verified": "2026-08-22"
    },
    "conservation": {
     "env_redlist": {
@@ -6855,8 +6869,14 @@
      "last_verified": "2026-08-17"
     },
     "iucn": {
-     "value": null,
-     "verification": "NEEDS_REVIEW"
+     "value": "EN（絶滅危惧）",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "sources": [
+      "https://iucn-tftsg.org/mauremys-nigricans-068/"
+     ],
+     "note": "野生個体群は食用・薬用の乱獲で激減。流通はCB前提",
+     "last_verified": "2026-08-22"
     }
    },
    "cites": {
@@ -6864,16 +6884,19 @@
      "value": "III",
      "verification": "CONFIRMED",
      "provenance": "official",
-     "institution": "CITES事務局/USFWS/カナダ政府",
+     "institution": "CITES事務局/EU規則1332/2005",
      "sources": [
-      "https://cites.org/eng/taxonomy/term/4560"
+      "https://www.legislation.gov.uk/eur/2005/1332/data.html",
+      "https://www.fws.gov/species/chinese-red-necked-turtle-mauremys-nigricans"
      ],
-     "note": "種M. reevesiiとして附属書III（中国）",
-     "last_verified": "2026-08-17"
+     "note": "中国が2005年に Chinemys nigricans として附属書IIIへ掲載（クサガメ C. reevesii と同一バッチ）。区分はIIIのまま変更なし",
+     "last_verified": "2026-08-22"
     },
     "since": {
-     "value": null,
-     "verification": "UNPROVEN"
+     "value": "2005",
+     "verification": "LIKELY",
+     "note": "EU規則1332/2005で掲載を確認。正確な発効日は通知原文未確認",
+     "last_verified": "2026-08-22"
     }
    },
    "domestic_law": {
