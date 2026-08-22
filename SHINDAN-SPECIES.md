@@ -123,17 +123,19 @@
 
 ---
 
-## リクガメ系（24種）
+## リクガメ系（26種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | ロシアリクガメ | Testudo (Agrionemys) horsfieldii | M | 中級 | CITES II | 入門の定番 |
 | ヘルマンリクガメ | Testudo hermanni | M | 中級 | CITES II | EUCB流通豊富。流通の主体は東亜種 T. h. boettgeri |
-| ヘルマンリクガメ（ニシ） | Testudo hermanni hermanni | M | 中級 | CITES II | 小型・黄みが強い |
+| ヒガシヘルマンリクガメ | Testudo hermanni boettgeri | M | 中級 | CITES II | ヘルマンの東亜種・大型側。国内流通の主流 |
+| ニシヘルマンリクガメ | Testudo hermanni hermanni | S〜M | 中級 | CITES II | ヘルマンの基亜種・小型側。腹甲の連続黒帯が識別点 |
 | ロシアリクガメ（カラーモルフ） | Testudo horsfieldii（色変個体） | M | 中級 | CITES II | 種は同一 |
 | ギリシャリクガメ | Testudo graeca | M | 中〜上級 | CITES II | 亜種多数・産地確認必須 |
 | イベラギリシャリクガメ | Testudo graeca ibera | M | 中〜上級 | CITES II | ギリシャリクガメの亜種・大型化 |
 | チュニジアギリシャリクガメ | Testudo graeca nabeulensis | S | 中〜上級 | CITES II | ギリシャリクガメの亜種・最小級・冬眠させない系統 |
+| ゴールデンギリシャリクガメ | Testudo graeca terrestris | S〜M | 中〜上級 | CITES II | ギリシャリクガメの中東亜種・明色小型。冬眠させない管理が基本 |
 | フチゾリリクガメ | Testudo marginata | M | 中〜上級 | CITES II | 後部甲羅が反り返る |
 | オオフチゾリリクガメ | Testudo marginata marginata | M〜L | 中〜上級 | CITES II | 最大亜種 |
 | エロンガータリクガメ | Indotestudo elongata | M | 中〜上級 | CITES II | 高温多湿好む |

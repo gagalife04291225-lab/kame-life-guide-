@@ -385,6 +385,24 @@
   "credited_license": "cc-by"
  },
  {
+  "wamei": "ニシヘルマンリクガメ",
+  "gakumei": "Testudo hermanni hermanni",
+  "author": "Orchi",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/Category:Testudo_hermanni_hermanni"
+ },
+ {
+  "wamei": "ヒガシヘルマンリクガメ",
+  "gakumei": "Testudo hermanni boettgeri",
+  "author": "Palauenc05",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Hermanni_boettgeri_Pag.jpg"
+ },
+ {
   "wamei": "ミシシッピダイヤモンドバックテラピン",
   "gakumei": "Malaclemys terrapin pileata",
   "author": "evangrimes",

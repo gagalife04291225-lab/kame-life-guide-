@@ -5,7 +5,7 @@ species-master.json（FACT-CHECK正本）と、サイト内の種データの照
 照合対象:
   shindan/species.js   … latin / cites / 最大甲長
   SHINDAN-SPECIES.md   … 学名列 / CITES列
-  species/<slug>.html  … 学名の記載 / 保全表記のラベル
+  species/<slug>.html  … 学名の記載 / 保全表記のラベル・master 未登録ページの検出
   master 内部        … scientific_name.rank の語彙・学名の一意性
 
 原則:
@@ -18,7 +18,7 @@ species-master.json（FACT-CHECK正本）と、サイト内の種データの照
   python3 tools/validate_species.py            # 検出結果を表示（常に exit 0）
   python3 tools/validate_species.py --strict   # MISMATCH があれば exit 1
 """
-import argparse, json, os, re, sys
+import argparse, glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTER = os.path.join(ROOT, "data", "species-master.json")
@@ -230,6 +230,22 @@ def main():
             if dup:
                 mismatch("master:" + val, "slug重複",
                          "rank=%s 内で一意" % kind, " / ".join(dup))
+
+
+    # --- W3: 実体ページはあるが master に未登録（2026-08 追加）---
+    # master 起点の照合だけでは「ページだけ増えてデータ層に無い種」を検出できない。
+    # リダイレクト用スタブと雛形は対象外にする。
+    registered = {sp["slug"] for sp in master}
+    for path in sorted(glob.glob(os.path.join(ROOT, "species", "*.html"))):
+        slug = os.path.basename(path)[:-5]
+        if slug in registered:
+            continue
+        raw = open(path, encoding="utf-8").read()
+        if re.search(r'http-equiv=["\']refresh["\']', raw, re.I):
+            continue                                  # リダイレクト用スタブ
+        if "template" in slug or slug.startswith("_"):
+            continue                                  # 雛形
+        warns.append("WARN species/%s.html は実体ページですが master に未登録です" % slug)
 
     print("=== validate_species: master %d種を照合 ===" % len(master))
     for i in issues:
