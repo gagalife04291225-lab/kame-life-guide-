@@ -346,7 +346,7 @@ aquatic: [
     extraSpecs: { tankSize: '90cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'western-painted-turtle', hasPage: true,
-    match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2 && (s.na_water||0) >= 2; },
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2 && (s.na_water||0) >= 2 && ((s.intermediate||0) >= 1 || (s.advanced||0) >= 1); },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.na_water||0)+(s.swimmer||0)+(s.cool_climate||0)+(s.beauty||0); },
     availability: 'rare'
   },
@@ -357,7 +357,7 @@ aquatic: [
     extraSpecs: { tankSize: '60cm〜' },
     links: [{ label: '水棲ガメ 飼育ガイド', href: '../guide-water-full.html' }], asin: null,
     slug: 'eastern-painted-turtle', hasPage: true,
-    match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2 && (s.na_water||0) >= 2 && (s.cool_climate||0) >= 2; },
+    match: function(s){ return (s.medium_tank||0) >= 2 && (s.active||0) >= 2 && (s.na_water||0) >= 2 && (s.cool_climate||0) >= 2 && ((s.intermediate||0) >= 1 || (s.advanced||0) >= 1); },
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.na_water||0)+(s.cool_climate||0)+(s.swimmer||0)+(s.small_tank||0); },
     availability: 'rare'
   },

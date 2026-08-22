@@ -3211,7 +3211,7 @@
           "kubetsu": "dorsalis は背甲正中に明瞭な赤/橙の縦条を持ち、独立種として扱われる。bellii の淡色縦条より明瞭で幅広い。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本では特定外来生物に指定されていない。",
+      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本での外来生物法上の指定状況は未確認（環境省告示の一次資料で要確認）。master の domestic_law は UNPROVEN。",
       "photo_hantei": "滑らかで扁平な緑〜黒の甲＋縁甲板/継ぎ目の赤模様＋腹甲全面に広がる大きな暗色figure。カナダ南部〜米中西部・北西部産であること。",
       "photo_chuui": "①腹甲が写っていない写真では bellii と断定できない—産地を根拠とする。②painted-turtle（種全体）・eastern-painted-turtle と写真の使い回しリスクあり。3ページで別個体・別産地を使うこと。③亜種間の intergrade が広範で、分布境界の個体は亜種帰属できないことが多い。",
       "sources": [
@@ -3245,7 +3245,7 @@
           "kubetsu": "dorsalis は背甲正中に明瞭な赤/橙の縦条を持ち、独立種として扱われる。picta には正中条がない。"
         }
       ],
-      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本では特定外来生物に指定されていない。",
+      "houkisei": "CITES未掲載。IUCN低危険（Least Concern、種としての評価）。日本での外来生物法上の指定状況は未確認（環境省告示の一次資料で要確認）。master の domestic_law は UNPROVEN。",
       "photo_hantei": "背甲の甲板の継ぎ目が左右一列にまっすぐ揃うこと＋縁甲板/継ぎ目の赤模様＋ほぼ無地の淡黄色の腹甲。米大西洋岸産であること。",
       "photo_chuui": "①甲板の並びは本亜種の有力な手がかりだが、斜め・側面からの写真では判定できない—産地を根拠とする。②painted-turtle（種全体）・western-painted-turtle と写真の使い回しリスクあり。3ページで別個体・別産地を使うこと。③marginata との intergrade 帯が広く、境界の個体は亜種帰属できない。",
       "sources": [
