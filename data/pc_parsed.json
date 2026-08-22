@@ -23,8 +23,8 @@
  {
   "wamei": "アフリカヨコクビガメ",
   "gakumei": "Pelomedusa subrufa",
-  "author": "Ryan van Huyssteen",
-  "obs": 189944887,
+  "author": "Charlotte Kirchner",
+  "obs": 17860129,
   "license": "by"
  },
  {
@@ -58,8 +58,8 @@
  {
   "wamei": "イベラギリシャリクガメ",
   "gakumei": "Testudo graeca",
-  "author": "Kostas Zontanos",
-  "obs": 10389032,
+  "author": "katunchik",
+  "obs": 16827143,
   "license": "by"
  },
  {
@@ -77,7 +77,7 @@
   "license": "by"
  },
  {
-  "wamei": "オオアタマドロガメ",
+  "wamei": "ハナナガドロガメ",
   "gakumei": "Kinosternon acutum",
   "author": "Annika Lindqvist",
   "obs": 10285875,
@@ -86,8 +86,8 @@
  {
   "wamei": "オオアタマヒメニオイガメ",
   "gakumei": "Sternotherus minor",
-  "author": "John P Friel",
-  "obs": 3663150,
+  "author": "John G. Phillips",
+  "obs": 203020925,
   "license": "by"
  },
  {
@@ -127,9 +127,9 @@
  },
  {
   "wamei": "ガルフコーストハコガメ",
-  "gakumei": "Terrapene carolina",
-  "author": "Michael Ellis",
-  "obs": 12051904,
+  "gakumei": "Terrapene carolina major",
+  "author": "evangrimes",
+  "obs": 75060129,
   "license": "by"
  },
  {
@@ -268,9 +268,11 @@
  {
   "wamei": "スペングラーヤマガメ",
   "gakumei": "Geoemyda spengleri",
-  "author": "Takaaki Hattori",
-  "obs": 119989784,
-  "license": "by"
+  "author": "Viva.Chelonia",
+  "obs": null,
+  "license": "by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Geoemyda_spengleri.jpg"
  },
  {
   "wamei": "スムーススッポン",
@@ -417,7 +419,7 @@
   "license": "by"
  },
  {
-  "wamei": "ニシキマゲクビガメ（ピンクベリー）",
+  "wamei": "ニシキマゲクビガメ",
   "gakumei": "Emydura subglobosa",
   "author": "mefisher",
   "obs": 39029210,
@@ -480,13 +482,6 @@
   "license": "by"
  },
  {
-  "wamei": "ヒラタニオイガメ",
-  "gakumei": "Sternotherus depressus",
-  "author": "John P Friel",
-  "obs": 7666917,
-  "license": "by"
- },
- {
   "wamei": "ヒメハコヨコクビガメ",
   "gakumei": "Pelusios castaneus",
   "author": "Marius Burger",
@@ -545,8 +540,8 @@
  {
   "wamei": "フロリダハコガメ",
   "gakumei": "Terrapene carolina bauri",
-  "author": "Michael Ellis",
-  "obs": 12051904,
+  "author": "Kai Squires",
+  "obs": 47543300,
   "license": "by"
  },
  {
@@ -580,9 +575,9 @@
  {
   "wamei": "ベルセオレガメ",
   "gakumei": "Kinixys belliana",
-  "author": "Simon Tonge",
-  "obs": 9879873,
-  "license": "cc0"
+  "author": "Tommy Andriollo",
+  "obs": 147387449,
+  "license": "by"
  },
  {
   "wamei": "ペニンシュラクーター",
@@ -656,9 +651,9 @@
  },
  {
   "wamei": "ミツユビハコガメ",
-  "gakumei": "Terrapene carolina",
-  "author": "Michael Ellis",
-  "obs": 12051904,
+  "gakumei": "Terrapene triunguis",
+  "author": "Daniel Patterson",
+  "obs": 224311043,
   "license": "by"
  },
  {
@@ -666,13 +661,6 @@
   "gakumei": "Mauremys mutica",
   "author": "Toby Y",
   "obs": 357419308,
-  "license": "by"
- },
- {
-  "wamei": "メキシカンジャイアントマスク",
-  "gakumei": "Staurotypus triporcatus",
-  "author": "Luis Mora",
-  "obs": 10658621,
   "license": "by"
  },
  {
@@ -715,13 +703,6 @@
   "gakumei": "Graptemys oculifera",
   "author": "evangrimes",
   "obs": 58654309,
-  "license": "by"
- },
- {
-  "wamei": "ワモンチズガメ系",
-  "gakumei": "Graptemys ouachitensis",
-  "author": "Eric Schmidt",
-  "obs": 175862002,
   "license": "by"
  }
 ]
