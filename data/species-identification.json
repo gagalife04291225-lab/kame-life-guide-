@@ -219,9 +219,9 @@
     {
       "slug": "three-toed-box-turtle",
       "wamei": "ミツユビハコガメ",
-      "gakumei": "Terrapene mexicana triunguis",
+      "gakumei": "Terrapene carolina triunguis",
       "eimei": "Three-toed Box Turtle",
-      "koura": "ドーム状の甲で、可動式の腹甲ヒンジにより完全に閉じる。甲は褐色〜オリーブで模様は控えめ・やや細長い。TTWG2021で独立種 Terrapene mexicana の亜種に再分類（旧 T. carolina triunguis）。",
+      "koura": "ドーム状の甲で、可動式の腹甲ヒンジにより完全に閉じる。甲は褐色〜オリーブで模様は控えめ・やや細長い。サイトは USFWS/CITES 掲載表と同じ Terrapene carolina triunguis 表記を採用（分類は下記 unresolved のとおり未決着）。",
       "iro_moyou": "甲は tan〜オリーブで暗色の縫合線と不明瞭な斑。腹甲は淡黄。頭部・前肢に橙・赤・黄の斑が出る個体が多く、オスは頭部が赤くなる個体もある。",
       "tobu": "後肢の指が3本（本亜種名の由来。carolina群の他亜種は4本が多い）。頭部に橙〜赤斑。",
       "size": "12〜18cm。carolinaと同程度かやや長く、甲はより細い。",
@@ -246,7 +246,7 @@
         "https://animaldiversity.org/accounts/Terrapene_carolina/",
         "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
       ],
-      "unresolved": "TTWG2021で独立種 T. mexicana の亜種(T. m. triunguis)に暫定再分類(旧 T. carolina triunguis)。ただしtriunguis×carolinaの遺伝子浸透を理由に単一種とすべきとの反論(Fritz&Havaš2014)あり未決着。TTWGも『より完全な遺伝子サンプリングで見直す可能性』と留保。交雑帯個体は同定不可。旧学名での流通画像多数。",
+      "unresolved": "【2026-08-22 記録】属内分類が未決着で、現行文献に3つの扱いが併存する。①TTWG第9版(2021)は独立種 Terrapene triunguis を「暫定的に」承認。②Martin et al.(2013/2014/2020/2021)は T. mexicana の亜種 T. m. triunguis を支持。③USFWS・CITES掲載表など法規制文書は従来の T. carolina triunguis を使用。サイトは法規制表記と一致し流通実態にも合う③ T. carolina triunguis を全層で採用する（master の provenance=official / USFWS に準拠）。TTWGが暫定承認を確定させた時点で①への移行を再検討する。なお photo-credits.html の学名 Terrapene triunguis は出典（iNaturalist）側のtaxon表記であり、そのまま保持する。交雑帯個体は同定不可。旧学名での流通画像多数。",
       "status": "confirmed"
     },
     {
@@ -375,7 +375,7 @@
       "houkisei": "CITES附属書III掲載（2006年6月14日〜、Graptemys属一括で米国が提案）。国際取引には輸出書類が必要（附属書IIIは取引記録が目的）。",
       "photo_hantei": "頭部側面の大きな長方形の眼後斑＋高いキール＋顎の黄斑。頭部カット必須。",
       "photo_chuui": "false/kohniiと混同。眼後斑の大きさ・形（大きな長方形）が決め手。旧slug ouachita-map-turtle は本ページ(-sp)へのリダイレクト殻。",
-      "unresolved": "",
+      "unresolved": "【2026-08-22 記録・HOLD】亜種の扱いが未決着。旧来は Graptemys ouachitensis に基亜種 ouachitensis と sabinensis の2亜種を認めるが、近年は sabinensis を独立種 Graptemys sabinensis とする扱いが広まっており、その場合 G. ouachitensis は単型となり亜種名を付けない表記が正しくなる。サイトは公開ページ・本レコードが三名法 G. o. ouachitensis、data/species-master.json が二名法 G. ouachitensis と分かれている。TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Graptemys",
@@ -554,7 +554,7 @@
     {
       "slug": "florida-mud-turtle",
       "wamei": "フロリダドロガメ",
-      "gakumei": "Kinosternon subrubrum steindachneri",
+      "gakumei": "Kinosternon steindachneri",
       "eimei": "Florida Mud Turtle",
       "koura": "subrubrumの亜種(近年 K. steindachneri として独立種扱いする分類もある)。腹甲2ヒンジ、背甲ドーム状。",
       "iro_moyou": "頭・首に淡色斑。",
@@ -574,7 +574,7 @@
       "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "腹甲2ヒンジ＋フロリダ半島の分布。",
       "photo_chuui": "K. steindachneri として独立種化する分類あり。bauriiと分布が重なる。",
-      "unresolved": "分類学的扱いが過渡期。旧来はK. subrubrum steindachneri(亜種)、近年の一部研究はK. steindachneri(独立種)。サイトは亜種表記。",
+      "unresolved": "分類学的扱いが過渡期。旧来はK. subrubrum steindachneri(亜種)、Bourque(2012)の骨学とIverson et al.(2013)の分子系統によりTTWG(2017)以降は独立種 K. steindachneri を受理。サイトは master・species.js・公開ページとも独立種表記に統一（2026-08-22）。古い資料・流通名では亜種表記が残るため学名検索時に留意。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
@@ -847,7 +847,7 @@
     {
       "slug": "chinese-box-turtle",
       "wamei": "チュウゴクセマルハコガメ",
-      "gakumei": "Cuora flavomarginata flavomarginata",
+      "gakumei": "Cuora flavomarginata",
       "eimei": "Yellow-margined Box Turtle",
       "koura": "高くドーム状の背甲。暗褐〜黒で、椎甲板のキールに沿ってクリーム〜黄色の縦条。腹甲は黒く可動ヒンジで完全に閉じられる（箱化）。",
       "iro_moyou": "甲は暗褐＋キールに黄条。頭頂は淡緑。",
@@ -867,7 +867,7 @@
       "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 IUCNは絶滅危惧。Mauremys japonica等と交雑例。",
       "photo_hantei": "高ドーム甲＋キールの黄条＋眼後の黄線。頭部と甲側面が見えるカット。",
       "photo_chuui": "亜種evelynaeと酷似（分布で区別）。trifasciata（3黒条）と混同注意。",
-      "unresolved": "",
+      "unresolved": "中国大陸産個体群は亜種 Cuora flavomarginata sinensis とされることがあるが有効性に議論があり、基亜種のシノニムとする見解もある。サイトは master・公開ページと同じく亜種を断定しない種レベル表記 Cuora flavomarginata を採る（2026-08-22 統一）。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Asian_box_turtle",
@@ -879,7 +879,7 @@
     {
       "slug": "taiwan-box-turtle",
       "wamei": "タイワンセマルハコガメ",
-      "gakumei": "Cuora flavomarginata evelynae",
+      "gakumei": "Cuora flavomarginata flavomarginata",
       "eimei": "Ryukyu Yellow-margined Box Turtle",
       "koura": "flavomarginataの亜種。高ドーム甲、キールに黄条、腹甲で箱化。",
       "iro_moyou": "基亜種とほぼ同様。",
@@ -895,7 +895,7 @@
       "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 日本の南西諸島個体群は国内天然記念物級の保護対象（要確認）。",
       "photo_hantei": "高ドーム甲＋黄条＋南西諸島の産地情報。",
       "photo_chuui": "和名『タイワン』だが学名evelynaeは琉球産で紛らわしい。基亜種と酷似。",
-      "unresolved": "和名『タイワンセマルハコガメ』と学名C. f. evelynae（琉球亜種）の対応が流通上ねじれている可能性。台湾産は基亜種flavomarginataのはず。検収時に和名の実態を再確認。",
+      "unresolved": "【2026-08-22 解消】本レコードの学名が琉球（八重山）産亜種 C. f. evelynae になっていた誤りを修正。タイワンセマルハコガメは台湾産の基亜種で、基準産地が Tamsuy(台湾北西部) であることから C. f. flavomarginata が正しい。evelynae（Ernst & Lovich 1990）はヤエヤマセマルハコガメ＝天然記念物・飼育不可の別亜種。中国大陸産を亜種 sinensis とする見解もあるが有効性に議論があり、TFTSG 035 は3亜種(flavomarginata/sinensis/evelynae)を認める。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Asian_box_turtle",
@@ -924,16 +924,18 @@
           "kubetsu": "galbinifronsは花柄模様。trifasciataは3本の黒縦条。"
         }
       ],
-      "houkisei": "CITES附属書II（Cuora属一括掲載）＋主要種は野生個体の商業目的ゼロクォータ（2026年3月5日発効版で確認）。実質的に野生個体の商業取引は禁止レベル。国内CB個体が中心。 IUCN絶滅危惧（CR近い）。乱獲で激減。",
+      "houkisei": "CITES附属書I掲載（2023年2月23日発効。CoP19 Prop.26 で Cuora galbinifrons が附属書IIから附属書Iへ移行、コンセンサス採択。旧亜種の C. bourreti・C. picturata も同時に附属書I）。商業目的の国際取引は原則禁止で、国内でも特定国際種事業者の登録・登録票が必要。国内CB個体が中心。IUCN Critically Endangered。乱獲で激減。※古い資料は「附属書II（Cuora属一括掲載）＋野生個体ゼロクォータ」と記載しているので注意。",
       "photo_hantei": "高ドーム甲＋花柄状の甲模様。甲上面が見えるカット。",
       "photo_chuui": "ornata（旧同種）と混同。ハコガメ類の中でも花柄模様が識別点。",
-      "unresolved": "",
+      "unresolved": "【2026-08-22 修正】本レコードは附属書II表記のままだったが、master・species.js・公開ページはいずれも附属書Iで、CoP19 Prop.26（II→I、2023-02-23発効）が一次根拠。附属書Iへ統一した。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Asian_box_turtle",
         "https://cites.org/eng/app/appendices.php",
         "https://animaldiversity.org/accounts/Cuora_amboinensis/",
-        "https://en.wikipedia.org/wiki/Chinese_box_turtle"
+        "https://en.wikipedia.org/wiki/Chinese_box_turtle",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+        "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
       ]
     },
     {
@@ -1079,7 +1081,7 @@
       "houkisei": "CITES附属書III（中国）。IUCN絶滅危惧（EN/CR級）。",
       "photo_hantei": "成体の赤みを帯びた頸部＋角張った俵型の甲＋シームの橙条。頭頸部が見えるカット。",
       "photo_chuui": "★重要：本種の正しい学名は Mauremys nigricans。サイトが M. reevesii（クサガメの広東型）としているのは誤り。reevesiiとは別種。",
-      "unresolved": "★ページ修正要：canton-reeves-turtle.html の学名が M. reevesii（広東型）と誤記されている。正しくは M. nigricans（独立種）。監査時に『reevesiiの重複』と誤判定したが実際は学名取り違え。amazon-matamata/giant-musk-mx/hime-nioiと同じ修正対象。",
+      "unresolved": "【2026-08-22 記録・要判断】和名『カントンクサガメ』が2つの実体に使われており、層間で学名が食い違っている。(a) 本レコードが採る Mauremys nigricans は Reptile Database・TTWG・ITIS・GBIF・USFWS・IUCN(EN) が認める独立種で、中国広東・広西の固有種、CITES附属書II。(b) 一方 data/species-master.json と公開ページ species/canton-reeves-turtle.html は 『クサガメ Mauremys reevesii の広東省産地個体群（広東型）』を実体とし、CITES附属書III（中国）としている（2026-08 の運営判断）。ページ本文・FAQ（通常のクサガメとの交雑懸念／黄みがかった体色）も (b) を前提に書かれ、掲載写真(iNat 145422325)も M. reevesii としてクレジットされている。どちらを採るかで CITES区分・本文・写真がまとめて変わるため、学名のみの機械的な統一は行わない。解消には『このページがどちらの実体を扱うか』の運営者判断と、(a)を採る場合はページ本文の書き直しおよび M. nigricans の写真差し替えが必要。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
@@ -1469,7 +1471,7 @@
       "bunpu": "米東部（メイン州南部〜フロリダ北部、ニューヨーク・ミシガン、西はイリノイ南部・ケンタッキー・テネシー・ミシシッピ/アラバマ北部）。落葉樹林。歴史的にカナダ南部オンタリオにも。",
       "kondou_shu": [
         {
-          "aite": "ミツユビハコガメ (Terrapene mexicana triunguis)",
+          "aite": "ミツユビハコガメ (Terrapene carolina triunguis)",
           "kubetsu": "carolinaは後肢4指・派手な放射模様/triunguisは後肢3指・模様控えめなtan〜オリーブ甲。"
         },
         {
@@ -2512,14 +2514,14 @@
       ],
       "houkisei": "CITES未掲載。IUCN低危険(LC)/TFTSG草案でNear Threatened。豪州は在来種の商業輸出を規制。国内流通個体はCB由来。",
       "photo_hantei": "幅広い頭部＋非常に長い首＋大きく扁平な暗褐色甲＋狭い腹甲＋豪州北部/ニューギニア産。頭幅と首の長さが手がかり。",
-      "photo_chuui": "①【命名法が複雑】本種はかつてsiebenrocki→rugosa→oblonga→再びrugosaと学名が二転三転。C. siebenrockiはC. rugosaのシノニム。サイトはMacrochelodina rugosa表記だが現在はChelodina (Chelydera) rugosaとされる—学名検索時に旧名(siebenrocki/oblonga/Macrochelodina)も考慮。②同群のburrungandjii/expansaと酷似し交雑個体もあり、産地なしでは同定困難。",
+      "photo_chuui": "①【命名法が複雑】本種はかつてsiebenrocki→rugosa→oblonga→再びrugosaと学名が二転三転。C. siebenrockiはC. rugosaのシノニム。サイト表記は2026-08-22にChelodina rugosaへ統一済み（Macrochelodinaは亜属扱い）—学名検索時に旧名(siebenrocki/oblonga/Macrochelodina)も考慮。②同群のburrungandjii/expansaと酷似し交雑個体もあり、産地なしでは同定困難。",
       "sources": [
         "https://en.wikipedia.org/wiki/Northern_snake-necked_turtle",
         "https://www.researchgate.net/publication/261604332_Chelodina_oblonga_Gray_1841_-_Northern_Snake-Necked_Turtle",
         "https://www.researchgate.net/publication/258374477_Chelodina_burrungandjii_Thomson_Kennett_and_Georges_2000_-_Sandstone_Snake-Necked_Turtle",
         "https://www.nature.com/articles/s41598-019-42310-x.pdf"
       ],
-      "unresolved": "命名法が極めて複雑：長年C. rugosa Ogilby 1890とされたが、C. oblonga Gray 1841のホロタイプが本種と判明しoblongaへの変更が提案され、その後ミトゲノム解析でホロタイプの帰属が疑問視されoblongaはnomen dubium化、rugosaが復活。siebenrockiはrugosaのシノニム(ニューギニア個体群)。属/亜属もMacrochelodina/Chelodina(Chelydera)で揺れる。burrungandjiiとの交雑・浸透あり。サイトのMacrochelodina rugosa表記と現行Chelodina rugosaの齟齬を検収時に確認。",
+      "unresolved": "命名法が極めて複雑：長年C. rugosa Ogilby 1890とされたが、C. oblonga Gray 1841のホロタイプが本種と判明しoblongaへの変更が提案され、その後ミトゲノム解析でホロタイプの帰属が疑問視されoblongaはnomen dubium化、rugosaが復活。siebenrockiはrugosaのシノニム(ニューギニア個体群)。属/亜属もMacrochelodina/Chelodina(Chelydera)で揺れる。burrungandjiiとの交雑・浸透あり。【2026-08-22】属名の齟齬は解消済み（サイト全層をChelodina rugosaへ統一）。種小名 rugosa / oblonga の系統はTTWG第10版(2025)本文を確認できるまで変更しない。",
       "status": "confirmed"
     },
     {
@@ -3164,7 +3166,7 @@
           "kubetsu": "両種とも椎甲板2-4がキノコ/イチョウ葉形だが、spengleriは極小(11cm以下)＋陸生＋褐色葉状甲＋黒い腹甲/crassicollisは中型(20cm)＋水生＋ほぼ全身黒。サイズ・生態で区別。"
         }
       ],
-      "houkisei": "CITES附属書III掲載(中国)＋Geoemydidaeの一部として国際規制。IUCN Endangered(危機、2018時点)。生きたペット取引で中国・ベトナムから多数輸出され個体群減少。輸入規制に留意。※当運営者(亀好きさん)はケージ実写真を保有する種。",
+      "houkisei": "CITES附属書II掲載（CoP16最終決定・2013年6月12日発効。従来は中国による附属書III掲載だった）。IUCN Endangered(危機、2018時点)。生きたペット取引で中国・ベトナムから多数輸出され個体群減少。輸入書類に留意。※古い資料は「附属書III（中国）」と記載しているので注意。※当運営者(亀好きさん)はケージ実写真を保有する種。",
       "photo_hantei": "極小の褐色葉状甲＋強い鋸歯状の前後縁＋キノコ/イチョウ葉形の椎甲板2-4＋黒い腹甲＋陸生。極小サイズと強い鋸歯縁が手がかり。",
       "photo_chuui": "①リュウキュウヤマガメ(japonica)と近縁で酷似—産地(中国/北ベトナム vs 琉球)で区別。日本産の写真をspengleriとしない。②crassicollisと椎甲板形を共有—サイズ・生態・腹甲色で区別。③当運営者のケージ実写真が確定素材として利用可能(iNat写真より優先)。④CITES掲載＋Endangeredで出所に留意。",
       "sources": [
@@ -3172,15 +3174,16 @@
         "https://iucn-tftsg.org/geoemyda-spengleri-047/",
         "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_047_spengleri_v1_2010.pdf",
         "https://www.researchgate.net/publication/299637397_Geoemyda_spengleri_Gmelin_1789_-_Black-Breasted_Leaf_Turtle",
-        "http://www.turtlepuddle.org/exotics/leaf.html"
+        "http://www.turtlepuddle.org/exotics/leaf.html",
+        "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
       ],
-      "unresolved": "Geoemyda属は現生2種(spengleri/japonica)＋化石種amamiensis。spengleriとjaponica(琉球)はかつてG. spengleriの亜種spengleri/japonicaとされたが、大規模標本比較(Yasukawa & Ota)で両者に相当な差があり独立種として扱うのが適切とされ、現在は別種。ただし単系統群を成す。spengleriは頭・甲の色彩変異が大きいが地理的変異の詳細は未解明。当運営者(亀好きさん)のケージ実写真が本種の確定素材。",
+      "unresolved": "【2026-08-22 修正】本レコードは附属書III（中国）表記のままだったが、master・species.js・SHINDAN-SPECIES.md・公開ページはいずれも附属書IIで、CoP16最終決定（2013-06-12発効）が一次根拠。附属書IIへ統一した。Geoemyda属は現生2種(spengleri/japonica)＋化石種amamiensis。spengleriとjaponica(琉球)はかつてG. spengleriの亜種spengleri/japonicaとされたが、大規模標本比較(Yasukawa & Ota)で両者に相当な差があり独立種として扱うのが適切とされ、現在は別種。ただし単系統群を成す。spengleriは頭・甲の色彩変異が大きいが地理的変異の詳細は未解明。当運営者(亀好きさん)のケージ実写真が本種の確定素材。",
       "status": "confirmed"
     },
     {
       "slug": "west-african-mud-turtle",
       "wamei": "ヒメハコヨコクビガメ",
-      "gakumei": "Pelusios castaneus",
+      "gakumei": "Pelusios nanus",
       "eimei": "West African Mud Turtle / Swamp Terrapin",
       "koura": "ヨコクビ亜目Pelomedusidae。背甲は褐色のドーム状オーバル。【属の決定的特徴】腹甲に蝶番(hinge)を持ち前葉が可動する(胸甲板と腹甲板の間)＝姉妹属Pelomedusa(蝶番なし)との決定的差。項甲板を欠きM1とM2が接する(Pelomedusidae共通)。",
       "iro_moyou": "背甲は一様な褐色(CB個体で淡色〜ハイポの例も)。腹甲は淡色で、周縁に角ばった暗色図形のみ(中央部は無地に近い)。頭部に細く曲がりくねった網目模様(vermiculation)。",
@@ -3207,7 +3210,7 @@
         "https://reptilesmagazine.com/west-african-mud-turtle-care-sheet/",
         "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3819"
       ],
-      "unresolved": "Pelusios castaneus seychellensis(セーシェル)の分類が論争的。Bour(1983)らは近縁別種とするが、Stuckas et al.(2013)・Kindler et al.(2016)は歴史的に移入されたcastaneusのシノニム(=別種でない)とし、遺伝解析でlectotypeがcastaneusと確認された。TTWG(2014)は移入由来の亜種の可能性を保留。かつてP. chapiniがcastaneusの亜種とされた(1983年まで)経緯もあり、Pelusios属内の種・亜種境界は流動的。",
+      "unresolved": "【2026-08-22 修正】本レコードの学名が近縁種 Pelusios castaneus になっていたため、master・公開ページ・species.js・SHINDAN-SPECIES.md と同じ Pelusios nanus（曲頸亜目最小種）に統一した。なお公開ページの写真は P. nanus の適格な自由ライセンス写真が確保できていないため近縁種 P. castaneus の写真を代替使用しており、ページ本文・photo-credits.html でその旨を明示している（写真クレジット側の学名 P. castaneus は被写体の実体であり誤りではない）。Pelusios castaneus seychellensis(セーシェル)の分類が論争的。Bour(1983)らは近縁別種とするが、Stuckas et al.(2013)・Kindler et al.(2016)は歴史的に移入されたcastaneusのシノニム(=別種でない)とし、遺伝解析でlectotypeがcastaneusと確認された。TTWG(2014)は移入由来の亜種の可能性を保留。かつてP. chapiniがcastaneusの亜種とされた(1983年まで)経緯もあり、Pelusios属内の種・亜種境界は流動的。",
       "status": "confirmed"
     },
     {

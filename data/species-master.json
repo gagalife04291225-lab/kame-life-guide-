@@ -3516,14 +3516,15 @@
    "page": "species/mississippi-map-turtle.html",
    "wamei": "ミシシッピチズガメ",
    "scientific_name": {
-    "value": "Graptemys pseudogeographica kohni",
+    "value": "Graptemys pseudogeographica kohnii",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17",
+    "last_verified": "2026-08-22",
     "provenance": "official",
     "sources": [
      "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-    ]
+    ],
+    "note": "亜種小名の原綴は kohnii（Baur, 1890）。TTWG・GBIF・NatureServe・USFWS いずれも kohnii を用いる。kohni は Mertens(1934) 以降に流布した異綴で、サイト内表記を kohnii に統一した（2026-08-22）。"
    },
    "english_name": {
     "value": null,
@@ -6825,7 +6826,7 @@
     "value": "Mauremys reevesii",
     "rank": "regional_form",
     "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。",
+    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。　【2026-08-22 記録】data/species-identification.json は同 slug に独立種 Mauremys nigricans（Reptile Database・TTWG・CITES附属書II）を採っており、本レコード（M. reevesii 広東型・CITES附属書III）と食い違っている。和名『カントンクサガメ』が2実体に使われていることが原因で、どちらを採るかで CITES区分・ページ本文・掲載写真がまとめて変わる。学名のみの機械的統一はせず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
     "last_verified": "2026-08-17",
     "provenance": "official",
     "sources": [
@@ -9418,9 +9419,10 @@
    "page": "species/siebenrocks-snake-necked-turtle.html",
    "wamei": "ジーベンロックナガクビガメ",
    "scientific_name": {
-    "value": "Macrochelodina rugosa",
+    "value": "Chelodina rugosa",
     "verification": "LIKELY",
-    "last_verified": "2026-08-17"
+    "last_verified": "2026-08-22",
+    "note": "属名を Macrochelodina から Chelodina へ修正（2026-08-22）。TTWG・Reptile Database は Macrochelodina を Chelodina の亜属として扱い、有効な属名は Chelodina（Chelodina (Macrochelodina) rugosa と表記される）。種小名は未決着：C. rugosa Ogilby 1890 が長年使われたのち C. oblonga Gray 1841 への変更が提案され、その後 oblonga のホロタイプ帰属が疑問視されて nomen dubium 化し rugosa が復活した経緯がある。TTWG系は北部種を oblonga、南西部種を colliei とする一方、WA博物館・iNaturalist は北部種を rugosa、南西部種を oblonga とする。サイトは南西部種を colliei、北部種を rugosa としており種小名の系統は混在したままなので、TTWG第10版(2025)本文を確認できるまで種小名は変更しない。"
    },
    "english_name": {
     "value": null,

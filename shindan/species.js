@@ -427,7 +427,7 @@ aquatic: [
     score: function(s){ return (s.large_tank||0)+(s.active||0)+(s.beginner||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohni', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: 'CITES III', legal: null,
+  { name: 'ミシシッピチズガメ', latin: 'Graptemys pseudogeographica kohnii', emoji: '🗺️', difficulty: '中級', size: 'M（オス10cm/メス20cm）', cites: 'CITES III', legal: null,
     reason: 'チズガメ類で最も流通が多い入門種。独特の甲羅のキールと首の模様が美しい。水質に敏感なのでフィルターは必須。',
     specs: { '最大甲長': '20cm（メス）', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm（メス）', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
@@ -1139,7 +1139,7 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.intermediate||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
-  { name: 'ジーベンロックナガクビガメ', latin: 'Macrochelodina rugosa', emoji: '🌊', difficulty: '上級', size: 'L（25〜35cm）', cites: null, legal: null,
+  { name: 'ジーベンロックナガクビガメ', latin: 'Chelodina rugosa', emoji: '🌊', difficulty: '上級', size: 'L（25〜35cm）', cites: null, legal: null,
     reason: 'オーストラリア北部産の大型曲頸類。頑丈な甲羅と大きなサイズが特徴。水中生活が主体で大型水槽が必要な本格派。',
     specs: { '最大甲長': '35cm', '水槽サイズ': '90cm〜', '水温': '24〜30℃', '難易度': '★★★' },
     coreSpecs: { size: '35cm', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },

@@ -68,10 +68,10 @@
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
-| ミシシッピチズガメ | Graptemys pseudogeographica kohni | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
+| ミシシッピチズガメ | Graptemys pseudogeographica kohnii | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
 | キタチズガメ | Graptemys geographica | M | 中級 | メスは28cmと大型・CITES III（米国・2006） |
 | アラバマチズガメ | Graptemys pulchra | M | 中〜上級 | 雌雄差が大きい・CITES III（米国・2006） |
-| ニセチズガメ | Graptemys pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
+| ニセチズガメ | Graptemys pseudogeographica pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
 | フトマユチズガメ | Graptemys ouachitensis | M | 中級 | 眉のような模様・CITES III（米国・2006） |
 | クロコブチズガメ | Graptemys nigrinoda | M | 中〜上級 | 黒いコブ状キール・CITES III（米国・2006） |
 | テキサスチズガメ | Graptemys versa | M | 中〜上級 | テキサス限定水系・CITES III（米国・2006） |
@@ -166,7 +166,7 @@
 | ヘビクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
 | セグロヘビクビガメ | Chelodina colliei | M | 中〜上級 | なし | 西オーストラリア産・旧学名 C. oblonga |
 | マッコードナガクビガメ | Chelodina mccordi | M | 上級 | CITES II | 2005年掲載・野生個体は輸出ゼロ枠。附属書Iではない |
-| ジーベンロックナガクビガメ | Macrochelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
+| ジーベンロックナガクビガメ | Chelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
 | パーケリーナガクビガメ | Chelodina parkeri | L | 上級 | なし | EUCB流通・色抜け個体美しい |
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |
