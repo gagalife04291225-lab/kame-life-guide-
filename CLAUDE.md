@@ -477,8 +477,66 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 |------|------|
 | `greek-tortoise` | 真上から・頭も四肢も引っ込み・硬貨をスケールに並べた計測写真 |
 | `collier-snake-necked-turtle` | 砂に平たく伏せ、目は閉じて見える。人の手が覆いかぶさる構図 |
-| `pancake-tortoise` | 岩の隙間に挟まり、暗くピントも合っていない |
 | `wood-turtle` | 背甲のみ。手に持たれており生存は分かるが状態が見えない |
+
+現状維持と決めたもの（代替候補なし・将来改善）:
+
+| slug | 判断と根拠 |
+|------|-----------|
+| `pancake-tortoise` | 岩の隙間に挟まり暗くピントも合っておらず、識別点（極端に扁平な甲・暗色放射ライン）が写っていない。だが差し替え先が存在しないため現状維持とする。iNaturalist Open Data（S3・2026-07-27版）を全走査し、Malacochersus tornieri は該当観察109件・該当写真177枚。ライセンスは CC-BY-NC 165 / CC-BY 9 / CC-BY-NC-SA 2 / CC-BY-SA 1 で、CC0 はゼロ。quality_grade=research かつ商用利用可を満たすのは1枚のみで、それが現行写真そのもの（obs 56152762 / Matt Pilkington / CC BY 4.0）だった。視覚的に優れた写真は存在するがすべて casual grade の飼育（動物園）個体。将来 research grade の商用可写真が投稿されたら差し替える |
+
+出典URL重複の監査で判明し、対処したもの:
+
+| slug | 内容 |
+|------|------|
+| `mississippi-map-turtle` | 旧写真に第三者の「© Arthur Windsor」表示が焼き込まれていた一方、サイトのクレジットは Sam Kieschnick / CC BY 4.0 / obs 35213614 で、権利根拠を確認できなかった（この観察IDは false-map-turtle と共有され、両ページの実画像は別物）。iNaturalist Open Data を走査し、taxon 39849 (Graptemys pseudogeographica kohnii, subspecies) の research grade × 商用可 × 800×600以上の候補28枚を目視比較のうえ差し替えた。新写真は photo 170209451 / Schyler Brown / CC0 1.0。眼後の三日月斑・白い虹彩・首縞が眼に達しないことをすべて確認済み。※ 撮影地はテキサス州で位置精度29km。ミシシッピ川水系の域外にあたる可能性があり、同定は形態形質と iNaturalist のコミュニティ同定に依拠している |
+
+出典URL重複9グループの一括処理（2026-08-23）:
+
+同一観察IDを複数ページが共有していた9グループ21ページを、実画像・MD5・
+一次データ（iNaturalist Open Data 2026-07-27版）で照合した。21ページとも
+クレジット4層は一致していたが、グループ内の実画像はすべて別物で、
+1観察=1個体という前提が成立していなかった。
+
+一次データで出典を証明できた2件は現状維持（KEEP）:
+
+| slug | 根拠 |
+|------|------|
+| `reeves-turtle` | photo 249782015 → observer `geologyistheway` = Samuele Papeschi / CC-BY / research / Mauremys reevesii。ページ表記と全一致 |
+| `red-footed-tortoise` | photo 453340456 → observer `filipeprates` / CC-BY / research / Chelonoidis carbonarius。ページ表記と全一致 |
+
+出典を証明できず差し替えた14件（すべて research grade・商用可・800×600以上・実画像を目視）:
+
+| slug | 新出典 | 作者 | ライセンス |
+|------|--------|------|-----------|
+| `brown-wood-turtle-manni` | photo 414053415 | Michelle Monge-Velazquez | CC BY 4.0 |
+| `painted-wood-turtle` | photo 13510207 | Dan Riley | CC BY 4.0 |
+| `cumberland-slider` | photo 364092938 | Max G.W. Verheij | CC0 1.0 |
+| `red-eared-slider` | photo 6777689 | Laura Clark | CC BY 4.0 |
+| `yellow-bellied-slider` | photo 66948731 | Joshua Liverman | CC BY 4.0 |
+| `northern-diamondback-terrapin` | photo 505897694 | aberkov | CC BY 4.0 |
+| `ornate-diamondback-terrapin` | photo 377182688 | Matthew | CC BY 4.0 |
+| `chinese-softshell-turtle` | photo 504765200 | Karen Offereins | CC BY 4.0 |
+| `cherry-head-tortoise` | photo 342981503 | MadMagpie | CC0 1.0 |
+| `yaeyama-pond-turtle` | photo 429295308 | Stefan Curth | CC BY 4.0 |
+| `yellow-pond-turtle` | photo 484479287 | 許慶棠Ray | CC BY 4.0 |
+| `eastern-mud-turtle` | photo 83968654 | stephen | CC BY 4.0 |
+| `mississippi-mud-turtle` | photo 129563098 | Cody Stricker | CC BY 4.0 |
+| `chinese-box-turtle` | photo 66931158 | 葉子 | CC0 1.0 |
+
+差し替えできず HOLD とした5件:
+
+| slug | 理由 |
+|------|------|
+| `nicaragua-wood-turtle` | Rhinoclemmys pulcherrima incisa は research×商用可×800×600 を満たす写真が0件 |
+| `carolina-diamondback-terrapin` | 候補4枚のうち規格を満たすのは1枚で、水没して識別不能 |
+| ~~`canton-reeves-turtle`~~ | **解消済み**。photo 233939363 / mami_t_t / CC BY 4.0 / research / Mauremys reevesii（2022-09-30・東京都）へ差し替えた。岩上でバスキング中の健全個体で、頭部の黄条線と背甲のキールを確認。これにより出典URL重複は 1グループ → 0 になった |
+| `albino-chinese-softshell` | アルビノ個体の research grade 写真が存在しない |
+| `taiwan-box-turtle` | 候補2枚のみ。1枚は甲片標本＋定規、1枚は撮影者名の透かし入り |
+
+`chinese-box-turtle` は実画像の出所が photo 96478948（brentwhite1213 / CC-BY-SA /
+Cuora flavomarginata evelynae）だったのに対し、ページ表記は「祐 / CC BY 4.0 /
+obs 373535988」で作者・ライセンス・観察ID・亜種のすべてが食い違っていた。
 
 基準には触れないが別の問題:
 
@@ -489,6 +547,37 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 | `marginated-tortoise` / `russian-tortoise` | 交尾中の個体。禁止事項ではないが代表写真としての適否は要判断 |
 
 差し替えが済んだ行はこの表から削除する。表が空になったら監査結果の節ごと畳んでよい。
+
+### 生体写真監査の完了（2026-08-23・クローズ）
+
+**生体写真の監査・差し替えプロジェクトはここで完了とする。**
+
+- 出典URL重複: 10グループ24ページ → **0グループ**
+- 画像MD5重複: 0件（全100枚）
+- 権利上の危険（第三者の著作権表示）: 解消済み
+- 差し替え実績: 16件（mississippi-map-turtle ＋ 一括14件 ＋ canton-reeves-turtle）
+- KEEP: 2件（reeves-turtle / red-footed-tortoise。一次データで出典を証明済み）
+
+HOLD 5件は **新しい利用可能ソースが出るまで再調査しない**:
+
+| slug | 理由 |
+|------|------|
+| `nicaragua-wood-turtle` | R. p. incisa は research×商用可×800×600 を満たす写真が0件 |
+| `carolina-diamondback-terrapin` | 規格を満たす候補が1枚のみで、水没して識別不能 |
+| `albino-chinese-softshell` | アルビノ個体の research grade 写真が存在しない |
+| `taiwan-box-turtle` | 候補2枚のみ。甲片標本＋定規 / 撮影者名の透かし入り |
+| `pancake-tortoise` | research×商用可が現行写真1枚のみ（前述） |
+
+いずれも iNaturalist Open Data の全走査で「素材が実在しない」ことを確認済み。
+調査を再開する条件は、iNaturalist に新規投稿が出るか、別出典を開拓した場合のみ。
+
+**次工程（写真プロジェクトとは分離）**: 既存10ページのクレジット表記ゆれ。
+figcaption が Wikimedia Commons 由来で検証スクリプトがライセンスを拾えないもの5件
+（`eastern-painted-turtle` / `mississippi-diamondback-terrapin` /
+`texas-diamondback-terrapin` / `tunisian-greek-tortoise` / `western-painted-turtle`）と、
+alt の和名がクレジット見出しと異なる表記のもの5件（`amazon-matamata` /
+`eastern-hermann-tortoise` / `pink-bellied-side-necked-turtle` /
+`west-african-mud-turtle` / `western-hermann-tortoise`）。実害は小さい。
 
 ### 絶対に使わない写真
 
@@ -516,6 +605,23 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
    保証しない。検索が返す候補には、割れた甲羅・営巣跡・死骸が普通に混ざる。
 3. 上の「絶対に使わない」に1つでも当たれば、その候補は捨てて次を見る
 4. 見ていない画像を「確認した」と書かない
+
+## NO-REWORK GATE（恒久ルール・2026-08 亀好きさん承認）
+
+重複作業の再発防止ルール。全スキル・全作業に適用する。
+
+- 完了済み・監査確定済みの工程を再実行しない。
+- 既存の確定結果（監査表・判定・取得済み一次データ）は固定入力として使う。
+- 再調査を許可するのは次の場合のみ:
+  ① 対象データが変更された ② 新しい矛盾が見つかった
+  ③ 新証拠が出た ④ ユーザーの明示指示がある
+- 「念のため」「安全確認」「最終確認」は再調査の理由にしない。
+- 再調査する場合は、前回結果を再利用できない具体的理由を開始前に示す。
+  理由を示せなければ再調査をスキップし、未解決工程へ進む。
+- 1件ずつ承認待ちにせず、同一スコープの作業は可能な限り一括処理する。
+- 横断検証（全種スキャン等）は全修正が終わった後に1回だけ行う。
+  検証で新しい問題が見つかった場合は、その問題だけを修正して再確認する。
+  正常と確認済みの項目を最初から再監査しない。
 
 ## KAME LIFE GUIDE 改善方針（恒久・完成度を磨くフェーズ）
 

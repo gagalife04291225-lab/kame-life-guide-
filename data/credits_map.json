@@ -9,9 +9,12 @@
  {
   "wamei": "アカスジヤマガメ",
   "gakumei": "Rhinoclemmys pulcherrima",
-  "author": "Sinaloa Silvestre",
-  "obs": 245150697,
-  "credited_license": "cc0"
+  "author": "Dan Riley",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/83fdcba2-c49b-4fa0-bd6b-3dd89eaf55c2",
+  "photo_id": "13510207"
  },
  {
   "wamei": "アジアコガシラドロガメ",
@@ -93,9 +96,12 @@
  {
   "wamei": "オルナータダイヤモンドバックテラピン",
   "gakumei": "Malaclemys terrapin",
-  "author": "Simon Tonge",
-  "obs": 9822014,
-  "credited_license": "cc0"
+  "author": "Matthew",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/f5153a02-182b-4ae9-b05b-d7864fe0d035",
+  "photo_id": "377182688"
  },
  {
   "wamei": "カブトニオイガメ",
@@ -114,16 +120,22 @@
  {
   "wamei": "カントンクサガメ",
   "gakumei": "Mauremys reevesii",
-  "author": "Samuele Papeschi",
-  "obs": 145422325,
-  "credited_license": "cc-by"
+  "author": "mami_t_t",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/954677bc-4394-4362-ad16-c7f40a1d15f4",
+  "photo_id": "233939363"
  },
  {
   "wamei": "カンバーランドスライダー",
   "gakumei": "Trachemys scripta",
-  "author": "Laura Clark",
-  "obs": 4571829,
-  "credited_license": "cc-by"
+  "author": "Max G.W. Verheij",
+  "obs": null,
+  "credited_license": "cc0",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/823187bd-7cb3-4bf5-b29b-a7bf181b4a59",
+  "photo_id": "364092938"
  },
  {
   "wamei": "ガルフコーストハコガメ",
@@ -156,9 +168,12 @@
  {
   "wamei": "キバラガメ",
   "gakumei": "Trachemys scripta",
-  "author": "Laura Clark",
-  "obs": 4571829,
-  "credited_license": "cc-by"
+  "author": "Joshua Liverman",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/ec36a97b-bd23-44dc-90f7-9307a4452b9e",
+  "photo_id": "66948731"
  },
  {
   "wamei": "キボシイシガメ",
@@ -254,9 +269,12 @@
  {
   "wamei": "スッポン（シナスッポン）",
   "gakumei": "Pelodiscus sinensis",
-  "author": "Matt Muir",
-  "obs": 245665,
-  "credited_license": "cc-by"
+  "author": "Karen Offereins",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/7fb9e982-ab7b-4e35-9f52-60149e10352c",
+  "photo_id": "504765200"
  },
  {
   "wamei": "スパイニースッポン",
@@ -319,9 +337,12 @@
  {
   "wamei": "チェリーヘッドアカアシリクガメ",
   "gakumei": "Chelonoidis carbonarius",
-  "author": "filipeprates",
-  "obs": 253212433,
-  "credited_license": "cc-by"
+  "author": "MadMagpie",
+  "obs": null,
+  "credited_license": "cc0",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/395e3281-cd7c-4829-8ec2-1dd1a6719bd6",
+  "photo_id": "342981503"
  },
  {
   "wamei": "チャコリクガメ",
@@ -333,9 +354,12 @@
  {
   "wamei": "チュウゴクセマルハコガメ",
   "gakumei": "Cuora flavomarginata",
-  "author": "祐",
-  "obs": 373535988,
-  "credited_license": "cc-by"
+  "author": "葉子",
+  "obs": null,
+  "credited_license": "cc0",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/6acf267a-29e5-43e6-bf83-efbc64de4c44",
+  "photo_id": "66931158"
  },
  {
   "wamei": "チュニジアギリシャリクガメ",
@@ -354,9 +378,12 @@
  {
   "wamei": "トウブドロガメ",
   "gakumei": "Kinosternon subrubrum",
-  "author": "Jody Shugart",
-  "obs": 3721352,
-  "credited_license": "cc-by"
+  "author": "stephen",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/8efc6d03-803a-4574-b8fb-9b7880decfaf",
+  "photo_id": "83968654"
  },
  {
   "wamei": "トウブニシキガメ",
@@ -456,9 +483,12 @@
  {
   "wamei": "ノーザンダイヤモンドバックテラピン",
   "gakumei": "Malaclemys terrapin",
-  "author": "Simon Tonge",
-  "obs": 9822014,
-  "credited_license": "cc0"
+  "author": "aberkov",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/1185ff0d-bdc8-4e97-8570-8cb1c484a78e",
+  "photo_id": "505897694"
  },
  {
   "wamei": "ハナガメ",
@@ -610,30 +640,42 @@
  {
   "wamei": "マンヤマガメ",
   "gakumei": "Rhinoclemmys pulcherrima",
-  "author": "Sinaloa Silvestre",
-  "obs": 245150697,
-  "credited_license": "cc0"
+  "author": "Michelle Monge-Velazquez",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/cd67cf19-2352-4879-8759-e6e7e600babf",
+  "photo_id": "414053415"
  },
  {
   "wamei": "ミシシッピアカミミガメ",
   "gakumei": "Trachemys scripta",
   "author": "Laura Clark",
-  "obs": 4571829,
-  "credited_license": "cc-by"
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/a61b219f-4c9a-4988-8a78-d23011b0c931",
+  "photo_id": "6777689"
  },
  {
   "wamei": "ミシシッピチズガメ",
   "gakumei": "Graptemys pseudogeographica",
-  "author": "Sam Kieschnick",
-  "obs": 35213614,
-  "credited_license": "cc-by"
+  "author": "Schyler Brown",
+  "obs": null,
+  "credited_license": "cc0",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/3d3f1dd2-0a50-4777-84aa-cde694b7c45e",
+  "photo_id": "170209451"
  },
  {
   "wamei": "ミシシッピドロガメ",
   "gakumei": "Kinosternon subrubrum",
-  "author": "Jody Shugart",
-  "obs": 3721352,
-  "credited_license": "cc-by"
+  "author": "Cody Stricker",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/f3812595-5870-496b-ba87-bdd56337abc4",
+  "photo_id": "129563098"
  },
  {
   "wamei": "ミシシッピニオイガメ",
@@ -659,9 +701,12 @@
  {
   "wamei": "ミナミイシガメ",
   "gakumei": "Mauremys mutica",
-  "author": "Toby Y",
-  "obs": 357419308,
-  "credited_license": "cc-by"
+  "author": "許慶棠Ray",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/94d81e7e-52df-4226-be22-b134e05ceea0",
+  "photo_id": "484479287"
  },
  {
   "wamei": "モリイシガメ",
@@ -673,9 +718,12 @@
  {
   "wamei": "ヤエヤマイシガメ",
   "gakumei": "Mauremys mutica",
-  "author": "Toby Y",
-  "obs": 357419308,
-  "credited_license": "cc-by"
+  "author": "Stefan Curth",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/0d6a3256-8472-473f-8598-61e7fb542bfb",
+  "photo_id": "429295308"
  },
  {
   "wamei": "ヨーロッパヌマガメ",
