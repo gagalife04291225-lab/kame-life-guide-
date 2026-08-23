@@ -12151,6 +12151,140 @@
      "note": "亜種 Testudo graeca terrestris の care 値は親種 Testudo graeca のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
     }
    }
+  },
+  {
+   "slug": "moroccan-greek-tortoise",
+   "page": "species/moroccan-greek-tortoise.html",
+   "wamei": "モロッコギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca graeca",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "ギリシャリクガメの基亜種。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み（taxon 1629023）。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。北アフリカの個体群をどこまで基亜種に含めるかは資料により分かれる。",
+    "sources": [
+     "https://www.inaturalist.org/taxa/1629023-Testudo-graeca-graeca"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Moroccan Greek Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は複数の呼称が併用される。一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-21"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局",
+     "sources": [
+      "https://cites.org/eng/taxonomy/term/4664",
+      "https://cites.org/eng/taxonomy/term/4663"
+     ],
+     "note": "リクガメ科の科単位掲載（附属書I種を除く）",
+     "last_verified": "2026-08-21"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "uvb": {
+     "value": "Ferguson Zone 3（強UVB帯）・T5 HO 10〜12%管が基本",
+     "verification": "LIKELY",
+     "provenance": "manufacturer_primary",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "Zone表はZoo Med一次資料",
+      "jp_note": "特定製品は照度表確認まで断定しない"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://zoomed.com/wp-content/uploads/Powersun_Instrct_U.S_5-18.pdf"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "冬眠の可否は系統差が大きい",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "亜種・系統の見極めと健康管理が国内初心者には難しい",
+      "jp_note": "国内初心者は通年加温・冬眠なしを推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "humidity_pct": {
+     "value": "乾燥系（梅雨〜夏の蒸れが最大リスク）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "地中海性気候と日本の梅雨の湿度差",
+      "jp_note": "通気最優先・乾燥系床材"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "90〜120cm級（床面積優先）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "イベラ系は大きめに育つ",
+      "jp_note": "90cm開始・120cm推奨"
+     },
+     "last_verified": "2026-08-17",
+     "sources": [
+      "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+     ],
+     "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+    }
+   }
   }
  ]
 }

@@ -606,6 +606,37 @@ alt の和名がクレジット見出しと異なる表記のもの5件（`amazo
 3. 上の「絶対に使わない」に1つでも当たれば、その候補は捨てて次を見る
 4. 見ていない画像を「確認した」と書かない
 
+## 亜種PROJECT Phase B の完了記録（2026-08-23）
+
+Phase B 候補11件を repo 状態と照合して確定した。**再監査は不要。**
+
+既に実装済みだったもの 5件（commit 1421bf9）:
+`eastern-painted-turtle` / `western-painted-turtle` / `tunisian-greek-tortoise` /
+`mississippi-diamondback-terrapin` / `texas-diamondback-terrapin`
+
+DROP 3件 — iNaturalist taxonomy で **active=false**（廃止済みタクソン）:
+
+| 候補 | taxon | 理由 |
+|------|-------|------|
+| `Cuora amboinensis amboinensis` | 39897 | active=false |
+| `Cuora amboinensis couro` | 39896 | active=false |
+| `Kinosternon scorpioides albogulare` | 39727 | active=false。`Kinosternon albogulare`（taxon 1642141）が独立種として active のため、亜種ではなく別種扱い。亜種PROJECTの対象外 |
+
+IMPLEMENT 1件:
+
+| slug | 学名 | 写真 |
+|------|------|------|
+| `moroccan-greek-tortoise` | Testudo graeca graeca（taxon 1629023 / subspecies / active） | photo 463181313 / Valentin Moser / CC BY 4.0 / research / モロッコ産 |
+
+HOLD 2件 — タクソンは有効だが写真が条件を満たさない:
+
+| 候補 | 理由 |
+|------|------|
+| `Testudo graeca cyrenaica` | taxon 40030 は active だが research grade 観察が世界で3件のみ。商用可の候補は1枚で代替なし。飼育情報の一次資料も乏しく、流通実態がほぼない |
+| `Emydura subglobosa worrelli` | taxon 607063 は active だが候補1枚のみ。乾いた地面での頭部クローズアップで皮膚が乾燥し眼も暗く、生死・健康状態が判断しづらい。識別形質も写っていない |
+
+HOLD 2件は **新しい利用可能ソースが出るまで再探索しない**。
+
 ## NO-REWORK GATE（恒久ルール・2026-08 亀好きさん承認）
 
 重複作業の再発防止ルール。全スキル・全作業に適用する。

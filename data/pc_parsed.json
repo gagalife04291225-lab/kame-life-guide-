@@ -752,5 +752,15 @@
   "author": "evangrimes",
   "obs": 58654309,
   "license": "by"
+ },
+ {
+  "wamei": "モロッコギリシャリクガメ",
+  "gakumei": "Testudo graeca graeca",
+  "author": "Valentin Moser",
+  "obs": null,
+  "license": "by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/b6ca9a54-7152-46a9-9a09-d77b71acea71",
+  "photo_id": "463181313"
  }
 ]

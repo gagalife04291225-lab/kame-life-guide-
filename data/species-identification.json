@@ -3481,6 +3481,45 @@
       "sources": [],
       "unresolved": "本亜種の有効性はページ本文が TTWG チェックリスト（2021）を根拠としているが、本データ作成時点で同チェックリスト本文には到達できていない。Testudo graeca は亜種の区切りに資料間の相違が大きい。本ページには現時点で条件を満たす実写写真がなく、写真は未掲載（写真保留）。",
       "status": "draft"
+    },
+    {
+      "slug": "moroccan-greek-tortoise",
+      "wamei": "モロッコギリシャリクガメ",
+      "gakumei": "Testudo graeca graeca",
+      "eimei": "Moroccan Greek Tortoise",
+      "koura": "ドーム状。大腿部に結節（スパー）を持ち、尾端スパーはない（ヘルマンとの区別点）。臀甲板は通常一枚。イベラ亜種ほど大型・robust にはならない。",
+      "iro_moyou": "淡い黄褐色〜黄土色の地に、各甲板の黒斑がはっきりした輪郭で入る。イベラ亜種に多い全身暗色型とは印象が異なる。",
+      "tobu": "頭部は中程度。前肢5爪・後肢4爪。",
+      "size": "甲長15〜20cm程度が目安。イベラ亜種（20〜30cm）より小さく、nabeulensis（13〜17cm）より大きい。亜種単位の一次資料に乏しく、親種の値と飼育資料からの目安。",
+      "bunpu": "モロッコ〜アルジェリアの北アフリカ、乾燥した低木林・草地・農地周辺。イベリア半島南部にも個体群が知られるが、自然分布か人為的導入かは資料により分かれる。",
+      "kondou_shu": [
+        {
+          "aite": "イベラギリシャリクガメ (Testudo graeca ibera)",
+          "kubetsu": "ibera は東亜種クレード（トルコ〜コーカサス）で20〜30cmと大型・robust。基亜種は北アフリカ産で15〜20cm程度。最終サイズと産地が最も確実な区別点。"
+        },
+        {
+          "aite": "チュニジアギリシャリクガメ (Testudo graeca nabeulensis)",
+          "kubetsu": "nabeulensis はチュニジア北東部産で13〜17cmと最小級。基亜種とは分布が接し、独立亜種として扱うか基亜種の地域変異に含めるかは資料により分かれる。"
+        },
+        {
+          "aite": "ゴールデンギリシャリクガメ (Testudo graeca terrestris)",
+          "kubetsu": "terrestris は中東産で明色・小型。基亜種は北アフリカ産で黒斑の輪郭がはっきりする傾向。産地が区別の根拠になる。"
+        },
+        {
+          "aite": "ヘルマンリクガメ (Testudo hermanni)",
+          "kubetsu": "ヘルマンは尾端に角質スパーがあり大腿部結節がない。基亜種は逆（大腿部スパーあり・尾端スパーなし）。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Testudinidae 科単位掲載、附属書I種を除く）。附属書II証明で取引可。日本国内CB飼育可。",
+      "photo_hantei": "大腿部の結節＋尾端スパーの欠如＋淡い黄褐色地に輪郭のはっきりした黒斑。モロッコ〜アルジェリア産であること。前肢5爪。",
+      "photo_chuui": "①イベラ亜種と幼体では区別困難—最終サイズと産地を根拠とする。②Testudo graeca は亜種間の交雑個体が多く流通し、産地不明個体の亜種同定は困難。基亜種と確証できない個体を採用しない。③イベリア半島の個体群は自然分布か導入かで扱いが分かれるため、写真の産地を明記すること。④greek-tortoise / iberian-greek-tortoise / tunisian-greek-tortoise / golden-greek-tortoise と写真の使い回しリスクあり。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/1629023-Testudo-graeca-graeca",
+        "https://cites.org/eng/taxonomy/term/4664"
+      ],
+      "unresolved": "基亜種 graeca の範囲をどこまでとするかは資料により差がある。北アフリカの個体群を細分する立場もあり、イベリア半島南部の個体群を自然分布とみるか人為的導入とみるかも見解が分かれる。TTWG Checklist 本文は未確認。",
+      "status": "confirmed",
+      "photo_id": "463181313"
     }
   ]
 }
