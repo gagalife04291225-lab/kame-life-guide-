@@ -762,5 +762,55 @@
   "source": "inaturalist",
   "source_url": "https://www.inaturalist.org/observations/b6ca9a54-7152-46a9-9a09-d77b71acea71",
   "photo_id": "463181313"
+ },
+ {
+  "wamei": "チュウブニシキガメ",
+  "gakumei": "Chrysemys picta marginata",
+  "author": "Robert Roach",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/a8e75dee-90f1-41d8-b931-5a4291e036af",
+  "photo_id": "365358288"
+ },
+ {
+  "wamei": "スワニークーター",
+  "gakumei": "Pseudemys concinna suwanniensis",
+  "author": "Ashwin Srinivasan",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/730e47f2-5c98-4252-8981-e723ec2d94ce",
+  "photo_id": "592142792"
+ },
+ {
+  "wamei": "ソノラクジャクガメ",
+  "gakumei": "Rhinoclemmys pulcherrima rogerbarbouri",
+  "author": "Francisco Farriols Sarabia",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/113178f9-c6b4-44a7-9a0c-d3f279e45e56",
+  "photo_id": "222282044"
+ },
+ {
+  "wamei": "ゲレーロクジャクガメ",
+  "gakumei": "Rhinoclemmys pulcherrima pulcherrima",
+  "author": "Jalil R.",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/dffedb1a-7f5d-4487-a829-2d610aba9b59",
+  "photo_id": "90079125"
+ },
+ {
+  "wamei": "マングローブダイヤモンドバックテラピン",
+  "gakumei": "Malaclemys terrapin rhizophorarum",
+  "author": "Simon Tonge",
+  "obs": null,
+  "credited_license": "cc0",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/d2d897e5-9644-40d7-85d0-6399f69df802",
+  "photo_id": "13445385"
  }
 ]

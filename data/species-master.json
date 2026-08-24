@@ -12285,6 +12285,494 @@
      "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
     }
    }
+  },
+  {
+   "slug": "midland-painted-turtle",
+   "page": "species/midland-painted-turtle.html",
+   "wamei": "チュウブニシキガメ",
+   "scientific_name": {
+    "value": "Chrysemys picta marginata",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39772-Chrysemys-picta-marginata"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Midland Painted Turtle",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CITES 附属書には掲載されていない",
+     "last_verified": "2026-08-23"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "brumation": {
+     "value": "温帯種・野生では冬眠（国内初心者は加温が安全）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Chrysemys picta marginata の care 値は親種 Chrysemys picta のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "suwannee-cooter",
+   "page": "species/suwannee-cooter.html",
+   "wamei": "スワニークーター",
+   "scientific_name": {
+    "value": "Pseudemys concinna suwanniensis",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　独立種 Pseudemys suwanniensis として扱う資料もあり、Pseudemys 属の種・亜種境界には見解の幅がある。",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/121140-Pseudemys-concinna-suwanniensis"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Suwannee Cooter",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": null,
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CITES 附属書には掲載されていない",
+     "last_verified": "2026-08-23"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "enclosure_jp": {
+     "value": "成体は120cm級＋強力ろ過",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Pseudemys concinna suwanniensis の care 値は親種 Pseudemys concinna のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "diet": {
+     "value": "成体は草食傾向",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "水草・葉野菜"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Pseudemys concinna suwanniensis の care 値は親種 Pseudemys concinna のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "sonora-wood-turtle",
+   "page": "species/sonora-wood-turtle.html",
+   "wamei": "ソノラクジャクガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys pulcherrima rogerbarbouri",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　Rhinoclemmys pulcherrima の4亜種は色と模様が連続的に変化し、写真からの亜種同定は困難。",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39933-Rhinoclemmys-pulcherrima-rogerbarbouri"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Rogerbarbour's Painted Wood Turtle",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP19（2022）でアメリカヤマガメ属 Rhinoclemmys を属一括で附属書II掲載（2023年2月発効）。亜種も同掲載の対象",
+     "last_verified": "2026-08-23"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "LIKELY"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "高め（林床性・梅雨は好条件）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "蒸れ回避"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Rhinoclemmys pulcherrima rogerbarbouri の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "熱帯産・冬眠不可",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "加温越冬"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Rhinoclemmys pulcherrima rogerbarbouri の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "guerrero-wood-turtle",
+   "page": "species/guerrero-wood-turtle.html",
+   "wamei": "ゲレーロクジャクガメ",
+   "scientific_name": {
+    "value": "Rhinoclemmys pulcherrima pulcherrima",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　Rhinoclemmys pulcherrima の4亜種は色と模様が連続的に変化し、写真からの亜種同定は困難。",
+    "sources": [
+     "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39935-Rhinoclemmys-pulcherrima-pulcherrima"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Mexican Painted Wood Turtle",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP19（2022）でアメリカヤマガメ属 Rhinoclemmys を属一括で附属書II掲載（2023年2月発効）。亜種も同掲載の対象",
+     "last_verified": "2026-08-23"
+    },
+    "since": {
+     "value": "2023-02-23",
+     "verification": "LIKELY"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "humidity_pct": {
+     "value": "高め（林床性・梅雨は好条件）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "蒸れ回避"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Rhinoclemmys pulcherrima pulcherrima の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "熱帯産・冬眠不可",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "加温越冬"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Rhinoclemmys pulcherrima pulcherrima の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
+  },
+  {
+   "slug": "mangrove-diamondback-terrapin",
+   "page": "species/mangrove-diamondback-terrapin.html",
+   "wamei": "マングローブダイヤモンドバックテラピン",
+   "scientific_name": {
+    "value": "Malaclemys terrapin rhizophorarum",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。　形態にもとづく亜種区分は分子系統と一致しないことが知られており、亜種境界そのものが再検討の途中にある。",
+    "sources": [
+     "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+     "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf",
+     "https://www.inaturalist.org/taxa/39842-Malaclemys-terrapin-rhizophorarum"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Mangrove Diamondback Terrapin",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS",
+     "sources": [
+      "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "CoP16（2013）で種 Malaclemys terrapin を附属書II掲載。亜種も同掲載の対象",
+     "last_verified": "2026-08-23"
+    },
+    "since": {
+     "value": "2013-06-12",
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "water_salinity": {
+     "value": "汽水（人工海水0.5〜1.5%目安）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": "塩分対応機材"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin rhizophorarum の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "メスは90cm以上",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Malaclemys terrapin rhizophorarum の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
   }
  ]
 }
