@@ -3520,6 +3520,180 @@
       "unresolved": "基亜種 graeca の範囲をどこまでとするかは資料により差がある。北アフリカの個体群を細分する立場もあり、イベリア半島南部の個体群を自然分布とみるか人為的導入とみるかも見解が分かれる。TTWG Checklist 本文は未確認。",
       "status": "confirmed",
       "photo_id": "463181313"
+    },
+    {
+      "slug": "midland-painted-turtle",
+      "wamei": "チュウブニシキガメ",
+      "gakumei": "Chrysemys picta marginata",
+      "eimei": "Midland Painted Turtle",
+      "koura": "背甲は滑らかで扁平なオーバル。甲板の継ぎ目は picta 亜種のように一列には揃わない。大きさは picta と bellii の中間。",
+      "iro_moyou": "背甲はオリーブ〜黒地に、縁甲板と継ぎ目に沿った赤い模様。腹甲は黄〜橙地で、中央に暗色の figure を持つが bellii のように腹甲全面へは広がらず中央付近に収まる。",
+      "tobu": "頭部・首・四肢は暗色地に黄条、眼後に黄斑、首や脚に赤条。",
+      "size": "ニシキガメ亜種の中間。甲長13〜19cm。",
+      "bunpu": "五大湖周辺〜カナダ・オンタリオ州南部、米北東部内陸〜テネシー州北部。picta（東）と bellii（西）にはさまれた中間域。",
+      "kondou_shu": [
+        {
+          "aite": "トウブニシキガメ (Chrysemys picta picta)",
+          "kubetsu": "picta は甲板の継ぎ目が左右一列に揃い、腹甲がほとんど無地の黄色。marginata は継ぎ目が揃わず、腹甲中央に暗色 figure を持つ。"
+        },
+        {
+          "aite": "セイブニシキガメ (Chrysemys picta bellii)",
+          "kubetsu": "bellii は腹甲全面に大きな暗色 figure が広がり、より大型（25cmの記録）。marginata の figure は中央付近に収まる。"
+        },
+        {
+          "aite": "ニシキガメ（種全体・Chrysemys picta）",
+          "kubetsu": "同一種。本ページは marginata 亜種のページであり、種全体のページは painted-turtle。両ページで同一個体を使わないこと。"
+        },
+        {
+          "aite": "ミナミニシキガメ (Chrysemys dorsalis)",
+          "kubetsu": "dorsalis は背甲正中に明瞭な赤/橙の縦条を持ち、独立種として扱われる。marginata には明瞭な正中条がない。"
+        }
+      ],
+      "houkisei": "CITES掲載なし。日本の外来生物法上の指定は未確認（環境省告示で要確認）。米国の州により採取規制あり。",
+      "photo_hantei": "滑らかで扁平な緑〜黒の甲＋縁甲板/継ぎ目の赤模様＋腹甲中央に収まる暗色 figure。五大湖周辺〜米北東部内陸産であること。",
+      "photo_chuui": "①腹甲が写らない写真では bellii/picta と区別できない。②分布が隣接3亜種と連続し intergrade が広範—産地を根拠とする。③既存のニシキガメ3ページ（painted/western/eastern）と写真の使い回しリスクあり。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39772-Chrysemys-picta-marginata",
+        "https://www.iucnredlist.org/species/pdf/97410447"
+      ],
+      "unresolved": "ニシキガメの亜種は分布境界で広く intergrade をつくり、marginata は東西両亜種にはさまれるため中間個体の割合が高い。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "suwannee-cooter",
+      "wamei": "スワニークーター",
+      "gakumei": "Pseudemys concinna suwanniensis",
+      "eimei": "Suwannee Cooter",
+      "koura": "高くドーム状の甲。concinna 群共通の第2肋甲板の後ろ向き『C』字マークが出るが、老成個体では暗色化して不明瞭になる。後縁はやや鋸歯。",
+      "iro_moyou": "背甲は暗褐〜黒地に緑黄褐の複雑な模様。老成個体はとくに暗色化しやすい。腹甲は黄〜橙で継ぎ目に沿って黒色素。",
+      "tobu": "頭頸部は暗色地に細い黄条。眼後の赤帯を欠く（アカミミガメとの区別点）。",
+      "size": "クーター類でも大型。甲長30〜43cm（メス）。",
+      "bunpu": "米フロリダ州北部〜ジョージア州南部のメキシコ湾に注ぐ河川。スワニー川水系が分布の中心。iNaturalist の Research Grade 観察は北緯27.7〜30.9度・西経84.8〜81.6度に集中。",
+      "kondou_shu": [
+        {
+          "aite": "コウキバラガメ（種全体・Pseudemys concinna）",
+          "kubetsu": "同一種。本ページは suwanniensis 亜種のページであり、種全体のページは river-cooter。両ページで同一個体を使わないこと。"
+        },
+        {
+          "aite": "ペニンシュラクーター (Pseudemys peninsularis)",
+          "kubetsu": "peninsularis はフロリダ半島産で甲に黄橙の線＋腹甲が無地の黄色。suwanniensis は腹甲の継ぎ目に沿って黒色素が出る。分類上は近縁で紛らわしい。"
+        },
+        {
+          "aite": "フロリダレッドベリータートル (Pseudemys nelsoni)",
+          "kubetsu": "nelsoni は腹甲が橙赤＋甲に赤縦縞。suwanniensis は腹甲が黄橙で継ぎ目黒。"
+        }
+      ],
+      "houkisei": "CITES掲載なし。日本の外来生物法上の指定は未確認（環境省告示で要確認）。フロリダ州で採取規制あり。",
+      "photo_hantei": "暗色化しやすい大型の甲＋腹甲の継ぎ目に沿う黒＋眼後赤帯の欠如。フロリダ半島北部〜メキシコ湾岸産であること。",
+      "photo_chuui": "①クーター類は種・亜種の同定が難しく、産地が最善の手がかり。②親種ページ（river-cooter）およびペニンシュラクーターとの写真使い回しリスクあり。③老成個体は模様が消えるため識別点が写らないことがある。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/121140-Pseudemys-concinna-suwanniensis",
+        "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+      ],
+      "unresolved": "Pseudemys 属の種・亜種境界には見解の幅があり、本亜種を独立種 Pseudemys suwanniensis として扱う資料もある。当サイトは iNaturalist の分類（rank=subspecies・active）に合わせている。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "sonora-wood-turtle",
+      "wamei": "ソノラクジャクガメ",
+      "gakumei": "Rhinoclemmys pulcherrima rogerbarbouri",
+      "eimei": "Rogerbarbour's Painted Wood Turtle",
+      "koura": "R. pulcherrima の亜種 rogerbarbouri。甲の基本構造は種と同じ（褐色＋正中キール＋後縁鋸歯＋成長輪、半陸生）。4亜種のうち最も北の個体群。",
+      "iro_moyou": "背甲は褐色で、橙〜黄の模様が細く分断されがちとされる。manni のような渦巻＋眼状斑にはならない個体が多い（連続変異あり）。腹甲は黄色に暗色 blotch/stripe。頭部に橙赤条。",
+      "tobu": "頭部は褐〜緑褐色に橙〜赤の条（『アカスジ』の由来）。",
+      "size": "中型。甲長17〜20cm。",
+      "bunpu": "メキシコ北西部（ソノラ州南部〜シナロア・ナヤリット・ハリスコ）の太平洋岸低地林・川辺。iNaturalist の Research Grade 観察は北緯18.9〜27.1度・西経109.0〜103.7度に集中。",
+      "kondou_shu": [
+        {
+          "aite": "ゲレーロクジャクガメ（基亜種・R. p. pulcherrima）",
+          "kubetsu": "基亜種はメキシコ南西部（ゲレーロ〜オアハカ）。rogerbarbouri はより北のソノラ〜ハリスコ。分布は離れるが模様は連続変異し、写真断定は困難。"
+        },
+        {
+          "aite": "マンヤマガメ (R. p. manni) / ニカラグアクジャクガメ (R. p. incisa)",
+          "kubetsu": "いずれも同一種の亜種。manni は南ニカラグア〜北コスタリカ産で最も鮮やか、incisa は中米北部産。rogerbarbouri は最も北で模様が地味な傾向。区別は産地が主。"
+        },
+        {
+          "aite": "ネンリンヤマガメ (Rhinoclemmys annulata)",
+          "kubetsu": "pulcherrima は腹甲が黄色＋橙赤の頭条／annulata は腹甲がほぼ黒＋黄キール。腹甲の色で区別。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Rhinoclemmys 属一括、CoP19・2023年2月発効）。IUCN の評価は種単位。",
+      "photo_hantei": "褐色の甲＋正中キール＋後縁鋸歯＋頭部の橙赤条＋黄腹甲。メキシコ北西部（ソノラ〜ハリスコ）産であること。",
+      "photo_chuui": "①同種の他亜種3ページ（painted-wood/nicaragua/brown-wood-manni）と写真の使い回しリスクが極めて高い。②亜種の区別は産地が主で、模様からの断定は不可。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39933-Rhinoclemmys-pulcherrima-rogerbarbouri",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf"
+      ],
+      "unresolved": "Rhinoclemmys pulcherrima の4亜種は色と模様が連続的に変化し、亜種同定は産地に依存する。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "guerrero-wood-turtle",
+      "wamei": "ゲレーロクジャクガメ",
+      "gakumei": "Rhinoclemmys pulcherrima pulcherrima",
+      "eimei": "Mexican Painted Wood Turtle",
+      "koura": "R. pulcherrima の基亜種。甲の基本構造は種と同じ（褐色＋正中キール＋後縁鋸歯＋成長輪、半陸生）。",
+      "iro_moyou": "背甲は褐色地に橙〜黄の模様。manni のような渦巻＋眼状斑ほどは発達しない個体が多いとされる（連続変異あり）。腹甲は黄色に暗色 blotch/stripe。頭部に橙赤条。",
+      "tobu": "頭部は褐〜緑褐色に橙〜赤の条（『アカスジ』の由来）。",
+      "size": "中型。甲長17〜20cm。",
+      "bunpu": "メキシコ南西部（ゲレーロ州〜オアハカ州）の太平洋斜面の低地林・川辺。iNaturalist の Research Grade 観察は北緯15.7〜18.9度・西経101.7〜96.0度に集中。",
+      "kondou_shu": [
+        {
+          "aite": "ソノラクジャクガメ (R. p. rogerbarbouri)",
+          "kubetsu": "rogerbarbouri はより北のソノラ〜ハリスコ。基亜種はゲレーロ〜オアハカ。分布は離れるが模様は連続変異し、写真断定は困難。"
+        },
+        {
+          "aite": "マンヤマガメ (R. p. manni) / ニカラグアクジャクガメ (R. p. incisa)",
+          "kubetsu": "いずれも同一種の亜種。manni は南ニカラグア〜北コスタリカ産で最も鮮やか、incisa は中米北部産。区別は産地が主。"
+        },
+        {
+          "aite": "アカスジヤマガメ（種全体・Rhinoclemmys pulcherrima）",
+          "kubetsu": "同一種。本ページは基亜種のページであり、種全体のページは painted-wood-turtle。両ページで同一個体を使わないこと。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Rhinoclemmys 属一括、CoP19・2023年2月発効）。IUCN の評価は種単位。",
+      "photo_hantei": "褐色の甲＋正中キール＋後縁鋸歯＋頭部の橙赤条＋黄腹甲。メキシコ南西部（ゲレーロ〜オアハカ）産であること。",
+      "photo_chuui": "①同種の他亜種3ページ（painted-wood/nicaragua/brown-wood-manni）と写真の使い回しリスクが極めて高い。②基亜種の分布記述は資料により幅がある—産地を根拠とする。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39935-Rhinoclemmys-pulcherrima-pulcherrima",
+        "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf"
+      ],
+      "unresolved": "Rhinoclemmys pulcherrima の4亜種は色と模様が連続的に変化し、亜種同定は産地に依存する。基亜種の分布についても資料により記述に幅がある。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
+    },
+    {
+      "slug": "mangrove-diamondback-terrapin",
+      "wamei": "マングローブダイヤモンドバックテラピン",
+      "gakumei": "Malaclemys terrapin rhizophorarum",
+      "eimei": "Mangrove Diamondback Terrapin",
+      "koura": "各甲板に同心円（ひし形）模様。中央キールに結節が出る個体もある。汽水性。",
+      "iro_moyou": "背甲は灰〜褐〜黒で同心円模様。甲板中央が橙黄に明色化しない。",
+      "tobu": "頭部・首・四肢の皮膚に、細かい斑点ではなく縦の縞が出る個体が多いとされる（連続変異あり）。",
+      "size": "性的二型顕著。オス約13cm、メス平均19cm・最大23cm超の記録（種としての値）。",
+      "bunpu": "米フロリダ州フロリダキーズ〜南フロリダ本土沿岸のマングローブ林・潮汐水路。iNaturalist の Research Grade 観察は北緯24.8〜25.7度・西経81.2〜80.2度に集中。",
+      "kondou_shu": [
+        {
+          "aite": "フロリダイーストダイヤモンドバックテラピン (Malaclemys terrapin tequesta)",
+          "kubetsu": "tequesta はフロリダ半島東岸。rhizophorarum はフロリダキーズのマングローブ域。分布が接し中間個体もあるため、産地が最も確実な手がかり。"
+        },
+        {
+          "aite": "オルナータダイヤモンドバックテラピン (Malaclemys terrapin macrospilota)",
+          "kubetsu": "macrospilota は各甲板中央が橙〜黄で明色化する。rhizophorarum は中央明色化せず同心円模様のみ。"
+        },
+        {
+          "aite": "ノーザンダイヤモンドバックテラピン (Malaclemys terrapin terrapin)",
+          "kubetsu": "terrapin は大西洋岸北部で分布が完全に離れる。産地で区別する。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Malaclemys terrapin 種全体、2013年CoP16で掲載）。IUCN Vulnerable（種としての評価）。米国の州により所持・採取規制あり。",
+      "photo_hantei": "同心円（ひし形）模様＋淡色肌＋甲板中央が橙黄に明色化しないこと。フロリダキーズ〜南フロリダ産であること。",
+      "photo_chuui": "①隣接亜種 tequesta と分布が接し、写真単独では区別困難—産地を根拠とする。②形態亜種が分子系統と一致せず亜種境界は再検討中。③既存のテラピン5ページと写真の使い回しリスクあり。別個体・別観察を使うこと。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/39842-Malaclemys-terrapin-rhizophorarum",
+        "https://cites.org/sites/default/files/eng/cop/16/prop/E-CoP16-Prop-31.pdf"
+      ],
+      "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
     }
   ]
 }

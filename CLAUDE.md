@@ -675,3 +675,68 @@ HOLD 2件は **新しい利用可能ソースが出るまで再探索しない**
   既存資産を活かしながら完成度を高めることを原則とする。
 - 今後の **全レビュー・実装・改善提案** は、上記2憲法（名称・改善方針）を
   基準として適用する。
+
+## 亜種PROJECT Phase C の完了記録（2026-08-23）
+
+Phase C は「以前の全件監査で C判定された亜種候補」を扱う工程だが、
+**その C判定リストはリポジトリに残っていなかった**。推測で一覧を作ると漏れも混入も出るため、
+一次データから候補集合を作り直した。**この候補作成と判定はやり直さない。**
+
+候補の作り方（機械列挙）:
+`data/species-master.json` の掲載86種の二名法名を鍵に、iNaturalist Open Data の
+`taxa.csv.gz`（1,650,967行）を1パス走査し、カメ目（ancestry に 39532）に属する亜種を全件抽出。
+149件がヒットし、そこから **active=false / 既実装29件 / Phase B 決着済み6件** を除いた
+**56件**が Phase C の候補集合になった。C判定候補はこの集合の部分集合にあたる。
+
+判定: **IMPLEMENT 5 / HOLD 3 / DROP 48**
+
+IMPLEMENT 5件（すべて rank=subspecies・active=true。写真は research grade × 商用可 ×
+800×600以上を満たし、1枚ずつ実物を目視した）:
+
+| slug | 和名 | 学名 | 追加価値 | 写真 |
+|------|------|------|---------|------|
+| `midland-painted-turtle` | チュウブニシキガメ | Chrysemys picta marginata | ニシキガメ3亜種で唯一欠けていた中間亜種。腹甲 figure が「中央に収まる」識別点 | photo 365358288 / Robert Roach / CC BY 4.0 / Ontario |
+| `suwannee-cooter` | スワニークーター | Pseudemys concinna suwanniensis | クーター類でもとくに大型（メス40cm級）。設備要求が親種より一段重い | photo 592142792 / Ashwin Srinivasan / CC BY 4.0 / Florida |
+| `sonora-wood-turtle` | ソノラクジャクガメ | Rhinoclemmys pulcherrima rogerbarbouri | アカスジヤマガメ4亜種で最も北・最も地味。購入前に知る価値のある差 | photo 222282044 / Francisco Farriols Sarabia / CC BY 4.0 / Sinaloa |
+| `guerrero-wood-turtle` | ゲレーロクジャクガメ | Rhinoclemmys pulcherrima pulcherrima | 基亜種。これで R. pulcherrima 4亜種が完備 | photo 90079125 / Jalil R. / CC BY-SA 4.0 / Guerrero |
+| `mangrove-diamondback-terrapin` | マングローブダイヤモンドバックテラピン | Malaclemys terrapin rhizophorarum | SHINDAN-SPECIES.md が「その他の亜種（マングローブ等）」として未着手を明記していた1件 | photo 13445385 / Simon Tonge / CC0 1.0 / Florida |
+
+HOLD 3件 — **新しい利用可能ソースが出るまで再探索しない**:
+
+| 候補 | 理由 |
+|------|------|
+| `Malaclemys terrapin tequesta` | taxon 39837 は active で、掲載価値の判断も IMPLEMENT 相当（これが入ればテラピン7亜種が完備する）。だが採用条件を満たす写真が1観察6枚しかなく、6枚とも屋内・人の手の上の同一幼体で、亜種の識別点が写っていない。写真だけ揃えば実装できる |
+| `Cuora mouhotii obsti` | taxon 115579 は active だが research grade 観察が世界で1件のみ（ベトナム北部）。採用条件を満たす写真素材が存在しない |
+| `Graptemys nigrinoda delticola` | taxon 39857 は active だが research grade 観察が3件のみ。採用条件を満たす写真素材が事実上ない。国内流通も極小 |
+
+DROP 48件の内訳（同じ理由でまとまるものは束ねた）:
+
+| 理由 | 件数 | 例 |
+|------|------|-----|
+| 法規制で飼育不可・診断除外 | 4 | `Cuora flavomarginata evelynae`（天然記念物）／`Pyxis arachnoides` 3亜種（CITES I） |
+| サイトの確定済み分類方針と衝突 | 2 | `Terrapene ornata` 2亜種（commit ad6bbb7 で単型種へ同期済み） |
+| 基亜種で、既存の種ページと重複 | 12 | `Mauremys mutica mutica`／`Pseudemys concinna concinna` 等 |
+| 亜種指定の流通・識別の実態がない | 30 | `Aldabrachelys` 4／`Apalone` 6／`Emys orbicularis` 6／`Testudo graeca` 6／`Testudo horsfieldii` 4 等 |
+
+基亜種の扱いは次の規則で統一した:
+**「同種の亜種ページが既に2枚以上あり、基亜種だけが欠けている場合にのみ基亜種ページを作る」**。
+`Chrysemys picta picta`（トウブニシキガメ）が既にこの形で実装されており、
+`Rhinoclemmys pulcherrima pulcherrima` を今回追加したのは同じ理由。それ以外の基亜種は
+種ページと内容が重複するため DROP とした。
+
+飼育数値は Phase B と同じく親種のレコードを継承し、master の note に継承であることを明記した。
+分布はページ本文・identification とも iNaturalist の research grade 観察の実測範囲に整合する
+範囲でだけ書き、断定していない。和名は既存の亜種ページと同じく英名の音写または産地にもとづく
+当サイト表記で、国内で定着した和名ではないことを各ページの「まだ分かっていないこと」に明記した。
+
+`guerrero-wood-turtle` の写真だけライセンスが **CC BY-SA 4.0**（継承条件つき）。
+該当タクソンの採用可能な写真が1観察5枚しかなく、5枚とも CC BY-SA だったため。
+サイトには既に CC BY-SA の写真があり前例に沿うが、把握しておくこと。
+
+### Phase C で見つかった既存の欠陥（未修正・亀好きさんの判断待ち）
+
+Phase B（commit 1421bf9）で追加した4ページの `<title>` と `og:title` に
+`水温・餌・設備・餌・設備・難易度` という語の重複がある。
+対象: `eastern-painted-turtle` / `western-painted-turtle` /
+`mississippi-diamondback-terrapin` / `texas-diamondback-terrapin`。
+Phase C のスコープ外（既存ページの変更）のため今回は触っていない。
