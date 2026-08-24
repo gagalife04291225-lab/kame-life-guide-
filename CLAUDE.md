@@ -733,10 +733,43 @@ DROP 48件の内訳（同じ理由でまとまるものは束ねた）:
 該当タクソンの採用可能な写真が1観察5枚しかなく、5枚とも CC BY-SA だったため。
 サイトには既に CC BY-SA の写真があり前例に沿うが、把握しておくこと。
 
-### Phase C で見つかった既存の欠陥（未修正・亀好きさんの判断待ち）
+### title 重複の修正（解消済み・2026-08-24）
 
-Phase B（commit 1421bf9）で追加した4ページの `<title>` と `og:title` に
-`水温・餌・設備・餌・設備・難易度` という語の重複がある。
-対象: `eastern-painted-turtle` / `western-painted-turtle` /
-`mississippi-diamondback-terrapin` / `texas-diamondback-terrapin`。
-Phase C のスコープ外（既存ページの変更）のため今回は触っていない。
+Phase B / C で追加したページの `<title>` と `og:title` に語の重複があり、全6件とも解消した。
+**再監査しない。**
+
+| 対象 | 誤 | 正 | 解消 |
+|------|----|----|------|
+| `eastern-painted-turtle` / `western-painted-turtle` / `mississippi-diamondback-terrapin` / `texas-diamondback-terrapin` | 水温・餌・設備・**餌・設備**・難易度 | 水温・餌・設備・難易度 | PR #37（merge 793f859） |
+| `moroccan-greek-tortoise` / `tunisian-greek-tortoise` | 温度・餌・ケージ・**餌・設備**・難易度 | 温度・餌・ケージ・難易度 | 本コミット |
+
+いずれも `<title>` と `og:title` の2行のみの修正で、本文・写真・学名・和名・CITES・
+飼育情報・構造化データは無変更。修正後、サイト全体でこの重複パターンは0件。
+
+---
+
+## 亜種PROJECT 正式クローズ（2026-08-24）
+
+**亜種PROJECT は Phase A / B / C をもって完了した。以後は再開しない。**
+
+- **候補集合を使い切った。** Phase C で `taxa.csv.gz` を全走査し、サイト掲載86種に属する
+  カメ目の亜種149件を機械列挙。そこから active=false・既実装29件・Phase B 決着6件を
+  除いた56件を全件判定した（Phase C: IMPLEMENT 5 / HOLD 3 / DROP 48）。
+  Phase B の11候補は別途決着済み（実装済み5 / IMPLEMENT 1 / HOLD 2 / DROP 3）。
+  **未判定はゼロ。新規の亜種候補探索は行わない。**
+- **HOLD 5件は再探索禁止。** Phase B 2件（`Testudo graeca cyrenaica` /
+  `Emydura subglobosa worrelli`）＋ Phase C 3件（`Malaclemys terrapin tequesta` /
+  `Cuora mouhotii obsti` / `Graptemys nigrinoda delticola`）。
+  いずれも「タクソンは有効だが採用条件を満たす写真素材が存在しない」ことを
+  一次データで確認済み。**iNaturalist に新規投稿が出たときだけ再開する。定期チェックは不要。**
+  うち `Malaclemys terrapin tequesta` だけは掲載価値の判断が IMPLEMENT 相当で、
+  写真さえ揃えば即実装できる（これが入ればテラピン7亜種が完備する）。
+- **本プロジェクト全体が NO-REWORK GATE の対象。** Phase A / B / C の再監査、
+  候補の再判定、HOLD 案件の再探索、title 重複の再点検は行わない。
+  再開できるのは NO-REWORK GATE の4条件（データ変更／新しい矛盾／新証拠／明示指示）を
+  満たす場合のみ。
+
+**次工程は運営・成長フェーズ。** `docs/operations/` の
+`OPERATIONS_MANUAL.md` / `WEEKLY_REVIEW.md` / `MONTHLY_REVIEW.md` / `KPI.md` /
+`DECISION_RULE.md` に従い、GSC/GA4 の実測値がトリガーを引いたページのみを改善する
+（週最大3ページ）。
