@@ -108,11 +108,10 @@
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | スペングラーヤマガメ | Geoemyda spengleri | S | 中〜上級 | CITES II | 夏の保冷管理が最大課題 |
-| ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea） |
+| ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea）。別名モンホットハコガメ |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
 | モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I | CoP19で附属書Iへ移行・萌黄色の甲羅 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
-| モンホットハコガメ | Cuora mouhotii | M | 上級 | CITES II | 東南アジア産 |
 | ミスジハコガメ | Cuora trifasciata | M | 上級 | CITES II | 高価・流通少 |
 | マンヤマガメ | Rhinoclemmys pulcherrima manni | M | 中〜上級 | CITES II | 鮮やかな色彩 |
 | アカスジヤマガメ | Rhinoclemmys pulcherrima | M | 中〜上級 | CITES II | 赤いラインが美しい |
