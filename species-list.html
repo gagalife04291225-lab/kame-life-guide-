@@ -151,6 +151,21 @@
   footer a{color:var(--accent);text-decoration:none;}
   .disclaimer{font-size:.74rem;color:#9aa89d;max-width:640px;margin:16px auto 0;line-height:1.7;}
 
+  /* Phase1A: 大分類 → 属 → 種 → 亜種 のグループ見出し */
+  .sp-groups{display:block;}
+  .sp-cat{margin:34px 0 4px;padding:0 0 8px;border-bottom:2px solid var(--accent);
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .sp-cat:first-child{margin-top:8px;}
+  .sp-cat h2{font-family:"Playfair Display",serif;font-weight:700;font-size:1.18rem;color:var(--forest);line-height:1.4;}
+  .sp-cat .sp-cat-count{font-size:.8rem;color:#7b8a7f;white-space:nowrap;}
+  .sp-genus{margin:20px 0 10px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;}
+  .sp-genus h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;
+    font-size:.98rem;color:var(--accent-dark);line-height:1.4;}
+  .sp-genus .sp-genus-count{font-size:.74rem;color:#8a9389;}
+  .sp-sub{margin:12px 0 8px;font-size:.76rem;color:#7b8a7f;font-style:italic;
+    padding-left:10px;border-left:3px solid #e0d8c2;}
+  .sp-grid + .sp-cat{margin-top:38px;}
+
   @media(max-width:760px){.sp-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:480px){
     .sp-grid{grid-template-columns:1fr;}
@@ -437,6 +452,114 @@ ALL_SPECIES.forEach(function(item, i) {
   item.pop = sp.recommendationPriority || 0;
 });
 
+// ============================================================
+// Phase1A: 大分類 → 属 → 種 → 亜種 の分類（表示順のみ。種データは不変）
+// 判定は「属 → 大分類」の明示マッピングだけで行う。種名の部分一致は使わない。
+// ============================================================
+var GENUS_CAT = {
+  // ① リクガメ（リクガメ科 Testudinidae）
+  Testudo:'リクガメ', Indotestudo:'リクガメ', Chelonoidis:'リクガメ', Stigmochelys:'リクガメ',
+  Kinixys:'リクガメ', Centrochelys:'リクガメ', Aldabrachelys:'リクガメ', Manouria:'リクガメ',
+  Malacochersus:'リクガメ', Geochelone:'リクガメ', Chersina:'リクガメ', Pyxis:'リクガメ',
+  // ② ヤマガメ・ハコガメ（森林性の陸生・半陸生）
+  Clemmys:'ヤマガメ・ハコガメ', Glyptemys:'ヤマガメ・ハコガメ', Geoemyda:'ヤマガメ・ハコガメ',
+  Cuora:'ヤマガメ・ハコガメ', Rhinoclemmys:'ヤマガメ・ハコガメ', Terrapene:'ヤマガメ・ハコガメ',
+  Cyclemys:'ヤマガメ・ハコガメ',
+  // ③ 半水棲（ニオイガメ科 Kinosternidae）
+  Sternotherus:'半水棲', Kinosternon:'半水棲', Staurotypus:'半水棲',
+  // ④ 水棲（淡水）
+  Chrysemys:'水棲（淡水）', Mauremys:'水棲（淡水）', Trachemys:'水棲（淡水）',
+  Graptemys:'水棲（淡水）', Pseudemys:'水棲（淡水）', Emydoidea:'水棲（淡水）',
+  Emys:'水棲（淡水）', Siebenrockiella:'水棲（淡水）',
+  // ⑤ 汽水
+  Malaclemys:'汽水',
+  // ⑥ スッポン・曲頸
+  Apalone:'スッポン・曲頸', Carettochelys:'スッポン・曲頸', Pelodiscus:'スッポン・曲頸',
+  Chelodina:'スッポン・曲頸', Chelus:'スッポン・曲頸', Emydura:'スッポン・曲頸',
+  Phrynops:'スッポン・曲頸', Pelomedusa:'スッポン・曲頸', Pelusios:'スッポン・曲頸'
+};
+var CAT_ORDER = ['リクガメ','ヤマガメ・ハコガメ','半水棲','水棲（淡水）','汽水','スッポン・曲頸'];
+var CAT_NOTE = {
+  'リクガメ':'陸で暮らす。床材とバスキング、UVBが要。',
+  'ヤマガメ・ハコガメ':'森林の落ち葉の下。高湿度と浅い水場。',
+  '半水棲':'ニオイガメ・ドロガメの仲間。浅い水と陸場。',
+  '水棲（淡水）':'水槽で泳がせる。ろ過とバスキングが要。',
+  '汽水':'塩分のある水。専用の水づくりが要。',
+  'スッポン・曲頸':'スッポン類と、首を横に曲げる仲間。'
+};
+
+// 学名パース：亜属 (…) と 全角括弧の注記 （…） を除いて属・種小名・亜種小名に分ける
+function sciParts(latin) {
+  var s = String(latin || '');
+  var note = (s.match(/（([^）]*)）/) || [])[1] || '';
+  var bare = s.replace(/\([^)]*\)/g, ' ').replace(/（[^）]*）/g, ' ').replace(/\s+/g, ' ').trim();
+  var w = bare.split(' ');
+  return { genus: w[0] || '', species: w[1] || '', subsp: w[2] || '', note: note,
+           binomial: (w[0] || '') + ' ' + (w[1] || '') };
+}
+
+ALL_SPECIES.forEach(function(item) {
+  var p = sciParts(item.sp.latin);
+  item.genus    = p.genus;
+  item.binomial = p.binomial;
+  item.subsp    = p.subsp;
+  item.bigCat   = GENUS_CAT[p.genus] || 'その他';
+  item.rank     = p.subsp ? '亜種' : (p.note ? '変異型' : '種');
+});
+
+var RANK_ORDER = { '種': 0, '変異型': 1, '亜種': 2 };
+
+// 大分類 → 属 → 種(binomial) の入れ子を作る
+function buildGroups(list) {
+  var cats = [];
+  CAT_ORDER.concat(['その他']).forEach(function(cat) {
+    var items = list.filter(function(i){ return i.bigCat === cat; });
+    if (!items.length) return;
+    var gmap = {};
+    items.forEach(function(i){ (gmap[i.genus] = gmap[i.genus] || []).push(i); });
+    var genera = Object.keys(gmap).map(function(g) {
+      var arr = gmap[g], smap = {};
+      arr.forEach(function(i){ (smap[i.binomial] = smap[i.binomial] || []).push(i); });
+      var species = Object.keys(smap).map(function(b) {
+        var s = smap[b].slice().sort(function(a, z) {
+          if (RANK_ORDER[a.rank] !== RANK_ORDER[z.rank]) return RANK_ORDER[a.rank] - RANK_ORDER[z.rank];
+          if (a.rank === '亜種' && z.rank === '亜種') return a.subsp < z.subsp ? -1 : a.subsp > z.subsp ? 1 : 0;
+          return a.origIndex - z.origIndex;
+        });
+        return { binomial: b, items: s, pop: Math.max.apply(null, s.map(function(x){ return x.pop; })) };
+      }).sort(function(a, z){ return (z.pop - a.pop) || (a.binomial < z.binomial ? -1 : 1); });
+      return { genus: g, species: species,
+               count: arr.length,
+               pop: Math.max.apply(null, arr.map(function(x){ return x.pop; })) };
+    }).sort(function(a, z){ return (z.pop - a.pop) || (a.genus < z.genus ? -1 : 1); });
+    cats.push({ cat: cat, genera: genera, count: items.length });
+  });
+  return cats;
+}
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// グループ表示のHTML（カード本体は既存の renderCard をそのまま使う）
+function renderGroups(list) {
+  return buildGroups(list).map(function(c) {
+    var head = '<div class="sp-cat"><h2>' + esc(c.cat) + '</h2>' +
+               '<span class="sp-cat-count">' + c.count + ' 種' +
+               (CAT_NOTE[c.cat] ? '｜' + esc(CAT_NOTE[c.cat]) : '') + '</span></div>';
+    var body = c.genera.map(function(g) {
+      var gh = '<div class="sp-genus"><h3>' + esc(g.genus) + '</h3>' +
+               '<span class="sp-genus-count">' + g.count + ' 種</span></div>';
+      var inner = g.species.map(function(s) {
+        var lead = (s.items.length > 1)
+          ? '<div class="sp-sub">' + esc(s.binomial) + ' — 種と亜種 ' + s.items.length + ' 件</div>'
+          : '';
+        return lead + '<div class="sp-grid">' + s.items.map(renderCard).join('') + '</div>';
+      }).join('');
+      return gh + inner;
+    }).join('');
+    return head + body;
+  }).join('');
+}
+
 // バッジHTML
 function diffBadge(diff) {
   var c = (diff === '入門' || diff === '入門〜中級') ? 'spb-begin'
@@ -552,7 +675,14 @@ function sortList(list) {
 
 function render() {
   var list = sortList(ALL_SPECIES.filter(matches));
-  grid.innerHTML = list.map(renderCard).join('');
+  // 既定（人気順）ではグループ表示。並び替えを選んだときは従来どおりフラット表示。
+  if (state.sort === 'popular') {
+    grid.className = 'sp-groups';
+    grid.innerHTML = renderGroups(list);
+  } else {
+    grid.className = 'sp-grid';
+    grid.innerHTML = list.map(renderCard).join('');
+  }
   countEl.textContent = list.length;
   noResultEl.style.display = list.length === 0 ? '' : 'none';
 }
