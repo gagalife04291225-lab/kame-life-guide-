@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | **PR #59**（A-4 FAQ問いの可視・JSON-LD同期）を含む `origin/main` |
+| 基準 | **PR #60**（H1 B分類のJSON-LD複製14件を同期）を含む `origin/main` |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-25 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
@@ -42,6 +42,7 @@
 | #57 | AI-HANDOFF の CURRENT_BASE を同期 | `ed14074` | 本ファイル自身を merge 後の main へ同期 |
 | #58 | A-1 quick-facts のラベル置換 | PR #58 | species 26ページの `初心者向き？` → **`飼育難易度`**。値・理由文・色・アイコンは無変更。HOLD 0件。`compare/hermann-vs-greek.html` の「どっちが初心者向き？」3件（title / OG / hero-sub）は `<strong>` 形ではなく**対象外**として維持 |
 | #59 | A-4 FAQ問いの可視・JSON-LD同期 | PR #59 | 5ページの `初心者向けですか？` → **`はじめて飼う亀に向きますか？`**。可視 `<summary>` と JSON-LD `"name"` を同一commitで完全一致。回答本文は無変更。HOLD 0件。**可視FAQとJSON-LDの同時修正を初めて適用し、成立を確認した** |
+| #60 | H1 B分類の JSON-LD複製14件を同期 | PR #60 | 可視FAQ（`faq-body` / `h3`）と JSON-LD（`acceptedAnswer.text` / `"name"`）を同一commitで完全一致。14件×2箇所=28箇所。意味・安全性・推奨強度は不変。HOLD 0件。**B分類は 51/52 に到達**（残る B18 は A-5 と不可分のため NEXT へ） |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -91,9 +92,11 @@
 
 - 公開表示 **239件 / 87ファイル**（基準 `6bb2fb0`）
   `A 難易度 62 / B 飼育経験 52 / C おすすめ 22 / D 注意・警告 24 / E 見出し・CTA・ナビ 67 / F その他 12`
-- 処理済 105件（B-1 37 + B-2 37 + A-1 26 + A-4 5）→ **残 134件**
+- 処理済 119件（B-1 37 + B-2 37 + A-1 26 + A-4 5 + H1 14）→ **残 120件**
 - **A-1 は完了。** species 個別ページの quick-facts ラベルは `飼育難易度`。
   `初心者向き？` は species/ 配下に残っていない
+- **B分類は 51/52 が完了。** 冬眠まわりの可視文とJSON-LDは同期済み。
+  残る1件（B18）は A-5 と同時処理が必要なため `UNRESOLVED / U3` に分離した
 - **A-4 は完了。** 対象5ページのFAQ問いは `はじめて飼う亀に向きますか？`。
   可視 `<summary>` と JSON-LD `"name"` は一致している。
   残る「初心者向けですか？」2件は**複合質問で対象外**
@@ -111,8 +114,9 @@
 - **JSON-LD の `FAQPage` が可視の `faq-body` / `h3` を1文字違わず複製している。**
   可視側だけを直すと構造化データと表示内容が乖離する。
   可視FAQを直すときは**同一commitでJSON-LDと完全同期**させる（PR #54 で条件付き許可済み）。
-  **PR #59 でこの手順の成立を確認済み**（可視 `<summary>` と `"name"` を同時置換し、
-  JSON-LD は `"name"` 以外に差分0・パース成功）
+  **PR #59 / #60 でこの手順の成立を確認済み。**
+  #59 は `"name"`、#60 は `acceptedAnswer.text` に適用。いずれも可視とJSON-LDを
+  同時置換し、置換箇所以外に差分0・JSONパース成功を確認している
 - 互換のため変更しない: `sort=beginner` / `?diff=初心者向け` / GA4イベント名 /
   `s.beginner` / beginner を含むURL・slug・ファイル名
 - generator 5本（マーカー方式・`--check` で差分検出）
@@ -154,25 +158,26 @@
 
 | ID | 内容 |
 |----|------|
-| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#59 が記録されていない |
+| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#60 が記録されていない |
 
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### H1 — B分類の JSON-LD複製 14件を、可視FAQとJSON-LDの同時修正で解消する
+### A-5 見出し「初心者に向くか」3件 ＋ B18 本文1件 — 同一ブロックとして同時処理する
 
-**なぜ今これか**: PR #59（A-4）で「可視FAQと JSON-LD `"name"` を同一commitで同期する」
-手順の成立を確認できた。H1 はこの手順を**回答本文（`acceptedAnswer.text`）**へ広げる工程で、
-Phase B-1 で唯一積み残した塊。これを閉じると B分類が完了する。
+**なぜ今これか**: H1 で B分類は 51/52 に到達し、残る B18 は
+直上の見出し（A-5）と分離できないことが確定した。A-5 の3件を処理する工程に
+B18 を同梱すれば、**B分類が完全に閉じる**。見出しと本文が同じ主張を扱うため、
+片方だけ直すと乖離する。
 
 | 項目 | 内容 |
 |------|------|
-| **対象** | Phase B-1 で HOLD した14件。可視 `faq-body` / `h3` と JSON-LD の `acceptedAnswer.text` / `"name"` が1文字違わず複製されているもの。<br>`ranking-beginner-top10` / `species/_template-monetized` / `canton-reeves-turtle` / `eastern-box-turtle` / `eastern-hermann-tortoise` / `european-pond-turtle` / `gulf-coast-box-turtle` / `hermann-tortoise` / `iberian-greek-tortoise` / `reeves-turtle` / `russian-tortoise` / `spotted-turtle` / `three-toed-box-turtle` / `trouble/hibernation-trouble`<br>※着手時に現mainから実数を再抽出し、14件と一致しなければ STOP して差異を報告する |
-| **Scope** | B分類の置換方針（Phase B-1 と同一）を可視側に適用し、**同じ文字列を JSON-LD にも同一commitで反映**する。主語削除／「飼育経験が浅いうちは」／「飼育下では」／「はじめての飼育では」 |
-| **開始前ゲート** | 14件それぞれで「可視1件＋JSON-LD 1件」の1対1対応を実測。対応が取れないものだけ HOLD |
-| **変更禁止** | 回答の**意味・安全性・推奨強度**を変えないこと／difficulty の値・★・色・アイコン／A-1「飼育難易度」・A-4「はじめて飼う亀に向きますか？」／C・D・E・F分類／CTA・ナビ／`title`・`meta`・OG・canonical／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／H2（`shindan` の「初心者TOP3」）／複合質問2件（`guide-beginner` / `razorback-musk-turtle`） |
-| **完了条件** | ①対象14件の可視とJSON-LDが完全一致 ②JSON-LD が有効なJSONのまま ③意味・推奨強度が変わっていないことを1件ずつ確認 ④Scope Lock 対象に意図外差分0 ⑤generator 4本 `--check` 差分0 ⑥JSエラー増加0 ⑦commit → push → PR → merge → main反映確認 ⑧本ファイルの更新 |
+| **対象** | ① A-5: `<h2>初心者に向くか</h2>` **3件**（`golden-greek-tortoise` / `eastern-hermann-tortoise` / `western-hermann-tortoise`）② B18: `golden-greek-tortoise` 本文「…むしろ**初心者**と相性の良い面があります」**1件**。※着手時に現mainから実数を再抽出し、A-5 が3件と一致しなければ STOP して差異を報告 |
+| **Scope** | 見出しと、それに対応する本文の推奨強度表現のみ。<br>見出し案: `初心者に向くか` → `はじめての1頭に向くか`<br>本文案: `むしろ初心者と相性の良い面があります` → `むしろはじめての1頭として相性の良い面があります` |
+| **開始前ゲート** | 3件それぞれで JSON-LD 複製の有無を実測する。複製があれば可視とJSON-LDを同一commitで同期（PR #59 / #60 の手順）。属性値・パンくず・`title`・`meta` に無いことも確認し、該当するものだけ HOLD |
+| **変更禁止** | 推奨強度・意味を変えないこと／difficulty の値・★・色・アイコン／A-1「飼育難易度」・A-4「はじめて飼う亀に向きますか？」／C・D・E・F分類／CTA・ナビ／`title`・`meta`・OG・canonical／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／H2（`shindan` の「初心者TOP3」）／複合質問2件 |
+| **完了条件** | ①A-5 3件と B18 1件の置換完了（HOLD分を除く）②JSON-LD 複製があった分は可視と完全一致・パース成功 ③**B分類 52/52・未処理0** の確認 ④Scope Lock 対象に意図外差分0 ⑤generator 4本 `--check` 差分0 ⑥JSエラー増加0 ⑦commit → push → PR → merge → main反映確認 ⑧本ファイルの更新 |
 
 > **UNRESOLVED を勝手に全部処理しない。** 今回実行するのは上記1工程だけ。
 > U1 / U2 / H2 / H3 / N1 には触れない。
