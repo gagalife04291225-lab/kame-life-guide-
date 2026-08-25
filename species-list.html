@@ -251,10 +251,12 @@
       <div class="filter-label">生息環境</div>
       <div class="filter-btns" id="hab-btns">
         <button class="fbtn active" data-hab="all">すべて</button>
-        <button class="fbtn" data-hab="水棲">水棲</button>
+        <button class="fbtn" data-hab="リクガメ">リクガメ</button>
+        <button class="fbtn" data-hab="ヤマガメ・ハコガメ">ヤマガメ・ハコガメ</button>
         <button class="fbtn" data-hab="半水棲">半水棲</button>
-        <button class="fbtn" data-hab="陸棲">陸棲</button>
-        <button class="fbtn" data-hab="森林系">森林系</button>
+        <button class="fbtn" data-hab="水棲（淡水）">水棲（淡水）</button>
+        <button class="fbtn" data-hab="汽水">汽水</button>
+        <button class="fbtn" data-hab="スッポン・曲頸">スッポン・曲頸</button>
       </div>
     </div>
     <div class="filter-group">
@@ -418,15 +420,6 @@ function maxCm(sizeStr) {
   var nums = (String(sizeStr).match(/\d+/g) || []).map(Number);
   return nums.length ? Math.max.apply(null, nums) : 0;
 }
-// 生息環境
-function habitatOf(item) {
-  var r = item.route, n = item.sp.name;
-  if (r === 'land') return '陸棲';
-  if (r === 'forest') return '森林系';
-  // aquatic / exotic：ニオイ・ドロ・ハコガメ系は半水棲、それ以外は水棲
-  if (/ニオイ|ドロ/.test(n)) return '半水棲';
-  return '水棲';
-}
 // 難易度ランク（初心者向け=0, 中級=1, 上級=2）
 function diffRank(d) {
   if (/上級/.test(d)) return 2;
@@ -439,7 +432,6 @@ ALL_SPECIES.forEach(function(item, i) {
   var cm = maxCm(sp.size);
   item.origIndex = i;
   item.maxCm = cm;
-  item.habitat = habitatOf(item);
   item.diffRank = diffRank(sp.difficulty);
   item.sizeClass = cm > 30 ? '大型' : cm >= 16 ? '中型' : '小型';
   item.rare = sp.availability === 'rare';
@@ -531,6 +523,22 @@ ALL_SPECIES.forEach(function(item) {
 });
 
 var RANK_ORDER = { '種': 0, '変異型': 1, '亜種': 2 };
+
+// 生息環境フィルタの選択値 → 対象となる大分類の集合。
+// 6大分類（CAT_ORDER）はそのまま1件。
+// 旧4値のURL（?hab=水棲 等）は後方互換のため対応する大分類へ展開する。
+// 旧「水棲」は 水棲（淡水）・汽水・スッポン・曲頸 の3分類に分かれていたため3件返す。
+var LEGACY_HAB = {
+  '陸棲':   ['リクガメ'],
+  '森林系': ['ヤマガメ・ハコガメ'],
+  '半水棲': ['半水棲'],
+  '水棲':   ['水棲（淡水）', '汽水', 'スッポン・曲頸']
+};
+function habTargets(v) {
+  if (!v || v === 'all') return null;
+  if (CAT_ORDER.indexOf(v) >= 0) return [v];
+  return LEGACY_HAB[v] || null;
+}
 
 // 大分類 → 属 → 種(binomial) の入れ子を作る
 function buildGroups(list) {
@@ -659,6 +667,7 @@ var noResultEl = document.getElementById('no-result');
 var state = {
   q: '',
   hab: 'all',
+  habCats: null,   // null = すべて。配列 = 対象の大分類
   diff: 'all',
   size: 'all',
   klg: {},        // { lowOdor:true, ... }
@@ -673,7 +682,7 @@ function haystack(item) {
 
 function matches(item) {
   if (state.q && haystack(item).indexOf(state.q) < 0) return false;
-  if (state.hab !== 'all' && item.habitat !== state.hab) return false;
+  if (state.habCats && state.habCats.indexOf(item.bigCat) < 0) return false;
   if (state.diff !== 'all') {
     var want = state.diff === '初心者向け' ? 0 : state.diff === '中級' ? 1 : 2;
     if (item.diffRank !== want) return false;
@@ -720,17 +729,18 @@ document.getElementById('search-box').addEventListener('input', function(e) {
 });
 
 // 単一選択チップ（生息環境 / サイズ）
-function singleSelect(containerId, attr, activeClass) {
+function singleSelect(containerId, attr, activeClass, after) {
   document.getElementById(containerId).addEventListener('click', function(e) {
     var btn = e.target.closest('.fbtn');
     if (!btn) return;
     this.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove(activeClass); });
     btn.classList.add(activeClass);
     state[attr] = btn.dataset[attr];
+    if (after) after(state[attr]);
     render();
   });
 }
-singleSelect('hab-btns', 'hab', 'active');
+singleSelect('hab-btns', 'hab', 'active', function(v){ state.habCats = habTargets(v); });
 singleSelect('size-btns', 'size', 'active');
 
 // 難易度チップ（別の active クラス）
@@ -762,7 +772,7 @@ document.getElementById('sort-sel').addEventListener('change', function(e) {
 
 // 空結果からのリセット
 document.getElementById('reset-filters').addEventListener('click', function() {
-  state.q = ''; state.hab = 'all'; state.diff = 'all'; state.size = 'all'; state.klg = {};
+  state.q = ''; state.hab = 'all'; state.habCats = null; state.diff = 'all'; state.size = 'all'; state.klg = {};
   document.getElementById('search-box').value = '';
   ['hab-btns','size-btns'].forEach(function(id) {
     document.querySelectorAll('#' + id + ' .fbtn').forEach(function(b) {
@@ -793,7 +803,18 @@ document.getElementById('reset-filters').addEventListener('click', function() {
     });
     if (matched) state[attr] = val;
   }
-  setSingle('hab-btns', 'hab', 'active', p.get('hab'));
+  // hab は旧4値のURLも受けるため個別処理（該当ボタンが無い旧値でも絞り込みは効く）
+  var habVal = p.get('hab');
+  if (habVal) {
+    var habT = habTargets(habVal);
+    if (habT) {
+      state.hab = habVal;
+      state.habCats = habT;
+      document.querySelectorAll('#hab-btns .fbtn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.hab === habVal);
+      });
+    }
+  }
   setSingle('size-btns', 'size', 'active', p.get('size'));
   setSingle('diff-btns', 'diff', 'active-diff', p.get('diff'));
   var klg = p.get('klg');

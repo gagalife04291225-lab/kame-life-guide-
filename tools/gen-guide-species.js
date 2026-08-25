@@ -73,15 +73,15 @@ const GUIDE_META = {
 
 // 一覧への絞り込み導線（species-list.html の既存URLパラメータを使う）
 const LIST_LINK = {
-  'guide-dry':        { href:'species-list.html?hab=陸棲',        text:'リクガメを一覧で見る' },
-  'guide-arid':       { href:'species-list.html?hab=陸棲',        text:'リクガメを一覧で見る' },
-  'guide-moist':      { href:'species-list.html?hab=森林系',      text:'ヤマガメ・ハコガメを一覧で見る' },
-  'guide-semi':       { href:'species-list.html?hab=半水棲',      text:'半水棲ガメを一覧で見る' },
-  'guide-water-full': { href:'species-list.html?hab=水棲',        text:'水棲ガメを一覧で見る' },
-  'guide-brackish':   { href:'species-list.html?hab=水棲',        text:'水棲ガメを一覧で見る' },
-  'guide-softshell':  { href:'species-list.html?hab=水棲',        text:'水棲ガメを一覧で見る' },
-  'guide-japan':      { href:'species-list.html?hab=水棲',        text:'水棲ガメを一覧で見る' },
-  'guide-beginner':   { href:'species-list.html?diff=初心者向け', text:'初心者向けの種を一覧で見る' }
+  'guide-dry':        { href:'species-list.html?hab=リクガメ',            text:'リクガメを一覧で見る' },
+  'guide-arid':       { href:'species-list.html?hab=リクガメ',            text:'リクガメを一覧で見る' },
+  'guide-moist':      { href:'species-list.html?hab=ヤマガメ・ハコガメ',  text:'ヤマガメ・ハコガメを一覧で見る' },
+  'guide-semi':       { href:'species-list.html?hab=半水棲',              text:'半水棲ガメを一覧で見る' },
+  'guide-water-full': { href:'species-list.html?hab=水棲（淡水）',        text:'水棲・淡水ガメを一覧で見る' },
+  'guide-brackish':   { href:'species-list.html?hab=汽水',                text:'汽水ガメを一覧で見る' },
+  'guide-softshell':  { href:'species-list.html?hab=スッポン・曲頸',      text:'スッポン・曲頸を一覧で見る' },
+  'guide-japan':      { href:'species-list.html?hab=水棲（淡水）',        text:'水棲・淡水ガメを一覧で見る' },
+  'guide-beginner':   { href:'species-list.html?diff=初心者向け',         text:'初心者向けの種を一覧で見る' }
 };
 
 const GUIDES = Object.keys(GUIDE_META);
