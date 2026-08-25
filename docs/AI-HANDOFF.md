@@ -16,7 +16,8 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最新 main commit | `4fc0952`（Merge pull request #56: AI引継ぎ・重複作業防止システムの整備） |
+| 基準 | **PR #58**（A-1 quick-facts のラベル置換）を含む `origin/main` |
+| 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-25 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
 | 作業ツリー | clean（origin/main と一致） |
@@ -38,6 +39,8 @@
 | #54 | difficulty 公開表現整合 Gate | `61ceb48` | 既知5件を**すべて判定A（正本が正しい）**で確定。「非推奨」を廃止 |
 | #55 | difficulty 表示層の完全同期 | `e51fc09` | badge/stat-item の不一致28件を解消。**公開difficulty表示249箇所の不一致0** |
 | #56 | AI引継ぎ・重複作業防止システムの整備 | `4fc0952` | 本ファイルを現在状態の単一正本として新設。`CLAUDE.md` と `.claude/rules/chatgpt-handoff.md` に読取ゲート・更新義務・NEXT HANDOFF ブロック・プロンプト生成規則を追加 |
+| #57 | AI-HANDOFF の CURRENT_BASE を同期 | `ed14074` | 本ファイル自身を merge 後の main へ同期 |
+| #58 | A-1 quick-facts のラベル置換 | PR #58 | species 26ページの `初心者向き？` → **`飼育難易度`**。値・理由文・色・アイコンは無変更。HOLD 0件。`compare/hermann-vs-greek.html` の「どっちが初心者向き？」3件（title / OG / hero-sub）は `<strong>` 形ではなく**対象外**として維持 |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -87,7 +90,9 @@
 
 - 公開表示 **239件 / 87ファイル**（基準 `6bb2fb0`）
   `A 難易度 62 / B 飼育経験 52 / C おすすめ 22 / D 注意・警告 24 / E 見出し・CTA・ナビ 67 / F その他 12`
-- 処理済 74件（B-1 37 + B-2 37）→ **残 165件**
+- 処理済 100件（B-1 37 + B-2 37 + A-1 26）→ **残 139件**
+- **A-1 は完了。** species 個別ページの quick-facts ラベルは `飼育難易度`。
+  `初心者向き？` は species/ 配下に残っていない
 - **「初心者向け」→「入門向け」の一律置換は禁止。** 「入門」は既に難易度値として
   公開HTML内で128件使われており、件数の異なる集合が同じ語になる
 - 採用する語彙（サイトに既に定着しているもののみ。新語を作らない）
@@ -128,7 +133,6 @@
 |----|------|
 | U1 | **badge★の1対1再割り当て。** 「最上級」廃止で★5が空いたため `中級★3 / 中〜上級★4 / 上級★5` にできるが、ラベルが既に正しい71ページ（中〜上級37 + 上級34）の★を付け替えることになる |
 | U2 | **CLAUDE.md への「初心者」方針追記の承認。** 追記案は作成済み（本ファイル §NEXT の前提ではない） |
-| U3 | **A分類62件のうち FAQ問い5件の扱い。** `初心者向けですか？` が JSON-LD の `"name"` にも複製されている（`hermann-tortoise` / `red-eared-slider` / `russian-tortoise` / `leopard-tortoise` / `sulcata-tortoise` で実測済み） |
 
 ### HOLD（条件が揃うまで着手しない）
 
@@ -142,27 +146,29 @@
 
 | ID | 内容 |
 |----|------|
-| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#56 が記録されていない |
+| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#58 が記録されていない |
 
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### A-1 quick-facts のラベル置換 —「初心者向き？」→「飼育難易度」
+### A-4 FAQ問い「初心者向けですか？」5件 — 可視FAQとJSON-LDを同一commitで同期
 
-**なぜ今これか**: PR #54 / #55 で quick-facts の**値**が正本5値に揃った。
-残るのは問いのラベル1語だけで、値・色・アイコンには一切触れずに完了できる。
+**なぜ今これか**: A-1 が完了し、A分類で次に閉じられるのはこの5件。
+`UNRESOLVED / U3` の実体であり、PR #54 で条件付き許可された
+「可視FAQとJSON-LDの同時修正」を初めて適用する工程にあたる。
 
 | 項目 | 内容 |
 |------|------|
-| **対象** | species 個別ページの `<strong>初心者向き？</strong>` **26件**（A分類 A-1）。`→ <strong>値</strong>。理由` の値と理由文は変更しない |
-| **Scope** | ラベル文字列のみ。`初心者向き？` → `飼育難易度` |
-| **開始前ゲート** | 26件すべてについて、JSON-LD複製の有無／属性値との結合／見出し・パンくずでないこと／`meta`・`title` にないことを**機械判定**する。1つでも該当すればその件だけ HOLD（PR #53 と同じ手順） |
-| **変更禁止** | difficulty の値・色・アイコン／A-4「初心者向けですか？」5件（U3・JSON-LD複製あり）／B・C・D・E・F分類／CTA・ナビ／`title`・`meta`・OG・JSON-LD／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js` |
-| **完了条件** | ①`初心者向き？` の残存0（HOLD分を除く）②公開difficulty表示249箇所の不一致0を維持 ③difficulty 118件・正本外0 ④Scope Lock 全項目差分0 ⑤generator 4本 `--check` 差分0 ⑥JSエラー増加0 ⑦commit → push → PR → merge → main反映確認 ⑧本ファイルの更新 |
+| **対象** | `<summary>初心者向けですか？</summary>` と、同一ページの JSON-LD `FAQPage` の `"name": "初心者向けですか？"`。**5ページ**（`hermann-tortoise` / `red-eared-slider` / `russian-tortoise` / `leopard-tortoise` / `sulcata-tortoise`）※着手時に現mainから実数を再抽出し、5件と一致しなければ STOP して差異を報告する |
+| **Scope** | 問いの文字列のみ。可視側と JSON-LD の `"name"` を**同一commitで完全同期**させる。回答本文（`faq-body` / `acceptedAnswer.text`）は変更しない |
+| **置換案** | `初心者向けですか？` → `はじめて飼う亀に向きますか？`（Phase A 設計の A-4 案） |
+| **開始前ゲート** | 5件それぞれで「可視1件＋JSON-LD 1件」の対応を実測し、対応が取れないものは HOLD |
+| **変更禁止** | 回答本文／difficulty の値・★・色・アイコン／A-1 で置換済みの `飼育難易度`／B・C・D・E・F分類／CTA・ナビ／`title`・`meta`・OG・canonical／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／H1 の JSON-LD複製14件（別工程） |
+| **完了条件** | ①対象5件の可視とJSON-LDが一致 ②`初心者向けですか？` の残存0（HOLD除く）③Scope Lock 対象に意図外差分0 ④generator 4本 `--check` 差分0 ⑤JSエラー増加0 ⑥commit → push → PR → merge → main反映確認 ⑦本ファイルの更新 |
 
 > **UNRESOLVED を勝手に全部処理しない。** 今回実行するのは上記1工程だけ。
-> U1〜U3 / H1〜H3 / N1 には触れない。
+> U1 / U2 / H1〜H3 / N1 には触れない。
 
 ---
 
@@ -170,7 +176,10 @@
 
 Claude Code は各作業の完了後、**同じPRの中で**本ファイルを更新する。
 
-1. **CURRENT_BASE** — 最新 main commit と最終更新日を書き換える
+1. **CURRENT_BASE** — 基準（今回のPR）と最終更新日を書き換える。
+   merge commit は本ファイルを書く時点では確定しないため、**PR番号で記す**。
+   次に作業する側は `git log --oneline -1 origin/main` で実測し、
+   `git merge-base --is-ancestor <該当PRのcommit> origin/main` が真であることを確認する
 2. **COMPLETED** — 完了した NEXT を移す。PR番号・merge commit・**確定した結論**を必ず書く
 3. **FIXED_FACTS** — 新たに確定し、今後は入力として使う事実を追記する
 4. **UNRESOLVED** — 本当に未解決のものだけ残す。判断待ち / HOLD / 新発見 を区別する。
