@@ -151,8 +151,8 @@ section { padding: 96px 48px; }
 .merit, .demerit { padding: 28px; }
 .merit { background: #f2f8f0; border-top: 2px solid var(--sage); }
 .demerit { background: #faf2f0; border-top: 2px solid #c47a5a; }
-.merit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin-bottom: 14px; }
-.demerit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a4a2a; margin-bottom: 14px; }
+.merit h3, .merit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--moss); margin-bottom: 14px; }
+.demerit h3, .demerit h4 { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9a4a2a; margin-bottom: 14px; }
 .merit ul, .demerit ul { padding-left: 18px; }
 .merit li, .demerit li { font-size: 13px; line-height: 1.85; font-family: 'Noto Sans JP', sans-serif; }
 .rating-box { margin: 52px 0; background: var(--forest); padding: 52px; text-align: center; }
@@ -177,7 +177,7 @@ section { padding: 96px 48px; }
 .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 64px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px; }
 .footer-brand .logo { color: var(--cream); display: inline-flex; margin-bottom: 18px; }
 .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.9; max-width: 300px; }
-.footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 22px; }
+.footer-col h3, .footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 22px; }
 .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 13px; transition: color 0.2s; }
 .footer-col a:hover { color: var(--sage-light); }
 .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
