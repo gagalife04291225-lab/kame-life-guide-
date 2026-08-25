@@ -247,6 +247,17 @@ land: [
     score: function(s){ return (s.dry||0)+(s.herbivore||0)+(s.intermediate||0)+(s.compact||0)+(s.eu_cb||0); },
     availability: 'rare'
   },
+  { name: 'リビアギリシャリクガメ', latin: 'Testudo graeca cyrenaica', emoji: '🏜️', difficulty: '中〜上級', size: 'S〜M（13〜18cm）', cites: 'CITES II', legal: 'cites_ii',
+    reason: 'リビア・キレナイカ地方の固有亜種。ギリシャリクガメのなかでも扁平で明るい色合いになる傾向。国内流通はほぼ皆無で、記録目的の掲載。飼育情報も乏しく、迎える機会は極めて限られる。',
+    specs: { '最大甲長': '18cm', 'タイプ': '乾燥系陸棲', '温度': '26〜32℃', '難易度': '★★★' },
+    coreSpecs: { size: '18cm', temp: '26〜32℃', lifespan: '50〜80年', diet: '草食' },
+    extraSpecs: {},
+    links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
+    slug: 'libyan-greek-tortoise', hasPage: true,
+    match: function(s){ return (s.dry||0) >= 1 && (s.collector_grade||0) >= 1 && ((s.intermediate||0) >= 1 || (s.advanced||0) >= 1); },
+    score: function(s){ return (s.dry||0)+(s.intermediate||0)+(s.advanced||0)+(s.collector_grade||0)+(s.collector||0); },
+    availability: 'rare'
+  },
   { name: 'ヒガシヘルマンリクガメ', latin: 'Testudo hermanni boettgeri', emoji: '🌿', difficulty: '中級', size: 'M（15〜23cm・最大28cm級）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'ヘルマンリクガメ2亜種の東側・大型側で、日本で「ヘルマン」として流通する個体の主流。EU産CBが安定して流通し丈夫。ニシ亜種より明確に大きく育つため、成体には120cm級の床面積を前提に計画する。CITES II。',
     specs: { '最大甲長': '28cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜30℃' },
