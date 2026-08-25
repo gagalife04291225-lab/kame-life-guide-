@@ -764,6 +764,8 @@ Phase B / C で追加したページの `<title>` と `og:title` に語の重複
   実行されたときだけ再開する。定期チェックは不要。**
   うち `Malaclemys terrapin tequesta` だけは掲載価値の判断が IMPLEMENT 相当で、
   写真さえ揃えば即実装できる（これが入ればテラピン7亜種が完備する）。
+  4件の写真素材は 2026-08-24 に `photos.csv.gz` の完全照合で実測確定済み
+  （下記「HOLD 4件の写真素材 最終確定」）。**この照合をやり直さない。**
 ### HOLD案件の外部ソース完全調査（2026-08-24・亀好きさん指示で実施済み）
 
 明示指示にもとづき、HOLD 5件について iNaturalist 以外の外部ソース
@@ -780,10 +782,59 @@ Outdoor Alabama / TFTSG / 論文 / theTurtleRoom 等を WebSearch で追跡）�
 | `Cuora mouhotii obsti` | 有効（Fritz et al. 1998・TTWG承認） | **合法候補を発見**: Wikimedia Commons `File:Pyxidea mouhotii obsti Male.jpg`・同 `Male ventral.jpg`（Torsten Blanck / GFDL または CC BY-SA 3.0）。ただし本実行環境からは Commons が遮断されており取得・解像度確認が不可能 | HOLD（下記Owner経路あり） |
 | `Graptemys nigrinoda delticola` | 形式上有効だが Ennen et al. 2014 が診断性を否定（クリナル変異） | 公開ライセンスの写真は皆無（TFTSG=©Godwin、theTurtleRoom=©、iNat 3観察に該当なし） | HOLD |
 
-**Ownerが取得すれば動く経路（obsti のみ）**: Commons の上記2ファイルを
-ブラウザでダウンロードし、①原寸が800×600以上か ②個体が健全な生体か を確認のうえ
-ファイルを渡してもらえれば、CC BY-SA 3.0 表記（作者 Torsten Blanck）で実装できる。
-サイトには CC BY-SA の前例あり。
+~~**Ownerが取得すれば動く経路（obsti のみ）**~~ … **この経路は無効と確定した**。
+Commons の2ファイルは実測で `Male.jpg` 500×349 / `Male ventral.jpg` 500×359 と判明し、
+800×600 基準を満たさない。詳細と代替経路は下記「HOLD 4件の写真素材 最終確定」を参照。
+
+---
+
+## HOLD 4件の写真素材 最終確定（2026-08-24・調査クローズ）
+
+**HOLD 4件の写真調査はここで完了とする。以後、同じ探索を繰り返さない。**
+
+`photos.csv.gz`（19.6GB）を対象43観察のパターンで **1パス完走**し、
+紐づく写真レコード90枚を全件照合。条件通過9枚は全枚を原寸取得して目視した。
+以下はすべて一次データの実測値であり、推論ではない。
+
+| 亜種 | 観察数 | 写真総数 | 商用可×800×600 | 目視 | 障害（実測） | 判定 |
+|------|-------|---------|----------------|------|-------------|------|
+| `Cuora mouhotii obsti` | 1 | 7 | 7（CC-BY-SA / 1536×2048 / Chris Oldnall） | 7枚 | 写真素材は存在する。だが産地20.20N は obsti の分布域（Thua Thien-Hue 16.3N〜Dak Lak 12.7N）の約400km北で、intergradation zone（Quang Tri〜Nghe An）よりさらに北＝基亜種の分布域。腹甲もほぼ無地で obsti の識別形質「放射状の黒斑」と一致しない。**亜種同定を証明できない** | HOLD |
+| `Emydura subglobosa worrelli` | 19 | 34 | 3（CC-BY / 2048×1536 / Nathan Ruser） | 3枚 | 3枚すべて同一個体の**死骸**（四肢硬直・腹甲漂白・体腔空洞化）。残る31枚は CC-BY-NC で商用不可。**採用可能写真0** | HOLD |
+| `Malaclemys terrapin tequesta` | 21 | 46 | 6（CC-BY / 1536×2048 / Lexi Amico） | 6枚 | 6枚すべて同一の孵化直後幼体を屋内（キッチンカウンター）で手のひらに乗せた写真。自然な姿勢ではなく、幼体のため亜種の識別形質が未発達で確認できない。残る40枚は NC 系。**採用可能写真0**。ただし**掲載価値の判断は IMPLEMENT 相当**（写真さえ揃えばテラピン7亜種が完備する） | HOLD |
+| `Graptemys nigrinoda delticola` | 3 | 10 | **0**（10枚すべて CC-BY-NC） | ─ | iNaturalist 内に商用利用可能な写真が1枚も存在しない。加えて Ennen et al. 2014 が本亜種の形態的診断性を否定（クリナル変異）しており、写真が出ても掲載価値の再判断が必要 | HOLD |
+
+**再開条件（これ以外では再探索しない）**
+
+- 共通: iNaturalist に採用条件を満たす新規投稿が出たとき
+- `Cuora mouhotii obsti` のみ別経路あり: **Torsten Blanck 本人**（Cuora Conservation
+  Center / Turtle Island, info@cuora.org）から 800×600 以上の合法利用可能画像を
+  提供いただく。本人は既に同じ写真を Commons に GFDL / CC BY-SA 3.0 で公開しており、
+  オープンライセンスで公開する意思がある。Turtles of the World 10th Ed.(2025) に
+  掲載された Blanck / Phu Yen Prov. / male の写真が原典候補だが、
+  CRM の写真は再利用ライセンスが確認できないため書籍からの転載は不可。
+
+### 監査上の欠陥と再発防止ルール（恒久）
+
+**Phase C の写真照合には欠落が2件あった。**
+
+- `Graptemys nigrinoda delticola` … Phase C の照合対象リストに**含めていなかった**。
+  写真を一度も照合しないまま「公開ライセンス写真は皆無」と書いていた。
+- `Emydura subglobosa worrelli` … 照合自体は Phase B で済んでいたが、目視は
+  「1観察につき代表1枚」の絞り込みを通しており、**3枚中1枚しか見ていなかった**。
+- `Cuora mouhotii obsti` … Phase C で照合対象リストから漏れており、
+  「観察が1件しかない」ことだけを根拠に「写真素材が存在しない」と断定していた。
+  実際には CC-BY-SA・1536×2048 の写真が7枚あった（**この1件は明確な誤判定**）。
+
+今回の完全照合の結果、**最終的な HOLD 判定への影響は3件中0件**だったが、
+判定の根拠が推論のままだった点は欠陥である。以下を恒久ルールとする。
+
+**写真監査の鉄則（今後すべての写真調査に適用）**
+
+1. **観察数と写真数を分けて数える。**「観察が少ない」から「写真がない」を導かない。
+2. 対象観察に紐づく `photos` レコードを**最後まで照合する**。
+3. 条件通過写真は代表1枚ではなく**全枚を原寸で目視する**。
+4. 処理を中断した場合は「**未確認**」と記録する。「素材なし」と判定してはならない。
+5. 照合対象リストを絞ったときは、**除外した taxon を明示的に記録する**。
 
 - **本プロジェクト全体が NO-REWORK GATE の対象。** Phase A / B / C の再監査、
   候補の再判定、HOLD 案件の再探索、title 重複の再点検は行わない。
