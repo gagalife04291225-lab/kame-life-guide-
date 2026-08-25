@@ -110,7 +110,7 @@ body.no-furigana ruby rt{display:none}
 
 /* ---------- セクション ---------- */
 .k-sec{margin:44px auto 0}
-.k-sec h2{
+.k-sec h1,.k-sec h2{
   font-size:clamp(21px,4.8vw,27px);
   line-height:1.7;
   margin:0 0 6px;
@@ -119,7 +119,7 @@ body.no-furigana ruby rt{display:none}
   align-items:center;
   gap:12px;
 }
-.k-sec h2 .n{
+.k-sec h1 .n,.k-sec h2 .n{
   flex:0 0 auto;
   width:44px;height:44px;
   border-radius:50%;
@@ -141,14 +141,14 @@ body.no-furigana ruby rt{display:none}
   padding:22px 20px;
   box-shadow:var(--k-shadow);
 }
-.k-card h3{
+.k-card h2,.k-card h3{
   margin:0 0 8px;
   font-size:21px;
   line-height:1.75;
   font-weight:800;
   display:flex;align-items:center;gap:10px;
 }
-.k-card h3 .ico{font-size:30px;line-height:1}
+.k-card h2 .ico,.k-card h3 .ico{font-size:30px;line-height:1}
 .k-card p{margin:0;font-size:19px;line-height:2.05}
 .k-card p + p{margin-top:10px}
 
@@ -184,11 +184,11 @@ body.no-furigana ruby rt{display:none}
   color:var(--k-red-ink);
   box-shadow:var(--k-shadow);
 }
-.k-dont h3{
+.k-dont h2,.k-dont h3{
   margin:0 0 8px;font-size:21px;font-weight:800;line-height:1.75;
   display:flex;align-items:center;gap:10px;color:var(--k-red-ink);
 }
-.k-dont h3 .ico{font-size:28px}
+.k-dont h2 .ico,.k-dont h3 .ico{font-size:28px}
 .k-dont p{margin:0;font-size:19px;line-height:2.05;color:var(--k-red-ink)}
 .k-dont p + p{margin-top:10px}
 .k-dont ruby rt{color:#96503f}
@@ -532,7 +532,7 @@ span.k-stop .k-dot{border-color:#b8d0c0;color:#4f6a5a}
 }
 .k-rule{background:var(--k-green-bg);border-radius:var(--k-radius);padding:18px 20px;margin:0}
 .k-rule p{margin:0;font-size:18px;line-height:1.95}
-.k-sec h2 .n.hex{
+.k-sec h1 .n.hex,.k-sec h2 .n.hex{
   border-radius:0;
   clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
 }
