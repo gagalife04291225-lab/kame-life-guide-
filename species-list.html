@@ -265,8 +265,10 @@
       <div class="filter-label">難易度</div>
       <div class="filter-btns" id="diff-btns">
         <button class="fbtn active-diff" data-diff="all">すべて</button>
-        <button class="fbtn" data-diff="初心者向け">初心者向け</button>
+        <button class="fbtn" data-diff="入門">入門</button>
+        <button class="fbtn" data-diff="入門〜中級">入門〜中級</button>
         <button class="fbtn" data-diff="中級">中級</button>
+        <button class="fbtn" data-diff="中〜上級">中〜上級</button>
         <button class="fbtn" data-diff="上級">上級</button>
       </div>
     </div>
@@ -422,11 +424,28 @@ function maxCm(sizeStr) {
   var nums = (String(sizeStr).match(/\d+/g) || []).map(Number);
   return nums.length ? Math.max.apply(null, nums) : 0;
 }
-// 難易度ランク（初心者向け=0, 中級=1, 上級=2）
-function diffRank(d) {
-  if (/上級/.test(d)) return 2;
-  if (/入門/.test(d)) return 0;
-  return 1;
+// 難易度は shindan/species.js の difficulty 生値5段階をそのまま使う。
+// 並び替え（易しい順）のために順序だけ定義する。
+var DIFF_ORDER = ['入門', '入門〜中級', '中級', '中〜上級', '上級'];
+function diffIndex(d) {
+  var i = DIFF_ORDER.indexOf(d);
+  return i < 0 ? DIFF_ORDER.length : i;   // 未知の値は最後尾
+}
+
+// 難易度フィルタの選択値 → 対象となる difficulty の集合。
+// 5値はそのまま1件。旧3値のURL（?diff=初心者向け 等）は後方互換で展開する。
+// 判定は「5値が先、旧値が後」。'中級' と '上級' は新旧で文字列が同じで、
+// 新5値としての解釈が優先される（中級23件は新旧同数。上級は新解釈の39件になる）。
+// 旧値専用の '初心者向け' だけは従来どおり18件に展開される。
+var LEGACY_DIFF = {
+  '初心者向け': ['入門', '入門〜中級'],
+  '中級':       ['中級'],
+  '上級':       ['中〜上級', '上級']
+};
+function diffTargets(v) {
+  if (!v || v === 'all') return null;
+  if (DIFF_ORDER.indexOf(v) >= 0) return [v];
+  return LEGACY_DIFF[v] || null;   // 未知の値は絞り込みなし
 }
 
 ALL_SPECIES.forEach(function(item, i) {
@@ -434,7 +453,7 @@ ALL_SPECIES.forEach(function(item, i) {
   var cm = maxCm(sp.size);
   item.origIndex = i;
   item.maxCm = cm;
-  item.diffRank = diffRank(sp.difficulty);
+  item.diffIndex = diffIndex(sp.difficulty);
   item.sizeClass = cm > 30 ? '大型' : cm >= 16 ? '中型' : '小型';
   item.rare = sp.availability === 'rare';
   // 低臭：床材飼育の陸棲・森林系（水質由来の臭気が少ない）
@@ -671,6 +690,7 @@ var state = {
   hab: 'all',
   habCats: null,   // null = すべて。配列 = 対象の大分類
   diff: 'all',
+  diffVals: null,  // null = すべて。配列 = 対象の difficulty 生値
   size: 'all',
   klg: {},        // { lowOdor:true, ... }
   sort: 'popular'
@@ -685,10 +705,7 @@ function haystack(item) {
 function matches(item) {
   if (state.q && haystack(item).indexOf(state.q) < 0) return false;
   if (state.habCats && state.habCats.indexOf(item.bigCat) < 0) return false;
-  if (state.diff !== 'all') {
-    var want = state.diff === '初心者向け' ? 0 : state.diff === '中級' ? 1 : 2;
-    if (item.diffRank !== want) return false;
-  }
+  if (state.diffVals && state.diffVals.indexOf(item.sp.difficulty) < 0) return false;
   if (state.size !== 'all' && item.sizeClass !== state.size) return false;
   for (var tag in state.klg) {
     if (state.klg[tag] && !item[tag]) return false;   // 選択タグはAND
@@ -700,7 +717,7 @@ function sortList(list) {
   var s = state.sort;
   return list.slice().sort(function(a, b) {
     if (s === 'popular') return (b.pop - a.pop) || (a.origIndex - b.origIndex);
-    if (s === 'beginner') return (a.diffRank - b.diffRank) || (a.origIndex - b.origIndex);
+    if (s === 'beginner') return (a.diffIndex - b.diffIndex) || (a.origIndex - b.origIndex);
     if (s === 'size')     return (a.maxCm - b.maxCm) || (a.origIndex - b.origIndex);
     if (s === 'odor')     return ((b.lowOdor?1:0) - (a.lowOdor?1:0)) || (a.origIndex - b.origIndex);
     return a.origIndex - b.origIndex;
@@ -752,6 +769,7 @@ document.getElementById('diff-btns').addEventListener('click', function(e) {
   this.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('active-diff'); });
   btn.classList.add('active-diff');
   state.diff = btn.dataset.diff;
+  state.diffVals = diffTargets(state.diff);
   render();
 });
 
@@ -774,7 +792,7 @@ document.getElementById('sort-sel').addEventListener('change', function(e) {
 
 // 空結果からのリセット
 document.getElementById('reset-filters').addEventListener('click', function() {
-  state.q = ''; state.hab = 'all'; state.habCats = null; state.diff = 'all'; state.size = 'all'; state.klg = {};
+  state.q = ''; state.hab = 'all'; state.habCats = null; state.diff = 'all'; state.diffVals = null; state.size = 'all'; state.klg = {};
   document.getElementById('search-box').value = '';
   ['hab-btns','size-btns'].forEach(function(id) {
     document.querySelectorAll('#' + id + ' .fbtn').forEach(function(b) {
@@ -818,7 +836,18 @@ document.getElementById('reset-filters').addEventListener('click', function() {
     }
   }
   setSingle('size-btns', 'size', 'active', p.get('size'));
-  setSingle('diff-btns', 'diff', 'active-diff', p.get('diff'));
+  // diff は旧3値のURLも受けるため個別処理（該当ボタンが無い旧値でも絞り込みは効く）
+  var diffVal = p.get('diff');
+  if (diffVal) {
+    var diffT = diffTargets(diffVal);
+    if (diffT) {
+      state.diff = diffVal;
+      state.diffVals = diffT;
+      document.querySelectorAll('#diff-btns .fbtn').forEach(function(b) {
+        b.classList.toggle('active-diff', b.dataset.diff === diffVal);
+      });
+    }
+  }
   var klg = p.get('klg');
   if (klg) klg.split(',').forEach(function(tag) {
     var b = document.querySelector('#klg-btns .fbtn[data-klg="' + tag + '"]');
