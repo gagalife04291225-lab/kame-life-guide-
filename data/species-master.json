@@ -12773,6 +12773,131 @@
      "note": "亜種 Malaclemys terrapin rhizophorarum の care 値は親種 Malaclemys terrapin terrapin のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
     }
    }
+  },
+  {
+   "slug": "libyan-greek-tortoise",
+   "page": "species/libyan-greek-tortoise.html",
+   "wamei": "リビアギリシャリクガメ",
+   "scientific_name": {
+    "value": "Testudo graeca cyrenaica",
+    "rank": "subspecies",
+    "verification": "LIKELY",
+    "provenance": "expert_consensus",
+    "note": "現行有効な亜種として扱う。iNaturalist の taxon 解決で rank=subspecies・active として一意に確定できることは確認済み。TTWG の亜種アカウント（Testudo graeca 西側クレード）にも cyrenaica が含まれる。　ただしギリシャリクガメの亜種分類は研究者間で見解が分かれ、cyrenaica を認めない資料もある。TTWG Checklist 本文は未確認のため CONFIRMED にはしない。",
+    "sources": [
+     "https://iucn-tftsg.org/toc/",
+     "https://www.inaturalist.org/taxa/40030-Testudo-graeca-cyrenaica"
+    ],
+    "last_verified": "2026-08-23"
+   },
+   "english_name": {
+    "value": "Libyan Tortoise",
+    "verification": "LIKELY",
+    "note": "英名は広く用いられるが一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-23"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "IUCN の評価は種単位。亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "CONFIRMED",
+     "provenance": "official",
+     "institution": "CITES事務局/USFWS",
+     "sources": [
+      "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+     ],
+     "note": "Testudo 属一括で附属書II掲載（T. kleinmanni を除く）。亜種も同掲載の対象",
+     "last_verified": "2026-08-24"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "外部一次資料での検証未了。特定外来生物の指定状況は環境省告示で要確認。"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種単位の外部一次資料での検証未了"
+   },
+   "care": {
+    "uvb": {
+     "value": "Ferguson Zone 3（強UVB帯）・T5 HO 10〜12%管が基本",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "same_as_source",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Testudo graeca cyrenaica の care 値は親種 Testudo graeca のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "brumation": {
+     "value": "北アフリカ産・冬眠させない管理が安全",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Testudo graeca cyrenaica の care 値は親種 Testudo graeca のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "humidity_pct": {
+     "value": "乾燥系（梅雨〜夏の蒸れが最大リスク）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": "蒸れ回避"
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Testudo graeca cyrenaica の care 値は親種 Testudo graeca のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    },
+    "enclosure_jp": {
+     "value": "90cm級〜（床面積優先）",
+     "verification": "LIKELY",
+     "provenance": "expert_consensus",
+     "japan_fit": {
+      "judgment": "adjusted_for_japan",
+      "basis": "",
+      "jp_note": ""
+     },
+     "last_verified": "2026-08-23",
+     "sources": [],
+     "note": "亜種 Testudo graeca cyrenaica の care 値は親種 Testudo graeca のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+    }
+   }
   }
  ]
 }

@@ -757,13 +757,34 @@ Phase B / C で追加したページの `<title>` と `og:title` に語の重複
   除いた56件を全件判定した（Phase C: IMPLEMENT 5 / HOLD 3 / DROP 48）。
   Phase B の11候補は別途決着済み（実装済み5 / IMPLEMENT 1 / HOLD 2 / DROP 3）。
   **未判定はゼロ。新規の亜種候補探索は行わない。**
-- **HOLD 5件は再探索禁止。** Phase B 2件（`Testudo graeca cyrenaica` /
-  `Emydura subglobosa worrelli`）＋ Phase C 3件（`Malaclemys terrapin tequesta` /
-  `Cuora mouhotii obsti` / `Graptemys nigrinoda delticola`）。
-  いずれも「タクソンは有効だが採用条件を満たす写真素材が存在しない」ことを
-  一次データで確認済み。**iNaturalist に新規投稿が出たときだけ再開する。定期チェックは不要。**
+- **HOLD 4件は再探索禁止。**（2026-08-24 の外部ソース完全調査で1件を実装・4件を再確定）
+  `Malaclemys terrapin tequesta` / `Cuora mouhotii obsti` /
+  `Graptemys nigrinoda delticola` / `Emydura subglobosa worrelli`。
+  **iNaturalist に新規投稿が出たとき、または下記「Ownerが取得すれば動く経路」が
+  実行されたときだけ再開する。定期チェックは不要。**
   うち `Malaclemys terrapin tequesta` だけは掲載価値の判断が IMPLEMENT 相当で、
   写真さえ揃えば即実装できる（これが入ればテラピン7亜種が完備する）。
+### HOLD案件の外部ソース完全調査（2026-08-24・亀好きさん指示で実施済み）
+
+明示指示にもとづき、HOLD 5件について iNaturalist 以外の外部ソース
+（Wikimedia Commons / GBIF / ALA / OZCAM / naturepl / pbase / NASA / USFWS /
+Outdoor Alabama / TFTSG / 論文 / theTurtleRoom 等を WebSearch で追跡）と
+最新の分類学的有効性（TTWG / Reptile Database / USFWS / ITIS / 査読論文）を
+調査した。**この外部調査を同じ範囲でやり直さない。** 結果:
+
+| 候補 | 分類 | 写真調査の結論 | 判定 |
+|------|------|---------------|------|
+| `Testudo graeca cyrenaica` | 有効（TTWG西側クレード） | iNat obs f20d8af2（Arthur Gelling / CC BY / 2048×1536 / リビア・キュレネ近郊）が基準を満たすと目視確定。Wikimedia Commons も同観察の写真を採用済み | **IMPLEMENT（`libyan-greek-tortoise` として実装済み）** |
+| `Emydura subglobosa worrelli` | 有効（亜種として維持。2025 bioRxiv で種昇格が再検討中だが確定変更なし） | 唯一の採用条件通過候補（photo 175567334）は**乾燥した死骸**と亀好きさんが目視確定。ALA/OZCAM は生体画像なし、naturepl は有償ストック、pbase は©個人 | HOLD |
+| `Malaclemys terrapin tequesta` | 有効 | iNat は屋内・手のひら幼体の1観察のみ（S3データ7/27版から更新なし）。NASA KSC の PD 写真は発見できず。Stolen et al. 2024 (Ecology and Evolution, CC BY) は調査手法論文で生体写真の確証なし | HOLD |
+| `Cuora mouhotii obsti` | 有効（Fritz et al. 1998・TTWG承認） | **合法候補を発見**: Wikimedia Commons `File:Pyxidea mouhotii obsti Male.jpg`・同 `Male ventral.jpg`（Torsten Blanck / GFDL または CC BY-SA 3.0）。ただし本実行環境からは Commons が遮断されており取得・解像度確認が不可能 | HOLD（下記Owner経路あり） |
+| `Graptemys nigrinoda delticola` | 形式上有効だが Ennen et al. 2014 が診断性を否定（クリナル変異） | 公開ライセンスの写真は皆無（TFTSG=©Godwin、theTurtleRoom=©、iNat 3観察に該当なし） | HOLD |
+
+**Ownerが取得すれば動く経路（obsti のみ）**: Commons の上記2ファイルを
+ブラウザでダウンロードし、①原寸が800×600以上か ②個体が健全な生体か を確認のうえ
+ファイルを渡してもらえれば、CC BY-SA 3.0 表記（作者 Torsten Blanck）で実装できる。
+サイトには CC BY-SA の前例あり。
+
 - **本プロジェクト全体が NO-REWORK GATE の対象。** Phase A / B / C の再監査、
   候補の再判定、HOLD 案件の再探索、title 重複の再点検は行わない。
   再開できるのは NO-REWORK GATE の4条件（データ変更／新しい矛盾／新証拠／明示指示）を

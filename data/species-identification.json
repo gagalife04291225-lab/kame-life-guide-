@@ -3694,6 +3694,40 @@
       ],
       "unresolved": "Malaclemys terrapin の形態亜種は分子系統地理と一致せず、亜種境界は分子的に支持されない（Lamb & Avise 1992）。TTWG による改訂分類は未策定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定に依拠しており、標本による検証ではない。",
       "status": "confirmed"
+    },
+    {
+      "slug": "libyan-greek-tortoise",
+      "wamei": "リビアギリシャリクガメ",
+      "gakumei": "Testudo graeca cyrenaica",
+      "eimei": "Libyan Tortoise",
+      "koura": "T. graeca の亜種のなかでも背甲が低く扁平になる傾向。後縁甲板がやや反る個体もある。小型にとどまる。",
+      "iro_moyou": "背甲は明るい黄褐色の地に暗色斑。ギリシャリクガメ共通の腿部の結節（スパー）を持つ。",
+      "tobu": "頭部・四肢は黄褐〜褐色。",
+      "size": "小型。甲長13〜18cm目安（本亜種の実測資料は乏しく推定を含む）。",
+      "bunpu": "リビア北東部キレナイカ地方（ベンガジ〜ダルナ周辺）の固有亜種。iNaturalist の Research Grade 観察は北緯32.7度・東経21.9度前後（キュレネ近郊）。世界的に観察記録が数件のみ。",
+      "kondou_shu": [
+        {
+          "aite": "ギリシャリクガメ（種全体・Testudo graeca）",
+          "kubetsu": "同一種。本ページは cyrenaica 亜種のページであり、種全体のページは greek-tortoise。両ページで同一個体を使わないこと。"
+        },
+        {
+          "aite": "チュニジアギリシャリクガメ (Testudo graeca nabeulensis)",
+          "kubetsu": "nabeulensis も北アフリカ産の小型亜種で酷似する。cyrenaica はより扁平とされるが連続変異があり、写真での区別はほぼ不可能。産地（リビア東部かチュニジアか）が唯一の確実な手がかり。"
+        },
+        {
+          "aite": "ヘルマンリクガメ (Testudo hermanni)",
+          "kubetsu": "graeca は腿部にスパー（結節）を持ち尾端の角質爪を欠く。hermanni はその逆。"
+        }
+      ],
+      "houkisei": "CITES附属書II掲載（Testudo属一括）。リビアからの商業輸出実績はほぼなく、国内流通もほぼ皆無。",
+      "photo_hantei": "扁平で明るい黄褐色の背甲＋腿部スパー＋リビア・キレナイカ産であること。産地が同定の根拠。",
+      "photo_chuui": "①ギリシャリクガメ亜種は連続変異し写真単独の同定は不可—産地を根拠とする。②Research Grade 観察が世界で数件しかなく、素材の選択肢が事実上1観察のみ。③既存のギリシャリクガメ5ページとの写真使い回しに注意。",
+      "sources": [
+        "https://www.inaturalist.org/taxa/40030-Testudo-graeca-cyrenaica",
+        "https://iucn-tftsg.org/toc/"
+      ],
+      "unresolved": "ギリシャリクガメの亜種分類は係争中で、cyrenaica の有効性にも見解の幅がある。本亜種固有の飼育・繁殖情報はほぼ公表されておらず、飼育数値は近縁亜種からの推定。本ページの写真は iNaturalist の Research Grade・rank=subspecies 同定（産地: リビア・キレナイカ）に依拠しており、標本による検証ではない。",
+      "status": "confirmed"
     }
   ]
 }
