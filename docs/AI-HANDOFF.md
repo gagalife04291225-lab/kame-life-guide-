@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | **PR #62**（H2 最終HOLD解消）を含む `origin/main` |
+| 基準 | **PR #63**（N1 AI_CHANGELOG 欠落補完）を含む `origin/main` |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-25 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
@@ -45,6 +45,7 @@
 | #60 | H1 B分類の JSON-LD複製14件を同期 | PR #60 | 可視FAQ（`faq-body` / `h3`）と JSON-LD（`acceptedAnswer.text` / `"name"`）を同一commitで完全一致。14件×2箇所=28箇所。意味・安全性・推奨強度は不変。HOLD 0件。**B分類は 51/52 に到達**（残る B18 は A-5 と不可分のため NEXT へ） |
 | #61 | A-5 見出し3件 ＋ B18 本文1件 | PR #61 | `<h2>初心者に向くか</h2>` → **`はじめての1頭に向くか`**（3件）と、`むしろ初心者と相性の良い面があります` → **`むしろはじめての1頭として相性の良い面があります`**（1件）。JSON-LD複製なし。HOLD 0件。**B分類 52/52 完了** |
 | #62 | H2 shindan の「初心者TOP3」＋説明文を同時処理 | PR #62 | `初心者TOP3` → **`はじめての亀 TOP3`** と、それを名指しする `ec-text-sub`「初心者向けTOP3や比較ページも…」→ **`はじめての亀 TOP3や比較ページも…`** を同一commitで変更。JSON-LD複製なし。`href`・`id`・GA4・診断ロジックは無変更。**未処理HOLDが0になった** |
+| #63 | N1 AI_CHANGELOG の欠落補完 | PR #63 | `AI_CHANGELOG.md` に **Merge済み PR 47件（#13〜#62）** を1エントリ1件で追記。既存2エントリは1文字も変更していない（append-only）。**想定の「#44〜#62 の19件」ではなく47件が欠落**していた（既存2エントリは PR ではなく branch commit を指していた）。Automation 31件・直push 5件は merge ではないため §9.3-R1 の対象外と判断 |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -132,6 +133,17 @@
   `gen-guide-species.js` / `gen-guide-nav.js`
 - 本番URLの確認は本実行環境から不可（EGRESS_BLOCKED）。GitHub Pages 反映確認は亀好きさん側
 
+### 変更履歴（AI_CHANGELOG）
+
+- **`AI_CHANGELOG.md` は Merge済み PR #13〜#62 を全件記録済み**（PR #63 で補完）。
+  §9.3-R2 の7項目（Date / Actor / Change / Reason / PR・Commit / Approver / Conforms）を
+  47/47 で満たし、記載した merge commit は 47/47 が実在する
+- **記録対象は「Merge済み変更」＝PR merge のみ。** Automation（rakuten 価格更新・main 直 push）と
+  直 push は §9.3-R1 の「Merge 済み変更」に当たらないため記録しない
+- 欠番 **#14 / #16 / #35** は main に Merge されていない
+- 各エントリの Change / Reason は Git 履歴（merge commit・PRブランチのコミット本文・変更統計）から
+  取った事実のみ。**推測で補っていない**
+
 ### 正本ファイルの所在
 
 | 対象 | 正本 |
@@ -169,23 +181,23 @@
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### N1 — `AI_CHANGELOG.md` に PR #44〜#62 を追記して記録の欠落を埋める
+### C分類22件 —「初心者におすすめ」系を「はじめて飼う方」系へ置換
 
-**なぜ今これか**: 「初心者」公開表現の HOLD が 0 になり、残りは
-U1 / U2（**亀好きさんの判断待ちで、勝手に進めてはいけない**）と N1 だけになった。
-N1 は判断を要さず、Constitution v2.0 §9.3（1エントリ = Merge済み変更1件）への
-明確な違反を解消する工程で、**AI側で完結できる唯一の未処理項目**。
+**なぜ今これか**: N1 の完了で、AI 側だけで進められる未処理項目が尽きた。
+残る `UNRESOLVED` は U1 / U2 の**2件とも亀好きさんの判断待ち**で、勝手に進めてはいけない。
+一方「初心者」公開表現は残 114件あり、そのうち **C分類（おすすめ・選び方）22件**が
+次に着手できる最大のまとまり。Phase A で語彙・方針が確定済みで、新たな判断を要さない。
 
 | 項目 | 内容 |
 |------|------|
-| **対象** | `AI_CHANGELOG.md`。最新エントリが 2026-07-16 で停止しており、**PR #44〜#62 が未記録**。※着手時に `git log --first-parent origin/main` で実際の merge 済みPRを列挙し、既記録分と突き合わせてから書く |
-| **Scope** | `AI_CHANGELOG.md` への**追記のみ**（append-only）。既存エントリは1文字も変更しない。各エントリは既存フォーマット（Date / Actor / Change / Reason / PR・Commit / Approver / Conforms）に従う |
-| **書き方** | 事実のみ。PR番号・merge commit・変更内容は `docs/AI-HANDOFF.md` の COMPLETED と main の履歴から取る。**推測で Reason を作らない**。判断が残っている項目（U1 / U2）を「決定済み」と書かない |
-| **変更禁止** | `AI_CHANGELOG.md` の既存エントリ／公開HTML・JS・CSS・data 等のサイト資産（**変更0**）／`CLAUDE.md`／`DEVELOPMENT_CONSTITUTION.md`／`docs/AI-HANDOFF.md` の COMPLETED・FIXED_FACTS の内容（本工程の更新を除く）／difficulty／taxonomy／写真／CITES／学名・和名 |
-| **完了条件** | ①PR #44〜#62 が漏れなく記録されている ②既存エントリの差分0（append-only を守る） ③サイト資産の変更0 ④generator 4本 `--check` 差分0 ⑤commit → push → PR → merge → main反映確認 ⑥本ファイルの更新 |
+| **対象** | Phase A の **C分類 22件 / 15ファイル**（`compare/` 7 / ルート直下 6 / `guides/` 6 / `species/` 3）。※着手時に現mainから実数を再抽出し、22件と一致しなければ STOP して差異を報告 |
+| **Scope** | 「初心者におすすめ」「初心者に人気」「初心者にも飼いやすい」等の推奨文のみ。Phase A 設計の C 置換ルールを適用する<br>例: `初心者に人気の2大リクガメを比較。` → `はじめて飼う方に人気の2大リクガメを比較。`<br>`初心者が最初の1頭を選ぶなら、…` → `最初の1頭を選ぶなら、…`（主語削除）<br>`丈夫で適応力が高く初心者にも飼いやすい` → `丈夫で適応力が高く、はじめてでも飼いやすい` |
+| **開始前ゲート** | 22件それぞれで JSON-LD 複製の有無／属性値との結合／見出し・パンくず／`title`・`meta` を機械判定。複製があれば可視とJSON-LDを同一commitで同期（PR #59 / #60 の手順）。該当するものだけ HOLD |
+| **変更禁止** | **推奨強度・意味を変えないこと**（推薦を弱めない・強めない）／difficulty の値・★・色・アイコン／A-1「飼育難易度」・A-4「はじめて飼う亀に向きますか？」・A-5「はじめての1頭に向くか」／B・D・E・F分類／CTA・ナビ／`title`・`meta`・OG・canonical／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／複合質問2件／`compare/hermann-vs-greek.html` の3件 |
+| **完了条件** | ①C分類22件の置換完了（HOLD分を除く）②JSON-LD 複製があった分は可視と完全一致・パース成功 ③Scope Lock 対象に意図外差分0 ④generator 4本 `--check` 差分0 ⑤JSエラー増加0 ⑥commit → push → PR → merge → main反映確認 ⑦本ファイルの更新 |
 
 > **UNRESOLVED を勝手に全部処理しない。** 今回実行するのは上記1工程だけ。
-> U1 / U2 / H3 には触れない（U1・U2 は亀好きさんの判断待ち）。
+> U1 / U2 は**亀好きさんの判断待ち**、H3 は再探索禁止のため触れない。
 
 ---
 
