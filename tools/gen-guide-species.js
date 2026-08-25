@@ -9,7 +9,7 @@
  * 一切変更しない。種を追加したら本スクリプトを再実行すれば9ガイドが同期する。
  *
  * ── 帰属の根拠 ────────────────────────────────────────────
- * 1. 大分類は GENUS_CAT（属→大分類の明示マッピング・species-list.html と同一）で決める。
+ * 1. 大分類は tools/taxonomy.js の GENUS_CAT（属→大分類の明示マッピング）で決める。
  *    種名（和名）の部分一致判定は使わない。
  * 2. 大分類 → ガイドの基本対応は CAT_GUIDE のとおり。
  * 3. リクガメの guide-dry / guide-arid 振り分けは、species.js の links[0].href
@@ -29,28 +29,17 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const T = require('./taxonomy.js');
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = T.ROOT;
+
+// 分類と並び順の定義は tools/taxonomy.js が正本。ここでは複製しない。
+const GENUS_CAT = T.GENUS_CAT;
+const RANK_ORDER = T.RANK_ORDER;
+const sciParts = T.sciParts;
+const esc = T.esc;
 const BEGIN = '<!-- BEGIN:guide-species (tools/gen-guide-species.js が生成。手で編集しない) -->';
 const END = '<!-- END:guide-species -->';
-
-// ── 属 → 大分類（species-list.html の GENUS_CAT と同一・40属）──
-const GENUS_CAT = {
-  Testudo:'リクガメ', Indotestudo:'リクガメ', Chelonoidis:'リクガメ', Stigmochelys:'リクガメ',
-  Kinixys:'リクガメ', Centrochelys:'リクガメ', Aldabrachelys:'リクガメ', Manouria:'リクガメ',
-  Malacochersus:'リクガメ', Geochelone:'リクガメ', Chersina:'リクガメ', Pyxis:'リクガメ',
-  Clemmys:'ヤマガメ・ハコガメ', Glyptemys:'ヤマガメ・ハコガメ', Geoemyda:'ヤマガメ・ハコガメ',
-  Cuora:'ヤマガメ・ハコガメ', Rhinoclemmys:'ヤマガメ・ハコガメ', Terrapene:'ヤマガメ・ハコガメ',
-  Cyclemys:'ヤマガメ・ハコガメ',
-  Sternotherus:'半水棲', Kinosternon:'半水棲', Staurotypus:'半水棲',
-  Chrysemys:'水棲（淡水）', Mauremys:'水棲（淡水）', Trachemys:'水棲（淡水）',
-  Graptemys:'水棲（淡水）', Pseudemys:'水棲（淡水）', Emydoidea:'水棲（淡水）',
-  Emys:'水棲（淡水）', Siebenrockiella:'水棲（淡水）',
-  Malaclemys:'汽水',
-  Apalone:'スッポン・曲頸', Carettochelys:'スッポン・曲頸', Pelodiscus:'スッポン・曲頸',
-  Chelodina:'スッポン・曲頸', Chelus:'スッポン・曲頸', Emydura:'スッポン・曲頸',
-  Phrynops:'スッポン・曲頸', Pelomedusa:'スッポン・曲頸', Pelusios:'スッポン・曲頸'
-};
 
 // 大分類 → ガイド（リクガメだけは dry/arid に分かれるので後段で決める）
 const CAT_GUIDE = {
@@ -97,30 +86,6 @@ const LIST_LINK = {
 
 const GUIDES = Object.keys(GUIDE_META);
 
-// ── species.js の読み込み（評価するだけ。書き換えない）──
-function loadSpecies() {
-  const src = fs.readFileSync(path.join(ROOT, 'shindan/species.js'), 'utf8');
-  const S = new Function(src + '\nreturn SPECIES;')();
-  const routes = ['land', 'aquatic', 'forest', 'exotic'];
-  const seen = {}, all = [];
-  routes.forEach(r => S[r].forEach(sp => {
-    if (seen[sp.name]) return;
-    seen[sp.name] = true;
-    all.push({ sp: sp, route: r, origIndex: all.length });
-  }));
-  return all;
-}
-
-// 学名を 属 / 種小名 / 亜種小名 に分ける（亜属 (…) と全角注記 （…） は除く）
-function sciParts(latin) {
-  const s = String(latin || '');
-  const note = (s.match(/（([^）]*)）/) || [])[1] || '';
-  const bare = s.replace(/\([^)]*\)/g, ' ').replace(/（[^）]*）/g, ' ').replace(/\s+/g, ' ').trim();
-  const w = bare.split(' ');
-  return { genus: w[0] || '', species: w[1] || '', subsp: w[2] || '', note: note,
-           binomial: (w[0] || '') + ' ' + (w[1] || '') };
-}
-
 function linkGuide(sp) {
   const h = (sp.links && sp.links[0]) ? sp.links[0].href : '';
   return h.replace('../', '').replace('.html', '');
@@ -153,7 +118,6 @@ function assign(all) {
 }
 
 // ── 並び（species-list.html Phase 1A と同じ規則）──
-const RANK_ORDER = { '種': 0, '変異型': 1, '亜種': 2 };
 function orderForGuide(items) {
   const gmap = {};
   items.forEach(i => { (gmap[i.genus] = gmap[i.genus] || []).push(i); });
@@ -170,10 +134,6 @@ function orderForGuide(items) {
     }).sort((a, z) => (z.pop - a.pop) || (a.binomial < z.binomial ? -1 : 1));
     return { genus: g, species: species, pop: Math.max.apply(null, arr.map(x => x.pop)) };
   }).sort((a, z) => (z.pop - a.pop) || (a.genus < z.genus ? -1 : 1));
-}
-
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 const STYLE = [
@@ -225,7 +185,7 @@ function renderBlock(guide, items) {
 
 // ── 実行 ──
 const check = process.argv.indexOf('--check') >= 0;
-const all = loadSpecies();
+const all = T.loadSpecies();
 const problems = assign(all);
 
 const byGuide = {};
