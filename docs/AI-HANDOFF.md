@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最新 main commit | `e51fc09`（Merge pull request #55: difficulty 表示層の完全同期） |
+| 最新 main commit | `4fc0952`（Merge pull request #56: AI引継ぎ・重複作業防止システムの整備） |
 | 最終更新日 | 2026-08-25 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
 | 作業ツリー | clean（origin/main と一致） |
@@ -37,6 +37,7 @@
 | #53 | 「初心者」公開表現 Phase B-2（E分類） | `5fa7c9c` | CTA・関連リンク・ナビ37件を「はじめての亀」系へ。**HOLD 1件** |
 | #54 | difficulty 公開表現整合 Gate | `61ceb48` | 既知5件を**すべて判定A（正本が正しい）**で確定。「非推奨」を廃止 |
 | #55 | difficulty 表示層の完全同期 | `e51fc09` | badge/stat-item の不一致28件を解消。**公開difficulty表示249箇所の不一致0** |
+| #56 | AI引継ぎ・重複作業防止システムの整備 | `4fc0952` | 本ファイルを現在状態の単一正本として新設。`CLAUDE.md` と `.claude/rules/chatgpt-handoff.md` に読取ゲート・更新義務・NEXT HANDOFF ブロック・プロンプト生成規則を追加 |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -141,7 +142,7 @@
 
 | ID | 内容 |
 |----|------|
-| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#55 が記録されていない |
+| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#56 が記録されていない |
 
 ---
 
