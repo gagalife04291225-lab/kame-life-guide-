@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | **PR #61**（A-5 3件 + B18 1件・B分類完了）を含む `origin/main` |
+| 基準 | **PR #62**（H2 最終HOLD解消）を含む `origin/main` |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-25 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
@@ -44,6 +44,7 @@
 | #59 | A-4 FAQ問いの可視・JSON-LD同期 | PR #59 | 5ページの `初心者向けですか？` → **`はじめて飼う亀に向きますか？`**。可視 `<summary>` と JSON-LD `"name"` を同一commitで完全一致。回答本文は無変更。HOLD 0件。**可視FAQとJSON-LDの同時修正を初めて適用し、成立を確認した** |
 | #60 | H1 B分類の JSON-LD複製14件を同期 | PR #60 | 可視FAQ（`faq-body` / `h3`）と JSON-LD（`acceptedAnswer.text` / `"name"`）を同一commitで完全一致。14件×2箇所=28箇所。意味・安全性・推奨強度は不変。HOLD 0件。**B分類は 51/52 に到達**（残る B18 は A-5 と不可分のため NEXT へ） |
 | #61 | A-5 見出し3件 ＋ B18 本文1件 | PR #61 | `<h2>初心者に向くか</h2>` → **`はじめての1頭に向くか`**（3件）と、`むしろ初心者と相性の良い面があります` → **`むしろはじめての1頭として相性の良い面があります`**（1件）。JSON-LD複製なし。HOLD 0件。**B分類 52/52 完了** |
+| #62 | H2 shindan の「初心者TOP3」＋説明文を同時処理 | PR #62 | `初心者TOP3` → **`はじめての亀 TOP3`** と、それを名指しする `ec-text-sub`「初心者向けTOP3や比較ページも…」→ **`はじめての亀 TOP3や比較ページも…`** を同一commitで変更。JSON-LD複製なし。`href`・`id`・GA4・診断ロジックは無変更。**未処理HOLDが0になった** |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -93,13 +94,17 @@
 
 - 公開表示 **239件 / 87ファイル**（基準 `6bb2fb0`）
   `A 難易度 62 / B 飼育経験 52 / C おすすめ 22 / D 注意・警告 24 / E 見出し・CTA・ナビ 67 / F その他 12`
-- 処理済 123件（B-1 37 + B-2 37 + A-1 26 + A-4 5 + H1 14 + A-5 3 + B18 1）→ **残 116件**
+- 処理済 125件（B-1 37 + B-2 37 + A-1 26 + A-4 5 + H1 14 + A-5 3 + B18 1 + H2 2）→ **残 114件**
 - **A-1 は完了。** species 個別ページの quick-facts ラベルは `飼育難易度`。
   `初心者向き？` は species/ 配下に残っていない
 - **B分類（飼育経験）52件は 52/52 完了・未処理0。** 冬眠まわりの可視文とJSON-LDは同期済み。
   **B分類はクローズ。再監査しない**
 - **A-5 は完了。** 見出しは `はじめての1頭に向くか`。
   `初心者に向くか` はリポジトリ内に残っていない
+- **未処理の HOLD は 0。** Phase B-1 / B-2 由来の HOLD 16件（JSON-LD複製14 + B18 1 + H2 1）は
+  すべて解消済み。以後、これらを HOLD として扱わない
+- **`shindan/index.html` の exit-capture カードは `はじめての亀 TOP3` 系で統一済み。**
+  `ec-btn-guide` の `href` / `id` / GA4イベント（`exit_capture_click` / `target_type`）は無変更
 - **A-4 は完了。** 対象5ページのFAQ問いは `はじめて飼う亀に向きますか？`。
   可視 `<summary>` と JSON-LD `"name"` は一致している。
   残る「初心者向けですか？」2件は**複合質問で対象外**
@@ -158,30 +163,29 @@
 
 ### 新発見（未処理）
 
-| ID | 内容 |
-|----|------|
-| N1 | **`AI_CHANGELOG.md` が 2026-07-16 で停止している。** Constitution v2.0 §9.3 は「1エントリ = Merge済み変更1件」を求めているが、PR #44〜#61 が記録されていない |
+現在なし（N1 は NEXT へ移動）。
 
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### H2 — `shindan/index.html`「初心者TOP3」ボタンと、それを名指しする説明文を同時処理
+### N1 — `AI_CHANGELOG.md` に PR #44〜#62 を追記して記録の欠落を埋める
 
-**なぜ今これか**: B分類が 52/52 で閉じ、A分類も A-1 / A-4 / A-5 が完了した。
-残る単独 HOLD は H2 の1件だけで、**2文字列を同時に直せば閉じる最小の工程**。
-これを片づけると、未処理の HOLD がゼロになる。
+**なぜ今これか**: 「初心者」公開表現の HOLD が 0 になり、残りは
+U1 / U2（**亀好きさんの判断待ちで、勝手に進めてはいけない**）と N1 だけになった。
+N1 は判断を要さず、Constitution v2.0 §9.3（1エントリ = Merge済み変更1件）への
+明確な違反を解消する工程で、**AI側で完結できる唯一の未処理項目**。
 
 | 項目 | 内容 |
 |------|------|
-| **対象** | `shindan/index.html` の2箇所。<br>① `<a id="ec-btn-guide" …>初心者TOP3</a>`（Phase B-2 の HOLD）<br>② 同じカード内の `<div class="ec-text-sub">初心者向けTOP3や比較ページも見てみましょう</div>`（このボタンを名指ししている文）<br>※着手時に現mainから実数を再抽出し、2件と一致しなければ STOP して差異を報告 |
-| **Scope** | 上記2つの可視ラベル・文言のみ。**必ず同時に変更する**（片方だけだとカード内で乖離する）<br>案: `初心者TOP3` → `はじめての亀 TOP3`／`初心者向けTOP3や比較ページも見てみましょう` → `はじめての亀 TOP3や比較ページも見てみましょう` |
-| **開始前ゲート** | 2件について JSON-LD 複製・属性値との結合・見出し／パンくず・`title`／`meta` を機械判定。`ec-btn-guide` は GA4 クリック計測に使われるがラベルは JS から読まれない（PR #53 で実測済み・再調査しない） |
-| **変更禁止** | `href="../guides/beginner-best-turtles.html"`／GA4イベント名 `exit_capture_click` と `target_type`／`id`・`class`／診断ロジック・スコアリング／difficulty の値・★・色・アイコン／A-1「飼育難易度」・A-4「はじめて飼う亀に向きますか？」・A-5「はじめての1頭に向くか」／B・C・D・E・F分類の他の文言／CTA・ナビの他の箇所／`title`・`meta`・OG・canonical／URL・slug／`sort=beginner`／`?diff=初心者向け`／`s.beginner`／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js` |
-| **完了条件** | ①2箇所とも置換され、カード内の表記が整合 ②`shindan/index.html` の当該2文字列の残存0 ③診断の動作に回帰なし（ルート選択→結果表示、`exit-capture` の表示） ④Scope Lock 対象に意図外差分0 ⑤generator 4本 `--check` 差分0 ⑥JSエラー増加0 ⑦commit → push → PR → merge → main反映確認 ⑧本ファイルの更新 |
+| **対象** | `AI_CHANGELOG.md`。最新エントリが 2026-07-16 で停止しており、**PR #44〜#62 が未記録**。※着手時に `git log --first-parent origin/main` で実際の merge 済みPRを列挙し、既記録分と突き合わせてから書く |
+| **Scope** | `AI_CHANGELOG.md` への**追記のみ**（append-only）。既存エントリは1文字も変更しない。各エントリは既存フォーマット（Date / Actor / Change / Reason / PR・Commit / Approver / Conforms）に従う |
+| **書き方** | 事実のみ。PR番号・merge commit・変更内容は `docs/AI-HANDOFF.md` の COMPLETED と main の履歴から取る。**推測で Reason を作らない**。判断が残っている項目（U1 / U2）を「決定済み」と書かない |
+| **変更禁止** | `AI_CHANGELOG.md` の既存エントリ／公開HTML・JS・CSS・data 等のサイト資産（**変更0**）／`CLAUDE.md`／`DEVELOPMENT_CONSTITUTION.md`／`docs/AI-HANDOFF.md` の COMPLETED・FIXED_FACTS の内容（本工程の更新を除く）／difficulty／taxonomy／写真／CITES／学名・和名 |
+| **完了条件** | ①PR #44〜#62 が漏れなく記録されている ②既存エントリの差分0（append-only を守る） ③サイト資産の変更0 ④generator 4本 `--check` 差分0 ⑤commit → push → PR → merge → main反映確認 ⑥本ファイルの更新 |
 
 > **UNRESOLVED を勝手に全部処理しない。** 今回実行するのは上記1工程だけ。
-> U1 / U2 / H3 / N1 には触れない。
+> U1 / U2 / H3 には触れない（U1・U2 は亀好きさんの判断待ち）。
 
 ---
 
