@@ -457,9 +457,12 @@
  {
   "wamei": "ニシキマゲクビガメ",
   "gakumei": "Emydura subglobosa",
-  "author": "mefisher",
-  "obs": 39029210,
-  "credited_license": "cc0"
+  "author": "Petra Karstedt",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Rotbauchspitzkopfschildkroete-07.jpg",
+  "license_note": "CC BY-SA 2.0 ドイツ（ported）。継承条件あり。出典 Tiermotive.de、2005-11-29 に PetraK が de.wikipedia へ初回投稿。撮影地はケルン動物園（飼育個体）。原寸 780x520 はサイト基準 800x600 に未達のため、4:3 に切った 693x519 を 1.15 倍に拡大して掲載している（2026-08-26 亀好きさん判断で基準を本件に限り緩和）。種レベルの同定で、亜種 worrelli の別は特定されていない"
  },
  {
   "wamei": "ニセチズガメ",
