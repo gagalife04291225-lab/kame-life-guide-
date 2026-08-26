@@ -363,14 +363,14 @@ function getCvrBadge(item, equipmentKey) {
     return { icon: '🔥', label: '必須アイテム' };
   }
   if (cat === 'food') {
-    if (tier === 'budget')   return { icon: '🔰', label: '初心者向け' };
+    if (tier === 'budget')   return { icon: '🔰', label: 'はじめての方向け' };
     if (tier === 'premium')  return { icon: '🌿', label: '高品質' };
     return { icon: '🐢', label: '定番フード' };
   }
   if (cat === 'enclosure') {
     if (tier === 'budget')   return { icon: '💰', label: 'コスパ◎' };
     if (tier === 'premium')  return { icon: '🏆', label: '本格仕様' };
-    return { icon: '🔰', label: '初心者向け' };
+    return { icon: '🔰', label: 'はじめての方向け' };
   }
   if (cat === 'substrate') {
     var isDryTortoise = ek.indexOf('tortoise_dry') >= 0;

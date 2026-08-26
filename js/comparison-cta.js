@@ -20,7 +20,7 @@
         target: 'greek-tortoise',
         targetName: 'ギリシャリクガメ',
         selfName: 'ヘルマンリクガメ',
-        points: ['サイズ', '寿命', '湿度管理', '初心者向け'],
+        points: ['サイズ', '寿命', '湿度管理', 'はじめての方向け'],
         comparePage: '../compare/hermann-vs-greek.html'
       },
       {
@@ -36,7 +36,7 @@
         target: 'hermann-tortoise',
         targetName: 'ヘルマンリクガメ',
         selfName: 'ギリシャリクガメ',
-        points: ['亜種の多様性', '湿度管理', '価格帯', '初心者向け'],
+        points: ['亜種の多様性', '湿度管理', '価格帯', 'はじめての方向け'],
         comparePage: null
       }
     ],

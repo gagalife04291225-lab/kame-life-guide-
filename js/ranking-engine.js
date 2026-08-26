@@ -15,7 +15,7 @@
   var FORMULAS = {
     type0: {
       name: 'ranking_hub',
-      label: '初心者向け総合ランキング',
+      label: 'はじめての方向け総合ランキング',
       weights: {
         beginner: 0.30,
         smell: 0.20,
@@ -87,7 +87,7 @@
     },
     type6: {
       name: 'tortoise',
-      label: '初心者向けリクガメランキング',
+      label: 'はじめての方向けリクガメランキング',
       weights: {
         beginner: 0.30,
         cost: 0.25,

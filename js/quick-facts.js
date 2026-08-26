@@ -179,8 +179,8 @@ function renderQuickFacts(opts) {
 function renderStickyCTA(opts) {
   var isEasy = /入門/.test(opts.difficulty || '');
   var ctaText = isEasy
-    ? '初心者向けに全部選んだ飼育セットを見る'
-    : '初心者向け飼育セットを見る';
+    ? 'はじめての方向けに全部選んだ飼育セットを見る'
+    : 'はじめての方向け飼育セットを見る';
 
   var sName = opts.name          || '';
   var sKey  = opts.equipmentKey  || '';
