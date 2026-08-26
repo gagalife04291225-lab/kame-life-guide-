@@ -187,7 +187,7 @@ const SPECIES_EQUIPMENT_MAP = {
   'ミシシッピアカミミガメ':      '_aquatic_large',
   'ペニンシュラクーター':        '_aquatic_large',
   'マタマタ':                    '_aquatic_large',
-  'アマゾンマタマタ':            '_aquatic_large',
+  'オリノコマタマタ':            '_aquatic_large',
   // ヤマガメ系（保冷）
   'スペングラーヤマガメ':        '_forest_cool',
   'ヒラセガメ':                  '_forest_cool',

@@ -1260,7 +1260,7 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.budget_high||0)+(s.advanced||0)+(s.accessible||0); },
     availability: 'rare'
   },
-  { name: 'アマゾンマタマタ', latin: 'Chelus orinocensis', emoji: '🌿', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'オリノコマタマタ', latin: 'Chelus orinocensis', emoji: '🌿', difficulty: '上級', size: 'L（35〜45cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'オリノコ川水系産のマタマタ近縁種。外見はマタマタに酷似するが別種。CITES II。究極の枯れ葉擬態カメをコレクションに加えたい上級者向き。',
     specs: { '最大甲長': '45cm', '水槽サイズ': '90cm〜', '水流': '極弱', '水温': '26〜30℃' },
     coreSpecs: { size: '45cm', temp: '26〜30℃', lifespan: '20〜40年', diet: '肉食（待ち伏せ捕食）' },
