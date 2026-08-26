@@ -199,9 +199,12 @@
  {
   "wamei": "クロコブチズガメ",
   "gakumei": "Graptemys nigrinoda",
-  "author": "evangrimes",
-  "obs": 70357178,
-  "credited_license": "cc-by"
+  "author": "OpenCage",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Graptemys_nigrinoda_by_OpenCage.jpg",
+  "license_note": "CC BY-SA 2.5 一般。継承条件あり。Commons 版（1,800x1,199 / 2021-11-01 アップロード）を 800x600 にトリミングして使用。ファイルページの「ソース」欄が原典として File:Graptemys_nigrinoda_by_OpenCage.jpg を挙げており、著者欄は OpenCage（opencage.info）。飼育個体（水槽展示中の成体・2007-02-04 撮影）。種レベルの同定で、亜種 delticola / nigrinoda の別は特定されていない"
  },
  {
   "wamei": "ケヅメリクガメ",
