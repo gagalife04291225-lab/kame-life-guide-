@@ -6,7 +6,7 @@ const SPECIES = {
 // ==================== リクガメルート ====================
 land: [
   { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', recommendationPriority: 94, difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、初心者にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
+    reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、はじめて飼う方にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
     specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     coreSpecs: { size: '20cm前後', temp: '25〜32℃', lifespan: '40〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
@@ -428,7 +428,7 @@ aquatic: [
     availability: 'rare'
   },
   { name: 'クサガメ', latin: 'Mauremys reevesii', emoji: '🇯🇵', recommendationPriority: 72, difficulty: '入門', size: 'M（15〜25cm）', cites: 'CITES III', legal: null,
-    reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高く初心者にも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
+    reason: '昔からペットとして親しまれてきたガメ。丈夫で適応力が高くはじめてでも飼いやすい。外来起源説があるため野外への放流は厳禁。国内CB個体を選ぶこと。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
@@ -692,7 +692,7 @@ aquatic: [
     availability: 'common'
   },
   { name: 'トウブドロガメ', latin: 'Kinosternon subrubrum subrubrum', emoji: '🌊', difficulty: '入門', size: 'S（9〜12cm）', cites: 'CITES II', legal: null,
-    reason: 'ニオイガメと並ぶ入門向けの小型ドロガメ。北米東部の湿地・沼地に生息し、30〜45cm水槽から飼育可能。水陸両用で活発に動く姿が愛らしい。比較的温和で初心者にも向く。',
+    reason: 'ニオイガメと並ぶ入門向けの小型ドロガメ。北米東部の湿地・沼地に生息し、30〜45cm水槽から飼育可能。水陸両用で活発に動く姿が愛らしい。比較的温和ではじめての1頭にも向く。',
     specs: { '最大甲長': '12cm', '水槽サイズ': '30〜45cm', '水温': '22〜27℃', '難易度': '★☆☆' },
     coreSpecs: { size: '12cm', temp: '22〜27℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '30〜45cm' },
