@@ -1391,13 +1391,13 @@ var BARRIER_BADGE_MAP = {
   tortoise_dry_small:  ['🌿 室内飼育OK', '💨 ニオイ少なめ', '👀 観察が楽しい'],
   tortoise_dry_large:  ['🌿 室内飼育OK', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
   tortoise_forest:     ['🌿 室内飼育OK', '💧 湿度管理で長生き', '👀 観察が楽しい'],
-  semi_aquatic_small:  ['🏠 省スペース', '🎯 初心者向き', '👀 観察が楽しい'],
+  semi_aquatic_small:  ['🏠 省スペース', '🎯 はじめての方向け', '👀 観察が楽しい'],
   semi_aquatic_medium: ['🌊 水棲ガメ代表', '📦 必要なものが分かりやすい', '👀 観察が楽しい'],
   fully_aquatic:       ['💧 水棲特化', '📦 飼育イメージをつかみやすい', '👀 観察が楽しい'],
   japanese_pond:       ['🇯🇵 日本産', '🌊 水槽飼育OK', '👀 観察が楽しい'],
   box_turtle:          ['🌿 室内飼育OK', '🐢 ユニークな習性', '👀 観察が楽しい'],
 };
-var BARRIER_BADGE_BEGINNER = ['🎯 初心者向き', '📦 必要なものが分かりやすい', '👀 観察が楽しい'];
+var BARRIER_BADGE_BEGINNER = ['🎯 はじめての方向け', '📦 必要なものが分かりやすい', '👀 観察が楽しい'];
 var BARRIER_BADGE_ADVANCED  = ['✨ 憧れ枠', '🏆 上級者向け', '📦 詳細ページで確認できる'];
 
 // ===== Phase 7-C Step 2-A: emotion copy テンプレート =====
@@ -1447,7 +1447,7 @@ function buildFitReasonText(sp, sc, routeId) {
   var clauses = [];
 
   if ((sc.beginner || 0) >= 2 && diff.indexOf('入門') >= 0) {
-    clauses.push('初心者向けの回答内容に合わせやすい、管理しやすい入門種です。');
+    clauses.push('はじめての方向けの回答内容に合わせやすい、管理しやすい入門種です。');
   } else if (((sc.advanced || 0) + (sc.expert || 0)) >= 2 && diff.indexOf('上級') >= 0) {
     clauses.push('本格的な飼育経験を重視する回答に合う、経験者向けの候補です。');
   }
@@ -1564,7 +1564,7 @@ function buildComparativeEdge(sp, runnerUp, sc, routeId) {
     }
   }
   if ((sc.beginner || 0) >= 2) {
-    return '初心者向けの回答に対して、他候補より始めやすい候補です。';
+    return 'はじめての方向けの回答に対して、他候補より始めやすい候補です。';
   }
   return '今回の回答条件から、他候補より相性が高いと判断しました。';
 }
@@ -2665,7 +2665,7 @@ function calcResult() {
         exoFallback = {
           name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
           difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
-          reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメは初心者に最も適した定番種です。',
+          reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメははじめての1頭に最も適した定番種です。',
           hasPage: true, slug: 'musk-turtle', links: [],
           equipmentKey: '_aquatic_small',
           coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
@@ -2857,7 +2857,7 @@ function calcResult() {
     var fallbackSp = {
       name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
       difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
-      reason: '初心者に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
+      reason: 'はじめての1頭に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
       hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
       coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
       match: function(){ return true; }, score: function(){ return 0; }
