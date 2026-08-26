@@ -16,10 +16,10 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **12346ed**（PR #77 / #78 / #79 merge 済み）。本PR = kids 導線の救出実装（merge 待ち） |
+| 基準 | `origin/main` = **1a6ed76**（PR #80〜#85 まで merge 済み）。merge 待ちPR なし |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
-| 作業ブランチ | `claude/gemma-github-fj689h` |
+| 作業ブランチ | `claude/handoff-sync` |
 | 作業ツリー | clean（origin/main と一致） |
 
 ---
@@ -61,7 +61,12 @@
 | #78 | 商品スニペット無効108件の解消 | `34889c0` | GSC 実測エラー「offers、review、または aggregateRating を指定する必要があります」の解消。`*-best10.html` 7ファイルの JSON-LD `@graph` から **`ItemList` ノードのみ削除**（108アイテム）。`Article` / `BreadcrumbList` は1バイトも変更せず、**JSON-LD 以外の全文が7ファイルとも完全一致**。実描画で Amazon リンク109本・アフィリID付き109本・本文長・h1 が変更前と一致、JSエラー 0/0。**削除のみ（683行削除 / 追加0行）** |
 | #79 | sitemap.xml の lastmod 194件を実態へ同期 | `12346ed` | `<lastmod>` は**新規ページ追加時にしか書かれていなかった**（sitemap.xml を触った commit は 190 中 **12** で、すべて種ページ追加の `feat(species)`）。既存ページを編集しても更新されず陳腐化していた。194件すべてを対応HTMLの `git log -1 --format=%cs` へ一致させ、**189件を更新 / 5件は既に一致 / 日付が古くなったものは0件**。`<loc>` の追加・削除・変更・順序変更なし、sitemap.xml 以外の変更なし。生成日は8種類（07-26 17 / 08-14 2 / 08-18 23 / 08-22 7 / 08-23 7 / 08-24 10 / 08-25 73 / 08-26 55）で、**全件同日への一括書き換えではない**。generator 4本 `--check` 差分0 |
 | #77 | PR #67 救出 — agent 定義の新規追加と種名誤混入5箇所の修正 | `2cebce4` | `.github/agents/kame-life-guide.agent.md` を新規追加（状態は毎回 `docs/AI-HANDOFF.md` を読む設計）。`species/razorback-musk-turtle.html` の別種「ミスジドロガメ」誤混入5箇所を「カブトニオイガメ」へ。main 上で誤混入0件を確認。**PR #67 は merge せず close 済み**（内容は #68 と #77 に移植済み） |
-| #80 | PR #16 救出 — カメふしぎ島への導線を全公開ページへ | PR #80（**merge 待ち**） | 旧ブランチを merge/rebase せず、現 main へ必要差分だけを実装し直した。**167ページに1本ずつ導線を追加**（hub-links 150 / related-links 9 / フッター6 / hint-links 1 / 404 1）＋ `index.html` の Care Module 05 を更新（8ページ版の説明文・CTA・`kids/otona.html` への副リンク新設）。新規GA4イベント `site_kids_click`。**対象外36ページ**（kids本体9 / 商品レビュー6 / 規約・運営者4 / 診断 / 相談窓口 / kid/ / 実飼育記録3 / テンプレート4 / リダイレクトスタブ3 / before-keeping・photo-credits・updates）。検証は全PASS（Scope外差分0・漏れ0・重複0・リンク切れ0・開閉収支不変・SEO7項目不変・ItemList 0維持・「初心者」97行と「はじめての方向け」24行が不変・generator 4本 --check 差分0・実描画と実クリックでJSエラー0） |
+| #80 | PR #16 救出 — カメふしぎ島への導線を全公開ページへ | `e81be51` | 旧ブランチを merge/rebase せず、現 main へ必要差分だけを実装し直した。**167ページに1本ずつ導線を追加**（hub-links 150 / related-links 9 / フッター6 / hint-links 1 / 404 1）＋ `index.html` の Care Module 05 を更新（8ページ版の説明文・CTA・`kids/otona.html` への副リンク新設）。新規GA4イベント `site_kids_click`。**対象外36ページ**（kids本体9 / 商品レビュー6 / 規約・運営者4 / 診断 / 相談窓口 / kid/ / 実飼育記録3 / テンプレート4 / リダイレクトスタブ3 / before-keeping・photo-credits・updates）。検証は全PASS（Scope外差分0・漏れ0・重複0・リンク切れ0・開閉収支不変・SEO7項目不変・ItemList 0維持・「初心者」97行と「はじめての方向け」24行が不変・generator 4本 --check 差分0・実描画と実クリックでJSエラー0） |
+| #81 | パンケーキリクガメの写真差し替え | `5c25a1e` | HOLD 解消。**候補C採用**（photo 263266953 / Julien Lepage / CC BY 4.0 / スイス・飼育個体）。casual grade を許容する判断で決着 |
+| #82 | タイワンセマルハコガメの写真差し替え | `6efbba6` | HOLD 解消。**臺北翡翠水庫管理局 / 台北市政府許諾**（CC ではない。出典明記のみで商用可・継承なし・撤回不可）。原寸 2400×1800。産地は出典機関からの推定 |
+| #83 | ニカラグアクジャクガメの写真差し替え | `5f70b8d` | HOLD 解消。**Tornadohalt / CC BY-SA 3.0**（File:RPincisa-02c.jpg）。ファイル名と説明の両方に `incisa` が明記され亜種を特定できた。飼育個体 |
+| #84 | クロコブチズガメの写真差し替え | `484f93b` | HOLD 外の改善。**OpenCage / CC BY-SA 2.5**。旧写真は川の遠景に2匹が豆粒大で識別点が皆無だった。種レベル同定のため delticola は未解消 |
+| #85 | ニシキマゲクビガメの写真差し替え | `1a6ed76` | HOLD 外の改善。**Petra Karstedt / CC BY-SA 2.0 DE**。腹甲の橙色（アカハラの由来）が現行写真に写っていなかった。**原寸 780×520 で 800×600 基準に未達のため、亀好きさん判断で本件に限り基準を緩和**（1.15倍拡大）。種レベル同定のため worrelli は未解消 |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -305,6 +310,42 @@
 `guides/index.html` のフッターは既存リンク14pxに対し追加分は34px。いずれも既存設計に合わせた結果で、
 本PRが持ち込んだ劣化ではない。
 
+#### 写真の出典・和名（2026-08-26 実測確定・**再調査しない**）
+
+**Wikimedia Commons 経路が使えるようになった。** この実行環境から Commons・Wikipedia・
+fws.gov・nps.gov・GBIF・Flickr はすべて egress proxy で遮断（CONNECT 403）されており、
+到達できるのは `inaturalist-open-data.s3.amazonaws.com` のみ。
+**亀好きさんがファイルページのスクリーンショットと画像を送る形で運用が成立した。**
+必要なのは ①ファイル名 ②説明（学名・亜種名）③ライセンス ④著者 ⑤原寸 ⑥画像本体 の6点。
+
+| 対象 | 確定した出典 |
+|------|-------------|
+| `pancake-tortoise` | photo 263266953 / Julien Lepage / CC BY 4.0 / 飼育個体 |
+| `taiwan-box-turtle` | File:Chineseboxturtle 2006.jpg / 臺北翡翠水庫管理局 / **台北市政府許諾（CC ではない）** / 帰属表示「台北市政府」 |
+| `nicaragua-wood-turtle` | File:RPincisa-02c.jpg / Tornadohalt / CC BY-SA 3.0 / 飼育個体 |
+| `black-knobbed-map-turtle` | File:Graptemys_nigrinoda_by_OpenCage.jpg / OpenCage / CC BY-SA 2.5 / 飼育個体 |
+| `pink-bellied-side-necked-turtle` | File:Rotbauchspitzkopfschildkroete-07.jpg / Petra Karstedt / CC BY-SA 2.0 DE / 飼育個体 |
+| `carolina-diamondback-terrapin` | **現状維持で決着**（Simon Tonge / CC0 / obs 9822014） |
+
+**解像度基準の運用**: 800×600 は原則維持。PR #85 で **1.15倍拡大を1件だけ許容**した
+（識別上もっとも重要な形質が旧写真に写っていなかったため）。
+Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達として不採用**。
+緩和は自動適用しない。拡大率と得られる情報を都度天秤にかける。
+
+**私（Agent）が誤っていた和名 — 正本は `data/species-master.json`:**
+
+| 学名 | 誤 | 正 |
+|------|----|----|
+| `Cuora mouhotii obsti` | ~~オオヤマガメ~~ | 親種 = **ヒラセガメ**（`hirase-turtle`・別名モンホットハコガメ） |
+| `Graptemys nigrinoda delticola` | ~~デルタコクロスジチズガメ~~ | 親種 = **クロコブチズガメ**（`black-knobbed-map-turtle`） |
+| `Emydura subglobosa worrelli` | ~~ジーベンロックナガクビガメ近縁~~ | 親種 = **ニシキマゲクビガメ**（`pink-bellied-side-necked-turtle`） |
+
+`ジーベンロックナガクビガメ` はサイトに実在する**別種** *Chelodina rugosa*（`siebenrocks-snake-necked-turtle`）。
+`Malaclemys terrapin tequesta` の和名は **ヒガシフロリダキスイガメ**（2026-08-26 亀好きさん決定・A案）。
+
+**`scripts/verify_credits.py` は元から FATAL。** `pc_parsed.json` を cwd 直下で探す設計だが
+実体は `data/` にあり、加えて iNaturalist への通信が必要。本セッションの変更とは無関係。
+
 ### 変更履歴（AI_CHANGELOG）
 
 - **`AI_CHANGELOG.md` は Merge済み PR #13〜#62 を全件記録済み**（PR #63 で補完）。
@@ -334,27 +375,18 @@
 
 ### 判断待ち
 
-| ID | 内容 | Agent側 |
-|----|------|---------|
-| **PR #35** | カントンクサガメのページが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている | 判定済み・着手待ち。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
-| **PR #80** | 本PR。Owner の merge 待ち | 完了 |
-
-**PR #16 は救出済み（PR #80）。#16 自体は merge も close もしていない。**
-PR #76 で決着した4件は記録として残す:
-
-| ID | 決着 |
-|----|------|
-| U1 | **CLOSE / 変更しない。** badge★の71ページ再割り当ては実施しない |
-| U2 | **実施済み。** `CLAUDE.md` に「公開語彙ルール — 「初心者」」を新設 |
-| H5 | **実施済み。** 難易度軸へ統合せず、別軸のまま確定語彙へ（6件） |
-| H6 | **実施済み。** E扱いで一般公開コピーとして置換（3件） |
+| 対象 | 内容 |
+|------|------|
+| **PR #35** | カントンクサガメが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
+| **PR #16** | 救出済み（PR #80 で main 反映）。**#16 自体は merge も close もしていない。** close してよいか判断待ち |
+| **オプストヒラセガメ** | **写真は確定済み**（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。残るは**亜種ページの新規作成**（Phase C と同規模：新規ページ約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）。着手するかの判断待ち |
 
 ### HOLD（条件が揃うまで着手しない）
 
 | ID | 内容 |
 |----|------|
-| H3 | 写真HOLD 4件・亜種HOLD — **`CLAUDE.md` の該当節が正本。** 能動的な再探索を行わない |
-| H8 | **「初心者」の SEO運用HOLD 80行**（`title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 1対1 の3 / 見出し 9 / パンくず 3）。**GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ**という運営フェーズの方針に従う。**一斉置換は禁止。能動的に着手しない** |
+| H3 | **写真HOLD は残り4件**。`albino-chinese-softshell`（商用可273枚を全枚目視してアルビノ個体0枚）／`Emydura subglobosa worrelli`（商用可3枚がすべて同一個体の死骸）／`Malaclemys terrapin tequesta`（商用可6枚が同一の孵化幼体を屋内で手のひらに乗せたもの。**掲載価値は最優先＝これが入ればテラピン7亜種が完備**）／`Graptemys nigrinoda delticola`（10枚すべて CC-BY-NC。加えて Ennen et al. 2014 が形態的識別性を否定しており、**そもそも亜種ページを作る価値があるかから再判断が要る**）。**Commons 経路が開いたので、亀好きさんが候補を見つけた時点で動かせる。能動的な定期探索は行わない** |
+| H8 | **「初心者」の SEO運用HOLD 80行**（`title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 1対1 の3 / 見出し 9 / パンくず 3）。**GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ**。**一斉置換は禁止。能動的に着手しない** |
 
 ### 新発見（未処理）
 
@@ -364,25 +396,23 @@ PR #76 で決着した4件は記録として残す:
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### PR #80 merge 後 → Search Console に sitemap.xml を再送信し、「検出 - インデックス未登録」28件の変化を観察する
+### Search Console にサイトマップを再送信し、「検出 - インデックス未登録」28件の変化を観察する
 
 **Agent の実装作業は発生しない。Owner の操作と待機だけの工程。**
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | ① Owner が PR #80 を merge ② GitHub Pages 反映を待つ（約60秒）③ GSC > サイトマップ で `sitemap.xml` を再送信 ④ 数日〜数週間おいて「検出 - インデックス未登録」28件が減るかを確認 |
-| **なぜこれが次か** | 28件は **lastmod が 6/26〜7/17 と古いままでクロールされていない**ページ群だった。PR #79 で lastmod を実態へ直したので、再クロールが起きるかがこの仮説の唯一の検証手段になる。PR #80 で内部リンクが167ページ分増えたことも、あわせて効果を見る |
-| **期待結果** | 「検出 - インデックス未登録」28件が減少する。**減らなければ lastmod 仮説は否定**され、原因は別（クロールバジェット等）に絞られる |
-| **同時に見る** | 「商品スニペット」無効108件（PR #78 の効果。Google の再クロール待ちで数日〜数週間かかる。すぐ 0 にならなくても異常ではない） |
+| **やること** | ① GitHub Pages の反映を待つ（約60秒）② GSC > サイトマップ で `sitemap.xml` を再送信 ③ 数日〜数週間おいて「検出 - インデックス未登録」28件が減るかを確認 |
+| **なぜこれが次か** | 28件は lastmod が古いままクロールされていなかったページ群で、PR #79 で lastmod を実態へ直した。さらに **PR #80 で内部リンクが168ページ分増えた**ので、再クロールが起きるかを見る条件が揃っている |
+| **期待結果** | 「検出 - インデックス未登録」28件が減少する。**減らなければ lastmod 仮説は否定**され、原因はクロールバジェット等に絞られる |
+| **同時に見る** | 「商品スニペット」無効108件（PR #78 の効果。Google の再クロール待ちで数日〜数週間かかる） |
 | **変更しない** | `<loc>` の追加・削除・順序／`offers`・価格・在庫の追加（恒久禁止）／H3・H8 |
-| **やらないこと** | sitemap generator の実装（PR #79 で**提案のみ**に留めた）。PR #35 への着手（Owner の実体決定が先） |
 
-**その次**（収益改善フェーズ）: Owner から実測データを受領して改善対象を決める。
-最小は ① GSC 検索パフォーマンス > ページ（過去28日・表示回数上位20）と
-④ Amazon アソシエイト > 売上（過去30日・商品名/ASIN/発生日）の2つ。
+**Owner の判断が来たら、そちらを優先して差し支えない**（判断待ち3件は `UNRESOLVED` 参照）。
+とくに **オプストヒラセガメの亜種ページ新規作成**は写真が確定済みで、GO が出れば単独工程として着手できる。
 
 > **UNRESOLVED を勝手に処理しない。** PR #35 は Owner の実体決定なしに着手しない。
-> H3（写真・亜種）は再探索禁止、H8（SEO系80行）は GSC/GA4 の実測トリガーなしに着手しない。
+> H3（写真4件）は能動的な探索をしない。H8 は GSC/GA4 の実測トリガーなしに着手しない。
 
 ---
 
