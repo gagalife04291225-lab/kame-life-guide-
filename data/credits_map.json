@@ -507,9 +507,12 @@
  {
   "wamei": "パンケーキリクガメ",
   "gakumei": "Malacochersus tornieri",
-  "author": "Matt Pilkington",
-  "obs": 56152762,
-  "credited_license": "cc-by"
+  "author": "Julien Lepage",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "inaturalist",
+  "source_url": "https://www.inaturalist.org/observations/64f605b7-1c74-4508-bbcd-ca9f756d77f6",
+  "photo_id": "263266953"
  },
  {
   "wamei": "ヒメハコヨコクビガメ",
