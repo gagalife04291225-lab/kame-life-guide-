@@ -16,10 +16,10 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **93ee426**（PR #87 まで merge 済み）。**merge 待ち = PR #88**（本作業） |
+| 基準 | `origin/main` = **d4c30c7**（PR #88 まで merge 済み）。**merge 待ち = PR #89**（本作業） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
-| 作業ブランチ | `claude/amazon-matamata-wamei` |
+| 作業ブランチ | `claude/canton-reeves-nigricans` |
 | 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
 
 ---
@@ -35,7 +35,8 @@
 |----|------|-------|-------------|
 | #87 | 監査で誤り確定した3件のうち **1件だけを是正** | 本PR | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
 | #16 | 旧PRを **merge せず CLOSE** | close のみ | 「旧PRを merge せず、最新 main 上で必要差分を救出実装し **PR #80** で反映済み」を理由として記録。**ブランチ `claude/kame-life-guide-elementary-gidu7i` は無変更**（merge / rebase / push なし・head `863ee7c` のまま）。close 前に現 main で救出実装を実測確認: kids リンク **167ページ** / `site_kids_click` **168** / `index.html` Care Module 05 の CTA と `gl-sub-link` / `guide-*` は `END:guide-nav` の外側 / generator 4本 差分0 |
-| #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | 本PR | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
+| #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | `d4c30c7` | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
+| #89 | カントンクサガメの分類を **独立種 Mauremys nigricans** へ確定 | 本PR | 旧 PR #35 は merge/rebase せず、現 main へ必要差分だけを新規実装。`Mauremys reevesii`（広東型・rank=regional_form・CITES附属書III）という扱いを廃止し、**`Mauremys nigricans` / rank=species / CITES附属書II** へ全層統一。クサガメ（`reeves-turtle`）は1バイトも変更していない。**写真だけは差し替えていない**（下記 FIXED_FACTS と H9 を参照） |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -161,6 +162,26 @@
   検証では「変更前後で出力が完全一致すること」を確認すれば足りる。修正は別工程。
 - **`scripts/verify_all.py` / `verify_credits.py` はこの実行環境では動かない**
   iNaturalist API へ到達できない（egress ポリシー）。**毎回試さない。**
+
+- **カントンクサガメの実体は確定した。再議論・再調査しない**
+  slug `canton-reeves-turtle` = **独立種 *Mauremys nigricans*** / `rank=species` /
+  **CITES附属書II**（2026-08-26 亀好きさん確定・分類根拠は外部確認済み）。
+  和名「カントンクサガメ」は維持。slug も維持（URL 互換）。
+  旧扱い「クサガメ *Mauremys reevesii* の広東型・`rank=regional_form`・附属書III」は**廃止**。
+  クサガメ（slug `reeves-turtle` / *Mauremys reevesii* / `rank=species` / **附属書III**）は
+  **別種**であり、片方を直すときにもう片方を巻き込まない。
+- **カントンクサガメの写真とクレジット4層は、いま書き換えてはいけない**
+  掲載写真 `assets/species-photos/canton-reeves-turtle.webp` は iNaturalist photo 233939363
+  （mami_t_t / CC BY 4.0 / 2022-09-30・東京都）で、***Mauremys reevesii* としてクレジットされている**。
+  *M. nigricans* の写真ではない。クレジット4層（figcaption / `photo-credits.html` /
+  `pc_parsed.json` / `credits_map.json`）は**写真の実体を正しく述べている**ので、
+  学名を `Mauremys nigricans` に書き換えると**虚偽のクレジットになる**。
+  公開ページには「この写真は *M. reevesii* のもの」と明記済み。
+  **写真そのものを差し替えたときに、初めて4層を nigricans へ更新する。**
+- **`docs/SPECIES-ID-ASSIGNMENTS.md` は古い。真として読まない**
+  同ファイルは識別タスクの**担当割り当て記録**であり、
+  「reeves と canton-reeves は同一学名 M. reevesii」「canton-reeves(M. reevesii 広東型)」と
+  書かれているが、これは PR #89 で**廃止された旧扱い**。歴史的記録として残しているだけ。
 
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
@@ -427,7 +448,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 | 対象 | 内容 |
 |------|------|
-| **PR #35** | カントンクサガメが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
+| **PR #35** | **実体は決着した**（PR #89 で `Mauremys nigricans` / `species` / CITES II へ統一）。旧 PR #35 は merge も rebase もしておらず、**close してよいかの判断だけが残っている**。#35 自体はバイナリ競合＋`CLAUDE.md` が OBSOLETE のため **merge しない** |
 | **オプストヒラセガメ** | **写真は確定済み**（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。残るは**亜種ページの新規作成**（Phase C と同規模：新規ページ約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）。着手するかの判断待ち |
 | **`ouachita-map-turtle-sp` の三名法/二名法** | 監査で「identification の `Graptemys ouachitensis ouachitensis` を `Graptemys ouachitensis` へ」と指示されたが、**`data/species-identification.json:378` に 2026-08-22 付の `unresolved` HOLD 記録があり、そこに「TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない」と明記されている**。指示はこの HOLD の解除にあたる。さらに identification だけ直しても `species/ouachita-map-turtle-sp.html` の **4箇所**（`meta description` / `og:description` / JSON-LD `description` / `.latin` の `Graptemys ouachitensis ouachitensis — Ouachita Map Turtle (nominotypic)`）が三名法のまま残り、**不整合はむしろ増える**。うち3箇所は SEO 層で H8 の変更禁止に触れる。**HOLD 解除の可否と、解除する場合の対象範囲は Owner 判断** |
 
@@ -437,13 +458,15 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |----|------|
 | H3 | **写真HOLD は残り4件**。`albino-chinese-softshell`（商用可273枚を全枚目視してアルビノ個体0枚）／`Emydura subglobosa worrelli`（商用可3枚がすべて同一個体の死骸）／`Malaclemys terrapin tequesta`（商用可6枚が同一の孵化幼体を屋内で手のひらに乗せたもの。**掲載価値は最優先＝これが入ればテラピン7亜種が完備**）／`Graptemys nigrinoda delticola`（10枚すべて CC-BY-NC。加えて Ennen et al. 2014 が形態的識別性を否定しており、**そもそも亜種ページを作る価値があるかから再判断が要る**）。**Commons 経路が開いたので、亀好きさんが候補を見つけた時点で動かせる。能動的な定期探索は行わない** |
 | H8 | **「初心者」の SEO運用HOLD 80行**（`title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 1対1 の3 / 見出し 9 / パンくず 3）。**GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ**。**一斉置換は禁止。能動的に着手しない** |
+| H9 | **カントンクサガメの写真差し替え**。実体が *Mauremys nigricans* に確定した結果、現在の写真（*M. reevesii*・東京都・photo 233939363）は**別種の写真**になった。ページには明記済み。差し替えには research grade × 商用可 × 800×600以上の *M. nigricans* の写真が要る。**H3 と同じ扱いで、能動的な定期探索は行わない** |
 
 ### 新発見（未処理）
 
 | ID | 内容 |
 |----|------|
-| N6 | **`species/matamata.html` の2箇所を PR #88 で変更したことの追認**。`:271`「アマゾンマタマタとの亜種・種の違いを把握してから選ぶことが大切」と `:356`「飼育の考え方はアマゾンマタマタと同じです」は、どちらも fimbriata のページから **`Chelus orinocensis` を指していた**ため オリノコマタマタ へ変更した。指示の「`Chelus fimbriata` を正しく指している場合は変更しない」という条件に**当たらない**という判断。残す判断であれば2行の revert で戻せる |
 | N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
+| N10 | **`species/canton-reeves-turtle.html:7` の `meta name="description"` が壊れている**。文末に別の説明文の断片（`...解説します.' Turtle）の飼育ガイド。野生環境から逆算した...`）が連結されている。学名は含まれないため PR #89 では触っていない。SEO層なので `docs/operations/DECISION_RULE.md` に従い、**GSC/GA4 の実測トリガーが引いたときに直す** |
+| N11 | **カントンクサガメの `shindan/species.js` の `legal` は `null` のまま**。CITES II になったが、`legal: 'cites_ii'` を立てるかは判断が要る（立てると診断結果に「CITES IIです。書類を確認してください」の注意が出る）。CITES II の79種のうち `legal` を持つのは43種で一律ではないため、推測で立てなかった。**Owner の一言で決まる** |
 
 ---
 

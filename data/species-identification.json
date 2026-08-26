@@ -1078,10 +1078,10 @@
           "kubetsu": "nigricansは中国南部固有の別種で、成体頸部が赤みを帯び、より角張った甲。reevesiiは東アジア広域＋3キールが明瞭＋頭首に黄条。和名『カントンクサガメ』だが学名はM. nigricansでreevesiiとは別種。"
         }
       ],
-      "houkisei": "CITES附属書III（中国）。IUCN絶滅危惧（EN/CR級）。",
+      "houkisei": "CITES附属書II。IUCN絶滅危惧（EN/CR級）。",
       "photo_hantei": "成体の赤みを帯びた頸部＋角張った俵型の甲＋シームの橙条。頭頸部が見えるカット。",
-      "photo_chuui": "★重要：本種の正しい学名は Mauremys nigricans。サイトが M. reevesii（クサガメの広東型）としているのは誤り。reevesiiとは別種。",
-      "unresolved": "【2026-08-22 記録・要判断】和名『カントンクサガメ』が2つの実体に使われており、層間で学名が食い違っている。(a) 本レコードが採る Mauremys nigricans は Reptile Database・TTWG・ITIS・GBIF・USFWS・IUCN(EN) が認める独立種で、中国広東・広西の固有種、CITES附属書II。(b) 一方 data/species-master.json と公開ページ species/canton-reeves-turtle.html は 『クサガメ Mauremys reevesii の広東省産地個体群（広東型）』を実体とし、CITES附属書III（中国）としている（2026-08 の運営判断）。ページ本文・FAQ（通常のクサガメとの交雑懸念／黄みがかった体色）も (b) を前提に書かれ、掲載写真(iNat 145422325)も M. reevesii としてクレジットされている。どちらを採るかで CITES区分・本文・写真がまとめて変わるため、学名のみの機械的な統一は行わない。解消には『このページがどちらの実体を扱うか』の運営者判断と、(a)を採る場合はページ本文の書き直しおよび M. nigricans の写真差し替えが必要。",
+      "photo_chuui": "クサガメ (M. reevesii) の黄色みの強い個体や黒化個体と混同されやすい。決め手は成体の赤〜橙色を帯びた頸部と、角張った俵型の甲。【2026-08-26】サイト側の学名・rank・CITES は Mauremys nigricans / species / 附属書II へ統一済み。ただし掲載写真は未差し替えで、実体は M. reevesii のもの（unresolved を参照）。",
+      "unresolved": "【2026-08-26 更新】分類の未決着は解消した。和名『カントンクサガメ』が扱う実体は独立種 Mauremys nigricans（rank=species・CITES附属書II）に確定し、master・shindan/species.js・公開ページ・SHINDAN-SPECIES.md をすべてこれへ統一した（旧扱い『クサガメ M. reevesii の広東型・附属書III』は廃止）。残る未解決は写真のみ。掲載写真 assets/species-photos/canton-reeves-turtle.webp は iNaturalist photo 233939363（mami_t_t / CC BY 4.0）で、東京都で撮影された Mauremys reevesii としてクレジットされており、M. nigricans ではない。クレジット4層（figcaption / photo-credits.html / pc_parsed.json / credits_map.json）は写真の実体を正しく述べているため、学名を nigricans に書き換えてはならない。解消には M. nigricans の写真そのものの差し替えが必要で、そのときに初めてクレジット4層も nigricans へ更新する。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Chinese_pond_turtle",
