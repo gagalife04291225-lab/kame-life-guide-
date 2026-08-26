@@ -16,11 +16,11 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **7b979f3**（PR #86 まで merge 済み）。merge 待ちPR なし |
+| 基準 | `origin/main` = **93ee426**（PR #87 まで merge 済み）。**merge 待ち = PR #88**（本作業） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
-| 作業ブランチ | `claude/taxonomy-fix-3` |
-| 作業ツリー | clean（origin/main と一致） |
+| 作業ブランチ | `claude/amazon-matamata-wamei` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
 
 ---
 
@@ -34,6 +34,8 @@
 | PR | 作業 | merge | 確定した結論 |
 |----|------|-------|-------------|
 | #87 | 監査で誤り確定した3件のうち **1件だけを是正** | 本PR | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
+| #16 | 旧PRを **merge せず CLOSE** | close のみ | 「旧PRを merge せず、最新 main 上で必要差分を救出実装し **PR #80** で反映済み」を理由として記録。**ブランチ `claude/kame-life-guide-elementary-gidu7i` は無変更**（merge / rebase / push なし・head `863ee7c` のまま）。close 前に現 main で救出実装を実測確認: kids リンク **167ページ** / `site_kids_click` **168** / `index.html` Care Module 05 の CTA と `gl-sub-link` / `guide-*` は `END:guide-nav` の外側 / generator 4本 差分0 |
+| #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | 本PR | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -132,6 +134,33 @@
 - **`loggerhead-musk-turtle` の `Sternotherus minor` は正しい**（別種）。
   クレジット層の `オオアタマヒメニオイガメ / Sternotherus minor / obs 203020925` を
   `peltifer` に巻き込んで置換してはならない。
+
+- **マタマタ属の和名は確定した。再議論しない**
+  `Chelus orinocensis`（slug `amazon-matamata`）= **オリノコマタマタ**、
+  `Chelus fimbriata`（slug `matamata`）= **マタマタ／アマゾンマタマタ**。
+  「アマゾンマタマタ」は fimbriata 側を指す名称であり、orinocensis の alias には残さない。
+  `data/species-identification.json` の slug `matamata` = `マタマタ（アマゾンマタマタ）` は
+  **正しいので変更しない**。`species/matamata.html` の `.latin` は
+  `Chelus fimbriata — Amazon Mata Mata` のままで正しい。
+  なお **slug は `amazon-matamata` のまま**（URL 互換のため変更しない。
+  slug と和名がねじれている件は `data/species-identification.json:77` に記録済み）。
+- **和名を変えるときに必ず同時に直す3箇所**（PR #88 で実証）
+  ① `shindan/species.js` の `name`（生成領域の唯一の入力）
+  ② `shindan/equipment.js` の `SPECIES_EQUIPMENT_MAP` のキー
+     （`getEquipment(speciesName)` が `SPECIES_EQUIPMENT_MAP[speciesName]` で引く）
+  ③ `species-list.html` の `CAT_OVERRIDE` のキー（`CAT_OVERRIDE[sp.name]` で引く手書きJS）
+  この3つは同じ和名文字列で連結しており、**片方だけ変えると機能が壊れる**。
+  生成領域（`BEGIN:species-index` / `BEGIN:guide-species`）は上流を直して
+  generator を実行する。**生成物を手修正しない。**
+- **`docs/phase2/baselines/*.json` は凍結スナップショット。追随させない**
+  commit `0bb3185` 時点の Phase2 評価結果の記録であり、現在のデータと一致しなくてよい。
+  和名変更で古い名前が残るが、**過去の評価記録を書き換えないため無変更が正しい**。
+- **`tools/validate_species.py` は main の時点で既に落ちる**
+  `SHINDAN-SPECIES.md` の CITES 列が `None` の行で `TypeError` → exit 1。
+  **これは既存の不具合であり、個々の作業の失敗ではない。**
+  検証では「変更前後で出力が完全一致すること」を確認すれば足りる。修正は別工程。
+- **`scripts/verify_all.py` / `verify_credits.py` はこの実行環境では動かない**
+  iNaturalist API へ到達できない（egress ポリシー）。**毎回試さない。**
 
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
@@ -399,10 +428,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 | 対象 | 内容 |
 |------|------|
 | **PR #35** | カントンクサガメが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
-| **PR #16** | 救出済み（PR #80 で main 反映）。**#16 自体は merge も close もしていない。** close してよいか判断待ち |
 | **オプストヒラセガメ** | **写真は確定済み**（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。残るは**亜種ページの新規作成**（Phase C と同規模：新規ページ約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）。着手するかの判断待ち |
-
-| **`amazon-matamata` の和名統一** | 監査で「master の `wamei` を `アマゾンマタマタ` → **`オリノコマタマタ`** へ統一」と指示されたが、**master 単独では統一にならない**。ページ本体は既に全面 `オリノコマタマタ`（h1・title・meta・OG・JSON-LD・alt・パンくず）である一方、`アマゾンマタマタ` は master 以外に **12箇所**残る: `shindan/species.js:1263`（生成物の上流）／**`shindan/equipment.js:190`（辞書キー・機能）**／`species-list.html:397`（手書きJS）／`species-list.html:1079`（`BEGIN:species-index` 生成領域）／`guide-softshell.html:365`（`BEGIN:guide-species` 生成領域）／`photo-credits.html:141`／`data/pc_parsed.json:34`／`data/credits_map.json:34`／`species/amazon-matamata.html:260`（**飼育本文＝変更禁止**）／`species/matamata.html` 2件（別種ページ＝変更禁止）／`food-best10.html:427`／`SHINDAN-SPECIES.md:163`。**どこまで変えるかは Owner 判断**（① master のみ ② master＋クレジット層＋非生成の表示層 ③ `shindan/species.js`＋`equipment.js` まで含めた完全統一） |
 | **`ouachita-map-turtle-sp` の三名法/二名法** | 監査で「identification の `Graptemys ouachitensis ouachitensis` を `Graptemys ouachitensis` へ」と指示されたが、**`data/species-identification.json:378` に 2026-08-22 付の `unresolved` HOLD 記録があり、そこに「TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない」と明記されている**。指示はこの HOLD の解除にあたる。さらに identification だけ直しても `species/ouachita-map-turtle-sp.html` の **4箇所**（`meta description` / `og:description` / JSON-LD `description` / `.latin` の `Graptemys ouachitensis ouachitensis — Ouachita Map Turtle (nominotypic)`）が三名法のまま残り、**不整合はむしろ増える**。うち3箇所は SEO 層で H8 の変更禁止に触れる。**HOLD 解除の可否と、解除する場合の対象範囲は Owner 判断** |
 
 ### HOLD（条件が揃うまで着手しない）
@@ -414,7 +440,10 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ### 新発見（未処理）
 
-**なし。** N3 / N4 / N5 はすべて解消済み。
+| ID | 内容 |
+|----|------|
+| N6 | **`species/matamata.html` の2箇所を PR #88 で変更したことの追認**。`:271`「アマゾンマタマタとの亜種・種の違いを把握してから選ぶことが大切」と `:356`「飼育の考え方はアマゾンマタマタと同じです」は、どちらも fimbriata のページから **`Chelus orinocensis` を指していた**ため オリノコマタマタ へ変更した。指示の「`Chelus fimbriata` を正しく指している場合は変更しない」という条件に**当たらない**という判断。残す判断であれば2行の revert で戻せる |
+| N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
 
 ---
 
