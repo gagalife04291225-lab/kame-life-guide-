@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | **PR #69**（A分類28件の着手ゲートで STOP・実測記録）を含む `origin/main` |
+| 基準 | **PR #70**（A-6 難易度の軸ラベル18行 — 6件適用 / 12件 HOLD）を含む `origin/main` |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
@@ -51,6 +51,7 @@
 | #66 | F分類12件（読者層・採点基準・UI例文） | PR #66 | 12件中 **11件を置換・1件を HOLD**。F1 3件は「初心者向けに解説します」→「はじめて飼う方に向けて解説します」、F2 6件は「初心者が〜」→「はじめて飼う方が〜」（1件のみ「初心者には見逃しやすい」→「飼育経験が浅いうちは見逃しやすい」）、F3 は `annainin` の placeholder のみ置換。**JSON-LD複製は0件**（4ファイルの JSON-LD に `初心者` は残るが、すべて `headline`/`description`/`name` = SEO②領域で F の対象文ではない）。**HOLD 1件 = F3-2 `annainin/index.html:74` の topic-btn 可視ラベル「初心者向け」**（理由は FIXED_FACTS 参照） |
 | #68 | annainin の語彙統一（H4 + N2） | PR #68 | `annainin` 内の公開語彙を**「はじめての方向け」系へ統一**し、**H4 と N2 を同時に解消**。可視ラベル / `data-quick-reply` / `TOPIC_QUICK_REPLIES` / bot応答本文2件の**計4箇所**を同一commitで整合。`INTENT_RULES` の beginner キーワード `['初心者','はじめて','初めて','入門']` は**1文字も変更していない**（「初心者」と手入力するユーザーは beginner のまま）。`annainin` 配下の公開表示から「初心者」は**0件**になり、リポジトリに残るのは非表示の分類キーワード1件のみ |
 | #69 | A分類28件の着手ゲート → **STOP（サイト変更0）** | PR #69 | `NEXT` の「A分類の残り28件」を現mainから再抽出しようとしたが、**28件を機械的に特定できないことが判明**して STOP した。原因は **Phase A の per-item 分類リストがリポジトリのどこにも保存されていない**こと（残っているのは分類ごとの件数だけ）。28件を確定するには Phase A の分類をやり直すしかなく、それは `DO_NOT_REPEAT` で禁止されている。**公開HTMLの「初心者」155行の分布を実測して記録し、代わりに機械判定できる `NEXT` を再設定した。** サイトファイルの変更は0件 |
+| #70 | A-6 難易度の軸ラベル18行 | PR #70 | 機械条件で18行を再抽出し**行番号まで完全一致**。1件ずつ文脈確認し、**compare の `<td>初心者適性</td>` 6件を `<td>飼育難易度</td>` へ**。**セルの値は1文字も変更していない**（各ファイルで変化した `<td>` はラベル1個のみ）。**残り12件は HOLD**（内訳は UNRESOLVED の H5〜H7）。JSON-LD複製0件。`species/` の difficulty 表示227件は変更前後で完全一致、`species/` `shindan/` の変更0 |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -135,6 +136,12 @@
   いずれも Phase A では E分類）
 - **「初心者向け」→「入門向け」の一律置換は禁止。** 「入門」は既に難易度値として
   公開HTML内で128件使われており、件数の異なる集合が同じ語になる
+- **compare 系の★は「多いほどやさしい」**（PR #70 で全 compare ページを実測して確定・再調査しない）。
+  `飼育難易度 ★★★★★ 入門向き` / `★★★★☆ 初中級` / `★★★☆☆ 中級` /
+  `★★☆☆☆（中〜上級者向け）`。**species 個別ページの diff-badge とは向きが逆**なので、
+  compare の★を species の★と同じ規則で読み替えない（★の統一は U1 の範囲）
+- **compare の比較表の難易度軸ラベルは `飼育難易度` で統一済み**（PR #70）。
+  値（★・◎・○・―・括弧の補足）は一切変更していない
 - **Phase A の per-item 分類リストは repo に存在しない**（PR #69 で確定・再探索しない）。
   残っているのは分類ごとの件数（A62 / B52 / C22 / D24 / E67 / F12）だけで、
   「どの行がA分類か」の一覧は `docs/` にも `AI_CHANGELOG.md` にも `CLAUDE.md` にも無い。
@@ -228,6 +235,9 @@
 | ID | 内容 |
 |----|------|
 | H3 | 写真HOLD 4件・亜種HOLD — **`CLAUDE.md` の該当節が正本。** 能動的な再探索を行わない |
+| H5 | **同一表・同一カード内に既に難易度軸があるため HOLD した6件**（PR #70）。`飼育難易度` にすると同じ表に難易度が2つ並ぶ。`compare/hermann-vs-greek.html:167`（同表 L166 に `飼育難易度 ★★★☆☆ 中級`）／`compare/musk-vs-razorback.html:167`（L166 `★★★★★ 入門向き`）／`compare/reeves-vs-japanese-pond.html:167`（L166 `★★★★☆ 初中級`）／`index.html:4156`（同表 L4153 に `<th>難易度</th>`）／`species/west-african-mud-turtle.html:179`（L177 stat `難易度=中級` ＋ L183 diff-badge）／`guides/beginner-best-turtles.html:119`（同一 rank-card L124 `難易度：★★★☆☆`）。**2つの軸を1つに統合するか、初心者軸を別名にするかは亀好きさんの判断が要る** |
+| H6 | **そもそも難易度の軸ラベルではなかった3件**（PR #70。機械条件では拾えたが文脈確認で判明）。`compare/elongated-vs-hermann.html:202` は勝者バッジ（並びは「個性・希少性」「丈夫さ・安定性」等の“強み”名）／`index.html:3469` は hero-stat（対の英語ラベルが `Beginner Friendly`、並びは `100+ Species Database` 等）／`guides/index.html:465` は `gh-card-tag`（カードの分類タグで難易度の値を持たない）。いずれも `飼育難易度` に置換すると意味が通らない。**C / E のどちらで扱うかを決めてから着手する** |
+| H7 | **A-6 の Scope 外の行と連動しているため HOLD した3件**（PR #70）。`guides/low-odor-top10-turtles.html:923` `<th>初心者向け</th>` は導入文 `:913` が同じ軸を「初心者向け度」と呼ぶ／`guides/small-turtle-top10.html:915` `<th>初心者向け</th>` は導入文 `:905` が「初心者向け度」／`guides/small-turtle-top10.html:338` `method-label 初心者向き度` は sub が「情報量・飼育データの豊富さ」で、測っているのは情報量であって飼育難易度ではない。**th と導入文を同一工程で揃える必要がある** |
 
 ### 新発見（未処理）
 
@@ -239,28 +249,29 @@
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### A-6 難易度の軸ラベル18行 — 機械判定できる条件で対象を定義する
+### H7 解消 — スコア表の「初心者向け」軸を、表と導入文で同時に揃える5行
 
-**なぜこの形か**: 前工程（PR #69）で「A分類の残り28件」は対象行を特定できないと確定した
-（Phase A の per-item 分類リストが repo に無い。詳細は `FIXED_FACTS` / `N3`）。
-そこで **件数ではなく機械判定できる条件**で対象を切り出す。
-「初心者＋軸語（適性 / 向き / 向け / 向き度）が、比較表・スコア表・バッジ・stat の
-**ラベル位置に単独のテキストノードとして置かれている**行」は文脈判断なしに抽出でき、
-用法も一意に難易度の軸である。**これは Phase A の再分類ではなく、機械条件による再抽出。**
+**なぜ今これか**: PR #70 で HOLD にした12件のうち、**H5 と H6 は亀好きさんの判断が要る**
+（2つの難易度軸を統合するか／その要素をC・Eどちらで扱うか）。
+**H7 だけは判断待ちがない** — 表の `<th>` と、同じ軸を指す導入文が別の語で書かれているだけで、
+両方を同時に変えれば閉じる。置換先の語彙も **PR #68 で確定済みの「はじめての方向け」** を使う。
+
+**この軸に `飼育難易度` は使わない。** スコア表の他の列（ニオイ管理・排泄量少なさ・
+掃除頻度少なさ・ニオイ管理しやすさ）はすべて「ドットが多いほど良い」向きに揃えてあり、
+`飼育難易度` にすると多いほど難しい＝悪い、と読めて**列の向きが反転する**。
+値（score-dots）は変更禁止なので、ラベル側を反転させない語に揃える。
 
 | 項目 | 内容 |
 |------|------|
-| **対象** | 下の18行（main `3e84381` 実測）。※着手時に同じ機械条件で再抽出し、**18行と一致しなければ変更せず STOP して差異を報告** |
-| **対象の内訳** | `<td>` 9件: `compare/elongated-vs-hermann.html:250` `compare/hermann-vs-greek.html:167` `compare/hermann-vs-russian.html:271` `compare/musk-vs-razorback.html:167` `compare/painted-vs-red-eared-slider.html:261` `compare/red-footed-vs-leopard.html:254` `compare/reeves-vs-japanese-pond.html:167` `compare/three-toed-vs-eastern-box.html:255` `compare/three-toed-vs-gulf-coast.html:260` ／ `<th>` 3件: `guides/low-odor-top10-turtles.html:923` `guides/small-turtle-top10.html:915` `index.html:4156` ／ `.wb-badge` 1件: `compare/elongated-vs-hermann.html:202` ／ `.rank-badge-pill` 1件: `guides/beginner-best-turtles.html:119`（`初心者◎`）／ `.gh-card-tag` 1件: `guides/index.html:465` ／ `.method-label` 1件: `guides/small-turtle-top10.html:338`（`初心者向き度`）／ `.stat-label` 1件: `species/west-african-mud-turtle.html:179` ／ `index.html:3469` の hero-stat（`初心者<br>対応`）1件 |
-| **Scope** | 軸ラベルを **A-1 で確定済みの `飼育難易度` に揃える**のが基本。ただし**同じ表に既に「飼育難易度」行がある場合は重複するため、その件は変更せず HOLD して報告する**（比較表は難易度と初心者適性を別行に持つものがある）。`初心者◎` のような**値つきバッジは、値の意味を変えずにラベル部分だけ**を置き換える |
-| **1件ずつ確認** | 18行を1件ずつ、**同じ表・同じカード内に「飼育難易度」が既にあるか**を確認してから決める。機械一括置換しない |
-| **絶対に変更禁止** | セルの**値**（`◎` `○` `△` `★★★☆☆` `△〜○` などの評価そのもの）／difficulty の値・★・色・アイコン／`species-list.html:303` の `<option value="beginner">初心者向け</option>`（`?diff=初心者向け` 互換）／`species-list.html:436-441` の後方互換マップ |
-| **その他の変更禁止** | 確定済み文言（A-1 `飼育難易度` / A-4 / A-5 / B・C・D・F の全確定文 / annainin の `はじめての方向け` 系4箇所）／E分類（h1-h6 の見出し9行・パンくず2行）／`title`・`meta`・OG・canonical・JSON-LD の `headline`・`description`・`name`／`href`・URL・slug／`sort=beginner`／GA4（`page_title` を含む）／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／`js/annainin.js:127` の `INTENT_RULES`／複合質問2件（`guide-beginner.html:716` / `species/razorback-musk-turtle.html:365`）／`compare/hermann-vs-greek.html` の title・OG・hero-sub 3件 |
-| **開始前ゲート** | 18行それぞれで JSON-LD複製 / 属性値との結合 / 同一表内の「飼育難易度」の有無 を機械判定。複製があれば可視と同一commitで同期（PR #59 / #60 / #64 / #65 / #66 の手順） |
-| **完了条件** | ①18行の処理完了（HOLD分は理由つきで報告）②JSON-LD複製分は可視と完全一致・パース成功 ③**セルの値に差分0**（ラベルだけを変えたこと）④Scope Lock 対象に意図外差分0 ⑤公開difficulty表示249箇所と正本5値の不一致が0のまま ⑥generator 4本 `--check` 差分0 ⑦JSエラー増加0 ⑧commit → push → PR → merge → main反映確認 ⑨本ファイルの更新 |
+| **対象** | **5行**。※着手時に現mainから再抽出し、5行と一致しなければ変更せず STOP して差異を報告<br>`guides/low-odor-top10-turtles.html:913`（導入文「…掃除頻度・**初心者向け度**」）<br>`guides/low-odor-top10-turtles.html:923`（`<th>**初心者向け**</th>`）<br>`guides/small-turtle-top10.html:338`（`method-label` **初心者向き度**。`method-sub` は「情報量・飼育データの豊富さ」）<br>`guides/small-turtle-top10.html:905`（導入文「…ニオイ管理しやすさ・**初心者向け度**」）<br>`guides/small-turtle-top10.html:915`（`<th>**初心者向け**</th>`） |
+| **Scope** | 「初心者向け度」「初心者向き度」→ **「はじめての方向け度」**、`<th>初心者向け`→ **「はじめての方向け」**。**同じページ内の導入文と `<th>` を同一commitで揃える**（片方だけ変えない）。`method-sub`「情報量・飼育データの豊富さ」は軸の説明なので**無変更** |
+| **絶対に変更禁止** | `score-bar` / `score-dots` の**値**（`dot filled` の数）／他の列ラベル（ニオイ管理・排泄量少なさ・掃除頻度少なさ・成体甲長・最小水槽・ニオイ管理しやすさ・ハンドリング難易度）／`aria-label`（`ニオイ管理 比較マトリクス` / `小型亀 比較マトリクス`）／表の行数・列数・順序 |
+| **その他の変更禁止** | H5 / H6 の12件（判断待ち）／difficulty の値・★・色・アイコン／確定済み文言（A-1 `飼育難易度` / A-4 / A-5 / B・C・D・F の全確定文 / annainin の `はじめての方向け` 系4箇所 / PR #70 の compare 6件）／E分類（h1-h6・パンくず）／`title`・`meta`・OG・canonical・JSON-LD の `headline`・`description`・`name`／`href`・URL・slug／`sort=beginner`／`?diff=初心者向け`／GA4／`data-*`／taxonomy／写真／CITES／学名・和名／`shindan/species.js`／`js/annainin.js:127` の `INTENT_RULES` |
+| **開始前ゲート** | 5行それぞれで JSON-LD複製 / 属性値との結合 / 見出し・パンくず / `title`・`meta` を機械判定。複製があれば可視と同一commitで同期（PR #59 / #60 / #64 / #65 / #66 の手順） |
+| **完了条件** | ①5行の置換完了 ②同一ページ内で導入文と `<th>` の軸名が一致 ③**score-dots の `filled` 数に差分0**（値を変えていないこと）④Scope Lock 対象に意図外差分0 ⑤`species/` の difficulty 表示227件が変更前と完全一致 ⑥generator 4本 `--check` 差分0 ⑦JSエラー増加0 ⑧commit → push → PR → merge → main反映確認 ⑨本ファイルの更新 |
 
 > **UNRESOLVED を勝手に全部処理しない。** 今回実行するのは上記1工程だけ。
-> U1 / U2 は**亀好きさんの判断待ち**、H3 は再探索禁止、N3 の残り62行は方針未定のため触れない。
+> U1 / U2 / H5 / H6 は**亀好きさんの判断待ち**、H3 は再探索禁止、N3 の残り62行は方針未定のため触れない。
 
 ---
 
