@@ -148,7 +148,7 @@
   //    DB-backed ones compute their numbers at call time from SPECIES /
   //    PRODUCTS / EQUIPMENT_MAP — nothing is hardcoded copy.
   // ---------------------------------------------------------------------
-  var TOPIC_QUICK_REPLIES = ['初心者向けの亀は？', '水槽サイズは？', '臭いは気になる？', '初期費用はいくら？'];
+  var TOPIC_QUICK_REPLIES = ['はじめての方向けの亀は？', '水槽サイズは？', '臭いは気になる？', '初期費用はいくら？'];
 
   var RESPONSE_BUILDERS = {
     greeting: function () {
@@ -185,7 +185,7 @@
 
     capability: function () {
       return {
-        reply: '私にできることはまだ準備中の部分も多いですが、初心者向けの相談、水槽サイズ、臭い、予算、子ども向け、屋外飼育、多頭飼育、寿命、大きさ、おすすめ種類についてお答えできます。',
+        reply: '私にできることはまだ準備中の部分も多いですが、はじめての方向けの相談、水槽サイズ、臭い、予算、子ども向け、屋外飼育、多頭飼育、寿命、大きさ、おすすめ種類についてお答えできます。',
         quickReplies: TOPIC_QUICK_REPLIES,
         linkedFeatures: []
       };
@@ -311,7 +311,7 @@
 
     unknown: function () {
       return {
-        reply: 'ごめんなさい、まだうまく理解できませんでした🙏 初心者向け・水槽サイズ・臭い・予算・子ども向け・屋外飼育・多頭飼育・寿命・大きさ・おすすめ種類について相談できます。下のボタンからも選べます。',
+        reply: 'ごめんなさい、まだうまく理解できませんでした🙏 はじめての方向け・水槽サイズ・臭い・予算・子ども向け・屋外飼育・多頭飼育・寿命・大きさ・おすすめ種類について相談できます。下のボタンからも選べます。',
         quickReplies: TOPIC_QUICK_REPLIES,
         linkedFeatures: []
       };
