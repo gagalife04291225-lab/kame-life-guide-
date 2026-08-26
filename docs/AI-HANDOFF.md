@@ -458,12 +458,14 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |----|------|
 | H3 | **写真HOLD は残り4件**。`albino-chinese-softshell`（商用可273枚を全枚目視してアルビノ個体0枚）／`Emydura subglobosa worrelli`（商用可3枚がすべて同一個体の死骸）／`Malaclemys terrapin tequesta`（商用可6枚が同一の孵化幼体を屋内で手のひらに乗せたもの。**掲載価値は最優先＝これが入ればテラピン7亜種が完備**）／`Graptemys nigrinoda delticola`（10枚すべて CC-BY-NC。加えて Ennen et al. 2014 が形態的識別性を否定しており、**そもそも亜種ページを作る価値があるかから再判断が要る**）。**Commons 経路が開いたので、亀好きさんが候補を見つけた時点で動かせる。能動的な定期探索は行わない** |
 | H8 | **「初心者」の SEO運用HOLD 80行**（`title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 1対1 の3 / 見出し 9 / パンくず 3）。**GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ**。**一斉置換は禁止。能動的に着手しない** |
-| H9 | **カントンクサガメの写真差し替え**。実体が *Mauremys nigricans* に確定した結果、現在の写真（*M. reevesii*・東京都・photo 233939363）は**別種の写真**になった。ページには明記済み。差し替えには research grade × 商用可 × 800×600以上の *M. nigricans* の写真が要る。**H3 と同じ扱いで、能動的な定期探索は行わない** |
+| H9 | **カントンクサガメの写真差し替え**。実体が *Mauremys nigricans* に確定した結果、現在の写真（*M. reevesii*・東京都・photo 233939363）は**別種の写真**になった。ページには明記済み。差し替えには research grade × 商用可 × 800×600以上の *M. nigricans* の写真が要る。**H3 と同じ扱いで、能動的な定期探索は行わない**。ただし **N13 に候補が1件記録されている**（旧 PR #35 の Commons 写真）ため、H3 の4件より解消は近い |
 
 ### 新発見（未処理）
 
 | ID | 内容 |
 |----|------|
+| N12 | **【要確認】カントンクサガメの CITES 区分について、リポジトリ内に対立する記録がある**。今回は亀好きさんの確定事項に従い **附属書II** で全層統一した。一方、旧 PR #35 の本文（2026-08-22）は *Mauremys nigricans* について「2005年に中国が *Chinemys nigricans* として**附属書III**へ掲載（クサガメと同一バッチ・**EU規則1332/2005**で確認）→ 区分の変更なし」と、出典付きで **III** を主張している。他方 `data/species-identification.json` の旧 `unresolved`（同日付）は **II** としていた。**同じ日に書かれた2つの記録が食い違っている。**本実行環境からは CITES Species+ にも EU規則にも到達できない（egress ポリシー）ため検証できない。**III が正しい場合に直すのは4箇所だけ**: `data/species-master.json` の `cites.appendix.value`／`data/species-identification.json` の `houkisei`／`shindan/species.js` の `cites`／`SHINDAN-SPECIES.md` の CITES列。公開ページ本文の「附属書II」表記3箇所（`.lp-fit-list` 1・後悔ポイント 1・`env-card` と まとめ文 2）も併せて直す |
+| N13 | **H9（カントンクサガメの写真差し替え）の候補が旧 PR #35 に記録されている**。Wikimedia Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG`（Greg Hume / **CC BY-SA 4.0** / 1920×1537）。PR #35 の本文によれば、カテゴリで種一致・目視確認済み（健康個体が水中で立ち上がる自然な姿勢・頭部と前肢が明瞭・オレンジ腹甲に黒斑という識別点）で、800×600 WebP へ変換して採用済みとされ、その成果は PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）にある。また PR #35 は「iNaturalist は本種の観察が全13件で、条件を満たす候補は**0件**」とも記録している。**本実行環境から Commons へは到達できない**ため、亀好きさんが画像を渡すか、PR #35 のブランチから当該 webp とクレジット4層だけを救出する経路になる。**H9 はこの候補があるため、H3 の他4件より解消が近い** |
 | N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
 | N10 | **`species/canton-reeves-turtle.html:7` の `meta name="description"` が壊れている**。文末に別の説明文の断片（`...解説します.' Turtle）の飼育ガイド。野生環境から逆算した...`）が連結されている。学名は含まれないため PR #89 では触っていない。SEO層なので `docs/operations/DECISION_RULE.md` に従い、**GSC/GA4 の実測トリガーが引いたときに直す** |
 | N11 | **カントンクサガメの `shindan/species.js` の `legal` は `null` のまま**。CITES II になったが、`legal: 'cites_ii'` を立てるかは判断が要る（立てると診断結果に「CITES IIです。書類を確認してください」の注意が出る）。CITES II の79種のうち `legal` を持つのは43種で一律ではないため、推測で立てなかった。**Owner の一言で決まる** |
