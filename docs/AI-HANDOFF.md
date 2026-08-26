@@ -16,10 +16,10 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **1a6ed76**（PR #80〜#85 まで merge 済み）。merge 待ちPR なし |
+| 基準 | `origin/main` = **7b979f3**（PR #86 まで merge 済み）。merge 待ちPR なし |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
-| 作業ブランチ | `claude/handoff-sync` |
+| 作業ブランチ | `claude/taxonomy-fix-3` |
 | 作業ツリー | clean（origin/main と一致） |
 
 ---
@@ -28,6 +28,12 @@
 
 以下は結論が確定している。**再調査・再監査・再実装しない。**
 再開できるのは「重複作業防止ゲート」の4条件を満たす場合のみ。
+
+### 和名↔学名↔分類階級 監査の是正（2026-08-26）
+
+| PR | 作業 | merge | 確定した結論 |
+|----|------|-------|-------------|
+| #87 | 監査で誤り確定した3件のうち **1件だけを是正** | 本PR | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -111,6 +117,21 @@
   `diff-badge 112 / quick-facts 26 / stat-item 111` = **249箇所・不一致0**
 - badge の★は `入門★1 / 入門〜中級★2 / 中級★3 / 中〜上級★3 / 上級★4`
   （中級と中〜上級が★3で重なっている。UNRESOLVED を参照）
+
+- **生成物の上流は `shindan/species.js`。`data/species-master.json` ではない**
+  `tools/gen-species-list.js` / `gen-guide-species.js` はいずれも `shindan/species.js` の
+  `name` / `latin` を唯一の入力とする（`gen-guide-species.js` 冒頭に明記）。
+  したがって **master の `wamei` を変えても生成領域の表示名は変わらない**。
+  公開表示の和名を変えるには `shindan/species.js` を変える必要があり、
+  `shindan/equipment.js` は**その `name` 文字列を辞書キーにしている**ため、
+  片方だけ変えると推奨機材のマッピングが壊れる。**和名変更は master 単独では完結しない。**
+- **`species/stripe-necked-musk-turtle.html:195` の `Sternotherus minor` は誤りではない**
+  「かつて *S. minor* の亜種 *S. minor peltifer* として扱われた」という**沿革の説明**であり、
+  同ページは `Sternotherus peltifer` 5箇所・`minor` 1箇所。**この1箇所は残すのが正しい。**
+  監査報告の「該当HTML箇所」は **false positive**。**再指摘しない。**
+- **`loggerhead-musk-turtle` の `Sternotherus minor` は正しい**（別種）。
+  クレジット層の `オオアタマヒメニオイガメ / Sternotherus minor / obs 203020925` を
+  `peltifer` に巻き込んで置換してはならない。
 
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
@@ -380,6 +401,9 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 | **PR #35** | カントンクサガメが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
 | **PR #16** | 救出済み（PR #80 で main 反映）。**#16 自体は merge も close もしていない。** close してよいか判断待ち |
 | **オプストヒラセガメ** | **写真は確定済み**（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。残るは**亜種ページの新規作成**（Phase C と同規模：新規ページ約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）。着手するかの判断待ち |
+
+| **`amazon-matamata` の和名統一** | 監査で「master の `wamei` を `アマゾンマタマタ` → **`オリノコマタマタ`** へ統一」と指示されたが、**master 単独では統一にならない**。ページ本体は既に全面 `オリノコマタマタ`（h1・title・meta・OG・JSON-LD・alt・パンくず）である一方、`アマゾンマタマタ` は master 以外に **12箇所**残る: `shindan/species.js:1263`（生成物の上流）／**`shindan/equipment.js:190`（辞書キー・機能）**／`species-list.html:397`（手書きJS）／`species-list.html:1079`（`BEGIN:species-index` 生成領域）／`guide-softshell.html:365`（`BEGIN:guide-species` 生成領域）／`photo-credits.html:141`／`data/pc_parsed.json:34`／`data/credits_map.json:34`／`species/amazon-matamata.html:260`（**飼育本文＝変更禁止**）／`species/matamata.html` 2件（別種ページ＝変更禁止）／`food-best10.html:427`／`SHINDAN-SPECIES.md:163`。**どこまで変えるかは Owner 判断**（① master のみ ② master＋クレジット層＋非生成の表示層 ③ `shindan/species.js`＋`equipment.js` まで含めた完全統一） |
+| **`ouachita-map-turtle-sp` の三名法/二名法** | 監査で「identification の `Graptemys ouachitensis ouachitensis` を `Graptemys ouachitensis` へ」と指示されたが、**`data/species-identification.json:378` に 2026-08-22 付の `unresolved` HOLD 記録があり、そこに「TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない」と明記されている**。指示はこの HOLD の解除にあたる。さらに identification だけ直しても `species/ouachita-map-turtle-sp.html` の **4箇所**（`meta description` / `og:description` / JSON-LD `description` / `.latin` の `Graptemys ouachitensis ouachitensis — Ouachita Map Turtle (nominotypic)`）が三名法のまま残り、**不整合はむしろ増える**。うち3箇所は SEO 層で H8 の変更禁止に触れる。**HOLD 解除の可否と、解除する場合の対象範囲は Owner 判断** |
 
 ### HOLD（条件が揃うまで着手しない）
 
