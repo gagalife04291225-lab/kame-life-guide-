@@ -405,9 +405,12 @@
  {
   "wamei": "ニカラグアクジャクガメ",
   "gakumei": "Rhinoclemmys pulcherrima",
-  "author": "Sinaloa Silvestre",
-  "obs": 245150697,
-  "credited_license": "cc0"
+  "author": "Tornadohalt",
+  "obs": null,
+  "credited_license": "cc-by-sa",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:RPincisa-02c.jpg",
+  "license_note": "CC BY-SA 3.0（GFDL 1.2+ とのデュアルライセンス）。継承条件あり。ファイル名 RPincisa-02c.jpg と説明の学名 Rhinoclemmys pulcherrima incisa で亜種が明記されている。飼育個体（テラリウム個体「カシオペア」・撮影時 10〜11 歳）"
  },
  {
   "wamei": "ニシキガメ",
