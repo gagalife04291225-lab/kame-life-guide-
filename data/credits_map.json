@@ -330,9 +330,12 @@
  {
   "wamei": "タイワンセマルハコガメ",
   "gakumei": "Cuora flavomarginata",
-  "author": "祐",
-  "obs": 373535988,
-  "credited_license": "cc-by"
+  "author": "臺北翡翠水庫管理局",
+  "obs": null,
+  "credited_license": "cc-by",
+  "source": "commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Chineseboxturtle_2006.jpg",
+  "license_note": "台北市政府の許諾（帰属表示: 台北市政府）。出典表示を条件に商用利用・改変・再配布が可能で、継承条件はなく撤回もされない。CC ライセンスではない"
  },
  {
   "wamei": "チェリーヘッドアカアシリクガメ",
