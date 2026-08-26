@@ -16,7 +16,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **34889c0**（PR #78 merge 済み）。本PR = sitemap.xml lastmod 同期（merge 待ち） |
+| 基準 | `origin/main` = **12346ed**（PR #77 / #78 / #79 merge 済み）。本PR = kids 導線の救出実装（merge 待ち） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
@@ -59,7 +59,9 @@
 | #75 | N5 解消 — `js/` 配下の共有スクリプト8件 | PR #75 | **安全ゲート PASS・HOLD 0件**（8件とも比較・分岐 / GA4 / href / キー参照のいずれにも未使用）。8件すべてを **`はじめての方向け`** に統一。`js/quick-facts.js` 2（CTA・111ページ）／`js/starter-kit.js` 2（`🔰` tierバッジ・113ページ）／`js/comparison-cta.js` 2（`points` 配列・12ページ）／`js/ranking-engine.js` 2（ランキング名）。キー名・`icon`・`tier`/`cat` 判定条件・`weights`・`comparePage`・配列要素数・`href` はすべて不変。**`js/` 配下の「初心者」は `annainin.js:127` の非表示キーワード1件のみ**になった |
 | #76 | 最終フェーズ — U2 + H5 + H6 + N3 | PR #76 | **「初心者」表記整理プロジェクトを CLOSED**。U1 は変更しないと決定してクローズ（★の71ページ再割り当ては実施しない）。U2 = `CLAUDE.md` に「公開語彙ルール — 「初心者」」を新設（18行の最小差分）。H5 6件 = 難易度軸へ統合せず別軸のまま `はじめての方向け` / `はじめての1頭◎` へ。**既存の「飼育難易度」行は無変更**。H6 3件 = E扱いで一般公開コピーとして置換（勝者バッジ / hero-stat / gh-card-tag）。N3 29件 = **変更17 / 内部互換HOLD 1 / SEO不可分HOLD 11** に分類し、17件を同工程で実装。**公開HTMLの「初心者」は 123 → 97 行になり、説明不能な公開表示は0件** |
 | #78 | 商品スニペット無効108件の解消 | `34889c0` | GSC 実測エラー「offers、review、または aggregateRating を指定する必要があります」の解消。`*-best10.html` 7ファイルの JSON-LD `@graph` から **`ItemList` ノードのみ削除**（108アイテム）。`Article` / `BreadcrumbList` は1バイトも変更せず、**JSON-LD 以外の全文が7ファイルとも完全一致**。実描画で Amazon リンク109本・アフィリID付き109本・本文長・h1 が変更前と一致、JSエラー 0/0。**削除のみ（683行削除 / 追加0行）** |
-| #79 | sitemap.xml の lastmod 194件を実態へ同期 | PR #79（**merge 待ち**） | `<lastmod>` は**新規ページ追加時にしか書かれていなかった**（sitemap.xml を触った commit は 190 中 **12** で、すべて種ページ追加の `feat(species)`）。既存ページを編集しても更新されず陳腐化していた。194件すべてを対応HTMLの `git log -1 --format=%cs` へ一致させ、**189件を更新 / 5件は既に一致 / 日付が古くなったものは0件**。`<loc>` の追加・削除・変更・順序変更なし、sitemap.xml 以外の変更なし。生成日は8種類（07-26 17 / 08-14 2 / 08-18 23 / 08-22 7 / 08-23 7 / 08-24 10 / 08-25 73 / 08-26 55）で、**全件同日への一括書き換えではない**。generator 4本 `--check` 差分0 |
+| #79 | sitemap.xml の lastmod 194件を実態へ同期 | `12346ed` | `<lastmod>` は**新規ページ追加時にしか書かれていなかった**（sitemap.xml を触った commit は 190 中 **12** で、すべて種ページ追加の `feat(species)`）。既存ページを編集しても更新されず陳腐化していた。194件すべてを対応HTMLの `git log -1 --format=%cs` へ一致させ、**189件を更新 / 5件は既に一致 / 日付が古くなったものは0件**。`<loc>` の追加・削除・変更・順序変更なし、sitemap.xml 以外の変更なし。生成日は8種類（07-26 17 / 08-14 2 / 08-18 23 / 08-22 7 / 08-23 7 / 08-24 10 / 08-25 73 / 08-26 55）で、**全件同日への一括書き換えではない**。generator 4本 `--check` 差分0 |
+| #77 | PR #67 救出 — agent 定義の新規追加と種名誤混入5箇所の修正 | `2cebce4` | `.github/agents/kame-life-guide.agent.md` を新規追加（状態は毎回 `docs/AI-HANDOFF.md` を読む設計）。`species/razorback-musk-turtle.html` の別種「ミスジドロガメ」誤混入5箇所を「カブトニオイガメ」へ。main 上で誤混入0件を確認。**PR #67 は merge せず close 済み**（内容は #68 と #77 に移植済み） |
+| #80 | PR #16 救出 — カメふしぎ島への導線を全公開ページへ | PR #80（**merge 待ち**） | 旧ブランチを merge/rebase せず、現 main へ必要差分だけを実装し直した。**167ページに1本ずつ導線を追加**（hub-links 150 / related-links 9 / フッター6 / hint-links 1 / 404 1）＋ `index.html` の Care Module 05 を更新（8ページ版の説明文・CTA・`kids/otona.html` への副リンク新設）。新規GA4イベント `site_kids_click`。**対象外36ページ**（kids本体9 / 商品レビュー6 / 規約・運営者4 / 診断 / 相談窓口 / kid/ / 実飼育記録3 / テンプレート4 / リダイレクトスタブ3 / before-keeping・photo-credits・updates）。検証は全PASS（Scope外差分0・漏れ0・重複0・リンク切れ0・開閉収支不変・SEO7項目不変・ItemList 0維持・「初心者」97行と「はじめての方向け」24行が不変・generator 4本 --check 差分0・実描画と実クリックでJSエラー0） |
 
 **PR #54 / #55 で確定し、二度と問い直さない判定:**
 
@@ -286,6 +288,23 @@
 `<lastmod>` だけを `git log -1 --format=%cs` から生成・照合する。既存 generator 4本と同じ
 `--check` 契約に揃えれば、PR ごとに差分0を確認できる。**実装は未着手。**
 
+#### kids 導線と generator 管理領域（PR #80 で実測確定・**再調査しない**）
+
+| 事実 | 実測値 |
+|------|--------|
+| 導線を入れた対象 | **167ページ**（hub-links 150 / related-links 9 / フッター 6 / hint-links 1 / 404 1）＋ `index.html` |
+| 対象外 | **36ページ**。kids本体9 / 商品レビュー6（`*-review.html`）/ 規約・運営者4 / `shindan/` / `annainin/` / `kid/` / 実飼育記録3 / テンプレート4 / リダイレクトスタブ3（`meta refresh` + `noindex`）/ `before-keeping` `photo-credits` `updates` |
+| 新規GA4イベント | `site_kids_click`（`from`: `hub` / `related` / `hub_footer` / `explore` / `404` / `guide_module_otona`）。既存イベント名・件数は不変 |
+| **`guide-*.html` 8本の `hub-links` は generator 管理領域** | `tools/gen-guide-nav.js` が `<!-- BEGIN:guide-nav -->` 〜 `<!-- END:guide-nav -->` を丸ごと再生成する。**内側を手で編集すると `--check` が差分を出す。** マーカーの外に独立した `hub-links` を置くこと |
+| `guides/index.html` の「カテゴリから探す」も同様 | `<!-- BEGIN:guides-hub-env -->` 〜 `<!-- END:guides-hub-env -->` が生成対象 |
+| `.gl-cta`（`index.html`） | `::after` が `"→"` を付与する。**CTA本文に矢印を書くと二重になる。** 5枚とも本文に矢印なし |
+| リダイレクトスタブ3件 | `species/ornate-cuora.html` / `species/hime-nioi-turtle.html` / `species/ouachita-map-turtle.html` |
+| テンプレート4件 | `species/_template-monetized.html` / `hermann-dry-template` / `pink-bellied-template` / `three-toed-box-template` |
+
+`explore.html` の `.hint-links` は既存3リンクとも**タップ高27px**で、追加した1本も同値。
+`guides/index.html` のフッターは既存リンク14pxに対し追加分は34px。いずれも既存設計に合わせた結果で、
+本PRが持ち込んだ劣化ではない。
+
 ### 変更履歴（AI_CHANGELOG）
 
 - **`AI_CHANGELOG.md` は Merge済み PR #13〜#62 を全件記録済み**（PR #63 で補完）。
@@ -315,15 +334,13 @@
 
 ### 判断待ち
 
-**内容の判断待ちは0件。** U1 / U2 / H5 / H6 は PR #76 ですべて決着した。
-残っているのは **Owner の merge 操作待ちのPR 2本**だけで、Agent 側の作業は完了している。
-
-| PR | 状態 | Agent側 |
+| ID | 内容 | Agent側 |
 |----|------|---------|
-| #77 | open（PR #67 救出 = `.github/agents/kame-life-guide.agent.md` 新規 ＋ `species/razorback-musk-turtle.html` の種名誤混入5箇所修正） | 完了。merge 後に **PR #67 を close 可**（内容は #68 と #77 に移植済み） |
-| #79 | open（本PR = sitemap.xml lastmod 同期） | 完了 |
+| **PR #35** | カントンクサガメのページが扱う実体を決める。**(a) 独立種 *Mauremys nigricans*** か **(b) クサガメ *M. reevesii* の広東型**か。あわせて CITES が **II か III** か。`data/species-master.json` の note と `data/species-identification.json` の `unresolved` が「要運営者判断」と明記しており、main にこの矛盾が残っている | 判定済み・着手待ち。**#35 は merge しない**（バイナリ競合＋CLAUDE.md が OBSOLETE）。決定後に救出PRを作る |
+| **PR #80** | 本PR。Owner の merge 待ち | 完了 |
 
-PR #76 で決着した4件（記録として残す）:
+**PR #16 は救出済み（PR #80）。#16 自体は merge も close もしていない。**
+PR #76 で決着した4件は記録として残す:
 
 | ID | 決着 |
 |----|------|
@@ -347,25 +364,25 @@ PR #76 で決着した4件（記録として残す）:
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### PR #79 merge 後 → Search Console に sitemap.xml を再送信し、「検出 - インデックス未登録」28件の変化を観察する
+### PR #80 merge 後 → Search Console に sitemap.xml を再送信し、「検出 - インデックス未登録」28件の変化を観察する
 
 **Agent の実装作業は発生しない。Owner の操作と待機だけの工程。**
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | ① Owner が PR #79 を merge ② GitHub Pages 反映を待つ（約60秒）③ GSC > サイトマップ で `sitemap.xml` を再送信 ④ 数日〜数週間おいて「検出 - インデックス未登録」28件が減るかを確認 |
-| **なぜこれが次か** | 28件は **lastmod が 6/26〜7/17 と古いままでクロールされていない**ページ群だった（PR #78 前の調査で実測）。lastmod を実態へ直したので、再クロールが起きるかどうかがこの仮説の唯一の検証手段になる |
-| **期待結果** | 「検出 - インデックス未登録」28件が減少する。**減らなければ lastmod 仮説は否定**され、原因は別（内部リンク・クロールバジェット等）に絞られる |
+| **やること** | ① Owner が PR #80 を merge ② GitHub Pages 反映を待つ（約60秒）③ GSC > サイトマップ で `sitemap.xml` を再送信 ④ 数日〜数週間おいて「検出 - インデックス未登録」28件が減るかを確認 |
+| **なぜこれが次か** | 28件は **lastmod が 6/26〜7/17 と古いままでクロールされていない**ページ群だった。PR #79 で lastmod を実態へ直したので、再クロールが起きるかがこの仮説の唯一の検証手段になる。PR #80 で内部リンクが167ページ分増えたことも、あわせて効果を見る |
+| **期待結果** | 「検出 - インデックス未登録」28件が減少する。**減らなければ lastmod 仮説は否定**され、原因は別（クロールバジェット等）に絞られる |
 | **同時に見る** | 「商品スニペット」無効108件（PR #78 の効果。Google の再クロール待ちで数日〜数週間かかる。すぐ 0 にならなくても異常ではない） |
 | **変更しない** | `<loc>` の追加・削除・順序／`offers`・価格・在庫の追加（恒久禁止）／H3・H8 |
-| **やらないこと** | sitemap generator の実装（PR #79 で**提案のみ**に留めた。着手はこの観察結果を見てから判断する） |
+| **やらないこと** | sitemap generator の実装（PR #79 で**提案のみ**に留めた）。PR #35 への着手（Owner の実体決定が先） |
 
 **その次**（収益改善フェーズ）: Owner から実測データを受領して改善対象を決める。
 最小は ① GSC 検索パフォーマンス > ページ（過去28日・表示回数上位20）と
 ④ Amazon アソシエイト > 売上（過去30日・商品名/ASIN/発生日）の2つ。
 
-> **UNRESOLVED を勝手に処理しない。** H3（写真・亜種）は再探索禁止、
-> H8（SEO系80行）は GSC/GA4 の実測トリガーなしに着手しない。
+> **UNRESOLVED を勝手に処理しない。** PR #35 は Owner の実体決定なしに着手しない。
+> H3（写真・亜種）は再探索禁止、H8（SEO系80行）は GSC/GA4 の実測トリガーなしに着手しない。
 
 ---
 
