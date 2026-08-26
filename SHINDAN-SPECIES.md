@@ -160,7 +160,7 @@
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
 | マタマタ | Chelus fimbriata | L | 上級 | CITES II | 枯れ葉擬態・水ごと魚を吸い込む |
-| アマゾンマタマタ | Chelus orinocensis | L | 上級 | CITES II | オリノコ川水系産 |
+| オリノコマタマタ | Chelus orinocensis | L | 上級 | CITES II | オリノコ川水系産 |
 | ニシキマゲクビガメ（ピンクベリー） | Emydura subglobosa | M | 中〜上級 | なし | 曲頸類入門として人気 |
 | ヘビクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
 | セグロヘビクビガメ | Chelodina colliei | M | 中〜上級 | なし | 西オーストラリア産・旧学名 C. oblonga |
