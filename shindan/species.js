@@ -192,7 +192,7 @@ land: [
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)+(s.collector||0)+(s.ultra_rare||0); },
     availability: 'rare'
   },
-  { name: 'セオレガメ（ホメアナ）', latin: 'Kinixys homeana', emoji: '🔒', difficulty: '上級', size: 'M（18〜25cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ホームセオレガメ', latin: 'Kinixys homeana', emoji: '🔒', difficulty: '上級', size: 'M（18〜25cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '西アフリカの熱帯雨林に生息するセオレガメ。甲羅後半がヒンジで閉じる独特の機構を持つ。高湿度・高温の環境が必要で、WC個体はストレスや寄生虫に弱い。CB個体推奨の難種。CITES II。',
     specs: { '最大甲長': '25cm', '主な食事': 'キノコ・果実・ミミズ', '水容量': '浅め水入れ', '温度': '26〜32℃' },
     coreSpecs: { size: '25cm', temp: '26〜32℃', lifespan: '20〜40年', diet: '雑食（キノコ・果実・小動物）' },
@@ -538,7 +538,7 @@ aquatic: [
     availability: 'common'
   },
   { name: 'スワニークーター', latin: 'Pseudemys concinna suwanniensis', emoji: '🌾', difficulty: '中級', size: 'L（30〜43cm）', cites: null, legal: null,
-    reason: 'フロリダ半島北部のスワニー川水系を中心に分布するコウキバラガメの亜種。クーター類でもとくに大型で、メスは40cmに届くこともある。背甲は暗色化しやすい。成体には120cm級の水槽か屋外池が必要。',
+    reason: 'フロリダ半島北部のスワニー川水系を中心に分布するリバークーターの亜種。クーター類でもとくに大型で、メスは40cmに届くこともある。背甲は暗色化しやすい。成体には120cm級の水槽か屋外池が必要。',
     specs: { '最大甲長': '43cm（メス）', '水槽サイズ': '120cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '43cm（メス）', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（植物多め）' },
     extraSpecs: { tankSize: '120cm〜' },
@@ -746,7 +746,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.maintenance||0)+(s.beauty||0)+(s.advanced||0)+(s.na_water||0)+(s.collector||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'アジアコガシラドロガメ', latin: 'Siebenrockiella crassicollis', emoji: '🖤', difficulty: '中〜上級', size: 'M（16〜20cm）', cites: 'CITES II', legal: 'cites_ii',
+  { name: 'ホオジロクロガメ', latin: 'Siebenrockiella crassicollis', emoji: '🖤', difficulty: '中〜上級', size: 'M（16〜20cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '東南アジア産の黒い水棲ガメ。全身真っ黒の独特の容姿が魅力で、低地の沼・湿地・溜池に生息。高水温と水質管理が重要。CITES II種のため国内CBの取引証明書確認が必要。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '24〜30℃', '難易度': '★★☆' },
     coreSpecs: { size: '20cm', temp: '24〜30℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },
@@ -790,7 +790,7 @@ aquatic: [
     score: function(s){ return (s.small_tank||0)+(s.beginner||0)+(s.observational||0)+(s.mud_lover||0)+(s.na_water||0)+(s.warm_climate||0)+(s.intermediate||0); },
     availability: 'common'
   },
-  { name: 'コウキバラガメ', latin: 'Pseudemys concinna', emoji: '🏞️', difficulty: '中級', size: 'L（25〜40cm）', cites: null, legal: null,
+  { name: 'リバークーター', latin: 'Pseudemys concinna', emoji: '🏞️', difficulty: '中級', size: 'L（25〜40cm）', cites: null, legal: null,
     reason: 'リバークーターとも呼ばれる北米産の大型スライダー系ガメ。国内CB・輸入CB流通あり。活発に泳ぎ回る姿が見応えある。大型水槽が必要だが丈夫で飼育しやすい。',
     specs: { '最大甲長': '40cm', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '40cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（植物多め）' },
@@ -802,7 +802,7 @@ aquatic: [
     availability: 'common'
   },
   { name: 'リオグランデクーター', latin: 'Pseudemys gorzugi', emoji: '🌊', difficulty: '中級', size: 'M（20〜28cm）', cites: null, legal: null,
-    reason: 'テキサス州〜メキシコ北部のリオグランデ川流域産のクーター。コウキバラガメより小型で扱いやすい。国内流通あり。活発に泳ぎ回る姿が魅力の中型水棲ガメ。',
+    reason: 'テキサス州〜メキシコ北部のリオグランデ川流域産のクーター。リバークーターより小型で扱いやすい。国内流通あり。活発に泳ぎ回る姿が魅力の中型水棲ガメ。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60〜90cm', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '28cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（植物多め）' },
     extraSpecs: { tankSize: '60〜90cm' },
@@ -812,7 +812,7 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.active||0)+(s.intermediate||0)+(s.swimmer||0)+(s.na_water||0)+(s.warm_climate||0); },
     availability: 'common'
   },
-  { name: 'フロリダレッドベリータートル', latin: 'Pseudemys nelsoni', emoji: '❤️', difficulty: '中級', size: 'L（25〜37cm）', cites: null, legal: null,
+  { name: 'フロリダアカハラガメ', latin: 'Pseudemys nelsoni', emoji: '❤️', difficulty: '中級', size: 'L（25〜37cm）', cites: null, legal: null,
     reason: 'フロリダ産のクーター系大型水棲ガメ。腹甲が赤いのが特徴。国内流通あり。丈夫で飼育しやすく、活発に泳ぐ姿が見応えある。大型水槽と強力なフィルターが必要。',
     specs: { '最大甲長': '37cm', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '★★☆' },
     coreSpecs: { size: '37cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（植物多め）' },
@@ -1073,7 +1073,7 @@ forest: [
 
 // ==================== マニアック・特殊ルート ====================
 exotic: [
-  { name: 'スパイニースッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: 'CITES II', legal: null,
+  { name: 'トゲスッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: 'CITES II', legal: null,
     reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
     specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '50cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
@@ -1084,8 +1084,8 @@ exotic: [
     score: function(s){ return (s.softshell||0)+(s.advanced||0)+(s.budget_high||0)+(s.accessible||0)*2; },
     availability: 'common'
   },
-  { name: 'スムーススッポン', latin: 'Apalone mutica', emoji: '🫧', difficulty: '上級', size: 'L（25〜45cm）', cites: 'CITES II', legal: null,
-    reason: 'スパイニースッポンよりキールが目立たない滑らかな甲羅を持つ。砂底必須・水流弱め。スッポン属の中でも温和な個体が多い。',
+  { name: 'スベスッポン', latin: 'Apalone mutica', emoji: '🫧', difficulty: '上級', size: 'L（25〜45cm）', cites: 'CITES II', legal: null,
+    reason: 'トゲスッポンよりキールが目立たない滑らかな甲羅を持つ。砂底必須・水流弱め。スッポン属の中でも温和な個体が多い。',
     specs: { '最大甲長': '45cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '45cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },
@@ -1205,7 +1205,7 @@ exotic: [
     score: function(s){ return (s.brackish||0)+(s.advanced||0)+(s.expert||0)+(s.collector_grade||0)+(s.accessible||0); },
     availability: 'rare'
   },
-  { name: 'ヘビクビガメ', latin: 'Chelodina longicollis', emoji: '🐍', difficulty: '中〜上級', size: 'M（20〜28cm）', cites: null, legal: null,
+  { name: 'オーストラリアナガクビガメ', latin: 'Chelodina longicollis', emoji: '🐍', difficulty: '中〜上級', size: 'M（20〜28cm）', cites: null, legal: null,
     reason: 'オーストラリア産の曲頸類。首が長く蛇のように素早く動く。甲羅に引っ込めず横に曲げる独特の防御行動が印象的。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★★★' },
     coreSpecs: { size: '28cm', temp: '20〜28℃', lifespan: '20〜40年', diet: '肉食（魚・エビ中心）' },
@@ -1227,7 +1227,7 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'common'
   },
-  { name: 'アフリカヨコクビガメ', latin: 'Pelomedusa subrufa', emoji: '🌍', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: null, legal: null,
+  { name: 'アフリカヌマヨコクビガメ', latin: 'Pelomedusa subrufa', emoji: '🌍', difficulty: '中〜上級', size: 'M（15〜25cm）', cites: null, legal: null,
     reason: 'アフリカ南部〜東部に分布する曲頸類。比較的安価で入手しやすくなっている。横に首を曲げる独特の行動が面白い。水棲傾向が強い。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '24〜29℃', '難易度': '★★☆' },
     coreSpecs: { size: '25cm', temp: '24〜29℃', lifespan: '20〜40年', diet: '雑食' },
@@ -1304,8 +1304,8 @@ exotic: [
     score: function(s){ return (s.snakeneck||0)+(s.advanced||0)+(s.budget_max||0)+(s.expert||0)+(s.ultra_rare||0)*2+(s.collector||0); },
     availability: 'common'
   },
-  { name: 'セグロヘビクビガメ', latin: 'Chelodina colliei', emoji: '🦎', difficulty: '中〜上級', size: 'M（22〜28cm）', cites: null, legal: null,
-    reason: '西オーストラリア・コリー川産の曲頸類。首が長くヘビのように動かす独特のシルエットが魅力。国内流通あり。ヘビクビガメ（Chelodina longicollis）と並ぶ人気の曲頸類。',
+  { name: 'コウホソナガクビガメ', latin: 'Chelodina colliei', emoji: '🦎', difficulty: '中〜上級', size: 'M（22〜28cm）', cites: null, legal: null,
+    reason: '西オーストラリア・コリー川産の曲頸類。首が長くヘビのように動かす独特のシルエットが魅力。国内流通あり。オーストラリアナガクビガメ（Chelodina longicollis）と並ぶ人気の曲頸類。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60〜90cm', '水温': '18〜25℃', '難易度': '★★☆' },
     coreSpecs: { size: '28cm', temp: '18〜25℃', lifespan: '20〜30年', diet: '雑食（動物食強め）' },
     extraSpecs: { tankSize: '60〜90cm' },

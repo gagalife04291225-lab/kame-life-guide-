@@ -4375,7 +4375,7 @@
   {
    "slug": "spiny-softshell-turtle",
    "page": "species/spiny-softshell-turtle.html",
-   "wamei": "スパイニースッポン",
+   "wamei": "トゲスッポン",
    "scientific_name": {
     "value": "Apalone spinifera",
     "verification": "LIKELY",
@@ -4469,7 +4469,7 @@
   {
    "slug": "smooth-softshell-turtle",
    "page": "species/smooth-softshell-turtle.html",
-   "wamei": "スムーススッポン",
+   "wamei": "スベスッポン",
    "scientific_name": {
     "value": "Apalone mutica",
     "verification": "LIKELY",
@@ -7774,7 +7774,7 @@
   {
    "slug": "home-hinge-back-tortoise",
    "page": "species/home-hinge-back-tortoise.html",
-   "wamei": "セオレガメ（ホメアナ）",
+   "wamei": "ホームセオレガメ",
    "scientific_name": {
     "value": "Kinixys homeana",
     "verification": "LIKELY",
@@ -9266,7 +9266,7 @@
   {
    "slug": "eastern-long-necked-turtle",
    "page": "species/eastern-long-necked-turtle.html",
-   "wamei": "ヘビクビガメ",
+   "wamei": "オーストラリアナガクビガメ",
    "scientific_name": {
     "value": "Chelodina longicollis",
     "verification": "LIKELY",
@@ -9349,7 +9349,7 @@
   {
    "slug": "collier-snake-necked-turtle",
    "page": "species/collier-snake-necked-turtle.html",
-   "wamei": "セグロヘビクビガメ",
+   "wamei": "コウホソナガクビガメ",
    "scientific_name": {
     "value": "Chelodina colliei",
     "verification": "LIKELY",
@@ -9557,7 +9557,7 @@
   {
    "slug": "african-helmeted-turtle",
    "page": "species/african-helmeted-turtle.html",
-   "wamei": "アフリカヨコクビガメ",
+   "wamei": "アフリカヌマヨコクビガメ",
    "scientific_name": {
     "value": "Pelomedusa subrufa",
     "verification": "LIKELY",
@@ -9713,7 +9713,7 @@
   {
    "slug": "river-cooter",
    "page": "species/river-cooter.html",
-   "wamei": "コウキバラガメ",
+   "wamei": "リバークーター",
    "scientific_name": {
     "value": "Pseudemys concinna",
     "verification": "LIKELY",
@@ -9873,7 +9873,7 @@
   {
    "slug": "florida-red-bellied-turtle",
    "page": "species/florida-red-bellied-turtle.html",
-   "wamei": "フロリダレッドベリータートル",
+   "wamei": "フロリダアカハラガメ",
    "scientific_name": {
     "value": "Pseudemys nelsoni",
     "verification": "LIKELY",
@@ -10628,7 +10628,7 @@
   {
    "slug": "asian-black-marsh-turtle",
    "page": "species/asian-black-marsh-turtle.html",
-   "wamei": "アジアコガシラドロガメ",
+   "wamei": "ホオジロクロガメ",
    "scientific_name": {
     "value": "Siebenrockiella crassicollis",
     "verification": "LIKELY",

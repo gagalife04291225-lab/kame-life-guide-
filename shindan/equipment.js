@@ -211,8 +211,8 @@ const SPECIES_EQUIPMENT_MAP = {
   'ミスジハコガメ':              '_box_asia',
   'ミスジハコガメ（希少コレクション）': '_box_asia',
   // スッポン系
-  'スパイニースッポン':          '_softshell',
-  'スムーススッポン':            '_softshell',
+  'トゲスッポン':          '_softshell',
+  'スベスッポン':            '_softshell',
   'フロリダスッポン':            '_softshell',
   'スッポンモドキ':              '_softshell',
   'スッポン（シナスッポン）':    '_softshell',
@@ -222,10 +222,10 @@ const SPECIES_EQUIPMENT_MAP = {
   'カロリナダイヤモンドバックテラピン':    '_brackish',
   'オルナータダイヤモンドバックテラピン':  '_brackish',
   // 曲頸類
-  'ヘビクビガメ':                '_snakeneck',
+  'オーストラリアナガクビガメ':                '_snakeneck',
   'ニシキヘビクビガメ':          '_snakeneck',
   'ジーベンロックナガクビガメ':  '_snakeneck',
-  'アフリカヨコクビガメ':        '_snakeneck',
+  'アフリカヌマヨコクビガメ':        '_snakeneck',
   'ヒラリーカエルガメ':          '_snakeneck',
   'パーケリーナガクビガメ':      '_snakeneck',
   // 大型ドロガメ

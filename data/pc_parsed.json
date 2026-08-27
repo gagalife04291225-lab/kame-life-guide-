@@ -17,14 +17,14 @@
   "photo_id": "13510207"
  },
  {
-  "wamei": "アジアコガシラドロガメ",
+  "wamei": "ホオジロクロガメ",
   "gakumei": "Siebenrockiella crassicollis",
   "author": "Rongrong Angkaew",
   "obs": 33416889,
   "license": "by"
  },
  {
-  "wamei": "アフリカヨコクビガメ",
+  "wamei": "アフリカヌマヨコクビガメ",
   "gakumei": "Pelomedusa subrufa",
   "author": "Charlotte Kirchner",
   "obs": 17860129,
@@ -214,7 +214,7 @@
   "license": "by"
  },
  {
-  "wamei": "コウキバラガメ",
+  "wamei": "リバークーター",
   "gakumei": "Pseudemys concinna",
   "author": "Jody Shugart",
   "obs": 43419777,
@@ -280,7 +280,7 @@
   "photo_id": "504765200"
  },
  {
-  "wamei": "スパイニースッポン",
+  "wamei": "トゲスッポン",
   "gakumei": "Apalone spinifera",
   "author": "Rachel Stringham",
   "obs": 30120195,
@@ -296,7 +296,7 @@
   "source_url": "https://commons.wikimedia.org/wiki/File:Geoemyda_spengleri.jpg"
  },
  {
-  "wamei": "スムーススッポン",
+  "wamei": "スベスッポン",
   "gakumei": "Apalone mutica",
   "author": "Eric Schmidt",
   "obs": 144135002,
@@ -310,14 +310,14 @@
   "license": "by"
  },
  {
-  "wamei": "セオレガメ（ホメアナ）",
+  "wamei": "ホームセオレガメ",
   "gakumei": "Kinixys homeana",
   "author": "B. Phalan",
   "obs": 9624630,
   "license": "by"
  },
  {
-  "wamei": "セグロヘビクビガメ",
+  "wamei": "コウホソナガクビガメ",
   "gakumei": "Chelodina colliei",
   "author": "Cal Wood",
   "obs": 258885509,
@@ -590,7 +590,7 @@
   "license": "by"
  },
  {
-  "wamei": "フロリダレッドベリータートル",
+  "wamei": "フロリダアカハラガメ",
   "gakumei": "Pseudemys nelsoni",
   "author": "Josiah Londerée",
   "obs": 266843264,
@@ -604,7 +604,7 @@
   "license": "by"
  },
  {
-  "wamei": "ヘビクビガメ",
+  "wamei": "オーストラリアナガクビガメ",
   "gakumei": "Chelodina longicollis",
   "author": "Dominic Williams",
   "obs": 239609744,

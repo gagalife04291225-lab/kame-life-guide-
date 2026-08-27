@@ -16,10 +16,10 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **d4c30c7**（PR #88 まで merge 済み）。**merge 待ち = PR #89**（本作業） |
+| 基準 | `origin/main` = **9b31cec**（PR #89 まで merge 済み。直前に Automation の `9b1ca77` 楽天価格同期あり）。**merge 待ち = PR #90**（本作業） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-26 |
-| 作業ブランチ | `claude/canton-reeves-nigricans` |
+| 作業ブランチ | `claude/wamei-b9-fix` |
 | 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
 
 ---
@@ -36,7 +36,8 @@
 | #87 | 監査で誤り確定した3件のうち **1件だけを是正** | 本PR | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
 | #16 | 旧PRを **merge せず CLOSE** | close のみ | 「旧PRを merge せず、最新 main 上で必要差分を救出実装し **PR #80** で反映済み」を理由として記録。**ブランチ `claude/kame-life-guide-elementary-gidu7i` は無変更**（merge / rebase / push なし・head `863ee7c` のまま）。close 前に現 main で救出実装を実測確認: kids リンク **167ページ** / `site_kids_click` **168** / `index.html` Care Module 05 の CTA と `gl-sub-link` / `guide-*` は `END:guide-nav` の外側 / generator 4本 差分0 |
 | #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | `d4c30c7` | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
-| #89 | カントンクサガメの分類を **独立種 Mauremys nigricans** へ確定 | 本PR | 旧 PR #35 は merge/rebase せず、現 main へ必要差分だけを新規実装。`Mauremys reevesii`（広東型・rank=regional_form・CITES附属書III）という扱いを廃止し、**`Mauremys nigricans` / rank=species / CITES附属書II** へ全層統一。クサガメ（`reeves-turtle`）は1バイトも変更していない。**写真だけは差し替えていない**（下記 FIXED_FACTS と H9 を参照） |
+| #89 | カントンクサガメの分類を **独立種 Mauremys nigricans** へ確定 | `9b31cec` | 旧 PR #35 は merge/rebase せず、現 main へ必要差分だけを新規実装。`Mauremys reevesii`（広東型・rank=regional_form・CITES附属書III）という扱いを廃止し、**`Mauremys nigricans` / rank=species / CITES附属書II** へ全層統一。クサガメ（`reeves-turtle`）は1バイトも変更していない。**写真だけは差し替えていない**（下記 FIXED_FACTS と H9 を参照） |
+| #90 | 和名118件監査で **B判定＝修正確定の9件**を実装 | 本PR | 43ファイル・+334/−334行。`shindan/species.js` の `name` を正とし、`equipment.js` の辞書キー・`species-list.html` の `CAT_OVERRIDE` キーを同時改名（PR #88 の3点セット）。master／identification／`photo-credits.html`／`pc_parsed`／`credits_map`／`SHINDAN-SPECIES.md`／対象 species HTML も追従し、生成領域は generator 出力と一致。**和名が変わったのは B9 の9件だけで、A74・C17・D12・E1・F5 は全件不変**。`latin` は118件すべて不変 |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -182,6 +183,26 @@
   同ファイルは識別タスクの**担当割り当て記録**であり、
   「reeves と canton-reeves は同一学名 M. reevesii」「canton-reeves(M. reevesii 広東型)」と
   書かれているが、これは PR #89 で**廃止された旧扱い**。歴史的記録として残しているだけ。
+
+- **B判定9件の和名は実装済み。再調査・再判定しない**（PR #90）
+  `セオレガメ（ホメアナ）`→**ホームセオレガメ**／`アジアコガシラドロガメ`→**ホオジロクロガメ**／
+  `コウキバラガメ`→**リバークーター**／`フロリダレッドベリータートル`→**フロリダアカハラガメ**／
+  `スパイニースッポン`→**トゲスッポン**／`スムーススッポン`→**スベスッポン**／
+  `ヘビクビガメ`→**オーストラリアナガクビガメ**／`アフリカヨコクビガメ`→**アフリカヌマヨコクビガメ**／
+  `セグロヘビクビガメ`→**コウホソナガクビガメ**。slug・URL・学名は1つも変えていない。
+- **「ヘビクビガメ」は文脈で意味が変わる。一括置換してはいけない**
+  種名 *Chelodina longicollis* としての用法は PR #90 で オーストラリアナガクビガメ へ移した。
+  残る50箇所は**すべて意図的残存**であり、次の12パターンのいずれかに当たる:
+  `スッポン・ヘビクビガメ`（guide-softshell のカテゴリ名。nav／title／meta／h1／パンくず／
+  `shindan/species.js` の links ラベル／`tools/gen-guide-nav.js` のラベル表）／`ヘビクビガメ科`（科名）／
+  `ニシキヘビクビガメ`（*Chelodina mccordi* の旧表記・別種）／`ライマンヘビクビガメ`（別種）／
+  `水棲のヘビクビガメ`・`水棲ヘビクビガメ`・`背腹二色型ヘビクビガメ`・
+  `「ヘビクビガメはヒーターなしでも大丈夫」`（いずれも科レベルの総称）／
+  `ヘビクビガメ・ナガクビガメ`・`ヘビクビガメ</span><span>ナガクビガメ`・
+  `スッポン類・ヘビクビガメ`・`マタマタ・ヘビクビガメ`（分類群の並記）。
+- **B9のうち equipment キーを持つのは4件だけ**（トゲスッポン／スベスッポン／
+  オーストラリアナガクビガメ／アフリカヌマヨコクビガメ）。残る5件は**変更前から未マッピング**で、
+  `getEquipment` の未解決46件に元から含まれる。**PR #90 は新しいキーを足していない**（劣化ゼロ）。
 
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
@@ -466,6 +487,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |----|------|
 | N12 | **【要確認】カントンクサガメの CITES 区分について、リポジトリ内に対立する記録がある**。今回は亀好きさんの確定事項に従い **附属書II** で全層統一した。一方、旧 PR #35 の本文（2026-08-22）は *Mauremys nigricans* について「2005年に中国が *Chinemys nigricans* として**附属書III**へ掲載（クサガメと同一バッチ・**EU規則1332/2005**で確認）→ 区分の変更なし」と、出典付きで **III** を主張している。他方 `data/species-identification.json` の旧 `unresolved`（同日付）は **II** としていた。**同じ日に書かれた2つの記録が食い違っている。**本実行環境からは CITES Species+ にも EU規則にも到達できない（egress ポリシー）ため検証できない。**III が正しい場合に直すのは4箇所だけ**: `data/species-master.json` の `cites.appendix.value`／`data/species-identification.json` の `houkisei`／`shindan/species.js` の `cites`／`SHINDAN-SPECIES.md` の CITES列。公開ページ本文の「附属書II」表記3箇所（`.lp-fit-list` 1・後悔ポイント 1・`env-card` と まとめ文 2）も併せて直す |
 | N13 | **H9（カントンクサガメの写真差し替え）の候補が旧 PR #35 に記録されている**。Wikimedia Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG`（Greg Hume / **CC BY-SA 4.0** / 1920×1537）。PR #35 の本文によれば、カテゴリで種一致・目視確認済み（健康個体が水中で立ち上がる自然な姿勢・頭部と前肢が明瞭・オレンジ腹甲に黒斑という識別点）で、800×600 WebP へ変換して採用済みとされ、その成果は PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）にある。また PR #35 は「iNaturalist は本種の観察が全13件で、条件を満たす候補は**0件**」とも記録している。**本実行環境から Commons へは到達できない**ため、亀好きさんが画像を渡すか、PR #35 のブランチから当該 webp とクレジット4層だけを救出する経路になる。**H9 はこの候補があるため、H3 の他4件より解消が近い** |
+| N20 | **`shindan/equipment.js` と `species-list.html` の `CAT_OVERRIDE` に孤児キーが残っている**（`shindan/species.js` の `name` に対応が無いキー）。equipment 8件: `ヘルマンリクガメ（ヒガシ亜種）`／`ヘルマンリクガメ（ニシ亜種）`／`ソマリアリクガメ（エジプトリクガメ）`／`ニオイガメ`／`ペインテッドタートル`／`ミスジハコガメ（希少コレクション）`／`ニシキヘビクビガメ`／`パーケリーナガクビガメ`。CAT_OVERRIDE 3件: `ニシキヘビクビガメ`／`パーケリーナガクビガメ`／`ミスジハコガメ（希少コレクション）`。**PR #90 の前から同数（8 / 3）で、本PRは増やしていない。**害はないが掃除の候補 |
 | N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
 | N10 | **`species/canton-reeves-turtle.html:7` の `meta name="description"` が壊れている**。文末に別の説明文の断片（`...解説します.' Turtle）の飼育ガイド。野生環境から逆算した...`）が連結されている。学名は含まれないため PR #89 では触っていない。SEO層なので `docs/operations/DECISION_RULE.md` に従い、**GSC/GA4 の実測トリガーが引いたときに直す** |
 | N11 | **カントンクサガメの `shindan/species.js` の `legal` は `null` のまま**。CITES II になったが、`legal: 'cites_ii'` を立てるかは判断が要る（立てると診断結果に「CITES IIです。書類を確認してください」の注意が出る）。CITES II の79種のうち `legal` を持つのは43種で一律ではないため、推測で立てなかった。**Owner の一言で決まる** |
