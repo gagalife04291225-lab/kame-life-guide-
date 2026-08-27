@@ -935,6 +935,10 @@
    "slug": "russian-tortoise",
    "page": "species/russian-tortoise.html",
    "wamei": "ロシアリクガメ",
+   "wamei_aliases": [
+    "ヨツユビリクガメ（標準和名）",
+    "ホルスフィールドリクガメ"
+   ],
    "scientific_name": {
     "value": "Testudo horsfieldii",
     "verification": "CONFIRMED",
@@ -2552,6 +2556,9 @@
    "slug": "mexican-mud-turtle",
    "page": "species/mexican-mud-turtle.html",
    "wamei": "サラドロガメ",
+   "wamei_aliases": [
+    "メキシコドロガメ"
+   ],
    "scientific_name": {
     "value": "Kinosternon integrum",
     "verification": "LIKELY",
@@ -3209,6 +3216,9 @@
    "slug": "red-eared-slider",
    "page": "species/red-eared-slider.html",
    "wamei": "ミシシッピアカミミガメ",
+   "wamei_aliases": [
+    "アカミミガメ（条件付特定外来生物の指定名）"
+   ],
    "scientific_name": {
     "value": "Trachemys scripta elegans",
     "verification": "LIKELY",
@@ -3415,6 +3425,9 @@
    "slug": "cumberland-slider",
    "page": "species/cumberland-slider.html",
    "wamei": "カンバーランドスライダー",
+   "wamei_aliases": [
+    "カンバーランドキミミガメ"
+   ],
    "scientific_name": {
     "value": "Trachemys scripta troostii",
     "verification": "LIKELY",
@@ -4669,6 +4682,10 @@
    "slug": "northern-diamondback-terrapin",
    "page": "species/northern-diamondback-terrapin.html",
    "wamei": "ノーザンダイヤモンドバックテラピン",
+   "wamei_aliases": [
+    "キスイガメ（種 Malaclemys terrapin の和名）",
+    "ダイヤモンドガメ（種の別名）"
+   ],
    "scientific_name": {
     "value": "Malaclemys terrapin terrapin",
     "verification": "LIKELY",
@@ -4763,6 +4780,10 @@
    "slug": "carolina-diamondback-terrapin",
    "page": "species/carolina-diamondback-terrapin.html",
    "wamei": "カロリナダイヤモンドバックテラピン",
+   "wamei_aliases": [
+    "キスイガメ（種 Malaclemys terrapin の和名）",
+    "ダイヤモンドガメ（種の別名）"
+   ],
    "scientific_name": {
     "value": "Malaclemys terrapin centrata",
     "verification": "LIKELY",
@@ -4879,6 +4900,11 @@
    "slug": "ornate-diamondback-terrapin",
    "page": "species/ornate-diamondback-terrapin.html",
    "wamei": "オルナータダイヤモンドバックテラピン",
+   "wamei_aliases": [
+    "ニシキダイヤモンドガメ",
+    "キスイガメ（種 Malaclemys terrapin の和名）",
+    "ダイヤモンドガメ（種の別名）"
+   ],
    "scientific_name": {
     "value": "Malaclemys terrapin macrospilota",
     "verification": "LIKELY",
@@ -7860,6 +7886,9 @@
    "slug": "impressed-tortoise",
    "page": "species/impressed-tortoise.html",
    "wamei": "インプレッサムツアシガメ",
+   "wamei_aliases": [
+    "ベッコウムツアシガメ"
+   ],
    "scientific_name": {
     "value": "Manouria impressa",
     "verification": "LIKELY",
@@ -7959,6 +7988,9 @@
    "slug": "leopard-tortoise",
    "page": "species/leopard-tortoise.html",
    "wamei": "ヒョウモンガメ",
+   "wamei_aliases": [
+    "ヒョウモンリクガメ"
+   ],
    "scientific_name": {
     "value": "Stigmochelys pardalis",
     "verification": "LIKELY",
@@ -8153,6 +8185,9 @@
    "slug": "marginated-tortoise",
    "page": "species/marginated-tortoise.html",
    "wamei": "フチゾリリクガメ",
+   "wamei_aliases": [
+    "マルギナータリクガメ"
+   ],
    "scientific_name": {
     "value": "Testudo marginata",
     "verification": "LIKELY",
@@ -8314,6 +8349,9 @@
    "slug": "pancake-tortoise",
    "page": "species/pancake-tortoise.html",
    "wamei": "パンケーキリクガメ",
+   "wamei_aliases": [
+    "パンケーキガメ"
+   ],
    "scientific_name": {
     "value": "Malacochersus tornieri",
     "verification": "LIKELY",
@@ -9415,6 +9453,9 @@
    "slug": "siebenrocks-snake-necked-turtle",
    "page": "species/siebenrocks-snake-necked-turtle.html",
    "wamei": "ジーベンロックナガクビガメ",
+   "wamei_aliases": [
+    "チリメンナガクビガメ"
+   ],
    "scientific_name": {
     "value": "Chelodina rugosa",
     "verification": "LIKELY",
@@ -10951,6 +10992,9 @@
    "slug": "brown-wood-turtle-manni",
    "page": "species/brown-wood-turtle-manni.html",
    "wamei": "マンヤマガメ",
+   "wamei_aliases": [
+    "コスタリカアカスジヤマガメ"
+   ],
    "scientific_name": {
     "value": "Rhinoclemmys pulcherrima manni",
     "verification": "LIKELY",
@@ -11098,6 +11142,9 @@
    "slug": "loggerhead-musk-turtle",
    "page": "species/loggerhead-musk-turtle.html",
    "wamei": "オオアタマヒメニオイガメ",
+   "wamei_aliases": [
+    "ヒメニオイガメ（種 Sternotherus minor の和名）"
+   ],
    "scientific_name": {
     "value": "Sternotherus minor",
     "verification": "LIKELY",
@@ -11454,6 +11501,10 @@
    "slug": "mississippi-diamondback-terrapin",
    "page": "species/mississippi-diamondback-terrapin.html",
    "wamei": "ミシシッピダイヤモンドバックテラピン",
+   "wamei_aliases": [
+    "キスイガメ（種 Malaclemys terrapin の和名）",
+    "ダイヤモンドガメ（種の別名）"
+   ],
    "scientific_name": {
     "value": "Malaclemys terrapin pileata",
     "rank": "subspecies",
@@ -11555,6 +11606,10 @@
    "slug": "texas-diamondback-terrapin",
    "page": "species/texas-diamondback-terrapin.html",
    "wamei": "テキサスダイヤモンドバックテラピン",
+   "wamei_aliases": [
+    "キスイガメ（種 Malaclemys terrapin の和名）",
+    "ダイヤモンドガメ（種の別名）"
+   ],
    "scientific_name": {
     "value": "Malaclemys terrapin littoralis",
     "rank": "subspecies",
