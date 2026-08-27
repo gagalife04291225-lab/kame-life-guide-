@@ -245,7 +245,7 @@
 <div class="filter-bar">
   <div class="wrap">
     <div class="filter-group">
-      <input type="search" id="search-box" class="search-box" placeholder="種名・学名で検索（例：ニオイガメ / russian / Testudo）" autocomplete="off" aria-label="種名検索">
+      <input type="search" id="search-box" class="search-box" placeholder="種名・別名・学名で検索（例：ニオイガメ / ヨツユビリクガメ / russian / Testudo）" autocomplete="off" aria-label="種名・別名・学名で検索">
     </div>
     <div class="filter-group">
       <div class="filter-label">生息環境</div>
@@ -525,6 +525,36 @@ var CAT_NOTE = {
 };
 // END:taxonomy-data
 
+// BEGIN:wamei-alias (tools/gen-species-list.js が生成。手で編集しない)
+// 別名の正本は data/species-master.json の wamei_aliases。ここは検索用の写し。
+// 値は master の文字列をそのまま連結する（加工しない）。
+var WAMEI_ALIAS = {
+  'インプレッサムツアシガメ':'ベッコウムツアシガメ',
+  'エジプトリクガメ':'ソマリアリクガメ',
+  'オオアタマヒメニオイガメ':'ヒメニオイガメ（種 Sternotherus minor の和名）',
+  'オルナータダイヤモンドバックテラピン':'ニシキダイヤモンドガメ キスイガメ（種 Malaclemys terrapin の和名） ダイヤモンドガメ（種の別名）',
+  'カロリナダイヤモンドバックテラピン':'キスイガメ（種 Malaclemys terrapin の和名） ダイヤモンドガメ（種の別名）',
+  'カンバーランドスライダー':'カンバーランドキミミガメ',
+  'サソリドロガメ':'スコーピオンマッドタートル',
+  'サラドロガメ':'メキシコドロガメ',
+  'サルヴィンオオニオイガメ':'メキシカンジャイアントマスクタートル サルビンオオニオイガメ',
+  'ジーベンロックナガクビガメ':'チリメンナガクビガメ',
+  'スジオオニオイガメ':'メキシコオオニオイガメ ミツウネオオニオイガメ',
+  'テキサスダイヤモンドバックテラピン':'キスイガメ（種 Malaclemys terrapin の和名） ダイヤモンドガメ（種の別名）',
+  'ノーザンダイヤモンドバックテラピン':'キスイガメ（種 Malaclemys terrapin の和名） ダイヤモンドガメ（種の別名）',
+  'ハナナガドロガメ':'オオアタマドロガメ（当サイト旧表記・使用実績確認できず） タバスコドロガメ',
+  'パンケーキリクガメ':'パンケーキガメ',
+  'ヒョウモンガメ':'ヒョウモンリクガメ',
+  'ヒラセガメ':'モンホットハコガメ',
+  'フチゾリリクガメ':'マルギナータリクガメ',
+  'マッコードナガクビガメ':'ニシキヘビクビガメ',
+  'マンヤマガメ':'コスタリカアカスジヤマガメ',
+  'ミシシッピアカミミガメ':'アカミミガメ（条件付特定外来生物の指定名）',
+  'ミシシッピダイヤモンドバックテラピン':'キスイガメ（種 Malaclemys terrapin の和名） ダイヤモンドガメ（種の別名）',
+  'ロシアリクガメ':'ヨツユビリクガメ（標準和名） ホルスフィールドリクガメ'
+};
+// END:wamei-alias
+
 // 学名パース：亜属 (…) と 全角括弧の注記 （…） を除いて属・種小名・亜種小名に分ける
 function sciParts(latin) {
   var s = String(latin || '');
@@ -697,10 +727,12 @@ var state = {
   sort: 'popular'
 };
 
-// 検索ハッシュ（種名・学名・slug＝英名代替 を小文字連結）
+// 検索ハッシュ（種名・別名・学名・slug＝英名代替 を小文字連結）
+// 別名の正本は data/species-master.json の wamei_aliases。WAMEI_ALIAS はその写し。
 function haystack(item) {
   var sp = item.sp;
-  return (sp.name + ' ' + (sp.latin || '') + ' ' + (sp.slug || '')).toLowerCase();
+  return (sp.name + ' ' + (WAMEI_ALIAS[sp.name] || '') + ' ' +
+          (sp.latin || '') + ' ' + (sp.slug || '')).toLowerCase();
 }
 
 function matches(item) {

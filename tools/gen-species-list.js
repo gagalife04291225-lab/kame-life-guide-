@@ -12,7 +12,12 @@
  *      定義の正本は tools/taxonomy.js の1箇所だけ。
  *   2. <!-- BEGIN:species-index … --> … <!-- END:species-index -->
  *      JS無効時に見える noscript 静的一覧。JS表示と同じ118件・同じ並び順にする。
- *   3. 件数バーの初期値（JS無効時に見える数字）。
+ *   3. // BEGIN:wamei-alias … // END:wamei-alias
+ *      検索で別名を引くための WAMEI_ALIAS。正本は data/species-master.json の
+ *      wamei_aliases 1箇所だけで、ここはその写し。二重管理をしないため
+ *      shindan/species.js には alias を持たせない。master の wamei と
+ *      species.js の name を突き合わせて紐づける（slug を持たない種があるため）。
+ *   4. 件数バーの初期値（JS無効時に見える数字）。
  *
  * shindan/species.js は読み取るだけで書き換えない。種を追加したら本スクリプトと
  * tools/gen-guide-species.js を実行すれば、一覧とガイドの両方が同期する。
@@ -61,7 +66,39 @@ const taxonomyBlock = [
   'var CAT_NOTE = ' + jsObj(T.CAT_NOTE, 2) + ';'
 ].join('\n');
 
-// ── 2. noscript 静的一覧（JS表示と同じ118件・同じ並び）──
+// ── 2. 検索用の別名（正本は data/species-master.json の wamei_aliases）──
+const MASTER = path.join(T.ROOT, 'data', 'species-master.json');
+const master = JSON.parse(fs.readFileSync(MASTER, 'utf8')).species;
+const nameSet = new Set(all.map(i => i.sp.name));
+const aliasPairs = [];
+const aliasProblems = [];
+master.forEach(rec => {
+  const a = rec.wamei_aliases;
+  if (!a || !a.length) return;
+  if (!nameSet.has(rec.wamei)) {
+    // 正本に別名があるのに一覧へ載らない＝検索から静かに消える。気づけるように止める。
+    aliasProblems.push('wamei_aliases があるが species.js に該当種がない: ' +
+                       rec.slug + '（' + rec.wamei + '）');
+    return;
+  }
+  aliasPairs.push([rec.wamei, a.slice()]);
+});
+if (aliasProblems.length) {
+  console.error('■ 別名の紐づけに問題があるため書き込みを中止します');
+  aliasProblems.forEach(p => console.error('  - ' + p));
+  process.exit(1);
+}
+aliasPairs.sort((x, y) => (x[0] < y[0] ? -1 : x[0] > y[0] ? 1 : 0));
+const aliasCount = aliasPairs.reduce((n, p) => n + p[1].length, 0);
+const aliasBlock = [
+  '// 別名の正本は data/species-master.json の wamei_aliases。ここは検索用の写し。',
+  '// 値は master の文字列をそのまま連結する（加工しない）。',
+  'var WAMEI_ALIAS = {'
+].concat(aliasPairs.map((p, i) =>
+  "  '" + p[0] + "':'" + p[1].join(' ') + "'" + (i < aliasPairs.length - 1 ? ',' : '')
+)).concat(['};']).join('\n');
+
+// ── 3. noscript 静的一覧（JS表示と同じ118件・同じ並び）──
 const idx = ['<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ118件・同じ並び順。 -->',
              '<noscript>', '<nav aria-label="種別ページ一覧">'];
 groups.forEach(c => {
@@ -89,12 +126,17 @@ let next = T.replaceBlock(src, '// BEGIN:taxonomy-data (tools/gen-species-list.j
 if (next === null) { console.error('マーカーが見つかりません: taxonomy-data'); process.exit(1); }
 src = next;
 
+next = T.replaceBlock(src, '// BEGIN:wamei-alias (tools/gen-species-list.js が生成。手で編集しない)',
+                      '// END:wamei-alias', aliasBlock);
+if (next === null) { console.error('マーカーが見つかりません: wamei-alias'); process.exit(1); }
+src = next;
+
 next = T.replaceBlock(src, '<!-- BEGIN:species-index (tools/gen-species-list.js が生成。手で編集しない) -->',
                       '<!-- END:species-index -->', indexBlock);
 if (next === null) { console.error('マーカーが見つかりません: species-index'); process.exit(1); }
 src = next;
 
-// ── 3. 件数バーの初期値 ──
+// ── 4. 件数バーの初期値 ──
 const countRe = /(<span class="count-num" id="count-num">)\d+(<\/span>)/;
 if (!countRe.test(src)) { console.error('件数バーが見つかりません'); process.exit(1); }
 src = src.replace(countRe, '$1' + all.length + '$2');
@@ -108,4 +150,5 @@ console.log('  noscript 掲載   ' + (indexBlock.match(/<li>/g) || []).length + 
             '（うち種別ページ ' + all.filter(i => i.sp.hasPage).length + ' / ガイド遷移 ' +
             all.filter(i => !i.sp.hasPage).length + '）');
 console.log('  件数バー初期値  ' + all.length);
+console.log('  検索用の別名    ' + aliasPairs.length + '種 / ' + aliasCount + '件（正本 data/species-master.json）');
 console.log(check ? ('差分: ' + (changed ? 'あり' : 'なし')) : ('species-list.html: ' + (changed ? '更新' : '変更なし')));
