@@ -1827,7 +1827,7 @@
     },
     {
       "slug": "river-cooter",
-      "wamei": "コウキバラガメ（リバークーター）",
+      "wamei": "リバークーター",
       "gakumei": "Pseudemys concinna",
       "eimei": "River Cooter",
       "koura": "高くドーム状の甲で、黒〜暗褐色地。緑・黄・褐・黒の複雑な模様。第2肋甲板に淡色の後ろ向き『C』字マークが出るのが特徴的（ただし個体・角度で不明瞭）。後縁はやや鋸歯。",
@@ -1877,7 +1877,7 @@
           "kubetsu": "同じフロリダ産で酷似するが、peninsularisは腹甲が無地の黄色/nelsoniは腹甲が橙赤＋甲に赤縦縞。腹甲の色が最も確実な決め手。"
         },
         {
-          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "aite": "リバークーター (Pseudemys concinna)",
           "kubetsu": "peninsularisは黄橙の線＋腹甲無地黄/concinnaは第2肋甲板のC字マーク＋腹甲継ぎ目黒。近縁で分類上peninsularisをfloridana/concinna群に含める説あり。"
         }
       ],
@@ -1909,7 +1909,7 @@
           "kubetsu": "gorzugiとtexanaは近縁で分布が接する。頭部模様・甲の眼状斑パターンで区別されるが酷似。産地(リオグランデ/ペコス水系=gorzugi)が手がかり。"
         },
         {
-          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "aite": "リバークーター (Pseudemys concinna)",
           "kubetsu": "元はconcinnaの亜種(1984)、1990年に独立種昇格。gorzugiはより西方(リオグランデ水系)・眼状斑が明瞭/concinnaは南東部河川。"
         }
       ],
@@ -1942,7 +1942,7 @@
           "kubetsu": "同じフロリダ産で酷似。nelsoniは腹甲が橙赤＋甲に赤い太縦縞(3本の太い赤縞)/peninsularisは腹甲が無地の黄色＋甲は3本の細い黄縞。腹甲の色と縞の色/太さが決め手。"
         },
         {
-          "aite": "コウキバラガメ (Pseudemys concinna)",
+          "aite": "リバークーター (Pseudemys concinna)",
           "kubetsu": "nelsoniは腹甲橙赤＋甲の赤縦縞＋高いドーム/concinnaは腹甲黄橙(継ぎ目黒)＋第2肋甲板のC字マーク。"
         }
       ],
@@ -2035,11 +2035,11 @@
       "bunpu": "米南東部(サウスカロライナ・ジョージア・アラバマ・フロリダ)。池沼・湖・湿地・時に汽水。亜種なし(単型)。",
       "kondou_shu": [
         {
-          "aite": "スパイニースッポン (Apalone spinifera)",
+          "aite": "トゲスッポン (Apalone spinifera)",
           "kubetsu": "feroxは前縁結節が幅広く扁平半球状＋ずんぐり大型＋暗色/spiniferaは前縁に円錐状の棘＋眼状斑＋砂ペーパー状の甲。feroxは遥かに大型。"
         },
         {
-          "aite": "スムーススッポン (Apalone mutica)",
+          "aite": "スベスッポン (Apalone mutica)",
           "kubetsu": "feroxは前縁に結節あり＋大型/muticaは前縁に棘/結節なし・平滑＋鼻孔が丸い(隔壁隆起なし)。"
         }
       ],
@@ -2060,7 +2060,7 @@
     },
     {
       "slug": "spiny-softshell-turtle",
-      "wamei": "スパイニースッポン（トゲスッポン）",
+      "wamei": "トゲスッポン",
       "gakumei": "Apalone spinifera",
       "eimei": "Spiny Softshell Turtle",
       "koura": "背甲は円形で扁平・軟質革状(角質甲板なし)。前縁に棘状の突起(spine/円錐状tubercle)が並ぶ＝名の由来で最大の識別点。甲表面はサンドペーパー状にざらつく。鼻孔に隔壁の隆起(C字型の鼻孔)。",
@@ -2070,7 +2070,7 @@
       "bunpu": "米国大半＋カナダ南部(オンタリオ・ケベック)＋メキシコ北東部(北西部を除く)。河川・運河・湖沼。5〜6亜種(aspera/emoryi/guadalupensis/pallida/spinifera等)。",
       "kondou_shu": [
         {
-          "aite": "スムーススッポン (Apalone mutica)",
+          "aite": "スベスッポン (Apalone mutica)",
           "kubetsu": "spiniferaは前縁に棘＋甲がざらつく＋鼻孔に隔壁隆起/muticaは前縁に棘なし・平滑＋鼻孔が丸い(隔壁隆起なし)。鼻孔の形が決定的。"
         },
         {
@@ -2096,7 +2096,7 @@
     },
     {
       "slug": "smooth-softshell-turtle",
-      "wamei": "スムーススッポン",
+      "wamei": "スベスッポン",
       "gakumei": "Apalone mutica",
       "eimei": "Smooth Softshell Turtle",
       "koura": "背甲は円形〜卵形で扁平・軟質革状。前縁に棘/結節がなく平滑(smooth)＝名の由来。甲表面はざらつかない。属内で最も滑らか。",
@@ -2106,7 +2106,7 @@
       "bunpu": "米国中央〜南中部(ロッキー山脈以東)。砂底の河川を好む。2亜種。",
       "kondou_shu": [
         {
-          "aite": "スパイニースッポン (Apalone spinifera)",
+          "aite": "トゲスッポン (Apalone spinifera)",
           "kubetsu": "【最重要】muticaは前縁に棘なし・平滑＋鼻孔が丸い(隔壁隆起なし)/spiniferaは前縁に棘＋甲がざらつく＋鼻孔に隔壁隆起。鼻孔の形(丸い=mutica)が最も確実。"
         },
         {
@@ -2233,7 +2233,7 @@
     },
     {
       "slug": "home-hinge-back-tortoise",
-      "wamei": "セオレガメ（ホメアナ）",
+      "wamei": "ホームセオレガメ",
       "gakumei": "Kinixys homeana",
       "eimei": "Home's Hinge-back Tortoise",
       "koura": "【属の特徴】背甲後半に蝶番を持つセオレガメ。【種の決定的特徴】背甲後縁が急角度で下方に落ち込み、後端が反り返る(steep/abrupt posterior slope)＝本種最大の識別点。森林(雨林)性クレードでK. erosaと近縁。",
@@ -2429,7 +2429,7 @@
     },
     {
       "slug": "eastern-long-necked-turtle",
-      "wamei": "ヘビクビガメ（トウブナガクビガメ）",
+      "wamei": "オーストラリアナガクビガメ",
       "gakumei": "Chelodina longicollis",
       "eimei": "Eastern Long-necked / Snake-necked Turtle",
       "koura": "曲頸亜目Chelidae。甲は扁平なオーバルで暗褐〜黒。首を横に折り畳んで甲の縁に収める(ヨコ/ナガクビ)。Chelodina亜属(Group B)の基準種。前肢4爪、腹甲で喉甲板(gular)が接触。",
@@ -2526,7 +2526,7 @@
     },
     {
       "slug": "collier-snake-necked-turtle",
-      "wamei": "セグロヘビクビガメ",
+      "wamei": "コウホソナガクビガメ",
       "gakumei": "Chelodina colliei",
       "eimei": "Oblong / Collie's Snake-necked Turtle",
       "koura": "曲頸亜目Chelidae。単型亜属Macrodiremys(分子系統で他のChelodinaと独立)。甲は細長いオーバル(oblong)で扁平、暗褐〜黒。首が長い。前肢4爪、喉甲板接触。",
@@ -2572,7 +2572,7 @@
           "kubetsu": "hilariiは頭部の太い黒条(吻〜眼〜後頭)＋2本のあご髭＋大型/近縁種は条や髭の有無・頭形で区別。頭部の黒条が有効。"
         },
         {
-          "aite": "アフリカヨコクビガメ (Pelomedusa subrufa)",
+          "aite": "アフリカヌマヨコクビガメ (Pelomedusa subrufa)",
           "kubetsu": "hilariiは南米Chelidaeで大型＋頭部黒条＋あご髭2本/Pelomedusaはアフリカ・別科Pelomedusidaeで小型・頭部条なし。科・産地・サイズで区別。"
         }
       ],
@@ -2622,7 +2622,7 @@
     },
     {
       "slug": "african-helmeted-turtle",
-      "wamei": "アフリカヨコクビガメ",
+      "wamei": "アフリカヌマヨコクビガメ",
       "gakumei": "Pelomedusa subrufa",
       "eimei": "African Helmeted Turtle / Marsh Terrapin",
       "koura": "【別科】ヨコクビ亜目Pelomedusidae(Chelidaeとは別科)。甲は扁平でオーバル、褐〜緑褐色。首を横に折って甲に収める。腹甲に蝶番はない。",
@@ -2636,7 +2636,7 @@
           "kubetsu": "Pelomedusaはアフリカ・Pelomedusidaeで小型・頭部条なし/南米ヨコクビ(Chelidae)は大型で頭部に黒条やあご髭が目立つ。科・産地・サイズで区別。"
         },
         {
-          "aite": "アフリカヨコクビガメ属の別種 (Pelomedusa複合体)",
+          "aite": "アフリカヌマヨコクビガメ属の別種 (Pelomedusa複合体)",
           "kubetsu": "従来単一種P. subrufaとされたが近年複数種に分割された(P. olivacea, P. galeata等)。外見が酷似し、産地・頭骨で区別されるが写真だけの種同定は困難。"
         }
       ],
@@ -3019,7 +3019,7 @@
     },
     {
       "slug": "asian-black-marsh-turtle",
-      "wamei": "アジアコガシラドロガメ",
+      "wamei": "ホオジロクロガメ",
       "gakumei": "Siebenrockiella crassicollis",
       "eimei": "Black Marsh Turtle / Smiling Terrapin",
       "koura": "Geoemydidae。背甲は黒〜暗褐色で、椎甲板2-4がキノコ形/イチョウ葉形(近縁のフィリピンヤマガメと共有する形質)。後縁やや鋸歯、正中キール。中型。",
@@ -3162,7 +3162,7 @@
           "kubetsu": "同属で近縁。spengleriは中国南部〜北ベトナム産/japonicaは琉球列島(沖縄・久米島・渡嘉敷)固有。産地で区別。両者はかつて亜種扱いだったが現在は別種で、形態にも差(japonicaがやや大型・色調差)。"
         },
         {
-          "aite": "アジアコガシラドロガメ (Siebenrockiella crassicollis)",
+          "aite": "ホオジロクロガメ (Siebenrockiella crassicollis)",
           "kubetsu": "両種とも椎甲板2-4がキノコ/イチョウ葉形だが、spengleriは極小(11cm以下)＋陸生＋褐色葉状甲＋黒い腹甲/crassicollisは中型(20cm)＋水生＋ほぼ全身黒。サイズ・生態で区別。"
         }
       ],
@@ -3192,7 +3192,7 @@
       "bunpu": "西・中央アフリカ(サバンナ主体だが森林・マングローブにも侵入)の流れ・池沼・湿地。乾季は泥中で夏眠。※セーシェルのP. seychellensisは遺伝解析で実はcastaneusと判明。",
       "kondou_shu": [
         {
-          "aite": "アフリカヨコクビガメ (Pelomedusa subrufa)",
+          "aite": "アフリカヌマヨコクビガメ (Pelomedusa subrufa)",
           "kubetsu": "【重要】castaneus(Pelusios)は腹甲に蝶番あり(前葉が可動)＋頭に網目模様/subrufa(Pelomedusa)は腹甲に蝶番なし(固定)。腹甲の蝶番の有無が属を分ける決定的識別点。"
         },
         {
@@ -3202,7 +3202,7 @@
       ],
       "houkisei": "CITES未掲載。IUCN低危険(Least Concern)。安価で普通に流通する入門種。西アフリカから多数輸出＋CB繁殖も進む。",
       "photo_hantei": "褐色のドーム甲＋腹甲の蝶番(前葉が可動)＋頭部の細い網目模様＋狭い楕円形の間喉甲板＋淡色腹甲(周縁のみ暗色図形)。腹甲の蝶番と頭の網目が決め手。",
-      "photo_chuui": "①アフリカヨコクビガメ(Pelomedusa)と混同—腹甲の蝶番の有無(Pelusios=あり/Pelomedusa=なし)が決定的。腹甲が写るカットで蝶番を確認。②P. subnigerとは頭の模様(castaneus=網目あり)で区別。③一様な褐色で個体変異(CB個体は淡色)があり色単独で判定しない。④セーシェル産『P. seychellensis』は実はcastaneus(別種でない)。",
+      "photo_chuui": "①アフリカヌマヨコクビガメ(Pelomedusa)と混同—腹甲の蝶番の有無(Pelusios=あり/Pelomedusa=なし)が決定的。腹甲が写るカットで蝶番を確認。②P. subnigerとは頭の模様(castaneus=網目あり)で区別。③一様な褐色で個体変異(CB個体は淡色)があり色単独で判定しない。④セーシェル産『P. seychellensis』は実はcastaneus(別種でない)。",
       "sources": [
         "https://iucn-tftsg.org/pelusios-castaneus-095/",
         "https://en.wikipedia.org/wiki/West_African_mud_turtle",
@@ -3571,7 +3571,7 @@
       "bunpu": "米フロリダ州北部〜ジョージア州南部のメキシコ湾に注ぐ河川。スワニー川水系が分布の中心。iNaturalist の Research Grade 観察は北緯27.7〜30.9度・西経84.8〜81.6度に集中。",
       "kondou_shu": [
         {
-          "aite": "コウキバラガメ（種全体・Pseudemys concinna）",
+          "aite": "リバークーター（種全体・Pseudemys concinna）",
           "kubetsu": "同一種。本ページは suwanniensis 亜種のページであり、種全体のページは river-cooter。両ページで同一個体を使わないこと。"
         },
         {
@@ -3579,7 +3579,7 @@
           "kubetsu": "peninsularis はフロリダ半島産で甲に黄橙の線＋腹甲が無地の黄色。suwanniensis は腹甲の継ぎ目に沿って黒色素が出る。分類上は近縁で紛らわしい。"
         },
         {
-          "aite": "フロリダレッドベリータートル (Pseudemys nelsoni)",
+          "aite": "フロリダアカハラガメ (Pseudemys nelsoni)",
           "kubetsu": "nelsoni は腹甲が橙赤＋甲に赤縦縞。suwanniensis は腹甲が黄橙で継ぎ目黒。"
         }
       ],

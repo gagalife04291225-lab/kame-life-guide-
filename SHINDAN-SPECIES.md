@@ -53,13 +53,13 @@
 | カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | クーター | Pseudemys spp. | L | 中級 | なし | 大型化・90cm水槽必要 |
 | ペニンシュラクーター | Pseudemys peninsularis | L | 中級 | なし | フロリダ半島産 |
-| フロリダレッドベリータートル | Pseudemys nelsoni | L | 中級 | なし | フロリダ産・腹甲が赤い |
+| フロリダアカハラガメ | Pseudemys nelsoni | L | 中級 | なし | フロリダ産・腹甲が赤い |
 | リオグランデクーター | Pseudemys gorzugi | M | 中級 | なし | リオグランデ川水系産 |
-| コウキバラガメ | Pseudemys concinna | L | 中級 | なし | 北米河川産。別称リバークーター |
+| リバークーター | Pseudemys concinna | L | 中級 | なし | 北米河川産。別称リバークーター |
 | キボシヌマガメ | Emys orbicularis（ウクライナ産） | M | 中級 | なし | 国内CB確認済み |
 | ブランディングガメ | Emydoidea blandingii | M | 上級 | CITES II | 黄色い喉元・国内CB確認・CoP16（2013）掲載 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
-| アジアコガシラドロガメ | Siebenrockiella crassicollis | M | 中〜上級 | CITES II | 東南アジア産・黒色で頭部に白斑 |
+| ホオジロクロガメ | Siebenrockiella crassicollis | M | 中〜上級 | CITES II | 東南アジア産・黒色で頭部に白斑 |
 | ハナガメ | Mauremys sinensis | M | −（新規飼育不可） | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
 
 ---
@@ -145,7 +145,7 @@
 | チャコリクガメ | Chelonoidis chilensis | M | 上級 | CITES II | 南米乾燥地帯産 |
 | ソリガメ | Chersina angulata | M | 上級 | CITES II | 南アフリカ産・単型属・流通少 |
 | ベルセオレガメ | Kinixys belliana | M | 上級 | CITES II | ヒンジバック・WC多い・狭義はアンゴラ〜ブルンジ（nogueyi/zombensisは別種） |
-| セオレガメ（ホメアナ） | Kinixys homeana | M | 上級 | CITES II | 同属・よりデリケート・流通少 |
+| ホームセオレガメ | Kinixys homeana | M | 上級 | CITES II | 同属・よりデリケート・流通少 |
 | エジプトリクガメ | Testudo kleinmanni | S | 上級 | CITES I | 世界最小級・1995年に附属書Iへ |
 | パンケーキリクガメ | Malacochersus tornieri | S | 上級 | CITES I | CoP18で附属書Iへ・商業輸入不可・診断除外 |
 | インドホシガメ | Geochelone elegans | M | 上級 | CITES I | CoP18で附属書Iへ・商業輸入不可・診断除外 |
@@ -162,15 +162,15 @@
 | マタマタ | Chelus fimbriata | L | 上級 | CITES II | 枯れ葉擬態・水ごと魚を吸い込む |
 | オリノコマタマタ | Chelus orinocensis | L | 上級 | CITES II | オリノコ川水系産 |
 | ニシキマゲクビガメ（ピンクベリー） | Emydura subglobosa | M | 中〜上級 | なし | 曲頸類入門として人気 |
-| ヘビクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
-| セグロヘビクビガメ | Chelodina colliei | M | 中〜上級 | なし | 西オーストラリア産・旧学名 C. oblonga |
+| オーストラリアナガクビガメ | Chelodina longicollis | M | 中〜上級 | なし | オーストラリア産 |
+| コウホソナガクビガメ | Chelodina colliei | M | 中〜上級 | なし | 西オーストラリア産・旧学名 C. oblonga |
 | マッコードナガクビガメ | Chelodina mccordi | M | 上級 | CITES II | 2005年掲載・野生個体は輸出ゼロ枠。附属書Iではない |
 | ジーベンロックナガクビガメ | Chelodina rugosa | L | 上級 | なし | 大型・水中生活主体 |
 | パーケリーナガクビガメ | Chelodina parkeri | L | 上級 | なし | EUCB流通・色抜け個体美しい |
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |
 | セウネハコヨコクビガメ | Pelusios castaneus | M | 上級 | なし | 西アフリカ産 |
-| アフリカヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
+| アフリカヌマヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
 | ヒメハコヨコクビガメ | Pelusios nanus | S | 上級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
 | モンキヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型。別名テレケイヨコクビガメ。「ヌマヨコクビガメ」は Pelomedusa subrufa の和名なので本種には使わない |
 | ブランディルカブトガメ | Peltocephalus dumerilianus | L | 上級 | なし | アマゾン産・大型 |
@@ -196,8 +196,8 @@
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
 | フロリダスッポン | Apalone ferox | L | 上級 | 砂底必須・ストレスに弱い・CITES II（2023）  |
-| スムーススッポン | Apalone mutica | L | 上級 | 砂底必須・CITES II（2023）  |
-| スパイニースッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須・CITES II（2023）  |
+| スベスッポン | Apalone mutica | L | 上級 | 砂底必須・CITES II（2023）  |
+| トゲスッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須・CITES II（2023）  |
 | スッポンモドキ | Carettochelys insculpta | XL | 上級 | 26〜30℃高水温必要・CITES II |
 
 ---
