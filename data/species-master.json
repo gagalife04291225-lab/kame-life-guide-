@@ -6823,15 +6823,14 @@
    "page": "species/canton-reeves-turtle.html",
    "wamei": "カントンクサガメ",
    "scientific_name": {
-    "value": "Mauremys reevesii",
-    "rank": "regional_form",
-    "verification": "LIKELY",
-    "note": "広東型は種内変異/地域個体群であり独立taxonではない。学名欄は二名法のみを保持する。産地型「広東型」は rank=regional_form と和名で表現する（2026-08）。　【2026-08-22 記録】data/species-identification.json は同 slug に独立種 Mauremys nigricans（Reptile Database・TTWG・CITES附属書II）を採っており、本レコード（M. reevesii 広東型・CITES附属書III）と食い違っている。和名『カントンクサガメ』が2実体に使われていることが原因で、どちらを採るかで CITES区分・ページ本文・掲載写真がまとめて変わる。学名のみの機械的統一はせず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
-    "last_verified": "2026-08-17",
+    "value": "Mauremys nigricans",
+    "rank": "species",
+    "verification": "CONFIRMED",
     "provenance": "official",
-    "sources": [
-     "https://cites.org/eng/taxonomy/term/4560"
-    ]
+    "institution": "Reptile Database / TTWG / ITIS / GBIF / IUCN",
+    "note": "【2026-08-26 確定】和名『カントンクサガメ』が扱う実体を独立種 Mauremys nigricans に確定した。従来の「クサガメ Mauremys reevesii の広東型（rank=regional_form）」という扱いは廃止する。分類根拠は外部で確認済みのため再調査しない。クサガメ（slug reeves-turtle・Mauremys reevesii・CITES附属書III）とは別種であり、同一視しない。",
+    "last_verified": "2026-08-26",
+    "sources": []
    },
    "english_name": {
     "value": null,
@@ -6861,15 +6860,13 @@
    },
    "cites": {
     "appendix": {
-     "value": "III",
+     "value": "II",
      "verification": "CONFIRMED",
      "provenance": "official",
-     "institution": "CITES事務局/USFWS/カナダ政府",
-     "sources": [
-      "https://cites.org/eng/taxonomy/term/4560"
-     ],
-     "note": "種M. reevesiiとして附属書III（中国）",
-     "last_verified": "2026-08-17"
+     "institution": "CITES事務局",
+     "sources": [],
+     "note": "【2026-08-26 確定】Mauremys nigricans として附属書II。旧記載の「種M. reevesiiとして附属書III（中国）」は実体をクサガメと誤認していたことによるもので廃止した。附属書IIIのクサガメ（reeves-turtle）と混同しない。",
+     "last_verified": "2026-08-26"
     },
     "since": {
      "value": null,

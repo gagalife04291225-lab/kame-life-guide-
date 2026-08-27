@@ -592,8 +592,8 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.observational||0)+(s.eu_water||0)+(s.cool_climate||0); },
     availability: 'common'
   },
-  { name: 'カントンクサガメ', latin: 'Mauremys reevesii（広東型）', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: 'CITES III', legal: null,
-    reason: 'クサガメの広東産地個体群。黄みがかった体色や明確な産地証明が魅力。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
+  { name: 'カントンクサガメ', latin: 'Mauremys nigricans', emoji: '🟡', difficulty: '入門〜中級', size: 'M（15〜25cm）', cites: 'CITES II', legal: null,
+    reason: '中国南部固有の独立種で、クサガメとは別種。成体で頸部が赤みを帯びるのが最大の特徴。ぶりくら等で国内CB流通確認済み。野外への放流は厳禁。',
     specs: { '最大甲長': '25cm', '水槽サイズ': '60cm〜', '水温': '20〜28℃', '難易度': '★☆☆' },
     coreSpecs: { size: '25cm', temp: '20〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
