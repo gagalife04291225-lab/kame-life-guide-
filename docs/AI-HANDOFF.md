@@ -16,11 +16,18 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **0e8449e**（PR #92 まで merge 済み）。**merge 待ち = 本PR**（本ファイルの同期のみ） |
-| 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
+| 基準 | `origin/main` = **135da8c**（PR #93 まで merge 済み） |
+| サイトファイルの状態 | **PR #92 = `0e8449e`** が最後。PR #93 と本PRは `docs/AI-HANDOFF.md` のみで、公開ページ・`shindan/`・生成物は無変更 |
+| 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
 | 最終更新日 | 2026-08-27 |
 | 作業ブランチ | `claude/gemma-github-fj689h` |
 | 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `docs/AI-HANDOFF.md` 1ファイル） |
+
+> **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
+> 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
+> 重要なのは tip と一致していることではなく、**「サイトファイルの状態」の行が正しいこと**。
+> 作業開始前は `git log --oneline -1 origin/main` を実測し、
+> 差が `docs/AI-HANDOFF.md` だけの commit なら BASE のズレとして扱わなくてよい。
 
 ---
 
@@ -604,10 +611,12 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 Claude Code は各作業の完了後、**同じPRの中で**本ファイルを更新する。
 
-1. **CURRENT_BASE** — 基準（今回のPR）と最終更新日を書き換える。
-   merge commit は本ファイルを書く時点では確定しないため、**PR番号で記す**。
+1. **CURRENT_BASE** — 基準・**サイトファイルの状態**・最終更新日を書き換える。
+   merge commit は本ファイルを書く時点では確定しないため、**直前に merge 済みの commit を書く**
+   （自分の merge commit は書けない。表が tip と1 commit ずれるのは正常）。
+   **`docs/AI-HANDOFF.md` だけを変える同期PRでは「サイトファイルの状態」の行を動かさない。**
    次に作業する側は `git log --oneline -1 origin/main` で実測し、
-   `git merge-base --is-ancestor <該当PRのcommit> origin/main` が真であることを確認する
+   差が本ファイルだけなら BASE のズレとして扱わない
 2. **COMPLETED** — 完了した NEXT を移す。PR番号・merge commit・**確定した結論**を必ず書く
 3. **FIXED_FACTS** — 新たに確定し、今後は入力として使う事実を追記する
 4. **UNRESOLVED** — 本当に未解決のものだけ残す。判断待ち / HOLD / 新発見 を区別する。
