@@ -16,10 +16,10 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **3ddbf65**（PR #90 まで merge 済み）。**merge 待ち = PR #91**（本作業） |
+| 基準 | `origin/main` = **46efe39**（PR #91 まで merge 済み）。**merge 待ち = PR #92**（本作業） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-27 |
-| 作業ブランチ | `claude/wamei-c17-alias` |
+| 作業ブランチ | `claude/wamei-alias-search` |
 | 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
 
 ---
@@ -38,7 +38,8 @@
 | #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | `d4c30c7` | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
 | #89 | カントンクサガメの分類を **独立種 Mauremys nigricans** へ確定 | `9b31cec` | 旧 PR #35 は merge/rebase せず、現 main へ必要差分だけを新規実装。`Mauremys reevesii`（広東型・rank=regional_form・CITES附属書III）という扱いを廃止し、**`Mauremys nigricans` / rank=species / CITES附属書II** へ全層統一。クサガメ（`reeves-turtle`）は1バイトも変更していない。**写真だけは差し替えていない**（下記 FIXED_FACTS と H9 を参照） |
 | #90 | 和名118件監査で **B判定＝修正確定の9件**を実装 | `3ddbf65` | 43ファイル・+334/−334行。`shindan/species.js` の `name` を正とし、`equipment.js` の辞書キー・`species-list.html` の `CAT_OVERRIDE` キーを同時改名（PR #88 の3点セット）。master／identification／`photo-credits.html`／`pc_parsed`／`credits_map`／`SHINDAN-SPECIES.md`／対象 species HTML も追従し、生成領域は generator 出力と一致。**和名が変わったのは B9 の9件だけで、A74・C17・D12・E1・F5 は全件不変**。`latin` は118件すべて不変 |
-| #91 | 和名118件監査の **C判定17件**に `wamei_aliases` を実装 | 本PR | `data/species-master.json` **1ファイル・+55行/−0行**（純粋な追加）。16レコードに `wamei_aliases` を新設し、1件（`narrow-bridged-mud-turtle`）は既存値を保持。**primary 和名（`wamei`）は120レコードすべて不変**、学名・`cites`・`slug`・`page` も不変で、値が変化したキーは `wamei_aliases` だけ。公開ページ・`shindan/`・生成物は1バイトも変えていない |
+| #91 | 和名118件監査の **C判定17件**に `wamei_aliases` を実装 | `46efe39` | `data/species-master.json` **1ファイル・+55行/−0行**（純粋な追加）。16レコードに `wamei_aliases` を新設し、1件（`narrow-bridged-mud-turtle`）は既存値を保持。**primary 和名（`wamei`）は120レコードすべて不変**、学名・`cites`・`slug`・`page` も不変で、値が変化したキーは `wamei_aliases` だけ。公開ページ・`shindan/`・生成物は1バイトも変えていない |
+| #92 | **N21 解消** — 登録済みの別名を `species-list.html` の検索で引けるようにした | 本PR | `tools/gen-species-list.js` が `data/species-master.json` の `wamei_aliases` を読み、`species-list.html` の新マーカー `BEGIN:wamei-alias` へ `WAMEI_ALIAS` を焼き込む。`haystack()` は `name + 別名 + latin + slug` を見る。**正本は master の1箇所のまま**で、`shindan/species.js` に別名を二重登録していない。別名33件すべてで検索到達を確認し、既存の検索（primary和名118 / 学名118 / slug112）は**1件も減っていない** |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -227,6 +228,21 @@
   ダイヤモンドバックテラピン5亜種＝キスイガメ（種の和名）/ダイヤモンドガメ（種の別名）、
   うち `オルナータ` のみ ニシキダイヤモンドガメ を追加、
   `ジーベンロックナガクビガメ`＝チリメンナガクビガメ。
+
+- **別名検索のデータフロー（PR #92 で確立。二重管理しない）**
+  正本 `data/species-master.json` の `wamei_aliases`
+   → `tools/gen-species-list.js` が読む（キーは **`wamei`**。`slug` を持たない種があるため）
+   → `species-list.html` の `// BEGIN:wamei-alias … // END:wamei-alias` へ `WAMEI_ALIAS` を焼き込む
+   → `haystack()` が `sp.name + WAMEI_ALIAS[sp.name] + sp.latin + sp.slug` を返す。
+  `species-list.html` は外部JSを増やさない方針なので、`taxonomy-data` と同じく**値を焼き込む**。
+  **別名を追加したら master だけ直して `node tools/gen-species-list.js` を実行する。**
+  `shindan/species.js` には別名を持たせない（二重管理をしない）。
+  master の値は**加工せずそのまま**連結する。`（標準和名）` のような注記も一緒に入るが、
+  部分一致検索なので注記を除いた別名そのものでもヒットする。
+  master に別名があるのに `species.js` に該当種が無い場合、generator は**書き込みを中止する**
+  （別名が検索から静かに消えるのを防ぐため）。
+- **`キスイガメ` / `ダイヤモンドガメ` が5件ヒットするのは誤ヒットではない**
+  どちらも種 *Malaclemys terrapin* の和名で、5亜種すべての別名として登録されているため。
 
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
@@ -512,7 +528,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 | N12 | **【要確認】カントンクサガメの CITES 区分について、リポジトリ内に対立する記録がある**。今回は亀好きさんの確定事項に従い **附属書II** で全層統一した。一方、旧 PR #35 の本文（2026-08-22）は *Mauremys nigricans* について「2005年に中国が *Chinemys nigricans* として**附属書III**へ掲載（クサガメと同一バッチ・**EU規則1332/2005**で確認）→ 区分の変更なし」と、出典付きで **III** を主張している。他方 `data/species-identification.json` の旧 `unresolved`（同日付）は **II** としていた。**同じ日に書かれた2つの記録が食い違っている。**本実行環境からは CITES Species+ にも EU規則にも到達できない（egress ポリシー）ため検証できない。**III が正しい場合に直すのは4箇所だけ**: `data/species-master.json` の `cites.appendix.value`／`data/species-identification.json` の `houkisei`／`shindan/species.js` の `cites`／`SHINDAN-SPECIES.md` の CITES列。公開ページ本文の「附属書II」表記3箇所（`.lp-fit-list` 1・後悔ポイント 1・`env-card` と まとめ文 2）も併せて直す |
 | N13 | **H9（カントンクサガメの写真差し替え）の候補が旧 PR #35 に記録されている**。Wikimedia Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG`（Greg Hume / **CC BY-SA 4.0** / 1920×1537）。PR #35 の本文によれば、カテゴリで種一致・目視確認済み（健康個体が水中で立ち上がる自然な姿勢・頭部と前肢が明瞭・オレンジ腹甲に黒斑という識別点）で、800×600 WebP へ変換して採用済みとされ、その成果は PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）にある。また PR #35 は「iNaturalist は本種の観察が全13件で、条件を満たす候補は**0件**」とも記録している。**本実行環境から Commons へは到達できない**ため、亀好きさんが画像を渡すか、PR #35 のブランチから当該 webp とクレジット4層だけを救出する経路になる。**H9 はこの候補があるため、H3 の他4件より解消が近い** |
 | N20 | **`shindan/equipment.js` と `species-list.html` の `CAT_OVERRIDE` に孤児キーが残っている**（`shindan/species.js` の `name` に対応が無いキー）。equipment 8件: `ヘルマンリクガメ（ヒガシ亜種）`／`ヘルマンリクガメ（ニシ亜種）`／`ソマリアリクガメ（エジプトリクガメ）`／`ニオイガメ`／`ペインテッドタートル`／`ミスジハコガメ（希少コレクション）`／`ニシキヘビクビガメ`／`パーケリーナガクビガメ`。CAT_OVERRIDE 3件: `ニシキヘビクビガメ`／`パーケリーナガクビガメ`／`ミスジハコガメ（希少コレクション）`。**PR #90 の前から同数（8 / 3）で、本PRは増やしていない。**害はないが掃除の候補 |
-| N21 | **`wamei_aliases` は現在どこからも読まれていない**。PR #91 で C17 の別名を記録したが、`species-list.html` の検索は `shindan/species.js` の `name` / `latin` / `slug` しか見ないため、**別名では検索にヒットしない**。alias を検索に効かせるには (a) `haystack()` に alias を渡す仕組み、または (b) `shindan/species.js` 側に alias フィールドを持たせる仕組みが要る。**どちらも新しい設計なので PR #91 では実装していない。Owner の判断が要る** |
+| ~~N21~~ | **解消済み（PR #92）**。`wamei_aliases` を `species-list.html` の検索で引けるようにした。正本は master の1箇所のままで、generator が `WAMEI_ALIAS` を焼き込む。別名33件すべてで検索到達を確認済み |
 | N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
 | N10 | **`species/canton-reeves-turtle.html:7` の `meta name="description"` が壊れている**。文末に別の説明文の断片（`...解説します.' Turtle）の飼育ガイド。野生環境から逆算した...`）が連結されている。学名は含まれないため PR #89 では触っていない。SEO層なので `docs/operations/DECISION_RULE.md` に従い、**GSC/GA4 の実測トリガーが引いたときに直す** |
 | N11 | **カントンクサガメの `shindan/species.js` の `legal` は `null` のまま**。CITES II になったが、`legal: 'cites_ii'` を立てるかは判断が要る（立てると診断結果に「CITES IIです。書類を確認してください」の注意が出る）。CITES II の79種のうち `legal` を持つのは43種で一律ではないため、推測で立てなかった。**Owner の一言で決まる** |
