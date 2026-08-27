@@ -16,11 +16,11 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **46efe39**（PR #91 まで merge 済み）。**merge 待ち = PR #92**（本作業） |
+| 基準 | `origin/main` = **0e8449e**（PR #92 まで merge 済み）。**merge 待ち = 本PR**（本ファイルの同期のみ） |
 | 確認方法 | `git merge-base --is-ancestor <本PRのcommit> origin/main` が真であること |
 | 最終更新日 | 2026-08-27 |
-| 作業ブランチ | `claude/wamei-alias-search` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
+| 作業ブランチ | `claude/gemma-github-fj689h` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `docs/AI-HANDOFF.md` 1ファイル） |
 
 ---
 
@@ -33,13 +33,13 @@
 
 | PR | 作業 | merge | 確定した結論 |
 |----|------|-------|-------------|
-| #87 | 監査で誤り確定した3件のうち **1件だけを是正** | 本PR | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
+| #87 | 監査で誤り確定した3件のうち **1件だけを是正** | `93ee426` | `stripe-necked-musk-turtle` のクレジット層 `gakumei` を `Sternotherus minor` → **`Sternotherus peltifer`**（`data/pc_parsed.json` / `data/credits_map.json` 各1エントリ）。これで **master・`photo-credits.html`・species HTML・クレジットJSON2本の全層が `Sternotherus peltifer` で一致**。残る2件は着手前に**指示と main の矛盾**が判明したため STOP（UNRESOLVED 参照） |
 | #16 | 旧PRを **merge せず CLOSE** | close のみ | 「旧PRを merge せず、最新 main 上で必要差分を救出実装し **PR #80** で反映済み」を理由として記録。**ブランチ `claude/kame-life-guide-elementary-gidu7i` は無変更**（merge / rebase / push なし・head `863ee7c` のまま）。close 前に現 main で救出実装を実測確認: kids リンク **167ページ** / `site_kids_click` **168** / `index.html` Care Module 05 の CTA と `gl-sub-link` / `guide-*` は `END:guide-nav` の外側 / generator 4本 差分0 |
 | #88 | `amazon-matamata` の和名を **オリノコマタマタ** へ完全統一 | `d4c30c7` | 12ファイル・14行。上流 3本（`shindan/species.js` の `name`／`shindan/equipment.js` の辞書キー／`species-list.html` の `CAT_OVERRIDE` キー）を同時改名し、生成領域2箇所は generator で再生成。**「アマゾンマタマタ」は `Chelus fimbriata` 側を指す名称として扱い、`orinocensis` の alias には残さない**（`wamei_aliases` は `null` のまま） |
 | #89 | カントンクサガメの分類を **独立種 Mauremys nigricans** へ確定 | `9b31cec` | 旧 PR #35 は merge/rebase せず、現 main へ必要差分だけを新規実装。`Mauremys reevesii`（広東型・rank=regional_form・CITES附属書III）という扱いを廃止し、**`Mauremys nigricans` / rank=species / CITES附属書II** へ全層統一。クサガメ（`reeves-turtle`）は1バイトも変更していない。**写真だけは差し替えていない**（下記 FIXED_FACTS と H9 を参照） |
 | #90 | 和名118件監査で **B判定＝修正確定の9件**を実装 | `3ddbf65` | 43ファイル・+334/−334行。`shindan/species.js` の `name` を正とし、`equipment.js` の辞書キー・`species-list.html` の `CAT_OVERRIDE` キーを同時改名（PR #88 の3点セット）。master／identification／`photo-credits.html`／`pc_parsed`／`credits_map`／`SHINDAN-SPECIES.md`／対象 species HTML も追従し、生成領域は generator 出力と一致。**和名が変わったのは B9 の9件だけで、A74・C17・D12・E1・F5 は全件不変**。`latin` は118件すべて不変 |
 | #91 | 和名118件監査の **C判定17件**に `wamei_aliases` を実装 | `46efe39` | `data/species-master.json` **1ファイル・+55行/−0行**（純粋な追加）。16レコードに `wamei_aliases` を新設し、1件（`narrow-bridged-mud-turtle`）は既存値を保持。**primary 和名（`wamei`）は120レコードすべて不変**、学名・`cites`・`slug`・`page` も不変で、値が変化したキーは `wamei_aliases` だけ。公開ページ・`shindan/`・生成物は1バイトも変えていない |
-| #92 | **N21 解消** — 登録済みの別名を `species-list.html` の検索で引けるようにした | 本PR | `tools/gen-species-list.js` が `data/species-master.json` の `wamei_aliases` を読み、`species-list.html` の新マーカー `BEGIN:wamei-alias` へ `WAMEI_ALIAS` を焼き込む。`haystack()` は `name + 別名 + latin + slug` を見る。**正本は master の1箇所のまま**で、`shindan/species.js` に別名を二重登録していない。別名33件すべてで検索到達を確認し、既存の検索（primary和名118 / 学名118 / slug112）は**1件も減っていない** |
+| #92 | **N21 解消** — 登録済みの別名を `species-list.html` の検索で引けるようにした | `0e8449e` | `tools/gen-species-list.js` が `data/species-master.json` の `wamei_aliases` を読み、`species-list.html` の新マーカー `BEGIN:wamei-alias` へ `WAMEI_ALIAS` を焼き込む。`haystack()` は `name + 別名 + latin + slug` を見る。**正本は master の1箇所のまま**で、`shindan/species.js` に別名を二重登録していない。別名33件すべてで検索到達を確認し、既存の検索（primary和名118 / 学名118 / slug112）は**1件も減っていない** |
 
 ### 直近の連続作業（difficulty ／「初心者」表現）
 
@@ -244,6 +244,42 @@
 - **`キスイガメ` / `ダイヤモンドガメ` が5件ヒットするのは誤ヒットではない**
   どちらも種 *Malaclemys terrapin* の和名で、5亜種すべての別名として登録されているため。
 
+### ゴールデンギリシャリクガメの写真素材（2026-08-27・探索クローズ）
+
+`species/golden-greek-tortoise.html` は **land 27種でただ1つ生体写真を持たないページ**
+（`img` タグ0件・`species-photo` ブロック無し・`css/species-photo.css` 未読込・
+`og:image` は `images/hero/eastern-box-turtle-hero.jpg` を流用中）。
+候補探索を2回実施して**打ち止めまで到達した**。以下は一次データの実測値であり推論ではない。
+**同じ探索をやり直さない。**
+
+- ***Testudo graeca* 系の taxon は 20件**（種1＋亜種19。うち active 11）。
+  シノニム `floweri`(40026) / `perses`(889772) / `anamurensis`(40027) / `pallasi`(116209) /
+  `lamberti`(116206) / `nikolskii`(40025) / `soussensis`(40024) / `graeca`(40031) は
+  **すべて active=false かつ観察0件**。掘る先はもう無い。
+- **terrestris 固有域の箱 = lat 28.0–36.0 / lon 32.5–42.0**。
+  `observations.csv.gz` から *T. graeca* 系 7,148観察を抽出して亜種別レンジを実測し、
+  **他亜種が1件も入らない最大の範囲**として確定した。箱の中身は
+  種レベル(40023) research 880 / casual 10 / needs_id 1、terrestris 166、他亜種 **0**。
+  最寄りの他亜種（ibera）は箱の外 45km。
+- **照合した写真は累計 606枚**（terrestris 同定 280 ＋ 固有域 research 309 ＋ 固有域 casual/needs_id 17）。
+  **商用可（CC0 / CC-BY / CC-BY-SA）は 21枚のみ**で、残る **585枚（96.5%）が CC-BY-NC 系**。
+  ボトルネックは**ライセンスであって素材の総量ではない**。
+- **解像度は制約になっていない。** 商用可21枚は**全部が 800×600 以上**。
+  「あと少しで届かない」写真は0枚。**基準を下げても候補は増えない。**
+- **21枚すべてを原寸取得して1枚ずつ目視済み**（推論による判定は0件）。
+  候補ボード → https://claude.ai/code/artifact/f7554b86-cdce-4e53-b65b-4512543fb7f6
+- **研究グレードの範囲に、採用基準を完全に満たす写真は無い。**
+  自然な姿勢の成体は1枚（photo 10249391）だけで、それも甲が暗色で「ゴールデン」に見えない。
+  黄金色が明瞭なもの（photo 229122899 / 5361707）は**頭も四肢も引っ込んでいる**。
+- **casual grade に、21枚中もっとも状態のよい写真がある**（photo 30155234 / obs c66eee0a /
+  Hila Taylor / CC BY 4.0 / 2048×2048）。頭を完全に出し目が開き、甲は黄金色。
+  ただし **quality grade が casual** で、当サイト基準（research grade）の外側。
+  **Open Data の公開項目に captive フラグは無く、casual の理由は断定できない**
+  （日付・座標・種同定が揃っているため飼育個体フラグの可能性が高い、までしか言えない）。
+- **第1次の最上位候補 photo 229122899（obs 302e6a4f）はトルコ南東部ディヤルバクル産**で、
+  流通名「ゴールデンギリシャ」が指すレバント個体群から**約700km北**。
+  半径150km内の亜種同定つき terrestris はわずか2件。第1次では把握していなかった弱点。
+
 ### 「初心者」公開表現（Phase A の分類・**再分類しない**）
 
 - 公開表示 **239件 / 87ファイル**（基準 `6bb2fb0`）
@@ -440,7 +476,7 @@
 
 `explore.html` の `.hint-links` は既存3リンクとも**タップ高27px**で、追加した1本も同値。
 `guides/index.html` のフッターは既存リンク14pxに対し追加分は34px。いずれも既存設計に合わせた結果で、
-本PRが持ち込んだ劣化ではない。
+PR #80 が持ち込んだ劣化ではない。
 
 #### 写真の出典・和名（2026-08-26 実測確定・**再調査しない**）
 
@@ -511,6 +547,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |------|------|
 | **PR #35** | **実体は決着した**（PR #89 で `Mauremys nigricans` / `species` / CITES II へ統一）。旧 PR #35 は merge も rebase もしておらず、**close してよいかの判断だけが残っている**。#35 自体はバイナリ競合＋`CLAUDE.md` が OBSOLETE のため **merge しない** |
 | **オプストヒラセガメ** | **写真は確定済み**（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。残るは**亜種ページの新規作成**（Phase C と同規模：新規ページ約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）。着手するかの判断待ち |
+| **ゴールデンギリシャリクガメの写真** | **探索は打ち止め**（FIXED_FACTS 参照。iNaturalist Open Data 内にこれ以上の候補は存在しない）。残るのは**採否の判断だけ**。選択肢は3つ ―― ① 研究グレード5枚から妥協して選ぶ（完全合致は0枚）② casual grade の photo 30155234 を採る（**`pancake-tortoise` で「casual の飼育個体は不採用」とした前例と食い違う。例外を作ることになる**）③ 今回は入れない。あわせて **CC BY-SA（継承条件）を許容するか**の判断も要る（前例あり: `guerrero-wood-turtle`）。判断が出れば実装は単独工程として着手できる |
 | **`ouachita-map-turtle-sp` の三名法/二名法** | 監査で「identification の `Graptemys ouachitensis ouachitensis` を `Graptemys ouachitensis` へ」と指示されたが、**`data/species-identification.json:378` に 2026-08-22 付の `unresolved` HOLD 記録があり、そこに「TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない」と明記されている**。指示はこの HOLD の解除にあたる。さらに identification だけ直しても `species/ouachita-map-turtle-sp.html` の **4箇所**（`meta description` / `og:description` / JSON-LD `description` / `.latin` の `Graptemys ouachitensis ouachitensis — Ouachita Map Turtle (nominotypic)`）が三名法のまま残り、**不整合はむしろ増える**。うち3箇所は SEO 層で H8 の変更禁止に触れる。**HOLD 解除の可否と、解除する場合の対象範囲は Owner 判断** |
 
 ### HOLD（条件が揃うまで着手しない）
@@ -527,7 +564,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |----|------|
 | N12 | **【要確認】カントンクサガメの CITES 区分について、リポジトリ内に対立する記録がある**。今回は亀好きさんの確定事項に従い **附属書II** で全層統一した。一方、旧 PR #35 の本文（2026-08-22）は *Mauremys nigricans* について「2005年に中国が *Chinemys nigricans* として**附属書III**へ掲載（クサガメと同一バッチ・**EU規則1332/2005**で確認）→ 区分の変更なし」と、出典付きで **III** を主張している。他方 `data/species-identification.json` の旧 `unresolved`（同日付）は **II** としていた。**同じ日に書かれた2つの記録が食い違っている。**本実行環境からは CITES Species+ にも EU規則にも到達できない（egress ポリシー）ため検証できない。**III が正しい場合に直すのは4箇所だけ**: `data/species-master.json` の `cites.appendix.value`／`data/species-identification.json` の `houkisei`／`shindan/species.js` の `cites`／`SHINDAN-SPECIES.md` の CITES列。公開ページ本文の「附属書II」表記3箇所（`.lp-fit-list` 1・後悔ポイント 1・`env-card` と まとめ文 2）も併せて直す |
 | N13 | **H9（カントンクサガメの写真差し替え）の候補が旧 PR #35 に記録されている**。Wikimedia Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG`（Greg Hume / **CC BY-SA 4.0** / 1920×1537）。PR #35 の本文によれば、カテゴリで種一致・目視確認済み（健康個体が水中で立ち上がる自然な姿勢・頭部と前肢が明瞭・オレンジ腹甲に黒斑という識別点）で、800×600 WebP へ変換して採用済みとされ、その成果は PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）にある。また PR #35 は「iNaturalist は本種の観察が全13件で、条件を満たす候補は**0件**」とも記録している。**本実行環境から Commons へは到達できない**ため、亀好きさんが画像を渡すか、PR #35 のブランチから当該 webp とクレジット4層だけを救出する経路になる。**H9 はこの候補があるため、H3 の他4件より解消が近い** |
-| N20 | **`shindan/equipment.js` と `species-list.html` の `CAT_OVERRIDE` に孤児キーが残っている**（`shindan/species.js` の `name` に対応が無いキー）。equipment 8件: `ヘルマンリクガメ（ヒガシ亜種）`／`ヘルマンリクガメ（ニシ亜種）`／`ソマリアリクガメ（エジプトリクガメ）`／`ニオイガメ`／`ペインテッドタートル`／`ミスジハコガメ（希少コレクション）`／`ニシキヘビクビガメ`／`パーケリーナガクビガメ`。CAT_OVERRIDE 3件: `ニシキヘビクビガメ`／`パーケリーナガクビガメ`／`ミスジハコガメ（希少コレクション）`。**PR #90 の前から同数（8 / 3）で、本PRは増やしていない。**害はないが掃除の候補 |
+| N20 | **`shindan/equipment.js` と `species-list.html` の `CAT_OVERRIDE` に孤児キーが残っている**（`shindan/species.js` の `name` に対応が無いキー）。equipment 8件: `ヘルマンリクガメ（ヒガシ亜種）`／`ヘルマンリクガメ（ニシ亜種）`／`ソマリアリクガメ（エジプトリクガメ）`／`ニオイガメ`／`ペインテッドタートル`／`ミスジハコガメ（希少コレクション）`／`ニシキヘビクビガメ`／`パーケリーナガクビガメ`。CAT_OVERRIDE 3件: `ニシキヘビクビガメ`／`パーケリーナガクビガメ`／`ミスジハコガメ（希少コレクション）`。**PR #90 の前から同数（8 / 3）で、PR #90 は増やしていない。**害はないが掃除の候補 |
 | ~~N21~~ | **解消済み（PR #92）**。`wamei_aliases` を `species-list.html` の検索で引けるようにした。正本は master の1箇所のままで、generator が `WAMEI_ALIAS` を焼き込む。別名33件すべてで検索到達を確認済み |
 | N7 | **`species/northern-map-turtle.html` だけが `ouachita-map-turtle-sp.html` を「オウアチタチズガメ」と表記**している（他ページは「フトマユチズガメ」）。同一 slug の表示名ゆれ。**ouachita は HOLD 中のため未処理** |
 | N10 | **`species/canton-reeves-turtle.html:7` の `meta name="description"` が壊れている**。文末に別の説明文の断片（`...解説します.' Turtle）の飼育ガイド。野生環境から逆算した...`）が連結されている。学名は含まれないため PR #89 では触っていない。SEO層なので `docs/operations/DECISION_RULE.md` に従い、**GSC/GA4 の実測トリガーが引いたときに直す** |
@@ -549,8 +586,14 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 | **同時に見る** | 「商品スニペット」無効108件（PR #78 の効果。Google の再クロール待ちで数日〜数週間かかる） |
 | **変更しない** | `<loc>` の追加・削除・順序／`offers`・価格・在庫の追加（恒久禁止）／H3・H8 |
 
-**Owner の判断が来たら、そちらを優先して差し支えない**（判断待ち3件は `UNRESOLVED` 参照）。
-とくに **オプストヒラセガメの亜種ページ新規作成**は写真が確定済みで、GO が出れば単独工程として着手できる。
+**Owner の判断が来たら、そちらを優先して差し支えない**（判断待ち4件は `UNRESOLVED` 参照）。
+とくに次の2件は、GO が出ればそれぞれ単独工程として着手できる。
+
+- **ゴールデンギリシャリクガメの写真実装** — 候補の探索は完了済み。採否が決まれば
+  `species/golden-greek-tortoise.html` ／ `assets/species-photos/` ／ クレジット4層
+  （figcaption・`photo-credits.html`・`data/pc_parsed.json`・`data/credits_map.json`）／
+  `css/species-photo.css` の読み込み ／ `og:image` を1工程で処理する
+- **オプストヒラセガメの亜種ページ新規作成** — 写真が確定済み
 
 > **UNRESOLVED を勝手に処理しない。** PR #35 は Owner の実体決定なしに着手しない。
 > H3（写真4件）は能動的な探索をしない。H8 は GSC/GA4 の実測トリガーなしに着手しない。
