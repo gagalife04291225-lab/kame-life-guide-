@@ -16,12 +16,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **135da8c**（PR #93 まで merge 済み） |
-| サイトファイルの状態 | **PR #92 = `0e8449e`** が最後。PR #93 と本PRは `docs/AI-HANDOFF.md` のみで、公開ページ・`shindan/`・生成物は無変更 |
+| 基準 | `origin/main` = **54bd27b**（PR #94 merge ＋ Automation の `data/products.js` 更新まで反映済み） |
+| サイトファイルの状態 | **PR #92 = `0e8449e`** が最後。**merge 待ち = 本PR（TOP DESIGN Phase 3・`index.html` 1ファイル）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
-| 最終更新日 | 2026-08-27 |
-| 作業ブランチ | `claude/gemma-github-fj689h` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `docs/AI-HANDOFF.md` 1ファイル） |
+| 最終更新日 | 2026-08-28 |
+| 作業ブランチ | `claude/kame-life-top-redesign-audit-3vtnf9` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `index.html` と `docs/AI-HANDOFF.md`） |
 
 > **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
 > 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
@@ -35,6 +35,30 @@
 
 以下は結論が確定している。**再調査・再監査・再実装しない。**
 再開できるのは「重複作業防止ゲート」の4条件を満たす場合のみ。
+
+### TOP DESIGN — トップページ「引き算の再設計」（2026-08-28）
+
+| Phase | 作業 | 状態 | 確定した結論 |
+|-------|------|------|-------------|
+| Phase 2 | 現行トップの全構造棚卸しと KEEP/MERGE/MOVE/REMOVE-FROM-HOME 判定 | 設計のみ（ファイル変更0） | `index.html` の可視コンテンツブロック **22**・固定UI 2・hidden 1・章見出し4・`<details>` 3 を表示順に全件棚卸しし、**KEEP 9 / MERGE 9 / MOVE 6 / REMOVE-FROM-HOME 7** に判定。新トップ骨格（主要8ブロック＋Header＋Footer）を確定。**この棚卸しと判定は再実行しない** |
+| Phase 3 | 新骨格への一括再構成 | 本PR | `index.html` **1ファイル・+344/−2,861行**。旧22ブロック → **①Header ②Hero ③信頼表示 ④3目的入口 ⑤写真付き種探索 ⑥飼う前に知っておきたいこと ⑦飼育情報入口 ⑧著者・編集方針 ⑨Final CTA ⑩Footer** へ再構成。**title / meta description / og: / twitter: / JSON-LD 3ノードは1バイトも変更していない**（diff 0 を機械確認） |
+
+**Phase 3 で確定し、二度と問い直さない事実:**
+
+- **トップの `<details>`（もっと見る）は 0。** 実写真グリッドは `<details>` の外＝**初期表示**になった
+  （実測: スマホ390px で開始Y **7,626px → 1,383px**）
+- **固定UIは `mini-nav` の1本だけ。** `#sticky-diagnosis-cta` は markup / CSS / JS を撤去済み
+- **診断への導線は 12本 → 6本**（mini-nav リンク・mini-nav CTA・Hero・④の①カード・⑥・⑨）
+- **Kids のトップ露出は 4箇所 → 1箇所**（⑦ Care Module 05 ＋ 同ブロック内の `kids/otona.html` 副リンク）。
+  `kids/` 本体と `assets/kids/` の画像は**削除していない**
+- **公開UIの種数は 118 に統一**（可視「100種」は 0 件）。6大分類チップは正本
+  （`tools/taxonomy.js` × `shindan/species.js`）の実数 **27 / 22 / 18 / 29 / 6 / 16 = 118** と一致
+- **「10K+ Data Points」「98 Care Pages」はトップから除外**（根拠不明・正本不一致）。
+  信頼表示に載せるのは正本と一致する **118 掲載種 / 112 種別ページ / 6 暮らしタイプ** のみ
+- **ページ全長: スマホ390px 12,418px → 8,736px（−29.6%）／PC1280px 9,990px → 7,098px（−29.0%）**
+- **`index.html` のインライン CSS から、今回の撤去で孤立した 340ルールを削除**した。
+  削除は「旧ファイルでは使われていて、新ファイルで未使用になったセレクタ」に限定し、
+  **旧ファイル時点ですでに孤立していた 79ルールには触れていない**（機械判定・再スキャンで新規孤立 0 を確認）
 
 ### 和名↔学名↔分類階級 監査の是正（2026-08-26）
 
@@ -569,6 +593,9 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 | ID | 内容 |
 |----|------|
+| N22 | **⑤の写真グリッドに載せた `spenglers-leaf-turtle` の写真は、人の手に持たれた構図**。`assets/species-photos/spenglers-leaf-turtle.webp` は 2026-08-22 の生体写真全数監査（123枚）を通過済みで「絶対に使わない」条件には当たらない（健康・頭部と四肢が出ている）が、Phase 3 で**トップの最上位グリッドへ露出が上がった**。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして残すかは Owner 判断。差し替える場合の影響は `index.html` の1カードと `species/spenglers-leaf-turtle.html` |
+| N23 | **`index.html` のインライン CSS に、Phase 3 以前から孤立していたルールが 79 残っている**（`nav.crumbs` / `.item` / `.amazon-btn` / `section.ranking` / `.hub-links` / `.cta-btn-primary` / `.entry-nav` / `.species-preview` / `.h3-eyebrow` 等。他ページのテンプレート由来）。Phase 3 は「今回の変更で孤立したもの」だけを削除しており、**この79件には触れていない**。害はないが掃除の候補 |
+| N24 | **`index.html` の `meta description` / `og:description` / `twitter:description` は「100種」のまま**。公開UIは 118 に統一したが、SEO層は **H8（GSC/GA4 の実測トリガーなしに変更しない）** のため据え置いた。数値の食い違いが残っていることは把握しておく |
 | N12 | **【要確認】カントンクサガメの CITES 区分について、リポジトリ内に対立する記録がある**。今回は亀好きさんの確定事項に従い **附属書II** で全層統一した。一方、旧 PR #35 の本文（2026-08-22）は *Mauremys nigricans* について「2005年に中国が *Chinemys nigricans* として**附属書III**へ掲載（クサガメと同一バッチ・**EU規則1332/2005**で確認）→ 区分の変更なし」と、出典付きで **III** を主張している。他方 `data/species-identification.json` の旧 `unresolved`（同日付）は **II** としていた。**同じ日に書かれた2つの記録が食い違っている。**本実行環境からは CITES Species+ にも EU規則にも到達できない（egress ポリシー）ため検証できない。**III が正しい場合に直すのは4箇所だけ**: `data/species-master.json` の `cites.appendix.value`／`data/species-identification.json` の `houkisei`／`shindan/species.js` の `cites`／`SHINDAN-SPECIES.md` の CITES列。公開ページ本文の「附属書II」表記3箇所（`.lp-fit-list` 1・後悔ポイント 1・`env-card` と まとめ文 2）も併せて直す |
 | N13 | **H9（カントンクサガメの写真差し替え）の候補が旧 PR #35 に記録されている**。Wikimedia Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG`（Greg Hume / **CC BY-SA 4.0** / 1920×1537）。PR #35 の本文によれば、カテゴリで種一致・目視確認済み（健康個体が水中で立ち上がる自然な姿勢・頭部と前肢が明瞭・オレンジ腹甲に黒斑という識別点）で、800×600 WebP へ変換して採用済みとされ、その成果は PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）にある。また PR #35 は「iNaturalist は本種の観察が全13件で、条件を満たす候補は**0件**」とも記録している。**本実行環境から Commons へは到達できない**ため、亀好きさんが画像を渡すか、PR #35 のブランチから当該 webp とクレジット4層だけを救出する経路になる。**H9 はこの候補があるため、H3 の他4件より解消が近い** |
 | N20 | **`shindan/equipment.js` と `species-list.html` の `CAT_OVERRIDE` に孤児キーが残っている**（`shindan/species.js` の `name` に対応が無いキー）。equipment 8件: `ヘルマンリクガメ（ヒガシ亜種）`／`ヘルマンリクガメ（ニシ亜種）`／`ソマリアリクガメ（エジプトリクガメ）`／`ニオイガメ`／`ペインテッドタートル`／`ミスジハコガメ（希少コレクション）`／`ニシキヘビクビガメ`／`パーケリーナガクビガメ`。CAT_OVERRIDE 3件: `ニシキヘビクビガメ`／`パーケリーナガクビガメ`／`ミスジハコガメ（希少コレクション）`。**PR #90 の前から同数（8 / 3）で、PR #90 は増やしていない。**害はないが掃除の候補 |
@@ -581,29 +608,37 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### Search Console にサイトマップを再送信し、「検出 - インデックス未登録」28件の変化を観察する
+### TOP DESIGN Phase 4 — Phase 2 で MOVE 判定したコンテンツを移設先ページへ実装する
 
-**Agent の実装作業は発生しない。Owner の操作と待機だけの工程。**
+Phase 3 でトップから外したが、**移設先への実装はまだ行っていない**。
+対象コンテンツの原文は `origin/main` の **`54bd27b:index.html`** に全文が残っている
+（`git show 54bd27b:index.html` で取得できる）。**推測で書き直さず、原文から移す。**
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | ① GitHub Pages の反映を待つ（約60秒）② GSC > サイトマップ で `sitemap.xml` を再送信 ③ 数日〜数週間おいて「検出 - インデックス未登録」28件が減るかを確認 |
-| **なぜこれが次か** | 28件は lastmod が古いままクロールされていなかったページ群で、PR #79 で lastmod を実態へ直した。さらに **PR #80 で内部リンクが168ページ分増えた**ので、再クロールが起きるかを見る条件が揃っている |
-| **期待結果** | 「検出 - インデックス未登録」28件が減少する。**減らなければ lastmod 仮説は否定**され、原因はクロールバジェット等に絞られる |
-| **同時に見る** | 「商品スニペット」無効108件（PR #78 の効果。Google の再クロール待ちで数日〜数週間かかる） |
-| **変更しない** | `<loc>` の追加・削除・順序／`offers`・価格・在庫の追加（恒久禁止）／H3・H8 |
+| **やること** | 下表6件のうち **`guides/index.html` への3件（lead-in / discover 8カード / gear-index 7カード）を1工程で実装する** |
+| **移設元** | `54bd27b:index.html` の該当ブロック（lead-in L3745-3750 / discover L3752-3819 / gear-index L4417-4433） |
+| **移設先** | `guides/index.html`（冒頭・「飼育環境 — 種類別ガイド」・「まず揃えるべき飼育用品ガイド」） |
+| **注意** | `guide-*.html` 8本は移設先に**既にリンクが存在する**ため、追加するのは `dc-species`（代表種行）の情報だけ。best10 7本は移設先に**未掲載**なので新規追加になる |
+| **変更しない** | `index.html`（Phase 3 で確定済み）／移設先の `title`・`meta`・OG・JSON-LD／H3・H8・H9 |
+| **完了条件** | 移設先で情報が読める・リンク切れ0・`title`/`meta`/OG/JSON-LD 差分0・実描画でJSエラー0 |
 
-**Owner の判断が来たら、そちらを優先して差し支えない**（判断待ち4件は `UNRESOLVED` 参照）。
-とくに次の2件は、GO が出ればそれぞれ単独工程として着手できる。
+**Phase 4 以降に残っている MOVE 対象（着手順は Owner 判断）:**
 
-- **ゴールデンギリシャリクガメの写真実装** — 候補の探索は完了済み。採否が決まれば
-  `species/golden-greek-tortoise.html` ／ `assets/species-photos/` ／ クレジット4層
-  （figcaption・`photo-credits.html`・`data/pc_parsed.json`・`data/credits_map.json`）／
-  `css/species-photo.css` の読み込み ／ `og:image` を1工程で処理する
-- **オプストヒラセガメの亜種ページ新規作成** — 写真が確定済み
+| 移設元（`54bd27b:index.html`） | 移設先 | 状態 |
+|------------------------------|--------|------|
+| `lead-in` L3745-3750 | `guides/index.html` 冒頭 | 未実施（本 NEXT） |
+| `discover` 8カード L3752-3819 | `guides/index.html`「飼育環境 — 種類別ガイド」 | 未実施（本 NEXT） |
+| `gear-index` 7カード L4417-4433 | `guides/index.html`「まず揃えるべき飼育用品ガイド」 | 未実施（本 NEXT） |
+| `live-compare` 3枚 L4037-4150 | `compare/index.html` の `ch-card` へ `lc-metrics` を移植 | 未実施 |
+| `compare-engine` 表 L4151-4261 | `compare/index.html` へ**逐語**移設 | 未実施。**H5 で確定した `<th>はじめての方向け</th>` と `難易度` 列のラベルを統一しない** |
+| `journey-preview` L4527-4572 | `shindan/index.html` スタート画面 | 未実施。移設先に同等の説明は**存在しない**＝実追加 |
+| `readiness-score` L4585-4758 ＋ JS | `before-keeping.html` | 未実施。5軸が移設先の章立てと一致 |
 
-> **UNRESOLVED を勝手に処理しない。** PR #35 は Owner の実体決定なしに着手しない。
-> H3（写真4件）は能動的な探索をしない。H8 は GSC/GA4 の実測トリガーなしに着手しない。
+> **トップからリンクが消えたページは1つも無い**（Phase 3 でリンク切れ0・内部リンク44本を実測）。
+> best10 7本も⑦の機材リンク行でトップから直リンクを維持している。
+
+**Owner の判断待ち案件が来たら、そちらを優先して差し支えない**（`UNRESOLVED` 参照）。
 
 ---
 
