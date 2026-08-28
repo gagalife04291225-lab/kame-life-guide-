@@ -17,6 +17,9 @@
  *
  * species-list.html 側のフィルタ実装（LEGACY_HAB / habTargets / state.habCats）
  * は Phase 1C のままで、ここでは触らない。ボタンのマークアップだけを生成する。
+ *
+ * 掲載区分（通常一覧／参考掲載）は生息環境ボタンには影響しない。ボタンは118件全体に
+ * かかり、参考掲載の3種も絞り込みの対象に残す。ログの内訳だけ通常一覧基準で出す。
  */
 'use strict';
 const fs = require('fs');
@@ -97,6 +100,9 @@ if (new Set(T.CAT_ORDER.map(c => CAT_UI[c] && CAT_UI[c].ga)).size !== T.CAT_ORDE
 }
 // 実データ側との突き合わせ（分類が空にならないこと）
 const all = T.decorate(T.loadSpecies());
+// 掲載区分の正本は tools/taxonomy.js。ここでは内訳を出すために分けるだけで判定はしない。
+// 生息環境ボタンは118件全体にかかるため、ボタンのマークアップは掲載区分の影響を受けない。
+const listing = T.splitListing(all);
 T.CAT_ORDER.forEach(c => {
   const n = all.filter(i => i.bigCat === c).length;
   if (!n) problems.push('該当する種が0件の分類: ' + c);
@@ -150,6 +156,10 @@ const nCard = (renderExploreCards().match(/class="cat-card"/g) || []).length;
 console.log('  ' + EX_FILE.padEnd(20) + nCard + 'カード（6大分類のみ。小型・珍しい種類は対象外）' +
             (d2 ? '  [更新]' : '  [変更なし]'));
 
-console.log('  分類の内訳: ' + T.CAT_ORDER.map(c => c + ' ' + all.filter(i => i.bigCat === c).length).join(' / ') +
-            '  計' + all.length);
+console.log('  分類の内訳（通常一覧）: ' +
+            T.CAT_ORDER.map(c => c + ' ' + listing.normal.filter(i => i.bigCat === c).length).join(' / ') +
+            '  計' + listing.normal.length);
+console.log('  参考掲載: ' + listing.reference.length + '種（' +
+            listing.reference.map(i => i.sp.name + '／' + i.bigCat).join('・') + '）');
+console.log('  ボタンの対象: ' + all.length + '種（生息環境フィルタは掲載区分で絞らない）');
 console.log(check ? ('差分のあるファイル: ' + changed) : ('書き込み: ' + changed + ' ファイル'));

@@ -6,6 +6,7 @@
  *   - species-list.html の GENUS_CAT / CAT_ORDER / CAT_NOTE（tools/gen-species-list.js）
  *   - species-list.html の noscript 静的一覧（tools/gen-species-list.js）
  *   - guide-*.html の「このガイドの対象種」（tools/gen-guide-species.js）
+ *   - species-list.html の掲載区分 REFERENCE_ONLY（tools/gen-species-list.js）
  *
  * 種データ（shindan/species.js）は読み取るだけで、絶対に書き換えない。
  * 属を増やしたときはここだけ直して各ジェネレータを再実行する。
@@ -51,6 +52,33 @@ const CAT_NOTE = {
   '汽水':'塩分のある水。専用の水づくりが要。',
   'スッポン・曲頸':'スッポン類と、首を横に曲げる仲間。'
 };
+
+// ── 掲載区分（種一覧の見せ方だけを決める）──
+// 参考掲載＝国内で流通している個体を確認できなかった種。データとしては残すが、
+// これから飼う種を選ぶ通常一覧には並べない。「法的に飼えない」という意味ではない。
+// 判定の根拠は docs/AI-HANDOFF.md の8種判定表。ここは結論の置き場所であって再判定はしない。
+//
+// 診断（shindan/index.html）は shindan/species.js の availability と match だけを見ており、
+// この定義は参照しない。掲載区分を動かしても診断結果は変わらない。
+const REFERENCE_ONLY = ['エジプトリクガメ', 'マダガスカルクモノスガメ', 'モエギハコガメ'];
+
+function isReference(sp) { return REFERENCE_ONLY.indexOf(sp.name) >= 0; }
+
+// 通常一覧と参考掲載に分ける。
+// REFERENCE_ONLY に species.js へ存在しない和名が混ざったら止める。
+// 和名が変わったときに参考掲載が静かに0件へ落ちると気づけないため。
+function splitListing(all) {
+  const names = {};
+  all.forEach(i => { names[i.sp.name] = true; });
+  const missing = REFERENCE_ONLY.filter(n => !names[n]);
+  if (missing.length) {
+    throw new Error('REFERENCE_ONLY に shindan/species.js へ無い和名がある: ' + missing.join(' / '));
+  }
+  return {
+    normal:    all.filter(i => !isReference(i.sp)),
+    reference: all.filter(i =>  isReference(i.sp))
+  };
+}
 
 const RANK_ORDER = { '種': 0, '変異型': 1, '亜種': 2 };
 
@@ -142,6 +170,6 @@ function replaceBlock(src, beginMark, endMark, body) {
   return src.replace(re, beginMark + '\n' + body + '\n' + endMark);
 }
 
-module.exports = { ROOT, GENUS_CAT, CAT_ORDER, CAT_NOTE, RANK_ORDER,
+module.exports = { ROOT, GENUS_CAT, CAT_ORDER, CAT_NOTE, RANK_ORDER, REFERENCE_ONLY,
                    sciParts, loadSpecies, decorate, buildGroups, flatten,
-                   guideHref, esc, replaceBlock };
+                   isReference, splitListing, guideHref, esc, replaceBlock };
