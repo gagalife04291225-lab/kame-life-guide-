@@ -7,11 +7,12 @@
  *
  * 生成する箇所は3つ。いずれもマーカーで囲われている。
  *   1. // BEGIN:taxonomy-data … // END:taxonomy-data
- *      ページ内 JS が使う GENUS_CAT / CAT_ORDER / CAT_NOTE。
+ *      ページ内 JS が使う GENUS_CAT / CAT_ORDER / CAT_NOTE / REFERENCE_ONLY。
  *      species-list.html は外部JSを増やさない方針なので、値をここへ焼き込む。
  *      定義の正本は tools/taxonomy.js の1箇所だけ。
  *   2. <!-- BEGIN:species-index … --> … <!-- END:species-index -->
  *      JS無効時に見える noscript 静的一覧。JS表示と同じ118件・同じ並び順にする。
+ *      通常一覧115件と参考掲載3件に分けて出す。クローラー向けのリンクは減らさない。
  *   3. // BEGIN:wamei-alias … // END:wamei-alias
  *      検索で別名を引くための WAMEI_ALIAS。正本は data/species-master.json の
  *      wamei_aliases 1箇所だけで、ここはその写し。二重管理をしないため
@@ -31,8 +32,11 @@ const FILE = path.join(T.ROOT, 'species-list.html');
 const check = process.argv.indexOf('--check') >= 0;
 
 const all = T.decorate(T.loadSpecies());
-const groups = T.buildGroups(all);
-const ordered = T.flatten(groups);
+// 掲載区分の正本は tools/taxonomy.js。ここでは分けるだけで判定はしない。
+const listing = T.splitListing(all);
+const groups = T.buildGroups(listing.normal);
+const refItems = listing.reference;
+const ordered = T.flatten(groups).concat(refItems);
 
 // ── 検証 ──
 const problems = [];
@@ -41,6 +45,12 @@ const names = ordered.map(i => i.sp.name);
 if (new Set(names).size !== names.length) problems.push('種名の重複');
 const unknown = all.filter(i => i.bigCat === 'その他');
 if (unknown.length) problems.push('大分類UNKNOWN: ' + unknown.map(i => i.sp.name + '（' + i.genus + '）').join(', '));
+if (listing.normal.length + refItems.length !== all.length) {
+  problems.push('掲載区分の合計が種数と合わない: ' + listing.normal.length + ' + ' + refItems.length + ' / ' + all.length);
+}
+if (refItems.length !== T.REFERENCE_ONLY.length) {
+  problems.push('参考掲載の件数が REFERENCE_ONLY と合わない: ' + refItems.length + ' / ' + T.REFERENCE_ONLY.length);
+}
 ordered.forEach(i => {
   const h = T.guideHref(i.sp);
   const f = h.split('#')[0].split('?')[0];
@@ -63,7 +73,10 @@ const taxonomyBlock = [
   '// このブロックは tools/taxonomy.js から生成される。値の正本はそちら。',
   'var GENUS_CAT = ' + jsObj(T.GENUS_CAT, 2) + ';',
   'var CAT_ORDER = ' + JSON.stringify(T.CAT_ORDER).replace(/","/g, "','").replace(/^\["/, "['").replace(/"\]$/, "']") + ';',
-  'var CAT_NOTE = ' + jsObj(T.CAT_NOTE, 2) + ';'
+  'var CAT_NOTE = ' + jsObj(T.CAT_NOTE, 2) + ';',
+  '// 掲載区分。参考掲載＝国内で流通している個体を確認できなかった種。',
+  '// 「法的に飼えない」という意味ではない。診断はこの値を参照しない。',
+  'var REFERENCE_ONLY = [' + T.REFERENCE_ONLY.map(n => "'" + n + "'").join(',') + '];'
 ].join('\n');
 
 // ── 2. 検索用の別名（正本は data/species-master.json の wamei_aliases）──
@@ -98,22 +111,32 @@ const aliasBlock = [
   "  '" + p[0] + "':'" + p[1].join(' ') + "'" + (i < aliasPairs.length - 1 ? ',' : '')
 )).concat(['};']).join('\n');
 
-// ── 3. noscript 静的一覧（JS表示と同じ118件・同じ並び）──
-const idx = ['<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ118件・同じ並び順。 -->',
+// ── 3. noscript 静的一覧 ──
+// JS表示と同じ順序で、通常一覧115件と参考掲載3件に分けて出す。
+// クローラー向けのリンク総数は118件のまま減らさない。
+function li(i) {
+  return '<li><a href="' + T.esc(T.guideHref(i.sp)) + '">' + T.esc(i.sp.name) +
+         '（' + T.esc(i.sp.latin) + '）' +
+         (i.sp.hasPage ? 'の飼育ガイド' : 'は暮らし方ガイドで解説') + '</a></li>';
+}
+const idx = ['<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ' + all.length +
+             '件・同じ並び順。通常一覧' + listing.normal.length +
+             '件＋参考掲載' + refItems.length + '件。 -->',
              '<noscript>', '<nav aria-label="種別ページ一覧">'];
 groups.forEach(c => {
   idx.push('<h2>' + T.esc(c.cat) + '（' + c.count + '種）</h2>');
   c.genera.forEach(g => {
     idx.push('<h3>' + T.esc(g.genus) + '</h3>');
     idx.push('<ul>');
-    g.species.forEach(s => s.items.forEach(i => {
-      idx.push('<li><a href="' + T.esc(T.guideHref(i.sp)) + '">' + T.esc(i.sp.name) +
-               '（' + T.esc(i.sp.latin) + '）' +
-               (i.sp.hasPage ? 'の飼育ガイド' : 'は暮らし方ガイドで解説') + '</a></li>');
-    }));
+    g.species.forEach(s => s.items.forEach(i => { idx.push(li(i)); }));
     idx.push('</ul>');
   });
 });
+idx.push('<h2>参考掲載（' + refItems.length + '種）</h2>');
+idx.push('<p>国内で流通している個体を確認できなかった種です。飼う種を選ぶときの候補には入れていません。</p>');
+idx.push('<ul>');
+refItems.forEach(i => { idx.push(li(i)); });
+idx.push('</ul>');
 idx.push('</nav>', '</noscript>');
 const indexBlock = idx.join('\n');
 
@@ -136,19 +159,28 @@ next = T.replaceBlock(src, '<!-- BEGIN:species-index (tools/gen-species-list.js 
 if (next === null) { console.error('マーカーが見つかりません: species-index'); process.exit(1); }
 src = next;
 
-// ── 4. 件数バーの初期値 ──
+// ── 4. 件数バーの初期値（総数と内訳。JS無効時に見える数字）──
 const countRe = /(<span class="count-num" id="count-num">)\d+(<\/span>)/;
 if (!countRe.test(src)) { console.error('件数バーが見つかりません'); process.exit(1); }
 src = src.replace(countRe, '$1' + all.length + '$2');
+
+const splitRe = /(<span class="count-split" id="count-split">)[^<]*(<\/span>)/;
+if (!splitRe.test(src)) { console.error('件数の内訳が見つかりません'); process.exit(1); }
+src = src.replace(splitRe,
+  '$1通常一覧 ' + listing.normal.length + ' / 参考掲載 ' + refItems.length + '$2');
 
 const changed = src !== before;
 if (changed && !check) fs.writeFileSync(FILE, src);
 
 console.log('  種データ        ' + all.length + '件');
-console.log('  大分類          ' + groups.map(c => c.cat + ' ' + c.count).join(' / '));
+console.log('  掲載区分        通常一覧 ' + listing.normal.length + ' / 参考掲載 ' + refItems.length +
+            '（' + refItems.map(i => i.sp.name).join('・') + '）');
+console.log('  大分類          ' + groups.map(c => c.cat + ' ' + c.count).join(' / ') +
+            '  計' + listing.normal.length + '（通常一覧のみ）');
 console.log('  noscript 掲載   ' + (indexBlock.match(/<li>/g) || []).length + '件' +
             '（うち種別ページ ' + all.filter(i => i.sp.hasPage).length + ' / ガイド遷移 ' +
             all.filter(i => !i.sp.hasPage).length + '）');
-console.log('  件数バー初期値  ' + all.length);
+console.log('  件数バー初期値  ' + all.length + '（通常一覧 ' + listing.normal.length +
+            ' / 参考掲載 ' + refItems.length + '）');
 console.log('  検索用の別名    ' + aliasPairs.length + '種 / ' + aliasCount + '件（正本 data/species-master.json）');
 console.log(check ? ('差分: ' + (changed ? 'あり' : 'なし')) : ('species-list.html: ' + (changed ? '更新' : '変更なし')));

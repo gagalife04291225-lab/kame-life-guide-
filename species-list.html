@@ -133,9 +133,13 @@
   /* KLGクイックの選択色 */
   .fbtn.active-klg{background:var(--accent);border-color:var(--accent);color:#3a2610;}
 
-  /* 件数表示 */
-  .count-text{flex:0 0 auto;font-size:.82rem;color:#6b7c70;white-space:nowrap;}
+  /* 件数表示。総数と、通常一覧／参考掲載の内訳を2行で出す。
+     1行に並べると390pxで並び替えが折り返り、sticky バーが縦に伸びるため */
+  .count-text{flex:0 0 auto;display:flex;flex-direction:column;line-height:1.25;
+    font-size:.82rem;color:#6b7c70;white-space:nowrap;}
   .count-num{font-weight:700;color:var(--forest);font-size:1.05rem;}
+  /* #7b8a7f は白地で 3.63 と AA を割るため #57685c（5.93）にする */
+  .count-split{font-size:.7rem;color:#57685c;}
   .sort-wrap{display:flex;align-items:center;gap:8px;}
   .sort-label{font-size:.78rem;letter-spacing:.1em;color:var(--accent-dark);font-weight:700;}
   .sort-sel{
@@ -237,6 +241,23 @@
   .sp-sub{margin:10px 0 6px;font-size:.74rem;color:#7b8a7f;font-style:italic;
     padding-left:10px;border-left:3px solid #e0d8c2;}
   .sp-grid + .sp-cat{margin-top:32px;}
+
+  /* 参考掲載。通常一覧と地続きに見えないよう、区切り線と背景で明確に分ける */
+  .sp-ref{
+    margin-top:44px;padding:22px 18px 26px;border-radius:12px;
+    background:#eee9db;border:1px solid #ddd4bd;
+  }
+  .sp-ref-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+    padding-bottom:7px;border-bottom:2px solid #c9bd9c;}
+  .sp-ref-head h2{font-family:"Playfair Display",serif;font-weight:700;font-size:1.12rem;
+    color:var(--forest);line-height:1.4;}
+  /* 参考掲載の背景 #eee9db 上では #6b7c70 が 3.65 と AA を割るため #57685c（4.89）にする */
+  .sp-ref-count{font-size:.8rem;color:#57685c;white-space:nowrap;}
+  .sp-ref-note{margin:10px 0 16px;font-size:.8rem;line-height:1.85;color:#4a5a50;}
+  @media(max-width:480px){
+    .sp-ref{margin-top:36px;padding:18px 14px 22px;}
+    .sp-ref-head h2{font-size:1.02rem;}
+  }
 
   @media(max-width:760px){.sp-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:480px){
@@ -343,7 +364,7 @@
       </div>
     </div>
     <div class="sl-status">
-      <span class="count-text"><span class="count-num" id="count-num">118</span> 種</span>
+      <span class="count-text"><span class="count-line"><span class="count-num" id="count-num">118</span> 種</span><span class="count-split" id="count-split">通常一覧 115 / 参考掲載 3</span></span>
       <div class="sl-chips" id="active-chips"></div>
       <span class="sort-wrap">
         <label for="sort-sel" class="sort-label">並び替え</label>
@@ -408,6 +429,14 @@
     <div class="no-result" id="no-result" style="display:none">
       <p>条件に一致する種が見つかりませんでした。<br>検索語や絞り込みを少しゆるめてみてください。</p>
       <button type="button" class="fbtn no-result-reset" id="reset-filters">条件をリセットする</button>
+    </div>
+    <div class="sp-ref" id="ref-section" hidden>
+      <div class="sp-ref-head">
+        <h2>参考掲載</h2>
+        <span class="sp-ref-count" id="ref-count">3 種</span>
+      </div>
+      <p class="sp-ref-note">国内で流通している個体を確認できなかった種です。記録として残していますが、これから飼う種を選ぶときの候補には入れていません。</p>
+      <div class="sp-grid" id="ref-grid"></div>
     </div>
   </div>
 </section>
@@ -614,6 +643,9 @@ var CAT_NOTE = {
   '汽水':'塩分のある水。専用の水づくりが要。',
   'スッポン・曲頸':'スッポン類と、首を横に曲げる仲間。'
 };
+// 掲載区分。参考掲載＝国内で流通している個体を確認できなかった種。
+// 「法的に飼えない」という意味ではない。診断はこの値を参照しない。
+var REFERENCE_ONLY = ['エジプトリクガメ','マダガスカルクモノスガメ','モエギハコガメ'];
 // END:taxonomy-data
 
 // BEGIN:wamei-alias (tools/gen-species-list.js が生成。手で編集しない)
@@ -712,6 +744,11 @@ function buildGroups(list) {
 }
 
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// 掲載区分 — REFERENCE_ONLY は生成領域（BEGIN:taxonomy-data）の写しで、正本は tools/taxonomy.js。
+// 参考掲載＝国内で流通している個体を確認できなかった種。「法的に飼えない」という意味ではない。
+// 診断は shindan/species.js の availability と match だけを見ており、ここは参照されない。
+function isReference(item) { return REFERENCE_ONLY.indexOf(item.sp.name) >= 0; }
 
 // グループ表示のHTML（カード本体は既存の renderCard をそのまま使う）
 function renderGroups(list) {
@@ -818,7 +855,11 @@ function renderCard(item) {
 
 var grid = document.getElementById('sp-grid');
 var countEl = document.getElementById('count-num');
+var splitEl = document.getElementById('count-split');
 var noResultEl = document.getElementById('no-result');
+var refSection = document.getElementById('ref-section');
+var refGrid = document.getElementById('ref-grid');
+var refCountEl = document.getElementById('ref-count');
 
 // フィルター/ソート状態
 var state = {
@@ -863,7 +904,12 @@ function sortList(list) {
 }
 
 function render() {
-  var list = sortList(ALL_SPECIES.filter(matches));
+  // 絞り込みは118件全体にかける。そのうえで通常一覧と参考掲載に分ける。
+  // 参考掲載も検索・絞り込みの対象に残す（探している人が見つけられなくなるため）。
+  var hit  = sortList(ALL_SPECIES.filter(matches));
+  var list = hit.filter(function(i){ return !isReference(i); });
+  var refs = hit.filter(isReference);
+
   // 既定（人気順）ではグループ表示。並び替えを選んだときは従来どおりフラット表示。
   if (state.sort === 'popular') {
     grid.className = 'sp-groups';
@@ -872,9 +918,16 @@ function render() {
     grid.className = 'sp-grid';
     grid.innerHTML = list.map(renderCard).join('');
   }
-  countEl.textContent = list.length;
-  noResultEl.style.display = list.length === 0 ? '' : 'none';
-  renderChips(list.length);
+
+  refGrid.innerHTML = refs.map(renderCard).join('');
+  refCountEl.textContent = refs.length + ' 種';
+  refSection.hidden = refs.length === 0;
+
+  countEl.textContent = hit.length;
+  splitEl.textContent = '通常一覧 ' + list.length + ' / 参考掲載 ' + refs.length;
+  splitEl.hidden = refs.length === 0;
+  noResultEl.style.display = hit.length === 0 ? '' : 'none';
+  renderChips(hit.length);
 }
 
 // ── 適用中の条件チップ（× で個別に外せる）────────────────────
@@ -1098,10 +1151,10 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 </script>
 
 <!-- BEGIN:species-index (tools/gen-species-list.js が生成。手で編集しない) -->
-<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ118件・同じ並び順。 -->
+<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ118件・同じ並び順。通常一覧115件＋参考掲載3件。 -->
 <noscript>
 <nav aria-label="種別ページ一覧">
-<h2>リクガメ（27種）</h2>
+<h2>リクガメ（25種）</h2>
 <h3>Testudo</h3>
 <ul>
 <li><a href="species/hermann-tortoise.html">ヘルマンリクガメ（Testudo hermanni）の飼育ガイド</a></li>
@@ -1114,7 +1167,6 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 <li><a href="species/iberian-greek-tortoise.html">イベラギリシャリクガメ（Testudo graeca ibera）の飼育ガイド</a></li>
 <li><a href="species/tunisian-greek-tortoise.html">チュニジアギリシャリクガメ（Testudo graeca nabeulensis）の飼育ガイド</a></li>
 <li><a href="species/golden-greek-tortoise.html">ゴールデンギリシャリクガメ（Testudo graeca terrestris）の飼育ガイド</a></li>
-<li><a href="guide-dry.html">エジプトリクガメ（Testudo kleinmanni）は暮らし方ガイドで解説</a></li>
 <li><a href="species/marginated-tortoise.html">フチゾリリクガメ（Testudo marginata）の飼育ガイド</a></li>
 </ul>
 <h3>Aldabrachelys</h3>
@@ -1157,15 +1209,11 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 <ul>
 <li><a href="species/impressed-tortoise.html">インプレッサムツアシガメ（Manouria impressa）の飼育ガイド</a></li>
 </ul>
-<h3>Pyxis</h3>
-<ul>
-<li><a href="guide-dry.html">マダガスカルクモノスガメ（Pyxis arachnoides）は暮らし方ガイドで解説</a></li>
-</ul>
 <h3>Stigmochelys</h3>
 <ul>
 <li><a href="species/leopard-tortoise.html">ヒョウモンガメ（Stigmochelys pardalis）の飼育ガイド</a></li>
 </ul>
-<h2>ヤマガメ・ハコガメ（22種）</h2>
+<h2>ヤマガメ・ハコガメ（21種）</h2>
 <h3>Clemmys</h3>
 <ul>
 <li><a href="species/spotted-turtle.html">キボシイシガメ（Clemmys guttata）の飼育ガイド</a></li>
@@ -1188,7 +1236,6 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 <li><a href="species/malayan-box-turtle.html">マレーハコガメ（Cuora amboinensis）の飼育ガイド</a></li>
 <li><a href="species/chinese-box-turtle.html">チュウゴクセマルハコガメ（Cuora flavomarginata）の飼育ガイド</a></li>
 <li><a href="species/taiwan-box-turtle.html">タイワンセマルハコガメ（Cuora flavomarginata flavomarginata）の飼育ガイド</a></li>
-<li><a href="species/indochinese-box-turtle.html">モエギハコガメ（Cuora galbinifrons）の飼育ガイド</a></li>
 <li><a href="species/hirase-turtle.html">ヒラセガメ（Cuora mouhotii）の飼育ガイド</a></li>
 <li><a href="species/three-striped-box-turtle.html">ミスジハコガメ（Cuora trifasciata）の飼育ガイド</a></li>
 </ul>
@@ -1344,6 +1391,13 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 <h3>Phrynops</h3>
 <ul>
 <li><a href="species/hilaire-side-necked-turtle.html">ヒラリーカエルガメ（Phrynops hilarii）の飼育ガイド</a></li>
+</ul>
+<h2>参考掲載（3種）</h2>
+<p>国内で流通している個体を確認できなかった種です。飼う種を選ぶときの候補には入れていません。</p>
+<ul>
+<li><a href="guide-dry.html">エジプトリクガメ（Testudo kleinmanni）は暮らし方ガイドで解説</a></li>
+<li><a href="guide-dry.html">マダガスカルクモノスガメ（Pyxis arachnoides）は暮らし方ガイドで解説</a></li>
+<li><a href="species/indochinese-box-turtle.html">モエギハコガメ（Cuora galbinifrons）の飼育ガイド</a></li>
 </ul>
 </nav>
 </noscript>
