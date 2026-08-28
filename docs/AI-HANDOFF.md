@@ -16,12 +16,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **412e23b**（PR #95 = TOP DESIGN Phase 3 の merge commit まで反映済み） |
-| サイトファイルの状態 | **PR #95 = `13bd65e`** が最後（トップの再構成）。**merge 待ち = 本PR（TOP DESIGN Phase 4・移設先4ページ）** |
+| 基準 | `origin/main` = **f9b5be0**（PR #96 = TOP DESIGN Phase 4 の merge commit まで反映済み） |
+| サイトファイルの状態 | **PR #96 = `01685fa`** が最後（移設先4ページ）。**merge 待ち = 本PR（N25 修正・`shindan/index.html` 2行）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
 | 最終更新日 | 2026-08-28 |
-| 作業ブランチ | `claude/kame-life-top-move-phase4` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は移設先4ページと `docs/AI-HANDOFF.md`） |
+| 作業ブランチ | `claude/kame-life-shindan-n25` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `shindan/index.html` と `docs/AI-HANDOFF.md`） |
 
 > **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
 > 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
@@ -43,7 +43,9 @@
 | Phase 2 | 現行トップの全構造棚卸しと KEEP/MERGE/MOVE/REMOVE-FROM-HOME 判定 | 設計のみ（ファイル変更0） | `index.html` の可視コンテンツブロック **22**・固定UI 2・hidden 1・章見出し4・`<details>` 3 を表示順に全件棚卸しし、**KEEP 9 / MERGE 9 / MOVE 6 / REMOVE-FROM-HOME 7** に判定。新トップ骨格（主要8ブロック＋Header＋Footer）を確定。**この棚卸しと判定は再実行しない** |
 | Phase 3 | 新骨格への一括再構成 | **PR #95 / merge `412e23b`** | `index.html` **1ファイル・+344/−2,861行**。旧22ブロック → **①Header ②Hero ③信頼表示 ④3目的入口 ⑤写真付き種探索 ⑥飼う前に知っておきたいこと ⑦飼育情報入口 ⑧著者・編集方針 ⑨Final CTA ⑩Footer** へ再構成。**title / meta description / og: / twitter: / JSON-LD 3ノードは1バイトも変更していない**（diff 0 を機械確認） |
 
-| Phase 4 | MOVE 7件を移設先ページへ実装 | 本PR | 移設先**4ファイル・+1,181/−0行（純粋な追加）**。移設元の正本は `54bd27b:index.html`。`index.html` は1バイトも変更していない |
+| Phase 4 | MOVE 7件を移設先ページへ実装 | **PR #96 / merge `f9b5be0`** | 移設先**4ファイル・+1,181/−0行（純粋な追加）**。移設元の正本は `54bd27b:index.html`。`index.html` は1バイトも変更していない |
+
+| N25 修正 | 診断開始画面の可視「100種」を正本 118 へ | 本PR | `shindan/index.html` **2行のみ**（`.species-count`「100種対応」→「118種対応」／`.jp-step-copy`「100種から…」→「118種から…」）。**`<script>` 6ブロック・CSS・`title`/`meta`/OG/twitter/JSON-LD はすべて差分0。** 診断5ルートを実操作して全て結果画面へ到達（JSエラー0）。**ただし `shindan/routes.js:169` の `全100種・8問で診断` は本工程の変更禁止指定に含まれていたため未修正 → `UNRESOLVED` の N26 へ** |
 
 **Phase 4 で確定し、再実行しない事実（MOVE 7件は完了。移設元は二度と参照しなくてよい）:**
 
@@ -618,7 +620,8 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 | ID | 内容 |
 |----|------|
-| N25 | **`shindan/index.html` の可視「100種」が2箇所ある**。`.species-count` の「100種対応」（元からある）と、Phase 4 で移設した `journey-preview` の「100種から相性のいい候補を絞り込む」（移設元の文言を逐語で持ち込んだ）。Owner 確定 U-A では**公開UIの種数は正本 118 に合わせる**方針だが、Phase 4 の Scope（MOVE 7件）の外なので**触っていない**。同一画面に 100 と 118 が混在しないよう、2箇所は**同時に**直すこと。`title`/`meta`/OG は H8 のため対象外 |
+| N26 | **診断開始画面にまだ「100種」が1箇所残っている。** `shindan/routes.js:169` の `desc: 'まだ決めていない人向け（全100種・8問で診断）'`。ルートカード（全カテゴリ診断）の説明文としてそのまま画面に出る。N25 の工程では `routes.js` が**変更禁止指定に含まれていた**ため手を付けていない。実描画で確認済み: 開始画面の可視テキストは「118種」2件・「100種」**1件**（出所は `route-desc`）。**1行の文字列置換で済む**（`全100種` → `全118種`）。診断ロジックとは無関係な表示文字列で、`qCount: 8` などの隣接キーは触らない。次の工程の冒頭で片付けるのが安全 |
+| ~~N25~~ | **解消済み（本PR）**。`shindan/index.html` の可視「100種」2箇所を 118 へ統一した |
 | N22 | **⑤の写真グリッドに載せた `spenglers-leaf-turtle` の写真は、人の手に持たれた構図**。`assets/species-photos/spenglers-leaf-turtle.webp` は 2026-08-22 の生体写真全数監査（123枚）を通過済みで「絶対に使わない」条件には当たらない（健康・頭部と四肢が出ている）が、Phase 3 で**トップの最上位グリッドへ露出が上がった**。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして残すかは Owner 判断。差し替える場合の影響は `index.html` の1カードと `species/spenglers-leaf-turtle.html` |
 | N23 | **`index.html` のインライン CSS に、Phase 3 以前から孤立していたルールが 79 残っている**（`nav.crumbs` / `.item` / `.amazon-btn` / `section.ranking` / `.hub-links` / `.cta-btn-primary` / `.entry-nav` / `.species-preview` / `.h3-eyebrow` 等。他ページのテンプレート由来）。Phase 3 は「今回の変更で孤立したもの」だけを削除しており、**この79件には触れていない**。害はないが掃除の候補 |
 | N24 | **`index.html` の `meta description` / `og:description` / `twitter:description` は「100種」のまま**。公開UIは 118 に統一したが、SEO層は **H8（GSC/GA4 の実測トリガーなしに変更しない）** のため据え置いた。数値の食い違いが残っていることは把握しておく |
@@ -634,21 +637,21 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### N25 の解消 — `shindan/index.html` の可視「100種」2箇所を正本 118 へ揃える
+### ② 種類一覧ページ（`species-list.html`）のデザイン監査
 
-TOP DESIGN の Phase 2 → 3 → 4 は完了した。**MOVE 対象は残っていない。**
-残っているのは、Owner 確定 U-A（公開UIの種数は正本 118）に対する取りこぼし1件だけ。
+**TOP DESIGN プロジェクト（Phase 2 / 3 / 4）は完了。** トップページの再設計は
+`index.html`（PR #95）と移設先4ページ（PR #96）で終わっている。**再監査しない。**
+亀好きさんの指定により、次のデザイン対象は **② 種類一覧ページ** へ移る。
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | `shindan/index.html` の可視「100種」**2箇所**を「118種」へ揃える。① `.species-count` の `100種対応` ② `.jp-step-copy` の `100種から相性のいい候補を絞り込む`。**同一画面にあるので必ず同時に直す** |
-| **なぜこれが次か** | Phase 4 で `journey-preview` を移設したことで、同じ画面に「100種」が2つ並んだ。片方だけ直すと画面内で矛盾する |
-| **対象** | `shindan/index.html` のみ（可視テキスト2箇所） |
-| **変更しない** | `title` / `meta` / OG / twitter（H8 SEO運用HOLD。`index.html` の「100種」も同じ理由で据え置き）／`<script>` 6ブロック（診断ロジック）／`shindan/species.js`・`routes.js`・`equipment.js`／`index.html` |
-| **完了条件** | `shindan/index.html` の可視「100種」が0件・「118種」が2件。`<script>` の差分0。実描画でJSエラー0。診断が5ルートとも通ること |
+| **やること** | `species-list.html` の現状を実測して構造を棚卸しし、TOP と同じ手順（現状把握 → 判定 → 設計確定 → 実装）の**最初の1工程＝現状把握と設計案**まで進める |
+| **前提として渡す固定入力** | 掲載種 **118** / 個別ページを持つ種 **112** / 6大分類 27・22・18・29・6・16 / difficulty 正本5値 / `species-list.html` は `tools/gen-species-list.js` の**生成領域を持つ**（`BEGIN:species-index` / `BEGIN:wamei-alias`）ので手修正しない / 検索は `haystack() = name + 別名 + latin + slug` |
+| **変更しない** | `title` / `meta` / OG / twitter / JSON-LD（H8）／生成領域／`shindan/species.js`・`equipment.js`・`CAT_OVERRIDE` の和名キー3点セット／`index.html` |
+| **完了条件** | 現行構造の全件棚卸しと、新構成の設計案を1本提示すること。実装は次工程 |
 
-**この工程が終われば TOP DESIGN プロジェクトはクローズしてよい。**
-以後は `docs/operations/` に従い、GSC/GA4 の実測がトリガーを引いたページのみを改善する（週最大3ページ）。
+**ただし着手前に N26（`routes.js:169` の「全100種」1行）を片付けてよい。**
+公開画面に 100 と 118 が混在したままなので、次のPRの冒頭で同時に直すのが安全。
 
 **Owner の判断待ち案件が来たら、そちらを優先して差し支えない**（`UNRESOLVED` 参照）。
 
