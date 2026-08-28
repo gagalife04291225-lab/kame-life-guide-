@@ -36,9 +36,78 @@
   nav.crumbs a{color:var(--accent);text-decoration:none;}
   nav.crumbs a:hover{text-decoration:underline;}
 
-  /* フィルターバー */
-  .filter-bar{background:#fff;border-bottom:1px solid #e4ddc9;padding:18px 0 14px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(13,31,26,.06);}
-  .filter-group{margin-bottom:10px;}
+  /* 操作バー（検索・絞り込み・生息環境・件数・条件チップ・並び替え）— 一覧中も画面上部に固定 */
+  .filter-bar{background:#fff;border-bottom:1px solid #e4ddc9;padding:12px 0 10px;position:sticky;top:0;z-index:20;box-shadow:0 2px 10px rgba(13,31,26,.07);}
+  .sl-row{display:flex;gap:8px;align-items:center;}
+  .sl-row .search-box{flex:1;min-width:0;}
+  .sl-filter-btn{
+    flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+    min-height:44px;padding:0 16px;border-radius:24px;cursor:pointer;
+    font-family:"Noto Serif JP",serif;font-size:.86rem;font-weight:700;
+    border:1.5px solid var(--forest);background:var(--forest);color:var(--parchment);
+    -webkit-tap-highlight-color:transparent;transition:background .15s;
+  }
+  .sl-filter-btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  .sl-filter-n{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:19px;height:19px;padding:0 5px;border-radius:10px;
+    background:var(--accent);color:#3a2610;font-size:.68rem;font-weight:800;line-height:1;
+  }
+  /* 生息環境は1行に収め、横スクロールで送る（縦を増やさない） */
+  .sl-habs{margin-top:9px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .sl-habs::-webkit-scrollbar{display:none;}
+  .sl-habs .filter-btns{flex-wrap:nowrap;width:max-content;padding-bottom:2px;}
+  .sl-status{display:flex;align-items:center;gap:10px;margin-top:9px;flex-wrap:wrap;}
+  .sl-chips{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;}
+  .sl-chips::-webkit-scrollbar{display:none;}
+  .sl-chip{
+    flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;
+    padding:4px 10px;border-radius:16px;cursor:pointer;white-space:nowrap;
+    font-family:"Noto Serif JP",serif;font-size:.76rem;
+    border:1.5px solid var(--accent);background:#fffaf1;color:var(--forest-deep);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .sl-chip:hover{background:#fff3e0;}
+  .sl-chip-x{font-size:.9rem;line-height:1;color:var(--accent-dark);}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  /* 絞り込みシート（難易度・サイズ・KLGクイック） */
+  /* display 指定が hidden 属性より強いので、明示的に打ち消す */
+  [hidden]{display:none !important;}
+  .sl-backdrop{position:fixed;inset:0;background:rgba(8,19,15,.5);z-index:30;}
+  .sl-sheet{
+    position:fixed;left:0;right:0;bottom:0;z-index:31;
+    background:#fff;border-top:2px solid var(--accent);
+    border-radius:16px 16px 0 0;max-height:82vh;display:flex;flex-direction:column;
+    box-shadow:0 -8px 28px rgba(8,19,15,.24);
+  }
+  .sl-sheet-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px 10px;border-bottom:1px solid #e4ddc9;
+  }
+  .sl-sheet-title{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:1.06rem;color:var(--forest);}
+  .sl-sheet-close{
+    min-height:44px;padding:0 12px;border:none;background:none;cursor:pointer;
+    font-family:"Noto Serif JP",serif;font-size:.84rem;color:var(--accent-dark);font-weight:700;
+  }
+  .sl-sheet-body{padding:16px 20px 8px;overflow-y:auto;}
+  .sl-sheet-foot{
+    display:flex;gap:10px;align-items:center;
+    padding:12px 20px calc(14px + env(safe-area-inset-bottom,0px));
+    border-top:1px solid #e4ddc9;background:#fff;
+  }
+  .sl-sheet-clear{
+    flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:22px;cursor:pointer;
+    font-family:"Noto Serif JP",serif;font-size:.82rem;
+    border:1.5px solid #d4c9a8;background:#fff;color:var(--forest-deep);
+  }
+  .sl-sheet-apply{
+    flex:1;min-height:48px;border-radius:24px;cursor:pointer;
+    font-family:"Noto Serif JP",serif;font-size:.92rem;font-weight:700;
+    border:1.5px solid var(--forest);background:var(--forest);color:var(--parchment);
+  }
+  .sl-sheet-apply:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+  .filter-group{margin-bottom:16px;}
   .filter-group:last-child{margin-bottom:0;}
   .filter-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:8px;}
   .filter-btns{display:flex;flex-wrap:wrap;gap:7px;}
@@ -65,8 +134,7 @@
   .fbtn.active-klg{background:var(--accent);border-color:var(--accent);color:#3a2610;}
 
   /* 件数表示 */
-  .count-bar{padding:18px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-  .count-text{font-size:.9rem;color:#6b7c70;}
+  .count-text{flex:0 0 auto;font-size:.82rem;color:#6b7c70;white-space:nowrap;}
   .count-num{font-weight:700;color:var(--forest);font-size:1.05rem;}
   .sort-wrap{display:flex;align-items:center;gap:8px;}
   .sort-label{font-size:.78rem;letter-spacing:.1em;color:var(--accent-dark);font-weight:700;}
@@ -79,55 +147,60 @@
   .sort-sel:focus{border-color:var(--accent);}
 
   /* 種カードグリッド */
-  section.species-grid{padding:4px 0 60px;}
-  .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  section.species-grid{padding:4px 0 44px;}
+  .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  /* カード全体がリンク。中身は 実写真 / 和名 / 学名 / 難易度 / 甲長 の5点 */
   .sp-card{
-    background:#fff;border-radius:14px;border:1px solid #e4ddc9;
-    padding:0 0 18px;
-    box-shadow:0 2px 8px rgba(13,31,26,.06);
-    display:flex;flex-direction:column;gap:0;overflow:hidden;
-    transition:transform .14s,box-shadow .14s,border-color .14s;
+    display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    background:#fff;border:1px solid #e4ddc9;border-radius:10px;overflow:hidden;
+    transition:border-color .14s,box-shadow .14s;
   }
-  .sp-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,31,26,.1);border-color:var(--accent);}
+  .sp-card:hover{border-color:var(--accent);box-shadow:0 3px 12px rgba(13,31,26,.09);}
+  .sp-card:focus-visible{outline:2px solid var(--accent-dark);outline-offset:2px;}
   /* 写真サムネイル枠：4:3固定でCLS防止 */
+  /* 一覧のサムネイルは 3:2。元画像は 800×600 なので上下がわずかに切れる。
+     全身と識別点は詳細ページの 4:3 写真で見せる */
   .sp-photo{
-    position:relative;width:100%;aspect-ratio:4 / 3;
-    background:linear-gradient(155deg,#eef1ea 0%,#e0e5dc 100%);
-    overflow:hidden;
+    display:block;position:relative;width:100%;aspect-ratio:3 / 2;
+    background:#e6e9e2;overflow:hidden;
   }
-  .sp-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  /* 写真がない種：絵文字を枠の中央に大きく表示（フォールバック） */
-  .sp-photo-fallback{
+  .sp-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  /* 写真がない種：深緑のプレースホルダ（絵文字も生成画像も使わない） */
+  .sp-photo-none{
     display:flex;align-items:center;justify-content:center;
-    width:100%;height:100%;font-size:3.2rem;line-height:1;
-    background:linear-gradient(155deg,#eef1ea 0%,#dfe4da 100%);
+    width:100%;height:100%;
+    background:linear-gradient(160deg,#22372c 0%,#2f4a3c 100%);
+    color:rgba(244,239,226,.62);font-size:.7rem;letter-spacing:.1em;
   }
-  .sp-body{padding:16px 18px 0;display:flex;flex-direction:column;flex:1;}
-  .sp-card-top{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
-  .sp-emoji{font-size:1.5rem;line-height:1;flex-shrink:0;}
-  .sp-name-wrap{min-width:0;}
-  .sp-name{font-weight:700;font-size:.95rem;color:var(--forest);line-height:1.3;}
-  .sp-latin{font-style:italic;font-size:.72rem;color:#8a9389;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .sp-badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
-  .spb{font-size:.7rem;padding:2px 9px;border-radius:12px;font-weight:700;white-space:nowrap;}
+  .sp-body{display:flex;flex-direction:column;gap:2px;padding:9px 11px 10px;flex:1;}
+  .sp-name{font-weight:700;font-size:.88rem;color:var(--forest);line-height:1.38;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .sp-latin{font-style:italic;font-size:.68rem;color:#8a9389;line-height:1.4;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .sp-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:4px;}
+  .sp-cm{font-size:.7rem;color:#6b7c70;white-space:nowrap;}
+  .sp-to-guide{margin-top:6px;font-size:.68rem;color:var(--accent-dark);font-weight:700;}
+  .spb{font-size:.68rem;padding:1px 8px;border-radius:11px;font-weight:700;white-space:nowrap;}
   .spb-begin{background:#e8f5ee;color:#2d6a4f;border:1px solid #a8d5be;}
   .spb-inter{background:#fff3e0;color:#8f5f2c;border:1px solid #f0c878;}
   .spb-adv{background:#fdeaea;color:#b03a2e;border:1px solid #f5a9a0;}
-  .spb-size{background:var(--parchment);color:var(--forest);border:1px solid #d4c9a8;}
-  .spb-cites{background:#fffde7;color:#7d6608;border:1px solid #e8d84a;}
-  .spb-invasive{background:#fff0f0;color:#b03a2e;border:1px solid #f5a9a0;}
-  .sp-reason{font-size:.78rem;color:#5a6b60;line-height:1.6;flex:1;margin-bottom:14px;
-    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-  .sp-link{
-    display:block;text-align:center;padding:9px 12px;
-    background:var(--forest);color:var(--parchment);text-decoration:none;
-    border-radius:8px;font-size:.78rem;font-weight:700;
-    transition:background .15s;margin-top:auto;
+  /* 法規制ラベル：legal フラグを持つ14種にだけ出す。
+     CITES II/III の一般表示は行わない（95種に出て情報密度を壊すため）。
+     文言は shindan/index.html の確定済み法規制文を一覧カード用に短くしたもの。
+     規制の区分と、飼いたい人にとっての帰結を2行に分けている。狭いカードで
+     語の途中から折り返るのを避け、帰結の行を読み落としにくくするため。 */
+  .sp-legal{
+    display:block;margin-top:6px;padding:3px 7px;border-radius:5px;line-height:1.5;
   }
-  .sp-link:hover{background:var(--accent-dark);}
+  /* 色は薄めない。AA を下回るため、区分と帰結の差は字送りと太さで付ける */
+  .sp-legal-k{display:block;font-size:.62rem;letter-spacing:.04em;font-weight:600;}
+  .sp-legal-v{display:block;font-size:.7rem;font-weight:700;}
+  /* 新規に手に入れることができない種 */
+  .sp-legal--stop{background:#fdeaea;color:#a03225;border:1px solid #f0b3aa;}
+  /* 手に入るが書類の確認が要る種 */
+  .sp-legal--doc{background:#fff6e6;color:#8a5a1e;border:1px solid #e8cb95;}
 
   .no-result{text-align:center;padding:52px 0 60px;color:#8a9389;font-size:.96rem;line-height:2;}
-  .no-result-emoji{font-size:2.2rem;margin-bottom:10px;}
   .no-result-reset{margin-top:16px;padding:8px 22px;font-size:.86rem;}
   /* Phase4: loop-back 2-door hub (診断 / 探索) */
   .loopback{padding:30px 0 6px;text-align:center;}
@@ -136,7 +209,6 @@
   .loopback-card{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:var(--forest);background:#fff;border:1.5px solid #e4ddc9;border-radius:14px;padding:18px 16px;font-weight:700;font-size:.98rem;transition:transform .15s,box-shadow .15s,border-color .15s;}
   .loopback-card:hover,.loopback-card:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,31,26,.10);border-color:var(--accent);outline:none;}
   .loopback-card--primary{border-color:var(--accent);background:linear-gradient(180deg,#fffaf1,#fff);}
-  .loopback-icon{font-size:1.3rem;line-height:1;}
   .loopback-note{font-size:.8rem;color:#4a5a50;margin:14px 0 0;}
   @media(max-width:520px){.loopback-cards{grid-template-columns:1fr;}}
 
@@ -153,24 +225,33 @@
 
   /* Phase1A: 大分類 → 属 → 種 → 亜種 のグループ見出し */
   .sp-groups{display:block;}
-  .sp-cat{margin:34px 0 4px;padding:0 0 8px;border-bottom:2px solid var(--accent);
+  .sp-cat{margin:28px 0 4px;padding:0 0 7px;border-bottom:2px solid var(--accent);
     display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;}
   .sp-cat:first-child{margin-top:8px;}
   .sp-cat h2{font-family:"Playfair Display",serif;font-weight:700;font-size:1.18rem;color:var(--forest);line-height:1.4;}
   .sp-cat .sp-cat-count{font-size:.8rem;color:#7b8a7f;white-space:nowrap;}
-  .sp-genus{margin:20px 0 10px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;}
+  .sp-genus{margin:16px 0 8px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;}
   .sp-genus h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:600;
     font-size:.98rem;color:var(--accent-dark);line-height:1.4;}
   .sp-genus .sp-genus-count{font-size:.74rem;color:#8a9389;}
-  .sp-sub{margin:12px 0 8px;font-size:.76rem;color:#7b8a7f;font-style:italic;
+  .sp-sub{margin:10px 0 6px;font-size:.74rem;color:#7b8a7f;font-style:italic;
     padding-left:10px;border-left:3px solid #e0d8c2;}
-  .sp-grid + .sp-cat{margin-top:38px;}
+  .sp-grid + .sp-cat{margin-top:32px;}
 
   @media(max-width:760px){.sp-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:480px){
-    .sp-grid{grid-template-columns:1fr;}
+    /* スマホでも2列を維持。操作バーの sticky も解除しない */
+    .sp-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .wrap{padding:0 14px;}
+    header.hero{padding:38px 0 32px;}
     header.hero h1{font-size:1.6rem;}
-    .filter-bar{position:static;}
+    .sp-name{font-size:.82rem;}
+    .sp-latin{font-size:.64rem;}
+    .sp-cat h2{font-size:1.06rem;}
+  }
+  @media(max-width:360px){
+    .sp-body{padding:9px 9px 10px;}
+    .sp-name{font-size:.79rem;}
   }
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -232,7 +313,7 @@
   <div class="wrap">
     <div class="eyebrow">Species Index</div>
     <h1>カメ・リクガメ 種一覧</h1>
-    <p class="lead">どの種を迎えるか、まだ決まっていなくても大丈夫。難易度やカテゴリを絞り込みながら、自分に合う一種を探してみてください。</p>
+    <p class="lead">暮らし方や大きさ、飼育の難しさから絞り込めます。</p>
   </div>
 </header>
 
@@ -244,11 +325,11 @@
 
 <div class="filter-bar">
   <div class="wrap">
-    <div class="filter-group">
-      <input type="search" id="search-box" class="search-box" placeholder="種名・別名・学名で検索（例：ニオイガメ / ヨツユビリクガメ / russian / Testudo）" autocomplete="off" aria-label="種名・別名・学名で検索">
+    <div class="sl-row">
+      <input type="search" id="search-box" class="search-box" placeholder="種名・別名・学名で検索" autocomplete="off" aria-label="種名・別名・学名で検索">
+      <button type="button" class="sl-filter-btn" id="filter-open" aria-expanded="false" aria-controls="filter-sheet">絞り込み<span class="sl-filter-n" id="filter-n" hidden></span></button>
     </div>
-    <div class="filter-group">
-      <div class="filter-label">生息環境</div>
+    <div class="sl-habs">
       <div class="filter-btns" id="hab-btns">
 <!-- BEGIN:hab-buttons (tools/gen-category-ui.js が生成。手で編集しない) -->
         <button class="fbtn active" data-hab="all">すべて</button>
@@ -261,6 +342,30 @@
 <!-- END:hab-buttons -->
       </div>
     </div>
+    <div class="sl-status">
+      <span class="count-text"><span class="count-num" id="count-num">118</span> 種</span>
+      <div class="sl-chips" id="active-chips"></div>
+      <span class="sort-wrap">
+        <label for="sort-sel" class="sort-label">並び替え</label>
+        <select id="sort-sel" class="sort-sel">
+          <option value="popular">人気順</option>
+          <option value="beginner">初心者向け</option>
+          <option value="size">小型順</option>
+          <option value="odor">低臭順</option>
+        </select>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- 絞り込みシート（難易度・サイズ・KLGクイック）— 既定は閉じている -->
+<div class="sl-backdrop" id="filter-backdrop" hidden></div>
+<div class="sl-sheet" id="filter-sheet" role="dialog" aria-modal="true" aria-label="絞り込み" hidden>
+  <div class="sl-sheet-head">
+    <span class="sl-sheet-title">絞り込み</span>
+    <button type="button" class="sl-sheet-close" id="filter-close" aria-label="絞り込みを閉じる">閉じる</button>
+  </div>
+  <div class="sl-sheet-body">
     <div class="filter-group">
       <div class="filter-label">難易度</div>
       <div class="filter-btns" id="diff-btns">
@@ -291,20 +396,9 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="wrap">
-  <div class="count-bar">
-    <span class="count-text"><span class="count-num" id="count-num">118</span> 種 表示中</span>
-    <span class="sort-wrap">
-      <label for="sort-sel" class="sort-label">並び替え</label>
-      <select id="sort-sel" class="sort-sel">
-        <option value="popular">人気順</option>
-        <option value="beginner">初心者向け</option>
-        <option value="size">小型順</option>
-        <option value="odor">低臭順</option>
-      </select>
-    </span>
+  <div class="sl-sheet-foot">
+    <button type="button" class="sl-sheet-clear" id="filter-clear">条件をすべて外す</button>
+    <button type="button" class="sl-sheet-apply" id="filter-apply"><span id="filter-apply-n">118</span> 種を見る</button>
   </div>
 </div>
 
@@ -312,7 +406,6 @@
   <div class="wrap">
     <div class="sp-grid" id="sp-grid"></div>
     <div class="no-result" id="no-result" style="display:none">
-      <div class="no-result-emoji" aria-hidden="true">🐢💤</div>
       <p>条件に一致する種が見つかりませんでした。<br>検索語や絞り込みを少しゆるめてみてください。</p>
       <button type="button" class="fbtn no-result-reset" id="reset-filters">条件をリセットする</button>
     </div>
@@ -325,12 +418,10 @@
     <div class="loopback-cards">
       <a class="loopback-card loopback-card--primary" href="./shindan/"
          onclick="(typeof gtag==='function')&&gtag('event','specieslist_loopback_click',{to:'shindan'})">
-        <span class="loopback-icon" aria-hidden="true">🐢</span>
         <span>あなたに合う亀を診断する</span>
       </a>
       <a class="loopback-card" href="./explore.html"
          onclick="(typeof gtag==='function')&&gtag('event','specieslist_loopback_click',{to:'explore'})">
-        <span class="loopback-icon" aria-hidden="true">🌿</span>
         <span>別の特徴から探してみる</span>
       </a>
     </div>
@@ -351,7 +442,7 @@
       <a href="guide-moist.html">ヤマガメ・ハコガメ</a>
       <a href="guide-dry.html">乾燥系リクガメ</a>
       <a href="guide-arid.html">多湿系リクガメ</a>
-      <a href="shindan/index.html">🐢 亀診断</a>
+      <a href="shindan/index.html">亀診断</a>
       <a href="kids/index.html" onclick="(typeof gtag==='function')&amp;&amp;gtag('event','site_kids_click',{from:'hub'})">🧒 カメふしぎ島（こども向け）</a>
     </div>
   </div>
@@ -629,14 +720,29 @@ function renderGroups(list) {
                '<span class="sp-cat-count">' + c.count + ' 種' +
                (CAT_NOTE[c.cat] ? '｜' + esc(CAT_NOTE[c.cat]) : '') + '</span></div>';
     var body = c.genera.map(function(g) {
-      var gh = '<div class="sp-genus"><h3>' + esc(g.genus) + '</h3>' +
+      // 1種しかない属は見出しを出さない（見出しだけが増えて一覧が読みにくくなるため）
+      var gh = g.count <= 1 ? ''
+             : '<div class="sp-genus"><h3>' + esc(g.genus) + '</h3>' +
                '<span class="sp-genus-count">' + g.count + ' 種</span></div>';
-      var inner = g.species.map(function(s) {
-        var lead = (s.items.length > 1)
-          ? '<div class="sp-sub">' + esc(s.binomial) + ' — 種と亜種 ' + s.items.length + ' 件</div>'
-          : '';
-        return lead + '<div class="sp-grid">' + s.items.map(renderCard).join('') + '</div>';
-      }).join('');
+      // 亜種を持つ種だけ小見出し＋専用グリッドにする。
+      // 単独の種は連続するぶんを1つのグリッドにまとめ、カードが2列に流れるようにする
+      // （種ごとにグリッドを分けると1枚のカードで1行を使ってしまうため）。
+      var inner = '', buf = [];
+      function flush() {
+        if (!buf.length) return;
+        inner += '<div class="sp-grid">' + buf.join('') + '</div>';
+        buf = [];
+      }
+      g.species.forEach(function(s) {
+        if (s.items.length > 1) {
+          flush();
+          inner += '<div class="sp-sub">' + esc(s.binomial) + ' — 種と亜種 ' + s.items.length + ' 件</div>' +
+                   '<div class="sp-grid">' + s.items.map(renderCard).join('') + '</div>';
+        } else {
+          buf.push(renderCard(s.items[0]));
+        }
+      });
+      flush();
       return gh + inner;
     }).join('');
     return head + body;
@@ -650,14 +756,23 @@ function diffBadge(diff) {
   return '<span class="spb ' + c + '">' + diff + '</span>';
 }
 
-function legalBadge(sp) {
-  if (sp.legal === 'conditional_invasive') {
-    return '<span class="spb spb-invasive">条件付特定外来</span>';
-  }
-  if (sp.cites) {
-    return '<span class="spb spb-cites">' + sp.cites + '</span>';
-  }
-  return '';
+// 法規制ラベル — species.js の legal を持つ種だけに出す。
+// legal が null の104種には何も出さない。CITES II/III の一般表示もしない。
+// 文言は shindan/index.html の法規制文を一覧用に短縮したもので、新しい解釈は足していない。
+// CITES I を「購入不可」とは書かない。登録票のある個体は国内で流通している。
+var LEGAL_NOTE = {
+  conditional_invasive: ['stop', '条件付特定外来', '新規購入不可'],
+  unknown_hold:         ['stop', '特定外来生物',   '新規購入不可'],
+  cites_i:              ['doc',  'CITES I',       '登録票が必要'],
+  cites_ii_cb_only:     ['doc',  'CITES II',      'CB個体・要書類確認']
+};
+function legalNote(sp) {
+  var n = LEGAL_NOTE[sp.legal];
+  if (!n) return '';
+  return '<span class="sp-legal sp-legal--' + n[0] + '">' +
+    '<span class="sp-legal-k">' + esc(n[1]) + '</span>' +
+    '<span class="sp-legal-v">' + esc(n[2]) + '</span>' +
+  '</span>';
 }
 
 // リンクURL — species.js の slug/hasPage を参照（data-driven、MAPなし）
@@ -666,49 +781,39 @@ function guideHref(sp) {
   if (!sp.links || !sp.links[0]) return 'index.html';
   return sp.links[0].href.replace('../', '');
 }
-function guideLabel(sp) {
-  if (sp.hasPage) return '詳しく見る';
-  if (!sp.links || !sp.links[0]) return '飼育ガイドを見る';
-  return sp.links[0].label;
-}
 
 // 実写サムネイルが配置済みの種slug（assets/species-photos/{slug}.webp）
 var PHOTO_SLUGS = {"libyan-greek-tortoise":1,"midland-painted-turtle":1,"suwannee-cooter":1,"sonora-wood-turtle":1,"guerrero-wood-turtle":1,"mangrove-diamondback-terrapin":1,"moroccan-greek-tortoise":1,"african-helmeted-turtle":1,"alabama-map-turtle":1,"albino-chinese-softshell":1,"aldabra-tortoise":1,"amazon-matamata":1,"annulated-wood-turtle":1,"asian-black-marsh-turtle":1,"asian-leaf-turtle":1,"bell-hinge-back-tortoise":1,"black-knobbed-map-turtle":1,"blandings-turtle":1,"bowsprit-tortoise":1,"brown-wood-turtle-manni":1,"canton-reeves-turtle":1,"carolina-diamondback-terrapin":1,"chaco-tortoise":1,"cherry-head-tortoise":1,"chinese-box-turtle":1,"chinese-softshell-turtle":1,"chinese-stripe-necked-turtle":1,"collier-snake-necked-turtle":1,"cumberland-slider":1,"desert-box-turtle":1,"eastern-box-turtle":1,"eastern-hermann-tortoise":1,"eastern-painted-turtle":1,"mississippi-diamondback-terrapin":1,"texas-diamondback-terrapin":1,"tunisian-greek-tortoise":1,"western-hermann-tortoise":1,"eastern-long-necked-turtle":1,"eastern-mud-turtle":1,"elongated-tortoise":1,"european-pond-turtle":1,"false-map-turtle":1,"florida-box-turtle":1,"florida-mud-turtle":1,"florida-red-bellied-turtle":1,"florida-softshell-turtle":1,"giant-musk-turtle":1,"giant-musk-turtle-mx":1,"greek-tortoise":1,"gulf-coast-box-turtle":1,"hermann-tortoise":1,"herrera-mud-turtle":1,"hilaire-side-necked-turtle":1,"hirase-turtle":1,"home-hinge-back-tortoise":1,"iberian-greek-tortoise":1,"impressed-tortoise":1,"japanese-pond-turtle":1,"leopard-tortoise":1,"loggerhead-musk-turtle":1,"malayan-box-turtle":1,"marginated-tortoise":1,"matamata":1,"mexican-mud-turtle":1,"mississippi-map-turtle":1,"mississippi-mud-turtle":1,"musk-turtle":1,"narrow-bridged-mud-turtle":1,"nicaragua-wood-turtle":1,"northern-diamondback-terrapin":1,"northern-map-turtle":1,"ornate-box-turtle":1,"ornate-diamondback-terrapin":1,"ouachita-map-turtle-sp":1,"painted-turtle":1,"painted-wood-turtle":1,"pancake-tortoise":1,"peninsula-cooter":1,"pig-nosed-turtle":1,"pink-bellied-side-necked-turtle":1,"razorback-musk-turtle":1,"red-cheeked-mud-turtle":1,"red-eared-slider":1,"red-footed-tortoise":1,"reeves-turtle":1,"ringed-map-turtle":1,"rio-grande-cooter":1,"river-cooter":1,"russian-tortoise":1,"scorpion-mud-turtle":1,"smooth-softshell-turtle":1,"spenglers-leaf-turtle":1,"spiny-softshell-turtle":1,"spotted-turtle":1,"stripe-necked-musk-turtle":1,"striped-mud-turtle":1,"sulcata-tortoise":1,"taiwan-box-turtle":1,"three-toed-box-turtle":1,"west-african-mud-turtle":1,"western-painted-turtle":1,"white-lipped-mud-turtle":1,"wood-turtle":1,"yaeyama-pond-turtle":1,"yellow-bellied-slider":1,"yellow-mud-turtle":1,"yellow-pond-turtle":1};
 function hasPhoto(sp) { return !!(sp.slug && PHOTO_SLUGS[sp.slug]); }
 
-// 写真枠HTML（写真あり→img / なし→絵文字フォールバック）
+// 写真枠HTML（写真あり→img / なし→深緑のプレースホルダ。絵文字は使わない）
 function photoBlock(sp) {
   if (hasPhoto(sp)) {
-    return '<div class="sp-photo">' +
-      '<img src="assets/species-photos/' + sp.slug + '.webp" alt="' + sp.name + 'の写真"' +
-      ' width="800" height="600" loading="lazy"></div>';
+    return '<span class="sp-photo">' +
+      '<img src="assets/species-photos/' + sp.slug + '.webp" alt="' + esc(sp.name) + 'の写真"' +
+      ' width="800" height="600" loading="lazy"></span>';
   }
-  return '<div class="sp-photo"><div class="sp-photo-fallback" aria-hidden="true">' + sp.emoji + '</div></div>';
+  return '<span class="sp-photo"><span class="sp-photo-none">写真を準備中</span></span>';
 }
 
-// カード生成（写真 → 種名・学名 → バッジ → 説明 → 詳細リンク）
+// カード生成（実写真 → 和名・学名 → 難易度・甲長）
+// カード全体を <a> にしている。個別ページを持たない種は遷移先がガイドなので明示する。
 function renderCard(item) {
   var sp = item.sp;
-  var legal = legalBadge(sp);
-  return '<div class="sp-card" data-cat="' + item.cat + '" data-diff="' + sp.difficulty + '">' +
+  var cm = item.maxCm ? '<span class="sp-cm">最大 ' + item.maxCm + 'cm</span>' : '';
+  // 個別ページを持たない種は遷移先がカテゴリの飼育ガイド。誤認しないよう明示する
+  var guide = sp.hasPage ? '' : '<span class="sp-to-guide">飼育ガイドへ</span>';
+  return '<a class="sp-card" href="' + guideHref(sp) + '"' +
+    ' data-cat="' + esc(item.cat) + '" data-diff="' + esc(sp.difficulty) + '">' +
     photoBlock(sp) +
-    '<div class="sp-body">' +
-      '<div class="sp-card-top">' +
-        '<span class="sp-emoji" aria-hidden="true">' + sp.emoji + '</span>' +
-        '<div class="sp-name-wrap">' +
-          '<div class="sp-name">' + sp.name + '</div>' +
-          '<div class="sp-latin">' + sp.latin + '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div class="sp-badges">' +
-        diffBadge(sp.difficulty) +
-        '<span class="spb spb-size">' + sp.size + '</span>' +
-        legal +
-      '</div>' +
-      '<p class="sp-reason">' + sp.reason + '</p>' +
-      '<a href="' + guideHref(sp) + '" class="sp-link">' + guideLabel(sp) + ' →</a>' +
-    '</div>' +
-  '</div>';
+    '<span class="sp-body">' +
+      '<span class="sp-name">' + esc(sp.name) + '</span>' +
+      '<span class="sp-latin">' + esc(sp.latin) + '</span>' +
+      '<span class="sp-meta">' + diffBadge(sp.difficulty) + cm + '</span>' +
+      legalNote(sp) +
+      guide +
+    '</span>' +
+  '</a>';
 }
 
 var grid = document.getElementById('sp-grid');
@@ -769,7 +874,105 @@ function render() {
   }
   countEl.textContent = list.length;
   noResultEl.style.display = list.length === 0 ? '' : 'none';
+  renderChips(list.length);
 }
+
+// ── 適用中の条件チップ（× で個別に外せる）────────────────────
+var KLG_LABEL = { lowOdor:'低臭', lowBudget:'低予算', compact:'省スペース', rare:'レア種' };
+var chipsEl   = document.getElementById('active-chips');
+var applyNEl  = document.getElementById('filter-apply-n');
+var filterNEl = document.getElementById('filter-n');
+
+function activeConds() {
+  var out = [];
+  if (state.q)                 out.push({ k:'q',    label:'「' + state.q + '」' });
+  if (state.hab  !== 'all')    out.push({ k:'hab',  label:state.hab });
+  if (state.diff !== 'all')    out.push({ k:'diff', label:state.diff });
+  if (state.size !== 'all')    out.push({ k:'size', label:state.size });
+  Object.keys(state.klg).forEach(function(t){
+    if (state.klg[t]) out.push({ k:'klg', tag:t, label:KLG_LABEL[t] || t });
+  });
+  return out;
+}
+
+function renderChips(n) {
+  var conds = activeConds();
+  chipsEl.innerHTML = conds.map(function(c){
+    return '<button type="button" class="sl-chip" data-k="' + c.k + '"' +
+           (c.tag ? ' data-tag="' + c.tag + '"' : '') + '>' +
+           esc(c.label) + '<span class="sl-chip-x" aria-hidden="true">×</span>' +
+           '<span class="sr-only">を外す</span></button>';
+  }).join('');
+  if (applyNEl) applyNEl.textContent = n;
+  // 絞り込みシート内の条件（難易度・サイズ・KLG）の数だけバッジに出す
+  var inSheet = conds.filter(function(c){ return c.k !== 'q' && c.k !== 'hab'; }).length;
+  if (filterNEl) { filterNEl.textContent = inSheet; filterNEl.hidden = inSheet === 0; }
+}
+
+// チップの × で1条件だけ外す
+chipsEl.addEventListener('click', function(e) {
+  var btn = e.target.closest('.sl-chip');
+  if (!btn) return;
+  var k = btn.dataset.k;
+  if (k === 'q') {
+    state.q = ''; document.getElementById('search-box').value = '';
+  } else if (k === 'hab') {
+    state.hab = 'all'; state.habCats = null;
+    document.querySelectorAll('#hab-btns .fbtn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.hab === 'all');
+    });
+  } else if (k === 'diff') {
+    state.diff = 'all'; state.diffVals = null;
+    document.querySelectorAll('#diff-btns .fbtn').forEach(function(b){
+      b.classList.toggle('active-diff', b.dataset.diff === 'all');
+    });
+  } else if (k === 'size') {
+    state.size = 'all';
+    document.querySelectorAll('#size-btns .fbtn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.size === 'all');
+    });
+  } else if (k === 'klg') {
+    var tag = btn.dataset.tag;
+    state.klg[tag] = false;
+    var b = document.querySelector('#klg-btns .fbtn[data-klg="' + tag + '"]');
+    if (b) b.classList.remove('active-klg');
+  }
+  render();
+});
+
+// ── 絞り込みシートの開閉 ──────────────────────────────────
+(function sheet() {
+  var openBtn  = document.getElementById('filter-open');
+  var closeBtn = document.getElementById('filter-close');
+  var applyBtn = document.getElementById('filter-apply');
+  var clearBtn = document.getElementById('filter-clear');
+  var sheetEl  = document.getElementById('filter-sheet');
+  var backdrop = document.getElementById('filter-backdrop');
+  if (!openBtn || !sheetEl) return;
+
+  function open() {
+    sheetEl.hidden = false; backdrop.hidden = false;
+    openBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close() {
+    sheetEl.hidden = true; backdrop.hidden = true;
+    openBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    openBtn.focus();
+  }
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  applyBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !sheetEl.hidden) close();
+  });
+  clearBtn.addEventListener('click', function(){
+    document.getElementById('reset-filters').click();
+  });
+})();
 
 // 初期描画
 render();
