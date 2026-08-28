@@ -16,12 +16,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **f9b5be0**（PR #96 = TOP DESIGN Phase 4 の merge commit まで反映済み） |
-| サイトファイルの状態 | **PR #96 = `01685fa`** が最後（移設先4ページ）。**merge 待ち = 本PR（N25 修正・`shindan/index.html` 2行）** |
+| 基準 | `origin/main` = **cd6f086**（PR #97 = N25 修正の merge commit まで反映済み） |
+| サイトファイルの状態 | **PR #97 = `d024790`** が最後。**merge 待ち = 本PR（公開UIの種数表記を118へ統一・143ファイル）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
 | 最終更新日 | 2026-08-28 |
-| 作業ブランチ | `claude/kame-life-shindan-n25` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `shindan/index.html` と `docs/AI-HANDOFF.md`） |
+| 作業ブランチ | `claude/kame-life-species-count-118` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
 
 > **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
 > 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
@@ -45,7 +45,26 @@
 
 | Phase 4 | MOVE 7件を移設先ページへ実装 | **PR #96 / merge `f9b5be0`** | 移設先**4ファイル・+1,181/−0行（純粋な追加）**。移設元の正本は `54bd27b:index.html`。`index.html` は1バイトも変更していない |
 
-| N25 修正 | 診断開始画面の可視「100種」を正本 118 へ | 本PR | `shindan/index.html` **2行のみ**（`.species-count`「100種対応」→「118種対応」／`.jp-step-copy`「100種から…」→「118種から…」）。**`<script>` 6ブロック・CSS・`title`/`meta`/OG/twitter/JSON-LD はすべて差分0。** 診断5ルートを実操作して全て結果画面へ到達（JSエラー0）。**ただし `shindan/routes.js:169` の `全100種・8問で診断` は本工程の変更禁止指定に含まれていたため未修正 → `UNRESOLVED` の N26 へ** |
+| N25 修正 | 診断開始画面の可視「100種」を正本 118 へ | **PR #97 / merge `cd6f086`** | `shindan/index.html` **2行のみ**（`.species-count`「100種対応」→「118種対応」／`.jp-step-copy`「100種から…」→「118種から…」）。**`<script>` 6ブロック・CSS・`title`/`meta`/OG/twitter/JSON-LD はすべて差分0。** 診断5ルートを実操作して全て結果画面へ到達（JSエラー0）。**ただし `shindan/routes.js:169` の `全100種・8問で診断` は本工程の変更禁止指定に含まれていたため未修正 → `UNRESOLVED` の N26 へ** |
+
+| 種数表記の統一 | 公開UIの掲載種数を全ページ 118 へ | 本PR | **143ファイル・319行**（`100種` → `118種`）。repo 全体を機械抽出して分類（総計334件 = 公開本文/UI 323 ／ SEO層 7 ／ 未公開テンプレート 4）。**公開本文/UIの「100種」は0件になった。** 差分は数字の置換のみで、319行すべて「`100種`→`118種`」以外の変化がないことを機械照合済み |
+
+**公開UIの掲載種数について、今後は再調査しない事実:**
+
+- **公開画面に出る掲載種数は「118種」で確定。** 正本は `shindan/species.js`（118件）／
+  `hasPage:true` = 112／6大分類 27・22・18・29・6・16 = 118。
+- **`title` / `meta description` / `og:` / `twitter:` / JSON-LD の「100種」7件は意図的に据え置き**
+  （`index.html` 3 ／ `shindan/index.html` 4）。**H8（SEO運用HOLD）** の対象で、
+  GSC/GA4 の実測がトリガーを引いたときにだけ扱う。**取りこぼしではない。**
+- **未公開テンプレート3ファイルの「100種」8件も意図的に据え置き**
+  （`species/_template-monetized.html` 4 ／ `species/hermann-dry-template.html` 2 ／
+  `species/three-toed-box-template.html` 2）。いずれも **sitemap 未掲載・被リンク0** で
+  公開画面には出ない。ただし**このテンプレートから新しい species ページを作ると 100種 が復活する**
+  ため、次に species ページを新規作成する工程の冒頭で直すこと（→ `UNRESOLVED` の N27）。
+- **`trouble/` 6ページの「全種一覧（100種以上）」は「全種一覧（118種）」にした。**
+  実数が118で確定しているため「以上」を落とした。これが唯一「数字以外」に手を入れた箇所。
+- `shindan/routes.js:169` の `desc`（ルートカードの説明文）と `js/annainin.js` の
+  連携ラベル・bot応答文も 118 へ。**どちらも表示文字列のみで、`qCount` や判定ロジックは無変更。**
 
 **Phase 4 で確定し、再実行しない事実（MOVE 7件は完了。移設元は二度と参照しなくてよい）:**
 
@@ -620,8 +639,9 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 | ID | 内容 |
 |----|------|
-| N26 | **診断開始画面にまだ「100種」が1箇所残っている。** `shindan/routes.js:169` の `desc: 'まだ決めていない人向け（全100種・8問で診断）'`。ルートカード（全カテゴリ診断）の説明文としてそのまま画面に出る。N25 の工程では `routes.js` が**変更禁止指定に含まれていた**ため手を付けていない。実描画で確認済み: 開始画面の可視テキストは「118種」2件・「100種」**1件**（出所は `route-desc`）。**1行の文字列置換で済む**（`全100種` → `全118種`）。診断ロジックとは無関係な表示文字列で、`qCount: 8` などの隣接キーは触らない。次の工程の冒頭で片付けるのが安全 |
-| ~~N25~~ | **解消済み（本PR）**。`shindan/index.html` の可視「100種」2箇所を 118 へ統一した |
+| N27 | **未公開テンプレート3ファイルに「100種」が8件残っている。** `species/_template-monetized.html`（4件）／`species/hermann-dry-template.html`（2件）／`species/three-toed-box-template.html`（2件）。3ファイルとも **sitemap 未掲載・被リンク0** で公開画面には出ないため、公開UI統一の工程では意図的に触っていない。**ただしこのテンプレートから新しい species ページを作ると「100種」が復活する。** 次に species ページを新規作成する工程の冒頭で `100種` → `118種` に直すこと。8件とも単純な文字列置換で済む |
+| ~~N26~~ | **解消済み（本PR）**。`shindan/routes.js:169` の `全100種` → `全118種`。`qCount: 8` などの隣接キーと判定ロジックは無変更 |
+| ~~N25~~ | **解消済み（PR #97）**。`shindan/index.html` の可視「100種」2箇所を 118 へ統一した |
 | N22 | **⑤の写真グリッドに載せた `spenglers-leaf-turtle` の写真は、人の手に持たれた構図**。`assets/species-photos/spenglers-leaf-turtle.webp` は 2026-08-22 の生体写真全数監査（123枚）を通過済みで「絶対に使わない」条件には当たらない（健康・頭部と四肢が出ている）が、Phase 3 で**トップの最上位グリッドへ露出が上がった**。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして残すかは Owner 判断。差し替える場合の影響は `index.html` の1カードと `species/spenglers-leaf-turtle.html` |
 | N23 | **`index.html` のインライン CSS に、Phase 3 以前から孤立していたルールが 79 残っている**（`nav.crumbs` / `.item` / `.amazon-btn` / `section.ranking` / `.hub-links` / `.cta-btn-primary` / `.entry-nav` / `.species-preview` / `.h3-eyebrow` 等。他ページのテンプレート由来）。Phase 3 は「今回の変更で孤立したもの」だけを削除しており、**この79件には触れていない**。害はないが掃除の候補 |
 | N24 | **`index.html` の `meta description` / `og:description` / `twitter:description` は「100種」のまま**。公開UIは 118 に統一したが、SEO層は **H8（GSC/GA4 の実測トリガーなしに変更しない）** のため据え置いた。数値の食い違いが残っていることは把握しておく |
@@ -637,21 +657,19 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### ② 種類一覧ページ（`species-list.html`）のデザイン監査
+### ② `species-list.html` のデザイン監査（**現状把握と設計案まで。実装はしない**）
 
-**TOP DESIGN プロジェクト（Phase 2 / 3 / 4）は完了。** トップページの再設計は
-`index.html`（PR #95）と移設先4ページ（PR #96）で終わっている。**再監査しない。**
-亀好きさんの指定により、次のデザイン対象は **② 種類一覧ページ** へ移る。
+**TOP DESIGN（Phase 2 / 3 / 4）と公開UIの種数表記統一はいずれも完了。再監査しない。**
+亀好きさんの指定により、次のデザイン対象は **② 種類一覧ページ** に移る。
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | `species-list.html` の現状を実測して構造を棚卸しし、TOP と同じ手順（現状把握 → 判定 → 設計確定 → 実装）の**最初の1工程＝現状把握と設計案**まで進める |
-| **前提として渡す固定入力** | 掲載種 **118** / 個別ページを持つ種 **112** / 6大分類 27・22・18・29・6・16 / difficulty 正本5値 / `species-list.html` は `tools/gen-species-list.js` の**生成領域を持つ**（`BEGIN:species-index` / `BEGIN:wamei-alias`）ので手修正しない / 検索は `haystack() = name + 別名 + latin + slug` |
-| **変更しない** | `title` / `meta` / OG / twitter / JSON-LD（H8）／生成領域／`shindan/species.js`・`equipment.js`・`CAT_OVERRIDE` の和名キー3点セット／`index.html` |
-| **完了条件** | 現行構造の全件棚卸しと、新構成の設計案を1本提示すること。実装は次工程 |
-
-**ただし着手前に N26（`routes.js:169` の「全100種」1行）を片付けてよい。**
-公開画面に 100 と 118 が混在したままなので、次のPRの冒頭で同時に直すのが安全。
+| **やること** | `species-list.html` の現行構造を表示順に全件棚卸しし、新構成の設計案を**1本だけ**提示する |
+| **やらないこと** | **実装しない。** HTML/CSS を書き換えない。TOP のときと同じく、設計を確定させてから次工程で実装する |
+| **前提として渡す固定入力（再調査させない）** | 掲載種 **118** ／ 個別ページを持つ種 **112** ／ 6大分類 リクガメ27・ヤマガメ ハコガメ22・半水棲18・水棲（淡水）29・汽水6・スッポン 曲頸16 ／ difficulty 正本5値（入門11・入門〜中級7・中級23・中〜上級38・上級39）／ 公開UIの種数表記は **118種** で統一済み |
+| **触ってはいけない構造** | `species-list.html` は `tools/gen-species-list.js` の**生成領域**を2つ持つ（`BEGIN:species-index` / `BEGIN:wamei-alias`）。**生成物を手修正しない**（直すなら上流と generator） ／ 検索は `haystack() = name + 別名 + latin + slug` ／ 和名は `shindan/species.js` の `name`・`shindan/equipment.js` の辞書キー・`species-list.html` の `CAT_OVERRIDE` キーの**3点セットで連結**しており、片方だけ変えると機能が壊れる |
+| **変更しない** | `title` / `meta` / OG / twitter / JSON-LD（H8）／`index.html`／N22・N23・N24・N27・U-D・H3・H8・H9 |
+| **完了条件** | 現行構造の全件棚卸し（表示順・要素・役割）と、新構成の設計案1本。判定は TOP と同じ KEEP / MERGE / MOVE / REMOVE の4分類で示す |
 
 **Owner の判断待ち案件が来たら、そちらを優先して差し支えない**（`UNRESOLVED` 参照）。
 
