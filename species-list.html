@@ -204,6 +204,37 @@
   /* 手に入るが書類の確認が要る種 */
   .sp-legal--doc{background:#fff6e6;color:#8a5a1e;border:1px solid #e8cb95;}
 
+  /* 暮らしから選ぶ — 6大分類の写真タイル。スマホ2列×3行 */
+  section.hab-tiles{padding:18px 0 4px;}
+  .ht-head{font-family:"Playfair Display",serif;font-weight:700;font-size:1.12rem;
+    color:var(--forest);margin:0 0 12px;}
+  .ht-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .ht{
+    display:flex;flex-direction:column;text-align:left;padding:0;overflow:hidden;
+    background:#fff;border:1.5px solid #e4ddc9;border-radius:10px;cursor:pointer;
+    font-family:inherit;-webkit-tap-highlight-color:transparent;
+    transition:border-color .14s,box-shadow .14s;
+  }
+  .ht:hover{border-color:var(--accent);box-shadow:0 3px 12px rgba(13,31,26,.09);}
+  .ht:focus-visible{outline:2px solid var(--accent-dark);outline-offset:2px;}
+  /* 選択中は枠の太さと地色で示す。チェック記号やアイコンは足さない */
+  .ht.is-active{border-color:var(--accent-dark);border-width:2px;background:#fffaf1;}
+  .ht.is-active .ht-name{color:var(--accent-dark);}
+  /* height:auto を書かないと img の height 属性（600）が効いて aspect-ratio が無視される */
+  .ht-photo{display:block;width:100%;height:auto;aspect-ratio:3 / 2;object-fit:cover;
+    object-position:center;background:#e6e9e2;}
+  .ht-cap{display:block;padding:8px 10px 10px;}
+  .ht-name{display:block;font-weight:700;font-size:.86rem;color:var(--forest);line-height:1.35;}
+  .ht-n{display:block;font-size:.72rem;color:#57685c;margin-top:1px;}
+  /* 写っている種。どの亀の写真かを隠さないために出す。
+     長い和名は切らずに2行まで折り返す（「オルナータダイヤモン…」で切れるより読める） */
+  .ht-of{font-size:.66rem;color:#617266;margin-top:3px;line-height:1.4;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  @media(min-width:760px){
+    .ht-grid{grid-template-columns:repeat(3,1fr);}
+    .ht-name{font-size:.92rem;}
+  }
+
   .no-result{text-align:center;padding:52px 0 60px;color:#8a9389;font-size:.96rem;line-height:2;}
   .no-result-reset{margin-top:16px;padding:8px 22px;font-size:.86rem;}
   /* Phase4: loop-back 2-door hub (診断 / 探索) */
@@ -422,6 +453,15 @@
     <button type="button" class="sl-sheet-apply" id="filter-apply"><span id="filter-apply-n">118</span> 種を見る</button>
   </div>
 </div>
+
+<!-- 暮らしから選ぶ（6大分類の写真タイル）。中身は JS が描画するので、
+     JS が無い環境では出さない。種の一覧は下の noscript が担う -->
+<section class="hab-tiles" id="hab-tiles-sec" aria-labelledby="hab-tiles-head" hidden>
+  <div class="wrap">
+    <h2 class="ht-head" id="hab-tiles-head">暮らしから選ぶ</h2>
+    <div class="ht-grid" id="hab-tiles"></div>
+  </div>
+</section>
 
 <section class="species-grid">
   <div class="wrap">
@@ -903,6 +943,75 @@ function sortList(list) {
   });
 }
 
+// ── 暮らしから選ぶ（6大分類の写真タイル）────────────────────
+// 分類とその順序の正本は CAT_ORDER（tools/taxonomy.js 由来の生成値）。ここでは
+// 「どの分類にどの写真を使うか」だけを持つ。件数は描画時に通常一覧から数えるので
+// 数字を焼き込まない。フィルタは既存の #hab-btns をそのまま押すだけで、
+// 新しい絞り込みロジックは持たない。
+// 写真は assets/species-photos の既存6枚。1枚ずつ実物を目視して選んだ。
+var HAB_PHOTO = {
+  'リクガメ':           { slug:'hermann-tortoise',            of:'ヘルマンリクガメ' },
+  'ヤマガメ・ハコガメ': { slug:'three-toed-box-turtle',        of:'ミツユビハコガメ' },
+  '半水棲':             { slug:'musk-turtle',                  of:'ミシシッピニオイガメ' },
+  '水棲（淡水）':       { slug:'reeves-turtle',                of:'クサガメ' },
+  '汽水':               { slug:'ornate-diamondback-terrapin',  of:'オルナータダイヤモンドバックテラピン' },
+  'スッポン・曲頸':     { slug:'pig-nosed-turtle',             of:'スッポンモドキ' }
+};
+
+var habTilesSec = document.getElementById('hab-tiles-sec');
+var habTilesEl  = document.getElementById('hab-tiles');
+
+// 通常一覧の件数（参考掲載は数えない）
+function habCount(cat) {
+  var n = 0;
+  for (var i = 0; i < ALL_SPECIES.length; i++) {
+    var it = ALL_SPECIES[i];
+    if (it.bigCat === cat && !isReference(it)) n++;
+  }
+  return n;
+}
+
+function renderHabTiles() {
+  if (!habTilesEl) return;
+  var html = CAT_ORDER.map(function(cat) {
+    var ph = HAB_PHOTO[cat];
+    if (!ph) return '';   // 分類が増えて写真が未定なら、そのタイルは出さない
+    return '<button type="button" class="ht" data-hab="' + esc(cat) + '" aria-pressed="false">' +
+      '<img class="ht-photo" src="assets/species-photos/' + ph.slug + '.webp" alt=""' +
+      ' width="800" height="600" loading="lazy" decoding="async">' +
+      '<span class="ht-cap">' +
+        '<span class="ht-name">' + esc(cat) + '</span>' +
+        '<span class="ht-n">' + habCount(cat) + ' 種</span>' +
+        '<span class="ht-of">写真: ' + esc(ph.of) + '</span>' +
+      '</span>' +
+    '</button>';
+  }).join('');
+  habTilesEl.innerHTML = html;
+  habTilesSec.hidden = !html;
+}
+
+// 既存フィルタとの選択状態の同期。render() から毎回呼ぶので、
+// タイル・チップ・シート・URLのどこから変えても表示が食い違わない。
+function syncHabTiles() {
+  if (!habTilesEl) return;
+  habTilesEl.querySelectorAll('.ht').forEach(function(b) {
+    var on = b.dataset.hab === state.hab;
+    b.classList.toggle('is-active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+// タップは既存の生息環境ボタンを押すだけ。選択中の分類をもう一度押したら「すべて」へ戻す
+if (habTilesEl) {
+  habTilesEl.addEventListener('click', function(e) {
+    var tile = e.target.closest('.ht');
+    if (!tile) return;
+    var want = (tile.dataset.hab === state.hab) ? 'all' : tile.dataset.hab;
+    var btn = document.querySelector('#hab-btns .fbtn[data-hab="' + want + '"]');
+    if (btn) btn.click();
+  });
+}
+
 function render() {
   // 絞り込みは118件全体にかける。そのうえで通常一覧と参考掲載に分ける。
   // 参考掲載も検索・絞り込みの対象に残す（探している人が見つけられなくなるため）。
@@ -928,6 +1037,7 @@ function render() {
   splitEl.hidden = refs.length === 0;
   noResultEl.style.display = hit.length === 0 ? '' : 'none';
   renderChips(hit.length);
+  syncHabTiles();
 }
 
 // ── 適用中の条件チップ（× で個別に外せる）────────────────────
@@ -1028,6 +1138,7 @@ chipsEl.addEventListener('click', function(e) {
 })();
 
 // 初期描画
+renderHabTiles();
 render();
 
 // 検索（リアルタイム）
