@@ -16,12 +16,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **54bd27b**（PR #94 merge ＋ Automation の `data/products.js` 更新まで反映済み） |
-| サイトファイルの状態 | **PR #92 = `0e8449e`** が最後。**merge 待ち = 本PR（TOP DESIGN Phase 3・`index.html` 1ファイル）** |
+| 基準 | `origin/main` = **412e23b**（PR #95 = TOP DESIGN Phase 3 の merge commit まで反映済み） |
+| サイトファイルの状態 | **PR #95 = `13bd65e`** が最後（トップの再構成）。**merge 待ち = 本PR（TOP DESIGN Phase 4・移設先4ページ）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
 | 最終更新日 | 2026-08-28 |
-| 作業ブランチ | `claude/kame-life-top-redesign-audit-3vtnf9` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は `index.html` と `docs/AI-HANDOFF.md`） |
+| 作業ブランチ | `claude/kame-life-top-move-phase4` |
+| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ。変更は移設先4ページと `docs/AI-HANDOFF.md`） |
 
 > **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
 > 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
@@ -41,7 +41,32 @@
 | Phase | 作業 | 状態 | 確定した結論 |
 |-------|------|------|-------------|
 | Phase 2 | 現行トップの全構造棚卸しと KEEP/MERGE/MOVE/REMOVE-FROM-HOME 判定 | 設計のみ（ファイル変更0） | `index.html` の可視コンテンツブロック **22**・固定UI 2・hidden 1・章見出し4・`<details>` 3 を表示順に全件棚卸しし、**KEEP 9 / MERGE 9 / MOVE 6 / REMOVE-FROM-HOME 7** に判定。新トップ骨格（主要8ブロック＋Header＋Footer）を確定。**この棚卸しと判定は再実行しない** |
-| Phase 3 | 新骨格への一括再構成 | 本PR | `index.html` **1ファイル・+344/−2,861行**。旧22ブロック → **①Header ②Hero ③信頼表示 ④3目的入口 ⑤写真付き種探索 ⑥飼う前に知っておきたいこと ⑦飼育情報入口 ⑧著者・編集方針 ⑨Final CTA ⑩Footer** へ再構成。**title / meta description / og: / twitter: / JSON-LD 3ノードは1バイトも変更していない**（diff 0 を機械確認） |
+| Phase 3 | 新骨格への一括再構成 | **PR #95 / merge `412e23b`** | `index.html` **1ファイル・+344/−2,861行**。旧22ブロック → **①Header ②Hero ③信頼表示 ④3目的入口 ⑤写真付き種探索 ⑥飼う前に知っておきたいこと ⑦飼育情報入口 ⑧著者・編集方針 ⑨Final CTA ⑩Footer** へ再構成。**title / meta description / og: / twitter: / JSON-LD 3ノードは1バイトも変更していない**（diff 0 を機械確認） |
+
+| Phase 4 | MOVE 7件を移設先ページへ実装 | 本PR | 移設先**4ファイル・+1,181/−0行（純粋な追加）**。移設元の正本は `54bd27b:index.html`。`index.html` は1バイトも変更していない |
+
+**Phase 4 で確定し、再実行しない事実（MOVE 7件は完了。移設元は二度と参照しなくてよい）:**
+
+| 移設元（`54bd27b:index.html`） | 移設先 | 実装の要点 |
+|------------------------------|--------|-----------|
+| `lead-in` L3745-3750 | `guides/index.html`（hero 直下 `.gh-lead`） | 本文2段落を逐語 |
+| `discover` 8カード L3752-3819 | `guides/index.html`「飼育環境 — 種類別ガイド」の冒頭 `.gh-hab-grid` | **リンクは重複させていない**。8本の `guide-*.html` へのリンクは直下の生成カード（`BEGIN:guides-hub-env`）が既に持つため、移設先に無かった情報（生態の説明文・代表種・英字ラベル）だけを置いた。生成領域は1バイトも変更していない |
+| `gear-index` 7カード L4417-4433 | `guides/index.html`「まず揃えるべき飼育用品ガイド」内 `.gh-gear-grid` | best10 7本は移設先に未掲載だったので実追加。既存4枚（`*-guide.html`）とリンク先が重ならない |
+| `live-compare` 3枚 L4037-4150 | `compare/index.html` の**既存 ch-card 3枚の中**（`.lc-badge` + `.lc-metrics`） | **カードを増やしていない**。3ペアとも移設先に既存のため、移設先に無かった数値（難易度・初期費用・においリスク等）とバッジだけを既存カードへ足した |
+| `compare-engine` 表 L4151-4261 | `compare/index.html` の `ch-bottom` 直前 `#compare-engine` | 表を**逐語**移設。`<th>難易度</th>` と `<th>はじめての方向け</th>` は**別軸のまま**（H5 確定・統合も改名もしていない）。末尾にあった `ce-cta-box`（診断CTA）は直下の `ch-bottom` と同義のため持ち込まず、caveat だけ `.ce-note` として残した |
+| `journey-preview` L4527-4572 | `shindan/index.html` の `#screen-start` 内 `.jp-block` | 文言は逐語。**`<script>` 6ブロックは変更前後で完全一致**（診断ロジック無変更）。CSS は移設先のダークテーマに合わせて配色のみ書き下ろした |
+| `readiness-score` L4585-4758 ＋ JS L4935-5170 | `before-keeping.html`（チェックリスト直後・「すべて確認できたら」の直前） | 質問5・選択肢15・配点列 `210210210210210`・バンド境界 `0-3 / 4-7 / 8-10`・`TOTAL_Q=5` が移設元と**完全一致**。本診断と別物であることを `.trs-scope` で明示 |
+
+**Phase 4 で加えた必要な変更（推測ではなく、移設先の事情による確定事項）:**
+
+- Readiness Score の高得点バンドの CTA リンク先を `#top-gear-picks` → **`./shindan/`** に変更した。
+  `#top-gear-picks` は `index.html` にあったアンカーで、`before-keeping.html` には存在せず**リンク切れになる**ため。
+  Starter Kit は診断結果の機能なので `./shindan/` が実体と一致する。**質問・配点・判定ロジックは無変更。**
+- `before-keeping.html` の汎用 `h2`（下線）と `a`（下線）のスタイルが移設ブロックへ漏れていたのを
+  `.trs-heading` / `.trs-result-cta` で打ち消した（移設元には無かった装飾のため）。
+- **`guides/index.html` の `.gh-featured-*` に CSS が1つも無く、素のリンク列として描画されていた既存不具合を是正した**
+  （main の時点からの不具合。移設した機材カードの直上にあたるため同Phase内で修正）。
+  配色・角丸・余白は同ページの `.gh-card` 系に合わせた。**HTML は1行も変えていない。**
 
 **Phase 3 で確定し、二度と問い直さない事実:**
 
@@ -593,6 +618,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 | ID | 内容 |
 |----|------|
+| N25 | **`shindan/index.html` の可視「100種」が2箇所ある**。`.species-count` の「100種対応」（元からある）と、Phase 4 で移設した `journey-preview` の「100種から相性のいい候補を絞り込む」（移設元の文言を逐語で持ち込んだ）。Owner 確定 U-A では**公開UIの種数は正本 118 に合わせる**方針だが、Phase 4 の Scope（MOVE 7件）の外なので**触っていない**。同一画面に 100 と 118 が混在しないよう、2箇所は**同時に**直すこと。`title`/`meta`/OG は H8 のため対象外 |
 | N22 | **⑤の写真グリッドに載せた `spenglers-leaf-turtle` の写真は、人の手に持たれた構図**。`assets/species-photos/spenglers-leaf-turtle.webp` は 2026-08-22 の生体写真全数監査（123枚）を通過済みで「絶対に使わない」条件には当たらない（健康・頭部と四肢が出ている）が、Phase 3 で**トップの最上位グリッドへ露出が上がった**。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして残すかは Owner 判断。差し替える場合の影響は `index.html` の1カードと `species/spenglers-leaf-turtle.html` |
 | N23 | **`index.html` のインライン CSS に、Phase 3 以前から孤立していたルールが 79 残っている**（`nav.crumbs` / `.item` / `.amazon-btn` / `section.ranking` / `.hub-links` / `.cta-btn-primary` / `.entry-nav` / `.species-preview` / `.h3-eyebrow` 等。他ページのテンプレート由来）。Phase 3 は「今回の変更で孤立したもの」だけを削除しており、**この79件には触れていない**。害はないが掃除の候補 |
 | N24 | **`index.html` の `meta description` / `og:description` / `twitter:description` は「100種」のまま**。公開UIは 118 に統一したが、SEO層は **H8（GSC/GA4 の実測トリガーなしに変更しない）** のため据え置いた。数値の食い違いが残っていることは把握しておく |
@@ -608,35 +634,21 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### TOP DESIGN Phase 4 — Phase 2 で MOVE 判定したコンテンツを移設先ページへ実装する
+### N25 の解消 — `shindan/index.html` の可視「100種」2箇所を正本 118 へ揃える
 
-Phase 3 でトップから外したが、**移設先への実装はまだ行っていない**。
-対象コンテンツの原文は `origin/main` の **`54bd27b:index.html`** に全文が残っている
-（`git show 54bd27b:index.html` で取得できる）。**推測で書き直さず、原文から移す。**
+TOP DESIGN の Phase 2 → 3 → 4 は完了した。**MOVE 対象は残っていない。**
+残っているのは、Owner 確定 U-A（公開UIの種数は正本 118）に対する取りこぼし1件だけ。
 
 | 項目 | 内容 |
 |------|------|
-| **やること** | 下表6件のうち **`guides/index.html` への3件（lead-in / discover 8カード / gear-index 7カード）を1工程で実装する** |
-| **移設元** | `54bd27b:index.html` の該当ブロック（lead-in L3745-3750 / discover L3752-3819 / gear-index L4417-4433） |
-| **移設先** | `guides/index.html`（冒頭・「飼育環境 — 種類別ガイド」・「まず揃えるべき飼育用品ガイド」） |
-| **注意** | `guide-*.html` 8本は移設先に**既にリンクが存在する**ため、追加するのは `dc-species`（代表種行）の情報だけ。best10 7本は移設先に**未掲載**なので新規追加になる |
-| **変更しない** | `index.html`（Phase 3 で確定済み）／移設先の `title`・`meta`・OG・JSON-LD／H3・H8・H9 |
-| **完了条件** | 移設先で情報が読める・リンク切れ0・`title`/`meta`/OG/JSON-LD 差分0・実描画でJSエラー0 |
+| **やること** | `shindan/index.html` の可視「100種」**2箇所**を「118種」へ揃える。① `.species-count` の `100種対応` ② `.jp-step-copy` の `100種から相性のいい候補を絞り込む`。**同一画面にあるので必ず同時に直す** |
+| **なぜこれが次か** | Phase 4 で `journey-preview` を移設したことで、同じ画面に「100種」が2つ並んだ。片方だけ直すと画面内で矛盾する |
+| **対象** | `shindan/index.html` のみ（可視テキスト2箇所） |
+| **変更しない** | `title` / `meta` / OG / twitter（H8 SEO運用HOLD。`index.html` の「100種」も同じ理由で据え置き）／`<script>` 6ブロック（診断ロジック）／`shindan/species.js`・`routes.js`・`equipment.js`／`index.html` |
+| **完了条件** | `shindan/index.html` の可視「100種」が0件・「118種」が2件。`<script>` の差分0。実描画でJSエラー0。診断が5ルートとも通ること |
 
-**Phase 4 以降に残っている MOVE 対象（着手順は Owner 判断）:**
-
-| 移設元（`54bd27b:index.html`） | 移設先 | 状態 |
-|------------------------------|--------|------|
-| `lead-in` L3745-3750 | `guides/index.html` 冒頭 | 未実施（本 NEXT） |
-| `discover` 8カード L3752-3819 | `guides/index.html`「飼育環境 — 種類別ガイド」 | 未実施（本 NEXT） |
-| `gear-index` 7カード L4417-4433 | `guides/index.html`「まず揃えるべき飼育用品ガイド」 | 未実施（本 NEXT） |
-| `live-compare` 3枚 L4037-4150 | `compare/index.html` の `ch-card` へ `lc-metrics` を移植 | 未実施 |
-| `compare-engine` 表 L4151-4261 | `compare/index.html` へ**逐語**移設 | 未実施。**H5 で確定した `<th>はじめての方向け</th>` と `難易度` 列のラベルを統一しない** |
-| `journey-preview` L4527-4572 | `shindan/index.html` スタート画面 | 未実施。移設先に同等の説明は**存在しない**＝実追加 |
-| `readiness-score` L4585-4758 ＋ JS | `before-keeping.html` | 未実施。5軸が移設先の章立てと一致 |
-
-> **トップからリンクが消えたページは1つも無い**（Phase 3 でリンク切れ0・内部リンク44本を実測）。
-> best10 7本も⑦の機材リンク行でトップから直リンクを維持している。
+**この工程が終われば TOP DESIGN プロジェクトはクローズしてよい。**
+以後は `docs/operations/` に従い、GSC/GA4 の実測がトリガーを引いたページのみを改善する（週最大3ページ）。
 
 **Owner の判断待ち案件が来たら、そちらを優先して差し支えない**（`UNRESOLVED` 参照）。
 
