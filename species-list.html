@@ -184,6 +184,21 @@
   .spb-begin{background:#e8f5ee;color:#2d6a4f;border:1px solid #a8d5be;}
   .spb-inter{background:#fff3e0;color:#8f5f2c;border:1px solid #f0c878;}
   .spb-adv{background:#fdeaea;color:#b03a2e;border:1px solid #f5a9a0;}
+  /* 法規制ラベル：legal フラグを持つ14種にだけ出す。
+     CITES II/III の一般表示は行わない（95種に出て情報密度を壊すため）。
+     文言は shindan/index.html の確定済み法規制文を一覧カード用に短くしたもの。
+     規制の区分と、飼いたい人にとっての帰結を2行に分けている。狭いカードで
+     語の途中から折り返るのを避け、帰結の行を読み落としにくくするため。 */
+  .sp-legal{
+    display:block;margin-top:6px;padding:3px 7px;border-radius:5px;line-height:1.5;
+  }
+  /* 色は薄めない。AA を下回るため、区分と帰結の差は字送りと太さで付ける */
+  .sp-legal-k{display:block;font-size:.62rem;letter-spacing:.04em;font-weight:600;}
+  .sp-legal-v{display:block;font-size:.7rem;font-weight:700;}
+  /* 新規に手に入れることができない種 */
+  .sp-legal--stop{background:#fdeaea;color:#a03225;border:1px solid #f0b3aa;}
+  /* 手に入るが書類の確認が要る種 */
+  .sp-legal--doc{background:#fff6e6;color:#8a5a1e;border:1px solid #e8cb95;}
 
   .no-result{text-align:center;padding:52px 0 60px;color:#8a9389;font-size:.96rem;line-height:2;}
   .no-result-reset{margin-top:16px;padding:8px 22px;font-size:.86rem;}
@@ -741,6 +756,25 @@ function diffBadge(diff) {
   return '<span class="spb ' + c + '">' + diff + '</span>';
 }
 
+// 法規制ラベル — species.js の legal を持つ種だけに出す。
+// legal が null の104種には何も出さない。CITES II/III の一般表示もしない。
+// 文言は shindan/index.html の法規制文を一覧用に短縮したもので、新しい解釈は足していない。
+// CITES I を「購入不可」とは書かない。登録票のある個体は国内で流通している。
+var LEGAL_NOTE = {
+  conditional_invasive: ['stop', '条件付特定外来', '新規購入不可'],
+  unknown_hold:         ['stop', '特定外来生物',   '新規購入不可'],
+  cites_i:              ['doc',  'CITES I',       '登録票が必要'],
+  cites_ii_cb_only:     ['doc',  'CITES II',      'CB個体・要書類確認']
+};
+function legalNote(sp) {
+  var n = LEGAL_NOTE[sp.legal];
+  if (!n) return '';
+  return '<span class="sp-legal sp-legal--' + n[0] + '">' +
+    '<span class="sp-legal-k">' + esc(n[1]) + '</span>' +
+    '<span class="sp-legal-v">' + esc(n[2]) + '</span>' +
+  '</span>';
+}
+
 // リンクURL — species.js の slug/hasPage を参照（data-driven、MAPなし）
 function guideHref(sp) {
   if (sp.hasPage && sp.slug) return 'species/' + sp.slug + '.html';
@@ -776,6 +810,7 @@ function renderCard(item) {
       '<span class="sp-name">' + esc(sp.name) + '</span>' +
       '<span class="sp-latin">' + esc(sp.latin) + '</span>' +
       '<span class="sp-meta">' + diffBadge(sp.difficulty) + cm + '</span>' +
+      legalNote(sp) +
       guide +
     '</span>' +
   '</a>';
