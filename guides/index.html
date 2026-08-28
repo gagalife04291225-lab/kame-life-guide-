@@ -207,6 +207,81 @@
       .gh-heading{font-size:1.52rem;}
       .gh-card-title{font-size:.96rem;}
     }
+
+    /* Phase 4 で検出した既存不具合の修正:
+       .gh-featured-* は main の時点で CSS が1つも定義されておらず、
+       素のリンク列として描画されていた（移設した機材カードの直上のため同Phaseで是正）。
+       配色・角丸・余白は同ページの .gh-card 系に合わせている */
+    .gh-featured{background:var(--parchment);padding:56px 0 8px;}
+    .gh-featured .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+    .gh-featured-label{
+      font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--accent-gold);display:block;text-align:center;margin-bottom:12px;
+    }
+    .gh-featured-heading{
+      font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+      font-size:clamp(1.20rem,3vw,1.50rem);color:var(--forest-deep);
+      text-align:center;margin:0 0 32px;line-height:1.35;
+    }
+    .gh-featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+    .gh-featured-card{
+      display:flex;flex-direction:column;align-items:center;gap:8px;
+      text-decoration:none;text-align:center;
+      background:#fff;border:1.5px solid #e2dbc8;border-radius:var(--radius-lg);
+      padding:22px 16px 18px;box-shadow:0 2px 10px rgba(8,20,17,.04);
+      transition:transform var(--dur-base) var(--ease-soft),box-shadow var(--dur-base),border-color var(--dur-base);
+    }
+    .gh-featured-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(8,20,17,.09);border-color:rgba(201,169,107,.40);}
+    .gh-featured-card:focus-visible{outline:2px solid var(--accent-gold);outline-offset:3px;}
+    .gh-featured-icon{font-size:1.6rem;line-height:1;}
+    .gh-featured-title{
+      font-family:"Playfair Display",serif;font-weight:700;font-size:1rem;
+      color:var(--forest-deep);margin:0;line-height:1.3;
+    }
+    .gh-featured-arrow{font-size:.78rem;font-weight:700;color:var(--accent-dark,#b07c3f);}
+
+    /* ═══ Phase 4: index.html から移設したブロック ═══════════════════ */
+
+    /* lead-in（このサイトのガイドの考え方） */
+    .gh-lead{padding:40px 0 8px;}
+    .gh-lead .wrap{max-width:760px;}
+    .gh-lead p{font-size:1rem;line-height:2;color:#4b5546;margin:0 0 18px;}
+    .gh-lead p strong{color:var(--forest,#2f4a3c);}
+
+    /* discover（暮らしのタイプ別の生態と代表種） */
+    .gh-hab-lead{font-size:.92rem;color:#6b7c70;line-height:1.85;margin:0 0 20px;}
+    .gh-hab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:28px;}
+    .gh-hab{background:#fff;border:1px solid #e4ddc9;border-radius:14px;padding:18px 18px 16px;}
+    .gh-hab-eyebrow{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+      color:#b07c3f;font-weight:700;margin:0 0 6px;}
+    .gh-hab-name{font-family:'Playfair Display','Noto Serif JP',serif;font-style:italic;
+      font-size:1.14rem;color:#2f4a3c;margin:0 0 8px;}
+    .gh-hab-desc{font-size:.88rem;color:#56655b;line-height:1.75;margin:0;}
+    .gh-hab-species{font-size:.8rem;color:#7c8579;margin:10px 0 0;padding-top:9px;
+      border-top:1px dashed #e0d8c2;}
+
+    /* gear-index（機材から探す） */
+    .gh-gear-lead{font-size:.9rem;color:#6b7c70;line-height:1.85;margin:26px 0 14px;}
+    .gh-gear-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .gh-gear-card{display:flex;flex-direction:column;gap:5px;text-decoration:none;
+      background:#0d1f1a;border-radius:12px;padding:18px 16px;transition:background .18s;}
+    .gh-gear-card:hover{background:#b07c3f;}
+    .gh-gear-label{font-family:'Playfair Display','Noto Serif JP',serif;font-style:italic;
+      font-size:1.06rem;color:#d4a96a;}
+    .gh-gear-card:hover .gh-gear-label{color:#fff;}
+    .gh-gear-sub{font-size:.8rem;color:#cdd8cc;line-height:1.6;}
+    .gh-gear-card:hover .gh-gear-sub{color:#f4efe2;}
+
+    @media(max-width:760px){
+      .gh-gear-grid{grid-template-columns:repeat(2,1fr);}
+      .gh-featured-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:520px){
+      .gh-lead{padding:32px 0 4px;}
+      .gh-lead p{font-size:.95rem;line-height:1.95;}
+      .gh-hab-grid{grid-template-columns:1fr;gap:10px;}
+      .gh-gear-grid{grid-template-columns:1fr;}
+    }
   </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -290,6 +365,14 @@
     </div>
   </section>
 
+  <!-- Phase 4 移設: index.html の lead-in（編集方針の導入文）。本文は逐語 -->
+  <section class="gh-lead" aria-label="このサイトのガイドの考え方">
+    <div class="wrap">
+      <p>水槽の大きさ、ライトの強さ、床材の種類。カメの飼育で迷うことは尽きません。けれど、その答えのほとんどは「そのカメが野生でどう暮らしているか」の中にあります。乾いた草原を歩き回るリクガメと、薄暗い林の床に潜むヤマガメでは、必要なものがまるで違うからです。</p>
+      <p>このサイトでは、カメを<strong>暮らしのタイプ</strong>で分け、それぞれの生態から逆算して飼育環境と機材を考えていきます。難しい話を並べるのではなく、「なぜそれが必要なのか」が腑に落ちるように書いているつもりです。お迎えを迷っている方も、すでに一緒に暮らしている方も、気になるところから読んでみてください。</p>
+    </div>
+  </section>
+
   <!-- Guide Cards -->
   <!-- Phase 13-E: Featured commerce guides -->
 <section class="gh-featured" aria-labelledby="gh-feat-label">
@@ -327,6 +410,25 @@
       </a>
 
     </div>
+
+    <!-- Phase 4 移設: index.html の gear-index（機材から探す）。ラベル・サブ文・リンク先は逐語 -->
+    <p class="gh-gear-lead">機材ごとに、実在を確認した製品をベスト10で紹介しています。「野生の暮らしから逆算する」という視点はどのページにも通底しています。</p>
+    <div class="gh-gear-grid">
+      <a class="gh-gear-card" href="../cage-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'cage'})"><span class="gh-gear-label">ケージ・水槽</span><span class="gh-gear-sub">床面積と水量を暮らしから選ぶ</span></a>
+      <a class="gh-gear-card" href="../substrate-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'substrate'})"><span class="gh-gear-label">床材・砂</span><span class="gh-gear-sub">保湿か水はけか、地面を再現する</span></a>
+      <a class="gh-gear-card" href="../shelter-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'shelter'})"><span class="gh-gear-label">シェルター・浮島</span><span class="gh-gear-sub">成体サイズで選ぶ隠れ家と陸場</span></a>
+      <a class="gh-gear-card" href="../uvb-light-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'uvb'})"><span class="gh-gear-label">UVBライト</span><span class="gh-gear-sub">種に合った強さで甲羅と骨を守る</span></a>
+      <a class="gh-gear-card" href="../food-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'food'})"><span class="gh-gear-label">餌・フード</span><span class="gh-gear-sub">食性に合わせた主食を選ぶ</span></a>
+      <a class="gh-gear-card" href="../water-filter-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'filter'})"><span class="gh-gear-label">フィルター</span><span class="gh-gear-sub">水量と水位に合うろ過を選ぶ</span></a>
+      <a class="gh-gear-card" href="../dish-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','guides_gear_card_click',{gear:'dish'})"><span class="gh-gear-label">水入れ・エサ入れ</span><span class="gh-gear-sub">体が浸かれるサイズ選びが健康を左右する</span></a>
+    </div>
   </div>
 </section>
 
@@ -338,6 +440,62 @@
       <!-- 飼育環境ガイド -->
       <div class="gh-cat">
         <p class="gh-cat-title">飼育環境 — 種類別ガイド</p>
+
+        <!-- Phase 4 移設: index.html の discover（暮らしから探す）。
+             8本のガイドへのリンクは下の生成カードが既に持っているため、リンクは重複させず、
+             移設先に無かった情報（生態の説明文と代表種）だけをここに置く。本文は逐語。 -->
+        <p class="gh-hab-lead">飼っている（迎えたい）カメの暮らしに近いタイプを選ぶと、必要な環境と機材の考え方がまとまっています。</p>
+        <div class="gh-hab-grid">
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Freshwater</p>
+            <p class="gh-hab-name">水棲・淡水ガメ</p>
+            <p class="gh-hab-desc">一日の多くを水の中で過ごすカメ。泳げる水量と、甲羅を乾かす陸場の両立が健康の土台になります。</p>
+            <p class="gh-hab-species">クサガメ・アカミミガメ・イシガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Brackish</p>
+            <p class="gh-hab-name">汽水・水辺ガメ</p>
+            <p class="gh-hab-desc">河口や塩性湿地に適応した、少し特殊な暮らしのカメ。水質と塩分の管理に専門的な配慮が要ります。</p>
+            <p class="gh-hab-species">ダイヤモンドバックテラピン など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Semi-aquatic</p>
+            <p class="gh-hab-name">半水棲ガメ</p>
+            <p class="gh-hab-desc">泳ぐより水底を歩くのが得意なカメ。浅い水位と、登れる陸場・隠れ家がポイントになります。</p>
+            <p class="gh-hab-species">ニオイガメ・ドロガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Forest Floor</p>
+            <p class="gh-hab-name">ヤマガメ・ハコガメ</p>
+            <p class="gh-hab-desc">湿った林の床に暮らす森林性のカメ。湿度と隠れ家、浅い水場で「しっとりした林床」を再現します。</p>
+            <p class="gh-hab-species">スペングラーヤマガメ・ヒラセガメ・ハコガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Arid Grassland</p>
+            <p class="gh-hab-name">乾燥系リクガメ</p>
+            <p class="gh-hab-desc">乾いた草原を歩き回るリクガメ。広い床面積と強い光、草食メインの食事が暮らしの起点です。</p>
+            <p class="gh-hab-species">ロシア・ヘルマン・ギリシャリクガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Humid Tropics</p>
+            <p class="gh-hab-name">多湿系リクガメ</p>
+            <p class="gh-hab-desc">湿度のある暖かい環境を好む熱帯のリクガメ。広さに加え、適度な保湿が幼体期の健康を左右します。</p>
+            <p class="gh-hab-species">アカアシ・エロンガータリクガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Softshell &amp; Side-neck</p>
+            <p class="gh-hab-name">スッポン・ヘビクビガメ</p>
+            <p class="gh-hab-desc">砂に潜るスッポンと、首を横に曲げる曲頸類。どちらも深水と強力なろ過が飼育の核心になります。</p>
+            <p class="gh-hab-species">トゲスッポン・ヘビクビガメ・ナガクビガメ など</p>
+          </div>
+          <div class="gh-hab">
+            <p class="gh-hab-eyebrow">Japanese Native</p>
+            <p class="gh-hab-name">日本産カメ</p>
+            <p class="gh-hab-desc">日本の清流と里山に生きる固有種。野外個体は採集禁止——CB個体を選ぶことが保全につながります。</p>
+            <p class="gh-hab-species">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ など</p>
+          </div>
+        </div>
+
         <div class="gh-cards">
 <!-- BEGIN:guides-hub-env (tools/gen-guide-nav.js が生成。手で編集しない) -->
 

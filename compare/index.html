@@ -278,6 +278,93 @@
       .ch-heading{font-size:1.52rem;}
       .ch-card-title{font-size:1.08rem;}
     }
+
+    /* ═══ Phase 4: index.html から移設したブロック ═══════════════════ */
+
+    /* live-compare のバッジと数値。既存 ch-card の中に統合している */
+    .lc-badge{
+      display:inline-block;margin:0 0 10px;padding:4px 12px;
+      background:rgba(212,169,106,.16);border:1px solid rgba(176,124,63,.35);
+      border-radius:9999px;font-size:.68rem;font-weight:700;letter-spacing:.06em;
+      color:#8c5f2b;
+    }
+    .lc-metrics{
+      margin:14px 0 4px;padding:12px 14px;
+      background:#faf6ea;border:1px solid #e6dfcb;border-radius:12px;
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .lc-metric{
+      display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;
+      font-size:.78rem;line-height:1.5;
+    }
+    .lc-metric-label{
+      font-size:.68rem;letter-spacing:.06em;color:#7c8579;white-space:nowrap;
+      text-align:center;
+    }
+    .lc-metric > .lc-win:first-child,
+    .lc-metric > .lc-lose:first-child,
+    .lc-metric > .lc-tie:first-child{text-align:right;}
+    .lc-metric > span:last-child{text-align:left;}
+    .lc-win{font-weight:700;color:#2f6b46;}
+    .lc-lose{color:#8a8579;}
+    .lc-tie{color:#6b7566;}
+
+    /* compare-engine（4種の横断比較表） */
+    .ce-section{background:#fff;padding:56px 0 60px;border-top:1px solid #e6dfcb;}
+    .ce-eyebrow{
+      font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      color:#b07c3f;text-align:center;margin-bottom:10px;
+    }
+    .ce-heading{
+      font-family:'Playfair Display','Noto Serif JP',serif;font-weight:700;
+      font-size:clamp(1.3rem,4vw,1.7rem);color:var(--forest);
+      text-align:center;margin:0 0 10px;line-height:1.35;
+    }
+    .ce-sub{font-size:.9rem;color:#6b7566;text-align:center;line-height:1.8;margin:0 0 22px;}
+    .scroll-hint-ce{
+      display:none;font-size:.74rem;color:#8a8579;text-align:right;margin-bottom:6px;
+    }
+    .ce-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .ce-table{
+      width:100%;min-width:560px;border-collapse:collapse;
+      background:#fff;font-size:.86rem;
+    }
+    .ce-table th{
+      background:var(--forest);color:var(--parchment);
+      font-size:.76rem;font-weight:700;letter-spacing:.04em;
+      padding:12px 10px;text-align:center;white-space:nowrap;
+    }
+    .ce-table th:first-child{text-align:left;}
+    .ce-table td{
+      border-bottom:1px solid #e6dfcb;padding:14px 10px;
+      text-align:center;vertical-align:middle;color:#3a463c;
+    }
+    .ce-table td:first-child{text-align:left;font-weight:700;line-height:1.45;}
+    .ce-latin{display:block;font-style:italic;font-size:.7rem;color:#8a8579;margin-top:3px;}
+    .ce-dots{display:inline-flex;gap:3px;}
+    .ce-dot{width:9px;height:9px;border-radius:50%;background:#2f6b46;display:inline-block;}
+    .ce-dot.empty{background:#ddd6c4;}
+    .ce-smell .ce-dot{background:#b07c3f;}
+    .ce-smell .ce-dot.empty{background:#ddd6c4;}
+    .ce-cost{font-weight:700;color:#8c5f2b;letter-spacing:.06em;}
+    .ce-badge{
+      display:inline-block;min-width:30px;padding:3px 8px;border-radius:9999px;
+      font-weight:700;font-size:.86rem;
+    }
+    .ce-badge.best{background:#e4f0e6;color:#22593a;}
+    .ce-badge.good{background:#eef2e6;color:#4a5c2c;}
+    .ce-badge.caution{background:#f6ecdc;color:#8c5f2b;}
+    .ce-badge.hard{background:#f2e4e2;color:#8a3529;}
+    .ce-note{font-size:.78rem;color:#8a8579;text-align:center;margin:14px 0 0;}
+
+    @media(max-width:640px){
+      .scroll-hint-ce{display:block;}
+      .ce-section{padding:44px 0 48px;}
+    }
+    @media(max-width:520px){
+      .lc-metric{font-size:.74rem;}
+      .lc-metric-label{font-size:.64rem;}
+    }
   </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -370,6 +457,7 @@
         <a href="./hermann-vs-greek.html" class="ch-card"
            onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'hermann_vs_greek'})">
           <span class="ch-card-num">Compare 01</span>
+          <span class="lc-badge">はじめて飼う方に人気</span>
           <p class="ch-card-title">ヘルマン vs ギリシャ</p>
           <div class="ch-card-vs">
             <span class="ch-card-species">ヘルマンリクガメ</span>
@@ -377,6 +465,23 @@
             <span class="ch-card-species">ギリシャリクガメ</span>
           </div>
           <p class="ch-card-desc">はじめて飼う方に人気の2大リクガメを比較。飼いやすさ・費用・サイズの違いを詳しく解説。</p>
+          <div class="lc-metrics">
+            <div class="lc-metric">
+              <span class="lc-win">◎ 飼いやすい</span>
+              <span class="lc-metric-label">難易度</span>
+              <span class="lc-lose">○ やや難</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-lose">¥40,000〜</span>
+              <span class="lc-metric-label">初期費用</span>
+              <span class="lc-win">◎ ¥25,000〜</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-win">◎ 少ない</span>
+              <span class="lc-metric-label">においリスク</span>
+              <span class="lc-tie">同等</span>
+            </div>
+          </div>
           <span class="ch-card-cta">
             くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
           </span>
@@ -385,6 +490,7 @@
         <a href="./musk-vs-razorback.html" class="ch-card"
            onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'musk_vs_razorback'})">
           <span class="ch-card-num">Compare 02</span>
+          <span class="lc-badge">Most Compared</span>
           <p class="ch-card-title">ニオイガメ vs カブトニオイ</p>
           <div class="ch-card-vs">
             <span class="ch-card-species">ミシシッピニオイガメ</span>
@@ -392,6 +498,23 @@
             <span class="ch-card-species">カブトニオイガメ</span>
           </div>
           <p class="ch-card-desc">小型で人気の水棲ガメ比較。省スペースで飼える2種の特徴と違いを解説。</p>
+          <div class="lc-metrics">
+            <div class="lc-metric">
+              <span class="lc-win">◎ 入門向き</span>
+              <span class="lc-metric-label">難易度</span>
+              <span class="lc-lose">初中級</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-win">◎ ¥15,000〜</span>
+              <span class="lc-metric-label">初期費用</span>
+              <span class="lc-lose">¥20,000〜</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-tie">同等</span>
+              <span class="lc-metric-label">においリスク</span>
+              <span class="lc-tie">同等</span>
+            </div>
+          </div>
           <span class="ch-card-cta">
             くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
           </span>
@@ -400,6 +523,7 @@
         <a href="./reeves-vs-japanese-pond.html" class="ch-card"
            onclick="(typeof gtag==='function')&&gtag('event','compare_hub_card_click',{pair:'reeves_vs_japanese_pond'})">
           <span class="ch-card-num">Compare 03</span>
+          <span class="lc-badge">国産限定</span>
           <p class="ch-card-title">クサガメ vs ニホンイシガメ</p>
           <div class="ch-card-vs">
             <span class="ch-card-species">クサガメ</span>
@@ -407,6 +531,23 @@
             <span class="ch-card-species">ニホンイシガメ</span>
           </div>
           <p class="ch-card-desc">日本種同士を比較。入手しやすさ・飼育難易度・希少性の違いをまとめました。</p>
+          <div class="lc-metrics">
+            <div class="lc-metric">
+              <span class="lc-win">◎ 入手しやすい</span>
+              <span class="lc-metric-label">入手性</span>
+              <span class="lc-lose">希少</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-win">◎ ¥15,000〜</span>
+              <span class="lc-metric-label">初期費用</span>
+              <span class="lc-lose">¥20,000〜</span>
+            </div>
+            <div class="lc-metric">
+              <span class="lc-tie">同等</span>
+              <span class="lc-metric-label">飼いやすさ</span>
+              <span class="lc-tie">同等</span>
+            </div>
+          </div>
           <span class="ch-card-cta">
             くわしく見る <span class="ch-card-arrow" aria-hidden="true">→</span>
           </span>
@@ -504,6 +645,113 @@
         </a>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Phase 4 移設: index.html の compare-engine（4種の横断比較表）。
+       表の中身と列ラベルは逐語（H5 確定の「難易度」と「はじめての方向け」は別軸のまま。統合・改名しない）。
+       末尾にあった診断CTA（ce-cta-box）は直下の ch-bottom と同義のため持ち込まない。 -->
+  <section class="ce-section" id="compare-engine" aria-labelledby="ce-h2">
+    <div class="wrap">
+      <div class="ce-eyebrow">Species Compare</div>
+      <h2 class="ce-heading" id="ce-h2">どの亀があなた向き？</h2>
+      <p class="ce-sub">はじめて飼う方が迷いやすい代表種を、飼育難易度・匂い・初期費用で比較しました。</p>
+      <div class="scroll-hint-ce">← 横にスクロール</div>
+      <div class="ce-table-wrap">
+            <table class="ce-table">
+              <thead>
+                <tr>
+                  <th>種名</th>
+                  <th>難易度</th>
+                  <th>匂い</th>
+                  <th>初期費用</th>
+                  <th>はじめての方向け</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    ミシシッピニオイガメ
+                    <span class="ce-latin">Sternotherus odoratus</span>
+                  </td>
+                  <td>
+                    <span class="ce-dots">
+                      <span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="ce-dots ce-smell">
+                      <span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td><span class="ce-cost">¥</span></td>
+                  <td><span class="ce-badge best">◎</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    ヘルマンリクガメ
+                    <span class="ce-latin">Testudo hermanni</span>
+                  </td>
+                  <td>
+                    <span class="ce-dots">
+                      <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="ce-dots ce-smell">
+                      <span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td><span class="ce-cost">¥¥¥</span></td>
+                  <td><span class="ce-badge good">○</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    ミツユビハコガメ
+                    <span class="ce-latin">Terrapene carolina triunguis</span>
+                  </td>
+                  <td>
+                    <span class="ce-dots">
+                      <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="ce-dots ce-smell">
+                      <span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td><span class="ce-cost">¥¥</span></td>
+                  <td><span class="ce-badge caution">△</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    スペングラーヤマガメ
+                    <span class="ce-latin">Geoemyda spengleri</span>
+                  </td>
+                  <td>
+                    <span class="ce-dots">
+                      <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="ce-dots ce-smell">
+                      <span class="ce-dot"></span><span class="ce-dot"></span>
+                      <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
+                    </span>
+                  </td>
+                  <td><span class="ce-cost">¥¥¥</span></td>
+                  <td><span class="ce-badge hard">×</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      <p class="ce-note">表の比較はあくまで目安です。</p>
     </div>
   </section>
 
