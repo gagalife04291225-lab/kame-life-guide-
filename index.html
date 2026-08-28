@@ -87,13 +87,9 @@
        → starter_kit_shown
        → affiliate_click
 
-     READINESS SCORE FUNNEL:
-       readiness_view → readiness_start
-       → readiness_answer × 5
-       → readiness_result
-       → readiness_cta_click
-       → diagnosis_result_view / starter_kit_shown
-       → affiliate_click
+     READINESS SCORE FUNNEL: REMOVED (Phase 3 — トップから撤去)
+       readiness_view / readiness_start / readiness_answer /
+       readiness_result / readiness_cta_click は index.html では発火しない
 
      KEY EVENT NOTES:
        - gtag guard: typeof gtag === 'function' を全箇所に適用済み
@@ -338,41 +334,7 @@
     font-family:"Playfair Display",serif;font-style:italic;
     font-size:1.15rem;color:var(--accent);margin-bottom:18px;letter-spacing:.02em;
   }
-  section.lead-in{padding:46px 0 10px;}
   section.lead-in .wrap{max-width:760px;}
-  section.lead-in p{font-size:1.06rem;line-height:2;margin-bottom:20px;}
-  section.lead-in p strong{color:var(--forest);}
-  .section-title{
-    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
-    font-size:1.65rem;color:var(--forest);margin:0 0 6px;
-  }
-  .section-eyebrow{
-    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent-dark);margin-bottom:8px;font-weight:700;
-  }
-  .section-note{font-size:.98rem;color:#5a6b60;margin:0 0 26px;max-width:680px;}
-  section.discover{padding:44px 0 18px;}
-  section.gear-index{padding:30px 0 18px;}
-  .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  .dcard{
-    display:block;text-decoration:none;background:#fff;border:1px solid #e4ddc9;
-    border-radius:14px;padding:24px 22px;transition:transform .15s,box-shadow .15s,border-color .15s;
-  }
-  .dcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,31,26,.10);border-color:var(--accent);}
-  .dcard .dc-eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:9px;}
-  .dcard h3{font-family:"Playfair Display",serif;font-style:italic;font-size:1.3rem;color:var(--forest);margin-bottom:9px;}
-  .dcard p{font-size:.92rem;color:#56655b;line-height:1.7;margin:0;}
-  .dcard .dc-species{font-size:.82rem;color:#8a9389;margin-top:11px;}
-  .gcard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
-  .gcard{
-    display:flex;flex-direction:column;text-decoration:none;background:var(--forest-deep);
-    border-radius:12px;padding:20px 18px;transition:background .18s;
-  }
-  .gcard:hover{background:var(--accent-dark);}
-  .gcard .gc-label{font-family:"Playfair Display",serif;font-style:italic;font-size:1.12rem;color:var(--accent);margin-bottom:5px;}
-  .gcard:hover .gc-label{color:#fff;}
-  .gcard .gc-sub{font-size:.82rem;color:#cdd8cc;line-height:1.6;}
-  .gcard:hover .gc-sub{color:#f0e6d4;}
   section.author{padding:46px 0 24px;}
   .author-box{
     background:var(--forest-deep);color:var(--parchment);border-radius:16px;
@@ -393,10 +355,7 @@
   }
   .author-box .note-link:hover{background:#e0c089;}
   @media(max-width:640px){
-    .card-grid{grid-template-columns:1fr;}
-    .gcard-grid{grid-template-columns:1fr 1fr;}
     .author-box{flex-direction:column;gap:16px;padding:28px 22px;}
-    section.lead-in p{font-size:1rem;}
   }
 
   /* --- PHASE1追加 --- */
@@ -451,12 +410,6 @@
     transition:background .18s;white-space:nowrap;
   }
   .sp-link:hover{background:var(--accent-dark);}
-  /* === トラブルハブ === */
-  section.trouble-hub{
-    padding:28px 0 34px;
-    border-top:1px solid #ddd5be;
-    background:#fff;
-  }
   .th-inner{
     display:flex;align-items:center;justify-content:space-between;
     gap:20px;flex-wrap:wrap;margin-bottom:18px;
@@ -487,25 +440,6 @@
     .entry-nav-btns a{font-size:.88rem;padding:10px 16px;}
     .sp-inner{flex-direction:column;align-items:flex-start;}
   }
-  /* === 人気の亀ガイド === */
-  section.popular-guides{padding:34px 0 10px;border-top:1px solid #ddd5be;}
-  .pg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
-  .pg-card{
-    background:#fff;border:1.5px solid #ddd5be;border-radius:14px;
-    padding:20px 18px 18px;text-decoration:none;color:var(--forest-deep);
-    display:flex;flex-direction:column;gap:6px;
-    box-shadow:0 2px 8px rgba(13,31,26,.06);
-    transition:border-color .15s,transform .14s,box-shadow .14s;
-  }
-  .pg-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,31,26,.1);}
-  .pg-emoji{font-size:2rem;line-height:1;margin-bottom:4px;}
-  .pg-name{font-weight:700;font-size:.98rem;color:var(--forest);line-height:1.35;}
-  .pg-latin{font-style:italic;font-size:.72rem;color:#8a9389;margin-top:1px;}
-  .pg-desc{font-size:.8rem;color:#5a6b60;line-height:1.6;margin-top:4px;flex:1;}
-  .pg-cta{font-size:.78rem;font-weight:700;color:var(--accent-dark);margin-top:8px;}
-  .pg-all{display:block;text-align:center;margin-top:18px;font-size:.9rem;color:var(--accent-dark);font-weight:700;text-decoration:none;}
-  .pg-all:hover{text-decoration:underline;}
-  @media(max-width:520px){.pg-grid{grid-template-columns:1fr;gap:10px;}}
 
   /* ===== Phase 36-G: Mobile-First Cinematic Hero ===== */
 
@@ -789,42 +723,7 @@
     outline:2px solid var(--accent-gold,#C9A96B);
     outline-offset:2px;
   }
-
-  /* ── Stats strip (glassmorphism) ── */
-  .hero-stats-strip{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-    padding:14px 18px 20px;
-    background:var(--bg-deep,#0d1210);
-  }
-  .h12-stats{display:none;}  /* hide old inline stats */
-  .hero-stat-card{
-    background:rgba(13,31,26,0.60);
-    border:1px solid rgba(212,169,106,0.20);
-    border-radius:10px;
-    padding:11px 8px 10px;
-    text-align:center;
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    box-shadow:0 4px 18px rgba(0,0,0,0.28),
-               0 1px 0 rgba(212,169,106,0.06) inset;
-  }
-  .hero-stat-val{
-    font-size:1.05rem;
-    font-weight:800;
-    color:var(--accent-gold,#C9A96B);
-    line-height:1.1;
-    margin-bottom:3px;
-    letter-spacing:-0.01em;
-  }
-  .hero-stat-val sup{font-size:.68rem;font-weight:700;}
-  .hero-stat-lbl{
-    font-size:.58rem;
-    color:rgba(122,140,128,1);
-    letter-spacing:.05em;
-    line-height:1.4;
-  }
+  .h12-stats{display:none;}
 
   /* Scallop — keep for downstream transition */
   .hero-scallop{
@@ -897,11 +796,6 @@
         radial-gradient(ellipse at center,
           transparent 55%,
           rgba(13,18,16,0.32) 100%);
-    }
-
-    /* Stats — row below hero on desktop */
-    .hero-stats-strip{
-      display:none; /* desktop shows scallop-flow; use original h12-stats if needed */
     }
 
     .h12-brand{
@@ -1069,42 +963,6 @@
   .h3-eyebrow{display:none;}
   .h3-chips,.h3-chip{display:none;}
   .h3-terminal{display:none;}
-
-  /* ===== /Phase 36-G ===== */
-
-  /* ===== Phase 12 Patch: Top Gear Picks ===== */
-  section.top-gear-picks{
-    background:var(--parchment);
-    padding:64px 0 60px;
-    position:relative;
-  }
-  .tg-eyebrow{
-    display:block;
-    text-align:center;
-    font-size:.68rem;
-    font-weight:700;
-    letter-spacing:.26em;
-    text-transform:uppercase;
-    color:var(--accent-dark);
-    margin-bottom:12px;
-    opacity:.85;
-  }
-  .tg-heading{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:clamp(1.35rem,3.8vw,1.8rem);
-    color:var(--forest-deep);
-    text-align:center;
-    margin-bottom:8px;
-    line-height:1.3;
-  }
-  .tg-sub{
-    text-align:center;
-    font-size:.92rem;
-    color:#647568;
-    margin-bottom:40px;
-    line-height:1.7;
-  }
   .tg-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -1173,240 +1031,8 @@
       max-width:400px;
       margin:0 auto;
     }
-    section.top-gear-picks{padding:52px 0 48px;}
-  }
-  /* ===== /Phase 12 Patch: Top Gear Picks ===== */
-
-  /* ===== Phase 12-D: Live Compare Section ===== */
-  section.live-compare{
-    background:linear-gradient(170deg,#06110e 0%,#0d1e18 55%,#080f0c 100%);
-    padding:80px 0 72px;
-    position:relative;
-    overflow:hidden;
-  }
-  /* ambient glow — mirrors Hero atmosphere */
-  section.live-compare::before{
-    content:"";
-    position:absolute;inset:0;
-    background:
-      radial-gradient(ellipse 65% 45% at 5% 95%, rgba(47,74,60,.55) 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at 95% 5%, rgba(212,169,106,.09) 0%, transparent 52%),
-      radial-gradient(ellipse 80% 35% at 50% 110%, rgba(13,31,26,.9) 0%, transparent 60%);
-    pointer-events:none;z-index:0;
   }
   section.live-compare .wrap{position:relative;z-index:1;}
-
-  /* ── Header ── */
-  .lc-eyebrow{
-    display:block;
-    text-align:center;
-    font-size:.68rem;
-    font-weight:700;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:14px;
-    opacity:.85;
-  }
-  .lc-heading{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:clamp(1.55rem,4.5vw,2.15rem);
-    color:#f5f0e8;
-    text-align:center;
-    margin-bottom:10px;
-    line-height:1.3;
-  }
-  .lc-sub{
-    text-align:center;
-    font-size:.95rem;
-    color:rgba(217,224,214,.62);
-    max-width:440px;
-    margin:0 auto 52px;
-    line-height:1.85;
-  }
-
-  /* ── Card grid ── */
-  .lc-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-bottom:44px;
-  }
-  .lc-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(212,169,106,.18);
-    border-radius:20px;
-    overflow:hidden;
-    transition:transform .2s,box-shadow .2s,border-color .2s;
-    text-decoration:none;
-    display:block;
-    color:inherit;
-  }
-  .lc-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 0 1px rgba(212,169,106,.38);
-    border-color:rgba(212,169,106,.45);
-  }
-
-  /* Badge */
-  .lc-badge{
-    display:inline-block;
-    background:linear-gradient(105deg,var(--accent) 0%,var(--accent-dark) 100%);
-    color:#05100d;
-    font-size:.62rem;
-    font-weight:700;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    padding:4px 12px;
-    border-radius:0 0 10px 10px;
-    margin-left:22px;
-  }
-
-  /* VS strip */
-  .lc-vs-strip{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px 22px 16px;
-    gap:8px;
-  }
-  .lc-name{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:.98rem;
-    color:#f0ece2;
-    line-height:1.25;
-    flex:1;
-  }
-  .lc-name.right{ text-align:right; }
-  .lc-vs{
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-weight:700;
-    font-size:1.25rem;
-    color:var(--accent);
-    flex-shrink:0;
-    padding:0 6px;
-    opacity:.9;
-  }
-
-  /* Divider */
-  .lc-divider{
-    height:1px;
-    background:linear-gradient(90deg,transparent,rgba(212,169,106,.2),transparent);
-    margin:0 22px;
-  }
-
-  /* Metrics */
-  .lc-metrics{
-    padding:16px 22px 22px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .lc-metric{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
-    align-items:center;
-    gap:6px;
-    font-size:.78rem;
-  }
-  .lc-metric-label{
-    grid-column:2;
-    color:rgba(217,224,214,.5);
-    font-size:.7rem;
-    font-weight:700;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    text-align:center;
-    white-space:nowrap;
-  }
-  /* winner pill */
-  .lc-win{
-    background:rgba(212,169,106,.14);
-    border:1px solid rgba(212,169,106,.28);
-    color:var(--accent);
-    font-weight:700;
-    font-size:.72rem;
-    padding:3px 10px;
-    border-radius:20px;
-    text-align:center;
-    white-space:nowrap;
-  }
-  /* tie pill */
-  .lc-tie{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.12);
-    color:rgba(217,224,214,.55);
-    font-weight:700;
-    font-size:.72rem;
-    padding:3px 10px;
-    border-radius:20px;
-    text-align:center;
-    white-space:nowrap;
-  }
-  /* loser — faded */
-  .lc-lose{
-    color:rgba(217,224,214,.3);
-    font-size:.72rem;
-    text-align:center;
-    padding:3px 10px;
-  }
-
-  /* detail link inside card */
-  .lc-card-cta{
-    display:block;
-    text-align:center;
-    font-size:.75rem;
-    font-weight:700;
-    color:rgba(212,169,106,.6);
-    padding:12px 22px 18px;
-    letter-spacing:.06em;
-    transition:color .15s;
-  }
-  .lc-card:hover .lc-card-cta{ color:var(--accent); }
-
-  /* ── Bottom CTA ── */
-  .lc-cta-wrap{
-    text-align:center;
-  }
-  .lc-cta{
-    display:inline-flex;align-items:center;gap:8px;
-    background:transparent;
-    border:1px solid rgba(212,169,106,.38);
-    color:var(--accent);
-    text-decoration:none;
-    font-family:"Noto Serif JP",serif;
-    font-weight:700;font-size:.95rem;
-    padding:14px 36px;border-radius:50px;
-    transition:background .2s,border-color .2s,box-shadow .2s;
-    letter-spacing:.04em;
-  }
-  .lc-cta:hover{
-    background:rgba(212,169,106,.10);
-    border-color:rgba(212,169,106,.65);
-    box-shadow:0 0 28px rgba(212,169,106,.18);
-  }
-  .lc-cta .arrow{display:inline-block;transition:transform .18s;}
-  .lc-cta:hover .arrow{transform:translateX(4px);}
-
-  /* ── Mobile ── */
-  @media(max-width:720px){
-    .lc-grid{
-      grid-template-columns:1fr;
-      gap:16px;
-      max-width:420px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-  }
-  @media(max-width:400px){
-    section.live-compare{padding:64px 0 60px;}
-    .lc-name{font-size:.88rem;}
-    .lc-vs{font-size:1.1rem;}
-    .lc-heading{font-size:1.38rem;}
-  }
   /* ===== /Phase 12-D ===== */
 
   /* ===== Phase 11 Step 1C: Problem Cards (Regret Prevention) ===== */
@@ -1442,9 +1068,6 @@
   }
   
   .pc-reassure::before{content:"✓ ";}
-  @media(max-width:840px){
-    
-  }
   @media(max-width:480px){
     
     
@@ -1469,102 +1092,6 @@
     .reveal-soft{
       opacity:1;transform:none;transition:none;
     }
-  }
-  /* ── Phase 12-A Sprint 2-B: Emotional Hook + Problem Grid ──── */
-
-  /* A. Emotional Hook section */
-  .emo-hook{
-    background:var(--bg-primary,#081411);
-    padding:72px 0 80px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  /* subtle mist layer */
-  .emo-hook::before{
-    content:"";
-    position:absolute;inset:0;
-    background:
-      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(22,56,40,.55) 0%, transparent 58%),
-      radial-gradient(ellipse 60% 40% at 20% 20%,  rgba(201,169,107,.04) 0%, transparent 55%);
-    pointer-events:none;
-  }
-  .emo-hook .wrap{
-    position:relative;z-index:1;
-    max-width:640px;
-  }
-  /* decade number */
-  .emo-hook-num{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:clamp(3.6rem,12vw,7.2rem);
-    line-height:1;
-    letter-spacing:-.03em;
-    color:#eef0ec;
-    margin-bottom:0;
-    display:block;
-  }
-  .emo-hook-num em{
-    font-style:italic;
-    color:var(--accent-gold,#C9A96B);
-  }
-  .emo-hook-unit{
-    font-size:clamp(.80rem,2.5vw,1.10rem);
-    font-weight:700;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:rgba(201,169,107,.58);
-    display:block;
-    margin-bottom:32px;
-  }
-  .emo-hook-body{
-    font-family:"Noto Serif JP",serif;
-    font-size:clamp(1.06rem,2.8vw,1.28rem);
-    line-height:1.95;
-    color:rgba(200,215,205,.72);
-    max-width:520px;
-    margin:0 auto 16px;
-  }
-  .emo-hook-sub{
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-size:.94rem;
-    color:rgba(201,169,107,.52);
-    line-height:1.8;
-    max-width:400px;
-    margin:0 auto;
-  }
-  /* top scallop transition from parchment/white */
-  .emo-hook-cap-top{
-    position:absolute;
-    top:-1px;left:0;right:0;height:52px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(55% 100% at 50% 0%);
-    pointer-events:none;
-  }
-  /* bottom scallop out to next light section */
-  .emo-hook-cap-bot{
-    position:absolute;
-    bottom:-1px;left:0;right:0;height:52px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(55% 100% at 50% 100%);
-    pointer-events:none;
-  }
-  @media(max-width:680px){
-    .emo-hook{ padding:60px 0 68px; }
-    .emo-hook-body{ font-size:1.02rem; }
-  }
-  @media(max-width:400px){
-    .emo-hook{ padding:52px 0 60px; }
-    .emo-hook-num{ font-size:3.2rem; }
-    .emo-hook-body{ font-size:.96rem; }
-  }
-
-  /* B. Problem Grid (Sprint 2-B redesign) */
-  /* reuses existing .pc-* classes; only add premium overwrites */
-  .pc-section{
-    background:var(--parchment,#f4efe2);
-    padding:72px 0 80px;
   }
   .pc-eyebrow-s2{
     font-size:.68rem;
@@ -1635,271 +1162,16 @@
     line-height:1.75;
     flex:1;
   }
-  .pc-card-s2-hint{
-    font-size:.74rem;
-    font-weight:700;
-    color:rgba(47,74,60,.60);
-    border-top:1px dashed #ddd5bf;
-    padding-top:10px;
-    margin-top:auto;
-    line-height:1.55;
-  }
-  /* CTA block */
-  .pc-cta-wrap{
-    text-align:center;
-    margin-top:40px;
-  }
-  .pc-cta-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    background:linear-gradient(112deg,var(--accent-gold,#C9A96B) 0%,#9a6e28 100%);
-    color:#05100c;
-    font-family:"Noto Serif JP",serif;
-    font-weight:700;
-    font-size:.95rem;
-    text-decoration:none;
-    padding:15px 40px;
-    border-radius:9999px;
-    min-height:52px;
-    letter-spacing:.03em;
-    box-shadow:0 5px 22px rgba(201,169,107,.30);
-    transition:background .22s,transform .16s,box-shadow .22s;
-  }
-  .pc-cta-btn:hover{
-    background:linear-gradient(112deg,#d8be7c 0%,#aa7e34 100%);
-    transform:translateY(-2px);
-    box-shadow:0 12px 32px rgba(201,169,107,.44);
-  }
-  .pc-cta-btn:focus-visible{
-    outline:3px solid var(--accent-gold,#C9A96B);
-    outline-offset:3px;
-  }
-  .pc-cta-note{
-    display:block;
-    font-size:.76rem;
-    color:rgba(47,74,60,.45);
-    margin-top:12px;
-    letter-spacing:.03em;
-  }
-  /* 05 は「不安」ではなく Kids への導線カード。全幅で1行使う */
-  .pc-card-s2--kids{
-    grid-column:1/-1;
-    text-decoration:none;color:inherit;
-    /* グラデーションだけだと背景色が transparent のままになり、
-       コントラスト計算が親要素に抜ける。実色を必ず併記する */
-    background-color:#fffaf1;
-    background-image:linear-gradient(180deg,#fffaf1,#fff);
-    border-color:rgba(201,169,107,.55);
-  }
-  .pc-card-s2--kids .pc-card-s2-hint{font-weight:700;color:#2f4a3c;}
   @media(max-width:760px){
     .pc-grid-s2{grid-template-columns:repeat(2,1fr);}
   }
   @media(max-width:480px){
     .pc-grid-s2{grid-template-columns:1fr;gap:10px;}
     .pc-card-s2{padding:22px 18px 20px;}
-    .pc-section{padding:52px 0 60px;}
-    .pc-cta-btn{font-size:.88rem;padding:14px 32px;}
   }
   @media(max-width:360px){
     .pc-card-s2-q{font-size:.96rem;}
-    .pc-cta-btn{padding:13px 24px;min-height:48px;}
   }
-  }
-  /* ===== /Phase 11 Step 1C ===== */
-
-
-
-  /* ===== Phase 12-C: Journey Preview Polish ===== */
-  section.journey-preview{
-    /* Subtle gradient: parchment top → pure white mid → parchment bottom */
-    background:linear-gradient(180deg,#f0ebe0 0%,#faf8f4 40%,#f0ebe0 100%);
-    padding:72px 0 64px;
-    position:relative;
-  }
-  .jp-eyebrow{
-    font-size:.68rem;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--accent-dark);
-    font-weight:700;
-    text-align:center;
-    margin-bottom:12px;
-    display:block;
-  }
-  .jp-heading{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-style:normal;
-    font-size:1.65rem;
-    color:var(--forest-deep);
-    text-align:center;
-    margin-bottom:56px;
-    line-height:1.35;
-  }
-  /* Desktop: 4-column connected flow */
-  .jp-steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-    position:relative;
-  }
-  /* connector line — sits above cards at num center */
-  .jp-steps::before{
-    content:"";
-    position:absolute;
-    top:35px;
-    left:calc(12.5% + 20px);
-    right:calc(12.5% + 20px);
-    height:1px;
-    background:linear-gradient(90deg,
-      var(--accent) 0%,
-      rgba(212,169,106,.45) 55%,
-      rgba(212,169,106,.15) 100%);
-    z-index:0;
-  }
-  /* Premium card */
-  .jp-step{
-    position:relative;
-    z-index:1;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:0 14px 28px;
-    background:#fff;
-    border:1px solid #ede6d4;
-    border-radius:18px;
-    box-shadow:0 2px 14px rgba(13,31,26,.055),0 0 0 1px rgba(212,169,106,.07);
-    transition:transform .18s,box-shadow .18s,border-color .18s;
-  }
-  .jp-step:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 32px rgba(13,31,26,.10),0 0 0 1px rgba(212,169,106,.18);
-    border-color:rgba(212,169,106,.4);
-  }
-  /* step number circle — pulled up to overlap card top edge */
-  .jp-num{
-    width:68px;height:68px;
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-weight:700;
-    font-size:1.4rem;
-    margin-top:-34px;
-    margin-bottom:18px;
-    flex-shrink:0;
-    position:relative;
-    transition:transform .2s;
-    border:3px solid #fff;
-  }
-  .jp-step:hover .jp-num{transform:translateY(-2px);}
-  .jp-step:nth-child(1) .jp-num{
-    background:linear-gradient(135deg,var(--forest) 0%,#1e3d2e 100%);
-    color:var(--accent);
-    box-shadow:0 4px 18px rgba(47,74,60,.38);
-  }
-  .jp-step:nth-child(2) .jp-num{
-    background:linear-gradient(135deg,#2a4535 0%,var(--forest-deep) 100%);
-    color:var(--accent);
-    box-shadow:0 4px 18px rgba(47,74,60,.30);
-  }
-  .jp-step:nth-child(3) .jp-num{
-    background:linear-gradient(135deg,var(--forest-deep) 0%,#0a1a14 100%);
-    color:var(--accent);
-    box-shadow:0 4px 18px rgba(13,31,26,.38);
-  }
-  .jp-step:nth-child(4) .jp-num{
-    background:linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%);
-    color:#05100d;
-    box-shadow:0 4px 22px rgba(212,169,106,.48);
-  }
-  .jp-step-label{
-    font-size:.65rem;
-    font-weight:700;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--accent-dark);
-    margin-bottom:8px;
-    opacity:.75;
-  }
-  .jp-step-title{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:1.08rem;
-    color:var(--forest-deep);
-    line-height:1.3;
-    margin-bottom:10px;
-  }
-  .jp-step-copy{
-    font-size:.83rem;
-    color:#647568;
-    line-height:1.72;
-    max-width:170px;
-  }
-  /* Emotional payoff line */
-  .jp-payoff{
-    text-align:center;
-    margin-top:44px;
-    font-family:"Playfair Display",serif;
-    font-style:italic;
-    font-size:1.05rem;
-    color:var(--forest);
-    letter-spacing:.01em;
-  }
-  .jp-payoff::before{
-    content:"";
-    display:block;
-    width:32px;height:1px;
-    background:var(--accent);
-    margin:0 auto 16px;
-    opacity:.5;
-  }
-  /* Mobile: vertical timeline */
-  @media(max-width:680px){
-    section.journey-preview{padding:56px 0 52px;}
-    .jp-heading{font-size:1.32rem;margin-bottom:52px;}
-    .jp-steps{
-      grid-template-columns:1fr;
-      gap:0;
-    }
-    .jp-steps::before{
-      top:0;
-      bottom:0;
-      left:33px;
-      right:auto;
-      width:1px;
-      height:auto;
-    }
-    .jp-step{
-      flex-direction:row;
-      align-items:flex-start;
-      text-align:left;
-      gap:18px;
-      padding:0 0 20px 0;
-      background:none;
-      border:none;
-      box-shadow:none;
-      border-radius:0;
-    }
-    .jp-step:hover{transform:none;box-shadow:none;border-color:transparent;}
-    .jp-step:last-child{padding-bottom:0;}
-    .jp-num{
-      width:52px;height:52px;
-      font-size:1.1rem;
-      flex-shrink:0;
-      margin-top:0;
-      margin-bottom:0;
-      border:2px solid #fff;
-    }
-    .jp-step-body{flex:1;}
-    .jp-step-copy{max-width:100%;}
-    .jp-payoff{margin-top:36px;font-size:.96rem;}
-  }
-  @media(max-width:400px){
-    .jp-heading{font-size:1.18rem;}
   }
   /* ===== /Phase 12-C ===== */
   /* ===== Phase 11 Step 1D: AI Recommendation Shelf ===== */
@@ -1915,362 +1187,11 @@
     background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,169,106,.07) 0%,transparent 65%);
     pointer-events:none;
   }
-  
-  
-  
-  /* 4-column shelf */
-  
-  
-  
-  /* AI match badge */
-  
-  
-  /* best-for label */
-  
-  
-  
-  /* meta row */
-  
-  
-  
-  
-  
-  /* CTA link */
-  
-  /* Mobile */
-  @media(max-width:840px){
-    
-  }
   @media(max-width:480px){
     section.popular-picks{padding:56px 0 52px;}
     
     
     
-  }
-
-  /* ══ Phase 12-A Sprint 3-A: Species Universe ══════════════════
-     prefix: su-  (Species Universe)
-  ════════════════════════════════════════════════════════════════ */
-
-  .su-section{
-    background:var(--bg-primary,#081411);
-    padding:72px 0 80px;
-    position:relative;overflow:hidden;
-  }
-  .su-cap-top{
-    position:absolute;top:-1px;left:0;right:0;height:52px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(55% 100% at 50% 0%);
-    pointer-events:none;
-  }
-  .su-cap-bot{
-    position:absolute;bottom:-1px;left:0;right:0;height:52px;
-    background:var(--forest-deep,#0d1f1a);
-    clip-path:ellipse(55% 100% at 50% 100%);
-    pointer-events:none;
-  }
-  .su-section .wrap{position:relative;z-index:1;}
-  .su-eyebrow{
-    display:inline-flex;align-items:center;gap:7px;
-    font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent-gold,#C9A96B);
-    background:rgba(201,169,107,.08);border:1px solid rgba(201,169,107,.20);
-    border-radius:9999px;padding:5px 18px;margin-bottom:20px;
-  }
-  .su-heading{
-    font-family:"Playfair Display",serif;font-weight:700;
-    font-size:clamp(1.60rem,4.5vw,2.20rem);color:#eef0ec;
-    line-height:1.22;letter-spacing:-.02em;margin-bottom:10px;
-  }
-  .su-heading em{font-style:italic;color:var(--accent-gold,#C9A96B);}
-  .su-sub{
-    font-size:.92rem;color:rgba(200,215,205,.58);
-    line-height:1.85;max-width:440px;margin:0 auto 48px;
-  }
-  .su-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  .su-panel{
-    display:flex;flex-direction:column;justify-content:flex-end;
-    min-height:240px;border-radius:18px;
-    position:relative;overflow:hidden;
-    text-decoration:none;color:#fff;
-    border:1px solid rgba(255,255,255,.06);
-    transition:transform .28s cubic-bezier(.22,.68,0,1),
-               box-shadow .28s cubic-bezier(.22,.68,0,1),
-               border-color .28s;
-    will-change:transform;
-  }
-  .su-panel:hover{
-    transform:translateY(-5px);
-    box-shadow:0 18px 48px rgba(0,0,0,.42);
-    border-color:rgba(201,169,107,.28);
-  }
-  .su-panel:focus-visible{outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;}
-  .su-panel--aquatic{
-    background:
-      linear-gradient(180deg,rgba(4,24,32,.20) 0%,rgba(8,40,56,.85) 60%,rgba(4,20,28,.97) 100%),
-      linear-gradient(135deg,#061c24 0%,#0a3040 40%,#062030 70%,#04141e 100%);
-  }
-  .su-panel--tortoise{
-    background:
-      linear-gradient(180deg,rgba(10,16,6,.20) 0%,rgba(18,32,10,.85) 60%,rgba(8,14,4,.97) 100%),
-      linear-gradient(135deg,#0c1a06 0%,#1a3010 40%,#0e2008 70%,#081408 100%);
-  }
-  .su-panel--box{
-    background:
-      linear-gradient(180deg,rgba(12,10,4,.20) 0%,rgba(28,22,8,.85) 60%,rgba(14,10,4,.97) 100%),
-      linear-gradient(135deg,#140e04 0%,#2a1e08 40%,#1c140a 70%,#0e0a04 100%);
-  }
-  .su-panel--rare{
-    background:
-      linear-gradient(180deg,rgba(8,4,16,.20) 0%,rgba(16,8,32,.85) 60%,rgba(6,4,14,.97) 100%),
-      linear-gradient(135deg,#0c0618 0%,#1a0e30 40%,#100820 70%,#060410 100%);
-  }
-  .su-panel::before{
-    content:"";position:absolute;inset:0;pointer-events:none;transition:opacity .28s;
-  }
-  .su-panel--aquatic::before{
-    background:radial-gradient(ellipse 80% 50% at 60% 20%,rgba(126,215,193,.12) 0%,transparent 65%);
-  }
-  .su-panel--tortoise::before{
-    background:radial-gradient(ellipse 80% 50% at 40% 20%,rgba(80,160,80,.10) 0%,transparent 65%);
-  }
-  .su-panel--box::before{
-    background:radial-gradient(ellipse 80% 50% at 50% 15%,rgba(201,169,107,.08) 0%,transparent 60%);
-  }
-  .su-panel--rare::before{
-    background:radial-gradient(ellipse 80% 50% at 50% 20%,rgba(160,100,220,.10) 0%,transparent 60%);
-  }
-  .su-panel:hover::before{opacity:1.6;}
-  .su-panel-inner{position:relative;z-index:1;padding:24px 24px 26px;}
-  .su-panel-badge{
-    display:inline-block;font-size:.60rem;font-weight:700;
-    letter-spacing:.16em;text-transform:uppercase;
-    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);
-    border-radius:9999px;padding:3px 11px;margin-bottom:10px;
-    color:rgba(255,255,255,.72);
-  }
-  .su-panel-badge-count{color:var(--accent-gold,#C9A96B);font-weight:700;}
-  .su-panel-title{
-    font-family:"Playfair Display",serif;font-weight:700;
-    font-size:clamp(1.18rem,3vw,1.44rem);line-height:1.22;
-    color:#f0f2ee;margin-bottom:6px;
-  }
-  .su-panel-title em{font-style:italic;color:var(--accent-gold,#C9A96B);}
-  .su-panel-desc{
-    font-size:.82rem;color:rgba(200,215,205,.62);
-    line-height:1.70;margin-bottom:16px;
-  }
-  .su-panel-cta{
-    display:inline-flex;align-items:center;gap:6px;
-    font-size:.78rem;font-weight:700;
-    color:rgba(201,169,107,.82);letter-spacing:.05em;
-  }
-  .su-panel-cta-arrow{
-    display:inline-block;font-style:normal;
-    transition:transform .22s cubic-bezier(.22,.68,0,1);
-  }
-  .su-panel:hover .su-panel-cta-arrow{transform:translateX(5px);}
-  .su-explore{text-align:center;margin-top:40px;}
-  .su-explore-link{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:.88rem;font-weight:700;
-    color:rgba(200,215,205,.55);letter-spacing:.04em;
-    text-decoration:none;
-    border-bottom:1px solid rgba(200,215,205,.18);padding-bottom:2px;
-    transition:color .22s;
-  }
-  .su-explore-link:hover{color:var(--accent-gold,#C9A96B);}
-  .su-explore-link:focus-visible{outline:2px solid var(--accent-gold,#C9A96B);outline-offset:3px;}
-
-  /* ══ Phase 12-A Sprint 3-B: Intelligence Layer ════════════════
-     prefix: il-   感情→理性の橋渡し、静かな信頼構築
-  ════════════════════════════════════════════════════════════════ */
-
-  .il-section{
-    background:var(--bg-secondary,#10241d);
-    padding:72px 0 80px;
-    position:relative;
-    overflow:hidden;
-  }
-  /* top: continue dark from Species Universe */
-  .il-cap-top{
-    position:absolute;top:-1px;left:0;right:0;height:52px;
-    background:var(--bg-primary,#081411);
-    clip-path:ellipse(55% 100% at 50% 0%);
-    pointer-events:none;
-  }
-  /* bottom: fade to parchment / next section */
-  .il-cap-bot{
-    position:absolute;bottom:-1px;left:0;right:0;height:52px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(55% 100% at 50% 100%);
-    pointer-events:none;
-  }
-  .il-section .wrap{position:relative;z-index:1;}
-
-  /* subtle noise texture overlay (pure CSS) */
-  .il-section::before{
-    content:"";
-    position:absolute;inset:0;pointer-events:none;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,169,107,.06) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(126,215,193,.04) 0%, transparent 55%);
-  }
-
-  /* ── Header ── */
-  .il-header{text-align:center;margin-bottom:48px;}
-  .il-eyebrow{
-    display:inline-flex;align-items:center;gap:7px;
-    font-size:.68rem;font-weight:700;
-    letter-spacing:.22em;text-transform:uppercase;
-    color:rgba(201,169,107,.68);
-    background:rgba(201,169,107,.07);
-    border:1px solid rgba(201,169,107,.18);
-    border-radius:9999px;padding:5px 18px;
-    margin-bottom:20px;
-  }
-  .il-heading{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:clamp(1.48rem,4.2vw,2.0rem);
-    color:#eef0ec;
-    line-height:1.28;
-    letter-spacing:-.02em;
-    margin-bottom:12px;
-  }
-  .il-heading em{
-    font-style:italic;
-    color:var(--accent-gold,#C9A96B);
-  }
-  .il-sub{
-    font-size:.90rem;
-    color:rgba(200,215,205,.52);
-    line-height:1.90;
-    max-width:460px;
-    margin:0 auto;
-  }
-
-  /* ── 5-card grid ── */
-  .il-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:12px;
-  }
-
-  /* Glass stat card */
-  .il-card{
-    background:rgba(255,255,255,.038);
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:14px;
-    padding:24px 16px 22px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    transition:
-      background .24s cubic-bezier(.22,.68,0,1),
-      border-color .24s,
-      transform .24s cubic-bezier(.22,.68,0,1),
-      box-shadow .24s;
-  }
-  .il-card:hover{
-    background:rgba(255,255,255,.060);
-    border-color:rgba(201,169,107,.22);
-    transform:translateY(-3px);
-    box-shadow:0 12px 32px rgba(0,0,0,.30);
-  }
-
-  /* top gold rule per card */
-  .il-card::before{
-    content:"";
-    position:absolute;top:0;left:20%;right:20%;height:1px;
-    background:linear-gradient(90deg,
-      transparent 0%,
-      rgba(201,169,107,.50) 50%,
-      transparent 100%);
-  }
-
-  /* Number / label value */
-  .il-card-val{
-    font-family:"Playfair Display",serif;
-    font-weight:700;
-    font-size:clamp(1.80rem,3.5vw,2.40rem);
-    line-height:1;
-    color:var(--accent-gold,#C9A96B);
-    margin-bottom:6px;
-    display:block;
-    letter-spacing:-.02em;
-  }
-  /* small superscript (+) */
-  .il-card-val sup{
-    font-size:.55em;
-    vertical-align:super;
-    letter-spacing:0;
-    opacity:.75;
-  }
-  /* non-numeric value (AI, 3-Tier) */
-  .il-card-val--label{
-    font-size:clamp(1.32rem,2.5vw,1.72rem);
-    letter-spacing:.04em;
-  }
-
-  /* Card title */
-  .il-card-title{
-    font-size:.74rem;
-    font-weight:700;
-    letter-spacing:.10em;
-    text-transform:uppercase;
-    color:rgba(200,215,205,.58);
-    display:block;
-    margin-bottom:6px;
-    line-height:1.35;
-  }
-
-  /* Card description */
-  .il-card-desc{
-    font-size:.72rem;
-    color:rgba(200,215,205,.36);
-    line-height:1.65;
-  }
-
-  /* gold glow for AI card */
-  .il-card--ai .il-card-val{
-    color:var(--accent-cyan,#7ED7C1);
-  }
-  .il-card--ai::before{
-    background:linear-gradient(90deg,
-      transparent 0%,
-      rgba(126,215,193,.48) 50%,
-      transparent 100%);
-  }
-  .il-card--ai:hover{
-    border-color:rgba(126,215,193,.22);
-  }
-
-  /* ── Bottom caption ── */
-  .il-caption{
-    text-align:center;
-    margin-top:36px;
-    font-size:.76rem;
-    color:rgba(200,215,205,.30);
-    letter-spacing:.05em;
-    line-height:1.7;
-  }
-
-  /* ── Mobile ── */
-  @media(max-width:800px){
-    .il-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
-  }
-  @media(max-width:520px){
-    .il-section{padding:56px 0 64px;}
-    .il-grid{grid-template-columns:repeat(2,1fr);gap:9px;}
-    .il-card{padding:20px 12px 18px;}
-    .il-card-val{font-size:1.70rem;}
-  }
-  @media(max-width:360px){
-    .il-card{padding:18px 10px 16px;border-radius:10px;}
-    .il-card-val{font-size:1.52rem;}
-    .il-card-title{font-size:.68rem;}
-    .il-card-desc{font-size:.66rem;}
   }
 
 
@@ -2303,14 +1224,6 @@
     position:absolute;bottom:-1px;left:0;right:0;height:52px;
     background:var(--parchment,#f4efe2);
     clip-path:ellipse(55% 100% at 50% 100%);pointer-events:none;
-  }
-
-  /* Header — upgraded copy */
-  .csim-eyebrow{
-    font-size:.68rem;font-weight:700;
-    letter-spacing:.22em;text-transform:uppercase;
-    color:rgba(201,169,107,.72);
-    display:block;text-align:center;margin-bottom:18px;
   }
   .csim-heading{
     font-family:"Playfair Display",serif;
@@ -2464,30 +1377,6 @@
     .csim-cost-val{font-size:1.06rem;}
   }
 
-  /* top-gear-picks: subtle rebrand */
-  .tg-eyebrow{
-    font-size:.68rem;font-weight:700;letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--accent-dark,#b07c3f);display:block;
-    text-align:center;margin-bottom:10px;
-  }
-  .tg-heading{
-    font-family:"Playfair Display",serif;
-    font-style:italic;font-weight:500;font-size:1.48rem;
-    color:var(--forest-deep,#0d1f1a);
-    text-align:center;margin-bottom:8px;
-  }
-  @media(max-width:680px){
-    .su-section{padding:60px 0 68px;}
-    .su-grid{grid-template-columns:1fr;gap:12px;}
-    .su-panel{min-height:190px;}
-  }
-  @media(max-width:400px){
-    .su-panel-inner{padding:20px 20px 22px;}
-    .su-panel{min-height:172px;}
-    .su-panel-desc{font-size:.79rem;}
-  }
-
   /* ===== Phase 11 Step 1F: Budget Reality Check ===== */
   section.cost-sim{
     padding:72px 0 68px;
@@ -2500,17 +1389,6 @@
     position:absolute;inset:0;
     background:radial-gradient(ellipse 75% 55% at 50% 110%,rgba(212,169,106,.07) 0%,transparent 65%);
     pointer-events:none;
-  }
-  .csim-eyebrow{
-    font-size:.7rem;
-    letter-spacing:.26em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:700;
-    text-align:center;
-    margin-bottom:10px;
-    display:block;
-    opacity:.85;
   }
   .csim-heading{
     font-family:"Playfair Display",serif;
@@ -2788,35 +1666,6 @@
     .gl-heading{font-size:1.3rem;}
     .gl-card{padding:22px 18px 20px;border-radius:16px;}
   }
-  /* ===== Phase 11 Step 1H: Launch CTA CTA ===== */
-
-  /* ── ce-cta-box (compare-engine内CTA) ── */
-  .ce-cta-box{
-    background:rgba(13,31,26,.96);
-    border:1px solid rgba(212,169,106,.28);
-    border-radius:16px;
-    padding:28px 28px 26px;
-    margin-top:28px;
-    text-align:center;
-  }
-  .ce-cta-box p{
-    font-size:.92rem;
-    color:rgba(217,224,214,.85);
-    margin-bottom:18px;
-    line-height:1.7;
-  }
-  .ce-cta-box p strong{color:var(--accent);}
-  .ce-cta-btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--accent);
-    color:var(--forest-deep);
-    text-decoration:none;
-    font-family:"Noto Serif JP",serif;
-    font-weight:700;font-size:.95rem;
-    padding:13px 32px;border-radius:10px;
-    transition:background .18s,transform .14s;
-  }
-  .ce-cta-btn:hover{background:#e0c089;transform:translateY(-1px);}
 
   /* ── launch-cta (page-bottom final CTA) ── */
   section.launch-cta{
@@ -2938,300 +1787,7 @@
     .cl-chips{gap:7px;}
     .cl-chip{font-size:.74rem;padding:5px 13px;}
   }
-  /* ===== /Phase 11 Step 1H ===== */
 
-  /* ===== /Phase 11 Step 1G ===== */
-
-  /* ===== /Phase 11 Step 1F ===== */
-
-  /* ===== /Phase 11 Step 1E ===== */
-
-  /* ===== /Phase 11 Step 1D ===== */
-
-  /* ===== /Phase 11 Step 1B ===== */
-  /* ═══════════════════════════════════════════════════════
-     Phase 12-C: Turtle Readiness Score OS
-     prefix: trs-  (Turtle Readiness Score)
-  ══════════════════════════════════════════════════════════ */
-  .trs-section{
-    padding:72px 0 80px;
-    background:var(--forest-deep,#0d1f1a);
-    position:relative;
-    overflow:hidden;
-  }
-  /* Ambient top fade from parchment */
-  .trs-section::before{
-    content:"";
-    position:absolute;top:-1px;left:0;right:0;height:60px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(58% 100% at 50% 0%);
-    pointer-events:none;
-  }
-  /* Ambient bottom fade to parchment */
-  .trs-section::after{
-    content:"";
-    position:absolute;bottom:-1px;left:0;right:0;height:60px;
-    background:var(--parchment,#f4efe2);
-    clip-path:ellipse(58% 100% at 50% 100%);
-    pointer-events:none;
-  }
-  .trs-inner{
-    max-width:680px;
-    margin:0 auto;
-    padding:0 20px;
-    position:relative;z-index:1;
-  }
-
-  /* ── Header ── */
-  .trs-eyebrow{
-    display:inline-flex;align-items:center;gap:7px;
-    font-size:.70rem;font-weight:700;letter-spacing:.22em;
-    text-transform:uppercase;
-    color:rgba(212,169,106,.78);
-    background:rgba(212,169,106,.08);
-    border:1px solid rgba(212,169,106,.20);
-    border-radius:40px;padding:5px 16px;
-    margin-bottom:18px;
-  }
-  .trs-heading{
-    font-family:"Playfair Display",serif;
-    font-size:clamp(1.45rem,4.5vw,2rem);
-    font-weight:700;color:#f2ede4;
-    line-height:1.3;margin-bottom:10px;letter-spacing:-.01em;
-  }
-  .trs-sub{
-    font-size:.92rem;color:rgba(210,220,208,.60);
-    line-height:1.85;margin-bottom:36px;
-  }
-
-  /* ── Progress bar ── */
-  .trs-progress-wrap{
-    height:3px;background:rgba(255,255,255,.08);
-    border-radius:2px;margin-bottom:32px;overflow:hidden;
-  }
-  .trs-progress-bar{
-    height:100%;width:0%;
-    background:linear-gradient(90deg,#d4a96a,#c08840);
-    border-radius:2px;
-    transition:width .4s cubic-bezier(.4,0,.2,1);
-  }
-
-  /* ── Question card ── */
-  .trs-question{display:none;}
-  .trs-question.trs-active{display:block;}
-  .trs-q-label{
-    font-size:.68rem;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;color:rgba(212,169,106,.60);
-    margin-bottom:10px;
-  }
-  .trs-q-text{
-    font-family:"Noto Serif JP",serif;
-    font-size:1.08rem;font-weight:700;
-    color:#f2ede4;line-height:1.5;margin-bottom:20px;
-  }
-
-  /* ── Answer buttons ── */
-  .trs-options{display:flex;flex-direction:column;gap:10px;}
-  .trs-opt{
-    display:flex;align-items:center;gap:12px;
-    background:rgba(255,255,255,.045);
-    border:1.5px solid rgba(212,169,106,.14);
-    border-radius:10px;padding:14px 18px;
-    cursor:pointer;
-    font-family:"Noto Serif JP",serif;
-    font-size:.92rem;color:rgba(230,235,228,.88);
-    text-align:left;width:100%;
-    transition:background .18s,border-color .18s,transform .12s;
-    -webkit-tap-highlight-color:transparent;
-    min-height:52px;
-  }
-  .trs-opt:hover{
-    background:rgba(212,169,106,.09);
-    border-color:rgba(212,169,106,.38);
-  }
-  .trs-opt:focus-visible{
-    outline:2px solid var(--accent,#d4a96a);
-    outline-offset:2px;
-  }
-  .trs-opt.trs-selected{
-    background:rgba(212,169,106,.14);
-    border-color:rgba(212,169,106,.55);
-    color:#f2ede4;
-  }
-  .trs-opt-icon{
-    font-size:1.1rem;flex-shrink:0;
-    width:28px;text-align:center;
-  }
-  .trs-opt-pts{
-    margin-left:auto;flex-shrink:0;
-    font-size:.68rem;font-weight:700;
-    color:rgba(212,169,106,.50);
-    letter-spacing:.06em;
-  }
-  .trs-opt.trs-selected .trs-opt-pts{color:rgba(212,169,106,.80);}
-
-  /* ── Nav row ── */
-  .trs-nav{
-    display:flex;align-items:center;justify-content:space-between;
-    margin-top:24px;gap:12px;
-  }
-  .trs-btn-back{
-    background:none;border:1px solid rgba(212,169,106,.22);
-    color:rgba(212,169,106,.60);
-    border-radius:8px;padding:10px 20px;
-    font-size:.82rem;font-weight:700;cursor:pointer;
-    transition:border-color .18s,color .18s;min-height:44px;
-  }
-  .trs-btn-back:hover{border-color:rgba(212,169,106,.45);color:rgba(212,169,106,.90);}
-  .trs-btn-back:focus-visible{outline:2px solid var(--accent,#d4a96a);outline-offset:2px;}
-  .trs-btn-back:disabled{opacity:.25;cursor:default;}
-  .trs-btn-next{
-    background:linear-gradient(108deg,#d4a96a 0%,#be8535 100%);
-    color:#04100c;border:none;
-    border-radius:8px;padding:11px 28px;
-    font-family:"Noto Serif JP",serif;
-    font-size:.88rem;font-weight:700;cursor:pointer;
-    transition:background .18s,transform .12s,opacity .2s;
-    min-height:44px;letter-spacing:.03em;
-    opacity:.4;pointer-events:none;
-  }
-  .trs-btn-next.trs-unlocked{opacity:1;pointer-events:auto;}
-  .trs-btn-next.trs-unlocked:hover{
-    background:linear-gradient(108deg,#ddb870 0%,#cc9040 100%);
-    transform:translateY(-1px);
-  }
-  .trs-btn-next:focus-visible{outline:2px solid var(--accent,#d4a96a);outline-offset:2px;}
-
-  /* ── Result card ── */
-  .trs-result{display:none;}
-  .trs-result.trs-active{display:block;}
-  .trs-result-card{
-    background:rgba(255,255,255,.045);
-    border:1.5px solid rgba(212,169,106,.20);
-    border-radius:16px;padding:32px 28px;
-    text-align:center;
-  }
-  .trs-score-ring{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:88px;height:88px;border-radius:50%;
-    border:3px solid rgba(212,169,106,.35);
-    background:rgba(212,169,106,.07);
-    margin-bottom:16px;
-    font-family:"Playfair Display",serif;
-    font-size:2rem;font-weight:700;
-    color:var(--accent,#d4a96a);
-    position:relative;
-  }
-  .trs-score-denom{
-    font-size:.80rem;color:rgba(212,169,106,.55);
-    font-family:"Noto Serif JP",serif;
-    align-self:flex-end;margin-bottom:8px;margin-left:3px;
-  }
-  .trs-score-row{
-    display:flex;align-items:baseline;
-    justify-content:center;gap:0;margin-bottom:16px;
-  }
-  .trs-band-label{
-    font-size:.72rem;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;margin-bottom:10px;
-  }
-  .trs-band--low  .trs-band-label{color:#f0965a;}
-  .trs-band--mid  .trs-band-label{color:#e8c870;}
-  .trs-band--high .trs-band-label{color:#78c878;}
-  .trs-result-headline{
-    font-family:"Playfair Display",serif;
-    font-size:1.22rem;font-weight:700;color:#f2ede4;
-    margin-bottom:10px;line-height:1.4;
-  }
-  .trs-result-advice{
-    font-size:.88rem;color:rgba(210,220,208,.70);
-    line-height:1.85;margin-bottom:24px;
-  }
-  .trs-result-cta{
-    display:inline-flex;align-items:center;gap:8px;
-    background:linear-gradient(108deg,#d4a96a 0%,#be8535 100%);
-    color:#04100c;text-decoration:none;
-    border-radius:50px;padding:14px 36px;
-    font-family:"Noto Serif JP",serif;
-    font-size:.95rem;font-weight:700;
-    box-shadow:0 6px 24px rgba(212,169,106,.35);
-    transition:background .2s,transform .15s;
-    letter-spacing:.03em;min-height:50px;
-  }
-  .trs-result-cta:hover{
-    background:linear-gradient(108deg,#ddb870 0%,#cc9040 100%);
-    transform:translateY(-2px);
-  }
-  .trs-result-cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
-
-  /* ── Lead capture card (optional) ── */
-  .trs-lead-card{
-    margin-top:16px;
-    background:rgba(255,255,255,.03);
-    border:1px dashed rgba(212,169,106,.18);
-    border-radius:12px;padding:20px 24px;
-    text-align:center;
-  }
-  .trs-lead-badge{
-    display:inline-block;font-size:.62rem;font-weight:700;
-    letter-spacing:.14em;text-transform:uppercase;
-    background:rgba(212,169,106,.12);
-    color:rgba(212,169,106,.70);
-    border-radius:20px;padding:3px 12px;margin-bottom:10px;
-  }
-  .trs-lead-title{
-    font-size:.90rem;font-weight:700;color:rgba(230,235,228,.80);
-    margin-bottom:6px;
-  }
-  .trs-lead-sub{
-    font-size:.78rem;color:rgba(210,220,208,.45);
-    line-height:1.7;margin-bottom:14px;
-  }
-  .trs-lead-row{display:flex;gap:8px;max-width:360px;margin:0 auto;}
-  .trs-lead-input{
-    flex:1;background:rgba(255,255,255,.06);
-    border:1px solid rgba(212,169,106,.20);
-    border-radius:8px;padding:10px 14px;
-    color:rgba(230,235,228,.80);font-size:.85rem;
-    font-family:"Noto Serif JP",serif;
-    outline:none;min-height:44px;
-  }
-  .trs-lead-input::placeholder{color:rgba(210,220,208,.30);}
-  .trs-lead-input:focus{border-color:rgba(212,169,106,.40);}
-  .trs-lead-submit{
-    background:rgba(212,169,106,.15);
-    border:1px solid rgba(212,169,106,.28);
-    color:rgba(212,169,106,.75);
-    border-radius:8px;padding:10px 16px;
-    font-size:.80rem;font-weight:700;cursor:default;
-    white-space:nowrap;min-height:44px;
-  }
-
-  /* ── Restart button ── */
-  .trs-restart{
-    display:block;margin:16px auto 0;
-    background:none;border:none;
-    color:rgba(212,169,106,.45);
-    font-size:.78rem;cursor:pointer;
-    text-decoration:underline;text-underline-offset:3px;
-    padding:6px;
-  }
-  .trs-restart:hover{color:rgba(212,169,106,.75);}
-
-  /* ── Mobile ── */
-  @media(max-width:480px){
-    .trs-section{padding:60px 0 68px;}
-    .trs-heading{font-size:1.32rem;}
-    .trs-q-text{font-size:1rem;}
-    .trs-opt{padding:12px 14px;font-size:.88rem;}
-    .trs-result-card{padding:24px 18px;}
-    .trs-lead-row{flex-direction:column;}
-    .trs-lead-submit{width:100%;}
-  }
-  @media(max-width:360px){
-    .trs-opt{padding:11px 12px;gap:9px;}
-    .trs-btn-back,.trs-btn-next{padding:10px 16px;}
-  }
 
 
 
@@ -3239,45 +1795,19 @@
      Target: 360px / 390px / 430px  — all sections tighter
   ══════════════════════════════════════════════════════════════ */
   @media(max-width:680px){
-    /* Emotional Hook: reduce vertical padding */
-    .emo-hook{ padding:48px 0 52px; }
-    .emo-hook-num{ font-size:clamp(3.0rem,10vw,5.0rem); }
-    /* Problem Grid */
-    .pc-section{ padding:48px 0 52px; }
-    /* Species Universe */
-    .su-section{ padding:48px 0 52px; }
-    .su-sub{ margin-bottom:28px; }
-    /* Intelligence Layer */
-    .il-section{ padding:44px 0 48px; }
-    .il-header{ margin-bottom:28px; }
     /* Cost Sim */
     section.cost-sim{ padding:48px 0 52px; }
     /* Launch CTA */
     section.launch-cta,
     .cl-section{ padding:48px 0 52px; }
     /* Guide links */
-    #guide-links{ padding:44px 0 48px; }
+    #care-hub{ padding:44px 0 48px; }
   }
   @media(max-width:480px){
-    .emo-hook{ padding:40px 0 44px; }
-    .pc-section{ padding:40px 0 44px; }
-    .su-section{ padding:40px 0 44px; }
-    .il-section{ padding:36px 0 40px; }
     section.cost-sim{ padding:40px 0 44px; }
-    /* Journey Preview: shorten on mobile */
-    .journey-preview{ padding:36px 0 40px; }
-    .jp-heading{ font-size:1.24rem; margin-bottom:20px; }
-    .jp-steps{ gap:12px; }
-    /* Intelligence Layer: hide on very small for density */
-    .il-grid{ grid-template-columns:repeat(2,1fr); gap:8px; }
-    .il-card{ padding:16px 10px 14px; }
   }
   @media(max-width:360px){
-    .emo-hook{ padding:34px 0 36px; }
-    .emo-hook-num{ font-size:2.8rem; }
-    .pc-section,.su-section,.il-section,
-    section.cost-sim{ padding:34px 0 36px; }
-    .journey-preview{ padding:28px 0 32px; }
+section.cost-sim{ padding:34px 0 36px; }
     /* Hero 360px: hide non-essential, maximize readability */
     header.hero .wrap{ padding:52px 14px 44px; }
     .h12-eyebrow{ display:none; }
@@ -3288,29 +1818,6 @@
     .hero-cta-group{ margin-bottom:12px; }
   }</style>
 <style>
-/* ===== Phase 48-A: Homepage IA restructure additions ===== */
-
-/* Kids「カメふしぎ島」バナー（Hero直下・E-E-A-Tリボンの次） */
-.kids-band{width:min(1120px,92vw);margin:22px auto 0;}
-.kids-band-link{
-  display:block;text-decoration:none;border-radius:18px;overflow:hidden;
-  background:#2f4a3c;box-shadow:0 8px 26px rgba(20,45,32,.18);
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-.kids-band-link:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(20,45,32,.24);}
-.kids-band-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
-.kids-band-link img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;}
-/* 画像内に文字が焼き込まれているため、CTA は本物のテキストで別に置く */
-.kids-band-cta{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  min-height:56px;padding:14px 18px;
-  background:#d4a96a;color:#20301f;
-  font-size:18px;font-weight:800;line-height:1.5;text-align:center;
-}
-.kids-band-link:hover .kids-band-cta{background:#e0bb84;}
-.kids-band-note{width:min(1120px,92vw);margin:8px auto 0;font-size:.84rem;color:#4d5f54;text-align:right;}
-@media(min-width:720px){.kids-band-cta{font-size:20px;min-height:64px;}}
-@media(prefers-reduced-motion:reduce){.kids-band-link{transition:none;}.kids-band-link:hover{transform:none;}}
 
 /* Entry cards (Hero直下 3入口) — 🐢診断 / 🌿探索 / 🧒キッズ */
 .entry-cards{padding:8px 0 46px;}
@@ -3328,71 +1835,101 @@
 .entry-card-cta{display:inline-block;margin-top:8px;font-size:.85rem;font-weight:700;color:var(--forest);}
 @media(max-width:980px){
   .entry-cards-grid{grid-template-columns:repeat(2,1fr);}
-  .entry-card--kids{grid-column:1/-1;}
 }
 @media(max-width:760px){
   .entry-cards-grid{grid-template-columns:1fr;}
 }
 
-/* New IA umbrella headings (亀を選ぶ / 飼育を始める) */
-.find-turtle-heading{padding:52px 0 4px;}
+/* ═══ Phase 3: TOP「引き算の再設計」— 新ブロック分のみ追加 ═══════════ */
 
-/* "もっと見る" collapse wrapper — shared by 亀を選ぶ・飼育を始める・診断の流れ */
-details.ia-more{margin:0;}
-details.ia-more > summary.ia-more-summary{
-  max-width:760px;margin:18px auto 8px;padding:14px 20px;
-  cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;gap:8px;
-  font-family:"Playfair Display",serif;font-style:italic;font-weight:600;font-size:.96rem;
-  color:var(--accent-dark);background:#fff;border:1.5px solid #e4ddc9;border-radius:14px;
+/* ④ 3目的入口 — 2列時に3枚目が単独で残らないよう全幅にする */
+@media(min-width:761px) and (max-width:980px){
+  .entry-cards-grid > :nth-child(3){grid-column:1/-1;}
+}
+
+/* ③ 信頼表示に併記する実数（正本 shindan/species.js / tools/taxonomy.js の値のみ） */
+.trust-facts{
+  list-style:none;margin:10px 0 0;padding:0;
+  display:flex;justify-content:center;flex-wrap:wrap;gap:8px 26px;
+}
+.trust-facts li{display:flex;align-items:baseline;gap:6px;}
+.trust-facts b{font-size:1.02rem;font-weight:800;color:#d4a96a;letter-spacing:.01em;}
+.trust-facts span{font-size:.72rem;color:#b9cbbf;letter-spacing:.04em;}
+
+/* ⑤ 写真付き種探索 — 著者飼育バッジ / 6大分類チップ / 全種導線 */
+.rtg-own{
+  align-self:flex-start;margin-top:4px;padding:2px 8px;
+  font-size:.62rem;font-weight:700;letter-spacing:.04em;
+  color:#2f4a3c;background:#eef3ec;border:1px solid #cfdcd0;border-radius:999px;
+}
+.spx-lead{
+  margin:28px 0 12px;text-align:center;
+  font-size:.86rem;font-weight:700;letter-spacing:.06em;color:#2f4a3c;
+}
+.spx-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;}
+.spx-cat{
+  display:inline-flex;align-items:center;gap:7px;
+  min-height:44px;padding:10px 16px;
+  background:#fff;border:1.5px solid #e2dac4;border-radius:999px;
+  color:#2f4a3c;text-decoration:none;font-size:.86rem;font-weight:700;
   transition:border-color .15s,background .15s;
 }
-details.ia-more > summary.ia-more-summary::-webkit-details-marker{display:none;}
-details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);background:#fffbf3;}
+.spx-cat:hover{border-color:var(--accent);background:#fffbf3;}
+.spx-cat:focus-visible{outline:3px solid var(--accent-dark);outline-offset:2px;}
+.spx-cat-n{font-size:.78rem;font-weight:800;color:#b07c3f;}
+.spx-all{margin:24px 0 0;text-align:center;}
+.spx-all a{
+  display:inline-block;min-height:44px;padding:13px 30px;
+  background:#2f4a3c;color:#f4efe2;
+  text-decoration:none;font-size:.94rem;font-weight:700;
+  border-radius:999px;line-height:1.4;transition:background .18s;
+}
+.spx-all a:hover{background:#b07c3f;}
 @media(max-width:480px){
-  details.ia-more > summary.ia-more-summary{font-size:.88rem;padding:12px 16px;margin:14px 20px 6px;}
+  .spx-cat{font-size:.82rem;padding:10px 13px;}
+  .spx-lead{margin-top:22px;}
 }
 
-/* ===== Phase5-D: Sticky Diagnosis CTA 復旧（CSS不足のみ・JS非変更） ===== */
-/* JSは #sticky-diagnosis-cta にスクロール300pxで .visible を付与する（既存・変更なし）。
-   CSS未定義のため画面に出ていなかった。ここで固定表示スタイルを定義して復旧する。 */
-#sticky-diagnosis-cta{
-  position:fixed;
-  left:0;right:0;bottom:0;
-  z-index:200;                 /* 上部 .mini-nav と同tier（画面上部/下部で非重複） */
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px)); /* iOS安全領域 */
-  background:rgba(13,18,16,0.96);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  border-top:1px solid rgba(212,169,106,0.28);
-  box-shadow:0 -6px 24px rgba(0,0,0,.28);
-  transform:translateY(120%);opacity:0;pointer-events:none; /* 既定は隠す */
-  transition:transform .28s ease,opacity .28s ease;
+/* ⑥ 飼う前に知っておきたいこと — 暗い背景の上で見出しを読ませる */
+/* 上下の scallop（parchment・高さ52px）に eyebrow / CTA が重なると
+   金色文字がクリーム地に乗ってコントラストが落ちる。必ず 52px を超える余白を確保する */
+#before-you-keep{padding-top:78px;padding-bottom:78px;}
+#before-you-keep .pc-heading-s2{color:#eef0ec;margin-bottom:34px;}
+#before-you-keep .pc-heading-s2 em{font-style:italic;color:#d4a96a;}
+#before-you-keep .pc-grid-s2{margin-bottom:58px;}
+#before-you-keep .csim-cap-bot{background:#fff;}
+#before-you-keep .csim-cta-row{justify-content:center;margin-top:28px;}
+#before-you-keep .csim-cta{margin-right:0;}
+@media(max-width:680px){
+  #before-you-keep{padding-top:72px;padding-bottom:72px;}
 }
-#sticky-diagnosis-cta.visible{transform:translateY(0);opacity:1;pointer-events:auto;}
-.sticky-cta-left{display:flex;align-items:center;gap:10px;min-width:0;}
-.sticky-emoji{font-size:1.6rem;line-height:1;flex-shrink:0;}
-.sticky-copy{min-width:0;}
-.sticky-main{font-size:.92rem;font-weight:700;color:var(--parchment);line-height:1.25;}
-.sticky-sub{font-size:.72rem;color:var(--accent);letter-spacing:.04em;}
-.sticky-btn{
-  flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;
-  min-height:44px;padding:12px 20px;                 /* 十分なタップ領域 */
-  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-  color:#12160c;font-weight:800;font-size:.9rem;white-space:nowrap;
-  text-decoration:none;border-radius:999px;
-  box-shadow:0 3px 12px rgba(176,124,63,.4);
-  -webkit-tap-highlight-color:transparent;
-  transition:transform .12s ease,opacity .15s ease;
-}
-.sticky-btn:hover{opacity:.94;}
-.sticky-btn:active{transform:scale(.97);}
 @media(max-width:480px){
-  #sticky-diagnosis-cta{padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));}
-  .sticky-main{font-size:.85rem;}
-  .sticky-sub{font-size:.68rem;}
-  .sticky-btn{padding:11px 15px;font-size:.84rem;}
-  .sticky-emoji{font-size:1.4rem;}
+  #before-you-keep .pc-grid-s2{margin-bottom:42px;}
 }
+
+/* ⑦ 飼育情報入口 — 統合した「機材」「困ったときは」の小見出し */
+.ch-subhead{
+  margin:54px 0 20px;text-align:center;
+  font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+  font-size:1.3rem;color:#2f4a3c;
+}
+#care-hub .tg-card{background:#f4efe2;}
+.ch-gear-links{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:4px 6px;margin:16px 0 0;
+}
+.ch-gear-links a{
+  display:inline-block;min-height:44px;padding:12px 14px;line-height:1.4;
+  font-size:.84rem;font-weight:700;color:#b07c3f;text-decoration:none;
+}
+.ch-gear-links a:hover{text-decoration:underline;}
+@media(max-width:680px){
+  .ch-subhead{margin:40px 0 16px;font-size:1.18rem;}
+}
+
+/* ⑧ 編集方針の一文 */
+.author-box p.author-policy{font-size:.88rem;line-height:1.8;color:#cdd8cd;}
+.author-box p.author-policy a{color:#d4a96a;text-decoration:underline;}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -3403,7 +1940,9 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   <meta name="theme-color" content="#0d1f1a">
 <body>
 
-<!-- Phase 13-A P0: Mini Navigation -->
+<!-- ════════════════════════════════════════════════════════════
+     ① Header — mini-nav（Phase 3 変更禁止。20ページ共有）
+════════════════════════════════════════════════════════════ -->
 <nav class="mini-nav" aria-label="サイトナビゲーション">
   <div class="mini-nav-inner">
     <a href="./" class="mini-nav-logo" aria-label="カメライフガイド トップ">KAME LIFE</a>
@@ -3417,6 +1956,10 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
        onclick="(typeof gtag==='function')&&gtag('event','mini_nav_cta_click',{location:'homepage'})">30秒診断 →</a>
   </div>
 </nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     ② Hero — 写真・ブランド世界観・H1 は現行維持。診断が Primary CTA
+════════════════════════════════════════════════════════════ -->
 <header class="hero" role="banner">
 
   <!-- Hero Image (45vh mobile / 55% column desktop) -->
@@ -3447,7 +1990,7 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
     <!-- Sub copy -->
     <p class="h12-support">
-      100種の亀データから、飼育スペース・経験・初期費用・臭いや掃除の許容度などをもとに、あなたに合う1種を探します。
+      118種の亀データから、飼育スペース・経験・初期費用・臭いや掃除の許容度などをもとに、あなたに合う1種を探します。
     </p>
 
     <!-- Emotional closing (desktop only) -->
@@ -3464,96 +2007,64 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
   </div>
 
-  <!-- Stats strip (mobile / tablet) -->
-  <div class="hero-stats-strip" aria-label="サービス概要">
-    <div class="hero-stat-card">
-      <div class="hero-stat-val">100<sup>+</sup></div>
-      <div class="hero-stat-lbl">Species<br>Database</div>
-    </div>
-    <div class="hero-stat-card">
-      <div class="hero-stat-val">10K<sup>+</sup></div>
-      <div class="hero-stat-lbl">Data<br>Points</div>
-    </div>
-    <div class="hero-stat-card">
-      <div class="hero-stat-val" style="font-size:.72rem;line-height:1.35;padding-top:2px">はじめての方<br>向け</div>
-      <div class="hero-stat-lbl">Beginner<br>Friendly</div>
-    </div>
-  </div>
-
   <!-- Scallop (desktop) -->
   <div class="hero-scallop" aria-hidden="true"></div>
 
 </header>
-<!-- E-E-A-T ribbon: Hero直下でtrust強化 -->
+
+<!-- ════════════════════════════════════════════════════════════
+     ③ 信頼表示 — E-E-A-T リボンを核に、正本と一致する数値だけを併記
+     （「10K+ Data Points」「98 Care Pages」は根拠不明のため不採用）
+════════════════════════════════════════════════════════════ -->
 <div class="hero-eeeat">
   <p><strong>実際の飼育経験</strong>と、公的機関・専門文献・信頼できる長期飼育情報をもとに記事を作成・更新しています。飼育していない種は、資料にもとづく情報であることを明記しています。</p>
+  <ul class="trust-facts" aria-label="収録データの規模">
+    <li><b>118</b><span>掲載種</span></li>
+    <li><b>112</b><span>種別ページ</span></li>
+    <li><b>6</b><span>暮らしタイプ</span></li>
+  </ul>
 </div>
 
-<!-- Kids「カメふしぎ島」バナー — Hero → E-E-A-Tリボン → ここ → entry-cards -->
-<div class="kids-band">
-  <a class="kids-band-link" href="kids/index.html"
-     onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'hero_band'})">
-    <img src="assets/kids/kids-hero-fushigijima.webp" width="1600" height="800"
-         alt="" loading="eager" decoding="async">
-    <span class="kids-band-cta">カメふしぎ島へ行く <span aria-hidden="true">→</span></span>
-  </a>
-</div>
-<p class="kids-band-note">お子さま向けページです（ふりがな付き）</p>
-
-<!-- Phase 12-A Sprint 2-B: Emotional Hook -->
-<!-- HIDDEN: removed from homepage flow — P0 Hero Fix. Restore by removing hidden attr. -->
-<section class="emo-hook" aria-label="亀と長い時間を共にする" hidden>
-  <div class="emo-hook-cap-top" aria-hidden="true"></div>
-  <div class="wrap">
-    <span class="emo-hook-unit t-label-gold">年</span>
-    <p class="emo-hook-num reveal-soft reveal-soft--delay-1" aria-label="50年から100年">
-      50<em>〜</em>100
-    </p>
-    <p class="emo-hook-body reveal-soft reveal-soft--delay-2">
-      亀は、50年。種によっては100年以上生きる。
-    </p>
-    <p class="emo-hook-sub">
-      だから、焦って選ぶ必要はありません。<br>
-      あなたの暮らしに合う一匹を、静かに探しましょう。
-    </p>
-  </div>
-  <div class="emo-hook-cap-bot" aria-hidden="true"></div>
-</section>
-
-<!-- P0: Entry Cards — 3 user paths -->
-<section class="entry-cards">
+<!-- ════════════════════════════════════════════════════════════
+     ④ 3目的入口 — 探す / 調べる / 飼い方を知る を同等に提示
+════════════════════════════════════════════════════════════ -->
+<section class="entry-cards" aria-label="3つの入口">
   <div class="wrap">
     <div class="entry-cards-grid">
+
       <a href="./shindan/" class="entry-card entry-card--primary"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'shindan'})">
         <span class="entry-card-icon" aria-hidden="true">🐢</span>
         <div>
-          <p class="entry-card-label">初めて亀を飼う</p>
-          <p class="entry-card-sub">安心して飼い始められるよう、あなたに合った種類をご案内します。</p>
-          <span class="entry-card-cta">診断を始める <span aria-hidden="true">→</span></span>
+          <p class="entry-card-label">自分に合うカメを探す</p>
+          <p class="entry-card-sub">予算・広さ・臭いの許容度から、118種のなかであなたの暮らしに合う1種を絞り込みます。</p>
+          <span class="entry-card-cta">30秒診断を始める <span aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a href="explore.html" class="entry-card"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'explore'})">
-        <span class="entry-card-icon" aria-hidden="true">🌿</span>
+
+      <a href="species-list.html" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'species_list'})">
+        <span class="entry-card-icon" aria-hidden="true">🔍</span>
         <div>
-          <p class="entry-card-label">いろいろな亀を見てみる</p>
-          <p class="entry-card-sub">気になる種類を見比べながら、あなたにぴったりの亀を探してみましょう。</p>
-          <span class="entry-card-cta">一覧を見る <span aria-hidden="true">→</span></span>
+          <p class="entry-card-label">特定のカメを調べる</p>
+          <p class="entry-card-sub">名前・学名・暮らしのタイプ・飼育難易度から、118種を絞り込んで調べられます。</p>
+          <span class="entry-card-cta">種一覧を見る <span aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a href="kids/index.html" class="entry-card entry-card--kids"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'kids'})">
-        <span class="entry-card-icon" aria-hidden="true">🧒</span>
+
+      <a href="./guides/" class="entry-card"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_entry_card_click',{path:'guides'})">
+        <span class="entry-card-icon" aria-hidden="true">📖</span>
         <div>
-          <p class="entry-card-label">子どもと一緒に読む</p>
-          <p class="entry-card-sub">ふりがな付きのキッズページ。お子さまだけでも読める言葉で書いています。</p>
-          <span class="entry-card-cta">カメふしぎ島へ行く <span aria-hidden="true">→</span></span>
+          <p class="entry-card-label">飼育方法を調べる</p>
+          <p class="entry-card-sub">水槽・床材・温度・餌・トラブル対処。暮らしのタイプ別に飼育の考え方をまとめています。</p>
+          <span class="entry-card-cta">飼育ガイドを見る <span aria-hidden="true">→</span></span>
         </div>
       </a>
+
     </div>
 
-    <!-- Phase 46-B/C -> 48-C: 案内人 entry link — moved out of hero, below the 3 entry cards -->
+    <!-- 案内人（Phase 46-B/C -> 48-C）: 3入口の直下に1本だけ置く -->
     <div style="text-align:center;">
       <a href="./annainin/" class="hero-annainin-link hero-annainin-link--onlight"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_annainin_entry_click',{location:'entry_cards'})">
@@ -3563,274 +2074,24 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   </div>
 </section>
 
-
-
-<!-- Phase 12-A Sprint 2-B: Problem Grid (replaces Phase 11 Step 1C) -->
-<section class="pc-section" id="problem-grid" aria-label="よくある5つの不安">
-  <div class="wrap">
-    <span class="pc-eyebrow-s2">よくある不安に答えます</span>
-    <h2 class="pc-heading-s2 reveal-soft reveal-soft--delay-1">
-      飼う前に知っておきたい、<em>5つのこと。</em>
-    </h2>
-    <div class="pc-grid-s2">
-
-      <div class="pc-card-s2 reveal-soft reveal-soft--delay-1">
-        <span class="pc-card-s2-num">01</span>
-        <span class="pc-card-s2-icon" aria-hidden="true">💧</span>
-        <p class="pc-card-s2-q">臭いは？</p>
-        <p class="pc-card-s2-body">水換え・濾過・種類選びで大きく変わります。</p>
-        <p class="pc-card-s2-hint">診断で臭いの少ない種を絞り込めます</p>
-      </div>
-
-      <div class="pc-card-s2 reveal-soft reveal-soft--delay-2">
-        <span class="pc-card-s2-num">02</span>
-        <span class="pc-card-s2-icon" aria-hidden="true">🐣</span>
-        <p class="pc-card-s2-q">はじめてでも大丈夫？</p>
-        <p class="pc-card-s2-body">丈夫な種と、最初から避けたい種があります。</p>
-        <p class="pc-card-s2-hint">診断が向いている種・難しい種を分けてお伝えします</p>
-      </div>
-
-      <div class="pc-card-s2 reveal-soft reveal-soft--delay-3">
-        <span class="pc-card-s2-num">03</span>
-        <span class="pc-card-s2-icon" aria-hidden="true">💰</span>
-        <p class="pc-card-s2-q">いくらかかる？</p>
-        <p class="pc-card-s2-body">初期費用と毎月の維持費を、診断後に目安表示します。</p>
-        <p class="pc-card-s2-hint">Starter Kitで必要機材と費用をまとめて確認できます</p>
-      </div>
-
-      <div class="pc-card-s2 reveal-soft reveal-soft--delay-4">
-        <span class="pc-card-s2-num">04</span>
-        <span class="pc-card-s2-icon" aria-hidden="true">🌿</span>
-        <p class="pc-card-s2-q">長く飼える？</p>
-        <p class="pc-card-s2-body">亀は長寿。だから相性を見て選ぶことが大切です。</p>
-        <p class="pc-card-s2-hint">ライフスタイルに合った種を診断が提案します</p>
-      </div>
-
-      <a href="kids/index.html" class="pc-card-s2 pc-card-s2--kids reveal-soft reveal-soft--delay-4"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'problem_grid'})">
-        <span class="pc-card-s2-num">05</span>
-        <span class="pc-card-s2-icon" aria-hidden="true">🧒</span>
-        <p class="pc-card-s2-q">子どもが「カメ飼いたい」と言い出した？</p>
-        <p class="pc-card-s2-body">まずはお子さま自身に、カメがどんな生きものか知ってもらうところから。ふりがな付きのキッズページを用意しています。</p>
-        <p class="pc-card-s2-hint">カメふしぎ島へ行く →</p>
-      </a>
-
-    </div>
-
-    <div class="pc-cta-wrap">
-      <a href="./shindan/"
-         class="pc-cta-btn"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_problem_diagnosis_click',{location:'problem_grid',cta:'diagnosis'})">
-        不安を整理して診断する <span aria-hidden="true">→</span>
-      </a>
-      <span class="pc-cta-note">所要時間 約30秒 · 無料 · 登録不要</span>
-    </div>
-  </div>
-</section>
-
-<section class="find-turtle-heading">
-  <div class="wrap">
-    <div class="section-eyebrow">Find Your Turtle</div>
-    <h2 class="section-title">あなたに合う亀を探す</h2>
-    <p class="section-note">暮らしのタイプ・人気種・比較から、あなたに合う一匹を探します。</p>
-  </div>
-</section>
-
-<!-- Phase 12-A Sprint 3-A: Species Universe (replaces Phase 11 Step 1D) -->
-<section class="su-section" id="popular-picks" aria-label="亀の世界を探索する">
-  <div class="su-cap-top" aria-hidden="true"></div>
-  <div class="wrap">
-
-    <!-- Header -->
-    <div style="text-align:center;">
-      <span class="su-eyebrow">Species Universe</span>
-      <h2 class="su-heading reveal-soft reveal-soft--delay-1">
-        亀の<em>世界</em>へようこそ。
-      </h2>
-      <p class="su-sub">
-        水の中から、大地の上まで。<br>
-        あなたの暮らしに合った世界を、静かに探してください。
-      </p>
-    </div>
-
-    <!-- 2×2 Panel Grid -->
-    <div class="su-grid">
-
-      <!-- Panel 1: Aquatic Turtles -->
-      <a href="guide-water-full.html"
-         class="su-panel su-panel--aquatic reveal-soft reveal-soft--delay-1"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'aquatic',location:'popular_picks',homepage_version:'phase_12A'})"
-         aria-label="水棲ガメの世界を探索する">
-        <div class="su-panel-inner">
-          <span class="su-panel-badge">
-            <span class="su-panel-badge-count">32</span> 種
-          </span>
-          <p class="su-panel-title">Aquatic Turtles<br><em>水棲ガメ</em></p>
-          <p class="su-panel-desc">静かな水面の下で暮らす、もっとも人気のカテゴリー。</p>
-          <span class="su-panel-cta">
-            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Panel 2: Tortoises -->
-      <a href="guide-dry.html"
-         class="su-panel su-panel--tortoise reveal-soft reveal-soft--delay-2"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'tortoise',location:'popular_picks',homepage_version:'phase_12A'})"
-         aria-label="リクガメの世界を探索する">
-        <div class="su-panel-inner">
-          <span class="su-panel-badge">
-            <span class="su-panel-badge-count">28</span> 種
-          </span>
-          <p class="su-panel-title">Tortoises<br><em>リクガメ</em></p>
-          <p class="su-panel-desc">大地をゆっくり歩く、長寿のパートナー。</p>
-          <span class="su-panel-cta">
-            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Panel 3: Box / Forest Turtles -->
-      <a href="guide-moist.html"
-         class="su-panel su-panel--box reveal-soft reveal-soft--delay-3"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'box_forest',location:'popular_picks',homepage_version:'phase_12A'})"
-         aria-label="ハコガメ・ヤマガメの世界を探索する">
-        <div class="su-panel-inner">
-          <span class="su-panel-badge">
-            <span class="su-panel-badge-count">18</span> 種
-          </span>
-          <p class="su-panel-title">Box &amp; Forest<br><em>ハコガメ・ヤマガメ</em></p>
-          <p class="su-panel-desc">森と湿地を好む、表情豊かな仲間たち。</p>
-          <span class="su-panel-cta">
-            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Panel 4: Rare / Exotic -->
-      <a href="species-list.html"
-         class="su-panel su-panel--rare reveal-soft reveal-soft--delay-4"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_universe_click',{category:'rare_exotic',location:'popular_picks',homepage_version:'phase_12A'})"
-         aria-label="レア・エキゾチックな亀の世界を探索する">
-        <div class="su-panel-inner">
-          <span class="su-panel-badge">
-            <span class="su-panel-badge-count">20</span> 種以上
-          </span>
-          <p class="su-panel-title">Rare &amp; Exotic<br><em>希少・個性派</em></p>
-          <p class="su-panel-desc">希少で個性的。深い魅力を持つ上級者向け。</p>
-          <span class="su-panel-cta">
-            この世界を探索する <span class="su-panel-cta-arrow" aria-hidden="true">→</span>
-          </span>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- Bottom explore link -->
-    <div class="su-explore">
-      <a href="species-list.html" class="su-explore-link">
-        すべての種を見る（100種） <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-
-  </div>
-  <div class="su-cap-bot" aria-hidden="true"></div>
-</section>
-
-
-
-
-<details class="ia-more">
-<summary class="ia-more-summary">もっと見る（写真・人気ガイド・比較でさらに探す） ↓</summary>
-<section class="lead-in">
-  <div class="wrap">
-    <p>水槽の大きさ、ライトの強さ、床材の種類。カメの飼育で迷うことは尽きません。けれど、その答えのほとんどは「そのカメが野生でどう暮らしているか」の中にあります。乾いた草原を歩き回るリクガメと、薄暗い林の床に潜むヤマガメでは、必要なものがまるで違うからです。</p>
-    <p>このサイトでは、カメを<strong>暮らしのタイプ</strong>で分け、それぞれの生態から逆算して飼育環境と機材を考えていきます。難しい話を並べるのではなく、「なぜそれが必要なのか」が腑に落ちるように書いているつもりです。お迎えを迷っている方も、すでに一緒に暮らしている方も、気になるところから読んでみてください。</p>
-  </div>
-</section>
-
-<section class="discover" id="discover">
-  <div class="wrap">
-    <div class="section-eyebrow">Find by Habitat</div>
-    <h2 class="section-title">暮らしから探す</h2>
-    <p class="section-note">飼っている（迎えたい）カメの暮らしに近いタイプを選ぶと、必要な環境と機材の考え方がまとまっています。</p>
-
-    <div class="card-grid">
-
-      <a class="dcard" href="guide-water-full.html">
-        <div class="dc-eyebrow">Freshwater</div>
-        <h3>水棲・淡水ガメ</h3>
-        <p>一日の多くを水の中で過ごすカメ。泳げる水量と、甲羅を乾かす陸場の両立が健康の土台になります。</p>
-        <div class="dc-species">クサガメ・アカミミガメ・イシガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-brackish.html">
-        <div class="dc-eyebrow">Brackish</div>
-        <h3>汽水・水辺ガメ</h3>
-        <p>河口や塩性湿地に適応した、少し特殊な暮らしのカメ。水質と塩分の管理に専門的な配慮が要ります。</p>
-        <div class="dc-species">ダイヤモンドバックテラピン など</div>
-      </a>
-
-      <a class="dcard" href="guide-semi.html">
-        <div class="dc-eyebrow">Semi-aquatic</div>
-        <h3>半水棲ガメ</h3>
-        <p>泳ぐより水底を歩くのが得意なカメ。浅い水位と、登れる陸場・隠れ家がポイントになります。</p>
-        <div class="dc-species">ニオイガメ・ドロガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-moist.html">
-        <div class="dc-eyebrow">Forest Floor</div>
-        <h3>ヤマガメ・ハコガメ</h3>
-        <p>湿った林の床に暮らす森林性のカメ。湿度と隠れ家、浅い水場で「しっとりした林床」を再現します。</p>
-        <div class="dc-species">スペングラーヤマガメ・ヒラセガメ・ハコガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-dry.html">
-        <div class="dc-eyebrow">Arid Grassland</div>
-        <h3>乾燥系リクガメ</h3>
-        <p>乾いた草原を歩き回るリクガメ。広い床面積と強い光、草食メインの食事が暮らしの起点です。</p>
-        <div class="dc-species">ロシア・ヘルマン・ギリシャリクガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-arid.html">
-        <div class="dc-eyebrow">Humid Tropics</div>
-        <h3>多湿系リクガメ</h3>
-        <p>湿度のある暖かい環境を好む熱帯のリクガメ。広さに加え、適度な保湿が幼体期の健康を左右します。</p>
-        <div class="dc-species">アカアシ・エロンガータリクガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-softshell.html">
-        <div class="dc-eyebrow">Softshell &amp; Side-neck</div>
-        <h3>スッポン・ヘビクビガメ</h3>
-        <p>砂に潜るスッポンと、首を横に曲げる曲頸類。どちらも深水と強力なろ過が飼育の核心になります。</p>
-        <div class="dc-species">トゲスッポン・ヘビクビガメ・ナガクビガメ など</div>
-      </a>
-
-      <a class="dcard" href="guide-japan.html">
-        <div class="dc-eyebrow">Japanese Native</div>
-        <h3>日本産カメ</h3>
-        <p>日本の清流と里山に生きる固有種。野外個体は採集禁止——CB個体を選ぶことが保全につながります。</p>
-        <div class="dc-species">ニホンイシガメ・ヤエヤマイシガメ・ミナミイシガメ など</div>
-      </a>
-
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== Phase 36B: Real Photo Trust Grid ===== -->
-<section class="rtg-section" id="real-trust-grid" aria-label="実際に飼われている人気種をチェック">
+<!-- ════════════════════════════════════════════════════════════
+     ⑤ 写真付き種探索 — real-trust-grid を初期表示へ。
+        popular-guides / Species Universe をここへ統合。
+        6大分類は正本（tools/taxonomy.js）の実数を使用。
+════════════════════════════════════════════════════════════ -->
+<section class="rtg-section" id="species-explore" aria-label="写真から亀を探す">
   <div class="rtg-wrap">
-    <span class="rtg-eyebrow">Real Turtle Photos</span>
-    <h2 class="rtg-heading">実際に飼われている人気種をチェック</h2>
-    <p class="rtg-sub">写真・特徴・飼育難易度を並べて比較して、<br>あなたに合う亀を見つけます。</p>
+    <span class="rtg-eyebrow">Find Your Turtle</span>
+    <h2 class="rtg-heading">写真から、亀を探す</h2>
+    <p class="rtg-sub">実際の姿・学名・飼育情報を並べて比較して、<br>あなたに合う亀を見つけます。</p>
+
     <div class="rtg-grid" role="list">
       <a class="rtg-card" role="listitem" href="species/musk-turtle.html"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミシシッピニオイガメ',species_slug:'musk-turtle'})">
         <span class="rtg-imgbox">
-          <img loading="lazy" src="images/trust/mississippi-musk-turtle.webp"
+          <img src="images/trust/mississippi-musk-turtle.webp"
                alt="ミシシッピニオイガメ (Sternotherus odoratus) real photo"
-               width="800" height="600" loading="eager" decoding="async">
+               width="800" height="600" loading="lazy" decoding="async">
         </span>
         <span class="rtg-meta">
           <span class="rtg-names">
@@ -3840,12 +2101,44 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
           <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
         </span>
       </a>
+      <a class="rtg-card" role="listitem" href="species/three-toed-box-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ミツユビハコガメ',species_slug:'three-toed-box-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="assets/species-photos/three-toed-box-turtle.webp"
+               alt="ミツユビハコガメ (Terrapene carolina triunguis) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ミツユビハコガメ</span>
+            <span class="rtg-latin">Terrapene carolina triunguis</span>
+            <span class="rtg-own">著者が飼育中</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/spenglers-leaf-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'スペングラーヤマガメ',species_slug:'spenglers-leaf-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="assets/species-photos/spenglers-leaf-turtle.webp"
+               alt="スペングラーヤマガメ (Geoemyda spengleri) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">スペングラーヤマガメ</span>
+            <span class="rtg-latin">Geoemyda spengleri</span>
+            <span class="rtg-own">著者が飼育中</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
       <a class="rtg-card" role="listitem" href="species/hermann-tortoise.html"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ヘルマンリクガメ',species_slug:'hermann-tortoise'})">
         <span class="rtg-imgbox">
-          <img loading="lazy" src="images/trust/hermanns-tortoise.webp"
+          <img src="images/trust/hermanns-tortoise.webp"
                alt="ヘルマンリクガメ (Testudo hermanni) real photo"
-               width="800" height="600" loading="eager" decoding="async">
+               width="800" height="600" loading="lazy" decoding="async">
         </span>
         <span class="rtg-meta">
           <span class="rtg-names">
@@ -3896,6 +2189,21 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
           <span class="rtg-names">
             <span class="rtg-name">カブトニオイガメ</span>
             <span class="rtg-latin">Sternotherus carinatus</span>
+          </span>
+          <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+      <a class="rtg-card" role="listitem" href="species/west-african-mud-turtle.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_trust_grid_click',{species_name:'ヒメハコヨコクビガメ',species_slug:'west-african-mud-turtle'})">
+        <span class="rtg-imgbox">
+          <img src="assets/species-photos/west-african-mud-turtle.webp"
+               alt="ヒメハコヨコクビガメ (Pelusios castaneus) real photo"
+               width="800" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="rtg-meta">
+          <span class="rtg-names">
+            <span class="rtg-name">ヒメハコヨコクビガメ</span>
+            <span class="rtg-latin">Pelusios castaneus</span>
           </span>
           <span class="rtg-arrow" aria-hidden="true">&#8594;</span>
         </span>
@@ -3976,317 +2284,86 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         </span>
       </a>
     </div>
+
+    <!-- 6大分類（正本 tools/taxonomy.js の実数）— Species Universe / discover を統合 -->
+    <p class="spx-lead">暮らしのタイプから探す</p>
+    <div class="spx-cats">
+      <a class="spx-cat" href="species-list.html?hab=リクガメ"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'land'})">🐢 リクガメ <span class="spx-cat-n">27</span></a>
+      <a class="spx-cat" href="species-list.html?hab=ヤマガメ・ハコガメ"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'forest'})">🍃 ヤマガメ・ハコガメ <span class="spx-cat-n">22</span></a>
+      <a class="spx-cat" href="species-list.html?hab=半水棲"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'semiaquatic'})">💧 半水棲 <span class="spx-cat-n">18</span></a>
+      <a class="spx-cat" href="species-list.html?hab=水棲（淡水）"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'aquatic'})">🌊 水棲（淡水） <span class="spx-cat-n">29</span></a>
+      <a class="spx-cat" href="species-list.html?hab=汽水"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'brackish'})">🧂 汽水 <span class="spx-cat-n">6</span></a>
+      <a class="spx-cat" href="species-list.html?hab=スッポン・曲頸"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_category_click',{cat:'softshell'})">🌀 スッポン・曲頸 <span class="spx-cat-n">16</span></a>
+    </div>
+
+    <p class="spx-all">
+      <a href="species-list.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_species_all_click',{location:'species_explore'})">118種すべてを見る <span aria-hidden="true">→</span></a>
+    </p>
     <p class="rtg-credits"><a href="photo-credits.html">Photo Credits</a></p>
   </div>
 </section>
 
-<section class="popular-guides" id="popular-species">
-  <div class="wrap">
-    <div class="section-eyebrow">Popular Species</div>
-    <h2 class="section-title">人気の亀ガイド</h2>
-    <p class="section-note">実飼育者が書いた、種別ガイドページ。飼育環境・機材・よくある質問まで一種ずつまとめています。</p>
-    <div class="pg-grid">
-      <a href="species/russian-tortoise.html" class="pg-card">
-        <div class="pg-emoji">🏔️</div>
-        <div class="pg-name">ロシアリクガメ</div>
-        <div class="pg-latin">Testudo horsfieldii</div>
-        <p class="pg-desc">リクガメ入門の定番。60〜90cmケージから始められる乾燥系リクガメ。好奇心旺盛でなつきやすい。</p>
-        <div class="pg-cta">ロシアリクガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/musk-turtle.html" class="pg-card">
-        <div class="pg-emoji">🔬</div>
-        <div class="pg-name">ニオイガメ</div>
-        <div class="pg-latin">Sternotherus odoratus</div>
-        <p class="pg-desc">水棲ガメ入門の定番。最大14cm・30cm水槽から。慣れれば臭いも少なく飼育しやすい小型種。</p>
-        <div class="pg-cta">ニオイガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/three-toed-box-turtle.html" class="pg-card">
-        <div class="pg-emoji">📦</div>
-        <div class="pg-name">ミツユビハコガメ</div>
-        <div class="pg-latin">Terrapene carolina triunguis</div>
-        <p class="pg-desc">腹甲を完全に閉じる独自構造の北米産ハコガメ。雑食性で飼育食への移行がしやすい。著者も飼育中。</p>
-        <div class="pg-cta">ミツユビハコガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/spenglers-leaf-turtle.html" class="pg-card">
-        <div class="pg-emoji">🌿</div>
-        <div class="pg-name">スペングラーヤマガメ</div>
-        <div class="pg-latin">Geoemyda spengleri</div>
-        <p class="pg-desc">湿った林床を好む小型ヤマガメ。高湿度環境と豊富な隠れ家が重要。マニア人気が高い。著者も飼育中。</p>
-        <div class="pg-cta">スペングラーヤマガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/west-african-mud-turtle.html" class="pg-card">
-        <div class="pg-emoji">🌊</div>
-        <div class="pg-name">ヒメハコヨコクビガメ</div>
-        <div class="pg-latin">Pelusios castaneus</div>
-        <p class="pg-desc">水棲寄りだが陸場も使う西アフリカ産の曲頸類。丈夫さと個性的な姿が魅力で、ろ過と陸場設計が飼育の鍵。</p>
-        <div class="pg-cta">ヒメハコヨコクビガメの飼育ガイドを読む →</div>
-      </a>
-      <a href="species/reeves-turtle.html" class="pg-card">
-        <div class="pg-emoji">🇯🇵</div>
-        <div class="pg-name">クサガメ</div>
-        <div class="pg-latin">Mauremys reevesii</div>
-        <p class="pg-desc">日本で馴染み深い代表種。丈夫で適応力が高いが、成長後サイズも考慮したい。</p>
-        <div class="pg-cta">クサガメの飼育ガイドを読む →</div>
-      </a>
-    </div>
-    <a href="species-list.html" class="pg-all">100種別ガイドを全て見る →</a>
-  </div>
-</section>
-
-<!-- Live Compare (Phase 12-D) -->
-<section class="live-compare" id="live-compare">
-  <div class="wrap">
-
-    <span class="lc-eyebrow">Compare Before You Commit</span>
-    <h2 class="lc-heading">飼う前に、違いを見抜く。</h2>
-    <p class="lc-sub">見た目が似ていても、飼いやすさはまったく違う。<br>人気の比較を、1分で確認。</p>
-
-    <div class="lc-grid">
-
-      <!-- Card 1: Hermann vs Greek -->
-      <a class="lc-card"
-         href="./compare/hermann-vs-greek.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'hermann_vs_greek'})">
-        <span class="lc-badge">はじめて飼う方に人気</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">ヘルマン<br>リクガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">ギリシャ<br>リクガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 飼いやすい</span>
-            <span class="lc-metric-label">難易度</span>
-            <span class="lc-lose">○ やや難</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-lose">¥40,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-win">◎ ¥25,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ 少ない</span>
-            <span class="lc-metric-label">においリスク</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">ヘルマン vs ギリシャを比較する →</span>
-      </a>
-
-      <!-- Card 2: Musk vs Razorback -->
-      <a class="lc-card"
-         href="./compare/musk-vs-razorback.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'musk_vs_razorback'})">
-        <span class="lc-badge">Most Compared</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">ミシシッピ<br>ニオイガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">カブトニオイ<br>ガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 入門向き</span>
-            <span class="lc-metric-label">難易度</span>
-            <span class="lc-lose">初中級</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ ¥15,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-lose">¥20,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-tie">同等</span>
-            <span class="lc-metric-label">においリスク</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">ニオイガメ vs カブトを比較する →</span>
-      </a>
-
-      <!-- Card 3: Reeves vs Japanese Pond -->
-      <a class="lc-card"
-         href="./compare/reeves-vs-japanese-pond.html"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_card_click',{event_category:'live_compare',event_label:'reeves_vs_japanese_pond'})">
-        <span class="lc-badge">国産限定</span>
-        <div class="lc-vs-strip">
-          <span class="lc-name">クサガメ</span>
-          <span class="lc-vs">vs</span>
-          <span class="lc-name right">ニホン<br>イシガメ</span>
-        </div>
-        <div class="lc-divider"></div>
-        <div class="lc-metrics">
-          <div class="lc-metric">
-            <span class="lc-win">◎ 入手しやすい</span>
-            <span class="lc-metric-label">入手性</span>
-            <span class="lc-lose">希少</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-win">◎ ¥15,000〜</span>
-            <span class="lc-metric-label">初期費用</span>
-            <span class="lc-lose">¥20,000〜</span>
-          </div>
-          <div class="lc-metric">
-            <span class="lc-tie">同等</span>
-            <span class="lc-metric-label">飼いやすさ</span>
-            <span class="lc-tie">同等</span>
-          </div>
-        </div>
-        <span class="lc-card-cta">クサガメ vs イシガメを比較する →</span>
-      </a>
-
-    </div>
-
-    <div class="lc-cta-wrap">
-      <a href="./compare/"
-         class="lc-cta"
-         onclick="(typeof gtag==='function')&&gtag('event','live_compare_all_click',{event_category:'live_compare',event_label:'all_comparisons'})">
-        すべての比較を見る <span class="arrow">→</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-<section class="compare-engine" id="compare-engine">
-  <div class="wrap">
-    <div class="ce-eyebrow">Species Compare</div>
-    <h2 class="ce-heading">どの亀があなた向き？</h2>
-    <p class="ce-sub">はじめて飼う方が迷いやすい代表種を、飼育難易度・匂い・初期費用で比較しました。</p>
-    <div class="scroll-hint-ce">← 横にスクロール</div>
-    <div class="ce-table-wrap">
-      <table class="ce-table">
-        <thead>
-          <tr>
-            <th>種名</th>
-            <th>難易度</th>
-            <th>匂い</th>
-            <th>初期費用</th>
-            <th>はじめての方向け</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              ミシシッピニオイガメ
-              <span class="ce-latin">Sternotherus odoratus</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥</span></td>
-            <td><span class="ce-badge best">◎</span></td>
-          </tr>
-          <tr>
-            <td>
-              ヘルマンリクガメ
-              <span class="ce-latin">Testudo hermanni</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥¥</span></td>
-            <td><span class="ce-badge good">○</span></td>
-          </tr>
-          <tr>
-            <td>
-              ミツユビハコガメ
-              <span class="ce-latin">Terrapene carolina triunguis</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥</span></td>
-            <td><span class="ce-badge caution">△</span></td>
-          </tr>
-          <tr>
-            <td>
-              スペングラーヤマガメ
-              <span class="ce-latin">Geoemyda spengleri</span>
-            </td>
-            <td>
-              <span class="ce-dots">
-                <span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span><span class="ce-dot"></span>
-              </span>
-            </td>
-            <td>
-              <span class="ce-dots ce-smell">
-                <span class="ce-dot"></span><span class="ce-dot"></span>
-                <span class="ce-dot empty"></span><span class="ce-dot empty"></span><span class="ce-dot empty"></span>
-              </span>
-            </td>
-            <td><span class="ce-cost">¥¥¥</span></td>
-            <td><span class="ce-badge hard">×</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="ce-cta-box">
-      <p><strong>まだ迷っているなら、30秒診断が確実です。</strong><br>表の比較はあくまで目安。予算・スペース・臭いの不安を入力すれば、100種からあなたに合う1種を提案します。</p>
-      <a href="./shindan/"
-         class="ce-cta-btn"
-         data-event="homepage_compare_diagnosis_click"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_compare_diagnosis_click',{event_category:'compare_engine',event_label:'cta_btn'})">
-        30秒診断を始める →
-      </a>
-    </div>
-  </div>
-</section>
-
-</details>
-
-<section class="find-turtle-heading">
-  <div class="wrap">
-    <div class="section-eyebrow">Get Started</div>
-    <h2 class="section-title">飼育を始める</h2>
-    <p class="section-note">初期費用の目安と、最初に揃えたい定番機材をまとめました。</p>
-  </div>
-</section>
-
-<!-- Cost Simulator (Phase 11 Step 1F: Budget Reality Check) -->
-<section class="cost-sim" id="cost-sim" aria-label="環境提案・費用の目安">
+<!-- ════════════════════════════════════════════════════════════
+     ⑥ 飼う前に知っておきたいこと
+        problem-grid 01〜04 と cost-sim を1ブロックへ統合。
+        費用系 CTA は1系統のみ。
+════════════════════════════════════════════════════════════ -->
+<section class="cost-sim" id="before-you-keep" aria-label="飼う前に知っておきたいこと">
   <div class="csim-cap-top" aria-hidden="true"></div>
   <div class="wrap">
 
-    <!-- Header: Environment guidance (not commerce) -->
-    <span class="csim-eyebrow">Environment Guide</span>
-    <h2 class="csim-heading reveal-soft reveal-soft--delay-1">
-      この環境から始めると、<br><em>安心です。</em>
+    <span class="pc-eyebrow-s2">Before You Keep</span>
+    <h2 class="pc-heading-s2 reveal-soft reveal-soft--delay-1">
+      飼う前に知っておきたい、<em>4つのこと。</em>
     </h2>
+
+    <div class="pc-grid-s2">
+
+      <div class="pc-card-s2 reveal-soft reveal-soft--delay-1">
+        <span class="pc-card-s2-num">01</span>
+        <span class="pc-card-s2-icon" aria-hidden="true">💧</span>
+        <p class="pc-card-s2-q">臭いは？</p>
+        <p class="pc-card-s2-body">水換え・濾過・種類選びで大きく変わります。</p>
+      </div>
+
+      <div class="pc-card-s2 reveal-soft reveal-soft--delay-2">
+        <span class="pc-card-s2-num">02</span>
+        <span class="pc-card-s2-icon" aria-hidden="true">🐣</span>
+        <p class="pc-card-s2-q">はじめてでも大丈夫？</p>
+        <p class="pc-card-s2-body">丈夫な種と、最初から避けたい種があります。</p>
+      </div>
+
+      <div class="pc-card-s2 reveal-soft reveal-soft--delay-3">
+        <span class="pc-card-s2-num">03</span>
+        <span class="pc-card-s2-icon" aria-hidden="true">💰</span>
+        <p class="pc-card-s2-q">いくらかかる？</p>
+        <p class="pc-card-s2-body">初期費用と毎月の維持費の目安を、下のタブで確認できます。</p>
+      </div>
+
+      <div class="pc-card-s2 reveal-soft reveal-soft--delay-4">
+        <span class="pc-card-s2-num">04</span>
+        <span class="pc-card-s2-icon" aria-hidden="true">🌿</span>
+        <p class="pc-card-s2-q">長く飼える？</p>
+        <p class="pc-card-s2-body">亀は長寿。だから相性を見て選ぶことが大切です。</p>
+      </div>
+
+    </div>
+
+    <!-- 費用と環境の目安（旧 cost-sim） -->
+    <h3 class="csim-heading">この環境から始めると、<em>安心です。</em></h3>
     <p class="csim-sub">
       亀選びの次に大切なのは、環境づくり。<br>
       必要なのは「高い機材」ではなく、<br>
       その種に合った飼育環境です。
     </p>
 
-    <!-- Environment tiers -->
     <div class="csim-tiers" aria-label="環境グレード">
       <span class="csim-tier csim-tier--essential">
         <span class="csim-tier-dot" aria-hidden="true"></span>Essential — 最低限、安心して始める構成
@@ -4318,10 +2395,6 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミシシッピニオイガメ、クサガメ</p>
         <p class="csim-reassure">30cm水槽・フィルター・ヒーターがあれば始められます。小型なので維持費も抑えやすく、初めての亀に最も選ばれているタイプです。</p>
-        <div class="csim-cta-row">
-          <a href="./shindan/" class="csim-cta"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'small_aquatic',section:'commerce',homepage_version:'phase_12A'})">診断して必要機材を見る</a>
-        </div>
       </div>
     </div>
     <div id="csim-p2" class="csim-panel" role="tabpanel">
@@ -4338,10 +2411,6 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ミツユビハコガメ、トウブハコガメ</p>
         <p class="csim-reassure">半陸棲・半水棲で、水場と陸場の両方が必要です。温度・湿度の管理が重要ですが、適切な環境を作れば長く付き合える種です。</p>
-        <div class="csim-cta-row">
-          <a href="./shindan/" class="csim-cta"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'box_forest',section:'commerce',homepage_version:'phase_12A'})">診断して必要機材を見る</a>
-        </div>
       </div>
     </div>
     <div id="csim-p3" class="csim-panel" role="tabpanel">
@@ -4358,112 +2427,28 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         </div>
         <p class="csim-examples"><strong>代表種：</strong>ヘルマンリクガメ、ギリシャリクガメ</p>
         <p class="csim-reassure">UVBライト・バスキングライト・保温器具が必要で初期費用は高めです。ただし一式揃えれば数十年の長期飼育ができる、育てがいのあるタイプです。</p>
-        <div class="csim-cta-row">
-          <a href="./shindan/" class="csim-cta"
-             onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{tab:'tortoise',section:'commerce',homepage_version:'phase_12A'})">診断して必要機材を見る</a>
-        </div>
       </div>
     </div>
+
+    <div class="csim-cta-row">
+      <a href="./shindan/" class="csim-cta"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_cost_cta_click',{section:'before_keeping'})">診断して必要機材を見る</a>
+    </div>
+
   </div>
   <div class="csim-cap-bot" aria-hidden="true"></div>
 </section>
 
-
-<!-- Top Gear Picks (Phase 12 Patch) -->
-<section class="top-gear-picks" id="top-gear-picks">
-  <div class="wrap">
-    <span class="tg-eyebrow">Environment Essentials</span>
-    <h2 class="tg-heading">環境を整えるための、定番機材</h2>
-    <p class="tg-sub">実飼育者が最初に選ぶ信頼の定番</p>
-    <div class="tg-grid">
-
-      <a class="tg-card"
-         href="uvb-light-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">☀️</span>
-        <span class="tg-cat">UVBライト</span>
-        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
-        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
-        <span class="tg-cta">UVBランプ10選を見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-      <a class="tg-card"
-         href="water-filter-best10.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">💧</span>
-        <span class="tg-cat">フィルター</span>
-        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
-        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
-        <span class="tg-cta">フィルター10選を見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-      <a class="tg-card"
-         href="guides/temperature-guide.html"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
-        <span class="tg-icon">🌡️</span>
-        <span class="tg-cat">保温器具</span>
-        <span class="tg-title">ヒーター・保温球<br>選び方ガイド</span>
-        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
-        <span class="tg-cta">保温器具の選び方を見る <span class="tg-cta-arrow">→</span></span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-<details class="ia-more">
-<summary class="ia-more-summary">もっと見る（機材をすべて見る） ↓</summary>
-<section class="gear-index">
-  <div class="wrap">
-    <div class="section-eyebrow">Find by Gear</div>
-    <h2 class="section-title">機材から探す</h2>
-    <p class="section-note">機材ごとに、実在を確認した製品をベスト10で紹介しています。「野生の暮らしから逆算する」という視点はどのページにも通底しています。</p>
-
-    <div class="gcard-grid">
-      <a class="gcard" href="cage-best10.html"><span class="gc-label">ケージ・水槽</span><span class="gc-sub">床面積と水量を暮らしから選ぶ</span></a>
-      <a class="gcard" href="substrate-best10.html"><span class="gc-label">床材・砂</span><span class="gc-sub">保湿か水はけか、地面を再現する</span></a>
-      <a class="gcard" href="shelter-best10.html"><span class="gc-label">シェルター・浮島</span><span class="gc-sub">成体サイズで選ぶ隠れ家と陸場</span></a>
-      <a class="gcard" href="uvb-light-best10.html"><span class="gc-label">UVBライト</span><span class="gc-sub">種に合った強さで甲羅と骨を守る</span></a>
-      <a class="gcard" href="food-best10.html"><span class="gc-label">餌・フード</span><span class="gc-sub">食性に合わせた主食を選ぶ</span></a>
-      <a class="gcard" href="water-filter-best10.html"><span class="gc-label">フィルター</span><span class="gc-sub">水量と水位に合うろ過を選ぶ</span></a>
-      <a class="gcard" href="dish-best10.html"><span class="gc-label">水入れ・エサ入れ</span><span class="gc-sub">体が浸かれるサイズ選びが健康を左右する</span></a>
-    </div>
-  </div>
-</section>
-
-</details>
-
-<section class="find-turtle-heading">
-  <div class="wrap">
-    <h2 class="section-title">困ったら</h2>
-  </div>
-</section>
-
-<section class="trouble-hub">
-  <div class="wrap">
-    <div class="th-inner">
-      <div class="th-text">
-        <div class="section-eyebrow">Trouble Shooting</div>
-        <h2 class="section-title">カメのトラブル解決</h2>
-        <p>食べない、鼻水が出る、目が開かない——症状から原因と対処法を確認できます。</p>
-      </div>
-      <a href="guides/turtle-trouble-guide.html" class="th-link">トラブル早見表へ →</a>
-    </div>
-    <div class="th-tags">
-      <a href="guides/turtle-not-eating.html">🍃 餌を食べない</a>
-      <a href="guides/turtle-runny-nose.html">💧 鼻水・くしゃみ</a>
-      <a href="guides/turtle-shell-white.html">🐚 甲羅が白い・ぬめる</a>
-    </div>
-  </div>
-</section>
-
-<!-- Guide Links (Phase 11 Step 1G: Care Library) — Phase 48-C: moved from A章 into C章「困ったら」 -->
-<section class="guide-links" id="guide-links">
+<!-- ════════════════════════════════════════════════════════════
+     ⑦ 飼育情報入口 — Care Module 01〜05 / 機材 / トラブル を統合。
+        Kids の露出はここ1箇所のみ。
+════════════════════════════════════════════════════════════ -->
+<section class="guide-links" id="care-hub">
   <div class="wrap">
     <span class="gl-eyebrow">Care Library</span>
     <h2 class="gl-heading">選んだ後も、飼育で迷わせない。</h2>
     <p class="gl-sub">水槽・床材・温度・食事。飼い始めてから必要になる知識を、飼育スタイル別に整理しています。</p>
+
     <div class="gl-grid">
 
       <a href="guides/beginner-top10-turtles.html" class="gl-card"
@@ -4503,11 +2488,11 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
         <span class="gl-cta">KID（甲長逆引きDB）を見る</span>
       </a>
 
-      <!-- こども向けページ CTA -->
+      <!-- こども向けページ CTA — トップにおける Kids の唯一の掲載箇所 -->
       <a href="kids/index.html" class="gl-card" style="grid-column:1/-1;"
-         onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'kids'})">
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'care_hub'})">
         <span class="gl-module-label">Care Module 05</span>
-        <span class="gl-icon">🐢</span>
+        <span class="gl-icon">🧒</span>
         <div class="gl-situation">お子さんが亀に興味を持った？</div>
         <p class="gl-desc">お子さん自身が読める「カメふしぎ島」。全漢字ふりがな付きの8ページで、しめった森・水辺・かわいた場所をめぐりながら、カメの体と暮らしを見くらべます。カメと暮らす約束、やってはいけないこと、最後はカメクイズ。商品リンクは一切ありません。</p>
         <span class="gl-cta">カメふしぎ島へ行く</span>
@@ -4518,307 +2503,73 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       </p>
 
     </div>
-  </div>
-</section>
 
+    <!-- 機材（旧 top-gear-picks ＋ gear-index を統合） -->
+    <h3 class="ch-subhead">環境を整えるための、定番機材</h3>
+    <div class="tg-grid">
 
-<details class="ia-more">
-<summary class="ia-more-summary">診断の流れを見る（How it works） ↓</summary>
-<section class="journey-preview" id="journey-preview">
-  <div class="wrap">
-    <span class="jp-eyebrow">How It Works</span>
-    <h2 class="jp-heading">答えるだけで、理想の亀にたどり着く。</h2>
-    <div class="jp-steps">
+      <a class="tg-card"
+         href="uvb-light-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'uvb',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">☀️</span>
+        <span class="tg-cat">UVBライト</span>
+        <span class="tg-title">紫外線ランプ<br>おすすめ10選</span>
+        <p class="tg-benefit">カルシウム吸収に必須。リクガメ・半水棲ガメ問わず初日から必要な定番アイテム。</p>
+        <span class="tg-cta">UVBランプ10選を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
 
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">1</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 1</div>
-          <div class="jp-step-title">希望を選ぶ</div>
-          <p class="jp-step-copy">予算・部屋サイズ・臭いの不安を選ぶだけ</p>
-        </div>
-      </div>
+      <a class="tg-card"
+         href="water-filter-best10.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'filter',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">💧</span>
+        <span class="tg-cat">フィルター</span>
+        <span class="tg-title">水槽フィルター<br>おすすめ10選</span>
+        <p class="tg-benefit">水棲ガメの水質管理を自動化。臭いを抑えて水換えの手間を大幅に削減できる。</p>
+        <span class="tg-cta">フィルター10選を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
 
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">2</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 2</div>
-          <div class="jp-step-title">条件で絞り込む</div>
-          <p class="jp-step-copy">100種から相性のいい候補を絞り込む</p>
-        </div>
-      </div>
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">3</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 3</div>
-          <div class="jp-step-title">候補を比較</div>
-          <p class="jp-step-copy">難易度・費用・手間を横並びで確認</p>
-        </div>
-      </div>
-
-      <div class="jp-step">
-        <div class="jp-num" aria-hidden="true">4</div>
-        <div class="jp-step-body">
-          <div class="jp-step-label">Step 4</div>
-          <div class="jp-step-title">準備完了</div>
-          <p class="jp-step-copy">必要な機材をまとめて把握してスタート</p>
-        </div>
-      </div>
-
-    </div>
-    <p class="jp-payoff">迷っていた亀選びが、楽しみに変わる。</p>
-  </div>
-</section>
-</details>
-
-<section class="find-turtle-heading">
-  <div class="wrap">
-    <h2 class="section-title">このサイトについて</h2>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     Phase 12-C: Turtle Readiness Score OS
-     Placement: cost-sim直後 / guide-links直前
-══════════════════════════════════════════════════════════ -->
-<section class="trs-section" id="readiness-score"
-  aria-label="亀を迎える準備チェック"
-  data-ga-view="readiness_view">
-  <div class="trs-inner">
-
-    <!-- Header -->
-    <p class="trs-eyebrow">Turtle Readiness Score</p>
-    <h2 class="trs-heading">亀を迎える準備、<br>できていますか？</h2>
-    <p class="trs-sub">5つの質問で、あなたの飼育準備スコアを診断します。</p>
-
-    <!-- Progress bar -->
-    <div class="trs-progress-wrap" role="progressbar" aria-valuenow="0" aria-valuemax="100" aria-label="診断進捗">
-      <div class="trs-progress-bar" id="trs-progress"></div>
-    </div>
-
-    <!-- Q1 住環境 -->
-    <div class="trs-question trs-active" id="trs-q1" data-qid="q1">
-      <p class="trs-q-label">Question 01 / 05</p>
-      <p class="trs-q-text">飼育スペースを確保できそうですか？</p>
-      <div class="trs-options" role="group" aria-label="住環境">
-        <button class="trs-opt" data-pts="2" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🏠</span>
-          十分な設置スペースがある
-          <span class="trs-opt-pts">+2</span>
-        </button>
-        <button class="trs-opt" data-pts="1" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">📦</span>
-          小型種なら置けそう
-          <span class="trs-opt-pts">+1</span>
-        </button>
-        <button class="trs-opt" data-pts="0" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🤔</span>
-          まだ未定・難しい
-          <span class="trs-opt-pts">+0</span>
-        </button>
-      </div>
-      <div class="trs-nav">
-        <button class="trs-btn-back" type="button" disabled aria-label="前の質問">← 戻る</button>
-        <button class="trs-btn-next" type="button" aria-label="次の質問へ">次へ →</button>
-      </div>
-    </div>
-
-    <!-- Q2 月予算 -->
-    <div class="trs-question" id="trs-q2" data-qid="q2">
-      <p class="trs-q-label">Question 02 / 05</p>
-      <p class="trs-q-text">飼育にかける月予算はどのくらいですか？</p>
-      <div class="trs-options" role="group" aria-label="月予算">
-        <button class="trs-opt" data-pts="2" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">💰</span>
-          月1万円以上は余裕がある
-          <span class="trs-opt-pts">+2</span>
-        </button>
-        <button class="trs-opt" data-pts="1" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🪙</span>
-          月5千円前後なら出せる
-          <span class="trs-opt-pts">+1</span>
-        </button>
-        <button class="trs-opt" data-pts="0" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">😓</span>
-          正直、余裕がない
-          <span class="trs-opt-pts">+0</span>
-        </button>
-      </div>
-      <div class="trs-nav">
-        <button class="trs-btn-back" type="button" aria-label="前の質問">← 戻る</button>
-        <button class="trs-btn-next" type="button" aria-label="次の質問へ">次へ →</button>
-      </div>
-    </div>
-
-    <!-- Q3 温度管理 -->
-    <div class="trs-question" id="trs-q3" data-qid="q3">
-      <p class="trs-q-label">Question 03 / 05</p>
-      <p class="trs-q-text">室内の温度管理を年中できますか？</p>
-      <div class="trs-options" role="group" aria-label="温度管理">
-        <button class="trs-opt" data-pts="2" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🌡️</span>
-          エアコン・保温器具で年中管理できる
-          <span class="trs-opt-pts">+2</span>
-        </button>
-        <button class="trs-opt" data-pts="1" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🌤️</span>
-          季節によって難しい時期がある
-          <span class="trs-opt-pts">+1</span>
-        </button>
-        <button class="trs-opt" data-pts="0" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">❄️</span>
-          設備が整っておらず難しい
-          <span class="trs-opt-pts">+0</span>
-        </button>
-      </div>
-      <div class="trs-nav">
-        <button class="trs-btn-back" type="button" aria-label="前の質問">← 戻る</button>
-        <button class="trs-btn-next" type="button" aria-label="次の質問へ">次へ →</button>
-      </div>
-    </div>
-
-    <!-- Q4 家族理解 -->
-    <div class="trs-question" id="trs-q4" data-qid="q4">
-      <p class="trs-q-label">Question 04 / 05</p>
-      <p class="trs-q-text">同居の家族や同居人は理解していますか？</p>
-      <div class="trs-options" role="group" aria-label="家族の理解">
-        <button class="trs-opt" data-pts="2" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">👨‍👩‍👧</span>
-          全員が賛成・理解している
-          <span class="trs-opt-pts">+2</span>
-        </button>
-        <button class="trs-opt" data-pts="1" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🤝</span>
-          一部反対だが、説得できそう
-          <span class="trs-opt-pts">+1</span>
-        </button>
-        <button class="trs-opt" data-pts="0" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">💬</span>
-          まだ相談していない
-          <span class="trs-opt-pts">+0</span>
-        </button>
-      </div>
-      <div class="trs-nav">
-        <button class="trs-btn-back" type="button" aria-label="前の質問">← 戻る</button>
-        <button class="trs-btn-next" type="button" aria-label="次の質問へ">次へ →</button>
-      </div>
-    </div>
-
-    <!-- Q5 継続覚悟 -->
-    <div class="trs-question" id="trs-q5" data-qid="q5">
-      <p class="trs-q-label">Question 05 / 05</p>
-      <p class="trs-q-text">亀は数十年生きます。長期飼育の覚悟はありますか？</p>
-      <div class="trs-options" role="group" aria-label="継続の覚悟">
-        <button class="trs-opt" data-pts="2" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🔥</span>
-          10年以上、一緒に暮らす覚悟がある
-          <span class="trs-opt-pts">+2</span>
-        </button>
-        <button class="trs-opt" data-pts="1" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">🌱</span>
-          まだ少し不安だが、向き合いたい
-          <span class="trs-opt-pts">+1</span>
-        </button>
-        <button class="trs-opt" data-pts="0" type="button">
-          <span class="trs-opt-icon" aria-hidden="true">❓</span>
-          正直、まだわからない
-          <span class="trs-opt-pts">+0</span>
-        </button>
-      </div>
-      <div class="trs-nav">
-        <button class="trs-btn-back" type="button" aria-label="前の質問">← 戻る</button>
-        <button class="trs-btn-next trs-btn-finish" type="button" aria-label="結果を見る">結果を見る ✓</button>
-      </div>
-    </div>
-
-    <!-- Result -->
-    <div class="trs-result" id="trs-result" aria-live="polite">
-      <div class="trs-result-card" id="trs-result-card">
-        <div class="trs-score-row">
-          <div class="trs-score-ring" id="trs-score-num">—</div>
-          <span class="trs-score-denom">/ 10</span>
-        </div>
-        <p class="trs-band-label" id="trs-band-label"></p>
-        <p class="trs-result-headline" id="trs-result-headline"></p>
-        <p class="trs-result-advice" id="trs-result-advice"></p>
-        <a href="#" id="trs-result-cta" class="trs-result-cta"
-          onclick="(typeof gtag==='function')&&gtag('event','readiness_cta_click',{score:window._trsScore||0,result_band:window._trsBand||'',location:'readiness'})">
-          <span id="trs-cta-text"></span>
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <button class="trs-restart" id="trs-restart" type="button" aria-label="もう一度診断する">
-        もう一度診断する
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Phase 12-A Sprint 3-B: Intelligence Layer -->
-<section class="il-section" id="intelligence-layer" aria-label="データと設計の概要">
-  <div class="il-cap-top" aria-hidden="true"></div>
-
-  <div class="wrap">
-    <!-- Header -->
-    <header class="il-header">
-      <span class="il-eyebrow">By The Numbers</span>
-      <h2 class="il-heading reveal-soft reveal-soft--delay-1">
-        静かな世界の裏には、<br><em>膨大なデータ</em>があります。
-      </h2>
-      <p class="il-sub">
-        100種の生体データ・飼育ページ・機材DB・比較システムをもとに、候補をご案内しています。
-      </p>
-    </header>
-
-    <!-- 5 stat cards -->
-    <div class="il-grid" role="list">
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">100<sup>+</sup></span>
-        <span class="il-card-title">Species<br>Profiles</span>
-        <span class="il-card-desc">100種の亀・リクガメの生体データを収録</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">98</span>
-        <span class="il-card-title">Care<br>Pages</span>
-        <span class="il-card-desc">実飼育者が執筆した個別飼育ページ</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val">87</span>
-        <span class="il-card-title">Curated<br>Essentials</span>
-        <span class="il-card-desc">実使用ベースで厳選した飼育必需品データ</span>
-      </div>
-
-      <div class="il-card il-card--ai" role="listitem">
-        <span class="il-card-val il-card-val--label">診断</span>
-        <span class="il-card-title">Diagnosis<br>Engine</span>
-        <span class="il-card-desc">5ルート・約30秒で種と環境を提案</span>
-      </div>
-
-      <div class="il-card" role="listitem">
-        <span class="il-card-val il-card-val--label">3-Tier</span>
-        <span class="il-card-title">Starter<br>Kits</span>
-        <span class="il-card-desc">予算別・種別に合わせて選んだ機材セット</span>
-      </div>
+      <a class="tg-card"
+         href="guides/temperature-guide.html"
+         onclick="(typeof gtag==='function')&&gtag('event','homepage_topgear_click',{event_category:'top_gear',event_label:'heater',section:'commerce',homepage_version:'phase_12A'})">
+        <span class="tg-icon">🌡️</span>
+        <span class="tg-cat">保温器具</span>
+        <span class="tg-title">ヒーター・保温球<br>選び方ガイド</span>
+        <p class="tg-benefit">年間を通じて適温を維持するための必需品。種別に適した温度管理を解説。</p>
+        <span class="tg-cta">保温器具の選び方を見る <span class="tg-cta-arrow">→</span></span>
+      </a>
 
     </div>
 
-    <!-- caption -->
-    <p class="il-caption">
-      データは実際の飼育経験と信頼できる資料をもとに継続的に更新しています。
+    <p class="ch-gear-links">
+      <a href="cage-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'cage'})">ケージ・水槽</a>
+      <a href="substrate-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'substrate'})">床材・砂</a>
+      <a href="shelter-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'shelter'})">シェルター・浮島</a>
+      <a href="uvb-light-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'uvb'})">UVBライト</a>
+      <a href="food-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'food'})">餌・フード</a>
+      <a href="water-filter-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'filter'})">フィルター</a>
+      <a href="dish-best10.html" onclick="(typeof gtag==='function')&&gtag('event','homepage_gear_index_click',{gear:'dish'})">水入れ・エサ入れ</a>
     </p>
-  </div>
 
-  <div class="il-cap-bot" aria-hidden="true"></div>
+    <!-- トラブル（旧 trouble-hub） -->
+    <h3 class="ch-subhead">困ったときは</h3>
+    <div class="th-inner">
+      <div class="th-text">
+        <p>食べない、鼻水が出る、目が開かない——症状から原因と対処法を確認できます。</p>
+      </div>
+      <a href="guides/turtle-trouble-guide.html" class="th-link">トラブル早見表へ →</a>
+    </div>
+    <div class="th-tags">
+      <a href="guides/turtle-not-eating.html">🍃 餌を食べない</a>
+      <a href="guides/turtle-runny-nose.html">💧 鼻水・くしゃみ</a>
+      <a href="guides/turtle-shell-white.html">🐚 甲羅が白い・ぬめる</a>
+    </div>
+
+  </div>
 </section>
 
-
+<!-- ════════════════════════════════════════════════════════════
+     ⑧ 著者・編集方針 — By The Numbers ブロックは撤去
+════════════════════════════════════════════════════════════ -->
 <section class="author">
   <div class="wrap">
     <div class="author-box">
@@ -4826,13 +2577,16 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       <div>
         <h3>書いている人について</h3>
         <p>実際にスペングラーヤマガメ・ヒラセガメ・ミツユビハコガメを飼育しながら、論文や飼育記録を自分で調べ、日々の観察とつき合わせて書いています。カメの生態をもっと物語として読みたい方は note もどうぞ。</p>
+        <p class="author-policy">飼育していない種は「資料にもとづく情報」であることを明記し、分からないことは分からないと書きます。写真は出典とライセンスを1枚ずつ記録しています。<a href="site-policy.html">このサイトの情報について</a>・<a href="before-keeping.html">飼う前に考えてほしいこと</a></p>
         <a class="note-link" href="https://note.com/proper_bison2362" target="_blank" rel="noopener">note の記事を読む →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Launch CTA CTA (Phase 11 Step 1H) -->
+<!-- ════════════════════════════════════════════════════════════
+     ⑨ Final CTA — 診断 ＋ 種一覧の2択
+════════════════════════════════════════════════════════════ -->
 <section class="launch-cta" id="launch-cta">
   <div class="wrap">
 
@@ -4844,12 +2598,12 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
     </h2>
     <p class="cl-sub">
       予算・スペース・臭いの不安を入力するだけ。<br>
-      100種から、あなたの条件に合う一匹を提案します。
+      118種から、あなたの条件に合う一匹を提案します。
     </p>
 
     <div class="cl-chips" aria-label="サービスの特徴">
       <span class="cl-chip">30秒で完了</span>
-      <span class="cl-chip">100種から提案</span>
+      <span class="cl-chip">118種から提案</span>
       <span class="cl-chip">費用・臭い・サイズも考慮</span>
     </div>
 
@@ -4866,9 +2620,9 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
   </div>
 </section>
 
-
-
-
+<!-- ════════════════════════════════════════════════════════════
+     ⑩ Footer — 原則維持
+════════════════════════════════════════════════════════════ -->
 <footer>
   <div class="wrap">
     <p>カメライフガイド｜運営：亀好きさん（実飼育者）｜<a href="about-tete.html" style="color:var(--accent);">運営者について</a>｜<a href="privacy.html" style="color:var(--accent);">プライバシーポリシー</a>｜<a href="disclaimer.html" style="color:var(--accent);">免責事項</a>｜<a href="photo-credits.html" style="color:var(--accent);">写真クレジット</a>｜<a href="before-keeping.html" style="color:var(--accent);">飼う前に考えてほしいこと</a>｜<a href="site-policy.html" style="color:var(--accent);">このサイトの情報について</a>｜<a href="updates.html" style="color:var(--accent);">更新履歴</a></p>
@@ -4877,40 +2631,6 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
     </p>
   </div>
 </footer>
-<!-- Phase 7-D Task 2A: Sticky Diagnosis CTA -->
-<div id="sticky-diagnosis-cta" aria-hidden="true">
-  <div class="sticky-cta-left">
-    <div class="sticky-emoji">🐢</div>
-    <div class="sticky-copy">
-      <div class="sticky-main">100種から診断</div>
-      <div class="sticky-sub">30秒・無料</div>
-    </div>
-  </div>
-  <a href="./shindan/"
-     class="sticky-btn"
-     onclick="(typeof gtag==='function')&&gtag('event','homepage_sticky_cta_click',{location:'sticky_bottom',cta_type:'diagnosis'})">30秒診断を始める →</a>
-</div>
-<script>
-(function(){
-  var el = document.getElementById('sticky-diagnosis-cta');
-  if(!el) return;
-  var shown = false;
-  var ticking = false;
-  function update(){
-    var y = window.pageYOffset || document.documentElement.scrollTop;
-    var next = y >= 300;
-    if(next !== shown){
-      shown = next;
-      el.classList.toggle('visible', shown);
-      el.setAttribute('aria-hidden', shown ? 'false' : 'true');
-    }
-    ticking = false;
-  }
-  window.addEventListener('scroll', function(){
-    if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
-  }, {passive:true});
-})();
-</script>
 
 <script src="js/analytics-funnel.js"></script>
 <script>
@@ -4930,242 +2650,6 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
       if(typeof gtag==='function') gtag('event','homepage_cost_tab_click',{tab:tabId});
     });
   });
-})();
-</script>
-<script>
-/* ── Turtle Readiness Score OS — Phase 12-C ───────────────────
-   依存: なし（vanilla JS）
-   GA4: readiness_view / readiness_start / readiness_answer /
-         readiness_result / readiness_cta_click
-──────────────────────────────────────────────────────────────── */
-(function(){
-  'use strict';
-
-  /* ── Config ── */
-  var TOTAL_Q = 5;
-
-  var BANDS = [
-    {
-      min:0, max:3, id:'low',
-      label:'まだ準備前',
-      headline:'もう少し環境を整えてから迎えましょう。',
-      advice:'スペース・予算・温度管理のどれかに不安が残っています。まずは亀診断で、あなたの状況に合う種類を確認してみてください。',
-      cta:'亀診断で相性を見る',
-      href:'./shindan/'
-    },
-    {
-      min:4, max:7, id:'mid',
-      label:'もう少しで飼育可能',
-      headline:'あと一歩。準備を整えれば迎えられます。',
-      advice:'基本的な条件は揃いつつあります。はじめてでも育てやすい種を確認しながら、残りの準備を進めましょう。',
-      cta:'はじめての方向けの亀を見る',
-      href:'./guides/beginner-top10-turtles.html'
-    },
-    {
-      min:8, max:10, id:'high',
-      label:'迎える準備ができています',
-      headline:'準備は整っています。最初の一匹を選びましょう。',
-      advice:'スペース・予算・覚悟、すべてが整っています。あとは種と飼育セットを選ぶだけです。',
-      cta:'おすすめのStarter Kitを見る',
-      href:'#top-gear-picks'
-    }
-  ];
-
-  /* ── State ── */
-  var answers = {};       // qid -> pts
-  var currentQ = 1;
-  var started = false;
-
-  /* ── Helpers ── */
-  function _ga(name, payload) {
-    if (typeof gtag === 'function') gtag('event', name, payload || {});
-  }
-  function _qs(sel) { return document.querySelector(sel); }
-  function _qsa(sel) { return document.querySelectorAll(sel); }
-
-  function getBand(score) {
-    for (var i = 0; i < BANDS.length; i++) {
-      if (score >= BANDS[i].min && score <= BANDS[i].max) return BANDS[i];
-    }
-    return BANDS[0];
-  }
-
-  function totalScore() {
-    var t = 0;
-    for (var k in answers) t += answers[k];
-    return t;
-  }
-
-  /* ── Progress ── */
-  function updateProgress(q) {
-    var pct = Math.round((q - 1) / TOTAL_Q * 100);
-    var bar = _qs('#trs-progress');
-    var wrap = bar && bar.parentElement;
-    if (bar) bar.style.width = pct + '%';
-    if (wrap) {
-      wrap.setAttribute('aria-valuenow', pct);
-    }
-  }
-
-  /* ── Show question ── */
-  function showQuestion(n) {
-    _qsa('.trs-question').forEach(function(el) {
-      el.classList.remove('trs-active');
-    });
-    var q = _qs('#trs-q' + n);
-    if (!q) return;
-    q.classList.add('trs-active');
-    currentQ = n;
-    updateProgress(n);
-
-    // Restore selection if revisiting
-    var opts = q.querySelectorAll('.trs-opt');
-    var qid = q.dataset.qid;
-    var nextBtn = q.querySelector('.trs-btn-next');
-    var backBtn = q.querySelector('.trs-btn-back');
-
-    opts.forEach(function(opt) {
-      opt.classList.remove('trs-selected');
-    });
-    if (answers[qid] !== undefined) {
-      opts.forEach(function(opt) {
-        if (parseInt(opt.dataset.pts, 10) === answers[qid]) {
-          opt.classList.add('trs-selected');
-        }
-      });
-      if (nextBtn) nextBtn.classList.add('trs-unlocked');
-    } else {
-      if (nextBtn) nextBtn.classList.remove('trs-unlocked');
-    }
-
-    if (backBtn) backBtn.disabled = (n === 1);
-
-    // Focus first option for keyboard nav
-    if (opts[0]) opts[0].focus();
-  }
-
-  /* ── Show result ── */
-  function showResult() {
-    _qsa('.trs-question').forEach(function(el) {
-      el.classList.remove('trs-active');
-    });
-    var score = totalScore();
-    var band = getBand(score);
-
-    // GA4
-    window._trsScore = score;
-    window._trsBand  = band.id;
-    _ga('readiness_result', { score: score, result_band: band.id });
-
-    // Populate result card
-    _qs('#trs-score-num').textContent = score;
-    _qs('#trs-band-label').textContent = band.label;
-    _qs('#trs-result-headline').textContent = band.headline;
-    _qs('#trs-result-advice').textContent = band.advice;
-    _qs('#trs-cta-text').textContent = band.cta;
-    _qs('#trs-result-cta').href = band.href;
-
-    // Band class on card
-    var card = _qs('#trs-result-card');
-    card.classList.remove('trs-band--low', 'trs-band--mid', 'trs-band--high');
-    card.classList.add('trs-band--' + band.id);
-
-    // Show lead card only for mid/high (low = not ready, skip)
-    var leadCard = _qs('#trs-lead-card');
-    if (leadCard) leadCard.style.display = (band.id === 'low') ? 'none' : '';
-
-    // Progress to 100%
-    var bar = _qs('#trs-progress');
-    if (bar) bar.style.width = '100%';
-
-    var resultEl = _qs('#trs-result');
-    resultEl.classList.add('trs-active');
-    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  /* ── Init ── */
-  function init() {
-    var section = _qs('#readiness-score');
-    if (!section) return;
-
-    // Intersection Observer: readiness_view
-    if ('IntersectionObserver' in window) {
-      var fired = false;
-      var io = new IntersectionObserver(function(entries) {
-        if (!fired && entries[0].isIntersecting) {
-          fired = true;
-          _ga('readiness_view', {});
-          io.disconnect();
-        }
-      }, { threshold: 0.25 });
-      io.observe(section);
-    }
-
-    /* Option click */
-    _qsa('.trs-opt').forEach(function(opt) {
-      opt.addEventListener('click', function() {
-        var q = opt.closest('.trs-question');
-        var qid = q.dataset.qid;
-        var pts = parseInt(opt.dataset.pts, 10);
-
-        // Deselect siblings
-        q.querySelectorAll('.trs-opt').forEach(function(o) {
-          o.classList.remove('trs-selected');
-        });
-        opt.classList.add('trs-selected');
-        answers[qid] = pts;
-
-        // Unlock Next
-        var nextBtn = q.querySelector('.trs-btn-next');
-        if (nextBtn) nextBtn.classList.add('trs-unlocked');
-
-        // GA4: readiness_start (first answer)
-        if (!started) {
-          started = true;
-          _ga('readiness_start', {});
-        }
-        // GA4: readiness_answer
-        _ga('readiness_answer', { question_id: qid, score: pts, result_band: 'pending' });
-      });
-    });
-
-    /* Next button */
-    _qsa('.trs-btn-next').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        if (!btn.classList.contains('trs-unlocked')) return;
-        if (btn.classList.contains('trs-btn-finish')) {
-          showResult();
-        } else {
-          if (currentQ < TOTAL_Q) showQuestion(currentQ + 1);
-        }
-      });
-    });
-
-    /* Back button */
-    _qsa('.trs-btn-back').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        if (currentQ > 1) showQuestion(currentQ - 1);
-      });
-    });
-
-    /* Restart */
-    var restart = _qs('#trs-restart');
-    if (restart) {
-      restart.addEventListener('click', function() {
-        answers = {};
-        started = false;
-        _qs('#trs-result').classList.remove('trs-active');
-        showQuestion(1);
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 })();
 </script>
 
@@ -5266,4 +2750,3 @@ details.ia-more > summary.ia-more-summary:hover{border-color:var(--accent);backg
 
 </body>
 </html>
-
