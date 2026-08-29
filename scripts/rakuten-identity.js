@@ -127,8 +127,9 @@ function extractAttrs(text) {
   // サイズ等級（S/M/ML/L等）: 単独トークンのみ。容量の l と誤認しないよう境界必須
   const sre = /(?:^|[\s(（/])(ss|ml|xl|ll|s|m|l)(?:サイズ)?(?:$|[\s)）/])/g;
   while ((m = sre.exec(t))) attrs.grades.push(m[1]);
-  // 入数・セット数（×2、3個セット等）。商品名自体に「セット」を含む商品は呼び出し側で除外判断
-  const pre1 = /[×x]\s*([2-9]\d*)(?![0-9])/g;
+  // 入数・セット数（×2、3個セット等）。商品名自体に「セット」を含む商品は呼び出し側で除外判断。
+  // 寸法表記（600×295×360 等）を入数と誤認しないよう、×の直前が数字の場合と3桁以上は除外する。
+  const pre1 = /(?<![0-9０-９])[×x]\s*([2-9]\d?)(?![0-9])/g;
   while ((m = pre1.exec(t))) attrs.packs.push(parseInt(m[1], 10));
   const pre2 = /([2-9]\d*)\s*(?:個|袋|本|箱|枚)\s*(?:入り?|セット|パック)/g;
   while ((m = pre2.exec(t))) attrs.packs.push(parseInt(m[1], 10));

@@ -950,12 +950,13 @@ async function identityDryRun(products) {
         return (it.itemCode || '') === (product.rakutenItemCode || '');
       });
       const storedMatch = storedItem ? IDN.matchIdentity(idn, storedItem) : null;
-      if (storedMatch && storedMatch.level === 'REJECT') {
-        action = 'LEGACY_DEMOTE';
-        legacyNote = ' | stored=REJECT(' + storedMatch.conflicts.join(',') + ')';
-      } else if (promotable) {
+      if (promotable) {
+        // 本適用と同じ優先順: EXACT/STRONG を特定できれば差し替え更新が最優先
         action = 'LEGACY_REFRESH';
         legacyNote = ' | stored=' + (storedMatch ? storedMatch.level : 'not-in-results');
+      } else if (storedMatch && storedMatch.level === 'REJECT') {
+        action = 'LEGACY_DEMOTE';
+        legacyNote = ' | stored=REJECT(' + storedMatch.conflicts.join(',') + ')';
       } else {
         action = 'LEGACY_KEEP';
         legacyNote = ' | stored=' + (storedMatch ? storedMatch.level : 'not-in-results');
@@ -1204,17 +1205,10 @@ async function main() {
           return (it.itemCode || '') === (product.rakutenItemCode || '');
         });
         const storedMatch = storedItem ? IDN.matchIdentity(idn, storedItem) : null;
-        if (storedMatch && storedMatch.level === 'REJECT') {
-          // 誤リンクを残さない: 現CTAの出品が identity 不合格 → search へ安全降格
-          Object.assign(updates, demotionUpdates(today, bestId.quality));
-          report.searchFallback++;
-          console.log('[DEMOTED:ID] ' + productId + ' — 現CTAの出品が identity REJECT (' +
-                      storedMatch.conflicts.join(',') + ')');
-          recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
-            outcome: 'DEMOTED_IDENTITY_REJECT', reason: storedMatch.conflicts.join(','),
-            best: diagBest(storedItem) }, today);
-        } else if (idOk) {
-          // EXACT/STRONG のみ更新可（identity 検証済みの出品で日次リフレッシュ）
+        if (idOk) {
+          // EXACT/STRONG を安全に特定できた場合は identity 検証済みの出品で更新する。
+          // 現CTAの出品が REJECT でも、正しい本体へ差し替えられるならそちらを優先する
+          // （例: 2217 のろ材セットCTAを 2217 本体の EXACT 出品へ是正）。
           updates.rakutenStatus     = 'available';
           updates.rakutenUrl        = idAff;
           updates.rakutenItemCode   = bestId.item.itemCode || null;
@@ -1225,6 +1219,16 @@ async function main() {
           recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
             outcome: 'REFRESHED_' + idLvl, reason: bestId.match.evidence.join(','),
             best: diagBest(bestId.item) }, today);
+        } else if (storedMatch && storedMatch.level === 'REJECT') {
+          // 誤リンクを残さない: 現CTAの出品が identity 不合格で、
+          // 正しい本体を EXACT/STRONG で特定できない → search へ安全降格
+          Object.assign(updates, demotionUpdates(today, bestId.quality));
+          report.searchFallback++;
+          console.log('[DEMOTED:ID] ' + productId + ' — 現CTAの出品が identity REJECT (' +
+                      storedMatch.conflicts.join(',') + ')');
+          recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+            outcome: 'DEMOTED_IDENTITY_REJECT', reason: storedMatch.conflicts.join(','),
+            best: diagBest(storedItem) }, today);
         } else {
           // AMBIGUOUS / 未確証 → 勝手に更新しない（現状維持・診断のみ・書き込みなし）
           recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
