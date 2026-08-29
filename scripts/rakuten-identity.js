@@ -289,9 +289,11 @@ function matchIdentity(idn, item) {
     if (hit) evidence.push('等級' + idn.attrs.grades[0].toUpperCase());
     else conflicts.push('等級不一致');
   }
-  // 入数（自商品がセット商品でないのに ×2 / 3個セット等）
-  if (!idn.productIsSet && hayAttrs.packs.length) {
-    conflicts.push('入数(' + hayAttrs.packs[0] + ')');
+  // 入数（自商品がセット商品でないのに ×2 / 3個セット等）。
+  // Phase 3: catchcopy の「お得な2個セットも」等に反応しないよう itemName 内のみ見る。
+  const hayNameAttrs = extractAttrs(item.itemName || '');
+  if (!idn.productIsSet && hayNameAttrs.packs.length) {
+    conflicts.push('入数(' + hayNameAttrs.packs[0] + ')');
   }
 
   // 成分変種（カルシウムの D3 有無）の取り違え防止
@@ -303,10 +305,13 @@ function matchIdentity(idn, item) {
   }
 
   // ── RAKUTEN-ID Phase 2: 誤マッチ防止 ──
-  // 消耗品・付属品（自商品名に同語が無い場合のみ矛盾扱い）
+  // 消耗品・付属品（自商品名に同語が無い場合のみ矛盾扱い）。
+  // Phase 3: フィルター本体の catchcopy が交換ろ材に言及するだけで REJECT しないよう
+  // itemName 内の出現だけを矛盾とみなす（実例: AT-50 / メガパワー6090 の誤降格）。
+  const hayNameNormEarly = normJa(item.itemName || '');
   CONSUMABLE_WORDS.forEach(function(w) {
     const nw = normJa(w);
-    if (hayNorm.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) conflicts.push('消耗品(' + w + ')');
+    if (hayNameNormEarly.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) conflicts.push('消耗品(' + w + ')');
   });
   // ケージ・水槽商品に照明系候補を許さない
   if (idn.category === 'enclosure') {
