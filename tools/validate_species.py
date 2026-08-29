@@ -81,7 +81,15 @@ def main():
     for sp in master:
         slug, wamei = sp["slug"], sp["wamei"]
         sci = sp["scientific_name"]
-        cit = sp["cites"]["appendix"]
+        # cites / appendix ごと欠損しているレコードでも落ちないようにする
+        cit = (sp.get("cites") or {}).get("appendix") or {}
+        # appendix の値が I / II / III / not_listed のいずれでもない場合
+        # （null・未記入・想定外の表記）は照合の基準を作れないため比較しない。
+        # null を「CITES未掲載(not_listed)」へ読み替える意味変換は意図的に行わない。
+        cites_known = cit.get("value") in ("I", "II", "III", "not_listed")
+        if cit.get("verification") == "CONFIRMED" and not cites_known:
+            warns.append("WARN %s の cites.appendix が CONFIRMED だが値が %r のため "
+                         "CITES照合をスキップした" % (slug, cit.get("value")))
 
         # --- shindan/species.js ---
         e = js.get(slug)
@@ -89,7 +97,7 @@ def main():
             if sci["verification"] in ("CONFIRMED", "LIKELY"):
                 if binomial(e["latin"]) != binomial(sci["value"]):
                     mismatch("species.js:" + slug, "学名", sci["value"], e["latin"])
-            if cit["verification"] == "CONFIRMED":
+            if cit.get("verification") == "CONFIRMED" and cites_known:
                 want = None if cit["value"] == "not_listed" else cites_label(cit["value"])
                 if e["cites"] != want:
                     mismatch("species.js:" + slug, "CITES", want, e["cites"])
@@ -123,7 +131,7 @@ def main():
                     continue
                 if binomial(sci["value"]).split()[0:2] != binomial(r["gakumei"]).split()[0:2]:
                     mismatch("MD:" + w, "学名", sci["value"], r["gakumei"])
-            if cit["verification"] == "CONFIRMED":
+            if cit.get("verification") == "CONFIRMED" and cites_known:
                 if cit["value"] == "not_listed":
                     # 「なし」または備考列運用（CITES列が無い表）を許容
                     if "CITES" in r["cites"]:
