@@ -16,18 +16,61 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **7cd22a0**（PR #112 = Phase 3 ＋ 日次sync自動commit まで反映済み） |
-| サイトファイルの状態 | **`7cd22a0`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 4 型番ルート）** |
+| 基準 | `origin/main` = **8c7cdca**（PR #113 = Phase 4 型番ルート まで反映済み） |
+| サイトファイルの状態 | **`8c7cdca`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 5 型番発火条件の拡張）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/rakuten-model-query` |
+| 作業ブランチ | `claude/rakuten-model-fallback` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### RAKUTEN-ID Phase 4 — 型番ルートの追加と B確定5件の処理（2026-08-29 / 本PR）
+### RAKUTEN-ID Phase 5 — 型番検索の発火条件拡張（2026-08-29 / 本PR）
+
+Phase 4 では型番単独クエリが「主検索0件」のときしか撃たれず、それが理由で救えていなかった
+2件を回収した。**available 34 → 36。**
+
+- **発火条件を2つ追加**（いずれも `rakutenModelNo` 宣言商品に限定・1商品につき最大1回）:
+  ① 主検索が**非致命エラー**（BAD_RESPONSE / API_ERROR / NETWORK / 5xx retry 使い切り）で落ちた場合。
+  **AUTH / RATE_LIMIT は従来どおり同期全体を中断**する（この2つは到達しない）。
+  ② 主検索の候補が **AMBIGUOUS / REJECT にしかならない**場合。型番側で EXACT/STRONG を
+  特定できたときだけ候補集合を差し替え、それ以外は Phase 4 までと完全に同一挙動
+- 昇格条件は**不変**（allowlist ＋ EXACT/STRONG ＋ scoreCandidate ＋ 成果対象 affiliateUrl）。
+  `CONFIDENCE_THRESHOLD` 8.0 と identity 定義は無変更。**型番一致だけでは昇格しない**
+- PROMOTE_ALLOWLIST 30→31（`basking_100w`。Owner が Phase 5 の対象として明示指定）
+
+**実昇格2件**（dry-run 33277758200 → 本適用 33277932962 / commit 36457ec）:
+
+| ID | 判定 | 決め手 | 出品 |
+|----|------|--------|------|
+| `basking_100w` | EXACT / qual 4.9 | `rakutenModelNo: 'PT2138'` の宣言だけで**主検索の候補が AMBIGUOUS → EXACT に確定**。型番クエリは不要だった | GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 / プロツールショップヤブモト ¥2,280 |
+| `shelter_small` | EXACT / qual 7.7 | 主検索が **API_ERROR** → 新設の①経路が型番 `RX-191` で回復 | ロックシェルターSP S RX-191 スドー / 爬虫類用品店 トップクリエイト ¥760 |
+
+**昇格しなかったものと実測理由:**
+
+| ID | 結果 | 理由 |
+|----|------|------|
+| `heater_aqua_100w` | 未昇格（search 維持） | 新設の②経路は正しく発火したが、**型番クエリ "SH55" の10件は「今治タオル 今治謹製至福タオル SH55030」等の無関係商品**だった。identity gate が AMBIGUOUS を返して差し替えを拒否し、誤リンクは発生していない。**SH55 の宣言は撤回済み**（commit a50eb1f） |
+| `food_tortoise_staple` | 未昇格 | 本適用時に候補を確保できず（dry-run では STRONG qual 6.3 に到達）。Phase 2・3・4 と合わせ**4回連続**で本適用時だけ落ちる |
+| `substrate_cypress` | 未昇格 | Phase 4 で PT2752 が使えないと確定済み。型番ルートなし |
+
+**確定した事実（再調査しない）:**
+
+- **`SH55` は楽天の検索キーとして機能しない。** 第2次救出調査の「SH55 → 67件」は
+  PT2752 と同じく**件数だけを見た誤判定**だった。Phase 4 の教訓
+  「候補件数だけで型番ルートの有効性を判定してはならない」が再確認された
+- **`PT2138` は自サイト商品と同一SKU。** GEX公式製品DB「サングロータイトビームバスキング
+  スポットランプ100W PT2138」と商品名・W数が一致。同シリーズ75W(PT2136)は watt 競合で REJECT、
+  「PT2138用」アクセサリは適合表記で REJECT されることを fixture で確認済み
+- **型番宣言が価値を持つのは2通り**: ①型番クエリが正商品を引く（RX-191）
+  ②宣言そのものが identity の根拠になり主検索の候補を EXACT へ引き上げる（PT2138）。
+  ②は追加のAPI呼び出しすら不要で、**①より確実**
+- available **36** / search 65 / pending 3。available 36件すべて成果対象URL。
+  既存 available の降格0。Amazon差分0（affiliateUrl / asin 行の変更0）。誤商品0
+
+### RAKUTEN-ID Phase 4 — 型番ルートの追加と B確定5件の処理（2026-08-29 / PR #113 / merge `8c7cdca`）
 
 第2次救出調査（READ-ONLY・確定済み）の B確定5件＋承認済み food_tortoise_staple を処理した。
 
@@ -49,8 +92,8 @@
 | ID | 結果 | 理由 |
 |----|------|------|
 | `substrate_cypress` | 未昇格 | **PT2752 は楽天の検索キーとして機能しない**。型番クエリの結果は「【中古】廣瀬裕子のしあわせになるDVD」等の無関係商品で、identity gate が AMBIGUOUS で正しく阻止。宣言を撤回済み（第2次調査の「PT2752→5件＝有効」は件数のみを見た誤判定で、本Phaseで訂正） |
-| `heater_aqua_100w` | 未昇格 | 主クエリ「水中ヒーター 100W 亀 水槽」が4件返すため**0件フォールバックに到達しない**。SH55 宣言は正しいが現時点では不発 |
-| `shelter_small` | 未昇格 | 本適用時に主クエリが **API_ERROR**。main() の非致命エラー処理はその商品をスキップするため型番フォールバックに到達しなかった（dry-run では RX-191 で EXACT・qual 7.7 に到達していた） |
+| `heater_aqua_100w` | 未昇格 | 主クエリ「水中ヒーター 100W 亀 水槽」が4件返すため**0件フォールバックに到達しない**。→ Phase 5 で②経路を追加して到達させた結果、**SH55 自体が使えない**と判明（Phase 5 参照） |
+| `shelter_small` | 未昇格 | 本適用時に主クエリが **API_ERROR**。main() の非致命エラー処理はその商品をスキップするため型番フォールバックに到達しなかった。→ **Phase 5 の①経路で解消・昇格済み** |
 | `food_tortoise_staple` | 未昇格 | 本適用時に **NO_RESULT**（Phase 2・3・4 と3回連続。dry-run では毎回 STRONG に到達するため時間帯による在庫変動とみられる） |
 
 **確定した事実（再調査しない）:**
@@ -58,7 +101,9 @@
 - **型番検索の成否は「楽天の出店者が商品名に型番を併記するか」で決まる。** 件数がヒットしても
   正商品とは限らない（PT2752 が実例）。**候補件数だけで型番ルートの有効性を判定してはならない。**
 - 実際に正商品へ到達した型番は **RX-191 のみ**（dry-run 実測）。
-- available **34** / search 67 / pending 3。available 34件すべて成果対象URL。Amazon差分0。降格0。
+  ※ Phase 5 で **PT2138 が2例目**として追加された（ただし型番クエリ経由ではなく
+  identity の根拠としての採用）。
+- Phase 4 終了時点で available **34** / search 67 / pending 3。**現在値は Phase 5 を参照**。
 
 ### RAKUTEN-ID Phase 3 — 日次レガシー経路の identity gate 統一（2026-08-29 / PR #112 / merge `346bd57`）
 
@@ -94,7 +139,7 @@
   thermometer_dual_probe / thermometer_wifi / hydrometer_tetra
 - **food_tortoise_staple のみ承認済みだが未昇格**（promote 実行時に API 0件 = NO_RESULT。
   allowlist に残してあり、次回 identity_promote 実行で昇格できる）→ UNRESOLVED
-- rakutenStatus: available 34 / search 67 / pending 3（計104）。Amazon 系フィールドの変更 0
+- rakutenStatus: available 34 / search 67 / pending 3（計104。**この工程終了時点の値**。現在値は Phase 5 を参照）。Amazon 系フィールドの変更 0
 - CATEGORY_GUARDS(heating) に「サーモスタット」を追加した（閾値 8.0 は数値・条件とも無変更）
 - 日次 schedule 実行では identity_promote は構造的に無効（workflow の式が必ず 'false' になる）
 - `data/rakuten-diag.json` に25件の診断記録（secret / affiliateUrl / itemUrl なし）
@@ -1053,10 +1098,12 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ### 判断待ちではないが未完了（次に楽天系工程を立てるときに拾う）
 
-- **承認済みだが未昇格の4件**（すべて allowlist 在籍。次回 `identity_promote` 実行で再挑戦できる）:
-  `food_tortoise_staple`（本適用時 NO_RESULT・3回連続）／`shelter_small`（本適用時 API_ERROR。
-  main() が非致命エラーで商品をスキップするため型番フォールバックに到達しない＝**要小改修**）／
-  `heater_aqua_100w`（主クエリが0件にならず型番フォールバック不発＝**要設計判断**）／
+- **承認済みだが未昇格の2件**（Phase 5 で `shelter_small` と `basking_100w` は解消済み）:
+  `food_tortoise_staple`（本適用時だけ候補を確保できない状態が**4回連続**。dry-run では毎回
+  STRONG に到達するため、次回 `identity_promote` 実行で再挑戦する価値はある）／
+  `heater_aqua_100w`（**SH55 も PT2752 も楽天の検索キーとして機能しないことが実測確定**。
+  主クエリ「水中ヒーター 100W 亀 水槽」が汎用商品しか返さないため、
+  **rakutenSearchTerm を商品名側へ寄せない限り自動救出は不可**）／
   `substrate_cypress`（PT2752 が使えないため型番ルートなし。別の識別手段がない限り救出不可）
 - 楽天 △5件（basking_dual_150 / basking_hid_70w / food_aquatic_staple / food_tortoise_herbs /
   substrate_bottom_sand）は **Owner 非承認で search 維持が確定**。再提案しない。

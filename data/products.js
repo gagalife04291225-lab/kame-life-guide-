@@ -541,6 +541,7 @@ const PRODUCTS = {
 
   basking_100w: {
     id: 'basking_100w',
+    rakutenModelNo: 'PT2138', // GEX公式製品DB「サングロータイトビームバスキング スポットランプ100W PT2138」。100W・同一SKUを確認
     name: 'GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W', // Phase 39-P3: web_search確認済みの実商品名に修正（国内GEX正規品）
     category: 'lighting_basking',
     tier: 'standard',
@@ -553,11 +554,11 @@ const PRODUCTS = {
     rating: 4.3,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
-    rakutenItemCode: null,
-    rakutenPrice: null,
-    rakutenShop: null,
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00r096n.nhbnn0fc.g00r096n.nhbnofdc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-yabumoto%2Flovely-19103-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-yabumoto%2Fi%2F10368235%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
+    rakutenItemCode: 'auc-yabumoto:10368235',
+    rakutenPrice: 2280,
+    rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
     rakutenLastUpdated: '2026-08-29',
   },
@@ -813,7 +814,6 @@ const PRODUCTS = {
 
   heater_aqua_100w: {
     id: 'heater_aqua_100w',
-    rakutenModelNo: 'SH55', // 自サイト name に既出の型番。実測: 67件（run 33259093448）
     name: 'GEX カメ元気 オートヒーター SH55',
     category: 'heating',
     tier: 'standard',
@@ -1503,9 +1503,14 @@ const PRODUCTS = {
     rating: 4.2,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
     rakutenSearchTerm: 'スドー ロックシェルターSP S',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pzvcn.nhbnnb21.g00pzvcn.nhbno140/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftopcreate%2F0036-00121%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftopcreate%2Fi%2F10021348%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
+    rakutenItemCode: 'topcreate:10021348',
+    rakutenPrice: 760,
+    rakutenShop: '爬虫類用品店 トップクリエイト',
+    rakutenConfidence: 7.7,
+    rakutenLastUpdated: '2026-08-29',
   },
 
   shelter_medium: {
