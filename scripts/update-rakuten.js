@@ -74,6 +74,10 @@ const PROMOTE_ALLOWLIST = new Set([
   // 阻害していた2件。昇格は従来どおり EXACT/STRONG ＋ 安全チェック ＋ 成果対象URL を全て通過した場合のみ。
   'substrate_cypress', 'shelter_small', 'heater_aqua_100w',
   'enclosure_kayuso_90', 'substrate_grassland_mix',
+  // Phase 5 追加承認（2026-08-29）— Owner が Phase 5 の対象3件目として明示指定。
+  // GEX公式製品DB「サングロータイトビームバスキング スポットランプ100W PT2138」と
+  // 自サイト商品名・W数が一致することを確認済み。
+  'basking_100w',
 ]);
 const DIAG_PATH = path.resolve(__dirname, '../data/rakuten-diag.json');
 const AUDIT_OUT_PATH = path.resolve(process.cwd(), 'rakuten-image-audit.json');
@@ -894,6 +898,28 @@ function isInvalidAvailable(product) {
   return product.rakutenStatus === 'available' && !IDN.isCommissionUrl(product.rakutenUrl);
 }
 
+// ─── RAKUTEN-ID Phase 5: 型番単独クエリ ───────────────────────
+// rakutenModelNo（メーカー公式で確定した型番）を宣言している商品に限り、
+// 主検索とは別に「型番だけ」で1回だけ引き直す。1商品につき最大1回・1req/sec厳守。
+// ここで得た候補も、最終的には従来の identity（EXACT/STRONG）＋ scoreCandidate ＋
+// 成果対象 affiliateUrl を全て通らなければ採用されない（型番一致だけでは昇格しない）。
+async function modelQuery(productId, product, searchTerm) {
+  const alt = IDN.buildAltQueries(searchTerm, product.rakutenModelNo)[0];
+  if (!alt || alt !== String(product.rakutenModelNo || '').trim()) {
+    return { query: null, items: [], error: null };
+  }
+  await sleep(1100);
+  try {
+    const r = await rakutenSearch(alt, 10);
+    const got = (r.Items || []).map(function(i) { return i.Item || i; });
+    console.log('[ALT_QUERY] ' + productId + ' — 型番クエリ "' + alt + '" で ' + got.length + '件');
+    return { query: alt, items: got, error: null };
+  } catch (e) {
+    console.log('[ALT_QUERY_FAIL] ' + productId + ' (' + (e.kind || 'UNKNOWN') + ')');
+    return { query: alt, items: [], error: (e.kind || 'UNKNOWN') };
+  }
+}
+
 // ─── RAKUTEN-ID Phase 1: 同一性診断 DRY-RUN ───────────────────
 // products.js / rakuten-diag.json を含む一切のファイルへ書き込まない。
 // 出力はログのみ。affiliateUrl の値・secret は出力しない（有無のみ）。
@@ -942,7 +968,30 @@ async function identityDryRun(products) {
       continue;
     }
     const idn = IDN.deriveIdentity(product);
-    const best = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
+    let best = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
+    // Phase 5: 主検索の候補が AMBIGUOUS/REJECT にしかならない場合も型番単独で引き直す。
+    // 型番側で EXACT/STRONG を特定できたときだけ候補を差し替える（それ以外は据え置き）。
+    let modelNote = '';
+    if (product.rakutenModelNo &&
+        best.match.level !== 'EXACT' && best.match.level !== 'STRONG') {
+      const mq = await modelQuery(productId, product, baseTerm);
+      if (mq.query && mq.query !== usedQuery) {
+        if (mq.error) {
+          modelNote = ' | model q="' + mq.query + '" API_ERROR(' + mq.error + ')';
+        } else if (!mq.items.length) {
+          modelNote = ' | model q="' + mq.query + '" n=0';
+        } else {
+          const mb = IDN.pickBest(idn, mq.items, function(it) { return scoreCandidate(it, product); });
+          modelNote = ' | model q="' + mq.query + '" n=' + mq.items.length +
+                      ' → ' + mb.match.level + ' qual=' + mb.quality +
+                      ' item="' + String(mb.item.itemName || '').slice(0, 50) + '"';
+          if (mb.match.level === 'EXACT' || mb.match.level === 'STRONG') {
+            modelNote += ' [UPGRADE ' + best.match.level + '→' + mb.match.level + ']';
+            best = mb; items = mq.items; usedQuery = mq.query;
+          }
+        }
+      }
+    }
     const lvl = best.match.level;
     sum[lvl]++;
     const aff = !!(best.item.affiliateUrl && String(best.item.affiliateUrl).length > 10);
@@ -980,7 +1029,7 @@ async function identityDryRun(products) {
       ' aff=' + (aff ? 'YES' : 'NO') +
       ' qual=' + best.quality +
       ' | ev=' + (best.match.evidence.join(',') || '-') +
-      ' | ng=' + (best.match.conflicts.join(',') || '-') + legacyNote);
+      ' | ng=' + (best.match.conflicts.join(',') || '-') + modelNote + legacyNote);
   }
   console.log('[identity-dryrun] SUMMARY ' + JSON.stringify(sum));
   console.log('[identity-dryrun] DONE — no files written.');
@@ -1085,7 +1134,27 @@ async function main() {
       }
     }
     if (apiFailure) break;          // fatal: stop iterating products
-    if (!apiResult) {
+
+    // RAKUTEN-ID Phase 5: 主検索が非致命エラー（BAD_RESPONSE / API_ERROR / NETWORK /
+    // 5xx retry 使い切り）で落ちた場合も、型番宣言商品だけは型番単独で1回だけ回復を試みる。
+    // AUTH / RATE_LIMIT は上で apiFailure を立てて break 済みなのでここには到達しない。
+    let recoveredItems = null;
+    let modelTried = false;
+    if (!apiResult && product.rakutenModelNo) {
+      modelTried = true;
+      const mq = await modelQuery(productId, product, searchTerm);
+      if (mq.items.length) {
+        recoveredItems = mq.items;
+        // 主検索は落ちたが本商品としては失敗していないので failed から取り下げる
+        report.failed = report.failed.filter(function(f) {
+          return f.indexOf(productId + ' (') !== 0;
+        });
+        console.log('[ALT_QUERY_RECOVERED] ' + productId +
+                    ' — 主検索の非致命エラーを型番クエリで回復');
+      }
+    }
+
+    if (!apiResult && !recoveredItems) {
       // This product failed but was not fatal — move on.
       if (report.failed.length > MAX_PRODUCT_FAILURES) {
         console.error('[FATAL] Too many product failures (' + report.failed.length +
@@ -1099,26 +1168,39 @@ async function main() {
 
     // Reaching here means: HTTP 200, JSON, no error structure, Items is an array.
     // An empty array is therefore a genuine "no products matched" — not a failure.
-    let items = (apiResult.Items || []).map(function(i) { return i.Item || i; });
+    let items = recoveredItems ||
+                (apiResult.Items || []).map(function(i) { return i.Item || i; });
 
-    // RAKUTEN-ID Phase 4: 0件のときだけ「型番単独」で1回だけ引き直す。
+    // RAKUTEN-ID Phase 4: 0件のときは「型番単独」で1回だけ引き直す。
     // 対象は rakutenModelNo を宣言している商品に限る（宣言のない商品の挙動は完全に据え置き＝
     // 他商品の判定を意図せず変えない）。追加のAPI呼び出しは該当商品につき最大1回・1req/sec厳守。
-    if (!items.length && product.rakutenModelNo) {
-      const alt = IDN.buildAltQueries(searchTerm, product.rakutenModelNo)[0];
-      if (alt) {
-        await sleep(1100);
-        try {
-          const r2 = await rakutenSearch(alt, 10);
-          const got = (r2.Items || []).map(function(i) { return i.Item || i; });
-          if (got.length) {
-            items = got;
-            console.log('[ALT_QUERY] ' + productId + ' — 型番クエリ "' + alt + '" で ' +
-                        got.length + '件');
+    if (!items.length && product.rakutenModelNo && !modelTried) {
+      modelTried = true;
+      const mq = await modelQuery(productId, product, searchTerm);
+      if (mq.items.length) items = mq.items;
+    }
+
+    // RAKUTEN-ID Phase 5: 主検索に候補はあるが identity を EXACT/STRONG まで詰められない
+    // （AMBIGUOUS/REJECT だけ）場合も、型番宣言商品に限り型番単独で引き直す。
+    // 型番側で EXACT/STRONG を特定できたときだけ候補集合を差し替える。差し替えないケースの
+    // 挙動は Phase 4 までと完全に同一（＝他商品・他ケースの判定を変えない）。
+    // 型番一致だけでは昇格しない: この後の identity ＋ 品質 ＋ 成果対象URL 判定は不変。
+    if (items.length && product.rakutenModelNo && !modelTried) {
+      const idnPre = IDN.deriveIdentity(product);
+      const bestPre = IDN.pickBest(idnPre, items, function(it) { return scoreCandidate(it, product); });
+      if (bestPre.match.level !== 'EXACT' && bestPre.match.level !== 'STRONG') {
+        modelTried = true;
+        const mq = await modelQuery(productId, product, searchTerm);
+        if (mq.items.length) {
+          const bestAlt = IDN.pickBest(idnPre, mq.items, function(it) { return scoreCandidate(it, product); });
+          if (bestAlt.match.level === 'EXACT' || bestAlt.match.level === 'STRONG') {
+            items = mq.items;
+            console.log('[ALT_QUERY_UPGRADE] ' + productId + ' — 主検索 ' +
+                        bestPre.match.level + ' → 型番検索 ' + bestAlt.match.level);
+          } else {
+            console.log('[ALT_QUERY_NOGAIN] ' + productId + ' — 型番検索も ' +
+                        bestAlt.match.level + '。候補は主検索のまま据え置き');
           }
-        } catch (e) {
-          // 代替クエリの失敗は本商品のみの問題として扱う（同期全体は止めない）。
-          console.log('[ALT_QUERY_FAIL] ' + productId + ' (' + (e.kind || 'UNKNOWN') + ')');
         }
       }
     }

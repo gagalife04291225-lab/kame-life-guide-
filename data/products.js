@@ -541,6 +541,7 @@ const PRODUCTS = {
 
   basking_100w: {
     id: 'basking_100w',
+    rakutenModelNo: 'PT2138', // GEX公式製品DB「サングロータイトビームバスキング スポットランプ100W PT2138」。100W・同一SKUを確認
     name: 'GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W', // Phase 39-P3: web_search確認済みの実商品名に修正（国内GEX正規品）
     category: 'lighting_basking',
     tier: 'standard',
