@@ -69,6 +69,11 @@ const PROMOTE_ALLOWLIST = new Set([
   'supplement_calcium_d3', 'calcium_no_d3', 'supplement_calcium_plus',
   'supplement_multivitamin',
   'thermometer_dual_probe', 'thermometer_wifi', 'hydrometer_tetra',
+  // Phase 4 追加承認（2026-08-29）— 第2次救出調査の「B確定5件」。
+  // 型番ルート実測でヒットした3件と、identity は通るがカテゴリガード語彙だけが
+  // 阻害していた2件。昇格は従来どおり EXACT/STRONG ＋ 安全チェック ＋ 成果対象URL を全て通過した場合のみ。
+  'substrate_cypress', 'shelter_small', 'heater_aqua_100w',
+  'enclosure_kayuso_90', 'substrate_grassland_mix',
 ]);
 const DIAG_PATH = path.resolve(__dirname, '../data/rakuten-diag.json');
 const AUDIT_OUT_PATH = path.resolve(process.cwd(), 'rakuten-image-audit.json');
@@ -101,8 +106,11 @@ const CATEGORY_GUARDS = {
   lighting_uvb:     ['UVB', '紫外線', 'ランプ', 'ライト', 'T5', 'T8'],
   lighting_basking: ['バスキング', 'ハロゲン', 'セラミック', 'ランプ', '電球'],
   filter:           ['フィルター', 'ポンプ', 'ろ過'],
-  enclosure:        ['ケージ', '水槽', 'ケース', '爬虫類'],
-  substrate:        ['床材', '土', 'サンド', 'マット', 'バーク', 'マルチ'],
+  // Phase 4: 実在の対象商品名だけを最小追加（ガードを緩めるのではなく語彙の取りこぼしを埋める）。
+  // enclosure: 三晃商会「パンテオン」／エキゾテラ「グラステラリウム」等がケージ語を含まない
+  // substrate: エキゾテラ「デザートベース」が床材語を含まない
+  enclosure:        ['ケージ', '水槽', 'ケース', '爬虫類', 'パンテオン', 'テラリウム'],
+  substrate:        ['床材', '土', 'サンド', 'マット', 'バーク', 'マルチ', 'デザートベース'],
   heating:          ['ヒーター', '保温', 'パネル', 'サーモスタット'],
   shelter:          ['シェルター', '隠れ家', 'コルク'],
   food:             ['フード', '餌', 'エサ', 'ペレット'],
@@ -910,7 +918,7 @@ async function identityDryRun(products) {
     }
     const baseTerm = product.rakutenSearchTerm || product.name;
     if (!baseTerm) { console.log('[IDENTITY] ' + productId + ' | SKIP | 検索語なし'); continue; }
-    const queries = [baseTerm].concat(IDN.buildAltQueries(baseTerm));
+    const queries = [baseTerm].concat(IDN.buildAltQueries(baseTerm, product.rakutenModelNo));
     let items = [], usedQuery = baseTerm, fatal = null;
     for (let qi = 0; qi < queries.length; qi++) {
       await sleep(1100);                       // 1req/sec 厳守（代替クエリ含む）
@@ -1091,7 +1099,30 @@ async function main() {
 
     // Reaching here means: HTTP 200, JSON, no error structure, Items is an array.
     // An empty array is therefore a genuine "no products matched" — not a failure.
-    const items = (apiResult.Items || []).map(function(i) { return i.Item || i; });
+    let items = (apiResult.Items || []).map(function(i) { return i.Item || i; });
+
+    // RAKUTEN-ID Phase 4: 0件のときだけ「型番単独」で1回だけ引き直す。
+    // 対象は rakutenModelNo を宣言している商品に限る（宣言のない商品の挙動は完全に据え置き＝
+    // 他商品の判定を意図せず変えない）。追加のAPI呼び出しは該当商品につき最大1回・1req/sec厳守。
+    if (!items.length && product.rakutenModelNo) {
+      const alt = IDN.buildAltQueries(searchTerm, product.rakutenModelNo)[0];
+      if (alt) {
+        await sleep(1100);
+        try {
+          const r2 = await rakutenSearch(alt, 10);
+          const got = (r2.Items || []).map(function(i) { return i.Item || i; });
+          if (got.length) {
+            items = got;
+            console.log('[ALT_QUERY] ' + productId + ' — 型番クエリ "' + alt + '" で ' +
+                        got.length + '件');
+          }
+        } catch (e) {
+          // 代替クエリの失敗は本商品のみの問題として扱う（同期全体は止めない）。
+          console.log('[ALT_QUERY_FAIL] ' + productId + ' (' + (e.kind || 'UNKNOWN') + ')');
+        }
+      }
+    }
+
     if (!items.length) {
       console.log('[NO_RESULT] ' + productId);
       report.noResult++;

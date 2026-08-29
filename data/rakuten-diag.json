@@ -15,7 +15,7 @@
   "date": "2026-08-29",
   "query": "マルカン バスキングライト 50W BL-50",
   "resultCount": 3,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:マルカン,50W,model:BL-50",
   "best": {
    "itemName": "マルカン　バスキングライト　50W　BL−50　爬虫類　保温球　関東当日便",
@@ -27,7 +27,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA サングロー バスキングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 送料無料",
@@ -95,7 +95,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 50W",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,50W,series:サングロー",
   "best": {
    "itemName": "●【エキゾテラ】サングロー バスキングスポットランプ 50w　EXOTERRA 【バスキング 保温 GEX ジェックス】",
@@ -131,7 +131,7 @@
   "date": "2026-08-29",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
@@ -155,8 +155,8 @@
   "date": "2026-08-29",
   "query": "SANKO パンテオン ブラック BK9045",
   "resultCount": 7,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "outcome": "PROMOTED_EXACT",
+  "reason": "maker:三晃商会,model:BK9045,series:パンテオン",
   "best": {
    "itemName": "三晃商会　パンテオン　ブラック　BK9045　E15",
    "price": 26750,
@@ -311,7 +311,7 @@
   "date": "2026-08-29",
   "query": "GEX AQUA FILTER e-ROKA PF701",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,model:e-ROKA,series:aqua",
   "best": {
    "itemName": "ジェックス GEX AQUA FILTER e-ROKA イーロカ PF701 ロングシャワー方式 エアレーション機能 流量調整機能付き水中モーターフィルター幅",
@@ -455,8 +455,8 @@
   "date": "2026-08-29",
   "query": "水中ヒーター 100W 亀 水槽",
   "resultCount": 4,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=5.9",
+  "outcome": "KEPT_SEARCH_AMBIGUOUS",
+  "reason": null,
   "best": {
    "itemName": "【期間限定！！クーポン利用】【短納期】加熱ヒーター 水槽ヒーター 小型 25W 50W 100W 200W 300W 自動恒温加熱 吸盤付き 空焼き防止 20℃",
    "price": 2099,
@@ -475,7 +475,7 @@
   "date": "2026-08-29",
   "query": "Zoo Med レプティヒートケーブル 25W",
   "resultCount": 2,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:Zoo Med,25W,series:レプティヒートケーブル",
   "best": {
    "itemName": "ZOOMED　レプティヒートケーブル　25W　4．5m　爬虫類　両生類　パネルヒーター　保温　関東当日便",
@@ -487,7 +487,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 1号",
   "resultCount": 5,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:みどり商会,1号,series:ピタリ適温プラス",
   "best": {
    "itemName": "○【レップジャパン】ピタリ適温プラス 1号 7w【ヒーター みどり商会】",
@@ -499,7 +499,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 2号",
   "resultCount": 9,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:みどり商会,2号,series:ピタリ適温プラス",
   "best": {
    "itemName": "○【レップジャパン】ピタリ適温プラス 2号 10w【ヒーター みどり商会】",
@@ -511,7 +511,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 3号",
   "resultCount": 5,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
    "itemName": "発芽 育苗 水耕栽培 植物 ヒーターマット ピタリ適温プラス 3号 約42×22cm 発芽育苗 【あす楽】",
@@ -523,7 +523,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 暖突 Lサイズ",
   "resultCount": 2,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:みどり商会,等級L,series:暖突",
   "best": {
    "itemName": "●【レップジャパン】暖突 Lサイズ 【ヒーター 遠赤外線 みどり商会】",
@@ -535,7 +535,7 @@
   "date": "2026-08-29",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
    "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
@@ -567,7 +567,7 @@
   "date": "2026-08-29",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
    "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
@@ -663,7 +663,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
    "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
@@ -675,8 +675,8 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA デザートベース 細目 3L",
   "resultCount": 10,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "outcome": "PROMOTED_STRONG",
+  "reason": "maker:GEX,容量一致,series:デザートベース",
   "best": {
    "itemName": "EXO TERRA エキゾテラ GEX EXOTERRA デザートベース 細目 3L 通水性・通気性がよい天然素材 砂漠・亜熱帯環境 湿度管理",
    "price": 1994,
@@ -723,7 +723,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 90g",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
    "itemName": "GEX EXOTERRA カルシウム+ビタミンD3 90g PT1856 粉末カルシウム・ビタミンD3 昼行性爬虫類に最適",
@@ -735,7 +735,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 40g",
   "resultCount": 8,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
    "itemName": "GEX EXO TERRA（エキゾテラ）　カルシウム＋ビタミンD3　40g　PT1855",
@@ -763,7 +763,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA マルチビタミン 30g",
   "resultCount": 9,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,容量一致,series:マルチビタミン",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA マルチビタミン 30g PT1860 不足しがちなビタミンやミネラルなど10種類以上を含有したパウダーサプリ",
@@ -815,7 +815,7 @@
   "date": "2026-08-29",
   "query": "コトブキ工芸 KC-ワイド900 水槽",
   "resultCount": 4,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:コトブキ工芸,series:コトブキ工芸",
   "best": {
    "itemName": "◇寿工芸 KC‐ワイド900 ブラック | コトブキ工芸 90cm水槽 コトブキ ワイド900",
@@ -859,7 +859,7 @@
   "date": "2026-08-29",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
    "itemName": "シンワ測定　#73117　デジタル温度計 Smart B　室内・室外 防水外部センサー　【代引き不可】【沖縄・離島配送不可】",
@@ -883,7 +883,7 @@
   "date": "2026-08-29",
   "query": "INKBIRD WiFi 温湿度計 IBS-TH3",
   "resultCount": 1,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:INKBIRD,model:IBS-TH3,series:ibs-th3",
   "best": {
    "itemName": "INKBIRD WiFi 温湿度計 高精度測定 デジタル 温度計 湿度計 スマート温度計 アプリで温度湿度管理 アラート通知 データグラフ可視化 データクラウド",
@@ -907,7 +907,7 @@
   "date": "2026-08-29",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
    "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
@@ -927,7 +927,7 @@
   "date": "2026-08-29",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
    "itemName": "コトブキ工芸　ヒュドラサーモ　HT−330XD　爬虫類　温度管理　サーモスタット　関東当日便",
@@ -947,7 +947,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 10,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
    "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
@@ -971,7 +971,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA ソーラーグローUV 80W",
   "resultCount": 10,
-  "outcome": "REFRESHED_STRONG",
+  "outcome": "PROMOTED_STRONG",
   "reason": "maker:GEX,80W,series:ソーラーグローuv",
   "best": {
    "itemName": "【送料無料】エキゾテラ GEX EXOTERRA ソーラーグローUV 80W PT2334 UVB&バスキングライト 昼用 砂漠サバンナに棲息する昼行性の爬虫類",
@@ -991,7 +991,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 10,
-  "outcome": "REFRESHED_EXACT",
+  "outcome": "PROMOTED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA レプタイルUVB150 26W PT2189 爬虫類用 紫外線ライト パープル 砂漠・サバンナに棲 送料無料",
