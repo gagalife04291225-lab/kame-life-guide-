@@ -1,0 +1,221 @@
+/* ============================================================
+   KAME LIFE GUIDE — Visual System (Phase 1)
+   共通デザイントークン / 共通ナビ / アイコン
+   このファイルは各ページのインライン <style> より後に読み込む。
+   既存の配色（深緑×ゴールド）と書体（Playfair Display / Noto Serif JP）は変えない。
+   ============================================================ */
+
+:root{
+  /* --- ブランド色（既存値をトークン化しただけ。新色は足していない） --- */
+  --klg-forest-deep:#0d1f1a;
+  --klg-forest:#2f4a3c;
+  --klg-parchment:#f4efe2;
+  --klg-gold:#c9a96b;
+  --klg-gold-bright:#d8be7c;
+  --klg-gold-dark:#8f5f2c;
+  --klg-line:#e4ddc9;
+  --klg-ink:#0d1f1a;
+  --klg-muted:#5a6b60;
+
+  /* --- 角丸は2系統だけ --- */
+  --klg-radius:8px;
+  --klg-radius-lg:14px;
+  --klg-radius-pill:9999px;
+
+  /* --- 影 --- */
+  --klg-shadow-sm:0 2px 8px rgba(8,20,17,.06);
+  --klg-shadow:0 6px 18px rgba(8,20,17,.10);
+
+  /* --- 余白スケール --- */
+  --klg-sp-1:4px;  --klg-sp-2:8px;  --klg-sp-3:12px;
+  --klg-sp-4:16px; --klg-sp-5:24px; --klg-sp-6:32px; --klg-sp-7:48px;
+
+  --klg-nav-h:52px;
+}
+
+/* ============================================================
+   共通ナビ
+   スマホでは高さ52px・ロゴ＋主要3リンク＋診断CTAのみ。
+   リンクは横並びのままスクロールさせず、文字を詰めて収める。
+   ============================================================ */
+.klg-nav{
+  position:fixed; top:0; left:0; right:0; z-index:300;
+  height:var(--klg-nav-h);
+  display:flex; align-items:center;
+  background:rgba(13,31,26,.96);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(201,169,107,.18);
+}
+.klg-nav-inner{
+  display:flex; align-items:center; gap:var(--klg-sp-1);
+  width:100%; max-width:1120px; margin:0 auto; padding:0 var(--klg-sp-3);
+}
+.klg-nav-logo{
+  display:inline-flex; align-items:center; gap:6px; min-height:40px;
+  font-family:"Playfair Display",serif;
+  font-size:.78rem; font-weight:700; letter-spacing:.14em;
+  color:var(--klg-gold); text-decoration:none; margin-right:auto;
+  white-space:nowrap;
+}
+.klg-nav-logo .klg-ico{width:17px;height:17px;}
+.klg-nav-link{
+  display:inline-flex; align-items:center; min-height:40px;
+  font-size:.74rem; font-weight:600; letter-spacing:.02em;
+  color:rgba(212,220,215,.78); text-decoration:none;
+  padding:0 7px; white-space:nowrap;
+  transition:color .18s ease;
+}
+.klg-nav-link:hover,.klg-nav-link:focus-visible{color:var(--klg-gold);}
+.klg-nav-cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:5px; min-height:40px;
+  background:var(--klg-gold); color:#06120d;
+  font-size:.72rem; font-weight:700; white-space:nowrap;
+  padding:8px 13px; border-radius:var(--klg-radius-pill);
+  text-decoration:none; margin-left:var(--klg-sp-2);
+  transition:background .18s ease,transform .15s ease;
+}
+.klg-nav-cta:hover{background:var(--klg-gold-bright);transform:translateY(-1px);}
+.klg-nav-cta .klg-ico{width:14px;height:14px;}
+.klg-nav a:focus-visible{outline:2px solid var(--klg-gold);outline-offset:2px;border-radius:4px;}
+
+/* 固定ナビ分の押し下げ。ナビを差し込んだページだけに付く */
+body.klg-has-nav{padding-top:var(--klg-nav-h);}
+
+/* 360px 未満はロゴを記号だけにし、リンクも3→2本へ絞って収める */
+@media(max-width:389px){
+  .klg-nav-inner{padding:0 var(--klg-sp-2);}
+  .klg-nav-link{padding:0 5px;font-size:.71rem;}
+  .klg-nav-cta{padding:0 11px;font-size:.7rem;margin-left:var(--klg-sp-1);}
+  .klg-nav-logo{font-size:.72rem;letter-spacing:.08em;}
+}
+@media(max-width:359px){
+  .klg-nav-logo .klg-nav-logo-text{display:none;}
+  .klg-nav-link[data-klg-optional]{display:none;}
+}
+@media(min-width:720px){
+  :root{--klg-nav-h:58px;}
+  .klg-nav-inner{padding:0 var(--klg-sp-5);}
+  .klg-nav-logo{font-size:.9rem;}
+  .klg-nav-link{font-size:.82rem;padding:16px 13px;}
+  .klg-nav-cta{font-size:.8rem;padding:9px 18px;}
+}
+
+/* ============================================================
+   アイコン
+   OS絵文字の代わりに使う単色ラインアイコン。currentColor で着色する。
+   ============================================================ */
+.klg-ico{
+  width:1em; height:1em; display:inline-block; vertical-align:-.14em;
+  fill:none; stroke:currentColor; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round;
+  flex:0 0 auto;
+}
+.klg-sprite{position:absolute;width:0;height:0;overflow:hidden;}
+
+/* species ヒーローのカテゴリアイコン */
+.sp-emoji .klg-ico{
+  width:38px; height:38px;
+  stroke-width:1.35;
+  color:var(--sp-accent,var(--klg-gold));
+  opacity:.92;
+}
+.sp-emoji{font-size:0;line-height:0;display:block;margin-bottom:var(--klg-sp-3);}
+
+/* ============================================================
+   species ヒーローの配色をカテゴリ6色へ集約
+   種ごとに違っていた --sp-from / --sp-to / --sp-accent を、
+   body の data-klg-cat に応じて上書きする。
+   （body で定義した変数が :root より優先されて子孫へ届く）
+   ============================================================ */
+body[data-klg-cat]{--sp-from:#12241d;--sp-to:#08120e;--sp-accent:var(--klg-gold);}
+body[data-klg-cat="リクガメ"]           {--sp-from:#1d2417;--sp-to:#0b120a;--sp-accent:#cbb26a;}
+body[data-klg-cat="ヤマガメ・ハコガメ"] {--sp-from:#14241a;--sp-to:#080f0b;--sp-accent:#a8c08a;}
+body[data-klg-cat="半水棲"]             {--sp-from:#12242a;--sp-to:#070f12;--sp-accent:#8fbcc4;}
+body[data-klg-cat="水棲（淡水）"]       {--sp-from:#0f2430;--sp-to:#060f14;--sp-accent:#7fb0c8;}
+body[data-klg-cat="汽水"]               {--sp-from:#152530;--sp-to:#080f14;--sp-accent:#9fb8c8;}
+body[data-klg-cat="スッポン・曲頸"]     {--sp-from:#1c2220;--sp-to:#0a0e0d;--sp-accent:#bfae8a;}
+
+/* ============================================================
+   UIトークンの適用
+   ページごとに乱立していた角丸・ボタン色を共通化する。
+   本文やカードの中身には触れない。
+   ============================================================ */
+.klg-btn,
+.btn-cta-primary,.cta-btn-primary{
+  border-radius:var(--klg-radius) !important;
+}
+.klg-btn-pill,.mini-nav-cta{border-radius:var(--klg-radius-pill) !important;}
+
+/* review系が使っていた Amazon オレンジをサイト主要UI色から外す。
+   ボタンの意味（1次CTA）は変えず、ブランドゴールドへ寄せる。 */
+.klg-review .btn-primary,
+.klg-review .amazon-btn,
+.klg-review a.btn-primary{
+  background:var(--klg-gold) !important;
+  border-color:var(--klg-gold) !important;
+  color:#06120d !important;
+  border-radius:var(--klg-radius) !important;
+  box-shadow:var(--klg-shadow-sm) !important;
+}
+.klg-review .btn-primary:hover,.klg-review .amazon-btn:hover{
+  background:var(--klg-gold-bright) !important;
+}
+/* review系のカード・枠線をパーチメント基調へ寄せる */
+.klg-review .card,.klg-review .box,.klg-review .note-box,.klg-review .spec-box{
+  border-radius:var(--klg-radius-lg) !important;
+  border-color:var(--klg-line) !important;
+}
+/* review系の独自ヘッダーは共通ナビに置き換えたので隠す */
+.klg-review header.site-header{display:none !important;}
+
+/* 既存クラスの中で絵文字→SVGに置換した箇所のサイズ調整 */
+.pc-card-s2-icon{line-height:0;display:block;}
+.pc-card-s2-icon .klg-ico{width:26px;height:26px;color:var(--klg-gold);}
+.entry-card-icon .klg-ico{width:24px;height:24px;color:var(--klg-gold);}
+
+/* ============================================================
+   Kids — 世界観は変えず、ブランド接続と戻り導線だけ整える
+   本体と同じ濃色ナビにはせず、細い1本のバンドにとどめる
+   ============================================================ */
+.klg-kids-band{
+  background:var(--klg-forest-deep);
+  padding:0 var(--klg-sp-3);
+}
+.klg-kids-home{
+  display:flex; align-items:center; gap:8px; min-height:42px;
+  max-width:1120px; margin:0 auto;
+  color:var(--klg-gold); text-decoration:none;
+}
+.klg-kids-home .klg-ico{width:17px;height:17px;}
+.klg-kids-brand{
+  font-family:"Playfair Display",serif;
+  font-size:.76rem; font-weight:700; letter-spacing:.12em;
+}
+.klg-kids-back{
+  margin-left:auto; font-size:.74rem; font-weight:600;
+  color:rgba(212,220,215,.8);
+}
+.klg-kids-home:hover .klg-kids-back{color:var(--klg-gold);}
+@media(max-width:359px){ .klg-kids-brand{letter-spacing:.06em;font-size:.7rem;} }
+
+/* review系: メタ行を記号なしで読ませる */
+.klg-review .article-meta-row{gap:var(--klg-sp-3);flex-wrap:wrap;}
+.klg-review .klg-meta-item{
+  position:relative; padding-left:11px; font-size:.78rem; color:var(--klg-muted);
+}
+.klg-review .klg-meta-item::before{
+  content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:4px; height:4px; border-radius:50%; background:var(--klg-gold);
+}
+.klg-review .article-badge{display:inline-flex;align-items:center;gap:6px;border-radius:var(--klg-radius-pill);}
+.klg-review .article-badge .klg-ico{width:14px;height:14px;}
+
+/* compare: 受賞バッジをブランドトーンへ */
+.wb-badge{border-radius:var(--klg-radius-pill)!important;display:inline-flex;align-items:center;gap:5px;}
+.wb-icon .klg-ico{width:13px;height:13px;}
+
+/* rel-btn / species-nav のアイコン */
+.rel-btn{display:inline-flex;align-items:center;gap:6px;}
+.rel-btn .klg-ico{width:15px;height:15px;color:var(--klg-gold-dark);}
+.snl-icon{line-height:0;}
+.snl-icon .klg-ico{width:19px;height:19px;color:var(--klg-gold-dark);}

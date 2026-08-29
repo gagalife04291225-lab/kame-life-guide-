@@ -23,7 +23,7 @@ const COMMON_QUESTIONS = [
 
 const ROUTES = [
   {
-    id: 'land', emoji: '🏔️', name: 'リクガメルート',
+    id: 'land', icon: 'klg-i-tortoise', name: 'リクガメルート',
     desc: 'リクガメが気になる人向け（ロシア・ヘルマン・ケヅメなど）', qCount: 7,
     get species(){ return SPECIES.land; },
     questions: [
@@ -56,7 +56,7 @@ const ROUTES = [
     ].concat(COMMON_QUESTIONS)
   },
   {
-    id: 'aquatic', emoji: '🏊', name: '水棲ガメルート',
+    id: 'aquatic', icon: 'klg-i-aquatic', name: '水棲ガメルート',
     desc: '水槽で飼いたい人向け（ニオイガメ・チズガメなど）', qCount: 10,
     get species(){ return SPECIES.aquatic; },
     questions: [
@@ -104,7 +104,7 @@ const ROUTES = [
     ].concat(COMMON_QUESTIONS)
   },
   {
-    id: 'forest', emoji: '🍂', name: 'ヤマガメ・ハコガメルート',
+    id: 'forest', icon: 'klg-i-forest', name: 'ヤマガメ・ハコガメルート',
     desc: '森や多湿環境の種が好きな人向け（スペングラー・ハコガメなど）', qCount: 7,
     get species(){ return SPECIES.forest; },
     questions: [
@@ -136,7 +136,7 @@ const ROUTES = [
     ].concat(COMMON_QUESTIONS)
   },
   {
-    id: 'exotic', emoji: '🌀', name: 'マニアック・特殊ルート',
+    id: 'exotic', icon: 'klg-i-sparkle', name: 'マニアック・特殊ルート',
     desc: 'レア種やマニア向け（スッポン・曲頸類など）', qCount: 6,
     get species(){ return SPECIES.exotic; },
     questions: [
@@ -165,7 +165,7 @@ const ROUTES = [
     ].concat(COMMON_QUESTIONS)
   },
   {
-    id: 'all', emoji: '❓', name: '全カテゴリ診断',
+    id: 'all', icon: 'klg-i-help', name: '全カテゴリ診断',
     desc: 'まだ決めていない人向け（全119種・8問で診断）', qCount: 8,
     get species(){ return SPECIES.all; },
     questions: [

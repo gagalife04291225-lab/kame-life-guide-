@@ -299,6 +299,9 @@ def plan(paths, guides_idx, compare_idx):
     for p in paths:
         slug = os.path.basename(p)[:-5]
         html = strip_autolinks(open(p, encoding="utf-8").read())
+        # 共通ナビ（klg-nav）は全ページに guides/ trouble/ へのリンクを持つ。
+        # これを「既に手書きリンクがある」と誤判定しないよう、判定対象から外す。
+        html = re.sub(r'<nav class="klg-nav".*?</nav>', "", html, flags=re.S)
         adds = []
 
         # 1. compare（実在する比較ページのみ・1本まで）
