@@ -504,7 +504,7 @@
     overflow:hidden;
     display:flex;
     flex-direction:column;
-    padding-top:56px; /* nav height */
+    padding-top:0; /* 固定ナビ分は body.klg-has-nav の padding-top が確保する。ここで足すと二重になり、ナビ直下にクリーム色の帯が出る */
     background:none;
     min-height:auto;
   }
@@ -756,8 +756,8 @@
     header.hero{
       flex-direction:row;
       align-items:stretch;
-      min-height:calc(100vh - 64px);
-      padding-top:64px;
+      min-height:calc(100vh - var(--klg-nav-h,58px));
+      padding-top:0;
     }
 
     /* Text column: left 45% */
@@ -2088,7 +2088,7 @@ section.cost-sim{ padding:34px 0 36px; }
     <div style="text-align:center;">
       <a href="./annainin/" class="hero-annainin-link hero-annainin-link--onlight"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_annainin_entry_click',{location:'entry_cards'})">
-        💬 亀選び・容器・機材で迷ったら、案内人に相談 <span aria-hidden="true">→</span>
+        <svg class="klg-ico" aria-hidden="true"><use href="#klg-i-help"/></svg> 亀選び・容器・機材で迷ったら、案内人に相談 <span aria-hidden="true">→</span>
       </a>
     </div>
   </div>
@@ -2474,7 +2474,7 @@ section.cost-sim{ padding:34px 0 36px; }
       <a href="guides/beginner-top10-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'beginner_top10'})">
         <span class="gl-module-label">Care Module 01</span>
-        <span class="gl-icon">🐢</span>
+        <span class="gl-icon"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-tortoise"/></svg></span>
         <div class="gl-situation">はじめての1頭、どう選ぶ？</div>
         <p class="gl-desc">難易度・費用・サイズの三軸で、はじめて飼う方が後悔しにくい種をランキング形式で解説。</p>
         <span class="gl-cta">はじめての方向け選び方を読む</span>
@@ -2483,7 +2483,7 @@ section.cost-sim{ padding:34px 0 36px; }
       <a href="guides/small-best-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'small_best'})">
         <span class="gl-module-label">Care Module 02</span>
-        <span class="gl-icon">🔬</span>
+        <span class="gl-icon"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-search"/></svg></span>
         <div class="gl-situation">スペースが限られている？</div>
         <p class="gl-desc">30〜45cm水槽から飼える最大15cm以下の小型種を厳選。省スペース派に最適な3種を比較。</p>
         <span class="gl-cta">小型種3選を見る</span>
@@ -2492,7 +2492,7 @@ section.cost-sim{ padding:34px 0 36px; }
       <a href="guides/low-odor-turtles.html" class="gl-card"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'low_odor_best'})">
         <span class="gl-module-label">Care Module 03</span>
-        <span class="gl-icon">🌿</span>
+        <span class="gl-icon"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-leaf"/></svg></span>
         <div class="gl-situation">室内の臭いが心配？</div>
         <p class="gl-desc">管理次第で臭いを抑えられる種と方法を解説。陸棲なら水の問題ごと解消できます。</p>
         <span class="gl-cta">臭い対策ガイドを読む</span>
@@ -2502,7 +2502,7 @@ section.cost-sim{ padding:34px 0 36px; }
       <a href="kid/index.html" class="gl-card" style="grid-column:1/-1;"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_guide_click',{guide:'kid'})">
         <span class="gl-module-label">Care Module 04</span>
-        <span class="gl-icon">📏</span>
+        <span class="gl-icon"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-scale"/></svg></span>
         <div class="gl-situation">飼育用品、サイズで失敗したくない？</div>
         <p class="gl-desc">うちの子の甲長から「今使える／もう使えない／次に買う」を逆引き。実飼育者の失敗事例つき。安全判定を購入リンクより先に。</p>
         <span class="gl-cta">KID（甲長逆引きDB）を見る</span>
@@ -2512,7 +2512,7 @@ section.cost-sim{ padding:34px 0 36px; }
       <a href="kids/index.html" class="gl-card" style="grid-column:1/-1;"
          onclick="(typeof gtag==='function')&&gtag('event','homepage_kids_click',{slot:'care_hub'})">
         <span class="gl-module-label">Care Module 05</span>
-        <span class="gl-icon">🧒</span>
+        <span class="gl-icon"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-sparkle"/></svg></span>
         <div class="gl-situation">お子さんが亀に興味を持った？</div>
         <p class="gl-desc">お子さん自身が読める「カメふしぎ島」。全漢字ふりがな付きの8ページで、しめった森・水辺・かわいた場所をめぐりながら、カメの体と暮らしを見くらべます。カメと暮らす約束、やってはいけないこと、最後はカメクイズ。商品リンクは一切ありません。</p>
         <span class="gl-cta">カメふしぎ島へ行く</span>

@@ -207,6 +207,9 @@ def apply_species(paths, cats):
         slug = os.path.basename(p)[:-5]
         cat = cats.get(slug, "")
         icon = CAT_ICON.get(cat, FALLBACK_ICON)
+        # species ページであることを示すクラス。Phase 2 の hero 調整を
+        # species 以外（トップ・種一覧・ガイド等）へ漏らさないため。
+        html, _ = add_body_class(html, "klg-species")
         if cat:
             html, _ = set_body_attr(html, "data-klg-cat", cat)
         new_span = '<span class="sp-emoji">%s</span>' % (ICO % icon)

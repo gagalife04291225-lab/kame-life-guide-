@@ -115,13 +115,21 @@ body.no-furigana ruby rt{display:none}
   line-height:1.7;
   margin:0 0 6px;
   font-weight:800;
-  display:flex;
-  align-items:center;
-  gap:12px;
+  /* .k-card h2 と同じ理由で flex をやめる。flex にすると見出し内のテキストと
+     <ruby> が別々のフレックスアイテムになり、2行に折り返した瞬間に
+     ベースラインが崩れて縦に散らばる（320〜390px で再現）。 */
+  display:block;
 }
+/* 丸番号は左に浮かせ、見出しテキストはその右で通常のインライン整形で流す。
+   float なら2行目以降も丸番号の右に回り込み、横並びが保たれる。 */
+.k-sec h1 > .n,.k-sec h2 > .n{
+  float:left;margin:0 12px 0 0;
+}
+.k-sec h1::after,.k-sec h2::after{content:"";display:block;clear:both;}
 .k-sec h1 .n,.k-sec h2 .n{
   flex:0 0 auto;
   width:44px;height:44px;
+  display:inline-grid;
   border-radius:50%;
   background:var(--k-green);
   color:#fff;
@@ -146,7 +154,13 @@ body.no-furigana ruby rt{display:none}
   font-size:21px;
   line-height:1.75;
   font-weight:800;
-  display:flex;align-items:center;gap:10px;
+  /* display:flex にすると、見出し内のテキストと <ruby> が別々のフレックス
+     アイテムになり、2行に折り返した瞬間にベースラインが崩れて縦に散らばる。
+     通常のインライン整形に戻し、アイコンだけ inline-block で並べる。 */
+  display:block;
+}
+.k-card h2 > .ico,.k-card h3 > .ico{
+  display:inline-block;vertical-align:-.16em;margin-right:10px;
 }
 .k-card h2 .ico,.k-card h3 .ico{font-size:30px;line-height:1}
 .k-card p{margin:0;font-size:19px;line-height:2.05}
@@ -186,7 +200,10 @@ body.no-furigana ruby rt{display:none}
 }
 .k-dont h2,.k-dont h3{
   margin:0 0 8px;font-size:21px;font-weight:800;line-height:1.75;
-  display:flex;align-items:center;gap:10px;color:var(--k-red-ink);
+  display:block;color:var(--k-red-ink);
+}
+.k-dont h2 > .ico,.k-dont h3 > .ico{
+  display:inline-block;vertical-align:-.16em;margin-right:10px;
 }
 .k-dont h2 .ico,.k-dont h3 .ico{font-size:28px}
 .k-dont p{margin:0;font-size:19px;line-height:2.05;color:var(--k-red-ink)}
@@ -256,7 +273,8 @@ body.no-furigana ruby rt{display:none}
   min-height:48px;
 }
 .k-link:hover,.k-link:focus{border-color:var(--k-green);background:var(--k-green-bg)}
-.k-link b{display:flex;align-items:center;gap:10px;font-size:20px;line-height:1.75;margin-bottom:6px}
+.k-link b{display:block;font-size:20px;line-height:1.75;margin-bottom:6px}
+.k-link b > .ico{display:inline-block;vertical-align:-.16em;margin-right:10px;}
 .k-link b .ico{font-size:28px}
 .k-link span{font-size:17px;color:var(--k-ink-soft);line-height:1.9;display:block}
 

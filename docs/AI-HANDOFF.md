@@ -16,16 +16,44 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **0e4b036**（PR #107 = VISUAL SYSTEM Phase 1 まで反映済み） |
-| サイトファイルの状態 | **PR #107 = `0e4b036`** が最後。**merge 待ち = 本PR（VISUAL SYSTEM Phase 2）** |
+| 基準 | `origin/main` = **2a76240**（PR #108 = VISUAL SYSTEM Phase 2 まで反映済み） |
+| サイトファイルの状態 | **PR #108 = `2a76240`** が最後。**merge 待ち = 本PR（VISUAL SYSTEM Phase 3）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/visual-system-p2` |
+| 作業ブランチ | `claude/visual-system-p3` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### VISUAL SYSTEM Phase 3 — 公開表示の欠陥CLOSE（2026-08-29 / 本PR）
+
+デザインは作り直していない。**実在する表示欠陥だけ**を潰した。
+配色・書体・トップ構成・写真は変更していない。
+
+| 欠陥 | 原因 | 修正 |
+|------|------|------|
+| **トップのクリーム帯** | Phase 2 の `header.hero{padding:38px…!important}` が species 以外にも適用。**さらに `index.html` 自身に旧ナビ用 `padding-top:56px /* nav height */` が残り、`body.klg-has-nav` の 52px と二重**になっていた | CSSを `body.klg-species header.hero` へスコープ（generator が全 species に `klg-species` を付与）＋ index の旧ナビ補正を 0 に。**hero 上部の空白 56px → 0px** |
+| **Kids の見出し異常折返し** | `.k-card h2` `.k-dont h2` `.k-link b` `.k-sec h1/h2` が `display:flex`。テキストと `<ruby>` が別々のフレックスアイテムになり、2行になった瞬間にベースラインが崩れて縦に散らばる | `display:block` に戻し、アイコンは `inline-block`、丸番号は `float:left`（2行目も右に回り込み横並びを維持）。**320/360/390px で再現していた破綻が解消** |
+| **review系6ページの PC グリッド不一致** | `css/style.css` の `.article-hero-inner` が `max-width:840px` の左寄せ、本文 `.article-body-wrap` は `760px` 中央寄せ。1920px で h1=left48 / 本文=left645 | hero-inner を `760px` 中央寄せ＋内側 padding を本文と一致。狭幅の padding 二重も解消。**390/750/1440/1920 すべてで ずれ 0px** |
+
+**同時に実測確認した8項目**（再現しなかったものは変更していない）:
+
+| 項目 | 結果 |
+|------|------|
+| スマホナビの overflow | **再現せず**（360/390/412px で `scrollWidth == clientWidth`、右端余白 8〜12px）→ 変更なし |
+| 種カード和名切れ | **再現せず**（119枚すべて `scrollWidth <= clientWidth`）→ 変更なし |
+| フィルタチップ切れ | **再現せず**（21個すべて）→ 変更なし |
+| 写真なしカード | 12件あるが「写真を準備中」プレースホルダが正常動作。**欠陥ではない**→ 変更なし |
+| トップのブランドラベル重複 | **再現**。ナビロゴ「KAME LIFE」と `.h12-brand` が二重 → `.h12-brand` を非表示（DOM・文言は保持） |
+| Care Module の絵文字 | **再現**（🐢🔬🌿📏🧒 の5件）→ SVG へ置換 |
+| 「案内人に相談」の💬 | **再現** → SVG へ置換 |
+| `Trouble Shooting` 表記 | **再現**。英語として誤り（正しくは1語）→ `Troubleshooting` へ（10ファイル） |
+
+**検証**: 390 / 750 / 1440 / 1920px × 16ページ（トップ・種一覧・species2・guide・ranking・review2・compare・trouble・shindan・Kids5）で
+横スクロール0 / はみ出し0 / 文字切れ0 / 異常折返し0 / 画像失敗0 / SVG欠落0 / ナビ重なり0 / JSエラー0。
+全 generator 冪等（再実行で書き込み0）。回帰ゲート species→guides **113/113 維持**。
 
 ### VISUAL SYSTEM Phase 2 / DESIGN CLOSEOUT（2026-08-29 / 本PR）
 
