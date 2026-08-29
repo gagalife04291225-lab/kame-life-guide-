@@ -16,17 +16,65 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **f2bdaed**（PR #104 = CLOSEOUT PHASE の merge まで反映済み） |
-| サイトファイルの状態 | **PR #104 = `f2bdaed`** が最後。**merge 待ち = 本PR（DECISION CLOSEOUT）** |
+| 基準 | `origin/main` = **acc5b0c**（PR #105 = DECISION CLOSEOUT の merge まで反映済み） |
+| サイトファイルの状態 | **PR #105 = `acc5b0c`** が最後。**merge 待ち = 本PR（CLOSEOUT COMPLETE）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
-| 作業ブランチ | `claude/decision-closeout` |
-| 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
-| 本PRの変更 | `assets/species-photos/canton-reeves-turtle.webp` ／ `data/credits_map.json` ／ `data/pc_parsed.json` ／ `photo-credits.html` ／ `species/canton-reeves-turtle.html` ／ `docs/AI-HANDOFF.md` |
+| 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
+| 作業ブランチ | `claude/closeout-complete` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### CLOSEOUT COMPLETE（2026-08-29 / 本PR）
+
+#### D3 オプストヒラセガメの亜種ページを新規作成（写真なし・A案）
+
+`species/obsti-hirase-turtle.html` を新規作成。**旧候補写真（iNat photo 134512961 / Chris Oldnall）は使用していない。**
+`CLAUDE.md`（2026-08-24 調査クローズ）が「産地20.20N は本亜種の分布域から約400km北の基亜種分布域、腹甲もほぼ無地で識別形質と不一致 → 亜種同定を証明できない」と確定しているため、写真なしで公開した。**この判断を再検討しない。**
+
+**ページに書いた内容の根拠範囲を明示している** ―― 確定事実として使ったのは分類（Fritz et al. 1998・TTWG承認）／分布（トゥアティエン＝フエ 16.3N〜ダクラク 12.7N・移行帯はクアンチ〜ゲアン付近）／識別形質（腹甲の放射状黒斑・基亜種はほぼ無地）／CITES II（親種からの種単位継承）のみ。**飼育情報はすべて「親種ヒラセガメに準じる」と明記**し、親種の UNPROVEN 値（最大甲長・寿命）を亜種固有の事実として書いていない。**運営者は本亜種を飼育していない旨もページ内に明記した。**
+
+**同一工程で同期した全層:**
+
+| 層 | 内容 |
+|----|------|
+| ページ | `species/obsti-hirase-turtle.html` 新規 |
+| `shindan/species.js` | `forest` ルートへ1件追加（`all` は連結で自動反映）。`availability: 'reference_only'`、`match` は常に false（診断で推薦しない） |
+| `data/species-master.json` | 121件へ。`photo` に不採用理由を記録 |
+| `data/species-identification.json` | 114件へ。`photo_chuui` に「本亜種として掲載しないこと」を明記 |
+| `tools/taxonomy.js`（**掲載区分の正本**） | `REFERENCE_ONLY` に追加 → generator 経由で `species-list.html` へ反映。**species-list.html を手編集していない** |
+| `sitemap.xml` | 195 URL へ |
+| 相互リンク | 親種 `species/hirase-turtle.html` → 新ページ、新ページ → 親種 |
+| 内部リンク generator | `scripts/gen_related_links.py` が新ページを自動で結線（species→ 117→118本） |
+
+#### 119種化の全面同期
+
+新規追加により **118種 → 119種**。固定値を残さないため機械抽出して一括同期した。
+
+- 公開層の `118種` **151ファイル / 349箇所 → 119種**。**`118種` の残存 0ファイル**
+- `tools/gen-species-list.js` `gen-category-ui.js` `taxonomy.js` および `species-list.html` のコメント内 `118件` も `119件` へ（説明が実態と食い違う状態を残さない）
+- 内訳は **通常一覧 115 ＋ 参考掲載 4**（参考掲載＝国内で流通している個体を確認できなかった種。「法的に飼えない」意味ではない）
+- generator 再実行で件数バー初期値 119 / noscript 119件を確認
+
+#### D7 スペングラーヤマガメの写真 → B案（自前写真へ差し替え）
+
+候補5枚を実画像で確認し、**`face-close.jpg` を採用**。
+
+| 候補 | 判定 |
+|------|------|
+| **face-close.jpg**（1599×1600） | **採用**。頭部が鮮明で目にピントが合い、甲も判別できる。自然な姿勢（自分のテラリウム内）。4:3 トリミング後もカードサイズ160px相当で亀と判別できることを実測 |
+| water-dish.jpg（1201×1600） | 甲は見えるが頭部が小さい。縦位置で 800×600 への切り出し損失が大きい |
+| hiding-cork.jpg / rock-cave.jpg | 個体が暗所・遮蔽で判別しにくい。メイン写真に不適 |
+| setup-full.jpg | 環境全体のカット。個体がほぼ見えずメイン写真に不適 |
+| 旧・Commons 画像（Viva.Chelonia） | 個体は最も鮮明だが**人の手に持たれた構図**。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして不採用 |
+
+800×600 WebP（75KB）へ変換して差し替え、**クレジット4層を自前写真へ更新**（`credits_map.json` ／ `pc_parsed.json` ／ `photo-credits.html` ／ 種ページ figcaption）。出典は Real Setup 記事へリンク。**外部ライセンス依存が1件減り、E-E-A-T の一次性が上がった。**
+
+#### PR #35 → close 済み
+
+写真とクレジットの救出は PR #105 で完了済み。コードは merge せず GitHub 上で close し、CITES の論点は BLOCKED B6 へ引き継いだ旨をコメントで残した。
 
 ### DECISION CLOSEOUT（2026-08-29 / 本PR）
 
@@ -804,54 +852,53 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
-> **2026-08-29 DECISION CLOSEOUT 後の実態。**
-> D1 / D2 / D6 / D8 は CLOSE 済みで COMPLETED へ移した。ここには残っていない。
-> 再開条件のない「後でやる」「次回確認」はこのリストに置かない。
+> **2026-08-29 CLOSEOUT COMPLETE 後の実態。**
+> **DECISION は0件。** 判断待ちで止まっている作業はもう無い。
+> 残っているのは、外部データ・外部一次資料・新しい写真素材が無いと
+> **物理的に進められない BLOCKED だけ**。
 
-### DECISION — Owner の判断だけで再開できる（**再調査しない**）
+### DECISION
 
-| ID | 選択肢 | 判断材料 |
-|----|--------|---------|
-| **D3 オプストヒラセガメの亜種ページ** ⚠️**前提が誤っていたため差し戻し** | A: 写真なしページとして作成 / B: 写真が出るまで作らない | **旧記載「写真は確定済（photo 134512961 / Chris Oldnall）」は誤りだった。** `CLAUDE.md`「HOLD 4件の写真素材 最終確定（2026-08-24・調査クローズ）」が、この写真について **「亜種同定を証明できない」= HOLD** と結論している。理由は実測: 産地 20.20N は obsti の分布域（Thua Thien-Hue 16.3N〜Dak Lak 12.7N）の**約400km北**で intergradation zone よりさらに北＝**基亜種の分布域**、かつ腹甲がほぼ無地で obsti の識別形質「放射状の黒斑」と一致しない。**この写真を obsti として載せると誤同定の公開になる。**<br>**A を選べる根拠**: 写真なしの species ページは既に8件あり確立されたパターン（`golden-greek-tortoise` `indochinese-box-turtle` `mccords-snake-necked-turtle` `three-striped-box-turtle` `siebenrocks-snake-necked-turtle` ほか）。<br>**A を選ぶ場合の注意**: 親種 `hirase-turtle`（*Cuora mouhotii*）の master は `distribution` / `max_shell_length_cm` / `lifespan` がいずれも **UNPROVEN**。亜種固有で確実に書けるのは分類（Fritz et al. 1998・TTWG承認）、分布域、識別形質（腹甲の放射状黒斑）程度で、**飼育情報は「親種に準じる」と明記する形になる**。薄いページになることを承知で作るかの判断 |
-| **D7 `spenglers-leaf-turtle` の写真構図** | A: 現状維持 / B: 亀好きさん自身の実飼育写真へ差し替え | **現在画像**: `assets/species-photos/spenglers-leaf-turtle.webp`（800×600 / 51KB / Viva.Chelonia / Wikimedia Commons / CC BY-SA）。人の手に持たれた構図。使用箇所は **`index.html` の1カードと `species/spenglers-leaf-turtle.html`** の2箇所。<br>**差し替え候補は repo 内に既にある** — `assets/species/spenglers-leaf-turtle/` の**亀好きさん自身の実飼育写真5枚**（Real Setup 記事用）: `face-close.jpg`(1599×1600) ／ `hiding-cork.jpg`(1600×1201) ／ `rock-cave.jpg`(1600×1201) ／ `setup-full.jpg`(1600×1201) ／ `water-dish.jpg`(1201×1600)。**いずれも自然な姿勢で、800×600 基準を満たす解像度があり、外部ライセンス制約もない（自前写真）**。B を選ぶ場合は 800×600 WebP へ変換し、クレジット4層を「亀好きさん自身の撮影」へ更新する。**E-E-A-T の観点では B が有利**（Commons 写真より自前写真のほうが一次性が高い）。**どれを採るかは実画像を見ないと決められないため Owner 判断** |
+**なし。** D1〜D9 はすべて CLOSE または BLOCKED へ着地した（COMPLETED 参照）。
 
-### BLOCKED — 外部データ待ち。**受領したら即再開できる**
+### BLOCKED — 外部入力待ち。**受領したら即再開できる**
 
 | ID | 不足しているもの | 受領後にすること |
 |----|----------------|-----------------|
-| **B1 GSC 成長分析**（旧 D9 を統合） | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。①Pages.csv ②Queries.csv ③**ページ×クエリの組み合わせ**（最重要。ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio で ディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A=順位11〜20かつ表示上位／B=順位1〜10なのにCTRが期待値以下（title・meta の書換で伸びる）／C=3クエリ以上で表示が立ち始め。**species に限定せず guides / ranking / trouble / compare も同条件で評価**。<br>**旧 D9（`shindan/index.html` の静的本文984字 / noscript なし）はここに統合した。** shindan は被リンク**491本 / 159ページ**とサイト最大のハブだが、Google は JS を実行するため即時の順位影響は限定的。**GSC で shindan の実測が出てから、本文増強・noscript の要否を判断する。単独残件としては持たない** |
+| **B1 GSC 成長分析** | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。①Pages.csv ②Queries.csv ③**ページ×クエリの組み合わせ**（最重要。ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio で ディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A=順位11〜20かつ表示上位／B=順位1〜10なのにCTRが期待値以下（title・meta の書換で伸びる）／C=3クエリ以上で表示が立ち始め。**species に限定せず guides / ranking / trouble / compare も同条件で評価**。<br>`shindan/index.html` の静的本文984字 / noscript なしの扱いもここで判断する（被リンク491本・159ページのサイト最大ハブだが、Google は JS を実行するため即時の順位影響は限定的） |
 | **B2 beginner TOP10 の2URL競合** | 同上（B1 の③で同時に解ける） | `guides/beginner-top10-turtles.html` と `ranking-beginner-top10.html` は title・h1・想定クエリが同型で両方とも自己 canonical。**構造上は黒に近いが GSC の実クエリを見るまで確定しない**。重複が実証されたら統合または canonical 集約 |
 | **B3 H8「初心者」SEO運用 80行** | 同上 | `title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 3 / 見出し 9 / パンくず 3。**トリガーが引いたページのみ・週最大3ページ。一斉置換は禁止。能動的に着手しない**。N10（`canton-reeves-turtle.html` の meta description 破損）もここに含む |
-| **B4 写真HOLD 3件**（旧 H3 から obsti を除いた3件） | 亀好きさんが候補画像を見つけた時点。**能動的な定期探索は行わない**（`CLAUDE.md` 2026-08-24 恒久方針） | `Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的診断性を否定しており**亜種ページを作る価値から再判断が要る**） |
-| **B6 N12 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。旧 PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所。**D1 の写真救出では意図的に触れていない** |
-| **B7 D4 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できるもの）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現在の候補（研究グレード5枚は完全合致0枚／casual の photo 30155234 は `pancake-tortoise` の前例と矛盾）は **Owner 判断で「採用しない」と確定した**。`species/golden-greek-tortoise.html` は写真なしのまま運用する。新しい写真が偶然見つかった時点で採用可否を判断する |
-| **B8 D5 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の 2026-08-22 付 `unresolved` HOLD を維持する。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3/H8 に触れる）。**和名の表示ゆれは PR #104 で独立に解消済みで、この HOLD には含まれない** |
+| **B4 写真HOLD 3件** | 亀好きさんが候補画像を見つけた時点。**能動的な定期探索は行わない**（`CLAUDE.md` 2026-08-24 恒久方針） | `Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的診断性を否定しており**亜種ページを作る価値から再判断が要る**） |
+| **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
+| **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
+| **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
+| **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
 
 ### DROP — 今後やらない。**未解決リストから外す**
 
 | 対象 | 理由 |
 |------|------|
-| **N23 `index.html` の孤立CSS 79ルール** | 価値ゼロに対し、JS が動的付与するクラスを誤削除する回帰リスクが実在。リスクがベネフィットを上回るため掃除しない |
+| **N23 `index.html` の孤立CSS 79ルール** | 価値ゼロに対し、JS が動的付与するクラスを誤削除する回帰リスクが実在。リスクがベネフィットを上回る |
 | **N20 孤児キー（equipment 8 / CAT_OVERRIDE 3）** | 動作影響のない死にデータ。PR #90 の前から同数。触る利得がない |
-| **旧 H9 / B5 カントンクサガメの写真差し替え** | **D1 で解決済み**（本PR）。別種 *M. reevesii* 写真の流用と観察ID共用が解消した |
-| **旧 D9 shindan 静的本文 / noscript** | B1 へ統合。単独残件として持たない |
-| ~~N7~~ / ~~N24~~ / ~~N25~~ / ~~N26~~ / ~~N21~~ / ~~N27~~ / ~~N29~~ / 320px横スクロール | すべて解消済み（PR #92/#97/#98/#99/#102/#104） |
+| **テンプレ内のリンク切れ8件** | `_template-monetized.html` の `SLUG2/3/4.html` プレースホルダ等。**noindex・sitemap未掲載で公開画面に出ない**。テンプレとして正しい状態 |
+| 旧 D1 / D2 / D3 / D4 / D5 / D6 / D7 / D8 / D9 | すべて CLOSE または BLOCKED へ着地済み |
+| ~~N7~~ / ~~N24~~ / ~~N25~~ / ~~N26~~ / ~~N21~~ / ~~N27~~ / ~~N29~~ / 320px横スクロール / 旧H9 / 旧H3のobsti | 解消済み |
 
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### D3 / D7 の Owner 判断 → 判断が出たものを実装
+### B1 — GSC 実測データの受領
 
-**AI 側の判断だけで着手できる作業は残っていない。**
+**AI 側の判断だけで着手できる作業は、もう1件も残っていない。** DECISION は0件。
 
-- **DECISION 2件**（D3 オプストヒラセガメ／D7 spenglers 写真）は、選択肢・判断材料・実装手順まで揃っている。**判断が出たらそのまま実装できる。**
-- **BLOCKED 7件**（B1〜B8）は外部データ・外部資料待ち。**受領物と受領後の処理は固定済み。**
-
-最も投資対効果が高いのは **B1（GSC 実測データの受領）**。B1 が解ければ B2 と B3 のトリガーも同時に決まる。
+次の一手は **B1（GSC 実測データの受領）**。これが解ければ **B2 と B3 のトリガーも同時に決まる**。
+必要なものと受領後の処理は UNRESOLVED の B1 に固定済み。
 
 **GSC が用意できない場合の代替工程は置かない。** 推測でページを選定して改修することは
 `docs/operations/DECISION_RULE.md`（GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ）に反する。
+
+B4〜B8 は写真素材・外部一次資料の到着待ちで、**能動的に追いかけるタスクとしては存在しない**。
 
 ---
 

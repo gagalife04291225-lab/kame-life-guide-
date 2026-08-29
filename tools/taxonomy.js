@@ -60,7 +60,7 @@ const CAT_NOTE = {
 //
 // 診断（shindan/index.html）は shindan/species.js の availability と match だけを見ており、
 // この定義は参照しない。掲載区分を動かしても診断結果は変わらない。
-const REFERENCE_ONLY = ['エジプトリクガメ', 'マダガスカルクモノスガメ', 'モエギハコガメ'];
+const REFERENCE_ONLY = ['エジプトリクガメ', 'マダガスカルクモノスガメ', 'モエギハコガメ', 'オプストヒラセガメ'];
 
 function isReference(sp) { return REFERENCE_ONLY.indexOf(sp.name) >= 0; }
 
@@ -92,7 +92,7 @@ function sciParts(latin) {
            binomial: (w[0] || '') + ' ' + (w[1] || '') };
 }
 
-// shindan/species.js を評価して 118件を得る（書き換えはしない）
+// shindan/species.js を評価して 119件を得る（書き換えはしない）
 function loadSpecies() {
   const src = fs.readFileSync(path.join(ROOT, 'shindan/species.js'), 'utf8');
   const S = new Function(src + '\nreturn SPECIES;')();

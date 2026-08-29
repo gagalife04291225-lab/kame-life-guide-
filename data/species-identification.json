@@ -1027,6 +1027,28 @@
       ]
     },
     {
+      "slug": "obsti-hirase-turtle",
+      "wamei": "オプストヒラセガメ",
+      "gakumei": "Cuora mouhotii obsti",
+      "eimei": "Obst's Keeled Box Turtle",
+      "koura": "背甲は親種ヒラセガメと同じく強い3本のキールと鋸歯状の後縁をもつ。亜種の識別形質は腹甲側にある。",
+      "iro_moyou": "腹甲に放射状の黒斑が入る。基亜種 C. m. mouhotii の腹甲はほぼ無地とされる点が識別点。",
+      "tobu": "親種に準じる（亜種固有の頭部形質は未確認）。",
+      "size": "亜種固有値は未確認。親種の甲長約18cmを援用。",
+      "bunpu": "ベトナム中部〜南部（トゥアティエン＝フエ 16.3N 〜 ダクラク 12.7N）。基亜種との移行帯はベトナム北中部（クアンチ〜ゲアン付近）。",
+      "kondou_shu": [
+        {
+          "aite": "基亜種 Cuora mouhotii mouhotii",
+          "kubetsu": "腹甲の模様で見分ける。obsti は放射状の黒斑、基亜種はほぼ無地。ただし移行帯の個体は中間的で、外見のみでの亜種同定はできない。産地情報が決め手になる。"
+        }
+      ],
+      "houkisei": "親種 Cuora mouhotii を継承しCITES附属書II（Cuora属一括掲載）。CITESの掲載は種単位のため亜種単位の個別掲載はない。国内CB個体が前提。",
+      "photo_hantei": "腹甲の放射状黒斑が写り、かつ産地情報が本亜種の分布域と一致すること。両方そろわない限り亜種同定は成立しない。",
+      "photo_chuui": "採用条件を満たす写真は未確認。iNaturalist photo 134512961（Chris Oldnall / CC BY-SA / 1536x2048）は産地20.20Nが本亜種の分布域から約400km北（基亜種の分布域）で、腹甲もほぼ無地のため不採用（CLAUDE.md 2026-08-24 調査クローズ）。本亜種として掲載しないこと。",
+      "unresolved": "亜種固有の飼育データ（適温・湿度・最大甲長・寿命）を裏づける一次資料が未確認。飼育情報は親種 hirase-turtle に準じるものとして扱う。",
+      "last_verified": "2026-08-29"
+    },
+    {
       "slug": "reeves-turtle",
       "wamei": "クサガメ",
       "gakumei": "Mauremys reevesii",

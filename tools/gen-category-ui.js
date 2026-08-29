@@ -18,7 +18,7 @@
  * species-list.html 側のフィルタ実装（LEGACY_HAB / habTargets / state.habCats）
  * は Phase 1C のままで、ここでは触らない。ボタンのマークアップだけを生成する。
  *
- * 掲載区分（通常一覧／参考掲載）は生息環境ボタンには影響しない。ボタンは118件全体に
+ * 掲載区分（通常一覧／参考掲載）は生息環境ボタンには影響しない。ボタンは119件全体に
  * かかり、参考掲載の3種も絞り込みの対象に残す。ログの内訳だけ通常一覧基準で出す。
  */
 'use strict';
@@ -101,7 +101,7 @@ if (new Set(T.CAT_ORDER.map(c => CAT_UI[c] && CAT_UI[c].ga)).size !== T.CAT_ORDE
 // 実データ側との突き合わせ（分類が空にならないこと）
 const all = T.decorate(T.loadSpecies());
 // 掲載区分の正本は tools/taxonomy.js。ここでは内訳を出すために分けるだけで判定はしない。
-// 生息環境ボタンは118件全体にかかるため、ボタンのマークアップは掲載区分の影響を受けない。
+// 生息環境ボタンは119件全体にかかるため、ボタンのマークアップは掲載区分の影響を受けない。
 const listing = T.splitListing(all);
 T.CAT_ORDER.forEach(c => {
   const n = all.filter(i => i.bigCat === c).length;
