@@ -63,6 +63,23 @@ const GENERIC_WORDS = [
   '餌', 'エサ', 'セット', 'サイズ', 'タイプ', 'ガラス製', '大型', '小型',
 ];
 
+// ── RAKUTEN-ID Phase 2: 誤マッチ防止語彙 ───────────────────────
+// 消耗品・付属品ワード。候補名に現れ、自商品名に無い場合は本体候補として不採用（REJECT）。
+// Phase 1 dry-run の実例: 「粗目フィルターパッド 2213用」「クラシック2217専用ろ材セット」。
+const CONSUMABLE_WORDS = [
+  'パッド', 'ろ材', '濾材', 'ろ過材', '交換用', '詰め替え', '詰替', 'スペア', '替えマット',
+];
+// 変種SKUマーカー。候補名にあり自商品名に無い場合、STRONG を AMBIGUOUS へ落とす
+// （同一シリーズの別SKUを安易に同一扱いしない）。EXACT（一意型番一致）には適用しない。
+// Phase 1 dry-run の実例: 「レプトミン ニオイブロック超大粒」「カメプロス 沈下性大スティック」。
+const VARIANT_MARKERS = [
+  'ニオイブロック', '超大粒', '大粒', '小粒', '細粒', '細目', '粗目',
+  '沈下性', '浮上性', 'タイトビーム', '訳あり', '徳用', '業務用', 'ジュニア', 'ベビー',
+];
+// ケージ・水槽（enclosure）商品の候補に照明系ワードを許さない。
+// Phase 1 dry-run の実例: グラステラリウム9030 の適合表記を持つ「コンパクトトップ90N」（照明フード）。
+const LIGHTING_WORDS = ['ランプ', 'ライト', '照明', '灯式', '電球', 'バルブ'];
+
 // ── 検索語の別表記（0件時の代替クエリ生成専用。同定には使わない）──
 const BRAND_QUERY_ALIASES = [
   [/SANKO/gi, '三晃商会'],
@@ -113,7 +130,7 @@ function extractAttrs(text) {
   // 入数・セット数（×2、3個セット等）。商品名自体に「セット」を含む商品は呼び出し側で除外判断
   const pre1 = /[×x]\s*([2-9]\d*)(?![0-9])/g;
   while ((m = pre1.exec(t))) attrs.packs.push(parseInt(m[1], 10));
-  const pre2 = /([2-9]\d*)\s*(?:個|袋|本|箱)\s*(?:入り|セット|パック)/g;
+  const pre2 = /([2-9]\d*)\s*(?:個|袋|本|箱|枚)\s*(?:入り?|セット|パック)/g;
   while ((m = pre2.exec(t))) attrs.packs.push(parseInt(m[1], 10));
   return attrs;
 }
@@ -182,7 +199,7 @@ function deriveIdentity(product) {
   const productIsSet = /セット/.test(name);
   return { maker: maker, makerAliases: makerAliases, models: models,
            attrs: attrs, series: series, productIsSet: productIsSet,
-           name: name };
+           name: name, category: String(product.category || '') };
 }
 
 // hay 内に「別メーカー」の別名があるか（自メーカー別名は除外して判定）
@@ -199,6 +216,22 @@ function findForeignMaker(hayNorm, ownMaker) {
     });
   });
   return found;
+}
+
+// 型番が「適合・専用表記」の文脈でだけ現れていないか（RAKUTEN-ID Phase 2）。
+// 例: 「粗目フィルターパッド 2213用」「クラシック2217専用ろ材セット」
+//     「…コンパクトトップ90N … グラステラリウム9045 9030用」
+// 型番の直後（間に別の英数トークン・区切りを挟んでもよい）に
+// 用/専用/対応/適合 が続く場合、その一致は本体の同一性根拠にしない。
+// 数字のみの型番は連続一致のみ許す（「90-30」等の寸法表記を型番と誤認しないため）。
+function modelInCompatContext(hayNorm, tok) {
+  const a = alnum(tok);
+  if (!a) return false;
+  const esc = function(c) { return c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); };
+  const sep = '[\\s\\-‐–−]*';
+  const aPat = /^[0-9]+$/.test(a) ? esc(a) : a.split('').map(esc).join(sep);
+  const re = new RegExp(aPat + '(?:[\\s/、,]*[0-9a-z\\-‐–−]+)*\\s*(?:専用|対応|適合|用)');
+  return re.test(hayNorm);
 }
 
 // ── 候補1件との照合 ──────────────────────────────────────
@@ -269,18 +302,43 @@ function matchIdentity(idn, item) {
     if (hayNorm.indexOf('d3なし') >= 0) conflicts.push('D3有無');
   }
 
-  // 型番
-  let modelHit = null;
+  // ── RAKUTEN-ID Phase 2: 誤マッチ防止 ──
+  // 消耗品・付属品（自商品名に同語が無い場合のみ矛盾扱い）
+  CONSUMABLE_WORDS.forEach(function(w) {
+    const nw = normJa(w);
+    if (hayNorm.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) conflicts.push('消耗品(' + w + ')');
+  });
+  // ケージ・水槽商品に照明系候補を許さない
+  if (idn.category === 'enclosure') {
+    const lw = LIGHTING_WORDS.find(function(w) { return hayNorm.indexOf(normJa(w)) >= 0; });
+    if (lw) conflicts.push('照明系(' + lw + ')');
+  }
+
+  // 型番（適合・専用表記の文脈でだけ現れる型番は同一性根拠にしない）
+  let modelHit = null, compatOnly = null;
   idn.models.forEach(function(tok) {
     if (modelHit) return;
     const a = alnum(tok);
-    if (a && hayAl.indexOf(a) >= 0) modelHit = tok;
+    if (!(a && hayAl.indexOf(a) >= 0)) return;
+    if (modelInCompatContext(hayNorm, tok)) { if (!compatOnly) compatOnly = tok; return; }
+    modelHit = tok;
   });
+  if (compatOnly && !modelHit) conflicts.push('適合表記(' + compatOnly + ')');
   if (modelHit) evidence.push('model:' + modelHit);
 
-  // シリーズ
-  const seriesHits = idn.series.filter(function(t) { return hayNorm.indexOf(t) >= 0; });
+  // シリーズ（Phase 2: catchcopy でなく itemName 内の一致だけを根拠にする。
+  // 例:「乾燥エビ」が説明文にだけ現れる別商品を STRONG にしない）
+  const hayNameNorm = normJa(item.itemName || '');
+  const seriesHits = idn.series.filter(function(t) { return hayNameNorm.indexOf(t) >= 0; });
   if (seriesHits.length) evidence.push('series:' + seriesHits[0]);
+
+  // 変種SKUマーカー（候補名にあり自商品名に無い → STRONG 不成立の材料）
+  const variantMismatch = [];
+  VARIANT_MARKERS.forEach(function(w) {
+    const nw = normJa(w);
+    if (hayNameNorm.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) variantMismatch.push(w);
+  });
+  if (variantMismatch.length) evidence.push('variant≠' + variantMismatch[0]);
 
   // ── レベル判定 ──
   let level;
@@ -297,10 +355,12 @@ function matchIdentity(idn, item) {
     if (idn.attrs.gous.length)   declared.push(hayAttrs.gous.length   && idn.attrs.gous.some(function(v){ return hayAttrs.gous.indexOf(v) >= 0; }));
     if (idn.attrs.grades.length) declared.push(hayAttrs.grades.length && idn.attrs.grades.some(function(g){ return hayAttrs.grades.indexOf(g) >= 0; }));
     const attrsAllConfirmed = declared.length === 0 || declared.every(Boolean);
-    if (makerHit && seriesHits.length >= 1 && attrsAllConfirmed) level = 'STRONG';
+    if (makerHit && seriesHits.length >= 1 && attrsAllConfirmed &&
+        variantMismatch.length === 0) level = 'STRONG';
     else level = 'AMBIGUOUS';
   }
-  return { level: level, evidence: evidence, conflicts: conflicts };
+  return { level: level, evidence: evidence, conflicts: conflicts,
+           variantMismatch: variantMismatch };
 }
 
 // ── 候補配列から最良を選ぶ ─────────────────────────────────
@@ -350,6 +410,10 @@ function isCommissionUrl(url) {
 module.exports = {
   MAKERS: MAKERS,
   BRAND_QUERY_ALIASES: BRAND_QUERY_ALIASES,
+  CONSUMABLE_WORDS: CONSUMABLE_WORDS,
+  VARIANT_MARKERS: VARIANT_MARKERS,
+  LIGHTING_WORDS: LIGHTING_WORDS,
+  modelInCompatContext: modelInCompatContext,
   normJa: normJa,
   extractAttrs: extractAttrs,
   extractModels: extractModels,
