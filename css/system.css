@@ -219,3 +219,118 @@ body[data-klg-cat="スッポン・曲頸"]     {--sp-from:#1c2220;--sp-to:#0a0e0
 .rel-btn .klg-ico{width:15px;height:15px;color:var(--klg-gold-dark);}
 .snl-icon{line-height:0;}
 .snl-icon .klg-ico{width:19px;height:19px;color:var(--klg-gold-dark);}
+
+/* ============================================================
+   Phase 2-A: タイポグラフィ・スケール
+   ページごとに乱立していたサイズを用途別トークンへ寄せる。
+   「全て15px以上」の機械置換はしていない。用途と可読性を確認し、
+   識別情報・法規制・価格など読ませる必要があるものだけ引き上げる。
+   装飾的な eyebrow（全角大文字＋字間広め）は小さいままでよいが、
+   下限を 11.5px に揃える。
+   ============================================================ */
+:root{
+  --klg-fs-micro:11.5px;  /* eyebrow・装飾ラベル。これ以下は使わない */
+  --klg-fs-label:12px;    /* バッジ・学名・単位・注記 */
+  --klg-fs-sm:13px;       /* 補足文 */
+  --klg-fs-body:15px;     /* 本文 */
+  --klg-fs-lg:17px;
+  --klg-fs-h3:20px;
+  --klg-fs-h2:24px;
+}
+
+/* --- 識別情報（学名・サイズ・法規制）。一覧カードで最も読まれる --- */
+.sp-latin{font-size:var(--klg-fs-label);}
+.sp-cm{font-size:var(--klg-fs-label);}
+.sp-sub{font-size:12.5px;}
+.sp-legal-k{font-size:var(--klg-fs-micro);}
+.spb{font-size:var(--klg-fs-micro);}
+.rtg-latin{font-size:var(--klg-fs-label);}
+.rank-latin{font-size:12.5px;}
+.rank-pill{font-size:var(--klg-fs-label);}
+
+/* --- 機材カード。価格や必須/推奨の判断材料なので小さすぎた --- */
+.sk-cvr-badge{font-size:var(--klg-fs-micro);}
+.sk-cat-label{font-size:var(--klg-fs-label);}
+.sk-price-note{font-size:12.5px;}
+.sk-card-check-text{font-size:12.5px;}
+
+/* --- ラベル・注記 --- */
+.csim-cost-label{font-size:var(--klg-fs-label);}
+.gl-module-label{font-size:var(--klg-fs-micro);}
+.related-card-arrow{font-size:var(--klg-fs-label);}
+.klg-review .rank-list-note{font-size:12.5px;}
+
+/* --- eyebrow 系は下限だけ揃える（装飾なので大きくしない） --- */
+.section-eyebrow,.pc-eyebrow-s2,.su-eyebrow,.dc-eyebrow,.rtg-eyebrow,
+.lc-eyebrow,.hero-eyebrow,.related-guides-label,.end-cta-label,
+.eyebrow,.sp-eyebrow{font-size:var(--klg-fs-micro);}
+
+/* Kids は対象読者が違うため対象外（M PLUS Rounded と独自サイズを維持） */
+body.k-body .klg-ico{color:var(--klg-gold);}
+
+/* ============================================================
+   Phase 2-C: species ファーストビューの視覚バランス
+   文章は一切変えず、CSS だけで hero 高さのばらつきを圧縮する。
+   狙いは「和名・学名・重要情報・写真」が同じリズムで現れること。
+   ============================================================ */
+header.hero{padding:38px 0 32px !important;}
+header.hero .eyebrow{margin-bottom:6px;}
+.sp-emoji{margin-bottom:10px !important;}
+header.hero h1{margin:0 0 6px;line-height:1.28;}
+header.hero .latin{margin:0 0 12px;}
+header.hero .lead{
+  font-size:var(--klg-fs-body);
+  line-height:1.72;
+  max-width:34em; margin-left:auto; margin-right:auto;
+}
+/* hero 内の注記ボックスは補足なので、写真を押し下げないよう詰める */
+header.hero .note-box{
+  font-size:12.5px; line-height:1.7;
+  padding:10px 12px; margin-top:12px;
+  border-radius:var(--klg-radius);
+  text-align:left;
+}
+@media(min-width:720px){
+  header.hero{padding:56px 0 46px !important;}
+}
+
+/* stats-bar を4列で揃え、行の高さと文字サイズを統一する */
+.stats-bar .stats-inner{display:flex;flex-wrap:nowrap;}
+.stats-bar .stat-item{flex:1 1 0;min-width:0;padding:10px 6px;text-align:center;}
+.stats-bar .stat-label{font-size:var(--klg-fs-micro);letter-spacing:.04em;opacity:.8;}
+.stats-bar .stat-value{font-size:13.5px;font-weight:700;line-height:1.35;
+  overflow-wrap:anywhere;}
+@media(min-width:720px){ .stats-bar .stat-value{font-size:15px;} }
+
+/* ============================================================
+   Phase 2-D: 残りUI
+   ============================================================ */
+
+/* 1) species-list の生息環境フィルタが横スクロールできることを示す。
+      右端にフェードを重ね、続きがあると分かるようにする。 */
+.sl-habs{position:relative;}
+.sl-habs::after{
+  content:""; position:absolute; top:0; right:0; bottom:0; width:36px;
+  pointer-events:none;
+  background:linear-gradient(to right,rgba(244,239,226,0),rgba(244,239,226,.96));
+}
+@media(min-width:900px){ .sl-habs::after{display:none;} }
+
+/* 2) Photo Credits を本文と区別し、出典への導線だと分かる形にする。
+      写真の出典表示はサイトの信頼設計の一部なので埋没させない。 */
+.rtg-credits{margin-top:var(--klg-sp-4);text-align:center;}
+.rtg-credits a{
+  display:inline-flex; align-items:center; gap:6px; min-height:36px;
+  padding:0 14px; border:1px solid var(--klg-line);
+  border-radius:var(--klg-radius-pill);
+  font-size:var(--klg-fs-label); font-weight:600; letter-spacing:.04em;
+  color:var(--klg-muted); text-decoration:none; background:#fff;
+  transition:border-color .18s ease,color .18s ease;
+}
+.rtg-credits a:hover{border-color:var(--klg-gold);color:var(--klg-gold-dark);}
+.cmp-eyebrow{font-size:var(--klg-fs-micro);}
+
+/* ヒーローの「別種」注記。識別情報なので下限を守る */
+.latin-alt{display:block;font-size:var(--klg-fs-label);opacity:.78;margin-top:4px;}
+/* FAQ の分類タグ。装飾だが読ませる語なので下限を守る */
+.faq-tag{font-size:var(--klg-fs-micro);}

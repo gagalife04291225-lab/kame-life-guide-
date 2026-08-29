@@ -59,20 +59,20 @@ TERRESTRIAL_GUIDES = {
 
 # カテゴリ別の機材ガイド（最も飼育の要になる1本だけ）
 EQUIPMENT_GUIDE = {
-    "aquatic": ("guides/filter-guide.html", "🔄 フィルターの選び方"),
-    "terrestrial": ("guides/uvb-light-guide.html", "☀️ UVBライトの選び方"),
+    "aquatic": ("guides/filter-guide.html", "[[klg-i-gear]] フィルターの選び方"),
+    "terrestrial": ("guides/uvb-light-guide.html", "[[klg-i-gear]] UVBライトの選び方"),
 }
 
 # 種を掲載しているガイドの表示ラベル（採用優先度順）
 FEATURE_GUIDES = [
-    ("guides/real-setup-spenglers-leaf-turtle.html", "📷 リアル飼育環境の実記録"),
-    ("guides/real-setup-west-african-mud-turtle.html", "📷 リアル飼育環境の実記録"),
-    ("guides/beginner-top10-turtles.html", "🔰 初心者向け亀ランキング"),
-    ("guides/small-turtle-top10.html", "📏 小型の亀ランキング"),
-    ("guides/low-odor-top10-turtles.html", "🌿 臭わない亀ランキング"),
-    ("guides/beginner-best-turtles.html", "🔰 初心者向けおすすめ3選"),
-    ("guides/small-best-turtles.html", "📏 小型種おすすめ3選"),
-    ("guides/low-odor-turtles.html", "🌿 臭いが少ない種おすすめ3選"),
+    ("guides/real-setup-spenglers-leaf-turtle.html", "[[klg-i-book]] リアル飼育環境の実記録"),
+    ("guides/real-setup-west-african-mud-turtle.html", "[[klg-i-book]] リアル飼育環境の実記録"),
+    ("guides/beginner-top10-turtles.html", "[[klg-i-star]] 初心者向け亀ランキング"),
+    ("guides/small-turtle-top10.html", "[[klg-i-star]] 小型の亀ランキング"),
+    ("guides/low-odor-top10-turtles.html", "[[klg-i-star]] 臭わない亀ランキング"),
+    ("guides/beginner-best-turtles.html", "[[klg-i-star]] 初心者向けおすすめ3選"),
+    ("guides/small-best-turtles.html", "[[klg-i-star]] 小型種おすすめ3選"),
+    ("guides/low-odor-turtles.html", "[[klg-i-star]] 臭いが少ない種おすすめ3選"),
 ]
 
 SPECIES_REF = re.compile(r"species/([a-z0-9-]+)\.html")
@@ -203,6 +203,14 @@ def wamei_of(slug):
     return name
 
 
+
+def ico(label):
+    """ラベル先頭の [[icon-id]] を SVG へ展開する"""
+    m = re.match(r"\[\[([a-z0-9-]+)\]\]\s*(.*)$", label, re.S)
+    if not m:
+        return label
+    return '<svg class="klg-ico" aria-hidden="true"><use href="#%s"/></svg> %s' % (m.group(1), m.group(2))
+
 def species_pages():
     out = []
     for p in sorted(glob.glob(os.path.join(ROOT, "species", "*.html"))):
@@ -246,7 +254,7 @@ def build_reverse_index():
                     cand = [x for x in parts if x != mine]
                     if len(cand) == 1:
                         other = cand[0]
-            label = "⚖️ %sと比較" % other if other else "⚖️ 近縁種と比較"
+            label = "[[klg-i-scale]] %sと比較" % other if other else "[[klg-i-scale]] 近縁種と比較"
             compare_idx.setdefault(slug, []).append(("compare/" + base, label))
 
     return guides_idx, compare_idx
@@ -350,7 +358,7 @@ def apply(paths, planned):
             inner = re.search(r'\n([ \t]*)<a ', html[i:j])
             pad = inner.group(1) if inner else indent + "  "
             block = "".join(
-                '%s<a href="../%s" class="rel-btn" data-autolink="1">%s</a>\n' % (pad, u, l)
+                '%s<a href="../%s" class="rel-btn" data-autolink="1">%s</a>\n' % (pad, u, ico(l))
                 for u, l in adds
             )
             html = html[: k + 1] + block + html[k + 1 :]
