@@ -16,18 +16,40 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **2a76240**（PR #108 = VISUAL SYSTEM Phase 2 まで反映済み） |
-| サイトファイルの状態 | **PR #108 = `2a76240`** が最後。**merge 待ち = 本PR（VISUAL SYSTEM Phase 3）** |
+| 基準 | `origin/main` = **fbefc1d**（PR #110 = RAKUTEN-ID Phase 1 まで反映済み） |
+| サイトファイルの状態 | **PR #110 = `fbefc1d`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 2 本適用）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/visual-system-p3` |
+| 作業ブランチ | `claude/rakuten-identity-phase2` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### VISUAL SYSTEM Phase 3 — 公開表示の欠陥CLOSE（2026-08-29 / 本PR）
+### RAKUTEN-ID Phase 1＋Phase 2 — 楽天アフィリエイト自動収益化（2026-08-29）
+
+| 工程 | 状態 | 確定した結論 |
+|------|------|-------------|
+| Phase 1（identity gate 実装＋dry-run） | **PR #110 / merge `fbefc1d`** | `scripts/rakuten-identity.js` 新規（EXACT/STRONG/AMBIGUOUS/REJECT）。既存 8.0 閾値・レガシー経路は無変更。実API dry-run 101件: 誤マッチ6件を特定し候補仕分け（◎24/△5/❌6）。Owner が ◎24＋thermostat 条件付き承認・△❌HOLD 非承認を決定 |
+| Phase 2（本適用） | 本PR | **承認 allowlist 25ID を IDENTITY_PROMOTE の必須ゲート化**（承認外は EXACT/STRONG でも昇格禁止・昇格モードでは allowlist 外に API 照会もしない）。誤マッチ防止（消耗品/適合表記/照明系/変種SKU/series=itemName限定）を実装し fixture 38/38 PASS。再dry-run（run 33248746005）で ❌6件の PROMOTE 消滅と新規誤マッチ0を確認後、identity_promote 実行（run 33248895442）で **24商品を search→available 化**（commit `14e9ffd`・全件 `hb.afl.rakuten.co.jp` 成果対象URL・楽天API 返却値のみ使用） |
+
+**再実行しない事実:**
+
+- 昇格24: tank_90 / uvb_compact / uvb_t5_desert_12 / uvb_mvb_100 / basking_50w / basking_75w /
+  basking_halogen_50w / heater_panel_30w / 45 / 60 / heater_radiant_panel / heater_cord_20w /
+  thermostat_digital / **thermostat_kotobuki_hydra**（Phase 0 降格→EXACT+ガード通過で正規URLに復帰）/
+  filter_submersible_medium / substrate_gex_terrarium_soil / shelter_medium /
+  supplement_calcium_d3 / calcium_no_d3 / supplement_calcium_plus / supplement_multivitamin /
+  thermometer_dual_probe / thermometer_wifi / hydrometer_tetra
+- **food_tortoise_staple のみ承認済みだが未昇格**（promote 実行時に API 0件 = NO_RESULT。
+  allowlist に残してあり、次回 identity_promote 実行で昇格できる）→ UNRESOLVED
+- rakutenStatus: available 34 / search 67 / pending 3（計104）。Amazon 系フィールドの変更 0
+- CATEGORY_GUARDS(heating) に「サーモスタット」を追加した（閾値 8.0 は数値・条件とも無変更）
+- 日次 schedule 実行では identity_promote は構造的に無効（workflow の式が必ず 'false' になる）
+- `data/rakuten-diag.json` に25件の診断記録（secret / affiliateUrl / itemUrl なし）
+
+### VISUAL SYSTEM Phase 3 — 公開表示の欠陥CLOSE（2026-08-29 / PR #109 / merge `386f86e`）
 
 デザインは作り直していない。**実在する表示欠陥だけ**を潰した。
 配色・書体・トップ構成・写真は変更していない。
@@ -971,7 +993,22 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ### DECISION
 
-**なし。** D1〜D9 はすべて CLOSE または BLOCKED へ着地した（COMPLETED 参照）。
+| ID | 内容 | 判断材料 |
+|----|------|---------|
+| **R1 food_hikari_turtle の実体確認** | name「カメのごはん（ウーパールーパー用？）」と term/why が別商品を指す。ASIN B0043UN3X4 の実体確認は Owner の実物確認が必要 | 確認できたら name/term を同期し `rakutenIdentityHold` を外す。確認できるまで楽天昇格から恒久除外（HOLD） |
+| **R2 food_reptomin_tetra の統合/削除** | food_aquatic_premium と同一商品ライン（テトラ レプトミン）の重複。EQUIPMENT_MAP 未参照の孤児レコード | 削除しても参照切れは起きないことを Phase 0 で確認済み。統合 or 削除は Owner 判断（HOLD） |
+
+**旧 D1〜D9 はすべて CLOSE または BLOCKED へ着地済み**（COMPLETED 参照）。
+
+### 判断待ちではないが未完了（次に楽天系工程を立てるときに拾う）
+
+- **food_tortoise_staple**（承認済み・未昇格）: promote 実行時に API 0件（NO_RESULT）で昇格できなかった。
+  allowlist に残っているため、次回 `identity_promote` の workflow_dispatch で昇格できる。
+- 楽天 △5件（basking_dual_150 / basking_hid_70w / food_aquatic_staple / food_tortoise_herbs /
+  substrate_bottom_sand）は **Owner 非承認で search 維持が確定**。再提案しない。
+- `ranking-beginner-top10.html` の 10位学名（Elseya schultzei 表記）誤りと 9位の species.js 不在
+  （ヤエヤマ工程で発見・未修正）。
+- guides 4ページのアフィリエイトリンク rel 未付与 12本（4AI事実確認で確定・未修正）。
 
 ### BLOCKED — 外部入力待ち。**受領したら即再開できる**
 
