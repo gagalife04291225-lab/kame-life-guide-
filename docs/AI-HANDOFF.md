@@ -16,18 +16,51 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **65ace63**（PR #111 = RAKUTEN-ID Phase 2 本適用まで反映済み） |
-| サイトファイルの状態 | **PR #111 = `65ace63`** が最後。**merge 待ち = 本PR（レガシー経路 identity gate 統一）** |
+| 基準 | `origin/main` = **7cd22a0**（PR #112 = Phase 3 ＋ 日次sync自動commit まで反映済み） |
+| サイトファイルの状態 | **`7cd22a0`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 4 型番ルート）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/rakuten-legacy-idgate` |
+| 作業ブランチ | `claude/rakuten-model-query` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### RAKUTEN-ID Phase 3 — 日次レガシー経路の identity gate 統一（2026-08-29 / 本PR）
+### RAKUTEN-ID Phase 4 — 型番ルートの追加と B確定5件の処理（2026-08-29 / 本PR）
+
+第2次救出調査（READ-ONLY・確定済み）の B確定5件＋承認済み food_tortoise_staple を処理した。
+
+- **`rakutenModelNo` を導入**。0件時の代替クエリ1本目に「型番単独」を置く。総本数の上限2本は据え置き。
+  適用経路(main)へも配線したが**型番を宣言した商品に限定**したため、他101商品の代替クエリ・identity は
+  旧実装と1件も差分なし（機械照合で確認）
+- CATEGORY_GUARDS 最小追加: `enclosure` に パンテオン/テラリウム、`substrate` に デザートベース
+- PROMOTE_ALLOWLIST 25→30（Owner承認のB確定5件）
+
+**実昇格2件**（run 33276960299 / commit 0ec4e46）:
+
+| ID | 判定 | 決め手 | 出品 |
+|----|------|--------|------|
+| `enclosure_kayuso_90` | EXACT / qual 6.6 | ガード語彙「パンテオン」追加 | 三晃商会 パンテオン ブラック BK9045 E15 / ネオス ¥26,750 |
+| `substrate_grassland_mix` | STRONG / qual 5.9 | ガード語彙「デザートベース」追加 | エキゾテラ デザートベース 細目 3L / アルメリア ¥1,994 |
+
+**昇格しなかった4件と実測理由（推測ではなく実行ログ）:**
+
+| ID | 結果 | 理由 |
+|----|------|------|
+| `substrate_cypress` | 未昇格 | **PT2752 は楽天の検索キーとして機能しない**。型番クエリの結果は「【中古】廣瀬裕子のしあわせになるDVD」等の無関係商品で、identity gate が AMBIGUOUS で正しく阻止。宣言を撤回済み（第2次調査の「PT2752→5件＝有効」は件数のみを見た誤判定で、本Phaseで訂正） |
+| `heater_aqua_100w` | 未昇格 | 主クエリ「水中ヒーター 100W 亀 水槽」が4件返すため**0件フォールバックに到達しない**。SH55 宣言は正しいが現時点では不発 |
+| `shelter_small` | 未昇格 | 本適用時に主クエリが **API_ERROR**。main() の非致命エラー処理はその商品をスキップするため型番フォールバックに到達しなかった（dry-run では RX-191 で EXACT・qual 7.7 に到達していた） |
+| `food_tortoise_staple` | 未昇格 | 本適用時に **NO_RESULT**（Phase 2・3・4 と3回連続。dry-run では毎回 STRONG に到達するため時間帯による在庫変動とみられる） |
+
+**確定した事実（再調査しない）:**
+
+- **型番検索の成否は「楽天の出店者が商品名に型番を併記するか」で決まる。** 件数がヒットしても
+  正商品とは限らない（PT2752 が実例）。**候補件数だけで型番ルートの有効性を判定してはならない。**
+- 実際に正商品へ到達した型番は **RX-191 のみ**（dry-run 実測）。
+- available **34** / search 67 / pending 3。available 34件すべて成果対象URL。Amazon差分0。降格0。
+
+### RAKUTEN-ID Phase 3 — 日次レガシー経路の identity gate 統一（2026-08-29 / PR #112 / merge `346bd57`）
 
 日次 rakuten-sync の 8.0 経路にも identity gate を適用し、誤商品CTAが再発しない構造にした。
 
@@ -1020,8 +1053,11 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ### 判断待ちではないが未完了（次に楽天系工程を立てるときに拾う）
 
-- **food_tortoise_staple**（承認済み・未昇格）: promote 実行時に API 0件（NO_RESULT）で昇格できなかった。
-  allowlist に残っているため、次回 `identity_promote` の workflow_dispatch で昇格できる。
+- **承認済みだが未昇格の4件**（すべて allowlist 在籍。次回 `identity_promote` 実行で再挑戦できる）:
+  `food_tortoise_staple`（本適用時 NO_RESULT・3回連続）／`shelter_small`（本適用時 API_ERROR。
+  main() が非致命エラーで商品をスキップするため型番フォールバックに到達しない＝**要小改修**）／
+  `heater_aqua_100w`（主クエリが0件にならず型番フォールバック不発＝**要設計判断**）／
+  `substrate_cypress`（PT2752 が使えないため型番ルートなし。別の識別手段がない限り救出不可）
 - 楽天 △5件（basking_dual_150 / basking_hid_70w / food_aquatic_staple / food_tortoise_herbs /
   substrate_bottom_sand）は **Owner 非承認で search 維持が確定**。再提案しない。
 - `ranking-beginner-top10.html` の 10位学名（Elseya schultzei 表記）誤りと 9位の species.js 不在
