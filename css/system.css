@@ -273,25 +273,28 @@ body.k-body .klg-ico{color:var(--klg-gold);}
    文章は一切変えず、CSS だけで hero 高さのばらつきを圧縮する。
    狙いは「和名・学名・重要情報・写真」が同じリズムで現れること。
    ============================================================ */
-header.hero{padding:38px 0 32px !important;}
-header.hero .eyebrow{margin-bottom:6px;}
-.sp-emoji{margin-bottom:10px !important;}
-header.hero h1{margin:0 0 6px;line-height:1.28;}
-header.hero .latin{margin:0 0 12px;}
-header.hero .lead{
+/* ★ species ページ限定。Phase 2 ではセレクタが header.hero だけだったため、
+   同じクラス名を使うトップ・種一覧・ガイド・トラブル・比較・ランキングにも
+   38px の padding が当たり、ナビ直下にクリーム色の帯が出ていた（Phase 3 で修正）。 */
+body.klg-species header.hero{padding:38px 0 32px;}
+body.klg-species header.hero .eyebrow{margin-bottom:6px;}
+body.klg-species .sp-emoji{margin-bottom:10px;}
+body.klg-species header.hero h1{margin:0 0 6px;line-height:1.28;}
+body.klg-species header.hero .latin{margin:0 0 12px;}
+body.klg-species header.hero .lead{
   font-size:var(--klg-fs-body);
   line-height:1.72;
   max-width:34em; margin-left:auto; margin-right:auto;
 }
 /* hero 内の注記ボックスは補足なので、写真を押し下げないよう詰める */
-header.hero .note-box{
+body.klg-species header.hero .note-box{
   font-size:12.5px; line-height:1.7;
   padding:10px 12px; margin-top:12px;
   border-radius:var(--klg-radius);
   text-align:left;
 }
 @media(min-width:720px){
-  header.hero{padding:56px 0 46px !important;}
+  body.klg-species header.hero{padding:56px 0 46px;}
 }
 
 /* stats-bar を4列で揃え、行の高さと文字サイズを統一する */
@@ -334,3 +337,13 @@ header.hero .note-box{
 .latin-alt{display:block;font-size:var(--klg-fs-label);opacity:.78;margin-top:4px;}
 /* FAQ の分類タグ。装飾だが読ませる語なので下限を守る */
 .faq-tag{font-size:var(--klg-fs-micro);}
+
+/* ============================================================
+   Phase 3: 実在した表示欠陥の修正
+   ============================================================ */
+/* 共通ナビのロゴ「KAME LIFE」とヒーローの装飾ブランドが二重に出ていた。
+   Phase 1 でナビを全ページへ展開した時点で役目が重複したため、
+   ヒーロー側の装飾ブランドを非表示にする（DOM・文言は残す）。 */
+.h12-brand{display:none;}
+.gl-icon{line-height:0;display:block;}
+.gl-icon .klg-ico{width:26px;height:26px;color:var(--klg-gold-dark);}

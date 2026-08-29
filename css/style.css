@@ -131,9 +131,12 @@ section { padding: 96px 48px; }
 .card-meta { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); display: flex; align-items: center; gap: 8px; }
 .card-meta::before { content: ''; width: 20px; height: 1px; background: var(--sage); }
 
-.article-hero { background: var(--forest); padding: 140px 48px 80px; position: relative; overflow: hidden; }
+.article-hero { background: var(--forest); padding: 88px 0 64px; position: relative; overflow: hidden; }
 .article-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,103,65,0.2) 0%, transparent 70%); }
-.article-hero-inner { max-width: 840px; position: relative; z-index: 1; }
+/* 本文 .article-body-wrap が max-width:760px の中央寄せなのに対し、ここは
+   840px の左寄せだったため、PC でヒーローと本文のグリッドが一致していなかった
+   （1920px で顕著。h1 は left=48、本文は left=645）。本文と同じ軸に揃える。 */
+.article-hero-inner { max-width: 760px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
 .article-badge { display: inline-block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); border: 1px solid rgba(122,158,110,0.35); padding: 6px 16px; margin-bottom: 28px; }
 .article-page-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 52px); font-weight: 700; line-height: 1.18; color: var(--cream); margin-bottom: 24px; }
 .article-meta-row { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
@@ -191,7 +194,8 @@ section { padding: 96px 48px; }
   .article-grid { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; }
-  .article-hero { padding: 120px 28px 60px; }
+  .article-hero { padding: 72px 0 60px; }
+  .article-hero-inner { padding: 0 28px; }
   .article-body-wrap { padding: 52px 28px 80px; }
   .site-footer { padding: 60px 28px 36px; }
   .breadcrumb { padding: 14px 28px; }
@@ -203,7 +207,8 @@ section { padding: 96px 48px; }
   .hero-content { padding: 0 20px; }
   .hero-right { display: none; }
   .article-grid { grid-template-columns: 1fr; }
-  .article-hero { padding: 110px 20px 52px; }
+  .article-hero { padding: 64px 0 52px; }
+  .article-hero-inner { padding: 0 20px; }
   .article-body-wrap { padding: 44px 20px 72px; }
   .site-footer { padding: 52px 20px 32px; }
   .breadcrumb { padding: 12px 20px; }
