@@ -1,9 +1,21 @@
 {
+ "basking_100w": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
+  "resultCount": 3,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=4.9",
+  "best": {
+   "itemName": "【9/1限定★3点以上購入でポイント20倍】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ",
+   "price": 2280,
+   "shop": "プロツールショップヤブモト"
+  }
+ },
  "basking_50w": {
   "date": "2026-08-29",
   "query": "マルカン バスキングライト 50W BL-50",
   "resultCount": 3,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:マルカン,50W,model:BL-50",
   "best": {
    "itemName": "マルカン　バスキングライト　50W　BL−50　爬虫類　保温球　関東当日便",
@@ -15,7 +27,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA サングロー バスキングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 送料無料",
@@ -23,11 +35,67 @@
    "shop": "SooTune"
   }
  },
+ "basking_arcadia_deep_heat_projector": {
+  "date": "2026-08-29",
+  "query": "Arcadia Deep Heat Projector 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "basking_ceramic_100w": {
+  "date": "2026-08-29",
+  "query": "セラミックヒートランプ 100W 爬虫類",
+  "resultCount": 10,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=7.2",
+  "best": {
+   "itemName": "100 W 赤外線セラミック エミッター熱電球ランプ ペット爬虫類ブローダー セラミック熱球 ケージ付き 火傷防止 フックデザイン ブローダー用ヒートランプ カ",
+   "price": 1809,
+   "shop": "BaibaiyiSHOP"
+  }
+ },
+ "basking_dual_150": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA サングロー バスキングスポットランプ 150W",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5.3",
+  "best": {
+   "itemName": "●【エキゾテラ】サングロー タイトビームバスキング スポットランプ 150w　EXOTERRA 【バスキング 保温 GEX ジェックス】",
+   "price": 1860,
+   "shop": "PALMY EXPRESS"
+  }
+ },
+ "basking_exoterra_halogen": {
+  "date": "2026-08-29",
+  "query": "Exo Terra ハロゲン バスキングスポット",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "basking_exoterra_intense_spot": {
+  "date": "2026-08-29",
+  "query": "Exo Terra Intense Basking Spot バスキングランプ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "basking_halogen_35w": {
+  "date": "2026-08-29",
+  "query": "ハロゲン バスキングランプ 35W 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "basking_halogen_50w": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 50W",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,50W,series:サングロー",
   "best": {
    "itemName": "●【エキゾテラ】サングロー バスキングスポットランプ 50w　EXOTERRA 【バスキング 保温 GEX ジェックス】",
@@ -35,11 +103,35 @@
    "shop": "PALMY EXPRESS"
   }
  },
+ "basking_hid_70w": {
+  "date": "2026-08-29",
+  "query": "ゼンスイ ソラリウムセット メタルハライド",
+  "resultCount": 3,
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=3.5",
+  "best": {
+   "itemName": "ゼンスイ ソラリウムセット(メタルハライドランプ+灯具) 50W",
+   "price": 33521,
+   "shop": "クロスワン 楽天市場店"
+  }
+ },
+ "basking_infrared_red": {
+  "date": "2026-08-29",
+  "query": "赤外線 バスキングランプ 75W 爬虫類",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.2",
+  "best": {
+   "itemName": "【送料無料】 三晃商会 赤外線保温 バスキングスポットランプ 75W ( REPTI ZOO E783 爬虫類 保温 バスキング ランプ ライト 赤外線 )",
+   "price": 2508,
+   "shop": "Goodsania 2nd store"
+  }
+ },
  "calcium_no_d3": {
   "date": "2026-08-29",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
@@ -47,16 +139,308 @@
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
+ "enclosure_glass_45": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA グラステラリウム 4545",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=4.9 照明系(ランプ)",
+  "best": {
+   "itemName": "ジェックス EXO TERRA コンパクトトップ45N PT2226 26W(2灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム4530/454",
+   "price": 7253,
+   "shop": "アルメリア楽天市場店"
+  }
+ },
+ "enclosure_kayuso_90": {
+  "date": "2026-08-29",
+  "query": "SANKO パンテオン ブラック BK9045",
+  "resultCount": 7,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "best": {
+   "itemName": "三晃商会　パンテオン　ブラック　BK9045　E15",
+   "price": 26750,
+   "shop": "ネオス 楽天市場店"
+  }
+ },
+ "enclosure_plastic_60": {
+  "date": "2026-08-29",
+  "query": "プラケース 60L 爬虫類 飼育",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "enclosure_reptihabitat_40g": {
+  "date": "2026-08-29",
+  "query": "ReptiHabitat 40Gallon Zoo Med リクガメ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "enclosure_tortoise_120": {
+  "date": "2026-08-29",
+  "query": "爬虫類ケージ 120cm 大型 飼育ボックス",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5.7",
+  "best": {
+   "itemName": "爬虫類 ケージ 120cm 大型 メッシュケージ 爬虫類ボックス 飼育ケース 観賞 通気性抜群 アルミニウム合金 ステンレス 網 扉ロック付き 底トレイ付き 給",
+   "price": 30273,
+   "shop": "ハッピージョイフルマーケット"
+  }
+ },
+ "enclosure_tortoise_house_zm": {
+  "date": "2026-08-29",
+  "query": "Zoo Med Tortoise House リクガメ ケージ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "enclosure_wood_120_generic": {
+  "date": "2026-08-29",
+  "query": "木製ケージ 120 60 爬虫類 リクガメ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "enclosure_wood_90": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA グラステラリウム 9030",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=6.3 照明系(ランプ)",
+  "best": {
+   "itemName": "ジェックス EXO TERRA コンパクトトップ90N PT2228 26W(4灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム9030/904",
+   "price": 13822,
+   "shop": "マニッシュボーイ"
+  }
+ },
+ "filter_canister_large": {
+  "date": "2026-08-29",
+  "query": "EHEIM クラシック 2215 外部フィルター",
+  "resultCount": 1,
+  "outcome": "DEMOTED_IDENTITY_REJECT",
+  "reason": "入数(2),消耗品(ろ材)",
+  "best": {
+   "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
+   "price": 21670,
+   "shop": "ミナトワークス"
+  }
+ },
+ "filter_canister_medium": {
+  "date": "2026-08-29",
+  "query": "EHEIM クラシック 2213 外部フィルター",
+  "resultCount": 6,
+  "outcome": "DEMOTED_IDENTITY_REJECT",
+  "reason": "入数(2),消耗品(ろ材)",
+  "best": {
+   "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
+   "price": 14940,
+   "shop": "ミナトワークス"
+  }
+ },
+ "filter_canister_premium": {
+  "date": "2026-08-29",
+  "query": "エーハイム クラシック 2217",
+  "resultCount": 10,
+  "outcome": "REFRESHED_EXACT",
+  "reason": "maker:エーハイム,model:2217,series:クラシック",
+  "best": {
+   "itemName": "外部フィルター　50Hz　エーハイム　クラシックフィルター　2217−NEW　東日本用　おまけ付き　メーカー保証期間2年　関東当日便",
+   "price": 26997,
+   "shop": "charm 楽天市場店"
+  }
+ },
+ "filter_canister_xl": {
+  "date": "2026-08-29",
+  "query": "GEX メガパワー 6090 外部フィルター",
+  "resultCount": 10,
+  "outcome": "REFRESHED_EXACT",
+  "reason": "maker:GEX,model:6090,series:メガパワー",
+  "best": {
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
+   "price": 8980,
+   "shop": "charm 楽天市場店"
+  }
+ },
+ "filter_fluval_fx6": {
+  "date": "2026-08-29",
+  "query": "Fluval FX6 外部フィルター",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "filter_hang_on": {
+  "date": "2026-08-29",
+  "query": "外掛け フィルター 爬虫類 亀",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.2",
+  "best": {
+   "itemName": "水槽 フィルター 上部フィルター アクアリウム ポンプ 外掛け式 ろ過 流量調節 静音 コンパクト 多機能 水質改善 透明 クリアタイプ メンテナンス 簡単 省",
+   "price": 11096,
+   "shop": "擇木ショップ"
+  }
+ },
+ "filter_small": {
+  "date": "2026-08-29",
+  "query": "テトラ オートワンタッチフィルター AT-50",
+  "resultCount": 10,
+  "outcome": "REFRESHED_EXACT",
+  "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
+  "best": {
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック　関東当日便",
+   "price": 2095,
+   "shop": "charm 楽天市場店"
+  }
+ },
+ "filter_sponge_dual": {
+  "date": "2026-08-29",
+  "query": "スポンジフィルター ダブル 亀 水槽",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "filter_submersible_medium": {
   "date": "2026-08-29",
   "query": "GEX AQUA FILTER e-ROKA PF701",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,model:e-ROKA,series:aqua",
   "best": {
    "itemName": "ジェックス GEX AQUA FILTER e-ROKA イーロカ PF701 ロングシャワー方式 エアレーション機能 流量調整機能付き水中モーターフィルター幅",
    "price": 2796,
    "shop": "セレクトショップ RST"
+  }
+ },
+ "filter_turtle_clean": {
+  "date": "2026-08-29",
+  "query": "テトラ レプトフィルター 亀 フィルター",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "food_aqua_turtle_pellet": {
+  "date": "2026-08-29",
+  "query": "カメの主食 GEX 亀 フード",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5.3",
+  "best": {
+   "itemName": "カメ元気 毎日の主食 ごちそうごはん 大粒 180g ジェックス ▼a ペット フード 亀 甲羅の大きさ7cm以上 えび 汚れ分解菌 GEX",
+   "price": 420,
+   "shop": "リプロスストア"
+  }
+ },
+ "food_aquatic_premium": {
+  "date": "2026-08-29",
+  "query": "レプトミン テトラ 亀 餌",
+  "resultCount": 10,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.9",
+  "best": {
+   "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
+   "price": 3502,
+   "shop": "CheeringCharm 楽天市場店"
+  }
+ },
+ "food_aquatic_staple": {
+  "date": "2026-08-29",
+  "query": "カメプロス キョーリン 亀 餌",
+  "resultCount": 10,
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=7.3",
+  "best": {
+   "itemName": "キョーリン　ひかり　カメプロス　(200g)　かめ　亀　エサ",
+   "price": 998,
+   "shop": "ツルハドラッグ"
+  }
+ },
+ "food_box_turtle_omnivore": {
+  "date": "2026-08-29",
+  "query": "Rep-Cal シータートルフード ビバリア",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "food_dried_shrimp": {
+  "date": "2026-08-29",
+  "query": "乾燥エビ 亀 おやつ ひかり",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=4.3",
+  "best": {
+   "itemName": "◇キョーリン ひかりクレスト タートルST 250g | カメ 餌 水棲カメ フード スティック キョーリン ひかりクレスト タートル サポート エサ 爬虫類 ",
+   "price": 767,
+   "shop": "ペットフォレスト 楽天市場店"
+  }
+ },
+ "food_hikari_turtle": {
+  "date": "2026-08-29",
+  "query": "ひかり タートル 亀 フード",
+  "resultCount": 3,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=6.3",
+  "best": {
+   "itemName": "キョーリン hikari ひかりクレスト タートル 52g 爬虫類 亀 水棲カメ 餌 フード",
+   "price": 598,
+   "shop": "プラザペットパレード 楽天市場店"
+  }
+ },
+ "food_mazuri_aquatic": {
+  "date": "2026-08-29",
+  "query": "Mazuri Aquatic Turtle Diet 亀 フード",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "food_mazuri_tortoise": {
+  "date": "2026-08-29",
+  "query": "Mazuri Tortoise Diet リクガメ フード",
+  "resultCount": 9,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=6.3",
+  "best": {
+   "itemName": "【即納在庫品】 ［正規品］ Mazuri トータスダイエット 560g リクガメフード 5M21 ホシガメ ハコガメ エサ マズリ",
+   "price": 2300,
+   "shop": "ホームセンターバロー2号店"
+  }
+ },
+ "food_reptomin_tetra": {
+  "date": "2026-08-29",
+  "query": "ReptoMin テトラ 亀 餌",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "food_tortoise_gel": {
+  "date": "2026-08-29",
+  "query": "リパシー ベジバーガー リクガメ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "food_tortoise_herbs": {
+  "date": "2026-08-29",
+  "query": "キョーリン マルベリックドライ リクガメ",
+  "resultCount": 10,
+  "outcome": "PROMOTED_LEGACY_STRONG",
+  "reason": "maker:キョーリン,容量一致,series:マルベリックドライ",
+  "best": {
+   "itemName": "キョーリン マルベリックドライ 180g 400g リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
+   "price": 998,
+   "shop": "ペットショップ うちのmofu"
   }
  },
  "food_tortoise_staple": {
@@ -67,11 +451,31 @@
   "reason": null,
   "best": null
  },
+ "heater_aqua_100w": {
+  "date": "2026-08-29",
+  "query": "水中ヒーター 100W 亀 水槽",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5.9",
+  "best": {
+   "itemName": "【期間限定！！クーポン利用】【短納期】加熱ヒーター 水槽ヒーター 小型 25W 50W 100W 200W 300W 自動恒温加熱 吸盤付き 空焼き防止 20℃",
+   "price": 2099,
+   "shop": "Rinkastore"
+  }
+ },
+ "heater_aqua_200w": {
+  "date": "2026-08-29",
+  "query": "ニッソー プロテクトPROヒーター 200W",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "heater_cord_20w": {
   "date": "2026-08-29",
   "query": "Zoo Med レプティヒートケーブル 25W",
   "resultCount": 2,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:Zoo Med,25W,series:レプティヒートケーブル",
   "best": {
    "itemName": "ZOOMED　レプティヒートケーブル　25W　4．5m　爬虫類　両生類　パネルヒーター　保温　関東当日便",
@@ -83,7 +487,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 1号",
   "resultCount": 5,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,1号,series:ピタリ適温プラス",
   "best": {
    "itemName": "○【レップジャパン】ピタリ適温プラス 1号 7w【ヒーター みどり商会】",
@@ -95,7 +499,7 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 2号",
   "resultCount": 9,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,2号,series:ピタリ適温プラス",
   "best": {
    "itemName": "○【レップジャパン】ピタリ適温プラス 2号 10w【ヒーター みどり商会】",
@@ -107,19 +511,19 @@
   "date": "2026-08-29",
   "query": "みどり商会 ピタリ適温プラス 3号",
   "resultCount": 5,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
-   "itemName": "○【レップジャパン】ピタリ適温プラス 3号 21w【ヒーター みどり商会】",
-   "price": 4825,
-   "shop": "PALMY EXPRESS"
+   "itemName": "発芽 育苗 水耕栽培 植物 ヒーターマット ピタリ適温プラス 3号 約42×22cm 発芽育苗 【あす楽】",
+   "price": 6028,
+   "shop": "水耕栽培専門店のエコゲリラ"
   }
  },
  "heater_radiant_panel": {
   "date": "2026-08-29",
   "query": "みどり商会 暖突 Lサイズ",
   "resultCount": 2,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,等級L,series:暖突",
   "best": {
    "itemName": "●【レップジャパン】暖突 Lサイズ 【ヒーター 遠赤外線 みどり商会】",
@@ -131,7 +535,7 @@
   "date": "2026-08-29",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
    "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
@@ -139,11 +543,31 @@
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
+ "shelter_bark_hide": {
+  "date": "2026-08-29",
+  "query": "コルクバーク 爬虫類 シェルター",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5",
+  "best": {
+   "itemName": "コルク樹皮 背景 生息地の装飾 爬虫類背景 テラリウム背景 カメ ヤモリ クモ フトアゴヒゲトカゲ イグアナ用 コルクバーク 爬虫類用品 飼育用品 ケージ装飾 ",
+   "price": 2580,
+   "shop": "Kショップ2022"
+  }
+ },
+ "shelter_exoterra_reptile_cave": {
+  "date": "2026-08-29",
+  "query": "Exo Terra Reptile Cave シェルター",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "shelter_medium": {
   "date": "2026-08-29",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
    "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
@@ -151,11 +575,95 @@
    "shop": "ペットと園芸のホムセントックリ"
   }
  },
+ "shelter_moist_hide": {
+  "date": "2026-08-29",
+  "query": "湿潤 シェルター モイスト 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "shelter_sanko_rock": {
+  "date": "2026-08-29",
+  "query": "SANKO ロックシェルター 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "shelter_turtle_dock": {
+  "date": "2026-08-29",
+  "query": "亀 浮島 ドック 水棲",
+  "resultCount": 3,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.2",
+  "best": {
+   "itemName": "亀 浮島 爬虫類 タートルドック 日光浴 プラットフォーム 階段 登り石 水槽 吊り下げ式 高さ調節可能 隠れ家 シェルター 飼育ケース レイアウト 浅い皿 エ",
+   "price": 5402,
+   "shop": "レボショップ"
+  }
+ },
+ "shelter_wood_premium": {
+  "date": "2026-08-29",
+  "query": "ウッドハイド シェルター 爬虫類 木製",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "substrate_arcadia_earthmix": {
+  "date": "2026-08-29",
+  "query": "Arcadia EarthMix 床材 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "substrate_bottom_sand": {
+  "date": "2026-08-29",
+  "query": "スドー ボトムサンド 5kg",
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.6",
+  "best": {
+   "itemName": "【訳あり】ボトムサンド5kg 水槽用砂 スドー",
+   "price": 2998,
+   "shop": "ホームセンターグッデイ楽天市場店"
+  }
+ },
+ "substrate_coco": {
+  "date": "2026-08-29",
+  "query": "ヤシガラ 爬虫類 床材",
+  "resultCount": 10,
+  "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
+  "reason": null,
+  "best": {
+   "itemName": "ヤシガラ 土 爬虫類 1L 細目 床材 飼育マット ハスク トカゲ ゲッコー リクガメ カエル 両生類 ヘビ スネーク 保湿 保温 消臭 SMILE PET C",
+   "price": 698,
+   "shop": "雑貨イズム"
+  }
+ },
+ "substrate_cypress": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA フォレストバーク 8.8L",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "substrate_exoterra_plantation_soil": {
+  "date": "2026-08-29",
+  "query": "Exo Terra Plantation Soil 床材",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "substrate_gex_terrarium_soil": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
    "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
@@ -163,11 +671,59 @@
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
+ "substrate_grassland_mix": {
+  "date": "2026-08-29",
+  "query": "GEX EXOTERRA デザートベース 細目 3L",
+  "resultCount": 10,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "best": {
+   "itemName": "EXO TERRA エキゾテラ GEX EXOTERRA デザートベース 細目 3L 通水性・通気性がよい天然素材 砂漠・亜熱帯環境 湿度管理",
+   "price": 1994,
+   "shop": "アルメリア楽天市場店"
+  }
+ },
+ "substrate_sand_mix": {
+  "date": "2026-08-29",
+  "query": "爬虫類 床材 砂 ミックス",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "substrate_sand_river": {
+  "date": "2026-08-29",
+  "query": "水作 大磯砂 2.4kg",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "substrate_soil": {
+  "date": "2026-08-29",
+  "query": "赤玉土 小粒 爬虫類",
+  "resultCount": 7,
+  "outcome": "DEMOTED_IDENTITY_REJECT",
+  "reason": "容量不一致",
+  "best": {
+   "itemName": "土　瀬戸ヶ原花苑　赤玉土　小粒　3リットル　園芸　単用土　お一人様5点限り　関東当日便",
+   "price": 300,
+   "shop": "charm 楽天市場店"
+  }
+ },
+ "substrate_sphagnum_moss": {
+  "date": "2026-08-29",
+  "query": "スファグナムモス 水苔 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "supplement_calcium_d3": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 90g",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
    "itemName": "GEX EXOTERRA カルシウム+ビタミンD3 90g PT1856 粉末カルシウム・ビタミンD3 昼行性爬虫類に最適",
@@ -179,7 +735,7 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 40g",
   "resultCount": 8,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
    "itemName": "GEX EXO TERRA（エキゾテラ）　カルシウム＋ビタミンD3　40g　PT1855",
@@ -187,11 +743,27 @@
    "shop": "ネオス 楽天市場店"
   }
  },
+ "supplement_electrolyte": {
+  "date": "2026-08-29",
+  "query": "エレクトロライト 爬虫類 電解質",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "supplement_mineral_block": {
+  "date": "2026-08-29",
+  "query": "カトルボーン 甲イカ 亀 カルシウム",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "supplement_multivitamin": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA マルチビタミン 30g",
   "resultCount": 9,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:マルチビタミン",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA マルチビタミン 30g PT1860 不足しがちなビタミンやミネラルなど10種類以上を含有したパウダーサプリ",
@@ -199,11 +771,51 @@
    "shop": "フォーチュネスマート"
   }
  },
+ "supplement_probiotics": {
+  "date": "2026-08-29",
+  "query": "爬虫類 プロバイオティクス 腸内環境",
+  "resultCount": 7,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "best": {
+   "itemName": "【3個セット】 イトスイ コメット 爬虫両生類用 主食 カメ フード プロバイオティクス配合 浮上性 善玉菌 健康維持 アクアリウム用品",
+   "price": 2269,
+   "shop": "ウルマックス 楽天市場店"
+  }
+ },
+ "tank_120_aqua": {
+  "date": "2026-08-29",
+  "query": "コトブキ工芸 アクアリスト KC-1200LT 120cm ガラス水槽",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "tank_120_gex": {
+  "date": "2026-08-29",
+  "query": "GEX 120cm ガラス水槽 亀",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "tank_60": {
+  "date": "2026-08-29",
+  "query": "水槽 60cm 亀",
+  "resultCount": 10,
+  "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
+  "reason": null,
+  "best": {
+   "itemName": "送料無料　らんちゅう水槽　600（599×295×230）60cm水槽　金魚　亀　カメ（単体）　お一人様1点限り　関東当日便",
+   "price": 5600,
+   "shop": "charm 楽天市場店"
+  }
+ },
  "tank_90": {
   "date": "2026-08-29",
   "query": "コトブキ工芸 KC-ワイド900 水槽",
   "resultCount": 4,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:コトブキ工芸,series:コトブキ工芸",
   "best": {
    "itemName": "◇寿工芸 KC‐ワイド900 ブラック | コトブキ工芸 90cm水槽 コトブキ ワイド900",
@@ -211,11 +823,43 @@
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
+ "thermometer_analog": {
+  "date": "2026-08-29",
+  "query": "アナログ 温湿度計 爬虫類",
+  "resultCount": 10,
+  "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
+  "reason": null,
+  "best": {
+   "itemName": "温度計 温湿度計 湿度温度計 爬虫類 温度計 家庭用 湿度計 アナログ 小型 壁掛け・卓上両用 精度高い 読みやすい ベビールーム 浴室 室内 室外 花屋 倉庫",
+   "price": 495,
+   "shop": "皆の生活館"
+  }
+ },
+ "thermometer_aqua": {
+  "date": "2026-08-29",
+  "query": "INKBIRD 水温計 Bluetooth",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "thermometer_digital": {
+  "date": "2026-08-29",
+  "query": "デジタル 温湿度計 爬虫類",
+  "resultCount": 10,
+  "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
+  "reason": null,
+  "best": {
+   "itemName": "【楽天1位】温湿度計 デジタル 赤ちゃん 通知 高精度 デジタル時計 バックライト 電池付き 説明書付き 温度計 湿度計 室温計 ベビー キッズ ペット 猫 犬",
+   "price": 1000,
+   "shop": "Palpito 楽天市場店"
+  }
+ },
  "thermometer_dual_probe": {
   "date": "2026-08-29",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
    "itemName": "シンワ測定　#73117　デジタル温度計 Smart B　室内・室外 防水外部センサー　【代引き不可】【沖縄・離島配送不可】",
@@ -223,11 +867,23 @@
    "shop": "Smart normal"
   }
  },
+ "thermometer_infrared": {
+  "date": "2026-08-29",
+  "query": "赤外線 温度計 非接触 爬虫類",
+  "resultCount": 2,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5",
+  "best": {
+   "itemName": "サーモチェッカーNEO RP-1443 ビバリア 爬虫類 両生類 非接触 赤外線 温度計 温度管理 トカゲ ヘビ カエルカメ レオパ",
+   "price": 3300,
+   "shop": "ペットと園芸のホムセントックリ"
+  }
+ },
  "thermometer_wifi": {
   "date": "2026-08-29",
   "query": "INKBIRD WiFi 温湿度計 IBS-TH3",
   "resultCount": 1,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:INKBIRD,model:IBS-TH3,series:ibs-th3",
   "best": {
    "itemName": "INKBIRD WiFi 温湿度計 高精度測定 デジタル 温度計 湿度計 スマート温度計 アプリで温度湿度管理 アラート通知 データグラフ可視化 データクラウド",
@@ -235,11 +891,23 @@
    "shop": "SelectSHOP 岐阜 楽天市場店"
   }
  },
+ "thermostat": {
+  "date": "2026-08-29",
+  "query": "サーモスタット 爬虫類 アナログ",
+  "resultCount": 3,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=5.7",
+  "best": {
+   "itemName": "◇ビバリア ツインメーターNEO | 温度計 湿度計 爬虫類用品 温湿度計 ビバリア ツインメーターNEO RP141 ペット飼育 温度管理 湿度管理 ケージ用",
+   "price": 1092,
+   "shop": "ペットフォレスト 楽天市場店"
+  }
+ },
  "thermostat_digital": {
   "date": "2026-08-29",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
    "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
@@ -247,11 +915,19 @@
    "shop": "charm 楽天市場店"
   }
  },
+ "thermostat_habistat_dimming": {
+  "date": "2026-08-29",
+  "query": "Habistat Dimming Thermostat 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "thermostat_kotobuki_hydra": {
   "date": "2026-08-29",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
    "itemName": "コトブキ工芸　ヒュドラサーモ　HT−330XD　爬虫類　温度管理　サーモスタット　関東当日便",
@@ -259,11 +935,19 @@
    "shop": "charm 楽天市場店"
   }
  },
+ "thermostat_nisso_generic": {
+  "date": "2026-08-29",
+  "query": "ニッソー 爬虫類 サーモスタット",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "uvb_compact": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 10,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
    "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
@@ -271,11 +955,23 @@
    "shop": "パレットマーケット"
   }
  },
+ "uvb_led_bar": {
+  "date": "2026-08-29",
+  "query": "UVB LED ライト バー 爬虫類",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.9",
+  "best": {
+   "itemName": "ANJOJOA 爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 UV強度選択 光",
+   "price": 6943,
+   "shop": "カラーズストア2号店"
+  }
+ },
  "uvb_mvb_100": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA ソーラーグローUV 80W",
   "resultCount": 10,
-  "outcome": "PROMOTED_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,80W,series:ソーラーグローuv",
   "best": {
    "itemName": "【送料無料】エキゾテラ GEX EXOTERRA ソーラーグローUV 80W PT2334 UVB&バスキングライト 昼用 砂漠サバンナに棲息する昼行性の爬虫類",
@@ -283,16 +979,64 @@
    "shop": "美容と雑貨のお店 エヌエルディ"
   }
  },
+ "uvb_t5_arcadia_desert_12": {
+  "date": "2026-08-29",
+  "query": "Arcadia ProT5 Kit Desert 12% UVB",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
  "uvb_t5_desert_12": {
   "date": "2026-08-29",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 10,
-  "outcome": "PROMOTED_EXACT",
+  "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA レプタイルUVB150 26W PT2189 爬虫類用 紫外線ライト パープル 砂漠・サバンナに棲 送料無料",
    "price": 3363,
    "shop": "ショップflora楽天市場店"
   }
+ },
+ "uvb_t5_desert_std": {
+  "date": "2026-08-29",
+  "query": "Zoo Med ReptiSun 10.0 T5",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "uvb_t5_forest_std": {
+  "date": "2026-08-29",
+  "query": "Zoo Med ReptiSun 5.0 T5",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "uvb_t5_tropical_6": {
+  "date": "2026-08-29",
+  "query": "Arcadia T5 6% UVB 爬虫類",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "waterdish_sanko_dish": {
+  "date": "2026-08-29",
+  "query": "SANKO レプタイルディッシュ 水入れ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
+ },
+ "waterdish_zoomed_ramp_bowl": {
+  "date": "2026-08-29",
+  "query": "Zoo Med Repti Ramp Bowl 水入れ",
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  }
 }
