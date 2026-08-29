@@ -1420,7 +1420,6 @@ const PRODUCTS = {
 
   substrate_cypress: {
     id: 'substrate_cypress',
-    rakutenModelNo: 'PT2752', // GEX公式製品DB（フォレストバーク 8.8L）。実測: 型番単独クエリで5件（run 33255728290）
     name: 'GEX EXOTERRA フォレストバーク 8.8L',
     category: 'substrate',
     tier: 'premium',
