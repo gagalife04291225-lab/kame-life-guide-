@@ -3,8 +3,8 @@
   "date": "2026-08-29",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=4.9",
+  "outcome": "PROMOTED_EXACT",
+  "reason": "maker:GEX,100W,model:PT2138",
   "best": {
    "itemName": "【9/1限定★3点以上購入でポイント20倍】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ",
    "price": 2280,
@@ -590,6 +590,18 @@
   "outcome": "NO_RESULT",
   "reason": null,
   "best": null
+ },
+ "shelter_small": {
+  "date": "2026-08-29",
+  "query": "スドー ロックシェルターSP S",
+  "resultCount": 10,
+  "outcome": "PROMOTED_EXACT",
+  "reason": "maker:スドー,等級S,model:RX-191,series:ロックシェルターsp",
+  "best": {
+   "itemName": "ロックシェルターSP S RX-191 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 760,
+   "shop": "爬虫類用品店 トップクリエイト"
+  }
  },
  "shelter_turtle_dock": {
   "date": "2026-08-29",
