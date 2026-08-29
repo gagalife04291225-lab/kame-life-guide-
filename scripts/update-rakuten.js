@@ -51,6 +51,25 @@ const AUDIT_IMAGES = process.env.AUDIT_IMAGES === 'true';
 // どちらも未設定なら従来どおり（8.0閾値の既存経路）。日次の既定動作は変えない。
 const IDENTITY_DRYRUN  = process.env.IDENTITY_DRYRUN === 'true';
 const IDENTITY_PROMOTE = process.env.IDENTITY_PROMOTE === 'true';
+
+// RAKUTEN-ID Phase 2 — Owner 承認 allowlist（2026-08-29 承認）。
+// IDENTITY_PROMOTE はこの ID 以外を一切昇格させない（identity が EXACT/STRONG でも禁止）。
+// △（要目視5件）・❌（誤マッチ6件）・HOLD 2件は含めない。
+// thermostat_kotobuki_hydra のみ「安全に通る場合のみ昇格」の条件付き承認
+// （identity EXACT/STRONG ＋ カテゴリガード等の安全チェック ＋ affiliateUrl を全て通過した場合だけ）。
+const PROMOTE_ALLOWLIST = new Set([
+  'tank_90', 'uvb_compact', 'uvb_t5_desert_12', 'uvb_mvb_100',
+  'basking_50w', 'basking_75w', 'basking_halogen_50w',
+  'heater_panel_30w', 'heater_panel_45', 'heater_panel_60',
+  'heater_radiant_panel', 'heater_cord_20w',
+  'thermostat_digital', 'thermostat_kotobuki_hydra',
+  'filter_submersible_medium',
+  'substrate_gex_terrarium_soil', 'shelter_medium',
+  'food_tortoise_staple',
+  'supplement_calcium_d3', 'calcium_no_d3', 'supplement_calcium_plus',
+  'supplement_multivitamin',
+  'thermometer_dual_probe', 'thermometer_wifi', 'hydrometer_tetra',
+]);
 const DIAG_PATH = path.resolve(__dirname, '../data/rakuten-diag.json');
 const AUDIT_OUT_PATH = path.resolve(process.cwd(), 'rakuten-image-audit.json');
 const AUDIT_MAX_CANDIDATES = 5;
@@ -84,7 +103,7 @@ const CATEGORY_GUARDS = {
   filter:           ['フィルター', 'ポンプ', 'ろ過'],
   enclosure:        ['ケージ', '水槽', 'ケース', '爬虫類'],
   substrate:        ['床材', '土', 'サンド', 'マット', 'バーク', 'マルチ'],
-  heating:          ['ヒーター', '保温', 'パネル'],
+  heating:          ['ヒーター', '保温', 'パネル', 'サーモスタット'],
   shelter:          ['シェルター', '隠れ家', 'コルク'],
   food:             ['フード', '餌', 'エサ', 'ペレット'],
   supplements:      ['カルシウム', 'サプリ', 'ビタミン'],
@@ -920,7 +939,10 @@ async function identityDryRun(products) {
     sum[lvl]++;
     const aff = !!(best.item.affiliateUrl && String(best.item.affiliateUrl).length > 10);
     const promotable = (lvl === 'EXACT' || lvl === 'STRONG') && best.quality !== null && aff;
-    const action = promotable ? 'PROMOTE' : 'KEEP_SEARCH';
+    // Phase 2: allowlist を dry-run にも反映。承認外は PROMOTE と表示しない。
+    const action = promotable
+      ? (PROMOTE_ALLOWLIST.has(productId) ? 'PROMOTE' : 'KEEP_SEARCH(NOT_APPROVED)')
+      : 'KEEP_SEARCH';
     console.log('[IDENTITY] ' + productId +
       ' | ' + lvl +
       ' | action=' + action +
@@ -951,10 +973,18 @@ async function main() {
   const diag = loadDiag();   // RAKUTEN-ID Phase 3: NO_RESULT/REJECTED も記録する
 
   // Collect candidates: status === "search" or "available"
-  const targets = Object.entries(products).filter(function(entry) {
+  let targets = Object.entries(products).filter(function(entry) {
     const p = entry[1];
     return p && (p.rakutenStatus === 'search' || p.rakutenStatus === 'available');
   });
+
+  // RAKUTEN-ID Phase 2: 昇格モードでは Owner 承認 allowlist の商品しか処理しない。
+  // 承認外の商品にはAPI照会も更新も行わない（承認外への影響を構造的にゼロにする）。
+  if (IDENTITY_PROMOTE) {
+    targets = targets.filter(function(entry) { return PROMOTE_ALLOWLIST.has(entry[0]); });
+    console.log('[identity-promote] Allowlist gate: ' + targets.length +
+                ' targets (allowlist size ' + PROMOTE_ALLOWLIST.size + ')');
+  }
 
   console.log('[rakuten-sync] Targets: ' + targets.length);
 
@@ -1101,8 +1131,12 @@ async function main() {
       const bestId = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
       const lvl  = bestId.match.level;
       const idAff = buildAffiliateUrl(bestId.item.itemUrl, bestId.item.affiliateUrl);
-      const promotable = !product.rakutenIdentityHold &&
-        (lvl === 'EXACT' || lvl === 'STRONG') && bestId.quality !== null && idAff;
+      // Phase 2: allowlist は必須ゲート。承認外は EXACT/STRONG でも昇格禁止。
+      // さらに affiliateUrl は成果対象ドメイン（*.afl.rakuten.co.jp）であることを必須にする。
+      const promotable = PROMOTE_ALLOWLIST.has(productId) &&
+        !product.rakutenIdentityHold &&
+        (lvl === 'EXACT' || lvl === 'STRONG') && bestId.quality !== null &&
+        idAff && IDN.isCommissionUrl(idAff);
       if (promotable) {
         updates.rakutenStatus     = 'available';
         updates.rakutenUrl        = idAff;
@@ -1116,6 +1150,15 @@ async function main() {
         recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
           outcome: 'PROMOTED_' + lvl, reason: bestId.match.evidence.join(','),
           best: diagBest(bestId.item) }, today);
+      } else if (product.rakutenStatus === 'available' && !isInvalidAvailable(product)) {
+        // Phase 2: 正常な available（成果対象URLあり）は identity 昇格モードで壊さない。
+        // 無変更で維持し、診断だけ残す（防御的分岐 — allowlist に available は含めない運用）。
+        recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+          outcome: 'KEPT_AVAILABLE_' + lvl,
+          reason: bestId.match.conflicts.join(',') || null,
+          best: diagBest(bestId.item) }, today);
+        console.log('[KEEP] ' + productId + ' — 正常な available は変更しない (level=' + lvl + ')');
+        continue;
       } else {
         Object.assign(updates, demotionUpdates(today, bestId.quality));
         report.searchFallback++;

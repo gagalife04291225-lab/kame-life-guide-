@@ -27,6 +27,11 @@ on:
         required: false
         default: false
         type: boolean
+      identity_promote:
+        description: 'Identity promote (RAKUTEN-ID Phase 2): Owner承認allowlistの商品だけをEXACT/STRONG＋安全チェック＋affiliateUrl通過時にavailable化。スケジュール実行では絶対に有効化されない'
+        required: false
+        default: false
+        type: boolean
       audit_search_term:
         description: '監査対象1商品の楽天検索語を一時的に上書きする。data/products.jsには保存しない。audit_images=true かつ audit_product_ids が1件のときのみ有効。'
         required: false
@@ -61,6 +66,9 @@ jobs:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          # RAKUTEN-ID Phase 2: workflow_dispatch で明示的に true を渡した時だけ有効。
+          # schedule 実行では inputs が空のためこの式は必ず 'false' になる。
+          IDENTITY_PROMOTE: ${{ github.event.inputs.identity_promote == 'true' && 'true' || 'false' }}
         run: node scripts/update-rakuten.js
 
       - name: Check for changes
