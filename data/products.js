@@ -855,6 +855,9 @@ const PRODUCTS = {
 
   thermostat_kotobuki_hydra: {
     id: 'thermostat_kotobuki_hydra',
+    // RAKUTEN-ID Phase4: 2026-07-04 に素の item.rakuten.co.jp URL のまま available 化されていた
+    // 残置レコード（無報酬CTA）。成果対象URLを確認できないため search へ降格。
+    // 正しい affiliateUrl は推測せず、日次 sync の再照合に委ねる
     name: 'コトブキ工芸 ヒュドラサーモ HT-330XD',
     category: 'heating',
     tier: 'budget',
@@ -866,11 +869,11 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small', 'japanese_pond'],
-    rakutenUrl: 'https://item.rakuten.co.jp/chanet/247595/', // Phase 39-P5: 実商品ページ確認済み(charm 楽天市場店)
-    rakutenStatus: 'available',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
     rakutenSearchTerm: 'コトブキ工芸 ヒュドラサーモ HT-330XD',
-    rakutenPrice: 4125,
-    rakutenShop: 'charm 楽天市場店',
+    rakutenPrice: null,
+    rakutenShop: null,
     rakutenConfidence: 7,
     rakutenLastUpdated: '2026-07-04',
   },
@@ -2007,6 +2010,9 @@ const PRODUCTS = {
 
   food_hikari_turtle: {
     id: 'food_hikari_turtle',
+    // RAKUTEN-ID Phase0 HOLD: name はウーパールーパー用、term/why はタートル用フードを指しており
+    // ASIN B0043UN3X4 がどちらの商品かをこの環境では検証できない。Owner確認まで identity 自動昇格から除外
+    rakutenIdentityHold: true,
     name: 'ひかりウーパールーパー（タートル用）',
     category: 'food',
     tier: 'standard',
@@ -2043,13 +2049,18 @@ const PRODUCTS = {
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '乾燥野草 リクガメ グラスランドサラダ',
+    // RAKUTEN-ID Phase0: 6769bc9 の再定義（グラスランドサラダ→マルベリックドライ）で
+    // rakutenSearchTerm だけが旧商品のまま残っていたのを name に同期
+    rakutenSearchTerm: 'キョーリン マルベリックドライ リクガメ',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
 
   food_reptomin_tetra: {
     id: 'food_reptomin_tetra',
+    // RAKUTEN-ID Phase0 HOLD: food_aquatic_premium（レプトミン）と同一商品ラインの重複レコードで、
+    // EQUIPMENT_MAP からも未参照（孤児）。統合/削除は Owner 判断。identity 自動昇格から除外
+    rakutenIdentityHold: true,
     name: 'ReptoMin（テトラ）',
     category: 'food',
     tier: 'budget',

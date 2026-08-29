@@ -18,6 +18,8 @@ const fs = require('fs');
 const path = require('path');
 
 // ─── Config ───────────────────────────────────────────────────
+const IDN = require('./rakuten-identity.js');   // RAKUTEN-ID Phase 1: 同一性判定（純関数）
+
 const APP_ID       = process.env.RAKUTEN_APP_ID;
 const ACCESS_KEY   = process.env.RAKUTEN_ACCESS_KEY;
 const AFFILIATE_ID = process.env.RAKUTEN_AFFILIATE_ID;
@@ -41,6 +43,15 @@ const RAKUTEN_API_PATH = '/ichibams/api/IchibaItem/Search/20260701';
 // It queries the Rakuten API for a small fixed product set and dumps
 // non-secret response fields to a JSON artifact for schema discovery.
 const AUDIT_IMAGES = process.env.AUDIT_IMAGES === 'true';
+
+// RAKUTEN-ID Phase 1 — 実行モード
+//   IDENTITY_DRYRUN=true  … 同一性診断のみ。ファイルへ一切書き込まない
+//   IDENTITY_PROMOTE=true … 同一性ゲート(EXACT/STRONG)経由で昇格する（Owner承認後の次工程で
+//                           workflow input を追加するまで、どの workflow からも渡されない）
+// どちらも未設定なら従来どおり（8.0閾値の既存経路）。日次の既定動作は変えない。
+const IDENTITY_DRYRUN  = process.env.IDENTITY_DRYRUN === 'true';
+const IDENTITY_PROMOTE = process.env.IDENTITY_PROMOTE === 'true';
+const DIAG_PATH = path.resolve(__dirname, '../data/rakuten-diag.json');
 const AUDIT_OUT_PATH = path.resolve(process.cwd(), 'rakuten-image-audit.json');
 const AUDIT_MAX_CANDIDATES = 5;
 
@@ -806,6 +817,126 @@ async function auditImages() {
               ' | Errors: ' + audit.errors.length);
 }
 
+// ─── RAKUTEN-ID Phase 1: 診断の永続化 ────────────────────────
+// products.js は公開配信されるpage依存ファイルのため、内部診断は別ファイル
+// data/rakuten-diag.json に置く（どのページからも読み込まれない）。
+// 秘密情報・affiliateUrl・itemUrl・生APIレスポンスは書かない。
+// entry.date は「内容が最後に変わった日」。日付だけの毎日churnを避ける。
+function loadDiag() {
+  try { return JSON.parse(fs.readFileSync(DIAG_PATH, 'utf8')); }
+  catch (e) { return {}; }
+}
+function recordDiag(diag, productId, entry, today) {
+  const prev = diag[productId] || null;
+  const cmp = { query: entry.query, resultCount: entry.resultCount,
+                outcome: entry.outcome, reason: entry.reason, best: entry.best };
+  const prevCmp = prev ? { query: prev.query, resultCount: prev.resultCount,
+                           outcome: prev.outcome, reason: prev.reason, best: prev.best } : null;
+  const changed = JSON.stringify(cmp) !== JSON.stringify(prevCmp);
+  diag[productId] = Object.assign({ date: changed ? today : (prev && prev.date) || today }, cmp);
+}
+function writeDiagIfChanged(diag) {
+  const sorted = {};
+  Object.keys(diag).sort().forEach(function(k) { sorted[k] = diag[k]; });
+  const out = JSON.stringify(sorted, null, 1) + '\n';
+  let prevRaw = null;
+  try { prevRaw = fs.readFileSync(DIAG_PATH, 'utf8'); } catch (e) {}
+  if (out !== prevRaw) {
+    fs.writeFileSync(DIAG_PATH, out, 'utf8');
+    console.log('[rakuten-sync] Wrote ' + DIAG_PATH);
+    return true;
+  }
+  return false;
+}
+function diagBest(item) {
+  if (!item) return null;
+  return { itemName: String(item.itemName || '').slice(0, 80),
+           price: item.itemPrice || null,
+           shop: String(item.shopName || '').slice(0, 40) };
+}
+
+// 無効な available（成果対象URLでないのに available）を残置しないための降格更新
+function demotionUpdates(today, score) {
+  const u = { rakutenLastUpdated: today, rakutenStatus: 'search',
+              rakutenUrl: null, rakutenItemCode: null,
+              rakutenPrice: null, rakutenShop: null };
+  if (typeof score === 'number') u.rakutenConfidence = score;
+  return u;
+}
+function isInvalidAvailable(product) {
+  return product.rakutenStatus === 'available' && !IDN.isCommissionUrl(product.rakutenUrl);
+}
+
+// ─── RAKUTEN-ID Phase 1: 同一性診断 DRY-RUN ───────────────────
+// products.js / rakuten-diag.json を含む一切のファイルへ書き込まない。
+// 出力はログのみ。affiliateUrl の値・secret は出力しない（有無のみ）。
+async function identityDryRun(products) {
+  console.log('[identity-dryrun] START — no files will be written.');
+  const targets = Object.entries(products).filter(function(e) {
+    const p = e[1];
+    return p && (p.rakutenStatus === 'search' || p.rakutenStatus === 'available');
+  });
+  console.log('[identity-dryrun] Targets: ' + targets.length);
+  const sum = { EXACT: 0, STRONG: 0, AMBIGUOUS: 0, REJECT: 0,
+                NO_RESULT: 0, HOLD: 0, API_FAIL: 0, DEMOTE_CANDIDATE: 0 };
+  for (const [productId, product] of targets) {
+    if (product.rakutenIdentityHold) {
+      sum.HOLD++;
+      console.log('[IDENTITY] ' + productId + ' | HOLD | action=HOLD | Phase0データ疑義のため対象外');
+      continue;
+    }
+    if (isInvalidAvailable(product)) {
+      sum.DEMOTE_CANDIDATE++;
+      console.log('[IDENTITY] ' + productId + ' | INVALID_AVAILABLE | action=DEMOTE_CANDIDATE | 成果対象URLでないavailable');
+    }
+    const baseTerm = product.rakutenSearchTerm || product.name;
+    if (!baseTerm) { console.log('[IDENTITY] ' + productId + ' | SKIP | 検索語なし'); continue; }
+    const queries = [baseTerm].concat(IDN.buildAltQueries(baseTerm));
+    let items = [], usedQuery = baseTerm, fatal = null;
+    for (let qi = 0; qi < queries.length; qi++) {
+      await sleep(1100);                       // 1req/sec 厳守（代替クエリ含む）
+      try {
+        const r = await rakutenSearch(queries[qi], 10);
+        const got = (r.Items || []).map(function(i) { return i.Item || i; });
+        usedQuery = queries[qi];
+        if (got.length) { items = got; break; }
+      } catch (e) {
+        if (e.kind === 'AUTH' || e.kind === 'RATE_LIMIT') { fatal = e; break; }
+        console.log('[IDENTITY] ' + productId + ' | API_ERROR(' + (e.kind || '?') + ') q=' + qi);
+      }
+    }
+    if (fatal) {
+      console.error('[FATAL][identity-dryrun] API ' + fatal.kind + ' — aborting.');
+      process.exit(1);
+    }
+    if (!items.length) {
+      sum.NO_RESULT++;
+      console.log('[IDENTITY] ' + productId + ' | NO_RESULT | action=KEEP_SEARCH | q="' + usedQuery + '" (+alt' + (queries.length - 1) + ')');
+      continue;
+    }
+    const idn = IDN.deriveIdentity(product);
+    const best = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
+    const lvl = best.match.level;
+    sum[lvl]++;
+    const aff = !!(best.item.affiliateUrl && String(best.item.affiliateUrl).length > 10);
+    const promotable = (lvl === 'EXACT' || lvl === 'STRONG') && best.quality !== null && aff;
+    const action = promotable ? 'PROMOTE' : 'KEEP_SEARCH';
+    console.log('[IDENTITY] ' + productId +
+      ' | ' + lvl +
+      ' | action=' + action +
+      ' | q="' + usedQuery + '" n=' + items.length +
+      ' | item="' + String(best.item.itemName || '').slice(0, 70) + '"' +
+      ' price=' + (best.item.itemPrice || '?') +
+      ' shop="' + String(best.item.shopName || '').slice(0, 24) + '"' +
+      ' aff=' + (aff ? 'YES' : 'NO') +
+      ' qual=' + best.quality +
+      ' | ev=' + (best.match.evidence.join(',') || '-') +
+      ' | ng=' + (best.match.conflicts.join(',') || '-'));
+  }
+  console.log('[identity-dryrun] SUMMARY ' + JSON.stringify(sum));
+  console.log('[identity-dryrun] DONE — no files written.');
+}
+
 // ─── Main ─────────────────────────────────────────────────────
 async function main() {
   validateSecrets();
@@ -813,6 +944,11 @@ async function main() {
 
   const { src, products } = loadProducts();
   const today = new Date().toISOString().slice(0, 10);
+
+  // RAKUTEN-ID Phase 1: 同一性診断モードは読み取り専用で完結する
+  if (IDENTITY_DRYRUN) { await identityDryRun(products); return; }
+
+  const diag = loadDiag();   // RAKUTEN-ID Phase 3: NO_RESULT/REJECTED も記録する
 
   // Collect candidates: status === "search" or "available"
   const targets = Object.entries(products).filter(function(entry) {
@@ -910,6 +1046,17 @@ async function main() {
     if (!items.length) {
       console.log('[NO_RESULT] ' + productId);
       report.noResult++;
+      recordDiag(diag, productId, { query: searchTerm, resultCount: 0,
+        outcome: 'NO_RESULT', reason: null, best: null }, today);
+      // RAKUTEN-ID Phase 4: 検索0件でも「成果対象URLでない available」は残置しない
+      if (isInvalidAvailable(product)) {
+        const dem = demotionUpdates(today, null);
+        currentSrc = patchProductInSource(currentSrc, productId, dem);
+        report.updated++;
+        report.searchFallback++;
+        report.changed.push(productId + ' (invalid-available → search)');
+        console.log('[DEMOTED] ' + productId + ' — available だが成果対象URLでないため search へ降格');
+      }
       continue;
     }
 
@@ -926,6 +1073,17 @@ async function main() {
 
     if (!bestItem) {
       console.log('[REJECTED] All candidates failed guards: ' + productId);
+      recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+        outcome: 'ALL_REJECTED', reason: 'カテゴリガード/価格/不審ショップで全候補除外',
+        best: diagBest(items[0]) }, today);
+      if (isInvalidAvailable(product)) {
+        const dem = demotionUpdates(today, null);
+        currentSrc = patchProductInSource(currentSrc, productId, dem);
+        report.updated++;
+        report.searchFallback++;
+        report.changed.push(productId + ' (invalid-available → search)');
+        console.log('[DEMOTED] ' + productId + ' — available だが成果対象URLでないため search へ降格');
+      }
       continue;
     }
 
@@ -934,7 +1092,39 @@ async function main() {
 
     const affiliateUrl = buildAffiliateUrl(bestItem.itemUrl, bestItem.affiliateUrl);
 
-    if (bestScore >= CONFIDENCE_THRESHOLD && affiliateUrl) {
+    if (IDENTITY_PROMOTE) {
+      // RAKUTEN-ID Phase 1: 同一性ゲート経由の昇格。
+      // EXACT/STRONG のみ昇格可。AMBIGUOUS/REJECT/HOLD は search 維持。
+      // 8.0 の人気閾値は課さない（scoreCandidate は候補選別時の
+      // 価格レンジ・カテゴリガード・不審ショップの安全チェックとして既に効いている）。
+      const idn  = IDN.deriveIdentity(product);
+      const bestId = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
+      const lvl  = bestId.match.level;
+      const idAff = buildAffiliateUrl(bestId.item.itemUrl, bestId.item.affiliateUrl);
+      const promotable = !product.rakutenIdentityHold &&
+        (lvl === 'EXACT' || lvl === 'STRONG') && bestId.quality !== null && idAff;
+      if (promotable) {
+        updates.rakutenStatus     = 'available';
+        updates.rakutenUrl        = idAff;
+        updates.rakutenItemCode   = bestId.item.itemCode || null;
+        updates.rakutenPrice      = bestId.item.itemPrice;
+        updates.rakutenShop       = bestId.item.shopName || '';
+        updates.rakutenConfidence = bestId.quality;
+        report.available++;
+        console.log('[PROMOTED:ID] ' + productId + ' level=' + lvl +
+                    ' ev=' + bestId.match.evidence.join(','));
+        recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+          outcome: 'PROMOTED_' + lvl, reason: bestId.match.evidence.join(','),
+          best: diagBest(bestId.item) }, today);
+      } else {
+        Object.assign(updates, demotionUpdates(today, bestId.quality));
+        report.searchFallback++;
+        recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+          outcome: 'KEPT_SEARCH_' + (product.rakutenIdentityHold ? 'HOLD' : lvl),
+          reason: bestId.match.conflicts.join(',') || null,
+          best: diagBest(bestId.item) }, today);
+      }
+    } else if (bestScore >= CONFIDENCE_THRESHOLD && affiliateUrl) {
       // Promote to available — only when BOTH score and commission URL exist
       updates.rakutenStatus     = 'available';
       updates.rakutenUrl        = affiliateUrl;
@@ -969,6 +1159,14 @@ async function main() {
       report.searchFallback++;
     }
 
+    if (!IDENTITY_PROMOTE) {
+      // RAKUTEN-ID Phase 3: レガシー経路の結果も診断ファイルへ残す
+      recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+        outcome: (updates.rakutenStatus === 'available') ? 'PROMOTED_LEGACY' : 'KEPT_SEARCH_LEGACY',
+        reason: 'score=' + bestScore + (affiliateUrl ? '' : ' no-affiliateUrl'),
+        best: diagBest(bestItem) }, today);
+    }
+
     currentSrc = patchProductInSource(currentSrc, productId, updates);
     report.updated++;
     report.changed.push(productId + ' (' + bestScore + ' → ' + updates.rakutenStatus + ')');
@@ -990,6 +1188,9 @@ async function main() {
     console.error('[rakuten-sync] Aborted — ' + new Date().toISOString());
     process.exit(1);           // fail the workflow
   }
+
+  // RAKUTEN-ID Phase 3: 診断ファイル（内容が変わったときだけ書く）
+  writeDiagIfChanged(diag);
 
   // Write only if changed
   if (report.updated > 0) {
@@ -1032,14 +1233,21 @@ async function main() {
 // ─── Entry point ──────────────────────────────────────────────
 // AUDIT_IMAGES=true routes to auditImages() and NEVER reaches main(),
 // so the products.js writeFileSync path is structurally unreachable.
-if (AUDIT_IMAGES) {
-  auditImages().catch(function(e) {
-    console.error('[FATAL][image-audit]', redact(e.message));
-    process.exit(1);
-  });
+// require された場合（ローカルのfixtureテスト用）は何も実行しない。
+if (require.main === module) {
+  if (AUDIT_IMAGES) {
+    auditImages().catch(function(e) {
+      console.error('[FATAL][image-audit]', redact(e.message));
+      process.exit(1);
+    });
+  } else {
+    main().catch(function(e) {
+      console.error('[FATAL]', e.message);
+      process.exit(1);
+    });
+  }
 } else {
-  main().catch(function(e) {
-    console.error('[FATAL]', e.message);
-    process.exit(1);
-  });
+  module.exports = { scoreCandidate: scoreCandidate, buildAffiliateUrl: buildAffiliateUrl,
+                     demotionUpdates: demotionUpdates, isInvalidAvailable: isInvalidAvailable,
+                     recordDiag: recordDiag, patchProductInSource: patchProductInSource };
 }

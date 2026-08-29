@@ -22,6 +22,11 @@ on:
         required: false
         default: ''
         type: string
+      identity_dryrun:
+        description: 'Identity dry-run (RAKUTEN-ID Phase 1): 同一性診断のみ。ファイルへ一切書き込まない'
+        required: false
+        default: false
+        type: boolean
       audit_search_term:
         description: '監査対象1商品の楽天検索語を一時的に上書きする。data/products.jsには保存しない。audit_images=true かつ audit_product_ids が1件のときのみ有効。'
         required: false
@@ -50,7 +55,8 @@ jobs:
       - name: Run Rakuten sync
         if: >-
           github.event_name != 'workflow_dispatch' ||
-          github.event.inputs.audit_images != 'true'
+          (github.event.inputs.audit_images != 'true' &&
+           github.event.inputs.identity_dryrun != 'true')
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
           RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
@@ -61,28 +67,59 @@ jobs:
         id: diff
         if: >-
           github.event_name != 'workflow_dispatch' ||
-          github.event.inputs.audit_images != 'true'
+          (github.event.inputs.audit_images != 'true' &&
+           github.event.inputs.identity_dryrun != 'true')
         run: |
-          if git diff --quiet data/products.js; then
+          if git diff --quiet data/products.js data/rakuten-diag.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "=== Changed lines in products.js ==="
-            git diff --stat data/products.js
+            echo "=== Changed files ==="
+            git diff --stat data/products.js data/rakuten-diag.json
           fi
 
       - name: Commit and push
         if: >-
           (github.event_name != 'workflow_dispatch' ||
-           github.event.inputs.audit_images != 'true') &&
+           (github.event.inputs.audit_images != 'true' &&
+            github.event.inputs.identity_dryrun != 'true')) &&
           steps.diff.outputs.changed == 'true' &&
           github.event.inputs.dry_run != 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/products.js
+          git add data/products.js data/rakuten-diag.json
           git commit -m "chore: auto update rakuten prices [$(date -u +%Y-%m-%d)]"
           git push
+
+      # ── Identity dry-run (RAKUTEN-ID Phase 1, read-only) ─────
+      # 同一性診断のみ。products.js / rakuten-diag.json を含む一切のファイルへ
+      # 書き込まないことを直後のステップで機械検証する。
+      - name: Run identity dry-run (read-only)
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.identity_dryrun == 'true' &&
+          github.event.inputs.audit_images != 'true'
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          IDENTITY_DRYRUN: 'true'
+        run: node scripts/update-rakuten.js
+
+      - name: Verify nothing was written by identity dry-run
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          github.event.inputs.identity_dryrun == 'true' &&
+          github.event.inputs.audit_images != 'true'
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "OK: identity dry-run wrote nothing."
+          else
+            echo "FATAL: identity dry-run modified files — this must never happen."
+            git status --porcelain
+            exit 1
+          fi
 
       # ── Image audit mode (read-only investigation) ───────────
       # Runs ONLY on manual dispatch with audit_images=true.
