@@ -16,23 +16,28 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **2df8cb6**（PR #103 merge = `bc9bd11` ＋ closeout-gate 追加まで反映済み） |
-| サイトファイルの状態 | **PR #103 = `bc9bd11`** が最後。**merge 待ち = 本PR（CLOSEOUT PHASE）** |
-| 確認方法 | `git log --oneline -1 origin/main` で**実測する**。表の値は下記の理由で常に1〜2 commit 遅れる |
+| 基準 | `origin/main` = **f2bdaed**（PR #104 = CLOSEOUT PHASE の merge まで反映済み） |
+| サイトファイルの状態 | **PR #104 = `f2bdaed`** が最後。**merge 待ち = 本PR（DECISION CLOSEOUT）** |
+| 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
-| 作業ブランチ | `claude/closeout-phase` |
+| 作業ブランチ | `claude/decision-closeout` |
 | 作業ツリー | clean（`origin/main` ＋ 本PRの変更のみ） |
-| 本PRの変更 | `guides/` 4件 ／ `species/` テンプレ3＋2 ／ `species-list.html` ／ `scripts/gen_related_links.py` ／ `docs/AI-HANDOFF.md` |
-
-> **この表が main の tip と一致しないのは正常。** 本ファイル自身の同期PRは、
-> 書いた時点では自分の merge commit を知りようがないため、**構造上かならず1 commit 先になる**。
-> 重要なのは tip と一致していることではなく、**「サイトファイルの状態」の行が正しいこと**。
-> 作業開始前は `git log --oneline -1 origin/main` を実測し、
-> 差が `docs/AI-HANDOFF.md` だけの commit なら BASE のズレとして扱わなくてよい。
+| 本PRの変更 | `assets/species-photos/canton-reeves-turtle.webp` ／ `data/credits_map.json` ／ `data/pc_parsed.json` ／ `photo-credits.html` ／ `species/canton-reeves-turtle.html` ／ `docs/AI-HANDOFF.md` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### DECISION CLOSEOUT（2026-08-29 / 本PR）
+
+DECISION 9件を確定処理した。**CLOSE したものは UNRESOLVED に残していない。**
+
+| ID | 確定 | 内容 |
+|----|------|------|
+| **D1 PR #35** | **CLOSE**（写真救出完了 → #35 は close 可） | N13 の写真候補を **PR #35 のブランチ `claude/konnichiha-fnoxtn`（`a38ee76`）から救出**。`assets/species-photos/canton-reeves-turtle.webp`（800×600 / Greg Hume / Wikimedia Commons / CC BY-SA 4.0）と**クレジット4層**（`credits_map.json` ／ `pc_parsed.json` ／ `photo-credits.html` ／ 種ページ figcaption）を同期。**これで H9／B5 も同時に解消**（別種 *M. reevesii* 写真の流用が解消され、観察ID共用も解消）。**CITES・分類は一切触っていない**（B6 の BLOCKED を侵さないため） |
+| **D2 テキサスチズガメ** | **CLOSE**（現状維持） | 通常一覧のまま。sitemap 掲載済・被リンク3で破綻なし。**再判断しない** |
+| **D6 カントンクサガメの `legal`** | **CLOSE**（変更しない） | `legal: null` のまま。立てても種一覧の表示は変わらず、影響は診断の注意文だけで価値が小さい。**D1/B5 の写真差し替えとは別件**（写真は上記で解決済み、`legal` は据え置き） |
+| **D8 species→compare 15/112** | **CLOSE**（仕様として確定） | 15 は構造上の上限。**被覆率を上げる目的だけの compare 新規作成は禁止**。今後この数値を欠陥として再指摘しない |
 
 ### CLOSEOUT PHASE — 残件棚卸しと一括クローズ（2026-08-29 / 本PR）
 
@@ -799,60 +804,54 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
-> **2026-08-29 CLOSEOUT PHASE で全件を BLOCKED / DECISION / DROP に分類済み。**
+> **2026-08-29 DECISION CLOSEOUT 後の実態。**
+> D1 / D2 / D6 / D8 は CLOSE 済みで COMPLETED へ移した。ここには残っていない。
 > 再開条件のない「後でやる」「次回確認」はこのリストに置かない。
 
 ### DECISION — Owner の判断だけで再開できる（**再調査しない**）
 
-| 対象 | 選択肢 | 推奨 | 影響 |
-|------|--------|------|------|
-| **PR #35** | A: close する / B: 残す | **A（close）** | 実体は PR #89 で決着済み。バイナリ競合＋`CLAUDE.md` OBSOLETE で merge 不可。ただし **N13 の写真候補が本文に記録されている**ため、close 前に該当記述を FIXED_FACTS へ退避すること |
-| **テキサスチズガメの掲載可否** | A: 通常一覧に残す（現状） / B: archive へ戻す | **A（現状維持）** | CITES III・`legal:null` で国内法規制なし。除外根拠も掲載根拠も不足。現在 sitemap 掲載済・被リンク3で破綻していない。新しい流通情報が出るまで動かす必要がない |
-| **オプストヒラセガメの亜種ページ新規作成** | A: 着手 / B: 見送り | 判断のみ | 写真は確定済（photo 134512961 / Chris Oldnall / CC BY-SA / 1536×2048）。着手する場合は Phase C 同規模（新規約320行＋master／identification／shindan／クレジット／sitemap／相互リンク）の**独立工程**。**着手時は本PRで修正済みのテンプレを使うこと（118種で正しい）** |
-| **ゴールデンギリシャリクガメの写真** | A: 研究グレード5枚から妥協選定（完全合致0枚） / B: casual の photo 30155234 を採る / C: 入れない | **C または A** | B は `pancake-tortoise` で「casual の飼育個体は不採用」とした前例と食い違い、例外を作ることになる。あわせて **CC BY-SA（継承条件）の許容可否**も判断が要る（前例: `guerrero-wood-turtle`）。探索は打ち止め済（FIXED_FACTS） |
-| **`ouachita-map-turtle-sp` の三名法/二名法** | A: HOLD 維持 / B: HOLD 解除して二名法へ統一 | **A（HOLD 維持）** | `data/species-identification.json:378` に 2026-08-22 付 `unresolved` があり「TTWG第9版(2021)本文で sabinensis の階級を確認できるまで、どちらへも統一しない」と明記。B を選ぶ場合、identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える。うち3箇所は SEO 層で **H8 の変更禁止に触れる**。**なお和名の表示ゆれ（N7）は本PRで独立に解消済みで、この判断には含まれない** |
-| **N11 カントンクサガメの `legal`** | A: `null` のまま / B: `'cites_ii'` を立てる | 判断のみ | B にすると診断結果に「CITES IIです。書類を確認してください」の注意が出る。**種一覧のカード表示は変わらない**（一覧が表示するのは `cites_i` / `cites_ii_cb_only` / `conditional_invasive` / `unknown_hold` の4値のみ）。影響は診断の注意文だけ |
-| **N22 `spenglers-leaf-turtle` の写真構図** | A: 残す / B: 差し替える | 判断のみ | 人の手に持たれた構図。生体写真全数監査（123枚）は通過済みだが Phase 3 でトップ最上位グリッドへ露出が上がった。`CLAUDE.md`「採用する写真＝自然な姿勢」に照らして判断。差し替える場合の影響は `index.html` 1カードと `species/spenglers-leaf-turtle.html` |
-| **species→compare 15/112** | A: 現状維持 / B: 比較ページを新規作成して被覆を上げる | **A（現状維持）** | 15 は**構造上の上限**。比較ページが実在するのが15種のみで、無関係な種から比較ページへリンクを張ることはしていない。被覆を上げるには比較ページ自体の新規作成（コンテンツ工程）が必要 |
-| **`shindan/index.html` の静的本文984字 / noscript なし** | A: 現状維持 / B: 静的本文を増やす / C: noscript を足す | 判断のみ | 被リンク**491本 / 159ページ**とサイト最大のハブでありながら本文はJS依存。Google はJSを実行するため即座の順位影響は限定的。B はコンテンツ工程、C 単独では効果が小さい。**GSC で shindan の実測が出てから判断するのが最も無駄がない**（BLOCKED-1 と同時に解ける） |
+| ID | 選択肢 | 判断材料 |
+|----|--------|---------|
+| **D3 オプストヒラセガメの亜種ページ** ⚠️**前提が誤っていたため差し戻し** | A: 写真なしページとして作成 / B: 写真が出るまで作らない | **旧記載「写真は確定済（photo 134512961 / Chris Oldnall）」は誤りだった。** `CLAUDE.md`「HOLD 4件の写真素材 最終確定（2026-08-24・調査クローズ）」が、この写真について **「亜種同定を証明できない」= HOLD** と結論している。理由は実測: 産地 20.20N は obsti の分布域（Thua Thien-Hue 16.3N〜Dak Lak 12.7N）の**約400km北**で intergradation zone よりさらに北＝**基亜種の分布域**、かつ腹甲がほぼ無地で obsti の識別形質「放射状の黒斑」と一致しない。**この写真を obsti として載せると誤同定の公開になる。**<br>**A を選べる根拠**: 写真なしの species ページは既に8件あり確立されたパターン（`golden-greek-tortoise` `indochinese-box-turtle` `mccords-snake-necked-turtle` `three-striped-box-turtle` `siebenrocks-snake-necked-turtle` ほか）。<br>**A を選ぶ場合の注意**: 親種 `hirase-turtle`（*Cuora mouhotii*）の master は `distribution` / `max_shell_length_cm` / `lifespan` がいずれも **UNPROVEN**。亜種固有で確実に書けるのは分類（Fritz et al. 1998・TTWG承認）、分布域、識別形質（腹甲の放射状黒斑）程度で、**飼育情報は「親種に準じる」と明記する形になる**。薄いページになることを承知で作るかの判断 |
+| **D7 `spenglers-leaf-turtle` の写真構図** | A: 現状維持 / B: 亀好きさん自身の実飼育写真へ差し替え | **現在画像**: `assets/species-photos/spenglers-leaf-turtle.webp`（800×600 / 51KB / Viva.Chelonia / Wikimedia Commons / CC BY-SA）。人の手に持たれた構図。使用箇所は **`index.html` の1カードと `species/spenglers-leaf-turtle.html`** の2箇所。<br>**差し替え候補は repo 内に既にある** — `assets/species/spenglers-leaf-turtle/` の**亀好きさん自身の実飼育写真5枚**（Real Setup 記事用）: `face-close.jpg`(1599×1600) ／ `hiding-cork.jpg`(1600×1201) ／ `rock-cave.jpg`(1600×1201) ／ `setup-full.jpg`(1600×1201) ／ `water-dish.jpg`(1201×1600)。**いずれも自然な姿勢で、800×600 基準を満たす解像度があり、外部ライセンス制約もない（自前写真）**。B を選ぶ場合は 800×600 WebP へ変換し、クレジット4層を「亀好きさん自身の撮影」へ更新する。**E-E-A-T の観点では B が有利**（Commons 写真より自前写真のほうが一次性が高い）。**どれを採るかは実画像を見ないと決められないため Owner 判断** |
 
 ### BLOCKED — 外部データ待ち。**受領したら即再開できる**
 
 | ID | 不足しているもの | 受領後にすること |
 |----|----------------|-----------------|
-| **B1: GSC 成長分析** | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。必要なのは ① Pages.csv ② Queries.csv、そして最重要が ③ **ページ×クエリの組み合わせ**（ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio の GSC コネクタでディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A「position 11〜20 かつ表示回数上位」／B「順位1〜10なのにCTRが期待値以下＝title・meta の書き換えで伸びる」／C「3クエリ以上で表示が立ち始めている」。**species に限定せず guides / ranking / trouble / compare も同条件で評価する** |
-| **B2: beginner TOP10 の2URL競合** | 同上（B1 の③があれば同時に解ける） | `guides/beginner-top10-turtles.html` と `ranking-beginner-top10.html` は title・h1・想定クエリが同型で、両方とも自己 canonical。**構造上は黒に近いが、GSC の実クエリを見るまでカニバリと確定しない**（前回の4AI事実確認で PARTIAL 判定）。実データで重複が確認されたら統合または canonical 集約 |
-| **B3: H8「初心者」SEO運用 80行** | 同上 | `title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 3 / 見出し 9 / パンくず 3。**GSC/GA4 がトリガーを引いたページのみ・週最大3ページ。一斉置換は禁止。能動的に着手しない** |
-| **B4: H3 写真HOLD 4件** | 亀好きさんが候補画像を見つけた時点 | `albino-chinese-softshell`（商用可273枚にアルビノ0枚）／`Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**これが入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的識別性を否定しており**亜種ページを作る価値から再判断が要る**）。**能動的な定期探索は行わない** |
-| **B5: H9 カントンクサガメの写真差し替え** | *M. nigricans* の research grade × 商用可 × 800×600以上 | 現在の写真は *M. reevesii*（別種）。ページには明記済み。**N13 に候補が1件ある**（Commons `File:Kwangtung Turtle (Mauremys nigricans).JPG` / Greg Hume / CC BY-SA 4.0 / 1920×1537）。本実行環境から Commons へ到達できないため、**亀好きさんが画像を渡すか、PR #35 のブランチ `claude/konnichiha-fnoxtn`（head `a38ee76`）から webp とクレジット4層だけを救出する**経路。H3 の4件より解消が近い |
-| **B6: N12 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。旧 PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
+| **B1 GSC 成長分析**（旧 D9 を統合） | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。①Pages.csv ②Queries.csv ③**ページ×クエリの組み合わせ**（最重要。ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio で ディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A=順位11〜20かつ表示上位／B=順位1〜10なのにCTRが期待値以下（title・meta の書換で伸びる）／C=3クエリ以上で表示が立ち始め。**species に限定せず guides / ranking / trouble / compare も同条件で評価**。<br>**旧 D9（`shindan/index.html` の静的本文984字 / noscript なし）はここに統合した。** shindan は被リンク**491本 / 159ページ**とサイト最大のハブだが、Google は JS を実行するため即時の順位影響は限定的。**GSC で shindan の実測が出てから、本文増強・noscript の要否を判断する。単独残件としては持たない** |
+| **B2 beginner TOP10 の2URL競合** | 同上（B1 の③で同時に解ける） | `guides/beginner-top10-turtles.html` と `ranking-beginner-top10.html` は title・h1・想定クエリが同型で両方とも自己 canonical。**構造上は黒に近いが GSC の実クエリを見るまで確定しない**。重複が実証されたら統合または canonical 集約 |
+| **B3 H8「初心者」SEO運用 80行** | 同上 | `title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 3 / 見出し 9 / パンくず 3。**トリガーが引いたページのみ・週最大3ページ。一斉置換は禁止。能動的に着手しない**。N10（`canton-reeves-turtle.html` の meta description 破損）もここに含む |
+| **B4 写真HOLD 3件**（旧 H3 から obsti を除いた3件） | 亀好きさんが候補画像を見つけた時点。**能動的な定期探索は行わない**（`CLAUDE.md` 2026-08-24 恒久方針） | `Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的診断性を否定しており**亜種ページを作る価値から再判断が要る**） |
+| **B6 N12 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。旧 PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所。**D1 の写真救出では意図的に触れていない** |
+| **B7 D4 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できるもの）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現在の候補（研究グレード5枚は完全合致0枚／casual の photo 30155234 は `pancake-tortoise` の前例と矛盾）は **Owner 判断で「採用しない」と確定した**。`species/golden-greek-tortoise.html` は写真なしのまま運用する。新しい写真が偶然見つかった時点で採用可否を判断する |
+| **B8 D5 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の 2026-08-22 付 `unresolved` HOLD を維持する。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3/H8 に触れる）。**和名の表示ゆれは PR #104 で独立に解消済みで、この HOLD には含まれない** |
 
 ### DROP — 今後やらない。**未解決リストから外す**
 
 | 対象 | 理由 |
 |------|------|
-| **N23 `index.html` の孤立CSS 79ルール** | 害がなく、ユーザー価値・SEO価値ともにゼロ。一方で JS が動的に付与するクラスを誤って消す回帰リスクが実在する。**リスクがベネフィットを上回るため掃除しない** |
-| **N20 孤児キー（equipment 8 / CAT_OVERRIDE 3）** | 同上。動作に影響しない死にデータで、PR #90 の前から同数。触る利得がない |
-| **N10 `canton-reeves-turtle.html` の meta description 破損** | SEO層のため **H8（GSC実測トリガー）に従う**。B3 に統合し、単独の残件としては持たない |
-| ~~N24~~ / ~~N25~~ / ~~N26~~ / ~~N21~~ / ~~N29~~ / ~~N27~~ / ~~N7~~ | すべて解消済み（N27・N7 は本PR、N24 は PR #102、他は PR #92/#97/#98/#99） |
-| **320px 横スクロール** | 本PRで解消（COMPLETED 参照） |
+| **N23 `index.html` の孤立CSS 79ルール** | 価値ゼロに対し、JS が動的付与するクラスを誤削除する回帰リスクが実在。リスクがベネフィットを上回るため掃除しない |
+| **N20 孤児キー（equipment 8 / CAT_OVERRIDE 3）** | 動作影響のない死にデータ。PR #90 の前から同数。触る利得がない |
+| **旧 H9 / B5 カントンクサガメの写真差し替え** | **D1 で解決済み**（本PR）。別種 *M. reevesii* 写真の流用と観察ID共用が解消した |
+| **旧 D9 shindan 静的本文 / noscript** | B1 へ統合。単独残件として持たない |
+| ~~N7~~ / ~~N24~~ / ~~N25~~ / ~~N26~~ / ~~N21~~ / ~~N27~~ / ~~N29~~ / 320px横スクロール | すべて解消済み（PR #92/#97/#98/#99/#102/#104） |
 
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### GSC 実測データの受領 → 成長候補の選定（BLOCKED-1 の解除）
+### D3 / D7 の Owner 判断 → 判断が出たものを実装
 
-**CLOSEOUT PHASE で、今の情報と権限だけで閉じられる作業はすべて閉じた。**
-残っているのは Owner の判断（DECISION 9件）と外部データ待ち（BLOCKED 6件）だけで、
-**AI 側の判断で着手できる工程は存在しない。**
+**AI 側の判断だけで着手できる作業は残っていない。**
 
-次の一手は **BLOCKED-1（GSC 成長分析）の解除**。必要なものは UNRESOLVED の B1 に明記した。
-受領すれば B1 と B2 が同時に解け、DECISION の「shindan 静的本文」も判断材料が揃う。
+- **DECISION 2件**（D3 オプストヒラセガメ／D7 spenglers 写真）は、選択肢・判断材料・実装手順まで揃っている。**判断が出たらそのまま実装できる。**
+- **BLOCKED 7件**（B1〜B8）は外部データ・外部資料待ち。**受領物と受領後の処理は固定済み。**
 
-**GSC が用意できない場合の代替工程は置かない。** 推測でページを選定して改修することは、
-`DECISION_RULE.md`（GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ）に反する。
-DECISION 9件のうち Owner が判断を出したものがあれば、そちらを優先して差し支えない。
+最も投資対効果が高いのは **B1（GSC 実測データの受領）**。B1 が解ければ B2 と B3 のトリガーも同時に決まる。
+
+**GSC が用意できない場合の代替工程は置かない。** 推測でページを選定して改修することは
+`docs/operations/DECISION_RULE.md`（GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ）に反する。
 
 ---
 
