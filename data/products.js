@@ -814,7 +814,6 @@ const PRODUCTS = {
 
   heater_aqua_100w: {
     id: 'heater_aqua_100w',
-    rakutenModelNo: 'SH55', // 自サイト name に既出の型番。実測: 67件（run 33259093448）
     name: 'GEX カメ元気 オートヒーター SH55',
     category: 'heating',
     tier: 'standard',
