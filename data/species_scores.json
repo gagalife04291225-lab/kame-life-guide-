@@ -334,12 +334,12 @@
     "rarity": 28,
     "monetization": 52,
     "authority": 42,
-    "has_page": true,
-    "species_page_url": "/species/yellow-spotted-river-turtle.html",
+    "has_page": false,
+    "species_page_url": null,
     "compare_urls": [],
     "starter_kit_key": "aquatic_medium",
     "market_tier": "A",
-    "notes": "安価（¥3,000〜¥9,000）。ベビー見た目かわいい。成体は大型化（甲長46cm）注意"
+    "notes": "安価（¥3,000〜¥9,000）。ベビー見た目かわいい。成体は大型化（甲長46cm）注意。種ページ未作成のため has_page=false / species_page_url=null。canonical slug は species-master.json の podocnemis-unifilis（page: null）。本レコードの slug はスコアとGA計測の識別子で、GA履歴の互換のため変更しない"
   },
   {
     "slug": "florida-box-turtle",
