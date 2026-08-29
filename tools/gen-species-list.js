@@ -11,7 +11,7 @@
  *      species-list.html は外部JSを増やさない方針なので、値をここへ焼き込む。
  *      定義の正本は tools/taxonomy.js の1箇所だけ。
  *   2. <!-- BEGIN:species-index … --> … <!-- END:species-index -->
- *      JS無効時に見える noscript 静的一覧。JS表示と同じ118件・同じ並び順にする。
+ *      JS無効時に見える noscript 静的一覧。JS表示と同じ119件・同じ並び順にする。
  *      通常一覧115件と参考掲載3件に分けて出す。クローラー向けのリンクは減らさない。
  *   3. // BEGIN:wamei-alias … // END:wamei-alias
  *      検索で別名を引くための WAMEI_ALIAS。正本は data/species-master.json の
@@ -113,7 +113,7 @@ const aliasBlock = [
 
 // ── 3. noscript 静的一覧 ──
 // JS表示と同じ順序で、通常一覧115件と参考掲載3件に分けて出す。
-// クローラー向けのリンク総数は118件のまま減らさない。
+// クローラー向けのリンク総数は119件のまま減らさない。
 function li(i) {
   return '<li><a href="' + T.esc(T.guideHref(i.sp)) + '">' + T.esc(i.sp.name) +
          '（' + T.esc(i.sp.latin) + '）' +

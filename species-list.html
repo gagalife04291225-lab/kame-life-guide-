@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カメ・リクガメ 種一覧（118種）｜カメライフガイド</title>
-<meta name="description" content="リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを118種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。">
+<title>カメ・リクガメ 種一覧（119種）｜カメライフガイド</title>
+<meta name="description" content="リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを119種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。">
 <link rel="canonical" href="https://kamelifeguide.com/species-list.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="カメ・リクガメ 種一覧（118種）｜カメライフガイド">
-<meta property="og:description" content="リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを118種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。">
+<meta property="og:title" content="カメ・リクガメ 種一覧（119種）｜カメライフガイド">
+<meta property="og:description" content="リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを119種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。">
 <meta property="og:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -327,7 +327,7 @@
     {
       "@type": "CollectionPage",
       "name": "カメ・リクガメ 種一覧",
-      "description": "リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを118種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。",
+      "description": "リクガメ・水棲ガメ・ヤマガメ・ハコガメ・スッポン・曲頸類・汽水ガメ・日本産カメを119種掲載。うち112種は専用の飼育ガイドページつき。難易度・カテゴリで絞り込みができます。",
       "url": "https://kamelifeguide.com/species-list.html",
       "isPartOf": {
         "@type": "WebSite",
@@ -399,7 +399,7 @@
       </div>
     </div>
     <div class="sl-status">
-      <span class="count-text"><span class="count-line"><span class="count-num" id="count-num">118</span> 種</span><span class="count-split" id="count-split">通常一覧 115 / 参考掲載 3</span></span>
+      <span class="count-text"><span class="count-line"><span class="count-num" id="count-num">119</span> 種</span><span class="count-split" id="count-split">通常一覧 115 / 参考掲載 4</span></span>
       <div class="sl-chips" id="active-chips"></div>
       <span class="sort-wrap">
         <label for="sort-sel" class="sort-label">並び替え</label>
@@ -689,7 +689,7 @@ var CAT_NOTE = {
 };
 // 掲載区分。参考掲載＝国内で流通している個体を確認できなかった種。
 // 「法的に飼えない」という意味ではない。診断はこの値を参照しない。
-var REFERENCE_ONLY = ['エジプトリクガメ','マダガスカルクモノスガメ','モエギハコガメ'];
+var REFERENCE_ONLY = ['エジプトリクガメ','マダガスカルクモノスガメ','モエギハコガメ','オプストヒラセガメ'];
 // END:taxonomy-data
 
 // BEGIN:wamei-alias (tools/gen-species-list.js が生成。手で編集しない)
@@ -1017,7 +1017,7 @@ if (habTilesEl) {
 }
 
 function render() {
-  // 絞り込みは118件全体にかける。そのうえで通常一覧と参考掲載に分ける。
+  // 絞り込みは119件全体にかける。そのうえで通常一覧と参考掲載に分ける。
   // 参考掲載も検索・絞り込みの対象に残す（探している人が見つけられなくなるため）。
   var hit  = sortList(ALL_SPECIES.filter(matches));
   var list = hit.filter(function(i){ return !isReference(i); });
@@ -1266,7 +1266,7 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 </script>
 
 <!-- BEGIN:species-index (tools/gen-species-list.js が生成。手で編集しない) -->
-<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ118件・同じ並び順。通常一覧115件＋参考掲載3件。 -->
+<!-- SEO: 静的種別ページリンク（クローラー向け）。JS表示と同じ119件・同じ並び順。通常一覧115件＋参考掲載4件。 -->
 <noscript>
 <nav aria-label="種別ページ一覧">
 <h2>リクガメ（25種）</h2>
@@ -1507,11 +1507,12 @@ document.getElementById('reset-filters').addEventListener('click', function() {
 <ul>
 <li><a href="species/hilaire-side-necked-turtle.html">ヒラリーカエルガメ（Phrynops hilarii）の飼育ガイド</a></li>
 </ul>
-<h2>参考掲載（3種）</h2>
+<h2>参考掲載（4種）</h2>
 <p>国内で流通している個体を確認できなかった種です。飼う種を選ぶときの候補には入れていません。</p>
 <ul>
 <li><a href="guide-dry.html">エジプトリクガメ（Testudo kleinmanni）は暮らし方ガイドで解説</a></li>
 <li><a href="guide-dry.html">マダガスカルクモノスガメ（Pyxis arachnoides）は暮らし方ガイドで解説</a></li>
+<li><a href="species/obsti-hirase-turtle.html">オプストヒラセガメ（Cuora mouhotii obsti）の飼育ガイド</a></li>
 <li><a href="species/indochinese-box-turtle.html">モエギハコガメ（Cuora galbinifrons）の飼育ガイド</a></li>
 </ul>
 </nav>

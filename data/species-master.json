@@ -6137,6 +6137,103 @@
    }
   },
   {
+   "slug": "obsti-hirase-turtle",
+   "page": "species/obsti-hirase-turtle.html",
+   "wamei": "オプストヒラセガメ",
+   "scientific_name": {
+    "value": "Cuora mouhotii obsti",
+    "verification": "CONFIRMED",
+    "last_verified": "2026-08-29",
+    "provenance": "literature",
+    "sources": [
+     "Fritz et al. 1998（原記載）",
+     "TTWG（亜種の有効性を承認）"
+    ],
+    "note": "ヒラセガメ Cuora mouhotii の亜種。旧属名 Pyxidea。基亜種は C. m. mouhotii"
+   },
+   "english_name": {
+    "value": "Obst's Keeled Box Turtle",
+    "verification": "LIKELY",
+    "note": "流通名・文献表記。一次資料での確定は未了"
+   },
+   "distribution": {
+    "value": "ベトナム中部〜南部（トゥアティエン＝フエ 16.3N 〜 ダクラク 12.7N）",
+    "verification": "CONFIRMED",
+    "provenance": "literature",
+    "last_verified": "2026-08-29",
+    "note": "基亜種との移行帯はベトナム北中部（クアンチ〜ゲアン付近）"
+   },
+   "identification": {
+    "value": "腹甲に放射状の黒斑。基亜種の腹甲はほぼ無地",
+    "verification": "CONFIRMED",
+    "provenance": "literature",
+    "last_verified": "2026-08-29",
+    "note": "移行帯の個体は中間的で、外見のみでの亜種同定は不可"
+   },
+   "max_shell_length_cm": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種固有値は未確認。親種ヒラセガメの値（18cm前後）を援用"
+   },
+   "conservation": {
+    "env_redlist": {
+     "value": "対象外（日本産種ではない）",
+     "verification": "CONFIRMED",
+     "last_verified": "2026-08-29"
+    },
+    "iucn": {
+     "value": null,
+     "verification": "NEEDS_REVIEW",
+     "note": "亜種単位の評価は未確認"
+    }
+   },
+   "cites": {
+    "appendix": {
+     "value": "II",
+     "verification": "LIKELY",
+     "provenance": "official",
+     "institution": "親種 Cuora mouhotii の掲載を継承（CITES は種単位で掲載）",
+     "note": "親種の値をそのまま継承。亜種単位の個別掲載はない",
+     "last_verified": "2026-08-29"
+    },
+    "since": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   },
+   "domestic_law": {
+    "value": null,
+    "verification": "UNPROVEN"
+   },
+   "lifespan": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "亜種固有値は未確認。親種ヒラセガメの値（30〜50年）を援用"
+   },
+   "photo": {
+    "value": null,
+    "verification": "UNPROVEN",
+    "note": "採用条件を満たす写真なし。iNat photo 134512961（Chris Oldnall / CC BY-SA / 1536x2048）は産地20.20Nが本亜種の分布域から約400km北で、腹甲もほぼ無地のため亜種同定を証明できず不採用（CLAUDE.md 2026-08-24 調査クローズ）"
+   },
+   "care": {
+    "note": "亜種固有の飼育データは未確認。すべて親種 hirase-turtle に準じる",
+    "air_temp_c": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "note": "親種の値（20〜28℃・夏は保冷）を援用"
+    },
+    "humidity_pct": {
+     "value": null,
+     "verification": "UNPROVEN",
+     "note": "親種の値（高め・蒸れは回避）を援用"
+    },
+    "brumation": {
+     "value": null,
+     "verification": "UNPROVEN"
+    }
+   }
+  },
+  {
    "slug": "taiwan-box-turtle",
    "page": "species/taiwan-box-turtle.html",
    "wamei": "タイワンセマルハコガメ",

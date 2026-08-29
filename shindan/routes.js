@@ -166,7 +166,7 @@ const ROUTES = [
   },
   {
     id: 'all', emoji: '❓', name: '全カテゴリ診断',
-    desc: 'まだ決めていない人向け（全118種・8問で診断）', qCount: 8,
+    desc: 'まだ決めていない人向け（全119種・8問で診断）', qCount: 8,
     get species(){ return SPECIES.all; },
     questions: [
       { text: '飼育環境の主な環境タイプを選んでください。', choices: [

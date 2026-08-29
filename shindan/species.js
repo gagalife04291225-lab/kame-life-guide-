@@ -871,6 +871,17 @@ forest: [
     score: function(s){ return (s.m_size||0)+(s.cooling||0)+(s.advanced||0)+(s.advanced_env||0)+(s.ya_ma||0); },
     availability: 'common'
   },
+  { name: 'オプストヒラセガメ', latin: 'Cuora mouhotii obsti', emoji: '🪨', difficulty: '中〜上級', size: 'M（親種準拠）', cites: 'CITES II', legal: 'cites_ii_cb_only', riskFlags: ["cites_ii", "cb_only", "high_humidity"],
+    reason: 'ヒラセガメの亜種。ベトナム中部〜南部に分布し、腹甲の放射状黒斑が基亜種との識別点。亜種固有の飼育データは未確認のため、飼育は親種ヒラセガメに準じます。国内流通はきわめて稀。',
+    specs: { '最大甲長': '親種準拠（18cm前後）', 'タイプ': '森林棲', '温度': '親種準拠（20〜28℃）', '難易度': '★★★' },
+    coreSpecs: { size: '18cm', temp: '20〜28℃', lifespan: '30〜50年', diet: '雑食' },
+    extraSpecs: {},
+    links: [{ label: 'ヒラセガメ（親種）', href: '../species/hirase-turtle.html' }], asin: null,
+    slug: 'obsti-hirase-turtle', hasPage: true,
+    match: function(s){ return false; },
+    score: function(s){ return 0; },
+    availability: 'reference_only'
+  },
   { name: 'アカスジヤマガメ', latin: 'Rhinoclemmys pulcherrima', emoji: '🔴', difficulty: '中〜上級', size: 'M（17〜20cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '甲羅と頭部に鮮やかな赤いラインが走る美しい中米産ヤマガメ。半陸棲で湿度管理が必要。マンヤマガメとの区別に注意。',
     specs: { '最大甲長': '20cm', 'タイプ': '半陸棲', '温度': '24〜30℃', '難易度': '★★☆' },
