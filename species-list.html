@@ -304,6 +304,10 @@
   @media(max-width:360px){
     .sp-body{padding:9px 9px 10px;}
     .sp-name{font-size:.79rem;}
+    /* 320px で件数＋注記が nowrap のまま 315px に伸び、ページ全体が
+       9px 横スクロールしていた。狭幅では折り返しを許可する。
+       元定義が .sp-cat .sp-cat-count のため特異性を合わせる */
+    .sp-cat .sp-cat-count{white-space:normal;}
   }
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
