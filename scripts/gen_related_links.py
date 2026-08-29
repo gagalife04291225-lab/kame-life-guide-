@@ -78,6 +78,112 @@ FEATURE_GUIDES = [
 SPECIES_REF = re.compile(r"species/([a-z0-9-]+)\.html")
 AUTOLINK_LINE = re.compile(r'[ \t]*<a href="[^"]*" class="rel-btn" data-autolink="1">.*?</a>\n?')
 
+# ---- guides → species（逆方向）---------------------------------------------
+# 機材ガイドから代表種へ戻す導線。対象種は恣意的に選ばず、
+# サイト自身が既にキュレーションしているランキング掲載種だけを候補にする。
+RANKING_SOURCES = [
+    "guides/beginner-top10-turtles.html",
+    "guides/small-turtle-top10.html",
+    "guides/low-odor-top10-turtles.html",
+]
+# ガイド → 対象カテゴリ（None は水棲・陸棲の両方から代表を出す）
+GUIDE_TARGETS = {
+    "guides/filter-guide.html": "aquatic",      # 水棲専用の機材
+    "guides/uvb-light-guide.html": "terrestrial",  # 陸棲・林床で特に重要
+    "guides/food-guide.html": None,             # 全種共通
+    "guides/temperature-guide.html": None,      # 全種共通
+}
+GUIDE_CARDS_MAX = 3
+AUTOCARD = re.compile(
+    r'[ \t]*<a href="[^"]*" class="related-card" data-autolink="1">.*?</a>\n?', re.S
+)
+
+
+def species_wamei_and_category():
+    """species ページ自身から 和名 と 生態カテゴリ を取り出す"""
+    out = {}
+    for p in species_pages():
+        slug = os.path.basename(p)[:-5]
+        html = open(p, encoding="utf-8").read()
+        out[slug] = (wamei_of(slug), detect_category(html))
+    return out
+
+
+def build_guide_species_plan():
+    """機材ガイドに載せる代表種カードを決める"""
+    # ランキング掲載回数を数える（多いほど「サイトが代表として扱っている種」）
+    freq = {}
+    for src in RANKING_SOURCES:
+        fp = os.path.join(ROOT, src)
+        if not os.path.exists(fp):
+            continue
+        for slug in set(SPECIES_REF.findall(open(fp, encoding="utf-8").read())):
+            freq[slug] = freq.get(slug, 0) + 1
+
+    meta = species_wamei_and_category()
+    plan = {}
+    for guide, want in GUIDE_TARGETS.items():
+        if not os.path.exists(os.path.join(ROOT, guide)):
+            continue
+        cands = []
+        for slug, n in freq.items():
+            if slug not in meta:
+                continue  # 実ページが無い / 除外対象
+            wamei, cat = meta[slug]
+            if not wamei or cat is None:
+                continue
+            if want is not None and cat != want:
+                continue
+            cands.append((-n, cat, slug, wamei))
+        cands.sort()
+        if want is None:
+            # 全種共通のガイドは水棲・陸棲の両方から均等に代表を出す
+            picked, seen = [], {}
+            for c in cands:
+                cat = c[1]
+                if seen.get(cat, 0) >= 2:
+                    continue
+                seen[cat] = seen.get(cat, 0) + 1
+                picked.append(c)
+                if len(picked) >= GUIDE_CARDS_MAX:
+                    break
+            cands = picked
+        else:
+            cands = cands[:GUIDE_CARDS_MAX]
+        plan[guide] = [(s, w, "🐢") for _, _, s, w in cands]
+    return plan
+
+
+def apply_guide_cards(plan):
+    changed, total = 0, 0
+    for guide, picks in plan.items():
+        fp = os.path.join(ROOT, guide)
+        src = open(fp, encoding="utf-8").read()
+        html = AUTOCARD.sub("", src)
+        i = html.find('<div class="related-guides-grid">')
+        if i == -1:
+            print("  ! related-guides-grid なし:", guide)
+            continue
+        j = html.find("</div>", i)
+        k = html.rfind("\n", i, j)
+        pad = "      "
+        block = ""
+        for slug, wamei, icon in picks:
+            block += (
+                '%s<a href="../species/%s.html" class="related-card" data-autolink="1">\n'
+                '%s  <span class="related-card-icon" aria-hidden="true">%s</span>\n'
+                '%s  <p class="related-card-title">%sの飼い方</p>\n'
+                '%s  <span class="related-card-arrow">くわしく →</span>\n'
+                "%s</a>\n" % (pad, slug, pad, icon, pad, wamei, pad, pad)
+            )
+            total += 1
+        html = html[: k + 1] + block + html[k + 1 :]
+        if html != src:
+            open(fp, "w", encoding="utf-8").write(html)
+            changed += 1
+    return changed, total
+
+
 
 _WAMEI_CACHE = {}
 
@@ -265,6 +371,34 @@ def verify(paths):
     return total, broken
 
 
+def verify_guides():
+    """guides→species で生成したリンクの実在確認"""
+    broken = []
+    for fp in sorted(glob.glob(os.path.join(ROOT, "guides", "*.html"))):
+        html = open(fp, encoding="utf-8").read()
+        for href in re.findall(
+            r'href="(\.\./species/[^"]+)" class="related-card" data-autolink="1"', html
+        ):
+            target = os.path.normpath(os.path.join(os.path.dirname(fp), href))
+            if not os.path.exists(target):
+                broken.append((os.path.relpath(fp, ROOT), href))
+    return broken
+
+
+def measure_dir(d):
+    """<dir>→species のリンク状況"""
+    v = []
+    for fp in sorted(glob.glob(os.path.join(ROOT, d, "*.html"))):
+        html = open(fp, encoding="utf-8").read()
+        v.append(len(re.findall(r'href="[^"]*species/', html)))
+    return dict(
+        linked=sum(1 for x in v if x > 0),
+        pages=len(v),
+        median=statistics.median(v),
+        total=sum(v),
+    )
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "--check"
     paths = species_pages()
@@ -279,11 +413,15 @@ def main():
 
     if mode == "--apply":
         changed = apply(paths, planned)
+        gplan = build_guide_species_plan()
+        gchanged, gtotal = apply_guide_cards(gplan)
         after = measure(paths)
         total, broken = verify(paths)
-        print("更新ファイル数: %d" % changed)
-        print("生成リンク総数: %d / 壊れたURL: %d" % (total, len(broken)))
-        for b in broken:
+        gb = verify_guides()
+        print("更新ファイル数: species %d / guides %d" % (changed, gchanged))
+        print("生成リンク総数: species→ %d / guides→species %d" % (total, gtotal))
+        print("壊れたURL: %d" % (len(broken) + len(gb)))
+        for b in broken + gb:
             print("  BROKEN:", b)
         print("\n--- 実装前 → 実装後 ---")
         for k in ("guides", "compare"):
@@ -293,7 +431,8 @@ def main():
             print("  0件ページ数:      %d → %d" % (b["zero"], a["zero"]))
             print("  中央値:           %g → %g" % (b["median"], a["median"]))
             print("  総リンク数:       %d → %d" % (b["total"], a["total"]))
-        return 1 if broken else 0
+        print("guides→species: %s" % (measure_dir("guides"),))
+        return 1 if (broken or gb) else 0
     else:
         print("\n--- 現状 ---")
         for k in ("guides", "compare"):
