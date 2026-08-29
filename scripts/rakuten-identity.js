@@ -111,14 +111,14 @@ function extractAttrs(text) {
   let m;
   const wre = /(\d+(?:\.\d+)?)\s*w(?![a-z])/g;
   while ((m = wre.exec(t))) attrs.watts.push(parseFloat(m[1]));
-  // 容量: kg→g、l→ml に正規化して {kind, v} で持つ
-  const cre = /(\d+(?:\.\d+)?)\s*(kg|g|l|ml)(?![a-z])/g;
+  // 容量: kg→g、l→ml に正規化して {kind, v} で持つ（「リットル」表記も l として扱う）
+  const cre = /(\d+(?:\.\d+)?)\s*(kg|g|ml|l|リットル|ℓ)(?![a-z])/g;
   while ((m = cre.exec(t))) {
     const v = parseFloat(m[1]);
     if (m[2] === 'kg')      attrs.caps.push({ kind: 'g',  v: v * 1000 });
     else if (m[2] === 'g')  attrs.caps.push({ kind: 'g',  v: v });
-    else if (m[2] === 'l')  attrs.caps.push({ kind: 'ml', v: v * 1000 });
-    else                    attrs.caps.push({ kind: 'ml', v: v });
+    else if (m[2] === 'ml') attrs.caps.push({ kind: 'ml', v: v });
+    else                    attrs.caps.push({ kind: 'ml', v: v * 1000 });
   }
   const cmre = /(\d{2,3}(?:\.\d+)?)\s*cm(?![a-z])/g;
   while ((m = cmre.exec(t))) attrs.cms.push(parseFloat(m[1]));
@@ -127,8 +127,9 @@ function extractAttrs(text) {
   // サイズ等級（S/M/ML/L等）: 単独トークンのみ。容量の l と誤認しないよう境界必須
   const sre = /(?:^|[\s(（/])(ss|ml|xl|ll|s|m|l)(?:サイズ)?(?:$|[\s)）/])/g;
   while ((m = sre.exec(t))) attrs.grades.push(m[1]);
-  // 入数・セット数（×2、3個セット等）。商品名自体に「セット」を含む商品は呼び出し側で除外判断
-  const pre1 = /[×x]\s*([2-9]\d*)(?![0-9])/g;
+  // 入数・セット数（×2、3個セット等）。商品名自体に「セット」を含む商品は呼び出し側で除外判断。
+  // 寸法表記（600×295×360 等）を入数と誤認しないよう、×の直前が数字の場合と3桁以上は除外する。
+  const pre1 = /(?<![0-9０-９])[×x]\s*([2-9]\d?)(?![0-9])/g;
   while ((m = pre1.exec(t))) attrs.packs.push(parseInt(m[1], 10));
   const pre2 = /([2-9]\d*)\s*(?:個|袋|本|箱|枚)\s*(?:入り?|セット|パック)/g;
   while ((m = pre2.exec(t))) attrs.packs.push(parseInt(m[1], 10));
@@ -289,9 +290,11 @@ function matchIdentity(idn, item) {
     if (hit) evidence.push('等級' + idn.attrs.grades[0].toUpperCase());
     else conflicts.push('等級不一致');
   }
-  // 入数（自商品がセット商品でないのに ×2 / 3個セット等）
-  if (!idn.productIsSet && hayAttrs.packs.length) {
-    conflicts.push('入数(' + hayAttrs.packs[0] + ')');
+  // 入数（自商品がセット商品でないのに ×2 / 3個セット等）。
+  // Phase 3: catchcopy の「お得な2個セットも」等に反応しないよう itemName 内のみ見る。
+  const hayNameAttrs = extractAttrs(item.itemName || '');
+  if (!idn.productIsSet && hayNameAttrs.packs.length) {
+    conflicts.push('入数(' + hayNameAttrs.packs[0] + ')');
   }
 
   // 成分変種（カルシウムの D3 有無）の取り違え防止
@@ -303,10 +306,13 @@ function matchIdentity(idn, item) {
   }
 
   // ── RAKUTEN-ID Phase 2: 誤マッチ防止 ──
-  // 消耗品・付属品（自商品名に同語が無い場合のみ矛盾扱い）
+  // 消耗品・付属品（自商品名に同語が無い場合のみ矛盾扱い）。
+  // Phase 3: フィルター本体の catchcopy が交換ろ材に言及するだけで REJECT しないよう
+  // itemName 内の出現だけを矛盾とみなす（実例: AT-50 / メガパワー6090 の誤降格）。
+  const hayNameNormEarly = normJa(item.itemName || '');
   CONSUMABLE_WORDS.forEach(function(w) {
     const nw = normJa(w);
-    if (hayNorm.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) conflicts.push('消耗品(' + w + ')');
+    if (hayNameNormEarly.indexOf(nw) >= 0 && pn.indexOf(nw) < 0) conflicts.push('消耗品(' + w + ')');
   });
   // ケージ・水槽商品に照明系候補を許さない
   if (idn.category === 'enclosure') {

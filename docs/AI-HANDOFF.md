@@ -16,16 +16,33 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **fbefc1d**（PR #110 = RAKUTEN-ID Phase 1 まで反映済み） |
-| サイトファイルの状態 | **PR #110 = `fbefc1d`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 2 本適用）** |
+| 基準 | `origin/main` = **65ace63**（PR #111 = RAKUTEN-ID Phase 2 本適用まで反映済み） |
+| サイトファイルの状態 | **PR #111 = `65ace63`** が最後。**merge 待ち = 本PR（レガシー経路 identity gate 統一）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/rakuten-identity-phase2` |
+| 作業ブランチ | `claude/rakuten-legacy-idgate` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### RAKUTEN-ID Phase 3 — 日次レガシー経路の identity gate 統一（2026-08-29 / 本PR）
+
+日次 rakuten-sync の 8.0 経路にも identity gate を適用し、誤商品CTAが再発しない構造にした。
+
+- **既存 available**: EXACT/STRONG を特定できれば検証済み出品で更新（誤商品CTAの是正差し替えを含む）。
+  現CTAの出品（itemCode一致）が REJECT で代替を特定できなければ search へ安全降格。
+  AMBIGUOUS/未確証は**勝手に更新しない**（無変更）。旧経路の「スコア<8.0のavailableを無条件降格」は
+  廃止（この旧仕様のままだと identity 昇格済み24商品が次の日次で誤降格されるところだった）
+- **search→available**: 従来の 8.0 閾値（据え置き）＋ identity EXACT/STRONG ＋ 成果対象URL を全要求
+- 誤検出対策3件を実API dry-run で発見し修正: 消耗品/入数判定を itemName 限定（catchcopyの
+  「ろ材」言及で本体を誤REJECT）／寸法「600×295×360」の×Nを入数と誤認／容量「リットル」表記の解析追加
+- **本適用結果**（run 33254770061 / commit 026355a）: 降格3（filter_canister_medium・large =
+  ろ材付セット出品 / substrate_soil = 容量不一致14L≠3L）、是正差し替え1（**filter_canister_premium**:
+  ろ材セットCTA → 2217本体EXACT出品 charm ¥26,997）、昇格1（food_tortoise_herbs = STRONG・9.1 →
+  下記 DECISION R3）、KEEP 4（tank_60/substrate_coco/thermometer_digital/analog = AMBIGUOUS）。
+  **available 32 / search 69 / pending 3**。全32件が成果対象URL。fixture 41+38 PASS
 
 ### RAKUTEN-ID Phase 1＋Phase 2 — 楽天アフィリエイト自動収益化（2026-08-29）
 
@@ -997,6 +1014,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 |----|------|---------|
 | **R1 food_hikari_turtle の実体確認** | name「カメのごはん（ウーパールーパー用？）」と term/why が別商品を指す。ASIN B0043UN3X4 の実体確認は Owner の実物確認が必要 | 確認できたら name/term を同期し `rakutenIdentityHold` を外す。確認できるまで楽天昇格から恒久除外（HOLD） |
 | **R2 food_reptomin_tetra の統合/削除** | food_aquatic_premium と同一商品ライン（テトラ レプトミン）の重複。EQUIPMENT_MAP 未参照の孤児レコード | 削除しても参照切れは起きないことを Phase 0 で確認済み。統合 or 削除は Owner 判断（HOLD） |
+| **R3 food_tortoise_herbs の昇格可否** | Phase 2 で Owner が△非承認（180g/400g併記出品）とした商品が、Phase 3 の日次レガシーゲートの正規条件（identity STRONG＋スコア9.1≧8.0＋成果対象URL）を満たして available 化された。商品自体はマルベリックドライで正しい | 非承認を維持するなら `rakutenIdentityHold: true` を1行付与（次回日次で自動降格）。昇格を認めるなら現状のまま。**Owner 判断** |
 
 **旧 D1〜D9 はすべて CLOSE または BLOCKED へ着地済み**（COMPLETED 参照）。
 

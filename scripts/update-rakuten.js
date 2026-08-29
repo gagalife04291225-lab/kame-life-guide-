@@ -940,9 +940,28 @@ async function identityDryRun(products) {
     const aff = !!(best.item.affiliateUrl && String(best.item.affiliateUrl).length > 10);
     const promotable = (lvl === 'EXACT' || lvl === 'STRONG') && best.quality !== null && aff;
     // Phase 2: allowlist を dry-run にも反映。承認外は PROMOTE と表示しない。
-    const action = promotable
+    let action = promotable
       ? (PROMOTE_ALLOWLIST.has(productId) ? 'PROMOTE' : 'KEEP_SEARCH(NOT_APPROVED)')
       : 'KEEP_SEARCH';
+    // Phase 3: 既存 available にはレガシー経路の identity gate 判定をシミュレートして表示
+    let legacyNote = '';
+    if (product.rakutenStatus === 'available') {
+      const storedItem  = items.find(function(it) {
+        return (it.itemCode || '') === (product.rakutenItemCode || '');
+      });
+      const storedMatch = storedItem ? IDN.matchIdentity(idn, storedItem) : null;
+      if (promotable) {
+        // 本適用と同じ優先順: EXACT/STRONG を特定できれば差し替え更新が最優先
+        action = 'LEGACY_REFRESH';
+        legacyNote = ' | stored=' + (storedMatch ? storedMatch.level : 'not-in-results');
+      } else if (storedMatch && storedMatch.level === 'REJECT') {
+        action = 'LEGACY_DEMOTE';
+        legacyNote = ' | stored=REJECT(' + storedMatch.conflicts.join(',') + ')';
+      } else {
+        action = 'LEGACY_KEEP';
+        legacyNote = ' | stored=' + (storedMatch ? storedMatch.level : 'not-in-results');
+      }
+    }
     console.log('[IDENTITY] ' + productId +
       ' | ' + lvl +
       ' | action=' + action +
@@ -953,7 +972,7 @@ async function identityDryRun(products) {
       ' aff=' + (aff ? 'YES' : 'NO') +
       ' qual=' + best.quality +
       ' | ev=' + (best.match.evidence.join(',') || '-') +
-      ' | ng=' + (best.match.conflicts.join(',') || '-'));
+      ' | ng=' + (best.match.conflicts.join(',') || '-') + legacyNote);
   }
   console.log('[identity-dryrun] SUMMARY ' + JSON.stringify(sum));
   console.log('[identity-dryrun] DONE — no files written.');
@@ -1167,47 +1186,91 @@ async function main() {
           reason: bestId.match.conflicts.join(',') || null,
           best: diagBest(bestId.item) }, today);
       }
-    } else if (bestScore >= CONFIDENCE_THRESHOLD && affiliateUrl) {
-      // Promote to available — only when BOTH score and commission URL exist
-      updates.rakutenStatus     = 'available';
-      updates.rakutenUrl        = affiliateUrl;
-      updates.rakutenItemCode   = bestItem.itemCode || null;
-      updates.rakutenPrice      = bestItem.itemPrice;
-      updates.rakutenShop       = bestItem.shopName || '';
-      updates.rakutenConfidence = bestScore;
-      report.available++;
-      console.log('[PROMOTED] ' + productId + ' affiliateUrl=' + affiliateUrl.slice(0,40) + '...');
-    } else if (bestScore >= CONFIDENCE_THRESHOLD && !affiliateUrl) {
-      // Good score but no commission URL — keep search, log for monitoring.
-      // IDEMPOTENCY: clear the commerce fields too. Leaving a stale price/shop
-      // from a previous 'available' run makes the record self-contradictory
-      // (search CTA shown, yet an old price still persisted in the data).
-      updates.rakutenStatus     = 'search';
-      updates.rakutenUrl        = null;
-      updates.rakutenItemCode   = null;
-      updates.rakutenPrice      = null;
-      updates.rakutenShop       = null;
-      updates.rakutenConfidence = bestScore;
-      report.searchFallback++;
-      console.log('[NO_AFF_URL] ' + productId + ' score=' + bestScore + ' no affiliateUrl returned');
     } else {
-      // Below threshold — keep search fallback.
-      // IDEMPOTENCY: same as above — demotion must clear commerce fields.
-      updates.rakutenStatus     = 'search';
-      updates.rakutenUrl        = null;
-      updates.rakutenItemCode   = null;
-      updates.rakutenPrice      = null;
-      updates.rakutenShop       = null;
-      updates.rakutenConfidence = bestScore;
-      report.searchFallback++;
-    }
+      // ── RAKUTEN-ID Phase 3: レガシー（日次）経路にも identity gate ──
+      // 誤商品への成果CTAが再発しない構造にする。8.0 閾値は据え置き:
+      // search→available の昇格には従来どおり 8.0 を要求し、identity(EXACT/STRONG) を
+      // 追加の必須条件にする。既存 available は EXACT/STRONG のときだけ更新し、
+      // AMBIGUOUS は勝手に更新せず、現CTAの出品が REJECT なら search へ安全降格する。
+      const idn    = IDN.deriveIdentity(product);
+      const bestId = IDN.pickBest(idn, items, function(it) { return scoreCandidate(it, product); });
+      const idLvl  = bestId.match.level;
+      const idAff  = buildAffiliateUrl(bestId.item.itemUrl, bestId.item.affiliateUrl);
+      const idOk   = (idLvl === 'EXACT' || idLvl === 'STRONG') && bestId.quality !== null &&
+                     idAff && IDN.isCommissionUrl(idAff) && !product.rakutenIdentityHold;
 
-    if (!IDENTITY_PROMOTE) {
-      // RAKUTEN-ID Phase 3: レガシー経路の結果も診断ファイルへ残す
-      recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
-        outcome: (updates.rakutenStatus === 'available') ? 'PROMOTED_LEGACY' : 'KEPT_SEARCH_LEGACY',
-        reason: 'score=' + bestScore + (affiliateUrl ? '' : ' no-affiliateUrl'),
-        best: diagBest(bestItem) }, today);
+      if (product.rakutenStatus === 'available') {
+        // 現在のCTAが指す出品そのもの（itemCode一致の候補）を検証できる場合は最優先で使う
+        const storedItem  = items.find(function(it) {
+          return (it.itemCode || '') === (product.rakutenItemCode || '');
+        });
+        const storedMatch = storedItem ? IDN.matchIdentity(idn, storedItem) : null;
+        if (idOk) {
+          // EXACT/STRONG を安全に特定できた場合は identity 検証済みの出品で更新する。
+          // 現CTAの出品が REJECT でも、正しい本体へ差し替えられるならそちらを優先する
+          // （例: 2217 のろ材セットCTAを 2217 本体の EXACT 出品へ是正）。
+          updates.rakutenStatus     = 'available';
+          updates.rakutenUrl        = idAff;
+          updates.rakutenItemCode   = bestId.item.itemCode || null;
+          updates.rakutenPrice      = bestId.item.itemPrice;
+          updates.rakutenShop       = bestId.item.shopName || '';
+          updates.rakutenConfidence = bestId.quality;
+          report.available++;
+          recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+            outcome: 'REFRESHED_' + idLvl, reason: bestId.match.evidence.join(','),
+            best: diagBest(bestId.item) }, today);
+        } else if (storedMatch && storedMatch.level === 'REJECT') {
+          // 誤リンクを残さない: 現CTAの出品が identity 不合格で、
+          // 正しい本体を EXACT/STRONG で特定できない → search へ安全降格
+          Object.assign(updates, demotionUpdates(today, bestId.quality));
+          report.searchFallback++;
+          console.log('[DEMOTED:ID] ' + productId + ' — 現CTAの出品が identity REJECT (' +
+                      storedMatch.conflicts.join(',') + ')');
+          recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+            outcome: 'DEMOTED_IDENTITY_REJECT', reason: storedMatch.conflicts.join(','),
+            best: diagBest(storedItem) }, today);
+        } else {
+          // AMBIGUOUS / 未確証 → 勝手に更新しない（現状維持・診断のみ・書き込みなし）
+          recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+            outcome: 'KEPT_AVAILABLE_' + (storedMatch ? storedMatch.level : 'UNVERIFIED'),
+            reason: bestId.match.conflicts.join(',') || null,
+            best: diagBest(bestId.item) }, today);
+          console.log('[KEEP] ' + productId + ' — identity未確証のため無変更 (best=' + idLvl + ')');
+          continue;
+        }
+      } else if (idOk && bestId.quality >= CONFIDENCE_THRESHOLD) {
+        // search → available: 従来の 8.0 閾値（据え置き）＋ identity EXACT/STRONG を両方要求
+        updates.rakutenStatus     = 'available';
+        updates.rakutenUrl        = idAff;
+        updates.rakutenItemCode   = bestId.item.itemCode || null;
+        updates.rakutenPrice      = bestId.item.itemPrice;
+        updates.rakutenShop       = bestId.item.shopName || '';
+        updates.rakutenConfidence = bestId.quality;
+        report.available++;
+        console.log('[PROMOTED] ' + productId + ' level=' + idLvl + ' score=' + bestId.quality);
+        recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+          outcome: 'PROMOTED_LEGACY_' + idLvl, reason: bestId.match.evidence.join(','),
+          best: diagBest(bestId.item) }, today);
+      } else {
+        // 閾値未満 / identity 未確証 / affiliateUrl 無し → search 維持。
+        // IDEMPOTENCY: 降格系フィールドをクリアする（従来どおり）。
+        updates.rakutenStatus     = 'search';
+        updates.rakutenUrl        = null;
+        updates.rakutenItemCode   = null;
+        updates.rakutenPrice      = null;
+        updates.rakutenShop       = null;
+        updates.rakutenConfidence = bestScore;
+        report.searchFallback++;
+        if (bestScore >= CONFIDENCE_THRESHOLD) {
+          console.log('[GATED] ' + productId + ' score=' + bestScore + ' だが identity=' + idLvl +
+                      (affiliateUrl ? '' : ' (no affiliateUrl)') + ' のため昇格せず');
+        }
+        recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
+          outcome: 'KEPT_SEARCH_LEGACY_' + idLvl,
+          reason: 'score=' + bestScore + (affiliateUrl ? '' : ' no-affiliateUrl') +
+                  (bestId.match.conflicts.length ? ' ' + bestId.match.conflicts.join(',') : ''),
+          best: diagBest(bestId.item) }, today);
+      }
     }
 
     currentSrc = patchProductInSource(currentSrc, productId, updates);
