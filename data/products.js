@@ -145,9 +145,14 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
     rakutenSearchTerm: 'SANKO パンテオン ブラック BK9045',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00r0znn.nhbnn37a.g00r0znn.nhbno17e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffish-neos%2Fsanko20220504-20%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffish-neos%2Fi%2F10105101%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
+    rakutenItemCode: 'fish-neos:10105101',
+    rakutenPrice: 26750,
+    rakutenShop: 'ネオス 楽天市場店',
+    rakutenConfidence: 6.6,
+    rakutenLastUpdated: '2026-08-29',
   },
 
   // ── Task2 追加 ──
@@ -1369,9 +1374,14 @@ const PRODUCTS = {
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small'],
-    rakutenUrl: null,
-    rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX EXOTERRA デザートベース 細目 3L', // Phase 39-P6: 商品名変更に伴い検索語も統一
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00u2znn.nhbnn256.g00u2znn.nhbno647/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Falmeria%2F39076665955%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Falmeria%2Fi%2F14624605%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenStatus: 'available',
+    rakutenItemCode: 'almeria:14624605',
+    rakutenPrice: 1994,
+    rakutenShop: 'アルメリア楽天市場店',
+    rakutenConfidence: 5.9,
+    rakutenLastUpdated: '2026-08-29',
   },
 
   substrate_sphagnum_moss: {
