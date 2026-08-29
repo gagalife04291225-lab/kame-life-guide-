@@ -16,16 +16,57 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **736c7dc**（PR #106 = CLOSEOUT COMPLETE まで反映済み） |
-| サイトファイルの状態 | **PR #106 = `736c7dc`** が最後。**merge 待ち = 本PR（VISUAL SYSTEM Phase 1）** |
+| 基準 | `origin/main` = **0e4b036**（PR #107 = VISUAL SYSTEM Phase 1 まで反映済み） |
+| サイトファイルの状態 | **PR #107 = `0e4b036`** が最後。**merge 待ち = 本PR（VISUAL SYSTEM Phase 2）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-29 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/visual-system-p1` |
+| 作業ブランチ | `claude/visual-system-p2` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### VISUAL SYSTEM Phase 2 / DESIGN CLOSEOUT（2026-08-29 / 本PR）
+
+Phase 1（54→78点）の残課題をCSS側で解消した。
+**SEO・分類・CITES・内部リンク・本文内容・著者情報は変更していない。**
+
+| 項目 | 実測（前 → 後） |
+|------|----------------|
+| 11.4px未満のテキスト | species 113ページで **16種類・1ページあたり最大93個 → 0** |
+| species ヒーロー高さ | 370〜904px（中央値429） → **300〜700px（中央値355）** |
+| 写真がFVに入らないページ | 1 → **0** |
+| stats-bar 列数 | 4列（元から統一。前回の「2/3/4列」は表示上の誤認） |
+
+**タイポグラフィは機械的な一律15px化をしていない。** 用途を確認し、
+識別情報（学名・サイズ・法規制）／購入判断（必須・推奨バッジ・価格注記）／
+FAQ分類タグなど「読ませる必要があるもの」だけ引き上げた。
+装飾的な eyebrow は小さいままとし、下限 11.5px に揃えただけ。
+**Kids は対象読者が違うため対象外**（M PLUS Rounded と独自サイズを維持）。
+
+**修正は正本CSSで行った** — `css/system.css` の後に読まれる
+`starter-kit.css` `quick-facts.css` `life-preview.css` `species.css`、
+および実行時にCSSを注入する `js/comparison-cta.js` が上書きしていたため、
+それぞれの定義元を直した（`!important` での押し切りはしていない）。
+
+**species ファーストビューは CSS のみで解決した。**
+リード文の削除・要約は一切していない。hero の padding、行間、
+hero 内 note-box の圧縮、stats-bar の行高・文字サイズ統一で
+高さのばらつきを圧縮した。
+
+**残りUI**: species-list の生息環境フィルタに右端フェードを追加して
+横スクロール可能であることを示した。Photo Credits を
+「写真の出典を見る」のアウトラインボタンにし、信頼設計の一部として
+埋没させないようにした。
+
+#### 作業中に自己検出して修正した回帰
+
+**`scripts/gen_related_links.py` が自動生成リンクを絵文字へ差し戻していた。**
+Phase 1 で rel-btn を SVG 化したが、generator 内のラベル定義は絵文字のままだったため、
+再実行するたびに ⚖️🔰🔄☀️ に戻っていた。
+ラベルを `[[icon-id]] テキスト` 形式に変え、出力時に SVG へ展開するようにして修正。
+**これで generator は冪等になり、Phase 1 の成果を壊さない。**
 
 ### VISUAL SYSTEM Phase 1（2026-08-29 / 本PR）
 
@@ -911,6 +952,7 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 | **B1 GSC 成長分析** | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。①Pages.csv ②Queries.csv ③**ページ×クエリの組み合わせ**（最重要。ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio で ディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A=順位11〜20かつ表示上位／B=順位1〜10なのにCTRが期待値以下（title・meta の書換で伸びる）／C=3クエリ以上で表示が立ち始め。**species に限定せず guides / ranking / trouble / compare も同条件で評価**。<br>`shindan/index.html` の静的本文984字 / noscript なしの扱いもここで判断する（被リンク491本・159ページのサイト最大ハブだが、Google は JS を実行するため即時の順位影響は限定的） |
 | **B2 beginner TOP10 の2URL競合** | 同上（B1 の③で同時に解ける） | `guides/beginner-top10-turtles.html` と `ranking-beginner-top10.html` は title・h1・想定クエリが同型で両方とも自己 canonical。**構造上は黒に近いが GSC の実クエリを見るまで確定しない**。重複が実証されたら統合または canonical 集約 |
 | **B3 H8「初心者」SEO運用 80行** | 同上 | `title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 3 / 見出し 9 / パンくず 3。**トリガーが引いたページのみ・週最大3ページ。一斉置換は禁止。能動的に着手しない**。N10（`canton-reeves-turtle.html` の meta description 破損）もここに含む |
+| **B9 species メイン写真の品質（12件）** | **種同定・商用可ライセンス・出典が確認できる代替写真**。本実行環境から iNaturalist / Commons へは到達できないため取得不可。**B4/B5/B7 の HOLD 4件とは別件**（それらは再探索しない） | 全107枚をコンタクトシートで目視した結果、以下がメイン写真として品質を落としている。差し替え候補が確認できた時点で 800×600 WebP 化し、クレジット4層（`credits_map.json` / `pc_parsed.json` / `photo-credits.html` / 種ページ figcaption）を同期する。<br>**最優先** `eastern-box-turtle`（手持ち＋背景に赤いピックアップトラックと人物）<br>**手持ち** `alabama-map-turtle` / `amazon-matamata` / `guerrero-wood-turtle` / `herrera-mud-turtle`（背景に車両）/ `loggerhead-musk-turtle` / `tunisian-greek-tortoise` / `spotted-turtle` / `stripe-necked-musk-turtle`<br>**被写体が判別しにくい** `chinese-stripe-necked-turtle`（濁った水中）/ `white-lipped-mud-turtle`（暗所）/ `ringed-map-turtle`（被写体が小さい）<br>**人工物が主役** `painted-turtle`（黄色い金網が画面を占める）<br>※**AIアップスケールによる「高解像度化」は禁止**。元画像が存在する場合のみ再書き出しする |
 | **B4 写真HOLD 3件** | 亀好きさんが候補画像を見つけた時点。**能動的な定期探索は行わない**（`CLAUDE.md` 2026-08-24 恒久方針） | `Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的診断性を否定しており**亜種ページを作る価値から再判断が要る**） |
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
 | **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
@@ -933,15 +975,16 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ### B1 — GSC 実測データの受領
 
-**AI 側の判断だけで着手できる作業は、もう1件も残っていない。** DECISION は0件。
+**デザイン工程は Phase 2 で CLOSE した。** CSSで解決できる視覚課題は残っていない。
+再採点は **78 → 88/100**。90に届かない残り2点は、
+**写真差し替え（B9）と写真の高解像度化**という素材待ちの項目に集約されている。
+これらは AI 側の判断だけでは進められない。
 
-次の一手は **B1（GSC 実測データの受領）**。これが解ければ **B2 と B3 のトリガーも同時に決まる**。
+次の一手は **B1（GSC 実測データの受領）**。B1 が解ければ B2 と B3 のトリガーも同時に決まる。
 必要なものと受領後の処理は UNRESOLVED の B1 に固定済み。
 
-**GSC が用意できない場合の代替工程は置かない。** 推測でページを選定して改修することは
-`docs/operations/DECISION_RULE.md`（GSC/GA4 の実測がトリガーを引いたページのみ・週最大3ページ）に反する。
-
-B4〜B8 は写真素材・外部一次資料の到着待ちで、**能動的に追いかけるタスクとしては存在しない**。
+**GSC が用意できない場合の代替工程は置かない。**
+`docs/operations/DECISION_RULE.md`（実測がトリガーを引いたページのみ・週最大3ページ）に反するため。
 
 ---
 

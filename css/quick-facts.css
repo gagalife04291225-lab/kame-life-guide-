@@ -211,3 +211,9 @@
     padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
   }
 }
+
+.qf-card-label{font-size:11.5px;}
+
+.qf-card-sub{font-size:11.5px;}
+
+.qf-note{font-size:11.5px;}
