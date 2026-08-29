@@ -1282,7 +1282,7 @@ const PRODUCTS = {
     rakutenItemCode: null,
     rakutenPrice: null,
     rakutenShop: null,
-    rakutenConfidence: 7.5,
+    rakutenConfidence: 8.5,
     rakutenLastUpdated: '2026-08-29',
   },
 

@@ -223,8 +223,8 @@
   "date": "2026-08-29",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
-  "outcome": "DEMOTED_IDENTITY_REJECT",
-  "reason": "入数(2),消耗品(ろ材)",
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=9.1 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
    "price": 21670,
@@ -235,8 +235,8 @@
   "date": "2026-08-29",
   "query": "EHEIM クラシック 2213 外部フィルター",
   "resultCount": 6,
-  "outcome": "DEMOTED_IDENTITY_REJECT",
-  "reason": "入数(2),消耗品(ろ材)",
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
    "price": 14940,
@@ -435,7 +435,7 @@
   "date": "2026-08-29",
   "query": "キョーリン マルベリックドライ リクガメ",
   "resultCount": 10,
-  "outcome": "PROMOTED_LEGACY_STRONG",
+  "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:マルベリックドライ",
   "best": {
    "itemName": "キョーリン マルベリックドライ 180g 400g リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
@@ -703,12 +703,12 @@
   "date": "2026-08-29",
   "query": "赤玉土 小粒 爬虫類",
   "resultCount": 7,
-  "outcome": "DEMOTED_IDENTITY_REJECT",
-  "reason": "容量不一致",
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=8.5",
   "best": {
-   "itemName": "土　瀬戸ヶ原花苑　赤玉土　小粒　3リットル　園芸　単用土　お一人様5点限り　関東当日便",
-   "price": 300,
-   "shop": "charm 楽天市場店"
+   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム",
+   "price": 1350,
+   "shop": "園芸用土のイワモト"
   }
  },
  "substrate_sphagnum_moss": {
