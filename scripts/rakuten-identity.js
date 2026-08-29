@@ -183,6 +183,11 @@ function deriveIdentity(product) {
     // メーカー別名そのものは型番ではない（例: GEX）
     return makerAliases.indexOf(normJa(tok)) < 0;
   });
+  // RAKUTEN-ID Phase 4: 商品が公式型番を宣言していれば同定の根拠に加える。
+  // 判定を緩めるのではなく、EXACT の根拠を1つ増やす方向にだけ働く
+  // （「型番+用/専用」の適合表記は modelInCompatContext で従来どおり除外される）。
+  const declared = String(product.rakutenModelNo || '').trim();
+  if (declared && models.indexOf(declared) < 0) models.unshift(declared);
 
   // シリーズ語: 括弧注記を除いた name から、メーカー別名・一般語を除いた語
   const stripped = name.replace(/（[^）]*）|\([^)]*\)/g, ' ');
@@ -387,17 +392,29 @@ function pickBest(idn, items, scoreFn) {
 }
 
 // ── 0件時の代替クエリ（最大2本。同定とは独立）────────────────────
-function buildAltQueries(term) {
-  const out = [];
+// RAKUTEN-ID Phase 4: 商品が公式型番（rakutenModelNo）を宣言している場合、
+// 「型番単独」を代替1本目に置く。実測（run 33255728290 / 33258859220 / 33259093448）で
+// PT2752 / RX-191 / SH55 はヒットし、既存の長い検索語では0件だった。
+// 型番はメーカー公式または自サイト name 由来の確定値のみを渡すこと（推測値を入れない）。
+function buildAltQueries(term, modelNo) {
+  // 語ベースの代替（従来ロジック。型番の有無で挙動を変えない）
+  const worded = [];
   let t1 = String(term || '');
   BRAND_QUERY_ALIASES.forEach(function(pair) { t1 = t1.replace(pair[0], pair[1]); });
   t1 = t1.replace(/\s+/g, ' ').trim();
-  if (t1 && t1 !== term) out.push(t1);
+  if (t1 && t1 !== term) worded.push(t1);
   // 補助語（爬虫類/リクガメ/亀/餌/フード等）を落とした短縮形
-  const t2base = (out[0] || term || '');
+  const t2base = (worded[0] || term || '');
   const t2 = t2base.replace(/\b(爬虫類|リクガメ|亀|カメ|餌|エサ|フード)\b/g, ' ')
                    .replace(/\s+/g, ' ').trim();
-  if (t2 && t2 !== t2base && t2 !== term && out.indexOf(t2) < 0 && t2.length >= 4) out.push(t2);
+  if (t2 && t2 !== t2base && t2 !== term && worded.indexOf(t2) < 0 && t2.length >= 4) worded.push(t2);
+
+  // 型番単独を先頭に置く（宣言があるときだけ）。総本数の上限2本は据え置き＝
+  // 1商品あたりのAPI呼び出し数（最大3回・各1req/sec）を増やさない。
+  const mn = String(modelNo == null ? '' : modelNo).trim();
+  const out = [];
+  if (mn && mn !== String(term || '').trim()) out.push(mn);
+  worded.forEach(function(q) { if (out.indexOf(q) < 0) out.push(q); });
   return out.slice(0, 2);
 }
 

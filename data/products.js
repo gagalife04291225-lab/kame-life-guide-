@@ -808,6 +808,7 @@ const PRODUCTS = {
 
   heater_aqua_100w: {
     id: 'heater_aqua_100w',
+    rakutenModelNo: 'SH55', // 自サイト name に既出の型番。実測: 67件（run 33259093448）
     name: 'GEX カメ元気 オートヒーター SH55',
     category: 'heating',
     tier: 'standard',
@@ -1419,6 +1420,7 @@ const PRODUCTS = {
 
   substrate_cypress: {
     id: 'substrate_cypress',
+    rakutenModelNo: 'PT2752', // GEX公式製品DB（フォレストバーク 8.8L）。実測: 型番単独クエリで5件（run 33255728290）
     name: 'GEX EXOTERRA フォレストバーク 8.8L',
     category: 'substrate',
     tier: 'premium',
@@ -1480,6 +1482,7 @@ const PRODUCTS = {
 
   shelter_small: {
     id: 'shelter_small',
+    rakutenModelNo: 'RX-191', // スドー公式製品ページ（ロックシェルターSP S）。実測: 64件（run 33258859220）
     name: 'スドー ハープクラフト ロックシェルターSP S', // Phase 39-P4: web_search確認済みの実商品名に修正
     category: 'shelter',
     tier: 'budget',
