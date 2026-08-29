@@ -111,14 +111,14 @@ function extractAttrs(text) {
   let m;
   const wre = /(\d+(?:\.\d+)?)\s*w(?![a-z])/g;
   while ((m = wre.exec(t))) attrs.watts.push(parseFloat(m[1]));
-  // 容量: kg→g、l→ml に正規化して {kind, v} で持つ
-  const cre = /(\d+(?:\.\d+)?)\s*(kg|g|l|ml)(?![a-z])/g;
+  // 容量: kg→g、l→ml に正規化して {kind, v} で持つ（「リットル」表記も l として扱う）
+  const cre = /(\d+(?:\.\d+)?)\s*(kg|g|ml|l|リットル|ℓ)(?![a-z])/g;
   while ((m = cre.exec(t))) {
     const v = parseFloat(m[1]);
     if (m[2] === 'kg')      attrs.caps.push({ kind: 'g',  v: v * 1000 });
     else if (m[2] === 'g')  attrs.caps.push({ kind: 'g',  v: v });
-    else if (m[2] === 'l')  attrs.caps.push({ kind: 'ml', v: v * 1000 });
-    else                    attrs.caps.push({ kind: 'ml', v: v });
+    else if (m[2] === 'ml') attrs.caps.push({ kind: 'ml', v: v });
+    else                    attrs.caps.push({ kind: 'ml', v: v * 1000 });
   }
   const cmre = /(\d{2,3}(?:\.\d+)?)\s*cm(?![a-z])/g;
   while ((m = cmre.exec(t))) attrs.cms.push(parseFloat(m[1]));
