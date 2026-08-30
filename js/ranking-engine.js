@@ -139,13 +139,17 @@
     type10: {
       name: 'long_life',
       label: '長生きする亀ランキング',
-      // TODO: future - integrate lifespan field from species.js
-      weights: {
-        friendliness: 0.35,
-        activity: 0.25,
-        beginner: 0.20,
-        maintenance: 0.20
-      },
+      // 利用不可。lifespan（寿命）の canonical データが存在しないため算出できない。
+      // 旧実装は friendliness（なつきやすさ）を寿命の代理として 0.35 の重みで
+      // 使っていたが、なつきやすさと寿命は無関係であり、これは誤った代理指標だった。
+      // 代理指標が復活しないよう weights は意図的に空にしてある。
+      // 0 点を代入して「計算できるように見せる」ことはしない。
+      // 有効化の条件: species データに実測 lifespan が入り、その値で式を組み直すこと。
+      unavailable: true,
+      unavailableReason:
+        'lifespan の canonical データが未整備。friendliness を寿命の代理に使う旧式は封鎖済み。',
+      requiresFields: ['lifespan'],
+      weights: {},
       filter: null
     },
     type11: {
@@ -175,6 +179,41 @@
       }
     }
   };
+
+  // ── Quarantine / availability guards ──────────────────────────────────
+
+  /**
+   * ランキングの入力にしてはいけないレコードか。
+   * 判定は data 側の明示フラグ ranking_eligible === false だけで行う。
+   * has_page:false を自動条件にはしない。has_page は「種ページが公開されているか」
+   * という掲載上の事実であって、スコアの妥当性とは別の軸だから。
+   * （ページ未作成でも評価値が正しいレコードは将来ありうるし、
+   *   ページがあっても中身が壊れているレコードもありうる）
+   * @param {Object} species
+   * @returns {boolean}
+   */
+  function isQuarantined(species) {
+    return !!species && species.ranking_eligible === false;
+  }
+
+  /**
+   * type が現在利用可能か検証する。利用不可なら投げる。
+   * 黙って 0 点や空配列を返さない — 誤用に気づけなくなるため。
+   * @param {string} type
+   * @param {Object} formula
+   */
+  function assertUsable(type, formula) {
+    if (formula.unavailable) {
+      throw new Error(
+        'Ranking type "' + type + '" is unavailable: ' +
+        (formula.unavailableReason || 'disabled') +
+        (formula.requiresFields ? ' (requires: ' + formula.requiresFields.join(', ') + ')' : '')
+      );
+    }
+    if (!formula.weights || Object.keys(formula.weights).length === 0) {
+      throw new Error('Ranking type "' + type + '" has no weights — refusing to score.');
+    }
+  }
 
   // ── Core engine ───────────────────────────────────────────────────────
 
@@ -211,6 +250,13 @@
     var formula = FORMULAS[type];
     if (!formula) {
       throw new Error('Unknown ranking type: ' + type);
+    }
+    assertUsable(type, formula);
+    if (isQuarantined(species)) {
+      throw new Error(
+        'Refusing to score quarantined record "' + species.slug + '": ' +
+        (species.quarantine_reason || 'ranking_eligible=false')
+      );
     }
 
     var weights = formula.weights;
@@ -249,11 +295,18 @@
     if (!formula) {
       return Promise.reject(new Error('Unknown ranking type: ' + type));
     }
+    try {
+      assertUsable(type, formula);
+    } catch (e) {
+      return Promise.reject(e);
+    }
 
     return loadScores().then(function (data) {
+      // 隔離レコードは formula.filter より前に落とす（どの type からも入力にしない）
+      var eligible = data.filter(function (s) { return !isQuarantined(s); });
       var filtered = formula.filter
-        ? data.filter(formula.filter)
-        : data.slice();
+        ? eligible.filter(formula.filter)
+        : eligible.slice();
 
       var scored = filtered.map(function (species) {
         var score = calculateScore(species, type);
@@ -281,7 +334,10 @@
       name: formula.name,
       label: formula.label,
       weights: Object.assign({}, formula.weights),
-      hasFilter: !!formula.filter
+      hasFilter: !!formula.filter,
+      unavailable: !!formula.unavailable,
+      unavailableReason: formula.unavailableReason || null,
+      requiresFields: formula.requiresFields || null
     };
   }
 
@@ -292,6 +348,7 @@
     calculateScore: calculateScore,
     getTopByType: getTopByType,
     getFormula: getFormula,
+    isQuarantined: isQuarantined,
     FORMULAS: FORMULAS
   };
 
