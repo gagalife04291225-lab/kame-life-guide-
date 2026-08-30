@@ -133,3 +133,20 @@
   .diff-badge-label{color:#6b5c42;font-weight:400;font-size:.75rem;margin-left:4px;}
 
 .species-nav-label{font-size:11.5px;}
+
+  /* ── このページの目次（tools/gen-species-toc.js が挿入する .sp-toc）── */
+  .sp-toc{
+    background:#fff;border:1px solid rgba(47,74,60,.18);border-left:4px solid var(--accent);
+    border-radius:10px;padding:18px 22px;margin:0 0 34px;
+  }
+  .sp-toc-title{
+    font-family:"Playfair Display","Noto Serif JP",serif;font-weight:700;
+    color:var(--forest);font-size:1rem;margin-bottom:8px;letter-spacing:.02em;
+  }
+  .sp-toc ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;}
+  .sp-toc li{font-size:.88rem;line-height:1.6;}
+  .sp-toc a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(212,169,106,.55);}
+  .sp-toc a:hover{color:var(--accent-dark);border-bottom-color:var(--accent-dark);}
+  @media(max-width:560px){.sp-toc ul{grid-template-columns:1fr;}}
+  /* 固定ナビ（--klg-nav-h:52px）に隠れないよう、アンカー着地位置を下げる */
+  [id^="sec-"]{scroll-margin-top:64px;}
