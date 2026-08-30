@@ -16,16 +16,55 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **640791d**（PR #123 = DATA HYGIENE CLOSE まで反映済み） |
-| サイトファイルの状態 | **`640791d`** が最後。**merge 待ち = 本PR（Species Scores Phase 1A）** |
+| 基準 | `origin/main` = **d7e78a4**（PR #124 = Species Scores Phase 1A まで反映済み） |
+| サイトファイルの状態 | **`d7e78a4`** が最後。**merge 待ち = 本PR（公開表示の破損2件 CLOSE）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-30 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/species-scores-phase1a` |
+| 作業ブランチ | `claude/public-fix-2` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 公開表示の破損2件 CLOSE（2026-08-30 / 本PR）
+
+PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力不要／Owner判断不要／公開影響あり）を
+すべて満たす」と確定した2件だけを処理した。**新しい監査は行っていない。**
+
+- **guide-moist.html の対象種リストを generator から同期。** 見出し「22種」→「23種」、
+  ヒラセガメの直後にオプストヒラセガメ（`species/obsti-hirase-turtle.html` /
+  *Cuora mouhotii obsti*）を1行追加。**手編集はせず `node tools/gen-guide-species.js` の
+  再実行で生成**（ブロックに「手で編集しない」と明記されているため）
+- **`species/canton-reeves-turtle.html` の meta description の破損を除去。**
+  正常な100文字の後ろに残っていた置換残骸53文字（未対応の `'` と開き括弧を欠いた
+  「Turtle）」を含む）を削除しただけ。**新しい文言は作っていない。**
+  og:description / title / og:title は無変更
+
+**確定した事実（再調査しない）:**
+
+- **乖離の原因はデータ不足ではなく generator の再実行漏れ。** オプストヒラセガメは
+  `shindan/species.js:874-880` に `hasPage: true` で以前から存在していた。
+  **種を追加したら `tools/gen-guide-species.js` を再実行する**運用が抜けやすい
+- 公開ページを生成する generator 4系統のうち、乖離していたのは gen-guide-species.js だけ。
+  gen-species-list / gen-guide-nav / gen-category-ui は修正前後とも差分0
+- description の破損は全 species ページ中この1件のみ（修正後は0件）。
+  meta description を生成するスクリプトは存在せず、過去の手作業置換の失敗が残ったもの
+- 実測: 全 generator --check 差分0 / ranking QA 18/18 PASS / validator MISMATCH 0・WARN 0・
+  `--strict` exit 0 / `test_validate_species.py` 10 PASS /
+  公開HTML差分は上記2ページのみ / data・shindan・ranking・js・css・sitemap 差分0 /
+  CITES・Amazon・楽天の該当行差分0
+
+**CLOSED と確定したもの（棚卸しの実測結果。再調査しない）:**
+
+- `CLAUDE.md` が「次工程」として残していた**クレジット表記ゆれ10件は解消済み**。
+  Wikimedia 由来とされた5件はいずれも iNaturalist 出典＋CC ライセンスリンク付きの
+  figcaption になっており、alt の和名5件も photo-credits.html の見出しと一致していた
+- `photo-credits.html` の「ヒメハコヨコクビガメ / *Pelusios castaneus*」は、
+  同ページ956行目の近縁種代替の注記でこの事例が名指しで開示されており**欠陥ではない**
+- `ranking-beginner-top10.html` 9位の公開スコア **62.00 は species_scores × type0 で
+  完全一致**する。10位の 61.90 と違い正しい種のレコードに由来し、他8枚と同素性。
+  **撤去対象にあたらない**
 
 ### Species Scores Phase 1A — 既存スコア基盤の安全化（2026-08-30 / 本PR）
 
@@ -1156,8 +1195,12 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 - 楽天 △5件（basking_dual_150 / basking_hid_70w / food_aquatic_staple / food_tortoise_herbs /
   substrate_bottom_sand）は **Owner 非承認で search 維持が確定**。再提案しない。
 - `ranking-beginner-top10.html` の 10位不整合（PR #115〜#117・#120）と guides の rel 未付与12本
-  （PR #118）は**すべて解消済み**。9位の species.js 不在だけが未修正で残る
-  （**推測でデータを作らない**方針のため、canonical が確定するまで着手しない）。
+  （PR #118）は**すべて解消済み**。9位（モンキヨコクビガメ）の species ページ不在だけが残るが、
+  これは修正ではなく**新規コンテンツ制作**であり、CTA は species-list.html への一般導線として
+  機能している（リンク切れではない）。**推測でデータを作らない**方針のため着手しない。
+- **`scripts/gen_related_links.py` の乖離有無は未確認。** `--check` の出力
+  （追加予定118 / 現状 species→guides 227・species→compare 15）から差分の有無を断定できなかった。
+  **「差分なし」と書いてはならない。** 次に関連リンク工程を立てるときに、出力の意味から確認する。
 
 ### BLOCKED — 外部入力待ち。**受領したら即再開できる**
 
