@@ -12480,15 +12480,17 @@
    },
    "cites": {
     "appendix": {
-     "value": null,
+     "value": "not_listed",
      "verification": "CONFIRMED",
      "provenance": "official",
-     "institution": "USFWS",
+     "institution": "CITES事務局",
      "sources": [
+      "https://cites.org/sites/default/files/notifications/E-Notif-2025-091.pdf",
+      "https://checklist.cites.org/",
       "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
      ],
-     "note": "CITES 附属書には掲載されていない",
-     "last_verified": "2026-08-23"
+     "note": "CITES 附属書 I / II / III のいずれにも掲載されていない。CoP20（2025-11-24〜12-05・サマルカンド）の正式提案一覧（CITES事務局 Notification No. 2025/091）に Chrysemys picta の附属書II新規掲載提案は含まれておらず、CoP20 を経ても非掲載のまま変わらない。米国側資料に見られた掲載の言及は CoP20 提出候補としての検討段階のもので、正式提案としては成立していない。3件目の USFWS カメ類附属書一覧（2024年5月版）は CoP20 以前の補助資料。",
+     "last_verified": "2026-08-30"
     },
     "since": {
      "value": null,
@@ -12566,15 +12568,17 @@
    },
    "cites": {
     "appendix": {
-     "value": null,
+     "value": "not_listed",
      "verification": "CONFIRMED",
      "provenance": "official",
-     "institution": "USFWS",
+     "institution": "CITES事務局",
      "sources": [
+      "https://cites.org/sites/default/files/notifications/E-Notif-2025-091.pdf",
+      "https://checklist.cites.org/",
       "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
      ],
-     "note": "CITES 附属書には掲載されていない",
-     "last_verified": "2026-08-23"
+     "note": "CITES 附属書 I / II / III のいずれにも掲載されていない。CoP20（2025-11-24〜12-05・サマルカンド）の正式提案一覧（CITES事務局 Notification No. 2025/091）に Pseudemys concinna の附属書II新規掲載提案は含まれておらず、CoP20 を経ても非掲載のまま変わらない。米国側資料に見られた掲載の言及は CoP20 提出候補としての検討段階のもので、正式提案としては成立していない。3件目の USFWS カメ類附属書一覧（2024年5月版）は CoP20 以前の補助資料。",
+     "last_verified": "2026-08-30"
     },
     "since": {
      "value": null,
