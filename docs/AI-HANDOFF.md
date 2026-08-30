@@ -16,16 +16,34 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **d7e78a4**（PR #124 = Species Scores Phase 1A まで反映済み） |
-| サイトファイルの状態 | **`d7e78a4`** が最後。**merge 待ち = 本PR（公開表示の破損2件 CLOSE）** |
+| 基準 | `origin/main` = **cb76f30**（PR #125 = 公開表示の破損2件 CLOSE まで反映済み） |
+| サイトファイルの状態 | **`cb76f30`** が最後。**merge 待ち = 本PR（種ページ目次 READABILITY）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-08-30 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/public-fix-2` |
+| 作業ブランチ | `claude/species-toc` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### READABILITY — 種ページ113枚に「このページの目次」を生成（2026-08-30 / 本PR）
+
+NEXT PROJECT DISCOVERY（READ ONLY）の候補4を Owner 指示「3で」で着手・CLOSE した。
+
+- **`tools/gen-species-toc.js` を新設**（既存 generator 4本と同じ設計様式:
+  BEGIN/END マーカー・`--check`・冪等）。入力は各ページ自身の `<h2>` だけ。
+  **本文・見出しの文言は一切変更していない**
+- 目次対象の h2 に `id="sec-N"` を付与し、最初の対象 h2 の直前に
+  `<nav class="sp-toc">` を挿入。目次から除外: `lp-heading`（ヒーロー）／
+  関連ページ／ほかの飼育ガイド／Kame Life Guide（回遊・フッター見出し）
+- `css/species.css` に `.sp-toc` スタイルと `[id^="sec-"]{scroll-margin-top:64px}`
+  を追加（固定ナビ `--klg-nav-h:52px` に隠れない着地位置）
+- 実測: **113/113 ページ・目次項目868件**。anchor↔id 不整合0・id重複0。
+  冪等（2回目実行で書き込み0）。全 generator `--check` 差分0。
+  `gen_related_links.py --apply` もスクラッチで無干渉を確認（更新0・壊れたURL0）
+- **DISCOVERY の「目次あり2/113」は誤検出だった**と訂正: 2件は外部URL
+  `iucn-tftsg.org/toc/` の部分一致で、実際の目次は **0/113** だった
 
 ### 公開表示の破損2件 CLOSE（2026-08-30 / 本PR）
 
