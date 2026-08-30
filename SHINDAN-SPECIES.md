@@ -35,7 +35,7 @@
 
 ---
 
-## 水棲ガメ・ヌマガメ系（22種）
+## 水棲ガメ・ヌマガメ系（24種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
@@ -44,6 +44,7 @@
 | ニシキガメ | Chrysemys picta | M | 入門 | なし | 赤黄のラインが美しい。別称ペインテッドタートル |
 | セイブニシキガメ | Chrysemys picta bellii | M | 入門 | なし | ニシキガメの亜種・4亜種で最大・腹甲全面に暗色模様 |
 | トウブニシキガメ | Chrysemys picta picta | S | 入門 | なし | ニシキガメの基亜種・4亜種で最小・甲板の継ぎ目が一列 |
+| チュウブニシキガメ | Chrysemys picta marginata | S〜M | 入門 | なし | ニシキガメの亜種・腹甲の斑紋が中央に収まる |
 | ミシシッピアカミミガメ | Trachemys scripta elegans | L | 入門 | なし | 条件付特定外来・新規購入不可 |
 | ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
 | ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
@@ -56,6 +57,7 @@
 | フロリダアカハラガメ | Pseudemys nelsoni | L | 中級 | なし | フロリダ産・腹甲が赤い |
 | リオグランデクーター | Pseudemys gorzugi | M | 中級 | なし | リオグランデ川水系産 |
 | リバークーター | Pseudemys concinna | L | 中級 | なし | 北米河川産。別称リバークーター |
+| スワニークーター | Pseudemys concinna suwanniensis | L | 中級 | なし | リバークーターの亜種・メスは40cm級で親種より大型 |
 | キボシヌマガメ | Emys orbicularis（ウクライナ産） | M | 中級 | なし | 国内CB確認済み |
 | ブランディングガメ | Emydoidea blandingii | M | 上級 | CITES II | 黄色い喉元・国内CB確認・CoP16（2013）掲載 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
@@ -101,7 +103,7 @@
 
 ---
 
-## ヤマガメ・ハコガメ（アジア・中南米系）（13種）
+## ヤマガメ・ハコガメ（アジア・中南米系）（15種）
 
 ※「オルナータハコガメ（Cuora ornata）」は実在しない学名だったため削除済み。オルナータ＝ニシキハコガメ（Terrapene ornata）は北米ハコガメの項（キタニシキ・ミナミニシキ）で管理する。
 
@@ -109,6 +111,7 @@
 |---|---|---|---|---|---|
 | スペングラーヤマガメ | Geoemyda spengleri | S | 中〜上級 | CITES II | 夏の保冷管理が最大課題 |
 | ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea）。別名モンホットハコガメ |
+| オプストヒラセガメ | Cuora mouhotii obsti | M | 中〜上級 | CITES II | ヒラセガメの亜種・腹甲に放射状の黒斑。適格写真が無く写真なしで掲載 |
 | マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
 | モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I | CoP19で附属書Iへ移行・萌黄色の甲羅 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
@@ -116,13 +119,15 @@
 | マンヤマガメ | Rhinoclemmys pulcherrima manni | M | 中〜上級 | CITES II | 鮮やかな色彩 |
 | アカスジヤマガメ | Rhinoclemmys pulcherrima | M | 中〜上級 | CITES II | 赤いラインが美しい |
 | ニカラグアクジャクガメ | Rhinoclemmys pulcherrima incisa | M | 中〜上級 | CITES II | アカスジヤマガメの亜種 |
+| ソノラクジャクガメ | Rhinoclemmys pulcherrima rogerbarbouri | M | 中〜上級 | CITES II | アカスジヤマガメの亜種・4亜種で最も北・体色は地味 |
+| ゲレーロクジャクガメ | Rhinoclemmys pulcherrima pulcherrima | M | 中〜上級 | CITES II | アカスジヤマガメの基亜種・メキシコ ゲレーロ州産 |
 | ネンリンヤマガメ | Rhinoclemmys annulata | M | 中〜上級 | CITES II | 年輪のような模様 |
 | ノコヘリマルガメ | Cyclemys dentata | M | 中〜上級 | CITES II | 東南アジア産・幼体は水棲傾向 |
 | カンムリヤマガメ | Rhinoclemmys diademata | M | 上級 | CITES II | マラカイボ湖周辺のみ・超稀少 |
 
 ---
 
-## リクガメ系（26種）
+## リクガメ系（28種）
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
@@ -135,6 +140,8 @@
 | イベラギリシャリクガメ | Testudo graeca ibera | M | 中〜上級 | CITES II | ギリシャリクガメの亜種・大型化 |
 | チュニジアギリシャリクガメ | Testudo graeca nabeulensis | S | 中〜上級 | CITES II | ギリシャリクガメの亜種・最小級・冬眠させない系統 |
 | ゴールデンギリシャリクガメ | Testudo graeca terrestris | S〜M | 中〜上級 | CITES II | ギリシャリクガメの中東亜種・明色小型。冬眠させない管理が基本 |
+| モロッコギリシャリクガメ | Testudo graeca graeca | M | 中〜上級 | CITES II | ギリシャリクガメの基亜種・モロッコ産 |
+| リビアギリシャリクガメ | Testudo graeca cyrenaica | S〜M | 中〜上級 | CITES II | ギリシャリクガメの亜種・リビア（キュレナイカ）産・流通はほぼない |
 | フチゾリリクガメ | Testudo marginata | M | 中〜上級 | CITES II | 後部甲羅が反り返る |
 | オオフチゾリリクガメ | Testudo marginata marginata | M〜L | 中〜上級 | CITES II | 最大亜種 |
 | エロンガータリクガメ | Indotestudo elongata | M | 中〜上級 | CITES II | 高温多湿好む |
@@ -178,7 +185,7 @@
 
 ---
 
-## 汽水ガメ（6種）
+## 汽水ガメ（7種）
 
 | 和名 | 学名 | サイズ | 難易度 | 備考 |
 |---|---|---|---|---|
@@ -187,6 +194,7 @@
 | オルナータダイヤモンドバックテラピン | Malaclemys terrapin macrospilota | M | 上級 | 派手な模様・国内CB盛ん・CITES II（2013）  |
 | ミシシッピダイヤモンドバックテラピン | Malaclemys terrapin pileata | M | 上級 | メキシコ湾岸産・頭頂が暗色・CITES II（2013）  |
 | テキサスダイヤモンドバックテラピン | Malaclemys terrapin littoralis | M | 上級 | 渋い色合い・CITES II（2013）  |
+| マングローブダイヤモンドバックテラピン | Malaclemys terrapin rhizophorarum | M | 上級 | フロリダのマングローブ域産・CITES II（2013）  |
 | その他の亜種（マングローブ等） | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない・CITES II（2013）  |
 
 ---
