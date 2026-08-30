@@ -16,18 +16,66 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **8c7cdca**（PR #113 = Phase 4 型番ルート まで反映済み） |
-| サイトファイルの状態 | **`8c7cdca`** が最後。**merge 待ち = 本PR（RAKUTEN-ID Phase 5 型番発火条件の拡張）** |
+| 基準 | `origin/main` = **640791d**（PR #123 = DATA HYGIENE CLOSE まで反映済み） |
+| サイトファイルの状態 | **`640791d`** が最後。**merge 待ち = 本PR（Species Scores Phase 1A）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-08-29 |
+| 最終更新日 | 2026-08-30 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/rakuten-model-fallback` |
+| 作業ブランチ | `claude/species-scores-phase1a` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### RAKUTEN-ID Phase 5 — 型番検索の発火条件拡張（2026-08-29 / 本PR）
+### Species Scores Phase 1A — 既存スコア基盤の安全化（2026-08-30 / 本PR）
+
+Phase 0（READ ONLY・**判定C**）で確定した既知の危険だけを除去した。
+**119種への拡張・6軸再設計・既存20件の再採点は一切していない。**
+
+- **legacy 2件を隔離。** `data/species_scores.json` の `reimanns-side-neck` と
+  `yellow-spotted-river-turtle` に `ranking_eligible: false` ＋ `quarantine_reason` を付与。
+  **レコードは削除していない**（GA/履歴互換を保持）。評価値10軸は**差分0**
+- **`has_page:false` を自動隔離条件にはしなかった。** `has_page` は掲載上の事実で
+  スコアの妥当性とは別の軸。自動条件にすると両方向で誤る
+- **`js/ranking-engine.js`**: `isQuarantined()` を追加し、`getTopByType` は `formula.filter`
+  より**前**に隔離レコードを除外。`calculateScore` は隔離レコードで throw
+- **type10 long_life を封鎖。** `unavailable: true` ＋ `weights: {}`。
+  friendliness を寿命の代理に使う旧式を撤去し、`assertUsable()` が
+  unavailable／weights空の type を必ず throw させる。**0点代入で計算できるように見せていない**
+- **type0 の式・他typeの式・friendliness の値は無変更**
+- QA に Check 13〜18 を追加（隔離フラグ / 全typeからの不在 / 61.90 の再生成不可 /
+  type10 の失敗 / 利用可能11type / type0 重み不変）
+
+**確定した事実（再調査しない）:**
+
+- **61.90 の出所はキメラレコード `reimanns-side-neck`。** slug・species_name_ja は
+  ライマンヘビクビガメだが、評価値と notes はヒメハコヨコクビガメ由来。
+  **どちらの種の正解データにもならない。120値を修正・転用してはならない**
+- **`ranking-engine.js` を読み込む HTML は0ページ**（現在も過去も）。公開ランキングは静的HTML。
+  エンジンの出力変化は公開物に波及しない
+- QA Check 6 は `species_page_url` に文字列を必須としており、PR #118/#123 で正当に null に
+  した2件で **BASE 時点から exit 1** になっていた。null を許容するよう修正済み
+- 実測: ranking QA **18/18 PASS** / validator MISMATCH 0・WARN 0・`--strict` exit 0 /
+  `test_validate_species.py` 10 PASS / 公開HTML・ranking HTML・species-master 差分0 /
+  楽天 available 36・search 65・pending 3 / Amazon 77本
+
+### 公開データ整合・事実性の連続CLOSE（2026-08-29〜30 / PR #115〜#123）
+
+`AI-HANDOFF.md` の同期が PR #114 で止まっていたため、以下をまとめて COMPLETED に記録する。
+
+| PR | merge | 内容と確定した結論 |
+|----|-------|------------------|
+| #115 | `cd06642` | `ranking-beginner-top10.html` 10位カードのレイヤ不整合を1種へ統一（学名 `Elseya schultzei` → `Pelusios nanus`、GA識別子 `reimanns-side-neck` → `west-african-mud-turtle`）。9位の species.js 不在は**推測でデータを作らず**現状維持 |
+| #116 | `1daefcb` | 10位の水槽サイズ 30cm → **60cm**。Owner 指摘「終生飼育で30cmは小さい」。自サイトの種ページが 60cm〜 と記載しており、45cm ではなく**自サイトの canonical に合わせた** |
+| #117 | `c00189d` | 10位 Cons を「泳ぎが苦手で水深13〜15cmと逃げ場が必須・入手はイベント中心」へ是正 |
+| #118 | `dbb4646` | モンキヨコクビガメの slug 二重化を解消。master は **113/113 で slug == ページのファイル名**という規則が成立していることを実測。GA履歴を壊さない範囲で統一し、`podocnemis-unifilis` は `page: null` と確定。あわせて guides 4ページのアフィリエイトリンク **rel 未付与12本**を付与（href・商品・表示文言・ID は無変更） |
+| #119 | `5317a18` | `tools/validate_species.py` の TypeError を最小修正。**原因は `r["cites"]` ではなく `cites_label()` が返す `None`** だった。null を「CITES未掲載」等へ**意味変換していない**。WARN として可視化する。回帰テスト `tools/test_validate_species.py` を新設（10 PASS） |
+| #120 | `40040b7` | 10位の**裏づけの無い公開数値を撤去**。score `61.90 / 100` → 表示削除、初期費用 `¥25,000〜` → `未算出`。**根拠のない価格を新しく推測していない** |
+| #121 | `68a79c2` | チュウブニシキガメ・スワニークーターの CITES を **`not_listed` / CONFIRMED** で確定（Owner 提供の一次資料を固定入力として使用。egress 再試行はしていない） |
+| #122 | `0d9f962` | `SHINDAN-SPECIES.md` に Phase B/C 亜種8件を独立行として追加。**推測値で埋めず**、親種の値を無条件コピーもしていない。validator WARN の抑制・除外もしていない |
+| #123 | `640791d` | 汽水ガメの表記重複を解消（独立行になったマングローブを「その他」に重複させない）＋ `species_scores.json` の `species_page_url` 不整合4件を是正。**slug・GA識別子・score・6軸評価値は無変更。URLだけを是正** |
+
+### RAKUTEN-ID Phase 5 — 型番検索の発火条件拡張（2026-08-29 / PR #114 / merge `e8bf58b`）
 
 Phase 4 では型番単独クエリが「主検索0件」のときしか撃たれず、それが理由で救えていなかった
 2件を回収した。**available 34 → 36。**
@@ -1107,15 +1155,16 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
   `substrate_cypress`（PT2752 が使えないため型番ルートなし。別の識別手段がない限り救出不可）
 - 楽天 △5件（basking_dual_150 / basking_hid_70w / food_aquatic_staple / food_tortoise_herbs /
   substrate_bottom_sand）は **Owner 非承認で search 維持が確定**。再提案しない。
-- `ranking-beginner-top10.html` の 10位学名（Elseya schultzei 表記）誤りと 9位の species.js 不在
-  （ヤエヤマ工程で発見・未修正）。
-- guides 4ページのアフィリエイトリンク rel 未付与 12本（4AI事実確認で確定・未修正）。
+- `ranking-beginner-top10.html` の 10位不整合（PR #115〜#117・#120）と guides の rel 未付与12本
+  （PR #118）は**すべて解消済み**。9位の species.js 不在だけが未修正で残る
+  （**推測でデータを作らない**方針のため、canonical が確定するまで着手しない）。
 
 ### BLOCKED — 外部入力待ち。**受領したら即再開できる**
 
 | ID | 不足しているもの | 受領後にすること |
 |----|----------------|-----------------|
 | **B1 GSC 成長分析** | Search Console → 検索パフォーマンス → エクスポート。**期間 直近3か月 / 検索タイプ ウェブ / フィルタなし**。①Pages.csv ②Queries.csv ③**ページ×クエリの組み合わせ**（最重要。ページタブでURL絞り込み→クエリタブでエクスポート、または Looker Studio で ディメンション=ページ+クエリ）。①②が別々だと紐付けできない | 成長候補TOP10を選定。優先度A=順位11〜20かつ表示上位／B=順位1〜10なのにCTRが期待値以下（title・meta の書換で伸びる）／C=3クエリ以上で表示が立ち始め。**species に限定せず guides / ranking / trouble / compare も同条件で評価**。<br>`shindan/index.html` の静的本文984字 / noscript なしの扱いもここで判断する（被リンク491本・159ページのサイト最大ハブだが、Google は JS を実行するため即時の順位影響は限定的） |
+| **B10 GSC 5xx 未登録の対象URL** | Search Console の該当レポートに出ている**実URL一覧**（メール本文には URL が無く、**推測しない**）。加えて URL 検査ツールのライブテスト結果 | リポジトリ側の原因は7観点で除外済み（**判定C**）。本番へは egress ポリシーで到達できないため、**ローカル200を「本番5xxなし」の証拠にはしない／本番未確認で「現在5xxなし」と断定しない**。URL一覧を受領した時点で、そのURLだけを対象に再調査する |
 | **B2 beginner TOP10 の2URL競合** | 同上（B1 の③で同時に解ける） | `guides/beginner-top10-turtles.html` と `ranking-beginner-top10.html` は title・h1・想定クエリが同型で両方とも自己 canonical。**構造上は黒に近いが GSC の実クエリを見るまで確定しない**。重複が実証されたら統合または canonical 集約 |
 | **B3 H8「初心者」SEO運用 80行** | 同上 | `title` 6 / `meta`・OG 33 / JSON-LD 26 / 可視FAQ×JSON-LD 3 / 見出し 9 / パンくず 3。**トリガーが引いたページのみ・週最大3ページ。一斉置換は禁止。能動的に着手しない**。N10（`canton-reeves-turtle.html` の meta description 破損）もここに含む |
 | **B9 species メイン写真の品質（12件）** | **種同定・商用可ライセンス・出典が確認できる代替写真**。本実行環境から iNaturalist / Commons へは到達できないため取得不可。**B4/B5/B7 の HOLD 4件とは別件**（それらは再探索しない） | 全107枚をコンタクトシートで目視した結果、以下がメイン写真として品質を落としている。差し替え候補が確認できた時点で 800×600 WebP 化し、クレジット4層（`credits_map.json` / `pc_parsed.json` / `photo-credits.html` / 種ページ figcaption）を同期する。<br>**最優先** `eastern-box-turtle`（手持ち＋背景に赤いピックアップトラックと人物）<br>**手持ち** `alabama-map-turtle` / `amazon-matamata` / `guerrero-wood-turtle` / `herrera-mud-turtle`（背景に車両）/ `loggerhead-musk-turtle` / `tunisian-greek-tortoise` / `spotted-turtle` / `stripe-necked-musk-turtle`<br>**被写体が判別しにくい** `chinese-stripe-necked-turtle`（濁った水中）/ `white-lipped-mud-turtle`（暗所）/ `ringed-map-turtle`（被写体が小さい）<br>**人工物が主役** `painted-turtle`（黄色い金網が画面を占める）<br>※**AIアップスケールによる「高解像度化」は禁止**。元画像が存在する場合のみ再書き出しする |
@@ -1139,7 +1188,14 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### B1 — GSC 実測データの受領
+### B1 — GSC 実測データの受領（**Phase 1A 後も変わらず次の一手**）
+
+> **B1 は 2026-08-30 に実測を試み、7経路すべてで取得不能を確認して STOP した（判定C）。**
+> 加えて **要求された「直近3か月」の期間は存在しない**（データ収集開始は 2026-07-17）。
+> 再取得を Claude 側で試行し直さない。**Owner が CSV をエクスポートして渡す**のが唯一の再開条件。
+>
+> **Species Scores の 119種拡張・6軸再設計は NEXT に置かない。** Phase 0 の判定Cのとおり、
+> cost の価格根拠と「そもそも拡張する価値があるか」の Owner 判断が先に要る。
 
 **デザイン工程は Phase 2 で CLOSE した。** CSSで解決できる視覚課題は残っていない。
 再採点は **78 → 88/100**。90に届かない残り2点は、
