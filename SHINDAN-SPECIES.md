@@ -195,7 +195,7 @@
 | ミシシッピダイヤモンドバックテラピン | Malaclemys terrapin pileata | M | 上級 | メキシコ湾岸産・頭頂が暗色・CITES II（2013）  |
 | テキサスダイヤモンドバックテラピン | Malaclemys terrapin littoralis | M | 上級 | 渋い色合い・CITES II（2013）  |
 | マングローブダイヤモンドバックテラピン | Malaclemys terrapin rhizophorarum | M | 上級 | フロリダのマングローブ域産・CITES II（2013）  |
-| その他の亜種（マングローブ等） | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない・CITES II（2013）  |
+| その他の亜種 | Malaclemys terrapin spp. | M | 上級 | 流通極めて少ない・CITES II（2013）  |
 
 ---
 
