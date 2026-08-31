@@ -24,9 +24,9 @@
   }
  },
  "basking_75w": {
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 10,
+  "resultCount": 9,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
@@ -140,16 +140,12 @@
   }
  },
  "enclosure_glass_45": {
-  "date": "2026-08-29",
+  "date": "2026-08-31",
   "query": "GEX EXOTERRA グラステラリウム 4545",
-  "resultCount": 1,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=4.9 照明系(ランプ)",
-  "best": {
-   "itemName": "ジェックス EXO TERRA コンパクトトップ45N PT2226 26W(2灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム4530/454",
-   "price": 7253,
-   "shop": "アルメリア楽天市場店"
-  }
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  },
  "enclosure_kayuso_90": {
   "date": "2026-08-30",
@@ -208,16 +204,12 @@
   "best": null
  },
  "enclosure_wood_90": {
-  "date": "2026-08-29",
+  "date": "2026-08-31",
   "query": "GEX EXOTERRA グラステラリウム 9030",
-  "resultCount": 1,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=6.3 照明系(ランプ)",
-  "best": {
-   "itemName": "ジェックス EXO TERRA コンパクトトップ90N PT2228 26W(4灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム9030/904",
-   "price": 13822,
-   "shop": "マニッシュボーイ"
-  }
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  },
  "filter_canister_large": {
   "date": "2026-08-30",
@@ -232,14 +224,14 @@
   }
  },
  "filter_canister_medium": {
-  "date": "2026-08-29",
+  "date": "2026-08-31",
   "query": "EHEIM クラシック 2213 外部フィルター",
   "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
-   "price": 14940,
+   "price": 14980,
    "shop": "ミナトワークス"
   }
  },
@@ -340,14 +332,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-08-29",
+  "date": "2026-08-31",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
-   "price": 3502,
+   "price": 3546,
    "shop": "CheeringCharm 楽天市場店"
   }
  },
@@ -564,15 +556,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -684,15 +676,15 @@
   }
  },
  "substrate_grassland_mix": {
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "query": "GEX EXOTERRA デザートベース 細目 3L",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:デザートベース",
   "best": {
    "itemName": "EXO TERRA エキゾテラ GEX EXOTERRA デザートベース 細目 3L 通水性・通気性がよい天然素材 砂漠・亜熱帯環境 湿度管理",
-   "price": 1994,
-   "shop": "アルメリア楽天市場店"
+   "price": 1003,
+   "shop": "バラエティショップ平和"
   }
  },
  "substrate_sand_mix": {
@@ -868,15 +860,15 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "シンワ測定　#73117　デジタル温度計 Smart B　室内・室外 防水外部センサー　【代引き不可】【沖縄・離島配送不可】",
-   "price": 2101,
-   "shop": "Smart normal"
+   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
+   "price": 2300,
+   "shop": "Arclands Online 楽天市場支店"
   }
  },
  "thermometer_infrared": {
@@ -968,15 +960,15 @@
   }
  },
  "uvb_led_bar": {
-  "date": "2026-08-29",
+  "date": "2026-08-31",
   "query": "UVB LED ライト バー 爬虫類",
-  "resultCount": 4,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
-   "itemName": "ANJOJOA 爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 UV強度選択 光",
-   "price": 6943,
-   "shop": "カラーズストア2号店"
+   "itemName": "爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 ライト選択 光量調整 タイマー ",
+   "price": 5980,
+   "shop": "カシキド楽天市場店"
   }
  },
  "uvb_mvb_100": {
