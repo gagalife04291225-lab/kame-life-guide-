@@ -4504,9 +4504,15 @@
     "note": "外部一次資料での検証未了"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN",
-    "note": "外部一次資料での検証未了"
+    "value": 35.6,
+    "verification": "LIKELY",
+    "provenance": "literature",
+    "sources": [
+     "https://animaldiversity.org/accounts/Apalone_mutica/",
+     "https://www.tn.gov/twra/wildlife/reptiles/turtle/smooth-softshell.html"
+    ],
+    "last_verified": "2026-08-31",
+    "note": "メス16.5〜35.6cm・オスはより小型。サイト表記は25〜35cm（メス基準・最大35.6cm）"
    },
    "conservation": {
     "env_redlist": {
@@ -7478,8 +7484,15 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 35,
+    "verification": "LIKELY",
+    "provenance": "literature",
+    "sources": [
+     "https://www.chewy.com/education/reptile-and-amphibian/general/cherry-head-red-footed-tortoise-care-sheet",
+     "https://www.petguide.com/breeds/turtle/cherry-head-red-foot-tortoise/"
+    ],
+    "last_verified": "2026-08-31",
+    "note": "色彩変異モルフで分類学上の基準値はない。成体は通常20〜30cm（8〜12in）と基準種より小型傾向。最大14in（約35cm）級の報告あり。サイト表記は20〜30cm基準"
    },
    "conservation": {
     "env_redlist": {
@@ -8199,8 +8212,14 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 35,
+    "verification": "LIKELY",
+    "provenance": "literature",
+    "sources": [
+     "https://iucn-tftsg.org/cbftt/species-accounts/testudo-graeca-eastern-subspecies-clades-120/"
+    ],
+    "last_verified": "2026-08-31",
+    "note": "通常成体はオス〜18cm・メス〜21cm（TFTSG）。大型個体群（アナトリア等）で30cm超、例外的に35cm。サイト表記は18〜25cm基準＋大型個体群30cm超の補足"
    },
    "conservation": {
     "env_redlist": {
@@ -9066,8 +9085,15 @@
     "verification": "UNPROVEN"
    },
    "max_shell_length_cm": {
-    "value": null,
-    "verification": "UNPROVEN"
+    "value": 70,
+    "verification": "LIKELY",
+    "provenance": "literature",
+    "sources": [
+     "https://animaldiversity.org/accounts/Carettochelys_insculpta/",
+     "https://www.reptilepark.com.au/about/meet-our-animals/pig-nosed-turtle"
+    ],
+    "last_verified": "2026-08-31",
+    "note": "成体一般は30〜55cm。沿岸個体群で最大70cm級の報告。サイト表記は成体30〜55cm・最大70cm"
    },
    "conservation": {
     "env_redlist": {
