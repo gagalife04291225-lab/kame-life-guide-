@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-08-30",
+  "date": "2026-09-02",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【9/1限定★3点以上購入でポイント20倍】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ",
+   "itemName": "【エントリーP5倍&クーポン 9/4 20時〜9/10】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 ",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -204,12 +204,16 @@
   "best": null
  },
  "enclosure_wood_90": {
-  "date": "2026-08-31",
+  "date": "2026-09-02",
   "query": "GEX EXOTERRA グラステラリウム 9030",
-  "resultCount": 0,
-  "outcome": "NO_RESULT",
-  "reason": null,
-  "best": null
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=6.3 照明系(ランプ)",
+  "best": {
+   "itemName": "ジェックス EXO TERRA コンパクトトップ90N PT2228 26W(4灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム9030/904",
+   "price": 13822,
+   "shop": "マニッシュボーイ"
+  }
  },
  "filter_canister_large": {
   "date": "2026-08-30",
@@ -248,13 +252,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "【9／1限定】当選確率2分の1！1等最大100％　外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
    "price": 8980,
    "shop": "charm 楽天市場店"
   }
@@ -280,13 +284,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "【9／1限定】当選確率2分の1！1等最大100％　テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -636,13 +640,13 @@
   }
  },
  "substrate_coco": {
-  "date": "2026-08-29",
+  "date": "2026-09-02",
   "query": "ヤシガラ 爬虫類 床材",
   "resultCount": 10,
   "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
   "reason": null,
   "best": {
-   "itemName": "ヤシガラ 土 爬虫類 1L 細目 床材 飼育マット ハスク トカゲ ゲッコー リクガメ カエル 両生類 ヘビ スネーク 保湿 保温 消臭 SMILE PET C",
+   "itemName": "ヤシガラ 土 爬虫類 1L 細目 床材 飼育マット ハスク トカゲ ゲ��コー リクガメ カエル 両生類 ヘビ スネーク 保湿 保温 消臭 SMILE PET ",
    "price": 698,
    "shop": "雑貨イズム"
   }
@@ -676,15 +680,15 @@
   }
  },
  "substrate_grassland_mix": {
-  "date": "2026-08-31",
+  "date": "2026-09-02",
   "query": "GEX EXOTERRA デザートベース 細目 3L",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:デザートベース",
   "best": {
    "itemName": "EXO TERRA エキゾテラ GEX EXOTERRA デザートベース 細目 3L 通水性・通気性がよい天然素材 砂漠・亜熱帯環境 湿度管理",
-   "price": 1003,
-   "shop": "バラエティショップ平和"
+   "price": 1994,
+   "shop": "アルメリア楽天市場店"
   }
  },
  "substrate_sand_mix": {
@@ -908,13 +912,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "【9／1限定】当選確率2分の1！1等最大100％　GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
    "price": 9300,
    "shop": "charm 楽天市場店"
   }
@@ -948,15 +952,15 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 8,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "【9/1限定★3点以上購入でポイント20倍】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【9/4 20時〜9/10 エントリーP5倍＆クーポン♪】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EX",
    "price": 3400,
-   "shop": "プロツールショップヤブモト"
+   "shop": "ハッピードライブヤブモト"
   }
  },
  "uvb_led_bar": {
