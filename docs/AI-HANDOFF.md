@@ -298,6 +298,23 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 動画素材源の確定（2026-09-03・素材源サーベイ）
+
+実測記録: `ai-tiktok-company` の `experiments/kame-source-survey/SOURCES.md` と
+`qc-evidence/kame-source-survey/`（生JSON・コンタクトシート）。**再調査しない。**
+
+| 事実 | 実測値 |
+|------|--------|
+| 固定先 | **Wikimedia Commons**（鍵不要・公式 MediaWiki API・robots 準拠） |
+| カメ動画（video mime・ウミガメ/AI除外・per-item ライセンス取得済み） | **176件** |
+| ライセンス内訳 | PD 74 / CC0 5 / CC BY 系 50 / CC BY-SA 系 47 → **継承義務なし129件** |
+| HD以上 / 最大解像度 | 152件 / **3840×2160**（実DL・ffprobe 済み） |
+| 目視歩留まり | PD/CC0 = **3/14（21%）** / CC BY = **9/12（75%）** |
+| 評価不能（BLOCKED_API_KEY） | Pexels / Pixabay / Flickr（**素材が無いのではなく鍵が無い**） |
+| 評価不能（BLOCKED） | Videvo / Vecteezy / Mazwai（規約ページ・robots が HTTP 403） |
+| 不採用（C） | Mixkit（確認26件が全て Restricted）/ Coverr（turtle 1件）/ GBIF / Openverse / Internet Archive |
+| **必須の前提** | **目視ゲート。** キーワード一致は実物を保証しない（14件中7件はカメ不在） |
+
 ### ゴールデンギリシャリクガメの写真素材（2026-08-27・探索クローズ）
 
 `species/golden-greek-tortoise.html` は **land 27種でただ1つ生体写真を持たないページ**
@@ -376,7 +393,7 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 | ID | 事項 | 裁定が無いと |
 |----|------|-------------|
-| D-01 | **Short Video Gate のデッドロック**（APIキー取得 / CC BY-SA 受入 / 停止） | **動画制作が止まる** |
+| D-01 | **Short Video Gate の再開レーン選択**（案E: Commons CC BY 主レーンで再開 / A: APIキー取得 / B: CC BY-SA 受入 / C: 停止）<br>2026-09-03 の素材源サーベイで**前提が変わった**。継承義務なしの素材が129件実在し、案E単独で再開できる | **動画制作が止まったまま**（理由は「素材が無い」ではなく「レーン未決」） |
 | D-02 | PM 実務原則 `pm-conduct.md` §8 の承認範囲 | 止まらない（実務原則として機能） |
 
 **裁定済み（2026-09-03）**: Merge 権限 → **案A**（**憲法を v2.1 へ改定**し、5条件下で Actor merge を許可）／
