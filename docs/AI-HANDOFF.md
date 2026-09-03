@@ -22,7 +22,7 @@
 |------|------|---:|
 | **常時必読** | 本ファイルの `CURRENT_BASE` / `UNRESOLVED` / `NEXT` | 約135行 |
 | **役割で必読** | PM（RO-2）→ [`.claude/rules/pm-conduct.md`](../.claude/rules/pm-conduct.md)<br>実装（RO-3）→ [`.claude/rules/chatgpt-handoff.md`](../.claude/rules/chatgpt-handoff.md) ＋ [`.claude/rules/closeout-gate.md`](../.claude/rules/closeout-gate.md) | 110行 / 180行 |
-| **該当時のみ** | `CLAUDE.md` の該当 SKILL 節（その作業をするとき）<br>`DEVELOPMENT_CONSTITUTION.md`（規範が競合したとき）<br>`docs/fixed-facts/`（該当する種・表現・構造に触れるとき）<br>`docs/archive/COMPLETED-PROJECTS.md`（完了済みの詳細が要るとき） | 参照時 |
+| **該当時のみ** | `CLAUDE.md` の該当 SKILL 節（その作業をするとき）<br>`DEVELOPMENT_CONSTITUTION.md`（規範が競合したとき）<br>`docs/fixed-facts/`（該当する種・表現・構造に触れるとき）<br>`docs/archive/COMPLETED-PROJECTS.md`（完了済みの詳細が要るとき）<br>`docs/decisions/OPEN-DECISIONS.md`（裁定待ちの詳細が要るとき） | 参照時 |
 
 **この区分は読む量を減らすためのものであり、規範の効力を下げるものではない。**
 `docs/fixed-facts/` と `docs/archive/` の内容は **固定入力・再調査禁止**のまま。
@@ -44,6 +44,21 @@
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### PM 実務原則の追加と裁定書の新設（2026-09-03 / 本PR）
+
+- `.claude/rules/pm-conduct.md` に **§8 PM の在り方（実務原則）7項目**を追加（110→185行）。
+  **起案は Claude Code（Owner 指示による）** であり §1〜§7（Owner 確定）と出所が違うことを
+  §8 冒頭に明記した。各原則に根拠を付し、実測でないものはそう書いた
+  - 8.1 成果物を見ずに受入判定をしない（Artifact First）／8.2 反証可能な受入基準／
+    8.3 PM 自身の数値にも出所／8.4 STOP を成果として扱う／8.5 一度に1工程／
+    8.6 自著の唯一の判定者にならない／8.7 Owner 判断事項を作業報告に埋めない
+- `docs/decisions/OPEN-DECISIONS.md` を新設（197行）。裁定待ち5件を
+  競合規則・選択肢・影響・推奨・「裁定が無いと何が止まるか」つきで分離した（§8.7 の実装）
+- 本ファイルの UNRESOLVED は **5行の索引表**に置き換え、読む量を増やしていない
+
+**確定した結論**: 裁定事項の正本は `docs/decisions/OPEN-DECISIONS.md`。
+裁定済みの項目は同ファイルから削除し、確定内容を該当規則へ反映する。
 
 ### AI-HANDOFF の分割と読む順序の階層化（2026-09-03 / 本PR）
 
@@ -300,24 +315,18 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
-### 【CONFIRM_REQUIRED】Merge 権限の優先関係（2026-09-03 提起・Owner 裁定待ち）
+### 裁定待ち（**Owner の判断が要る**）
 
-`.claude/rules/pm-conduct.md` §7 Merge Gate と `.claude/rules/chatgpt-handoff.md` §2 は
-「検証 PASS かつ BLOCKER なしなら merge 可能」と述べる。
-一方 `DEVELOPMENT_CONSTITUTION.md` §2.6-I1 / §2.3-R1 / §4.3-R1 は
-「Merge は RO-1 のみが実施 MUST。Actor は Merge しては MUST NOT」と定める。
+選択肢・影響・推奨・「裁定が無いと何が止まるか」は
+[`docs/decisions/OPEN-DECISIONS.md`](decisions/OPEN-DECISIONS.md) にある。
 
-- この不整合は**本作業で作ったものではなく、以前から repo に存在していた**
-- 憲法 §1.3-R1 に従えば憲法が優先する。ただし運用実態は前者
-- 本作業では**どちらの意味も変更していない**。憲法 §1.4-R2 に従い未確定として明記した
-- **必要なもの**: Owner の裁定（①憲法を改定する ②運用ルール側を憲法に合わせる ③現状維持）
-
-
-
-> **2026-08-29 CLOSEOUT COMPLETE 後の実態。**
-> **DECISION は0件。** 判断待ちで止まっている作業はもう無い。
-> 残っているのは、外部データ・外部一次資料・新しい写真素材が無いと
-> **物理的に進められない BLOCKED だけ**。
+| ID | 事項 | 裁定が無いと |
+|----|------|-------------|
+| D-01 | **Merge 権限の優先関係**（憲法 §2.6-I1 と `chatgpt-handoff.md` §2 / `pm-conduct.md` §7 の不整合。以前から存在） | Actor が毎回どちらに従うか判断する |
+| D-02 | 品質不足による STOP の扱い（`closeout-gate.md` に一文追加するか） | 実装側に品質不足でも走り切る圧が残る |
+| D-03 | 「合格基準を下げない」と「検査を追加する」の区別（`pm-conduct.md` §4 に一文追加するか） | 検査追加が「基準の後付け変更」と解釈されうる |
+| D-04 | **Short Video Gate のデッドロック**（APIキー取得 / CC BY-SA 受入 / 停止） | **動画制作が止まる** |
+| D-05 | PM 実務原則 `pm-conduct.md` §8 の承認範囲 | 止まらない（実務原則として機能） |
 
 ### DECISION
 
