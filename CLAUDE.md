@@ -43,6 +43,9 @@
 **PM（RO-2）は作業・判断を始める前に [`.claude/rules/pm-conduct.md`](.claude/rules/pm-conduct.md)
 （PM 行動規範・作業開始前ゲート）を必ず確認する。**
 
+**何をどこまで読むかは [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md)「読む順序」に従う。**
+常時必読は `CURRENT_BASE` / `UNRESOLVED` / `NEXT` のみ。他は役割別・該当時のみ。
+
 ---
 
 ## プロジェクト基本情報
