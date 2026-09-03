@@ -216,16 +216,12 @@
   }
  },
  "filter_canister_large": {
-  "date": "2026-08-30",
+  "date": "2026-09-03",
   "query": "EHEIM クラシック 2215 外部フィルター",
-  "resultCount": 1,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=9.1 入数(2),消耗品(ろ材)",
-  "best": {
-   "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 21630,
-   "shop": "ミナトワークス"
-  }
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  },
  "filter_canister_medium": {
   "date": "2026-08-31",
@@ -252,13 +248,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
    "price": 8980,
    "shop": "charm 楽天市場店"
   }
@@ -284,13 +280,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
+   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -336,14 +332,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-08-31",
+  "date": "2026-09-03",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
-   "price": 3546,
+   "price": 3894,
    "shop": "CheeringCharm 楽天市場店"
   }
  },
@@ -400,9 +396,9 @@
   "best": null
  },
  "food_mazuri_tortoise": {
-  "date": "2026-08-29",
+  "date": "2026-09-03",
   "query": "Mazuri Tortoise Diet リクガメ フード",
-  "resultCount": 9,
+  "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=6.3",
   "best": {
@@ -640,13 +636,13 @@
   }
  },
  "substrate_coco": {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "query": "ヤシガラ 爬虫類 床材",
   "resultCount": 10,
   "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
   "reason": null,
   "best": {
-   "itemName": "ヤシガラ 土 爬虫類 1L 細目 床材 飼育マット ハスク トカゲ ゲ��コー リクガメ カエル 両生類 ヘビ スネーク 保湿 保温 消臭 SMILE PET ",
+   "itemName": "ヤシガラ 土 爬虫類 1L 細目 床材 飼育マット ハスク トカゲ ゲッコー リクガメ カエル 両生類 ヘビ スネーク 保湿 保温 消臭 SMILE PET C",
    "price": 698,
    "shop": "雑貨イズム"
   }
@@ -864,13 +860,13 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-08-31",
+  "date": "2026-09-03",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
+   "itemName": "【9月5日限定！最大100％ポイントバック】シンワ測定 デジタル温度計 SMART B 73117",
    "price": 2300,
    "shop": "Arclands Online 楽天市場支店"
   }
@@ -888,14 +884,14 @@
   }
  },
  "thermometer_wifi": {
-  "date": "2026-09-01",
+  "date": "2026-09-03",
   "query": "INKBIRD WiFi 温湿度計 IBS-TH3",
   "resultCount": 2,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:INKBIRD,model:IBS-TH3,series:ibs-th3",
   "best": {
    "itemName": "INKBIRD WiFi 温湿度計 高精度測定 デジタル 温度計 湿度計 スマート温度計 アプリで温度湿度管理 アラート通知 データグラフ可視化 データクラウド",
-   "price": 3422,
+   "price": 4088,
    "shop": "SelectSHOP 岐阜 楽天市場店"
   }
  },
@@ -912,13 +908,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
    "price": 9300,
    "shop": "charm 楽天市場店"
   }
@@ -952,9 +948,9 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
-  "resultCount": 8,
+  "resultCount": 7,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
