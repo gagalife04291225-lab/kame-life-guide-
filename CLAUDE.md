@@ -40,6 +40,9 @@
 古くなった状態記述は残さない。詳細な手順は同ファイル末尾「更新ルール」と
 `.claude/rules/chatgpt-handoff.md` にある。
 
+**PM（RO-2）は作業・判断を始める前に [`.claude/rules/pm-conduct.md`](.claude/rules/pm-conduct.md)
+（PM 行動規範・作業開始前ゲート）を必ず確認する。**
+
 ---
 
 ## プロジェクト基本情報

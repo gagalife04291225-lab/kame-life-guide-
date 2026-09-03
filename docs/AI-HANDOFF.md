@@ -6,6 +6,7 @@
 >
 > - **作業開始前に必ず読む。** ルールは `CLAUDE.md`「重複作業防止ゲート」と
 >   `.claude/rules/chatgpt-handoff.md` にある。
+>   PM（RO-2）は加えて `.claude/rules/pm-conduct.md`（PM 行動規範・作業開始前ゲート）を確認する。
 > - **作業終了時に必ず更新する。** 更新手順は本ファイル末尾「更新ルール」。
 > - **現在状態だけを書く。** 履歴は `AI_CHANGELOG.md`（append-only）、
 >   規範は `DEVELOPMENT_CONSTITUTION.md`、恒久ルールは `CLAUDE.md`。ここに重複させない。
@@ -21,11 +22,29 @@
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-03 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/claude-md-split-pr1` |
+| 作業ブランチ | `claude/moneyprinterturbo-japanese-poc-nd71z0` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### PM 行動規範の恒久ルール化（2026-09-03 / 本PR）
+
+Owner が 2026-09-03 に確定した PM 運用規則を、GitHub 上の恒久ルールとして保存した。
+
+- **`.claude/rules/pm-conduct.md` を新設（110行）。** Conforms-to: Development Constitution v2.0。
+  対象 Role は **RO-2（Architect / PM）**。憲法 §2.1-R1 に従い Role で記述し Actor 名は書いていない
+- 内容は Owner 確定文の**そのまま**: 作業開始前ゲート（7種の作業）／禁止6項目／必須3項目／
+  証拠・計数8項目／STOP・BLOCKED 5項目＋反復禁止／Short Video Gate／Merge Gate
+- **新ルールは追加していない。既存ルールの意味も変えていない。** 参照表と
+  【CONFIRM_REQUIRED】1件のみを補記した
+- 参照経路: `CLAUDE.md`（+3行）と本ファイル冒頭（+1行）から `pm-conduct.md` を指す
+- 実測: 規範項目の網羅 **40/40**・見出し重複 0・Scope Lock 外の変更 **0件**
+
+**確定した結論**: PM 行動規範は `.claude/rules/pm-conduct.md` が正本。
+Merge Gate と憲法 §2.6-I1（Merge は RO-1 のみ）の優先関係は**未確定**として
+【CONFIRM_REQUIRED】で残した（下記 UNRESOLVED）。
+
 
 ### CLAUDE.md 整理 PR-1 — 完了記録の分離（2026-09-03 / 本PR）
 
@@ -1234,6 +1253,20 @@ Commons の obsti 候補（500×349・1.72倍拡大が必要）は**基準未達
 ---
 
 ## UNRESOLVED — 本当に未解決のものだけ
+
+### 【CONFIRM_REQUIRED】Merge 権限の優先関係（2026-09-03 提起・Owner 裁定待ち）
+
+`.claude/rules/pm-conduct.md` §7 Merge Gate と `.claude/rules/chatgpt-handoff.md` §2 は
+「検証 PASS かつ BLOCKER なしなら merge 可能」と述べる。
+一方 `DEVELOPMENT_CONSTITUTION.md` §2.6-I1 / §2.3-R1 / §4.3-R1 は
+「Merge は RO-1 のみが実施 MUST。Actor は Merge しては MUST NOT」と定める。
+
+- この不整合は**本作業で作ったものではなく、以前から repo に存在していた**
+- 憲法 §1.3-R1 に従えば憲法が優先する。ただし運用実態は前者
+- 本作業では**どちらの意味も変更していない**。憲法 §1.4-R2 に従い未確定として明記した
+- **必要なもの**: Owner の裁定（①憲法を改定する ②運用ルール側を憲法に合わせる ③現状維持）
+
+
 
 > **2026-08-29 CLOSEOUT COMPLETE 後の実態。**
 > **DECISION は0件。** 判断待ちで止まっている作業はもう無い。
