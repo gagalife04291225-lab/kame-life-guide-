@@ -558,3 +558,28 @@
 - **Conforms:** Constitution v2.0
 
 ---
+
+## [2026-09-03] Development Constitution v2.1 — 条件付き Actor merge の許可
+
+- **Actor:** Claude Code（起案・実装） / 亀好きさん（裁定・承認）
+- **Change:** `DEVELOPMENT_CONSTITUTION.md` を v2.0 → **v2.1**（§9.2-R1 の MINOR＝運用調整）。
+  **§2.6-I1 を改定** — 公開（Publish）は RO-1 単独のまま、Merge は5条件をすべて満たす場合に限り
+  Actor（RO-2 / RO-3）も実施可とした。整合: §2.3-R1 / §2.4-R1 / §2.4-R2 / §4.2-R2 / §4.3。
+  §9.2 に改定履歴表を新設。下位規則を v2.1 準拠へ更新
+  （`.claude/rules/pm-conduct.md` §7 を 7.1/7.2/7.3 に再構成・§4 に但し書き追加、
+  `.claude/rules/chatgpt-handoff.md` §2・§4、`.claude/rules/closeout-gate.md`、
+  `CLAUDE.md` 経路表と Git 運用）。§1.3-R2 / §9.2-R3 に従い `Conforms-to` を v2.1 へ更新。
+- **Reason:** 制定時の `pm-conduct.md` §7 Merge Gate「危険が無ければ merge 可能」が
+  憲法 §2.6-I1「Merge は RO-1 のみ MUST」と矛盾していた。Owner の裁定は当初案B
+  （Actor は merge しない）だったが、Owner の意図が案A（危険が無ければ Actor merge 可）
+  であることが判明し、案A へ変更。案A は憲法改定を伴うため v2.1 とした。
+  併せて Owner 裁定 D-02（品質不足による STOP は積み残しではない）と
+  D-03（合格基準の引き下げ禁止は検査の追加に及ばない）を規則へ反映。
+- **PR/Commit:** PR #132（前段・案B反映） / merge `5f96d2d`、本PR（案A・v2.1改定）
+- **Approver:** 亀好きさん（「aにして」）
+- **Conforms:** Constitution v2.1
+- **備考:** 過去の Actor merge 4件（PR #129 `877667d` / #130 `1e7ec89` / #131 `321ebe0` /
+  #132 `5f96d2d`）は改定後の5条件をすべて充足しており revert 不要。
+  経緯は `docs/decisions/OPEN-DECISIONS.md` に記録した。
+
+---

@@ -1,8 +1,8 @@
 # KAME LIFE GUIDE — Development Constitution
 
-- **Version:** 2.0
+- **Version:** 2.1
 - **Status:** DRAFT（本文完成。F1=CONFIRMED / F2=CONFIRMED。批准・公開は Owner 承認待ち）
-- **Last Updated:** 2026-07-16
+- **Last Updated:** 2026-09-03
 - **Supersedes:** CLAUDE.md（開発運用ルール部分）／ SHINDAN-SPEC.md（作業ルール・GitHub API鉄則部分）
 - **Conforms To:** MANIFEST.md ＞ AGENTS.md（`gagalife04291225-lab/ai-company-os`）
 
@@ -86,7 +86,7 @@ Template   qa_snapshot_template / species-template
 | commit | RO-3 | RO-3 | 自律 | RO-4 | — |
 | push(branch) | RO-3 | RO-3 | 自律/指定branch | RO-4 | — |
 | PR作成 | RO-3 | RO-1 | RO-1 | RO-4 | RO-4 |
-| Merge | RO-1 | RO-1 | RO-1 | RO-4 | — |
+| Merge | RO-1／条件付きで RO-2・RO-3（§2.6-I1） | RO-1 | RO-1 | RO-4 | — |
 | 公開 | RO-1 | RO-1 | RO-1 | — | — |
 | 緊急修正 | RO-3 | RO-1 | RO-1(事後可) | RO-4 | RO-4(事後) |
 | Bot同期 | RO-5 | RO-1(監督) | 自動 | RO-3/RO-1 | — |
@@ -102,16 +102,26 @@ Template   qa_snapshot_template / species-template
 | Architecture Proposal | RO-2 |
 | Implementation Proposal | RO-3 |
 | Final Decision | RO-1 |
-| Approve / Merge / Publish | RO-1（単独） |
+| Approve / Publish | RO-1（単独） |
+| Merge | RO-1／§2.6-I1 の5条件を満たす場合は RO-2・RO-3 も MAY |
 
-- §2.4-R2: Architect と Implementer で設計意見が対立した場合、両論を併記し RO-1 へエスカレーション MUST。**最終決定は常に RO-1** MUST。Actor 同士で Merge・公開を決しては MUST NOT。
+- §2.4-R2: Architect と Implementer で設計意見が対立した場合、両論を併記し RO-1 へエスカレーション MUST。**最終決定は常に RO-1** MUST。Actor 同士で**公開**を決しては MUST NOT。Merge は §2.6-I1 の5条件下でのみ Actor が実施 MAY。
 
 ### 2.5 Verification Duty
 - §2.5-R1: 他 AI（Grok 等）の生成物は、事実未検証のまま採用しては MUST NOT。
 - §2.5-R2: 製品名・ASIN は実在確認後にのみ記述 MUST。架空の製品・種名を記述しては MUST NOT。
 
 ### 2.6 Invariants
-- **I1:** Merge は RO-1 のみが実施 MUST。Actor は Merge しては MUST NOT。
+- **I1（v2.1 改定）:** **公開（Publish）は RO-1 のみが実施 MUST。**
+  Merge は原則 RO-1 が実施 MUST。ただし次の**5条件をすべて満たす場合に限り** Actor（RO-2・RO-3）が実施 MAY。
+  1. 宣言した検証項目がすべて PASS し、その**実測値**が PR に記載されている
+  2. **Scope Lock 外の変更が 0 件**であることを実測で示している
+  3. **破壊的変更・不可逆操作を含まない**（ファイル削除・リネーム・履歴書換・protected branch 設定変更を含まない）
+  4. **収益ゲート（Amazon `kamelife09-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）に影響しない**（I3）
+  5. Owner が当該 PR について「PR で止めろ」「承認待ち」を指示していない
+
+  1つでも満たさない場合、Actor は Merge しては MUST NOT。**Owner 判断へ戻す MUST。**
+  条件を満たして Actor が Merge した場合、PR に**満たした条件と実測値を記録** MUST。
 - **I2:** 人手・Web版の変更は PR 経由 MUST。protected branch への直 push は RO-5 の限定スコープに限る MUST。
 - **I3:** 収益ゲート（Amazon `kamelife09-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）は全経路で必須 MUST。Actor はこれらを無効化しては MUST NOT。
 - **I4:** 各活動の最終責任は単一主体 MUST。公開物の最終責任は常に RO-1 MUST。
@@ -153,10 +163,11 @@ Template   qa_snapshot_template / species-template
 
 ### 4.2 Review Layers（二層）
 - §4.2-R1: **設計承認（チャット層）** と **Merge承認（Platform層）** は別物として扱う MUST。
-- §4.2-R2: チャット層のレビューは RO-4 が行う MUST。Platform 層の Merge 承認は RO-1 のみ MUST。RO-2/RO-4 は Platform 上で Merge 権を持た MUST NOT。
+- §4.2-R2: チャット層のレビューは RO-4 が行う MUST。Platform 層の Merge 承認は RO-1 のみ MUST。RO-4（Reviewer / Auditor）は Platform 上で Merge 権を持た MUST NOT。RO-2・RO-3 は §2.6-I1 の5条件下でのみ Merge 実施 MAY。
 
 ### 4.3 Merge & Publish
-- §4.3-R1: Merge・公開は RO-1 が実施 MUST（Invariant I1）。
+- §4.3-R1: **公開は RO-1 が実施 MUST**（Invariant I1）。
+- §4.3-R2: Merge は原則 RO-1 が実施 MUST。**§2.6-I1 の5条件をすべて満たす場合に限り** Actor が実施 MAY。
 
 ### 4.4 Emergency（緊急修正）
 - §4.4-R1: 本番障害時、RO-3/RO-1 は `hotfix/<issue>` で即時修正し push MAY。
@@ -267,6 +278,12 @@ Template   qa_snapshot_template / species-template
 - §9.2-R1: バージョンは semver に従う MUST — MAJOR=責務再定義/互換性破壊、MINOR=章追加/運用調整、PATCH=誤字/リンク。
 - §9.2-R2: 改定は誰でも起案 MAY。成立は **RO-1 の承認のみ** MUST。
 - §9.2-R3: 改定時、依存する下位手順書の `Conforms-to` を更新し再検証 MUST。
+
+#### 改定履歴
+
+| 版 | 日付 | 種別 | 内容 | 承認 |
+|----|------|------|------|------|
+| 2.1 | 2026-09-03 | MINOR（運用調整） | **I1 を改定**し、5条件を満たす場合に限り Actor（RO-2・RO-3）の Merge を許可。**公開（Publish）は従来どおり RO-1 単独。** §2.3-R1／§2.4-R1／§2.4-R2／§4.2-R2／§4.3 を整合。Owner 裁定 D-01（案A・2026-09-03）による | RO-1 |
 
 ### 9.3 AI_CHANGELOG
 - §9.3-R1: Merge 済み変更 1 件につき `AI_CHANGELOG.md` に 1 エントリを追記 MUST（append-only、改ざん MUST NOT）。
