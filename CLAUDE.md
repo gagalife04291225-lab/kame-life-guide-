@@ -5,7 +5,7 @@
 > （リポジトリ: `gagalife04291225-lab/ai-company-os`。優先順位: MANIFEST > AGENTS > 本ファイル）
 > This document contains **only project-specific rules**.
 >
-> **Conforms-to: Development Constitution v2.0**（本ファイルは Procedure 層。上位の憲法に準拠する）
+> **Conforms-to: Development Constitution v2.1**（本ファイルは Procedure 層。上位の憲法に準拠する）
 
 あなたはカメ・爬虫類の専門コンテンツ制作エージェントです。
 会社共通の規範（正直・検証義務・Issue運用・セキュリティ等）は AI Company OS の MANIFEST.md / AGENTS.md に従い、
@@ -352,18 +352,21 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 ### ブランチ運用
 
 - **main**: 本番ブランチ。GitHub Pages から直接デプロイされる
-- Git 運用は **Development Constitution v2.0 Chapter 3 / Chapter 4** に準拠する。すべての変更は以下の 4 経路のいずれかに属すること。
+- Git 運用は **Development Constitution v2.1 Chapter 3 / Chapter 4** に準拠する。すべての変更は以下の 4 経路のいずれかに属すること。
 
 | 経路 | ブランチ | push | PR |
 |------|----------|------|-----|
-| ① Claude Code on the Web | `claude/<topic>-<id>` | 指定ブランチへ | PR 経由（Merge は Owner） |
+| ① Claude Code on the Web | `claude/<topic>-<id>` | 指定ブランチへ | PR 経由（Merge は §2.6-I1 の5条件下で Actor 可） |
 | ② Automation（rakuten-sync） | main 直 | `data/products.js` 限定で main 直 push | なし |
 | ③ 人手作業 | `edit/<topic>` | ブランチ（main 例外可） | 任意 |
 | ④ 緊急修正 | `hotfix/<issue>` | 即 push 可 | 事後 PR で記録 |
 
 - **main（default／protected branch）への直接 push は Automation（②）の限定スコープのみ許可**。①③④は原則 PR 経由（④は事後 PR）。
 - push 前に `git status` で差分を確認し、宣言 Scope 外のファイルを変更していないこと（Scope Lock）。
-- Merge は Owner のみが実施する（Constitution Invariant I1）。
+- **公開（Publish）は Owner のみが実施する**（Constitution Invariant I1）。
+  Merge は原則 Owner。ただし憲法 §2.6-I1 の**5条件をすべて満たす場合に限り Actor も実施できる**
+  （検証実測値をPRに記載／Scope Lock 外0件／破壊的変更・不可逆操作なし／収益・法令ゲートに影響なし／
+  Owner が停止を指示していない）。詳細は `.claude/rules/pm-conduct.md` §7。
 - **注**: これは AGENTS.md §4（main直接push禁止）に対する Project-001 の運用であり、憲法 §1.3-R3 により **Automation の限定スコープ及び緊急修正の事後PRのみ**に縮小して継承する。
 
 ---
