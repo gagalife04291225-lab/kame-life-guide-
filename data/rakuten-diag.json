@@ -140,12 +140,16 @@
   }
  },
  "enclosure_glass_45": {
-  "date": "2026-08-31",
+  "date": "2026-09-04",
   "query": "GEX EXOTERRA グラステラリウム 4545",
-  "resultCount": 0,
-  "outcome": "NO_RESULT",
-  "reason": null,
-  "best": null
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=4.9 照明系(ランプ)",
+  "best": {
+   "itemName": "ジェックス EXO TERRA コンパクトトップ45N PT2226 26W(2灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム4530/454",
+   "price": 7253,
+   "shop": "アルメリア楽天市場店"
+  }
  },
  "enclosure_kayuso_90": {
   "date": "2026-08-30",
@@ -224,9 +228,9 @@
   "best": null
  },
  "filter_canister_medium": {
-  "date": "2026-08-31",
+  "date": "2026-09-04",
   "query": "EHEIM クラシック 2213 外部フィルター",
-  "resultCount": 6,
+  "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
@@ -556,15 +560,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-08-31",
+  "date": "2026-09-04",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
-   "price": 1500,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
+   "price": 1685,
+   "shop": "ペッツマム"
   }
  },
  "shelter_moist_hide": {
@@ -896,14 +900,14 @@
   }
  },
  "thermostat": {
-  "date": "2026-08-29",
+  "date": "2026-09-04",
   "query": "サーモスタット 爬虫類 アナログ",
   "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.7",
   "best": {
    "itemName": "◇ビバリア ツインメーターNEO | 温度計 湿度計 爬虫類用品 温湿度計 ビバリア ツインメーターNEO RP141 ペット飼育 温度管理 湿度管理 ケージ用",
-   "price": 1092,
+   "price": 983,
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
@@ -948,15 +952,15 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
-  "resultCount": 7,
+  "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "【9/4 20時〜9/10 エントリーP5倍＆クーポン♪】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EX",
-   "price": 3400,
-   "shop": "ハッピードライブヤブモト"
+   "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
+   "price": 2602,
+   "shop": "パレットマーケット"
   }
  },
  "uvb_led_bar": {
