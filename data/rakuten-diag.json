@@ -708,9 +708,9 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-08-29",
+  "date": "2026-09-05",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 7,
+  "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=8.5",
   "best": {
@@ -832,14 +832,14 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-08-29",
+  "date": "2026-09-05",
   "query": "アナログ 温湿度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
   "reason": null,
   "best": {
    "itemName": "温度計 温湿度計 湿度温度計 爬虫類 温度計 家庭用 湿度計 アナログ 小型 壁掛け・卓上両用 精度高い 読みやすい ベビールーム 浴室 室内 室外 花屋 倉庫",
-   "price": 495,
+   "price": 491,
    "shop": "皆の生活館"
   }
  },
@@ -952,7 +952,7 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
@@ -960,7 +960,7 @@
   "best": {
    "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
    "price": 2602,
-   "shop": "パレットマーケット"
+   "shop": "KANADE STORE楽天市場店"
   }
  },
  "uvb_led_bar": {
