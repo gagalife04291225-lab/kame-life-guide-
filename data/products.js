@@ -57,6 +57,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B0CDLG5XF3)の実商品をweb_searchで確認したところ「Takimi 爬虫類ケージ 120cm大型
@@ -82,6 +83,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   tank_60: {
@@ -128,6 +130,7 @@ const PRODUCTS = {
     rakutenShop: 'ペットフォレスト 楽天市場店',
     rakutenConfidence: 5.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-24/pf-4972814019201.jpg?_ex=128x128',
   },
 
   // Phase 39-P4: ASIN(B09DNYMXTP)の実商品をweb_searchで確認したところ「SANKO パンテオン ブラック BK9045」
@@ -153,6 +156,7 @@ const PRODUCTS = {
     rakutenShop: 'ネオス 楽天市場店',
     rakutenConfidence: 6.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fish-neos/cabinet/20/sanko20220504-20_1.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -196,6 +200,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 4.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B09DP2X997)の実商品をweb_searchで確認したところ「SANKO パンテオン カノン ホワイト
@@ -374,6 +379,7 @@ const PRODUCTS = {
     rakutenShop: 'パレットマーケット',
     rakutenConfidence: 5.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palette-market/cabinet/onesell035/pab3908bfe3d_0.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -417,6 +423,7 @@ const PRODUCTS = {
     rakutenShop: 'ショップflora楽天市場店',
     rakutenConfidence: 5.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/shopflora/cabinet/onesell018/uec5712d09f0_0.jpg?_ex=128x128',
   },
 
   // Phase 39-P4: ASIN(B07BBMVJ6H)の実商品をweb_searchで確認したところ「GEX EXOTERRA ソーラーグローUV 80W
@@ -442,6 +449,7 @@ const PRODUCTS = {
     rakutenShop: '美容と雑貨のお店 エヌエルディ',
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/beautygoodsnld/cabinet/rakub155_0213/b07bbmvj6h-text.jpg?_ex=128x128',
   },
 
   uvb_led_bar: {
@@ -465,6 +473,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -514,6 +523,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/177/17733-1.jpg?_ex=128x128',
   },
 
   basking_75w: {
@@ -537,6 +547,7 @@ const PRODUCTS = {
     rakutenShop: 'SooTune',
     rakutenConfidence: 5.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/sootune/cabinet/onesell004/hinoce53b8439b_0.jpg?_ex=128x128',
   },
 
   basking_100w: {
@@ -561,6 +572,7 @@ const PRODUCTS = {
     rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/auc-yabumoto/cabinet/tatempo17/lovely-19103-r.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -607,6 +619,7 @@ const PRODUCTS = {
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 4.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/10614472/10614482/imgrc0104785595.jpg?_ex=128x128',
   },
 
   // Phase 39-P4: ASIN(B00E0GLQPI)の実商品をweb_searchで確認したところ「GEX EXOTERRA サングロー
@@ -632,6 +645,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B0858Y7XJX)の実商品をweb_searchで確認したところ「ゼンスイ ソラリウムセット
@@ -658,6 +672,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.5,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   basking_ceramic_100w: {
@@ -681,6 +696,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 7.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   basking_infrared_red: {
@@ -704,6 +720,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -787,6 +804,7 @@ const PRODUCTS = {
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.5,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317321.jpg?_ex=128x128',
   },
 
   heater_panel_45: {
@@ -810,6 +828,7 @@ const PRODUCTS = {
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.8,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317322.jpg?_ex=128x128',
   },
 
   heater_aqua_100w: {
@@ -833,6 +852,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P3: ASIN(B00BKULMIS)の実商品をweb_searchで特定できず、ブランド不明の汎用品だったため
@@ -859,6 +879,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // ── Phase 39-P3 追加（国内メーカー優先・汎用名商品の置き換え） ──
@@ -888,6 +909,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2475/247595-1.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -933,6 +955,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1869/186702-1.jpg?_ex=128x128',
   },
 
   heater_radiant_panel: {
@@ -956,6 +979,7 @@ const PRODUCTS = {
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 5.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317240.jpg?_ex=128x128',
   },
 
   heater_cord_20w: {
@@ -979,6 +1003,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1779/177849-1.jpg?_ex=128x128',
   },
 
   heater_panel_60: {
@@ -1002,6 +1027,7 @@ const PRODUCTS = {
     rakutenShop: '水耕栽培専門店のエコゲリラ',
     rakutenConfidence: 7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/eco-guerrilla/cabinet/daiichi/pitari_3_700.jpg?_ex=128x128',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -1067,6 +1093,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/129/12725-1.jpg?_ex=128x128',
   },
 
   filter_canister_medium: {
@@ -1090,6 +1117,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 8.8,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   filter_canister_large: {
@@ -1138,6 +1166,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   filter_sponge_dual: {
@@ -1179,6 +1208,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/459/45560-1.jpg?_ex=128x128',
   },
 
   filter_canister_xl: {
@@ -1202,6 +1232,7 @@ const PRODUCTS = {
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.4,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/453/45364-1.jpg?_ex=128x128',
   },
 
   filter_submersible_medium: {
@@ -1225,6 +1256,7 @@ const PRODUCTS = {
     rakutenShop: 'セレクトショップ RST',
     rakutenConfidence: 7.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/r-style-ra/cabinet/r_2023101209/20240606185858_67_1.jpg?_ex=128x128',
   },
 
   filter_turtle_clean: {
@@ -1290,6 +1322,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 8.5,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   substrate_coco: {
@@ -1382,6 +1415,7 @@ const PRODUCTS = {
     rakutenShop: 'アルメリア楽天市場店',
     rakutenConfidence: 5.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/almeria/cabinet/item/1956/39076665955_1.jpg?_ex=128x128',
   },
 
   substrate_sphagnum_moss: {
@@ -1511,6 +1545,7 @@ const PRODUCTS = {
     rakutenShop: '爬虫類用品店 トップクリエイト',
     rakutenConfidence: 7.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/topcreate/cabinet/0036/0036-00121.jpg?_ex=128x128',
   },
 
   shelter_medium: {
@@ -1534,6 +1569,7 @@ const PRODUCTS = {
     rakutenShop: 'ペットと園芸のホムセントックリ',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/toxtukuri/cabinet/0036/0036-00123.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -1559,6 +1595,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   shelter_moist_hide: {
@@ -1642,6 +1679,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -1796,6 +1834,7 @@ const PRODUCTS = {
     rakutenShop: 'Arclands Online 楽天市場支店',
     rakutenConfidence: 7.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/lamd/cabinet/image70/496091073117_1.jpg?_ex=128x128',
   },
 
   thermometer_infrared: {
@@ -1819,6 +1858,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B0CZ42FLXM)の実商品をweb_searchで確認したところ「INKBIRD WiFi温度計湿度計
@@ -1845,6 +1885,7 @@ const PRODUCTS = {
     rakutenShop: 'SelectSHOP 岐阜 楽天市場店',
     rakutenConfidence: 5.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/makana--/cabinet/root_sniper_folder/sniper_folder_00097/imgrc0144194927.jpg?_ex=128x128',
   },
 
   thermometer_analog: {
@@ -1895,6 +1936,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 7.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B0DF2SJMCJ)の実商品をweb_searchで確認したところ「Vivaria取扱 Rep-Cal
@@ -1940,6 +1982,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   food_aqua_turtle_pellet: {
@@ -1963,6 +2006,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 5.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: ASIN(B0F6JWRMSL)の実商品をweb_searchで確認したところ「Vivaria取扱 Rep-Cal
@@ -2009,6 +2053,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // Phase 39-P4: 旧ASIN(B00TJ3O1HC)はweb_searchで実在確認できず誤ASINと判断。
@@ -2055,6 +2100,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   food_tortoise_herbs: {
@@ -2080,6 +2126,7 @@ const PRODUCTS = {
     rakutenShop: 'ペットショップ うちのmofu',
     rakutenConfidence: 9.1,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/uchinomofu/cabinet/kyorin/maru/imgrc0098716274.jpg?_ex=128x128',
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
@@ -2144,6 +2191,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   /* ══════════════════════════════════════════
@@ -2172,6 +2220,7 @@ const PRODUCTS = {
     rakutenShop: 'NUvemshop楽天市場店',
     rakutenConfidence: 6.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/nuvem/cabinet/r_2024111218/20260604015514_189_1.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -2197,6 +2246,7 @@ const PRODUCTS = {
     rakutenShop: 'レヨンベールアクア楽天市場店',
     rakutenConfidence: 6.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/12000/11633.jpg?_ex=128x128',
   },
 
   // Phase 39-P4: ASIN(B09YYPLCV3)の実商品をweb_searchで確認したところ「GEX EXOTERRA カルシウム+
@@ -2223,6 +2273,7 @@ const PRODUCTS = {
     rakutenShop: 'ネオス 楽天市場店',
     rakutenConfidence: 7.3,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fish-neos/cabinet/-2/gex20210723-2_1.jpg?_ex=128x128',
   },
 
   supplement_multivitamin: {
@@ -2246,6 +2297,7 @@ const PRODUCTS = {
     rakutenShop: 'フォーチュネスマート',
     rakutenConfidence: 5.9,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fortuness/cabinet/r_2026080456/20260804042538_110_1.jpg?_ex=128x128',
   },
 
   // Phase 39-P4: ASIN(B09M65FBTD)の実商品をweb_searchで確認したところ「テトラ レプトセイフ カメの水つくり
@@ -2350,6 +2402,7 @@ const PRODUCTS = {
     rakutenShop: null,
     rakutenConfidence: 3.6,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: null,
   },
 
   // web_searchで実在確認（スペクトラムブランズジャパン公式・Amazon実ページ B004EIAQMG・2026-08-18）。
@@ -2374,6 +2427,7 @@ const PRODUCTS = {
     rakutenShop: 'スプラウツLLC 楽天市場店',
     rakutenConfidence: 4.2,
     rakutenLastUpdated: '2026-09-06',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/sproutsllc/cabinet/n20260802132715/b09t3g3917-1.jpg?_ex=128x128',
   },
 };
 
