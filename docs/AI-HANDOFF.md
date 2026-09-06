@@ -34,16 +34,46 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **016ba27**（PR #133 merge・憲法 v2.1 反映済み・2026-09-03 実測値） |
+| 基準 | `origin/main` = **7ff417a**（rakuten 日次同期 2026-09-06・実測値） |
 | サイトファイルの状態 | 直近の一連の作業は**ドキュメントのみ**の変更。サイトファイル（HTML/CSS/JS/data/assets）は無変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-03 |
+| 最終更新日 | 2026-09-06 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/moneyprinterturbo-japanese-poc-nd71z0` |
+| 作業ブランチ | `claude/kame-product-card-research-bfdzs0` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 商品カード（商品画像付き）実装可否の実測調査（2026-09-06 / 本PR・調査のみ）
+
+Owner 指示による調査。**サイトファイルは無変更。** 結論は **両経路とも BLOCKED**（B12 / B13）。
+
+- **既存 UI は「画像以外すべて揃っている」。** `js/starter-kit.js` の `sk-card` は
+  バッジ・商品名・価格帯・用途説明（`why`）・Amazonボタン・楽天ボタンを既に1カードで描画し、
+  114ページが読み込んでいる。Owner の UI 案との差分は **商品写真1点のみ**
+- **`image` フィールドは既に全104商品に存在するが、死にデータ。** 値は全件
+  `/assets/products/placeholder.webp` の1種類のみで、**`assets/products/` ディレクトリ自体が存在しない**。
+  かつ **どの描画コードからも参照されていない**（`js/kid-lookup.js` の `item.image` は別データ源）。
+  したがって現状は表示崩れを起こしていないが、`p.image` を描画した瞬間に**104件が壊れた画像になる**
+- **楽天は停止していない。** `rakuten-sync.yml` が日次 03:00 JST で稼働中（直近 7ff417a・2026-09-06）。
+  Secret は `RAKUTEN_APP_ID` / `RAKUTEN_ACCESS_KEY` / `RAKUTEN_AFFILIATE_ID` の3件が実在
+- **同期は既に画像を要求しているが、保存していない。** `scripts/update-rakuten.js` は
+  API へ `imageFlag: '1'` を送っており（L232 / L348）、応答から `mediumImageUrls` /
+  `smallImageUrls` / `imageUrl` を取り出す実装も**監査モードには既にある**（L630-632）。
+  一方、通常同期が products.js へ書き戻すのは `rakutenUrl` / `rakutenItemCode` /
+  `rakutenPrice` / `rakutenShop` の4つだけ（L1274-1374）。**画像URLは取得後に捨てている**
+- **Amazon は資格要件で不可。** PA-API は 2026-05-15 に廃止済み（`data/species-master.json:86`
+  に既に記録あり）。後継の Creators API は **直近30日で10件以上の発送実績**が利用条件。
+  リポジトリ内に Amazon 系 Secret・認証情報は **0件**
+- **楽天の一次規約は本環境から確認できない。** `webservice.rakuten.co.jp` および
+  `webservice.faq.rakuten.net` はいずれも egress ポリシーで **EGRESS_BLOCKED**。
+  **これは `NOT FOUND` ではない**（`pm-conduct.md` §4）
+
+**確定した結論**: 実装を止めているのは技術ではなく **①Amazon の資格要件 ②楽天の一次規約の未確認**
+の2点だけ。この2点が解ければ、必要な変更は「同期に画像URLの書き戻しを1本足す」
+「カードに `<img>` を1つ足す」の2箇所で足りる。**設計の作り直しは不要。**
+
 
 ### 憲法 v2.1 改定 — 条件付き Actor merge の許可（2026-09-03 / 本PR）
 
@@ -298,6 +328,41 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 商品データ層の実測値（2026-09-06 / 再計測しない）
+
+`data/products.js` を `node -e` で読み込んで実測。**目視やgrepの推定値ではない。**
+
+| 項目 | 実測値 |
+|------|-------:|
+| 総商品数 | **104** |
+| `rakutenStatus: 'available'`（実アフィリURL・同一性検証済み） | **36** |
+| `rakutenStatus: 'search'`（検索フォールバック・**同一性未検証**） | **65** |
+| `rakutenStatus: 'pending'`（楽天CTAなし） | **3** |
+| `affiliateUrl` が実 Amazon URL | **77**（全件 `kamelife09-22` 付き・**タグ漏れ0件**） |
+| `affiliateUrl` がプレースホルダ | **27**（`'#'` 23件 ／ `null` 4件） |
+| `image` フィールド保有 | 104（**全件同一の存在しないパス**） |
+| `rakutenImageUrl` / `imageUrl` フィールド | **0**（未定義） |
+| 商品カテゴリ | 12種（enclosure / lighting_uvb / lighting_basking / heating / filter / substrate / shelter / water_dish / thermometer / food / supplements / accessory） |
+
+**収益ゲートは健全**: 実 Amazon URL 77件は全て `kamelife09-22` を保持。
+タグ無しの27件は Amazon URL ですらないプレースホルダで、`starter-kit.js` は
+`affiliateUrl === '#'` を「選定中」ラベルへ落として描画する（リンクを出さない）。
+
+**画像を出せる上限は 36件**。`search` の65件は楽天側の商品同一性が未検証であり、
+その画像を Amazon 商品のカードに出すと**別商品の写真を出す**ことになる。
+`available` の36件だけが同一性検証済み（`rakutenItemCode` 実在36/36）。
+
+### 商品画像の取得経路（2026-09-06 / 再調査しない）
+
+| 経路 | 可否 | 根拠 |
+|------|------|------|
+| Amazon PA-API | **不可** | 2026-05-15 廃止済み |
+| Amazon Creators API | **資格未充足** | 直近30日で10件以上の発送実績が条件。リポジトリ内に Amazon 系 Secret 0件 |
+| Amazon 画像の保存・スクレイピング | **禁止** | アソシエイト規約違反。**代替案として検討しない** |
+| 楽天 IchibaItem Search API | **技術的には可能** | 既存 Secret 3件が稼働中。`imageFlag: '1'` を送信済みで応答に画像URLが含まれる |
+| 楽天画像の保存・自サイト再配置 | **採らない** | 公式提供URL（`thumbnail.image.rakuten.co.jp`）の参照で足りる。保存は権利上の追加リスクだけを増やす |
+
+
 ### kame ゲートの確定形と PLAYBOOK⑦ の結果（2026-09-04）
 
 実装記録: `ai-tiktok-company` の `experiments/shorts-gate/` と `video-output/kame-short-01/`。**再実装しない。**
@@ -501,6 +566,7 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 |----|------|---------|
 | **R1 food_hikari_turtle の実体確認** | name「カメのごはん（ウーパールーパー用？）」と term/why が別商品を指す。ASIN B0043UN3X4 の実体確認は Owner の実物確認が必要 | 確認できたら name/term を同期し `rakutenIdentityHold` を外す。確認できるまで楽天昇格から恒久除外（HOLD） |
 | **R2 food_reptomin_tetra の統合/削除** | food_aquatic_premium と同一商品ライン（テトラ レプトミン）の重複。EQUIPMENT_MAP 未参照の孤児レコード | 削除しても参照切れは起きないことを Phase 0 で確認済み。統合 or 削除は Owner 判断（HOLD） |
+| **R4 楽天クレジット表記の現状要否** | サイトは楽天APIを日次で叩き `affiliateId` 付きURLを掲載しているが、**API由来の表示コンテンツ（価格・在庫・店舗名・画像）は現在1つも描画していない**（`rakutenPrice`/`rakutenShop` は保存のみ・未表示）。かつ**クレジット表記は全ページで0件**。二次情報は「APIデータを表示する場合はクレジット必須」とするため、**現状で既に義務が生じているかは B13 の一次確認を待つ**。画像を出す場合は確実に義務が生じる | B13 受領後に判断。**先回りして推測の文言を入れない**（誤った表記は無表記と同じく非準拠） |
 | **R3 food_tortoise_herbs の昇格可否** | Phase 2 で Owner が△非承認（180g/400g併記出品）とした商品が、Phase 3 の日次レガシーゲートの正規条件（identity STRONG＋スコア9.1≧8.0＋成果対象URL）を満たして available 化された。商品自体はマルベリックドライで正しい | 非承認を維持するなら `rakutenIdentityHold: true` を1行付与（次回日次で自動降格）。昇格を認めるなら現状のまま。**Owner 判断** |
 
 **旧 D1〜D9 はすべて CLOSE または BLOCKED へ着地済み**（COMPLETED 参照）。
@@ -537,6 +603,8 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
 | **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
 | **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
+| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife09-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
+| **B13 楽天ウェブサービス規約の一次確認** | 本環境は `webservice.rakuten.co.jp` / `webservice.faq.rakuten.net` とも **EGRESS_BLOCKED**。Owner が公式ガイド（利用規約・「クレジット表記について」）を開き、**①API取得画像のサイト表示可否 ②必須クレジット表記の正確な文言・ロゴ・設置条件 ③価格/在庫を1時間に1回以上更新しない場合の更新時刻表示義務**の3点を原文で確認する | 3点が確定した時点で、`available` 36件に限り `rakutenImageUrl` を日次同期へ追加し、カードに `<img>` と規約準拠のクレジット表記を同時に入れる。**クレジット文言を推測で書いてはならない。** 二次情報（技術ブログ）は義務の存在は一致して示すが、正確な文言の根拠にしない |
 | **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
 
 ### DROP — 今後やらない。**未解決リストから外す**
@@ -568,6 +636,10 @@ Owner 決定（2026-09-03）。PR-1 に続く整理の第2段。**3点をまと�
    実装側は raw URL と merge 後の実測 commit SHA を必ず添える。
    PM側は URL を開いてから VERIFIED / UNVERIFIED を明示し、
    開かずに「確認しました」と書かない。取り込み済みスナップショットを判定根拠にしない。
+
+> **商品カード（商品画像付き）は NEXT ではない。** 2026-09-06 の調査で
+> **B12（Amazon 資格）/ B13（楽天 規約一次確認）の両方が BLOCKED** と確定した。
+> 外部入力を受領するまで着手しない。**既存構造の再調査もしない**（COMPLETED / FIXED_FACTS に固定済み）。
 
 **ルールの内容判断はしない。** 既存ルールは追認済み（Owner 決定）であり、
 統合・移動・表現の PM 非依存化のみを行う。ルールの新設・削除・意味変更をしない。
