@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>小型で飼いやすい亀おすすめ3選｜小さい亀の比較｜カメライフガイド</title>
-<meta name="description" content="小さい亀を飼いたい方向けに、最大サイズ・水槽・費用で選んだおすすめ3種を解説。ミシシッピニオイガメ・カブトニオイガメ・ニホンイシガメの特徴と選び方。">
+<title>大きくならない亀7種｜成体サイズ・水槽・難易度を比較｜カメライフガイド</title>
+<meta name="description" content="成体でも10〜20cmにとどまる小型の亀7種を、成体サイズ・必要な水槽/ケージ・飼育難易度・寿命で比較。最小クラスは10.7cmですが難易度は中〜上級で、小型でも45〜90cmの飼育容器が目安です。「小さい＝飼いやすい」で選ばないための判断材料をまとめました。">
 <link rel="canonical" href="https://kamelifeguide.com/guides/small-best-turtles.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小型で飼いやすい亀おすすめ3選｜小さい亀の比較｜カメライフガイド">
-<meta property="og:description" content="小さい亀を飼いたい方向けに、最大サイズ・水槽・費用で選んだおすすめ3種を解説。ミシシッピニオイガメ・カブトニオイガメ・ニホンイシガメの特徴と選び方。">
+<meta property="og:title" content="大きくならない亀7種｜成体サイズ・水槽・難易度を比較｜カメライフガイド">
+<meta property="og:description" content="成体でも10〜20cmにとどまる小型の亀7種を、成体サイズ・必要な水槽/ケージ・飼育難易度・寿命で比較。最小クラスは10.7cmですが難易度は中〜上級で、小型でも45〜90cmの飼育容器が目安です。「小さい＝飼いやすい」で選ばないための判断材料をまとめました。">
 <meta property="og:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,6 +81,52 @@ footer a{color:var(--accent);}
   .selection-label{min-width:0;}
   .selection-item{flex-direction:column;gap:4px;}
 }
+
+/* ── 冒頭の即答ブロック（モバイル1画面内で結論を出す） ── */
+.answer-box{background:#fff;border:2px solid var(--forest);border-radius:14px;padding:18px 18px 14px;margin:0 0 22px;}
+.answer-label{display:inline-block;background:var(--forest);color:var(--parchment);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:3px 10px;border-radius:6px;margin-bottom:10px;}
+.answer-box p{font-size:.95rem;line-height:1.8;margin-bottom:10px;}
+.answer-box p:last-child{margin-bottom:0;}
+.answer-key{font-weight:700;color:var(--accent-dark);}
+.answer-points{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #e4ddc9;}
+.answer-points li{font-size:.88rem;line-height:1.65;padding-left:20px;position:relative;}
+.answer-points li::before{content:"▸";position:absolute;left:0;color:var(--accent-dark);font-weight:700;}
+/* ── 成体サイズ比較表（表だけ内部スクロール。ページ本体は横スクロールさせない） ── */
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 8px;border:1px solid #e4ddc9;border-radius:12px;background:#fff;}
+.cmp-table{border-collapse:collapse;min-width:660px;width:100%;font-size:.84rem;}
+.cmp-table th,.cmp-table td{padding:10px 12px;text-align:left;border-bottom:1px solid #ece5d4;vertical-align:top;line-height:1.6;}
+.cmp-table thead th{background:var(--forest);color:var(--parchment);font-weight:700;font-size:.8rem;white-space:nowrap;position:sticky;top:0;}
+.cmp-table tbody tr:last-child td{border-bottom:none;}
+.cmp-table tbody tr:nth-child(even){background:#faf7ef;}
+.cmp-size{font-weight:700;color:var(--forest);white-space:nowrap;}
+.cmp-table td:nth-child(3),.cmp-table td:nth-child(5),.cmp-table td:nth-child(7){white-space:nowrap;}
+.cmp-name{font-weight:700;white-space:nowrap;}
+.cmp-name a{color:var(--accent-dark);text-decoration:underline;}
+.cmp-unknown{color:#8a7a5c;}
+.cmp-hint{font-size:.78rem;color:#6a7a6d;margin:0 0 6px;}
+.cmp-note{font-size:.78rem;color:#6a7a6d;line-height:1.75;margin:8px 0 0;}
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin:18px 0;}
+.faq-item{background:#fff;border:1px solid #e4ddc9;border-radius:10px;padding:14px 16px;}
+.faq-q{font-weight:700;font-size:.93rem;color:var(--forest);line-height:1.6;margin-bottom:8px;}
+.faq-a{font-size:.88rem;line-height:1.85;color:#4a5a50;}
+/* ── 役割の違いを示すボックス ── */
+.role-box{background:#fff;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 16px;margin:20px 0;font-size:.88rem;line-height:1.8;}
+.role-box a{color:var(--accent-dark);text-decoration:underline;font-weight:700;}
+@media(max-width:430px){
+  .cmp-table{font-size:.8rem;}
+  .cmp-table th,.cmp-table td{padding:9px 10px;}
+  /* 冒頭の結論をスマホ1画面に収めるため、ヒーローと記事上部を詰める */
+  header.hero{padding:30px 0 26px;}
+  header.hero h1{font-size:clamp(1.4rem,5.4vw,1.75rem);margin-bottom:7px;}
+  .hero-eyebrow{margin-bottom:9px;}
+  .hero-sub{font-size:.86rem;line-height:1.6;}
+  .article{padding:20px 0 20px;}
+  .answer-box{padding:15px 14px 12px;margin-bottom:18px;}
+  .answer-box p{font-size:.9rem;line-height:1.72;margin-bottom:8px;}
+  .answer-points{gap:6px;margin-top:10px;padding-top:10px;}
+  .answer-points li{font-size:.84rem;line-height:1.55;}
+}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -128,32 +174,88 @@ footer a{color:var(--accent);}
 <header class="hero">
   <div class="wrap">
     <div class="hero-eyebrow">Buyer's Guide</div>
-    <h1>小さい亀・小型種おすすめ3選</h1>
-    <p class="hero-sub">省スペースで飼える、コンパクトな定番種</p>
+    <h1>大きくならない亀・小型種7種の比較</h1>
+    <p class="hero-sub">成体サイズ・必要な水槽・難易度・寿命を並べて確認する</p>
   </div>
 </header>
-<nav class="crumbs"><div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ ガイド ＞ 小さい亀・小型種おすすめ3選</div></nav>
+<nav class="crumbs"><div class="wrap"><a href="../index.html">カメライフガイド</a> ＞ ガイド ＞ 大きくならない亀・小型種の比較</div></nav>
 
 <div class="article"><div class="wrap">
-  <p>亀は種類によって成体サイズが大きく異なります。「小さい亀を飼いたい」という方向けに、最大甲長15cm以下・省スペースで飼育できる人気3種をまとめました。</p>
-
-  <h2>おすすめ3種 早わかり</h2>
-  <div class="summary-box">
-    <div class="summary-title">小型亀おすすめ順</div>
-    <ul class="summary-list"><li><span>1位</span>ミシシッピニオイガメ</li><li><span>2位</span>カブトニオイガメ</li><li><span>3位</span>ニホンイシガメ</li></ul>
+  <div class="answer-box">
+    <div class="answer-label">結論</div>
+    <p><span class="answer-key">成体でも10〜20cmにとどまる亀は実在します。</span>ただし「小さい＝小さい水槽で飼える」「小さい＝飼いやすい」ではありません。</p>
+    <p>最小クラスの<strong>スペングラーヤマガメ（最大10.7cm）</strong>でも難易度は<strong>中〜上級</strong>。最大14cmのミシシッピニオイガメでも終生<strong>45〜60cm水槽</strong>が目安です。</p>
+    <ul class="answer-points">
+      <li>小型でも容器は<strong>45〜90cm</strong>。30cm水槽で終生飼える種は下表にない</li>
+      <li>難易度はサイズと一致しない（<strong>17cmで上級・14cmで入門</strong>）</li>
+      <li>寿命は<strong>20〜80年</strong>。小さいことは短命を意味しない</li>
+    </ul>
   </div>
 
-  <h2>詳細ランキング</h2>
+  <h2>成体サイズで比較する</h2>
+  <p class="cmp-hint">成体サイズの小さい順。表は横にスクロールできます。</p>
+  <div class="cmp-scroll">
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th scope="col">種名</th><th scope="col">成体サイズ</th><th scope="col">タイプ</th>
+        <th scope="col">飼育容器の目安</th><th scope="col">難易度</th><th scope="col">寿命の目安</th>
+        <th scope="col">法規制</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cmp-name"><a href="../species/spenglers-leaf-turtle.html">スペングラーヤマガメ</a></td>
+        <td class="cmp-size">最大10.7cm</td><td>半陸生</td>
+        <td>60cmケージ〜（床面積優先・高さ不要）</td><td>中〜上級</td><td>20〜40年以上</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/musk-turtle.html">ミシシッピニオイガメ</a></td>
+        <td class="cmp-size">最大14cm</td><td>半水棲</td>
+        <td>終生45〜60cm水槽</td><td>入門</td><td>20〜30年以上</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/razorback-musk-turtle.html">カブトニオイガメ</a></td>
+        <td class="cmp-size">最大15cm</td><td>半水棲</td>
+        <td>単独60cm水槽・ペア90cm</td><td>入門〜中級</td><td>20〜30年以上</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/white-lipped-mud-turtle.html">シロクチドロガメ</a></td>
+        <td class="cmp-size">最大17cm</td><td>半水棲</td>
+        <td>60cm水槽から・余裕があれば90cm</td><td>上級</td><td class="cmp-unknown">要確認</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/florida-box-turtle.html">フロリダハコガメ</a></td>
+        <td class="cmp-size">最大18.7cm</td><td>半陸生</td>
+        <td>90cm級から（床材を厚く敷く＋浅い水場）</td><td>中〜上級</td><td class="cmp-unknown">要確認</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/japanese-pond-turtle.html">ニホンイシガメ</a></td>
+        <td class="cmp-size">最大20cm</td><td>日本在来</td>
+        <td class="cmp-unknown">要確認（種ページ参照）</td><td>中級</td><td>30〜50年以上</td><td>CITES II</td>
+      </tr>
+      <tr>
+        <td class="cmp-name"><a href="../species/russian-tortoise.html">ロシアリクガメ</a></td>
+        <td class="cmp-size">最大20cm</td><td>リクガメ</td>
+        <td class="cmp-unknown">要確認（種ページ参照）</td><td>入門〜中級</td><td>40〜80年以上</td><td>CITES II</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="cmp-note">成体サイズは当サイトの種データベースで一次資料を確認できた値です（ミシシッピニオイガメのみ CONFIRMED、他は LIKELY）。飼育容器・寿命は国内飼育の目安で、確認が取れていない項目は<strong>「要確認」</strong>と表示し、推測値を入れていません。CITES II は絶滅のおそれのある種の国際取引に関する条約の附属書IIで、国内で適法に流通する個体を飼育すること自体は禁止されていませんが、輸入には書類が必要です。</p>
+
+  <h2>詳しい飼育ガイドがある3種</h2>
+  <p>上表のうち、当サイトで飼育情報をまとめている3種です。<strong>順位ではなくサイズ順に並べています。</strong>飼いやすさの順位で選びたい場合は、このページではなく下の「初心者におすすめの亀ランキング」を参照してください。</p>
   <div class="rank-card">
   <div class="rank-header">
-    <div class="rank-badge">1位</div>
+    <div class="rank-badge">最大14cm</div>
     <div class="rank-names">
       <div class="rank-name">ミシシッピニオイガメ</div>
       <div class="rank-latin">Sternotherus odoratus</div>
-      <div class="rank-badge-pill">最小サイズ◎</div>
+      <div class="rank-badge-pill">この3種では最小</div>
     </div>
   </div>
-  <p class="rank-reason">最大14cm。30〜45cm水槽で飼育でき、情報が豊富な水棲ガメ入門の定番。</p>
+  <p class="rank-reason">最大14cm。終生飼育の目安は45〜60cm水槽。情報量と入手性に恵まれ、国内で飼育例が多い半水棲ガメ。</p>
   <div class="rank-meta">
     <div class="rank-meta-item"><strong>難易度：</strong>★★★★★</div>
     <div class="rank-meta-item"><strong>初期費用：</strong>¥15,000〜</div>
@@ -165,14 +267,14 @@ footer a{color:var(--accent);}
 </div>
 <div class="rank-card">
   <div class="rank-header">
-    <div class="rank-badge">2位</div>
+    <div class="rank-badge">最大15cm</div>
     <div class="rank-names">
       <div class="rank-name">カブトニオイガメ</div>
       <div class="rank-latin">Sternotherus carinatus</div>
       <div class="rank-badge-pill">個性◎</div>
     </div>
   </div>
-  <p class="rank-reason">最大15cm。独特の隆起した甲羅形状が個性的。ニオイガメに近い管理で飼育できる。</p>
+  <p class="rank-reason">最大15cm。単独なら60cm水槽、ペアでは90cmが目安。隆起した甲羅が特徴で、ミシシッピニオイガメに近い管理で飼育できる。</p>
   <div class="rank-meta">
     <div class="rank-meta-item"><strong>難易度：</strong>★★★★☆</div>
     <div class="rank-meta-item"><strong>初期費用：</strong>¥20,000〜</div>
@@ -184,14 +286,14 @@ footer a{color:var(--accent);}
 </div>
 <div class="rank-card">
   <div class="rank-header">
-    <div class="rank-badge">3位</div>
+    <div class="rank-badge">最大20cm</div>
     <div class="rank-names">
       <div class="rank-name">ニホンイシガメ</div>
       <div class="rank-latin">Mauremys japonica</div>
       <div class="rank-badge-pill">日本固有◎</div>
     </div>
   </div>
-  <p class="rank-reason">最大20cm。日本固有の小〜中型種。CB個体を専門店・イベントで入手。</p>
+  <p class="rank-reason">最大20cm。日本固有の小〜中型種で、本表では最も大きい。CB個体を専門店・イベントで入手する。</p>
   <div class="rank-meta">
     <div class="rank-meta-item"><strong>難易度：</strong>★★★☆☆</div>
     <div class="rank-meta-item"><strong>初期費用：</strong>¥20,000〜</div>
@@ -202,16 +304,76 @@ footer a{color:var(--accent);}
   </a>
 </div>
 
-  <h2>こんな人におすすめ</h2>
-  <div class="selection-list"><div class="selection-item"><span class="selection-label">最もコンパクトに飼いたい</span><span class="selection-val">→ ミシシッピニオイガメ</span></div><div class="selection-item"><span class="selection-label">個性的な外見を楽しみたい</span><span class="selection-val">→ カブトニオイガメ</span></div><div class="selection-item"><span class="selection-label">日本固有種にこだわりたい</span><span class="selection-val">→ ニホンイシガメ</span></div></div>
+  <h2>条件から絞り込む</h2>
+  <div class="selection-list"><div class="selection-item"><span class="selection-label">水槽を最小限にしたい</span><span class="selection-val">→ ミシシッピニオイガメ（45〜60cm水槽）</span></div><div class="selection-item"><span class="selection-label">見た目の個性を重視したい</span><span class="selection-val">→ カブトニオイガメ（単独60cm水槽）</span></div><div class="selection-item"><span class="selection-label">日本固有種を飼いたい</span><span class="selection-val">→ ニホンイシガメ（最大20cm）</span></div></div>
 
-  <h2>まとめ・最終おすすめ</h2>
-  <p>小型水棲ガメを初めて飼うなら、情報量・入手性ともに優れたミシシッピニオイガメが最も安心感があります。カブトニオイガメはほぼ同じ設備で飼育でき、外見の個性を求める方に人気です。</p>
+  <h2>まとめ</h2>
+  <p>成体サイズが小さい亀は実在しますが、<strong>サイズの小ささは飼育の容易さを意味しません。</strong>上表のとおり、最小クラスのスペングラーヤマガメは難易度が中〜上級、17cmのシロクチドロガメは上級です。一方で最大14cmのミシシッピニオイガメは入門とされ、国内の飼育情報も多く残っています。</p>
+  <p>選ぶときは「小ささ」だけでなく、<strong>終生必要になる飼育容器・寿命・難易度・入手経路</strong>を分けて確認してください。子亀のサイズで判断すると、数年後に必要な設備を用意できなくなることがあります。</p>
+
+  <h2>よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">一番小さい亀はどの種ですか？</div>
+      <div class="faq-a">当サイトが成体サイズを一次資料で確認できている24種のなかでは、スペングラーヤマガメ（最大10.7cm）が最小です。ただし当サイトの掲載121種のうちサイズを確認済みなのは24種のため、これは「世界で一番小さい亀」という意味ではありません。また最小クラスでも飼育難易度は中〜上級で、小ささと飼いやすさは別の指標です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">大きくならない亀は本当にいますか？</div>
+      <div class="faq-a">います。上表の7種はいずれも成体で10〜20cmにとどまります。ただし「大きくならない」のは種として成体サイズが小さいという意味であり、幼体のあいだ小さいこととは別です。子亀は多くの種で数cmですが、その後の成体サイズは種によって大きく異なります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">小さい亀なら小さい水槽で飼えますか？</div>
+      <div class="faq-a">いいえ。上表で飼育容器の目安が最も小さいミシシッピニオイガメでも、終生飼育の目安は45〜60cm水槽です。30cm水槽で終生飼える種は上表にありません。半陸生のスペングラーヤマガメは60cmケージから、フロリダハコガメは90cm級からが目安です。成体サイズが10cm台でも、遊泳・歩行・温度勾配のために本体の数倍の容器が必要になります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">水棲ガメとリクガメでは、どちらが省スペースですか？</div>
+      <div class="faq-a">成体サイズだけでは決まりません。必要なものが違うためです。半水棲のミシシッピニオイガメ（最大14cm）は45〜60cm水槽と水量の管理が要り、半陸生のスペングラーヤマガメ（最大10.7cm）は床面積を優先した60cmケージで高さは不要です。ニホンイシガメとロシアリクガメの容器サイズは当サイトで確認が取れていないため「要確認」としており、各種ページで最新の記載をご確認ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">小型の種でも長生きしますか？</div>
+      <div class="faq-a">はい。上表で寿命の目安が判明している種は20〜80年です。最大20cmのロシアリクガメは40〜80年以上、ニホンイシガメは30〜50年以上とされます。体が小さいことは短命を意味しません。シロクチドロガメとフロリダハコガメは当サイトで確認が取れていないため「要確認」としています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">小さい亀は初心者向けですか？</div>
+      <div class="faq-a">サイズと難易度は一致しません。上表では最小のスペングラーヤマガメが中〜上級、最大17cmのシロクチドロガメが上級である一方、最大14cmのミシシッピニオイガメは入門とされています。小ささを理由に難易度を判断しないでください。飼いやすさで選びたい場合は、当サイトの「初心者におすすめの亀ランキング TOP10」を参照してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">将来どのくらいの水槽・ケージが必要になりますか？</div>
+      <div class="faq-a">上表の「飼育容器の目安」が終生飼育を想定した目安です。おおむね45〜90cmの範囲で、種によって必要な床面積・水深・高さが異なります。カブトニオイガメは単独60cm水槽・ペアでは90cm、フロリダハコガメは90cm級からが目安です。目安を確認できていない種は「要確認」と表示しているため、各種ページをご確認ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">子亀のサイズだけを見て選ぶと、何が危険ですか？</div>
+      <div class="faq-a">購入時の大きさは成体サイズを示しません。数年後に必要な容器を用意できず、飼育を続けられなくなることがあります。寿命も20〜80年と長く、進学・就職・転居をまたぐ前提が必要です。さらに難易度は成体サイズと一致せず、上表の7種はいずれもCITES附属書IIに掲載されているため、輸入には書類が必要です。購入前に成体サイズ・容器・寿命・難易度・入手経路を分けて確認してください。</div>
+    </div>
+  </div>
+
+  <h2>飼いやすさで選びたい場合</h2>
+  <div class="role-box">
+    <p>このページは<strong>成体サイズで選ぶため</strong>のページです。飼いやすさ・初心者向けかどうかで比較したい場合は、<a href="../ranking-beginner-top10.html">初心者におすすめの亀ランキング TOP10</a>をご覧ください。サイズと難易度は一致しないため、両方を確認してから決めることをおすすめします。</p>
+  </div>
+
+  <h2>タイプ別の飼育ガイド</h2>
+  <p>上表の「タイプ」ごとに、必要な設備と管理方法が異なります。</p>
+  <div class="related-links">
+    <a href="../guide-semi.html" class="rel-btn">半水棲ガメの飼育ガイド（ニオイガメ・ドロガメ）</a>
+    <a href="../guide-moist.html" class="rel-btn">ヤマガメ・ハコガメの飼育ガイド（半陸生）</a>
+    <a href="../guide-japan.html" class="rel-btn">日本在来種の飼育ガイド</a>
+    <a href="../guide-dry.html" class="rel-btn">乾燥系リクガメの飼育ガイド</a>
+  </div>
+
+  <h2>必要になる設備を調べる</h2>
+  <p>小型種でも、終生飼育には水槽・ケージのほか、ろ過・保温・紫外線・隠れ家が必要です。</p>
+  <div class="related-links">
+    <a href="../cage-best10.html" class="rel-btn">水槽・ケージの選び方</a>
+    <a href="../water-filter-best10.html" class="rel-btn">フィルターの選び方</a>
+    <a href="../uvb-light-best10.html" class="rel-btn">UVBライトの選び方</a>
+    <a href="../shelter-best10.html" class="rel-btn">シェルターの選び方</a>
+  </div>
 
   <h2>関連ページ</h2>
   <div class="related-links">
     <a href="../compare/musk-vs-razorback.html" class="rel-btn">ニオイガメ vs カブトニオイガメを比較</a>
-    <a href="../guides/beginner-best-turtles.html" class="rel-btn">はじめての亀 おすすめガイド</a>
+    <a href="../species-list.html" class="rel-btn">掲載中の亀を一覧から探す</a>
     <a href="../guides/low-odor-turtles.html" class="rel-btn">臭いが少ない亀ガイド</a>
   </div>
 
@@ -271,26 +433,66 @@ footer a{color:var(--accent);}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "小さい亀・省スペースで飼える亀には、どの種がおすすめですか？",
+      "name": "一番小さい亀はどの種ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "このガイドでは1位：ミシシッピニオイガメ、2位：カブトニオイガメ、3位：ニホンイシガメをおすすめしています。最もコンパクトに飼いたい方にはミシシッピニオイガメが最適で、成体最大14cmで30〜45cm水槽から飼育できます。個性的な外見を楽しみたい方にはカブトニオイガメ（最大15cm）、日本固有種を飼育したい方にはニホンイシガメ（最大20cm）が向いています。"
+        "text": "当サイトが成体サイズを一次資料で確認できている24種のなかでは、スペングラーヤマガメ（最大10.7cm）が最小です。ただし当サイトの掲載121種のうちサイズを確認済みなのは24種のため、これは「世界で一番小さい亀」という意味ではありません。また最小クラスでも飼育難易度は中〜上級で、小ささと飼いやすさは別の指標です。"
       }
     },
     {
       "@type": "Question",
-      "name": "小型の亀を飼い始めるにあたって、初期費用はどのくらい必要ですか？",
+      "name": "大きくならない亀は本当にいますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ミシシッピニオイガメは初期費用¥15,000〜が目安で、30〜45cm水槽・フィルター・ヒーターなどをセットで揃えられます。カブトニオイガメとニホンイシガメは¥20,000〜が目安です。ニホンイシガメはCB（繁殖個体）の入手ルートが専門店・イベント中心のため、個体価格がやや高くなる場合があります。いずれも月々の維持費が別途かかります。購入前に最新の価格をご確認ください。"
+        "text": "います。上表の7種はいずれも成体で10〜20cmにとどまります。ただし「大きくならない」のは種として成体サイズが小さいという意味であり、幼体のあいだ小さいこととは別です。子亀は多くの種で数cmですが、その後の成体サイズは種によって大きく異なります。"
       }
     },
     {
       "@type": "Question",
-      "name": "省スペースで飼える亀のなかで、日常の管理が最もやさしい種はどれですか？",
+      "name": "小さい亀なら小さい水槽で飼えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "日常管理が最もやさしいのはミシシッピニオイガメです。情報量・入手性ともに優れており、外部フィルターを備えた水槽での飼育が確立されています。小型のため水換えの手間も少なく、初心者に最も推奨されています。カブトニオイガメはほぼ同じ設備で飼育でき、管理難易度はミシシッピニオイガメに近いです。ニホンイシガメは水質管理にやや注意が必要で、CB個体の入手にも専門知識が求められます。"
+        "text": "いいえ。上表で飼育容器の目安が最も小さいミシシッピニオイガメでも、終生飼育の目安は45〜60cm水槽です。30cm水槽で終生飼える種は上表にありません。半陸生のスペングラーヤマガメは60cmケージから、フロリダハコガメは90cm級からが目安です。成体サイズが10cm台でも、遊泳・歩行・温度勾配のために本体の数倍の容器が必要になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "水棲ガメとリクガメでは、どちらが省スペースですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "成体サイズだけでは決まりません。必要なものが違うためです。半水棲のミシシッピニオイガメ（最大14cm）は45〜60cm水槽と水量の管理が要り、半陸生のスペングラーヤマガメ（最大10.7cm）は床面積を優先した60cmケージで高さは不要です。ニホンイシガメとロシアリクガメの容器サイズは当サイトで確認が取れていないため「要確認」としており、各種ページで最新の記載をご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小型の種でも長生きしますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。上表で寿命の目安が判明している種は20〜80年です。最大20cmのロシアリクガメは40〜80年以上、ニホンイシガメは30〜50年以上とされます。体が小さいことは短命を意味しません。シロクチドロガメとフロリダハコガメは当サイトで確認が取れていないため「要確認」としています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小さい亀は初心者向けですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サイズと難易度は一致しません。上表では最小のスペングラーヤマガメが中〜上級、最大17cmのシロクチドロガメが上級である一方、最大14cmのミシシッピニオイガメは入門とされています。小ささを理由に難易度を判断しないでください。飼いやすさで選びたい場合は、当サイトの「初心者におすすめの亀ランキング TOP10」を参照してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "将来どのくらいの水槽・ケージが必要になりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "上表の「飼育容器の目安」が終生飼育を想定した目安です。おおむね45〜90cmの範囲で、種によって必要な床面積・水深・高さが異なります。カブトニオイガメは単独60cm水槽・ペアでは90cm、フロリダハコガメは90cm級からが目安です。目安を確認できていない種は「要確認」と表示しているため、各種ページをご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "子亀のサイズだけを見て選ぶと、何が危険ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "購入時の大きさは成体サイズを示しません。数年後に必要な容器を用意できず、飼育を続けられなくなることがあります。寿命も20〜80年と長く、進学・就職・転居をまたぐ前提が必要です。さらに難易度は成体サイズと一致せず、上表の7種はいずれもCITES附属書IIに掲載されているため、輸入には書類が必要です。購入前に成体サイズ・容器・寿命・難易度・入手経路を分けて確認してください。"
       }
     }
   ]
