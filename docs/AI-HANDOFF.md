@@ -34,7 +34,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **3d76b30**（PR #140 merge・2026-09-06 実測値） |
+| 基準 | `origin/main` = **d3c696b**（PR #141 merge 後の日次同期・2026-09-07 実測値） |
 | サイトファイルの状態 | 楽天商品画像の実装により `js/starter-kit.js` / `js/setup-products.js` / `css/starter-kit.css` / `scripts/update-rakuten.js` を変更（HTML と `data/products.js` は無変更） |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-07 |
@@ -392,8 +392,28 @@ Owner（ChatGPT側）が楽天公式一次資料で確認済み。**Claude 側�
 | `KEPT_AVAILABLE_AMBIGUOUS` | 4 | **付かない**（`continue` で無変更。同一性未確証のため書かないのが正しい） |
 | `ALL_REJECTED` | 1 | **付かない**（候補なし） |
 
-**したがって期待値は 36件中およそ31件。36件に届かないのは不具合ではない。**
-無理に36件へ合わせない（AMBIGUOUS へ画像を書くことは同一性ゲートの緩和にあたる）。
+**実測結果（2026-09-07 / workflow run 116・main d3c696b）: 36件中 31件に画像が付いた。**
+予測（13 EXACT + 18 STRONG = 31）と**完全一致**した。
+残る5件（AMBIGUOUS 4 / ALL_REJECTED 1）に画像が無いのは**不具合ではなく設計どおり**。
+**無理に36件へ合わせない**（AMBIGUOUS へ画像を書くことは同一性ゲートの緩和にあたる）。
+
+実測の内訳:
+
+| 項目 | 実測値 |
+|------|-------:|
+| `rakutenImageUrl` 保有 | **31** |
+| うち `rakutenStatus` | **すべて `available`** |
+| `search` の画像保有 | **0** |
+| `pending` の画像保有 | **0** |
+| 画像URLのホスト | `thumbnail.image.rakuten.co.jp` のみ |
+| https 以外のURL | 0 |
+| 画像ありで `rakutenUrl` 無し | 0 |
+| 総数 / available / search / pending | 104 / 36 / 65 / 3（すべて維持） |
+| 実 Amazon URL / タグ漏れ | 77 / **0** |
+
+**画像を出しているのは `js/starter-kit.js` のカード（114ページ）だけ。**
+`js/setup-products.js`（8ページ）は「候補: 商品名＋ボタン」の行レイアウトでカードではないため、
+**クレジットのみ追加し画像は入れていない**（意図的な判断。不足ではない）。
 
 ### 本実行環境の制約（2026-09-07・再試行しない）
 
