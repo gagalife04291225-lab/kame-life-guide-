@@ -408,6 +408,47 @@ function getCvrBadge(item, equipmentKey) {
 }
 
 /**
+ * 属性値のエスケープ（画像URL・alt をHTML属性へ入れるため）
+ */
+function _skAttr(v) {
+  return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+/**
+ * 商品画像ブロック（楽天公式APIの提供画像URLを直接参照する）
+ *
+ * 表示条件は「rakutenImageUrl があること」だけ。
+ * rakutenImageUrl は同期側で available かつ同一性検証を通過した商品にしか
+ * 書き込まれないため、search / pending の商品には構造的に画像が出ない。
+ *
+ * - 画像は保存・コピーせず、楽天の配信URLをそのまま参照する
+ * - 壊れている既存の p.image（placeholder.webp）は使わない
+ * - クリック先は必ず「その商品の楽天アフィリエイトURL」。Amazon へは繋がない
+ * - 画像が無い商品は空文字を返し、カードは従来表示のまま
+ */
+function renderSkCardMedia(p) {
+  var src = p && p.rakutenImageUrl;
+  if (!src || typeof src !== 'string') return '';
+
+  // 画像は装飾。商品名は直下にテキストで出ており、遷移先も「楽天で見る」と同じなので、
+  // alt を空にし wrapper を aria-hidden にして読み上げ・タブ移動の重複を避ける。
+  var img = '<img class="sk-card-media-img" src="' + _skAttr(src) + '"' +
+    ' alt="" loading="lazy" decoding="async" width="128" height="128">';
+
+  // available のときだけリンク化する（rakutenUrl は available にしか無い）
+  if (p.rakutenStatus === 'available' && p.rakutenUrl) {
+    return '<a class="sk-card-media" href="' + _skAttr(p.rakutenUrl) + '"' +
+      ' target="_blank" rel="nofollow sponsored noopener"' +
+      ' data-provider="rakuten" data-mode="affiliate"' +
+      ' data-product-id="' + _skAttr(p.id) + '"' +
+      ' tabindex="-1" aria-hidden="true">' + img + '</a>';
+  }
+  return '<div class="sk-card-media" aria-hidden="true">' + img + '</div>';
+}
+
+/**
  * カード1枚のHTML
  */
 function renderSkCard(item, speciesName, equipmentKey) {
@@ -493,6 +534,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
 
   return '<div class="sk-card' + cardTierCls + '"' +
     ' data-sk-product="' + p.id + '" data-sk-tier="' + (item.tier || 'standard') + '">' +
+    renderSkCardMedia(p) +
     '<div class="sk-cat-label-row">' +
       '<div class="sk-cat-label">' + catLabel + '</div>' +
       cvrBadgeHtml +
@@ -841,6 +883,35 @@ function initSkTabs(root, species, _ctx) {
  *   analyticsCtx.sourcePage       — GA4 source_page param (default: 'species')
  *   analyticsCtx.affiliateLocation — GA4 location param in affiliate_click (default: 'starter_kit')
  */
+/**
+ * 楽天ウェブサービス公式クレジット（必須表示）
+ *
+ * 楽天APIから取得した情報（商品画像・商品URL）をページに表示するため、
+ * 楽天が指定する Attribution Snippet の表示義務がある。
+ *
+ * 重要: 下の SNIPPET は楽天指定のHTMLそのままである。改変しない。
+ * （ラップ用の div と日本語ラベルはスニペットの外側に置いている）
+ *
+ * 1ページに1回だけ描画する。window フラグで setup-products.js と共有し、
+ * 同じページで二重に出ないようにしている。
+ */
+var RAKUTEN_ATTRIBUTION_SNIPPET =
+  '<!-- Rakuten Web Services Attribution Snippet FROM HERE -->' +
+  '<a href="https://developers.rakuten.com/" target="_blank">Supported by Rakuten Developers</a>\n\n' +
+  '<!-- Rakuten Web Services Attribution Snippet TO HERE -->';
+
+function renderRakutenAttribution() {
+  try {
+    if (window.__kameRakutenAttributionRendered) return '';
+    window.__kameRakutenAttributionRendered = true;
+  } catch (e) { /* window 不在環境では素通し */ }
+  // インラインstyleで出す。ガイドページは starter-kit.css を読み込まないため、
+  // 外部CSSに依存せず「実画面で必ず見える」ことを保証する。
+  return '<p class="kame-rakuten-attribution" style="font-size:.78rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
+    '商品画像・商品情報の提供: ' + RAKUTEN_ATTRIBUTION_SNIPPET +
+    '</p>';
+}
+
 function mountStarterKit(species, mountId, analyticsCtx) {
   var rootId = mountId || 'starter-kit-root';
   var root = document.getElementById(rootId);
@@ -854,7 +925,7 @@ function mountStarterKit(species, mountId, analyticsCtx) {
   var html = renderStarterKitHtmlV2(species.equipmentKey, species);
   if (!html) { root.style.display = 'none'; return; }
 
-  root.innerHTML = html;
+  root.innerHTML = html + renderRakutenAttribution();
   var _tabCtrl = initSkTabs(root, species, _ctx);
 
   // ── Bundle card click: scroll-to-tab + GA4 ───────────────

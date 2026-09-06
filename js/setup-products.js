@@ -31,6 +31,26 @@
     });
   }
 
+  // 楽天ウェブサービス公式クレジット（必須表示）。
+  // 下の SNIPPET は楽天指定のHTMLそのままで、改変しない。
+  // starter-kit.js と同じ window フラグを見て1ページ1回だけ出す。
+  var RAKUTEN_ATTRIBUTION_SNIPPET =
+    '<!-- Rakuten Web Services Attribution Snippet FROM HERE -->' +
+    '<a href="https://developers.rakuten.com/" target="_blank">Supported by Rakuten Developers</a>\n\n' +
+    '<!-- Rakuten Web Services Attribution Snippet TO HERE -->';
+
+  function renderRakutenAttribution() {
+    try {
+      if (window.__kameRakutenAttributionRendered) return '';
+      window.__kameRakutenAttributionRendered = true;
+    } catch (e) { /* noop */ }
+    // インラインstyleで出す。ガイドページは starter-kit.css を読み込まないため、
+    // 外部CSSに依存せず「実画面で必ず見える」ことを保証する。
+    return '<p class="kame-rakuten-attribution" style="font-size:.78rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
+      '商品画像・商品情報の提供: ' + RAKUTEN_ATTRIBUTION_SNIPPET +
+      '</p>';
+  }
+
   function resolveProduct(equipmentKey, cat, tier) {
     try {
       var id = EQUIPMENT_MAP[equipmentKey] && EQUIPMENT_MAP[equipmentKey][cat] && EQUIPMENT_MAP[equipmentKey][cat][tier];
@@ -101,6 +121,9 @@
       h += row(m.label, 'must', m.spec + '（適切な候補を選定中のため、条件のみ記載しています）', null, null, null);
     });
     h += '</div>';
+    // 楽天APIデータ（楽天CTA）を出すブロックにだけクレジットを添える。
+    // noLinks のページは商品リンク自体を置かないため対象外。
+    if (!noLinks) h += renderRakutenAttribution();
     box.innerHTML = h;
     box.hidden = false;
 
