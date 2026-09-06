@@ -252,13 +252,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-03",
+  "date": "2026-09-06",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
    "price": 8980,
    "shop": "charm 楽天市場店"
   }
@@ -284,13 +284,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-09-03",
+  "date": "2026-09-06",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -368,14 +368,14 @@
   "best": null
  },
  "food_dried_shrimp": {
-  "date": "2026-08-29",
+  "date": "2026-09-06",
   "query": "乾燥エビ 亀 おやつ ひかり",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.3",
+  "reason": "score=3.2",
   "best": {
    "itemName": "◇キョーリン ひかりクレスト タートルST 250g | カメ 餌 水棲カメ フード スティック キョーリン ひかりクレスト タートル サポート エサ 爬虫類 ",
-   "price": 767,
+   "price": 815,
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
@@ -528,15 +528,15 @@
   }
  },
  "hydrometer_tetra": {
-  "date": "2026-08-30",
+  "date": "2026-09-06",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
-   "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
-   "price": 2250,
-   "shop": "レヨンベールアクア楽天市場店"
+   "itemName": "テトラ (Tetra) テトラ ハイドロメーター 比重計 人工海水",
+   "price": 1972,
+   "shop": "スプラウツLLC 楽天市場店"
   }
  },
  "shelter_bark_hide": {
@@ -560,15 +560,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-04",
+  "date": "2026-09-06",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -708,9 +708,9 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 6,
+  "resultCount": 7,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=8.5",
   "best": {
@@ -912,13 +912,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-03",
+  "date": "2026-09-06",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "【9／5限定】当選確率2分の1！1等最大100％　GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
    "price": 9300,
    "shop": "charm 楽天市場店"
   }
@@ -952,7 +952,7 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
@@ -960,7 +960,7 @@
   "best": {
    "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
    "price": 2602,
-   "shop": "KANADE STORE楽天市場店"
+   "shop": "パレットマーケット"
   }
  },
  "uvb_led_bar": {
