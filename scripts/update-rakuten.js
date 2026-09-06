@@ -565,6 +565,7 @@ function patchProductInSource(src, productId, updates) {
   const ALLOWED_FIELDS = [
     'rakutenUrl', 'rakutenStatus', 'rakutenSearchTerm', 'rakutenItemCode',
     'rakutenPrice', 'rakutenShop', 'rakutenConfidence', 'rakutenLastUpdated',
+    'rakutenImageUrl',
   ];
 
   // Update or add each field.
@@ -612,6 +613,45 @@ function safeHost(u) {
   } catch (e) {
     return null;                      // unparseable → null (never raw string)
   }
+}
+
+// ─── Rakuten official product image (Schema v5) ───────────────
+// 楽天市場商品検索APIが正式な出力項目として返す商品画像URLを取り出す。
+//
+// 取得元の優先順位は mediumImageUrls → smallImageUrls。
+// 返す値は「APIが返した文字列そのまま」であり、URLを組み立て直したり
+// リサイズ用パラメータを書き換えたりしない（公式提供URLの直接参照）。
+//
+// レスポンス形は2通りある。既存の `i.Item || i` と同じく両方を受ける:
+//   formatVersion 未指定 : [{ imageUrl: 'https://...' }, ...]
+//   formatVersion=2      : ['https://...', ...]
+//
+// ホストは楽天の画像配信ドメインだけを許可する。APIレスポンス由来の
+// 文字列をそのまま products.js（＝公開JS）へ書き込むため、
+// 想定外のホストが混入したら画像なしとして扱う。
+const RAKUTEN_IMAGE_HOSTS = ['thumbnail.image.rakuten.co.jp', 'image.rakuten.co.jp'];
+
+function extractRakutenImageUrl(item) {
+  if (!item || typeof item !== 'object') return null;
+
+  const fromList = function(list) {
+    if (!Array.isArray(list)) return null;
+    for (let i = 0; i < list.length; i++) {
+      const entry = list[i];
+      const raw = (typeof entry === 'string')
+        ? entry
+        : (entry && typeof entry.imageUrl === 'string') ? entry.imageUrl : '';
+      if (!raw) continue;
+      let u;
+      try { u = new URL(raw); } catch (e) { continue; }
+      if (u.protocol !== 'https:') continue;
+      if (RAKUTEN_IMAGE_HOSTS.indexOf(u.hostname) === -1) continue;
+      return raw;
+    }
+    return null;
+  };
+
+  return fromList(item.mediumImageUrls) || fromList(item.smallImageUrls) || null;
 }
 
 function extractAuditFields(item) {
@@ -890,7 +930,10 @@ function diagBest(item) {
 function demotionUpdates(today, score) {
   const u = { rakutenLastUpdated: today, rakutenStatus: 'search',
               rakutenUrl: null, rakutenItemCode: null,
-              rakutenPrice: null, rakutenShop: null };
+              rakutenPrice: null, rakutenShop: null,
+              // available を外れた商品は画像も必ず落とす。
+              // search / pending に画像が残ることを構造的に不可能にする。
+              rakutenImageUrl: null };
   if (typeof score === 'number') u.rakutenConfidence = score;
   return u;
 }
@@ -1276,6 +1319,9 @@ async function main() {
         updates.rakutenPrice      = bestId.item.itemPrice;
         updates.rakutenShop       = bestId.item.shopName || '';
         updates.rakutenConfidence = bestId.quality;
+        // 画像は rakutenUrl / rakutenItemCode と同一の bestId.item から取る。
+        // 別候補から取らないため、画像と楽天商品ページの対応が常に一致する。
+        updates.rakutenImageUrl   = extractRakutenImageUrl(bestId.item);
         report.available++;
         console.log('[PROMOTED:ID] ' + productId + ' level=' + lvl +
                     ' ev=' + bestId.match.evidence.join(','));
@@ -1328,6 +1374,9 @@ async function main() {
           updates.rakutenPrice      = bestId.item.itemPrice;
           updates.rakutenShop       = bestId.item.shopName || '';
           updates.rakutenConfidence = bestId.quality;
+          // 画像は rakutenUrl / rakutenItemCode と同一の bestId.item から取る。
+          // 別候補から取らないため、画像と楽天商品ページの対応が常に一致する。
+          updates.rakutenImageUrl   = extractRakutenImageUrl(bestId.item);
           report.available++;
           recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
             outcome: 'REFRESHED_' + idLvl, reason: bestId.match.evidence.join(','),
@@ -1359,6 +1408,9 @@ async function main() {
         updates.rakutenPrice      = bestId.item.itemPrice;
         updates.rakutenShop       = bestId.item.shopName || '';
         updates.rakutenConfidence = bestId.quality;
+        // 画像は rakutenUrl / rakutenItemCode と同一の bestId.item から取る。
+        // 別候補から取らないため、画像と楽天商品ページの対応が常に一致する。
+        updates.rakutenImageUrl   = extractRakutenImageUrl(bestId.item);
         report.available++;
         console.log('[PROMOTED] ' + productId + ' level=' + idLvl + ' score=' + bestId.quality);
         recordDiag(diag, productId, { query: searchTerm, resultCount: items.length,
@@ -1372,6 +1424,7 @@ async function main() {
         updates.rakutenItemCode   = null;
         updates.rakutenPrice      = null;
         updates.rakutenShop       = null;
+        updates.rakutenImageUrl   = null;
         updates.rakutenConfidence = bestScore;
         report.searchFallback++;
         if (bestScore >= CONFIDENCE_THRESHOLD) {
@@ -1468,5 +1521,6 @@ if (require.main === module) {
 } else {
   module.exports = { scoreCandidate: scoreCandidate, buildAffiliateUrl: buildAffiliateUrl,
                      demotionUpdates: demotionUpdates, isInvalidAvailable: isInvalidAvailable,
-                     recordDiag: recordDiag, patchProductInSource: patchProductInSource };
+                     recordDiag: recordDiag, patchProductInSource: patchProductInSource,
+                     extractRakutenImageUrl: extractRakutenImageUrl };
 }

@@ -1068,3 +1068,39 @@
 .sk-bundle-rec-badge{font-size:11.5px;}
 
 .sk-tab-rec-badge{font-size:11.5px;}
+
+/* ─────────────────────────────────────────────
+   商品画像（楽天公式API提供画像・Schema v5）
+   楽天の配信URLを直接参照する。保存・複製はしない。
+   available かつ同一性検証済みの商品にしか rakutenImageUrl が
+   入らないため、search / pending のカードにはこのブロックが出ない。
+   ───────────────────────────────────────────── */
+.sk-card-media {
+  /* 高さを固定して CLS を出さない。画像の読み込み前後でカードが動かない */
+  height: 132px;
+  flex: 0 0 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f4ec;
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2px;
+  text-decoration: none;
+}
+.sk-card-media-img {
+  /* 楽天の mediumImageUrls は 128x128。等倍で置いてぼやけを避ける。
+     正方形でない画像は contain でレターボックス表示になり、歪まない */
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  display: block;
+}
+/* 画像が404等で読めなかったときに alt の枠線やアイコンを目立たせない */
+.sk-card-media-img[alt=""] { color: transparent; }
+
+@media (max-width: 380px) {
+  .sk-card-media { height: 120px; flex-basis: 120px; }
+  .sk-card-media-img { width: 116px; height: 116px; }
+}
