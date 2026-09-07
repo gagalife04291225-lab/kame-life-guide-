@@ -8,6 +8,33 @@
 > したがって、本ファイルの行数と `shindan/species.js` のエントリ数は一致しません。
 > 学名は両者で必ず一致させますが、行の有無の差は仕様です。
 
+### 項目ごとの正本（2026-09-07 確定・N30）
+
+**「js だから」「md だから」ではなく、項目ごとに正本を決めている。**
+
+| 項目 | 正本 | 根拠 |
+|------|------|------|
+| 学名 | 本ファイル（`SHINDAN-SPECIES.md`） | 上の宣言のとおり両者で必ず一致させる |
+| CITES・法規制 | 本ファイル | `CLAUDE.md`「`SHINDAN-SPECIES.md` を正として学名・CITES 規制を確認する」 |
+| 成体サイズ | `data/species-master.json` の `max_shell_length_cm` | 一次資料の検証状態（CONFIRMED / LIKELY）を持つのはここだけ |
+| **難易度** | **`shindan/species.js` の `difficulty`** | ①診断ツールの採点・絞り込み・機材選定に実際に使われる機能値 ②公開中の種ページの表示値と一致する（不一致11件を照合し **11/11 が species.js と一致**）③`species-master.json` に難易度の項目は存在せず、master は判定材料を持たない |
+| **寿命** | **正本なし（未確定）** | `species-master.json` の `lifespan` は **121種すべて UNPROVEN・値 null**、かつ note に「外部一次資料での検証未了。**サイト既存表記を正として扱わないこと**」と明記されている。したがって `shindan/species.js`・種ページのどちらも正本にできない。**推測で統一しない**（下記「未解決」参照） |
+
+**同期ルール**
+
+- 難易度を変えるときは **`shindan/species.js` を先に直し、本ファイルと種ページを合わせる**。
+  本ファイルだけを書き換えない
+- 亜種・色変個体など本ファイル専用の行は、**基本種と同じ難易度**にする
+  （例: ロシアリクガメ（カラーモルフ）は基本種と同値）
+- 法規制で新規飼育ができない種も、難易度の列には**通常どおり難易度を書く**。
+  規制内容は「備考」列に書く（キバラガメ・アカミミガメ等と同じ扱い）
+
+**未解決（寿命）**: `shindan/species.js` の `coreSpecs.lifespan` と種ページの「推定寿命」は
+**両方に値がある27種すべてで食い違っている**（2026-09-07 実測）。
+master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がないので行わない**。
+解消するには外部一次資料で寿命を検証し、`species-master.json` の `lifespan` を
+確定させたうえで両者を合わせる必要がある。
+
 ---
 
 ## ドロガメ・ニオイガメ系（18種）
@@ -16,18 +43,18 @@
 |---|---|---|---|---|---|
 | ミシシッピニオイガメ | Sternotherus odoratus | S | 入門 | CITES II | 英名コモンムスクタートル。旧表記「ニオイガメ」 |
 | ヒラタニオイガメ | Sternotherus depressus | S | 上級 | CITES II | アラバマ州固有・IUCN CR・米国ESA Threatened。和名を2026-08修正（旧「ヒメニオイガメ」は S. minor の和名） |
-| カブトニオイガメ | Sternotherus carinatus | M | 入門 | CITES II | 気性がやや荒い |
+| カブトニオイガメ | Sternotherus carinatus | M | 入門〜中級 | CITES II | 気性がやや荒い |
 | トウブドロガメ | Kinosternon subrubrum subrubrum | S | 入門 | CITES II | 基亜種 |
 | ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | CITES II | トウブドロガメの亜種 |
 | サラドロガメ | Kinosternon integrum | M | 中級 | CITES II | 国内CB流通増加中 |
 | サソリドロガメ | Kinosternon scorpioides | L | 上級 | CITES II | ホオアカドロガメの基亜種を含む種 |
 | ホオアカドロガメ | Kinosternon scorpioides cruentatum | M | 中級 | CITES II | 頬が赤い・温和。TTWG第9版(2021)ではサソリドロガメの亜種 |
 | ハナナガドロガメ | Kinosternon acutum | S | 中級 | CITES II | 旧表記オオアタマドロガメ・タバスコドロガメとも（標準和名へ2026-08修正） |
-| フロリダドロガメ | Kinosternon steindachneri | S | 中級 | CITES II | ミスジドロガメとは別種 |
-| ミスジドロガメ | Kinosternon baurii | S | 中級 | CITES II | 甲羅に3本の筋 |
+| フロリダドロガメ | Kinosternon steindachneri | S | 入門〜中級 | CITES II | ミスジドロガメとは別種 |
+| ミスジドロガメ | Kinosternon baurii | S | 入門〜中級 | CITES II | 甲羅に3本の筋 |
 | キイロドロガメ | Kinosternon flavescens | M | 中級 | CITES II | 腹甲が黄みがかる |
 | スジクビニオイガメ | Sternotherus peltifer | S | 中級 | CITES II | 国内CB確認済み。Scott et al.(2018)で独立種化。別称スジクビヒメニオイガメ |
-| オオアタマヒメニオイガメ | Sternotherus minor | S〜M | 中級 | CITES II | 国内CB人気種。旧表記 carinatus×minor は誤記（2026-08修正） |
+| オオアタマヒメニオイガメ | Sternotherus minor | S〜M | 入門〜中級 | CITES II | 国内CB人気種。旧表記 carinatus×minor は誤記（2026-08修正） |
 | ハーレラドロガメ | Kinosternon herrerai | M | 上級 | CITES II | ザラアシドロガメとは別種 |
 | スジオオニオイガメ | Staurotypus triporcatus | L | 上級 | CITES II | オオニオイガメ属最大種・噛みつき力が非常に強い |
 | サルヴィンオオニオイガメ | Staurotypus salvinii | L | 上級 | CITES II | 太平洋岸産・スジオオより小型（最大25cm前後） |
@@ -49,9 +76,9 @@
 | ニホンイシガメ | Mauremys japonica | M | 中級 | CITES II | 日本固有種・国内CB流通 |
 | ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
 | ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | ミナミイシガメの亜種。国内では八重山諸島に分布（種全体の台湾・中国南部分布は基亜種） |
-| カントンクサガメ | Mauremys nigricans | M | 中級 | CITES II | クサガメとは別種。国内CB確認済み |
+| カントンクサガメ | Mauremys nigricans | M | 入門〜中級 | CITES II | クサガメとは別種。国内CB確認済み |
 | ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | なし | EUCB流通・やや低温好む |
-| カンバーランドスライダー | Trachemys scripta troostii | M | 中級 | なし | 条件付特定外来（種として指定）・新規購入不可 |
+| カンバーランドスライダー | Trachemys scripta troostii | M | 入門 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | クーター | Pseudemys spp. | L | 中級 | なし | 大型化・90cm水槽必要 |
 | ペニンシュラクーター | Pseudemys peninsularis | L | 中級 | なし | フロリダ半島産 |
 | フロリダアカハラガメ | Pseudemys nelsoni | L | 中級 | なし | フロリダ産・腹甲が赤い |
@@ -62,7 +89,7 @@
 | ブランディングガメ | Emydoidea blandingii | M | 上級 | CITES II | 黄色い喉元・国内CB確認・CoP16（2013）掲載 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
 | ホオジロクロガメ | Siebenrockiella crassicollis | M | 中〜上級 | CITES II | 東南アジア産・黒色で頭部に白斑 |
-| ハナガメ | Mauremys sinensis | M | −（新規飼育不可） | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
+| ハナガメ | Mauremys sinensis | M | 入門〜中級 | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
 
 ---
 
@@ -94,7 +121,7 @@
 | ガルフコーストハコガメ | Terrapene carolina major | M〜L | 中〜上級 | CITES II | ハコガメ最大亜種 |
 | フロリダハコガメ | Terrapene carolina bauri | M | 中〜上級 | CITES II | 放射状模様・carolinaの亜種 |
 | キタニシキハコガメ | Terrapene ornata | M | 中〜上級 | CITES II | 乾燥気味の環境。TTWG2021で亜種統合・単型種。和名は産地型の呼び分け |
-| ミナミニシキハコガメ | Terrapene ornata | M | 中〜上級 | CITES II | 砂漠〜半乾燥地帯産。旧亜種 luteola はTTWG2021で統合され無効。和名は産地型の呼び分け |
+| ミナミニシキハコガメ | Terrapene ornata | M | 上級 | CITES II | 砂漠〜半乾燥地帯産。旧亜種 luteola はTTWG2021で統合され無効。和名は産地型の呼び分け |
 | タイワンセマルハコガメ | Cuora flavomarginata flavomarginata | M | 中〜上級 | CITES II | 台湾産基亜種。八重山産の亜種evelynae（ヤエヤマセマルハコガメ）は天然記念物・飼育不可 |
 | チュウゴクセマルハコガメ | Cuora flavomarginata | M | 中〜上級 | CITES II | 中国産 |
 | スッポン（シナスッポン） | Pelodiscus sinensis | L | 中〜上級 | なし | 砂底必須 |
@@ -131,11 +158,11 @@
 
 | 和名 | 学名 | サイズ | 難易度 | CITES | 備考 |
 |---|---|---|---|---|---|
-| ロシアリクガメ | Testudo (Agrionemys) horsfieldii | M | 中級 | CITES II | 入門の定番 |
+| ロシアリクガメ | Testudo (Agrionemys) horsfieldii | M | 入門〜中級 | CITES II | 入門の定番 |
 | ヘルマンリクガメ | Testudo hermanni | M | 中級 | CITES II | EUCB流通豊富。流通の主体は東亜種 T. h. boettgeri |
 | ヒガシヘルマンリクガメ | Testudo hermanni boettgeri | M | 中級 | CITES II | ヘルマンの東亜種・大型側。国内流通の主流 |
 | ニシヘルマンリクガメ | Testudo hermanni hermanni | S〜M | 中級 | CITES II | ヘルマンの基亜種・小型側。腹甲の連続黒帯が識別点 |
-| ロシアリクガメ（カラーモルフ） | Testudo horsfieldii（色変個体） | M | 中級 | CITES II | 種は同一 |
+| ロシアリクガメ（カラーモルフ） | Testudo horsfieldii（色変個体） | M | 入門〜中級 | CITES II | 種は同一（難易度は基本種と同じ値にする） |
 | ギリシャリクガメ | Testudo graeca | M | 中〜上級 | CITES II | 亜種多数・産地確認必須 |
 | イベラギリシャリクガメ | Testudo graeca ibera | M | 中〜上級 | CITES II | ギリシャリクガメの亜種・大型化 |
 | チュニジアギリシャリクガメ | Testudo graeca nabeulensis | S | 中〜上級 | CITES II | ギリシャリクガメの亜種・最小級・冬眠させない系統 |
@@ -177,8 +204,8 @@
 | チモールナガクビガメ | Chelodina timorensis | M | 上級 | なし | チモール島産 |
 | ヒラリーカエルガメ | Phrynops hilarii | L | 上級 | なし | 南米産 |
 | セウネハコヨコクビガメ | Pelusios castaneus | M | 上級 | なし | 西アフリカ産 |
-| アフリカヌマヨコクビガメ | Pelomedusa subrufa | M | 上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
-| ヒメハコヨコクビガメ | Pelusios nanus | S | 上級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
+| アフリカヌマヨコクビガメ | Pelomedusa subrufa | M | 中〜上級 | なし | アフリカ南部〜東部（狭義）・種複合体 |
+| ヒメハコヨコクビガメ | Pelusios nanus | S | 中級 | なし | 曲頸亜目最小種（最大約12cm）・腹甲に蝶番あり |
 | モンキヨコクビガメ | Podocnemis unifilis | L | 上級 | CITES II | 南米産大型。別名テレケイヨコクビガメ。「ヌマヨコクビガメ」は Pelomedusa subrufa の和名なので本種には使わない |
 | ブランディルカブトガメ | Peltocephalus dumerilianus | L | 上級 | なし | アマゾン産・大型 |
 | インプレッサムツアシガメ | Manouria impressa | M | 上級 | CITES II | 高湿度低温・極めて難しい |
