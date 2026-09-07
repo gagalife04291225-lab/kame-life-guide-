@@ -134,6 +134,28 @@ footer a{color:var(--accent);}
   .triage p{font-size:.875rem;line-height:1.68;margin-bottom:8px;}
   .triage-note{font-size:.78rem;padding:9px 11px;margin-top:10px;line-height:1.65;}
 }
+
+/* ── 受診費用の目安 ── */
+.cost-wrap{background:#fff;border:1.5px solid #e4ddc9;border-radius:12px;padding:16px 16px 14px;margin:18px 0;}
+.cost-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 4px;}
+.cost-table{border-collapse:collapse;width:100%;min-width:0;font-size:.86rem;}
+.cost-table th,.cost-table td{padding:10px 8px;text-align:left;border-bottom:1px solid #ece5d4;line-height:1.6;vertical-align:top;}
+.cost-table thead th{background:#2f4a3c;color:#f4efe2;font-weight:700;font-size:.8rem;white-space:nowrap;}
+.cost-table tbody tr:last-child td{border-bottom:none;}
+.cost-table tbody tr:nth-child(even){background:#faf7ef;}
+.cost-item{font-weight:700;color:#2f4a3c;}
+.cost-amt{white-space:nowrap;font-weight:700;}
+.cost-notes{list-style:none;margin:12px 0 0;padding:12px 0 0;border-top:1px solid #ece5d4;}
+.cost-notes li{font-size:.79rem;color:#6a7a6d;line-height:1.75;padding-left:15px;position:relative;margin-bottom:6px;}
+.cost-notes li::before{content:"※";position:absolute;left:0;}
+.cost-notes li:last-child{margin-bottom:0;}
+.cost-push{background:#eef5ee;border-left:4px solid #2f6b3c;border-radius:0 10px 10px 0;padding:14px 16px;margin:16px 0 0;font-size:.9rem;line-height:1.9;color:#2f4a3c;}
+@media(max-width:430px){
+  .cost-wrap{padding:14px 13px 12px;}
+  .cost-table{font-size:.82rem;}
+  .cost-table th,.cost-table td{padding:9px 6px;}
+  .cost-push{font-size:.87rem;line-height:1.85;padding:13px 14px;}
+}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -310,6 +332,33 @@ footer a{color:var(--accent);}
       <li><span class="alert-icon" aria-hidden="true">🌡️</span>温度を適切に管理しても改善しない</li>
     </ul>
     <p class="alert-footer">「爬虫類 動物病院 ＋ お住まいの地域名」で検索し、事前に電話確認することをおすすめします。受診の際は症状が始まった時期・飼育温度・使用機材をメモしておくと診察がスムーズになります。</p>
+  </div>
+
+  <h2>受診費用の目安（費用が心配な方へ）</h2>
+  <p>「病院に連れて行きたいけれど、いくらかかるか分からない」という理由で受診をためらう方は少なくありません。金額の見当がつくだけでも判断しやすくなるため、<strong>診療料金を公開している爬虫類・エキゾチックアニマル対応の動物病院の料金表</strong>をもとに、目安をまとめました。</p>
+  <div class="cost-wrap">
+    <div class="cost-scroll">
+      <table class="cost-table">
+        <thead>
+          <tr><th scope="col">項目</th><th scope="col">目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="cost-item">初診料</td><td class="cost-amt">約1,500〜4,000円程度</td></tr>
+          <tr><td class="cost-item">レントゲン検査</td><td class="cost-amt">約3,000〜6,500円程度〜</td></tr>
+          <tr><td class="cost-item">内服薬</td><td class="cost-amt">約1,000円台〜</td></tr>
+          <tr><td class="cost-item">初診＋検査＋薬</td><td class="cost-amt">約7,000〜20,000円程度<br>になる例あり</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="cost-notes">
+      <li>これは<strong>全国平均ではありません。</strong>料金を公開している病院の例から拾った目安です。</li>
+      <li>撮影枚数・検査の種類・注射・血液検査・症状の程度・病院・地域によって<strong>大きく変わります</strong>。表の範囲に収まることを保証するものではありません。</li>
+      <li>病院によっては<strong>エキゾチックアニマルの専門外来料や調剤料などが別途必要</strong>になります。初回は専門料込みで5,000円台になる例もあります。</li>
+      <li>費用が不安なときは、<strong>受診前に電話で料金の目安を聞いても大丈夫です。</strong>「カメの鼻水で受診したい」「初診でだいたいどのくらいか」と伝えれば、多くの病院が答えてくれます。</li>
+    </ul>
+  </div>
+  <div class="cost-push">
+    決して小さな金額ではありません。費用が心配になるのは当然のことだと思います。ただ、<strong>呼吸がおかしい・鼻から泡が出る・食欲が落ちている</strong>といった症状は、早めに相談するほど選べる手が多くなります。迷っているときは、まず爬虫類を診られる動物病院に相談してみてください。電話で聞くだけでも、次にすることがはっきりします。
   </div>
 
   <h2>自宅でできる確認・見直し</h2>
