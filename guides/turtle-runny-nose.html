@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>亀の鼻水・くしゃみ｜考えられる原因と確認ポイント｜カメライフガイド</title>
-<meta name="description" content="亀が鼻水を出す、くしゃみをする原因を整理。低温・乾燥・呼吸器感染の違いと見分け方、自宅でできる環境チェック、受診を検討すべきタイミングを解説します。">
+<title>亀のくしゃみ・鼻水｜様子見の目安と受診サイン｜カメライフガイド</title>
+<meta name="description" content="亀のくしゃみ・鼻水について、様子見でよいケースと早めに受診すべきサインを分けて整理しました。鼻水が透明か粘液状か、温度・湿度・水質の確認手順、自宅でできる確認とやってはいけない自己対処、爬虫類を診られる動物病院へ相談する目安までまとめています。">
 <link rel="canonical" href="https://kamelifeguide.com/guides/turtle-runny-nose.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="亀の鼻水・くしゃみ｜考えられる原因と確認ポイント｜カメライフガイド">
-<meta property="og:description" content="亀が鼻水を出す、くしゃみをする原因を整理。低温・乾燥・呼吸器感染の違いと見分け方、自宅でできる環境チェック、受診を検討すべきタイミングを解説します。">
+<meta property="og:title" content="亀のくしゃみ・鼻水｜様子見の目安と受診サイン｜カメライフガイド">
+<meta property="og:description" content="亀のくしゃみ・鼻水について、様子見でよいケースと早めに受診すべきサインを分けて整理しました。鼻水が透明か粘液状か、温度・湿度・水質の確認手順、自宅でできる確認とやってはいけない自己対処、爬虫類を診られる動物病院へ相談する目安までまとめています。">
 <meta property="og:image" content="https://kamelifeguide.com/images/hero/eastern-box-turtle-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +89,51 @@ footer a{color:var(--accent);}
 .disclaimer{font-size:.74rem;color:#9aa89d;max-width:620px;margin:14px auto 0;line-height:1.7;}
 @media(max-width:520px){.signal-grid{grid-template-columns:1fr;}.hero-disclaimer{font-size:.76rem;}}
 @media(max-width:360px){header.hero h1{font-size:1.28rem;}.alert-box{padding:18px 16px;}}
+
+/* ── 冒頭の即答（様子見か受診か） ── */
+.triage{background:#fff;border:2px solid var(--forest,#2f4a3c);border-radius:14px;padding:17px 17px 14px;margin:0 0 20px;}
+.triage-label{display:inline-block;background:var(--forest,#2f4a3c);color:#f4efe2;font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:3px 10px;border-radius:6px;margin-bottom:10px;}
+.triage p{font-size:.95rem;line-height:1.8;margin-bottom:10px;}
+.triage p:last-child{margin-bottom:0;}
+.triage-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid #e4ddc9;}
+.triage-col{border-radius:10px;padding:11px 12px;}
+.triage-col.ok{background:#eef5ee;border:1px solid #cfe0cf;}
+.triage-col.ng{background:#fbeeee;border:1px solid #e8cfcf;}
+.triage-col h3{font-size:.84rem;margin:0 0 6px;font-weight:700;}
+.triage-col.ok h3{color:#2f6b3c;}
+.triage-col.ng h3{color:#a03535;}
+.triage-col ul{list-style:none;margin:0;padding:0;}
+.triage-col li{font-size:.8rem;line-height:1.6;padding-left:13px;position:relative;margin-bottom:4px;}
+.triage-col li::before{content:"・";position:absolute;left:0;}
+.triage-note{font-size:.79rem;color:#6a5a3a;background:#fdf6e8;border-left:3px solid #d4a96a;padding:9px 12px;border-radius:0 8px 8px 0;margin-top:12px;line-height:1.7;}
+/* ── やってはいけない自己対処 ── */
+.dont-box{background:#fbeeee;border:1.5px solid #e8cfcf;border-radius:12px;padding:16px 18px;margin:20px 0;}
+.dont-label{font-weight:700;color:#a03535;font-size:.95rem;margin-bottom:10px;}
+.dont-list{list-style:none;margin:0;padding:0;}
+.dont-list li{font-size:.87rem;line-height:1.75;padding-left:22px;position:relative;margin-bottom:8px;}
+.dont-list li::before{content:"✕";position:absolute;left:0;color:#a03535;font-weight:700;}
+.dont-list li:last-child{margin-bottom:0;}
+.dont-list b{color:#8a2b2b;}
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin:18px 0;}
+.faq-item{background:#fff;border:1px solid #e4ddc9;border-radius:10px;padding:14px 16px;}
+.faq-q{font-weight:700;font-size:.93rem;color:var(--forest,#2f4a3c);line-height:1.6;margin-bottom:8px;}
+.faq-a{font-size:.88rem;line-height:1.85;color:#4a5a50;}
+@media(max-width:430px){
+  /* 様子見／受診の対比は横並びのまま保つ。縦積みにすると1画面に収まらない */
+  .triage-split{grid-template-columns:1fr 1fr;gap:7px;margin-top:10px;padding-top:10px;}
+  .triage-col{padding:9px 9px;}
+  .triage-col h3{font-size:.8rem;margin-bottom:6px;line-height:1.35;}
+  .triage-col li{font-size:.78rem;line-height:1.55;padding-left:11px;margin-bottom:4px;}
+  header.hero{padding:26px 0 20px;}
+  header.hero h1{font-size:1.5rem;}
+  .hero-sub{font-size:.84rem;line-height:1.6;}
+  .hero-disclaimer{font-size:.72rem;line-height:1.6;}
+  .article{padding-top:18px;}
+  .triage{padding:14px 13px 11px;}
+  .triage p{font-size:.875rem;line-height:1.68;margin-bottom:8px;}
+  .triage-note{font-size:.78rem;padding:9px 11px;margin-top:10px;line-height:1.65;}
+}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -136,8 +181,8 @@ footer a{color:var(--accent);}
 <header class="hero">
   <div class="wrap">
     <div class="hero-eyebrow">Trouble Guide</div>
-    <h1>亀の鼻水・くしゃみ</h1>
-    <p class="hero-sub">考えられる原因と、受診を検討するタイミング</p>
+    <h1>亀のくしゃみ・鼻水</h1>
+    <p class="hero-sub">様子見でよい場合と、早めに受診すべきサインを分けて整理します</p>
     <p class="hero-disclaimer" role="note">
       <span aria-hidden="true">⚠️</span>
       <span>このページは一般的な目安の情報です。<strong>症状が続く・悪化する場合は爬虫類対応の動物病院に相談してください。</strong></span>
@@ -147,17 +192,45 @@ footer a{color:var(--accent);}
 <nav class="crumbs"><div class="wrap">
   <a href="../index.html">カメライフガイド</a> ＞
   <a href="turtle-trouble-guide.html">トラブル早見表</a> ＞
-  亀の鼻水・くしゃみ
+  亀のくしゃみ・鼻水
 </div></nav>
 
 <div class="article"><div class="wrap">
-  <p>亀が鼻水を出したり、くしゃみのような動作をすることがあります。原因は飼育温度の低さや乾燥など環境的なものから、呼吸器感染症（RI）まで幅広くあります。「様子見でいいのか、受診すべきか」を判断するポイントを整理します。</p>
+  <div class="triage">
+    <div class="triage-label">まず判断する</div>
+    <p><strong>判断の軸は「鼻水の性状」「続いている日数」「呼吸・食欲の変化」の3つ。</strong>くしゃみ・鼻水は環境要因でも感染でも起こり、見た目だけで原因は決められません。</p>
+    <div class="triage-split">
+      <div class="triage-col ok">
+        <h3>環境を整えて様子を見てよい</h3>
+        <ul>
+          <li>透明でサラサラした鼻水</li>
+          <li>症状が2〜3日以内</li>
+          <li>保温を強めたら軽くなった</li>
+          <li>食欲・動きはふだんどおり</li>
+          <li>くしゃみが時々あるだけ</li>
+        </ul>
+      </div>
+      <div class="triage-col ng">
+        <h3>早めに受診したい</h3>
+        <ul>
+          <li>粘り気がある・白濁・黄色い鼻水</li>
+          <li>3日以上続く／悪化している</li>
+          <li>温度を整えても変わらない</li>
+          <li>口を開けて呼吸する・音がする</li>
+          <li>食べない・動かない</li>
+        </ul>
+      </div>
+    </div>
+    <p class="triage-note"><strong>口を開けたままの呼吸・鼻から泡・ぐったりして動かない</strong>のいずれかは、日数に関係なく早めに相談してください。</p>
+  </div>
+
+  <p>以下では、自宅で確認できることと、やってはいけない自己対処、受診の目安を分けて整理します。</p>
 
   <h2>まず確認すること</h2>
   <div class="check-cards">
     <div class="check-card">
       <div class="check-head"><span class="check-icon" aria-hidden="true">🌡️</span><span class="check-title">飼育温度・夜間の保温</span></div>
-      <p class="check-body">鼻水の最多原因は温度不足です。特に夜間に温度が下がりやすい環境では、冬場に症状が出やすくなります。</p>
+      <p class="check-body">温度不足は最初に確認したい要因です。特に夜間に温度が下がりやすい環境では、冬場に症状が出ることがあります。</p>
       <div class="check-action"><strong>確認：</strong>夜間の最低気温 / 保温器具が正常に動作しているか / バスキングスポットの温度を実測。</div>
     </div>
     <div class="check-card">
@@ -172,7 +245,7 @@ footer a{color:var(--accent);}
     </div>
     <div class="check-card">
       <div class="check-head"><span class="check-icon" aria-hidden="true">⏱️</span><span class="check-title">症状の継続期間</span></div>
-      <p class="check-body">温度を改善して2〜3日で止まる鼻水は環境的要因が多く、1週間以上続く場合は感染の可能性が高まります。</p>
+      <p class="check-body">温度を整えて2〜3日で止まる鼻水は、環境が原因だったことが多くあります。3日以上続く場合や悪化する場合は、環境以外の原因も考えて受診を検討してください。</p>
       <div class="check-action"><strong>確認：</strong>いつから症状があるか / 改善・悪化の傾向 / 他の症状（食欲・動き）の変化。</div>
     </div>
   </div>
@@ -206,7 +279,7 @@ footer a{color:var(--accent);}
   <div class="check-cards">
     <div class="check-card">
       <div class="check-head"><span class="check-icon" aria-hidden="true">❄️</span><span class="check-title">低温・温度変化</span></div>
-      <p class="check-body">最多原因。夜間の冷え込み、季節の変わり目、ヒーター故障などが引き金になります。透明な鼻水・くしゃみが主症状で、温度を整えると数日で改善することが多いです。</p>
+      <p class="check-body">夜間の冷え込み、季節の変わり目、ヒーターの故障などが引き金になることがあります。透明な鼻水やくしゃみが中心で、温度を整えると数日で落ち着く場合があります。</p>
       <div class="check-action"><strong>対応：</strong>保温を強化し、2〜3日様子を見る。改善しない場合は受診を検討。</div>
     </div>
     <div class="check-card">
@@ -239,7 +312,7 @@ footer a{color:var(--accent);}
     <p class="alert-footer">「爬虫類 動物病院 ＋ お住まいの地域名」で検索し、事前に電話確認することをおすすめします。受診の際は症状が始まった時期・飼育温度・使用機材をメモしておくと診察がスムーズになります。</p>
   </div>
 
-  <h2>自宅で見直せる環境ポイント</h2>
+  <h2>自宅でできる確認・見直し</h2>
   <ul class="env-list" role="list">
     <li>温度計・湿度計を実測し、数値を把握する（手感覚ではなく器具で確認）</li>
     <li>夜間の保温を強化する（パネルヒーター・保温球の追加）</li>
@@ -250,12 +323,78 @@ footer a{color:var(--accent);}
     <li>改善しない場合は3日を目安に受診を検討する</li>
   </ul>
 
-  <h2>関連ページ</h2>
+  <h2>やってはいけない自己対処</h2>
+  <p>くしゃみ・鼻水が出ているときに、よかれと思って行われがちですが、状態を悪くしたり診断を難しくしたりする対応があります。</p>
+  <div class="dont-box">
+    <div class="dont-label">次のことはしないでください</div>
+    <ul class="dont-list">
+      <li><b>人用の風邪薬・解熱剤・点鼻薬を与える。</b>亀に安全な用量は確立しておらず、種や体重によって影響が大きく異なります。</li>
+      <li><b>抗生物質を自己判断で使う。</b>他の個体に処方された残りの薬、通販で入手した薬、以前の薬の使い回しはいずれも避けてください。原因菌が分からないまま使うと効かないだけでなく、受診時の判断も難しくなります。</li>
+      <li><b>魚病薬・観賞魚用の薬を水槽に入れる。</b>亀の呼吸器症状に対する効果は確認されていません。</li>
+      <li><b>鼻や口の分泌物を綿棒・ピンセットで取ろうとする。</b>粘膜を傷つけたり、鼻孔をふさいだりする恐れがあります。</li>
+      <li><b>急に高温にする。</b>「温めれば治る」と一気に温度を上げると、脱水や熱によるストレスを招きます。種に合った適正温度へ戻すことが目的です。</li>
+      <li><b>長時間・高温の温浴を繰り返す。</b>呼吸が苦しそうなときの温浴は、かえって負担になることがあります。</li>
+      <li><b>症状が続いているのに様子見を繰り返す。</b>受診が遅れること自体がリスクになります。</li>
+      <li><b>SNSや動画の投薬情報をそのまま真似る。</b>種・体重・症状が違えば適切な対応も変わります。</li>
+    </ul>
+  </div>
+  <p>環境を整えても改善しない場合に必要なのは、市販薬ではなく<strong>爬虫類を診られる獣医師の診察</strong>です。原因の特定には、診察に加えてレントゲンや検体検査が必要になることがあります。</p>
+
+  <h2>よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">亀がくしゃみをしています。まず何を確認すればいいですか？</div>
+      <div class="faq-a">飼育温度、特に夜間の最低温度をまず実測してください。あわせて、鼻水が出ているか（出ていれば透明か粘り気があるか）、いつから続いているか、食欲と動きに変化がないかを確認します。温度を種に合った範囲へ整えて2〜3日で落ち着けば、環境が原因だった場合が多くあります。手の感覚ではなく温度計で測ることが大切です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">亀のくしゃみ・鼻水は、いつ病院に行くべきですか？</div>
+      <div class="faq-a">3日以上続く場合、悪化している場合、粘り気のある・白濁した・黄色みがかった鼻水が出ている場合、口を開けて呼吸している場合、食欲低下や元気消失を伴う場合は、早めに爬虫類を診られる動物病院へ相談してください。口を開けたままの呼吸、鼻から泡、ぐったりして動かないのいずれかがあるときは、日数にかかわらず早めに相談してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">くしゃみをしているだけで、鼻水は出ていません。様子見でいいですか？</div>
+      <div class="faq-a">くしゃみだけで、鼻水がなく、食欲も動きもふだんどおりであれば、まず環境を確認して様子を見る対象になります。床材のほこり、消毒スプレーや芳香剤、タバコの煙など、刺激によるくしゃみのこともあります。ただし回数が増える、鼻水が出てくる、呼吸の音が変わるといった変化があれば受診を検討してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">透明な鼻水と、粘り気のある鼻水では何が違いますか？</div>
+      <div class="faq-a">鼻水の性状は判断材料の一つです。透明でサラサラした鼻水は温度不足や乾燥など環境要因でも見られます。粘り気がある、白く濁る、黄色みがかるといった変化は、環境要因だけでは説明しにくく、受診を検討する目安になります。ただし性状だけで原因を確定することはできません。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">温度を上げれば治りますか？</div>
+      <div class="faq-a">温度を種に合った適正範囲へ整えることは重要ですが、「温めれば治る」わけではありません。急に高温にすると脱水や熱によるストレスを招きます。目的は一気に温めることではなく、昼夜を通して適正な温度を保つことです。適正温度を保っても3日以上改善しない場合は、環境以外の原因を考えて受診を検討してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">市販の薬や、以前もらった抗生物質を使ってもいいですか？</div>
+      <div class="faq-a">使わないでください。人用の風邪薬・解熱剤・点鼻薬、魚病薬、他の個体に処方された薬の使い回しは、いずれも避けるべき対応です。亀に安全な用量は種や体重で大きく異なり、原因が分からないまま投薬すると効果がないだけでなく、受診時の判断も難しくなります。必要な場合は獣医師が診察したうえで処方します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">どんな動物病院に行けばいいですか？</div>
+      <div class="faq-a">犬や猫だけを診る病院では対応が難しいことがあるため、爬虫類の診療経験がある病院を探してください。「爬虫類 動物病院 ＋ お住まいの地域名」で検索し、受診前に電話で亀を診てもらえるか確認すると確実です。受診時は、症状が始まった時期、飼育温度と湿度の実測値、使用している保温・照明機材、直近の食事と排泄の状況をメモして持参すると診察がスムーズです。</div>
+    </div>
+  </div>
+
+  <h2>環境を見直すためのページ</h2>
+  <p>このページで確認した温度・湿度・水質を実際に整えるときは、次のページが役に立ちます。</p>
+  <div class="related-links">
+    <a href="temperature-guide.html" class="rel-btn">温度管理ガイド（水温・バスキング・保温器具）</a>
+    <a href="../trouble/water-quality.html" class="rel-btn">水質悪化のサインと対処</a>
+    <a href="filter-guide.html" class="rel-btn">フィルターの選び方</a>
+    <a href="uvb-light-guide.html" class="rel-btn">UVBライトの選び方</a>
+  </div>
+
+  <h2>あわせて確認したい症状</h2>
   <div class="related-links">
     <a href="turtle-trouble-guide.html" class="rel-btn">← トラブル早見表に戻る</a>
     <a href="turtle-not-eating.html" class="rel-btn">食欲不振のチェック</a>
+    <a href="../trouble/lethargy.html" class="rel-btn">動かない・元気がない</a>
+    <a href="../trouble/swollen-eyes.html" class="rel-btn">目が腫れている・開かない</a>
+    <a href="../trouble/runny-nose.html" class="rel-btn">鼻詰まり・呼吸器感染（URI）を詳しく</a>
     <a href="turtle-shell-white.html" class="rel-btn">甲羅が白い・ぬめる</a>
+  </div>
+
+  <h2>関連ページ</h2>
+  <div class="related-links">
     <a href="../shindan/" class="rel-btn"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-compass"/></svg> 亀診断で種を選ぶ</a>
+    <a href="../species-list.html" class="rel-btn">種ごとの適正温度を調べる</a>
     <a href="../index.html#top-gear-picks" class="rel-btn">おすすめ飼育機材</a>
   </div>
 
@@ -299,9 +438,67 @@ footer a{color:var(--accent);}
 
 <script>(function(){if(typeof gtag==='function')gtag('event','trouble_page_view',{page:'runny_nose'});})();</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"亀が鼻水を出している。まず何を確認すればいいですか？","acceptedAnswer":{"@type":"Answer","text":"まず飼育温度、特に夜間の最低気温を確認してください。低温は亀の鼻水・くしゃみの最多原因です。温度を適切に保ち2〜3日様子を見て透明な鼻水が止まれば、温度管理が原因である可能性が高いです。粘液状・白濁・黄色い鼻水が続く場合、または口呼吸が見られる場合は爬虫類対応の動物病院への相談を検討してください。"}},
-{"@type":"Question","name":"亀の鼻水はいつから病院に行くべきですか？","acceptedAnswer":{"@type":"Answer","text":"透明な鼻水で環境を改善してから3日以内に止まれば様子見で構いません。3日以上続く場合・粘液状や黄色みがかった鼻水が出ている場合・口呼吸や食欲低下を伴う場合は、早めに爬虫類対応の動物病院へ相談することをおすすめします。"}},
-{"@type":"Question","name":"亀の鼻水と呼吸器感染症（RI）の違いはどう見分けますか？","acceptedAnswer":{"@type":"Answer","text":"温度管理を改善して2〜3日以内に止まる透明な鼻水は環境的要因が多いです。一方、粘液状・白濁・黄色みがかった鼻水が続く、口を開けて呼吸している、食欲低下・元気消失を伴う場合は呼吸器感染症の可能性があります。自己判断での薬の使用は避け、早めに爬虫類対応の動物病院に相談してください。"}}
-]}</script>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "亀がくしゃみをしています。まず何を確認すればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "飼育温度、特に夜間の最低温度をまず実測してください。あわせて、鼻水が出ているか（出ていれば透明か粘り気があるか）、いつから続いているか、食欲と動きに変化がないかを確認します。温度を種に合った範囲へ整えて2〜3日で落ち着けば、環境が原因だった場合が多くあります。手の感覚ではなく温度計で測ることが大切です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "亀のくしゃみ・鼻水は、いつ病院に行くべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3日以上続く場合、悪化している場合、粘り気のある・白濁した・黄色みがかった鼻水が出ている場合、口を開けて呼吸している場合、食欲低下や元気消失を伴う場合は、早めに爬虫類を診られる動物病院へ相談してください。口を開けたままの呼吸、鼻から泡、ぐったりして動かないのいずれかがあるときは、日数にかかわらず早めに相談してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "くしゃみをしているだけで、鼻水は出ていません。様子見でいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "くしゃみだけで、鼻水がなく、食欲も動きもふだんどおりであれば、まず環境を確認して様子を見る対象になります。床材のほこり、消毒スプレーや芳香剤、タバコの煙など、刺激によるくしゃみのこともあります。ただし回数が増える、鼻水が出てくる、呼吸の音が変わるといった変化があれば受診を検討してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "透明な鼻水と、粘り気のある鼻水では何が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "鼻水の性状は判断材料の一つです。透明でサラサラした鼻水は温度不足や乾燥など環境要因でも見られます。粘り気がある、白く濁る、黄色みがかるといった変化は、環境要因だけでは説明しにくく、受診を検討する目安になります。ただし性状だけで原因を確定することはできません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "温度を上げれば治りますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "温度を種に合った適正範囲へ整えることは重要ですが、「温めれば治る」わけではありません。急に高温にすると脱水や熱によるストレスを招きます。目的は一気に温めることではなく、昼夜を通して適正な温度を保つことです。適正温度を保っても3日以上改善しない場合は、環境以外の原因を考えて受診を検討してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "市販の薬や、以前もらった抗生物質を使ってもいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "使わないでください。人用の風邪薬・解熱剤・点鼻薬、魚病薬、他の個体に処方された薬の使い回しは、いずれも避けるべき対応です。亀に安全な用量は種や体重で大きく異なり、原因が分からないまま投薬すると効果がないだけでなく、受診時の判断も難しくなります。必要な場合は獣医師が診察したうえで処方します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どんな動物病院に行けばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "犬や猫だけを診る病院では対応が難しいことがあるため、爬虫類の診療経験がある病院を探してください。「爬虫類 動物病院 ＋ お住まいの地域名」で検索し、受診前に電話で亀を診てもらえるか確認すると確実です。受診時は、症状が始まった時期、飼育温度と湿度の実測値、使用している保温・照明機材、直近の食事と排泄の状況をメモして持参すると診察がスムーズです。"
+      }
+    }
+  ]
+}
+</script>
 </body></html>
