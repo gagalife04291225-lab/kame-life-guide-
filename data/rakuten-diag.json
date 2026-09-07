@@ -128,14 +128,14 @@
   }
  },
  "calcium_no_d3": {
-  "date": "2026-08-30",
+  "date": "2026-09-07",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
-   "price": 1200,
+   "price": 1205,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -228,14 +228,14 @@
   "best": null
  },
  "filter_canister_medium": {
-  "date": "2026-09-04",
+  "date": "2026-09-07",
   "query": "EHEIM クラシック 2213 外部フィルター",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
-   "price": 14980,
+   "price": 14940,
    "shop": "ミナトワークス"
   }
  },
@@ -668,15 +668,15 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-09-01",
+  "date": "2026-09-07",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
   "resultCount": 10,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "outcome": "REFRESHED_STRONG",
+  "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
-   "itemName": "ジェックス EXO TERRA (エキゾテラ) テラリウムソイル 4kg 爬虫類・両生類用多孔質ソイル pH中性~弱酸性 ニオイ吸着 砂漠・亜熱帯環境 天然素材",
-   "price": 1457,
-   "shop": "バラエティショップ平和2号店"
+   "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
+   "price": 1771,
+   "shop": "ペットフォレスト 楽天市場店"
   }
  },
  "substrate_grassland_mix": {
@@ -864,13 +864,13 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-09-03",
+  "date": "2026-09-07",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "【9月5日限定！最大100％ポイントバック】シンワ測定 デジタル温度計 SMART B 73117",
+   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
    "price": 2300,
    "shop": "Arclands Online 楽天市場支店"
   }
