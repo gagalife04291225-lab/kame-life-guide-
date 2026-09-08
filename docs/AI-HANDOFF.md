@@ -34,18 +34,61 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **3a3ae17**（PR #164 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | PR #159〜#164 は main 反映済み。本PRは水質検査薬 2 件（category `water_test`・キット非表示・linkHold）の商品データ追加＋ `docs/water-test-notes.md`。記事導線なし。**新規 ASIN 2 件を含むため Owner 判断で merge** |
+| 基準 | `origin/main` = **670fbcc**（PR #165 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | PR #159〜#165 は main 反映済み。本PRは `guides/filter-guide.html` に 6in1 の導線 1 件（既存 ASIN・新規なし）＋ `water_test_tetra_6in1.linkHold=false` ＋ **商品不足監査の CLOSE 記録**。5 条件充足で merge |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/water-test-20260908`（本PR） |
+| 作業ブランチ | `claude/audit-close-20260908`（本PR） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### 水質検査薬 2 件の測定項目・対応水・用途の確定（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+### 商品不足監査 — **CLOSE**（2026-09-08 / 本PR）— **新しい記事・商品追加が発生したときだけ再開**
+
+「主要欠落の抽出・誤配線是正・必要商品候補整理完了」として CLOSE する。PR #159〜#165 と本PRで実施。定期再探索はしない。
+
+**CLOSED**
+
+| 項目 | 結果 | PR |
+|---|---|---|
+| 誤 ASIN 修正 | dish-best10 PT2812 枠 → B004NRABB4、岩石皿 S/M → 検索リンク（「Amazonで検索」） | #160 |
+| シェルター誤サイズ | SP S / SP ML / ケイブ S・M / モイストシェルター / 水入れ M の対象を実寸へ是正、誤配線（dry_large・forest/box premium）を解除 | #159 / #160 |
+| waterdish | レプティランプボウル LG（B00167XQLG）配線・最大甲長は断定しない／`waterdish_sanko_dish` は設備要件（購入導線なし） | #163 |
+| 浮島 | タートルバンク M（B00O0QM6H0）追加、setup-specs 4 種を M へ | #160 |
+| 外部フィルターろ材 | 13 件を 2 軸判定（VERIFIED 10 / PARTIAL 3）、best10 に VERIFIED 8 本の導線 | #161 / #162 |
+| 灯具候補 | ライトドーム 14cm PARTIAL（linkHold）／ライトスタンド VERIFIED（導線なし・ドームが PARTIAL のため） | #164 |
+| 水質検査薬 | NH3/NH4+ PARTIAL（linkHold）／6in1 VERIFIED・採用・filter-guide に導線 1 件 | #165 / 本PR |
+| 楽天ボタン描画 | water-filter-best10 の 0 件バグを修正（20/20） | #163 |
+| コバエ対策用品候補 | UV 殺虫器は ASIN 未確定のため商品追加なし。`docs/fly-control-notes.md` に記録のみ | #164 |
+| 大型リクガメ用シェルター | NOT_FOUND_EXACT_MATCH で CLOSE（null 維持） | #162 |
+
+**HOLD / PARTIAL（5 件・公開購入導線に出さない・DB 保持・新証拠が出るまで再探索しない）**
+
+| 商品 | ASIN | 未確定 |
+|---|---|---|
+| GEX エキゾテラ ライトドーム 14cm PT2055 | B00J58ROJS | セラミックヒーター可否・耐熱条件 |
+| テトラ テスト試験紙 NH3/NH4+ | B0GN1MFFPD | 測定範囲・海水表記不一致・汽水記載なし |
+| EHEIM 2213 活性炭パッド | B004WI234M | 型番未確認・用途限定 |
+| サブストラットプロ 1L | B005G0OUSW | 全量交換に要る容量 |
+| エーハイムメック 1L | B075VM8C5P | 同上 |
+
+**P1 残件（完全一致商品なし・既存状態を維持・定期再探索しない）**
+
+| 項目 | 状態 |
+|---|---|
+| 汽水対応アンモニア検査（テラピン） | P1_MISSING_WATER_TEST（液体「テトラ テスト アンモニア試薬（淡水・海水用）」の汽水明記と ASIN は未確認） |
+| 大型リクガメ成体用シェルター（`tortoise_dry_large`） | NOT_FOUND_EXACT_MATCH（null 維持） |
+| EHEIM 2217 粗目パッド | CANDIDATE_FOUND_UNVERIFIED（`/dp/` URL 未取得） |
+| Fluval BIOMAX / Polishing / Carbon A249 / Bio-Foam A228 | NOT_FOUND_AMAZON（co.jp） |
+| `waterdish_sanko_dish` の実商品 | NOT_FOUND_EXACT_MATCH（設備要件として運用） |
+| ユーザー実使用の UV 殺虫器 | NOT_FOUND_EXACT_MATCH（ASIN 提示があれば identity 照合） |
+
+**VERIFIED 導線候補の扱い（確定）**: ライトスタンド＝導線なし（対応ドームが PARTIAL）／6in1＝`guides/filter-guide.html` の 1 箇所のみ（species への一斉配線なし）／コバエ UV 殺虫器＝docs 記録のみ。
+`docs/decisions/OPEN-DECISIONS.md` には**追記しない**（判断待ちを積まない）。
+
+### 水質検査薬 2 件の測定項目・対応水・用途の確定（2026-09-08 / PR #165 merge 670fbcc）— **再調査しない**
 
 正本は [`docs/water-test-notes.md`](water-test-notes.md)。Amazon identity は両件 VERIFIED（固定入力）。
 
@@ -1359,7 +1402,11 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
-#### 本PR（水質検査薬 2 件・新規 ASIN B0GN1MFFPD / B002FBISEC）の merge 可否（Owner 判断）
+#### （解消済み）PR #165 の merge 可否 — **Owner 判断（2026-09-08）: NH3/NH4+ は PARTIAL・linkHold 維持／6in1 は淡水用として VERIFIED・採用 → merge した（670fbcc）**
+
+6in1 の公開導線は `guides/filter-guide.html` の 1 箇所（本PR）。NH3/NH4+ の購入導線は 0。PARTIAL 5 件は「公開購入導線に出さない」で固定。**このDECISIONは閉じた。**
+
+#### （解消済み）旧 DECISION（水質検査薬 2 件）
 
 Actor は merge しない。確認点: ①NH3/NH4+ 試験紙は PARTIAL（測定範囲未取得・海水表記不一致・汽水記載なし）のまま商品データだけ保持してよいか
 ②6in1（VERIFIED・淡水）を giant-musk / florida-mud / filter-guide のどれに導線として出すか ③汽水向けアンモニア検査（P1_MISSING_WATER_TEST）の探索を次工程に立てるか。
@@ -1398,7 +1445,7 @@ Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実
 | 候補 | 対象記事 | 既存で代用できない理由 | Amazon 候補（URL 照合済） | 楽天 |
 |---|---|---|---|---|
 | 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | 本PRで `fixture` として商品データ化（ドーム PARTIAL・スタンド VERIFIED）。記事導線と球との配線は未実施 | B00J58ROJS（PARTIAL・導線なし）／B07FHM2YKH（VERIFIED） | search |
-| 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 本PRで `water_test` として商品データ化（NH3 PARTIAL・6in1 VERIFIED・いずれも linkHold） | B0GN1MFFPD（PARTIAL）／B002FBISEC（VERIFIED・導線は Owner 判断） | search |
+| 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | `water_test` として商品データ化。6in1 は filter-guide に導線 1 件（確定） | B0GN1MFFPD（PARTIAL・導線なしで固定）／B002FBISEC（VERIFIED・導線あり） | search |
 | `waterdish_sanko_dish` | setup-specs redfoot-a / forest-terrarium の must | 該当商品なし（NOT_FOUND_EXACT_MATCH・本PRで名称是正） | REPTIZOO ウォーターディッシュ M は amazon.co.jp NOT_FOUND_AMAZON | pending |
 | 大型リクガメ用シェルター | tortoise_dry_large キット（空欄維持で CLOSE） | SP L2/XL/XXL とも成体（甲長40cm超）は不可（COMPLETED 参照） | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・不採用） | 再開条件のみ（COMPLETED） |
 
@@ -1474,13 +1521,12 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### P1 台帳の残件を Owner 判断へ集約（DECISION 化のみ・新規探索なし）
+### 運営フェーズへ復帰 — Routine 初回実行（2026-09-11 10:00 JST）の結果確認
 
-**対象**: 商品不足監査で PARTIAL / 導線未設置のまま商品データ化された 5 件（ライトドーム 14cm・NH3/NH4+ 試験紙・2213 活性炭・サブストラットプロ 1L・メック 1L）と、
-導線を出せる VERIFIED 3 件（ライトスタンド・6in1・ろ材 8 本は設置済み）の**掲載先案**を 1 枚の判断表にまとめ、`docs/decisions/OPEN-DECISIONS.md` へ追記する。
-**Scope**: 新規 ASIN 探索なし。既存の判定（identity / compatibility / useCase）を固定入力として使う。各行に「出す／出さない／追加確認が要る」の推奨と理由を付ける。
-**変更禁止**: `data/products.js`・HTML・CSV（docs のみ）。
-**完了条件**: Owner が 1 回の裁定で導線の可否を決められる表になっていること。docs のみのため 5 条件充足で merge 可。
+**対象**: Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（月・金 10:00 JST・ASIN 実在照合）と GitHub Actions `asin-audit.yml`（月・金 09:00 JST）の初回結果。
+**Scope**: ①Routine から GitHub MCP が使えたか（使えなければ git-only フォールバックが働いたか）②CAUTION 22 件の再照合結果と Issue の内容 ③失敗時は Routine プロンプトを修正する。
+**変更禁止**: 商品不足監査の再開（新しい記事・商品追加が発生したときだけ）／PARTIAL 5 件の再探索／`data/products.js` の ASIN。
+**完了条件**: Routine の成否と CAUTION 22 の処理状況が `FIXED_FACTS` に記録されていること。以後は `docs/operations/WEEKLY_REVIEW.md` に従う（B1 の GSC データ受領待ち）。
 
 ## 更新ルール（作業終了時に必ず実施）
 

@@ -1378,7 +1378,8 @@ const PRODUCTS = {
     testMethod: '試験紙（1秒浸漬・60秒後比色）',
     useCase: 'USE_CASE_VERIFIED',
     useCaseNote: '日常監視: NO2/NO3 で生物ろ過と換水時期、pH/GH/KH は種・飼育水に応じた補助指標。アンモニアの代用にはならない',
-    linkHold: true,
+    linkHold: false, // 2026-09-08 Owner 採用。公開導線は guides/filter-guide.html の1箇所のみ（species への一斉配線はしない）
+    publicLinkPages: ['guides/filter-guide.html'],
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'テトラ テスト 6in1 試験紙 25枚',
