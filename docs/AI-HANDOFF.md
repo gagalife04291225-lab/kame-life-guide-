@@ -49,15 +49,14 @@
 
 **waterdish_zoomed_ramp_bowl → VERIFIED で ASIN 配線**
 Zoo Med レプティランプボウル LG（RRB-11・**B00167XQLG**・`/dp/` URL 照合）。外寸 約25.4×20.4×5.8cm（国内販売店表記）＝Zoo Med 公式 10×8×2.25in と一致。
-スロープあり。内寸は未確認（sizeStatus PARTIALLY_EVALUATED）。用途＝**飲み水・浅い水浴び**。全身が入るのは甲長10cm前後までの幼体〜亜成体（推定）、
-甲長15cm以上の成体は飲み水・部分浴用。setup-specs tortoise-dry の must（「縁の低い浅型水入れ・スロープ付き」）と用途一致。
+スロープあり。内寸は未確認（sizeStatus PARTIALLY_EVALUATED）。用途＝**飲み水・浅い水浴び**。**内寸未確認のため「全身が入れる最大甲長」は断定しない**（Owner 指示で外寸ベース推定を削除）。成体では主に飲み水用、全身浴は個体サイズに合う別容器。setup-specs tortoise-dry の must（「縁の低い浅型水入れ・スロープ付き」）と用途一致。
 XL（RRB-12・B007TTV2LG・identity 照合済）は外寸が資料間で不一致（33×23×6cm / 25.4×24×7cm）のため未採用。
 
 **waterdish_sanko_dish → NOT_FOUND_EXACT_MATCH（ASIN 配線なし）**
 「SANKO レプタイルディッシュ」という商品は存在しない。実在するのは 三晃商会 REPTIZOO ウォーターディッシュ XS/S/M（M 20.5×16.5×5.0cm・公式ページあり・amazon.co.jp は NOT_FOUND_AMAZON）、
 スドー ハープクラフト レプタイルディッシュ S/L（RX-151/153・径7×2 / 10×3cm・成体には小さすぎる）、ニッソー WILD PLANET レプタイルディッシュ（二連・寸法未確認）。
 いずれも setup-specs redfoot-a「全身が入る浅い水入れ」／forest-terrarium「歩いて入れる浅い水場・深さ2〜3cm」の用途に一致しない（アカアシ成体 30cm 超は市販水入れでは不可）。
-**無理に別商品へ流用せず**、エントリ名を「全身が入る浅い水入れ（該当商品未選定）」へ是正し `rakutenStatus: 'pending'`（購入リンクなし）。setup-specs の must 指定は据え置き（DECISION）。
+**無理に別商品へ流用せず**、エントリを**設備要件**「甲長に合わせた浅い水場（設備要件・商品未選定）」へ整理（`requirement: true`・asin null・url '#'・`rakutenStatus: 'pending'`）。setup-products.js は requirement の行を「候補:」なし・購入ボタンなしで描画する（1 行追加）。setup-specs の must はラベルとして残る。
 
 **best10 楽天ボタン**: 生成 JS が `.item-body` 内の `h3` を探していたのを `item.closest('.item')` の `h3` へフォールバック（1 行）。描画 0 → **20/20**（楽天検索 URL）。Amazon ボタン 20/20・対応ろ材チップ 8 本に影響なし。
 
