@@ -243,6 +243,33 @@ const PRODUCTS = {
     rakutenSearchTerm: 'コトブキ工芸 アクアリスト KC-1200LT 120cm ガラス水槽', // Phase 39-P6: 「アクリル水槽」は誤り(実際はガラス製)だったため商品名に統一
   },
 
+  // 2026-09-08 商品不足監査: setup-specs（musk / reeves / snakeneck / terrapin）は60cm以上の水槽を前提にしているが、
+  // 既存の shelter_turtle_dock（タートルバンク S）は適合〜幅40cm水槽のため、60cm以上向けに M を追加。
+  // ASIN は WebSearch("B00O0QM6H0", amazon.co.jp) で商品ページURL /dp/B00O0QM6H0 を確認済み。価格は未取得のため空欄。
+  shelter_turtle_dock_m: {
+    id: 'shelter_turtle_dock_m',
+    name: 'GEX EXOTERRA タートルバンク M PT3801',
+    category: 'shelter',
+    tier: 'standard',
+    priceRange: '',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00O0QM6H0?tag=kamelife09-22',
+    asin: 'B00O0QM6H0',
+    image: '/assets/products/placeholder.webp',
+    why: 'マグネット式で水位に合わせて上下する浮島（約29.8×17.8cm）。幅45〜60cm水槽・甲長15cm前後までの個体向け。60cm水槽で飼うニオイガメ・クサガメ・テラピンの陸場はこのサイズから',
+    rating: null,
+    badge: null,
+    recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium'],
+    rakutenSearchTerm: 'GEX タートルバンク M PT3801',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: null,
+    rakutenLastUpdated: null,
+    rakutenImageUrl: null,
+  },
+
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
 
   enclosure_reptihabitat_40g: {
@@ -2466,7 +2493,7 @@ const EQUIPMENT_MAP = {
     lighting_basking: { budget: 'basking_100w',          standard: 'basking_dual_150',      premium: 'basking_hid_70w' },
     heating:          { budget: 'heater_panel_45',      standard: 'heater_panel_60',       premium: 'heater_radiant_panel' },
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_sand_mix',     premium: 'substrate_cypress' },
-    shelter:          { budget: 'shelter_medium',        standard: null,     premium: null }, // Phase 39-P4: shelter_cave_lgはサイズ不一致(要再選定)のため外し、budgetへフォールバック
+    shelter:          { budget: null,                    standard: null,     premium: null }, // 2026-09-08 商品不足監査: shelter_medium(SP ML 約13×17×H8cm)は成体大型リクガメに入らないため外す。大型種向けシェルターは未選定（setup-specs の missing に明記）
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_infrared',   premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_herbs',   premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null }, // Phase 39-P4: supplement_iodineは誤ASIN(水質調整剤)のため外し、standardへフォールバック
@@ -2479,7 +2506,7 @@ const EQUIPMENT_MAP = {
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
-    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
+    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: null }, // 2026-09-08 商品不足監査: shelter_moist_hide(入口5×3.5cm・ヤモリ向け)はカメが入れないため外し、standardへフォールバック
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_gel',  premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_multivitamin',premium: null },
@@ -2539,7 +2566,7 @@ const EQUIPMENT_MAP = {
     heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
-    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: 'shelter_moist_hide' },
+    shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: null }, // 2026-09-08 商品不足監査: shelter_moist_hide(入口5×3.5cm・ヤモリ向け)はカメが入れないため外し、standardへフォールバック
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },

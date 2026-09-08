@@ -47,7 +47,7 @@ const SETUP_SPECS = {
         note: '水温の常時監視。夏の28℃超え検知が主目的' },
     ],
     extras: [
-      { productId: 'shelter_turtle_dock', need: 'must',
+      { productId: 'shelter_turtle_dock_m', need: 'must',
         note: '甲羅干し用の浮島。体全体が乾ける面積を' },
     ],
     missing: [
@@ -78,7 +78,7 @@ const SETUP_SPECS = {
         note: '水温監視。夏の30℃超は危険（サイト飼育ページ準拠）' },
     ],
     extras: [
-      { productId: 'shelter_turtle_dock', need: 'must',
+      { productId: 'shelter_turtle_dock_m', need: 'must',
         note: '浮島タイプの陸場。成長後も全身が乗れるサイズを選ぶ' },
     ],
     missing: [],
@@ -97,7 +97,7 @@ const SETUP_SPECS = {
       { cat: 'thermometer', need: 'must', tier: 'budget', note: '水温の常時監視' },
     ],
     extras: [
-      { productId: 'shelter_turtle_dock', need: 'optional',
+      { productId: 'shelter_turtle_dock_m', need: 'optional',
         note: '甲羅干しは頻繁ではないが、上がれる場所があると安心' },
     ],
     missing: [],
@@ -120,7 +120,7 @@ const SETUP_SPECS = {
       { cat: 'thermometer', need: 'must', tier: 'budget', note: '水温監視' },
     ],
     extras: [
-      { productId: 'shelter_turtle_dock', need: 'must', note: '乾ける浮島。塩水に強い樹脂製' },
+      { productId: 'shelter_turtle_dock_m', need: 'must', note: '乾ける浮島。塩水に強い樹脂製' },
       { productId: 'hydrometer_tetra', need: 'must', label: '比重計',
         note: '汽水管理の基本計器。比重1.005〜1.015の維持に。±0.001目盛・汽水測定対応（販売元表記）' },
     ],
@@ -260,4 +260,4 @@ const SETUP_SPECS = {
 };
 
 // EQUIPMENT_MAP に無いが setup-specs から参照する既存商品IDの一覧（検証用）
-const SETUP_SPECS_EXTRA_IDS = ['shelter_turtle_dock', 'waterdish_sanko_dish', 'waterdish_zoomed_ramp_bowl', 'substrate_bottom_sand', 'hydrometer_tetra'];
+const SETUP_SPECS_EXTRA_IDS = ['shelter_turtle_dock_m', 'waterdish_sanko_dish', 'waterdish_zoomed_ramp_bowl', 'substrate_bottom_sand', 'hydrometer_tetra'];
