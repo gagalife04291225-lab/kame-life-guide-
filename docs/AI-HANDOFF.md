@@ -34,24 +34,41 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **6e6f7ea**（PR #160 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | PR #159（文言）・PR #160（ASIN 修正・タートルバンク M・配線）は main 反映済み。本PRは docs のみ（大型シェルター CLOSE 記録＋ `docs/filter-media-map.md`）。ろ材13件の追加は **PR #161（Owner 判断・merge 保留）** |
+| 基準 | `origin/main` = **621b9fa**（PR #161 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | PR #159〜#162 は main 反映済み（ろ材13件は identity/compatibility 2軸で分離済み・VERIFIED 10 / PARTIAL 3）。本PRは waterdish 2件の解決（レプティランプボウル LG の ASIN 配線・存在しない「SANKO レプタイルディッシュ」の名称是正）＋ water-filter-best10 の楽天ボタン描画バグ修正。**新規 ASIN 1件を含むため Owner 判断で merge** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/handoff-filter-media-20260908`（本PR）／`claude/filter-media-20260908`（#161） |
+| 作業ブランチ | `claude/waterdish-rakuten-20260908`（本PR） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### 外部フィルター対応ろ材監査 — 7機種 × 純正ろ材の 1 対 1 対応（2026-09-08 / PR #161・本PR）— **再監査しない**
+### waterdish 2件の解決＋best10 楽天ボタン 0 件バグの修正（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+
+**waterdish_zoomed_ramp_bowl → VERIFIED で ASIN 配線**
+Zoo Med レプティランプボウル LG（RRB-11・**B00167XQLG**・`/dp/` URL 照合）。外寸 約25.4×20.4×5.8cm（国内販売店表記）＝Zoo Med 公式 10×8×2.25in と一致。
+スロープあり。内寸は未確認（sizeStatus PARTIALLY_EVALUATED）。用途＝**飲み水・浅い水浴び**。全身が入るのは甲長10cm前後までの幼体〜亜成体（推定）、
+甲長15cm以上の成体は飲み水・部分浴用。setup-specs tortoise-dry の must（「縁の低い浅型水入れ・スロープ付き」）と用途一致。
+XL（RRB-12・B007TTV2LG・identity 照合済）は外寸が資料間で不一致（33×23×6cm / 25.4×24×7cm）のため未採用。
+
+**waterdish_sanko_dish → NOT_FOUND_EXACT_MATCH（ASIN 配線なし）**
+「SANKO レプタイルディッシュ」という商品は存在しない。実在するのは 三晃商会 REPTIZOO ウォーターディッシュ XS/S/M（M 20.5×16.5×5.0cm・公式ページあり・amazon.co.jp は NOT_FOUND_AMAZON）、
+スドー ハープクラフト レプタイルディッシュ S/L（RX-151/153・径7×2 / 10×3cm・成体には小さすぎる）、ニッソー WILD PLANET レプタイルディッシュ（二連・寸法未確認）。
+いずれも setup-specs redfoot-a「全身が入る浅い水入れ」／forest-terrarium「歩いて入れる浅い水場・深さ2〜3cm」の用途に一致しない（アカアシ成体 30cm 超は市販水入れでは不可）。
+**無理に別商品へ流用せず**、エントリ名を「全身が入る浅い水入れ（該当商品未選定）」へ是正し `rakutenStatus: 'pending'`（購入リンクなし）。setup-specs の must 指定は据え置き（DECISION）。
+
+**best10 楽天ボタン**: 生成 JS が `.item-body` 内の `h3` を探していたのを `item.closest('.item')` の `h3` へフォールバック（1 行）。描画 0 → **20/20**（楽天検索 URL）。Amazon ボタン 20/20・対応ろ材チップ 8 本に影響なし。
+
+### 外部フィルター対応ろ材監査 — 7機種 × 純正ろ材の 1 対 1 対応（2026-09-08 / PR #161 merge 621b9fa・PR #162）— **再監査しない**
 
 **対応表・判定根拠・未確定項目の正本は [`docs/filter-media-map.md`](filter-media-map.md)。** ここには結論だけ置く。
 
 - **対象機種（現 main 実測）**: EHEIM クラシック 2211（best10）/ 2213（best10・review・filter-guide・products.js）/ 2215（best10・products.js）/ 2217（products.js）、
   GEX メガパワー 2045（best10）/ 6090（best10・review・products.js）、Fluval FX6（products.js）。本体 ASIN は再照合していない。
 - **判定**: 初期ろ材は全機種「本体セットに付属」で NO_ADD_NEEDED。**交換パッド・補充生物ろ材の導線は全機種 0 件 → P1_MISSING_REPLACEMENT_PAD / P1_MISSING_MEDIA**。
+- **2026-09-08 追記（PR #161 merge 621b9fa）**: 13件を identity/compatibility 2軸へ分離。identity は全件 VERIFIED、compatibility は **VERIFIED 10 / PARTIAL 3**（2213 活性炭: 型番未確認・用途限定／サブストラットプロ 1L・メック 1L: 必要容量未確認）。PARTIAL は `linkHold: true` で best10 チップから撤去（8 本・全て VERIFIED）。型番末尾差（2616111/2616112 等）は **EHEIM Japan SKU と国際品番の差で入数・適合は同一**。2217-NEW（2217330）は国内ではろ材別売。EHEIM 投入順は最下段メック→粗目→サブストラット(プロ)→〔活性炭〕→細目で採用。
 - **追加候補 13 件（VERIFIED_ADD_CANDIDATE・PR #161 に実装）**: EHEIM 2211/2213/2215 の専用 粗目・細目パッド 6件、2213 活性炭パッド、2217 細目パッド、
   サブストラットプロ 1L、メック 1L、GEX 6090/2045 交換ろ材セット、Fluval FX Bio-Foam A239。全件 bare-ASIN 検索で `/dp/<ASIN>` を URL 照合。
 - **NOT_FOUND_AMAZON**: Fluval BIOMAX / Polishing Pad / Carbon Foam（A249）/ Bio-Foam 3枚（A228）。**CANDIDATE_FOUND_UNVERIFIED**: EHEIM 2217 粗目パッド（検索結果に価格付きで存在、`/dp/` URL 未取得）。
@@ -1314,7 +1331,13 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
-#### PR #161 の merge 可否（純正ろ材 13 件の新規 ASIN 追加・Owner 判断）
+#### 本PR（waterdish＋楽天ボタン修正）の merge 可否（新規 ASIN B00167XQLG を含む・Owner 判断）
+
+Actor は merge しない。確認点: ①レプティランプボウル LG を「飲み水・浅い水浴び（成体は飲み水用）」の用途表記で配線してよいか
+②`waterdish_sanko_dish` の setup-specs must（redfoot-a / forest-terrarium）を**商品なしの label 表示**へ落とすか、種別に容器サイズを明記する案内へ変えるか。
+**裁定が無いと**: tortoise-dry の must が url '#' のまま／best10 の楽天ボタンが 0 件のまま。
+
+#### （解消済み）PR #161 の merge 可否 — **Owner 指示（2026-09-08）により merge した（621b9fa）**
 
 Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実測値と確認点3つ
 （`filter_media` をキット非表示のまま best10 導線のみで運用するか／2213 活性炭パッドを導線に出すか／価格帯を空欄のままにするか）を記載済み。
@@ -1331,7 +1354,7 @@ Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実
 |---|---|---|---|---|
 | 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | DB は電球のみで灯具カテゴリが無い。review は汎用検索リンク | B00J58ROJS ライトドーム 14cm ≤75W／B07FHM2YKH ライトスタンド 53–89cm | 未着手 |
 | 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 該当カテゴリなし | B0GN1MFFPD テトラ NH3/NH4+／B002FBISEC 6in1（アンモニア非対応） | 未着手 |
-| `waterdish_sanko_dish` / `waterdish_zoomed_ramp_bowl` | setup-specs redfoot / forest / tortoise-dry の must | asin null・url `#` のまま must 表示 | 例: B00E0GLY96（ウォーターディッシュ L）／B005SYPZXU（XL）は dish-best10 既掲載 | search |
+| `waterdish_sanko_dish` | setup-specs redfoot-a / forest-terrarium の must | 該当商品なし（NOT_FOUND_EXACT_MATCH・本PRで名称是正） | REPTIZOO ウォーターディッシュ M は amazon.co.jp NOT_FOUND_AMAZON | pending |
 | 大型リクガメ用シェルター | tortoise_dry_large キット（空欄維持で CLOSE） | SP L2/XL/XXL とも成体（甲長40cm超）は不可（COMPLETED 参照） | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・不採用） | 再開条件のみ（COMPLETED） |
 
 #### （解消済み）ASIN の商品不一致10件 — **2026-09-08 に全件修正した**
@@ -1406,16 +1429,13 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### setup-specs が must 提示している水入れ2件（`waterdish_sanko_dish` / `waterdish_zoomed_ramp_bowl`）に実商品 ASIN を付ける
+### 灯具（ドーム・スタンド）2件の compatibility 確認と商品データ化
 
-**対象**: `data/products.js` の `waterdish_sanko_dish`・`waterdish_zoomed_ramp_bowl`（現状 `asin: null`・`affiliateUrl: '#'` のまま
-`data/setup-specs.js` redfoot-a / forest-terrarium / tortoise-dry の `extras` で must 表示）。
-**Scope**: 各エントリの商品名を手がかりに amazon.co.jp で候補を探し、`WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` で URL 照合できたものだけ採用。
-寸法（W×D×H・深さ）を販売店表記で確認し、対象甲長を `why` に明記する。判定状態は VERIFIED / CANDIDATE_FOUND_UNVERIFIED / PARTIALLY_EVALUATED /
-EVALUATED_INCONCLUSIVE / NOT_FOUND_AMAZON / NOT_FOUND_EXACT_MATCH / BLOCKED_EGRESS を厳密に使う。
-**変更禁止**: CAUTION 22 件／OK 156 件の ASIN／`dish-best10.html` の既存カード／`shindan/`／灯具・水質検査・ろ材（PR #161）。
-**完了条件**: 2件とも ASIN 付与か、NOT_FOUND_* で `setup-specs` の must を `label` 表示へ落とす案を Owner へ提示。
-ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
+**対象**: 識別済み候補 B00J58ROJS（EXO TERRA ライトドーム 14cm・≤75W）／B07FHM2YKH（GEX ライトスタンド 53–89cm）。Amazon identity は URL 照合済み（FIXED_FACTS）。
+**Scope**: メーカー適合（対応口金 E26・対応W数・対応ケージ幅・対応電球種）を一次資料または十分な型番証拠で確認し、`data/products.js` に category `fixture`（キット非表示）で追加。
+`uvb-light-review.html` 07/08 位の汎用検索リンクを実商品へ差し替えるかは Owner 判断項目として PR に記載。判定語（VERIFIED / PARTIAL / UNVERIFIED、AMAZON_IDENTITY_*）を厳密に使う。
+**変更禁止**: CAUTION 22／OK 157 の ASIN／ろ材 13 件／`shindan/`／best10 の既存カード。
+**完了条件**: 2件とも identity・compatibility が確定し、PARTIAL は導線に出さない。ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
 
 ## 更新ルール（作業終了時に必ず実施）
 
