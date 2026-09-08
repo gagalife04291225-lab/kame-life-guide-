@@ -34,18 +34,34 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **621b9fa**（PR #161 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | PR #159〜#162 は main 反映済み（ろ材13件は identity/compatibility 2軸で分離済み・VERIFIED 10 / PARTIAL 3）。本PRは waterdish 2件の解決（レプティランプボウル LG の ASIN 配線・存在しない「SANKO レプタイルディッシュ」の名称是正）＋ water-filter-best10 の楽天ボタン描画バグ修正。**新規 ASIN 1件を含むため Owner 判断で merge** |
+| 基準 | `origin/main` = **892bd9a**（PR #163 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | PR #159〜#163 は main 反映済み。本PRは灯具 2 件（category `fixture`・キット非表示）の商品データ追加＋コバエ対策の作業メモ `docs/fly-control-notes.md`。**新規 ASIN 2 件を含むため Owner 判断で merge** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/waterdish-rakuten-20260908`（本PR） |
+| 作業ブランチ | `claude/fixture-pest-20260908`（本PR） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### waterdish 2件の解決＋best10 楽天ボタン 0 件バグの修正（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+### 灯具 2 件の compatibility 判定＋コバエ対策用品の追加可否（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+
+**灯具（Amazon identity は 2026-09-08 照合済み・固定入力）**
+
+| 商品 | ASIN | compatibility | 要点 |
+|---|---|---|---|
+| GEX エキゾテラ ライトドーム 14cm PT2055 | B00J58ROJS | **PARTIAL**（linkHold） | E26／白熱球 75W まで／コンパクト UVB 26W まで／水銀灯（ソーラーグロー 80W・125W）不可／吊り下げ・直置き禁止／屋内専用。**セラミックヒーター可否と耐熱条件が GEX 公表値に無く未確認** → 導線に出さない |
+| GEX エキゾテラ ライトスタンド（高さ 53〜89cm） | B07FHM2YKH | **VERIFIED** | GEX 公式名「ライトドーム設置用スタンド」＝機種指定。据え置き（ケージ底面差し込み）。耐荷重は公表値なし（ライトドーム吊り下げ用途に限る） |
+
+category `fixture` はキット非表示で開始（UVB 球・バスキング球ごとに口金・W 数・耐熱を確認するまで自動配線しない）。
+`uvb-light-review.html` 08 位「直管用ライトスタンド・灯具」は T5 直管用なので本スタンドとは別物。**記事導線は今回追加していない**（Owner 判断）。
+
+**コバエ対策用品（P2・[`docs/fly-control-notes.md`](fly-control-notes.md)）**
+365nm UV 誘引式 電撃殺虫器: PRODUCT_TYPE_VERIFIED／実使用品の identity **NOT_FOUND_EXACT_MATCH**（画像から ASIN を推測しない）／USE_CASE_PARTIAL（ケージ外の成虫対策のみ・根本対策の代替ではない）→ **ASIN 追加なし**。
+採用時は category `accessory`（新カテゴリ不要）・optional・キット非表示。根本対策 6 項目／補助（黄色粘着トラップ・UV 殺虫器はケージ外）／禁止文言／掲載場所案（guide-moist / guide-arid の床材節 → substrate 系 → trouble）を整理済み。
+
+### waterdish 2件の解決＋best10 楽天ボタン 0 件バグの修正（2026-09-08 / PR #163 merge 892bd9a）— **再調査しない**
 
 **waterdish_zoomed_ramp_bowl → VERIFIED で ASIN 配線**
 Zoo Med レプティランプボウル LG（RRB-11・**B00167XQLG**・`/dp/` URL 照合）。外寸 約25.4×20.4×5.8cm（国内販売店表記）＝Zoo Med 公式 10×8×2.25in と一致。
@@ -1330,7 +1346,15 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
-#### 本PR（waterdish＋楽天ボタン修正）の merge 可否（新規 ASIN B00167XQLG を含む・Owner 判断）
+#### 本PR（灯具 2 件・新規 ASIN B00J58ROJS / B07FHM2YKH）の merge 可否（Owner 判断）
+
+Actor は merge しない。確認点: ①ライトドーム 14cm は PARTIAL（セラミックヒーター可否・耐熱条件未確認）のまま商品データだけ保持してよいか ②ライトスタンド（VERIFIED）を記事導線に出すか（出す場合の掲載先候補: `uvb-light-review.html` の灯具節を新設、または `cage-review`）③コバエ対策の掲載場所案（`docs/fly-control-notes.md` §4）のどれを採るか。
+
+#### （解消済み）PR #163 の merge 可否 — **Owner 指示（2026-09-08）により merge した（892bd9a）**
+
+レプティランプボウル LG は外寸ベースの甲長推定を削除（内寸未確認のため断定しない）。`waterdish_sanko_dish` は設備要件（`requirement: true`）として描画。楽天ボタン 20/20。**このDECISIONは閉じた。**
+
+#### （解消済み）旧 DECISION（waterdish＋楽天ボタン修正）
 
 Actor は merge しない。確認点: ①レプティランプボウル LG を「飲み水・浅い水浴び（成体は飲み水用）」の用途表記で配線してよいか
 ②`waterdish_sanko_dish` の setup-specs must（redfoot-a / forest-terrarium）を**商品なしの label 表示**へ落とすか、種別に容器サイズを明記する案内へ変えるか。
@@ -1351,7 +1375,7 @@ Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実
 
 | 候補 | 対象記事 | 既存で代用できない理由 | Amazon 候補（URL 照合済） | 楽天 |
 |---|---|---|---|---|
-| 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | DB は電球のみで灯具カテゴリが無い。review は汎用検索リンク | B00J58ROJS ライトドーム 14cm ≤75W／B07FHM2YKH ライトスタンド 53–89cm | 未着手 |
+| 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | 本PRで `fixture` として商品データ化（ドーム PARTIAL・スタンド VERIFIED）。記事導線と球との配線は未実施 | B00J58ROJS（PARTIAL・導線なし）／B07FHM2YKH（VERIFIED） | search |
 | 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 該当カテゴリなし | B0GN1MFFPD テトラ NH3/NH4+／B002FBISEC 6in1（アンモニア非対応） | 未着手 |
 | `waterdish_sanko_dish` | setup-specs redfoot-a / forest-terrarium の must | 該当商品なし（NOT_FOUND_EXACT_MATCH・本PRで名称是正） | REPTIZOO ウォーターディッシュ M は amazon.co.jp NOT_FOUND_AMAZON | pending |
 | 大型リクガメ用シェルター | tortoise_dry_large キット（空欄維持で CLOSE） | SP L2/XL/XXL とも成体（甲長40cm超）は不可（COMPLETED 参照） | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・不採用） | 再開条件のみ（COMPLETED） |
@@ -1428,13 +1452,13 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 灯具（ドーム・スタンド）2件の compatibility 確認と商品データ化
+### 水質検査薬 2 件の compatibility／用途確認と商品データ化（P1・giant-musk が推奨）
 
-**対象**: 識別済み候補 B00J58ROJS（EXO TERRA ライトドーム 14cm・≤75W）／B07FHM2YKH（GEX ライトスタンド 53–89cm）。Amazon identity は URL 照合済み（FIXED_FACTS）。
-**Scope**: メーカー適合（対応口金 E26・対応W数・対応ケージ幅・対応電球種）を一次資料または十分な型番証拠で確認し、`data/products.js` に category `fixture`（キット非表示）で追加。
-`uvb-light-review.html` 07/08 位の汎用検索リンクを実商品へ差し替えるかは Owner 判断項目として PR に記載。判定語（VERIFIED / PARTIAL / UNVERIFIED、AMAZON_IDENTITY_*）を厳密に使う。
-**変更禁止**: CAUTION 22／OK 157 の ASIN／ろ材 13 件／`shindan/`／best10 の既存カード。
-**完了条件**: 2件とも identity・compatibility が確定し、PARTIAL は導線に出さない。ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
+**対象**: identity 照合済みの B0GN1MFFPD（テトラ テスト NH3/NH4+ 25枚）／B002FBISEC（テトラテスト 6in1 25枚・アンモニア非対応）。再検索しない。
+**Scope**: 測定項目・淡水/汽水対応・判定色表・保存条件をメーカー公表値（販売店転載可）で確認し、`data/products.js` に category `water_test`（キット非表示）で追加。
+`species/giant-musk-turtle.html` の「アンモニア試薬」記述に対する導線は Owner 判断項目として PR に記載。汽水（テラピン）で使えるかは別途確認し、不明なら PARTIAL。
+**変更禁止**: CAUTION 22／OK 159 の ASIN／ろ材・灯具・waterdish の既存エントリ／`shindan/`。
+**完了条件**: 2 件の identity・compatibility（測定項目・対応水）が確定し、PARTIAL は導線に出さない。ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
 
 ## 更新ルール（作業終了時に必ず実施）
 
