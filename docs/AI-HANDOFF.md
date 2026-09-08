@@ -34,16 +34,58 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **c73c15d**（PR #154 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | 本PRで species 112ページに終生サイズ導線を追加、★難易度表記を全廃、種数表記を統一（`data/products.js` は無変更） |
+| 基準 | `origin/main` = **8620d27**（PR #158 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | 本PR（#159）はシェルター・水入れの対象サイズ文言修正＋テラピン3種の汽水ガイド導線のみ（ASIN 集合は main と同一）。ASIN 差し替え・配線変更は **PR #160（Owner 判断・merge 保留）** に分離 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/kame-product-card-research-bfdzs0` |
+| 作業ブランチ | `claude/product-gap-audit-20260908`（#159）／`claude/product-gap-asin-20260908`（#160） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 商品不足監査 — 記事の必要用品 × `data/products.js` の照合（2026-09-08 / PR #159・#160）— **再監査しない**
+
+**監査対象**: species 113 / guide 8 / best10 13 / shindan / `data/setup-specs.js` の推奨・必須用品と
+`data/products.js`（104商品・12カテゴリ）＋ `EQUIPMENT_MAP`（8キット）の突き合わせ。
+Amazon 164 ASIN の実在照合は完了済み（下記 PR #158）で**再監査していない**。CAUTION 22 も触っていない。
+
+**判定結果（固定）**
+
+| 区分 | 件数 | 内容 |
+|---|---|---|
+| P0 記事と商品用途が食い違い（誤購入リスク） | 5 | ①dish-best10 のエサ皿 PT2812 枠が水入れ M と同一 ASIN（B004HT2ZTO）／スドー岩石皿 S・M が GEX の ASIN を流用 ②dish-best10 水入れ M（12.4×9.5×3.5cm）を「甲長20cm成体が全身入る」と記述 ③幼体用シェルター（SP S / SP ML / モイストシェルター）が成体キットに配線 ④タートルバンク S（適合〜40cm水槽）を 60〜90cm 水槽の setup-specs で must ⑤shelter-best10 ケイブ S/M を「ハコガメ成体」対応と記述 |
+| P1 必須用品なのに導線なし | 4 | 灯具（ソケット・スタンド）が DB に無い／水質検査薬（giant-musk が推奨）が無い／`waterdish_*` が asin null・url `#`／テラピン3ページに汽水ガイド導線なし／`tortoise_dry_large` に成体が入るシェルターが無い |
+| P2 収益・利便性 | 3 | shindan 結果画面から best10 へのリンク 0／タートルバンク M カードに寸法なし／脱走防止フタ（setup-specs が自ら missing と宣言） |
+| NO ADD | — | カルキ抜き（淡水の中和をサイトが指示していない・ReptiSafe 既存）／サーモスタット・温度計・カルシウム・水中ヒーター（既存商品で充足）／霧吹き・ピンセット・タイマー（汎用品）／産卵床・落ち葉（商品化不要） |
+
+**実施した修正**
+
+- **PR #159（文言のみ・5条件充足で merge）**: `data/products.js` の shelter 5件の `why`（ASIN 付き商品の `name` は据え置き）／
+  `dish-best10.html` 水入れ M の対象を「幼体〜亜成体・成体は飲み水用」へ／`shelter-best10.html` ケイブ S・M の対象を実寸へ／
+  `species/{carolina,northern,ornate}-diamondback-terrapin.html` に `guide-brackish.html` の rel-btn を追加。
+  実測: tag 272→272・GA4 410→410・ASIN 集合同一・audit-asin exit 0・Playwright 7ページ PASS。
+- **PR #160（ASIN 変更を含む・Owner 判断で merge）**: PT2812 枠 B004HT2ZTO→**B004NRABB4**（URL 照合済）／
+  岩石皿 S・M は Amazon 上 NOT FOUND のため tag 付き検索リンクへ／`EQUIPMENT_MAP`: `tortoise_dry_large.shelter.budget` を null、
+  `tortoise_forest`・`box_turtle` の `shelter.premium`（モイストシェルター）を null／`shelter_turtle_dock_m`
+  （タートルバンク M PT3801・B00O0QM6H0＝shelter-best10 既掲載）を追加し setup-specs 4種の must を M へ／CSV 同期（OK 143 / CAUTION 22 / NE 0）。
+
+**NOT FOUND（推測で ASIN を作らなかった）**: スドー 岩石皿 S・M／T5 直管用灯具（単体 ASIN）／18cm・150W ライトドーム（URL に ASIN が出ず）。
+**未実装の候補**（DECISION に移した）: 灯具カテゴリ（B00J58ROJS ライトドーム 14cm・B07FHM2YKH ライトスタンド 53–89cm）、
+水質検査（B0GN1MFFPD テトラ NH3/NH4+・B002FBISEC テトラ 6in1〔アンモニア無し〕）、`waterdish_*` の ASIN 付与。
+
+### ASIN 検証の恒久運用と NOT EVALUATED 22件の解消（2026-09-08 / PR #156・#157・#158）— **再実行しない**
+
+- **PR #156**: `kids/fushigi.html` 見出し「😴 カメも ねるの？」→「😴 カメさんも ねるの？」。
+- **PR #157**: `scripts/audit-asin.mjs`（オフライン構造監査 NEW/REMOVED/RENAMED/NO_TAG/DUP/STALE、`--write` で CSV 同期、exit 0/1/2）と
+  `.github/workflows/asin-audit.yml`（**月・金 09:00 JST**。差分があれば Issue を作成/更新、無ければ close）。
+  Amazon 実在照合は Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（**月・金 10:00 JST**・初回 2026-09-11）が WebSearch で行う。
+  Routine から GitHub MCP が使えるかは初回実行まで未確認（プロンプトに git-only フォールバックを記載済み）。
+- **PR #158**: NOT EVALUATED 22件を `WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` 方式で再照合し **NE 0** にした。
+  表記修正4件: `food_dried_shrimp`→キョーリン カメのごほうび 乾燥川エビ 12g×3／`supplement_electrolyte`→Zoo Med レプティセーフ／
+  `substrate_coco`→ジクラ 万能ヤシガラマット 細目 8L（楽天は 1L 商品だったため `search` へ降格）／`shelter_bark_hide`→Zoo Med 天然コルクバーク ラウンド M。
+  結果 **OK 142 / CAUTION 22 / NOT EVALUATED 0**。
 
 ### 信頼性修正＋収益導線強化＋ASIN実測検証（2026-09-08 / 本PR）— **再監査しない**
 
@@ -766,6 +808,34 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### シェルター・陸場・水入れの実寸と対象（2026-09-08 確定 / 再測定しない）
+
+寸法はメーカー・販売店の公表値（WebSearch: cainz / charm / w-monster）。**「入れる／入れない」はこの実寸から判定した固定入力。**
+
+| 商品 | ASIN | 実寸（W×D×H） | 対象 |
+|---|---|---|---|
+| スドー ロックシェルターSP S | B07F3Q7L3Y | 約9.3×11×4.7cm | **幼体専用**（甲長6cm前後まで）。成体リクガメ・ヤマガメ・ハコガメは不可 |
+| スドー ロックシェルターSP ML | B07F3L16ZR | 約13×17×8cm | 幼体〜亜成体（甲長10cm前後まで）。ヘルマン・ギリシャ成体、大型リクガメ、成体ハコガメは不可 |
+| スドー SP L2 / XL / XXL | 未掲載 | 17.5×16.5×10.5 / 19×21.3×12.5 / 29×26×15.5cm | 成体向けの候補サイズ（DB 未登録） |
+| GEX レプタイルケイブ S | B004KUYSH2 | 17×9×5.5cm | ヤマガメ・ハコガメの**幼体**（甲長8cm前後まで） |
+| GEX レプタイルケイブ M | B00E0GM8JG | 23.5×15×6.5cm | スペングラー成体（甲高が低い）・ハコガメ**亜成体**まで。成体ハコガメ（甲長13cm超）は高さ不足 |
+| GEX モイストシェルター コーナー130 | B08W2ZKT94 | 13×13×9.5cm・**入口 5×3.5cm** | ヤモリ向け。**カメは入れない**（加湿容器としてのみ） |
+| GEX タートルバンク S PT3800 | B00O0QMK2Q | 16.6×12.4×3.3cm | **適合〜幅40cm水槽** |
+| GEX タートルバンク M PT3801 | B00O0QM6H0 | 29.8×17.8×5.4cm | 幅45〜60cm水槽 |
+| GEX ウォーターディッシュ M PT2802 | B004HT2ZTO | 12.4×9.5×3.5cm | 全身が入るのは甲長10cm前後まで。成体は飲み水用 |
+| ビバリア ピタッとランド L | B07SFCGCP1 | 寸法未取得（レビューで甲長15cm 可） | — |
+| Zoo Med コルクバーク ラウンド M / 木製隠れ家 | — | **NOT EVALUATED** | — |
+
+キットの対象甲長（`shindan/species.js` の `size` 実測）: tortoise_dry_small 17–35cm／tortoise_dry_large 65–120cm／
+tortoise_forest 11–40cm／box_turtle 15–22cm／semi_aquatic_small 11–27cm／semi_aquatic_medium 9–60cm／japanese_pond 20cm／fully_aquatic 45–55cm。
+
+**Amazon 上で NOT FOUND**（ASIN を作らない）: スドー 岩石皿 S・M／T5 直管用灯具の単体 ASIN／18cm・150W ライトドーム。
+**URL 照合済みで未採用の候補**: B004NRABB4（フィーディングディッシュ M PT2812・PR #160 で採用）／B00J58ROJS（ライトドーム 14cm ≤75W）／
+B07FHM2YKH（GEX ライトスタンド 53–89cm）／B002FBISEC（テトラテスト 6in1・アンモニア無し）／B0GN1MFFPD（テトラ NH3/NH4+）。
+
+**ASIN 照合の方式（固定）**: `WebSearch(query="<ASIN>", allowed_domains=["amazon.co.jp"])` で結果 URL に `/dp/<ASIN>` を含むものだけを一致とする。
+旧方式（`amazon.co.jp/dp/<ASIN>` を文字列検索）は命中率が低く使わない。
+
 ### 項目ごとの正本（2026-09-07 確定・N30 / 再検討しない）
 
 | 項目 | 正本 | 根拠 |
@@ -1192,6 +1262,21 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
+#### PR #160 の merge 可否（ASIN 差し替え・配線変更・Owner 判断）
+
+Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実測値と確認点3つ
+（`tortoise_dry_large` のシェルターを空にする可否／岩石皿 S・M を検索リンクで残すか削除するか／タートルバンク M の価格帯）を記載済み。
+**裁定が無いと**: dish-best10 の PT2812 枠が水入れ M へ誘導し続け、60cm 水槽向けセットアップが〜40cm 用の浮島を must 表示し続ける。
+
+#### 商品不足監査で見つかった P1 候補の採否（Owner 判断・**商品を増やすための追加はしない**）
+
+| 候補 | 対象記事 | 既存で代用できない理由 | Amazon 候補（URL 照合済） | 楽天 |
+|---|---|---|---|---|
+| 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | DB は電球のみで灯具カテゴリが無い。review は汎用検索リンク | B00J58ROJS ライトドーム 14cm ≤75W／B07FHM2YKH ライトスタンド 53–89cm | 未着手 |
+| 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 該当カテゴリなし | B0GN1MFFPD テトラ NH3/NH4+／B002FBISEC 6in1（アンモニア非対応） | 未着手 |
+| `waterdish_sanko_dish` / `waterdish_zoomed_ramp_bowl` | setup-specs redfoot / forest / tortoise-dry の must | asin null・url `#` のまま must 表示 | 例: B00E0GLY96（ウォーターディッシュ L）／B005SYPZXU（XL）は dish-best10 既掲載 | search |
+| 大型リクガメ用シェルター | tortoise_dry_large キット（PR #160 で空欄化） | SP ML では成体に入らない | スドー SP L2 / XL / XXL の ASIN は**未照合** | 未着手 |
+
 #### （解消済み）ASIN の商品不一致10件 — **2026-09-08 に全件修正した**
 
 Owner 指示「信用問題になるのでしっかり調べてすぐ直して」により、判断待ちにせず即日修正した。
@@ -1258,14 +1343,14 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### ASIN CAUTION 21件の整理
+### PR #160 の Owner 裁定を受けて、大型リクガメ（`tortoise_dry_large`）向けシェルターの実商品を1件確定する
 
-**対象**: `docs/asin-audit.csv` の `検証状態=CAUTION` 21件。
-**Scope**: 内訳は (a) 在庫切れ・入荷待ち 8件 (b) 型番・数量・ブランドラインの表記不足 9件
-(c) 同一製品に複数ASINを併用 2件 (d) 汎用名で商品を特定できない 2件。
-(b)(d) はサイト表記を実商品に合わせる。(a) は代替品の要否を判断する。(c) はどちらかへ寄せる。
-**変更禁止**: `検証状態=OK` の121件には触れないこと。NOT EVALUATED 22件を推測で埋めないこと。
-**完了条件**: CAUTION が 0 件になるか、残るものに理由と再開条件が付いていること。
+**対象**: `data/products.js` の `shelter_cave_lg`（asin null・pending）を実商品へ置き換えるか、新エントリを追加する。
+**Scope**: 候補はスドー ロックシェルターSP L2 / XL / XXL（実寸は FIXED_FACTS）。ASIN は
+`WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` で URL 照合できたものだけを採用し、`EQUIPMENT_MAP.tortoise_dry_large.shelter` に配線する。
+**変更禁止**: CAUTION 22 件（Routine 側）／OK 143 件の ASIN／PR #160 で Owner が裁定した箇所／`shindan/`。
+**完了条件**: 対象キットに成体（甲長20cm以上）が入る実寸のシェルターが1件表示され、audit-asin exit 0・tag/GA4 出現数の差分が追加分だけであること。
+ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
 
 ## 更新ルール（作業終了時に必ず実施）
 
