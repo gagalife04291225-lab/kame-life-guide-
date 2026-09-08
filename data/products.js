@@ -1327,7 +1327,7 @@ const PRODUCTS = {
 
   substrate_coco: {
     id: 'substrate_coco',
-    name: 'ヤシガラ（ブリック）',
+    name: 'ジクラ 万能ヤシガラマット 細目 8L',
     category: 'substrate',
     tier: 'budget',
     priceRange: '¥800–2,000',
@@ -1338,13 +1338,13 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenSearchTerm: 'ヤシガラ 爬虫類 床材',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00tfofn.nhbnnfd1.g00tfofn.nhbno9c2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-faith%2Fyashigara1l%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fb-faith%2Fi%2F10001480%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
-    rakutenItemCode: 'b-faith:10001480',
-    rakutenPrice: 698,
-    rakutenShop: '雑貨イズム',
-    rakutenConfidence: 8.3,
+    rakutenSearchTerm: 'ジクラ 万能ヤシガラマット 細目',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: null,
     rakutenLastUpdated: '2026-08-29',
   },
 
@@ -1577,7 +1577,7 @@ const PRODUCTS = {
 
   shelter_bark_hide: {
     id: 'shelter_bark_hide',
-    name: 'コルクバーク（丸太）',
+    name: 'Zoo Med 天然コルクバーク ラウンド M（3パック）',
     category: 'shelter',
     tier: 'standard',
     priceRange: '¥1,500–4,000',
@@ -1588,7 +1588,7 @@ const PRODUCTS = {
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_forest', 'box_turtle'],
-    rakutenSearchTerm: 'コルクバーク 爬虫類 シェルター',
+    rakutenSearchTerm: 'Zoo Med コルクバーク ラウンド 爬虫類',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -2037,7 +2037,7 @@ const PRODUCTS = {
 
   food_dried_shrimp: {
     id: 'food_dried_shrimp',
-    name: '乾燥エビ（ひかりFD）',
+    name: 'キョーリン カメのごほうび 乾燥川エビ 12g×3個',
     category: 'food',
     tier: 'budget',
     priceRange: '¥300–800',
@@ -2048,7 +2048,7 @@ const PRODUCTS = {
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'beginner'],
-    rakutenSearchTerm: '乾燥エビ 亀 おやつ ひかり',
+    rakutenSearchTerm: 'キョーリン カメのごほうび 乾燥川エビ',
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenItemCode: null,
@@ -2327,20 +2327,20 @@ const PRODUCTS = {
 
   supplement_electrolyte: {
     id: 'supplement_electrolyte',
-    name: 'エレクトロライト（電解質補給）',
+    name: 'Zoo Med レプティセーフ 水質調整剤（電解質配合）',
     category: 'supplements',
     tier: 'premium',
     priceRange: '¥1,800–4,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B000N5O6WA?tag=kamelife09-22',
     asin: 'B000N5O6WA',
     image: '/assets/products/placeholder.webp',
-    why: '脱水・拒食・回復期のカメの電解質補充に。温浴水や直接投与で使用',
+    why: '飼育水・温浴水のカルキ抜き。電解質を含み、水換えのたびに水に加えて使う',
     rating: 4.5,
     badge: null,
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'エレクトロライト 爬虫類 電解質',
+    rakutenSearchTerm: 'ゾーメッド レプティセーフ 水質調整剤',
   },
 
   supplement_mineral_block: {
