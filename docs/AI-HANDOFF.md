@@ -34,16 +34,60 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **8620d27**（PR #158 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | 本PR（#159）はシェルター・水入れの対象サイズ文言修正＋テラピン3種の汽水ガイド導線のみ（ASIN 集合は main と同一）。ASIN 差し替え・配線変更は **PR #160（Owner 判断・merge 保留）** に分離 |
+| 基準 | `origin/main` = **6e6f7ea**（PR #160 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | PR #159（文言）・PR #160（ASIN 修正・タートルバンク M・配線）は main 反映済み。本PRは docs のみ（大型シェルター CLOSE 記録＋ `docs/filter-media-map.md`）。ろ材13件の追加は **PR #161（Owner 判断・merge 保留）** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/product-gap-audit-20260908`（#159）／`claude/product-gap-asin-20260908`（#160） |
+| 作業ブランチ | `claude/handoff-filter-media-20260908`（本PR）／`claude/filter-media-20260908`（#161） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 外部フィルター対応ろ材監査 — 7機種 × 純正ろ材の 1 対 1 対応（2026-09-08 / PR #161・本PR）— **再監査しない**
+
+**対応表・判定根拠・未確定項目の正本は [`docs/filter-media-map.md`](filter-media-map.md)。** ここには結論だけ置く。
+
+- **対象機種（現 main 実測）**: EHEIM クラシック 2211（best10）/ 2213（best10・review・filter-guide・products.js）/ 2215（best10・products.js）/ 2217（products.js）、
+  GEX メガパワー 2045（best10）/ 6090（best10・review・products.js）、Fluval FX6（products.js）。本体 ASIN は再照合していない。
+- **判定**: 初期ろ材は全機種「本体セットに付属」で NO_ADD_NEEDED。**交換パッド・補充生物ろ材の導線は全機種 0 件 → P1_MISSING_REPLACEMENT_PAD / P1_MISSING_MEDIA**。
+- **追加候補 13 件（VERIFIED_ADD_CANDIDATE・PR #161 に実装）**: EHEIM 2211/2213/2215 の専用 粗目・細目パッド 6件、2213 活性炭パッド、2217 細目パッド、
+  サブストラットプロ 1L、メック 1L、GEX 6090/2045 交換ろ材セット、Fluval FX Bio-Foam A239。全件 bare-ASIN 検索で `/dp/<ASIN>` を URL 照合。
+- **NOT_FOUND_AMAZON**: Fluval BIOMAX / Polishing Pad / Carbon Foam（A249）/ Bio-Foam 3枚（A228）。**CANDIDATE_FOUND_UNVERIFIED**: EHEIM 2217 粗目パッド（検索結果に価格付きで存在、`/dp/` URL 未取得）。
+- **BLOCKED_EGRESS**: eheim.jp / product.gex-fp.co.jp / fluvalaquatics.com / charm / rva / minatodenki / aquatailors / w-monster / topcreate / aquahermit。
+  付属ろ材の内訳容量（MECH/SUBSTRAT の L 数）と取説の順番図は未確認 → PARTIALLY_EVALUATED。Owner 提示の「2213: MECH 1L + SUBSTRATpro 2L」等は**採用せず未確認のまま記録**。
+- **順番（メーカー水流）**: EHEIM クラシック＝下→上（メック／粗目 → サブストラット(プロ) → 細目 →〔必要時〕活性炭）／GEX メガパワー＝フルボトムアップ（下→上・順番図は未確認）／
+  Fluval FX6＝側面3段フォーム → バスケット上（物理）→ 中（生物 BIOMAX）→ 下（化学・必要時）。EHEIM 用ろ材を FX6 に流用しない。
+- **仕様変更（eheim.jp 抜粋）**: 2211 は 2025-04、2215 は 2025-09 に付属生物ろ材がサブストラットプロ → サブストラットへ変更。
+- **実装（PR #161・merge 保留）**: `data/products.js` に category `filter_media`（キット非表示）13件、`water-filter-best10.html` の 5 カードに「対応ろ材（純正）」チップ、CSV 同期（OK 156 / CAUTION 22 / NE 0）。
+  実測: tag 275→288（全て tag 付き）・GA4 410・audit-asin exit 0・Playwright 3 ページ PASS。
+
+### 大型リクガメ（`tortoise_dry_large`）用シェルターの実商品確定 — **NOT_FOUND_EXACT_MATCH で CLOSE**（2026-09-08 / 本PR）— **再探索しない**
+
+**前提**: PR #160（merge 6e6f7ea）で `EQUIPMENT_MAP.tortoise_dry_large.shelter` を `{budget:null, standard:null, premium:null}` にした。
+本工程はその空欄を埋める実商品1件の確定。既存シェルターの実寸監査は再実施していない（FIXED_FACTS を固定入力）。
+
+**キットの対象種（実測）**: `species/sulcata-tortoise.html`（ケヅメ・成体80cm超）／`species/leopard-tortoise.html`（ヒョウモン）／
+`species/aldabra-tortoise.html`（アルダブラ・甲長60cm超）。いずれも**成体は甲長40cm以上**。
+
+**候補3件の照合**（ASIN は `WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` で `/dp/<ASIN>` を URL 照合）
+
+| 候補 | ASIN | 正式商品名（Amazon） | 外寸 W×D×H | 入口幅・高さ | 内部有効 | 対象最大甲長（外寸からの推定） | 65〜120cm級への適合 | 判定 |
+|---|---|---|---|---|---|---|---|---|
+| スドー ロックシェルターSP L2 | **B07F3RVTXP** | SUDO(スドー) ハープクラフト ロックシェルターSP L2 RX-195 | 17.5×16.5×10.5cm（FIXED_FACTS。Amazon 掲載値も同一） | BLOCKED_EGRESS | EVALUATED_INCONCLUSIVE | 約10cm | 不可 | **PARTIALLY_EVALUATED**（成体大型種には NOT_FOUND_EXACT_MATCH） |
+| スドー ロックシェルターSP XL | **B07F3SR326** | SUDO(スドー) ハープクラフト ロックシェルターSP XL RX-196 | 19×21.3×12.5cm（FIXED_FACTS） | BLOCKED_EGRESS | EVALUATED_INCONCLUSIVE | 約12cm | 不可 | **PARTIALLY_EVALUATED**（同上） |
+| スドー ロックシェルターSP XXL | **B07F49T8N2** | SUDO(スドー) ハープクラフト ロックシェルターSP XXL RX-197 | 29×26×15.5cm（FIXED_FACTS。Amazon・ワイルドモンスター掲載値も同一） | BLOCKED_EGRESS | EVALUATED_INCONCLUSIVE | 約18cm | 不可 | **PARTIALLY_EVALUATED**（同上） |
+
+- 入口寸法はメーカー（sudo.jp）・販売店（w-monster.com / topcreate.jp）が **egress ポリシーで到達不可**。検索インデックスにも記載なし。**「入口不明」であり「入口が無い」ではない。**
+- 外寸だけで「入れる」とは判定していない。最大の XXL でも外寸高さ 15.5cm・奥行 26cm で、甲長40cm以上の成体が**入口を通る余地が物理的に無い**。
+  成功条件「成体大型リクガメが実際に使える根拠がある商品1件」は満たせない。
+
+**結論**: `tortoise_dry_large.shelter = null` を**維持**。`data/products.js` は変更していない（ASIN 追加なし）。
+
+**再開条件**: ①成体大型リクガメ向けの市販シェルター（目安: 内寸 W50×D40×H25cm 以上）の実商品が amazon.co.jp で URL 照合できたとき
+②Owner が「幼体〜亜成体（甲長18cm まで）限定」と明記したうえで XXL（B07F49T8N2）を `tortoise_dry_large.shelter.budget` に置く判断をしたとき。
+どちらも**能動的な定期探索は行わない**。
 
 ### 商品不足監査 — 記事の必要用品 × `data/products.js` の照合（2026-09-08 / PR #159・#160）— **再監査しない**
 
@@ -808,6 +852,14 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 外部フィルター × 純正ろ材の対応（2026-09-08 確定 / 再照合しない）
+
+正本は [`docs/filter-media-map.md`](filter-media-map.md)。URL 照合済み ASIN（13件）:
+2211 粗目 B004WI1I02 / 細目 B004WI1I1G ／ 2213 粗目 B004WI233I / 細目 B004FLGIGK / 活性炭 B004WI234M ／ 2215 粗目 B0014FKJNS / 細目 B0014FIOLM ／
+2217 細目 B00E0GLA04 ／ サブストラットプロ 1L B005G0OUSW ／ メック 1L B075VM8C5P ／ GEX 6090 セット B076MDP7WD ／ GEX 2045 セット B077N2ZDLN ／ Fluval Bio-Foam A239 B00D6DRSK8。
+**NOT_FOUND_AMAZON**: Fluval BIOMAX / Polishing / Carbon A249 / Bio-Foam A228。**CANDIDATE_FOUND_UNVERIFIED**: EHEIM 2217 粗目パッド。
+**BLOCKED_EGRESS（再試行しない）**: eheim.jp / product.gex-fp.co.jp / fluvalaquatics.com / shopping-charm.jp / rva.jp / minatodenki-online.jp / aquatailors.jp / w-monster.com / topcreate.jp / aquahermit.com / sudo.jp。
+
 ### シェルター・陸場・水入れの実寸と対象（2026-09-08 確定 / 再測定しない）
 
 寸法はメーカー・販売店の公表値（WebSearch: cainz / charm / w-monster）。**「入れる／入れない」はこの実寸から判定した固定入力。**
@@ -816,7 +868,7 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 |---|---|---|---|
 | スドー ロックシェルターSP S | B07F3Q7L3Y | 約9.3×11×4.7cm | **幼体専用**（甲長6cm前後まで）。成体リクガメ・ヤマガメ・ハコガメは不可 |
 | スドー ロックシェルターSP ML | B07F3L16ZR | 約13×17×8cm | 幼体〜亜成体（甲長10cm前後まで）。ヘルマン・ギリシャ成体、大型リクガメ、成体ハコガメは不可 |
-| スドー SP L2 / XL / XXL | 未掲載 | 17.5×16.5×10.5 / 19×21.3×12.5 / 29×26×15.5cm | 成体向けの候補サイズ（DB 未登録） |
+| スドー SP L2 / XL / XXL | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・DB 未登録） | 17.5×16.5×10.5 / 19×21.3×12.5 / 29×26×15.5cm | 外寸から甲長 約10 / 12 / 18cm まで。入口寸法は BLOCKED_EGRESS。**成体大型リクガメ（甲長40cm超）は3件とも不可** |
 | GEX レプタイルケイブ S | B004KUYSH2 | 17×9×5.5cm | ヤマガメ・ハコガメの**幼体**（甲長8cm前後まで） |
 | GEX レプタイルケイブ M | B00E0GM8JG | 23.5×15×6.5cm | スペングラー成体（甲高が低い）・ハコガメ**亜成体**まで。成体ハコガメ（甲長13cm超）は高さ不足 |
 | GEX モイストシェルター コーナー130 | B08W2ZKT94 | 13×13×9.5cm・**入口 5×3.5cm** | ヤモリ向け。**カメは入れない**（加湿容器としてのみ） |
@@ -1262,11 +1314,16 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
-#### PR #160 の merge 可否（ASIN 差し替え・配線変更・Owner 判断）
+#### PR #161 の merge 可否（純正ろ材 13 件の新規 ASIN 追加・Owner 判断）
 
 Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実測値と確認点3つ
-（`tortoise_dry_large` のシェルターを空にする可否／岩石皿 S・M を検索リンクで残すか削除するか／タートルバンク M の価格帯）を記載済み。
-**裁定が無いと**: dish-best10 の PT2812 枠が水入れ M へ誘導し続け、60cm 水槽向けセットアップが〜40cm 用の浮島を must 表示し続ける。
+（`filter_media` をキット非表示のまま best10 導線のみで運用するか／2213 活性炭パッドを導線に出すか／価格帯を空欄のままにするか）を記載済み。
+**裁定が無いと**: 外部フィルター 7 機種の交換パッド・補充ろ材の購入導線が 0 件のまま。
+
+#### （解消済み）PR #160 の merge 可否 — **Owner 指示（2026-09-08）により merge した（6e6f7ea）**
+
+岩石皿 S/M は検索リンクのまま・ボタン文言を「Amazonで検索」へ変更、`tortoise_dry_large.shelter = null` 維持、
+タートルバンク M（B00O0QM6H0・`priceRange: ''`）採用、PT2812 枠 B004NRABB4。**このDECISIONは閉じた。**
 
 #### 商品不足監査で見つかった P1 候補の採否（Owner 判断・**商品を増やすための追加はしない**）
 
@@ -1275,12 +1332,18 @@ Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実
 | 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | DB は電球のみで灯具カテゴリが無い。review は汎用検索リンク | B00J58ROJS ライトドーム 14cm ≤75W／B07FHM2YKH ライトスタンド 53–89cm | 未着手 |
 | 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 該当カテゴリなし | B0GN1MFFPD テトラ NH3/NH4+／B002FBISEC 6in1（アンモニア非対応） | 未着手 |
 | `waterdish_sanko_dish` / `waterdish_zoomed_ramp_bowl` | setup-specs redfoot / forest / tortoise-dry の must | asin null・url `#` のまま must 表示 | 例: B00E0GLY96（ウォーターディッシュ L）／B005SYPZXU（XL）は dish-best10 既掲載 | search |
-| 大型リクガメ用シェルター | tortoise_dry_large キット（PR #160 で空欄化） | SP ML では成体に入らない | スドー SP L2 / XL / XXL の ASIN は**未照合** | 未着手 |
+| 大型リクガメ用シェルター | tortoise_dry_large キット（空欄維持で CLOSE） | SP L2/XL/XXL とも成体（甲長40cm超）は不可（COMPLETED 参照） | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・不採用） | 再開条件のみ（COMPLETED） |
 
 #### （解消済み）ASIN の商品不一致10件 — **2026-09-08 に全件修正した**
 
 Owner 指示「信用問題になるのでしっかり調べてすぐ直して」により、判断待ちにせず即日修正した。
 記録は COMPLETED 側にある。**このDECISIONは閉じた。**
+
+### 新発見（2026-09-08・今回は着手しない）
+
+- **`water-filter-best10.html` の「楽天で探す」ボタンが 0 件描画**（main 実測・Playwright）。生成 JS が `.item-body` 内の `h3` を探すが、
+  `h3` は `.item-head` にあるため常に return する。修正は `item.closest('.item')` 等で `h3` を引く 1 行だが、unrelated のため未着手。
+  楽天導線の実装方針（R1〜R3 HOLD）と合わせて判断する。
 
 ### 新発見（2026-09-07・今回は着手しない）
 
@@ -1343,13 +1406,15 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### PR #160 の Owner 裁定を受けて、大型リクガメ（`tortoise_dry_large`）向けシェルターの実商品を1件確定する
+### setup-specs が must 提示している水入れ2件（`waterdish_sanko_dish` / `waterdish_zoomed_ramp_bowl`）に実商品 ASIN を付ける
 
-**対象**: `data/products.js` の `shelter_cave_lg`（asin null・pending）を実商品へ置き換えるか、新エントリを追加する。
-**Scope**: 候補はスドー ロックシェルターSP L2 / XL / XXL（実寸は FIXED_FACTS）。ASIN は
-`WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` で URL 照合できたものだけを採用し、`EQUIPMENT_MAP.tortoise_dry_large.shelter` に配線する。
-**変更禁止**: CAUTION 22 件（Routine 側）／OK 143 件の ASIN／PR #160 で Owner が裁定した箇所／`shindan/`。
-**完了条件**: 対象キットに成体（甲長20cm以上）が入る実寸のシェルターが1件表示され、audit-asin exit 0・tag/GA4 出現数の差分が追加分だけであること。
+**対象**: `data/products.js` の `waterdish_sanko_dish`・`waterdish_zoomed_ramp_bowl`（現状 `asin: null`・`affiliateUrl: '#'` のまま
+`data/setup-specs.js` redfoot-a / forest-terrarium / tortoise-dry の `extras` で must 表示）。
+**Scope**: 各エントリの商品名を手がかりに amazon.co.jp で候補を探し、`WebSearch("<ASIN>", allowed_domains=["amazon.co.jp"])` で URL 照合できたものだけ採用。
+寸法（W×D×H・深さ）を販売店表記で確認し、対象甲長を `why` に明記する。判定状態は VERIFIED / CANDIDATE_FOUND_UNVERIFIED / PARTIALLY_EVALUATED /
+EVALUATED_INCONCLUSIVE / NOT_FOUND_AMAZON / NOT_FOUND_EXACT_MATCH / BLOCKED_EGRESS を厳密に使う。
+**変更禁止**: CAUTION 22 件／OK 156 件の ASIN／`dish-best10.html` の既存カード／`shindan/`／灯具・水質検査・ろ材（PR #161）。
+**完了条件**: 2件とも ASIN 付与か、NOT_FOUND_* で `setup-specs` の must を `label` 表示へ落とす案を Owner へ提示。
 ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
 
 ## 更新ルール（作業終了時に必ず実施）
