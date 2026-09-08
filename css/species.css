@@ -128,9 +128,9 @@
   .decision-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
   .decision-list li{font-size:.88rem;line-height:1.55;color:#3a4a40;}
   .decision-box-avoid .decision-list li{color:#5a5a5a;}
-  .diff-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
-  .diff-badge-stars{color:var(--accent);letter-spacing:.05em;}
-  .diff-badge-label{color:#6b5c42;font-weight:400;font-size:.75rem;margin-left:4px;}
+  .diff-badge{display:inline-flex;align-items:center;gap:2px;background:#fff;border:1.5px solid #d4c9a8;border-radius:10px;padding:8px 14px;margin:16px 0 0;font-size:.82rem;font-weight:700;color:var(--forest);}
+  /* Phase 34A: 難易度の星表記は廃止。文字表記（入門／入門〜中級／中級／中〜上級／上級）に一本化 */
+  .diff-badge-label{color:var(--forest);font-weight:700;font-size:.82rem;}
 
 .species-nav-label{font-size:11.5px;}
 
@@ -150,3 +150,16 @@
   @media(max-width:560px){.sp-toc ul{grid-template-columns:1fr;}}
   /* 固定ナビ（--klg-nav-h:52px）に隠れないよう、アンカー着地位置を下げる */
   [id^="sec-"]{scroll-margin-top:64px;}
+  /* 終生飼育サイズの目安 → 安全判定（KID）→ サイズ帯別の機材候補 */
+  .ls-box{margin:0 0 22px;padding:16px 18px;border:1.5px solid #d4c9a8;border-left:5px solid var(--accent);border-radius:10px;background:#fffdf7;}
+  .ls-lead{margin:0;font-size:.92rem;line-height:1.85;color:var(--forest-deep);}
+  .ls-lead strong{color:var(--forest);font-size:1.02rem;}
+  .ls-kid{margin:10px 0 0;font-size:.85rem;line-height:1.8;}
+  .ls-kid a{color:#1a5f7a;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(26,95,122,.45);}
+  .ls-kid a:hover{border-bottom-color:#1a5f7a;}
+  .ls-links{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+  .ls-links li{margin:0;}
+  .ls-links a{display:inline-block;padding:7px 13px;border:1.5px solid var(--accent);border-radius:999px;background:#fff;color:var(--forest);font-size:.82rem;font-weight:700;text-decoration:none;line-height:1.5;}
+  .ls-links a:hover{background:var(--accent);color:#fff;}
+  .ls-note{margin:10px 0 0;font-size:.76rem;line-height:1.75;color:#6b5c42;}
+  @media(max-width:560px){.ls-links{flex-direction:column;}.ls-links a{display:block;text-align:center;}}
