@@ -1324,6 +1324,54 @@ const PRODUCTS = {
     rakutenSearchTerm: 'Fluval FX6 外部フィルター',
   },
 
+  // ── 灯具（2026-09-08 商品不足監査 P1）──
+  // category 'fixture' は EQUIPMENT_MAP / SK_CAT_ORDER に無い＝キット非表示。UVB球・バスキング球ごとに口金・W数・耐熱適合を確認するまで自動配線しない。
+  // Amazon identity は 2026-09-08 に /dp/<ASIN> を URL 照合済み（固定入力）。メーカー公式 product.gex-fp.co.jp は egress 遮断のため、仕様は販売店が転載する GEX 公表値で確認。
+  fixture_exoterra_light_dome_14: {
+    id: 'fixture_exoterra_light_dome_14',
+    name: 'GEX エキゾテラ ライトドーム 14cm PT2055',
+    category: 'fixture',
+    tier: 'standard',
+    priceRange: '',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00J58ROJS?tag=kamelife09-22',
+    asin: 'B00J58ROJS',
+    image: '/assets/products/placeholder.webp',
+    why: 'E26 口金のアルミ反射ドーム灯具。白熱系バスキング球は 75W まで、コンパクト UVB 蛍光球は 26W まで。ソーラーグロー UV（80W/125W 水銀灯）は定格電流不足で使用不可。付属ハンガーでケージ上部から吊り下げて使う（直置き禁止）。屋内専用',
+    rating: null,
+    badge: null,
+    recommendedFor: [],
+    amazonIdentity: 'AMAZON_IDENTITY_VERIFIED',
+    compatibility: 'COMPATIBILITY_PARTIAL',
+    compatibilityNote: 'メーカー: GEX（エキゾテラ）／型番 PT2055／口金 E26／最大 白熱球 75W・UV 球 26W／対応: 白熱系バスキング球・コンパクト UVB 蛍光球／不可: 水銀灯（ソーラーグロー UV 80W・125W）／セラミックヒーター: GEX 公表値に記載なし（未確認）／方式: 吊り下げ（ハンガー付属・直置き禁止）／屋内専用／外径 13.8cm・内径 12.8cm・高さ 16.9cm（フック含み 22cm）／耐熱条件: 公表値なし。GEX 公式ページは BLOCKED_EGRESS。セラミックヒーター可否と耐熱条件が未確認のため PARTIAL',
+    linkHold: true,
+    fixtureSpec: { socket: 'E26', maxIncandescentW: 75, maxUvbCompactW: 26, mercuryVapor: false, ceramicHeater: 'UNVERIFIED', mount: 'hanging', indoorOnly: true },
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX エキゾテラ ライトドーム 14cm PT2055',
+  },
+
+  fixture_gex_light_stand: {
+    id: 'fixture_gex_light_stand',
+    name: 'GEX エキゾテラ ライトスタンド（ライトドーム設置用・高さ53〜89cm）',
+    category: 'fixture',
+    tier: 'standard',
+    priceRange: '',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B07FHM2YKH?tag=kamelife09-22',
+    asin: 'B07FHM2YKH',
+    image: '/assets/products/placeholder.webp',
+    why: 'ライトドームを安全に吊り下げて高さ調整するための GEX 純正の専用スタンド。高さ 53〜89cm で調節でき、土台をグラステラリウム・レプテリアの底面に差し込んで使う',
+    rating: null,
+    badge: null,
+    recommendedFor: [],
+    amazonIdentity: 'AMAZON_IDENTITY_VERIFIED',
+    compatibility: 'COMPATIBILITY_VERIFIED',
+    compatibilityNote: 'メーカー: GEX（エキゾテラ）／GEX 公式名「ライトスタンド ライトドーム設置用スタンド」＝ライトドーム（14cm / 18cm）の吊り下げ専用と機種指定／高さ 53〜89cm／スタンド部 約幅17×高さ48cm・ベース 約45cm・土台 約25×14×4.5cm／材質 アルミ・スチール／据え置き（ケージ底面差し込み）／耐荷重は公表値なし（ライトドームを吊る用途に限る）。口金・W数は灯具側（ライトドーム）の値に従う',
+    fixtureSpec: { mount: 'floor_stand', heightRangeCm: [53, 89], forFixture: ['fixture_exoterra_light_dome_14'] },
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX エキゾテラ ライトスタンド ライトドーム',
+  },
+
   // ── 外部フィルター対応ろ材（2026-09-08 商品不足監査 P1）──
   // category 'filter_media' は EQUIPMENT_MAP / SK_CAT_ORDER に無い＝キットには出ない。water-filter-best10 の「対応ろ材」導線から参照する。
   // ASIN は WebSearch("<ASIN>", amazon.co.jp) で /dp/<ASIN> を URL 照合済み。メーカー公式（eheim.jp / gex-fp.co.jp / fluvalaquatics.com）は egress 遮断のため未読。
