@@ -894,7 +894,7 @@
     // 楽天ボタン生成
     var items = document.querySelectorAll(".item-body, .diy");
     items.forEach(function(item){
-      var h3 = item.querySelector("h3");
+      var h3 = item.querySelector("h3") || (item.closest(".item") ? item.closest(".item").querySelector("h3") : null);
       var btnArea = item.querySelector(".btn-area");
       if(!h3 || !btnArea) return;
       var name = h3.textContent.trim();

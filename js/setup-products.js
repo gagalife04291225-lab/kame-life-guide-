@@ -115,6 +115,7 @@
     (spec.extras || []).forEach(function (x) {
       var p = PRODUCTS[x.productId];
       if (noLinks) h += row(x.label || (p && CAT_LABEL[p.category]) || '関連用品', x.need, x.note, null, null, null);
+      else if (p && p.requirement) h += row(x.label || p.name, x.need, x.note + '（購入商品ではなく設備要件です。個体の甲長に合う容器を用意してください）', null, null, null);
       else if (p) h += row(x.label || CAT_LABEL[p.category] || '関連用品', x.need, x.note, p, null, null);
     });
     (spec.missing || []).forEach(function (m) {
