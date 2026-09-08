@@ -347,3 +347,5 @@ body.klg-species header.hero .note-box{
 .h12-brand{display:none;}
 .gl-icon{line-height:0;display:block;}
 .gl-icon .klg-ico{width:26px;height:26px;color:var(--klg-gold-dark);}
+/* 種ページ→機材ページのサイズ帯アンカー：固定ナビに隠れないよう着地位置を下げる */
+[id^="band-"],#cage-size-guide,#filter-size-guide,#uvb-type-guide{scroll-margin-top:calc(var(--klg-nav-h) + 12px);}

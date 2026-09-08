@@ -745,6 +745,7 @@ body {
   gap: 10px 14px;
   margin-bottom: 18px;
 }
+.res-rev-metrics > .res-rev-metric:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .res-rev-metric {
   background: rgba(255,255,255,.04);
   border-radius: 10px;
@@ -3047,24 +3048,10 @@ function showResult(sp, pct, runners) {
 
     var routeId  = selectedRoute ? selectedRoute.id : 'all';
     var diff     = (sp.difficulty || '').trim();
-    var sz       = (sp.size || '').toUpperCase();
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
     var spSlug   = sp.slug || '';
     var spPage   = spSlug ? ('../species/' + spSlug + '.html') : null;
     var skAnchor = spPage ? (spPage + '#starter-kit-root') : null;
-
-    // ── 飼いやすさ星評価 ────────────────────────────────────
-    function getEaseStars() {
-      if (diff.indexOf('入門') >= 0 && diff.indexOf('中級') < 0) return '★★★★☆';
-      if (diff.indexOf('入門〜中級') >= 0) return '★★★★☆';
-      if (diff === '中級' || diff.indexOf('中〜') >= 0) return '★★★☆☆';
-      if (diff.indexOf('上級') >= 0) return '★☆☆☆☆';
-      if (routeId === 'aquatic' && (sz === 'S' || sz === 'XS')) return '★★★★☆';
-      if (routeId === 'aquatic') return '★★★☆☆';
-      if (routeId === 'land') return '★★☆☆☆';
-      if (routeId === 'exotic') return '★☆☆☆☆';
-      return '★★★☆☆';
-    }
 
     // ── 難易度ラベル ─────────────────────────────────────────
     function getDiffLabel() {
@@ -3075,6 +3062,15 @@ function showResult(sp, pct, runners) {
       if (routeId === 'exotic') return '上級';
       if (routeId === 'land') return '中級';
       return '初級〜中級';
+    }
+
+    // 表示用ラベル：種ページの表記（入門／入門〜中級）に合わせる。
+    // GA4 の diff_label は getDiffLabel() の値を使い続ける（計測の互換性を壊さない）
+    function getDiffLabelDisplay() {
+      var v = getDiffLabel();
+      if (v === '初級') return '入門';
+      if (v === '初級〜中級') return '入門〜中級';
+      return v;
     }
 
     // ── 費用テキスト ─────────────────────────────────────────
@@ -3106,10 +3102,9 @@ function showResult(sp, pct, runners) {
       '<div class="res-rev-box">' +
         '<div class="res-rev-box-title">この子を迎える前に知っておきたいこと</div>' +
         '<div class="res-rev-metrics">' +
-          '<div class="res-rev-metric"><div class="res-rev-metric-label">飼いやすさ</div><div class="res-rev-metric-value">' + getEaseStars() + '</div></div>' +
+          '<div class="res-rev-metric"><div class="res-rev-metric-label">難易度</div><div class="res-rev-metric-value">' + getDiffLabelDisplay() + '</div></div>' +
           '<div class="res-rev-metric"><div class="res-rev-metric-label">初期費用</div><div class="res-rev-metric-value">' + initText + '</div></div>' +
           '<div class="res-rev-metric"><div class="res-rev-metric-label">維持コスト</div><div class="res-rev-metric-value">' + monthlyText + '</div></div>' +
-          '<div class="res-rev-metric"><div class="res-rev-metric-label">難易度</div><div class="res-rev-metric-value">' + getDiffLabel() + '</div></div>' +
         '</div>' +
         '<div class="res-rev-top3-title">まず必要なもの TOP3</div>' +
         '<ul class="res-rev-top3-list">' +

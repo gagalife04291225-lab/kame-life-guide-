@@ -579,20 +579,20 @@ const PRODUCTS = {
 
   basking_halogen_35w: {
     id: 'basking_halogen_35w',
-    name: 'ハロゲンバスキング 35W',
+    name: 'GEX エキゾテラ サングロータイトビーム バスキングスポットランプ 50W',
     category: 'lighting_basking',
     tier: 'budget',
-    priceRange: '¥500–1,200',
+    priceRange: '¥1,000–2,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B0043B0EAI?tag=kamelife09-22',
     asin: 'B0043B0EAI',
     image: '/assets/products/placeholder.webp',
-    why: '幼体・小型種の補助バスキングに。安価で交換しやすい',
+    why: '昼用の集光型バスキングランプ。小〜中型ケージのホットスポット作りに',
     rating: 3.9,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'ハロゲン バスキングランプ 35W 爬虫類',
+    rakutenSearchTerm: 'エキゾテラ サングロータイトビーム 50W',
   },
 
   // Phase 39-P2: このASIN(B0043B3ZJ0)はGEX EXOTERRA サングローバスキングスポットランプ50W（標準白熱球）であり
@@ -1891,24 +1891,24 @@ const PRODUCTS = {
 
   thermometer_analog: {
     id: 'thermometer_analog',
-    name: 'アナログ温湿度計',
+    name: 'GEX エキゾテラ アナログ温度計 PT2465',
     category: 'thermometer',
     tier: 'budget',
     priceRange: '¥500–1,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00CX9G5DM?tag=kamelife09-22',
     asin: 'B00CX9G5DM',
     image: '/assets/products/placeholder.webp',
-    why: '電池不要で壁掛けが可能。バックアップ用や屋外飼育スペースに',
+    why: '電池不要のアナログ式。温度のみ測定（湿度は測れないため湿度計は別途）',
     rating: 3.7,
     badge: 'Budget Pick',
     recommendedFor: ['beginner'],
-    rakutenSearchTerm: 'アナログ 温湿度計 爬虫類',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00t8t7n.nhbnn51b.g00t8t7n.nhbnoc60/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Farkstore%2Fj7792%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Farkstore%2Fi%2F10006128%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
-    rakutenStatus: 'available',
-    rakutenItemCode: 'arkstore:10006128',
-    rakutenPrice: 495,
-    rakutenShop: '皆の生活館',
-    rakutenConfidence: 8.2,
+    rakutenSearchTerm: 'エキゾテラ アナログ温度計 爬虫類',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: null,
     rakutenLastUpdated: '2026-08-29',
   },
 
@@ -2010,12 +2010,14 @@ const PRODUCTS = {
     rakutenImageUrl: null,
   },
 
-  // Phase 39-P4: ASIN(B0F6JWRMSL)の実商品をweb_searchで確認したところ「Vivaria取扱 Rep-Cal
-  // シータートルフード 340g」であり、旧ブランド表記「Zoo Med」は誤りだったため是正。
-  // 併せて「昆虫・果実成分配合」の記述は未確認のため、確認できる範囲の説明に変更
+  // 2026-09-08: ASIN(B0F6JWRMSL)の実商品を再確認したところ「ビバリア レップカル
+  // ハコガメフード 340g」であり、旧表記「シータートルフード」は誤り（ウミガメ用と誤解させる）
+  // だったため是正。本エントリは food_box_turtle_omnivore（ハコガメ用雑食枠）であり、
+  // ハコガメフードで枠の用途と一致する。楽天の検索語も同時に修正した。
+  // 併せて「昆虫・果実成分配合」の記述は未確認のため、確認できる範囲の説明に留める
   food_box_turtle_omnivore: {
     id: 'food_box_turtle_omnivore',
-    name: 'Rep-Cal シータートルフード 340g（ビバリア取扱）',
+    name: 'レップカル ハコガメフード 340g（ビバリア取扱）',
     category: 'food',
     tier: 'standard',
     priceRange: '¥1,500–3,000',
@@ -2028,7 +2030,7 @@ const PRODUCTS = {
     recommendedFor: ['box_turtle'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Rep-Cal シータートルフード ビバリア',
+    rakutenSearchTerm: 'レップカル ハコガメフード ビバリア',
     rakutenConfidence: 5.7,
     rakutenLastUpdated: '2026-07-01',
   },
@@ -2082,7 +2084,7 @@ const PRODUCTS = {
     // RAKUTEN-ID Phase0 HOLD: name はウーパールーパー用、term/why はタートル用フードを指しており
     // ASIN B0043UN3X4 がどちらの商品かをこの環境では検証できない。Owner確認まで identity 自動昇格から除外
     rakutenIdentityHold: true,
-    name: 'ひかりウーパールーパー（タートル用）',
+    name: 'キョーリン ひかりクレスト タートル 250g',
     category: 'food',
     tier: 'standard',
     priceRange: '¥700–1,800',

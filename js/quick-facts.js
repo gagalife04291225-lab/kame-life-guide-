@@ -58,13 +58,13 @@ var QF_MONTHLY = {
   box_turtle:          '¥1,500〜3,000',
 };
 
-/** 難易度文字列 → ☆バー（入門/中級/上級の3区分） */
+/** 難易度文字列 → 色分けラベル（星表記は廃止し、種ページと同じ文字表記に一本化） */
 function qfDiffBadge(difficulty) {
-  if (!difficulty) return { stars: '—', cls: '' };
+  if (!difficulty) return { cls: '', label: '—' };
   var d = difficulty + '';
-  if (/入門/.test(d))       return { stars: '★☆☆', cls: 'qf-diff--easy',  label: '入門' };
-  if (/上級/.test(d))       return { stars: '★★★', cls: 'qf-diff--hard',  label: '上級' };
-  return                           { stars: '★★☆', cls: 'qf-diff--mid',   label: '中級' };
+  if (/入門/.test(d))       return { cls: 'qf-diff--easy',  label: d };
+  if (/上級/.test(d))       return { cls: 'qf-diff--hard',  label: d };
+  return                           { cls: 'qf-diff--mid',   label: d };
 }
 
 /** 臭いレベル → 絵文字バー */
@@ -116,7 +116,7 @@ function renderQuickFacts(opts) {
     {
       icon: '🎯',
       label: '飼育難易度',
-      value: '<span class="qf-diff ' + diff.cls + '">' + diff.stars + ' ' + (diff.label || difficulty) + '</span>',
+      value: '<span class="qf-diff ' + diff.cls + '">' + (diff.label || difficulty) + '</span>',
     },
     {
       icon: '💰',
