@@ -1359,7 +1359,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B07FHM2YKH?tag=kamelife09-22',
     asin: 'B07FHM2YKH',
     image: '/assets/products/placeholder.webp',
-    why: 'ライトドームを吊り下げるための GEX 純正スタンド。高さ 53〜89cm で調節でき、土台をグラステラリウム・レプテリアの底面に差し込んで使う。ケージの上に灯具を直置きしないための必需品',
+    why: 'ライトドームを安全に吊り下げて高さ調整するための GEX 純正の専用スタンド。高さ 53〜89cm で調節でき、土台をグラステラリウム・レプテリアの底面に差し込んで使う',
     rating: null,
     badge: null,
     recommendedFor: [],
