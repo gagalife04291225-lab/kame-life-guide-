@@ -34,18 +34,31 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **892bd9a**（PR #163 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | PR #159〜#163 は main 反映済み。本PRは灯具 2 件（category `fixture`・キット非表示）の商品データ追加＋コバエ対策の作業メモ `docs/fly-control-notes.md`。**新規 ASIN 2 件を含むため Owner 判断で merge** |
+| 基準 | `origin/main` = **3a3ae17**（PR #164 merge・2026-09-08 実測値） |
+| サイトファイルの状態 | PR #159〜#164 は main 反映済み。本PRは水質検査薬 2 件（category `water_test`・キット非表示・linkHold）の商品データ追加＋ `docs/water-test-notes.md`。記事導線なし。**新規 ASIN 2 件を含むため Owner 判断で merge** |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-08 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/fixture-pest-20260908`（本PR） |
+| 作業ブランチ | `claude/water-test-20260908`（本PR） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### 灯具 2 件の compatibility 判定＋コバエ対策用品の追加可否（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+### 水質検査薬 2 件の測定項目・対応水・用途の確定（2026-09-08 / 本PR・Owner 判断で merge）— **再調査しない**
+
+正本は [`docs/water-test-notes.md`](water-test-notes.md)。Amazon identity は両件 VERIFIED（固定入力）。
+
+| 商品 | ASIN | 測定項目 | 淡水 / 汽水 / 海水 | compatibility | useCase |
+|---|---|---|---|---|---|
+| テトラ テスト試験紙 NH3/NH4+ 25回 | B0GN1MFFPD | 総アンモニア（NH3+NH4+）。範囲・単位は未取得（MEASUREMENT_ITEMS_PARTIAL） | VERIFIED / UNVERIFIED / PARTIAL（公式「淡水・海水用」vs 販売店「淡水用」で不一致） | **PARTIAL**（linkHold） | VERIFIED（アンモニア確認） |
+| テトラ テスト 6in1 試験紙（淡水用）25枚 | B002FBISEC | pH 6.4〜8.4／KH 0〜20°dH／GH <3〜>16°dH／NO2 0〜10／NO3 0〜250／Cl2 0〜3 mg/L・60秒（MEASUREMENT_ITEMS_VERIFIED） | VERIFIED / UNVERIFIED / NOT_SUPPORTED | **VERIFIED**（淡水用の区分内。linkHold で導線は Owner 判断） | VERIFIED（日常監視。**アンモニアの代用ではない**） |
+
+- category `water_test` はキット非表示・自動配線なし。記事導線は未設置（候補: giant-musk L154/457「アンモニア試薬」、florida-mud L270、filter-guide L523、water-filter-best10 L682、guide-water-full / guide-semi。guide-brackish は汽水 UNVERIFIED のため保留）。
+- 亀の安全閾値は示さない（メーカーの 0.25 mg/L は魚対象の一般値）。pH・水温で NH3 の割合が変わる注意を `why` に明記。
+- **P1_MISSING_WATER_TEST**: 汽水（テラピン）対応のアンモニア検査（液体「テトラ テスト アンモニア試薬（淡水・海水用）」が存在するが汽水明記と ASIN は未確認・今回は探索しない）。NO2/NO3/pH/GH/KH/Cl2 は淡水で 6in1 がカバー → NO ADD。
+
+### 灯具 2 件の compatibility 判定＋コバエ対策用品の追加可否（2026-09-08 / PR #164 merge 3a3ae17）— **再調査しない**
 
 **灯具（Amazon identity は 2026-09-08 照合済み・固定入力）**
 
@@ -1346,7 +1359,16 @@ D-01 動画の再開レーン → **案E**（Commons CC BY を主レーン・大
 
 ### DECISION
 
-#### 本PR（灯具 2 件・新規 ASIN B00J58ROJS / B07FHM2YKH）の merge 可否（Owner 判断）
+#### 本PR（水質検査薬 2 件・新規 ASIN B0GN1MFFPD / B002FBISEC）の merge 可否（Owner 判断）
+
+Actor は merge しない。確認点: ①NH3/NH4+ 試験紙は PARTIAL（測定範囲未取得・海水表記不一致・汽水記載なし）のまま商品データだけ保持してよいか
+②6in1（VERIFIED・淡水）を giant-musk / florida-mud / filter-guide のどれに導線として出すか ③汽水向けアンモニア検査（P1_MISSING_WATER_TEST）の探索を次工程に立てるか。
+
+#### （解消済み）PR #164 の merge 可否 — **Owner 指示（2026-09-08）により merge した（3a3ae17）**
+
+ライトスタンドの why から「必需品」を除去。ライトドーム 14cm は PARTIAL・linkHold 維持。**このDECISIONは閉じた。**
+
+#### （解消済み）旧 DECISION（灯具 2 件）
 
 Actor は merge しない。確認点: ①ライトドーム 14cm は PARTIAL（セラミックヒーター可否・耐熱条件未確認）のまま商品データだけ保持してよいか ②ライトスタンド（VERIFIED）を記事導線に出すか（出す場合の掲載先候補: `uvb-light-review.html` の灯具節を新設、または `cage-review`）③コバエ対策の掲載場所案（`docs/fly-control-notes.md` §4）のどれを採るか。
 
@@ -1376,7 +1398,7 @@ Actor は merge しない（憲法 §2.6-I1 条件④）。PR 本文に検証実
 | 候補 | 対象記事 | 既存で代用できない理由 | Amazon 候補（URL 照合済） | 楽天 |
 |---|---|---|---|---|
 | 灯具（ドーム / スタンド） | uvb-light-review 07・08 位、全キット | 本PRで `fixture` として商品データ化（ドーム PARTIAL・スタンド VERIFIED）。記事導線と球との配線は未実施 | B00J58ROJS（PARTIAL・導線なし）／B07FHM2YKH（VERIFIED） | search |
-| 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 該当カテゴリなし | B0GN1MFFPD テトラ NH3/NH4+／B002FBISEC 6in1（アンモニア非対応） | 未着手 |
+| 水質検査薬 | species/giant-musk-turtle（アンモニア試薬を推奨） | 本PRで `water_test` として商品データ化（NH3 PARTIAL・6in1 VERIFIED・いずれも linkHold） | B0GN1MFFPD（PARTIAL）／B002FBISEC（VERIFIED・導線は Owner 判断） | search |
 | `waterdish_sanko_dish` | setup-specs redfoot-a / forest-terrarium の must | 該当商品なし（NOT_FOUND_EXACT_MATCH・本PRで名称是正） | REPTIZOO ウォーターディッシュ M は amazon.co.jp NOT_FOUND_AMAZON | pending |
 | 大型リクガメ用シェルター | tortoise_dry_large キット（空欄維持で CLOSE） | SP L2/XL/XXL とも成体（甲長40cm超）は不可（COMPLETED 参照） | B07F3RVTXP / B07F3SR326 / B07F49T8N2（URL 照合済・不採用） | 再開条件のみ（COMPLETED） |
 
@@ -1452,13 +1474,13 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 水質検査薬 2 件の compatibility／用途確認と商品データ化（P1・giant-musk が推奨）
+### P1 台帳の残件を Owner 判断へ集約（DECISION 化のみ・新規探索なし）
 
-**対象**: identity 照合済みの B0GN1MFFPD（テトラ テスト NH3/NH4+ 25枚）／B002FBISEC（テトラテスト 6in1 25枚・アンモニア非対応）。再検索しない。
-**Scope**: 測定項目・淡水/汽水対応・判定色表・保存条件をメーカー公表値（販売店転載可）で確認し、`data/products.js` に category `water_test`（キット非表示）で追加。
-`species/giant-musk-turtle.html` の「アンモニア試薬」記述に対する導線は Owner 判断項目として PR に記載。汽水（テラピン）で使えるかは別途確認し、不明なら PARTIAL。
-**変更禁止**: CAUTION 22／OK 159 の ASIN／ろ材・灯具・waterdish の既存エントリ／`shindan/`。
-**完了条件**: 2 件の identity・compatibility（測定項目・対応水）が確定し、PARTIAL は導線に出さない。ASIN 追加を含むため **PR 作成まで**（merge は Owner）。
+**対象**: 商品不足監査で PARTIAL / 導線未設置のまま商品データ化された 5 件（ライトドーム 14cm・NH3/NH4+ 試験紙・2213 活性炭・サブストラットプロ 1L・メック 1L）と、
+導線を出せる VERIFIED 3 件（ライトスタンド・6in1・ろ材 8 本は設置済み）の**掲載先案**を 1 枚の判断表にまとめ、`docs/decisions/OPEN-DECISIONS.md` へ追記する。
+**Scope**: 新規 ASIN 探索なし。既存の判定（identity / compatibility / useCase）を固定入力として使う。各行に「出す／出さない／追加確認が要る」の推奨と理由を付ける。
+**変更禁止**: `data/products.js`・HTML・CSV（docs のみ）。
+**完了条件**: Owner が 1 回の裁定で導線の可否を決められる表になっていること。docs のみのため 5 条件充足で merge 可。
 
 ## 更新ルール（作業終了時に必ず実施）
 

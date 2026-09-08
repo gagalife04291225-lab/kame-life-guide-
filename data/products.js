@@ -1324,6 +1324,66 @@ const PRODUCTS = {
     rakutenSearchTerm: 'Fluval FX6 外部フィルター',
   },
 
+  // ── 水質検査薬（2026-09-08 商品不足監査 P1）──
+  // category 'water_test' は EQUIPMENT_MAP / SK_CAT_ORDER に無い＝キット非表示。種・水質条件ごとの必要性を確認するまで自動配線しない。
+  // Amazon identity は 2026-09-08 に /dp/<ASIN> を URL 照合済み（固定入力）。メーカー公式 spectrumbrands.jp は egress 遮断のため、仕様は公式ページの検索抜粋と販売店転載値で確認。
+  // 役割分離: NH3/NH4+ ＝ アンモニア確認（立ち上げ初期・フィルター交換後・大量給餌後・臭い/白濁時）。6in1 ＝ NO2/NO3/pH/GH/KH/Cl2 の日常監視。**6in1 はアンモニアを測れない。**
+  water_test_tetra_nh3: {
+    id: 'water_test_tetra_nh3',
+    name: 'テトラ テスト試験紙 NH3/NH4+（アンモニア）25回',
+    category: 'water_test',
+    tier: 'standard',
+    priceRange: '',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B0GN1MFFPD?tag=kamelife09-22',
+    asin: 'B0GN1MFFPD',
+    image: '/assets/products/placeholder.webp',
+    why: '飼育水の総アンモニア（NH3＋NH4+）を確認する試験紙。立ち上げ初期・フィルター交換後・大量給餌後・水が臭う／白濁したときに使う。付属試薬を入れた水に1秒浸し、1分後に比色する。同じ総アンモニア値でも pH が高く水温が高いほど有毒な NH3 の割合が増えるため、数値は pH・水温と合わせて読む。「何 mg/L までなら亀に安全」という閾値は根拠がないため示さない',
+    rating: null,
+    badge: null,
+    recommendedFor: [],
+    amazonIdentity: 'AMAZON_IDENTITY_VERIFIED',
+    compatibility: 'COMPATIBILITY_PARTIAL',
+    compatibilityNote: 'メーカー: スペクトラム ブランズ ジャパン（テトラ）。総アンモニア（NH3/NH4+）を測る（NH3 単独ではない）。淡水: 公式・販売店とも対応。海水: 公式ページ名は「淡水・海水用」だが charm / yodobashi / rva / joyfulhonda は「淡水用」表記で不一致。汽水: どの資料にも記載なし。測定範囲・単位（mg/L の段階）は公式が egress 遮断で未取得。25回・判定 1分・試験紙＋付属試薬方式。淡水以外と測定範囲が未確定のため PARTIAL',
+    measurementItems: ['総アンモニア（NH3+NH4+）'],
+    measurementStatus: 'MEASUREMENT_ITEMS_PARTIAL',
+    waterType: { freshwater: 'VERIFIED', brackish: 'UNVERIFIED', marine: 'PARTIAL' },
+    testMethod: '試験紙（付属のアクティベーター・シリンジ・検査チューブで検水を調製し、1秒浸漬・1分後比色）',
+    useCase: 'USE_CASE_VERIFIED',
+    useCaseNote: 'アンモニア確認: 立ち上げ初期／フィルター交換後／大量給餌後／臭い・白濁／排泄量が多い／ろ過能力不足の疑い',
+    linkHold: true,
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ テスト試験紙 NH3 NH4 アンモニア 25回',
+  },
+
+  water_test_tetra_6in1: {
+    id: 'water_test_tetra_6in1',
+    name: 'テトラ テスト 6in1 試験紙（淡水用）25枚',
+    category: 'water_test',
+    tier: 'standard',
+    priceRange: '',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B002FBISEC?tag=kamelife09-22',
+    asin: 'B002FBISEC',
+    image: '/assets/products/placeholder.webp',
+    why: 'pH・KH・GH・亜硝酸塩（NO2）・硝酸塩（NO3）・塩素（Cl2）の6項目を試験紙1枚・60秒で確認する日常監視用。NO2/NO3 で生物ろ過の状態と換水時期を見る。アンモニアは測れないので、アンモニア確認は NH3/NH4+ 試験紙を別に使う。淡水用（海水では使わない・汽水は記載なし）',
+    rating: null,
+    badge: null,
+    recommendedFor: [],
+    amazonIdentity: 'AMAZON_IDENTITY_VERIFIED',
+    compatibility: 'COMPATIBILITY_VERIFIED',
+    compatibilityNote: 'メーカー: スペクトラム ブランズ ジャパン（テトラ）。公式・販売店とも「淡水用」で一致。海水: 非対応（製品区分外）。汽水: 記載なし（UNVERIFIED）。測定範囲（公式抜粋）: pH 6.4〜8.4／KH 0〜20°dH／GH <3〜>16°dH／NO2 0〜10 mg/L／NO3 0〜250 mg/L／Cl2 0〜3 mg/L。判定 60秒・25枚。Cl2 は水道水の残留塩素確認に使える可能性があるが検出下限が未確認',
+    measurementItems: ['pH', 'KH', 'GH', 'NO2', 'NO3', 'Cl2'],
+    measurementStatus: 'MEASUREMENT_ITEMS_VERIFIED',
+    waterType: { freshwater: 'VERIFIED', brackish: 'UNVERIFIED', marine: 'NOT_SUPPORTED' },
+    testMethod: '試験紙（1秒浸漬・60秒後比色）',
+    useCase: 'USE_CASE_VERIFIED',
+    useCaseNote: '日常監視: NO2/NO3 で生物ろ過と換水時期、pH/GH/KH は種・飼育水に応じた補助指標。アンモニアの代用にはならない',
+    linkHold: true,
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ テスト 6in1 試験紙 25枚',
+  },
+
   // ── 灯具（2026-09-08 商品不足監査 P1）──
   // category 'fixture' は EQUIPMENT_MAP / SK_CAT_ORDER に無い＝キット非表示。UVB球・バスキング球ごとに口金・W数・耐熱適合を確認するまで自動配線しない。
   // Amazon identity は 2026-09-08 に /dp/<ASIN> を URL 照合済み（固定入力）。メーカー公式 product.gex-fp.co.jp は egress 遮断のため、仕様は販売店が転載する GEX 公表値で確認。
