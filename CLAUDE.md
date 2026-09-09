@@ -565,6 +565,85 @@ title 重複修正の記録、HOLD案件の外部ソース完全調査、HOLD 4�
   検証で新しい問題が見つかった場合は、その問題だけを修正して再確認する。
   正常と確認済みの項目を最初から再監査しない。
 
+## Claude Code 自律実行ルール（恒久ルール・2026-09-09 亀好きさん承認）
+
+claude.ai の Code / Claude Code（Opus 5・Fable 5.1・以降のモデル）で作業するときの行動ルール。
+毎回のプロンプトに同じ注意を書かなくても、repo 側で常に効く。モデル固有の API 設定は含めない。
+既存規範と重なる項目は**参照だけ**にし、ここで再定義しない。
+
+### 1. 自律完遂
+
+- Owner がリアルタイムで監視している前提にしない。
+- 元の依頼範囲内で、可逆的かつ安全な作業は「続けますか？」と止まらず実行する。
+- commit / push / PR / test / merge が明示的に許可され、憲法 §2.6-I1 の5条件
+  （`.claude/rules/chatgpt-handoff.md` §2）を満たす場合は、最後まで完了する。
+- 停止するのは **destructive action・重大な scope 変更・Owner しか決められない事項**だけ。
+  これは既存の Merge Gate（`.claude/rules/pm-conduct.md` §7）を弱めない。
+
+### 2. 未完了で終わらない
+
+- 最終回答を書く前に、最後の段落が「次にやる」「今後やる」「続けるなら」になっていないか確認する。
+  今すぐ実行可能な作業なら、その場で実行してから終了する。
+- エラー時は合理的な範囲で原因確認・再試行する。長時間作業を理由に途中終了しない。
+- 残件の分類（CLOSE NOW / BLOCKED / DECISION / DROP）は `.claude/rules/closeout-gate.md` に従う。
+  品質不足による STOP は同ファイルのとおり CLOSE の一形態であり、本節の「未完了」に当たらない。
+
+### 3. Scope discipline
+
+- 依頼された deliverable を勝手に狭めたり広げたりしない。
+- scope 外の既存バグ・改善点を発見しても、勝手に修正しない（Scope Lock：本ファイル「ブランチ運用」）。
+- 危険でない scope 外の問題は、最終報告の **FOLLOW-UP** に記録するだけにする
+  （`docs/AI-HANDOFF.md` では `UNRESOLVED` の「新発見」に置く）。
+
+### 4. Duplicate-work prevention
+
+- 本ファイル「NO-REWORK GATE」と `docs/AI-HANDOFF.md` の `COMPLETED` / `FIXED_FACTS` /
+  報告の `DO_NOT_REPEAT` に従う。ここでは再定義しない。
+- 追加の恒久項目: **BLOCKED_EGRESS と記録済みのドメインへ同一アクセスを繰り返さない。**
+  再試行してよいのは、経路（ドメイン・取得方法）が変わったときだけ。
+
+### 5. Evidence discipline
+
+- 証拠・計数の規則は `.claude/rules/pm-conduct.md` §4 に従う
+  （未確認を確認済みにしない／`NOT FOUND` と `NOT EVALUATED` と `BLOCKED` を混同しない）。
+- 追加の恒久項目:
+  - 推測値・推測 ASIN・推測互換性を**確定値として保存しない**（`data/products.js`・CSV・docs のいずれにも）。
+  - conclusion と evidence を分離して書く（何を見て、何を結論したか）。
+  - **商品の identity（Amazon 実体）と compatibility（機種・用途適合）は別判定にする。**
+    `/dp/<ASIN>` と商品名の一致だけで compatibility を VERIFIED にしない。
+
+### 6. Small-diff rule
+
+- 小変更では対象行だけを patch する。完成結果が同じならファイル全体を書き直さない。
+- 不要な整形・並び替え・改行コード変更を避ける（例: `docs/asin-audit.csv` は CRLF を維持する）。
+- **unrelated diff = 0** を目標にし、PR に実測（変更ファイル一覧）を書く。
+
+### 7. Parallel tool use
+
+- 独立して確認できる事項は、可能な限りまとめて並列に処理する。
+- 前の結果に依存する処理だけを直列化する。
+- 1 件ずつの検索・read・fetch を不必要に繰り返さない。
+
+### 8. Root-cause debugging
+
+バグ修正の順番: **再現 → 壊れた不変条件まで追跡 → root cause と evidence を分離して記録 → 最小修正**。
+原因を確かめずに症状だけ隠す band-aid 修正はしない。
+
+### 9. Model / API 固有設定を持ち込まない
+
+- repo の恒久ルールに Fable 5.1 専用の API 設定を強制しない。
+- `task_budget`・`tool_choice`・beta header・thinking 制御などを Claude Code 用設定として勝手に追加しない
+  （`.claude/settings.json` の変更は Owner の明示指示があるときだけ）。
+- Opus 5 / Fable 5.1 / 将来モデルでも通用する**行動ルール**を中心にする。
+
+### 10. Final report
+
+作業の最後は `.claude/rules/chatgpt-handoff.md` §3・§3-2 のとおり、単一コードブロックの
+**「ChatGPT引き継ぎ用報告」**（BASE / 変更内容 / tests / commit / PR / merge / COMPLETED / FIXED /
+UNRESOLVED / NEXT / DO_NOT_REPEAT を最低限含む）で終える。ここでは再定義しない。
+
+---
+
 ## KAME LIFE GUIDE 改善方針（恒久・完成度を磨くフェーズ）
 
 現在の KAME LIFE GUIDE は「新機能を増やすフェーズ」ではなく
