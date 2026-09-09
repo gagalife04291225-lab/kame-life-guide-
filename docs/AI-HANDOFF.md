@@ -34,12 +34,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **670fbcc**（PR #165 merge・2026-09-08 実測値） |
-| サイトファイルの状態 | PR #159〜#165 は main 反映済み。本PRは `guides/filter-guide.html` に 6in1 の導線 1 件（既存 ASIN・新規なし）＋ `water_test_tetra_6in1.linkHold=false` ＋ **商品不足監査の CLOSE 記録**。5 条件充足で merge |
+| 基準 | `origin/main` = **434a189**（rakuten-sync 2026-09-08 / PR #166 merge a0c0270 の直後・2026-09-09 実測値） |
+| サイトファイルの状態 | PR #159〜#166 は main 反映済み（商品不足監査 CLOSE）。本PRは `CLAUDE.md` に「Claude Code 自律実行ルール」を追加する docs のみ。サイトファイル・`data/*`・CSV は無変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-08 |
+| 最終更新日 | 2026-09-09 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/audit-close-20260908`（本PR） |
+| 作業ブランチ | `claude/autonomous-rules-20260909`（本PR） |
 
 ---
 
@@ -939,6 +939,11 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 ---
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
+
+### Claude Code 自律実行ルールは `CLAUDE.md` に恒久追加済み（2026-09-09 / 本PR）
+
+自律完遂・未完了で終わらない・Scope discipline・重複作業防止・Evidence discipline（identity と compatibility の分離）・Small-diff・並列ツール使用・Root-cause debugging・モデル固有設定の持ち込み禁止・最終報告形式の 10 項目。
+既存規範（NO-REWORK GATE / pm-conduct §4・§7 / closeout-gate / chatgpt-handoff §2・§3）と重なる項目は参照のみで、**同内容を複数ファイルへ複製していない**。再追加・再定義しない。
 
 ### 外部フィルター × 純正ろ材の対応（2026-09-08 確定 / 再照合しない）
 
