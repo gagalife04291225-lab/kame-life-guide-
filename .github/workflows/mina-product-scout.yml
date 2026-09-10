@@ -1,0 +1,99 @@
+name: Mina Product Scout (temporary)
+
+# 「ミナのいいものメモ」第1号の商品個体を楽天市場から自動確定するための一時ワークフロー。
+# 探索ブランチへの push でのみ動く。main では動かない。
+# data/products.js を含む本番データには一切書き込まない（直後のステップで機械検証する）。
+
+on:
+  push:
+    branches:
+      - claude/mina-product-selection-dhfz0i
+    paths:
+      - 'scripts/mina-product-scout.js'
+      - '.github/workflows/mina-product-scout.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # 楽天側へ到達できるかを先に実測する。
+      # Claude Code コンテナ側は egress 遮断のため、この結果が唯一の経路確認になる。
+      - name: Probe outbound network to Rakuten
+        run: |
+          echo "openapi.rakuten.co.jp:"
+          curl -sS -o /dev/null -w "  http_status=%{http_code}\n" \
+            -m 20 "https://openapi.rakuten.co.jp/" || echo "  unreachable"
+          echo "thumbnail.image.rakuten.co.jp:"
+          curl -sS -o /dev/null -w "  http_status=%{http_code}\n" \
+            -m 20 "https://thumbnail.image.rakuten.co.jp/" || echo "  unreachable"
+
+      - name: Run product scout
+        env:
+          RAKUTEN_APP_ID:       ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY:   ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: node scripts/mina-product-scout.js
+
+      # 本番データを触っていないことを機械で証明する。
+      - name: Verify production data untouched
+        run: |
+          if git diff --quiet data/ ; then
+            echo "OK: data/ unchanged by scout."
+          else
+            echo "FATAL: scout modified data/ — this must never happen."
+            git diff --stat data/
+            exit 1
+          fi
+
+      # 生成物に資格情報が混入していないことを独立に再検査する（多層防御）。
+      # 判定だけを出力し、一致した値そのものは絶対に表示しない。
+      - name: Independent secret scan of generated files
+        env:
+          RAKUTEN_APP_ID:     ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            const files = ["candidates.json", "selected-product.json", "evidence.md"]
+              .map(f => "qc-evidence/mina-product-001/" + f);
+            const appId  = process.env.RAKUTEN_APP_ID || "";
+            const secret = process.env.RAKUTEN_ACCESS_KEY || "";
+            // 楽天が affiliateUrl に自ら埋め込む公開トラッキング識別子
+            // (rafcid=wsc_i_is_<applicationId>) だけは許可する。
+            // 同一値は既に data/products.js で公開済みであり新規開示ではない。
+            const strip = s => appId ? s.split("rafcid=wsc_i_is_" + appId).join("rafcid=<PUBLISHED>") : s;
+            let bad = 0;
+            for (const f of files) {
+              const s = strip(fs.readFileSync(f, "utf8"));
+              if (appId && s.includes(appId))            { console.error("leak(appId): " + f); bad++; }
+              if (secret && s.includes(secret))          { console.error("leak(accessKey): " + f); bad++; }
+              if (/applicationId=|accessKey=/i.test(s))  { console.error("param leak: " + f); bad++; }
+            }
+            if (bad) { console.error("FATAL: credential leakage detected."); process.exit(1); }
+            console.log("OK: no credentials in generated files");
+          '
+
+      - name: Commit evidence
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add qc-evidence/mina-product-001/
+          if git diff --cached --quiet; then
+            echo "No evidence changes to commit."
+          else
+            git commit -m "chore(mina): 第1号 楽天商品候補の自動探索結果を記録 [skip ci]"
+            git push origin HEAD:claude/mina-product-selection-dhfz0i
+          fi
