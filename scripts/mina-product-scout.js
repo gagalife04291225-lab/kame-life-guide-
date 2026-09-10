@@ -114,6 +114,18 @@ function unwrap(entry) {
   return (entry && entry.Item) ? entry.Item : entry;
 }
 
+/**
+ * affiliateId を渡すと、API は itemUrl / shopUrl も hb.afl.rakuten.co.jp の
+ * アフィリエイト包装済み URL で返す。素の商品ページ URL は、その `pc=` パラメータに
+ * URL エンコードされて含まれている。推測ではなく API 応答からの復号なので一次データ。
+ */
+function plainUrlFrom(wrapped) {
+  if (!wrapped) return null;
+  const m = String(wrapped).match(/[?&]pc=([^&]+)/);
+  if (!m) return String(wrapped);
+  try { return decodeURIComponent(m[1]); } catch (e) { return null; }
+}
+
 function firstImage(item) {
   const pools = [item.mediumImageUrls, item.largeImageUrls, item.smallImageUrls];
   for (let i = 0; i < pools.length; i++) {
@@ -277,8 +289,10 @@ async function main() {
         itemName:      name,
         shopName:      String(it.shopName || ''),
         shopUrl:       it.shopUrl || null,
-        itemUrl:       it.itemUrl || null,
+        itemUrl:       plainUrlFrom(it.itemUrl),
+        shopPageUrl:   plainUrlFrom(it.shopUrl),
         affiliateUrl:  it.affiliateUrl || null,
+        rawItemUrl:    it.itemUrl || null,
         price:         Number(it.itemPrice || 0),
         // 楽天 Ichiba Item Search API は「通常価格 / 割引前価格」を返さない。
         // 推測せず NOT_DISPLAYED を明示する。
@@ -468,6 +482,7 @@ async function main() {
       itemName: selected.itemName,
       shopName: selected.shopName,
       itemUrl: selected.itemUrl,
+      shopPageUrl: selected.shopPageUrl,
       affiliateUrl: selected.affiliateUrl,
       price: selected.price,
       listPrice: selected.listPrice,
