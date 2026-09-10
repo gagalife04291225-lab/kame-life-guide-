@@ -9,16 +9,19 @@
 
 ## 使い方
 
-1. 今回の CONTENT MODE の並びを決める（[`mina-image-rules.md`](./mina-image-rules.md) CONTENT MODE）。
-2. 投稿単位で固定するモジュールを決める — SCENE / WARDROBE / HAIR。
-3. 下の表を CUT 数だけ埋める。
-4. 「検証」の4項目を表の上で確認する。1つでも通らなければ生成に進まない。
-5. 埋めた表を案件フォルダへ保存する。**このファイルには書き戻さない。**
+1. `MINA_MASTER` の正本を確認する（[`mina-fixed-rules.md`](./mina-fixed-rules.md) §2）。未配置なら SHOT PLAN は作れても生成へは進まない。
+2. 今回の CONTENT MODE の並びを決める（[`mina-image-rules.md`](./mina-image-rules.md) CONTENT MODE）。
+3. 投稿単位で固定するモジュールを決める — SCENE / WARDROBE / HAIR。
+4. 下の表を CUT 数だけ埋める。
+5. 「検証」の4項目を表の上で確認する。1つでも通らなければ生成に進まない。
+6. 埋めた表を案件フォルダへ保存する。**このファイルには書き戻さない。**
 
 ## 投稿ヘッダ（表の前に置く）
 
 ```
 案件:            <案件ID>
+MASTER IMAGE PATH: brand/assets/mina/mina-master.png
+MASTER VERSION:    <確認した正本のファイル名 / 更新日。未配置なら「未配置」と書く>
 用途 / 媒体:      <TikTok / Reels / Shorts / フィード / サムネイル / プロフィール>
 出力比率:         <9:16 / 1:1 / 4:5 / 16:9>
 CONTENT MODE 並び: <例: PRODUCT_HOOK → PRODUCT_DEMO → RESULT → CTA>
@@ -77,6 +80,8 @@ PRODUCT SCALE の前提:     <実寸確認済み / 未確認（粗い前提と�
 
 ```
 案件:            SAMPLE-000
+MASTER IMAGE PATH: brand/assets/mina/mina-master.png
+MASTER VERSION:    mina-master.png / 2026-09-10
 用途 / 媒体:      TikTok
 出力比率:         9:16
 CONTENT MODE 並び: PRODUCT_HOOK → PRODUCT_DEMO → RESULT → CTA
