@@ -12,9 +12,9 @@
   }
  },
  "basking_50w": {
-  "date": "2026-08-30",
+  "date": "2026-09-10",
   "query": "マルカン バスキングライト 50W BL-50",
-  "resultCount": 3,
+  "resultCount": 4,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:マルカン,50W,model:BL-50",
   "best": {
@@ -212,24 +212,28 @@
   "best": null
  },
  "enclosure_wood_90": {
-  "date": "2026-09-02",
+  "date": "2026-09-10",
   "query": "GEX EXOTERRA グラステラリウム 9030",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.3 照明系(ランプ)",
   "best": {
    "itemName": "ジェックス EXO TERRA コンパクトトップ90N PT2228 26W(4灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム9030/904",
-   "price": 13822,
+   "price": 18216,
    "shop": "マニッシュボーイ"
   }
  },
  "filter_canister_large": {
-  "date": "2026-09-03",
+  "date": "2026-09-10",
   "query": "EHEIM クラシック 2215 外部フィルター",
-  "resultCount": 0,
-  "outcome": "NO_RESULT",
-  "reason": null,
-  "best": null
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=8.4 入数(2),消耗品(ろ材)",
+  "best": {
+   "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
+   "price": 22720,
+   "shop": "ミナトワークス"
+  }
  },
  "filter_canister_medium": {
   "date": "2026-09-07",
@@ -412,14 +416,14 @@
   }
  },
  "food_hikari_turtle": {
-  "date": "2026-09-08",
+  "date": "2026-09-10",
   "query": "ひかり タートル 亀 フード",
   "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.3",
   "best": {
    "itemName": "◇キョーリン ひかりクレスト タートルST 250g | カメ 餌 水棲カメ フード スティック キョーリン ひかりクレスト タートル サポート エサ 爬虫類 ",
-   "price": 815,
+   "price": 949,
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
@@ -740,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -884,11 +888,11 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-09-06",
+  "date": "2026-09-10",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 7,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=8.5",
+  "reason": "score=8.1",
   "best": {
    "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム",
    "price": 1350,
@@ -904,15 +908,15 @@
   "best": null
  },
  "supplement_calcium_d3": {
-  "date": "2026-08-30",
+  "date": "2026-09-10",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 90g",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
    "itemName": "GEX EXOTERRA カルシウム+ビタミンD3 90g PT1856 粉末カルシウム・ビタミンD3 昼行性爬虫類に最適",
-   "price": 1258,
-   "shop": "NUvemshop楽天市場店"
+   "price": 1229,
+   "shop": "感花楽天市場店"
   }
  },
  "supplement_calcium_plus": {
@@ -1008,15 +1012,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
+   "price": 701,
+   "shop": "ペッツマム"
   }
  },
  "thermometer_aqua": {
@@ -1140,9 +1144,9 @@
   }
  },
  "uvb_led_bar": {
-  "date": "2026-08-31",
+  "date": "2026-09-10",
   "query": "UVB LED ライト バー 爬虫類",
-  "resultCount": 5,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
