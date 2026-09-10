@@ -1,0 +1,140 @@
+name: HF Gen Attempt (temporary)
+
+# alexnasa/ltx-2-TURBO の Gradio API を叩いて、MASTER 画像から短い動画を作れるか
+# 1回だけ試す。ZeroGPU が匿名実行を許すかどうかがここで分かる。
+# 失敗したら理由を出して終わる。再試行しない。
+
+on:
+  push:
+    branches:
+      - claude/mina-talk-test
+    paths:
+      - '.github/workflows/hf-gen-attempt.yml'
+
+permissions:
+  contents: write
+
+env:
+  SPACE: https://alexnasa-ltx-2-turbo.hf.space
+  OUT_DIR: qc-evidence/mina-intro-001
+
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch API schema and build payload from defaults
+        run: |
+          set -uo pipefail
+          curl -sf -m 30 "$SPACE/gradio_api/info" -o /tmp/info.json
+          echo "=== /generate_video のパラメータと既定値 ==="
+          jq -r '.named_endpoints["/generate_video"].parameters[]
+                 | "  \(.parameter_name // .label) = \(.parameter_default // "null")"' /tmp/info.json
+
+          # 既定値の配列を作り、必要な要素だけ差し替える。
+          # 引数の意味を推測で決め打ちしないための手順。
+          jq '[ .named_endpoints["/generate_video"].parameters[]
+                | (.parameter_default // null) ]' /tmp/info.json > /tmp/defaults.json
+          echo "=== defaults ==="; cat /tmp/defaults.json
+
+      - name: Upload MASTER image to the Space
+        run: |
+          set -uo pipefail
+          code=$(curl -s -o /tmp/upload.json -w '%{http_code}' -m 60 \
+            -F "files=@brand/assets/mina/mina-master.png" \
+            "$SPACE/gradio_api/upload")
+          echo "upload -> $code"
+          cat /tmp/upload.json; echo
+          [ "$code" = "200" ] || { echo "::error::upload failed"; exit 1; }
+          jq -r '.[0]' /tmp/upload.json > /tmp/path.txt
+          echo "uploaded path: $(cat /tmp/path.txt)"
+
+      - name: Call /generate_video
+        id: call
+        run: |
+          set -uo pipefail
+          PROMPT='A Japanese woman in a beige knit sweater sits at a table, holding a small white handheld device. She glances down for a moment, a little shy, then looks back toward the camera with a soft, slightly embarrassed smile. Subtle natural head motion and gentle blinking. Static camera, soft indoor daylight, realistic.'
+
+          jq -n --slurpfile d /tmp/defaults.json \
+                --arg p "$PROMPT" \
+                --arg fp "$(cat /tmp/path.txt)" \
+                --arg url "$SPACE/gradio_api/file=$(cat /tmp/path.txt)" '
+            ($d[0]) as $def
+            | { data: (
+                [ range(0; ($def|length)) ] | map(
+                    . as $i
+                    | if $i == 0 then
+                        { path: $fp, url: $url, meta: { _type: "gradio.FileData" } }
+                      elif $i == 2 then $p
+                      elif $i == 8 then 832
+                      elif $i == 9 then 480
+                      else $def[$i] end
+                  )
+              ) }' > /tmp/payload.json
+          echo "=== payload ==="; jq -c . /tmp/payload.json
+
+          code=$(curl -s -o /tmp/post.json -w '%{http_code}' -m 60 \
+            -X POST -H 'Content-Type: application/json' \
+            -d @/tmp/payload.json "$SPACE/gradio_api/call/generate_video")
+          echo "POST -> $code"; cat /tmp/post.json; echo
+          if [ "$code" != "200" ]; then
+            echo "::error::call rejected (HTTP $code) — 匿名実行が許可されていない可能性"
+            exit 1
+          fi
+          EID=$(jq -r '.event_id' /tmp/post.json)
+          echo "event_id: $EID"
+
+          echo "=== 結果ストリームを待つ（最大12分）==="
+          curl -sN -m 720 "$SPACE/gradio_api/call/generate_video/$EID" | tee /tmp/stream.txt | head -c 4000
+          echo
+
+          if grep -q '"event: error"\|event: error' /tmp/stream.txt; then
+            echo "::error::server returned error event"; exit 1
+          fi
+          VURL=$(grep '^data:' /tmp/stream.txt | tail -1 | sed 's/^data: //' \
+                 | jq -r '.. | objects | select(has("video") or has("path") or has("url"))
+                          | (.video.url // .url // .path)' 2>/dev/null | grep -m1 . || true)
+          [ -n "$VURL" ] || { echo "::error::動画URLを取り出せなかった"; tail -c 2000 /tmp/stream.txt; exit 1; }
+          echo "video url: $VURL"
+          case "$VURL" in http*) : ;; *) VURL="$SPACE/gradio_api/file=$VURL" ;; esac
+          mkdir -p "$OUT_DIR"
+          curl -fsSL -m 300 -o "$OUT_DIR/mina-intro-001.mp4" "$VURL"
+          ls -la "$OUT_DIR/mina-intro-001.mp4"
+
+      - name: Verify the video actually moves
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install --quiet Pillow
+          V="$OUT_DIR/mina-intro-001.mp4"
+          ffprobe -v error -show_entries stream=width,height,nb_frames \
+            -show_entries format=duration,size -of default=noprint_wrappers=1 "$V"
+          mkdir -p /tmp/f && ffmpeg -v error -i "$V" -vf fps=2 /tmp/f/%03d.png
+          python3 - <<'PY'
+          import glob
+          from PIL import Image
+          fs = sorted(glob.glob('/tmp/f/*.png'))
+          print('frames sampled:', len(fs))
+          prev=None; moved=0
+          for f in fs:
+              im=Image.open(f).convert('RGB'); w,h=im.size
+              px=[im.getpixel((int(w*(i+.5)/4),int(h*(j+.5)/4))) for i in range(4) for j in range(4)]
+              if prev is not None and px!=prev: moved+=1
+              prev=px
+          print('frames differing from previous:', moved, '/', max(len(fs)-1,0))
+          assert len(fs)>1, 'FAIL: 1フレームしかない'
+          assert moved>0, 'FAIL: 全フレーム同一＝動いていない'
+          print('MOTION: OK')
+          PY
+
+      - name: Commit video
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$OUT_DIR/mina-intro-001.mp4"
+          git diff --cached --quiet && echo "nothing to commit" || {
+            git commit -m "chore(mina): LTX-2 TURBO で生成した自己紹介クリップ [skip ci]"
+            git push origin HEAD:claude/mina-talk-test
+          }
