@@ -64,16 +64,42 @@ echo "=== download checkpoints ==="
 mkdir -p checkpoints gfpgan/weights
 BASE=https://github.com/OpenTalker/SadTalker/releases/download/v0.0.2-rc
 FX=https://github.com/xinntao/facexlib/releases/download/v0.1.0
-dl() { echo "  -> $2"; curl -sSL --retry 3 --retry-delay 3 -o "$2" "$1"; }
+FX22=https://github.com/xinntao/facexlib/releases/download/v0.2.2
+# -f を付けて HTTP エラーを失敗として扱う。
+# 付けないと 404 の本文がそのままファイルとして保存され、
+# 「数バイトの壊れた重み」が静かに出来上がる（MASTER 画像で起きたのと同じ事故）。
+dl() {
+  echo "  -> $2"
+  curl -fsSL --retry 3 --retry-delay 3 -o "$2" "$1" || { echo "::error::download failed: $1"; return 1; }
+  local sz; sz=$(stat -c%s "$2")
+  if [ "$sz" -lt 1000000 ]; then
+    echo "::error::suspiciously small file ($sz bytes): $2 <- $1"
+    return 1
+  fi
+  echo "     ok: $sz bytes"
+}
 
 dl "$BASE/mapping_00109-model.pth.tar"          checkpoints/mapping_00109-model.pth.tar
 dl "$BASE/mapping_00229-model.pth.tar"          checkpoints/mapping_00229-model.pth.tar
 dl "$BASE/SadTalker_V0.0.2_256.safetensors"     checkpoints/SadTalker_V0.0.2_256.safetensors
-# 顔検出・パースは enhancer を使わなくても必要
+# 顔検出・パースは enhancer を使わなくても必要。
+# parsing_parsenet.pth は v0.1.0 には無く v0.2.2 にある（前回 9 bytes になった原因）。
 dl "$FX/detection_Resnet50_Final.pth"           gfpgan/weights/detection_Resnet50_Final.pth
-dl "$FX/parsing_parsenet.pth"                   gfpgan/weights/parsing_parsenet.pth
+dl "$FX22/parsing_parsenet.pth"                 gfpgan/weights/parsing_parsenet.pth
 dl "$FX/alignment_WFLW_4HG.pth"                 gfpgan/weights/alignment_WFLW_4HG.pth
 ls -la checkpoints gfpgan/weights
+
+# SadTalker のソースは numpy 1.24 で削除された別名（np.float 等）を使っている。
+# 参照箇所を組み込み型へ置換する。np.float64 / np.int32 は \b により影響を受けない。
+echo "=== patch removed numpy aliases in SadTalker source ==="
+BEFORE=$(grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | wc -l)
+grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | while read -r f; do
+  sed -i -E 's/np\.float\b/float/g; s/np\.int\b/int/g; s/np\.bool\b/bool/g; s/np\.object\b/object/g; s/np\.complex\b/complex/g; s/np\.str\b/str/g' "$f"
+  echo "  patched: $f"
+done
+AFTER=$(grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | wc -l)
+echo "files with removed aliases: before=$BEFORE after=$AFTER"
+[ "$AFTER" -eq 0 ] || { echo "::error::numpy alias patch incomplete"; exit 1; }
 
 # ── 実行 ─────────────────────────────────────────────
 # 表情と首の動きの設計（初対面の照れ）:
