@@ -92,12 +92,20 @@ ls -la checkpoints gfpgan/weights
 # SadTalker のソースは numpy 1.24 で削除された別名（np.float 等）を使っている。
 # 参照箇所を組み込み型へ置換する。np.float64 / np.int32 は \b により影響を受けない。
 echo "=== patch removed numpy aliases in SadTalker source ==="
-BEFORE=$(grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | wc -l)
-grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | while read -r f; do
+# 注意: このスクリプトは set -o pipefail で走る。
+# grep は「該当なし」で終了コード 1 を返すため、`grep | wc -l` は
+# 0 件のときにパイプライン全体が失敗扱いになる。
+# 数えたいだけなので || true で吸収する。これを付けないと、
+# 置換が成功して残り 0 件になった瞬間にスクリプトが落ちる。
+count_aliases() {
+  grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . 2>/dev/null | wc -l || true
+}
+BEFORE=$(count_aliases)
+grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . 2>/dev/null | while read -r f; do
   sed -i -E 's/np\.float\b/float/g; s/np\.int\b/int/g; s/np\.bool\b/bool/g; s/np\.object\b/object/g; s/np\.complex\b/complex/g; s/np\.str\b/str/g' "$f"
   echo "  patched: $f"
-done
-AFTER=$(grep -rlE "np\.(float|int|bool|object|complex|str)\b" --include='*.py' . | wc -l)
+done || true
+AFTER=$(count_aliases)
 echo "files with removed aliases: before=$BEFORE after=$AFTER"
 [ "$AFTER" -eq 0 ] || { echo "::error::numpy alias patch incomplete"; exit 1; }
 
