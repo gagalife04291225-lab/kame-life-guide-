@@ -10,9 +10,10 @@
 ```
 案件:              mina-product-001
 MASTER IMAGE PATH: brand/assets/mina/mina-master.png
-MASTER VERSION:    blob 0989576d49ebc2df2b4dfbbcee9ce4540d24e463 / 15,009 bytes / main 5ec4ac9
-                    **検証 FAIL — ファイルは実在するが復号不能（JPEG が EOI 無しで途中終端）。
-                    詳細と再開条件は master-readiness-001.md。正本が復旧するまで画像生成を開始しない**
+MASTER VERSION:    blob fa9bb85ba10b8bc4be19d2a070840c064f64ffbb / 1,253,769 bytes
+                    PNG / 864 × 1536 / main 657dc61（PR #172 で修復）
+                    **検証 PASS — デコード可・IEND 正常・実際にミナが写っている。
+                    実測記録は master-readiness-001.md**
 補助参照:            mina-product-hold-reference.jpg = NOT_FOUND_EXACT_MATCH（BLOCKER 扱いにしない）
 用途 / 媒体:        TikTok（9秒・5カット）
 出力比率:           9:16
