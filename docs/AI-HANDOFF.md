@@ -34,7 +34,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **f2921cc**（PR #168「Mina fixed rules」merge の直後・2026-09-10 実測値） |
+| 基準 | `origin/main` = **3e02eed**（PR #169「ミナ画像ルール v2」merge の直後・2026-09-10 実測値） |
 | サイトファイルの状態 | PR #159〜#166 は main 反映済み（商品不足監査 CLOSE）。本PRは `CLAUDE.md` に「Claude Code 自律実行ルール」を追加する docs のみ。サイトファイル・`data/*`・CSV は無変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-10 |
@@ -44,6 +44,24 @@
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### ミナ ブランドキャラクター基盤化 v3 — **CLOSE**（2026-09-10 / 本PR）
+
+特定商品・特定場面・特定台本に寄っていたミナのルールを、**商品・カテゴリ・媒体を問わず横展開できる構造**へ再設計した。今後は商品が変わっても `brand/` のルールを書き直さない。
+
+| 層 | 中身 | 置き場所 |
+|---|---|---|
+| FIXED CORE | 人物IDのみ（年齢感・顔骨格・一重・肌質・髪色の基本・体型傾向・MASTER運用・別人化禁止） | `brand/mina-fixed-rules.md` |
+| VARIABLE MODULES | SCENE / WARDROBE / HAIR / EXPRESSION | `brand/mina-image-rules.md` |
+| PRODUCT INTERACTION | 関わり方16種。商品の実使用方法から都度決める | `brand/mina-image-rules.md` |
+| GAZE / CAMERA / CONTENT MODE | 視線整合9場面・カメラ3軸・用途モード9種。**すべて商品非依存** | `brand/mina-image-rules.md` |
+| SHOT PLAN | 汎用ひな型と生成前検証4項目。埋めた表は案件側へ | `brand/mina-shot-template.md`（新規） |
+| 商品固有データ | 商品名・型番・実寸・URL・価格・台本 | **`brand/` に置かない。**案件側 |
+
+**商品固有記述を `brand/` から完全に除去した**（シーラー・冷蔵庫・袋・125×40×63mm・175g の残存 0 件を機械検査で確認）。
+**SSOT を維持している**: 人物設定語は fixed のみ、モジュール一覧（髪型・服装・場面）は image-rules のみに存在する。
+特定カテゴリ専用の人物ルールは作らない方針を明記した。
+
 
 ### ミナ画像ルール v2 — 構図分散・視線整合 — **CLOSE**（2026-09-10 / 本PR）
 
