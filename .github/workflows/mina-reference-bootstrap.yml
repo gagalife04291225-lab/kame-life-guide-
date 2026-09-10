@@ -17,70 +17,59 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Materialize product-hold reference and update generation rules
+      - name: Materialize reference and update rules
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          import base64
+          src='brand/assets/mina/mina-product-hold-reference.b64'
+          out='brand/assets/mina/mina-product-hold-reference.jpg'
+          rules='brand/mina-image-rules.md'
 
-          src = Path('brand/assets/mina/mina-product-hold-reference.b64')
-          out = Path('brand/assets/mina/mina-product-hold-reference.jpg')
-          rules = Path('brand/mina-image-rules.md')
-          marker = '## CHATGPT AUTO-REFERENCE — 新規チャット自動参照'
+          base64 --decode "$src" > "$out"
+          file "$out" | grep -qi 'JPEG image data'
 
-          raw = ''.join(src.read_text(encoding='utf-8').split())
-          data = base64.b64decode(raw, validate=True)
-          if not data.startswith(b'\xff\xd8\xff'):
-              raise SystemExit('decoded payload is not JPEG')
-          out.write_bytes(data)
+          marker='## CHATGPT AUTO-REFERENCE — 新規チャット自動参照'
+          if ! grep -Fq "$marker" "$rules"; then
+            printf '%s\n' \
+              '' \
+              '---' \
+              '' \
+              '## CHATGPT AUTO-REFERENCE — 新規チャット自動参照' \
+              '' \
+              '新しい ChatGPT チャットで「ミナを生成して」「ミナの商品持ち画像を生成して」等の依頼を受けた場合、Owner に同じ基準画像の再添付を求める前に、**最新 main の GitHub 正本を自動参照する**。' \
+              '' \
+              '人物IDの一次参照:' \
+              '- `brand/assets/mina/mina-master.png`' \
+              '- raw: `https://raw.githubusercontent.com/gagalife04291225-lab/kame-life-guide-/main/brand/assets/mina/mina-master.png`' \
+              '' \
+              '商品持ち構図の補助参照:' \
+              '- `brand/assets/mina/mina-product-hold-reference.jpg`' \
+              '- raw: `https://raw.githubusercontent.com/gagalife04291225-lab/kame-life-guide-/main/brand/assets/mina/mina-product-hold-reference.jpg`' \
+              '' \
+              '運用:' \
+              '1. `MINA_MASTER` を人物同一性の最優先参照にする。' \
+              '2. `PRODUCT_HOOK` / `THUMBNAIL` / 商品持ち静止画では、商品持ち補助参照も同時に使い、自然な正面寄りの顔・手・商品保持・距離感の基準にする。' \
+              '3. 補助参照は MASTER を上書きしない。顔が競合したら MASTER を優先する。' \
+              '4. GitHub raw URL を直接画像参照にできる生成経路を使い、Owner に再アップロードを要求しない。' \
+              '5. 現在の生成経路が GitHub 画像を視覚参照へ投入できない場合は、文章だけで別人を新規生成せず、raw URL を参照入力できる生成経路へ切り替える。' \
+              '6. 実在商品を扱うときは案件側の実商品一次画像も別途参照する。補助参照画像に写る商品を別SKUへ流用しない。' \
+              '7. 生成後は MASTER と照合し、別人化・二重化・AI美女化・過度な美肌・髪の白粒・手指破綻を FAIL とする。' \
+              '' \
+              'この自動参照により、GitHub 上に正本が存在する限り、**新しいチャットごとの MINA_MASTER 手貼りを通常運用にしない。**' \
+              >> "$rules"
+          fi
 
-          text = rules.read_text(encoding='utf-8')
-          if marker not in text:
-              block = r'''
-
----
-
-## CHATGPT AUTO-REFERENCE — 新規チャット自動参照
-
-新しい ChatGPT チャットで「ミナを生成して」「ミナの商品持ち画像を生成して」等の依頼を受けた場合、Owner に同じ基準画像の再添付を求める前に、**最新 main の GitHub 正本を自動参照する**。
-
-人物IDの一次参照:
-- `brand/assets/mina/mina-master.png`
-- raw: `https://raw.githubusercontent.com/gagalife04291225-lab/kame-life-guide-/main/brand/assets/mina/mina-master.png`
-
-商品持ち構図の補助参照:
-- `brand/assets/mina/mina-product-hold-reference.jpg`
-- raw: `https://raw.githubusercontent.com/gagalife04291225-lab/kame-life-guide-/main/brand/assets/mina/mina-product-hold-reference.jpg`
-
-運用:
-1. `MINA_MASTER` を人物同一性の最優先参照にする。
-2. `PRODUCT_HOOK` / `THUMBNAIL` / 商品持ち静止画では、商品持ち補助参照も同時に使い、自然な正面寄りの顔・手・商品保持・距離感の基準にする。
-3. 補助参照は MASTER を上書きしない。顔が競合したら MASTER を優先する。
-4. ChatGPT が GitHub raw URL を直接画像参照にできる生成経路を持つ場合は、その経路を使う。再アップロードを Owner に要求しない。
-5. GitHub 画像を視覚参照へ投入できない生成経路しかない場合、文章だけで別人を新規生成せず、GitHub raw URLを参照入力できる画像生成経路へ切り替える。
-6. 実在商品を扱うときは案件側の実商品一次画像も別途参照する。補助参照画像に写る商品を別SKUへ流用しない。
-7. 生成後は MASTER と照合し、別人化・二重化・AI美女化・過度な美肌・髪の白粒・手指破綻を FAIL とする。
-
-この自動参照により、GitHub 上に正本が存在する限り、**新しいチャットごとの MINA_MASTER 手貼りを通常運用にしない。**
-'''
-              rules.write_text(text + block, encoding='utf-8')
-          PY
-
-          rm -f brand/assets/mina/mina-product-hold-reference.b64
+          rm -f "$src"
           rm -f brand/assets/mina/mina-product-hold-reference-128.txt
           rm -f .github/workflows/mina-reference-bootstrap.yml
 
-      - name: Commit bootstrap result
+      - name: Commit result
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git diff --cached --quiet; then
-            exit 0
-          fi
+          git diff --cached --quiet && exit 0
           git commit -m 'feat(brand): automate Mina GitHub image references'
           git push origin HEAD:main
