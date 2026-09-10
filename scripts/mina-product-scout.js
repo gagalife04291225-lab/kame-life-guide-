@@ -407,14 +407,45 @@ async function main() {
   fs.writeFileSync(path.join(OUT_DIR, 'evidence.md'), md);
 
   // ── 秘匿値の混入検査（出力を実際に読み直して検証する）──
+  //
+  // 一致が出た場合は「どこで一致したか」を必ず診断出力する。
+  // 原因を推測で塞ぐと、本物の漏洩と偶然の部分一致を区別できなくなるため。
+  // 出力時は秘匿値そのものを «SECRET» に置換し、周辺文脈だけを見せる。
+  function leakContexts(body, needle) {
+    const out = [];
+    let idx = body.indexOf(needle);
+    while (idx !== -1 && out.length < 5) {
+      const s = Math.max(0, idx - 100);
+      const e = Math.min(body.length, idx + needle.length + 100);
+      out.push(body.slice(s, e).split(needle).join('«SECRET»'));
+      idx = body.indexOf(needle, idx + needle.length);
+    }
+    return out;
+  }
+
+  console.log('secret-scan: appIdLength=' + APP_ID.length
+    + ' accessKeyLength=' + ACCESS_KEY.length
+    + ' affiliateIdLength=' + AFFILIATE_ID.length);
+
+  let leakFound = false;
   ['candidates.json', 'selected-product.json', 'evidence.md'].forEach(function(f) {
     const body = fs.readFileSync(path.join(OUT_DIR, f), 'utf8');
-    const bad = [];
-    if (APP_ID && body.includes(APP_ID))         bad.push('RAKUTEN_APP_ID');
-    if (ACCESS_KEY && body.includes(ACCESS_KEY)) bad.push('RAKUTEN_ACCESS_KEY');
-    if (/applicationId=|accessKey=/i.test(body)) bad.push('credential query parameter');
-    if (bad.length) fail('secret leaked into ' + f + ': ' + bad.join(', '));
+    [['RAKUTEN_APP_ID', APP_ID], ['RAKUTEN_ACCESS_KEY', ACCESS_KEY]].forEach(function(pair) {
+      const label = pair[0], val = pair[1];
+      if (!val || !body.includes(val)) return;
+      leakFound = true;
+      console.error('LEAK-DIAG ' + f + ' matched ' + label
+        + ' (len=' + val.length + ', occurrences=' + body.split(val).length + ')');
+      leakContexts(body, val).forEach(function(ctx, i) {
+        console.error('  context[' + i + ']: ' + ctx.replace(/\s+/g, ' '));
+      });
+    });
+    if (/applicationId=|accessKey=/i.test(body)) {
+      leakFound = true;
+      console.error('LEAK-DIAG ' + f + ' contains a credential query parameter');
+    }
   });
+  if (leakFound) fail('credential material present in generated files — see LEAK-DIAG above');
   console.log('OK: no credentials found in generated files');
 
   // ── ジョブログ / サマリへ結果を出す（コンテナ側から API 経由で読めるように）──
