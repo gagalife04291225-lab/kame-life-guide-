@@ -423,13 +423,24 @@ async function main() {
     return out;
   }
 
+  // 楽天は affiliateUrl / itemUrl の中に自ら `rafcid=wsc_i_is_<applicationId>` を
+  // 埋め込んで返す。この形の applicationId は公開前提のトラッキング識別子であり、
+  // 同一値が既に data/products.js（GitHub Pages で配信中）に含まれている。
+  // したがって「この形のときだけ」許可し、それ以外の位置に出た場合は従来どおり失敗させる。
+  // accessKey は本物の秘匿値なので、どこに出ても無条件で失敗させる。
+  function stripPublishedRafcid(body) {
+    if (!APP_ID) return body;
+    return body.split('rafcid=wsc_i_is_' + APP_ID).join('rafcid=wsc_i_is_<PUBLISHED_TRACKING_ID>');
+  }
+
   console.log('secret-scan: appIdLength=' + APP_ID.length
     + ' accessKeyLength=' + ACCESS_KEY.length
     + ' affiliateIdLength=' + AFFILIATE_ID.length);
 
   let leakFound = false;
   ['candidates.json', 'selected-product.json', 'evidence.md'].forEach(function(f) {
-    const body = fs.readFileSync(path.join(OUT_DIR, f), 'utf8');
+    const raw = fs.readFileSync(path.join(OUT_DIR, f), 'utf8');
+    const body = stripPublishedRafcid(raw);
     [['RAKUTEN_APP_ID', APP_ID], ['RAKUTEN_ACCESS_KEY', ACCESS_KEY]].forEach(function(pair) {
       const label = pair[0], val = pair[1];
       if (!val || !body.includes(val)) return;
