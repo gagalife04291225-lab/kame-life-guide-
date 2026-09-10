@@ -1,0 +1,62 @@
+name: HF Space API Probe (temporary)
+
+# HF Space の Gradio API を Actions から叩けるかを調べるだけ。1回限りの確認。
+# 生成までは行わない。到達性・認証要否・入出力スキーマを見る。
+
+on:
+  push:
+    branches:
+      - claude/mina-talk-test
+    paths:
+      - '.github/workflows/hf-api-probe.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - name: Probe Gradio APIs
+        run: |
+          set -uo pipefail
+          SPACES=(
+            "fffiloni-expression-editor"
+            "alexnasa-ltx-2-turbo"
+            "klingteam-liveportrait"
+          )
+          for s in "${SPACES[@]}"; do
+            echo "=================================================="
+            echo " $s"
+            echo "=================================================="
+            BASE="https://${s}.hf.space"
+
+            code=$(curl -s -o /tmp/root.html -w '%{http_code}' -m 25 -L "$BASE/" || echo 000)
+            echo "  GET /                 -> $code"
+
+            code=$(curl -s -o /tmp/info.json -w '%{http_code}' -m 30 -L "$BASE/gradio_api/info" || echo 000)
+            echo "  GET /gradio_api/info  -> $code  ($(stat -c%s /tmp/info.json 2>/dev/null || echo 0) bytes)"
+
+            if [ "$code" = "200" ] && jq -e . /tmp/info.json >/dev/null 2>&1; then
+              echo "  --- 呼び出せる関数 ---"
+              jq -r '.named_endpoints // {} | keys[]' /tmp/info.json 2>/dev/null | head -20
+              echo "  --- 先頭関数の入力型 ---"
+              jq -r '(.named_endpoints // {}) | to_entries[0] as $e
+                     | "  fn: \($e.key)",
+                       ( $e.value.parameters[]?
+                         | "    in : \(.label // .parameter_name // "?") [\(.type.type // .python_type.type // "?")]" ),
+                       ( $e.value.returns[]?
+                         | "    out: \(.label // "?") [\(.type.type // .python_type.type // "?")]" )' \
+                     /tmp/info.json 2>/dev/null | head -30
+            else
+              echo "  --- 応答の先頭 ---"
+              head -c 300 /tmp/info.json 2>/dev/null | tr -d '\0'; echo
+            fi
+            echo
+          done
+
+          echo "=================================================="
+          echo " 認証要否の判定材料"
+          echo "=================================================="
+          echo "ZeroGPU の Space は匿名の API 呼び出しを拒否することがある。"
+          echo "上の info が 200 で関数一覧が出ていれば、匿名で叩ける可能性がある。"
+          echo "401/403 や HTML が返っていれば HF トークンが要る。"
