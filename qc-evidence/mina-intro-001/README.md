@@ -76,3 +76,51 @@ HF の API を 20 個の検索語で引き、**469 件**の Space の稼働状�
 
 人物参照は `brand/assets/mina/mina-master.png`（canonical path）。
 生成物は派生物であり、MASTER にはしない。
+
+
+---
+
+## 音声なしで「画像から動かす」場合の調査（2026-09-10 実測）
+
+要件が「音声不要・画像から動きと表情が変わればよい」に変わったため、
+image-to-video / 表情エディタ系の 29 検索語で HF Spaces を取り直した。
+
+**745 件**の稼働状態を取得。RUNNING 205 / RUNTIME_ERROR 311 / PAUSED 81 /
+BUILD_ERROR 71 / SLEEPING 68 / CONFIG_ERROR 8。
+
+### 推奨1位: `fffiloni/expression-editor`（♥1,663 / zero-a10g / 2026-05-25）
+
+LivePortrait ベース。目の開き・瞳の向き・眉・口角・顔の pitch/yaw/roll を
+スライダーで直接操作する。**元画像のピクセルを保ったまま表情パラメータだけ動かす**ため、
+構造的に顔が変質しない。
+
+`brand/mina-fixed-rules.md` の「別人化禁止」「MASTER と同一人物に見えることを最優先」を
+満たせる唯一の系統であり、この制約を理由に1位とする。
+「初対面の照れ」も 視線を外す / 顎を引く / 口角をわずかに上げる を狙って作れる。
+
+### 動画としての動きが要る場合（すべて RUNNING）
+
+| Space | ♥ | HW | 更新 |
+|---|---:|---|---|
+| `alexnasa/ltx-2-TURBO` | 537 | zero-a10g | 2026-08-31 |
+| `Lightricks/LTX-2.5` | 66 | zero-a10g | 2026-08-11（公式・最新） |
+| `Lightricks/ltx-video-distilled` | 1,570 | zero-a10g | 2026-06-15（公式） |
+| `alexnasa/Wan2.2-Animate-ZEROGPU` | 322 | zero-a10g | 2026-08-24 |
+| `mediasynthesismuseum/stable-video-diffusion` | 2,032 | zero-a10g | 2026-07-15 |
+| `Saravutw/WAN2.2_I2V_LIGHTNING_4-8step_custom` | 276 | zero-a10g | 2026-08-13 |
+
+**この系統は拡散モデルであり、数秒動かすと顔が変質する。** 使う場合は生成後に
+MASTER と並べた IDENTITY QC を必ず行い、別人に見えたら不採用にする。
+
+### 駆動動画を撮れる場合
+
+`KlingTeam/LivePortrait`（♥3,788・最多 / zero-a10g）。
+3秒の演技を撮ってミナへ移す。表情の自然さは最上で、人物も壊れない。
+
+### 推奨手順
+
+1. `fffiloni/expression-editor` で狙った表情が作れるか確認する
+2. 動きが足りなければ `alexnasa/ltx-2-TURBO` を試し、IDENTITY QC をかける
+3. それでも不足なら `KlingTeam/LivePortrait` ＋ 自前の駆動動画
+
+**この調査は済んでいる。同じ検索を再実行しないこと。**
