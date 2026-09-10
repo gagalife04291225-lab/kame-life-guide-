@@ -109,6 +109,30 @@ AFTER=$(count_aliases)
 echo "files with removed aliases: before=$BEFORE after=$AFTER"
 [ "$AFTER" -eq 0 ] || { echo "::error::numpy alias patch incomplete"; exit 1; }
 
+# numpy 1.24+ は、スカラーと形状 (1,) の配列を混ぜた np.array を
+# "inhomogeneous shape" として拒否する。SadTalker の align_img がこれに当たる。
+# 各要素を明示的にスカラーへ潰す。
+echo "=== patch align_img inhomogeneous np.array ==="
+PP=src/face3d/util/preprocess.py
+if grep -q "trans_params = np.array(\[w0, h0, s, t\[0\], t\[1\]\])" "$PP"; then
+  python - "$PP" <<'PYEOF'
+import sys
+p = sys.argv[1]
+src = open(p, encoding='utf-8').read()
+old = "trans_params = np.array([w0, h0, s, t[0], t[1]])"
+new = ("trans_params = np.array([float(np.squeeze(w0)), float(np.squeeze(h0)), "
+       "float(np.squeeze(s)), float(np.squeeze(t[0])), float(np.squeeze(t[1]))])")
+assert old in src, 'align_img line not found'
+open(p, 'w', encoding='utf-8').write(src.replace(old, new, 1))
+print('  patched:', p)
+PYEOF
+else
+  echo "  align_img line not in expected form; skipping"
+  grep -n "trans_params" "$PP" || true
+fi
+python -c "import ast,sys; ast.parse(open('src/face3d/util/preprocess.py',encoding='utf-8').read()); print('  preprocess.py parses OK')"
+
+
 # ── 実行 ─────────────────────────────────────────────
 # 表情と首の動きの設計（初対面の照れ）:
 #   expression_scale 0.85 … 大げさに笑わせない。片側の口角がわずかに上がる程度
