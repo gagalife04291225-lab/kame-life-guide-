@@ -124,3 +124,64 @@ MASTER と並べた IDENTITY QC を必ず行い、別人に見えたら不採用
 3. それでも不足なら `KlingTeam/LivePortrait` ＋ 自前の駆動動画
 
 **この調査は済んでいる。同じ検索を再実行しないこと。**
+
+---
+
+## 実生成の結果（2026-09-10・実測・確定）
+
+**`alexnasa/ltx-2-TURBO` で実際に動画を生成できた。** 調査ではなく実測である。
+
+### 経路（これが唯一動く経路。再探索しない）
+
+GitHub Actions ランナーから HF Space の Gradio API を **匿名で** 叩ける。
+HF トークンは不要だった。ZeroGPU は匿名の predict を拒否しなかった。
+
+```
+POST https://alexnasa-ltx-2-turbo.hf.space/gradio_api/upload      （画像を上げる）
+POST https://alexnasa-ltx-2-turbo.hf.space/gradio_api/call/generate_video
+GET  https://alexnasa-ltx-2-turbo.hf.space/gradio_api/call/generate_video/<event_id>
+```
+
+引数配列は `/gradio_api/info` の `parameter_default` から組み立て、
+**index 0 = 画像 FileData / index 2 = prompt** だけ差し替えれば通る。
+実装は `.github/workflows/hf-gen-attempt.yml`（workflow run 34479887114 / job 102879746504）。
+
+### 出力の実測値
+
+| 項目 | 値 |
+|---|---|
+| 入力 | `brand/assets/mina/mina-master.png` 1枚のみ |
+| 出力 | `mina-intro-001.mp4` |
+| 解像度 | 960 × 1664（縦） |
+| フレーム数 | 73 |
+| 長さ | 3.041667 秒 |
+| サイズ | 594,118 bytes |
+| 生成時間 | 約 27 秒 |
+| 音声 | なし |
+
+`Height` / `Width` 引数（index 8 / 9 に 832 / 480 を渡した）は**反映されなかった**。
+出力比率は入力画像の比率で決まる。**この引数の探索をやり直さない。**
+
+### 目視QC の結果（全フレームを見た）
+
+良い点 — 顔向きが自然に動き、まばたきし、カメラ目線から視線を伏せる。
+MASTER と同一人物に見える。服・背景・照明・商品個体が一貫している。
+
+**破綻 — t ≒ 2.0 秒から商品が溶けて消失し、t ≒ 2.25 秒で手が崩壊する。**
+
+### 確定した制約
+
+**LTX-2 TURBO は 1カット 2秒以内でしか使えない。** 長回しはできない。
+商品を持たせたまま 2秒を超えさせない。超える必要がある場合は商品を画面外に置く。
+
+使える区間だけを切り出したものが `mina-intro-001-clean.mp4`
+（0〜1.9秒 / 388,493 bytes / 全12フレーム目視でクリーン）。
+
+### 無料ツールの最終順位（この案件の結論）
+
+| 用途 | 1番 | 理由 |
+|---|---|---|
+| 動きが必要 | `alexnasa/ltx-2-TURBO` | 実際に動いた唯一の実績。ただし2秒制約あり |
+| 表情だけ変える | `fffiloni/expression-editor` | 元ピクセルを保持するため別人化が構造的に起きない |
+
+**この結論は確定。同じ比較検討をやり直さない。**
