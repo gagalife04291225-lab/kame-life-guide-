@@ -1,0 +1,179 @@
+name: Mina Talk Test (temporary)
+
+# ミナの MASTER 画像を喋らせる検証用ワークフロー。
+# 音声: VOICEVOX ENGINE の CPU 版 Docker イメージ
+# 動画: SadTalker（--cpu）で MASTER 画像 + 音声 → mp4
+#
+# GitHub Actions の無料ランナーは GPU が無いが、どちらも CPU で動く。
+# 音声生成と動画生成を分離し、動画側が失敗しても音声だけは必ず残るようにしている。
+
+on:
+  push:
+    branches:
+      - claude/mina-talk-test
+    paths:
+      - '.github/workflows/mina-talk-test.yml'
+      - 'scripts/mina-talk-test.sh'
+
+permissions:
+  contents: write
+
+env:
+  # 「こんにちはミナです。初めまして。」
+  LINE: 'こんにちは、ミナです。はじめまして。'
+  # 候補話者（VOICEVOX の speaker id）。Owner が選べるよう3種類つくる。
+  #   2  = 四国めたん（ノーマル）
+  #   16 = 九州そら（ノーマル）
+  #   20 = もち子さん（ノーマル）
+  SPEAKERS: '2 16 20'
+  # 動画に使う話者。本来の声が判明したらここだけ差し替える。
+  ANIM_SPEAKER: '16'
+  OUT_DIR: qc-evidence/mina-intro-001
+
+jobs:
+  talk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify MINA_MASTER is a decodable image
+        run: |
+          python3 -m pip install --quiet Pillow
+          python3 - <<'PY'
+          import struct, warnings
+          from PIL import Image
+          p = 'brand/assets/mina/mina-master.png'
+          d = open(p, 'rb').read()
+          assert d[:8] == b'\x89PNG\r\n\x1a\n', 'MASTER is not a PNG'
+          assert d[-8:-4] == b'IEND', 'MASTER has no IEND'
+          w, h = struct.unpack('>II', d[16:24])
+          warnings.simplefilter('error')
+          im = Image.open(p); im.load()
+          print(f'MASTER OK: PNG {w}x{h} {len(d)} bytes, decode clean')
+          PY
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -version | head -1
+
+      # ── 音声（VOICEVOX ENGINE / CPU）─────────────────────────
+      - name: Start VOICEVOX ENGINE (CPU)
+        run: |
+          docker run -d --name voicevox -p 50021:50021 \
+            voicevox/voicevox_engine:cpu-ubuntu20.04-latest
+          echo "waiting for engine..."
+          for i in $(seq 1 60); do
+            if curl -sf http://127.0.0.1:50021/version >/dev/null; then
+              echo "engine up after ${i}s: $(curl -s http://127.0.0.1:50021/version)"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "::error::VOICEVOX engine did not become ready"
+          docker logs voicevox | tail -30
+          exit 1
+
+      - name: Synthesize voice candidates
+        run: |
+          mkdir -p "$OUT_DIR/audio"
+          for SP in $SPEAKERS; do
+            echo "--- speaker $SP ---"
+            curl -sf -X POST \
+              "http://127.0.0.1:50021/audio_query?speaker=${SP}" \
+              --get --data-urlencode "text=${LINE}" \
+              -o "/tmp/query_${SP}.json"
+            # 初対面の照れ: 少しゆっくり、抑揚をわずかに落とし、語尾の間を残す
+            python3 - "$SP" <<'PY'
+          import json, sys, os
+          sp = sys.argv[1]
+          p = f'/tmp/query_{sp}.json'
+          q = json.load(open(p))
+          q['speedScale']            = 0.94   # 少しゆっくり
+          q['pitchScale']            = 0.0
+          q['intonationScale']       = 0.92   # 抑揚を控えめに（照れ）
+          q['volumeScale']           = 1.0
+          q['prePhonemeLength']      = 0.20
+          q['postPhonemeLength']     = 0.55   # 言い終わりの間
+          json.dump(q, open(p, 'w'), ensure_ascii=False)
+          print('tuned', p)
+          PY
+            curl -sf -X POST \
+              "http://127.0.0.1:50021/synthesis?speaker=${SP}" \
+              -H "Content-Type: application/json" \
+              -d @"/tmp/query_${SP}.json" \
+              -o "$OUT_DIR/audio/mina-intro-speaker${SP}.wav"
+          done
+          echo "=== generated ==="
+          for f in "$OUT_DIR"/audio/*.wav; do
+            printf '%-60s %8s bytes  %s\n' "$f" "$(stat -c%s "$f")" \
+              "$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")s"
+          done
+
+      - name: Stop VOICEVOX ENGINE
+        if: always()
+        run: docker rm -f voicevox || true
+
+      # ── 動画（SadTalker / CPU）──────────────────────────────
+      # 依存が古く壊れやすいので continue-on-error。失敗しても音声は残す。
+      - name: Set up Python 3.10 for SadTalker
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install SadTalker and run (CPU)
+        id: anim
+        continue-on-error: true
+        run: bash scripts/mina-talk-test.sh
+
+      - name: Inspect generated video
+        if: steps.anim.outcome == 'success'
+        run: |
+          V="$OUT_DIR/mina-intro-001.mp4"
+          if [ ! -f "$V" ]; then echo "::error::no video produced"; exit 1; fi
+          echo "=== ffprobe ==="
+          ffprobe -v error -show_entries \
+            stream=codec_name,width,height,nb_frames,r_frame_rate \
+            -show_entries format=duration,size -of default=noprint_wrappers=1 "$V"
+          echo "=== フレーム抽出して内容を検査（均一色でないか）==="
+          mkdir -p /tmp/frames
+          ffmpeg -v error -i "$V" -vf "fps=2" /tmp/frames/f_%03d.png
+          python3 - <<'PY'
+          import glob
+          from PIL import Image
+          fs = sorted(glob.glob('/tmp/frames/f_*.png'))
+          print('sampled frames:', len(fs))
+          prev = None; moved = 0
+          for f in fs:
+              im = Image.open(f).convert('RGB'); w,h = im.size
+              px = [im.getpixel((int(w*(i+.5)/4), int(h*(j+.5)/4))) for i in range(4) for j in range(4)]
+              uniq = len(set(px))
+              if prev is not None and px != prev: moved += 1
+              prev = px
+              print(f'  {f.split("/")[-1]}: {w}x{h} distinct_sample_colours={uniq}')
+          print('frames differing from previous:', moved, '/', max(len(fs)-1,0))
+          assert moved > 0, 'FAIL: 全フレームが同一 = 動いていない'
+          print('MOTION: OK (フレーム間に変化あり)')
+          PY
+
+      - name: Commit outputs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$OUT_DIR" || true
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "chore(mina): 自己紹介ボイス/動画の生成結果を記録 [skip ci]"
+            git push origin HEAD:claude/mina-talk-test
+          fi
+
+      - name: Report animation failure (audio still produced)
+        if: steps.anim.outcome == 'failure'
+        run: |
+          echo "::warning::SadTalker step failed. 音声のみ生成された。ログを確認すること。"
+          exit 1
