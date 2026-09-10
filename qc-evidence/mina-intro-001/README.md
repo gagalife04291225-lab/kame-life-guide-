@@ -36,7 +36,43 @@ GitHub Actions の CPU ランナー上で SadTalker を動かそうとして5回
 ## 動画が必要になったときの方針
 
 自分でインストールして直す方向へ進まない。**他人が保守している動く環境を使う。**
-具体的には、HuggingFace Space の既存デモ等に MASTER 画像と wav を渡して mp4 を受け取る。
+HuggingFace Space の既存デモに MASTER 画像と wav を渡して mp4 を受け取る。
+
+### 調査済みの Space 一覧（2026-09-10 実測）
+
+HF の API を 20 個の検索語で引き、**469 件**の Space の稼働状態を取得した。
+
+| 状態 | 件数 |
+|---|---:|
+| RUNNING | 93 |
+| RUNTIME_ERROR | 173 |
+| BUILD_ERROR | 94 |
+| PAUSED | 62 |
+| SLEEPING | 38 |
+
+**過半数（57%）が壊れている。** RUNNING のものだけを対象にすること。
+
+**画像1枚＋音声 → 喋る動画（用途一致・すべて RUNNING）**
+
+| Space | ♥ | HW | 更新 |
+|---|---:|---|---|
+| `fffiloni/EchoMimic` | 161 | zero-a10g | 2026-05-13 |
+| `multimodalart/MoDA-fast-talking-head` | 138 | zero-a10g | 2026-07-14 |
+| `victor/LongCat-Video-Avatar-1.5` | 313 | zero-a10g | 2026-05-26 |
+| `meituan-longcat/LongCat-Video-Avatar-1.5-Demo` | 16 | zero-a10g | 2026-06-23（公式） |
+| `acvlab/FantasyTalking` | 152 | zero-a10g | 2025-05-12 |
+| `fffiloni/echomimic-v2` | 84 | cpu-upgrade | 2026-05-08 |
+
+推奨順: `fffiloni/EchoMimic` → `MoDA-fast-talking-head` → `LongCat-Video-Avatar-1.5`。
+`zero-a10g` は ZeroGPU（無料GPU）。利用に HF の無料アカウントが要る。
+
+**用途違いなので選ばないこと（いいね数は多いが罠）**
+
+- `fffiloni/LatentSync`（♥622）… 既存**動画**の口を音声に合わせるもの。静止画1枚からは作れない
+- `KlingTeam/LivePortrait`（♥3,788）… **音声では動かない**。駆動動画が別途必要。
+  ただし自分で「照れた演技」を撮れるなら、表情の自然さはこれが最上
+
+**この調査は済んでいる。同じ検索を再実行しないこと。**
 
 人物参照は `brand/assets/mina/mina-master.png`（canonical path）。
 生成物は派生物であり、MASTER にはしない。
