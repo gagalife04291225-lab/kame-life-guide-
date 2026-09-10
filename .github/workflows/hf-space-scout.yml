@@ -32,7 +32,7 @@ jobs:
             enc=$(printf '%s' "$q" | jq -sRr @uri)
             echo "--- query: $q ---"
             curl -sf --retry 2 \
-              "https://huggingface.co/api/spaces?search=${enc}&sort=likes&direction=-1&limit=40&full=true" \
+              "https://huggingface.co/api/spaces?search=${enc}&sort=likes&direction=-1&limit=40&expand[]=runtime&expand[]=likes&expand[]=sdk&expand[]=lastModified" \
               | jq -c --arg q "$q" '.[] | {
                   q: $q,
                   id: .id,
