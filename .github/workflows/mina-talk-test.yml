@@ -27,7 +27,7 @@ env:
   #   20 = もち子さん（ノーマル）
   SPEAKERS: '2 16 20'
   # 動画に使う話者。本来の声が判明したらここだけ差し替える。
-  ANIM_SPEAKER: '16'
+  ANIM_SPEAKER: "2"
   OUT_DIR: qc-evidence/mina-intro-001
 
 jobs:

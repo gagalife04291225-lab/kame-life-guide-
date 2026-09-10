@@ -35,12 +35,24 @@ python -m pip install --quiet \
 
 # basicsr 1.4.2 は torchvision>=0.17 で消えた
 # torchvision.transforms.functional_tensor を import して落ちる。既知の不具合。
-BASICSR_DIR="$(python -c 'import basicsr, os; print(os.path.dirname(basicsr.__file__))')"
-if grep -q "functional_tensor" "$BASICSR_DIR/data/degradations.py"; then
-  sed -i 's/torchvision\.transforms\.functional_tensor/torchvision.transforms.functional/' \
-    "$BASICSR_DIR/data/degradations.py"
-  echo "patched basicsr degradations.py (functional_tensor -> functional)"
-fi
+#
+# 重要: `import basicsr` 自体がこの不具合で落ちるため、
+# パッチ対象のパスを import で解決してはいけない。site-packages から直接引く。
+SITE="$(python -c "import sysconfig; print(sysconfig.get_paths()['purelib'])")"
+echo "site-packages: $SITE"
+PATCHED=0
+for f in "$SITE"/basicsr/data/degradations.py "$SITE"/basicsr/utils/*.py; do
+  [ -f "$f" ] || continue
+  if grep -q "torchvision.transforms.functional_tensor" "$f"; then
+    sed -i 's/torchvision\.transforms\.functional_tensor/torchvision.transforms.functional/' "$f"
+    echo "  patched: $f"
+    PATCHED=$((PATCHED+1))
+  fi
+done
+echo "patched files: $PATCHED"
+# パッチが効いたことを import で実証する（ここで落ちるなら先へ進む意味がない）
+python -c "import basicsr; print('basicsr import OK:', basicsr.__version__)"
+python -c "import facexlib, gfpgan; print('facexlib/gfpgan import OK')"
 
 # ── SadTalker 本体 ───────────────────────────────────
 echo "=== clone SadTalker ==="
