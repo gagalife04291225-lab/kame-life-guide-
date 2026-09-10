@@ -21,18 +21,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64
 
-          src='brand/assets/mina/mina-product-hold-reference.b64'
-          out='brand/assets/mina/mina-product-hold-reference.jpg'
-          rules='brand/mina-image-rules.md'
+          src = Path('brand/assets/mina/mina-product-hold-reference.b64')
+          out = Path('brand/assets/mina/mina-product-hold-reference.jpg')
+          rules = Path('brand/mina-image-rules.md')
+          marker = '## CHATGPT AUTO-REFERENCE — 新規チャット自動参照'
 
-          test -f "$src"
-          base64 --decode "$src" > "$out"
-          file "$out" | grep -qi 'JPEG image data'
+          raw = ''.join(src.read_text(encoding='utf-8').split())
+          data = base64.b64decode(raw, validate=True)
+          if not data.startswith(b'\xff\xd8\xff'):
+              raise SystemExit('decoded payload is not JPEG')
+          out.write_bytes(data)
 
-          marker='## CHATGPT AUTO-REFERENCE — 新規チャット自動参照'
-          if ! grep -Fq "$marker" "$rules"; then
-            cat >> "$rules" <<'EOF'
+          text = rules.read_text(encoding='utf-8')
+          if marker not in text:
+              block = r'''
 
 ---
 
@@ -58,10 +64,12 @@ jobs:
 7. 生成後は MASTER と照合し、別人化・二重化・AI美女化・過度な美肌・髪の白粒・手指破綻を FAIL とする。
 
 この自動参照により、GitHub 上に正本が存在する限り、**新しいチャットごとの MINA_MASTER 手貼りを通常運用にしない。**
-EOF
-          fi
+'''
+              rules.write_text(text + block, encoding='utf-8')
+          PY
 
-          rm -f "$src" brand/assets/mina/mina-product-hold-reference-128.txt
+          rm -f brand/assets/mina/mina-product-hold-reference.b64
+          rm -f brand/assets/mina/mina-product-hold-reference-128.txt
           rm -f .github/workflows/mina-reference-bootstrap.yml
 
       - name: Commit bootstrap result
