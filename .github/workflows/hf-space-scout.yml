@@ -1,0 +1,74 @@
+name: HF Space Scout (temporary)
+
+# HuggingFace Spaces を API で検索し、「いま動いている」talking-head 系の
+# デモを洗い出すだけのワークフロー。モデルの導入も実行もしない。
+# Claude Code のコンテナからは huggingface.co へ到達できないため Actions を使う。
+
+on:
+  push:
+    branches:
+      - claude/mina-talk-test
+    paths:
+      - '.github/workflows/hf-space-scout.yml'
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Query HuggingFace Spaces API
+        run: |
+          set -uo pipefail
+          QUERIES=(
+            "talking head" "lipsync" "lip sync" "portrait animation"
+            "audio driven" "sadtalker" "echomimic" "liveportrait"
+            "ditto talking" "personalive" "wav2lip" "hallo"
+            "musetalk" "latentsync" "avatar video" "image to video"
+            "infinitetalk" "fantasytalking" "omnihuman" "duix"
+          )
+          echo "results" > /tmp/all.jsonl
+          for q in "${QUERIES[@]}"; do
+            enc=$(printf '%s' "$q" | jq -sRr @uri)
+            echo "--- query: $q ---"
+            curl -sf --retry 2 \
+              "https://huggingface.co/api/spaces?search=${enc}&sort=likes&direction=-1&limit=40&full=true" \
+              | jq -c --arg q "$q" '.[] | {
+                  q: $q,
+                  id: .id,
+                  likes: (.likes // 0),
+                  stage: (.runtime.stage // "UNKNOWN"),
+                  hw: (.runtime.hardware.current // .runtime.hardware.requested // "unknown"),
+                  sdk: (.sdk // "?"),
+                  mod: (.lastModified // "" | .[0:10])
+                }' >> /tmp/all.jsonl || echo "  (query failed: $q)"
+            sleep 1
+          done
+
+          echo
+          echo "=========================================================="
+          echo " いま RUNNING の Space（重複除去・いいね順・上位40）"
+          echo "=========================================================="
+          grep -v '^results$' /tmp/all.jsonl \
+            | jq -s 'map(select(.stage == "RUNNING"))
+                     | group_by(.id) | map(.[0])
+                     | sort_by(-.likes) | .[0:40]
+                     | .[] | "\(.likes|tostring|(" "*(6-length))+.)  \(.stage)  hw=\(.hw)  sdk=\(.sdk)  upd=\(.mod)  \(.id)"' -r
+
+          echo
+          echo "=========================================================="
+          echo " 参考: SLEEPING（起こせば動く可能性あり・上位25）"
+          echo "=========================================================="
+          grep -v '^results$' /tmp/all.jsonl \
+            | jq -s 'map(select(.stage == "SLEEPING"))
+                     | group_by(.id) | map(.[0])
+                     | sort_by(-.likes) | .[0:25]
+                     | .[] | "\(.likes|tostring|(" "*(6-length))+.)  \(.stage)  hw=\(.hw)  sdk=\(.sdk)  upd=\(.mod)  \(.id)"' -r
+
+          echo
+          echo "=== 状態の内訳 ==="
+          grep -v '^results$' /tmp/all.jsonl \
+            | jq -s 'group_by(.id) | map(.[0]) | group_by(.stage)
+                     | map({stage: .[0].stage, n: length}) | .[]
+                     | "\(.stage): \(.n)"' -r
+          echo "unique spaces: $(grep -v '^results$' /tmp/all.jsonl | jq -s 'group_by(.id)|length')"
