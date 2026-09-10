@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAtUtc": "2026-09-10T00:28:10.264Z",
+    "generatedAtUtc": "2026-09-10T00:30:36.490Z",
     "source": "Rakuten Ichiba Item Search API (openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701)",
     "evidenceClass": "VERIFIED (楽天公式APIの一次データ)",
     "apiFilters": {
@@ -32,8 +32,8 @@
       }
     ],
     "uniqueItemsCollected": 92,
-    "candidatePoolSize": 78,
-    "excludedCount": 14,
+    "candidatePoolSize": 79,
+    "excludedCount": 13,
     "notes": [
       "楽天 Ichiba Item Search API は割引前価格（通常価格）を返さないため、listPrice / discountRate は NOT_DISPLAYED。",
       "availability=1 で絞り込んでいるため、収録された全候補は取得時点で在庫あり。",
@@ -45,8 +45,10 @@
     "itemName": "【先着様スーパーSALE】45％OFF 9/11 23:59迄 【楽天1位】ヒートシーラー ミニシーラー フードシーラー 充電式 ハンディシーラー 予熱不要 マグネット USB充電 6段階モード コンパクト ミニ 小さめ 収納 クラフト用 ヒートシーラー 真空保存",
     "shopName": "chakashodina",
     "shopUrl": "https://hb.afl.rakuten.co.jp/hgc/g00u575n.nhbnn5b2.g00u575n.nhbno737/?pc=https%3A%2F%2Fwww.rakuten.co.jp%2Fchakasho-dina%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchakasho-dina%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-    "itemUrl": "https://hb.afl.rakuten.co.jp/hgc/g00u575n.nhbnn5b2.g00u575n.nhbno737/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchakasho-dina%2F501fengkouji%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchakasho-dina%2Fi%2F10000751%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+    "itemUrl": "https://item.rakuten.co.jp/chakasho-dina/501fengkouji/",
+    "shopPageUrl": "https://www.rakuten.co.jp/chakasho-dina/",
     "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00u575n.nhbnn5b2.g00u575n.nhbno737/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchakasho-dina%2F501fengkouji%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchakasho-dina%2Fi%2F10000751%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+    "rawItemUrl": "https://hb.afl.rakuten.co.jp/hgc/g00u575n.nhbnn5b2.g00u575n.nhbno737/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchakasho-dina%2F501fengkouji%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchakasho-dina%2Fi%2F10000751%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
     "price": 3280,
     "listPrice": "NOT_DISPLAYED",
     "discountRate": "NOT_DISPLAYED",
