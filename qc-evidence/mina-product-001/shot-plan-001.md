@@ -10,7 +10,10 @@
 ```
 案件:              mina-product-001
 MASTER IMAGE PATH: brand/assets/mina/mina-master.png
-MASTER VERSION:    未配置（正本が置かれるまで画像生成を開始しない）
+MASTER VERSION:    blob 0989576d49ebc2df2b4dfbbcee9ce4540d24e463 / 15,009 bytes / main 5ec4ac9
+                    **検証 FAIL — ファイルは実在するが復号不能（JPEG が EOI 無しで途中終端）。
+                    詳細と再開条件は master-readiness-001.md。正本が復旧するまで画像生成を開始しない**
+補助参照:            mina-product-hold-reference.jpg = NOT_FOUND_EXACT_MATCH（BLOCKER 扱いにしない）
 用途 / 媒体:        TikTok（9秒・5カット）
 出力比率:           9:16
 CONTENT MODE 並び:  PRODUCT_HOOK → PRODUCT_DEMO → RESULT → PRODUCT_DEMO → CTA / LIFESTYLE
