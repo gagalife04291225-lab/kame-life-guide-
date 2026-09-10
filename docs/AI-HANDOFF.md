@@ -34,12 +34,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **9c27455**（PR #170「ミナ ブランドキャラクター基盤化」merge の直後・2026-09-10 実測値） |
+| 基準 | `origin/main` = **657dc61**（PR #172「MINA_MASTER 正本の破損修復」merge の直後・2026-09-10 実測値。旧記載 `9c27455` は PR #170 時点の値で古い） |
 | サイトファイルの状態 | PR #159〜#166 は main 反映済み（商品不足監査 CLOSE）。本PRは `CLAUDE.md` に「Claude Code 自律実行ルール」を追加する docs のみ。サイトファイル・`data/*`・CSV は無変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
 | 最終更新日 | 2026-09-10 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/autonomous-rules-20260909`（本PR） |
+| 作業ブランチ | `claude/mina-product-selection-dhfz0i`（本PR・第1号案件） |
 
 ---
 
@@ -996,6 +996,32 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 ---
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
+
+### MINA_MASTER 正本は復旧済み・必須8項目 PASS（2026-09-10 実測 / **再検証しない**）
+
+canonical path `brand/assets/mina/mina-master.png` の正本は PR #172（merge `657dc61`）で修復済み。
+2026-09-10 に必須8項目を独立に再実測し、**全項目 PASS**。
+
+| 項目 | 確定値 |
+|------|-------|
+| git blob | `fa9bb85ba10b8bc4be19d2a070840c064f64ffbb` |
+| SHA-256 | `763ba75f0259ce71c9a53f2493a80d1fcecec0d9172862fac204698fcda30dd4` |
+| byte size | 1,253,769 bytes |
+| dimensions | 864 × 1536（PNG / 8-bit RGB / non-interlaced / 9:16） |
+
+8項目の内訳（PNG署名 / デコード / IEND / 均一グレー否定 / 人物確認 / 正本1枚 / blob=作業ツリー / 旧破損blob不参照）と
+実測方法は [`qc-evidence/mina-product-001/master-readiness-001.md`](../qc-evidence/mina-product-001/master-readiness-001.md)。
+旧破損 blob `0989576d…`（15,009 bytes・実体は途中終端 JPEG）は履歴 `5ec4ac9` にのみ残り、**現行ツリーからの参照はゼロ**。
+
+- **PNG 再エンコードは実施しない。** 正常な PNG に対する無意味なバイト変更で、下流の SHA 参照だけを壊すため。
+- **正本を差し替えない。** Owner 承認画像をそのまま維持する（`mina-fixed-rules.md` §2.2）。
+- **この検証をやり直さない。** 第1号の画像生成 BLOCKER は解除済み。
+
+### 第1号動画の I2V 安全域（2026-09-10 Owner 確定 / **限界延長テスト禁止**）
+
+**0〜1.6秒 = production 推奨 / 1.7〜1.9秒 = 要目視QC / 2.0秒以降 = 使用禁止**（2.0秒から商品が消失し手が崩壊する）。
+生成経路と実測値は `qc-evidence/mina-intro-001/README.md`（**branch `claude/mina-talk-test` にのみ存在。main 未反映**）。
+**別ツールの再探索・限界延長テストは行わない。**
 
 ### Claude Code 自律実行ルールは `CLAUDE.md` に恒久追加済み（2026-09-09 / 本PR）
 
