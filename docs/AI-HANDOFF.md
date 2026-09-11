@@ -34,16 +34,27 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **657dc61**（PR #172「MINA_MASTER 正本の破損修復」merge の直後・2026-09-10 実測値。旧記載 `9c27455` は PR #170 時点の値で古い） |
-| サイトファイルの状態 | PR #159〜#166 は main 反映済み（商品不足監査 CLOSE）。本PRは `CLAUDE.md` に「Claude Code 自律実行ルール」を追加する docs のみ。サイトファイル・`data/*`・CSV は無変更 |
+| 基準 | `origin/main` = **6221b0b**（rakuten-sync「auto update rakuten prices [2026-09-10]」・2026-09-11 実測値） |
+| サイトファイルの状態 | **PR #174（Amazon アソシエイト ID 全置換・Owner merge 待ち）**。main はまだ旧 ID `kamelife09-22` のまま＝成果が付かない状態。PR #174 が merge されるまで新規 Amazon リンクを追加しない |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-10 |
+| 最終更新日 | 2026-09-11 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/mina-product-selection-dhfz0i`（本PR・第1号案件） |
+| 作業ブランチ | `claude/kame-product-card-research-bfdzs0`（PR #174） |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### Amazon アソシエイト却下の原因分析と再申請・新 ID への全置換（2026-09-11 / PR #174・**Owner merge 待ち**）— **再調査しない**
+
+- **却下理由**（Amazon 原文）: 「申請書に記載されていなかったサイトへユーザーを誘導/リダイレクト」。例示 URL は `https://gagalife04291225-lab.github.io/kame-life-guide-`。
+- **原因**: GitHub Pages はカスタムドメイン（CNAME=`kamelifeguide.com`）設定時に github.io を 301 する仕様。申請 URL と実サイトが食い違った。
+  サイト側の宣言（canonical 205 / sitemap 196 / robots）はすべて `kamelifeguide.com`。
+- **サイト側は適合**（実測）: Amazon リンクのあるページ 27/27 にアソシエイト表記あり（欠落 0）／怪しい転送 0／meta refresh 3 件は species→species の内部転送。
+- **再申請**（Owner 実施・2026-09-11）: 主サイト `https://kamelifeguide.com`、併記 github.io と `note.com/proper_bison2362`。種別「コンテンツメディア」。
+  → **新 ID `kamelife090e-22` が発行**（審査中・通常 3 営業日）。旧 ID `kamelife09-22` のアカウントは閉鎖済み。
+- **全置換**（PR #174）: 47 ファイル / 322 箇所。旧 ID 残 0・ID 以外の変更行 0・楽天リンク混入 0。`scripts/update-rakuten.js` は Amazon の tag を再生成しないので `data/products.js` は上書きされない。
+- **未実測**: この環境から `kamelifeguide.com` / github.io は egress 遮断で開けず、301 応答そのものは未確認（BLOCKED）。
 
 ### ミナ MASTER 画像の repo 保存前提化 — **CLOSE**（2026-09-10 / 本PR）
 
@@ -997,6 +1008,13 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### Amazon アソシエイト ID は `kamelife090e-22`（2026-09-11 発行・PR #174 で全置換）
+
+- 収益ゲートの ID は **`kamelife090e-22`**。旧 `kamelife09-22` は閉鎖アカウントの ID で、**今後一切使わない**。
+- ID の出現数（PR #174 時点）: 322 箇所 / 47 ファイル。監査は `grep -ro 'kamelife09-22'` が 0 であることを確認する。
+- github.io → kamelifeguide.com の 301 は GitHub Pages の正常動作。止めない。Amazon には両 URL を申告済み。
+- 承認後 180 日以内に適格販売 3 件が必要（Amazon の条件）。
+
 ### MINA_MASTER 正本は復旧済み・必須8項目 PASS（2026-09-10 実測 / **再検証しない**）
 
 canonical path `brand/assets/mina/mina-master.png` の正本は PR #172（merge `657dc61`）で修復済み。
@@ -1471,6 +1489,12 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
+### 判断待ち・未確認（2026-09-11）
+
+- **[DECISION] PR #174 の merge**（Owner）。収益ゲートの変更のため Actor は merge しない。
+- **[未確認] Amazon の審査結果**（通常 3 営業日）。承認メール到着後に `FIXED_FACTS` へ承認日を記録する。
+- **[未確認] Routine `trig_01N9G14WTPu77Fs36FS81de4` の初回実行（2026-09-11 10:00 JST）の結果**。本作業では未確認。
+
 ### 裁定待ち（**Owner の判断が要る**）
 
 選択肢・影響・推奨・「裁定が無いと何が止まるか」は
@@ -1609,12 +1633,12 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 運営フェーズへ復帰 — Routine 初回実行（2026-09-11 10:00 JST）の結果確認
+### PR #174 の main 反映と本番リンクの実測確認
 
-**対象**: Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（月・金 10:00 JST・ASIN 実在照合）と GitHub Actions `asin-audit.yml`（月・金 09:00 JST）の初回結果。
-**Scope**: ①Routine から GitHub MCP が使えたか（使えなければ git-only フォールバックが働いたか）②CAUTION 22 件の再照合結果と Issue の内容 ③失敗時は Routine プロンプトを修正する。
-**変更禁止**: 商品不足監査の再開（新しい記事・商品追加が発生したときだけ）／PARTIAL 5 件の再探索／`data/products.js` の ASIN。
-**完了条件**: Routine の成否と CAUTION 22 の処理状況が `FIXED_FACTS` に記録されていること。以後は `docs/operations/WEEKLY_REVIEW.md` に従う（B1 の GSC データ受領待ち）。
+**対象**: Owner が PR #174 を merge した後、`origin/main` に新 ID が反映されたことを実測し、本番ページ（例: `https://kamelifeguide.com/cage-review.html`）の Amazon リンクが `tag=kamelife090e-22` になっていることを WebFetch で確認する（この環境から遮断されていれば Owner がブラウザで確認）。
+**Scope**: 確認のみ。旧 ID が残っていれば、その箇所だけ追加で置換する。
+**変更禁止**: `data/products.js` の ASIN／商品不足監査の再開／PARTIAL 5 件の再探索。
+**完了条件**: `grep -ro 'kamelife09-22'` が main で 0、かつ本番ページ 1 枚以上で新 ID を確認。その後 `FIXED_FACTS` に Amazon 承認日を記録し、Routine 初回実行の結果確認（旧 NEXT）へ戻る。
 
 ## 更新ルール（作業終了時に必ず実施）
 
