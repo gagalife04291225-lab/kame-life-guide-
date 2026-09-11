@@ -29,7 +29,7 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const CSV_PATH = 'docs/asin-audit.csv';
-const TAG = 'kamelife09-22';
+const TAG = 'kamelife090e-22';
 const ARGV = process.argv.slice(2);
 const WRITE = ARGV.includes('--write');
 const STALE_DAYS = (() => {

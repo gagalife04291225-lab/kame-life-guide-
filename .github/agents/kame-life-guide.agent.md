@@ -145,7 +145,7 @@ node tools/gen-guide-nav.js --check
 | `sort=beginner` / `?diff=初心者向け` / `s.beginner` / `<option value="beginner">` | URL・後方互換性 |
 | `beginner` を含む URL・slug・ファイル名・内部識別子 | URL・互換性 |
 | GA4 のイベント名・パラメータ・`page_title` | 分析データの継続性 |
-| Amazon アソシエイト ID `kamelife09-22` | 収益直結 |
+| Amazon アソシエイト ID `kamelife090e-22` | 収益直結 |
 | GA4 タグ `G-QQTE5CVF3K` | 分析直結 |
 | CITES I 種・特定外来種・天然記念物 の診断除外設定 | 法規制 |
 | `shindan/species.js` の `difficulty`・`match()`・`score()` | 診断の正本・採点ロジック |

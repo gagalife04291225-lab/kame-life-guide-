@@ -37,7 +37,7 @@
 原則: **飼育条件 → 必要性能 → 条件を満たす国内流通品** の順。逆算禁止。
 
 - Amazon: PA-API は 2026-05-15 廃止済み。現行正式は **Creators API**（要販売実績）。
-  現サイトは価格を表示しない静的リンク（`/dp/ASIN/?tag=kamelife09-22`）のため
+  現サイトは価格を表示しない静的リンク（`/dp/ASIN/?tag=kamelife090e-22`）のため
   API なしで規約適合。価格の自動表示を始める場合のみ Creators API を申請する。
 - 楽天: 楽天ウェブサービス **IchibaItem Search 20260701版** で
   `.github/workflows/rakuten-sync.yml` が稼働中（週次で data/products.js を自動更新・
