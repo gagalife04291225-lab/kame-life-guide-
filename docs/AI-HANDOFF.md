@@ -376,7 +376,7 @@ species 112ページの「推奨機材セット」直後に `.ls-box` を挿入�
 `rakutenUrl` / `rakutenItemCode` / `rakutenPrice` / `rakutenShop` / `rakutenConfidence` を null にした。
 次回の日次同期で正しい商品に再照合される。`basking_halogen_35w` の検索語も実商品に合わせた。
 
-**収益ゲートの実測**: 追跡ID `kamelife09-22` の出現数は **272 → 272 で不変**、GA4 `G-QQTE5CVF3K` は
+**収益ゲートの実測**: 追跡ID `kamelife090e-22` の出現数は **272 → 272 で不変**、GA4 `G-QQTE5CVF3K` は
 **410 で不変**。差分に ID の欠落・追加はない。修正した8ページで Amazon リンクの
 **tag 欠落 0件・未解決ボタン 0件**を実描画で確認した。
 
@@ -1266,13 +1266,13 @@ Owner（ChatGPT側）が楽天公式一次資料で確認済み。**Claude 側�
 | `rakutenStatus: 'available'`（実アフィリURL・同一性検証済み） | **36** |
 | `rakutenStatus: 'search'`（検索フォールバック・**同一性未検証**） | **65** |
 | `rakutenStatus: 'pending'`（楽天CTAなし） | **3** |
-| `affiliateUrl` が実 Amazon URL | **77**（全件 `kamelife09-22` 付き・**タグ漏れ0件**） |
+| `affiliateUrl` が実 Amazon URL | **77**（全件 `kamelife090e-22` 付き・**タグ漏れ0件**） |
 | `affiliateUrl` がプレースホルダ | **27**（`'#'` 23件 ／ `null` 4件） |
 | `image` フィールド保有 | 104（**全件同一の存在しないパス**） |
 | `rakutenImageUrl` / `imageUrl` フィールド | **0**（未定義） |
 | 商品カテゴリ | 12種（enclosure / lighting_uvb / lighting_basking / heating / filter / substrate / shelter / water_dish / thermometer / food / supplements / accessory） |
 
-**収益ゲートは健全**: 実 Amazon URL 77件は全て `kamelife09-22` を保持。
+**収益ゲートは健全**: 実 Amazon URL 77件は全て `kamelife090e-22` を保持。
 タグ無しの27件は Amazon URL ですらないプレースホルダで、`starter-kit.js` は
 `affiliateUrl === '#'` を「選定中」ラベルへ落として描画する（リンクを出さない）。
 
@@ -1592,7 +1592,7 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
 | **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
 | **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
-| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife09-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
+| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife090e-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
 | **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
 
 ### DROP — 今後やらない。**未解決リストから外す**

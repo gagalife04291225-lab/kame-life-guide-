@@ -260,7 +260,7 @@ Wild Lifeセクション直後に設置：
     <div class="gear-name">{商品カテゴリ名と補足}</div>
     <div class="gear-why">{なぜこの種にこの機材が必要か・80字以内}</div>
     <div class="gear-btns">
-      <a class="btn-amz" href="https://www.amazon.co.jp/dp/{ASIN}?tag=kamelife09-22"
+      <a class="btn-amz" href="https://www.amazon.co.jp/dp/{ASIN}?tag=kamelife090e-22"
          target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
       <a class="btn-rak" href="https://search.rakuten.co.jp/search/mall/{検索ワード}/"
          target="_blank" rel="nofollow noopener">楽天で探す</a>
@@ -271,7 +271,7 @@ Wild Lifeセクション直後に設置：
 ```
 
 **チェック必須:**
-- `tag=kamelife09-22` が全Amazon URLに付いているか
+- `tag=kamelife090e-22` が全Amazon URLに付いているか
 - `rel="nofollow sponsored noopener"` が全Amazon aタグに付いているか
 - `pr-note` が全gear-cardに付いているか
 

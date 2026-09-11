@@ -3,7 +3,7 @@
 """
 docs/asin-audit.csv で「NG」と記入された ASIN を、Amazon 検索リンク形式へ置換する。
 
-    https://www.amazon.co.jp/s?k=<商品名>&tag=kamelife09-22
+    https://www.amazon.co.jp/s?k=<商品名>&tag=kamelife090e-22
 
 ■ 使い方
     python3 scripts/replace_dead_asin.py            # ドライラン（既定。1文字も書き換えない）
@@ -28,7 +28,7 @@ docs/asin-audit.csv で「NG」と記入された ASIN を、Amazon 検索リン
 
 ■ 安全策
   - 既定はドライラン。--apply を付けたときだけ書き込む。
-  - 追跡ID（kamelife09-22）は必ず維持する。ID が落ちる置換は行わない。
+  - 追跡ID（kamelife090e-22）は必ず維持する。ID が落ちる置換は行わない。
   - CSV に無い ASIN には触れない。
 """
 
@@ -40,7 +40,7 @@ import re
 import sys
 from urllib.parse import quote
 
-TAG = 'kamelife09-22'
+TAG = 'kamelife090e-22'
 CSV_PATH = 'docs/asin-audit.csv'
 ASIN_RE = re.compile(r'^[A-Z0-9]{10}$')
 

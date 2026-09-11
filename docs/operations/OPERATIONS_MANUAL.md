@@ -11,7 +11,7 @@
 
 - 本番配信：GitHub Pages（`main` ブランチに push で自動デプロイ・約60秒）
 - 計測：GA4 `G-QQTE5CVF3K`（全ページ設置済み）／ GSC 登録・sitemap 送信済み
-- 収益：Amazonアソシエイト（`kamelife09-22`）／ 楽天アフィリエイト
+- 収益：Amazonアソシエイト（`kamelife090e-22`）／ 楽天アフィリエイト
 - 一度だけの設定（[KPI.md](KPI.md) 末尾参照）：GA4拡張計測ON確認・affiliate_clickのカスタムディメンション登録・TikTok bioリンクのUTM付与
 
 ---

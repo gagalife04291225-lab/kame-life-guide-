@@ -83,7 +83,7 @@
      "data/products.js（楽天API自動更新済み87商品）とshindan/equipment.js（実在確認済みASIN）から要件を満たす候補を抽出",
      "満たす商品が無いカテゴリは掲載しない（無理に埋めない）"
     ],
-    "amazon": "PA-APIは2026-05-15廃止済み。現行正式はCreators API（要販売実績）。現サイトは価格を表示しない静的リンク（/dp/ASIN/?tag=kamelife09-22）のため規約上APIなしで適法。価格自動化を行う場合のみCreators API申請",
+    "amazon": "PA-APIは2026-05-15廃止済み。現行正式はCreators API（要販売実績）。現サイトは価格を表示しない静的リンク（/dp/ASIN/?tag=kamelife090e-22）のため規約上APIなしで適法。価格自動化を行う場合のみCreators API申請",
     "rakuten": "楽天ウェブサービス IchibaItem Search 20260701版で rakuten-sync.yml が稼働中（週次で価格・在庫をdata/products.jsへ自動反映、Secret redaction実装済み）。この既存経路を飼育データ層からも再利用する"
    },
    "priority_top10": [

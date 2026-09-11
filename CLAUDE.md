@@ -55,7 +55,7 @@
 | サイト URL | `https://gagalife04291225-lab.github.io/kame-life-guide-/` |
 | リポジトリ | `https://github.com/gagalife04291225-lab/kame-life-guide-` |
 | デプロイ方法 | **GitHub Pages のみ**（main ブランチ直デプロイ） |
-| Amazon アソシエイト ID | `kamelife09-22` |
+| Amazon アソシエイト ID | `kamelife090e-22` |
 | Google Analytics | GA4: `G-QQTE5CVF3K` |
 | note フッターリンク | `https://note.com/proper_bison2362` |
 | 運営者 | 亀好きさん（スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメ飼育中） |
@@ -205,7 +205,7 @@ guide-{habitat}.html        # ハビタット別飼育ガイド
 2. **設計** — HTML 構造・CSS 方針・リンク先を先に提示し承認を得る
 3. **実装** — 承認された設計通りに実装する。勝手に変えない
 4. **品質確認** — 以下をすべてチェックする：
-   - Amazon 追跡 ID（`kamelife09-22`）が正しく入っているか
+   - Amazon 追跡 ID（`kamelife090e-22`）が正しく入っているか
    - GA4 タグ（`G-QQTE5CVF3K`）が入っているか
    - WCAG AA コントラスト比を満たしているか（目視NG・数値で確認）
    - note フッターリンク（`https://note.com/proper_bison2362`）があるか
