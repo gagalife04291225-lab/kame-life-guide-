@@ -55,6 +55,7 @@
   → **新 ID `kamelife090e-22` が発行**（審査中・通常 3 営業日）。旧 ID `kamelife09-22` のアカウントは閉鎖済み。
 - **全置換**（PR #174）: 47 ファイル / 322 箇所。旧 ID 残 0・ID 以外の変更行 0・楽天リンク混入 0。`scripts/update-rakuten.js` は Amazon の tag を再生成しないので `data/products.js` は上書きされない。
 - **未実測**: この環境から `kamelifeguide.com` / github.io は egress 遮断で開けず、301 応答そのものは未確認（BLOCKED）。
+- **本番確認（Owner 実測・2026-09-11 22:00 JST）**: `kamelifeguide.com/cage-review.html` の Amazon リンクを長押しで取得し、`&tag=kamelife090e-22` を確認（スクリーンショット）。main で旧 ID 0 と合わせて切り替え完了。
 
 ### ミナ MASTER 画像の repo 保存前提化 — **CLOSE**（2026-09-10 / 本PR）
 
@@ -1632,12 +1633,13 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### PR #174 の main 反映と本番リンクの実測確認
+### Amazon 審査結果の記録と Routine 初回実行の結果確認
 
-**対象**: PR #174 は merge 済み（69b2690・main で旧 ID 0 を実測）。残りは本番ページ（例: `https://kamelifeguide.com/cage-review.html`）の Amazon リンクが `tag=kamelife090e-22` になっていることを WebFetch で確認する（この環境から遮断されていれば Owner がブラウザで確認）。
-**Scope**: 確認のみ。旧 ID が残っていれば、その箇所だけ追加で置換する。
-**変更禁止**: `data/products.js` の ASIN／商品不足監査の再開／PARTIAL 5 件の再探索。
-**完了条件**: `grep -ro 'kamelife09-22'` が main で 0、かつ本番ページ 1 枚以上で新 ID を確認。その後 `FIXED_FACTS` に Amazon 承認日を記録し、Routine 初回実行の結果確認（旧 NEXT）へ戻る。
+**対象**: ① Amazon アソシエイトの審査結果メール（通常 3 営業日・2026-09-11 申請）。承認なら承認日を `FIXED_FACTS` に記録し、否認なら理由を `UNRESOLVED` に置く。
+② Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（月・金 10:00 JST・ASIN 実在照合）と GitHub Actions `asin-audit.yml` の初回結果（2026-09-11 分）。
+**Scope**: 記録と確認のみ。①は Owner のメール確認が要る。②は Routine から GitHub MCP が使えたか／CAUTION 22 件の再照合結果と Issue／失敗時の Routine プロンプト修正。
+**変更禁止**: Amazon ID（`kamelife090e-22` で確定）／`data/products.js` の ASIN／商品不足監査の再開／PARTIAL 5 件の再探索。
+**完了条件**: ①の結果と②の成否が `FIXED_FACTS` に記録されていること。以後は `docs/operations/WEEKLY_REVIEW.md` に従う。
 
 ## 更新ルール（作業終了時に必ず実施）
 
