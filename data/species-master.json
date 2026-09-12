@@ -2507,9 +2507,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "peer_reviewed",
+        "institution": "Chelonian Research Monographs（Kinosternon scorpioides 種概説）",
+        "sources": [
+          "https://www.academia.edu/84014187/Kinosternon_dunni_Schmidt_1947_Dunn_s_Mud_Turtle_Cabeza_de_Trozo"
+        ],
+        "note": "Kinosternon scorpioides の個体群別最大サイズは150mm〜200mm超。cruentatum は4亜種のひとつで、亜種固有の最大値は未確認",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -2581,6 +2587,17 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "60cm開始・成体90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長20cm級のドロガメ。ミスジ等の小型種（45〜60cm）より一段大きい",
+            "jp_note": "60cm開始・成体90cm"
+          },
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -2890,6 +2907,16 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": null,
+          "verification": "UNPROVEN",
+          "japan_fit": {
+            "judgment": "UNPROVEN",
+            "basis": "",
+            "jp_note": ""
+          },
+          "note": "2026-09-12 調査：Carr & Mast (1988) に記載があるのはメスの成熟サイズ（直甲長115〜130mm）のみ。オスの方が大型になるとされるが最大甲長の数値は未取得。成熟サイズを最大サイズとして扱わない"
         }
       }
     },
@@ -6827,9 +6854,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 27.9,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USFWS（Chen & Lue 2009 を引用）",
+        "sources": [
+          "https://www.fws.gov/sites/default/files/documents/Ecological-Risk-Screening-Summary-Chinese-Striped-necked-Turtle.pdf"
+        ],
+        "note": "甲長30〜279mm（Chen & Lue 2009）。メスがオスより大型で、メスは26cm級",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6882,6 +6915,17 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "オス60〜90cm可・成体メスは120cm級",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長27.9cm。メス26cm級を前提に国内水槽規格へ換算",
+            "jp_note": "オス60〜90cm可・成体メスは120cm級"
+          },
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8887,8 +8931,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 28.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN",
+        "sources": [
+          "https://apistaging.iucnredlist.org/en/species/7709/155088836"
+        ],
+        "note": "IUCN評価書：オス最大28cm・メス最大22cm。本種はオスの方が大きい",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8952,6 +9003,17 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は90〜120cm＋乾ける陸場",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "オス最大28cm。本種はオスが大型で、湿地性のため陸場も要る",
+            "jp_note": "成体は90〜120cm＋乾ける陸場"
+          },
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -9125,6 +9187,16 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": null,
+          "verification": "UNPROVEN",
+          "japan_fit": {
+            "judgment": "UNPROVEN",
+            "basis": "",
+            "jp_note": ""
+          },
+          "note": "2026-09-12 調査：取得できたのは飼育下の成熟サイズ（メス178mm・オス190mm・Kayat & Saragih 2016）のみ。IUCN評価書にも最大甲長の記載なし。成熟サイズを最大サイズとして扱わない"
         }
       }
     },
@@ -9460,8 +9532,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 25.0,
+        "verification": "LIKELY",
+        "provenance": "keeper_consensus",
+        "institution": "飼育情報の独立複数資料",
+        "sources": [
+          "https://theturtlehub.com/turtle-database/emydura-subglobosa/",
+          "https://tailsandscales.ca/products/pink-belly-side-neck-turtle"
+        ],
+        "note": "メス最大23〜25cm・オス13〜15cm。出典は一次資料ではなく飼育情報の集約。原典確認が残る",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -9519,6 +9599,17 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "オス60cm可・メス90cm以上",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "雌雄差（オス13〜15cm／メス23〜25cm）をメス基準で国内規格へ換算",
+            "jp_note": "オス60cm可・メス90cm以上"
+          },
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -9686,6 +9777,16 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": null,
+          "verification": "UNPROVEN",
+          "japan_fit": {
+            "judgment": "UNPROVEN",
+            "basis": "",
+            "jp_note": ""
+          },
+          "note": "2026-09-12 調査：Chelodina colliei（旧 oblonga）の最大甲長は今回の検索で一次資料に到達できず。属内の他種（C. longicollis 30cm・C. burrungandjii 31.6cm）からの類推はしない"
         }
       }
     },
@@ -10978,8 +11079,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Naturalis Turtles of the World / MyBIS（Das 2010）",
+        "sources": [
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8050",
+          "https://www.mybis.gov.my/art/204"
+        ],
+        "note": "甲長20cmまで。平均17〜20cm（de Rooij 1915; Ernst & Barbour 1989）。独立2資料が一致",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11039,6 +11148,17 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "60cm開始・成体90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "最大甲長20cmの水棲種を国内水槽規格へ換算",
+            "jp_note": "60cm開始・成体90cm"
+          },
+          "last_verified": "2026-09-12"
         }
       }
     },
