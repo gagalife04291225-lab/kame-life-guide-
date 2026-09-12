@@ -224,14 +224,14 @@
   }
  },
  "filter_canister_large": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.4 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 22670,
+   "price": 22620,
    "shop": "ミナトワークス"
   }
  },
@@ -260,13 +260,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
    "price": 8980,
    "shop": "charm 楽天市場店"
   }
@@ -292,13 +292,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック　関東当日便",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -368,14 +368,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
-   "price": 3247,
+   "price": 2592,
    "shop": "CheeringCharm 楽天市場店"
   }
  },
@@ -436,15 +436,15 @@
   "best": null
  },
  "food_mazuri_tortoise": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "Mazuri Tortoise Diet リクガメ フード",
-  "resultCount": 8,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=6.3",
+  "reason": "score=5.7",
   "best": {
-   "itemName": "【即納在庫品】 ［正規品］ Mazuri トータスダイエット 560g リクガメフード 5M21 ホシガメ ハコガメ エサ マズリ",
-   "price": 2300,
-   "shop": "ホームセンターバロー2号店"
+   "itemName": "●【マズリ】トータス ダイエット 560g　5M21 S　Mazuri【爬虫類　フード　リクガメ　陸ガメ　ハコガメ　　お試し　小袋　ブリーダー】",
+   "price": 1640,
+   "shop": "PALMY EXPRESS"
   }
  },
  "food_reptomin_tetra": {
@@ -612,25 +612,25 @@
   }
  },
  "media_eheim_2213_coarse": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "エーハイム 2213 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=7.2 入数(2),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1070,
    "shop": "charm 楽天市場店"
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1260,
    "shop": "charm 楽天市場店"
   }
@@ -684,13 +684,13 @@
   }
  },
  "media_eheim_substrat_pro_1l": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "エーハイム サブストラットプロ レギュラー 1L",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.6",
   "best": {
-   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L",
+   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L　関東当日便",
    "price": 1820,
    "shop": "charm 楽天市場店"
   }
@@ -704,14 +704,14 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-09-08",
+  "date": "2026-09-12",
   "query": "GEX メガパワー 2045 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2159,
+   "price": 2062,
    "shop": "formanism"
   }
  },
@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-10",
+  "date": "2026-09-12",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
-   "price": 1500,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
+   "price": 1685,
+   "shop": "ペッツマム"
   }
  },
  "shelter_moist_hide": {
@@ -888,14 +888,14 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-09-10",
+  "date": "2026-09-12",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 5,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=8.1",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=8.1 容量不一致",
   "best": {
-   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム",
-   "price": 1350,
+   "itemName": "三本線【焼成・硬質赤玉土】 5L（約4kg）　赤玉土 用土 園芸 ガーデニング テラリウム メダカ",
+   "price": 700,
    "shop": "園芸用土のイワモト"
   }
  },
@@ -1012,15 +1012,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-09-10",
+  "date": "2026-09-12",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1092,13 +1092,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
    "price": 9300,
    "shop": "charm 楽天市場店"
   }
@@ -1212,25 +1212,25 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-09",
+  "date": "2026-09-12",
   "query": "テトラ テスト 6in1 試験紙 25枚",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=6.2",
   "best": {
    "itemName": "テトラ (Tetra) テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬",
-   "price": 3102,
+   "price": 2840,
    "shop": "kichibei"
   }
  },
  "water_test_tetra_nh3": {
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "query": "テトラ テスト試験紙 NH3 NH4 アンモニア 25回",
   "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4",
   "best": {
-   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回",
+   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回　関東当日便",
    "price": 1917,
    "shop": "charm 楽天市場店"
   }
