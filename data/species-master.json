@@ -119,14 +119,15 @@
       "steps": [
         "1) 成体甲長（max_shell_length_cm）を取る。雌雄差がある種はメスの値で判定し、オスは別記する",
         "2) 必要な容器の長辺 = 甲長 × 4（甲長30cm超は × 3）",
-        "3) 国内規格 45 / 60 / 90 / 120cm へ切り上げる。120cmを超える場合は『屋外飼育場・特注』と書く",
-        "4) 半陸生・陸生は床面積優先のため 甲長 × 5 を使い、ケージ規格（60 / 90 / 120cm）へ切り上げる",
+        "3) 国内規格（水槽 45/60/90/120cm・ケージ 60/90/120cm）のうち最も近いものへ丸める。切り上げではない。120cmを超える場合は『屋外飼育場・特注』と書く",
+        "4) 半陸生・陸生は床面積優先のため 甲長 × 5 を使い、ケージ規格（60/90/120cm）のうち最も近いものへ丸める",
         "5) スッポン類・マタマタなど潜砂・底棲性の種は床面積を優先し、水深ではなく底面積で判定する",
         "6) 甲長が UNPROVEN の種は enclosure_jp も value: null のまま置く。推測で埋めない"
       ],
       "verification": "enclosure_jp は飼育コンセンサスからの換算のため LIKELY が上限。CONFIRMED は付けない（既存64件も全件LIKELY）",
       "checker": "scripts/check_enclosure_sync.py",
-      "juvenile": "子亀期は終生サイズより小さい容器で飼える。判断は月数ではなく甲長で行う（容器長辺 ≒ 甲長×4。30cm容器＝甲長7cmまで／45cm＝11cmまで／60cm＝15cmまで）。成長速度は水温・給餌量で大きく変わるため『○ヶ月まで』という表記はしない。enclosure_jp は終生飼育の目安のみを持つ項目であり、子亀期の値を混ぜない"
+      "juvenile": "子亀期は終生サイズより小さい容器で飼える。判断は月数ではなく甲長で行う（容器長辺 ≒ 甲長×4。30cm容器＝甲長7cmまで／45cm＝11cmまで／60cm＝15cmまで）。成長速度は水温・給餌量で大きく変わるため『○ヶ月まで』という表記はしない。enclosure_jp は終生飼育の目安のみを持つ項目であり、子亀期の値を混ぜない",
+      "rounding_verified": "既存登録値で検証済み（スペングラー10.7cm→60／フロリダハコガメ18.7cm→90／トウブハコガメ19.8cm→90／ガルフコーストハコガメ23.5cm→120）。切り上げだとフロリダハコガメが120になり既存値と矛盾する"
     }
   },
   "species": [
@@ -1137,14 +1138,16 @@
           }
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長20cm×5=100cm。最も近い国内ケージ規格は90cm。前任者の『90cmケージ〜が通説』とも一致",
+            "jp_note": "90cm級ケージ〜（床面積優先）"
           },
-          "note": "90cmケージ〜が通説。海外推奨面積の確定換算は次回"
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         },
         "substrate": {
           "value": null,
@@ -1340,13 +1343,16 @@
           }
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "120cm級（Testudo中でも大型）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
-          }
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限。屋外囲いの併用が望ましい",
+            "jp_note": "120cm級（Testudo中でも大型）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         },
         "substrate": {
           "value": null,
@@ -5448,14 +5454,17 @@
           ]
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "owner_observation",
+          "institution": "運営者（実飼育者）",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
+            "judgment": "adjusted_for_japan",
+            "basis": "運営者が本種を実飼育しており、国内では90cm級ケージからと判断。海外の飼育指針は単独成体で0.74〜1.67㎡（120×60cm〜183×91cm）を最小とし、90cm級ケージ（約0.41㎡）を上回る。日本の住宅事情では90cm級が現実的な出発点で、可能なら広い床面積・暖季の屋外囲いを足す",
+            "jp_note": "90cm級ケージから。床面積を優先し、可能なら暖季は屋外囲いを併用"
           },
-          "note": "海外は屋外飼育・大型囲い推奨が主流。国内ケージ規格への確定換算は次回"
+          "note": "運営者の実飼育にもとづく一次情報（2026-09-12）。海外推奨との差は japan_fit.basis に記録。参照した海外指針: ReptiFiles 1.0㎡ / Wikipedia・iNaturalist 1.67㎡ / Reptile Supply・Dubia 0.74㎡",
+          "last_verified": "2026-09-12"
         },
         "water_temp_c": {
           "value": null,
@@ -6199,6 +6208,19 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "owner_observation",
+          "institution": "運営者（実飼育者）",
+          "japan_fit": {
+            "judgment": "same_as_source",
+            "basis": "運営者が本種を実飼育しており、終生は90cm級からと判断。甲長15〜20cm×5＝75〜100cmの換算値と一致し、本ページの購入導線もすでに木製ケージ90cmを指していた",
+            "jp_note": "90cm級ケージから。床面積を優先し高さは不要"
+          },
+          "note": "運営者の実飼育にもとづく一次情報（2026-09-12）。最大甲長そのものは外部一次資料で未検証のため max_shell_length_cm は UNPROVEN のまま",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6415,6 +6437,18 @@
           "sources": [
             "https://iucn-tftsg.org/cuora-flavomarginata-035/"
           ]
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先・浅い水場）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長19cm×5=95cm。基亜種チュウゴクセマルハコガメと同サイズ",
+            "jp_note": "90cm級ケージ〜（床面積優先・浅い水場）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6533,6 +6567,18 @@
           "sources": [
             "https://iucn-tftsg.org/cuora-flavomarginata-035/"
           ]
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先・浅い水場）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長19cm×5=95cm。最も近い国内ケージ規格は90cm",
+            "jp_note": "90cm級ケージ〜（床面積優先・浅い水場）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
