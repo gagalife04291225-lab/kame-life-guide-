@@ -6199,6 +6199,19 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "owner_observation",
+          "institution": "運営者（実飼育者）",
+          "japan_fit": {
+            "judgment": "same_as_source",
+            "basis": "運営者が本種を実飼育しており、終生は90cm級からと判断。甲長15〜20cm×5＝75〜100cmの換算値と一致し、本ページの購入導線もすでに木製ケージ90cmを指していた",
+            "jp_note": "90cm級ケージから。床面積を優先し高さは不要"
+          },
+          "note": "運営者の実飼育にもとづく一次情報（2026-09-12）。最大甲長そのものは外部一次資料で未検証のため max_shell_length_cm は UNPROVEN のまま",
+          "last_verified": "2026-09-12"
         }
       }
     },
