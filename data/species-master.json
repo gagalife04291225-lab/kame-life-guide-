@@ -7815,8 +7815,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 35.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN Red List／IUCN/SSC TFTSG 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/cbftt/species-accounts/chersina-angulata-030/"
+        ],
+        "note": "最大甲長35cm（350mm）。本種はオスがメスより大型。ただし通常の成体は21〜27cm程度とする資料もあり（Earthpedia: オス27.2cm・メス21.6cm）、35cmは上限値",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7879,6 +7886,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長35cm×5=175cm。国内ケージ規格（最大120cm）を超える。通常の成体は21〜27cm程度だが、上限の35cmを前提に計画する",
+            "jp_note": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7900,8 +7919,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 36.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/indotestudo-elongata-096/"
+        ],
+        "note": "直甲長最大360mm（Taylor 1970; Stuart et al. 2001; Auliya 2007）。多くの個体は280〜300mm",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7964,6 +7990,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長36cm×5=180cm。国内ケージ規格（最大120cm）を超えるため、規格品だけでは終生飼育できない",
+            "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7992,8 +8030,16 @@
         "last_verified": "2026-08-20"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 22.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "California Turtle & Tortoise Club／Wikipedia",
+        "sources": [
+          "https://tortoise.org/archives/kinixys.html",
+          "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise"
+        ],
+        "note": "最大22cm。独立2資料が一致",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8056,6 +8102,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm級（床面積優先・隠れ家必須）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。サバンナ性で乾季の休眠があるため床材を厚く敷ける床面積を確保する",
+            "jp_note": "120cm級（床面積優先・隠れ家必須）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8077,8 +8135,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 22.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/kinixys-homeana-070/"
+        ],
+        "note": "直甲長は220mmを超えない（Luiselli & Diagne 2013）。メスがオスより大型",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8141,6 +8206,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm級（床面積優先・高湿度維持）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。熱帯雨林性で高湿度の維持が要るため密閉性の高いケージが望ましい",
+            "jp_note": "120cm級（床面積優先・高湿度維持）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8165,8 +8242,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 31.0,
+        "verification": "LIKELY",
+        "provenance": "peer_reviewed",
+        "institution": "California Turtle & Tortoise Club（Moll 1989 を引用）",
+        "sources": [
+          "https://www.tortoise.org/archives/impressa.html",
+          "https://en.wikipedia.org/wiki/Impressed_tortoise"
+        ],
+        "note": "Moll 1989 が甲長31cmを最大記録とする。Wirot 1979 は28cmを超えないとし、Wikipedia・EOL・iNaturalist は35cmとする。資料間で28〜35cmと幅があり、査読文献の31cmを採用",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8243,6 +8328,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長31cm×5=155cm。国内ケージ規格（最大120cm）を超える。飼育難易度が高く『impressa病』で知られる種でもあり、環境は広めに取る",
+            "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -12360,9 +12457,16 @@
         "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+        "value": 28.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Wikipedia／iNaturalist／LafeberVet（いずれも同一の分類文献群に依拠）",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Hermann's_tortoise",
+          "https://www.inaturalist.org/guide_taxa/895805"
+        ],
+        "note": "T. h. boettgeri は最大28cm。本種群で最大の亜種。平均甲長は13〜18cm（IUCN TFTSG 種概説）",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12449,6 +12553,18 @@
             "https://www.testudoalbino.com/testudo-hermanni.php"
           ],
           "note": "亜種 Testudo hermanni boettgeri の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "120cm級（本種群で最大の亜種）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限で、屋外囲いの併用が望ましい",
+            "jp_note": "120cm級（本種群で最大の亜種）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -12476,9 +12592,16 @@
         "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+        "value": 18.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Wikipedia／iNaturalist",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Hermann's_tortoise",
+          "https://www.inaturalist.org/guide_taxa/895805"
+        ],
+        "note": "T. h. hermanni は18cmを超えることは稀。本種群で小型の亜種",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12565,6 +12688,18 @@
             "https://www.testudoalbino.com/testudo-hermanni.php"
           ],
           "note": "亜種 Testudo hermanni hermanni の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長18cm×5=90cm。最も近い国内ケージ規格は90cm。基準種ヘルマンリクガメ（28cm・120cm級）より一段小さい",
+            "jp_note": "90cm級ケージ〜（床面積優先）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
