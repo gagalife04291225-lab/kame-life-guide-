@@ -5448,14 +5448,17 @@
           ]
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "owner_observation",
+          "institution": "運営者（実飼育者）",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
+            "judgment": "adjusted_for_japan",
+            "basis": "運営者が本種を実飼育しており、国内では90cm級ケージからと判断。海外の飼育指針は単独成体で0.74〜1.67㎡（120×60cm〜183×91cm）を最小とし、90cm級ケージ（約0.41㎡）を上回る。日本の住宅事情では90cm級が現実的な出発点で、可能なら広い床面積・暖季の屋外囲いを足す",
+            "jp_note": "90cm級ケージから。床面積を優先し、可能なら暖季は屋外囲いを併用"
           },
-          "note": "海外は屋外飼育・大型囲い推奨が主流。国内ケージ規格への確定換算は次回"
+          "note": "運営者の実飼育にもとづく一次情報（2026-09-12）。海外推奨との差は japan_fit.basis に記録。参照した海外指針: ReptiFiles 1.0㎡ / Wikipedia・iNaturalist 1.67㎡ / Reptile Supply・Dubia 0.74㎡",
+          "last_verified": "2026-09-12"
         },
         "water_temp_c": {
           "value": null,
