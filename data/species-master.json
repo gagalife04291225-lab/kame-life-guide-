@@ -2842,7 +2842,8 @@
       "max_shell_length_cm": {
         "value": null,
         "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "note": "Kinosternon herrerai。取れたのは成熟サイズ（♀ 115〜130mm SCL で成熟・♂ の方が大型）と、個体群ごとの最大が 150mm〜200mm 超という幅のある記述のみ。上限が「200mm超」で閉じておらず、最大甲長として確定できない。成熟サイズを最大サイズとして登録しない方針のため据え置く。探した先: TFTSG CBFTT（本種の account は見つからず）／Carr & Mast 1988 の自然史観察（ULM 公開PDF）／researchgate・academia の自然史論文",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -2923,7 +2924,8 @@
             "basis": "",
             "jp_note": ""
           },
-          "note": "2026-09-12 調査：Carr & Mast (1988) に記載があるのはメスの成熟サイズ（直甲長115〜130mm）のみ。オスの方が大型になるとされるが最大甲長の数値は未取得。成熟サイズを最大サイズとして扱わない"
+          "note": "甲長が未確定のため換算しない。推測で埋めない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -5944,9 +5946,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 17.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 126）",
+        "sources": [
+          "https://iucn-tftsg.org/cbftt/species-accounts/terrapene-ornata-126/",
+          "https://www.fws.gov/species/ornate-box-turtle-terrapene-ornata-ornata"
+        ],
+        "note": "CBFTT 種概説は ♂ 最大 157mm・♀ 最大 170mm SCL と記載。メス基準で 17.0cm。亜種 T. o. ornata 固有の最大値は確認できず、種の値を用いた。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6009,6 +6018,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長17.0cm×5=85cm → ケージ規格 90cm が最も近い",
+            "jp_note": "半乾燥地の陸生種。床材を深くし潜れる厚みを確保する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6039,9 +6060,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 17.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 126）",
+        "sources": [
+          "https://iucn-tftsg.org/cbftt/species-accounts/terrapene-ornata-126/",
+          "https://www.fws.gov/species/desert-box-turtle-terrapene-ornata-luteola"
+        ],
+        "note": "CBFTT 種概説は ♂ 最大 157mm・♀ 最大 170mm SCL と記載（種 Terrapene ornata）。亜種 T. o. luteola 固有の最大値は確認できず、基亜種と同値として扱う。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6104,6 +6132,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長17.0cm×5=85cm → ケージ規格 90cm が最も近い",
+            "jp_note": "乾燥地の陸生種。床材を深くし潜れる厚みを確保する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6606,9 +6646,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 25.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 053, 2011）",
+        "sources": [
+          "https://iucn-tftsg.org/cbftt/species-accounts/cuora-amboinensis-053/",
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_053_amboinensis_v1_2011.pdf"
+        ],
+        "note": "CBFTT 種概説は直甲長 25cm まで・成体最大は 220〜250mm と記載。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6668,6 +6715,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長25.0cm×5=125cm → ケージ規格 120cm が最も近い",
+            "jp_note": "ハコガメ類では最も水に依存する。陸場と泳げる水場を両立させるため長辺を確保する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6695,9 +6754,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 23.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Blanck et al. 2006（TFTSG 掲載論文）",
+        "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/file/Articles/Blanck_etal_2006a.pdf"
+        ],
+        "note": "同論文は Cuora trifasciata sensu lato の最大甲長 30cm、多くの著者の記載は 15〜23cm とする。cyclornata・aurocapitata を分けた狭義の上限として 23cm を採った。30cm 説は s.l. の値。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6759,6 +6824,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長23.0cm×5=115cm → ケージ規格 120cm が最も近い",
+            "jp_note": "半水棲。水場を広く取り、陸場と分ける"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -6786,9 +6863,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Naturalis Turtles of the World",
+        "sources": [
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8053"
+        ],
+        "note": "成体の甲長は 19.8〜20cm。Cuora galbinifrons は bourreti・picturata を別種とする分割後の狭義の値。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6876,6 +6959,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "高地林の半陸生種。通気と涼しさを優先し、浅い水容器を置く"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7731,7 +7826,9 @@
       },
       "max_shell_length_cm": {
         "value": null,
-        "verification": "UNPROVEN"
+        "verification": "UNPROVEN",
+        "note": "Chelonoidis chilensis。二次資料は最大甲長 43.3cm とするが、同じ資料群が通常 20〜30cm とも書き、値が一桁近く割れる。2014年の系統解析で C. donosobarrosi・C. petersi が本種の新参異名とされ、大型のパタゴニア個体群が含まれた経緯があり、43.3cm はその広義の値の可能性が高い。狭義・広義どちらの最大値かを確定できる一次資料に到達できなかったため据え置く。探した先: TFTSG CBFTT 種概説（本種の account は見つからず）／IUCN Red List／researchgate・academia の系統解析論文。いずれも最大甲長の明記に到達せず",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7794,6 +7891,12 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": null,
+          "verification": "UNPROVEN",
+          "note": "甲長が未確定のため換算しない。推測で埋めない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7815,8 +7918,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 35.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN Red List／IUCN/SSC TFTSG 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/cbftt/species-accounts/chersina-angulata-030/"
+        ],
+        "note": "最大甲長35cm（350mm）。本種はオスがメスより大型。ただし通常の成体は21〜27cm程度とする資料もあり（Earthpedia: オス27.2cm・メス21.6cm）、35cmは上限値",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7879,6 +7989,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長35cm×5=175cm。国内ケージ規格（最大120cm）を超える。通常の成体は21〜27cm程度だが、上限の35cmを前提に計画する",
+            "jp_note": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7900,8 +8022,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 36.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/indotestudo-elongata-096/"
+        ],
+        "note": "直甲長最大360mm（Taylor 1970; Stuart et al. 2001; Auliya 2007）。多くの個体は280〜300mm",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7964,6 +8093,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長36cm×5=180cm。国内ケージ規格（最大120cm）を超えるため、規格品だけでは終生飼育できない",
+            "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -7992,8 +8133,16 @@
         "last_verified": "2026-08-20"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 22.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "California Turtle & Tortoise Club／Wikipedia",
+        "sources": [
+          "https://tortoise.org/archives/kinixys.html",
+          "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise"
+        ],
+        "note": "最大22cm。独立2資料が一致",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8056,6 +8205,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm級（床面積優先・隠れ家必須）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。サバンナ性で乾季の休眠があるため床材を厚く敷ける床面積を確保する",
+            "jp_note": "120cm級（床面積優先・隠れ家必須）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8077,8 +8238,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 22.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "sources": [
+          "https://iucn-tftsg.org/kinixys-homeana-070/"
+        ],
+        "note": "直甲長は220mmを超えない（Luiselli & Diagne 2013）。メスがオスより大型",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8141,6 +8309,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm級（床面積優先・高湿度維持）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。熱帯雨林性で高湿度の維持が要るため密閉性の高いケージが望ましい",
+            "jp_note": "120cm級（床面積優先・高湿度維持）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8165,8 +8345,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 31.0,
+        "verification": "LIKELY",
+        "provenance": "peer_reviewed",
+        "institution": "California Turtle & Tortoise Club（Moll 1989 を引用）",
+        "sources": [
+          "https://www.tortoise.org/archives/impressa.html",
+          "https://en.wikipedia.org/wiki/Impressed_tortoise"
+        ],
+        "note": "Moll 1989 が甲長31cmを最大記録とする。Wirot 1979 は28cmを超えないとし、Wikipedia・EOL・iNaturalist は35cmとする。資料間で28〜35cmと幅があり、査読文献の31cmを採用",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8243,6 +8431,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長31cm×5=155cm。国内ケージ規格（最大120cm）を超える。飼育難易度が高く『impressa病』で知られる種でもあり、環境は広めに取る",
+            "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -8635,8 +8835,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 17.8,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 107, 2018）",
+        "sources": [
+          "https://iucn-tftsg.org/malacochersus-tornieri-107/",
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_107_tornieri_v1_2018.pdf"
+        ],
+        "note": "CBFTT 種概説は最大甲長 17.8cm・体重は 500g を超えることが稀と記載。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8707,6 +8915,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm（岩組み必須）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長17.8cm×5=89cm → ケージ規格 60/90/120 のうち 90cm が最も近い",
+            "jp_note": "扁平種のため床面積より立体の岩組みが要る。90cm ケージ＋積み石で隠れ場所を作る"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -9163,8 +9383,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 24.1,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 008, 2008）",
+        "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_008_mccordi_v1_2008.pdf"
+        ],
+        "note": "CBFTT 種概説は記録個体（成熟メス）の甲長 241mm と記載。成熟サイズ（♀ 約178mm・♂ 約190mm）とは別の最大記録値。前回の据え置き理由（成熟サイズしか取れない）は解消した。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -9236,14 +9463,16 @@
           "sources": []
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長24.1cm×4=96.4cm → 水槽規格 90cm（差6.4cm）が 120cm（差23.6cm）より近い",
+            "jp_note": "遊泳性の水棲種。水深より遊泳距離を優先する"
           },
-          "note": "2026-09-12 調査：取得できたのは飼育下の成熟サイズ（メス178mm・オス190mm・Kayat & Saragih 2016）のみ。IUCN評価書にも最大甲長の記載なし。成熟サイズを最大サイズとして扱わない"
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -9780,8 +10009,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 40.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "西オーストラリア州 水資源環境規制省（DWER）",
+        "sources": [
+          "https://rivers.dwer.wa.gov.au/species/chelodina-oblonga/"
+        ],
+        "note": "州機関の種解説は甲長ほぼ 400mm まで・通常は 300mm 未満と記載。最大値 40.0cm を採用。学名は州機関が Chelodina oblonga を用いるが、本サイトは C. colliei 表記を維持する（2013年の名称変更を巡る係争がある）。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -9826,14 +10062,16 @@
           "sources": []
         },
         "enclosure_jp": {
-          "value": null,
-          "verification": "UNPROVEN",
+          "value": "120cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
           "japan_fit": {
-            "judgment": "UNPROVEN",
-            "basis": "",
-            "jp_note": ""
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長40.0cm×3=120cm（甲長30cm超のため×3）→ 水槽規格 120cm と一致",
+            "jp_note": "大型の遊泳性水棲種。120cm 水槽でも長期的には手狭になりやすい"
           },
-          "note": "2026-09-12 調査：Chelodina colliei（旧 oblonga）の最大甲長は今回の検索で一次資料に到達できず。属内の他種（C. longicollis 30cm・C. burrungandjii 31.6cm）からの類推はしない"
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -11227,8 +11465,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 22.6,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 123, 2023）",
+        "sources": [
+          "https://iucn-tftsg.org/rhinoclemmys-annulata-123/",
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.123.annulata.v1.2023.pdf"
+        ],
+        "note": "CBFTT 種概説は最大 SCL 226mm（♀）・♂ は 202mm と記載。メス基準で 22.6cm。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11286,6 +11532,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "120cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長22.6cm×5=113cm → ケージ規格 120cm が最も近い",
+            "jp_note": "湿潤林の陸生種。高湿度と落ち葉の厚い床材を要する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -11307,8 +11565,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USGS Nonindigenous Aquatic Species (NAS)",
+        "sources": [
+          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1257",
+          "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/"
+        ],
+        "note": "USGS NAS ファクトシートは ♀ 20cm・♂ 18cm と記載。メス基準で 20.0cm。基準種 Rhinoclemmys pulcherrima の値。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11366,6 +11632,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "半陸生。陸場を主体に、浅い水容器を常設する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -11387,8 +11665,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USGS Nonindigenous Aquatic Species (NAS)",
+        "sources": [
+          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1257",
+          "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/"
+        ],
+        "note": "USGS NAS ファクトシートは ♀ 20cm・♂ 18cm と記載。メス基準で 20.0cm。R. p. incisa。亜種固有の最大値は未確認のため基準種と同値。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11446,6 +11732,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "半陸生。陸場を主体に、浅い水容器を常設する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -11470,8 +11768,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USGS Nonindigenous Aquatic Species (NAS)",
+        "sources": [
+          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1257",
+          "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/"
+        ],
+        "note": "USGS NAS ファクトシートは ♀ 20cm・♂ 18cm と記載。メス基準で 20.0cm。R. p. manni。亜種固有の最大値は未確認のため基準種と同値。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11529,6 +11835,18 @@
           },
           "last_verified": "2026-08-17",
           "sources": []
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "半陸生。陸場を主体に、浅い水容器を常設する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -12360,9 +12678,16 @@
         "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+        "value": 28.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Wikipedia／iNaturalist／LafeberVet（いずれも同一の分類文献群に依拠）",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Hermann's_tortoise",
+          "https://www.inaturalist.org/guide_taxa/895805"
+        ],
+        "note": "T. h. boettgeri は最大28cm。本種群で最大の亜種。平均甲長は13〜18cm（IUCN TFTSG 種概説）",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12449,6 +12774,18 @@
             "https://www.testudoalbino.com/testudo-hermanni.php"
           ],
           "note": "亜種 Testudo hermanni boettgeri の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "120cm級（本種群で最大の亜種）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限で、屋外囲いの併用が望ましい",
+            "jp_note": "120cm級（本種群で最大の亜種）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -12476,9 +12813,16 @@
         "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は流通個体の観察に基づく目安。"
+        "value": 18.0,
+        "verification": "LIKELY",
+        "provenance": "expert_consensus",
+        "institution": "Wikipedia／iNaturalist",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Hermann's_tortoise",
+          "https://www.inaturalist.org/guide_taxa/895805"
+        ],
+        "note": "T. h. hermanni は18cmを超えることは稀。本種群で小型の亜種",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12565,6 +12909,18 @@
             "https://www.testudoalbino.com/testudo-hermanni.php"
           ],
           "note": "亜種 Testudo hermanni hermanni の care 値は親種 Testudo hermanni のレコードを継承（2026-08-22）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "90cm級ケージ〜（床面積優先）",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "adjusted_for_japan",
+            "basis": "甲長18cm×5=90cm。最も近い国内ケージ規格は90cm。基準種ヘルマンリクガメ（28cm・120cm級）より一段小さい",
+            "jp_note": "90cm級ケージ〜（床面積優先）"
+          },
+          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -13067,9 +13423,16 @@
         "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USGS Nonindigenous Aquatic Species (NAS)",
+        "sources": [
+          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1257",
+          "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/"
+        ],
+        "note": "USGS NAS ファクトシートは ♀ 20cm・♂ 18cm と記載。メス基準で 20.0cm。R. p. rogerbarbouri。亜種固有の最大値は未確認のため基準種と同値。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -13137,6 +13500,18 @@
           "last_verified": "2026-08-23",
           "sources": [],
           "note": "亜種 Rhinoclemmys pulcherrima rogerbarbouri の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "半陸生。陸場を主体に、浅い水容器を常設する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
@@ -13168,9 +13543,16 @@
         "note": "外部一次資料での検証未了。ページ本文の記述は iNaturalist の Research Grade 観察の実測範囲にもとづく目安。"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "亜種単位の外部一次資料での検証未了。ページ表記は親種の値からの目安。"
+        "value": 20.0,
+        "verification": "LIKELY",
+        "provenance": "official",
+        "institution": "USGS Nonindigenous Aquatic Species (NAS)",
+        "sources": [
+          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1257",
+          "https://animaldiversity.org/accounts/Rhinoclemmys_pulcherrima/"
+        ],
+        "note": "USGS NAS ファクトシートは ♀ 20cm・♂ 18cm と記載。メス基準で 20.0cm。基亜種 R. p. pulcherrima。亜種固有の最大値は未確認のため基準種と同値。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
+        "last_verified": "2026-09-12"
       },
       "conservation": {
         "env_redlist": {
@@ -13238,6 +13620,18 @@
           "last_verified": "2026-08-23",
           "sources": [],
           "note": "亜種 Rhinoclemmys pulcherrima pulcherrima の care 値は親種 Rhinoclemmys pulcherrima のレコードを継承（2026-08-23）。亜種単位で独立に検証した値ではない。"
+        },
+        "enclosure_jp": {
+          "value": "90cm",
+          "verification": "LIKELY",
+          "provenance": "expert_consensus",
+          "japan_fit": {
+            "judgment": "converted_from_shell_length",
+            "basis": "甲長20.0cm×5=100cm → ケージ規格 90cm（差10cm）が 120cm（差20cm）より近い",
+            "jp_note": "半陸生。陸場を主体に、浅い水容器を常設する"
+          },
+          "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
+          "last_verified": "2026-09-12"
         }
       }
     },
