@@ -34,16 +34,40 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **69b2690**（PR #174 merge・2026-09-11 実測値） |
-| サイトファイルの状態 | PR #174（Amazon アソシエイト ID 全置換）**main 反映済み（69b2690）**。GitHub Pages への反映は push 後約 60 秒 |
+| 基準 | `origin/main` = **c6730b5**（PR #175 merge・2026-09-12 実測値）。本ブランチ `fix/enclosure-terrestrial-batch` は PR #176・#177 の続き |
+| サイトファイルの状態 | Amazon ID 切り替えは main 反映済み。本作業は `data/species-master.json`（16種）と `species/*.html`（14ページ）のみ変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-11 |
+| 最終更新日 | 2026-09-12 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/kame-product-card-research-bfdzs0`（PR #174） |
+| 作業ブランチ | `fix/enclosure-terrestrial-batch` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 残り16種の甲長調査と enclosure_jp 登録 — **14種登録 / 2種据え置き**（2026-09-12 / 本PR）— **再調査しない**
+
+`check_enclosure_sync.py` の **一致 96 → 110・不一致 0**。未登録 16 → **2**。
+
+| 種 | 甲長(cm) | 換算 | enclosure_jp | 出典 |
+|---|---|---|---|---|
+| パンケーキリクガメ | 17.8 | ×5=89 | 90cm（岩組み必須） | TFTSG CBFTT 107 |
+| キタニシキハコガメ | 17.0(♀) | ×5=85 | 90cm | TFTSG CBFTT 126 |
+| ミナミニシキハコガメ | 17.0(♀) | ×5=85 | 90cm | 同上（亜種固有値なし・基亜種と同値） |
+| モエギハコガメ | 20.0 | ×5=100 | 90cm | Naturalis Turtles of the World |
+| マレーハコガメ | 25.0 | ×5=125 | 120cm | TFTSG CBFTT 053 |
+| ミスジハコガメ | 23.0 | ×5=115 | 120cm | Blanck et al. 2006（TFTSG 掲載） |
+| ネンリンヤマガメ | 22.6(♀) | ×5=113 | 120cm | TFTSG CBFTT 123 |
+| アカスジヤマガメ＋亜種4 | 20.0(♀) | ×5=100 | 90cm | USGS NAS ファクトシート |
+| マッコードナガクビガメ | 24.1(♀記録個体) | ×4=96.4 | 90cm | TFTSG CBFTT 008 |
+| コウホソナガクビガメ | 40.0 | ×3=120 | 120cm | 西豪州 DWER |
+
+- **据え置き 2 種**（値を入れない。note に「何を探して何が無かったか」を記録済み）:
+  **チャコリクガメ** … 二次資料の 43.3cm と通常 20〜30cm が割れる。C. donosobarrosi・C. petersi を新参異名とした経緯があり広義値の疑い。狭義の最大を確定できる一次資料に到達せず。
+  **ハーレラドロガメ** … 取れたのは成熟サイズ（♀115〜130mm）と「個体群最大 150mm〜200mm 超」のみ。上限が閉じておらず最大甲長として確定できない。
+- **丸めは切り上げではない**。モエギ100cm・アカスジ100cm は 90cm（差10）＜120cm（差20）で 90cm。
+- **証拠の強度**: 本作業環境からは iucn-tftsg.org / iucnredlist.org / fws.gov / ncbi / nas.er.usgs.gov / dwer.wa.gov.au が**すべて egress BLOCKED**（WebFetch 不可）。検索インデックス経由で該当箇所を引用した。**BLOCKED であって NOT FOUND ではない**。全件 `verification: LIKELY`・note に「原典確認が残る」を明記。
+- ページ同期: 14ページ / 74行（ls-lead・env-card・比較表の自種セル・10年後の文・購入導線バンド・title/meta・FAQ・JSON-LD）。近縁6ページの比較表は**行ごとに各種の正本値**へそろえた（24行）。
 
 ### Amazon アソシエイト却下の原因分析と再申請・新 ID への全置換（2026-09-11 / PR #174 merge **69b2690**・Owner 指示で merge）— **再調査しない**
 
@@ -1009,6 +1033,13 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 甲長・enclosure_jp の到達点（2026-09-12・本PR 時点）
+
+- `check_enclosure_sync.py`: **一致 110 / 不一致 0 / 未登録 2**（チャコリクガメ・ハーレラドロガメ）。
+- 上記 14 種の甲長と換算は固定入力。**再調査しない**（NO-REWORK GATE の4条件に該当する場合のみ）。
+- 一次資料ドメインは本環境から **egress BLOCKED**（iucn-tftsg.org / iucnredlist.org / fws.gov / ncbi.nlm.nih.gov / nas.er.usgs.gov / rivers.dwer.wa.gov.au）。**同じ経路で再試行しない**。
+- 購入導線バンドの anchor は `cage-best10.html` に実在する 6 種のみ: `band-terrarium-60` / `band-cage-90` / `band-cage-120` / `band-tank-30-45` / `band-tank-60-90` / `band-tank-90plus`。水槽 120cm 用の band は存在しないため、コウホソナガクビガメ（120cm水槽）は `band-tank-90plus` を指す。
+
 ### Amazon アソシエイト ID は `kamelife090e-22`（2026-09-11 発行・PR #174 で全置換）
 
 - 収益ゲートの ID は **`kamelife090e-22`**。旧 `kamelife09-22` は閉鎖アカウントの ID で、**今後一切使わない**。
@@ -1490,6 +1521,12 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
+### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）
+
+- **近似種比較表の他種セルが各種の正本値とずれている**（既存の不整合。今回の変更が原因ではない）。実測例: ヒラセガメ「60cm〜」対 正本「90cm級ケージ〜」／トウブハコガメ「60cm〜」対「室内90〜120cm級」／マタマタ・スジオオニオイガメ「90cm〜」対「120cm級」／ロシアリクガメ・ヘルマンリクガメ「60〜90cm」対「90cm級」「120cm級」。**自種の行は今回そろえた**。他種の行は別工程。
+- **「10年後は甲長X〜Ycm」の上限が正本 max を超えるページが 7 件**（実測）: three-toed-box-turtle 17>16.5 ／ eastern-box-turtle 20>19.8 ／ pancake-tortoise 18>17.8 ／ chinese-softshell-turtle 35>25 ／ albino-chinese-softshell 35>25 ／ spenglers-leaf-turtle 11>10.7 ／ asian-black-marsh-turtle 30>20。前5件は丸め誤差の範囲、後2件（ソフトシェル・アジアクロコガメ）は差が大きい。
+- **env-card のラベル不統一**: ネンリンヤマガメ等の陸生種で `必要水槽` ラベルが使われている（`必要ケージ`が正しい）。表示値は今回正本へそろえたがラベルは触っていない。
+
 ### 判断待ち・未確認（2026-09-11）
 
 - **[未確認] Amazon の審査結果**（通常 3 営業日）。承認メール到着後に `FIXED_FACTS` へ承認日を記録する。
@@ -1633,13 +1670,12 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### Amazon 審査結果の記録と Routine 初回実行の結果確認
+### 近似種比較表の「他種セル」を各種の正本値へそろえる
 
-**対象**: ① Amazon アソシエイトの審査結果メール（通常 3 営業日・2026-09-11 申請）。承認なら承認日を `FIXED_FACTS` に記録し、否認なら理由を `UNRESOLVED` に置く。
-② Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（月・金 10:00 JST・ASIN 実在照合）と GitHub Actions `asin-audit.yml` の初回結果（2026-09-11 分）。
-**Scope**: 記録と確認のみ。①は Owner のメール確認が要る。②は Routine から GitHub MCP が使えたか／CAUTION 22 件の再照合結果と Issue／失敗時の Routine プロンプト修正。
-**変更禁止**: Amazon ID（`kamelife090e-22` で確定）／`data/products.js` の ASIN／商品不足監査の再開／PARTIAL 5 件の再探索。
-**完了条件**: ①の結果と②の成否が `FIXED_FACTS` に記録されていること。以後は `docs/operations/WEEKLY_REVIEW.md` に従う。
+**対象**: 全 `species/*.html` の近似種比較表のうち、**自種以外の行**の「必要環境」セル。上記 UNRESOLVED の実測例（ヒラセガメ・トウブハコガメ・マタマタ・スジオオニオイガメ・ロシアリクガメ・ヘルマンリクガメ 等）が対象。
+**Scope**: セルの表示文字列のみ。`data/species-master.json` は**読むだけ**。表のヘッダ・行の増減・他カラムは触らない。
+**変更禁止**: 甲長の再調査（本PRで固定済み）／チャコリクガメ・ハーレラドロガメの再探索（据え置き理由は note にある）／`enclosure_jp` の値そのもの／Amazon ID・ASIN。
+**完了条件**: 比較表の全行が各種の `care.enclosure_jp` と矛盾しないこと。`check_enclosure_sync.py` が 不一致0 のままであること。
 
 ## 更新ルール（作業終了時に必ず実施）
 
