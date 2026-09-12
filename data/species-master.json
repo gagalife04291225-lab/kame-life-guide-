@@ -125,7 +125,8 @@
         "6) 甲長が UNPROVEN の種は enclosure_jp も value: null のまま置く。推測で埋めない"
       ],
       "verification": "enclosure_jp は飼育コンセンサスからの換算のため LIKELY が上限。CONFIRMED は付けない（既存64件も全件LIKELY）",
-      "checker": "scripts/check_enclosure_sync.py"
+      "checker": "scripts/check_enclosure_sync.py",
+      "juvenile": "子亀期は終生サイズより小さい容器で飼える。判断は月数ではなく甲長で行う（容器長辺 ≒ 甲長×4。30cm容器＝甲長7cmまで／45cm＝11cmまで／60cm＝15cmまで）。成長速度は水温・給餌量で大きく変わるため『○ヶ月まで』という表記はしない。enclosure_jp は終生飼育の目安のみを持つ項目であり、子亀期の値を混ぜない"
     }
   },
   "species": [
