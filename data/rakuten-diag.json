@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -888,14 +888,14 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 4,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=8.1 容量不一致",
+  "resultCount": 5,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=8.1",
   "best": {
-   "itemName": "三本線【焼成・硬質赤玉土】 5L（約4kg）　赤玉土 用土 園芸 ガーデニング テラリウム メダカ",
-   "price": 700,
+   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム",
+   "price": 1350,
    "shop": "園芸用土のイワモト"
   }
  },
@@ -1012,15 +1012,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
+   "price": 701,
+   "shop": "ペッツマム"
   }
  },
  "thermometer_aqua": {
