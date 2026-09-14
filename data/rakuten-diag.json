@@ -236,14 +236,14 @@
   }
  },
  "filter_canister_medium": {
-  "date": "2026-09-07",
+  "date": "2026-09-14",
   "query": "EHEIM クラシック 2213 外部フィルター",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
-   "price": 14940,
+   "price": 15090,
    "shop": "ミナトワークス"
   }
  },
@@ -332,15 +332,15 @@
   "best": null
  },
  "fixture_exoterra_light_dome_14": {
-  "date": "2026-09-11",
+  "date": "2026-09-14",
   "query": "GEX エキゾテラ ライトドーム 14cm PT2055",
-  "resultCount": 2,
+  "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=6.2",
+  "reason": "score=4",
   "best": {
-   "itemName": "【全国送料無料】GEX エキゾテラ ライトドーム 14cm PT2055",
-   "price": 3800,
-   "shop": "レヨンベールアクア楽天市場店"
+   "itemName": "◇ジェックス ライトドーム14cm PT2055 | 爬虫類ライト 照明 爬虫類 照明器具 エキゾテラ ライトドーム GEX UV灯 白熱球 バスキング ランプ",
+   "price": 4180,
+   "shop": "ペットフォレスト 楽天市場店"
   }
  },
  "fixture_gex_light_stand": {
@@ -600,14 +600,14 @@
   }
  },
  "media_eheim_2213_carbon": {
-  "date": "2026-09-08",
+  "date": "2026-09-14",
   "query": "エーハイム 2213 活性炭フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.6 入数(3),適合表記(2213)",
   "best": {
    "itemName": "エーハイム 2213専用 活性炭フィルターパッド 3枚入り 2628131 [EHEIM クラシックフィルター用]",
-   "price": 2150,
+   "price": 2200,
    "shop": "ミナトワークス"
   }
  },
@@ -636,26 +636,26 @@
   }
  },
  "media_eheim_2215_coarse": {
-  "date": "2026-09-08",
+  "date": "2026-09-14",
   "query": "エーハイム 2215 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.6 入数(2),適合表記(2215)",
   "best": {
    "itemName": "エーハイム 2215専用 粗目フィルターパッド 2枚入 2616151 [EHEIM 外部フィルター用]",
-   "price": 2430,
+   "price": 2490,
    "shop": "ミナトワークス"
   }
  },
  "media_eheim_2215_fine": {
-  "date": "2026-09-08",
+  "date": "2026-09-14",
   "query": "エーハイム 2215 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.2 入数(3),適合表記(2215)",
   "best": {
    "itemName": "エーハイム 2215専用 細目フィルターパッド 3枚入 2616155 [EHEIM 外部フィルター用]",
-   "price": 2100,
+   "price": 2150,
    "shop": "ミナトワークス"
   }
  },
@@ -848,9 +848,9 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-09-07",
+  "date": "2026-09-14",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 10,
+  "resultCount": 9,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
@@ -960,9 +960,9 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-08-29",
+  "date": "2026-09-14",
   "query": "爬虫類 プロバイオティクス 腸内環境",
-  "resultCount": 7,
+  "resultCount": 5,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1132,15 +1132,15 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-09",
+  "date": "2026-09-14",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
-  "resultCount": 10,
+  "resultCount": 7,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "ジェックス EXO TERRA エキゾテラ GEX EXOTERRA レプタイルUVB100 26W PT2187 熱帯・亜熱帯 爬虫類用 紫外",
-   "price": 2513,
-   "shop": "パレットマーケット"
+   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "price": 3400,
+   "shop": "プロツールショップヤブモト"
   }
  },
  "uvb_led_bar": {
@@ -1212,14 +1212,14 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-12",
+  "date": "2026-09-14",
   "query": "テトラ テスト 6in1 試験紙 25枚",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=6.2",
   "best": {
    "itemName": "テトラ (Tetra) テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬",
-   "price": 2840,
+   "price": 3102,
    "shop": "kichibei"
   }
  },
