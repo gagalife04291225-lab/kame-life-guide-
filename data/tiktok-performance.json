@@ -1,0 +1,6 @@
+{
+  "generated_at": null,
+  "metrics_available": ["view_count", "like_count", "comment_count", "share_count"],
+  "metrics_not_available_with_current_api": ["average_watch_time", "completion_rate"],
+  "videos": []
+}
