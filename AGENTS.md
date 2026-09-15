@@ -30,6 +30,7 @@ Claude Code / OpenAI Codex / GPT-6 Astra / その他、どれで作業しても�
 | PM（RO-2） | [`docs/agent-rules/pm-conduct.md`](docs/agent-rules/pm-conduct.md) | PM 行動規範・作業開始前ゲート・Merge Gate |
 | 実装（RO-3） | [`docs/agent-rules/handoff-gate.md`](docs/agent-rules/handoff-gate.md) | 引き継ぎ・重複作業防止・報告形式・EVIDENCE GATE |
 | 実装（RO-3） | [`docs/agent-rules/closeout-gate.md`](docs/agent-rules/closeout-gate.md) | 残件を積み上げない CLOSE 規則・デプロイ検証 |
+| PM / 実装 | [`docs/agent-rules/owner-dispatch.md`](docs/agent-rules/owner-dispatch.md) | Owner ショートコマンド・GitHub Issue 作業命令書 |
 
 ### 上位規範
 
@@ -101,3 +102,11 @@ Claude Code / OpenAI Codex / GPT-6 Astra / その他、どれで作業しても�
 | 報告の形式 | まず結論を短く。技術的詳細は求められたときだけ出す |
 
 Owner から明示的に指示された内容は、`NEXT` より優先します。
+
+## Owner ショートコマンド
+
+KAME LIFE GUIDE の作業文脈で Owner が Codex に「見て」（「見てやって」「指示見て」
+「GitHub見て」等を含む）と入力した場合、質問を返さず
+[`docs/agent-rules/owner-dispatch.md`](docs/agent-rules/owner-dispatch.md) の Codex 起動手順を実行します。
+Owner が ChatGPT PM に「おはよう」「こんにちは」「こんばんは」と入力した場合も、同ファイルの
+PM 起動手順を実行します。ショートコマンドの解釈と Issue 契約の正本は同ファイルだけです。
