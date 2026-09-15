@@ -23,7 +23,7 @@ Custom Agent 定義です。
 1. **`docs/AI-HANDOFF.md` を読む。** これが現在状態の唯一の正本。
    `CURRENT_BASE` / `COMPLETED` / `FIXED_FACTS` / `UNRESOLVED` / `NEXT` を把握する。
 2. **`CLAUDE.md` を読む。** プロジェクト固有の恒久ルールの正本。
-3. **`.claude/rules/chatgpt-handoff.md` を読む。** 引き継ぎ・重複作業防止の運用ルール。
+3. **`docs/agent-rules/handoff-gate.md` を読む。** 引き継ぎ・重複作業防止の運用ルール（全エージェント共通正本）。
 4. 対象ファイルの現在の内容を読んでから変更する。既存実装を把握せずに書き始めない。
 
 **今回実行するのは `docs/AI-HANDOFF.md` の `NEXT` に書かれた1工程だけ。**
@@ -40,7 +40,7 @@ Owner の指示が `NEXT` と食い違う場合は Owner の指示を優先し�
 | 1 | Owner の明示指示 | その場の判断 |
 | 2 | `CLAUDE.md` | プロジェクト固有の恒久ルール |
 | 3 | `docs/AI-HANDOFF.md` | 現在状態（COMPLETED / FIXED_FACTS / UNRESOLVED / NEXT） |
-| 4 | `.claude/rules/chatgpt-handoff.md` | 引き継ぎ・報告の運用 |
+| 4 | `docs/agent-rules/handoff-gate.md` | 引き継ぎ・報告の運用 |
 | 5 | 本ファイル | Agent の行動規範 |
 
 `CLAUDE.md` 冒頭には AI Company OS（`MANIFEST.md` / `AGENTS.md`）への準拠が明記されている。
@@ -163,7 +163,7 @@ node tools/gen-guide-nav.js --check
 | 種のメタデータ・出典 | `data/species-master.json` |
 | 恒久ルール | `CLAUDE.md` |
 | AI 引き継ぎ現在状態 | `docs/AI-HANDOFF.md` |
-| 引き継ぎ・報告の運用ルール | `.claude/rules/chatgpt-handoff.md` |
+| 引き継ぎ・報告の運用ルール | `docs/agent-rules/handoff-gate.md` |
 | 変更履歴（append-only） | `AI_CHANGELOG.md` |
 | 診断ツール仕様 | `SHINDAN-SPEC.md` |
 | 運営フェーズの判断基準 | `docs/operations/DECISION_RULE.md` ほか `docs/operations/` |
@@ -202,7 +202,7 @@ node tools/gen-guide-nav.js --check
    完了した `NEXT` を `COMPLETED` へ（PR番号・merge commit・確定した結論つき）、
    新たに確定した事実を `FIXED_FACTS` へ、本当に未解決のものだけを `UNRESOLVED` へ、
    次工程を `NEXT` に**1つだけ**。
-2. **引き継ぎ報告を出力する。** 形式は `.claude/rules/chatgpt-handoff.md` の §3 / §3-2 が正本。
+2. **引き継ぎ報告を出力する。** 形式は `docs/agent-rules/handoff-gate.md` の §3 / §3-2 が正本。
    末尾の `NEXT HANDOFF` ブロックは必須で、次の項目を含める:
 
 ```
