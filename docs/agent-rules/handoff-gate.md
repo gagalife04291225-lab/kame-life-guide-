@@ -3,6 +3,8 @@
 このルールは KAME LIFE GUIDE の実装作業に常時適用する。
 **Claude Code / OpenAI Codex / GPT-6 Astra など、どのエージェントで作業する場合も同じ。**
 Claude 側の入口 `.claude/rules/chatgpt-handoff.md` は本ファイルへの参照であり、正本はここ。
+GitHub Issue を介した Owner / PM / 実装担当の起動と受け渡しは
+[`owner-dispatch.md`](owner-dispatch.md) を正本とする。
 
 ## 1. 重複作業防止ゲート
 
