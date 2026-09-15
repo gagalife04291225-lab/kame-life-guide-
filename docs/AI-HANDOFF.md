@@ -35,12 +35,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **b8b3b4f**（`b8b3b4f0dc3d8948598a37f5d18409942c0e164f` / PR #179 merge・2026-09-15 実測値） |
-| サイトファイルの状態 | PR #179 はドキュメントのみの変更。サイトファイル（HTML / CSS / JS / data / assets / species）は無変更 |
-| 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
+| 基準 | 作業開始時の `main` = **c320a27**（`c320a275f9d37d9c6baff3b77b425ec3d4d8162b` / 2026-09-15 実測値） |
+| サイトファイルの状態 | 基準 commit は楽天価格の自動更新（`data/products.js` / `data/rakuten-diag.json`） |
+| 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-09-15 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/handoff-closeout-sync` |
+| 作業ブランチ | `claude/zero-copy-issue-dispatch-182` |
 
 ---
 

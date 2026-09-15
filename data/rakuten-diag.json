@@ -224,14 +224,14 @@
   }
  },
  "filter_canister_large": {
-  "date": "2026-09-12",
+  "date": "2026-09-15",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=8.4 入数(2),消耗品(ろ材)",
+  "reason": "score=9.1 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 22620,
+   "price": 22270,
    "shop": "ミナトワークス"
   }
  },
@@ -464,14 +464,14 @@
   "best": null
  },
  "food_tortoise_herbs": {
-  "date": "2026-08-29",
+  "date": "2026-09-15",
   "query": "キョーリン マルベリックドライ リクガメ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:マルベリックドライ",
   "best": {
    "itemName": "キョーリン マルベリックドライ 180g 400g リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
-   "price": 998,
+   "price": 1100,
    "shop": "ペットショップ うちのmofu"
   }
  },
@@ -540,9 +540,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-09-11",
+  "date": "2026-09-15",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 3,
+  "resultCount": 4,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -704,26 +704,26 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-09-12",
+  "date": "2026-09-15",
   "query": "GEX メガパワー 2045 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2062,
+   "price": 2140,
    "shop": "formanism"
   }
  },
  "media_gex_6090_set": {
-  "date": "2026-09-08",
+  "date": "2026-09-15",
   "query": "GEX メガパワー 6090 交換ろ材セット",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=5.6 適合表記(6090)",
+  "outcome": "KEPT_SEARCH_LEGACY_EXACT",
+  "reason": "score=5.6",
   "best": {
-   "itemName": "GEX　メガパワー6090用　交換ろ材セット　【新着】【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリウム/あくありうむ】【小型】",
-   "price": 2450,
+   "itemName": "新ハイクオリティ 21点水槽セット（GEX　メガパワー6090） 用　交換ろ材 セット（2回分）【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリウ",
+   "price": 4000,
    "shop": "ネオス 楽天市場店"
   }
  },
@@ -920,9 +920,9 @@
   }
  },
  "supplement_calcium_plus": {
-  "date": "2026-08-30",
+  "date": "2026-09-15",
   "query": "GEX EXOTERRA カルシウム ビタミンD3 40g",
-  "resultCount": 8,
+  "resultCount": 7,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,model:D3,series:カルシウム+ビタミンd3",
   "best": {
