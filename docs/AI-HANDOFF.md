@@ -1,12 +1,13 @@
 # AI-HANDOFF — AI作業の現在状態（単一正本）
 
 > **このファイルが「今どこまで終わっていて、次に何をするか」の唯一の正本。**
-> ChatGPT → Claude Code → 完了報告 → ChatGPT の往復で、
+> PM → 実装エージェント → 完了報告 → PM の往復で、
+> （実装は Claude Code / OpenAI Codex / GPT-6 Astra いずれでも同じ正本を読む）
 > 完了済み作業の再調査・次工程の取り違え・固定事項の再検証を防ぐために置いている。
 >
 > - **作業開始前に必ず読む。** ルールは `CLAUDE.md`「重複作業防止ゲート」と
->   `.claude/rules/chatgpt-handoff.md` にある。
->   PM（RO-2）は加えて `.claude/rules/pm-conduct.md`（PM 行動規範・作業開始前ゲート）を確認する。
+>   `docs/agent-rules/handoff-gate.md` にある（全エージェント共通正本）。
+>   PM（RO-2）は加えて `docs/agent-rules/pm-conduct.md`（PM 行動規範・作業開始前ゲート）を確認する。
 > - **作業終了時に必ず更新する。** 更新手順は本ファイル末尾「更新ルール」。
 > - **現在状態だけを書く。** 履歴は `AI_CHANGELOG.md`（append-only）、
 >   規範は `DEVELOPMENT_CONSTITUTION.md`、恒久ルールは `CLAUDE.md`。ここに重複させない。
@@ -21,7 +22,7 @@
 | 区分 | 対象 | 量 |
 |------|------|---:|
 | **常時必読** | 本ファイルの `CURRENT_BASE` / `UNRESOLVED` / `NEXT` | 約135行 |
-| **役割で必読** | PM（RO-2）→ [`.claude/rules/pm-conduct.md`](../.claude/rules/pm-conduct.md)<br>実装（RO-3）→ [`.claude/rules/chatgpt-handoff.md`](../.claude/rules/chatgpt-handoff.md) ＋ [`.claude/rules/closeout-gate.md`](../.claude/rules/closeout-gate.md) | 110行 / 180行 |
+| **役割で必読** | PM（RO-2）→ [`docs/agent-rules/pm-conduct.md`](agent-rules/pm-conduct.md)<br>実装（RO-3）→ [`docs/agent-rules/handoff-gate.md`](agent-rules/handoff-gate.md) ＋ [`docs/agent-rules/closeout-gate.md`](agent-rules/closeout-gate.md) | 110行 / 180行 |
 | **該当時のみ** | `CLAUDE.md` の該当 SKILL 節（その作業をするとき）<br>`DEVELOPMENT_CONSTITUTION.md`（規範が競合したとき）<br>`docs/fixed-facts/`（該当する種・表現・構造に触れるとき）<br>`docs/archive/COMPLETED-PROJECTS.md`（完了済みの詳細が要るとき）<br>`docs/decisions/OPEN-DECISIONS.md`（裁定待ちの詳細が要るとき） | 参照時 |
 
 **この区分は読む量を減らすためのものであり、規範の効力を下げるものではない。**
@@ -44,6 +45,31 @@
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### エージェント運用基盤の vendor-neutral 化（2026-09-15 / 本PR）
+
+Claude Code 専用の場所にあった共通ルールを、どのエージェントからも読める場所へ移した。
+**ルールの新設・削除・意味変更はしていない**（EVIDENCE GATE の追加のみ Owner 承認済み）。
+
+- **`AGENTS.md` を新規作成**（repo root）。全エージェント共通の入口・目次。
+  状態は書かず、`docs/AI-HANDOFF.md` と `docs/agent-rules/` への参照のみ。
+- **共通正本を `docs/agent-rules/` へ移設**（`git mv` で履歴を保持）
+  - `.claude/rules/chatgpt-handoff.md` → `docs/agent-rules/handoff-gate.md`
+  - `.claude/rules/closeout-gate.md` → `docs/agent-rules/closeout-gate.md`
+  - `.claude/rules/pm-conduct.md` → `docs/agent-rules/pm-conduct.md`
+- **`.claude/rules/` には同名の薄い参照スタブを残した**（Claude 互換）。本文は複製していない。
+- `docs/agent-rules/handoff-gate.md` に **§3-4 EVIDENCE GATE** を追加（2026-09-03 Owner 確定）。
+  raw URL ＋ 実測 commit SHA の提示義務、VERIFIED / UNVERIFIED の明示、
+  PM が raw URL を開けない環境での `VERIFIED (本文照合)` の扱いを含む。
+- `.claude/settings.json` の PostToolUse hook（push 後のデプロイ検証を促す）は**変更していない**。
+  Claude 以外では hook が動かないため、同じ検証要件を
+  `docs/agent-rules/closeout-gate.md`「push 後のデプロイ検証」に明文化した。
+- CLAUDE.md は削除せず「Claude Code 用入口 ＋ KLG固有情報」として維持。
+  冒頭に AGENTS.md への案内を追加し、NO-REWORK GATE の4条件の重複記述を参照へ置換。
+- `.github/agents/kame-life-guide.agent.md` の参照先も新正本へ更新。
+
+**サイト本体（HTML / CSS / JS / data / assets / images）の差分は 0。**
+
 
 ### 残り16種の甲長調査と enclosure_jp 登録 — **14種登録 / 2種据え置き**（2026-09-12 / 本PR）— **再調査しない**
 
