@@ -35,18 +35,18 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **c6730b5**（PR #175 merge・2026-09-12 実測値）。本ブランチ `fix/enclosure-terrestrial-batch` は PR #176・#177 の続き |
-| サイトファイルの状態 | Amazon ID 切り替えは main 反映済み。本作業は `data/species-master.json`（16種）と `species/*.html`（14ページ）のみ変更 |
+| 基準 | `origin/main` = **b8b3b4f**（`b8b3b4f0dc3d8948598a37f5d18409942c0e164f` / PR #179 merge・2026-09-15 実測値） |
+| サイトファイルの状態 | PR #179 はドキュメントのみの変更。サイトファイル（HTML / CSS / JS / data / assets / species）は無変更 |
 | 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-12 |
+| 最終更新日 | 2026-09-15 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `fix/enclosure-terrestrial-batch` |
+| 作業ブランチ | `claude/handoff-closeout-sync` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### エージェント運用基盤の vendor-neutral 化（2026-09-15 / 本PR）
+### エージェント運用基盤の vendor-neutral 化（2026-09-15 / PR #179・merge commit `b8b3b4f0dc3d8948598a37f5d18409942c0e164f`）
 
 Claude Code 専用の場所にあった共通ルールを、どのエージェントからも読める場所へ移した。
 **ルールの新設・削除・意味変更はしていない**（EVIDENCE GATE の追加のみ Owner 承認済み）。
