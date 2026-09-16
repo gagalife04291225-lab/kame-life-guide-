@@ -33,6 +33,16 @@
 
 ## CURRENT_BASE
 
+`CURRENT_BASE` は、**この作業を開始した時点で実測した `main` の基準 commit** を示す。
+この文書を同じ PR で更新するため、merge 後の `main` HEAD と常時一致させる値ではなく、
+一致させ続けるための同期 PR も作らない。新しい作業を始める側は、下記の記録を推測で流用せず、
+その時点の最新 `main` を必ず実測し、その commit を今回作業の BASE として使う。
+
+実測は vendor-neutral に行う。`origin/main` が利用可能なら
+`git log --oneline -1 origin/main`、`origin` がないクラウド環境では
+`git ls-remote https://github.com/gagalife04291225-lab/kame-life-guide-.git refs/heads/main`
+または GitHub API 等の読み取り専用手段を使う。特定ツールやリモート名を必須とせず、推測値は禁止する。
+
 | 項目 | 値 |
 |------|-----|
 | 基準 | 作業開始時の `main` = **c320a27**（`c320a275f9d37d9c6baff3b77b425ec3d4d8162b` / 2026-09-15 実測値） |
@@ -1565,7 +1575,6 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 | ID | 事項 | 裁定が無いと |
 |----|------|-------------|
-| D-01 | **Short Video Gate の再開レーン選択**（案E: Commons CC BY 主レーンで再開 / A: APIキー取得 / B: CC BY-SA 受入 / C: 停止）<br>2026-09-03 の素材源サーベイで**前提が変わった**。継承義務なしの素材が129件実在し、案E単独で再開できる | **動画制作が止まったまま**（理由は「素材が無い」ではなく「レーン未決」） |
 | D-02 | PM 実務原則 `pm-conduct.md` §8 の承認範囲 | 止まらない（実務原則として機能） |
 
 **裁定済み（2026-09-04）**: D-04 ジャンル別プロファイル化 → **案A**／D-05 K1 の較正 → **案A**（較正の結果K1を廃止しK2へ移管）／D-06 kame の G2 → **案B**（K8 へ置換）。**いずれも実装済み・science 回帰 PASS**／
@@ -1707,12 +1716,12 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 Claude Code は各作業の完了後、**同じPRの中で**本ファイルを更新する。
 
-1. **CURRENT_BASE** — 基準・**サイトファイルの状態**・最終更新日を書き換える。
-   merge commit は本ファイルを書く時点では確定しないため、**直前に merge 済みの commit を書く**
-   （自分の merge commit は書けない。表が tip と1 commit ずれるのは正常）。
+1. **CURRENT_BASE** — 作業開始時に最新 `main` を実測し、その基準 commit・**サイトファイルの状態**・最終更新日を書き換える。
+   merge commit は本ファイルを書く時点では確定しないため、**今回の作業開始時に実測した commit を書く**。
+   自分の merge commit は書けず、merge 後の tip と一致しないのが正常である。tip へ追従するためだけの同期 PR は作らない。
    **`docs/AI-HANDOFF.md` だけを変える同期PRでは「サイトファイルの状態」の行を動かさない。**
-   次に作業する側は `git log --oneline -1 origin/main` で実測し、
-   差が本ファイルだけなら BASE のズレとして扱わない
+   次に作業する側は、`origin/main` が利用可能ならそれを実測し、なければ GitHub の
+   `refs/heads/main` を読み取り専用で直接実測する。記録済みの値を推測で流用しない
 2. **COMPLETED** — 完了した NEXT を移す。PR番号・merge commit・**確定した結論**を必ず書く
 3. **FIXED_FACTS** — 新たに確定し、今後は入力として使う事実を追記する
 4. **UNRESOLVED** — 本当に未解決のものだけ残す。判断待ち / HOLD / 新発見 を区別する。
