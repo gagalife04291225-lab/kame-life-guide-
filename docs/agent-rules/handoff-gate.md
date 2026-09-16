@@ -3,11 +3,19 @@
 このルールは KAME LIFE GUIDE の実装作業に常時適用する。
 **Claude Code / OpenAI Codex / GPT-6 Astra など、どのエージェントで作業する場合も同じ。**
 Claude 側の入口 `.claude/rules/chatgpt-handoff.md` は本ファイルへの参照であり、正本はここ。
+GitHub Issue を介した Owner / PM / 実装担当の起動と受け渡しは
+[`owner-dispatch.md`](owner-dispatch.md) を正本とする。
 
 ## 1. 重複作業防止ゲート
 
 **作業開始前に `docs/AI-HANDOFF.md` を読む。** これが現在状態の唯一の正本であり、
 下の4区分はこのファイルの節にそのまま対応する。Git履歴や過去の作業報告を漁り直す必要はない。
+
+`CURRENT_BASE` は前回作業の開始時に実測した基準 commit であり、merge 後の最新 HEAD を
+永久追跡する値ではない。新しい作業では、その時点の最新 `main` を改めて実測し、今回作業の
+BASE とする。`origin/main` が利用可能ならそれを使い、`origin` がない環境では GitHub の
+`refs/heads/main` を `git ls-remote <repo URL> refs/heads/main` 等で読み取り専用に直接確認する。
+特定ツールやリモート名を前提にせず、推測値は使わない。
 
 | 区分 | AI-HANDOFF.md の節 | 扱い |
 |------|--------------------|------|
@@ -36,7 +44,7 @@ Claude 側の入口 `.claude/rules/chatgpt-handoff.md` は本ファイルへの�
 - 新たに確定し今後は入力として使う事実 → `FIXED_FACTS`
 - 本当に未解決のものだけ → `UNRESOLVED`（判断待ち / HOLD / 新発見 を区別する）
 - 次工程 → `NEXT` に**1つだけ**設定（対象 / Scope / 変更禁止 / 完了条件を書く）
-- `CURRENT_BASE` の main commit と最終更新日を書き換える
+- `CURRENT_BASE` を作業開始時に実測した main commit と最終更新日に書き換える
 - 古くなった状態記述を残さない。経緯は `AI_CHANGELOG.md`、恒久ルールは `CLAUDE.md` に置く
 
 禁止事項
