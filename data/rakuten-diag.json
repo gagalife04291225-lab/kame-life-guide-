@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-09-11",
+  "date": "2026-09-17",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【9/19 20時〜エントリー+購入でP5倍★】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -260,14 +260,14 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-12",
+  "date": "2026-09-17",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
    "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
-   "price": 8980,
+   "price": 12980,
    "shop": "charm 楽天市場店"
   }
  },
@@ -672,14 +672,14 @@
   }
  },
  "media_eheim_mech_1l": {
-  "date": "2026-09-09",
+  "date": "2026-09-17",
   "query": "エーハイム メック 1L",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.6",
   "best": {
    "itemName": "【全国送料無料】エーハイム エーハイムメック 1L パッケージなし 約850g (まとめ有)",
-   "price": 1470,
+   "price": 1520,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -848,9 +848,9 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-09-14",
+  "date": "2026-09-17",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 9,
+  "resultCount": 8,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
@@ -1012,15 +1012,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-09-13",
+  "date": "2026-09-17",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1132,13 +1132,13 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-14",
+  "date": "2026-09-17",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 7,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【9/19 20時〜エントリー+購入でP5倍★】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TER",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
