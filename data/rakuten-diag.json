@@ -224,14 +224,14 @@
   }
  },
  "filter_canister_large": {
-  "date": "2026-09-16",
+  "date": "2026-09-18",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=9.1 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 22220,
+   "price": 22170,
    "shop": "ミナトワークス"
   }
  },
@@ -344,14 +344,14 @@
   }
  },
  "fixture_gex_light_stand": {
-  "date": "2026-09-09",
+  "date": "2026-09-18",
   "query": "GEX エキゾテラ ライトスタンド ライトドーム",
   "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.2",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ ライトスタンド ライトドーム専用スタンド(新ロット新パッケージ)",
-   "price": 3570,
+   "price": 3600,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -368,14 +368,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-09-12",
+  "date": "2026-09-18",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
-   "price": 2592,
+   "price": 2526,
    "shop": "CheeringCharm 楽天市場店"
   }
  },
@@ -860,14 +860,14 @@
   }
  },
  "substrate_grassland_mix": {
-  "date": "2026-09-02",
+  "date": "2026-09-18",
   "query": "GEX EXOTERRA デザートベース 細目 3L",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:デザートベース",
   "best": {
    "itemName": "EXO TERRA エキゾテラ GEX EXOTERRA デザートベース 細目 3L 通水性・通気性がよい天然素材 砂漠・亜熱帯環境 湿度管理",
-   "price": 1994,
+   "price": 2000,
    "shop": "アルメリア楽天市場店"
   }
  },
@@ -888,13 +888,13 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-09-13",
+  "date": "2026-09-18",
   "query": "赤玉土 小粒 爬虫類",
   "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=8.1",
+  "reason": "score=8.5",
   "best": {
-   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム",
+   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム 細粒 小粒 中粒 大粒 選べる ガーデニング 培",
    "price": 1350,
    "shop": "園芸用土のイワモト"
   }
@@ -1044,13 +1044,13 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-09-07",
+  "date": "2026-09-18",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
+   "itemName": "【9月20日限定！最大100％ポイントバック】シンワ測定 デジタル温度計 SMART B 73117",
    "price": 2300,
    "shop": "Arclands Online 楽天市場支店"
   }
@@ -1092,14 +1092,14 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-12",
+  "date": "2026-09-18",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
    "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
-   "price": 9300,
+   "price": 9350,
    "shop": "charm 楽天市場店"
   }
  },
@@ -1144,26 +1144,26 @@
   }
  },
  "uvb_led_bar": {
-  "date": "2026-09-11",
+  "date": "2026-09-18",
   "query": "UVB LED ライト バー 爬虫類",
   "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 ライト選択 光量調整 タイマー ",
-   "price": 5980,
+   "price": 6380,
    "shop": "カシキド楽天市場店"
   }
  },
  "uvb_mvb_100": {
-  "date": "2026-09-08",
+  "date": "2026-09-18",
   "query": "GEX EXOTERRA ソーラーグローUV 80W",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,80W,series:ソーラーグローuv",
   "best": {
    "itemName": "【送料無料】エキゾテラ GEX EXOTERRA ソーラーグローUV 80W PT2334 UVB&バスキングライト 昼用 砂漠サバンナに棲息する昼行性の爬虫類",
-   "price": 7263,
+   "price": 7310,
    "shop": "美容と雑貨のお店 エヌエルディ"
   }
  },
