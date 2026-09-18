@@ -15,23 +15,31 @@ if (!APP_ID || !ACCESS_KEY) { console.error('RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY
 
 // 餌そのものを探す語。機材（ケージ・ライト等）は別カテゴリなので後段で落とす。
 const KEYWORDS = [
-  { term: 'カメ 餌 配合飼料', scene: 'pellet' },
-  { term: '亀 フード 主食', scene: 'pellet' },
-  { term: 'ミドリガメ 餌', scene: 'pellet' },
-  { term: 'リクガメ フード', scene: 'plant' },
-  { term: 'リクガメ 野草 フード', scene: 'plant' },
-  { term: 'カメ 乾燥エビ 餌', scene: 'animal' },
-  { term: '亀 おやつ 川エビ', scene: 'animal' },
-  { term: 'リクガメ 餌 野草', scene: 'plant' },
-  { term: 'リクガメ 主食 ペレット', scene: 'plant' },
-  { term: 'カメ 餌 人気', scene: 'pellet' },
-  { term: '水棲ガメ 餌', scene: 'pellet' },
-  { term: 'ゼニガメ 餌', scene: 'pellet' },
+  'カメ 餌 配合飼料',
+  '亀 フード 主食',
+  'ミドリガメ 餌',
+  'リクガメ フード',
+  'リクガメ 野草 フード',
+  'カメ 乾燥エビ 餌',
+  '亀 おやつ 川エビ',
+  'リクガメ 餌 野草',
+  'リクガメ 主食 ペレット',
+  'カメ 餌 人気',
+  '水棲ガメ 餌',
+  'ゼニガメ 餌',
 ];
-// 餌ではないものを落とす
-// 機材、および「亀」の字だけ一致する人間用食品（亀田製菓の介護食など・実測で混入）を落とす。
-const NG = /(ケージ|水槽|ライト|ヒーター|フィルター|サーモ|温度計|シェルター|床材|カルシウム剤?$|水質|カルキ|ネット|ピンセット|水槽台|バスキング|亀田製菓|介護食|おかゆ|人間用|お菓子|せんべい)/;
+// 機材、他の動物のフード、給餌器、および「亀/カメ」の字だけ一致する人間用食品を落とす。
+// 「カメラ」は カメ を含むので必ず除外する（自動給餌器が混入した実測がある）。
+const NG = /(ケージ|水槽|ライト|ヒーター|フィルター|サーモ|温度計|シェルター|床材|カルシウム剤?$|水質|カルキ|ネット|ピンセット|水槽台|バスキング|亀田製菓|介護食|おかゆ|人間用|お菓子|せんべい|自動給餌|給餌器|給餌機|餌やり機|インコ|オウム|文鳥|ハムスター|うさぎ|モルモット|犬用|猫用|ハリネズミ|フェレット)/;
+// 名前にカメ（亀）が出てこない商品は、検索語に引っかかっただけなので採らない。
+const TURTLE = /(亀|かめ|ガメ|タートル|トータス|陸ガメ|カメ(?!ラ))/;
 const OK = /(餌|エサ|フード|飼料|ペレット|スティック|エビ|乾燥|主食|おやつ)/;
+// 場面は検索語ではなく商品名で決める（「カメ 餌」で乾燥エビが出るなど、語と中身はずれる）。
+const sceneOf = (name) => {
+  if (/(川エビ|乾燥エビ|大エビ|ガマルス|ヨコエビ|ミルワーム|赤虫|クリル|ごほうび)/.test(name)) return 'animal';
+  if (/(リクガメ|陸ガメ|トータス|草食|野草|桑|マルベリ|タンポポ|牧草|チモシー)/.test(name)) return 'plant';
+  return 'pellet';
+};
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -75,7 +83,7 @@ const big = (url) => String(url || '').replace(/_ex=\d+x\d+/, '_ex=800x800');
 const main = async () => {
   const seen = new Map();
   const log = [];
-  for (const { term, scene } of KEYWORDS) {
+  for (const term of KEYWORDS) {
     if (log.length) await sleep(1500);
     let json;
     try { json = await search(term); }
@@ -84,13 +92,13 @@ const main = async () => {
     let kept = 0;
     for (const it of items) {
       const name = it.itemName ?? '';
-      if (NG.test(name) || !OK.test(name)) continue;
+      if (NG.test(name) || !OK.test(name) || !TURTLE.test(name)) continue;
       const code = it.itemCode;
       if (seen.has(code)) continue;
       const img = big(it.mediumImageUrls?.[0]?.imageUrl ?? it.mediumImageUrls?.[0] ?? '');
       if (!/^https:/.test(img)) continue;
       seen.set(code, {
-        scene, itemCode: code, name, shop: it.shopName,
+        scene: sceneOf(name), itemCode: code, name, shop: it.shopName,
         price: it.itemPrice, reviewCount: it.reviewCount, reviewAverage: it.reviewAverage,
         image: img, affiliateUrl: it.affiliateUrl || it.itemUrl, keyword: term,
       });
