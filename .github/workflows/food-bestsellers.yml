@@ -6,6 +6,13 @@ name: 亀の餌の売れ筋を楽天から取得
 
 on:
   workflow_dispatch:
+  # workflow_dispatch は既定ブランチにファイルが無いと API から叩けないため、
+  # この作業ブランチへの push でも走らせる（既存の mina 側と同じ方式）。
+  push:
+    branches: [claude/food-bestsellers]
+    paths:
+      - '.github/workflows/food-bestsellers.yml'
+      - 'scripts/food-bestsellers.mjs'
 
 permissions:
   contents: write
