@@ -45,16 +45,37 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **d4df906**（`git log --oneline -1 origin/main` / 2026-09-18 実測値） |
-| サイトファイルの状態 | 本PRは `species/*.html` 82ファイルの比較表セル（必要環境列）のみの変更。data / CSS / JS / 画像は無変更 |
+| 基準 | 作業開始時の `main` = **f2b8db7**（`git log --oneline -1 origin/main` / 2026-09-18 実測値） |
+| サイトファイルの状態 | 本PRは `species/*.html` 7ファイルの「10年後は甲長…」1文のみの変更。data / CSS / JS / 画像は無変更 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-09-18 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/konnichiha-aj2tk1` |
+| 作業ブランチ | `claude/tenyears-size-sync` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 「10年後は甲長X〜Ycm」の上限を正本へそろえた — **超過 0**（2026-09-18 / 本PR）— **再調査しない**
+
+`max_shell_length_cm`（正本）を超えていた 7 ページの「10年後」の文を修正した。7ファイル / 7行。
+
+| 種 | 変更前 | 変更後 | 正本 max |
+|---|---|---|---|
+| `three-toed-box-turtle` | 13〜17cm | **13〜16cm** | 16.5 |
+| `eastern-box-turtle` | 15〜20cm | **15〜19cm** | 19.8 |
+| `pancake-tortoise` | 14〜18cm | **14〜17cm** | 17.8 |
+| `spenglers-leaf-turtle` | 7〜11cm | **7〜10cm** | 10.7 |
+| `asian-black-marsh-turtle` | 20〜30cm | **17〜20cm** | 20.0（note「平均17〜20cm」に一致） |
+| `chinese-softshell-turtle` | 25〜35cm | **25cm級** | 25.0 |
+| `albino-chinese-softshell` | 25〜35cm | **25cm級** | 25.0 |
+
+- **丸めは切り上げにしない**（16.5→16 / 19.8→19 / 17.8→17 / 10.7→10）。
+- スッポン2種は下限を書ける根拠が正本に無い（note は種全体の 112〜250mm）。
+  **下限を推測で作らず**「25cm級」とした。範囲表記をやめたのはこの2件だけ。
+- 実測: 「10年後」の上限が正本 max を超えるページ **7 → 0**。
+  `check_compare_enclosure.py` 矛盾0 / `check_enclosure_sync.py` 不一致0（いずれも着手前と同値）。
+
 
 ### 近似種比較表の「必要環境」列を正本へそろえた — **矛盾 0**（2026-09-18 / 本PR）— **再調査しない**
 
@@ -1611,7 +1632,10 @@ product-free presenter master に切り替わった。**この判断待ちは閉
   フトマユチズガメ基亜種 `ouachita-map-turtle` 2行。正本が数値を持たない: モリイシガメ 2行
   （正本「水場と陸場の両方を広く（半陸半水）」）／チェリーヘッドアカアシリクガメ 1行
   （正本「『小型のまま』を前提にしない」）。**チャコリクガメ・ハーレラドロガメの再探索は禁止**（据え置き理由は master の note）。
-- **「10年後は甲長X〜Ycm」の上限が正本 max を超えるページが 7 件**（実測）: three-toed-box-turtle 17>16.5 ／ eastern-box-turtle 20>19.8 ／ pancake-tortoise 18>17.8 ／ chinese-softshell-turtle 35>25 ／ albino-chinese-softshell 35>25 ／ spenglers-leaf-turtle 11>10.7 ／ asian-black-marsh-turtle 30>20。前5件は丸め誤差の範囲、後2件（ソフトシェル・アジアクロコガメ）は差が大きい。
+- **「10年後」以外の甲長表記が正本 max を超える箇所が 15ページ / 33箇所**（2026-09-18 実測・下記 NEXT の対象）。
+  内訳の場所は meta description / `stat-label` / サイズ感（`lp-block-title`）/ 比較表の自種行の甲長列 / env-card「大きさ」/ チェックリスト行。
+  **「10年後」の文は本PRで解消済み**（COMPLETED 参照）。同じページ内に未修正の箇所が残っているため、
+  例えばスッポンは「10年後は甲長25cm級」に対し サイズ感が「25〜40cm」のままで**ページ内に不一致がある**。
 - **env-card のラベル不統一**: ネンリンヤマガメ等の陸生種で `必要水槽` ラベルが使われている（`必要ケージ`が正しい）。表示値は今回正本へそろえたがラベルは触っていない。
 
 ### 判断待ち・未確認（2026-09-11）
@@ -1756,18 +1780,27 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 「10年後は甲長X〜Ycm」の上限を正本の最大甲長へそろえる
+### 自種の甲長表記を `max_shell_length_cm`（正本）へそろえる — 15ページ / 33箇所
 
-**対象**: UNRESOLVED の実測 7 ページ。`three-toed-box-turtle` 17>16.5 ／ `eastern-box-turtle` 20>19.8 ／
-`pancake-tortoise` 18>17.8 ／ `chinese-softshell-turtle` 35>25 ／ `albino-chinese-softshell` 35>25 ／
-`spenglers-leaf-turtle` 11>10.7 ／ `asian-black-marsh-turtle` 30>20。
-**Scope**: 各ページの「10年後は甲長X〜Ycm」の**数値だけ**。`data/species-master.json` は**読むだけ**。
-**変更禁止**: 甲長そのものの再調査（正本は確定済み・NO-REWORK GATE）／比較表・env-card・ls-lead
-（本PRで矛盾 0 を確認済み）／ASIN・Amazon ID。
-**完了条件**: 7 ページすべてで「10年後」の上限が正本の最大甲長を超えないこと。
-`scripts/check_compare_enclosure.py` が **矛盾 0**、`scripts/check_enclosure_sync.py` が
-**不一致 0** のままであること。前5件（丸め誤差の範囲）と後2件（差が大きい）で文面の直し方が変わる場合は、
-**丸めを切り上げにしない**（COMPLETED の丸め規則に従う）。
+**対象**（2026-09-18 実測。カッコ内は正本 max）:
+`albino-chinese-softshell`(25.0) 4箇所 ／ `chinese-softshell-turtle`(25.0) 5箇所 ／
+`pancake-tortoise`(17.8) 4箇所 ／ `asian-black-marsh-turtle`(20.0) 2箇所 ／
+`bell-hinge-back-tortoise`(22.0) 2箇所 ／ `home-hinge-back-tortoise`(22.0) 2箇所 ／
+`eastern-box-turtle`(19.8) 2箇所 ／ `mccords-snake-necked-turtle`(24.1) 2箇所 ／
+`spenglers-leaf-turtle`(10.7) 2箇所 ／ `three-toed-box-turtle`(16.5) 2箇所 ／
+`yellow-pond-turtle`(19.5) 2箇所 ／ `yaeyama-pond-turtle`(19.5) 1箇所 ／
+`brown-wood-turtle-manni`(20.0) 1箇所 ／ `nicaragua-wood-turtle`(20.0) 1箇所 ／
+`painted-wood-turtle`(20.0) 1箇所
+
+**Scope**: 上記ページの**自種の甲長を示す表示文字列だけ**（meta description / `stat-label` /
+サイズ感の `lp-block-title` / 比較表の**自種行の甲長列** / env-card「大きさ」/ チェックリスト行）。
+`data/species-master.json` は**読むだけ**。
+**変更禁止**: 甲長そのものの再調査（正本は確定済み・NO-REWORK GATE）／比較表の**必要環境列**
+（矛盾0を確認済み）／他種行の甲長列（別工程）／重さ・寿命の記述／ASIN・Amazon ID。
+**完了条件**: 15ページすべてで自種の甲長表記の上限が `max_shell_length_cm` を超えないこと。
+丸めは**切り上げにしない**。下限の根拠が正本に無い場合は**推測で下限を作らず**、
+「◯cm級」等の上限のみの表記にする（スッポン2種で採った方法）。
+`check_compare_enclosure.py` 矛盾0 / `check_enclosure_sync.py` 不一致0 を維持すること。
 
 ## 更新ルール（作業終了時に必ず実施）
 
