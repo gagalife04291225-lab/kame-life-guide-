@@ -22,12 +22,19 @@ const KEYWORDS = [
   { term: 'リクガメ 野草 フード', scene: 'plant' },
   { term: 'カメ 乾燥エビ 餌', scene: 'animal' },
   { term: '亀 おやつ 川エビ', scene: 'animal' },
+  { term: 'リクガメ 餌 野草', scene: 'plant' },
+  { term: 'リクガメ 主食 ペレット', scene: 'plant' },
+  { term: 'カメ 餌 人気', scene: 'pellet' },
+  { term: '水棲ガメ 餌', scene: 'pellet' },
+  { term: 'ゼニガメ 餌', scene: 'pellet' },
 ];
 // 餌ではないものを落とす
 const NG = /(ケージ|水槽|ライト|ヒーター|フィルター|サーモ|温度計|シェルター|床材|カルシウム剤?$|水質|カルキ|ネット|ピンセット|水槽台|バスキング)/;
 const OK = /(餌|エサ|フード|飼料|ペレット|スティック|エビ|乾燥|主食|おやつ)/;
 
-const search = (keyword) => new Promise((resolve, reject) => {
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const requestOnce = (keyword) => new Promise((resolve, reject) => {
   const params = new URLSearchParams({
     applicationId: APP_ID, accessKey: ACCESS_KEY, affiliateId: AFFILIATE_ID ?? '',
     keyword, hits: '30', sort: '-reviewCount', imageFlag: '1', availability: '1',
@@ -47,12 +54,28 @@ const search = (keyword) => new Promise((resolve, reject) => {
   req.end();
 });
 
+// 楽天APIは短時間に連続で叩くと 429 を返す（実測）。指数バックオフで最大4回まで待つ。
+const search = async (keyword) => {
+  let last;
+  for (let i = 0; i < 5; i++) {
+    if (i) await sleep(2000 * 2 ** (i - 1));
+    try { return await requestOnce(keyword); }
+    catch (e) {
+      last = e;
+      if (!/HTTP (429|5\d\d)/.test(String(e))) throw e;
+      console.log(`    retry ${i + 1}/4: ${keyword} (${e.message})`);
+    }
+  }
+  throw last;
+};
+
 const big = (url) => String(url || '').replace(/_ex=\d+x\d+/, '_ex=800x800');
 
 const main = async () => {
   const seen = new Map();
   const log = [];
   for (const { term, scene } of KEYWORDS) {
+    if (log.length) await sleep(1500);
     let json;
     try { json = await search(term); }
     catch (e) { log.push({ term, error: String(e) }); console.log(`NG  ${term}: ${e}`); continue; }
