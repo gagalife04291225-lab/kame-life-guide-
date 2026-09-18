@@ -1,0 +1,51 @@
+name: 亀の餌の売れ筋を楽天から取得
+
+# Issue #11（mina-video-factory）の動画で使う「売れ筋の餌」を実データで取る。
+# 既存の rakuten-sync と同じ API・同じ並び（-reviewCount）を使い、結果を JSON に保存する。
+# products.js は変更しない（このワークフローは読み取りと JSON 出力だけ）。
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 売れ筋を取得
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: node scripts/food-bestsellers.mjs data/food-bestsellers.json
+
+      - name: 秘密が混ざっていないことを確認
+        shell: bash
+        run: |
+          set -euo pipefail
+          for k in applicationId accessKey affiliateId; do
+            if grep -q "$k=" data/food-bestsellers.json; then
+              echo "::error::$k が JSON に混ざっている"; exit 1
+            fi
+          done
+          echo "秘密の混入なし"
+          python3 -c "import json;d=json.load(open('data/food-bestsellers.json'));print('件数',len(d['items']))"
+
+      - name: 結果を commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/food-bestsellers.json
+          git diff --cached --quiet && { echo 'nothing to commit'; exit 0; }
+          git commit -m 'chore: 亀の餌の売れ筋（楽天・レビュー数順）を取得 [skip ci]'
+          git push origin HEAD:${GITHUB_REF_NAME}

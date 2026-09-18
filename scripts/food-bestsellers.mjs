@@ -1,0 +1,85 @@
+// 亀の餌の「売れ筋」を楽天 Ichiba Item Search API で引き、動画・記事から使える一覧を作る。
+// 既存の scripts/update-rakuten.js と同じ API・同じ並び（-reviewCount）を使う。
+// 秘密（applicationId / accessKey / affiliateId）は一切出力しない。
+import fs from 'node:fs/promises';
+import https from 'node:https';
+
+const APP_ID = process.env.RAKUTEN_APP_ID;
+const ACCESS_KEY = process.env.RAKUTEN_ACCESS_KEY;
+const AFFILIATE_ID = process.env.RAKUTEN_AFFILIATE_ID;
+const HOST = 'openapi.rakuten.co.jp';
+const PATH = '/ichibams/api/IchibaItem/Search/20260701';
+const OUT = process.argv[2] ?? 'data/food-bestsellers.json';
+
+if (!APP_ID || !ACCESS_KEY) { console.error('RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY が無い'); process.exit(1); }
+
+// 餌そのものを探す語。機材（ケージ・ライト等）は別カテゴリなので後段で落とす。
+const KEYWORDS = [
+  { term: 'カメ 餌 配合飼料', scene: 'pellet' },
+  { term: '亀 フード 主食', scene: 'pellet' },
+  { term: 'ミドリガメ 餌', scene: 'pellet' },
+  { term: 'リクガメ フード', scene: 'plant' },
+  { term: 'リクガメ 野草 フード', scene: 'plant' },
+  { term: 'カメ 乾燥エビ 餌', scene: 'animal' },
+  { term: '亀 おやつ 川エビ', scene: 'animal' },
+];
+// 餌ではないものを落とす
+const NG = /(ケージ|水槽|ライト|ヒーター|フィルター|サーモ|温度計|シェルター|床材|カルシウム剤?$|水質|カルキ|ネット|ピンセット|水槽台|バスキング)/;
+const OK = /(餌|エサ|フード|飼料|ペレット|スティック|エビ|乾燥|主食|おやつ)/;
+
+const search = (keyword) => new Promise((resolve, reject) => {
+  const params = new URLSearchParams({
+    applicationId: APP_ID, accessKey: ACCESS_KEY, affiliateId: AFFILIATE_ID ?? '',
+    keyword, hits: '30', sort: '-reviewCount', imageFlag: '1', availability: '1',
+  });
+  const req = https.request({
+    hostname: HOST, path: `${PATH}?${params}`, method: 'GET',
+    headers: { Accept: 'application/json', Origin: 'https://gagalife04291225-lab.github.io', Referer: 'https://gagalife04291225-lab.github.io/' },
+  }, (res) => {
+    let data = '';
+    res.on('data', (c) => { data += c; });
+    res.on('end', () => {
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
+      try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
+    });
+  });
+  req.on('error', reject);
+  req.end();
+});
+
+const big = (url) => String(url || '').replace(/_ex=\d+x\d+/, '_ex=800x800');
+
+const main = async () => {
+  const seen = new Map();
+  const log = [];
+  for (const { term, scene } of KEYWORDS) {
+    let json;
+    try { json = await search(term); }
+    catch (e) { log.push({ term, error: String(e) }); console.log(`NG  ${term}: ${e}`); continue; }
+    const items = (json.Items ?? []).map((x) => x.Item ?? x);
+    let kept = 0;
+    for (const it of items) {
+      const name = it.itemName ?? '';
+      if (NG.test(name) || !OK.test(name)) continue;
+      const code = it.itemCode;
+      if (seen.has(code)) continue;
+      const img = big(it.mediumImageUrls?.[0]?.imageUrl ?? it.mediumImageUrls?.[0] ?? '');
+      if (!/^https:/.test(img)) continue;
+      seen.set(code, {
+        scene, itemCode: code, name, shop: it.shopName,
+        price: it.itemPrice, reviewCount: it.reviewCount, reviewAverage: it.reviewAverage,
+        image: img, affiliateUrl: it.affiliateUrl || it.itemUrl, keyword: term,
+      });
+      kept++;
+    }
+    log.push({ term, hits: items.length, kept });
+    console.log(`OK  ${term}: ${items.length}件中 ${kept}件を採用`);
+  }
+  const all = [...seen.values()].sort((a, b) => (b.reviewCount ?? 0) - (a.reviewCount ?? 0));
+  await fs.writeFile(OUT, JSON.stringify({ fetched_at: new Date().toISOString(), log, items: all }, null, 2));
+  console.log(`\n売れ筋（レビュー数順）上位:`);
+  for (const p of all.slice(0, 12)) console.log(`  ${String(p.reviewCount).padStart(5)}件 ★${p.reviewAverage}  ${p.name.slice(0, 48)}`);
+  console.log(`\n合計 ${all.length} 件を ${OUT} へ保存`);
+  if (!all.length) process.exit(1);
+};
+await main();
