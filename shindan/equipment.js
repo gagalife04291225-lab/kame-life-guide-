@@ -2,7 +2,7 @@
 // equipment.js - 種別推奨機材ASINマップ（PHASE 4）
 // カテゴリ: cage / uvb / basking / substrate / food / filter
 // ASINはすべてweb_search実在確認済み（2026-06-19）。未確認はnullのまま。
-// Amazonアソシエイト タグ: kamelife09-22
+// Amazonアソシエイト タグ: kamelife090e-22
 //
 // 確認済みASIN一覧（web_search で amazon.co.jp に商品ページ実在を確認済み）:
 //   B00JZFJ5R0 = ビバリア スパイラルUVB デザート 26W（砂漠・リクガメ用）

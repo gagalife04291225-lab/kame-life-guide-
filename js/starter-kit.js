@@ -22,7 +22,7 @@
 // ── Phase 7-C Step 3-A: Amazon URL 判定ヘルパー ──────────────────
 function isAmazonUrl(url) {
   if (!url) return false;
-  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
+  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife090e-22/.test(url);
 }
 
 // ── Phase 10-D: GA4 payload helpers ──────────────────────────

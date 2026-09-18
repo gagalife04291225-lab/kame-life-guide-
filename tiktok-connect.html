@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok連携 — カメライフガイド</title>
+  <meta name="description" content="カメライフガイドの運営者がTikTok公式APIと連携し、自身の投稿動画の実績を記録するための管理用ページです。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://kamelifeguide.com/tiktok-connect.html">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0d1f1a">
+  <style>
+    .tc-wrap{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+    .tc-card{border:1px solid rgba(0,0,0,.12);border-radius:12px;padding:20px;margin:18px 0;background:#fff}
+    .tc-step{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#7a6a52;margin-bottom:6px}
+    .tc-btn{display:inline-block;background:#0d1f1a;color:#d4a96a;border:none;border-radius:999px;
+            padding:14px 28px;font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none}
+    .tc-btn:disabled{opacity:.45;cursor:not-allowed}
+    .tc-input{width:100%;padding:12px;border:1px solid rgba(0,0,0,.2);border-radius:8px;
+              font-family:ui-monospace,monospace;font-size:.95rem;box-sizing:border-box}
+    .tc-code{background:#0d1f1a;color:#d4a96a;padding:14px;border-radius:8px;
+             font-family:ui-monospace,monospace;font-size:.85rem;word-break:break-all;line-height:1.6}
+    .tc-note{font-size:.88rem;color:#5b5b5b;line-height:1.7}
+    .tc-warn{border-left:4px solid #c24a3a;background:#fdf3f1;padding:12px 14px;
+             border-radius:6px;font-size:.88rem;line-height:1.7}
+    table.tc-table{width:100%;border-collapse:collapse;font-size:.9rem}
+    table.tc-table th,table.tc-table td{padding:9px 8px;border-bottom:1px solid rgba(0,0,0,.1);text-align:right}
+    table.tc-table th:first-child,table.tc-table td:first-child{text-align:left}
+    table.tc-table thead th{color:#7a6a52;font-weight:600;white-space:nowrap}
+    .tc-empty{color:#7a6a52;font-size:.9rem;padding:18px 0;text-align:center}
+    .tc-status{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
+    .tc-ok{background:#e4f2e8;color:#1f6b3a}
+    .tc-off{background:#eee;color:#666}
+  </style>
+</head>
+<body>
+<div class="tc-wrap">
+
+  <h1>TikTok連携</h1>
+  <p class="tc-note">
+    カメライフガイドが運営するTikTokアカウントの投稿実績を、TikTok公式APIから取得して記録するための
+    管理用ページです。運営者本人のみが使用します。一般の読者向けの機能はありません。
+  </p>
+
+  <div class="tc-card">
+    <div class="tc-step">Step 1</div>
+    <h2>クライアントキーを入力</h2>
+    <p class="tc-note">
+      TikTok for Developers のアプリ設定にあるクライアントキーを貼り付けてください。
+      この値はこの端末のブラウザにのみ保存され、サイトには送信されません。
+    </p>
+    <p><input class="tc-input" id="ck" placeholder="クライアントキー（aw... で始まる文字列）" autocomplete="off"></p>
+    <p class="tc-warn">
+      <strong>クライアントシークレットはここに入力しないでください。</strong>
+      このページは静的サイト上にあり、入力した内容は誰でも読める状態になります。
+      シークレットはGitHub Actions Secretsにのみ保存します。
+    </p>
+  </div>
+
+  <div class="tc-card">
+    <div class="tc-step">Step 2</div>
+    <h2>TikTokアカウントを認可</h2>
+    <p class="tc-note">
+      下のボタンからTikTokの認可画面に進みます。許可すると、このページに戻ってきます。
+      要求する権限は <code>user.info.basic</code>（本人確認）と <code>video.list</code>（自分の投稿動画の読み取り）の2つだけです。
+      投稿・削除・編集の権限は要求しません。
+    </p>
+    <p><button class="tc-btn" id="auth" disabled>TikTokと連携する</button></p>
+  </div>
+
+  <div class="tc-card" id="result" hidden>
+    <div class="tc-step">Step 3</div>
+    <h2>認可コードを受け取りました</h2>
+    <p class="tc-note">
+      このコードをGitHub Actionsのワークフローに渡すと、アクセストークンとリフレッシュトークンに交換されます。
+      交換はサーバー側でのみ行い、このページでは行いません（クライアントシークレットを露出させないためです）。
+      コードは数分で失効するため、早めに使用してください。
+    </p>
+    <p class="tc-code" id="code"></p>
+    <p><button class="tc-btn" id="copy">コードをコピー</button></p>
+  </div>
+
+  <div class="tc-card" id="errbox" hidden>
+    <h2>認可されませんでした</h2>
+    <p class="tc-code" id="err"></p>
+    <p class="tc-note">やり直す場合は、上の「TikTokと連携する」をもう一度押してください。</p>
+  </div>
+
+  <div class="tc-card">
+    <div class="tc-step">Step 4</div>
+    <h2>取得した実績</h2>
+    <p class="tc-note">
+      定期実行で取得した投稿動画の実績です。再生数・いいね数・コメント数・シェア数を記録しています。
+      平均視聴時間と完視聴率はTikTok公式APIで提供されていないため、この表には含まれません。
+    </p>
+    <div id="stats"><div class="tc-empty">読み込み中…</div></div>
+    <p class="tc-note" id="updated"></p>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var AUTH = 'https://www.tiktok.com/v2/auth/authorize/';
+  var REDIRECT = 'https://kamelifeguide.com/tiktok-connect.html';
+  var SCOPE = 'user.info.basic,video.list';
+
+  var ckInput = document.getElementById('ck');
+  var authBtn = document.getElementById('auth');
+
+  try {
+    var saved = localStorage.getItem('tt_client_key');
+    if (saved) { ckInput.value = saved; }
+  } catch (e) {}
+
+  function sync() {
+    var v = ckInput.value.trim();
+    authBtn.disabled = v.length < 8;
+    try { localStorage.setItem('tt_client_key', v); } catch (e) {}
+  }
+  ckInput.addEventListener('input', sync);
+  sync();
+
+  function randomState() {
+    var a = new Uint8Array(16);
+    (window.crypto || window.msCrypto).getRandomValues(a);
+    return Array.prototype.map.call(a, function (b) {
+      return ('0' + b.toString(16)).slice(-2);
+    }).join('');
+  }
+
+  authBtn.addEventListener('click', function () {
+    var state = randomState();
+    try { sessionStorage.setItem('tt_state', state); } catch (e) {}
+    var url = AUTH
+      + '?client_key=' + encodeURIComponent(ckInput.value.trim())
+      + '&scope=' + encodeURIComponent(SCOPE)
+      + '&response_type=code'
+      + '&redirect_uri=' + encodeURIComponent(REDIRECT)
+      + '&state=' + encodeURIComponent(state);
+    window.location.href = url;
+  });
+
+  // 認可後のコールバック処理
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get('code');
+  var error = params.get('error');
+  var state = params.get('state');
+
+  if (error) {
+    document.getElementById('errbox').hidden = false;
+    document.getElementById('err').textContent =
+      error + (params.get('error_description') ? ' — ' + params.get('error_description') : '');
+  } else if (code) {
+    var expected = null;
+    try { expected = sessionStorage.getItem('tt_state'); } catch (e) {}
+    if (expected && state && expected !== state) {
+      document.getElementById('errbox').hidden = false;
+      document.getElementById('err').textContent =
+        'stateが一致しません。リクエストの改ざんの可能性があるため、このコードは使用しないでください。';
+    } else {
+      document.getElementById('result').hidden = false;
+      document.getElementById('code').textContent = code;
+      document.getElementById('copy').addEventListener('click', function () {
+        navigator.clipboard.writeText(code).then(function () {
+          document.getElementById('copy').textContent = 'コピーしました';
+        });
+      });
+    }
+  }
+
+  // 実績データの読み込み
+  var box = document.getElementById('stats');
+  fetch('data/tiktok-performance.json', { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) { throw new Error('not found'); }
+      return r.json();
+    })
+    .then(function (d) {
+      var rows = (d && d.videos) || [];
+      if (!rows.length) {
+        box.innerHTML = '<div class="tc-empty">まだ取得したデータがありません。'
+          + '認可が完了すると、定期実行でここに記録されていきます。</div>';
+        return;
+      }
+      var html = '<table class="tc-table"><thead><tr>'
+        + '<th>動画</th><th>再生</th><th>いいね</th><th>コメント</th><th>シェア</th><th>いいね率</th>'
+        + '</tr></thead><tbody>';
+      rows.forEach(function (v) {
+        var rate = (v.like_rate === null || v.like_rate === undefined)
+          ? '—' : (v.like_rate * 100).toFixed(1) + '%';
+        html += '<tr>'
+          + '<td>' + esc(v.topic || v.hook || v.video_id || '') + '</td>'
+          + '<td>' + num(v.views) + '</td>'
+          + '<td>' + num(v.likes) + '</td>'
+          + '<td>' + num(v.comments) + '</td>'
+          + '<td>' + num(v.shares) + '</td>'
+          + '<td>' + rate + '</td>'
+          + '</tr>';
+      });
+      html += '</tbody></table>';
+      box.innerHTML = html;
+      if (d.generated_at) {
+        document.getElementById('updated').textContent = '最終取得：' + d.generated_at;
+      }
+    })
+    .catch(function () {
+      box.innerHTML = '<div class="tc-empty">まだ取得したデータがありません。'
+        + '認可が完了すると、定期実行でここに記録されていきます。</div>';
+    });
+
+  function num(n) {
+    return (n === null || n === undefined) ? '—' : Number(n).toLocaleString('ja-JP');
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+})();
+</script>
+</body>
+</html>

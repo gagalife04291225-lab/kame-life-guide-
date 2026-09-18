@@ -33,7 +33,7 @@
   // href から provider を判定
   function providerOf(href) {
     if (!href) return null;
-    if (href.indexOf('amazon.co.jp') !== -1 || href.indexOf('tag=kamelife09-22') !== -1) return 'amazon';
+    if (href.indexOf('amazon.co.jp') !== -1 || href.indexOf('tag=kamelife090e-22') !== -1) return 'amazon';
     if (href.indexOf('rakuten') !== -1) return 'rakuten';
     return null;
   }

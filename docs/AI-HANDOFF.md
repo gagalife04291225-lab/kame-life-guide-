@@ -1,12 +1,13 @@
 # AI-HANDOFF — AI作業の現在状態（単一正本）
 
 > **このファイルが「今どこまで終わっていて、次に何をするか」の唯一の正本。**
-> ChatGPT → Claude Code → 完了報告 → ChatGPT の往復で、
+> PM → 実装エージェント → 完了報告 → PM の往復で、
+> （実装は Claude Code / OpenAI Codex / GPT-6 Astra いずれでも同じ正本を読む）
 > 完了済み作業の再調査・次工程の取り違え・固定事項の再検証を防ぐために置いている。
 >
 > - **作業開始前に必ず読む。** ルールは `CLAUDE.md`「重複作業防止ゲート」と
->   `.claude/rules/chatgpt-handoff.md` にある。
->   PM（RO-2）は加えて `.claude/rules/pm-conduct.md`（PM 行動規範・作業開始前ゲート）を確認する。
+>   `docs/agent-rules/handoff-gate.md` にある（全エージェント共通正本）。
+>   PM（RO-2）は加えて `docs/agent-rules/pm-conduct.md`（PM 行動規範・作業開始前ゲート）を確認する。
 > - **作業終了時に必ず更新する。** 更新手順は本ファイル末尾「更新ルール」。
 > - **現在状態だけを書く。** 履歴は `AI_CHANGELOG.md`（append-only）、
 >   規範は `DEVELOPMENT_CONSTITUTION.md`、恒久ルールは `CLAUDE.md`。ここに重複させない。
@@ -21,7 +22,7 @@
 | 区分 | 対象 | 量 |
 |------|------|---:|
 | **常時必読** | 本ファイルの `CURRENT_BASE` / `UNRESOLVED` / `NEXT` | 約135行 |
-| **役割で必読** | PM（RO-2）→ [`.claude/rules/pm-conduct.md`](../.claude/rules/pm-conduct.md)<br>実装（RO-3）→ [`.claude/rules/chatgpt-handoff.md`](../.claude/rules/chatgpt-handoff.md) ＋ [`.claude/rules/closeout-gate.md`](../.claude/rules/closeout-gate.md) | 110行 / 180行 |
+| **役割で必読** | PM（RO-2）→ [`docs/agent-rules/pm-conduct.md`](agent-rules/pm-conduct.md)<br>実装（RO-3）→ [`docs/agent-rules/handoff-gate.md`](agent-rules/handoff-gate.md) ＋ [`docs/agent-rules/closeout-gate.md`](agent-rules/closeout-gate.md) | 110行 / 180行 |
 | **該当時のみ** | `CLAUDE.md` の該当 SKILL 節（その作業をするとき）<br>`DEVELOPMENT_CONSTITUTION.md`（規範が競合したとき）<br>`docs/fixed-facts/`（該当する種・表現・構造に触れるとき）<br>`docs/archive/COMPLETED-PROJECTS.md`（完了済みの詳細が要るとき）<br>`docs/decisions/OPEN-DECISIONS.md`（裁定待ちの詳細が要るとき） | 参照時 |
 
 **この区分は読む量を減らすためのものであり、規範の効力を下げるものではない。**
@@ -32,18 +33,89 @@
 
 ## CURRENT_BASE
 
+`CURRENT_BASE` は、**この作業を開始した時点で実測した `main` の基準 commit** を示す。
+この文書を同じ PR で更新するため、merge 後の `main` HEAD と常時一致させる値ではなく、
+一致させ続けるための同期 PR も作らない。新しい作業を始める側は、下記の記録を推測で流用せず、
+その時点の最新 `main` を必ず実測し、その commit を今回作業の BASE として使う。
+
+実測は vendor-neutral に行う。`origin/main` が利用可能なら
+`git log --oneline -1 origin/main`、`origin` がないクラウド環境では
+`git ls-remote https://github.com/gagalife04291225-lab/kame-life-guide-.git refs/heads/main`
+または GitHub API 等の読み取り専用手段を使う。特定ツールやリモート名を必須とせず、推測値は禁止する。
+
 | 項目 | 値 |
 |------|-----|
-| 基準 | `origin/main` = **657dc61**（PR #172「MINA_MASTER 正本の破損修復」merge の直後・2026-09-10 実測値。旧記載 `9c27455` は PR #170 時点の値で古い） |
-| サイトファイルの状態 | PR #159〜#166 は main 反映済み（商品不足監査 CLOSE）。本PRは `CLAUDE.md` に「Claude Code 自律実行ルール」を追加する docs のみ。サイトファイル・`data/*`・CSV は無変更 |
-| 確認方法 | `git log --oneline -1 origin/main` で**実測する** |
-| 最終更新日 | 2026-09-10 |
+| 基準 | 作業開始時の `main` = **c320a27**（`c320a275f9d37d9c6baff3b77b425ec3d4d8162b` / 2026-09-15 実測値） |
+| サイトファイルの状態 | 本PRはエージェント運用文書のみの変更。サイト本体は無変更 |
+| 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
+| 最終更新日 | 2026-09-15 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/mina-product-selection-dhfz0i`（本PR・第1号案件） |
+| 作業ブランチ | `claude/zero-copy-issue-dispatch-182` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### エージェント運用基盤の vendor-neutral 化（2026-09-15 / PR #179・merge commit `b8b3b4f0dc3d8948598a37f5d18409942c0e164f`）
+
+Claude Code 専用の場所にあった共通ルールを、どのエージェントからも読める場所へ移した。
+**ルールの新設・削除・意味変更はしていない**（EVIDENCE GATE の追加のみ Owner 承認済み）。
+
+- **`AGENTS.md` を新規作成**（repo root）。全エージェント共通の入口・目次。
+  状態は書かず、`docs/AI-HANDOFF.md` と `docs/agent-rules/` への参照のみ。
+- **共通正本を `docs/agent-rules/` へ移設**（`git mv` で履歴を保持）
+  - `.claude/rules/chatgpt-handoff.md` → `docs/agent-rules/handoff-gate.md`
+  - `.claude/rules/closeout-gate.md` → `docs/agent-rules/closeout-gate.md`
+  - `.claude/rules/pm-conduct.md` → `docs/agent-rules/pm-conduct.md`
+- **`.claude/rules/` には同名の薄い参照スタブを残した**（Claude 互換）。本文は複製していない。
+- `docs/agent-rules/handoff-gate.md` に **§3-4 EVIDENCE GATE** を追加（2026-09-03 Owner 確定）。
+  raw URL ＋ 実測 commit SHA の提示義務、VERIFIED / UNVERIFIED の明示、
+  PM が raw URL を開けない環境での `VERIFIED (本文照合)` の扱いを含む。
+- `.claude/settings.json` の PostToolUse hook（push 後のデプロイ検証を促す）は**変更していない**。
+  Claude 以外では hook が動かないため、同じ検証要件を
+  `docs/agent-rules/closeout-gate.md`「push 後のデプロイ検証」に明文化した。
+- CLAUDE.md は削除せず「Claude Code 用入口 ＋ KLG固有情報」として維持。
+  冒頭に AGENTS.md への案内を追加し、NO-REWORK GATE の4条件の重複記述を参照へ置換。
+- `.github/agents/kame-life-guide.agent.md` の参照先も新正本へ更新。
+
+**サイト本体（HTML / CSS / JS / data / assets / images）の差分は 0。**
+
+
+### 残り16種の甲長調査と enclosure_jp 登録 — **14種登録 / 2種据え置き**（2026-09-12 / 本PR）— **再調査しない**
+
+`check_enclosure_sync.py` の **一致 96 → 110・不一致 0**。未登録 16 → **2**。
+
+| 種 | 甲長(cm) | 換算 | enclosure_jp | 出典 |
+|---|---|---|---|---|
+| パンケーキリクガメ | 17.8 | ×5=89 | 90cm（岩組み必須） | TFTSG CBFTT 107 |
+| キタニシキハコガメ | 17.0(♀) | ×5=85 | 90cm | TFTSG CBFTT 126 |
+| ミナミニシキハコガメ | 17.0(♀) | ×5=85 | 90cm | 同上（亜種固有値なし・基亜種と同値） |
+| モエギハコガメ | 20.0 | ×5=100 | 90cm | Naturalis Turtles of the World |
+| マレーハコガメ | 25.0 | ×5=125 | 120cm | TFTSG CBFTT 053 |
+| ミスジハコガメ | 23.0 | ×5=115 | 120cm | Blanck et al. 2006（TFTSG 掲載） |
+| ネンリンヤマガメ | 22.6(♀) | ×5=113 | 120cm | TFTSG CBFTT 123 |
+| アカスジヤマガメ＋亜種4 | 20.0(♀) | ×5=100 | 90cm | USGS NAS ファクトシート |
+| マッコードナガクビガメ | 24.1(♀記録個体) | ×4=96.4 | 90cm | TFTSG CBFTT 008 |
+| コウホソナガクビガメ | 40.0 | ×3=120 | 120cm | 西豪州 DWER |
+
+- **据え置き 2 種**（値を入れない。note に「何を探して何が無かったか」を記録済み）:
+  **チャコリクガメ** … 二次資料の 43.3cm と通常 20〜30cm が割れる。C. donosobarrosi・C. petersi を新参異名とした経緯があり広義値の疑い。狭義の最大を確定できる一次資料に到達せず。
+  **ハーレラドロガメ** … 取れたのは成熟サイズ（♀115〜130mm）と「個体群最大 150mm〜200mm 超」のみ。上限が閉じておらず最大甲長として確定できない。
+- **丸めは切り上げではない**。モエギ100cm・アカスジ100cm は 90cm（差10）＜120cm（差20）で 90cm。
+- **証拠の強度**: 本作業環境からは iucn-tftsg.org / iucnredlist.org / fws.gov / ncbi / nas.er.usgs.gov / dwer.wa.gov.au が**すべて egress BLOCKED**（WebFetch 不可）。検索インデックス経由で該当箇所を引用した。**BLOCKED であって NOT FOUND ではない**。全件 `verification: LIKELY`・note に「原典確認が残る」を明記。
+- ページ同期: 14ページ / 74行（ls-lead・env-card・比較表の自種セル・10年後の文・購入導線バンド・title/meta・FAQ・JSON-LD）。近縁6ページの比較表は**行ごとに各種の正本値**へそろえた（24行）。
+
+### Amazon アソシエイト却下の原因分析と再申請・新 ID への全置換（2026-09-11 / PR #174 merge **69b2690**・Owner 指示で merge）— **再調査しない**
+
+- **却下理由**（Amazon 原文）: 「申請書に記載されていなかったサイトへユーザーを誘導/リダイレクト」。例示 URL は `https://gagalife04291225-lab.github.io/kame-life-guide-`。
+- **原因**: GitHub Pages はカスタムドメイン（CNAME=`kamelifeguide.com`）設定時に github.io を 301 する仕様。申請 URL と実サイトが食い違った。
+  サイト側の宣言（canonical 205 / sitemap 196 / robots）はすべて `kamelifeguide.com`。
+- **サイト側は適合**（実測）: Amazon リンクのあるページ 27/27 にアソシエイト表記あり（欠落 0）／怪しい転送 0／meta refresh 3 件は species→species の内部転送。
+- **再申請**（Owner 実施・2026-09-11）: 主サイト `https://kamelifeguide.com`、併記 github.io と `note.com/proper_bison2362`。種別「コンテンツメディア」。
+  → **新 ID `kamelife090e-22` が発行**（審査中・通常 3 営業日）。旧 ID `kamelife09-22` のアカウントは閉鎖済み。
+- **全置換**（PR #174）: 47 ファイル / 322 箇所。旧 ID 残 0・ID 以外の変更行 0・楽天リンク混入 0。`scripts/update-rakuten.js` は Amazon の tag を再生成しないので `data/products.js` は上書きされない。
+- **未実測**: この環境から `kamelifeguide.com` / github.io は egress 遮断で開けず、301 応答そのものは未確認（BLOCKED）。
+- **本番確認（Owner 実測・2026-09-11 22:00 JST）**: `kamelifeguide.com/cage-review.html` の Amazon リンクを長押しで取得し、`&tag=kamelife090e-22` を確認（スクリーンショット）。main で旧 ID 0 と合わせて切り替え完了。
 
 ### ミナ MASTER 画像の repo 保存前提化 — **CLOSE**（2026-09-10 / 本PR）
 
@@ -376,7 +448,7 @@ species 112ページの「推奨機材セット」直後に `.ls-box` を挿入�
 `rakutenUrl` / `rakutenItemCode` / `rakutenPrice` / `rakutenShop` / `rakutenConfidence` を null にした。
 次回の日次同期で正しい商品に再照合される。`basking_halogen_35w` の検索語も実商品に合わせた。
 
-**収益ゲートの実測**: 追跡ID `kamelife09-22` の出現数は **272 → 272 で不変**、GA4 `G-QQTE5CVF3K` は
+**収益ゲートの実測**: 追跡ID `kamelife090e-22` の出現数は **272 → 272 で不変**、GA4 `G-QQTE5CVF3K` は
 **410 で不変**。差分に ID の欠落・追加はない。修正した8ページで Amazon リンクの
 **tag 欠落 0件・未解決ボタン 0件**を実描画で確認した。
 
@@ -997,6 +1069,20 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 甲長・enclosure_jp の到達点（2026-09-12・本PR 時点）
+
+- `check_enclosure_sync.py`: **一致 110 / 不一致 0 / 未登録 2**（チャコリクガメ・ハーレラドロガメ）。
+- 上記 14 種の甲長と換算は固定入力。**再調査しない**（NO-REWORK GATE の4条件に該当する場合のみ）。
+- 一次資料ドメインは本環境から **egress BLOCKED**（iucn-tftsg.org / iucnredlist.org / fws.gov / ncbi.nlm.nih.gov / nas.er.usgs.gov / rivers.dwer.wa.gov.au）。**同じ経路で再試行しない**。
+- 購入導線バンドの anchor は `cage-best10.html` に実在する 6 種のみ: `band-terrarium-60` / `band-cage-90` / `band-cage-120` / `band-tank-30-45` / `band-tank-60-90` / `band-tank-90plus`。水槽 120cm 用の band は存在しないため、コウホソナガクビガメ（120cm水槽）は `band-tank-90plus` を指す。
+
+### Amazon アソシエイト ID は `kamelife090e-22`（2026-09-11 発行・PR #174 で全置換）
+
+- 収益ゲートの ID は **`kamelife090e-22`**。旧 `kamelife09-22` は閉鎖アカウントの ID で、**今後一切使わない**。
+- ID の出現数（PR #174 時点）: 322 箇所 / 47 ファイル。監査は `grep -ro 'kamelife09-22'` が 0 であることを確認する。
+- github.io → kamelifeguide.com の 301 は GitHub Pages の正常動作。止めない。Amazon には両 URL を申告済み。
+- 承認後 180 日以内に適格販売 3 件が必要（Amazon の条件）。
+
 ### MINA_MASTER 正本は復旧済み・必須8項目 PASS（2026-09-10 実測 / **再検証しない**）
 
 canonical path `brand/assets/mina/mina-master.png` の正本は PR #172（merge `657dc61`）で修復済み。
@@ -1266,13 +1352,13 @@ Owner（ChatGPT側）が楽天公式一次資料で確認済み。**Claude 側�
 | `rakutenStatus: 'available'`（実アフィリURL・同一性検証済み） | **36** |
 | `rakutenStatus: 'search'`（検索フォールバック・**同一性未検証**） | **65** |
 | `rakutenStatus: 'pending'`（楽天CTAなし） | **3** |
-| `affiliateUrl` が実 Amazon URL | **77**（全件 `kamelife09-22` 付き・**タグ漏れ0件**） |
+| `affiliateUrl` が実 Amazon URL | **77**（全件 `kamelife090e-22` 付き・**タグ漏れ0件**） |
 | `affiliateUrl` がプレースホルダ | **27**（`'#'` 23件 ／ `null` 4件） |
 | `image` フィールド保有 | 104（**全件同一の存在しないパス**） |
 | `rakutenImageUrl` / `imageUrl` フィールド | **0**（未定義） |
 | 商品カテゴリ | 12種（enclosure / lighting_uvb / lighting_basking / heating / filter / substrate / shelter / water_dish / thermometer / food / supplements / accessory） |
 
-**収益ゲートは健全**: 実 Amazon URL 77件は全て `kamelife09-22` を保持。
+**収益ゲートは健全**: 実 Amazon URL 77件は全て `kamelife090e-22` を保持。
 タグ無しの27件は Amazon URL ですらないプレースホルダで、`starter-kit.js` は
 `affiliateUrl === '#'` を「選定中」ラベルへ落として描画する（リンクを出さない）。
 
@@ -1471,6 +1557,17 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
+### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）
+
+- **近似種比較表の他種セルが各種の正本値とずれている**（既存の不整合。今回の変更が原因ではない）。実測例: ヒラセガメ「60cm〜」対 正本「90cm級ケージ〜」／トウブハコガメ「60cm〜」対「室内90〜120cm級」／マタマタ・スジオオニオイガメ「90cm〜」対「120cm級」／ロシアリクガメ・ヘルマンリクガメ「60〜90cm」対「90cm級」「120cm級」。**自種の行は今回そろえた**。他種の行は別工程。
+- **「10年後は甲長X〜Ycm」の上限が正本 max を超えるページが 7 件**（実測）: three-toed-box-turtle 17>16.5 ／ eastern-box-turtle 20>19.8 ／ pancake-tortoise 18>17.8 ／ chinese-softshell-turtle 35>25 ／ albino-chinese-softshell 35>25 ／ spenglers-leaf-turtle 11>10.7 ／ asian-black-marsh-turtle 30>20。前5件は丸め誤差の範囲、後2件（ソフトシェル・アジアクロコガメ）は差が大きい。
+- **env-card のラベル不統一**: ネンリンヤマガメ等の陸生種で `必要水槽` ラベルが使われている（`必要ケージ`が正しい）。表示値は今回正本へそろえたがラベルは触っていない。
+
+### 判断待ち・未確認（2026-09-11）
+
+- **[未確認] Amazon の審査結果**（通常 3 営業日）。承認メール到着後に `FIXED_FACTS` へ承認日を記録する。
+- **[未確認] Routine `trig_01N9G14WTPu77Fs36FS81de4` の初回実行（2026-09-11 10:00 JST）の結果**。本作業では未確認。
+
 ### 裁定待ち（**Owner の判断が要る**）
 
 選択肢・影響・推奨・「裁定が無いと何が止まるか」は
@@ -1478,7 +1575,6 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 | ID | 事項 | 裁定が無いと |
 |----|------|-------------|
-| D-01 | **Short Video Gate の再開レーン選択**（案E: Commons CC BY 主レーンで再開 / A: APIキー取得 / B: CC BY-SA 受入 / C: 停止）<br>2026-09-03 の素材源サーベイで**前提が変わった**。継承義務なしの素材が129件実在し、案E単独で再開できる | **動画制作が止まったまま**（理由は「素材が無い」ではなく「レーン未決」） |
 | D-02 | PM 実務原則 `pm-conduct.md` §8 の承認範囲 | 止まらない（実務原則として機能） |
 
 **裁定済み（2026-09-04）**: D-04 ジャンル別プロファイル化 → **案A**／D-05 K1 の較正 → **案A**（較正の結果K1を廃止しK2へ移管）／D-06 kame の G2 → **案B**（K8 へ置換）。**いずれも実装済み・science 回帰 PASS**／
@@ -1592,7 +1688,7 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
 | **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
 | **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
-| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife09-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
+| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife090e-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
 | **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
 
 ### DROP — 今後やらない。**未解決リストから外す**
@@ -1609,23 +1705,23 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 運営フェーズへ復帰 — Routine 初回実行（2026-09-11 10:00 JST）の結果確認
+### 近似種比較表の「他種セル」を各種の正本値へそろえる
 
-**対象**: Claude Routine `trig_01N9G14WTPu77Fs36FS81de4`（月・金 10:00 JST・ASIN 実在照合）と GitHub Actions `asin-audit.yml`（月・金 09:00 JST）の初回結果。
-**Scope**: ①Routine から GitHub MCP が使えたか（使えなければ git-only フォールバックが働いたか）②CAUTION 22 件の再照合結果と Issue の内容 ③失敗時は Routine プロンプトを修正する。
-**変更禁止**: 商品不足監査の再開（新しい記事・商品追加が発生したときだけ）／PARTIAL 5 件の再探索／`data/products.js` の ASIN。
-**完了条件**: Routine の成否と CAUTION 22 の処理状況が `FIXED_FACTS` に記録されていること。以後は `docs/operations/WEEKLY_REVIEW.md` に従う（B1 の GSC データ受領待ち）。
+**対象**: 全 `species/*.html` の近似種比較表のうち、**自種以外の行**の「必要環境」セル。上記 UNRESOLVED の実測例（ヒラセガメ・トウブハコガメ・マタマタ・スジオオニオイガメ・ロシアリクガメ・ヘルマンリクガメ 等）が対象。
+**Scope**: セルの表示文字列のみ。`data/species-master.json` は**読むだけ**。表のヘッダ・行の増減・他カラムは触らない。
+**変更禁止**: 甲長の再調査（本PRで固定済み）／チャコリクガメ・ハーレラドロガメの再探索（据え置き理由は note にある）／`enclosure_jp` の値そのもの／Amazon ID・ASIN。
+**完了条件**: 比較表の全行が各種の `care.enclosure_jp` と矛盾しないこと。`check_enclosure_sync.py` が 不一致0 のままであること。
 
 ## 更新ルール（作業終了時に必ず実施）
 
 Claude Code は各作業の完了後、**同じPRの中で**本ファイルを更新する。
 
-1. **CURRENT_BASE** — 基準・**サイトファイルの状態**・最終更新日を書き換える。
-   merge commit は本ファイルを書く時点では確定しないため、**直前に merge 済みの commit を書く**
-   （自分の merge commit は書けない。表が tip と1 commit ずれるのは正常）。
+1. **CURRENT_BASE** — 作業開始時に最新 `main` を実測し、その基準 commit・**サイトファイルの状態**・最終更新日を書き換える。
+   merge commit は本ファイルを書く時点では確定しないため、**今回の作業開始時に実測した commit を書く**。
+   自分の merge commit は書けず、merge 後の tip と一致しないのが正常である。tip へ追従するためだけの同期 PR は作らない。
    **`docs/AI-HANDOFF.md` だけを変える同期PRでは「サイトファイルの状態」の行を動かさない。**
-   次に作業する側は `git log --oneline -1 origin/main` で実測し、
-   差が本ファイルだけなら BASE のズレとして扱わない
+   次に作業する側は、`origin/main` が利用可能ならそれを実測し、なければ GitHub の
+   `refs/heads/main` を読み取り専用で直接実測する。記録済みの値を推測で流用しない
 2. **COMPLETED** — 完了した NEXT を移す。PR番号・merge commit・**確定した結論**を必ず書く
 3. **FIXED_FACTS** — 新たに確定し、今後は入力として使う事実を追記する
 4. **UNRESOLVED** — 本当に未解決のものだけ残す。判断待ち / HOLD / 新発見 を区別する。

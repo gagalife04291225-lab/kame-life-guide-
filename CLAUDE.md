@@ -15,6 +15,10 @@
 
 ## 🚩 最初に読む — 重複作業防止ゲート（恒久ルール）
 
+> **このファイルは Claude Code 用の入口です。** 全エージェント共通の入口・目次は
+> [`AGENTS.md`](AGENTS.md)、役割別の共通ルールの正本は `docs/agent-rules/` にあります。
+> Claude / Codex / GPT-6 Astra のどれで作業しても、読む正本は同じです。
+
 **作業を始める前に必ず [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md) を読む。**
 このファイルが「今どこまで終わっていて、次に何をするか」の唯一の正本。
 
@@ -26,9 +30,8 @@
 | `UNRESOLVED` | 未解決。**勝手に全部処理しない** |
 | `NEXT` | **今回実行するのはここに書かれた1工程だけ** |
 
-- `COMPLETED` / `FIXED_FACTS` を再調査してよいのは、
-  **① 新しい矛盾が見つかった ② 新証拠が出た ③ 対象データ／コードが変更された
-  ④ ユーザーの明示指示がある** のいずれかだけ（NO-REWORK GATE と同じ4条件）。
+- `COMPLETED` / `FIXED_FACTS` を再調査してよい4条件は
+  本ファイルの **NO-REWORK GATE** 節が正本。ここには複製しない。
 - 「念のため」「安全確認」「最終確認」は再調査の理由にしない。
 - 再調査する場合は、前回結果を再利用できない具体的理由を開始前に示す。
 - ユーザーの指示が `NEXT` と食い違う場合は**ユーザーの指示を優先**し、
@@ -38,9 +41,9 @@
 完了した `NEXT` を `COMPLETED` へ移し、新たに確定した事実を `FIXED_FACTS` へ、
 未解決だけを `UNRESOLVED` に残し、次工程を `NEXT` に**1つだけ**設定する。
 古くなった状態記述は残さない。詳細な手順は同ファイル末尾「更新ルール」と
-`.claude/rules/chatgpt-handoff.md` にある。
+[`docs/agent-rules/handoff-gate.md`](docs/agent-rules/handoff-gate.md) にある。
 
-**PM（RO-2）は作業・判断を始める前に [`.claude/rules/pm-conduct.md`](.claude/rules/pm-conduct.md)
+**PM（RO-2）は作業・判断を始める前に [`docs/agent-rules/pm-conduct.md`](docs/agent-rules/pm-conduct.md)
 （PM 行動規範・作業開始前ゲート）を必ず確認する。**
 
 **何をどこまで読むかは [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md)「読む順序」に従う。**
@@ -55,7 +58,7 @@
 | サイト URL | `https://gagalife04291225-lab.github.io/kame-life-guide-/` |
 | リポジトリ | `https://github.com/gagalife04291225-lab/kame-life-guide-` |
 | デプロイ方法 | **GitHub Pages のみ**（main ブランチ直デプロイ） |
-| Amazon アソシエイト ID | `kamelife09-22` |
+| Amazon アソシエイト ID | `kamelife090e-22` |
 | Google Analytics | GA4: `G-QQTE5CVF3K` |
 | note フッターリンク | `https://note.com/proper_bison2362` |
 | 運営者 | 亀好きさん（スペングラーヤマガメ・ヒラセガメ・ミツユビハコガメ飼育中） |
@@ -205,7 +208,7 @@ guide-{habitat}.html        # ハビタット別飼育ガイド
 2. **設計** — HTML 構造・CSS 方針・リンク先を先に提示し承認を得る
 3. **実装** — 承認された設計通りに実装する。勝手に変えない
 4. **品質確認** — 以下をすべてチェックする：
-   - Amazon 追跡 ID（`kamelife09-22`）が正しく入っているか
+   - Amazon 追跡 ID（`kamelife090e-22`）が正しく入っているか
    - GA4 タグ（`G-QQTE5CVF3K`）が入っているか
    - WCAG AA コントラスト比を満たしているか（目視NG・数値で確認）
    - note フッターリンク（`https://note.com/proper_bison2362`）があるか
@@ -366,7 +369,7 @@ git push -u origin <branch>   # 経路①: claude/<topic>-<id> 等。main 直 pu
 - **公開（Publish）は Owner のみが実施する**（Constitution Invariant I1）。
   Merge は原則 Owner。ただし憲法 §2.6-I1 の**5条件をすべて満たす場合に限り Actor も実施できる**
   （検証実測値をPRに記載／Scope Lock 外0件／破壊的変更・不可逆操作なし／収益・法令ゲートに影響なし／
-  Owner が停止を指示していない）。詳細は `.claude/rules/pm-conduct.md` §7。
+  Owner が停止を指示していない）。詳細は `docs/agent-rules/pm-conduct.md` §7。
 - **注**: これは AGENTS.md §4（main直接push禁止）に対する Project-001 の運用であり、憲法 §1.3-R3 により **Automation の限定スコープ及び緊急修正の事後PRのみ**に縮小して継承する。
 
 ---
@@ -576,16 +579,16 @@ claude.ai の Code / Claude Code（Opus 5・Fable 5.1・以降のモデル）で
 - Owner がリアルタイムで監視している前提にしない。
 - 元の依頼範囲内で、可逆的かつ安全な作業は「続けますか？」と止まらず実行する。
 - commit / push / PR / test / merge が明示的に許可され、憲法 §2.6-I1 の5条件
-  （`.claude/rules/chatgpt-handoff.md` §2）を満たす場合は、最後まで完了する。
+  （`docs/agent-rules/handoff-gate.md` §2）を満たす場合は、最後まで完了する。
 - 停止するのは **destructive action・重大な scope 変更・Owner しか決められない事項**だけ。
-  これは既存の Merge Gate（`.claude/rules/pm-conduct.md` §7）を弱めない。
+  これは既存の Merge Gate（`docs/agent-rules/pm-conduct.md` §7）を弱めない。
 
 ### 2. 未完了で終わらない
 
 - 最終回答を書く前に、最後の段落が「次にやる」「今後やる」「続けるなら」になっていないか確認する。
   今すぐ実行可能な作業なら、その場で実行してから終了する。
 - エラー時は合理的な範囲で原因確認・再試行する。長時間作業を理由に途中終了しない。
-- 残件の分類（CLOSE NOW / BLOCKED / DECISION / DROP）は `.claude/rules/closeout-gate.md` に従う。
+- 残件の分類（CLOSE NOW / BLOCKED / DECISION / DROP）は `docs/agent-rules/closeout-gate.md` に従う。
   品質不足による STOP は同ファイルのとおり CLOSE の一形態であり、本節の「未完了」に当たらない。
 
 ### 3. Scope discipline
@@ -604,7 +607,7 @@ claude.ai の Code / Claude Code（Opus 5・Fable 5.1・以降のモデル）で
 
 ### 5. Evidence discipline
 
-- 証拠・計数の規則は `.claude/rules/pm-conduct.md` §4 に従う
+- 証拠・計数の規則は `docs/agent-rules/pm-conduct.md` §4 に従う
   （未確認を確認済みにしない／`NOT FOUND` と `NOT EVALUATED` と `BLOCKED` を混同しない）。
 - 追加の恒久項目:
   - 推測値・推測 ASIN・推測互換性を**確定値として保存しない**（`data/products.js`・CSV・docs のいずれにも）。
@@ -638,7 +641,7 @@ claude.ai の Code / Claude Code（Opus 5・Fable 5.1・以降のモデル）で
 
 ### 10. Final report
 
-作業の最後は `.claude/rules/chatgpt-handoff.md` §3・§3-2 のとおり、単一コードブロックの
+作業の最後は `docs/agent-rules/handoff-gate.md` §3・§3-2 のとおり、単一コードブロックの
 **「ChatGPT引き継ぎ用報告」**（BASE / 変更内容 / tests / commit / PR / merge / COMPLETED / FIXED /
 UNRESOLVED / NEXT / DO_NOT_REPEAT を最低限含む）で終える。ここでは再定義しない。
 

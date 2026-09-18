@@ -117,13 +117,13 @@ Template   qa_snapshot_template / species-template
   1. 宣言した検証項目がすべて PASS し、その**実測値**が PR に記載されている
   2. **Scope Lock 外の変更が 0 件**であることを実測で示している
   3. **破壊的変更・不可逆操作を含まない**（ファイル削除・リネーム・履歴書換・protected branch 設定変更を含まない）
-  4. **収益ゲート（Amazon `kamelife09-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）に影響しない**（I3）
+  4. **収益ゲート（Amazon `kamelife090e-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）に影響しない**（I3）
   5. Owner が当該 PR について「PR で止めろ」「承認待ち」を指示していない
 
   1つでも満たさない場合、Actor は Merge しては MUST NOT。**Owner 判断へ戻す MUST。**
   条件を満たして Actor が Merge した場合、PR に**満たした条件と実測値を記録** MUST。
 - **I2:** 人手・Web版の変更は PR 経由 MUST。protected branch への直 push は RO-5 の限定スコープに限る MUST。
-- **I3:** 収益ゲート（Amazon `kamelife09-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）は全経路で必須 MUST。Actor はこれらを無効化しては MUST NOT。
+- **I3:** 収益ゲート（Amazon `kamelife090e-22` / GA4 `G-QQTE5CVF3K`）と法令ゲート（CITES 等の除外規則）は全経路で必須 MUST。Actor はこれらを無効化しては MUST NOT。
 - **I4:** 各活動の最終責任は単一主体 MUST。公開物の最終責任は常に RO-1 MUST。
 - **I5:** Actor は自著の Artifact の Reviewer/Auditor になっては MUST NOT。
 
@@ -187,7 +187,7 @@ Template   qa_snapshot_template / species-template
 - §5.2-R3: 種数を減らしては MUST NOT。
 
 ### 5.3 Revenue & Legal Gates
-- §5.3-R1: 全 Amazon リンクに `tag=kamelife09-22` を付与 MUST。
+- §5.3-R1: 全 Amazon リンクに `tag=kamelife090e-22` を付与 MUST。
 - §5.3-R2: 全ページに GA4 `G-QQTE5CVF3K` を設置 MUST。
 - §5.3-R3: CITES I・特定外来・天然記念物は診断・掲載から除外 MUST。CITES II は「国内CB可・輸入書類要」を明記 MUST。条件付特定外来（アカミミガメ等）は「新規購入不可」を強調 MUST。
 

@@ -149,7 +149,7 @@
 
 [ ] gear-cards の全5件に Amazon リンク + 楽天リンクがある
 
-[ ] 全 Amazon URL に tag=kamelife09-22 が付いている
+[ ] 全 Amazon URL に tag=kamelife090e-22 が付いている
 
 [ ] 全 Amazon aタグに rel="nofollow sponsored noopener" が付いている
 
@@ -178,7 +178,7 @@
     → <details class="faq"> が6つ・</details> が対応している
 
 [ ] Amazon URL を全件チェックした
-    → tag=kamelife09-22 の有無（5件）
+    → tag=kamelife090e-22 の有無（5件）
     → rel="nofollow sponsored noopener" の有無（5件）
     → ASIN が equipment.js の確認済みASINと一致
 
@@ -300,7 +300,7 @@ hasPage:false で優先度Sの残り種を確認:
 ### Amazon リンクフォーマット
 
 ```
-https://www.amazon.co.jp/dp/{ASIN}?tag=kamelife09-22
+https://www.amazon.co.jp/dp/{ASIN}?tag=kamelife090e-22
 ```
 
 ### 楽天検索リンクフォーマット

@@ -63,7 +63,7 @@ function ga4Event(name, params) {
 // Phase 7-C Step 3-A: Amazon URL 判定ヘルパー
 function isAmazonUrl(url) {
   if (!url) return false;
-  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife09-22/.test(url);
+  return /amazon\.co\.jp|amzn\.to|amzn\.asia|tag=kamelife090e-22/.test(url);
 }
 // Phase 28-A: Rakuten URL 判定ヘルパー
 function isRakutenUrl(url) {
@@ -2281,7 +2281,7 @@ function renderStarterKit(sp) {
 
   // Phase 7: CTAボタン（Amazon検索へ）
   var ctaQuery = 'カメ 飼育セット ケージ UVB 温湿度計';
-  var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife09-22';
+  var ctaUrl = 'https://www.amazon.co.jp/s?k=' + encodeURIComponent(ctaQuery) + '&tag=kamelife090e-22';
   // Phase 28-A: Rakuten検索CTA（楽天市場検索 + アフィリエイトリンク）
   var rakutenTargetUrl = 'https://search.rakuten.co.jp/search/mall/' + encodeURIComponent(ctaQuery) + '/';
   var rakutenCtaUrl = 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=' + encodeURIComponent(rakutenTargetUrl);
@@ -3793,7 +3793,7 @@ function showResult(sp, pct, runners) {
     linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + (l.label || '') + '</a>';
   });
   if (sp.asin) {
-    linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife09-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="sponsored noopener noreferrer">Amazon で関連商品を見る</a>';
+    linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife090e-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="sponsored noopener noreferrer">Amazon で関連商品を見る</a>';
     // Phase 28-C: 統一affiliate_clickイベント（canonical schema）
     var spAmzLink = document.getElementById('sp-amazon-link');
     if (spAmzLink) {

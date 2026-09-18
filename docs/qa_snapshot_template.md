@@ -76,7 +76,7 @@ After:
 
 ### affiliate section
 
-| # | 機材名 | ASIN | tag=kamelife09-22 | rel=sponsored |
+| # | 機材名 | ASIN | tag=kamelife090e-22 | rel=sponsored |
 |---|---|---|---|---|
 | 1 | {機材名} | {ASIN} | ✅ or ❌ | ✅ or ❌ |
 | 2 | {機材名} | {ASIN} | ✅ or ❌ | ✅ or ❌ |

@@ -11,7 +11,7 @@
 - サイト：https://gagalife04291225-lab.github.io/kame-life-guide-/
 - リポジトリ：https://github.com/gagalife04291225-lab/kame-life-guide-
 - ブランチ：main／フラット構造／英語ファイル名のみ
-- Amazonアソシエイト：kamelife09-22
+- Amazonアソシエイト：kamelife090e-22
 
 ---
 
