@@ -45,12 +45,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **c320a27**（`c320a275f9d37d9c6baff3b77b425ec3d4d8162b` / 2026-09-15 実測値） |
-| サイトファイルの状態 | 本PRはエージェント運用文書のみの変更。サイト本体は無変更 |
+| 基準 | 作業開始時の `main` = **dec4865**（`dec4865e457b3d791d213a6da50580b85919ea49` / 2026-09-18 実測値） |
+| サイトファイルの状態 | 本PRは `brand/` のミナ正本画像とルール文書のみの変更。サイト本体のページは無変更 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
-| 最終更新日 | 2026-09-15 |
+| 最終更新日 | 2026-09-18 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/zero-copy-issue-dispatch-182` |
+| 作業ブランチ | `claude/mina-product-selection-dhfz0i` |
 
 ---
 
@@ -1083,25 +1083,28 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 - github.io → kamelifeguide.com の 301 は GitHub Pages の正常動作。止めない。Amazon には両 URL を申告済み。
 - 承認後 180 日以内に適格販売 3 件が必要（Amazon の条件）。
 
-### MINA_MASTER 正本は復旧済み・必須8項目 PASS（2026-09-10 実測 / **再検証しない**）
+### MINA_MASTER 正本 = product-free presenter master（2026-09-18 実測 / **再検証しない**）
 
-canonical path `brand/assets/mina/mina-master.png` の正本は PR #172（merge `657dc61`）で修復済み。
-2026-09-10 に必須8項目を独立に再実測し、**全項目 PASS**。
+canonical path `brand/assets/mina/mina-master.png` の正本は、Owner 決定（2026-09-18）により
+**商品を一切持たない product-free presenter master** へ差し替えた（PR #187）。
+差し替え後に必須8項目を実測し、**全項目 PASS**。
 
 | 項目 | 確定値 |
 |------|-------|
-| git blob | `fa9bb85ba10b8bc4be19d2a070840c064f64ffbb` |
-| SHA-256 | `763ba75f0259ce71c9a53f2493a80d1fcecec0d9172862fac204698fcda30dd4` |
-| byte size | 1,253,769 bytes |
-| dimensions | 864 × 1536（PNG / 8-bit RGB / non-interlaced / 9:16） |
+| git blob | `5f9e0c29f71d61c528daa2b04458ffe65b08bde5` |
+| SHA-256 | `0f63a51a739b6f1d83fbde6e0c09940011f650adf78470a525f7ca7e1eaa5bd6` |
+| byte size | 1,923,093 bytes |
+| dimensions | 941 × 1672（PNG / 8-bit RGB / 比 0.5628 ＝ 9:16 相当） |
 
-8項目の内訳（PNG署名 / デコード / IEND / 均一グレー否定 / 人物確認 / 正本1枚 / blob=作業ツリー / 旧破損blob不参照）と
+8項目の内訳（PNG署名 / デコード / IEND / 均一画像の否定 / 人物確認 / 正本1枚 / blob=作業ツリー / 旧blob不参照）と
 実測方法は [`qc-evidence/mina-product-001/master-readiness-001.md`](../qc-evidence/mina-product-001/master-readiness-001.md)。
-旧破損 blob `0989576d…`（15,009 bytes・実体は途中終端 JPEG）は履歴 `5ec4ac9` にのみ残り、**現行ツリーからの参照はゼロ**。
 
+- **正本は1枚だけ。** 商品を持った旧画像は**現行資産ではない**。別名コピー・副参照・
+  active evidence・workflow 参照・prompt 参照のいずれとしても保持しない。
+  差し替え前の commit が git 履歴に存在するのは通常の git の性質にすぎず、資産として再利用しない。
 - **PNG 再エンコードは実施しない。** 正常な PNG に対する無意味なバイト変更で、下流の SHA 参照だけを壊すため。
-- **正本を差し替えない。** Owner 承認画像をそのまま維持する（`mina-fixed-rules.md` §2.2）。
 - **この検証をやり直さない。** 第1号の画像生成 BLOCKER は解除済み。
+- 旧・商品保持正本で generic talking-video を生成しない（Owner 決定 2026-09-18）。
 
 ### 第1号動画の I2V 安全域（2026-09-10 Owner 確定 / **限界延長テスト禁止**）
 
@@ -1556,6 +1559,17 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 | 構造上の制約 | 104 | [`docs/fixed-facts/structural-constraints.md`](fixed-facts/structural-constraints.md) |
 
 ## UNRESOLVED — 本当に未解決のものだけ
+
+### 判断待ち — MINA_MASTER 差し替え PR #187 の merge（Owner のみ）
+
+`brand/assets/mina/mina-master.png` を product-free presenter master へ差し替える PR #187 は
+**検証全 PASS・Scope 外 0件**だが、このリポジトリは public かつ GitHub Pages の配信ソースであり、
+`main` への merge は**公開（Publish）**に当たる。憲法 Invariant I1 により公開は Owner のみが実施する。
+
+- merge されるまで `main` の正本は旧・商品保持画像のまま。
+- `mina-video-factory` の talk PoC は、旧正本を掴んだ場合に明示的に停止するガードを入れてある。
+- merge 後の次工程: HF_TOKEN 登録 → `mode=all` 実行 → `qc-evidence/talk-poc-002` の実MP4を全数QC。
+
 
 ### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）
 
