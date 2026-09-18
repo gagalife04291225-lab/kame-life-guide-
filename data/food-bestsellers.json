@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-18T23:31:59.144Z",
+  "fetched_at": "2026-09-18T23:35:55.243Z",
   "log": [
     {
       "term": "カメ 餌 配合飼料",
@@ -9,19 +9,22 @@
     {
       "term": "亀 フード 主食",
       "hits": 30,
-      "kept": 30
+      "kept": 26
     },
     {
       "term": "ミドリガメ 餌",
-      "error": "Error: HTTP 429"
+      "hits": 30,
+      "kept": 8
     },
     {
       "term": "リクガメ フード",
-      "error": "Error: HTTP 429"
+      "hits": 30,
+      "kept": 29
     },
     {
       "term": "リクガメ 野草 フード",
-      "error": "Error: HTTP 429"
+      "hits": 13,
+      "kept": 13
     },
     {
       "term": "カメ 乾燥エビ 餌",
@@ -31,10 +34,155 @@
     {
       "term": "亀 おやつ 川エビ",
       "hits": 30,
-      "kept": 28
+      "kept": 24
+    },
+    {
+      "term": "リクガメ 餌 野草",
+      "hits": 7,
+      "kept": 0
+    },
+    {
+      "term": "リクガメ 主食 ペレット",
+      "hits": 12,
+      "kept": 6
+    },
+    {
+      "term": "カメ 餌 人気",
+      "hits": 30,
+      "kept": 17
+    },
+    {
+      "term": "水棲ガメ 餌",
+      "hits": 30,
+      "kept": 11
+    },
+    {
+      "term": "ゼニガメ 餌",
+      "hits": 30,
+      "kept": 6
     }
   ],
   "items": [
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10013688",
+      "name": "キョーリン　ひかりクレスト　タートル　250g（パック）　爬虫類　餌　カメ　エサ　水棲ガメ用　お一人様30点限り　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 830,
+      "reviewCount": 77,
+      "reviewAverage": 4.6,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/123/11875-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F11875%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10013688%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "lighting:10000392",
+      "name": "2年保証 自動給餌器 最大4.5L大容量 猫 スマホ操作 300万画素 カメラ付き 犬 自動餌やり機 ペット給餌機 給餌器 暗視機能 餌やり機 スマート自動餌やり機 遠隔操作 双方向会話 健康見守る 動体検出 乾燥剤ポケット搭載 旅行 残業 出張",
+      "shop": "TECHNO楽天市場店",
+      "price": 8999,
+      "reviewCount": 70,
+      "reviewAverage": 4.34,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/lighting/cabinet/11099920/01.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00twknn.nhbnn6a3.g00twknn.nhbnodff/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flighting%2Facf100w%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flighting%2Fi%2F10000392%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10018525",
+      "name": "リクガメフード　スドー　ハープクラフト　トータスフード　700g　陸ガメ用　餌　エサ　関東当日便",
+      "shop": "charm 楽天市���店",
+      "price": 1398,
+      "reviewCount": 55,
+      "reviewAverage": 4.42,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/147/14631-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F14631%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10018525%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-a-avenue:10006125",
+      "name": "≪とびきり価格≫ビバリア　レップカル リクガメフード　907g 陸ガメ用　餌　エサ",
+      "shop": "アクアアベニュー",
+      "price": 4480,
+      "reviewCount": 54,
+      "reviewAverage": 4.69,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-a-avenue/cabinet/rk_image_rep01/10225355/00000072.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qtmnn.nhbnn671.g00qtmnn.nhbnod67/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-a-avenue%2F00000072%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-a-avenue%2Fi%2F10006125%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10018472",
+      "name": "リクガメフード　ビバリア　レップカル　340g　草食性リクガメの毎日の食事に！　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 2150,
+      "reviewCount": 47,
+      "reviewAverage": 4.57,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/153/14813-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F14813%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10018472%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "withstore20:10000018",
+      "name": "黒瀬ペットフード プロショップ専用 マニア mania 中型インコ 低脂肪タイプ 3L オカメインコ ボタンインコ 餌 バード えさ",
+      "shop": "ウィズペットストア",
+      "price": 2490,
+      "reviewCount": 36,
+      "reviewAverage": 4.89,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/withstore20/cabinet/4972228294409_1c.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00trq4n.nhbnnea7.g00trq4n.nhbnodc5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwithstore20%2F4972228294409%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwithstore20%2Fi%2F10000018%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10123417",
+      "name": "リクガメフード　セラ　レプタイルプロ　草食性用　250mL（80g）　陸ガメ・イグアナ用　草食性爬虫類　餌　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1580,
+      "reviewCount": 31,
+      "reviewAverage": 4.74,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/669/66468-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F66468%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10123417%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10209550",
+      "name": "リクガメフード　GEX　エキゾテラ　リクガメの栄養バランスフード　400g　リクガメ用　餌　エサ　ジェックス　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 990,
+      "reviewCount": 31,
+      "reviewAverage": 4.84,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1575/157326-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F157326%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10209550%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "rayon:10022450",
+      "name": "【全国送料無料】GEX エキゾテラ リクガメの栄養バランスフード 1Kg (まとめ有)",
+      "shop": "レヨンベールアクア楽天市場店",
+      "price": 2820,
+      "reviewCount": 30,
+      "reviewAverage": 4.8,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/10000/9420.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00scsrn.nhbnnad3.g00scsrn.nhbno2ac/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frayon%2F9420%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frayon%2Fi%2F10022450%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10137322",
+      "name": "キョーリン　リクガメフード　リックゼリー　お徳用70g×3袋　陸ガメ用　餌　エサ　野菜ゼリー　お一人様30点限り　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 2920,
+      "reviewCount": 28,
+      "reviewAverage": 4.29,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/795/79276-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F79276%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10137322%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
     {
       "scene": "pellet",
       "itemCode": "kohnan-eshop:10008881",
@@ -46,6 +194,318 @@
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kohnan-eshop/cabinet/goods/202306/s1/4971618205223.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00ssuan.nhbnn825.g00ssuan.nhbnofea/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkohnan-eshop%2F4971618205223%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkohnan-eshop%2Fi%2F10008881%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "亀 フード 主食"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "uchinomofu:10000391",
+      "name": "キョーリン マルベリックドライ 180g 400g リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
+      "shop": "ペットショップ うちのmofu",
+      "price": 1100,
+      "reviewCount": 25,
+      "reviewAverage": 4.72,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/uchinomofu/cabinet/kyorin/maru/imgrc0098716274.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00ui8un.nhbnn353.g00ui8un.nhbno1b3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fuchinomofu%2Fkyorin-maru-v%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fuchinomofu%2Fi%2F10000391%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10310162",
+      "name": "リクガメフード　GEX　エキゾテラ　リクガメの栄養バランスフード　1kg　リクガメ　エサ　カメ　餌　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 2100,
+      "reviewCount": 24,
+      "reviewAverage": 4.67,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1869/186697-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F186697%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10310162%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "rayon:10000617",
+      "name": "【全国送料無料】GEX エキゾテラ リクガメの栄養バランスフード 400g",
+      "shop": "レヨンベールアクア楽天市場店",
+      "price": 1480,
+      "reviewCount": 24,
+      "reviewAverage": 4.5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/4000/3077.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00scsrn.nhbnnad3.g00scsrn.nhbno2ac/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frayon%2F3077%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frayon%2Fi%2F10000617%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10018524",
+      "name": "リクガメフード　スドー　ハープクラフト　トータスフード　200g　陸ガメ用　餌　エサ　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 698,
+      "reviewCount": 24,
+      "reviewAverage": 4.46,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/147/14630-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F14630%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10018524%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10097431",
+      "name": "テトラ　ガマルス　50g　爬虫類　カメ　餌　エサ　水棲ガメ用　カルシウム　栄養補助　ヨコエビ　おやつ　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1350,
+      "reviewCount": 24,
+      "reviewAverage": 4.58,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/585/58235-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F58235%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10097431%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10137321",
+      "name": "キョーリン　リクガメフード　リックゼリー　7g×6袋　陸ガメ用　餌　エサ　国産　野菜ゼリー　お一人様48点限り　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 970,
+      "reviewCount": 22,
+      "reviewAverage": 4.05,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/795/79275-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F79275%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10137321%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10047434",
+      "name": "リクガメフード　ZOOMED　ナチュラルグラスランドリクガメフード　425g　陸ガメ用　餌　エサ　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1780,
+      "reviewCount": 17,
+      "reviewAverage": 3.88,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/459/45455-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F45455%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10047434%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10097309",
+      "name": "リクガメフード　ビバリア　レップカル　907g　草食性リクガメの毎日の食事に！　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 3980,
+      "reviewCount": 16,
+      "reviewAverage": 4.75,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/585/58228-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F58228%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10097309%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10209549",
+      "name": "リクガメフード　GEX　エキゾテラ　リクガメの栄養バランスフード　180g　リクガメ用　餌　エサ　高繊維質　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 530,
+      "reviewCount": 15,
+      "reviewAverage": 4.4,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1575/157325-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F157325%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10209549%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10214134",
+      "name": "リクガメフード　ZOOMED　トータスバンケットブロック　陸ガメ用　餌　エサ　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1200,
+      "reviewCount": 12,
+      "reviewAverage": 2.75,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1593/158988-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F158988%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10214134%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10023974",
+      "name": "キョーリン　ひかりクレスト　タートル　52g　爬虫類　餌　エサ　カメ　水棲ガメ用　お一人様50点限り　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 290,
+      "reviewCount": 12,
+      "reviewAverage": 4.67,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/123/11840-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F11840%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10023974%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10214132",
+      "name": "ZOOMED　タートルボーン　2枚入　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 880,
+      "reviewCount": 11,
+      "reviewAverage": 3.55,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1593/158986-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F158986%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10214132%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10170508",
+      "name": "コメット　ニオイガメの主食　小型用　55g　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 298,
+      "reviewCount": 11,
+      "reviewAverage": 4.09,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/873/86913-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F86913%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10170508%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10170509",
+      "name": "コメット　ニオイガメの主食　中・大型用　140g　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 578,
+      "reviewCount": 10,
+      "reviewAverage": 4.6,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/873/86914-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F86914%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10170509%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:11067988",
+      "name": "リクガメフード　GEX　エキゾテラ　リクガメの栄養バランスフード　1kg×3　リクガメの餌　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 6284,
+      "reviewCount": 9,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2643/264095-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F264095%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F11067988%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "thinkrich:10173363",
+      "name": "ジェックス エキゾテラ リクガメの栄養バランスフード1kg 送料無料 【SK01425】",
+      "shop": "THINK RICH STORE",
+      "price": 2467,
+      "reviewCount": 8,
+      "reviewAverage": 4.38,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/thinkrich/cabinet/sale2_muryou_01/s01425.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00slbfn.nhbnn916.g00slbfn.nhbnodf2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fthinkrich%2Fq09960%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fthinkrich%2Fi%2F10173363%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-a-avenue:10006269",
+      "name": "スドー　トータスフード 700g リクガメ 餌 エサ",
+      "shop": "アクアアベニュー",
+      "price": 1630,
+      "reviewCount": 8,
+      "reviewAverage": 4.25,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-a-avenue/cabinet/rk_image_rep01/00008413.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qtmnn.nhbnn671.g00qtmnn.nhbnod67/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-a-avenue%2F00008413%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-a-avenue%2Fi%2F10006269%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10047435",
+      "name": "リクガメフード　ZOOMED　ナチュラルフォレストリクガメフード　425g　陸ガメ用　餌　エサ　フード　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1780,
+      "reviewCount": 7,
+      "reviewAverage": 3.86,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/459/45456-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F45456%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10047435%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet3980:10015774",
+      "name": "リクガメフード　GEX　エキゾテラ　リクガメの栄養バランスフード　1kg×3　リクガメの餌　関東当日便",
+      "shop": "charm 3980 楽天市場店",
+      "price": 6284,
+      "reviewCount": 7,
+      "reviewAverage": 4.86,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet3980/cabinet/2643/264095-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00ukfqn.nhbnnc9c.g00ukfqn.nhbno7a8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet3980%2F264095%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet3980%2Fi%2F10015774%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10149163",
+      "name": "リクガメフード　セラ　ラフィビタール　Nature　250mL（47g）　陸ガメ・イグアナ用　草食性爬虫類　餌　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1380,
+      "reviewCount": 5,
+      "reviewAverage": 4.6,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/783/78388-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F78388%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10149163%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "akibaoo-r:10560488",
+      "name": "【ジェックス GEX】ジェックス リクガメの栄養バランスフード 1kg",
+      "shop": "あきばお〜楽天市場支店",
+      "price": 2391,
+      "reviewCount": 5,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/akibaoo-r/cabinet/gi1046/4972547026958.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qr6gn.nhbnn82a.g00qr6gn.nhbno573/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakibaoo-r%2Fhm000523177%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fakibaoo-r%2Fi%2F10560488%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "rakuten24:10444583",
+      "name": "エキゾテラ リクガメの栄養バランスフード(1kg)【エキゾテラ】",
+      "shop": "楽天24",
+      "price": 2145,
+      "reviewCount": 5,
+      "reviewAverage": 4.2,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakuten24/cabinet/958/4972547026958.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00r136n.nhbnn90e.g00r136n.nhbno102/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakuten24%2Fe410398h%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakuten24%2Fi%2F10444583%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "nyanzaq:10177807",
+      "name": "エキゾテラ リクガメの栄養バランスフード(1kg×2セット)【エキゾテラ】",
+      "shop": "楽天24 ペット館",
+      "price": 4317,
+      "reviewCount": 4,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/nyanzaq/cabinet/279/591279.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q36gn.nhbnn8d0.g00q36gn.nhbno23b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnyanzaq%2F591279%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnyanzaq%2Fi%2F10177807%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "topcreate:10020203",
+      "name": "リクガメの栄養バランスフード 1kg GEX（ジェックス） リクガメ ホシガメ エサ 専用フード 高繊維質 ビタミン カルシウム 安心 安全",
+      "shop": "爬虫類用品店 トップクリエイト",
+      "price": 2500,
+      "reviewCount": 4,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/topcreate/cabinet/0024/0024-00200.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pzvcn.nhbnnb21.g00pzvcn.nhbno140/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftopcreate%2F0024-00200%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftopcreate%2Fi%2F10020203%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "pets-kojima:10090902",
+      "name": "リクガメの栄養バランスフード 1kg",
+      "shop": "ペットの専門店コジマ楽天市場店",
+      "price": 2508,
+      "reviewCount": 4,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/pets-kojima/cabinet/25/25026958.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pw7an.nhbnn33b.g00pw7an.nhbno326/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpets-kojima%2F25026958%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpets-kojima%2Fi%2F10090902%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "b-faith:10003162",
+      "name": "爬虫類用 3種のドライベジタブル カルシウムプラス 100g 爬虫類 野菜 フトアゴ リクガメ トカゲ イグアナ フード 草食",
+      "shop": "雑貨イズム",
+      "price": 1048,
+      "reviewCount": 4,
+      "reviewAverage": 4.5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-faith/cabinet/image3/11617419/dryveg_top.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00tfofn.nhbnnfd1.g00tfofn.nhbno9c2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-faith%2Fdryveg100%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fb-faith%2Fi%2F10003162%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
     },
     {
       "scene": "animal",
@@ -61,6 +521,18 @@
     },
     {
       "scene": "pellet",
+      "itemCode": "chanet:10166916",
+      "name": "ZOOMED　ナチュラルアクアティックタートルフード　（中粒）　212g（水棲ガメ専用）　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 780,
+      "reviewCount": 4,
+      "reviewAverage": 3.75,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/891/88721-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F88721%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10166916%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
       "itemCode": "heaven:10000346",
       "name": "レップカル リクガメフード 340g",
       "shop": "小動物専門店ヘヴン",
@@ -70,6 +542,18 @@
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/heaven/cabinet/05/0519.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00popln.nhbnn985.g00popln.nhbno876/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fheaven%2F400537%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fheaven%2Fi%2F10000346%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "亀 フード 主食"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "chanet:10578473",
+      "name": "リクガメフード　リクガメ用　ア���ファルファキューブ　500g　ロシアリクガメ　ホシガメ　ヘルマンリクガメ　トカゲ　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 386,
+      "reviewCount": 3,
+      "reviewAverage": 2.33,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2139/213763-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F213763%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10578473%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ フード"
     },
     {
       "scene": "pellet",
@@ -84,6 +568,18 @@
       "keyword": "カメ 餌 配合飼料"
     },
     {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000095",
+      "name": "コメット COMET イトスイ【2袋セット】超徳用カメサクッ！ 300g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 4000,
+      "reviewCount": 2,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117513429.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453055779_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000095%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
       "scene": "animal",
       "itemCode": "petforest:10006734",
       "name": "◇イトスイ 大エビカメのおやつ 55g | カメ用フード 大エビ おやつ コメット 川エビ ペット用品 爬虫類フード 天然素材 乾燥エビ カメ用おやつ 栄養補助食品 ペットおやつ カメ フード 亀 農薬不使用 大きいカメ 小動物 ペット食 カメ用栄養 カメフード リクガメ",
@@ -96,21 +592,21 @@
       "keyword": "亀 おやつ 川エビ"
     },
     {
-      "scene": "animal",
-      "itemCode": "itosui-store:10000095",
-      "name": "コメット COMET イトスイ【2袋セット】超徳用カメサクッ！ 300g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
-      "shop": "イトスイストア 楽天市場店",
-      "price": 4000,
+      "scene": "pellet",
+      "itemCode": "chanet:10146830",
+      "name": "セラ　ラフィI　Nature　250ml　（35g）　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1450,
       "reviewCount": 2,
       "reviewAverage": 5,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117513429.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453055779_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000095%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 おやつ 川エビ"
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/783/78387-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F78387%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10146830%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
     },
     {
       "scene": "pellet",
       "itemCode": "itosui-store:10000001",
-      "name": "コメット COMET イトスイ カメの主食 260g カメのエサ カメの餌 カメフード 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "name": "��メット COMET イトスイ カメの主食 260g カメのエサ カメの餌 カメフード 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
       "shop": "イトスイストア 楽天市場店",
       "price": 1500,
       "reviewCount": 1,
@@ -120,7 +616,79 @@
       "keyword": "亀 フード 主食"
     },
     {
-      "scene": "animal",
+      "scene": "pellet",
+      "itemCode": "beisia:10068834",
+      "name": "キョーリン ひかり カメプロス 沈下性 大スティック 120g ペット | カメ 餌 かめ エサ 亀の餌 沈下性 大スティック 水棲カメ ニオイガメ クサガメ ミドリガメ イシガメ スッポン",
+      "shop": "ベイシア楽天市場店",
+      "price": 616,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/beisia/cabinet/petchibalc_1/pet1/4971618205452.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s0vmn.nhbnnc90.g00s0vmn.nhbnobe3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbeisia%2F4971618205452%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbeisia%2Fi%2F10068834%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000031",
+      "name": "コメット COMET イトスイ 超徳用カメサクッ！ 300g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 2400,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117098030.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453055779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000031%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "aassist:10000318",
+      "name": "[P2倍マラソン限定/0の日クーポン]亀の餌 爬虫類の餌 選べる2タイプ！【高カルシウム×ビタミンD3】成長サポート 元気いっぱい かめごはん かめのエサ 餌 安心成分で健康サポート！　（リクガメ・ミドリガメ・クサガメ、イモリ、ウーパールーパー等）かめ専用",
+      "shop": "PHI PHI SHOP",
+      "price": 1380,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aassist/cabinet/11446749/imgrc0096682445.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uih4n.nhbnn39a.g00uih4n.nhbno7a8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faassist%2Finsectinside-all-chil%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faassist%2Fi%2F10000318%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "beisia:10031759",
+      "name": "キョーリン ひかりカメプロス550g | カメ 餌 かめ エサ 亀の餌 水棲カメ ニオイガメ クサガメ ミドリガメ イシガメ スッポン 大容量",
+      "shop": "ベイシア楽天市場店",
+      "price": 2734,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/beisia/cabinet/09095992/4971618205223.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s0vmn.nhbnnc90.g00s0vmn.nhbnobe3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbeisia%2F4971618205223%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbeisia%2Fi%2F10031759%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000030",
+      "name": "コメット COMET イトスイ【2本セット】徳用カメサクッ！ 130g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 2500,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117098023.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453053270_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000030%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "auc-ulmax:11400653",
+      "name": "【3個セット】 キョーリン ひかり 爬虫類フード 小粒 ミドリガメ 水棲 両生類 浮上性 生き物 ペットフード 爬虫飼育 えさ 餌",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 633,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg007/51ltuutv5-l.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618881076_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F11400653%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ミドリガメ 餌"
+    },
+    {
+      "scene": "pellet",
       "itemCode": "petforest:10010773",
       "name": "◇キョーリン のこのこカメさん 40g | キョーリン カメ 餌 エサ 浮上性 小粒 水棲カメ ミドリガメ クサガメ 子亀 甲長5cm ベビー カメ食品 プレーシャー フード タートル フィッシュミール 乾燥川エビ ビール酵 小型カメ おやつ カメ用ペレット 栄養バランス 水棲亀",
       "shop": "ペットフォレスト 楽天市場店",
@@ -129,7 +697,7 @@
       "reviewAverage": 5,
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-15/pf-4971618881076.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uirhn.nhbnn600.g00uirhn.nhbno2d9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetforest%2Fpf-4971618881076%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetforest%2Fi%2F10010773%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 おやつ 川エビ"
+      "keyword": "ミドリガメ 餌"
     },
     {
       "scene": "animal",
@@ -156,28 +724,64 @@
       "keyword": "亀 おやつ 川エビ"
     },
     {
-      "scene": "animal",
-      "itemCode": "itosui-store:10000031",
-      "name": "コメット COMET イトスイ 超徳用カメサクッ！ 300g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
-      "shop": "イトスイストア 楽天市場店",
-      "price": 2400,
+      "scene": "pellet",
+      "itemCode": "fishingsanin:10047244",
+      "name": "マルシン漁具(Marushin)　至高のドロッパーエギ 1.8号　【釣り フィッシング ケンサキイカ ツツイカ イカメタル オモリグ エギ 餌木 ドロッパー 浮きスッテ スッテ ルアー マルシン 至高のドロッパーエギ 1.8号】",
+      "shop": "フィッシングサンイン",
+      "price": 560,
       "reviewCount": 1,
       "reviewAverage": 5,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117098030.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453055779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000031%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 おやつ 川エビ"
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/fishingsanin/cabinet/12542228/imgrc0115115135.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qjrun.nhbnn680.g00qjrun.nhbno1b1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffishingsanin%2Fshiko-no-doroppa-egi1-8%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffishingsanin%2Fi%2F10047244%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
     },
     {
-      "scene": "animal",
-      "itemCode": "itosui-store:10000030",
-      "name": "コメット COMET イトスイ【2本セット】徳用カメサクッ！ 130g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
-      "shop": "イトスイストア 楽天市場店",
-      "price": 2500,
+      "scene": "pellet",
+      "itemCode": "g-o-l-d:10000016",
+      "name": "オカメインコ 餌 中型インコ シード 2,700ml (約2kg) 厳選9種 ボレー粉配合 [コザクラインコ ボタンインコ ウロコインコ 鳥 フード えさ エサ ひまわりの種 オーツ麦 燕麦 大容量]",
+      "shop": "栃木ペットセンター",
+      "price": 1980,
       "reviewCount": 1,
       "reviewAverage": 5,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117098023.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453053270_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000030%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 おやつ 川エビ"
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/g-o-l-d/cabinet/12886102/12886103/cyuugata01.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00udhan.nhbnn171.g00udhan.nhbno7ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fg-o-l-d%2Fesag03%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fg-o-l-d%2Fi%2F10000016%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:11075608",
+      "name": "コメット　ニオイガメの主食　中・大型用　140g×2個　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1154,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2685/268549-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F268549%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F11075608%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10581364",
+      "name": "キョーリン　ひかりクレスト　タートル　250g（パック）×6袋　爬虫類　餌　カメ　エサ　水棲ガメ用　お一人様5点限り　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 4955,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1377/137666-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F137666%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10581364%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:10166917",
+      "name": "ZOOMED　ナチュラルアクアティックタートルフード（中粒）　1．5kg（水棲ガメ専用）　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 3900,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/891/88722-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F88722%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10166917%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
     },
     {
       "scene": "pellet",
@@ -253,18 +857,6 @@
     },
     {
       "scene": "pellet",
-      "itemCode": "kenkul:10024540",
-      "name": "介護食 ふっくら白がゆ おかゆ 200g × 20食 亀田製菓 フードケア 舌でつぶせる 介護食品 レトルト ごはん 主食 とろみ やわらか食 食事 非常食 備蓄食",
-      "shop": "ケンクル",
-      "price": 6610,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kenkul/cabinet/meal_oral/meal085-big.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q16tn.nhbnn8be.g00q16tn.nhbnof0c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenkul%2Fmeal085%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenkul%2Fi%2F10024540%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 フード 主食"
-    },
-    {
-      "scene": "pellet",
       "itemCode": "auc-ulmax:11397830",
       "name": "【3個セット】 イトスイ コメット ニオイガメ 主食 沈下性 フード 爬虫類 両生類 亀 フィード COMET 水棲",
       "shop": "ウルマックス 楽天市場店",
@@ -297,18 +889,6 @@
       "reviewAverage": 0,
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117097281.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453051795_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000028%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 フード 主食"
-    },
-    {
-      "scene": "pellet",
-      "itemCode": "kenkul:10024541",
-      "name": "介護食 ふっくら海苔がゆ おかゆ 200g × 20食 亀田製菓 フードケア 舌でつぶせる 介護食品 レトルト ごはん 主食 とろみ やわらか食 食事 非常食 備蓄食",
-      "shop": "ケンクル",
-      "price": 7670,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kenkul/cabinet/meal_oral/meal088-big.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q16tn.nhbnn8be.g00q16tn.nhbnof0c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenkul%2Fmeal088%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenkul%2Fi%2F10024541%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "亀 フード 主食"
     },
     {
@@ -385,20 +965,8 @@
     },
     {
       "scene": "pellet",
-      "itemCode": "kenkul:10024542",
-      "name": "介護食 ふっくらおはぎ おかゆ 200g × 20食 亀田製菓 フードケア 舌でつぶせる 介護食品 レトルト ごはん 主食 とろみ やわらか食 食事 非常食 備蓄食",
-      "shop": "ケンクル",
-      "price": 7670,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kenkul/cabinet/meal_oral/meal090-big.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q16tn.nhbnn8be.g00q16tn.nhbnof0c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenkul%2Fmeal090%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenkul%2Fi%2F10024542%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 フード 主食"
-    },
-    {
-      "scene": "pellet",
       "itemCode": "beautymate:10152260",
-      "name": "イトスイ　カメの主食　260g　【コメット　カメのおやつ　カメの飼育用餌　亀のおやつ　カメのエサ　亀のえさ　爬虫類　ペットフード　ペットグッズ】",
+      "name": "イトスイ　カメの主食　260g　【コメット　カメのおやつ　カメの飼育用餌　亀のおやつ　カメのエサ　亀のえさ���爬虫類　ペットフード　ペットグッズ】",
       "shop": "ビューティーメイト",
       "price": 1738,
       "reviewCount": 0,
@@ -529,18 +1097,6 @@
     },
     {
       "scene": "pellet",
-      "itemCode": "kenkul:10015115",
-      "name": "介護食 ふっくら梅がゆ おかゆ 200g × 20食 亀田製菓 フードケア 舌でつぶせる 介護食品 レトルト ごはん 主食 とろみ やわらか食 食事 非常食 備蓄食",
-      "shop": "ケンクル",
-      "price": 6610,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kenkul/cabinet/meal_oral/meal082-big.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q16tn.nhbnn8be.g00q16tn.nhbnof0c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkenkul%2Fmeal082%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkenkul%2Fi%2F10015115%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "亀 フード 主食"
-    },
-    {
-      "scene": "pellet",
       "itemCode": "petforest:10037336",
       "name": "【箱売り 12個セット】◇ジェックス カメ元気 ごちそうごはん 特大粒500g | カメ元気 カメ フード ごちそうごはん 特大粒 ペレット 水棲カメ えび味 主食 カルシウム 餌 えさ エサ ジェックス ミドリガメ ゼニガメ 幼体 ベビー イシガメ ミシシッピアカミミガメ",
       "shop": "ペットフォレスト 楽天市場店",
@@ -562,6 +1118,162 @@
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg007/51efj08kv3l.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971453054109%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F10161666%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "亀 フード 主食"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117078",
+      "name": "【6個セット】 キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 12483,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206329_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117078%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157417",
+      "name": "【3個セット】 キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 6683,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206329_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157417%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117101",
+      "name": "キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 3552,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206435%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117101%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117110",
+      "name": "【3個セット】 キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 8890,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206435_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117110%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157446",
+      "name": "キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 2816,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206329%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157446%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117102",
+      "name": "【6個セット】 キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 16897,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206435_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117102%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157458",
+      "name": "【6個セット】 キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 12483,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206329_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157458%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157595",
+      "name": "【3個セット】 キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 8890,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206435_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157595%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117073",
+      "name": "【3個セット】 キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 6683,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206329_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117073%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "petforest:10017298",
+      "name": "◇キョーリン マルベリックドライ 1kg | キョーリン 爬虫類フード 草食性爬虫類 フード リクガメ 餌 イグアナ カメ マルベリックドライ 無着色 高嗜好性 ペレット 1Kg 桑葉 高繊維 転送便 低蛋白 高保水 植物葉 モロヘイヤ 小松菜 両生類 トゲオアガマ 野草 食物繊維",
+      "shop": "ペットフォレスト 楽天市場店",
+      "price": 3438,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-18/pf-4971618206343.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uirhn.nhbnn600.g00uirhn.nhbno2d9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetforest%2Fpf-4971618206343%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetforest%2Fi%2F10017298%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157603",
+      "name": "【6個セット】 キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 16897,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206435_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157603%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12157576",
+      "name": "キョーリン ひかり マルベリックドライ 大粒 550g イグアナ トゲオアガマ リクガメ 草食爬虫類 主食 桑葉ベース Kyorin",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 3552,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg167/4971618206435.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971618206435%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12157576%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117076",
+      "name": "キョーリン マルベリックドライ 400g リクガメ 桑葉 草食爬虫類用 主食 KYORIN Maruberic フード 爬虫類用品 飼料 エサ 両生類",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 2816,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg167/4971618206329.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4971618206329%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117076%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 野草 フード"
     },
     {
       "scene": "animal",
@@ -662,7 +1374,7 @@
     {
       "scene": "animal",
       "itemCode": "itosui-store:10000098",
-      "name": "コメット COMET イトスイ カメのごはん 500g カメのおやつ 40g カメのエサ カメの餌 カメフード カメのおやつ 川エビ 亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "name": "コメット COMET イトスイ カメのごはん 500g カメのおやつ 40g カメのエサ カメの餌 カメフード カメのおやつ 川エビ 亀 水棲亀 ミドリガメ ゼニガメ イシガメ ��ーカー直販 送料無料",
       "shop": "イトスイストア 楽天市場店",
       "price": 1600,
       "reviewCount": 0,
@@ -806,7 +1518,7 @@
     {
       "scene": "animal",
       "itemCode": "tsuruha:10052865",
-      "name": "イトスイ　コメット　カメのおやつ　川エビ　(8g)　かめ　亀　エサ",
+      "name": "イトスイ　コメット　カメの���やつ　川エビ　(8g)　かめ　亀　エサ",
       "shop": "ツルハドラッグ",
       "price": 123,
       "reviewCount": 0,
@@ -874,6 +1586,306 @@
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg003/41b26poea1l.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4971453052198_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F11435721%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "亀 おやつ 川エビ"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117522",
+      "name": "【6個セット】 GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 6268,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4972547045058_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117522%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12158073",
+      "name": "【6個セット】 GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 6268,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4972547045058_6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12158073%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117519",
+      "name": "GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 1780,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4972547045058%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117519%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12158035",
+      "name": "GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 1780,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4972547045058%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12158035%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "ulmaxjapan2:11117521",
+      "name": "【3個セット】 GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "むさしのメディア 楽天市場店",
+      "price": 3575,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ulmaxjapan2/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00s4o6n.nhbnnd9c.g00s4o6n.nhbno296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fulmaxjapan2%2F4972547045058_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fulmaxjapan2%2Fi%2F11117521%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "plant",
+      "itemCode": "auc-ulmax:12158064",
+      "name": "【3個セット】 GEX リクガメブレンドフード 180g 草食性爬虫類 主食 Gekko ジェックス RepDeli EXOTERRA イグアナ フトアゴヒゲトカゲ 爬虫類用品",
+      "shop": "ウルマックス 楽天市場店",
+      "price": 3575,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-ulmax/cabinet/zg169/4972547045058.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00qn2hn.nhbnn66a.g00qn2hn.nhbno049/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-ulmax%2F4972547045058_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-ulmax%2Fi%2F12158064%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "リクガメ 主食 ペレット"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "ocean29:10030175",
+      "name": "ペット自動給餌器猫 猫犬通用 定時定量給餌 タイマー 音声録音 ステンレス製 6L大容量 餌 犬 ペット カメラ監視 双方向会話機能 暗視",
+      "shop": "OCEAN29 楽天市場店",
+      "price": 28980,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ocean29/cabinet/12781601/pgmt-s7014/10003027.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uulmn.nhbnn15b.g00uulmn.nhbno86d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Focean29%2Fp10003027108%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Focean29%2Fi%2F10030175%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "samidare7:10015156",
+      "name": "ペット自動給餌器猫 猫犬通用 定時定量給餌 タイマー 音声録音 ステンレス製 6L大容量 餌 犬 ペット カメラ監視 双方向会話機能 暗視",
+      "shop": "samidare",
+      "price": 29480,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/samidare7/cabinet/pakua16617/pbtd-a6170/pbtd-s1884/10008448.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00ujxqn.nhbnn636.g00ujxqn.nhbno01d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsamidare7%2Fp10008448208%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsamidare7%2Fi%2F10015156%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "aqua-f-shop:10017033",
+      "name": "【エサ】キョーリン　のこのこカメさん40g",
+      "shop": "AQUA-F",
+      "price": 200,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/b64.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-a9%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10017033%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "g-clover:10008449",
+      "name": "自動給餌器 ペット自動給餌器 猫 猫犬通用 定時定量給餌 タイマー 音声録音 ステンレス製 6L大容量 餌 犬 ペット カメラ監視 双方向会",
+      "shop": "GoldenClover楽天市場店",
+      "price": 29480,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/g-clover/cabinet/pwu78m/ppp2237072/10001644.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uprfn.nhbnn2a5.g00uprfn.nhbno582/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fg-clover%2Fp10001644083%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fg-clover%2Fi%2F10008449%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "tsunagu2017:10150723",
+      "name": "宇崎日新 アレス ブラックジャガー 漢気中錘式シンカー 太刀魚テンヤ 船釣り オフショア イカメタル ジギング タングステン 遊動式 固定式 高感度 潮切り 底取り 釣具 仕掛け 釣り用品 重り ルアー 餌釣り ソルトウォーター 海釣り マリンレジャー フィッシング 人気",
+      "shop": "TsuNaGu2017",
+      "price": 1100,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/tsunagu2017/cabinet/12427623/6605275_1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uq9xn.nhbnn6fc.g00uq9xn.nhbnofd5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsunagu2017%2F7z6kzuotvj5rsosl2evbxnxybi%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsunagu2017%2Fi%2F10150723%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "tsunagu2017:10150861",
+      "name": "マルシン漁具 ドラゴン グミグミスッテ イカメタル スッテ 鉛スッテ イカ釣り ルアー 船釣り 夜焚き ヤリイカ ケンサキイカ スルメイカ 釣果アップ 最新モデル 高実績 喰わせ 集魚効果 定番 人気 釣り具 疑似餌 釣りエサ オフショア 釣り具用品",
+      "shop": "TsuNaGu2017",
+      "price": 800,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/tsunagu2017/cabinet/12427756/6606069_2.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uq9xn.nhbnn6fc.g00uq9xn.nhbnofd5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsunagu2017%2Ftolpf4p5k52jt3xlidppeav7ja%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsunagu2017%2Fi%2F10150861%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "marukin-tsuri:10005608",
+      "name": "キザクラ エギボー セファロ 65 FLOW DRIFT 餌木 エギ 船釣り 浮きスッテ イカメタル オモリグ 潮乗り 安定姿勢 kizakura 人気 定番 竿",
+      "shop": "釣り具のまるきん 楽天市場店",
+      "price": 25850,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/marukin-tsuri/cabinet/1/4941702600111_c0.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00u85xn.nhbnn4a8.g00u85xn.nhbnocde/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmarukin-tsuri%2F4941702600111%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmarukin-tsuri%2Fi%2F10005608%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "aqua-f-shop:10012331",
+      "name": "【エサ】キョーリン 乾燥川エビカメのごほうび徳用35g",
+      "shop": "AQUA-F",
+      "price": 680,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/c53.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-66%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10012331%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "kansaisakabashop:10044144",
+      "name": "バード食器 【AIカメラ搭載で野鳥観察がもっと楽しく】スマート給鳥器 餌場 バードフィーダー おすすめ 屋外対応 ソーラー ビデオ撮影 ギフト プレゼント 人気 餌入れ 鳥用 餌台 母の日 給餌器 野鳥観察 父の日 ポイント消化 動き検出 自動キャプチャ バッテリー給電",
+      "shop": "関西酒場ショップ",
+      "price": 15050,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/kansaisakabashop/cabinet/abc303/abc3030061_1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuzhn.nhbnn3c9.g00uuzhn.nhbno82c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkansaisakabashop%2Fabc3030061%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkansaisakabashop%2Fi%2F10044144%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "newyoku:10003691",
+      "name": "ペット自動給餌器猫 猫犬通用 定時定量給餌 タイマー 音声録音 ステンレス製 6L大容量 餌 犬 ペット カメラ監視 双方向会話機能 暗視 洗い可能 肥満防止 アプリ操作 2Way給電 お留守番対策 餌やり 犬猫 見守り WiFi ペットフード",
+      "shop": "NEWYOKU",
+      "price": 28980,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/newyoku/cabinet/13467464/13497203/13506102/new-sdd608-01.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uumnn.nhbnn418.g00uumnn.nhbnoa20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnewyoku%2Fnew-sdd608-%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnewyoku%2Fi%2F10003691%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "aqua-f-shop:10012326",
+      "name": "【エサ】キョーリン おおきな教材カメのエサ(特大粒) 1000g",
+      "shop": "AQUA-F",
+      "price": 1580,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/b69.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-61%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10012326%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "tsunagu2017:10045209",
+      "name": "DUEL デュエル スッテ イージーベイト イカメタル ドロッパー 80mm 5g イカ釣り ルアー 疑似餌 エギング ヤリイカ ケンサキイカ スルメイカ アオリイカ 夜釣り 船釣り オフショア 高活性 低活性 渋い状況 集魚 人気 定番 おすすめ 釣具 初心者 手軽 喰わせ アピール",
+      "shop": "TsuNaGu2017",
+      "price": 1400,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/tsunagu2017/cabinet/12446043/4008719_7.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uq9xn.nhbnn6fc.g00uq9xn.nhbnofd5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsunagu2017%2Fahh7l3e7wxpokwyputxj55qciu%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsunagu2017%2Fi%2F10045209%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "tsunagu2017:10119380",
+      "name": "ヤマリア YAMARIA エギ 餌木 ルアー レンジD ディープ 1.8号 アオリイカ イカ釣り 仕掛け イカメタル キャスティング 堤防 船 磯 釣り フィッシング 初心者 ベテラン 実績 海 川 湖沼 高性能 高耐久 安定 アクション タックル スピード シーズン オールシーズン 最新 人気",
+      "shop": "TsuNaGu2017",
+      "price": 1800,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/tsunagu2017/cabinet/12424176/4993878_4.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uq9xn.nhbnn6fc.g00uq9xn.nhbnofd5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftsunagu2017%2Fk5d6nxbshghrwhruhnoqhpobz4%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftsunagu2017%2Fi%2F10119380%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "カメ 餌 人気"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "marquee:10009814",
+      "name": "キョーリン ひかりのこのこカメさん40g 亀の餌 クサガメ ゼニガメ ミドリガメ 小粒 経済的 人工飼料 国産 [trmt]",
+      "shop": "marquee",
+      "price": 179,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/marquee/cabinet/titem_2/41053_1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00sjj9n.nhbnnbae.g00sjj9n.nhbno4fd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmarquee%2F41053%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmarquee%2Fi%2F10009814%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000097",
+      "name": "コメット COMET イトスイ カメサクップレミアム 105g カメのおやつミックスフード 25g カメのエサ カメの餌 カメフード カメのおやつ 亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 2200,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117515068.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453057223_4971453057667%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000097%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000034",
+      "name": "コメット COMET イトスイ【2袋セット】カメのごはん 500g カメのエサ カメの餌 カメフード 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 1900,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117101251.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453053966_2%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000034%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000036",
+      "name": "コメット COMET イトスイ カメのごはん 1500g カメのエサ カメの餌 カメフード 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 2500,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117102644.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453054062%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000036%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "petforest:10013115",
+      "name": "◇イトスイ カメサクッ!超徳用 300g | カメ 餌 カメサクッ カメ用フード 水棲ガメ 飼料 川エビ ニンジンエキス ヒナ用餌 浮上性ペレット ソフトフード ミドリガメ ゼニガメ クサガメ イシガメ アカミミガメ イトスイ 遊び材料 ペット用品 飼育用品 健康管理フード",
+      "shop": "ペットフォレスト 楽天市場店",
+      "price": 1849,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-15/pf-4971453055779.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uirhn.nhbnn600.g00uirhn.nhbno2d9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetforest%2Fpf-4971453055779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetforest%2Fi%2F10013115%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "itosui-store:10000037",
+      "name": "コメット COMET イトスイ【3箱セット】カメのおやつ 8g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ 乾燥川エビ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "shop": "イトスイストア 楽天市場店",
+      "price": 800,
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/itosui-store/cabinet/imgrc0117103026.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00uuj3n.nhbnnf81.g00uuj3n.nhbno4f5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fitosui-store%2F4971453051849_3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fitosui-store%2Fi%2F10000037%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "ゼニガメ 餌"
     }
   ]
 }
