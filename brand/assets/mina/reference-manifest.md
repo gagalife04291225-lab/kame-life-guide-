@@ -8,12 +8,18 @@
 現行の MASTER は **product-free presenter master**（商品・device・packaging・logo を一切持たない）であり、
 商品の有無を問わずすべての生成の人物基準として使う。
 
-## Retired references
+## 商品を持った旧画像は現行資産ではない（2026-09-18・Owner 決定）
 
-- `mina-product-hold-reference.jpg` — **RETIRED（2026-09-18・Owner 決定）**。
-  商品を手に持った旧 master / 副参照は、**active generation から外す**。
-  過去の成果物を説明するための履歴・evidence としてのみ残し、新規生成の参照に使わない。
-  なお実測上、このファイルは本ブランチのリポジトリ内に実体として存在しない。
+商品（device / packaging / logo を含む）を手に持った旧 master および商品保持用の副参照は、
+**現行資産として保持しない。**
+
+- 別名コピー・副参照・active evidence・workflow 参照・prompt 参照のいずれとしても残さない。
+- 差し替え前の commit が git 履歴に存在するのは通常の git の性質にすぎず、
+  **資産として保持・再利用する意味を持たない。**
+- 実測（本ブランチ）: `brand/assets/mina/` の画像は `mina-master.png` の1枚のみ。
+  商品保持参照の payload（`.b64` / placeholder `.txt`）と、それを画像として実体化し
+  生成時の補助参照としてルール本文へ追記する bootstrap workflow は、**本PRで削除した**
+  （実行された形跡はなく、ルール本文への追記も発生していないことを実測済み）。
 
 ## Generation bootstrap
 

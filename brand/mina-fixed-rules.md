@@ -168,9 +168,11 @@ brand/assets/mina/mina-master.png
   Owner 判断により、**商品を一切持たない product-free の MASTER へ差し替えた**。
 - 新 MASTER は `mina-image-rules.md` WARDROBE の「不自然な露出に依存した構図」を解消している
   （旧 MASTER は深い V ネックで胸元の露出があった）。
-- **正本は引き続き1枚だけ。** 商品保持の副参照は active generation から外し、
-  `brand/assets/mina/reference-manifest.md` で RETIRED として記録した。
-- 旧 MASTER は削除せず、git 履歴に evidence として残る。
+- **正本は引き続き1枚だけ。** 商品を持った旧 MASTER と商品保持の副参照は、
+  **現行資産として保持しない**（別名コピー・副参照・active evidence・workflow 参照・
+  prompt 参照のいずれにも残さない）。`brand/assets/mina/reference-manifest.md` に明記した。
+- 差し替え前の commit が git 履歴に存在するのは通常の git の性質であり、
+  旧画像を資産として保持・再利用する意味は持たない。
 - 差し替え時の実測値は同 PR に記載する（形式・解像度・sha256・目視QC）。
 
 ## 7. 優先順位

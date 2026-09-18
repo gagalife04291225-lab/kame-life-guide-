@@ -10,15 +10,15 @@
 ```
 案件:              mina-product-001
 MASTER IMAGE PATH: brand/assets/mina/mina-master.png
-MASTER VERSION:    git blob  fa9bb85ba10b8bc4be19d2a070840c064f64ffbb
-                    SHA-256   763ba75f0259ce71c9a53f2493a80d1fcecec0d9172862fac204698fcda30dd4
-                    byte size 1,253,769 bytes
-                    dimensions 864 × 1536（PNG / 8-bit RGB / non-interlaced / 9:16）
-                    main 657dc61（PR #172 で修復）
-                    **検証 PASS — 必須8項目を 2026-09-10 に再実測して全通過。
-                    デコード可・IEND 正常・均一グレーではない・実際にミナが写っている。
+MASTER VERSION:    git blob  5f9e0c29f71d61c528daa2b04458ffe65b08bde5
+                    SHA-256   0f63a51a739b6f1d83fbde6e0c09940011f650adf78470a525f7ca7e1eaa5bd6
+                    byte size 1,923,093 bytes
+                    dimensions 941 × 1672（PNG / 8-bit RGB / 比 0.5628 ＝ 9:16 相当）
+                    PR #187（product-free presenter master へ差し替え）
+                    **検証 PASS — 必須8項目を 2026-09-18 に実測して全通過。
+                    デコード可・IEND 正常・均一画像ではない・実際にミナが写っている・商品なし。
                     実測記録は master-readiness-001.md**
-補助参照:            mina-product-hold-reference.jpg = NOT_FOUND_EXACT_MATCH（BLOCKER 扱いにしない）
+補助参照:            なし（active な補助参照は0件。人物基準は上記の product-free 正本のみ）
 用途 / 媒体:        TikTok（9秒・5カット）
 出力比率:           9:16
 CONTENT MODE 並び:  PRODUCT_HOOK → PRODUCT_DEMO → RESULT → PRODUCT_DEMO → CTA / LIFESTYLE

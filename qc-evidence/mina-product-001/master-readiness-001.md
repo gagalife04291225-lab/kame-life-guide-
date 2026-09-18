@@ -2,17 +2,21 @@
 
 案件側の検証記録。`brand/` のルール本文は変更していない。
 
-- 最終検証日: 2026-09-10
+- 最終検証日: 2026-09-18
 - 対象: `brand/assets/mina/mina-master.png`
-- 修復 PR: **#172**（merge commit `657dc615936cf33f454f711f4d1ca43fe0d8eea4`）
-- 基準 main: `657dc61`
+- 差し替え PR: **#187**（Owner 決定により **product-free presenter master** へ差し替え）
+- 基準 main: `dec4865`
 - 案件branch: `claude/mina-product-selection-dhfz0i`
+
+> 2026-09-10 時点の記録（商品を持った旧正本に対する受入検証）は、この更新で**置き換えた**。
+> 旧正本の実測値は git 履歴にのみ存在し、**現行資産ではない**。
 
 ## 判定
 
 **PASS — 画像生成を開始できる。**
 
 正本は canonical path に実在し、PNG として完全に復号でき、実際にミナが写っている。
+商品 / device / packaging / logo を一切持たないため、商品に依存しない汎用 presenter として使える。
 `brand/mina-fixed-rules.md` §2 の人物ID参照として機能する。
 
 ## 現行正本の実測値
@@ -20,36 +24,38 @@
 | 項目 | 実測結果 | 判定 |
 |------|---------|------|
 | パス | `brand/assets/mina/mina-master.png` | 実在 |
-| git blob SHA | `fa9bb85ba10b8bc4be19d2a070840c064f64ffbb` | — |
-| 内容 SHA-256 | `763ba75f0259ce71c9a53f2493a80d1fcecec0d9172862fac204698fcda30dd4` | — |
-| サイズ | 1,253,769 bytes | — |
-| 実体形式 | **PNG**（署名一致 / 8-bit RGB / non-interlaced） | PASS |
-| 画像サイズ | **864 × 1536**（9:16） | PASS |
+| git blob SHA | `5f9e0c29f71d61c528daa2b04458ffe65b08bde5` | — |
+| 内容 SHA-256 | `0f63a51a739b6f1d83fbde6e0c09940011f650adf78470a525f7ca7e1eaa5bd6` | — |
+| サイズ | 1,923,093 bytes | — |
+| 実体形式 | **PNG**（署名一致 / 8-bit RGB） | PASS |
+| 画像サイズ | **941 × 1672**（比 0.5628 ＝ 9:16 相当） | PASS |
 | デコードエラー | **0**（警告をエラー化した状態で `load()` 完走） | PASS |
 | チャンク列 | `IHDR / iCCP / IDAT×21 / IEND` — **IEND まで正常** | PASS |
-| 内容 | 縦10帯の平均色が10種すべて異なる（`(190,168,148)` 〜 `(233,213,203)`）。均一グレーではなく実際にミナが写っている | PASS |
-| main blob と作業ツリーの一致 | main blob の SHA-256 と Owner 提供ファイルの SHA-256 が完全一致 | PASS |
+| 内容 | 64×64 縮小でユニーク色 2,582 / 画素値レンジ 21..255。均一画像ではなく実際にミナが写っている | PASS |
+| 商品の有無 | 商品 / device / packaging / logo **なし**（全面を目視） | PASS |
+| blob と作業ツリーの一致 | `git hash-object` と index の blob が完全一致 | PASS |
 | `brand/assets/mina/` の MASTER 画像枚数 | **1枚のみ**（他は `README.md` / `reference-manifest.md`） | PASS |
-| 旧破損 blob の参照 | canonical path は新 blob を指す。旧 `0989576d…` は参照しない | PASS |
+| 旧 blob の参照 | canonical path は新 blob を指す。旧・商品保持 blob と旧破損 blob は参照しない | PASS |
 
-## 必須8項目の再実測（2026-09-10・Owner 指示による確認）
+## 必須8項目の実測（2026-09-18・product-free 正本への差し替え時）
 
-Owner から「main の同名ファイルは破損済みなので置換せよ」との指示を受けたが、
-**実測したところ破損は PR #172 で既に解消しており、main の正本は Owner 承認画像そのものだった。**
-置換すべき破損ファイルは存在しない。以下は指定された8項目を独立に測り直した結果である。
+旧正本は商品（美容デバイス）を手に持っており、商品非依存の汎用 presenter として使えないため
+Owner が却下した。Owner が product-free の実画像を提供し、目視 QC のうえ「これが正本」と明示承認した。
+以下は差し替え後の正本に対して8項目を実測した結果である。
 
 | # | 検証項目 | 実測方法 | 実測結果 | 判定 |
 |---|---------|---------|---------|------|
 | 1 | 実体形式 = PNG | 先頭8バイトを直接読む | `89 50 4E 47 0D 0A 1A 0A` — PNG 署名と完全一致 | **PASS** |
-| 2 | デコード成功 | Pillow で `load()` まで完走 | 例外なし。`format=PNG / mode=RGB / size=(864,1536)` | **PASS** |
+| 2 | デコード成功 | Pillow で `load()` まで完走 | 例外なし。`format=PNG / mode=RGB / size=(941,1672)` | **PASS** |
 | 3 | PNG IEND あり | 末尾12バイトを直接読む | `00 00 00 00 49 45 4E 44 AE 42 60 82` — `IEND` ＋ CRC で正常終端 | **PASS** |
-| 4 | 均一グレーではない | 24点サンプル＋全画素の標準偏差 | ユニーク色 **24/24**。RGB(128,128,128) は **0個**。標準偏差 R/G/B = **50.57 / 54.18 / 57.46** | **PASS** |
-| 5 | 実際にミナ本人が写っている | 画像を開いて目視 | ベージュのニット・低い位置でまとめた暗髪・白い小型シーラーを右手に持つ女性。室内。FIXED CORE と一致 | **PASS** |
+| 4 | 均一グレーではない | 64×64 縮小のユニーク色数と画素値レンジ | ユニーク色 **2,582**。レンジ **21..255** | **PASS** |
+| 5 | 実際にミナ本人が写っている | 作業ツリーの実ファイルを開いて目視。さらに目元を2.2倍で MASTER と並置比較 | 生成りのカーディガン＋セージ色リブトップ・低い位置でまとめた暗髪の女性。室内。**手には何も持っていない**。眉形・上瞼の浅い折り込み・鼻梁・唇形・口角の左右差・頬と目下のそばかす分布が旧正本と一致し、同一人物。FIXED CORE と一致 | **PASS** |
 | 6 | canonical path に MASTER は1枚だけ | `ls` ＋ repo 全体を `find -iname '*mina*master*'` | ヒットは `brand/assets/mina/mina-master.png` の **1件のみ**。同ディレクトリの他2件は `README.md` / `reference-manifest.md` | **PASS** |
-| 7 | Git blob と作業ツリーの SHA 一致 | `git hash-object` と `git ls-tree` を突き合わせ | 両方 `fa9bb85ba10b8bc4be19d2a070840c064f64ffbb`。内容 SHA-256 `763ba75f…a30dd4` も main の blob と一致 | **PASS** |
-| 8 | 旧破損 blob を参照していない | `grep -rn "0989576" --exclude-dir=.git .` | **参照ゼロ**。旧 blob `0989576d…` は履歴（`5ec4ac9`）にのみ残り、現行ツリーのどこからも指されていない | **PASS** |
+| 7 | Git blob と作業ツリーの SHA 一致 | `git hash-object` と index を突き合わせ | 両方 `5f9e0c29f71d61c528daa2b04458ffe65b08bde5` | **PASS** |
+| 8 | 旧 blob を参照していない | 現行ツリー全体を grep | **参照ゼロ**。旧・商品保持 blob と旧破損 blob は git 履歴にのみ残り、現行ツリーのどこからも指されていない | **PASS** |
 
-**8項目すべて PASS。** 判定は FAIL ではなく、最初から PASS の状態を再確認したものである。
+**8項目すべて PASS。** 拡大目視でも、髪の白粒・陶器肌化・謎の文字・形状破綻・不自然な左右対称は検出されなかった。
+手指は画面下端より外にあり、指の破綻リスクが構造的に存在しない。
 
 ### PNG 再エンコードは実施しない（理由）
 
@@ -78,16 +84,16 @@ Owner から「main の同名ファイルは破損済みなので置換せよ」
 blob と作業ツリーの SHA-256 完全一致 / LFS ポインタでもない）。
 **この調査は完了済み。再調査しない。**
 
-## 補助参照
+## 補助参照は存在しない（2026-09-18 Owner 決定）
 
-`brand/assets/mina/reference-manifest.md` が挙げる `mina-product-hold-reference.jpg` は
-**`NOT_FOUND_EXACT_MATCH`**（git 管理下に存在しない）。
+**active な補助参照は0件。** 正本 `mina-master.png` が唯一の master/reference である。
 
-`git ls-files brand/assets/mina/` の結果は `README.md` / `mina-master.png` /
-`reference-manifest.md` の3件のみ。
+商品を持った旧画像は、別名コピー・副参照・active evidence・workflow 参照・prompt 参照の
+いずれとしても保持しない。商品を持たせるカットが必要な場合も、人物基準は product-free の正本を使い、
+商品の持ち方は `product-spec-001.md` の実寸・操作記述と SHOT PLAN の記述で決める。
 
-指示のとおり、この不在は画像生成の BLOCKER として扱わない。
-商品持ちカットの構図・ポーズ参照が必要な場合は、正本と SHOT PLAN の記述で代替する。
+実測: `git ls-files brand/assets/mina/` の結果は `README.md` / `mina-master.png` /
+`reference-manifest.md` の3件のみ。画像は正本1枚だけ。
 
 ## Owner 判断待ちの記録（BLOCKER ではない）
 
@@ -95,12 +101,14 @@ blob と作業ツリーの SHA-256 完全一致 / LFS ポインタでもない�
 **本作業ではルール本文も正本も変更していない。**
 
 1. **目元** — `mina-fixed-rules.md` §3 は FIXED CORE に「一重」と定めているが、正本の目元は
-   写真上では奥二重〜二重寄りにも見える。生成後QC は毎回「一重が維持されているか」を照合するため、
-   正本と文言が食い違うと判定がぶれる。文言を正本に合わせるか、正本を差し替えるかは Owner 判断。
-2. **ネックライン** — `mina-image-rules.md` の WARDROBE は「不自然な露出に依存した構図」を禁止している。
-   正本の V ネックは胸元の開きがやや大きく、正本を参照した派生が同傾向へ寄る可能性がある。
-   SHOT PLAN の WARDROBE は「シンプルTシャツ（白〜ベージュ系）」を指定しており、
-   生成時はそちらが優先される。
+   写真上では奥二重寄りにも見える（新正本でも構造は同じ）。生成後QC は毎回「一重が維持されているか」を
+   照合するため、正本と文言が食い違うと判定がぶれる。文言を正本に合わせるかは Owner 判断。
+2. **ネックライン** — **RESOLVED（2026-09-18）。** 旧正本の V ネックは胸元の開きが大きく、
+   `mina-image-rules.md` WARDROBE の「不自然な露出に依存した構図」に寄る懸念があった。
+   product-free 正本（カーディガン＋リブトップ）への差し替えで解消した。
+3. **フレーミング** — 新正本は着座の腰上〜腿上で、前腕が画面下端で切れている。
+   手は画面外のため指の破綻リスクは無い。胸上中心のカットが必要な場合は正本から切り出す
+   （広い方から狭い方へは切り出せるが、逆はできないため原寸を正本にしている）。
 
 ## 案件側の準備状況（すべて PASS）
 
@@ -111,7 +119,7 @@ blob と作業ツリーの SHA-256 完全一致 / LFS ポインタでもない�
 | 仕様・操作確定 | `product-spec-001.md`（125×40×63mm / 175g / 密封口 最大95mm / 差し込む→押す→離す） |
 | 台本確定 | `script-001.md`（9.0秒 / 5カット / 字幕 / ナレーション / CTA / 撮影GATE） |
 | SHOT PLAN 確定 | `shot-plan-001.md`（5カット / 顔向き5種 / 距離5種 / カメラ目線は CUT5 のみ） |
-| brand ルール | main `657dc61` と全ファイル一致 |
+| brand ルール | main `dec4865` ＋ 本PRの差し替え分と一致 |
 
 **画像生成のブロッカーは解消した。** 次工程は CUT1〜CUT5 の画像生成。
 
