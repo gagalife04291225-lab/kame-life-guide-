@@ -159,6 +159,20 @@ brand/assets/mina/mina-master.png
 - public リポジトリかつ GitHub Pages 配信ソースであるため、置いたファイルが公開される点と、置いてよい素材の条件を明記した（§2.3）。
 - FIXED CORE の人物設定（年齢感・一重・髪色・肌質・親近感等）は**一切変更していない**。
 
+### v4 → v5（2026-09-18・MASTER を product-free presenter master へ差し替え）
+
+`MINA_MASTER` の実画像だけを差し替えた。**FIXED CORE の人物設定（年齢感・一重・肌質・髪色・
+細身・ナチュラルメイク・AI美女化禁止等）は一切変更していない。**
+
+- 旧 MASTER は商品（美容デバイス）を手に持っており、商品非依存の汎用 presenter 用途に使えなかった。
+  Owner 判断により、**商品を一切持たない product-free の MASTER へ差し替えた**。
+- 新 MASTER は `mina-image-rules.md` WARDROBE の「不自然な露出に依存した構図」を解消している
+  （旧 MASTER は深い V ネックで胸元の露出があった）。
+- **正本は引き続き1枚だけ。** 商品保持の副参照は active generation から外し、
+  `brand/assets/mina/reference-manifest.md` で RETIRED として記録した。
+- 旧 MASTER は削除せず、git 履歴に evidence として残る。
+- 差し替え時の実測値は同 PR に記載する（形式・解像度・sha256・目視QC）。
+
 ## 7. 優先順位
 
 ミナ関連の人物固定で記述が競合した場合は、次の順で扱う。
