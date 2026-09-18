@@ -45,16 +45,39 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **dec4865**（`dec4865e457b3d791d213a6da50580b85919ea49` / 2026-09-18 実測値） |
-| サイトファイルの状態 | 本PRは `brand/` のミナ正本画像とルール文書のみの変更。サイト本体のページは無変更 |
+| 基準 | 作業開始時の `main` = **d4df906**（`git log --oneline -1 origin/main` / 2026-09-18 実測値） |
+| サイトファイルの状態 | 本PRは `species/*.html` 82ファイルの比較表セル（必要環境列）のみの変更。data / CSS / JS / 画像は無変更 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-09-18 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/mina-product-selection-dhfz0i` |
+| 作業ブランチ | `claude/konnichiha-aj2tk1` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 近似種比較表の「必要環境」列を正本へそろえた — **矛盾 0**（2026-09-18 / 本PR）— **再調査しない**
+
+`species/*.html` の近似種比較表について、**自種行・他種行の両方**を
+`data/species-master.json` の `care.enclosure_jp`（正本）と照合し、
+**正本の必要サイズを下回る表示（矛盾）199 行を修正**した。82ファイル / 113行 / 差分は数値部分のみ。
+
+- **判定基準は「文字列一致」ではなく「矛盾しないこと」**。比較表のセルは `white-space:nowrap` の
+  短縮表記で、正本の文（例「オス60cm可・メス90〜120cm」）をそのまま入れられない。
+  **セルの最大値が正本の必要サイズを下回る場合だけ**を矛盾として直した。
+- 体裁（`ケージ` / `水槽` / 括弧注記）は元のまま残し、数値だけを正本の範囲へ置換した。
+  例: マタマタ「90cm〜」→「120cm〜」／ヒラセガメ「60cm〜ケージ」→「90cm〜ケージ」／
+  ニシキガメ「60cm〜」→「60〜120cm」。
+- **正本の文中の甲長は容器サイズに使わない**。クサガメ・カントンクサガメ・ミシシッピアカミミガメの
+  正本は「成体（メス25cm級）は90cm以上」の形で甲長を含むため、
+  容器サイズは国内規格の階梯（30/45/60/75/90/120/150/180）に限って読む。
+  この扱いを入れる前は「25〜90cm」という誤表示を生んでいた（適用前に検出・修正済み）。
+- 実測: `scripts/check_compare_enclosure.py` → **一致 378 / 矛盾 0 / 判定不能 10**。
+  `scripts/check_enclosure_sync.py` → **一致 110 / 不一致 0**（着手前と同値・悪化なし）。
+  差分行 113 / サイズ以外の差分 0（全行を機械照合）。
+- **判定不能 10 行は触っていない**（正本に値または数値がないため）。内訳は UNRESOLVED に残した。
+- PR #187（MINA_MASTER 差し替え）は **merge 済み**（`main` = `d4df906`）。この判断待ちは閉じた。
+
 
 ### エージェント運用基盤の vendor-neutral 化（2026-09-15 / PR #179・merge commit `b8b3b4f0dc3d8948598a37f5d18409942c0e164f`）
 
@@ -1069,6 +1092,18 @@ PUBLIC IMPACT 棚卸し（READ ONLY）で「4条件（未解決／外部入力�
 
 ## FIXED_FACTS — 固定入力。**再検証しない**
 
+### 比較表と正本の照合は `scripts/check_compare_enclosure.py` が正本（2026-09-18 / 本PR）
+
+- 比較表の「必要環境」列は**文字列一致では判定しない**。判定は「正本の必要サイズを下回らないこと」。
+  この基準とスクリプトは固定入力。**基準を作り直さない。**
+- `care.enclosure_jp` の文中にある甲長（「成体（メス25cm級）」等）は容器サイズではない。
+  容器サイズとして読むのは国内規格の階梯 **30 / 45 / 60 / 75 / 90 / 120 / 150 / 180 cm** のみ。
+- 2026-09-18 時点の実測: **一致 378 / 矛盾 0 / 判定不能 10**。
+  判定不能の内訳は、正本に値がない3種（チャコリクガメ 4行 / ハーレラドロガメ 1行 /
+  `ouachita-map-turtle` 2行）と、正本が数値を持たない2種（モリイシガメ 2行 /
+  チェリーヘッドアカアシリクガメ 1行）。**この 10 行を推測で埋めない。**
+
+
 ### 甲長・enclosure_jp の到達点（2026-09-12・本PR 時点）
 
 - `check_enclosure_sync.py`: **一致 110 / 不一致 0 / 未登録 2**（チャコリクガメ・ハーレラドロガメ）。
@@ -1560,20 +1595,22 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 ## UNRESOLVED — 本当に未解決のものだけ
 
-### 判断待ち — MINA_MASTER 差し替え PR #187 の merge（Owner のみ）
+### 外部入力待ち — ミナ talk PoC の HF_TOKEN（Owner のみ）
 
-`brand/assets/mina/mina-master.png` を product-free presenter master へ差し替える PR #187 は
-**検証全 PASS・Scope 外 0件**だが、このリポジトリは public かつ GitHub Pages の配信ソースであり、
-`main` への merge は**公開（Publish）**に当たる。憲法 Invariant I1 により公開は Owner のみが実施する。
+PR #187 は **merge 済み**（`main` = `d4df906`）。`brand/assets/mina/mina-master.png` の正本は
+product-free presenter master に切り替わった。**この判断待ちは閉じた。**
 
-- merge されるまで `main` の正本は旧・商品保持画像のまま。
+- 残る次工程: **HF_TOKEN 登録（Owner）** → `mode=all` 実行 → `qc-evidence/talk-poc-002` の実MP4を全数QC。
 - `mina-video-factory` の talk PoC は、旧正本を掴んだ場合に明示的に停止するガードを入れてある。
-- merge 後の次工程: HF_TOKEN 登録 → `mode=all` 実行 → `qc-evidence/talk-poc-002` の実MP4を全数QC。
 
 
 ### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）
 
-- **近似種比較表の他種セルが各種の正本値とずれている**（既存の不整合。今回の変更が原因ではない）。実測例: ヒラセガメ「60cm〜」対 正本「90cm級ケージ〜」／トウブハコガメ「60cm〜」対「室内90〜120cm級」／マタマタ・スジオオニオイガメ「90cm〜」対「120cm級」／ロシアリクガメ・ヘルマンリクガメ「60〜90cm」対「90cm級」「120cm級」。**自種の行は今回そろえた**。他種の行は別工程。
+- **比較表のうち 10 行は正本が無いため判定できない**（2026-09-18 実測・`scripts/check_compare_enclosure.py` の SKIP）。
+  正本に値なし: チャコリクガメ 4行（aldabra / chaco / cherry-head / pancake）／ハーレラドロガメ 1行／
+  フトマユチズガメ基亜種 `ouachita-map-turtle` 2行。正本が数値を持たない: モリイシガメ 2行
+  （正本「水場と陸場の両方を広く（半陸半水）」）／チェリーヘッドアカアシリクガメ 1行
+  （正本「『小型のまま』を前提にしない」）。**チャコリクガメ・ハーレラドロガメの再探索は禁止**（据え置き理由は master の note）。
 - **「10年後は甲長X〜Ycm」の上限が正本 max を超えるページが 7 件**（実測）: three-toed-box-turtle 17>16.5 ／ eastern-box-turtle 20>19.8 ／ pancake-tortoise 18>17.8 ／ chinese-softshell-turtle 35>25 ／ albino-chinese-softshell 35>25 ／ spenglers-leaf-turtle 11>10.7 ／ asian-black-marsh-turtle 30>20。前5件は丸め誤差の範囲、後2件（ソフトシェル・アジアクロコガメ）は差が大きい。
 - **env-card のラベル不統一**: ネンリンヤマガメ等の陸生種で `必要水槽` ラベルが使われている（`必要ケージ`が正しい）。表示値は今回正本へそろえたがラベルは触っていない。
 
@@ -1719,12 +1756,18 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 近似種比較表の「他種セル」を各種の正本値へそろえる
+### 「10年後は甲長X〜Ycm」の上限を正本の最大甲長へそろえる
 
-**対象**: 全 `species/*.html` の近似種比較表のうち、**自種以外の行**の「必要環境」セル。上記 UNRESOLVED の実測例（ヒラセガメ・トウブハコガメ・マタマタ・スジオオニオイガメ・ロシアリクガメ・ヘルマンリクガメ 等）が対象。
-**Scope**: セルの表示文字列のみ。`data/species-master.json` は**読むだけ**。表のヘッダ・行の増減・他カラムは触らない。
-**変更禁止**: 甲長の再調査（本PRで固定済み）／チャコリクガメ・ハーレラドロガメの再探索（据え置き理由は note にある）／`enclosure_jp` の値そのもの／Amazon ID・ASIN。
-**完了条件**: 比較表の全行が各種の `care.enclosure_jp` と矛盾しないこと。`check_enclosure_sync.py` が 不一致0 のままであること。
+**対象**: UNRESOLVED の実測 7 ページ。`three-toed-box-turtle` 17>16.5 ／ `eastern-box-turtle` 20>19.8 ／
+`pancake-tortoise` 18>17.8 ／ `chinese-softshell-turtle` 35>25 ／ `albino-chinese-softshell` 35>25 ／
+`spenglers-leaf-turtle` 11>10.7 ／ `asian-black-marsh-turtle` 30>20。
+**Scope**: 各ページの「10年後は甲長X〜Ycm」の**数値だけ**。`data/species-master.json` は**読むだけ**。
+**変更禁止**: 甲長そのものの再調査（正本は確定済み・NO-REWORK GATE）／比較表・env-card・ls-lead
+（本PRで矛盾 0 を確認済み）／ASIN・Amazon ID。
+**完了条件**: 7 ページすべてで「10年後」の上限が正本の最大甲長を超えないこと。
+`scripts/check_compare_enclosure.py` が **矛盾 0**、`scripts/check_enclosure_sync.py` が
+**不一致 0** のままであること。前5件（丸め誤差の範囲）と後2件（差が大きい）で文面の直し方が変わる場合は、
+**丸めを切り上げにしない**（COMPLETED の丸め規則に従う）。
 
 ## 更新ルール（作業終了時に必ず実施）
 
