@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-18T23:37:33.446Z",
+  "fetched_at": "2026-09-19T00:32:02.464Z",
   "log": [
     {
       "term": "カメ 餌 配合飼料",
@@ -49,7 +49,7 @@
     {
       "term": "カメ 餌 人気",
       "hits": 30,
-      "kept": 11
+      "kept": 9
     },
     {
       "term": "水棲ガメ 餌",
@@ -79,7 +79,7 @@
       "scene": "plant",
       "itemCode": "chanet:10018525",
       "name": "リクガメフード　スドー　ハープクラフト　トータスフード　700g　陸ガメ用　餌　エサ　関東当日便",
-      "shop": "charm 楽天市���店",
+      "shop": "charm 楽天市場店",
       "price": 1398,
       "reviewCount": 55,
       "reviewAverage": 4.42,
@@ -713,18 +713,6 @@
     },
     {
       "scene": "pellet",
-      "itemCode": "chanet:11075608",
-      "name": "コメット　ニオイガメの主食　中・大型用　140g×2個　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
-      "shop": "charm 楽天市場店",
-      "price": 1154,
-      "reviewCount": 1,
-      "reviewAverage": 5,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2685/268549-1.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F268549%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F11075608%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "水棲ガメ 餌"
-    },
-    {
-      "scene": "pellet",
       "itemCode": "chanet:10581364",
       "name": "キョーリン　ひかりクレスト　タートル　250g（パック）×6袋　爬虫類　餌　カメ　エサ　水棲ガメ用　お一人様5点限り　関東当日便",
       "shop": "charm 楽天市場店",
@@ -733,6 +721,18 @@
       "reviewAverage": 5,
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1377/137666-1.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F137666%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10581364%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
+      "keyword": "水棲ガメ 餌"
+    },
+    {
+      "scene": "pellet",
+      "itemCode": "chanet:11075608",
+      "name": "コメット　ニオイガメの主食　中・大型用　140g×2個　爬虫類　カメ　餌　エサ　水棲ガメ用　関東当日便",
+      "shop": "charm 楽天市場店",
+      "price": 1154,
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2685/268549-1.jpg?_ex=800x800",
+      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F268549%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F11075608%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "水棲ガメ 餌"
     },
     {
@@ -1398,7 +1398,7 @@
     {
       "scene": "animal",
       "itemCode": "itosui-store:10000041",
-      "name": "コメット COMET イ��スイ カメのおやつミックスフード 25g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ イトミミズ ニンジン リンゴ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
+      "name": "コメット COMET イトスイ カメのおやつミックスフード 25g カメのエサ カメの餌 カメフード カメのおやつ カメ おやつ 川エビ イトミミズ ニンジン リンゴ 亀 水亀 水棲亀 ミドリガメ ゼニガメ イシガメ メーカー直販 送料無料",
       "shop": "イトスイストア 楽天市場店",
       "price": 700,
       "reviewCount": 0,
@@ -1637,18 +1637,6 @@
     },
     {
       "scene": "pellet",
-      "itemCode": "aqua-f-shop:10017036",
-      "name": "【エサ】キョーリン　教材カメのエサ（大粒） 200g",
-      "shop": "AQUA-F",
-      "price": 500,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/b67.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-60a1%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10017036%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "カメ 餌 人気"
-    },
-    {
-      "scene": "pellet",
       "itemCode": "tsunagu2017:10150723",
       "name": "宇崎日新 アレス ブラックジャガー 漢気中錘式シンカー 太刀魚テンヤ 船釣り オフショア イカメタル ジギング タングステン 遊動式 固定式 高感度 潮切り 底取り 釣具 仕掛け 釣り用品 重り ルアー 餌釣り ソルトウォーター 海釣り マリンレジャー フィッシング 人気",
       "shop": "TsuNaGu2017",
@@ -1693,18 +1681,6 @@
       "reviewAverage": 0,
       "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/c53.jpg?_ex=800x800",
       "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-66%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10012331%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
-      "keyword": "カメ 餌 人気"
-    },
-    {
-      "scene": "pellet",
-      "itemCode": "aqua-f-shop:10017035",
-      "name": "【エサ】キョーリン　教材カメのエサ（小粒） 50g",
-      "shop": "AQUA-F",
-      "price": 300,
-      "reviewCount": 0,
-      "reviewAverage": 0,
-      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aqua-f-shop/cabinet/bait/b66.jpg?_ex=800x800",
-      "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00rl7on.nhbnn9a1.g00rl7on.nhbno0ad/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faqua-f-shop%2Fkyorin-esa-60a%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faqua-f-shop%2Fi%2F10017035%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be",
       "keyword": "カメ 餌 人気"
     },
     {
