@@ -14,7 +14,10 @@ const OUT = process.argv[2] ?? 'data/food-bestsellers.json';
 if (!APP_ID || !ACCESS_KEY) { console.error('RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY が無い'); process.exit(1); }
 
 // 餌そのものを探す語。機材（ケージ・ライト等）は別カテゴリなので後段で落とす。
-const KEYWORDS = [
+// FOOD_KEYWORDS（カンマ区切り）があればそちらを使う（特定商品を1件だけ引くとき用）
+const KEYWORDS = process.env.FOOD_KEYWORDS
+  ? process.env.FOOD_KEYWORDS.split(',').map((x) => x.trim()).filter(Boolean)
+  : [
   'カメ 餌 配合飼料',
   '亀 フード 主食',
   'ミドリガメ 餌',

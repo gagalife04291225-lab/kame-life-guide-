@@ -34,12 +34,21 @@ jobs:
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
         run: node scripts/food-bestsellers.mjs data/food-bestsellers.json
 
+      # 動画 FOOD-002 で紹介する「カメプロス プレミアム」だけを別ファイルに引く
+      - name: カメプロス プレミアムを取得
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          FOOD_KEYWORDS: 'カメプロス プレミアム,カメプロスプレミアム,キョーリン カメプロス プレミアム'
+        run: node scripts/food-bestsellers.mjs data/food-kameprospremium.json
+
       - name: 秘密が混ざっていないことを確認
         shell: bash
         run: |
           set -euo pipefail
           for k in applicationId accessKey affiliateId; do
-            if grep -q "$k=" data/food-bestsellers.json; then
+            if grep -q "$k=" data/food-bestsellers.json data/food-kameprospremium.json; then
               echo "::error::$k が JSON に混ざっている"; exit 1
             fi
           done
@@ -52,7 +61,7 @@ jobs:
           set -euo pipefail
           git config user.name  'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/food-bestsellers.json
+          git add data/food-bestsellers.json data/food-kameprospremium.json
           git diff --cached --quiet && { echo 'nothing to commit'; exit 0; }
           git commit -m 'chore: 亀の餌の売れ筋（楽天・レビュー数順）を取得 [skip ci]'
           git push origin HEAD:${GITHUB_REF_NAME}
