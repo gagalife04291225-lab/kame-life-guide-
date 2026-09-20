@@ -224,14 +224,14 @@
   }
  },
  "filter_canister_large": {
-  "date": "2026-09-18",
+  "date": "2026-09-20",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=9.1 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 22170,
+   "price": 22120,
    "shop": "ミナトワークス"
   }
  },
