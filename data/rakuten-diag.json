@@ -260,13 +260,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
    "price": 12980,
    "shop": "charm 楽天市場店"
   }
@@ -292,13 +292,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力N",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック　関東当日便",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -436,15 +436,15 @@
   "best": null
  },
  "food_mazuri_tortoise": {
-  "date": "2026-09-12",
+  "date": "2026-09-21",
   "query": "Mazuri Tortoise Diet リクガメ フード",
-  "resultCount": 4,
+  "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=5.7",
+  "reason": "score=6.3",
   "best": {
-   "itemName": "●【マズリ】トータス ダイエット 560g　5M21 S　Mazuri【爬虫類　フード　リクガメ　陸ガメ　ハコガメ　　お試し　小袋　ブリーダー】",
-   "price": 1640,
-   "shop": "PALMY EXPRESS"
+   "itemName": "【即納在庫品】 ［正規品］ Mazuri トータスダイエット 560g リクガメフード 5M21 ホシガメ ハコガメ エサ マズリ",
+   "price": 2300,
+   "shop": "ホームセンターバロー2号店"
   }
  },
  "food_reptomin_tetra": {
@@ -612,25 +612,25 @@
   }
  },
  "media_eheim_2213_coarse": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "エーハイム 2213 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=7.2 入数(2),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1070,
    "shop": "charm 楽天市場店"
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1260,
    "shop": "charm 楽天市場店"
   }
@@ -684,13 +684,13 @@
   }
  },
  "media_eheim_substrat_pro_1l": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "エーハイム サブストラットプロ レギュラー 1L",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.6",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L",
+   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L　関東当日便",
    "price": 1820,
    "shop": "charm 楽天市場店"
   }
@@ -704,14 +704,14 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-09-15",
+  "date": "2026-09-21",
   "query": "GEX メガパワー 2045 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2140,
+   "price": 2159,
    "shop": "formanism"
   }
  },
@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -848,9 +848,9 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-09-17",
+  "date": "2026-09-21",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 8,
+  "resultCount": 7,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
@@ -1044,13 +1044,13 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-09-18",
+  "date": "2026-09-21",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "【9月20日限定！最大100％ポイントバック】シンワ測定 デジタル温度計 SMART B 73117",
+   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
    "price": 2300,
    "shop": "Arclands Online 楽天市場支店"
   }
@@ -1092,13 +1092,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
    "price": 9350,
    "shop": "charm 楽天市場店"
   }
@@ -1224,13 +1224,13 @@
   }
  },
  "water_test_tetra_nh3": {
-  "date": "2026-09-19",
+  "date": "2026-09-21",
   "query": "テトラ テスト試験紙 NH3 NH4 アンモニア 25回",
   "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4",
   "best": {
-   "itemName": "【9／20限定】当選確率2分の1！1等最大100％　テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回",
+   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回　関東当日便",
    "price": 1917,
    "shop": "charm 楽天市場店"
   }
