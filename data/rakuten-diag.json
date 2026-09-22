@@ -624,14 +624,14 @@
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
    "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
-   "price": 1260,
+   "price": 1520,
    "shop": "charm 楽天市場店"
   }
  },
@@ -660,14 +660,14 @@
   }
  },
  "media_eheim_2217_fine": {
-  "date": "2026-09-08",
+  "date": "2026-09-22",
   "query": "エーハイム 2217 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=5.9 入数(6),消耗品(ろ材),適合表記(2217)",
   "best": {
    "itemName": "エーハイム　細目フィルターパッド　6枚入　2217専用ろ材　関東当日便",
-   "price": 1900,
+   "price": 2270,
    "shop": "charm 楽天市場店"
   }
  },
@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
-   "price": 1500,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
+   "price": 1685,
+   "shop": "ペッツマム"
   }
  },
  "shelter_moist_hide": {
