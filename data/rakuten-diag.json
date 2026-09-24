@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-09-17",
+  "date": "2026-09-24",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【9/19 20時〜エントリー+購入でP5倍★】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用",
+   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -144,14 +144,14 @@
   }
  },
  "enclosure_glass_45": {
-  "date": "2026-09-11",
+  "date": "2026-09-24",
   "query": "GEX EXOTERRA グラステラリウム 4545",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.9 照明系(ランプ)",
   "best": {
    "itemName": "ジェックス EXO TERRA コンパクトトップ45N PT2226 26W(2灯式) 爬虫類・両生類用紫外線ランプ用照明器具 グラステラリウム4530/454",
-   "price": 7383,
+   "price": 7359,
    "shop": "アルメリア楽天市場店"
   }
  },
@@ -368,15 +368,15 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-09-18",
+  "date": "2026-09-24",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=3.9",
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=5.7",
   "best": {
-   "itemName": "テトラ (Tetra) レプトミン ニオイブロック超大粒 200g ニオイ汚れをブロック アンモニアを吸着 腸内の善玉菌を増やす とびつくおいしさエビと酵母配合",
-   "price": 2526,
-   "shop": "CheeringCharm 楽天市場店"
+   "itemName": "カメの餌 テトラ レプトミン 中粒 70g 76821 スペクトラムブランズ [水棲カメ用 亀のエサ 爬虫類フード 臭い対策 免疫力 善玉菌 Tetra]",
+   "price": 353,
+   "shop": "セブンプロ"
   }
  },
  "food_aquatic_staple": {
@@ -436,15 +436,15 @@
   "best": null
  },
  "food_mazuri_tortoise": {
-  "date": "2026-09-21",
+  "date": "2026-09-24",
   "query": "Mazuri Tortoise Diet リクガメ フード",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=6.3",
+  "reason": "score=8.3",
   "best": {
    "itemName": "【即納在庫品】 ［正規品］ Mazuri トータスダイエット 560g リクガメフード 5M21 ホシガメ ハコガメ エサ マズリ",
    "price": 2300,
-   "shop": "ホームセンターバロー2号店"
+   "shop": "ホームセンターバロー 楽天市場店"
   }
  },
  "food_reptomin_tetra": {
@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
-   "price": 1500,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
+   "price": 1685,
+   "shop": "ペッツマム"
   }
  },
  "shelter_moist_hide": {
@@ -848,14 +848,14 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-09-21",
+  "date": "2026-09-24",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
   "resultCount": 7,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
    "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
-   "price": 1771,
+   "price": 1714,
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
@@ -960,9 +960,9 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-09-14",
+  "date": "2026-09-24",
   "query": "爬虫類 プロバイオティクス 腸内環境",
-  "resultCount": 5,
+  "resultCount": 7,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1000,14 +1000,14 @@
   }
  },
  "tank_90": {
-  "date": "2026-08-30",
+  "date": "2026-09-24",
   "query": "コトブキ工芸 KC-ワイド900 水槽",
   "resultCount": 4,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:コトブキ工芸,series:コトブキ工芸",
   "best": {
    "itemName": "◇寿工芸 KC‐ワイド900 ブラック | コトブキ工芸 90cm水槽 コトブキ ワイド900",
-   "price": 12811,
+   "price": 12050,
    "shop": "ペットフォレスト 楽天市場店"
   }
  },
@@ -1024,12 +1024,16 @@
   }
  },
  "thermometer_aqua": {
-  "date": "2026-08-29",
+  "date": "2026-09-24",
   "query": "INKBIRD 水温計 Bluetooth",
-  "resultCount": 0,
-  "outcome": "NO_RESULT",
-  "reason": null,
-  "best": null
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=3.5",
+  "best": {
+   "itemName": "INKBIRD 風呂温度計 お風呂 温度計 プール温度計 デジタル 水温計 浮かべる水温計 ワイヤレス フローティング温度計 水槽用 プール お風呂 水族館 B",
+   "price": 4735,
+   "shop": "ソファポテト"
+  }
  },
  "thermometer_digital": {
   "date": "2026-08-29",
@@ -1068,9 +1072,9 @@
   }
  },
  "thermometer_wifi": {
-  "date": "2026-09-03",
+  "date": "2026-09-24",
   "query": "INKBIRD WiFi 温湿度計 IBS-TH3",
-  "resultCount": 2,
+  "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:INKBIRD,model:IBS-TH3,series:ibs-th3",
   "best": {
@@ -1132,13 +1136,13 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-09-17",
+  "date": "2026-09-24",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 7,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "【9/19 20時〜エントリー+購入でP5倍★】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TER",
+   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
@@ -1212,15 +1216,15 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-14",
+  "date": "2026-09-24",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 10,
+  "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=6.2",
+  "reason": "score=4.2",
   "best": {
-   "itemName": "テトラ (Tetra) テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬",
-   "price": 3102,
-   "shop": "kichibei"
+   "itemName": "テトラ (Tetra)テスト 試験紙 6in1 （淡水用） 25枚",
+   "price": 2391,
+   "shop": "花丸良品堂 楽天市場店"
   }
  },
  "water_test_tetra_nh3": {
