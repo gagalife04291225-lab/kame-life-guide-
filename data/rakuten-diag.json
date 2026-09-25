@@ -368,14 +368,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-09-24",
+  "date": "2026-09-25",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=5.7",
   "best": {
-   "itemName": "カメの餌 テトラ レプトミン 中粒 70g 76821 スペクトラムブランズ [水棲カメ用 亀のエサ 爬虫類フード 臭い対策 免疫力 善玉菌 Tetra]",
-   "price": 353,
+   "itemName": "カメの餌 テトラ レプトミンスーパー 中粒 80g 76826 スペクトラムブランズ [プレミアムフード エビ入り 水棲カメ用 亀のエサ 爬虫類フード 善玉菌 ",
+   "price": 668,
    "shop": "セブンプロ"
   }
  },
@@ -404,13 +404,13 @@
   }
  },
  "food_dried_shrimp": {
-  "date": "2026-09-09",
+  "date": "2026-09-25",
   "query": "キョーリン カメのごほうび 乾燥川エビ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:カメのごほうび",
   "best": {
-   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り　関東当日便",
+   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ��カルシウム　お一人様150点限り　関東当日便",
    "price": 210,
    "shop": "charm 楽天市場店"
   }
@@ -744,15 +744,15 @@
   "best": null
  },
  "shelter_medium": {
-  "date": "2026-09-24",
+  "date": "2026-09-25",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -1216,9 +1216,9 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-24",
+  "date": "2026-09-25",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 6,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4.2",
   "best": {
