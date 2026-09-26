@@ -26,6 +26,11 @@ DEFAULT_LAG_DAYS = 3
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Export Search Console Search Analytics data")
     parser.add_argument("--site-url", default=os.getenv("GSC_SITE_URL"))
+    parser.add_argument(
+        "--site-host",
+        default=os.getenv("GSC_SITE_HOST", "kamelifeguide.com"),
+        help="Auto-discovery host used when --site-url is omitted",
+    )
     parser.add_argument("--credentials", default=os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
     parser.add_argument("--days", type=int, default=90)
     parser.add_argument("--lag-days", type=int, default=DEFAULT_LAG_DAYS)
@@ -74,6 +79,39 @@ def build_service(credentials_path: str):
         str(path), scopes=[SCOPE]
     )
     return build("searchconsole", "v1", credentials=credentials, cache_discovery=False)
+
+
+def discover_site_url(service: Any, host: str) -> str:
+    """Find an accessible Search Console property for host.
+
+    Prefer a Domain property because it covers all protocols/subdomains. Fall
+    back to a URL-prefix property whose hostname matches exactly.
+    """
+    from urllib.parse import urlparse
+
+    entries = service.sites().list().execute().get("siteEntry", [])
+    domain_matches: list[str] = []
+    prefix_matches: list[str] = []
+
+    for entry in entries:
+        site_url = entry.get("siteUrl", "")
+        if site_url == f"sc-domain:{host}":
+            domain_matches.append(site_url)
+            continue
+        try:
+            if urlparse(site_url).hostname == host:
+                prefix_matches.append(site_url)
+        except ValueError:
+            continue
+
+    matches = domain_matches or prefix_matches
+    if not matches:
+        visible = ", ".join(sorted(e.get("siteUrl", "") for e in entries if e.get("siteUrl")))
+        raise SystemExit(
+            f"No accessible Search Console property matched host '{host}'. "
+            f"Accessible properties: {visible or '(none)'}"
+        )
+    return sorted(matches)[0]
 
 
 def fetch_rows(
@@ -204,15 +242,14 @@ def main() -> int:
     args = parse_args()
     if args.self_test:
         return run_self_test()
-    if not args.site_url:
-        raise SystemExit("Missing Search Console property. Set GSC_SITE_URL or pass --site-url.")
 
     start, end = resolve_window(args)
     output_dir = Path(args.output_dir)
     service = build_service(args.credentials)
+    site_url = args.site_url or discover_site_url(service, args.site_host)
 
     try:
-        summary = export_dataset(service, args.site_url, start, end, output_dir)
+        summary = export_dataset(service, site_url, start, end, output_dir)
     except Exception as exc:
         # Do not dump credential material; Google client errors are safe to summarize.
         print(f"GSC export failed: {type(exc).__name__}: {exc}", file=sys.stderr)
