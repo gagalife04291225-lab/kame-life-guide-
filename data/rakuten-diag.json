@@ -1012,15 +1012,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-09-26",
+  "date": "2026-09-27",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=6.2",
+  "reason": "score=7.7",
   "best": {
    "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
    "price": 710,
-   "shop": "爬虫類用品店 トップクリエイト"
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1216,15 +1216,15 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-25",
+  "date": "2026-09-27",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 5,
+  "resultCount": 7,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=4.2",
+  "reason": "score=6.2",
   "best": {
-   "itemName": "テトラ (Tetra)テスト 試験紙 6in1 （淡水用） 25枚",
-   "price": 2391,
-   "shop": "花丸良品堂 楽天市場店"
+   "itemName": "テトラ (Tetra) テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬",
+   "price": 3102,
+   "shop": "kichibei"
   }
  },
  "water_test_tetra_nh3": {
