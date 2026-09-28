@@ -24,9 +24,9 @@
   }
  },
  "basking_75w": {
-  "date": "2026-09-09",
+  "date": "2026-09-28",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 9,
+  "resultCount": 8,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
@@ -132,15 +132,15 @@
   }
  },
  "calcium_no_d3": {
-  "date": "2026-09-11",
+  "date": "2026-09-28",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
-   "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
-   "price": 1200,
-   "shop": "レヨンベールアクア楽天市場店"
+   "itemName": "エキゾテラ GEX EXOTERRA カルシウム 90g PT1815 粉末カルシウム あまり紫外線を必要としない夜行性爬虫類に最適",
+   "price": 1041,
+   "shop": "ラサンタ"
   }
  },
  "enclosure_glass_45": {
@@ -156,9 +156,9 @@
   }
  },
  "enclosure_kayuso_90": {
-  "date": "2026-08-30",
+  "date": "2026-09-28",
   "query": "SANKO パンテオン ブラック BK9045",
-  "resultCount": 7,
+  "resultCount": 6,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:三晃商会,model:BK9045,series:パンテオン",
   "best": {
@@ -368,14 +368,14 @@
   }
  },
  "food_aquatic_premium": {
-  "date": "2026-09-25",
+  "date": "2026-09-28",
   "query": "レプトミン テトラ 亀 餌",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=5.7",
   "best": {
-   "itemName": "カメの餌 テトラ レプトミンスーパー 中粒 80g 76826 スペクトラムブランズ [プレミアムフード エビ入り 水棲カメ用 亀のエサ 爬虫類フード 善玉菌 ",
-   "price": 668,
+   "itemName": "カメの餌 テトラ レプトミン 中粒 70g 76821 スペクトラムブランズ [水棲カメ用 亀のエサ 爬虫類フード 臭い対策 免疫力 善玉菌 Tetra]",
+   "price": 353,
    "shop": "セブンプロ"
   }
  },
@@ -564,14 +564,14 @@
   }
  },
  "hydrometer_tetra": {
-  "date": "2026-09-26",
+  "date": "2026-09-28",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
    "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
-   "price": 2340,
+   "price": 2250,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -1084,9 +1084,9 @@
   }
  },
  "thermostat": {
-  "date": "2026-09-04",
+  "date": "2026-09-28",
   "query": "サーモスタット 爬虫類 アナログ",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.7",
   "best": {
@@ -1216,23 +1216,23 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-27",
+  "date": "2026-09-28",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 7,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=6.2",
+  "reason": "score=4.2",
   "best": {
-   "itemName": "テトラ (Tetra) テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬",
-   "price": 3102,
-   "shop": "kichibei"
+   "itemName": "テトラ (Tetra)テスト 試験紙 6in1 （淡水用） 25枚",
+   "price": 2391,
+   "shop": "花丸良品堂 楽天市場店"
   }
  },
  "water_test_tetra_nh3": {
-  "date": "2026-09-21",
+  "date": "2026-09-28",
   "query": "テトラ テスト試験紙 NH3 NH4 アンモニア 25回",
   "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=4",
+  "reason": "score=4.5",
   "best": {
    "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回　関東当日便",
    "price": 1917,
