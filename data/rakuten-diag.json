@@ -332,9 +332,9 @@
   "best": null
  },
  "fixture_exoterra_light_dome_14": {
-  "date": "2026-09-16",
+  "date": "2026-10-01",
   "query": "GEX エキゾテラ ライトドーム 14cm PT2055",
-  "resultCount": 2,
+  "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=6.2",
   "best": {
@@ -404,13 +404,13 @@
   }
  },
  "food_dried_shrimp": {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "query": "キョーリン カメのごほうび 乾燥川エビ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
-  "reason": "maker:キョーリン,容量一致,series:乾燥川エビ",
+  "reason": "maker:キョーリン,容量一致,series:カメのごほうび",
   "best": {
-   "itemName": "キョーリン　乾燥川エビ　カメのご��うび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り　関東当日便",
+   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り　関東当日便",
    "price": 210,
    "shop": "charm 楽天市場店"
   }
@@ -612,25 +612,25 @@
   }
  },
  "media_eheim_2213_coarse": {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "query": "エーハイム 2213 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=7.2 入数(2),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
+   "itemName": "【10／1限定】当選確率2分の1！1等最大100％　エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
    "price": 1070,
    "shop": "charm 楽天市場店"
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
+   "itemName": "【10／1限定】当選確率2分の1！1等最大100％　エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
    "price": 1520,
    "shop": "charm 楽天市場店"
   }
@@ -1160,14 +1160,14 @@
   }
  },
  "uvb_mvb_100": {
-  "date": "2026-09-19",
+  "date": "2026-10-01",
   "query": "GEX EXOTERRA ソーラーグローUV 80W",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,80W,series:ソーラーグローuv",
   "best": {
    "itemName": "【送料無料】エキゾテラ GEX EXOTERRA ソーラーグローUV 80W PT2334 UVB&バスキングライト 昼用 砂漠サバンナに棲息する昼行性の爬虫類",
-   "price": 7611,
+   "price": 7263,
    "shop": "美容と雑貨のお店 エヌエルディ"
   }
  },
@@ -1216,15 +1216,15 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 7,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4.2",
   "best": {
-   "itemName": "テトラ テスト 6 in 1 試験紙 25枚 水槽の水質を一瞬で測定 スマートフォンアプリ対応で誰でも簡単水質測定ができる 総硬度 硝酸塩 亜硝酸塩 塩素 炭酸",
-   "price": 3576,
-   "shop": "ダイコク屋本店楽天市場店"
+   "itemName": "テトラ (Tetra)テスト 試験紙 6in1 （淡水用） 25枚",
+   "price": 2391,
+   "shop": "花丸良品堂 楽天市場店"
   }
  },
  "water_test_tetra_nh3": {
