@@ -3239,8 +3239,9 @@ const EQUIPMENT_MAP = {
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: null }, // Phase 39-P4: shelter_cave_lgはサイズ不一致(要再選定)のため外し、standardへフォールバック
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_aquatic_premium',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' },
+    food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' }, // 2026-10-03: 水棲ガメ用レプトミンの誤導線を除去
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null },
+    water_dish:       { budget: 'waterdish_zoomed_ramp_bowl', standard: 'waterdish_zoomed_ramp_bowl', premium: null },
   },
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
@@ -3279,6 +3280,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
@@ -3291,6 +3293,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
@@ -3313,6 +3316,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
@@ -3327,6 +3331,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
+    water_dish:       { budget: 'waterdish_zoomed_ramp_bowl', standard: 'waterdish_zoomed_ramp_bowl', premium: null },
   },
 
 };
