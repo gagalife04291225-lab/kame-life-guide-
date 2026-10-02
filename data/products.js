@@ -864,6 +864,61 @@ const PRODUCTS = {
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317322.jpg?_ex=128x128',
   },
 
+  // 2026-10-03: GEX公式仕様で再選定。カメは低水位・押し上げによる空焚き事故に注意し、必ず水量と最低水位を確認する。
+  heater_gex_heatnavi_160: {
+    id: 'heater_gex_heatnavi_160',
+    name: 'GEX NEW セーフカバー ヒートナビ 160',
+    category: 'heating',
+    tier: 'standard',
+    priceRange: '¥3,000–5,000',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B01FI29HW6?tag=kamelife090e-22',
+    asin: 'B01FI29HW6',
+    image: '/assets/products/placeholder.webp',
+    why: '15〜32℃可変・160W・水容量約64L以下。安全カバーと温度ヒューズ付き。カメ飼育では完全水没と確実な固定、水流による撹拌、水温計併用が必須',
+    rating: null,
+    badge: 'Safety Pick',
+    recommendedFor: ['semi_aquatic_small'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 160',
+  },
+
+  heater_gex_heatnavi_220: {
+    id: 'heater_gex_heatnavi_220',
+    name: 'GEX NEW セーフカバー ヒートナビ 220',
+    category: 'heating',
+    tier: 'standard',
+    priceRange: '¥3,500–6,000',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B01FI29ID4?tag=kamelife090e-22',
+    asin: 'B01FI29ID4',
+    image: '/assets/products/placeholder.webp',
+    why: '15〜32℃可変・220W・水容量約110L以下。中型水棲ガメで水量が増えたときの候補。最低水位・完全水没・固定・撹拌・水温計を必ず確認',
+    rating: null,
+    badge: 'Safety Pick',
+    recommendedFor: ['semi_aquatic_medium', 'japanese_pond'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 220',
+  },
+
+  heater_gex_navipack_300: {
+    id: 'heater_gex_navipack_300',
+    name: 'GEX セーフカバーナビパック 300',
+    category: 'heating',
+    tier: 'premium',
+    priceRange: '¥5,500–8,000',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B015ZDLRXU?tag=kamelife090e-22',
+    asin: 'B015ZDLRXU',
+    image: '/assets/products/placeholder.webp',
+    why: '15〜35℃可変・300W・水容量約150L以下。サーモスタット＋交換式ヒーターの大型水槽向け。カメ飼育では最低水位・完全水没・固定・撹拌・水温計を必ず確認',
+    rating: null,
+    badge: 'Large Tank',
+    recommendedFor: ['fully_aquatic', 'semi_aquatic_medium'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX セーフカバーナビパック 300',
+  },
+
   heater_aqua_100w: {
     id: 'heater_aqua_100w',
     name: 'GEX カメ元気 オートヒーター SH55',
@@ -3239,8 +3294,9 @@ const EQUIPMENT_MAP = {
     substrate:        { budget: 'substrate_soil',        standard: 'substrate_grassland_mix',premium: 'substrate_cypress' },
     shelter:          { budget: 'shelter_small',         standard: 'shelter_medium',         premium: null }, // Phase 39-P4: shelter_cave_lgはサイズ不一致(要再選定)のため外し、standardへフォールバック
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
-    food:             { budget: 'food_aquatic_premium',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' },
+    food:             { budget: 'food_tortoise_staple',         standard: 'food_tortoise_staple',          premium: 'food_tortoise_herbs' }, // 2026-10-03: 水棲ガメ用レプトミンの誤導線を除去
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_calcium_plus',      premium: null },
+    water_dish:       { budget: 'waterdish_zoomed_ramp_bowl', standard: 'waterdish_zoomed_ramp_bowl', premium: null },
   },
 
   // ── 乾燥系リクガメ（大型：ヘルマン・チャコ・ヒョウモン等）
@@ -3274,11 +3330,12 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
-    heating:          { budget: 'thermostat_kotobuki_hydra', standard: 'heater_aqua_100w',    premium: 'thermostat_digital' }, // Phase 39-P3: thermostat(ブランド不明)→国内コトブキ実商品に差し替え
+    heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_160', premium: 'heater_gex_heatnavi_220' }, // 2026-10-03: カメ向けに安全カバー付き温度可変式へ
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
@@ -3286,17 +3343,18 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_90',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
-    heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_220', premium: 'heater_gex_navipack_300' },
     filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
   fully_aquatic: {
     enclosure:        { budget: 'tank_90',               standard: 'tank_120_aqua',          premium: 'tank_120_aqua' },
-    heating:          { budget: 'heater_aqua_100w',      standard: 'heater_aqua_200w',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_gex_heatnavi_220', standard: 'heater_gex_navipack_300', premium: 'heater_gex_navipack_300' },
     filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
     substrate:        { budget: 'substrate_sand_river',  standard: 'substrate_sand_river',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
@@ -3308,11 +3366,12 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'tank_60',               standard: 'tank_90',                premium: 'tank_120_aqua' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
-    heating:          { budget: 'thermostat_kotobuki_hydra', standard: 'heater_aqua_100w',    premium: 'thermostat_digital' }, // Phase 39-P3: thermostat(ブランド不明)→国内コトブキ実商品に差し替え
+    heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_220', premium: 'heater_gex_navipack_300' }, // 2026-10-03: 水量に応じた安全カバー付き温度可変式へ
     filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
+    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
@@ -3327,6 +3386,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: null },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_box_turtle_omnivore',        premium: 'food_tortoise_gel' },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
+    water_dish:       { budget: 'waterdish_zoomed_ramp_bowl', standard: 'waterdish_zoomed_ramp_bowl', premium: null },
   },
 
 };
