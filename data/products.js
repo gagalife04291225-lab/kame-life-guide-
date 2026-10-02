@@ -246,6 +246,19 @@ const PRODUCTS = {
   // 2026-09-08 商品不足監査: setup-specs（musk / reeves / snakeneck / terrapin）は60cm以上の水槽を前提にしているが、
   // 既存の shelter_turtle_dock（タートルバンク S）は適合〜幅40cm水槽のため、60cm以上向けに M を追加。
   // ASIN は WebSearch("B00O0QM6H0", amazon.co.jp) で商品ページURL /dp/B00O0QM6H0 を確認済み。価格は未取得のため空欄。
+  // 2026-10-03 GEX現行カメ用品ラインから追加。商品同一性確認前なので検索導線のみ。
+  shelter_gex_island_loft: {
+    id: 'shelter_gex_island_loft',
+    name: 'GEX カメ元気 カメの島 ロフトタイプ',
+    category: 'shelter', tier: 'budget', priceRange: null,
+    affiliateUrl: '#', asin: null, image: '/assets/products/placeholder.webp',
+    why: '約30×17.5×12.5cmのカメ用陸場。個体の甲長と水槽内寸を確認し、全身が上がって乾けるサイズで使う',
+    rating: null, badge: 'Turtle Specific',
+    recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null, rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX カメ元気 カメの島 ロフトタイプ',
+  },
+
   shelter_turtle_dock_m: {
     id: 'shelter_turtle_dock_m',
     name: 'GEX EXOTERRA タートルバンク M PT3801',
@@ -865,6 +878,19 @@ const PRODUCTS = {
   },
 
   // 2026-10-03: GEX公式仕様で再選定。カメは低水位・押し上げによる空焚き事故に注意し、必ず水量と最低水位を確認する。
+  // 2026-10-03 全市場監査: テトラ公式のカメ専用ヒーター。小型・20L以下専用として追加。
+  heater_tetra_repto_50w: {
+    id: 'heater_tetra_repto_50w',
+    name: 'テトラ レプトヒーター 50W',
+    category: 'heating', tier: 'budget', priceRange: null,
+    affiliateUrl: '#', asin: null, image: '/assets/products/placeholder.webp',
+    why: 'カメ用の安全カバー付き50Wヒーター。メーカー適合は20L以下、26℃前後の自動温度調節。水流のある場所に設置し、水温計で実測する。大型水槽や低水位で容量不足になる環境には使わない',
+    rating: null, badge: 'Small Tank',
+    recommendedFor: ['semi_aquatic_small'],
+    rakutenUrl: null, rakutenStatus: 'search',
+    rakutenSearchTerm: 'テトラ レプトヒーター 50W',
+  },
+
   heater_gex_heatnavi_160: {
     id: 'heater_gex_heatnavi_160',
     name: 'GEX NEW セーフカバー ヒートナビ 160',
@@ -1233,6 +1259,32 @@ const PRODUCTS = {
   },
 
   // ── Task2 追加 ──
+
+  // 2026-10-03 市場ランキングで上位確認。浅水位対応のカメ専用フィルターとして追加。
+  filter_suisaku_turtle_pro_l2: {
+    id: 'filter_suisaku_turtle_pro_l2',
+    name: '水作 タートルフィルター PRO L2',
+    category: 'filter', tier: 'budget', priceRange: null,
+    affiliateUrl: '#', asin: null, image: '/assets/products/placeholder.webp',
+    why: 'カメ用品市場で流通量の多い浅水位向けフィルター候補。商品同一性・メーカー現行仕様を販売先単位で確認できるまで固定ASINは付けない',
+    rating: null, badge: 'Market Pick',
+    recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null, rakutenStatus: 'search',
+    rakutenSearchTerm: '水作 タートルフィルター PRO L2',
+  },
+
+  // GEX現行カメ用品ラインで確認。専用交換ろ材があるため継続運用導線まで扱う。
+  filter_gex_dustcatch: {
+    id: 'filter_gex_dustcatch',
+    name: 'GEX カメ元気 ダストキャッチフィルター',
+    category: 'filter', tier: 'budget', priceRange: null,
+    affiliateUrl: '#', asin: null, image: '/assets/products/placeholder.webp',
+    why: 'GEX現行カメ用品の専用フィルター。小型水槽の選択肢。大型・高負荷水槽では外部フィルター等へ段階的に移行する',
+    rating: null, badge: 'Turtle Specific',
+    recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
+    rakutenUrl: null, rakutenStatus: 'search',
+    rakutenSearchTerm: 'GEX カメ元気 ダストキャッチフィルター',
+  },
 
   filter_hang_on: {
     id: 'filter_hang_on',
