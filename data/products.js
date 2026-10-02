@@ -2803,6 +2803,18 @@ const PRODUCTS = {
     rakutenUrl: null, rakutenStatus: 'search', rakutenSearchTerm: 'テトラ レプトミンスーパー 大粒 260g',
   },
 
+  food_kamepros_premium_200: {
+    id: 'food_kamepros_premium_200',
+    name: 'キョーリン カメプロス プレミアム 大スティック 200g',
+    category: 'food', tier: 'premium', priceRange: null,
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B07B4VTBFX?tag=kamelife090e-22',
+    asin: 'B07B4VTBFX', image: '/assets/products/placeholder.webp',
+    why: '大きめの水棲ガメ向けのプレミアム大スティック。嗜好性を重視した主食候補。',
+    rating: null, badge: null,
+    recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'japanese_pond'],
+    rakutenUrl: null, rakutenStatus: 'search', rakutenSearchTerm: 'キョーリン カメプロス プレミアム 大スティック 200g',
+  },
+
   food_kamepros_large_60: {
     id: 'food_kamepros_large_60',
     name: 'キョーリン カメプロス 大スティック 60g',
