@@ -3417,11 +3417,11 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
     heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_160', premium: 'heater_gex_heatnavi_220' }, // 2026-10-03: カメ向けに安全カバー付き温度可変式へ
-    filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
+    filter:           { budget: 'filter_suisaku_turtle_pro_l2', standard: 'filter_turtle_clean', premium: 'filter_canister_medium' }, // 2026-10-03: 市場定番の浅水位カメ用フィルターをbudgetへ
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
-    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
+    shelter:          { budget: 'shelter_gex_island_loft', standard: 'shelter_turtle_dock_m', premium: null }, // 2026-10-03: 国内カメ専用陸場→大型側の順
   },
 
   // ── 半水棲・中型（クサガメ・アカミミ・チズガメ等）
@@ -3434,7 +3434,7 @@ const EQUIPMENT_MAP = {
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
-    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
+    shelter:          { budget: 'shelter_gex_island_loft', standard: 'shelter_turtle_dock_m', premium: null }, // 2026-10-03: 国内カメ専用陸場→大型側の順
   },
 
   // ── 完全水棲（スッポン・マタマタ・ワニガメ等）
@@ -3453,11 +3453,11 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
     heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_220', premium: 'heater_gex_navipack_300' }, // 2026-10-03: 水量に応じた安全カバー付き温度可変式へ
-    filter:           { budget: 'filter_small',          standard: 'filter_turtle_clean',    premium: 'filter_canister_medium' },
+    filter:           { budget: 'filter_suisaku_turtle_pro_l2', standard: 'filter_turtle_clean', premium: 'filter_canister_medium' }, // 2026-10-03: 市場定番の浅水位カメ用フィルターをbudgetへ
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_mineral_block', standard: 'supplement_calcium_d3',         premium: null },
-    shelter:          { budget: 'shelter_turtle_dock_m', standard: 'shelter_turtle_dock_m', premium: null },
+    shelter:          { budget: 'shelter_gex_island_loft', standard: 'shelter_turtle_dock_m', premium: null }, // 2026-10-03: 国内カメ専用陸場→大型側の順
   },
 
   // ── 水陸両用ハコガメ（ミツユビ・トウブ・サバンナ等）
