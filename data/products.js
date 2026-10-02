@@ -1194,7 +1194,7 @@ const PRODUCTS = {
     asin: 'B002S152LG',
     rakutenSearchTerm: 'EHEIM クラシック 2213 外部フィルター',
     image: '/assets/products/placeholder.webp',
-    why: '水量の多い大型水槽向け。ろ過能力が高く水換え頻度を削減',
+    why: 'メーカー適合目安45〜75cm水槽（約40〜114L）、流量440/500L/h、ろ材容量約2.2L（コンテナ使用時）。中型までの候補。カメ水槽では汚れ量と実水量を見て余裕を持たせる',
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic'],
@@ -1218,7 +1218,7 @@ const PRODUCTS = {
     asin: 'B002OCNJXM',
     rakutenSearchTerm: 'EHEIM クラシック 2215 外部フィルター',
     image: '/assets/products/placeholder.webp',
-    why: '大型半水棲・完全水棲ガメの90cm以上水槽に対応',
+    why: 'メーカー適合目安60〜90cm水槽（約57〜157L）、流量500/620L/h、ろ材容量約4L。90cm級の候補だが、カメの高い汚濁負荷では実水量と個体サイズに応じて2217等も検討',
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
@@ -1286,7 +1286,7 @@ const PRODUCTS = {
     asin: 'B002SGX79U',
     rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
-    why: '外部フィルターの定番モデル。ろ過能力と静音性が高く、長期間使い続けるユーザーが多い。国内流通の 2217-NEW（2217330）はろ材別売のため、メック・サブストラット(プロ)・パッドを別途そろえる',
+    why: 'メーカー適合目安90〜150cm水槽（約101〜345L）、流量1000L/h、ろ材容量約6L。大型水棲ガメの高負荷水槽で余裕を取りやすい。2217-NEWはろ材別売のため別途ろ材が必要',
     rating: 4.9,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
@@ -1367,6 +1367,26 @@ const PRODUCTS = {
   },
 
   // ── Phase 39-P1 昇格候補 追加（要Amazon/楽天個別確認、amazon_status/rakuten_status未検証） ──
+
+  // 2026-10-03 深掘り監査: Fluval公式仕様 + turtle飼育コミュニティでの反復使用例を確認。
+  // 国内価格が高い場合があるためEHEIMを置換せず、比較候補として追加する。
+  filter_fluval_407: {
+    id: 'filter_fluval_407',
+    name: 'Fluval 407 外部フィルター',
+    category: 'filter',
+    tier: 'premium',
+    priceRange: '',
+    affiliateUrl: '#',
+    asin: null,
+    image: '/assets/products/placeholder.webp',
+    why: 'メーカー適合150〜500L、循環930L/h、ろ材バスケット4.2L。カメ飼育者の実使用例が複数ある比較候補。国内販売価格・正規流通・商品同一性を確認できる販売先だけを選ぶ',
+    rating: null,
+    badge: 'Community Pick',
+    recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'advanced'],
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenSearchTerm: 'Fluval 407 外部フィルター',
+  },
 
   filter_fluval_fx6: {
     id: 'filter_fluval_fx6',
@@ -2903,6 +2923,20 @@ const PRODUCTS = {
     rakutenConfidence: 6.4,
     rakutenLastUpdated: '2026-10-02',
     rakutenImageUrl: null,
+  },
+
+  // 2026-02発売をキョーリン公式で確認。70g/200gと同一プレミアム配合の大容量550g。
+  // Amazon/Rakutenの個別商品同一性は未確定のため、誤リンクを避けて検索導線のみ。
+  food_kamepros_premium_550: {
+    id: 'food_kamepros_premium_550',
+    name: 'キョーリン カメプロス プレミアム 550g',
+    category: 'food', tier: 'premium', priceRange: null,
+    affiliateUrl: '#', asin: null, image: '/assets/products/placeholder.webp',
+    why: '3cm以上の水棲ガメ向けプレミアム配合の大容量550g。複数飼育や消費量が多い環境の容量候補。粒サイズと個体サイズを確認して選ぶ',
+    rating: null, badge: 'Large Pack',
+    recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'japanese_pond'],
+    rakutenUrl: null, rakutenStatus: 'search',
+    rakutenSearchTerm: 'キョーリン カメプロス プレミアム 550g',
   },
 
   food_kamepros_large_60: {
