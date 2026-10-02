@@ -55,6 +55,7 @@ var SK_DISPLAY_CAT_MAP = {
   substrate:        '床材',
   thermometer:      '温湿度計',
   shelter:          'シェルター',
+  water_dish:       '水入れ・水浴び容器',
   food:             'フード',
   supplements:      'サプリメント',
 };
@@ -232,7 +233,7 @@ var SK_TABS = [
 var SK_CAT_ORDER = [
   'enclosure', 'lighting_uvb', 'lighting_basking',
   'heating', 'filter', 'substrate', 'thermometer',
-  'shelter', 'food', 'supplements'
+  'shelter', 'water_dish', 'food', 'supplements'
 ];
 
 /**
