@@ -3378,7 +3378,7 @@ const EQUIPMENT_MAP = {
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_100w' },
     heating:          { budget: 'heater_gex_heatnavi_160', standard: 'heater_gex_heatnavi_220', premium: 'heater_gex_navipack_300' },
-    filter:           { budget: 'filter_turtle_clean',   standard: 'filter_canister_medium', premium: 'filter_canister_premium' },
+    filter:           { budget: 'filter_canister_medium', standard: 'filter_canister_large', premium: 'filter_canister_premium' }, // 2026-10-03: 90cm級で小型専用フィルターを外し、2213→2215→2217へ段階化
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
     supplements:      { budget: 'supplement_calcium_d3',        standard: 'supplement_mineral_block',  premium: null },
@@ -3389,7 +3389,7 @@ const EQUIPMENT_MAP = {
   fully_aquatic: {
     enclosure:        { budget: 'tank_90',               standard: 'tank_120_aqua',          premium: 'tank_120_aqua' },
     heating:          { budget: 'heater_gex_heatnavi_220', standard: 'heater_gex_navipack_300', premium: 'heater_gex_navipack_300' },
-    filter:           { budget: 'filter_canister_medium',standard: 'filter_canister_large',  premium: 'filter_canister_premium' },
+    filter:           { budget: 'filter_canister_large', standard: 'filter_canister_premium', premium: 'filter_fluval_407' }, // 2026-10-03: 完全水棲は高負荷前提。2215→2217→Fluval 407比較候補
     substrate:        { budget: 'substrate_sand_river',  standard: 'substrate_sand_river',   premium: null },
     thermometer:      { budget: 'thermometer_aqua',      standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
     food:             { budget: 'food_aquatic_staple',         standard: 'food_aquatic_premium',          premium: null },
