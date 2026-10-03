@@ -56,7 +56,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -82,7 +82,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -129,7 +129,7 @@ const PRODUCTS = {
     rakutenPrice: 12050,
     rakutenShop: 'ペットフォレスト 楽天市場店',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-24/pf-4972814019201.jpg?_ex=128x128',
   },
 
@@ -155,7 +155,7 @@ const PRODUCTS = {
     rakutenPrice: 26750,
     rakutenShop: 'ネオス 楽天市場店',
     rakutenConfidence: 6.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fish-neos/cabinet/20/sanko20220504-20_1.jpg?_ex=128x128',
   },
 
@@ -199,7 +199,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -418,7 +418,7 @@ const PRODUCTS = {
     rakutenPrice: 3400,
     rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/auc-yabumoto/cabinet/tatempo17/lovely-26514-r.jpg?_ex=128x128',
   },
 
@@ -462,7 +462,7 @@ const PRODUCTS = {
     rakutenPrice: 3363,
     rakutenShop: 'ショップflora楽天市場店',
     rakutenConfidence: 5.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/shopflora/cabinet/onesell018/uec5712d09f0_0.jpg?_ex=128x128',
   },
 
@@ -488,7 +488,7 @@ const PRODUCTS = {
     rakutenPrice: 7263,
     rakutenShop: '美容と雑貨のお店 エヌエルディ',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/beautygoodsnld/cabinet/rakub155_0213/b07bbmvj6h-text.jpg?_ex=128x128',
   },
 
@@ -512,7 +512,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -562,7 +562,7 @@ const PRODUCTS = {
     rakutenPrice: 2980,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/177/17733-1.jpg?_ex=128x128',
   },
 
@@ -586,7 +586,7 @@ const PRODUCTS = {
     rakutenPrice: 1528,
     rakutenShop: 'SooTune',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/sootune/cabinet/onesell004/hinoce53b8439b_0.jpg?_ex=128x128',
   },
 
@@ -611,7 +611,7 @@ const PRODUCTS = {
     rakutenPrice: 2280,
     rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/auc-yabumoto/cabinet/tatempo17/lovely-19103-r.jpg?_ex=128x128',
   },
 
@@ -637,7 +637,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -664,7 +664,7 @@ const PRODUCTS = {
     rakutenPrice: 1420,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/10614472/10614482/imgrc0104785595.jpg?_ex=128x128',
   },
 
@@ -690,7 +690,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -717,7 +717,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -741,7 +741,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -765,7 +765,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -849,7 +849,7 @@ const PRODUCTS = {
     rakutenPrice: 3080,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317321.jpg?_ex=128x128',
   },
 
@@ -873,7 +873,7 @@ const PRODUCTS = {
     rakutenPrice: 3955,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.8,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317322.jpg?_ex=128x128',
   },
 
@@ -887,8 +887,15 @@ const PRODUCTS = {
     why: 'カメ用の安全カバー付き50Wヒーター。メーカー適合は20L以下、26℃前後の自動温度調節。水流のある場所に設置し、水温計で実測する。大型水槽や低水位で容量不足になる環境には使わない',
     rating: null, badge: 'Small Tank',
     recommendedFor: ['semi_aquatic_small'],
-    rakutenUrl: null, rakutenStatus: 'search',
     rakutenSearchTerm: 'テトラ レプトヒーター 50W',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 7,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   heater_gex_heatnavi_160: {
@@ -904,9 +911,15 @@ const PRODUCTS = {
     rating: null,
     badge: 'Safety Pick',
     recommendedFor: ['semi_aquatic_small'],
+    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 160',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 160',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 7.4,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   heater_gex_heatnavi_220: {
@@ -922,9 +935,15 @@ const PRODUCTS = {
     rating: null,
     badge: 'Safety Pick',
     recommendedFor: ['semi_aquatic_medium', 'japanese_pond'],
+    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 220',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX NEW セーフカバー ヒートナビ 220',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 6.1,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   heater_gex_navipack_300: {
@@ -940,9 +959,15 @@ const PRODUCTS = {
     rating: null,
     badge: 'Large Tank',
     recommendedFor: ['fully_aquatic', 'semi_aquatic_medium'],
+    rakutenSearchTerm: 'GEX セーフカバーナビパック 300',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'GEX セーフカバーナビパック 300',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 7.9,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   heater_aqua_100w: {
@@ -965,7 +990,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -992,7 +1017,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1016,14 +1041,14 @@ const PRODUCTS = {
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'semi_aquatic_small', 'japanese_pond'],
     rakutenSearchTerm: 'コトブキ工芸 ヒュドラサーモ HT-330XD',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F247595%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10974927%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00qai0n.nhbnn303.g00qai0n.nhbno1e5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkoiootani%2F10029129%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkoiootani%2Fi%2F10029129%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
-    rakutenItemCode: 'chanet:10974927',
-    rakutenPrice: 4125,
-    rakutenShop: 'charm 楽天市場店',
-    rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-10-02',
-    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2475/247595-1.jpg?_ex=128x128',
+    rakutenItemCode: 'koiootani:10029129',
+    rakutenPrice: 4470,
+    rakutenShop: '大谷錦鯉店',
+    rakutenConfidence: 4.6,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/koiootani/cabinet/hi-tasa-mo/05664102/hydra330xd.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -1068,7 +1093,7 @@ const PRODUCTS = {
     rakutenPrice: 9350,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1869/186702-1.jpg?_ex=128x128',
   },
 
@@ -1092,7 +1117,7 @@ const PRODUCTS = {
     rakutenPrice: 12300,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317240.jpg?_ex=128x128',
   },
 
@@ -1116,7 +1141,7 @@ const PRODUCTS = {
     rakutenPrice: 5980,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1779/177849-1.jpg?_ex=128x128',
   },
 
@@ -1140,7 +1165,7 @@ const PRODUCTS = {
     rakutenPrice: 6028,
     rakutenShop: '水耕栽培専門店のエコゲリラ',
     rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/eco-guerrilla/cabinet/daiichi/pitari_3_700.jpg?_ex=128x128',
   },
 
@@ -1206,7 +1231,7 @@ const PRODUCTS = {
     rakutenPrice: 2095,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/129/12725-1.jpg?_ex=128x128',
   },
 
@@ -1230,7 +1255,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 8.8,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1254,7 +1279,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 9.1,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1269,8 +1294,15 @@ const PRODUCTS = {
     why: 'カメ用品市場で流通量の多い浅水位向けフィルター候補。商品同一性・メーカー現行仕様を販売先単位で確認できるまで固定ASINは付けない',
     rating: null, badge: 'Market Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
-    rakutenUrl: null, rakutenStatus: 'search',
     rakutenSearchTerm: '水作 タートルフィルター PRO L2',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 6.3,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   // GEX現行カメ用品ラインで確認。専用交換ろ材があるため継続運用導線まで扱う。
@@ -1282,8 +1314,15 @@ const PRODUCTS = {
     why: 'GEX現行カメ用品の専用フィルター。小型水槽の選択肢。大型・高負荷水槽では外部フィルター等へ段階的に移行する',
     rating: null, badge: 'Turtle Specific',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],
-    rakutenUrl: null, rakutenStatus: 'search',
     rakutenSearchTerm: 'GEX カメ元気 ダストキャッチフィルター',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 6,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   filter_hang_on: {
@@ -1306,7 +1345,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1348,7 +1387,7 @@ const PRODUCTS = {
     rakutenPrice: 26997,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/459/45560-1.jpg?_ex=128x128',
   },
 
@@ -1372,7 +1411,7 @@ const PRODUCTS = {
     rakutenPrice: 12980,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.4,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/453/45364-1.jpg?_ex=128x128',
   },
 
@@ -1396,7 +1435,7 @@ const PRODUCTS = {
     rakutenPrice: 2796,
     rakutenShop: 'セレクトショップ RST',
     rakutenConfidence: 7.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/r-style-ra/cabinet/r_2023101209/20240606185858_67_1.jpg?_ex=128x128',
   },
 
@@ -1435,9 +1474,15 @@ const PRODUCTS = {
     rating: null,
     badge: 'Community Pick',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'advanced'],
+    rakutenSearchTerm: 'Fluval 407 外部フィルター',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Fluval 407 外部フィルター',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 3.6,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   filter_fluval_fx6: {
@@ -1492,7 +1537,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1527,7 +1572,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1559,7 +1604,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1587,7 +1632,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1621,7 +1666,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1651,7 +1696,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1681,7 +1726,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1711,7 +1756,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.8,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1742,7 +1787,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1772,7 +1817,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1802,7 +1847,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1832,7 +1877,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1863,7 +1908,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1894,7 +1939,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1924,7 +1969,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -1954,7 +1999,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2007,7 +2052,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2075,7 +2120,7 @@ const PRODUCTS = {
     rakutenPrice: 1714,
     rakutenShop: 'ペットフォレスト 楽天市場店',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-15/pf-4972547031426.jpg?_ex=128x128',
   },
 
@@ -2101,7 +2146,7 @@ const PRODUCTS = {
     rakutenPrice: 2000,
     rakutenShop: 'アルメリア楽天市場店',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/almeria/cabinet/item/1956/39076665955_1.jpg?_ex=128x128',
   },
 
@@ -2231,7 +2276,7 @@ const PRODUCTS = {
     rakutenPrice: 760,
     rakutenShop: '爬虫類用品店 トップクリエイト',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/topcreate/cabinet/0036/0036-00121.jpg?_ex=128x128',
   },
 
@@ -2249,14 +2294,14 @@ const PRODUCTS = {
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_forest'],
     rakutenSearchTerm: 'スドー ロックシェルターSP ML',
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00qov0n.nhbnn6bb.g00qov0n.nhbno764/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoxtukuri%2F0036-00123%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoxtukuri%2Fi%2F10020652%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00qlnsn.nhbnn195.g00qlnsn.nhbnoe50/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetsmum%2F20008828%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetsmum%2Fi%2F10045671%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
-    rakutenItemCode: 'toxtukuri:10020652',
-    rakutenPrice: 1500,
-    rakutenShop: 'ペットと園芸のホムセントックリ',
+    rakutenItemCode: 'petsmum:10045671',
+    rakutenPrice: 1685,
+    rakutenShop: 'ペッツマム',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
-    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/toxtukuri/cabinet/0036/0036-00123.jpg?_ex=128x128',
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petsmum/cabinet/reptiles/4974212601934_1.jpg?_ex=128x128',
   },
 
   // ── Task2 追加 ──
@@ -2365,7 +2410,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2436,7 +2481,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2510,7 +2555,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2536,7 +2581,7 @@ const PRODUCTS = {
     rakutenPrice: 2300,
     rakutenShop: 'Arclands Online 楽天市場支店',
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/lamd/cabinet/image70/496091073117_1.jpg?_ex=128x128',
   },
 
@@ -2560,7 +2605,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2587,7 +2632,7 @@ const PRODUCTS = {
     rakutenPrice: 4088,
     rakutenShop: 'SelectSHOP 岐阜 楽天市場店',
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/makana--/cabinet/root_sniper_folder/sniper_folder_00097/imgrc0144194927.jpg?_ex=128x128',
   },
 
@@ -2611,7 +2656,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2639,7 +2684,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2685,7 +2730,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2709,7 +2754,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2738,7 +2783,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2762,7 +2807,7 @@ const PRODUCTS = {
     rakutenPrice: 210,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/147/14730-1.jpg?_ex=128x128',
   },
 
@@ -2809,7 +2854,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2835,7 +2880,7 @@ const PRODUCTS = {
     rakutenPrice: 1100,
     rakutenShop: 'ペットショップ うちのmofu',
     rakutenConfidence: 9.1,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/uchinomofu/cabinet/kyorin/maru/imgrc0098716274.jpg?_ex=128x128',
   },
 
@@ -2897,7 +2942,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2916,7 +2961,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2935,7 +2980,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2954,7 +2999,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2973,7 +3018,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -2987,8 +3032,15 @@ const PRODUCTS = {
     why: '3cm以上の水棲ガメ向けプレミアム配合の大容量550g。複数飼育や消費量が多い環境の容量候補。粒サイズと個体サイズを確認して選ぶ',
     rating: null, badge: 'Large Pack',
     recommendedFor: ['semi_aquatic_medium', 'fully_aquatic', 'japanese_pond'],
-    rakutenUrl: null, rakutenStatus: 'search',
     rakutenSearchTerm: 'キョーリン カメプロス プレミアム 550g',
+    rakutenUrl: null,
+    rakutenStatus: 'search',
+    rakutenItemCode: null,
+    rakutenPrice: null,
+    rakutenShop: null,
+    rakutenConfidence: 6.4,
+    rakutenLastUpdated: '2026-10-03',
+    rakutenImageUrl: null,
   },
 
   food_kamepros_large_60: {
@@ -3006,7 +3058,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3025,7 +3077,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3044,7 +3096,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3075,7 +3127,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3094,7 +3146,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3118,7 +3170,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3147,7 +3199,7 @@ const PRODUCTS = {
     rakutenPrice: 1229,
     rakutenShop: '感花楽天市場店',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/kankapro/cabinet/r_2024061642/20240616094044_138_1.jpg?_ex=128x128',
   },
 
@@ -3173,7 +3225,7 @@ const PRODUCTS = {
     rakutenPrice: 1200,
     rakutenShop: 'レヨンベールアクア楽天市場店',
     rakutenConfidence: 6.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/12000/11633.jpg?_ex=128x128',
   },
 
@@ -3200,7 +3252,7 @@ const PRODUCTS = {
     rakutenPrice: 540,
     rakutenShop: 'ネオス 楽天市場店',
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fish-neos/cabinet/-2/gex20210723-2_1.jpg?_ex=128x128',
   },
 
@@ -3224,7 +3276,7 @@ const PRODUCTS = {
     rakutenPrice: 803,
     rakutenShop: 'フォーチュネスマート',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fortuness/cabinet/r_2026080456/20260804042538_110_1.jpg?_ex=128x128',
   },
 
@@ -3329,7 +3381,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: null,
   },
 
@@ -3354,7 +3406,7 @@ const PRODUCTS = {
     rakutenPrice: 2250,
     rakutenShop: 'レヨンベールアクア楽天市場店',
     rakutenConfidence: 6.1,
-    rakutenLastUpdated: '2026-10-02',
+    rakutenLastUpdated: '2026-10-03',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/50000/41840.jpg?_ex=128x128',
   },
 };
