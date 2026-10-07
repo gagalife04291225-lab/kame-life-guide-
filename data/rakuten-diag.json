@@ -24,9 +24,9 @@
   }
  },
  "basking_75w": {
-  "date": "2026-10-04",
+  "date": "2026-10-07",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 10,
+  "resultCount": 9,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
@@ -260,14 +260,14 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
    "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
-   "price": 12980,
+   "price": 10500,
    "shop": "charm 楽天市場店"
   }
  },
@@ -472,14 +472,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-04",
+  "date": "2026-10-07",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2191,
+   "price": 2189,
    "shop": "ラサンタ"
   }
  },
@@ -692,26 +692,26 @@
   }
  },
  "heater_gex_heatnavi_160": {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "query": "GEX NEW セーフカバー ヒートナビ 160",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=7.4",
+  "outcome": "PROMOTED_LEGACY_STRONG",
+  "reason": "maker:GEX,series:セーフカバー",
   "best": {
    "itemName": "GEX　NEW　セーフカバー　ヒートナビ160　〜60cm水槽用　縦設置可能　ヒーター、サーモ一体型　熱帯魚　関東当日便",
-   "price": 4928,
+   "price": 3780,
    "shop": "charm 楽天市場店"
   }
  },
  "heater_gex_heatnavi_220": {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "query": "GEX NEW セーフカバー ヒートナビ 220",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=6.1",
+  "reason": "score=6.8",
   "best": {
    "itemName": "GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯魚　関東当日便",
-   "price": 5698,
+   "price": 4280,
    "shop": "charm 楽天市場店"
   }
  },
@@ -728,9 +728,9 @@
   }
  },
  "heater_panel_30w": {
-  "date": "2026-08-30",
+  "date": "2026-10-07",
   "query": "みどり商会 ピタリ適温プラス 1号",
-  "resultCount": 5,
+  "resultCount": 4,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,1号,series:ピタリ適温プラス",
   "best": {
@@ -752,9 +752,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-10-03",
+  "date": "2026-10-07",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 4,
+  "resultCount": 3,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -1084,9 +1084,9 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 6,
+  "resultCount": 5,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1248,15 +1248,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-10-04",
+  "date": "2026-10-07",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
