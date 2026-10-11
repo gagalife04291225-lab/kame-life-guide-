@@ -1,0 +1,62 @@
+name: GSC Direct Search Report
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many finalized days to analyze (1-365)'
+        required: false
+        default: '90'
+        type: string
+  schedule:
+    # Every Monday 11:00 JST; settled period ends 3 days earlier
+    - cron: '0 2 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+      GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+      GSC_DAYS: ${{ inputs.days || '90' }}
+      GSC_LAG_DAYS: '3'
+      GSC_OUTPUT: ${{ runner.temp }}/gsc-private-report.json
+      GSC_REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+      GSC_ALLOW_PUBLIC_SUMMARY: ${{ vars.GSC_ALLOW_PUBLIC_SUMMARY }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install read-only API dependencies
+        run: python -m pip install 'google-auth>=2,<3' 'requests>=2.31,<3'
+
+      - name: Offline unit tests
+        run: python -m unittest discover -s tests -p 'test_gsc_direct_report.py'
+
+      - name: Check required settings without printing secrets
+        run: |
+          test -n "$GSC_SITE_URL" || { echo "::error::Set repository variable GSC_SITE_URL to your exact Search Console property."; exit 1; }
+          test -n "$GSC_SERVICE_ACCOUNT_JSON" || { echo "::error::Set repository secret GSC_SERVICE_ACCOUNT_JSON; never print it."; exit 1; }
+
+      - name: Fetch finalized Search Console data
+        run: python scripts/gsc_direct_report.py
+
+      # Do not persist search queries or private metrics as artifacts
+      # on a PUBLIC GitHub Pages source repository.
+      - name: Upload report (private repositories only)
+        if: ${{ github.event.repository.private }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: gsc-private-report
+          path: ${{ runner.temp }}/gsc-private-report.json
+          if-no-files-found: error
+          retention-days: 7
