@@ -156,7 +156,11 @@ def main():
 if __name__ == "__main__":
     try:
         sys.exit(main())
-    except Exception as exc:
-        # Google errors may contain private details; emit only our controlled messages.
+    except (ValueError, RuntimeError) as exc:
+        # These are controlled error strings from our own validation.
         print("ERROR: {}".format(str(exc)), file=sys.stderr)
+        sys.exit(1)
+    except Exception:
+        # Never print third-party exception payloads: they may contain credentials.
+        print("ERROR: Google API or authentication failed; check Actions setup and access.", file=sys.stderr)
         sys.exit(1)
