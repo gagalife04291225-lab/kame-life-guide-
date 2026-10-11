@@ -45,12 +45,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **d2049f932de25e2df94f084aa8a3d5e0dfc6a5ec**（2026-10-11 GitHub compare `main...main` 実測） |
+| 基準 | 作業開始時の `main` = **dc003b663f40c88ba9b2290d7df4454832b8b465**（2026-10-11 GitHub compare `main...main` 実測） |
 | サイトファイルの状態 | PR #205: 初心者ランキング2ページの注記・サイズ表示、餌ガイド1ページのUVB/D3表記のみ修正。商品DB・CSS/JS・採点ロジックは無変更 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-10-11 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `chatgpt/ranking-food-safety-fix-20261011` |
+| 作業ブランチ | `chatgpt/fix-beginner-cites-labels-20261011`（PR #207、公開未反映） |
 
 ---
 
@@ -1623,6 +1623,13 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 | 構造上の制約 | 104 | [`docs/fixed-facts/structural-constraints.md`](fixed-facts/structural-constraints.md) |
 
 ## UNRESOLVED — 本当に未解決のものだけ
+
+### 初心者亀TOP10のCITES法規制表示 — PR #207（2026-10-11、Owner判断待ち）
+
+- **修正PRは作成済み、main未マージ・本番未反映。** `guides/beginner-top10-turtles.html` の10種について正本 `data/species-master.json` と照合し、誤って「なし」と記載された8種をCITES II / IIIへ修正。修正後内訳は **II=8、III=2、規制なし=0**。
+- **重要な読者向け補足を追加**: CITES掲載は日本国内の飼育禁止と同義ではなく、国内CBなどの適法取得個体は飼育できること、国際取引手続き・購入時の出自書類の確認を明記。**既存の種別ページ・正本CITES区分・ランキングスコア・順位・商品リンクは変更しない**。
+- **ブランチcommit** `46bfc30cb48a2fdd1e9e86eeade0fac6f0c6227e`。PR: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/207 。HTMLの法規制表示10/10照合PASS、旧「なし」0、script 3→3、table 1→1、GA4識別子2→2。
+- **BLOCKED / Owner判断**: 本件は法令表示の修正のため、Actor自動mergeの5条件のうち「法令ゲート無影響」を満たさず、PRで停止。**PR #207 を査読してマージ可否を判断すること**。マージ後にmainおよび公開サイトを実測するまで完了扱いにしない。既存のNEXT（PR #189）や完了済み餌・ランキング案件を再監査しない。
 
 ### 外部入力待ち — ミナ talk PoC の HF_TOKEN（Owner のみ）
 
