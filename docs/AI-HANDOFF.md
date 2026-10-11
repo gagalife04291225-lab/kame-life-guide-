@@ -45,16 +45,28 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 今回の記録更新開始時の `main` = **e24ea097b52f00baee8c9f3fc5e73c3c2d0b9420**（GitHub compare `main...main` / 2026-10-11 実測値） |
-| サイトファイルの状態 | 本PRは `species/*.html` 82ファイルの比較表セル（必要環境列）のみの変更。data / CSS / JS / 画像は無変更 |
+| 基準 | 作業開始時の `main` = **d2049f932de25e2df94f084aa8a3d5e0dfc6a5ec**（2026-10-11 GitHub compare `main...main` 実測） |
+| サイトファイルの状態 | PR #205: 初心者ランキング2ページの注記・サイズ表示、餌ガイド1ページのUVB/D3表記のみ修正。商品DB・CSS/JS・採点ロジックは無変更 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-10-11 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `chatgpt/food-audit-completed-record-20261011` |
+| 作業ブランチ | `chatgpt/ranking-food-safety-fix-20261011` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 初心者ランキングの説明差と餌ガイドUVB/D3案内の個別是正（2026-10-11 / PR #205）— **再調査しない**
+
+Owner の明示指示で、**既存の餌商品の全面再監査ではなく、新たに特定された表示・説明の矛盾のみ**に対処。
+
+- `ranking-beginner-top10.html`: ロシアリクガメの成体サイズ表記をカード・比較表とも**15〜20cm**に一致させた（`species/russian-tortoise.html` の表示と一致し、`species-master.json` の LIKELY 上限20cmを超えない）。
+- 初心者向けランキング2本は、**5軸の重み付けが異なる別評価**。順位やスコアを勝手に統一せず、両記事内に差異の説明と相互導線を追加した。**SEOカニバリゼーションの有無は未確認（GSCデータ待ち）**なのでcanonical統合はしていない。
+- `guides/food-guide.html`: UVBなしならD3入りサプリを使うという**一律の選び方**と、週2〜3回を全種へ推奨する表記を除去。種・主食・UVB環境、D3過剰補給の危険、獣医師判断とMerck Veterinary Manualを明記。
+- 実装根拠: **PR #205**（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/205）。HTML3ファイルの最小差分、データDB・商品リンク・GA4・CITES無変更。**mainへの反映とmerge SHAはPR結果の実測を正とする**。
+
+**再実施禁止**: PR #194 / #195 / #199 / #200 / #201 / #202 で完了した餌全商品の再監査と、2ランキングのスコア・順位そのものの根拠なき変更。
+
 
 ### カメ用フードの全面再調査・拡充と飼育用品の導線監査 — **COMPLETED**（2026-10-02〜03 / 2026-10-11 main 反映確認）— **再調査しない**
 
@@ -1773,18 +1785,15 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 次に実行する工程（**1つだけ**）
 
-### 「10年後は甲長X〜Ycm」の上限を正本の最大甲長へそろえる
+### 未マージ PR #189 の既存甲長修正を最新mainへ取り込めるか確認する
 
-**対象**: UNRESOLVED の実測 7 ページ。`three-toed-box-turtle` 17>16.5 ／ `eastern-box-turtle` 20>19.8 ／
-`pancake-tortoise` 18>17.8 ／ `chinese-softshell-turtle` 35>25 ／ `albino-chinese-softshell` 35>25 ／
-`spenglers-leaf-turtle` 11>10.7 ／ `asian-black-marsh-turtle` 30>20。
-**Scope**: 各ページの「10年後は甲長X〜Ycm」の**数値だけ**。`data/species-master.json` は**読むだけ**。
-**変更禁止**: 甲長そのものの再調査（正本は確定済み・NO-REWORK GATE）／比較表・env-card・ls-lead
-（本PRで矛盾 0 を確認済み）／ASIN・Amazon ID。
-**完了条件**: 7 ページすべてで「10年後」の上限が正本の最大甲長を超えないこと。
-`scripts/check_compare_enclosure.py` が **矛盾 0**、`scripts/check_enclosure_sync.py` が
-**不一致 0** のままであること。前5件（丸め誤差の範囲）と後2件（差が大きい）で文面の直し方が変わる場合は、
-**丸めを切り上げにしない**（COMPLETED の丸め規則に従う）。
+**対象**: `claude/tenyears-size-sync` の既存PR #189（51ファイルの甲長表記修正、2026-09-18作成）。元の「10年後」7ページ修正は既にこのPRに含まれるため、**ゼロから作り直さない**。
+
+**Scope**: 最新mainとの差分・重複修正・競合・回帰・完了条件を照合し、ゲートPASSなら既存PRを安全に統合する。競合や未評価の重大事項があれば STOP とし Owner 判断に戻す。
+
+**変更禁止**: 正本 `data/species-master.json` の値の推測変更／餌・飼育用品の再監査／PR #205 で是正した2ランキング・餌ガイドの再変更／Amazon ID・GA4・CITESの変更。
+
+**完了条件**: PR #189 の上限超過が0で、`scripts/check_compare_enclosure.py` 矛盾0・`scripts/check_enclosure_sync.py` 不一致0、変更範囲外0、main反映実測または明確なBLOCKED報告。既存の検証値だけで最新mainへの適用を断定しない。
 
 ## 更新ルール（作業終了時に必ず実施）
 
