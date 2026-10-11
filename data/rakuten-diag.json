@@ -436,13 +436,13 @@
   }
  },
  "food_dried_shrimp": {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "query": "キョーリン カメのごほうび 乾燥川エビ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:カメのごほうび",
   "best": {
-   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ��カルシウム　お一人様150点限り　関東当日便",
+   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り　関東当日便",
    "price": 210,
    "shop": "charm 楽天市場店"
   }
@@ -980,15 +980,15 @@
   }
  },
  "shelter_medium": {
-  "date": "2026-10-09",
+  "date": "2026-10-11",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
-   "price": 1500,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
+   "price": 1685,
+   "shop": "ペッツマム"
   }
  },
  "shelter_moist_hide": {
@@ -1084,9 +1084,9 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-10-08",
+  "date": "2026-10-11",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 6,
+  "resultCount": 5,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1248,15 +1248,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
-   "price": 939,
-   "shop": "ウルマックス 楽天市場店"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1352,15 +1352,15 @@
   "best": null
  },
  "thermostat_kotobuki_hydra": {
-  "date": "2026-10-03",
+  "date": "2026-10-11",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
-   "itemName": "□コトブキ工芸 ヒュドラサーモHT-330XD サーモスタット送料無料",
-   "price": 4470,
-   "shop": "大谷錦鯉店"
+   "itemName": "コトブキ工芸 ヒュドラサーモ HT−330XD 爬虫類 温度管理 サーモスタット",
+   "price": 6030,
+   "shop": "ショップ泉嘉"
   }
  },
  "thermostat_nisso_generic": {
@@ -1416,15 +1416,15 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-10-10",
+  "date": "2026-10-11",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
-   "price": 3520,
-   "shop": "ハッピードライブヤブモト"
+   "itemName": "エキゾテラ GEX EXOTERRA レプタイルUVB150 26W PT2189 爬虫類用 紫外線ライト パープル 砂漠・サバンナに棲 送料無料",
+   "price": 3363,
+   "shop": "ショップflora楽天市場店"
   }
  },
  "uvb_t5_desert_std": {
