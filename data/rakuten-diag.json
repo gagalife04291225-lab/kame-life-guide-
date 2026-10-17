@@ -288,13 +288,13 @@
   "best": null
  },
  "filter_gex_dustcatch": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "GEX カメ元気 ダストキャッチフィルター",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6",
   "best": {
-   "itemName": "GEX　カメ元気　ダストキャッチフィルター",
+   "itemName": "GEX　カメ元気　ダストキャッチフィルター　関東当日便",
    "price": 2650,
    "shop": "charm 楽天市場店"
   }
@@ -312,13 +312,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック　関東当日便",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -344,13 +344,13 @@
   }
  },
  "filter_suisaku_turtle_pro_l2": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "水作 タートルフィルター PRO L2",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.3",
   "best": {
-   "itemName": "水作　タートルフィルター［PRO］L2　水中フィルター　亀　水質維持",
+   "itemName": "水作　タートルフィルター［PRO］L2　水中フィルター　亀　水質維持　関東当日便",
    "price": 3100,
    "shop": "charm 楽天市場店"
   }
@@ -448,11 +448,11 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-10-06",
+  "date": "2026-10-17",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
    "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
    "price": 798,
@@ -472,14 +472,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-15",
+  "date": "2026-10-17",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2165,
+   "price": 2129,
    "shop": "ラサンタ"
   }
  },
@@ -496,13 +496,13 @@
   }
  },
  "food_kamepros_healthcare_large_215": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "キョーリン カメプロス ヘルスケア 大スティック 215g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "キョーリン　カメプロス　ヘルスケア　大スティック　215g　餌　水棲カメ用　ニオイ・汚れ防止",
+   "itemName": "キョーリン　カメプロス　ヘルスケア　大スティック　215g　餌　水棲カメ用　ニオイ・汚れ防止　関東当日便",
    "price": 885,
    "shop": "charm 楽天市場店"
   }
@@ -532,25 +532,25 @@
   }
  },
  "food_kamepros_premium_200": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "キョーリン カメプロス プレミアム 大スティック 200g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　200g　餌　水棲カメ用　高嗜好性　お一人様30点限り",
+   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　200g　餌　水棲カメ用　高嗜好性　お一人様30点限り　関東当日便",
    "price": 1130,
    "shop": "charm 楽天市場店"
   }
  },
  "food_kamepros_premium_550": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "キョーリン カメプロス プレミアム 550g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　550g　餌　水棲カメ用　高嗜好性　お一人様20点限り",
+   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　550g　餌　水棲カメ用　高嗜好性　お一人様20点限り　関東当日便",
    "price": 2060,
    "shop": "charm 楽天市場店"
   }
@@ -692,25 +692,25 @@
   }
  },
  "heater_gex_heatnavi_160": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "GEX NEW セーフカバー ヒートナビ 160",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,series:セーフカバー",
   "best": {
-   "itemName": "GEX　NEW　セーフカバー　ヒートナビ160　〜60cm水槽用　縦設置可能　ヒーター、サーモ一体型　熱帯魚",
+   "itemName": "GEX　NEW　セーフカバー　ヒートナビ160　〜60cm水槽用　縦設置可能　ヒーター、サーモ一体型　熱帯魚　関東当日便",
    "price": 3780,
    "shop": "charm 楽天市場店"
   }
  },
  "heater_gex_heatnavi_220": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "GEX NEW セーフカバー ヒートナビ 220",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.8",
   "best": {
-   "itemName": "GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯魚",
+   "itemName": "GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯魚　関東当日便",
    "price": 4280,
    "shop": "charm 楽天市場店"
   }
@@ -836,25 +836,25 @@
   }
  },
  "media_eheim_2213_coarse": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "エーハイム 2213 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=7.2 入数(2),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1070,
    "shop": "charm 楽天市場店"
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）　関東当日便",
    "price": 1520,
    "shop": "charm 楽天市場店"
   }
@@ -908,13 +908,13 @@
   }
  },
  "media_eheim_substrat_pro_1l": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "エーハイム サブストラットプロ レギュラー 1L",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.6",
   "best": {
-   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L",
+   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L　関東当日便",
    "price": 1820,
    "shop": "charm 楽天市場店"
   }
@@ -928,14 +928,14 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "GEX メガパワー 2045 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2124,
+   "price": 2148,
    "shop": "formanism"
   }
  },
@@ -1124,14 +1124,14 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 4,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=8.5 容量不一致",
+  "resultCount": 5,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=8.5",
   "best": {
-   "itemName": "三本線【焼成・硬質赤玉土】5L（約4kg）赤玉土 用土 園芸 ガーデニング テラリウム メダカ 細粒 小粒 中粒 大粒 選べる 培養土 庭 土 観葉植物 多肉植",
-   "price": 850,
+   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム 細粒 小粒 中粒 大粒 選べる ガーデニング 培",
+   "price": 1350,
    "shop": "園芸用土のイワモト"
   }
  },
@@ -1248,21 +1248,21 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
+   "price": 939,
+   "shop": "ウルマックス 楽天市場店"
   }
  },
  "thermometer_aqua": {
-  "date": "2026-10-13",
+  "date": "2026-10-17",
   "query": "INKBIRD 水温計 Bluetooth",
-  "resultCount": 3,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.5",
   "best": {
@@ -1332,13 +1332,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット　関東当日便",
    "price": 9350,
    "shop": "charm 楽天市場店"
   }
@@ -1352,15 +1352,15 @@
   "best": null
  },
  "thermostat_kotobuki_hydra": {
-  "date": "2026-10-11",
+  "date": "2026-10-17",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
-   "itemName": "コトブキ工芸 ヒュドラサーモ HT−330XD 爬虫類 温度管理 サーモスタット",
-   "price": 6030,
-   "shop": "ショップ泉嘉"
+   "itemName": "□コトブキ工芸 ヒュドラサーモHT-330XD サーモスタット送料無料",
+   "price": 4470,
+   "shop": "大谷錦鯉店"
   }
  },
  "thermostat_nisso_generic": {
@@ -1464,13 +1464,13 @@
   }
  },
  "water_test_tetra_nh3": {
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "query": "テトラ テスト試験紙 NH3 NH4 アンモニア 25回",
   "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4.5",
   "best": {
-   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回",
+   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回　関東当日便",
    "price": 1917,
    "shop": "charm 楽天市場店"
   }
