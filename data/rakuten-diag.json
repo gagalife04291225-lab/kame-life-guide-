@@ -132,13 +132,13 @@
   }
  },
  "calcium_no_d3": {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
-   "itemName": "GEX エキゾテラ カルシウム 90g",
+   "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
    "price": 1130,
    "shop": "レヨンベールアクア楽天市場店"
   }
@@ -448,11 +448,11 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
    "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
    "price": 798,
@@ -716,14 +716,14 @@
   }
  },
  "heater_gex_navipack_300": {
-  "date": "2026-10-03",
+  "date": "2026-10-19",
   "query": "GEX セーフカバーナビパック 300",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.9",
   "best": {
    "itemName": "ジェックス GEX AQUA HEATER セーフカバーナビパック 300 サーモスタット+ヒーター 縦横設置 安全機能付 SP規格適合 約15",
-   "price": 6841,
+   "price": 7206,
    "shop": "ショウマーケット"
   }
  },
@@ -824,14 +824,14 @@
   }
  },
  "media_eheim_2213_carbon": {
-  "date": "2026-09-14",
+  "date": "2026-10-19",
   "query": "エーハイム 2213 活性炭フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.6 入数(3),適合表記(2213)",
   "best": {
    "itemName": "エーハイム 2213専用 活性炭フィルターパッド 3枚入り 2628131 [EHEIM クラシックフィルター用]",
-   "price": 2200,
+   "price": 2190,
    "shop": "ミナトワークス"
   }
  },
@@ -872,14 +872,14 @@
   }
  },
  "media_eheim_2215_fine": {
-  "date": "2026-09-14",
+  "date": "2026-10-19",
   "query": "エーハイム 2215 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.2 入数(3),適合表記(2215)",
   "best": {
    "itemName": "エーハイム 2215専用 細目フィルターパッド 3枚入 2616155 [EHEIM 外部フィルター用]",
-   "price": 2150,
+   "price": 2310,
    "shop": "ミナトワークス"
   }
  },
@@ -928,15 +928,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 10,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
-   "itemName": "ジェックス メガパワー2045用 交換ろ材セット",
-   "price": 2334,
-   "shop": "THRMiracle"
+   "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
+   "price": 2072,
+   "shop": "プライムズ商店"
   }
  },
  "media_gex_6090_set": {
@@ -980,15 +980,15 @@
   }
  },
  "shelter_medium": {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "スドー ロックシェルターSP ML 両生類 爬虫類 シェルター 隠れ家",
-   "price": 1685,
-   "shop": "ペッツマム"
+   "itemName": "ロックシェルターSP ML RX-193 スドー 爬虫類 両生類 シェルター 隠れ家 レジン製 アクセサリー ヘビ レオパ カエル トカゲ",
+   "price": 1500,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "shelter_moist_hide": {
@@ -1020,9 +1020,9 @@
   }
  },
  "shelter_turtle_dock": {
-  "date": "2026-08-29",
+  "date": "2026-10-19",
   "query": "亀 浮島 ドック 水棲",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.2",
   "best": {
@@ -1320,9 +1320,9 @@
   }
  },
  "thermostat": {
-  "date": "2026-10-16",
+  "date": "2026-10-19",
   "query": "サーモスタット 爬虫類 アナログ",
-  "resultCount": 2,
+  "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.7",
   "best": {
@@ -1352,15 +1352,15 @@
   "best": null
  },
  "thermostat_kotobuki_hydra": {
-  "date": "2026-10-17",
+  "date": "2026-10-19",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
-   "itemName": "□コトブキ工芸 ヒュドラサーモHT-330XD サーモスタット送料無料",
-   "price": 4470,
-   "shop": "大谷錦鯉店"
+   "itemName": "コトブキ工芸 ヒュドラサーモ HT－330XD 爬虫類 温度管理 サーモスタット",
+   "price": 7537,
+   "shop": "サイクルコネクション楽天市場店"
   }
  },
  "thermostat_nisso_generic": {
