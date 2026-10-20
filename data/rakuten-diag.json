@@ -12,21 +12,21 @@
   }
  },
  "basking_50w": {
-  "date": "2026-09-10",
+  "date": "2026-10-20",
   "query": "マルカン バスキングライト 50W BL-50",
-  "resultCount": 4,
+  "resultCount": 2,
   "outcome": "REFRESHED_EXACT",
-  "reason": "maker:マルカン,50W,model:BL-50",
+  "reason": "maker:マルカン,50W,model:BL-50,series:bl-50",
   "best": {
-   "itemName": "マルカン　バスキングライト　50W　BL−50　爬虫類　保温球　関東当日便",
-   "price": 2980,
-   "shop": "charm 楽天市場店"
+   "itemName": "マルカン バスキングライト50w [BL-50]",
+   "price": 3040,
+   "shop": "ペット健康便"
   }
  },
  "basking_75w": {
-  "date": "2026-10-15",
+  "date": "2026-10-20",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 9,
+  "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
@@ -184,16 +184,12 @@
   "best": null
  },
  "enclosure_tortoise_120": {
-  "date": "2026-08-29",
+  "date": "2026-10-20",
   "query": "爬虫類ケージ 120cm 大型 飼育ボックス",
-  "resultCount": 1,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=5.7",
-  "best": {
-   "itemName": "爬虫類 ケージ 120cm 大型 メッシュケージ 爬虫類ボックス 飼育ケース 観賞 通気性抜群 アルミニウム合金 ステンレス 網 扉ロック付き 底トレイ付き 給",
-   "price": 30273,
-   "shop": "ハッピージョイフルマーケット"
-  }
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  },
  "enclosure_tortoise_house_zm": {
   "date": "2026-08-29",
@@ -448,11 +444,11 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=4.2",
   "best": {
    "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
    "price": 798,
@@ -812,11 +808,11 @@
   }
  },
  "media_eheim_2211_fine": {
-  "date": "2026-09-08",
+  "date": "2026-10-20",
   "query": "エーハイム 2211 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=6.2",
+  "reason": "score=5.9",
   "best": {
    "itemName": "外部フィルター　エーハイム　クラシックフィルター　2211　純正細目フィルターパッド　3枚付　水槽　メーカー保証2年　関東当日便",
    "price": 11534,
@@ -1196,9 +1192,9 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-09-24",
+  "date": "2026-10-20",
   "query": "爬虫類 プロバイオティクス 腸内環境",
-  "resultCount": 7,
+  "resultCount": 6,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1352,15 +1348,15 @@
   "best": null
  },
  "thermostat_kotobuki_hydra": {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "query": "コトブキ工芸 ヒュドラサーモ HT-330XD",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:コトブキ工芸,model:HT-330XD,series:コトブキ工芸",
   "best": {
-   "itemName": "コトブキ工芸 ヒュドラサーモ HT－330XD 爬虫類 温度管理 サーモスタット",
-   "price": 7537,
-   "shop": "サイクルコネクション楽天市場店"
+   "itemName": "コトブキ工芸　ヒュドラサーモ　HT−330XD　爬虫類　温度管理　サーモスタット　関東当日便",
+   "price": 4125,
+   "shop": "charm 楽天市場店"
   }
  },
  "thermostat_nisso_generic": {
@@ -1452,9 +1448,9 @@
   "best": null
  },
  "water_test_tetra_6in1": {
-  "date": "2026-10-04",
+  "date": "2026-10-20",
   "query": "テトラ テスト 6in1 試験紙 25枚",
-  "resultCount": 10,
+  "resultCount": 9,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=6.2",
   "best": {
