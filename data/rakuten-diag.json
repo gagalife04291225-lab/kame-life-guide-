@@ -456,15 +456,15 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
-   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性",
-   "price": 1467,
-   "shop": "kichibei"
+   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
+   "price": 2260,
+   "shop": "SooTune"
   }
  },
  "food_gex_tortoise_blend_400": {
@@ -924,15 +924,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-10-19",
+  "date": "2026-10-22",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 4,
+  "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2072,
-   "shop": "プライムズ商店"
+   "price": 2740,
+   "shop": "ゆうゆうマーケット"
   }
  },
  "media_gex_6090_set": {
@@ -1192,9 +1192,9 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-10-20",
+  "date": "2026-10-22",
   "query": "爬虫類 プロバイオティクス 腸内環境",
-  "resultCount": 6,
+  "resultCount": 7,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
@@ -1480,14 +1480,14 @@
   "best": null
  },
  "waterdish_zoomed_ramp_bowl": {
-  "date": "2026-09-08",
+  "date": "2026-10-22",
   "query": "ズーメッド レプティランプボウル LG",
   "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=3.6",
   "best": {
    "itemName": "大感謝価格『ZOOMED ズーメッド レプティランプボウル LG RRB-11』『直送品。代引不可・同梱不可・返品キャンセル・割引不可』ペット 飼育 えさ 水入",
-   "price": 4954,
+   "price": 5489,
    "shop": "ロミオニ防災グッズ保存水や食の店"
   }
  }
