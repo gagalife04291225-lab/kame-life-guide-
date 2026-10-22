@@ -1,0 +1,92 @@
+name: GSC Direct Export
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/gsc-export.py'
+      - '.github/workflows/gsc-direct-export.yml'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Days to fetch'
+        required: false
+        default: '90'
+      site_url:
+        description: 'Optional exact Search Console property (blank = auto-discover kamelifeguide.com)'
+        required: false
+        default: ''
+  schedule:
+    # Monday 06:15 JST (Sunday 21:15 UTC)
+    - cron: '15 21 * * 0'
+
+permissions:
+  contents: read
+
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Self-test exporter
+        run: python scripts/gsc-export.py --self-test
+
+  export:
+    if: github.event_name != 'pull_request'
+    needs: self-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+      GSC_SITE_HOST: kamelifeguide.com
+      GSC_SITE_URL: ${{ inputs.site_url }}
+      GSC_DAYS: ${{ inputs.days || '90' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check credentials
+        shell: bash
+        run: |
+          if [ -z "${GSC_SERVICE_ACCOUNT_JSON:-}" ]; then
+            echo "::error::BLOCKED: repository secret GSC_SERVICE_ACCOUNT_JSON is not configured."
+            exit 1
+          fi
+
+      - name: Prepare service-account credentials
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          path = Path(os.environ['RUNNER_TEMP']) / 'gsc-service-account.json'
+          path.write_text(os.environ['GSC_SERVICE_ACCOUNT_JSON'], encoding='utf-8')
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
+              env.write(f'GOOGLE_APPLICATION_CREDENTIALS={path}\n')
+          PY
+
+      - name: Install Google API dependencies
+        run: python -m pip install --disable-pip-version-check 'google-api-python-client>=2,<3' 'google-auth>=2,<3'
+
+      - name: Fetch Search Console data ephemerally
+        shell: bash
+        run: |
+          args=(--days "$GSC_DAYS" --output-dir "$RUNNER_TEMP/gsc")
+          if [ -n "${GSC_SITE_URL:-}" ]; then
+            args+=(--site-url "$GSC_SITE_URL")
+          fi
+          python scripts/gsc-export.py "${args[@]}"
+          echo 'GSC fetch succeeded. Raw CSV/JSON remains only on this runner and is not uploaded or committed.'
+
+      - name: Remove GSC data and temporary credentials
+        if: always()
+        shell: bash
+        run: |
+          rm -rf "$RUNNER_TEMP/gsc"
+          rm -f "${GOOGLE_APPLICATION_CREDENTIALS:-$RUNNER_TEMP/gsc-service-account.json}"
