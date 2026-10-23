@@ -1,26 +1,26 @@
 {
  "basking_100w": {
-  "date": "2026-10-18",
+  "date": "2026-10-23",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【エントリーP5倍★10/24 20時〜10/27 9時】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
  },
  "basking_50w": {
-  "date": "2026-10-20",
+  "date": "2026-10-23",
   "query": "マルカン バスキングライト 50W BL-50",
-  "resultCount": 2,
+  "resultCount": 4,
   "outcome": "REFRESHED_EXACT",
-  "reason": "maker:マルカン,50W,model:BL-50,series:bl-50",
+  "reason": "maker:マルカン,50W,model:BL-50",
   "best": {
-   "itemName": "マルカン バスキングライト50w [BL-50]",
-   "price": 3040,
-   "shop": "ペット健康便"
+   "itemName": "マルカン　バスキングライト　50W　BL−50　爬虫類　保温球　関東当日便",
+   "price": 2980,
+   "shop": "charm 楽天市場店"
   }
  },
  "basking_75w": {
@@ -228,15 +228,15 @@
   }
  },
  "filter_canister_medium": {
-  "date": "2026-09-14",
+  "date": "2026-10-23",
   "query": "EHEIM クラシック 2213 外部フィルター",
-  "resultCount": 8,
+  "resultCount": 7,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=8.8 入数(2),消耗品(ろ材)",
+  "reason": "score=5.9 入数(2),消耗品(パッド),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
-   "price": 15090,
-   "shop": "ミナトワークス"
+   "itemName": "【在庫限り】エーハイム 粗目フィルターパッド 2枚入 2213用 (2616131) 全国送料無料 EHEIM 純正 ろ材 ブルー 青 スポンジ クラシック 外",
+   "price": 1690,
+   "shop": "シンプルデイリーケア 楽天市場店"
   }
  },
  "filter_canister_premium": {
@@ -252,14 +252,14 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-10-16",
+  "date": "2026-10-23",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
    "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス　関東当日便",
-   "price": 10500,
+   "price": 10200,
    "shop": "charm 楽天市場店"
   }
  },
@@ -360,15 +360,15 @@
   "best": null
  },
  "fixture_exoterra_light_dome_14": {
-  "date": "2026-10-21",
+  "date": "2026-10-23",
   "query": "GEX エキゾテラ ライトドーム 14cm PT2055",
-  "resultCount": 1,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=4",
+  "reason": "score=6.2",
   "best": {
-   "itemName": "◇ジェックス ライトドーム14cm PT2055 | 爬虫類ライト 照明 爬虫類 照明器具 エキゾテラ ライトドーム GEX UV灯 白熱球 バスキング ランプ",
-   "price": 3960,
-   "shop": "ペットフォレスト 楽天市場店"
+   "itemName": "【全国送料無料】GEX エキゾテラ ライトドーム 14cm PT2055",
+   "price": 3900,
+   "shop": "レヨンベールアクア楽天市場店"
   }
  },
  "fixture_gex_light_stand": {
@@ -432,13 +432,13 @@
   }
  },
  "food_dried_shrimp": {
-  "date": "2026-10-11",
+  "date": "2026-10-23",
   "query": "キョーリン カメのごほうび 乾燥川エビ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:カメのごほうび",
   "best": {
-   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り　関東当日便",
+   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ��カルシウム　お一人様150点限り　関東当日便",
    "price": 210,
    "shop": "charm 楽天市場店"
   }
@@ -456,26 +456,26 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
-   "price": 2260,
+   "price": 2259,
    "shop": "SooTune"
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-21",
+  "date": "2026-10-23",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2193,
+   "price": 2187,
    "shop": "ラサンタ"
   }
  },
@@ -492,14 +492,14 @@
   }
  },
  "food_kamepros_healthcare_large_215": {
-  "date": "2026-10-17",
+  "date": "2026-10-23",
   "query": "キョーリン カメプロス ヘルスケア 大スティック 215g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
    "itemName": "キョーリン　カメプロス　ヘルスケア　大スティック　215g　餌　水棲カメ用　ニオイ・汚れ防止　関東当日便",
-   "price": 885,
+   "price": 848,
    "shop": "charm 楽天市場店"
   }
  },
@@ -924,15 +924,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 3,
+  "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2740,
-   "shop": "ゆうゆうマーケット"
+   "price": 2932,
+   "shop": "formanism"
   }
  },
  "media_gex_6090_set": {
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-10-18",
+  "date": "2026-10-23",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1268,14 +1268,14 @@
   }
  },
  "thermometer_digital": {
-  "date": "2026-08-29",
+  "date": "2026-10-23",
   "query": "デジタル 温湿度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
   "reason": null,
   "best": {
    "itemName": "【楽天1位】温湿度計 デジタル 赤ちゃん 通知 高精度 デジタル時計 バックライト 電池付き 説明書付き 温度計 湿度計 室温計 ベビー キッズ ペット 猫 犬",
-   "price": 1000,
+   "price": 1200,
    "shop": "Palpito 楽天市場店"
   }
  },
@@ -1368,13 +1368,13 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-10-18",
+  "date": "2026-10-23",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 5,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【エントリーP5倍★10/24 20時〜10/27 9時】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EX",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
@@ -1412,13 +1412,13 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-10-18",
+  "date": "2026-10-23",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【マラソン中、エントリー+購入でP5倍】GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3520,
    "shop": "ハッピードライブヤブモト"
   }
