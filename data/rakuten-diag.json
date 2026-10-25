@@ -636,13 +636,13 @@
   "best": null
  },
  "food_tortoise_herbs": {
-  "date": "2026-09-15",
+  "date": "2026-10-25",
   "query": "キョーリン マルベリックドライ リクガメ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:マルベリックドライ",
   "best": {
-   "itemName": "キョーリン マルベリックドライ 180g 400g リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
+   "itemName": "キョーリン マルベリックドライ 180g 400g 1kg リクガメ フード 桑の葉配合 爬虫類 餌 ヒカリ hikari",
    "price": 1100,
    "shop": "ペットショップ うちのmofu"
   }
@@ -700,26 +700,26 @@
   }
  },
  "heater_gex_heatnavi_220": {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "query": "GEX NEW セーフカバー ヒートナビ 220",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.8",
   "best": {
-   "itemName": "【10／25限定】当選確率2分の1！1等最大100％　GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯",
+   "itemName": "GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯魚　関東当日便",
    "price": 4280,
    "shop": "charm 楽天市場店"
   }
  },
  "heater_gex_navipack_300": {
-  "date": "2026-10-19",
+  "date": "2026-10-25",
   "query": "GEX セーフカバーナビパック 300",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.9",
   "best": {
    "itemName": "ジェックス GEX AQUA HEATER セーフカバーナビパック 300 サーモスタット+ヒーター 縦横設置 安全機能付 SP規格適合 約15",
-   "price": 7206,
+   "price": 7194,
    "shop": "ショウマーケット"
   }
  },
@@ -748,9 +748,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-10-18",
+  "date": "2026-10-25",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -1412,15 +1412,15 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-10-23",
+  "date": "2026-10-25",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "【マラソン中、エントリー+購入でP5倍】GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
-   "price": 3520,
-   "shop": "ハッピードライブヤブモト"
+   "itemName": "エキゾテラ GEX EXOTERRA レプタイルUVB150 26W PT2189 爬虫類用 紫外線ライト パープル 砂漠・サバンナに棲息する爬",
+   "price": 3519,
+   "shop": "SHOP Coco Makai 楽天市場店"
   }
  },
  "uvb_t5_desert_std": {
