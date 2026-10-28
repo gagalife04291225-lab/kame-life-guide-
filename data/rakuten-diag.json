@@ -24,15 +24,15 @@
   }
  },
  "basking_75w": {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 9,
+  "resultCount": 7,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
-   "itemName": "エキゾテラ GEX EXOTERRA サングロー バ ス キングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 広域スペクトル昼用",
-   "price": 1437,
-   "shop": "川山商店 楽天市場店"
+   "itemName": "GEX EXO TERRA（エキゾテラ）　サングローバスキングスポットランプ 75W　PT2132 【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクア",
+   "price": 1530,
+   "shop": "ネオス 楽天市場店"
   }
  },
  "basking_arcadia_deep_heat_projector": {
@@ -216,14 +216,14 @@
   "best": null
  },
  "filter_canister_large": {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "query": "EHEIM クラシック 2215 外部フィルター",
   "resultCount": 1,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=9.1 入数(2),消耗品(ろ材)",
   "best": {
    "itemName": "エーハイム クラシックフィルター 2215 ろ材付 (1個／2個セット／フローパイプ+ 水質調整剤付き) 60cm〜90cm水槽用 2215320 [EHEIM",
-   "price": 22100,
+   "price": 22180,
    "shop": "ミナトワークス"
   }
  },
@@ -340,9 +340,9 @@
   }
  },
  "filter_suisaku_turtle_pro_l2": {
-  "date": "2026-10-26",
+  "date": "2026-10-28",
   "query": "水作 タートルフィルター PRO L2",
-  "resultCount": 8,
+  "resultCount": 9,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.3",
   "best": {
@@ -468,14 +468,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-26",
+  "date": "2026-10-28",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2189,
+   "price": 2165,
    "shop": "ラサンタ"
   }
  },
@@ -748,9 +748,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-10-25",
+  "date": "2026-10-28",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 2,
+  "resultCount": 4,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -796,15 +796,15 @@
   }
  },
  "media_eheim_2211_coarse": {
-  "date": "2026-09-08",
+  "date": "2026-10-28",
   "query": "エーハイム 2211 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=5.9 入数(2),消耗品(ろ材),適合表記(2211)",
+  "reason": "score=5.6 入数(2),適合表記(2211)",
   "best": {
-   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2211専用ろ材　関東当日便",
-   "price": 825,
-   "shop": "charm 楽天市場店"
+   "itemName": "エーハイム 2211専用 粗目フィルターパッド 2枚入 2616112 [EHEIM 外部フィルター用]",
+   "price": 1420,
+   "shop": "ミナトワークス"
   }
  },
  "media_eheim_2211_fine": {
@@ -820,14 +820,14 @@
   }
  },
  "media_eheim_2213_carbon": {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "query": "エーハイム 2213 活性炭フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.6 入数(3),適合表記(2213)",
   "best": {
    "itemName": "エーハイム 2213専用 活性炭フィルターパッド 3枚入り 2628131 [EHEIM クラシックフィルター用]",
-   "price": 2130,
+   "price": 2060,
    "shop": "ミナトワークス"
   }
  },
@@ -856,26 +856,26 @@
   }
  },
  "media_eheim_2215_coarse": {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "query": "エーハイム 2215 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.6 入数(2),適合表記(2215)",
   "best": {
    "itemName": "エーハイム 2215専用 粗目フィルターパッド 2枚入 2616151 [EHEIM 外部フィルター用]",
-   "price": 2440,
+   "price": 2410,
    "shop": "ミナトワークス"
   }
  },
  "media_eheim_2215_fine": {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "query": "エーハイム 2215 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.2 入数(3),適合表記(2215)",
   "best": {
    "itemName": "エーハイム 2215専用 細目フィルターパッド 3枚入 2616155 [EHEIM 外部フィルター用]",
-   "price": 2280,
+   "price": 2260,
    "shop": "ミナトワークス"
   }
  },
