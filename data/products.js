@@ -3354,20 +3354,20 @@ const PRODUCTS = {
 
   supplement_probiotics: {
     id: 'supplement_probiotics',
-    name: '爬虫類用プロバイオティクス',
+    name: 'GEX カメ元気 プロバイオフード 180g',
     category: 'supplements',
     tier: 'premium',
-    priceRange: '¥2,500–6,000',
+    priceRange: null,
     affiliateUrl: 'https://www.amazon.co.jp/dp/B01BXVIHRM?tag=kamelife090e-22',
     asin: 'B01BXVIHRM',
     image: '/assets/products/placeholder.webp',
-    why: '腸内細菌叢を整え消化吸収を促進。拒食回復期や繁殖個体の栄養管理に',
+    why: 'プロバイオ（善玉菌）配合のカメ用フード。サプリメントではなく食事として与える配合飼料。体調不良や拒食は獣医師に相談',
     rating: 4.6,
     badge: 'Premium',
     recommendedFor: ['advanced'],
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: '爬虫類 プロバイオティクス 腸内環境',
+    rakutenSearchTerm: 'ジェックス カメ元気 プロバイオフード 180g',
   },
 
   /* ══════════════════════════════════════════
