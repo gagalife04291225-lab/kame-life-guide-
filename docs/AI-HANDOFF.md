@@ -51,10 +51,19 @@
 | 最終更新日 | 2026-10-11 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
 | 作業ブランチ | `chatgpt/fix-beginner-cites-labels-20261011`（PR #207、公開反映はURL実測で確認） |
+| 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### ASIN 定期点検（月・金 Routine）2026-10-30 — 30件照合・ASIN 差し替え 0 — **同じ30件を再照合しない**
+
+- 対象30件（ユニーク）: 構造監査の NEW 13＋RENAMED 2＋CSV の CAUTION 15。**判定 NG 1（B01BXVIHRM・表記是正後に OK へ）／OK 14（是正済み1件を含む）／CAUTION 9／NOT EVALUATED 7**。内訳は `docs/asin-audit.csv` の検証日 2026-10-30 の行。
+- **NOT EVALUATED 7**（ASIN単体・商品名の2種で当該ページ取得不可。「存在しない」とは判定していない／差し替えもしていない）:
+  B0DJP5JRNP / B0F31WDH5C / B0GL24CTBF（今回 NEW 登録）、B00BKULMIS / B004WH8YBO / B00XVP3TPO / B00CB8KY78（9/8 は CAUTION だったが再現できず降格。9/8 の記録は検証メモに残した）。
+- **表記是正 1件（ASIN 不変）**: `B01BXVIHRM`（`supplement_probiotics`）。旧「爬虫類用プロバイオティクス」・価格帯¥2,500–6,000・サプリ前提の説明 → 実商品「GEX カメ元気 プロバイオフード 180g」（カメ用配合フード）に合わせ name / why / priceRange(null) / rakutenSearchTerm を修正。rakutenStatus は元から search（降格不要）。
+- 追跡ID `kamelife090e-22` 345 箇所・GA4 `G-QQTE5CVF3K` 423 箇所は変更前後で同数。ASIN 集合は不変。**注意: 点検指示書の「kamelife09-22」は旧表記。現行の正は `kamelife090e-22`（2026-09 新ID）。**
 
 ### 初心者ランキングの説明差と餌ガイドUVB/D3案内の個別是正（2026-10-11 / PR #205）— **再調査しない**
 
@@ -1623,6 +1632,13 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 | 構造上の制約 | 104 | [`docs/fixed-facts/structural-constraints.md`](fixed-facts/structural-constraints.md) |
 
 ## UNRESOLVED — 本当に未解決のものだけ
+
+### ASIN 点検の持ち越し（2026-10-30）— Owner 確認待ち
+
+- **B06XC8YK4Y（GEX デザートソイル 2kg）**: 同シリーズ10kg版ページに「粒が崩れやすく大型で体重の重い生き物には不向き」と読める記載があり、`substrate-best10.html` / `substrate-review.html` は乾燥系リクガメに推奨している。2kg版での同記載は未確認のためサイトは未変更。メーカー仕様の確認を要する。
+- **B00E0GLLKI（グラステラリウム 9045）**: 検索インデックスのタイトルが「ナノキューブ PT2599」と食い違う（URLスラッグは 9045 と整合）。商品同一性を確定できず据え置き。
+- **B00CB8KY78 と B00BF91SQK**: どちらもグラステラリウム 6030（同一製品の2ASIN併用）。B00CB8KY78 は今回ページ取得不可。整理の判断は未実施。
+- **`supplement_probiotics` の category は `supplements` のまま**（実体はフード）。カテゴリ変更は UI 影響があるため未実施。
 
 ### 初心者亀TOP10のCITES法規制表示 — PR #207（2026-10-11、Owner実行指示あり）
 
