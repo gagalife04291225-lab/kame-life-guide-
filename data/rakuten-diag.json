@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-10-27",
+  "date": "2026-10-30",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジ",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -456,26 +456,26 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
-   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
-   "price": 2259,
-   "shop": "SooTune"
+   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性",
+   "price": 1467,
+   "shop": "kichibei"
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2168,
+   "price": 2165,
    "shop": "ラサンタ"
   }
  },
@@ -596,15 +596,15 @@
   }
  },
  "food_reptomin_small_70": {
-  "date": "2026-10-04",
+  "date": "2026-10-30",
   "query": "テトラ レプトミン 小粒 70g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4",
+  "reason": "score=4.2",
   "best": {
-   "itemName": "カメの餌 テトラ レプトミン 小粒 70g 76820 スペクトラムブランズ [幼い水棲カメ用 亀のエサ 爬虫類フード 臭い対策 免疫力 善玉菌 Tetra]",
-   "price": 353,
-   "shop": "ホームセンターセブン"
+   "itemName": "テトラ (Tetra) レプトミン 小粒 70G ニオイ 汚れを抑える カメの主食 天然原料のみ使用の安心フード 着色料 保存料 不使用 水をキレイに保つ 食い",
+   "price": 1440,
+   "shop": "スマイルセレクションプラス"
   }
  },
  "food_reptomin_super_large_260": {
@@ -1192,15 +1192,15 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-10-22",
-  "query": "爬虫類 プロバイオティクス 腸内環境",
-  "resultCount": 7,
+  "date": "2026-10-30",
+  "query": "ジェックス カメ元気 プロバイオフード 180g",
+  "resultCount": 2,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
-   "itemName": "【3個セット】 イトスイ コメット 爬虫両生類用 主食 カメ フード プロバイオティクス配合 浮上性 善玉菌 健康維持 アクアリウム用品",
-   "price": 2269,
-   "shop": "ウルマックス 楽天市場店"
+   "itemName": "ジェックス カメ元気 プロバイオフード 180g",
+   "price": 2555,
+   "shop": "LINEAR shop"
   }
  },
  "tank_120_aqua": {
@@ -1368,13 +1368,13 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-10-27",
+  "date": "2026-10-30",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 5,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
