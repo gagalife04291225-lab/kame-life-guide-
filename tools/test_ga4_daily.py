@@ -208,6 +208,9 @@ class Tests(unittest.TestCase):
         self.assertIn("暫定", text)
         self.assertTrue(all(url.startswith((ga.DATA, ga.ADMIN, "https://analyticsadmin.googleapis.com/v1alpha/"))
                             for url, _ in api.calls))
+        malicious = "![private](https://example.test/image)"
+        data["summary"]["current"]["pages"][0]["page"] = malicious
+        self.assertNotIn(malicious, ga.markdown(data))
 
     def test_redirects_refused(self):
         with self.assertRaisesRegex(ga.Blocked, "API_REDIRECT_REFUSED"):

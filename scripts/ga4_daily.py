@@ -307,12 +307,17 @@ def markdown(data):
              "page_view完全一致のイベント数をPVとし、affiliate_clickは別クエリで取得。",
              "100PVあたりのクリック回数は実人数・購入率ではなく、100を超え得る。",
              "期間終了から日数を空けても確定値とは扱わない。毎日両期間を遅延再取得する。", "",
-             f"総数: {current['totals']} / 品質制限: {current['warnings']}", "",
+             f"総数: {current['totals']} / 品質制限: {current['warnings']}",
+             f"前期との増減: {summary['total_change']}", "",
              "## ページ別（前期と等長・非重複）", "",
              "| ページ | PV | affiliate_click | 回/100PV | 前期PV | 前期クリック |",
              "|---|---:|---:|---:|---:|---:|"]
     def cell(value):
-        return str(value).replace("|", "\\|").replace("\n", " ").replace("\r", " ").replace("<", "&lt;")
+        if value is None:
+            return "算出不能"
+        text = str(value).replace("\n", " ").replace("\r", " ").replace("<", "&lt;")
+        # Event parameter values and page paths are untrusted input. Prevent Markdown images/links.
+        return re.sub(r"([\\`*_{}\[\]()#+!|>])", r"\\\1", text)
     for row in sorted(current["pages"], key=lambda p: (-p["page_view"], p["page"])):
         old = row["previous"]
         lines.append("| " + " | ".join(cell(x) for x in (row["page"], row["page_view"], row["affiliate_click"],
@@ -328,9 +333,11 @@ def markdown(data):
                          "閲覧機会に対してクリックが少ない候補。まず導線の可視性・適合性と計測欠落を確認。"
                          "PV20以上で回/100PVの低い順という確認用規則。因果や増収額の推定ではない。")
     lines += ["", "## 商品ID別（生ID保持・異体系を統合しない）", "",
-              "| 商品ID | クリック数 |", "|---|---:|"]
-    for row in current["products_raw_ids"]:
-        lines.append(f"| {cell(row['dimensions'][0])} | {row['count']} |")
+              "| 商品ID | 今期クリック | 前期クリック | 増減 | 増減率% |", "|---|---:|---:|---:|---:|"]
+    for row in sorted(summary["product_change"], key=lambda r: (-r["current"], r["raw_id"])):
+        delta = row["change"] or {"absolute": None, "percent": None}
+        lines.append("| " + " | ".join(cell(x) for x in (row["raw_id"], row["current"], row["previous"],
+                                                       delta["absolute"], delta["percent"])) + " |")
     lines += ["", "## 未設定bucket", ""]
     for key, value in current["missing"].items():
         lines.append(f"- {key}: {cell(json.dumps(value, ensure_ascii=False))}")
@@ -372,9 +379,9 @@ def main():
         for suffix, content in ((".json", json.dumps(data, ensure_ascii=False, indent=2)),
                                 (".md", markdown(data))):
             path = destination / ("ga4-" + stamp + suffix)
-            with path.open("x", encoding="utf-8") as output:
+            descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            with os.fdopen(descriptor, "w", encoding="utf-8") as output:
                 output.write(content)
-            path.chmod(0o600)
         print("GA4_PRIVATE_REPORT_WRITTEN; PROVISIONAL")
         return 0
     except Blocked as error:

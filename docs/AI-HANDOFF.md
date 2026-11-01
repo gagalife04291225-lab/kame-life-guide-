@@ -1642,7 +1642,7 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 
 ### GA4自動分析 — CLI実装と本番運用を分離（2026-11-02 JST）
 
-- **CLOSED（実装・オフライン検証）**: `scripts/ga4_daily.py`、専用requirements、合成データ16テスト、公開CI、`docs/operations/GA4_DAILY.md`。PV/クリック独立取得、ページ・商品生ID・未設定bucket・前期比較、Admin/metadata/互換性確認、全行取得と品質制限、私的レポート保存を実装。リモート反映の証拠は同PRの結果を正とする。
+- **CLOSED（実装・オフライン検証）**: PR #212 / `scripts/ga4_daily.py`、専用requirements、合成データ16テスト、公開CI、`docs/operations/GA4_DAILY.md`。PV/クリック独立取得、ページ・商品生ID・未設定bucket・前期比較、Admin/metadata/互換性確認、全行取得と品質制限、私的レポート保存を実装。リモート反映の証拠はPR #212の結果を正とする。実測/稼働の完了とは区別する。
 - **BLOCKED（実取得・日次稼働）**: CLI実行は EXISTING_READONLY_AUTH_UNAVAILABLE。既存ADCファイル・明示ADC/トークン環境変数なし。新規キー/OAuth grant/アクセス拡張/既存秘密の継続利用設定は行わない。Ownerが認可した実行主体と私的保存先・日次報告先を確定後、手動取得と翌日実行を確認するまで本番PASSにしない。
 - **BLOCKED（13CTA本番補完）**: 既存ID・イベント名・旧キー値を保持。location/category/species_slugの追加分類値と外部レポート依存は未確定。追加案patchをrepo外の私的作業領域に作成し39ケースPASS（提案のみ・未適用）。カスタム定義の登録/改名・推測値の本番HTML導入はしない。Ownerへ外部レポート有無を照会。PR #211の仕様修正は再適用していない。
 - **固定入力**: プロパティtimezone・ストリーム対応・登録済み5定義・過去CSV照合は前回記録を利用。登録名と送信キーを自動別名対応しない。既存原本と後続snapshotを混ぜず、進行中だった期間を最終値としない。前期の実測は未取得。

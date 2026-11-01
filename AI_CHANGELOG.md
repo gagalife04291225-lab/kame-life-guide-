@@ -583,3 +583,13 @@
   経緯は `docs/decisions/OPEN-DECISIONS.md` に記録した。
 
 ---
+
+## 2026-11-02 — 私的GA4日次取得・集計CLI
+
+- **Actor:** Codex（RO-3 実装）
+- **Change:** `scripts/ga4_daily.py`、専用requirements、合成データテストと公開CI、`docs/operations/GA4_DAILY.md` を追加。AI-HANDOFFの停止点と再開条件を更新。既存認証を使う読み取り専用取得、独立PV/クリック、商品生ID・未設定bucket・前期比較、品質制限と私的レポート保存を実装。
+- **Reason:** GA4自動分析の基盤を、計測コードやGA4設定の変更から独立させて検証する。実認証・日次ランナー・13CTAの分類/外部レポート依存は未確認のためBLOCKEDとして保持。
+- **PR/Commit:** PR #212 / 初回実装 `90ce72f2d5c39bffee5afcddd92231db45397e7d`。最終head・merge結果はPRの実測を正とする。
+- **Validation:** 合成データ16テスト、py_compile、diff check。実取得は認証不在で停止、本番成功とは扱わない。HTML・既存JS・商品DB・リンク・計測ID差分0。実数・認証情報は公開しない。
+- **Approver:** Ownerの今回指示（安全性・互換性を検証できた変更はPR・mergeまで）。PlatformのApprove reviewは実施しない。
+- **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。指定BASE `221278dedd31b9f1266c64edd9c29f005beabcbb`、開始時main `fa828ec93438bfad140288c67958052111f2696e`。
