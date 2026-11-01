@@ -34,7 +34,7 @@ PV = `eventName=page_view` の `eventCount`。クリック = `eventName=affiliat
 
 APIのoffset/rowCountで全行を取得し、安定した次元順序、重複キー、取得中のrowCount変動、空ページによる打切りを検出。429/一時的5xxは有限リトライ、認証拒否は停止。リダイレクト先へ認証ヘッダーを転送しない。
 
-`subjectToThresholding` / `samplingMetadatas` / `dataLossFromOtherRow` / `emptyReason` / schema restrictionと全ページmetadataを記録する。品質制限やページ総計不一致があれば比率・比較・改善順位を保留する。商品次元だけの不一致なら商品未設定率・商品比較を保留し、独立ページ集計を保持する。
+`subjectToThresholding` / `samplingMetadatas` / `dataLossFromOtherRow` / `dataTruncationReasons` / `emptyReason` / schema restrictionと全ページmetadataを記録する。品質制限やページ総計不一致があれば比率・比較・改善順位を保留する。商品次元だけの不一致なら商品未設定率・商品比較を保留し、独立ページ集計を保持する。保持期間などによる期間打切りは、明細と総計が一致しても警告として扱う。
 
 改善候補は「20PV以上のページで回/100PVが低い順」の明示的な確認規則。導線と計測を確認する候補であり、増収の因果・期待収益を推計しない。商品生ID別クリック数と併用し、収益判断には私的ASP確定実績を別途照合する。
 

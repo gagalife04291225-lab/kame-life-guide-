@@ -110,7 +110,7 @@ def exact(field, value):
 
 def quality(metadata):
     warnings = []
-    for key in ("subjectToThresholding", "dataLossFromOtherRow", "schemaRestrictionResponse"):
+    for key in ("subjectToThresholding", "dataLossFromOtherRow", "schemaRestrictionResponse", "dataTruncationReasons"):
         if metadata.get(key):
             warnings.append(key)
     for sample in metadata.get("samplingMetadatas", []):

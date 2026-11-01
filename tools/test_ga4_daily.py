@@ -120,6 +120,18 @@ class Tests(unittest.TestCase):
         self.assertIsNone(result["current"]["pages"][0]["clicks_per_100_pv"])
         self.assertIsNone(result["current"]["pages"][0]["change"]["page_view"])
 
+    def test_truncated_period_suppresses_analysis_even_when_totals_match(self):
+        warning = ga.quality({"dataTruncationReasons": ["DATA_BEFORE_RETENTION_START"]})
+        self.assertEqual(warning, ["dataTruncationReasons"])
+        current = bundle(warnings=warning)
+        result = ga.summarize({"current": current, "previous": bundle()})
+        self.assertFalse(result["comparison_available"])
+        self.assertIsNone(result["total_change"]["affiliate_click"])
+        self.assertIsNone(result["current"]["missing"]["product_id"]["rate_percent"])
+        data = {"acquired_at_utc": "synthetic", "timezone": "America/Los_Angeles",
+                "host": "example.test", "periods": {}, "summary": result}
+        self.assertIn("優先順位・差分解釈を保留", ga.markdown(data))
+
     def test_total_mismatch_and_ambiguous_bucket(self):
         current = bundle()
         current["page_view_total"] = report([([], 99)])
