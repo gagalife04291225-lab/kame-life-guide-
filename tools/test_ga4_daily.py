@@ -121,7 +121,8 @@ class Tests(unittest.TestCase):
         self.assertIsNone(result["current"]["pages"][0]["change"]["page_view"])
 
     def test_truncated_period_suppresses_analysis_even_when_totals_match(self):
-        warning = ga.quality({"dataTruncationReasons": ["DATA_BEFORE_RETENTION_START"]})
+        warning = ga.quality({"dataTruncationReasons": [{"dataTruncationType": "DATA_TRUNCATION_TYPE_PROPERTY",
+                                                        "dataTruncationDate": "2026-10-15"}]})
         self.assertEqual(warning, ["dataTruncationReasons"])
         current = bundle(warnings=warning)
         result = ga.summarize({"current": current, "previous": bundle()})
