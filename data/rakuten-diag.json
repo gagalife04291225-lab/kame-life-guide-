@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-10-30",
+  "date": "2026-11-01",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジ",
+   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX ���ングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -24,15 +24,15 @@
   }
  },
  "basking_75w": {
-  "date": "2026-10-29",
+  "date": "2026-11-01",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 5,
+  "resultCount": 9,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
-   "itemName": "GEX EXO TERRA（エキゾテラ）　サングローバスキングスポットランプ 75W　PT2132 【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクア",
-   "price": 1530,
-   "shop": "ネオス 楽天市場店"
+   "itemName": "エキゾテラ GEX EXOTERRA サングロー バスキングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 送料無料",
+   "price": 1528,
+   "shop": "ショップflora楽天市場店"
   }
  },
  "basking_arcadia_deep_heat_projector": {
@@ -156,9 +156,9 @@
   }
  },
  "enclosure_kayuso_90": {
-  "date": "2026-10-10",
+  "date": "2026-11-01",
   "query": "SANKO パンテオン ブラック BK9045",
-  "resultCount": 8,
+  "resultCount": 9,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:三晃商会,model:BK9045,series:パンテオン",
   "best": {
@@ -228,15 +228,15 @@
   }
  },
  "filter_canister_medium": {
-  "date": "2026-10-23",
+  "date": "2026-11-01",
   "query": "EHEIM クラシック 2213 外部フィルター",
-  "resultCount": 7,
+  "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=5.9 入数(2),消耗品(パッド),消耗品(ろ材),適合表記(2213)",
+  "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
-   "itemName": "【在庫限り】エーハイム 粗目フィルターパッド 2枚入 2213用 (2616131) 全国送料無料 EHEIM 純正 ろ材 ブルー 青 スポンジ クラシック 外",
-   "price": 1690,
-   "shop": "シンプルデイリーケア 楽天市場店"
+   "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
+   "price": 15150,
+   "shop": "ミナトワークス"
   }
  },
  "filter_canister_premium": {
@@ -924,15 +924,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 10,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2777,
-   "shop": "パレットマーケット"
+   "price": 2864,
+   "shop": "プライムズ商店"
   }
  },
  "media_gex_6090_set": {
@@ -1016,15 +1016,15 @@
   }
  },
  "shelter_turtle_dock": {
-  "date": "2026-10-19",
+  "date": "2026-11-01",
   "query": "亀 浮島 ドック 水棲",
-  "resultCount": 2,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=3.2",
+  "resultCount": 1,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
-   "itemName": "亀 浮島 爬虫類 タートルドック 日光浴 プラットフォーム 階段 登り石 水槽 吊り下げ式 高さ調節可能 隠れ家 シェルター 飼育ケース レイアウト 浅い皿 エ",
-   "price": 5402,
-   "shop": "レボショップ"
+   "itemName": "亀 バスキングプラットフォーム 20×14cm タートルドック 浮き島 日向ぼっこ台 階段付き カメの生息地 PC製 耐熱 安定 透明 爬虫類 両生類 水槽用ト",
+   "price": 5426,
+   "shop": "michikostore"
   }
  },
  "shelter_wood_premium": {
@@ -1192,14 +1192,14 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "query": "ジェックス カメ元気 プロバイオフード 180g",
   "resultCount": 2,
   "outcome": "ALL_REJECTED",
   "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
    "itemName": "ジェックス カメ元気 プロバイオフード 180g",
-   "price": 2426,
+   "price": 2555,
    "shop": "LINEAR shop"
   }
  },
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
-   "price": 939,
-   "shop": "ウルマックス 楽天市場店"
+   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
+   "price": 701,
+   "shop": "ペッツマム"
   }
  },
  "thermometer_aqua": {
