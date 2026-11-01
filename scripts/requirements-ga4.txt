@@ -1,0 +1,3 @@
+# Installed only on the approved private runner. No credential creation commands.
+google-auth[requests]>=2.38,<3
+tzdata>=2025.1

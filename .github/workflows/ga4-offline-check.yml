@@ -1,0 +1,20 @@
+name: GA4 offline checks
+on:
+  pull_request:
+    paths:
+      - 'scripts/ga4_daily.py'
+      - 'tools/test_ga4_daily.py'
+      - '.github/workflows/ga4-offline-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tools -p test_ga4_daily.py -v
+        # Synthetic data only. No secrets, Google calls, summaries, or data artifacts.
