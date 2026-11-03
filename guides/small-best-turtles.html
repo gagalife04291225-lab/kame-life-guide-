@@ -113,6 +113,12 @@ footer a{color:var(--accent);}
 /* ── 役割の違いを示すボックス ── */
 .role-box{background:#fff;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 16px;margin:20px 0;font-size:.88rem;line-height:1.8;}
 .role-box a{color:var(--accent-dark);text-decoration:underline;font-weight:700;}
+.care-links{margin:18px 0;padding-left:1.4em;}
+.care-links li{margin:10px 0;}
+.care-links a{color:var(--accent-dark);text-decoration:underline;}
+.equipment-compare{margin:24px 0;}
+.equipment-compare summary{color:var(--forest);cursor:pointer;padding:10px 0;}
+#care-guides{scroll-margin-top:90px;}
 @media(max-width:430px){
   .cmp-table{font-size:.8rem;}
   .cmp-table th,.cmp-table td{padding:9px 10px;}
@@ -244,6 +250,10 @@ footer a{color:var(--accent);}
   </div>
   <p class="cmp-note">成体サイズは当サイトの種データベースで一次資料を確認できた値です（ミシシッピニオイガメのみ CONFIRMED、他は LIKELY）。飼育容器・寿命は国内飼育の目安で、確認が取れていない項目は<strong>「要確認」</strong>と表示し、推測値を入れていません。CITES II は絶滅のおそれのある種の国際取引に関する条約の附属書IIで、国内で適法に流通する個体を飼育すること自体は禁止されていませんが、輸入には書類が必要です。</p>
 
+  <div class="role-box">
+    <p>気になる種が見つかったら、<a href="#care-guides">タイプ別に飼育環境を確認する</a>ことから。水槽・ケージの幅だけでなく、水場と陸場、床材、温度や光の管理も、飼いたい種のガイドで確認してください。表の容器サイズは目安で、どの個体にも同じ設備が合うとは限りません。</p>
+  </div>
+
   <h2>詳しい飼育ガイドがある3種</h2>
   <p>上表のうち、当サイトで飼育情報をまとめている3種です。<strong>順位ではなくサイズ順に並べています。</strong>飼いやすさの順位で選びたい場合は、このページではなく下の「初心者におすすめの亀ランキング」を参照してください。</p>
   <div class="rank-card">
@@ -352,8 +362,8 @@ footer a{color:var(--accent);}
     <p>このページは<strong>成体サイズで選ぶため</strong>のページです。飼いやすさ・初心者向けかどうかで比較したい場合は、<a href="../ranking-beginner-top10.html">初心者におすすめの亀ランキング TOP10</a>をご覧ください。サイズと難易度は一致しないため、両方を確認してから決めることをおすすめします。</p>
   </div>
 
-  <h2>タイプ別の飼育ガイド</h2>
-  <p>上表の「タイプ」ごとに、必要な設備と管理方法が異なります。</p>
+  <h2 id="care-guides">タイプ別に飼育環境を確認する</h2>
+  <p>上表には水中で過ごす種から陸上中心の種まで含まれています。ニオイガメ・ドロガメは半水棲、ヤマガメ・ハコガメは半陸生、ニホンイシガメは日本在来種、ロシアリクガメは乾燥系リクガメのガイドへ。まず環境づくりの説明を読み、具体的な条件は各種ページとあわせて確認してください。</p>
   <div class="related-links">
     <a href="../guide-semi.html" class="rel-btn">半水棲ガメの飼育ガイド（ニオイガメ・ドロガメ）</a>
     <a href="../guide-moist.html" class="rel-btn">ヤマガメ・ハコガメの飼育ガイド（半陸生）</a>
@@ -361,14 +371,23 @@ footer a{color:var(--accent);}
     <a href="../guide-dry.html" class="rel-btn">乾燥系リクガメの飼育ガイド</a>
   </div>
 
-  <h2>必要になる設備を調べる</h2>
-  <p>小型種でも、終生飼育には水槽・ケージのほか、ろ過・保温・紫外線・隠れ家が必要です。</p>
-  <div class="related-links">
-    <a href="../cage-best10.html" class="rel-btn">水槽・ケージの選び方</a>
-    <a href="../water-filter-best10.html" class="rel-btn">フィルターの選び方</a>
-    <a href="../uvb-light-best10.html" class="rel-btn">UVBライトの選び方</a>
-    <a href="../shelter-best10.html" class="rel-btn">シェルターの選び方</a>
-  </div>
+  <h2>設備ごとの管理方法を調べる</h2>
+  <p>飼育環境の中で気になる点があれば、次の解説も参考にしてください。水質管理の解説は水棲・半水棲ガメ向けです。温度やUVBの条件は、飼う種に合わせて確認してください。</p>
+  <ul class="care-links">
+    <li><a href="filter-guide.html">水換えと水質管理の基本</a>（水棲・半水棲ガメ）</li>
+    <li><a href="temperature-guide.html">水温・バスキング温度・気温の考え方</a></li>
+    <li><a href="uvb-light-guide.html">UVBの役割を知る</a></li>
+  </ul>
+  <details class="equipment-compare">
+    <summary>用品を比較したい場合</summary>
+    <p>以下は用品の比較記事です。水槽・ケージの記事にはリクガメ向けも含まれるため、飼う種の用途・サイズに合うかを確認してください。</p>
+    <div class="related-links">
+      <a href="../cage-best10.html" class="rel-btn">水槽・ケージの比較</a>
+      <a href="../water-filter-best10.html" class="rel-btn">フィルターの比較</a>
+      <a href="../uvb-light-best10.html" class="rel-btn">UVBライトの比較</a>
+      <a href="../shelter-best10.html" class="rel-btn">シェルターの比較</a>
+    </div>
+  </details>
 
   <h2>関連ページ</h2>
   <div class="related-links">
