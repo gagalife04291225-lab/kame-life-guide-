@@ -120,9 +120,9 @@
   }
  },
  "basking_infrared_red": {
-  "date": "2026-08-29",
+  "date": "2026-11-03",
   "query": "赤外線 バスキングランプ 75W 爬虫類",
-  "resultCount": 4,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.2",
   "best": {
@@ -468,14 +468,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-10-31",
+  "date": "2026-11-03",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2167,
+   "price": 2147,
    "shop": "ラサンタ"
   }
  },
@@ -748,9 +748,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-10-28",
+  "date": "2026-11-03",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 4,
+  "resultCount": 3,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -1082,13 +1082,13 @@
  "substrate_gex_terrarium_soil": {
   "date": "2026-11-03",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 5,
-  "outcome": "REFRESHED_STRONG",
-  "reason": "maker:GEX,容量一致,series:テラリウムソイル",
+  "resultCount": 4,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
-   "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
-   "price": 1714,
-   "shop": "ペットフォレスト 楽天市場店"
+   "itemName": "ジェックス EXO TERRA (エキゾテラ) テラリウムソイル 4kg 爬虫類・両生類用多孔質ソイル pH中性~弱酸性 ニオイ吸着 砂漠・亜熱帯環境 天然素材",
+   "price": 1716,
+   "shop": "RoothouseStore"
   }
  },
  "substrate_grassland_mix": {
@@ -1246,9 +1246,9 @@
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
+   "price": 701,
+   "shop": "ペッツマム"
   }
  },
  "thermometer_aqua": {
@@ -1276,13 +1276,13 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-10-16",
+  "date": "2026-11-03",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
+   "itemName": "【11月5日限定！最大100％ポイントバック】シンワ測定 デジタル温度計 SMART B 73117",
    "price": 2300,
    "shop": "Arclands Online 楽天市場支店"
   }
