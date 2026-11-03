@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-11-01",
+  "date": "2026-11-03",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX ���ングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品",
+   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジ",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -132,14 +132,14 @@
   }
  },
  "calcium_no_d3": {
-  "date": "2026-10-19",
+  "date": "2026-11-03",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
-   "price": 1130,
+   "price": 1140,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -656,14 +656,14 @@
   "best": null
  },
  "heater_aqua_100w": {
-  "date": "2026-08-30",
+  "date": "2026-11-03",
   "query": "水中ヒーター 100W 亀 水槽",
   "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.9",
   "best": {
    "itemName": "【期間限定！！クーポン利用】【短納期】加熱ヒーター 水槽ヒーター 小型 25W 50W 100W 200W 300W 自動恒温加熱 吸盤付き 空焼き防止 20℃",
-   "price": 2099,
+   "price": 2204,
    "shop": "Rinkastore"
   }
  },
@@ -784,14 +784,14 @@
   }
  },
  "hydrometer_tetra": {
-  "date": "2026-10-18",
+  "date": "2026-11-03",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
    "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
-   "price": 2010,
+   "price": 2017,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -868,14 +868,14 @@
   }
  },
  "media_eheim_2215_fine": {
-  "date": "2026-10-31",
+  "date": "2026-11-03",
   "query": "エーハイム 2215 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.2 入数(6),適合表記(2215)",
   "best": {
    "itemName": "【全国送料無料】エーハイム 細目フィルターパッド 6枚入 2215用 2215998 クラシック350",
-   "price": 2998,
+   "price": 2580,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -924,9 +924,9 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-11-01",
+  "date": "2026-11-03",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 4,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
@@ -964,14 +964,14 @@
   "best": null
  },
  "shelter_gex_island_loft": {
-  "date": "2026-10-21",
+  "date": "2026-11-03",
   "query": "GEX カメ元気 カメの島 ロフトタイプ",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "ジェックス カメ元気 カメの島ロフトタイプ カメ用浮島 拡張性 陸地シェルター 吸盤固定式 はしご付き 日光浴 組立式",
-   "price": 2365,
+   "price": 2016,
    "shop": "Homey Shop 楽天市場店"
   }
  },
@@ -1080,15 +1080,15 @@
   "best": null
  },
  "substrate_gex_terrarium_soil": {
-  "date": "2026-10-27",
+  "date": "2026-11-03",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 4,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
+  "resultCount": 5,
+  "outcome": "REFRESHED_STRONG",
+  "reason": "maker:GEX,容量一致,series:テラリウムソイル",
   "best": {
-   "itemName": "ジェックス EXO TERRA (エキゾテラ) テラリウムソイル 4kg 爬虫類・両生類用多孔質ソイル pH中性~弱酸性 ニオイ吸着 砂漠・亜熱帯環境 天然素材",
-   "price": 1716,
-   "shop": "RoothouseStore"
+   "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
+   "price": 1714,
+   "shop": "ペットフォレスト 楽天市場店"
   }
  },
  "substrate_grassland_mix": {
@@ -1192,16 +1192,12 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-11-01",
+  "date": "2026-11-03",
   "query": "ジェックス カメ元気 プロバイオフード 180g",
-  "resultCount": 2,
-  "outcome": "ALL_REJECTED",
-  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
-  "best": {
-   "itemName": "ジェックス カメ元気 プロバイオフード 180g",
-   "price": 2555,
-   "shop": "LINEAR shop"
-  }
+  "resultCount": 0,
+  "outcome": "NO_RESULT",
+  "reason": null,
+  "best": null
  },
  "tank_120_aqua": {
   "date": "2026-08-29",
@@ -1244,15 +1240,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-01",
+  "date": "2026-11-03",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1316,9 +1312,9 @@
   }
  },
  "thermostat": {
-  "date": "2026-10-26",
+  "date": "2026-11-03",
   "query": "サーモスタット 爬虫類 アナログ",
-  "resultCount": 2,
+  "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.7",
   "best": {
