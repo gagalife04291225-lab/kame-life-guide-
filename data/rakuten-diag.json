@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジ",
+   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -456,14 +456,14 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-10-30",
+  "date": "2026-11-04",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性",
-   "price": 1467,
+   "price": 1403,
    "shop": "kichibei"
   }
  },
@@ -784,15 +784,15 @@
   }
  },
  "hydrometer_tetra": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "query": "テトラ ハイドロメーター 比重計",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:テトラ,series:ハイドロメーター",
   "best": {
-   "itemName": "【全国送料無料】テトラ 比重計 ハイドロメーター(新ロット新パッケージ)",
-   "price": 2017,
-   "shop": "レヨンベールアクア楽天市場店"
+   "itemName": "テトラ (Tetra) テトラ ハイドロメーター 比重計 人工海水 70735",
+   "price": 1972,
+   "shop": "スプラウツLLC 楽天市場店"
   }
  },
  "media_eheim_2211_coarse": {
@@ -1120,14 +1120,14 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-10-17",
+  "date": "2026-11-04",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 5,
-  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=8.5",
+  "resultCount": 4,
+  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
+  "reason": "score=8.5 容量不一致",
   "best": {
-   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム 細粒 小粒 中粒 大粒 選べる ガーデニング 培",
-   "price": 1350,
+   "itemName": "三本線【焼成・硬質赤玉土】5L（約4kg）赤玉土 用土 園芸 ガーデニング テラリウム メダカ 細粒 小粒 中粒 大粒 選べる 培養土 庭 土 観葉植物 多肉植",
+   "price": 850,
    "shop": "園芸用土のイワモト"
   }
  },
@@ -1240,15 +1240,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1364,26 +1364,26 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-10-30",
+  "date": "2026-11-04",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 5,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "【11/1〜3★三日間限定クーポン配布中】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
  },
  "uvb_led_bar": {
-  "date": "2026-09-18",
+  "date": "2026-11-04",
   "query": "UVB LED ライト バー 爬虫類",
-  "resultCount": 3,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.9",
   "best": {
    "itemName": "爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 ライト選択 光量調整 タイマー ",
-   "price": 6380,
+   "price": 6580,
    "shop": "カシキド楽天市場店"
   }
  },
@@ -1408,13 +1408,13 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-10-31",
+  "date": "2026-11-04",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 9,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "【限定フラッシュクーポン配布中♪11/1〜3】GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERR",
+   "itemName": "GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3520,
    "shop": "ハッピードライブヤブモト"
   }
@@ -1476,15 +1476,15 @@
   "best": null
  },
  "waterdish_zoomed_ramp_bowl": {
-  "date": "2026-10-22",
+  "date": "2026-11-04",
   "query": "ズーメッド レプティランプボウル LG",
-  "resultCount": 3,
+  "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=3.6",
+  "reason": "score=4",
   "best": {
-   "itemName": "大感謝価格『ZOOMED ズーメッド レプティランプボウル LG RRB-11』『直送品。代引不可・同梱不可・返品キャンセル・割引不可』ペット 飼育 えさ 水入",
-   "price": 5489,
-   "shop": "ロミオニ防災グッズ保存水や食の店"
+   "itemName": "レプティランプボウル LG RRB-11 ZOOMED(ズーメッド) 爬虫類 両生類 水飲み 水入れ カラー ランダム レオパ カエル トカゲ ヘビ カメ",
+   "price": 3600,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  }
 }
