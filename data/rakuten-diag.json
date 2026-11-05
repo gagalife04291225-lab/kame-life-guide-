@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【エントリーでP5倍★11/4 20時〜11/10】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -24,9 +24,9 @@
   }
  },
  "basking_75w": {
-  "date": "2026-11-01",
+  "date": "2026-11-05",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
-  "resultCount": 9,
+  "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
@@ -456,15 +456,15 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
-  "resultCount": 8,
+  "resultCount": 7,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
-   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性",
-   "price": 1403,
-   "shop": "kichibei"
+   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
+   "price": 2259,
+   "shop": "SooTune"
   }
  },
  "food_gex_tortoise_blend_400": {
@@ -584,15 +584,15 @@
   }
  },
  "food_reptomin_medium_70": {
-  "date": "2026-10-02",
+  "date": "2026-11-05",
   "query": "テトラ レプトミン 中粒 70g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.6",
+  "reason": "score=4.2",
   "best": {
-   "itemName": "スペクトラム　ブランズ　ジャパン株式会社 テトラ レプトミン 中粒 70g 爬虫類・両生類 フード 爬虫類・両生類用フードドライ 4004218320444 ≪",
-   "price": 975,
-   "shop": "hakozume"
+   "itemName": "テトラ(Tetra) レプトミン 中粒 70G ニオイ 汚れを抑える カメの主食 天然原料のみ使用の安心フード 着料 保存料 不使用 水をキレイに保つ 食いつき",
+   "price": 608,
+   "shop": "hanatomori楽天市場店"
   }
  },
  "food_reptomin_small_70": {
@@ -712,14 +712,14 @@
   }
  },
  "heater_gex_navipack_300": {
-  "date": "2026-10-25",
+  "date": "2026-11-05",
   "query": "GEX セーフカバーナビパック 300",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.9",
   "best": {
    "itemName": "ジェックス GEX AQUA HEATER セーフカバーナビパック 300 サーモスタット+ヒーター 縦横設置 安全機能付 SP規格適合 約15",
-   "price": 7194,
+   "price": 7206,
    "shop": "ショウマーケット"
   }
  },
@@ -748,9 +748,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-11-03",
+  "date": "2026-11-05",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -772,15 +772,15 @@
   }
  },
  "heater_tetra_repto_50w": {
-  "date": "2026-10-31",
+  "date": "2026-11-05",
   "query": "テトラ レプトヒーター 50W",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=7",
+  "reason": "score=5.4",
   "best": {
-   "itemName": "【全国送料無料】テトラ レプトヒーター 50w 安全カバー付 RHC50",
-   "price": 2360,
-   "shop": "レヨンベールアクア楽天市場店"
+   "itemName": "テトラ　レプトヒーター　50W　安全カバー付　水棲カメ用ヒーター　自動保温　縦横設置　安全機能付　SP規格適合　関東当日便",
+   "price": 1880,
+   "shop": "charm 楽天市場店"
   }
  },
  "hydrometer_tetra": {
@@ -924,15 +924,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-11-03",
+  "date": "2026-11-05",
   "query": "GEX メガパワー 2045 交換ろ材セット",
-  "resultCount": 5,
+  "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2864,
-   "shop": "プライムズ商店"
+   "price": 2932,
+   "shop": "formanism"
   }
  },
  "media_gex_6090_set": {
@@ -1120,14 +1120,14 @@
   "best": null
  },
  "substrate_soil": {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "query": "赤玉土 小粒 爬虫類",
-  "resultCount": 4,
-  "outcome": "KEPT_SEARCH_LEGACY_REJECT",
-  "reason": "score=8.5 容量不一致",
+  "resultCount": 5,
+  "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
+  "reason": "score=8.5",
   "best": {
-   "itemName": "三本線【焼成・硬質赤玉土】5L（約4kg）赤玉土 用土 園芸 ガーデニング テラリウム メダカ 細粒 小粒 中粒 大粒 選べる 培養土 庭 土 観葉植物 多肉植",
-   "price": 850,
+   "itemName": "登録商標三本線 【焼成・硬質赤玉土 14L】（約10kg）赤玉土 用土 園芸 ガーデニング メダカ テラリウム 細粒 小粒 中粒 大粒 選べる ガーデニング 培",
+   "price": 1350,
    "shop": "園芸用土のイワモト"
   }
  },
@@ -1364,13 +1364,13 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 5,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【エントリーでP5倍★11/4 20時〜11/10】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO T",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
@@ -1408,13 +1408,13 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 9,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
+   "itemName": "【11/4〜10 エントリー+購入でP5倍♪】GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERR",
    "price": 3520,
    "shop": "ハッピードライブヤブモト"
   }
@@ -1456,15 +1456,15 @@
   }
  },
  "water_test_tetra_nh3": {
-  "date": "2026-10-26",
+  "date": "2026-11-05",
   "query": "テトラ テスト試験紙 NH3 NH4 アンモニア 25回",
-  "resultCount": 6,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=4.5",
+  "reason": "score=3.6",
   "best": {
-   "itemName": "テトラ　テスト試験紙　NH3/NH4＋　（アンモニア）　（淡水用）　25回　関東当日便",
-   "price": 1917,
-   "shop": "charm 楽天市場店"
+   "itemName": "テトラ　テスト試験紙NH3/NH4+　(アンモニア)(淡水・海水用）25回　4571269556752　飼育水のアンモニアを簡単チェック",
+   "price": 2178,
+   "shop": "PET World アミーゴ楽天市場店"
   }
  },
  "waterdish_sanko_dish": {
