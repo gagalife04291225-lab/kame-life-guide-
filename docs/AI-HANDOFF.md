@@ -45,17 +45,27 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **fa828ec93438bfad140288c67958052111f2696e**（2026-11-02 JST / origin/main実測）。Owner指定BASE 221278dedd31b9f1266c64edd9c29f005beabcbbからの先行差分は楽天定期更新2ファイルのみ |
-| サイトファイルの状態 | PR #205: 初心者ランキング2ページの注記・サイズ表示、餌ガイド1ページのUVB/D3表記のみ修正。商品DB・CSS/JS・採点ロジックは無変更 |
+| 基準 | 作業開始時の `main` = **8da1d1af89cef93c10043b4057cc4f826da367ac**（2026-11-09の分類修正。GitHub API・origin/mainで実測） |
+| サイトファイルの状態 | 本修正は `data/products.js` の `supplement_probiotics.category` を `food` にする1行のみ。商品ID・ASIN・リンク・GA4コード・推薦マッピングは不変 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
-| 最終更新日 | 2026-11-02 |
+| 最終更新日 | 2026-11-09 |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/ga4-parameter-review-20261102`（KPI仕様・引き継ぎ文書のみ） |
+| 作業ブランチ | `claude/fix-probiotics-category-20261109`（分類1行＋引き継ぎ記録） |
 | 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### プロバイオフードの分類修正（2026-11-09 / 本修正PR）— ASIN再監査不要
+
+- **Owner承認**: 分類調査・1行パッチ案と実ブラウザ未確認の報告後、Ownerが「マージして」と明示指示。実装・オフライン検証を完了。merge/public反映の実測結果は本PRの記録を参照する。
+- `supplement_probiotics.category`: `supplements` → `food`。PR #210の商品名・説明を固定入力とし、ASIN監査・実商品再照合は行っていない。全142商品の比較で対象category以外のフィールド差分0。商品ID・ASIN・Amazon/楽天リンク・tier・rating・recommendedForは不変。
+- **参照の確定**: `EQUIPMENT_MAP` / `SETUP_SPECS` から対象IDの参照0。既存のスターターキット・用品ガイド・診断・費用見積りへの自動追加はない。カテゴリ抽出は food 24→25 / supplements 8→7。未使用の `getBestProduct('supplements')` は対象フード→`supplement_calcium_plus`、foodの代表とbudget代表は不変。
+- **オフライン検証**: 9検証群PASS。8系統×11分類×3tierの264照会・24推薦セット、スターターキット8系統の生成HTML、診断16組、10setup spec中9描画分が不変。DOM shimで既存setup 123リンク・kit 420リンクのpayload同一、`affiliate_click` 各1回を確認（実ユーザーの件数ではない）。対象商品の仮表示fixtureではリンク/IDを保持し分類値だけfoodへ是正。パッチ適用・JS構文もPASS。
+- **GA4**: 測定ID・イベント名・送信キー・リスナーの変更0。対象を将来表示した場合はcategory/product_categoryがfood、display_categoryがフードになる。過去データを書き換えない。実GA4受信は未評価。
+- **楽天同期**: `CATEGORY_GUARDS` がfood用になる。合成フード候補は拒否(null)→8.2、サプリ候補/不正価格/不審ショップの拒否は維持。実APIは実行していない。通常日次経路は同一性EXACT/STRONG・成果対象URL・HOLDなし・品質8.0以上なら後日昇格し得る（リンクの将来不変までは保証しない）。手動IDENTITY_PROMOTE経路のallowlistと混同しない。ガード/閾値/allowlistは無変更。
+- **制限**: 実ブラウザ確認はBLOCKED。Chromium起動時socket EPERM、共有ブラウザでもローカルfile URLはポリシーにより拒否。生成HTML/DOM shim検証を視覚・実DOM確認とは扱わない。今回、HTML/CSS/描画JSの変更0。公開反映の確認とブラウザ未確認は別に記録する。
 
 ### ASIN 定期点検（月・金 Routine）2026-10-30 — 30件照合・ASIN 差し替え 0 — **同じ30件を再照合しない**
 
@@ -1654,7 +1664,6 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 - **B06XC8YK4Y（GEX デザートソイル 2kg）**: 同シリーズ10kg版ページに「粒が崩れやすく大型で体重の重い生き物には不向き」と読める記載があり、`substrate-best10.html` / `substrate-review.html` は乾燥系リクガメに推奨している。2kg版での同記載は未確認のためサイトは未変更。メーカー仕様の確認を要する。
 - **B00E0GLLKI（グラステラリウム 9045）**: 検索インデックスのタイトルが「ナノキューブ PT2599」と食い違う（URLスラッグは 9045 と整合）。商品同一性を確定できず据え置き。
 - **B00CB8KY78 と B00BF91SQK**: どちらもグラステラリウム 6030（同一製品の2ASIN併用）。B00CB8KY78 は今回ページ取得不可。整理の判断は未実施。
-- **`supplement_probiotics` の category は `supplements` のまま**（実体はフード）。カテゴリ変更は UI 影響があるため未実施。
 
 ### 初心者亀TOP10のCITES法規制表示 — PR #207（2026-10-11、Owner実行指示あり）
 
@@ -1829,6 +1838,8 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 ---
 
 ## NEXT — 次に実行する工程（**1つだけ**）
+
+今回の分類修正は上記に記録済み。以下は既存の外部入力待ち工程であり、この分類修正では着手していない。
 
 ### 認可済み私的ランナーでGA4日次実測を受け入れる
 

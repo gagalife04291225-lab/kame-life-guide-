@@ -3355,7 +3355,7 @@ const PRODUCTS = {
   supplement_probiotics: {
     id: 'supplement_probiotics',
     name: 'GEX カメ元気 プロバイオフード 180g',
-    category: 'supplements',
+    category: 'food',
     tier: 'premium',
     priceRange: null,
     affiliateUrl: 'https://www.amazon.co.jp/dp/B01BXVIHRM?tag=kamelife090e-22',
