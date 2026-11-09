@@ -593,3 +593,14 @@
 - **Validation:** 合成データ16テスト、py_compile、diff check。実取得は認証不在で停止、本番成功とは扱わない。HTML・既存JS・商品DB・リンク・計測ID差分0。実数・認証情報は公開しない。
 - **Approver:** Ownerの今回指示（安全性・互換性を検証できた変更はPR・mergeまで）。PlatformのApprove reviewは実施しない。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。指定BASE `221278dedd31b9f1266c64edd9c29f005beabcbb`、開始時main `fa828ec93438bfad140288c67958052111f2696e`。
+
+
+## 2026-11-10 JST — Windows GA4日次運用の復旧記録
+
+- **Actor:** Codex（RO-3）
+- **Change:** AI-HANDOFFを実際のWindows私的ランナーの状態へ更新。既存読み取り専用OAuthを再認可し、手動取得とTask Scheduler経由の起動・私的保存を確認。既存タスクを再利用し、クライアント/キー/権限追加・タスク設定上書きはなし。公開repoの変更は2文書のみ。
+- **Reason:** 標準ADC不在と私的DPAPI認証を区別し、認証なしという古い停止点と、Testingの7日制限/復旧後定刻未検証を正しく引き継ぐ。
+- **Validation:** 手動・タスク起動とも終了コード0、異なる新規レポート対を読取、API品質警告0、対象ホスト/ストリーム/時間帯/独立総計を照合。同一ユーザー・IgnoreNew・WakeToRun=falseを確認。定刻実行と恒久運用は未検証/未完。私的実数/秘密を転載しない。
+- **PR/Commit:** 本作業ブランチ `claude/ga4-runtime-recovery-20261110` のPR結果を正とする。開始時main `34b47b509557c3a0c6282e88ad8fc0a67c39daac`、取得CLIはPR #212の既存版。
+- **Approver:** OwnerのWindows日次稼働の作業指示と、PC操作を代行して進める追加指示。OAuth本番公開の承認とは扱わない。
+- **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
