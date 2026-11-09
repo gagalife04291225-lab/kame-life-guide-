@@ -57,7 +57,7 @@
 
 ## COMPLETED — 完了済み。**再調査禁止**
 
-### プロバイオフードの分類修正（2026-11-09 / 本修正PR）— ASIN再監査不要
+### プロバイオフードの分類修正（2026-11-09 / PR #214）— ASIN再監査不要
 
 - **Owner承認**: 分類調査・1行パッチ案と実ブラウザ未確認の報告後、Ownerが「マージして」と明示指示。実装・オフライン検証を完了。merge/public反映の実測結果は本PRの記録を参照する。
 - `supplement_probiotics.category`: `supplements` → `food`。PR #210の商品名・説明を固定入力とし、ASIN監査・実商品再照合は行っていない。全142商品の比較で対象category以外のフィールド差分0。商品ID・ASIN・Amazon/楽天リンク・tier・rating・recommendedForは不変。
