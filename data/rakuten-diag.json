@@ -132,14 +132,14 @@
   }
  },
  "calcium_no_d3": {
-  "date": "2026-11-03",
+  "date": "2026-11-10",
   "query": "GEX エキゾテラ カルシウム 90g 爬虫類",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,容量一致,series:カルシウム",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ カルシウム 90g",
-   "price": 1140,
+   "price": 1130,
    "shop": "レヨンベールアクア楽天市場店"
   }
  },
@@ -296,15 +296,15 @@
   }
  },
  "filter_hang_on": {
-  "date": "2026-08-29",
+  "date": "2026-11-10",
   "query": "外掛け フィルター 爬虫類 亀",
-  "resultCount": 1,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
-  "reason": "score=3.2",
+  "reason": "score=6.3",
   "best": {
-   "itemName": "水槽 フィルター 上部フィルター アクアリウム ポンプ 外掛け式 ろ過 流量調節 静音 コンパクト 多機能 水質改善 透明 クリアタイプ メンテナンス 簡単 省",
-   "price": 11096,
-   "shop": "擇木ショップ"
+   "itemName": "水槽フィルター 水槽用フィルター 外掛け式 滝状 低水位 静音 流量調整 活性炭 淡水 海水 魚 爬虫類 両生類 アクアリウム ポンプ 600L/H",
+   "price": 3100,
+   "shop": "TsuNaGu2017"
   }
  },
  "filter_small": {
@@ -444,11 +444,11 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-11-08",
+  "date": "2026-11-10",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
-  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
    "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
    "price": 798,
@@ -468,14 +468,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-11-07",
+  "date": "2026-11-10",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2147,
+   "price": 2148,
    "shop": "ラサンタ"
   }
  },
@@ -748,9 +748,9 @@
   }
  },
  "heater_panel_60": {
-  "date": "2026-11-08",
+  "date": "2026-11-10",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 3,
+  "resultCount": 4,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -1082,13 +1082,13 @@
  "substrate_gex_terrarium_soil": {
   "date": "2026-11-10",
   "query": "GEX EXOTERRA テラリウムソイル 4kg",
-  "resultCount": 4,
-  "outcome": "REFRESHED_STRONG",
-  "reason": "maker:GEX,容量一致,series:テラリウムソイル",
+  "resultCount": 3,
+  "outcome": "ALL_REJECTED",
+  "reason": "カテゴリガード/価格/不審ショップで全候補除外",
   "best": {
-   "itemName": "◇ジェックス テラリウムソイル 4kg | GEX テラリウムソイル 爬虫類 床材 両生類 テラリウム ソイル 生きたバクテリア 熱帯 黒ボク土 中性 pH グ",
-   "price": 1714,
-   "shop": "ペットフォレスト 楽天市場店"
+   "itemName": "ジェックス EXO TERRA (エキゾテラ) テラリウムソイル 4kg 爬虫類・両生類用多孔質ソイル pH中性~弱酸性 ニオイ吸着 砂漠・亜熱帯環境 天然素材",
+   "price": 1716,
+   "shop": "RoothouseStore"
   }
  },
  "substrate_grassland_mix": {
