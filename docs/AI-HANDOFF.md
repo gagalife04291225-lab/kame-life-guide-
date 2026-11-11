@@ -45,17 +45,25 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時の `main` = **34b47b509557c3a0c6282e88ad8fc0a67c39daac**（2026-11-10 JST / git ls-remote・origin/main実測）。今回はGA4の既存Windows私的ランナーの稼働復旧と引き継ぎ記録のみ |
-| サイトファイルの状態 | 今回はHTML・既存JS・商品DB・リンク・計測IDの変更なし。PR #213・トップページ・13CTAは対象外 |
+| 基準 | 作業開始時の `main` = **570bc1c2808c93bc2c5e72678e8b50b276242853**（2026-11-12 JST / git ls-remote 実測）。今回は「大きくならない亀7種」記事の改稿と関連ページの矛盾修正 |
+| サイトファイルの状態 | `guides/small-best-turtles.html` 改稿・`ranking-beginner-top10.html`・種ページ3枚・`shindan/species.js`・`data/species-master.json` を変更（本ブランチ。merge 前） |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
-| 最終更新日 | 2026-11-10 JST |
+| 最終更新日 | 2026-11-12 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `claude/ga4-runtime-recovery-20261110`（運用状況の記録のみ） |
+| 作業ブランチ | `claude/small-turtles-adult-size-20261112` |
 | 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
 
 ## COMPLETED — 完了済み。**再調査禁止**
+
+### 「大きくならない亀7種」を成体サイズの根拠と飼育スペースで判断できる記事へ改稿（2026-11-12 / Owner 指示・PR は本ブランチ `claude/small-turtles-adult-size-20261112`）— **同じ再調査をしない**
+
+- 2026-09-07 の改善（FAQ schema・カニバリ解消）とは別工程。Owner の明示指示（NO-REWORK GATE ④）と新しい矛盾（ロシア20cm上限・カブトニオイ45cm表記）により7種を再調査した。
+- 記事: サイズ表（一般的な成体／資料上の上限／雌雄差）、飼育スペース表（当サイト目安／海外資料例／温度管理／難易度）、甲長の測り方、種カード7枚（向く人・向かない人）、同居、今は迎えない判断、FAQ 9問（JSON-LD 一致）、参考資料28件。根拠のない「初期費用」を削除。運営者の実飼育はスペングラーのみと明記し、既存実写真 `assets/species/spenglers-leaf-turtle/setup-full.jpg` を使用（撮影時期・甲長・性別は記録なしと明記）。
+- PR #213 の記事側の変更（タイプ別ガイド導線・設備解説3本・用品比較の折りたたみ）を取り込んだ。**本PRを merge する場合、#213 は close でよい（Owner 判断）。**
+- 関連ページの矛盾修正: `ranking-beginner-top10.html` カブトニオイ「45cmで終生」2箇所→60cm／`species/spenglers-leaf-turtle.html`「最大14cm」3箇所→7〜11cm／`species/razorback-musk-turtle.html`・`species/musk-turtle.html` の最大値表記を17.6cm記録に整合（計7箇所）／`shindan/species.js` 最大甲長 2件。
+- GA4 イベント（buyer_guide_click の destination 5種・view・kids）と Amazon/楽天リンクは不変。CITES 不変。
 
 ### プロバイオフードの分類修正（2026-11-09 / PR #214）— ASIN再監査不要
 
@@ -1346,27 +1354,25 @@ note に「外部一次資料での検証未了。**サイト既存表記を正�
 | ニホンイシガメ | ♂13cm・♀20cm | 30〜50年以上 |
 
 
-### 小型種の確定データ（2026-09-07 / 再調査しない）
+### 小型種7種のサイズ・飼育スペース（2026-11-12 更新 / Owner 指示で再調査済み・再調査しない）
 
-`guides/small-best-turtles.html` の比較表に採用した値。出典は下記のとおり分かれている。
+`guides/small-best-turtles.html` の表の値。サイズは「一般的な成体の目安／資料に残る上限／雌雄差」の3つに分けて表示する。
+根拠URLは記事の「参考資料」[1]〜[28] と `species-master.json` の各 `max_shell_length_cm.note/sources`。
 
-| 種 | 成体サイズ（master） | 飼育容器（master `care.enclosure_jp`） | 難易度（`shindan/species.js`） | 寿命（種ページ表記） |
+| 種 | 一般的な成体 | 資料に残る上限（master value） | 当サイトの容器目安（master `enclosure_jp`） | 難易度 |
 |---|---|---|---|---|
-| スペングラーヤマガメ | 10.7cm (LIKELY) | 60cmケージ〜（床面積優先・高さ不要） | 中〜上級 | 20〜40年以上 |
-| ミシシッピニオイガメ | 14cm (**CONFIRMED**) | 終生45〜60cm水槽 | 入門 | 20〜30年以上 |
-| カブトニオイガメ | 15cm (LIKELY) | 単独60cm水槽・ペア90cm | 入門〜中級 | 20〜30年以上 |
-| シロクチドロガメ | 17cm (LIKELY) | 60cm水槽から・余裕があれば90cm | 上級 | **要確認** |
-| フロリダハコガメ | 18.7cm (LIKELY) | 90cm級から（床材厚敷き＋浅い水場） | 中〜上級 | **要確認** |
-| ニホンイシガメ | 20cm (LIKELY) | **要確認**（master は null） | 中級 | 30〜50年以上 |
-| ロシアリクガメ | 20cm (LIKELY) | **要確認**（master は null） | 入門〜中級 | 40〜80年以上 |
+| スペングラーヤマガメ | 7〜11cm | 10.7cm（TFTSG）。Naturalis は13cm＝conflict未解消 | 60cmケージ〜 | 中〜上級 |
+| ミシシッピニオイガメ | 5〜12cm | 13.7cm（master 14・CONFIRMED） | 45cm開始→成体60cm | 入門 |
+| カブトニオイガメ | 10〜15cm | **17.6cm**（Outdoor Alabama。master 15→17.6） | 単独60cm・ペア90cm | 入門〜中級 |
+| フロリダハコガメ | 11〜15cm | 18.7cm（オス・Pritchard 1980） | 90cm級から | 中〜上級 |
+| シロクチドロガメ | **未確認**（信頼できる値なし） | オス175mm超・メス165mm超（CAAR）。master 17 は据え置き | 60cm〜90cm | 上級 |
+| ニホンイシガメ | オス10〜15・メス17〜21cm | メス20.2・オス14.5cm（TFTSG）。master 20 | 60cm開始・成体90cm | 中級 |
+| ロシアリクガメ | 13〜20cm | **22cm**（Highfield 1992・Naturalis。master 20→22）。28.64cm報告は原典未確認で不採用 | 90cm級ケージ〜 | 入門〜中級 |
 
-- **`species-master.json` で成体サイズが数値で確定しているのは 121種中 24種のみ**（97種は null）。
-  したがって「サイト最小」は言えても**「世界最小」とは書けない**。ページもその範囲で書いている
-- 全7種が CITES 附属書II
-- **ヒメハコヨコクビガメ（12cm）は比較表から意図的に外した。**
-  サイト内分類が `guide-softshell`（特殊種）で表のタイプ列に馴染まず、
-  難易度が資料間で食い違い（下記 N30）、寿命も「不明（記録が乏しい）」のため
-
+- **海外の飼育推奨は国内目安より広いものが多い**（ニオイガメ: 幅60cm〜約91×46cm・水量160L以上、ロシア: 約2.1×1.1m 等）。記事では「当サイトの目安＝下限寄り」と明記し、両方を並べた。**国内目安を一生十分と断定しない。**
+- **寿命の正本は引き続きなし**（master 全種 UNPROVEN）。記事の比較表から寿命列を外し、出典のある値だけ種カード・FAQで示した（ニオイガメ60年: Gill/Tortoise Trust、ロシア50年以上: ReptiFiles、イシガメ野外メスの約1/4が20歳超: TFTSG）。
+- **未評価（取得不可）**: 東京動物園協会の解説（Owner 提示の「8〜21cm」は本文未確認のため不使用）、RSPCA Brighton 譲渡PDF、USGS NAS ファクトシート、Tortoise Trust musk.html。本環境の WebFetch allowlist 外で、検索経由でも本文に届かなかった。NOT FOUND ではない。
+- 全7種 CITES 附属書II（変更なし）。ヒメハコヨコクビガメを外した理由も従前どおり。
 
 ### 楽天ウェブサービス規約の一次確認結果（2026-09-07 / B13 RESOLVED・再調査禁止）
 
@@ -1688,6 +1694,14 @@ product-free presenter master に切り替わった。**この判断待ちは閉
 - 残る次工程: **HF_TOKEN 登録（Owner）** → `mode=all` 実行 → `qc-evidence/talk-poc-002` の実MP4を全数QC。
 - `mina-video-factory` の talk PoC は、旧正本を掴んだ場合に明示的に停止するガードを入れてある。
 
+
+
+### 本PR（小型種7種の改稿）— Owner 判断待ち・新発見（2026-11-12）
+
+- **merge 判断待ち**: 本PRは PR #213（Owner の公開判断待ち）の記事変更を含むため、Actor は merge せず Owner へ戻した。merge 後は公開URLの表示を別途実測する（merge＝公開確認済みではない）。
+- **据え置き**: シロクチドロガメの一般的な成体サイズ、スペングラー（10.7 vs 13cm）、カブトニオイ・シロクチ・ニホンイシガメ・スペングラーの種別の飼育スペース推奨（海外資料）は未確認のまま。推測で埋めていない。
+- **新発見（未着手）**: `species/razorback-musk-turtle.html`・`greek-tortoise.html`・`hermann-tortoise.html` に `<cite index="…">` タグが本文に残っている（表示は斜体になるだけ・計18箇所）。ニオイガメの国内目安（45〜60cm）は海外推奨（約91cm・160L等）より小さく、`enclosure_jp` 自体の見直しは master と種ページ全体に波及するため今回は記事で併記するにとどめた。
+- **実写真の不足**: 運営者の実写真はスペングラーのみ（撮影時期・甲長・性別の記録なし）。ほかの6種は運営者写真なし。
 
 ### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）
 

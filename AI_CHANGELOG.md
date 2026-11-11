@@ -604,3 +604,14 @@
 - **PR/Commit:** 本作業ブランチ `claude/ga4-runtime-recovery-20261110` のPR結果を正とする。開始時main `34b47b509557c3a0c6282e88ad8fc0a67c39daac`、取得CLIはPR #212の既存版。
 - **Approver:** OwnerのWindows日次稼働の作業指示と、PC操作を代行して進める追加指示。OAuth本番公開の承認とは扱わない。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+
+
+## 2026-11-12 JST — 「大きくならない亀7種」記事の改稿と関連ページの矛盾修正
+
+- **Actor:** Claude Code（RO-3）
+- **Change:** `guides/small-best-turtles.html` を、成体サイズ（一般的な目安／資料上の上限／雌雄差）と成体1匹の飼育スペース（当サイト目安／海外資料例）で判断できる構成へ改稿。参考資料28件、種カード7枚、同居、今は迎えない判断、FAQ 9問を追加し、根拠のない初期費用を削除。PR #213 の記事側導線を取り込み。関連ページ（ranking-beginner-top10・種ページ3枚・shindan/species.js）の矛盾を修正し、species-master のカブトニオイ（15→17.6cm）・ロシアリクガメ（20→22cm）と5種の note/sources を更新。
+- **Reason:** Owner の明示指示（GSC 2026-10-13〜11-09: 214クリック・3,078表示・平均6.0位）。読者の「成長後も小さいか」に根拠付きで答えるため。
+- **Validation:** check_enclosure_sync 一致110/不一致0、check_compare_enclosure 一致378/矛盾0、validate_species MISMATCH 0、tools 17テスト OK、FAQ 可視9＝JSON-LD 9、ローカルリンク・アンカー切れ0、320/390/1280px で横はみ出し0、GA4/アフィリエイトID数 不変。
+- **PR/Commit:** ブランチ `claude/small-turtles-adult-size-20261112`。開始時 main `570bc1c2808c93bc2c5e72678e8b50b276242853`。merge は Owner 判断（PR #213 の公開判断を含むため）。
+- **Approver:** Owner の作業指示。merge・公開は未承認。
+- **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
