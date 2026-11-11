@@ -63,6 +63,7 @@
 - 記事: サイズ表（一般的な成体／資料上の上限／雌雄差）、飼育スペース表（当サイト目安／海外資料例／温度管理／難易度）、甲長の測り方、種カード7枚（向く人・向かない人）、同居、今は迎えない判断、FAQ 9問（JSON-LD 一致）、参考資料28件。根拠のない「初期費用」を削除。運営者の実飼育はスペングラーのみと明記し、既存実写真 `assets/species/spenglers-leaf-turtle/setup-full.jpg` を使用（撮影時期・甲長・性別は記録なしと明記）。
 - PR #213 の記事側の変更（タイプ別ガイド導線・設備解説3本・用品比較の折りたたみ）を取り込んだ。**本PRを merge する場合、#213 は close でよい（Owner 判断）。**
 - 関連ページの矛盾修正: `ranking-beginner-top10.html` カブトニオイ「45cmで終生」2箇所→60cm／`species/spenglers-leaf-turtle.html`「最大14cm」3箇所→7〜11cm／`species/razorback-musk-turtle.html`・`species/musk-turtle.html` の最大値表記を17.6cm記録に整合（計7箇所）／`shindan/species.js` 最大甲長 2件。
+- 独立レビュー（別エージェント）で指摘9件を確認し修正済み（カブトニオイの一般サイズ 10〜15→10〜12cm、雌雄差2件、子亀サイズ、東部ハコガメの成体サイズ、資料の性格の言い過ぎ、穴掘りの出典範囲、Pritchard の引用元統一）。診断データの「水槽サイズ: 45cm〜」は全種が開始サイズ表記のため据え置き。
 - GA4 イベント（buyer_guide_click の destination 5種・view・kids）と Amazon/楽天リンクは不変。CITES 不変。
 
 ### プロバイオフードの分類修正（2026-11-09 / PR #214）— ASIN再監査不要
@@ -1363,7 +1364,7 @@ note に「外部一次資料での検証未了。**サイト既存表記を正�
 |---|---|---|---|---|
 | スペングラーヤマガメ | 7〜11cm | 10.7cm（TFTSG）。Naturalis は13cm＝conflict未解消 | 60cmケージ〜 | 中〜上級 |
 | ミシシッピニオイガメ | 5〜12cm | 13.7cm（master 14・CONFIRMED） | 45cm開始→成体60cm | 入門 |
-| カブトニオイガメ | 10〜15cm | **17.6cm**（Outdoor Alabama。master 15→17.6） | 単独60cm・ペア90cm | 入門〜中級 |
+| カブトニオイガメ | 10〜12cm前後（ADW） | **17.6cm**（Outdoor Alabama。master 15→17.6） | 単独60cm・ペア90cm | 入門〜中級 |
 | フロリダハコガメ | 11〜15cm | 18.7cm（オス・Pritchard 1980） | 90cm級から | 中〜上級 |
 | シロクチドロガメ | **未確認**（信頼できる値なし） | オス175mm超・メス165mm超（CAAR）。master 17 は据え置き | 60cm〜90cm | 上級 |
 | ニホンイシガメ | オス10〜15・メス17〜21cm | メス20.2・オス14.5cm（TFTSG）。master 20 | 60cm開始・成体90cm | 中級 |

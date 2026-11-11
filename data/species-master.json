@@ -1812,7 +1812,7 @@
           "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8011"
         ],
         "last_verified": "2026-11-12",
-        "note": "記録上の最大17.6cm（アラバマ州自然保護局 Outdoor Alabama・J.C. Godwin。Ernst et al. 1994 等を引用）。Naturalis（Turtles of the World）は「16cmまで」。一般的な成体は10〜15cm前後（ADW: 10.2〜11.7cm）。2026-11-12 に15→17.6へ更新（15cmは一般的な上限の目安で、記録上限ではなかった）"
+        "note": "記録上の最大17.6cm（アラバマ州自然保護局 Outdoor Alabama・J.C. Godwin。Ernst et al. 1994 等を引用）。Naturalis（Turtles of the World）は「16cmまで」。一般的な成体はADWで10.2〜11.7cm（オスがやや大きいことがある）。2026-11-12 に15→17.6へ更新（15cmは一般的な上限の目安で、記録上限ではなかった）"
       },
       "conservation": {
         "env_redlist": {
@@ -11066,7 +11066,7 @@
         "value": 10.7,
         "verification": "LIKELY",
         "provenance": "official",
-        "note": "TFTSG種アカウント2010（Yasukawa & Ota）: 成体67.4〜107.1mm・最大記録107mm。Naturalis（Turtles of the World）は「13cmまで」と記載し資料差あり（conflict・未解消）。孵化幼体は約30mm",
+        "note": "TFTSG種アカウント2010（Yasukawa & Ota）: 成体67.4〜107.1mm・最大記録107mm。Naturalis（Turtles of the World）は「13cmまで」と記載し資料差あり（conflict・未解消）。孵化幼体は約30mm。TFTSGは雌雄で甲長に有意差なしとする",
         "sources": [
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_047_spengleri_v1_2010.pdf",
           "https://www.iucnredlist.org/species/pdf/2929166",
