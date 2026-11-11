@@ -37,9 +37,11 @@
     try { return _species.all || []; } catch (e) { return []; }
   }
 
+  // 文字列中の数値を配列で返す。小数は1つの数として読む（"17.6cm" → [17.6]。
+  // 以前は /\d+/ で "17" と "6" に分かれ、甲長の最小値が実在しない値になっていた）。
   function parseNums(str) {
-    if (!str) return null;
-    var nums = String(str).match(/\d+/g);
+    if (str === null || str === undefined) return null;
+    var nums = String(str).match(/\d+(?:\.\d+)?/g);
     if (!nums || !nums.length) return null;
     return nums.map(Number);
   }
@@ -64,16 +66,18 @@
     return { min: min, max: max, minName: minName, maxName: maxName };
   }
 
+  // coreSpecs.size は「最大甲長」（上限側の数字）。雌雄併記（例「オス7cm/メス12cm」）の
+  // 小さい方を拾うと種の上限を過小に見せるため、各種の上限値（文字列中の最大の数）で比べる。
   function sizeSummary() {
-    var min = null, max = null, maxName = null;
+    var min = null, max = null, minName = null, maxName = null;
     allSpecies().forEach(function (s) {
       var nums = s.coreSpecs && parseNums(s.coreSpecs.size);
       if (!nums) return;
-      var lo = Math.min.apply(null, nums), hi = Math.max.apply(null, nums);
-      if (min === null || lo < min) min = lo;
+      var hi = Math.max.apply(null, nums);
+      if (min === null || hi < min) { min = hi; minName = s.name; }
       if (max === null || hi > max) { max = hi; maxName = s.name; }
     });
-    return { min: min, max: max, maxName: maxName };
+    return { min: min, max: max, minName: minName, maxName: maxName };
   }
 
   function tankSizeSummary() {
@@ -279,7 +283,7 @@
     size: function () {
       var s = sizeSummary();
       var lede = (s.min !== null && s.max !== null)
-        ? 'データベースでは、成体の甲長はおおよそ' + s.min + '〜' + s.max + 'cmまで幅があります（最大級の例：' + (s.maxName || '大型種') + '）。'
+        ? 'データベースに登録した各種の「最大甲長」（資料に記録された上限や、大きめに見た目安）は、いちばん小さい種で約' + s.min + 'cm（' + (s.minName || '小型種') + '）、大きい種では' + s.max + 'cmに達します（' + (s.maxName || '大型種') + '）。これは一般的な成体の大きさではなく上限側の数字です。一般的な成体の大きさは種類ページで確認してください。'
         : '成体になったときの大きさは種類によって大きく異なります。';
       return {
         reply: lede + '小さいまま飼えると思っていた種類が想像以上に大きくなることも多いので、種類一覧や比較ページで成体サイズを確認してから選ぶことをおすすめします。',
@@ -467,6 +471,8 @@
   window.KameAnnainin = {
     classifyIntent: classifyIntent,
     getAnnaininResponse: getAnnaininResponse,
-    CONNECTORS: CONNECTORS
+    CONNECTORS: CONNECTORS,
+    // 回帰テスト用（tools/test-annainin-numbers.mjs）。表示には使わない
+    _test: { parseNums: parseNums, sizeSummary: sizeSummary, lifespanSummary: lifespanSummary, tankSizeSummary: tankSizeSummary }
   };
 })();

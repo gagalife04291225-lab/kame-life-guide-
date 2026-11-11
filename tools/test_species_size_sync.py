@@ -60,12 +60,20 @@ def species_records():
         name = re.search(r"name: '([^']+)'", seg).group(1)
         slug = re.search(r"slug: '([^']+)'", seg)
         core = re.search(r"coreSpecs:\s*\{[^}]*?size: '([^']*)'", seg)
+        reason = re.search(r"reason: '([^']*)'", seg)
+        tank = re.search(r"tankSize: '([^']*)'", seg)
+        tank_legacy = re.search(r"'水槽サイズ': '([^']*)'", seg)
+        note = re.search(r"sizeNote: '([^']*)'", seg)
         legacy = re.search(r"'最大甲長': '([^']*)'", seg)
         out.append({
             'name': name,
             'slug': slug.group(1) if slug else None,
             'core': core.group(1) if core else None,
             'legacy': legacy.group(1) if legacy else None,
+            'reason': reason.group(1) if reason else '',
+            'tank': tank.group(1) if tank else None,
+            'tank_legacy': tank_legacy.group(1) if tank_legacy else None,
+            'note': note.group(1) if note else None,
         })
     return out
 
@@ -111,6 +119,29 @@ class SpeciesSizeSync(unittest.TestCase):
                 limit_cell = re.sub(r'<a class="src-ref"[^>]*>\[\d+\]</a>', '', cells[2])
                 limit_cell = re.sub(r'<span class="cmp-sub">.*?</span>', '', limit_cell, flags=re.S)
                 self.assertLessEqual(abs(upper(limit_cell) - want), 0.5, '%s 記事=%s / master=%s' % (name, limit_cell, want))
+
+
+    def test_small_guide_notes_and_space(self):
+        """7種は「最大甲長」の注記を持ち、診断の容器の説明が正本の成体向け目安を下回らない。"""
+        by_slug = {r['slug']: r for r in self.records if r['slug']}
+        # 「45cm水槽」「30〜45cm水槽」「90cm級ケージ」「50cm程度のケージ」などの容器サイズ
+        tank_re = re.compile(r'(\d+)(?:〜(\d+))?cm.{0,4}?(?:水槽|ケージ|から)')
+        for slug, name in SMALL_GUIDE.items():
+            with self.subTest(slug=slug):
+                rec = by_slug[slug]
+                self.assertTrue(rec['note'], '%s に sizeNote がない' % name)
+                self.assertIn('一般的な成体', rec['note'])
+                enc = self.master[slug]['care']['enclosure_jp']['value']
+                enc = re.sub(r'（[^）]*インチ[^）]*）', '', enc)  # 正本の社内向け注記（インチ換算）を除く
+                floor = min(int(n) for n in re.findall(r'\d+', enc))
+                sizes = []
+                for m in tank_re.finditer(rec['reason']):
+                    sizes += [int(x) for x in m.groups() if x]
+                for field in ('tank', 'tank_legacy'):
+                    if rec[field]:
+                        sizes += [int(n) for n in re.findall(r'\d+', rec[field])]
+                for v in sizes:
+                    self.assertGreaterEqual(v, floor, '%s: 診断の容器説明 %scm が正本「%s」の下限 %scm を下回る' % (name, v, enc, floor))
 
 
 if __name__ == '__main__':

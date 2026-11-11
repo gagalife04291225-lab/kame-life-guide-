@@ -202,6 +202,7 @@ body {
 .spec-item { background: rgba(255,255,255,.04); border-radius: 8px; padding: 10px 12px; }
 .spec-label { font-size: .72rem; color: var(--text-muted); margin-bottom: 4px; }
 .spec-value { font-size: .9rem; color: var(--parchment); }
+.spec-note { grid-column: 1 / -1; font-size: .78rem; line-height: 1.7; color: #d9e0d6; margin: 2px 0 0; }
 .legal-box { background: rgba(125,102,8,.12); border: 1px solid rgba(125,102,8,.4); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: .85rem; color: #c4a820; line-height: 1.6; }
 .result-links { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .art-link { display: block; padding: 14px 18px; background: var(--forest-mid); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); color: var(--parchment); text-decoration: none; font-size: .9rem; transition: background .15s; -webkit-tap-highlight-color: transparent; }
@@ -3745,6 +3746,13 @@ function showResult(sp, pct, runners) {
     Object.entries(sp.specs).forEach(function(entry){
       specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + entry[0] + '</div><div class="spec-value">' + entry[1] + '</div></div>';
     });
+  }
+  // 最大甲長の注記（資料に記録された上限か・一般的な成体サイズはどのくらいか）。種データに sizeNote がある種だけ表示
+  if (sp.sizeNote) {
+    var sizeNoteEl = document.createElement('p');
+    sizeNoteEl.className = 'spec-note';
+    sizeNoteEl.textContent = '※最大甲長：' + sp.sizeNote;
+    specGrid.appendChild(sizeNoteEl);
   }
 
   // 種別ページCTA（Phase1.6）

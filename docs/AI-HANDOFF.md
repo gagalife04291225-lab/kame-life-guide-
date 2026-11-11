@@ -63,6 +63,7 @@
 - 記事: サイズ表（一般的な成体／資料上の上限／雌雄差）、飼育スペース表（当サイト目安／海外資料例／温度管理／難易度）、甲長の測り方、種カード7枚（向く人・向かない人）、同居、今は迎えない判断、FAQ 9問（JSON-LD 一致）、参考資料28件。根拠のない「初期費用」を削除。運営者の実飼育はスペングラーのみと明記し、既存実写真 `assets/species/spenglers-leaf-turtle/setup-full.jpg` を使用（撮影時期・甲長・性別は記録なしと明記）。
 - PR #213 の記事側の変更（タイプ別ガイド導線・設備解説3本・用品比較の折りたたみ）を取り込んだ。**本PRを merge する場合、#213 は close でよい（Owner 判断）。**
 - 関連ページの矛盾修正: `ranking-beginner-top10.html` カブトニオイ「45cmで終生」2箇所→60cm／`species/spenglers-leaf-turtle.html`「最大14cm」3箇所→7〜11cm／`species/razorback-musk-turtle.html`・`species/musk-turtle.html` の最大値表記を17.6cm記録に整合（計7箇所）／`shindan/species.js` の「最大甲長」を、診断画面が実際に表示する `coreSpecs.size` と旧形式 `specs` の両方で4種そろえた（ロシア22・カブトニオイ17.6・スペングラー10.7・フロリダハコガメ18.7cm。レビュー指摘 r4544118146 対応）。再発防止に `tools/test_species_size_sync.py` を追加。
+- 公開前の追加修正（同PR）: 診断の説明文・水槽サイズを正本の成体向け目安にそろえた（フロリダハコガメ「50cm程度のケージでも飼育可能」→90cm級から、ロシアリクガメ「60〜90cmから」→成体90cm級以上、ミシシッピニオイガメ 30cm〜→45cm〜（成体60cm）、カブトニオイガメ 45cm〜→60cm〜（ペア90cm）、ニホンイシガメ 60cm〜→60cm〜（成体90cm））。7種に `sizeNote`（記録上限か・一般的な成体サイズ・資料差）を追加し、診断結果の「最大甲長」の下に表示。シロクチドロガメの表示を17.5cm超（オス）・master 17→17.5、ミシシッピニオイガメ 14→13.7cm（記録値）、ニホンイシガメ 20→20.2cm（メス）。`js/annainin.js` の `parseNums` を小数対応にし、「大きさ」回答を上限側の数字だと明記（最小値 6cm→10.7cm）。テスト: `tools/test_species_size_sync.py` 4件、`tools/test-annainin-numbers.mjs` 21件（`node` で実行）。
 - 独立レビュー（別エージェント）で指摘9件を確認し修正済み（カブトニオイの一般サイズ 10〜15→10〜12cm、雌雄差2件、子亀サイズ、東部ハコガメの成体サイズ、資料の性格の言い過ぎ、穴掘りの出典範囲、Pritchard の引用元統一）。診断データの「水槽サイズ: 45cm〜」は全種が開始サイズ表記のため据え置き。
 - GA4 イベント（buyer_guide_click の destination 5種・view・kids）と Amazon/楽天リンクは不変。CITES 不変。
 
@@ -1702,7 +1703,7 @@ product-free presenter master に切り替わった。**この判断待ちは閉
 - **merge 判断待ち**: 本PRは PR #213（Owner の公開判断待ち）の記事変更を含むため、Actor は merge せず Owner へ戻した。merge 後は公開URLの表示を別途実測する（merge＝公開確認済みではない）。
 - **据え置き**: シロクチドロガメの一般的な成体サイズ、スペングラー（10.7 vs 13cm）、カブトニオイ・シロクチ・ニホンイシガメ・スペングラーの種別の飼育スペース推奨（海外資料）は未確認のまま。推測で埋めていない。
 - **新発見（未着手）**: `species/razorback-musk-turtle.html`・`greek-tortoise.html`・`hermann-tortoise.html` に `<cite index="…">` タグが本文に残っている（表示は斜体になるだけ・計18箇所）。ニオイガメの国内目安（45〜60cm）は海外推奨（約91cm・160L等）より小さく、`enclosure_jp` 自体の見直しは master と種ページ全体に波及するため今回は記事で併記するにとどめた。
-- **新発見（未着手・診断データ）**: `coreSpecs.size` と `specs['最大甲長']` の食い違いが残る6種（ヘルマン・イベラギリシャ・ヒガシヘルマン・チェリーヘッド・サルヴィンオオニオイガメ・アラバマチズガメ）は `tools/test_species_size_sync.py` の `KNOWN_DIVERGENCE` に固定（増えたら失敗）。master の LIKELY 値と `coreSpecs.size` が1cm超ずれる種は小型7種以外に25種ある。`js/annainin.js` の `sizeSummary()` は小数を「10」「7」に分けて読むため、サイズの最小値が6cmと表示される（スベスッポン「35.6cm」由来・本PR前から同じ値）。
+- **新発見（未着手・診断データ）**: `coreSpecs.size` と `specs['最大甲長']` の食い違いが残る6種（ヘルマン・イベラギリシャ・ヒガシヘルマン・チェリーヘッド・サルヴィンオオニオイガメ・アラバマチズガメ）は `tools/test_species_size_sync.py` の `KNOWN_DIVERGENCE` に固定（増えたら失敗）。master の LIKELY 値と `coreSpecs.size` が1cm超ずれる種は小型7種以外に25種ある。`js/annainin.js` の小数分割（PR前から「6〜120cm」と表示）は本PRで修正済み（下記）。
 - **実写真の不足**: 運営者の実写真はスペングラーのみ（撮影時期・甲長・性別の記録なし）。ほかの6種は運営者写真なし。
 
 ### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）

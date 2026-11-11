@@ -2962,10 +2962,10 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 17,
+        "value": 17.5,
         "verification": "LIKELY",
         "provenance": "official",
-        "note": "一部個体群でオス175mm超・メス165mm超（Berry & Iverson 2001, CAAR）。Naturalis: オス17.4cm・メス15.8cm（オスの方が大きい）。コロンビアNus川の個体群は他より小型（Ceballos et al. 2016）。旧noteの「コロンビア個体群研究に20cm超」は2026-11-12の確認で原典を特定できず削除。一般的な成体サイズの信頼できる値は未確認",
+        "note": "一部個体群でオス175mm超・メス165mm超（Berry & Iverson 2001, CAAR）。Naturalis: オス17.4cm・メス15.8cm（オスの方が大きい）。コロンビアNus川の個体群は他より小型（Ceballos et al. 2016）。旧noteの「コロンビア個体群研究に20cm超」は2026-11-12の確認で原典を特定できず削除。一般的な成体サイズの信頼できる値は未確認。2026-11-12 に17→17.5へ更新（診断・記事の表示「17.5cm超（オス）」とそろえるため）",
         "sources": [
           "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913",
           "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8016&epi=11",
