@@ -84,11 +84,11 @@
   "best": null
  },
  "basking_halogen_35w": {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "query": "エキゾテラ サングロータイトビーム 50W",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=7.4",
+  "reason": "score=7.5",
   "best": {
    "itemName": "【全国送料無料】GEX エキゾテラ サングロータイトビームバスキングスポットランプ 50W 昼用集光型 (橙)",
    "price": 1530,
@@ -456,15 +456,15 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-11-05",
+  "date": "2026-11-11",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
-  "resultCount": 7,
+  "resultCount": 9,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "reason": "score=4.6",
   "best": {
-   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
-   "price": 2259,
-   "shop": "SooTune"
+   "itemName": "[ジェックス(直送：小動物・観賞魚)] ExoTerra リクガメの栄養バランスフード 400g ※メーカー直送となります。 爬虫類 飼育用品 ペットフード 毎",
+   "price": 1770,
+   "shop": "well-being kikui-pharmacy"
   }
  },
  "food_gex_tortoise_blend_400": {
@@ -480,9 +480,9 @@
   }
  },
  "food_hikari_turtle": {
-  "date": "2026-09-10",
+  "date": "2026-11-11",
   "query": "ひかり タートル 亀 フード",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.3",
   "best": {
@@ -636,14 +636,14 @@
   "best": null
  },
  "food_tortoise_herbs": {
-  "date": "2026-10-26",
+  "date": "2026-11-11",
   "query": "キョーリン マルベリックドライ リクガメ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:マルベリックドライ",
   "best": {
    "itemName": "キョーリン マルベリックドライ 180g 400g 1kg リクガメ フード 桑の葉配合 国産 爬虫類 餌 ヒカリ hikari",
-   "price": 1100,
+   "price": 1735,
    "shop": "ペットショップ うちのmofu"
   }
  },
