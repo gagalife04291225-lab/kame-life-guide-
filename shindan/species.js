@@ -7,7 +7,7 @@ const SPECIES = {
 land: [
   { name: 'ロシアリクガメ', latin: 'Testudo (Agrionemys) horsfieldii', emoji: '🏔️', recommendationPriority: 94, difficulty: '入門〜中級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: 'リクガメ入門の定番。乾燥した環境を好み、60〜90cmのケージから始められます。好奇心が旺盛でなつきやすく、はじめて飼う方にも人気。CITES IIですので国内CBのインボイス付き個体を選びましょう。',
-    specs: { '最大甲長': '20cm前後', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
+    specs: { '最大甲長': '22cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '25〜32℃' },
     coreSpecs: { size: '20cm前後', temp: '25〜32℃', lifespan: '40〜80年', diet: '草食（野草・野菜中心）' },
     extraSpecs: {},
     links: [{ label: '乾燥系リクガメ 飼育ガイド', href: '../guide-dry.html' }], asin: null,
@@ -352,7 +352,7 @@ aquatic: [
   },
   { name: 'カブトニオイガメ', latin: 'Sternotherus carinatus', emoji: '⛑️', difficulty: '入門〜中級', size: 'M（10〜15cm）', cites: 'CITES II', legal: null,
     reason: 'キールが目立つ個性的な甲羅が魅力。ニオイガメよりやや大型化しますが45cm水槽から飼育可能。気性がやや荒い個体もいます。',
-    specs: { '最大甲長': '15cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '入門〜中級' },
+    specs: { '最大甲長': '17.6cm', '水槽サイズ': '45cm〜', '水温': '22〜28℃', '難易度': '入門〜中級' },
     coreSpecs: { size: '15cm', temp: '22〜28℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '45cm〜' },
     links: [{ label: '半水棲ガメ 飼育ガイド', href: '../guide-semi.html' }], asin: null,

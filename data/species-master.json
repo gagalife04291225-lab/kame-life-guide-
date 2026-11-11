@@ -169,10 +169,12 @@
         "verification": "LIKELY",
         "provenance": "expert_consensus",
         "sources": [
-          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8072&epi=11"
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8072&epi=11",
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_003_japonica_v1_2008.pdf",
+          "https://www.gov-online.go.jp/hlj/ja/april_2026/april_2026-12.html"
         ],
-        "last_verified": "2026-08-17",
-        "note": "♀最大201.8mm・♂145.4mm"
+        "last_verified": "2026-11-12",
+        "note": "TFTSG 2008: メス最大201.8mm・オス最大145.4mm、成熟個体の平均はオス104mm・メス173mm、孵化幼体30〜35mm。政府広報（Highlighting Japan 2026年4月号）はオス約15cm・メス約21cm。value 20 はメスの最大記録の丸め"
       },
       "conservation": {
         "env_redlist": {
@@ -994,14 +996,17 @@
         "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
       },
       "max_shell_length_cm": {
-        "value": 20,
+        "value": 22,
         "verification": "LIKELY",
-        "provenance": "keeper_consensus",
+        "provenance": "expert_consensus",
         "sources": [
-          "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/"
+          "https://www.reptiles.swelluk.com/help-guides/how-to-look-after-a-horsfield-tortoise/",
+          "https://mail.tortoisetrust.org/articles/horsfield2.html",
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8179",
+          "https://www.tortoise-protection-group.org.uk/site/files/Horsfield%20paper.pdf"
         ],
-        "last_verified": "2026-08-17",
-        "note": "12〜20cm"
+        "last_verified": "2026-11-12",
+        "note": "確認済み最大個体は直甲長22cm（A.C. Highfield, Tortoise Trust, 1992）。Naturalis も「22cmまで」。成体はおおむね13〜20cm、メスが大きい（British Chelonia Group: オス〜14cm・メス〜19cm）。メス28.64cmの報告（Lee & Smith 2010 が Yakovleva 1961 等を引用・地域差あり）は原典未確認のため value に採らない。2026-11-12 に20→22へ更新"
       },
       "conservation": {
         "env_redlist": {
@@ -1577,10 +1582,11 @@
         "verification": "CONFIRMED",
         "provenance": "official",
         "sources": [
-          "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=1269"
+          "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=1269",
+          "https://virginiaherpetologicalsociety.com/reptiles/turtles/stinkpot/index.php"
         ],
-        "last_verified": "2026-08-17",
-        "note": "最大直甲長137mm（USGS）。14cmは切上げ表記"
+        "last_verified": "2026-11-12",
+        "note": "最大直甲長137mm（Conant & Collins 1991。USGS・Virginia Herpetological Society）。14cmは切上げ表記。成体の雌雄差はほぼない（VHS）"
       },
       "conservation": {
         "env_redlist": {
@@ -1796,15 +1802,17 @@
         "last_verified": "2026-08-17"
       },
       "max_shell_length_cm": {
-        "value": 15,
+        "value": 17.6,
         "verification": "LIKELY",
         "provenance": "expert_consensus",
         "sources": [
           "https://animaldiversity.org/accounts/Sternotherus_carinatus/",
-          "https://www.allturtles.com/razor-back-musk-turtle/"
+          "https://www.allturtles.com/razor-back-musk-turtle/",
+          "https://outdooralabama.com/turtles/razor-backed-musk-turtle",
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8011"
         ],
-        "last_verified": "2026-08-17",
-        "note": "ニオイガメ属最大"
+        "last_verified": "2026-11-12",
+        "note": "記録上の最大17.6cm（アラバマ州自然保護局 Outdoor Alabama・J.C. Godwin。Ernst et al. 1994 等を引用）。Naturalis（Turtles of the World）は「16cmまで」。一般的な成体は10〜15cm前後（ADW: 10.2〜11.7cm）。2026-11-12 に15→17.6へ更新（15cmは一般的な上限の目安で、記録上限ではなかった）"
       },
       "conservation": {
         "env_redlist": {
@@ -2957,12 +2965,14 @@
         "value": 17,
         "verification": "LIKELY",
         "provenance": "official",
-        "note": "最大17cm前後（Reptiles of Ecuador等）。コロンビア個体群研究に20cm超の値もあり資料差をconflictとして保持",
+        "note": "一部個体群でオス175mm超・メス165mm超（Berry & Iverson 2001, CAAR）。Naturalis: オス17.4cm・メス15.8cm（オスの方が大きい）。コロンビアNus川の個体群は他より小型（Ceballos et al. 2016）。旧noteの「コロンビア個体群研究に20cm超」は2026-11-12の確認で原典を特定できず削除。一般的な成体サイズの信頼できる値は未確認",
         "sources": [
           "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913",
-          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8016&epi=11"
+          "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8016&epi=11",
+          "https://core.ac.uk/download/211381739.pdf",
+          "https://doi.org/10.1670/15-035"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -5826,11 +5836,12 @@
         "value": 18.7,
         "verification": "LIKELY",
         "provenance": "official",
-        "note": "最大記録187mm（Pritchard 1980・TFTSG 2015種アカウント経由）。通常は11〜15cm",
+        "note": "最大記録187mm（オス・Sanibel島。Pritchard 1980、TFTSG 2015種アカウント経由）。Dodd（2017）はEgmont Key島の調査でメス最大153mm・オス最大166mm、Sanibel島では雌雄とも180mm超と記載。オスがやや大きい傾向。通常は11〜15cm",
         "sources": [
-          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf",
+          "https://journals.ku.edu/reptilesandamphibians/article/download/14155/13043"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11055,13 +11066,13 @@
         "value": 10.7,
         "verification": "LIKELY",
         "provenance": "official",
-        "note": "TFTSG種アカウント2010: 成体67.4〜107.1mm・最大記録107mm。複数独立ソースの一致で確認（PDF直接取得はegress制限で未了）",
+        "note": "TFTSG種アカウント2010（Yasukawa & Ota）: 成体67.4〜107.1mm・最大記録107mm。Naturalis（Turtles of the World）は「13cmまで」と記載し資料差あり（conflict・未解消）。孵化幼体は約30mm",
         "sources": [
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_047_spengleri_v1_2010.pdf",
           "https://www.iucnredlist.org/species/pdf/2929166",
           "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8063&epi=11"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
