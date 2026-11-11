@@ -62,7 +62,7 @@
 - 2026-09-07 の改善（FAQ schema・カニバリ解消）とは別工程。Owner の明示指示（NO-REWORK GATE ④）と新しい矛盾（ロシア20cm上限・カブトニオイ45cm表記）により7種を再調査した。
 - 記事: サイズ表（一般的な成体／資料上の上限／雌雄差）、飼育スペース表（当サイト目安／海外資料例／温度管理／難易度）、甲長の測り方、種カード7枚（向く人・向かない人）、同居、今は迎えない判断、FAQ 9問（JSON-LD 一致）、参考資料28件。根拠のない「初期費用」を削除。運営者の実飼育はスペングラーのみと明記し、既存実写真 `assets/species/spenglers-leaf-turtle/setup-full.jpg` を使用（撮影時期・甲長・性別は記録なしと明記）。
 - PR #213 の記事側の変更（タイプ別ガイド導線・設備解説3本・用品比較の折りたたみ）を取り込んだ。**本PRを merge する場合、#213 は close でよい（Owner 判断）。**
-- 関連ページの矛盾修正: `ranking-beginner-top10.html` カブトニオイ「45cmで終生」2箇所→60cm／`species/spenglers-leaf-turtle.html`「最大14cm」3箇所→7〜11cm／`species/razorback-musk-turtle.html`・`species/musk-turtle.html` の最大値表記を17.6cm記録に整合（計7箇所）／`shindan/species.js` 最大甲長 2件。
+- 関連ページの矛盾修正: `ranking-beginner-top10.html` カブトニオイ「45cmで終生」2箇所→60cm／`species/spenglers-leaf-turtle.html`「最大14cm」3箇所→7〜11cm／`species/razorback-musk-turtle.html`・`species/musk-turtle.html` の最大値表記を17.6cm記録に整合（計7箇所）／`shindan/species.js` の「最大甲長」を、診断画面が実際に表示する `coreSpecs.size` と旧形式 `specs` の両方で4種そろえた（ロシア22・カブトニオイ17.6・スペングラー10.7・フロリダハコガメ18.7cm。レビュー指摘 r4544118146 対応）。再発防止に `tools/test_species_size_sync.py` を追加。
 - 独立レビュー（別エージェント）で指摘9件を確認し修正済み（カブトニオイの一般サイズ 10〜15→10〜12cm、雌雄差2件、子亀サイズ、東部ハコガメの成体サイズ、資料の性格の言い過ぎ、穴掘りの出典範囲、Pritchard の引用元統一）。診断データの「水槽サイズ: 45cm〜」は全種が開始サイズ表記のため据え置き。
 - GA4 イベント（buyer_guide_click の destination 5種・view・kids）と Amazon/楽天リンクは不変。CITES 不変。
 
@@ -1702,6 +1702,7 @@ product-free presenter master に切り替わった。**この判断待ちは閉
 - **merge 判断待ち**: 本PRは PR #213（Owner の公開判断待ち）の記事変更を含むため、Actor は merge せず Owner へ戻した。merge 後は公開URLの表示を別途実測する（merge＝公開確認済みではない）。
 - **据え置き**: シロクチドロガメの一般的な成体サイズ、スペングラー（10.7 vs 13cm）、カブトニオイ・シロクチ・ニホンイシガメ・スペングラーの種別の飼育スペース推奨（海外資料）は未確認のまま。推測で埋めていない。
 - **新発見（未着手）**: `species/razorback-musk-turtle.html`・`greek-tortoise.html`・`hermann-tortoise.html` に `<cite index="…">` タグが本文に残っている（表示は斜体になるだけ・計18箇所）。ニオイガメの国内目安（45〜60cm）は海外推奨（約91cm・160L等）より小さく、`enclosure_jp` 自体の見直しは master と種ページ全体に波及するため今回は記事で併記するにとどめた。
+- **新発見（未着手・診断データ）**: `coreSpecs.size` と `specs['最大甲長']` の食い違いが残る6種（ヘルマン・イベラギリシャ・ヒガシヘルマン・チェリーヘッド・サルヴィンオオニオイガメ・アラバマチズガメ）は `tools/test_species_size_sync.py` の `KNOWN_DIVERGENCE` に固定（増えたら失敗）。master の LIKELY 値と `coreSpecs.size` が1cm超ずれる種は小型7種以外に25種ある。`js/annainin.js` の `sizeSummary()` は小数を「10」「7」に分けて読むため、サイズの最小値が6cmと表示される（スベスッポン「35.6cm」由来・本PR前から同じ値）。
 - **実写真の不足**: 運営者の実写真はスペングラーのみ（撮影時期・甲長・性別の記録なし）。ほかの6種は運営者写真なし。
 
 ### 新発見（今回の作業で見つけた・**今回は直していない**／Scope Lock）

@@ -615,3 +615,5 @@
 - **PR/Commit:** ブランチ `claude/small-turtles-adult-size-20261112`。開始時 main `570bc1c2808c93bc2c5e72678e8b50b276242853`。merge は Owner 判断（PR #213 の公開判断を含むため）。
 - **Approver:** Owner の作業指示。merge・公開は未承認。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+
+- **追記（同PR・2026-11-12）:** レビュー指摘（PR #216 r4544118146）に対応し、診断画面が表示する `coreSpecs.size` を4種（ロシアリクガメ22cm・カブトニオイガメ17.6cm・スペングラーヤマガメ10.7cm・フロリダハコガメ18.7cm）で正本・記事にそろえた。`tools/test_species_size_sync.py`（3テスト）を追加。旧データでは失敗し、修正後は通ることを確認済み。
