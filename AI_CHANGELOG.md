@@ -652,3 +652,5 @@
 - Validation: Python41/41、13ファイルhash一致、9ページ375/1280横はみ出し0、重要箇所目視。詳細と未測定事項はdocs/qa/care-evidence-followup-20261112.md。
 - Status: 検証完了・PR/merge待ち。BASE0bc29360579461b90c3ddaf095a083671d8ded54、branch claude/care-evidence-followup-20261112、実装75e966c。PR番号・merge SHA・公開結果は未確定。
 - Conforms: Constitution v2.1 / handoff-gate / closeout-gate。
+
+- 追記: PR #219作成。Ownerの「入れて　マージして」により送信・merge承認。最終差分16ファイル、範囲外0、MERGEABLE/CLEAN（登録CIなし）、Python41/41再確認。本番はmerge後に別途実測する。

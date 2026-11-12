@@ -26,3 +26,6 @@ Chrome loaded full local candidate with actual relative assets/JS, not self-cont
 
 ## Retained limitations
 Public baseline already had45–60cm body versus90cm standard-kit recommendation. Shared kit's daily-small-water-change ideal wording remains unchanged. Product ruler, whole-lifespan data, other species unresolved values, KID dimensions/multipliers remain separate. Not a119-species verification.
+
+## Publication gate update
+PR #219 created after explicit Owner authorization to send and merge. GitHub reports MERGEABLE/CLEAN with no registered status checks; exact16-file diff checked, no deletes/renames or unrelated files. Python41/41 rerun PASS. Production verification remains pending until merge.
