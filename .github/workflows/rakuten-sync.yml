@@ -86,6 +86,17 @@ jobs:
             git diff --stat data/products.js data/rakuten-diag.json
           fi
 
+      - name: Refresh content-hashed asset references
+        if: >-
+          (github.event_name != 'workflow_dispatch' ||
+           (github.event.inputs.audit_images != 'true' &&
+            github.event.inputs.identity_dryrun != 'true')) &&
+          steps.diff.outputs.changed == 'true' &&
+          github.event.inputs.dry_run != 'true'
+        run: |
+          node scripts/update-asset-versions.mjs
+          node scripts/update-asset-versions.mjs --check
+
       - name: Commit and push
         if: >-
           (github.event_name != 'workflow_dispatch' ||
@@ -97,6 +108,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/products.js data/rakuten-diag.json
+          git add -u -- '*.html'
           git commit -m "chore: auto update rakuten prices [$(date -u +%Y-%m-%d)]"
           git push
 

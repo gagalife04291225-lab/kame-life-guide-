@@ -1363,12 +1363,12 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js');
+  return window.__loadScriptOnce('species.js?v=3f4b82d04b7d');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
-    window.__loadScriptOnce('../data/products.js'),
-    window.__loadScriptOnce('../js/starter-kit.js')
+    window.__loadScriptOnce('../data/products.js?v=f19632564bc5'),
+    window.__loadScriptOnce('../js/starter-kit.js?v=e933e5259bfe')
   ]);
 };
 </script>
