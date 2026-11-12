@@ -52,6 +52,10 @@
       : ((minCm > 0 ? minCm : "") + "〜" + maxCm + "cm");
     // 未確認の容器は、確認できていない数値を読み上げ名・表示の対応範囲に含めない。
     var UNVERIFIED_TXT = "対応甲長：未確認。下のサイズ条件を確認してください。";
+    // 未確認の数値範囲を色帯や目盛りでも適合範囲として示さない。
+    if (unverified) {
+      return '<div class="gauge" role="img" aria-label="' + esc(UNVERIFIED_TXT) + '"><p class="gauge-note">' + esc(UNVERIFIED_TXT) + '</p></div>';
+    }
     // 上限なしは表示と同じ「上限なし」を読み上げる（「0〜cm」のような不完全な表現にしない）。
     var label = unverified ? UNVERIFIED_TXT
       : (maxCm >= 999) ? "対応甲長 " + rangeTxt
@@ -115,7 +119,14 @@
     }
     if (du && du.note && (!di || !(di.w))) { /* note already shown */ }
     else if (du && du.note) { row("使用可寸", esc(du.note)); }
-    row("対応甲長", esc(item.shell_min_cm + "〜" + (item.shell_max_cm >= 999 ? "上限なし" : item.shell_max_cm + "cm")));
+    var unverified = item.size_check && item.size_check.status === "unverified";
+    row("対応甲長", unverified ? "未確認。検索用の区分は適合範囲を示しません。"
+      : esc(item.shell_min_cm + "〜" + (item.shell_max_cm >= 999 ? "上限なし" : item.shell_max_cm + "cm")));
+    var ref = item.dimension_reference;
+    if (ref) {
+      row("型番を限定した寸法資料", esc(ref.model) + "：" + esc(ref.text) +
+        ' <a href="' + esc(ref.url) + '" target="_blank" rel="noopener nofollow">メーカー資料</a>');
+    }
     if (item.water_depth) { row("水深", esc((item.water_depth.rule || "") + (item.water_depth.note ? "／" + item.water_depth.note : ""))); }
     if (item.substrate_depth) { row("床材深", esc((item.substrate_depth.min || "") + "（" + (item.substrate_depth.rule || "") + "）")); }
     row("頭数", ({ single: "単独1頭", pair: "ペア可", area_additive: "面積を頭数分加算", temp_only: "一時のみ" })[item.animal_count] || esc(item.animal_count));
@@ -279,9 +290,9 @@
       fit.hidden = !msg;
     });
     if (groupNote) {
-      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分を対応範囲に含む候補に絞れます。"; }
+      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分に登録された候補を表示します。適合未確認の容器も含みます。"; }
       else {
-        groupNote.textContent = "甲長 " + bk.label + " を対応範囲に含む候補：" + shown + "件。各カードの対応甲長と使用条件を確認してください。";
+        groupNote.textContent = "甲長 " + bk.label + " の区分に登録された候補：" + shown + "件。適合未確認の容器も含みます。各カードの対応甲長と使用条件を確認してください。";
       }
     }
     var clear = document.getElementById("selector-clear");

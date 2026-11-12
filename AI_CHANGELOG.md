@@ -643,3 +643,7 @@
 - **PR/Commit:** ブランチ `claude/kid-gauge-aria-unbounded-20261112`。開始時 main `97e7e434f828263b6773c467ce62196e80b9cd30`。
 - **Approver:** Owner の作業指示。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+
+## 2026-11-12 KID 容器2件の寸法根拠是正（公開判断待ち）
+
+外寸を内寸扱いしていた汎用データと×5/×3の安全断定を除去。赤長80L・天馬530Mの公式資料は型番限定の例として保存し、汎用容器への外挿をしない。UNKNOWN・K-SCORE非表示・数値ゲージ非表示・購入CTA保留・未確認トロ舟への代替推薦を除去。KID165件PASS、実Chromeの表示と390px/1249pxを確認。収益導線の変更を含むためOwner判断待ち。

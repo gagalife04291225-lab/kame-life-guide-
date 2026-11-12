@@ -29,27 +29,28 @@
       id: "tub-toro-80", name_ja: "トロ舟／プラ舟 80型", category: "aquatic",
       turtle_type_tags: ["aquatic", "semi-aquatic"],
       shell_min_cm: 6, shell_max_cm: 25, shell_buckets: ["M", "L", "XL"],
-      life_stage: ["juvenile", "adult"], adult_suitability: "conditional", duration: "permanent",
-      dim_external: { w: 911, d: 602, h: 207, unit: "mm", src: "価格.com" },
-      dim_internal: { w: 807, d: 500, h: 207, unit: "mm" },
-      dim_usable: { note: "内傾のため底面基準。要確認", w: null, d: null, h: null },
+      life_stage: ["juvenile", "adult"], adult_suitability: "unknown", duration: "permanent",
+      dim_external: { w: null, d: null, h: null, unit: "mm", src: null },
+      dim_internal: { w: null, d: null, h: null, unit: "mm" },
+      dim_usable: { note: "メーカー・型番を特定し、実際に床として使える底面の内寸を確認してください。外寸から内寸を推定しません。", w: null, d: null, h: null },
+      dimension_reference: { model: "藤原産業 赤長 DIYトロ舟 ブラック 80L（JAN 4977292117821・寸法表記の確認例）", text: "上部外寸 約911×602mm、底面外寸 約807×500mm、高さ外寸 約207mm。これらは内寸ではありません。メーカーはコンクリート混ぜ・野菜洗い以外の使用を禁じており、亀用の推薦例にはできません。購入リンクと同じ型番かも未確認です。", url: "https://www.fujiwarasangyo-markeweb2.com/DispDetail.do?itemID=t000100090592&volumeName=00017", reviewed: "2026-11-12" },
       dim_confidence: "要確認",
-      water_depth: { rule: "甲長×1〜2、種で調整", note: "底棲系は浅めに" },
+      water_depth: { rule: "種と個体の泳ぎ方・休める足場・息継ぎに合わせる", note: "寸法や甲長の倍率だけでは決めない" },
       substrate_depth: null, animal_count: "area_additive",
-      kscore: { swim: 3, turn: 3, bask: 2, shelter: 1, secure: 1, climate: 2 },
-      drown_badge: false, safety_label: "CONDITIONAL",
-      conditions: ["逃走防止フタ必須", "長辺＝甲長×5以上で判定", "屋外設置時は日陰を確保"],
-      size_check: { status: "unverified", note: "内寸の長辺約80.7cmに「長辺＝甲長×5以上」を当てはめると甲長16cm程度までになり、対応甲長（〜25cm）と一致しません。内傾で底面はさらに狭く、実際に使える寸法も確認できていません。" },
+      kscore: null,
+      drown_badge: false, safety_label: "UNKNOWN",
+      conditions: ["飼育用途に使える製品か、メーカーの用途・注意事項を確認する", "種・個体・設備配置に合う床面積と水場を確保し、単一の倍率で適合を判断しない", "屋外設置時は日陰を確保し、脱走を防ぐ"],
+      size_check: { status: "unverified", note: "80型という呼び名だけでは製品を特定できません。底面内寸・飼育用途への適合・使用できる甲長は未確認です。区分は検索用のタグであり、安全に使える範囲を示しません。" },
       risk_warnings: [
         { text: "屋外直射下は高水温になり致命的", sev: "high" },
         { text: "横から観察できない", sev: "low" }
       ],
       linked_failures: ["fail-overheat", "fail-escape"], linked_contested: [],
-      cta_enabled: true, cta_channel_hint: "rakuten_pref",
+      cta_enabled: false, cta_channel_hint: "rakuten_pref",
       affiliate: { amazon: "https://amzn.to/4p0SGUV", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://www.metalcontrol.work/entry/2022/08/16/194842", type: "blog", region: "JP" }],
       image: { path: null, license: null, author: null, ok: false },
-      confidence: 9, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
+      confidence: null, unresolved: ["model_identity", "usable_dimensions", "species_suitability", "affiliate"], last_reviewed: "2026-11-12"
     },
     {
       id: "nest-tote-soil", name_ja: "深型衣装ケース＋黒土/川砂（産卵床・幼体〜ヤング単独飼育）", category: "nesting",
@@ -214,7 +215,7 @@
       risk_warnings: [
         { text: "満水は側面変形→破損・水漏れ", sev: "high" },
         { text: "ヒーターが樹脂面に接触すると溶融・火災", sev: "high" },
-        { text: "成長後は長辺＝甲長×5以上の水槽/トロ舟へ", sev: "med" }
+        { text: "成長に合わせ、その種の成体サイズ・床面積・水場・設備配置に合う飼育容器へ移行", sev: "med" }
       ],
       linked_failures: ["fail-size-outgrow"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "rakuten_pref",
@@ -252,27 +253,28 @@
       id: "hospital-container", name_ja: "頑丈コンテナ（天馬ロックス530M等）", category: "hospital",
       turtle_type_tags: ["aquatic", "semi-aquatic", "box", "forest", "tortoise"],
       shell_min_cm: 0, shell_max_cm: 18, shell_buckets: ["S", "M", "L", "XL"],
-      life_stage: ["hatchling", "juvenile", "adult"], adult_suitability: "conditional", duration: "temporary",
-      dim_external: { w: 390, d: 530, h: 243, unit: "mm", src: "爬虫類.jp 実例" },
-      dim_internal: { w: null, d: null, h: null, unit: "mm", note: "リブで表記より狭い" },
-      dim_usable: { note: "内寸長辺≧甲長×3（一時利用）。要確認", w: null, d: null, h: null },
+      life_stage: ["hatchling", "juvenile", "adult"], adult_suitability: "unknown", duration: "temporary",
+      dim_external: { w: null, d: null, h: null, unit: "mm", src: null },
+      dim_internal: { w: null, d: null, h: null, unit: "mm" },
+      dim_usable: { note: "同じシリーズでも型番ごとに寸法が異なります。底面・突起・通気を含め、実際の容器を確認してください。", w: null, d: null, h: null },
+      dimension_reference: { model: "天馬 ロックス 530M（この型番だけの寸法例）", text: "メーカー表記の外寸は幅390×奥行530×高さ243mm。外寸を飼育に使える床面内寸として扱いません。他の型番や購入リンクの商品が同じ寸法だとは確認できていません。寸法だけで隔離・通院・薬浴への適合や使用できる甲長は決まりません。", url: "https://tenmafitsworld.com/SHOP/rox.html", reviewed: "2026-11-12" },
       dim_confidence: "要確認",
       water_depth: null, substrate_depth: { min: "簡易床で可", rule: "隔離・観察目的" },
       animal_count: "single",
-      kscore: { swim: null, turn: 2, bask: null, shelter: 2, secure: 3, climate: 2 },
-      drown_badge: false, safety_label: "TEMPORARY",
-      conditions: ["一時飼育・隔離・通院・薬浴用に限る", "ロック付きフタは通気孔を確保", "常設化しない"],
-      size_check: { status: "unverified", note: "外寸の長辺53cmでも「内寸長辺≧甲長×3」なら甲長17cm程度まで。内寸はリブで外寸より狭く未確認のため、対応甲長（〜18cm）は確認できていません。" },
+      kscore: null,
+      drown_badge: false, safety_label: "UNKNOWN",
+      conditions: ["使う製品の用途と材質を確認し、長期飼育の容器として扱わない", "隔離・通院・薬浴は目的と個体の状態に合わせ、必要なら担当獣医師に容器・水位・換気を確認する", "ロック付きフタでも十分な通気と脱走防止を両立する"],
+      size_check: { status: "unverified", note: "この欄は頑丈コンテナ一般を扱っています。購入先の型番・実際の底面内寸・用途への適合は未確認で、一時利用でも甲長の一律の倍率から安全な上限を決められません。区分は検索用タグです。" },
       risk_warnings: [
         { text: "フタ閉め切りは酸欠の危険。通気必須", sev: "high" },
         { text: "一時のつもりが常設化する失敗が最多", sev: "med" }
       ],
       linked_failures: [], linked_contested: [],
-      cta_enabled: true, cta_channel_hint: "amazon_pref",
+      cta_enabled: false, cta_channel_hint: "amazon_pref",
       affiliate: { amazon: "https://amzn.to/3RcHBDP", rakuten: null }, // TODO: affiliate URL
       evidence: [{ url: "https://hachurui.jp/310", type: "blog", region: "JP" }],
       image: { path: null, license: null, author: null, ok: false },
-      confidence: 8, unresolved: ["dims", "affiliate"], last_reviewed: "2026-07-03"
+      confidence: null, unresolved: ["model_identity", "usable_dimensions", "species_suitability", "affiliate"], last_reviewed: "2026-11-12"
     }
   ];
 
@@ -436,7 +438,7 @@
       id: "danger-full-water-tote", name_ja: "満水の衣装ケース（水棲）",
       safety_label: "UNSAFE", cta_enabled: false,
       reason: "側面が変形し破損・水漏れ。水は容器の1/3以下に。",
-      alternative_id: "tub-toro-80",
+      alternative_id: null,
       evidence: [{ url: "https://www.aquarium-favorite.com/entry/turtle-breeding-space/", type: "blog" }]
     },
     {
