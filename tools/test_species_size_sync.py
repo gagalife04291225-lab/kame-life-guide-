@@ -25,9 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 2026-11-12 時点で既に食い違っていた種（本テスト追加時の実測）。
 # 直したらここから消す。ここへ新しく足すのは、食い違いを意図して残すと Owner が判断したときだけ。
-KNOWN_DIVERGENCE = {
-    'チェリーヘッドアカアシリクガメ',
-}
+KNOWN_DIVERGENCE = set()
 
 # guides/small-best-turtles.html の比較表に載る7種
 SMALL_GUIDE = {

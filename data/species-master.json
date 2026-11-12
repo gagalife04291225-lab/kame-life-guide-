@@ -1435,15 +1435,16 @@
         "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
       },
       "max_shell_length_cm": {
-        "value": 30,
-        "verification": "LIKELY",
-        "provenance": "official",
-        "note": "TFTSG: 西側系統<25cm・東側系統≤30cm（例外的に46cmの記録）。国内流通はイベラ系（東側）中心",
+        "value": 46,
+        "verification": "NEEDS_REVIEW",
+        "provenance": "academic",
+        "note": "TTWG 2025は種全体のオス46cm・メス31.5cmを掲載。ただしTFTSG東側種概説2023は46cmの原記録に誤りの可能性を指摘しています。この数値を確定した上限や一般的な成体サイズと考えたり、飼育容器の大きさを決める基準にしたりすることはできません。",
         "sources": [
-          "https://iucn-tftsg.org/testudo-graeca-western-subspecies-clade-117/",
-          "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
+          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm.5.120.eastern.graeca.v1.2023.pdf"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "institution": "TTWG 2025（対象分類を注記）"
       },
       "conservation": {
         "env_redlist": {
@@ -2506,15 +2507,13 @@
       "page": "species/red-cheeked-mud-turtle.html",
       "wamei": "ホオアカドロガメ",
       "scientific_name": {
-        "value": "Kinosternon scorpioides cruentatum",
+        "value": "Kinosternon cruentatum",
         "verification": "LIKELY",
-        "note": "TTWG第9版(2021)・ITIS・GBIF・USFWSはサソリドロガメの亜種 K. s. cruentatum として扱う。独立種とする見解も過去にあり分類は流動的。従来の種扱い(K. cruentatum)から2026-08-17に修正　【2026-08-22 記録】data/species-identification.json のみ独立種 Kinosternon cruentatum を採用しており、本レコードと矛盾している。根拠（Hurtado-Gómez et al. 2024 本文 / TTWG 2025 本文）を確認できるまでどちらの表記へも統一せず、矛盾の存在のみを記録する。詳細は identification 側の unresolved を参照。",
+        "note": "大西洋側の狭義種。旧K. scorpioides cruentatumの全範囲と同一ではない。",
         "sources": [
-          "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=949779",
-          "https://www.gbif.org/species/9209971",
-          "https://www.fws.gov/species/red-cheeked-mud-turtle-kinosternon-scorpioides-cruentatum"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12"
       },
       "english_name": {
         "value": null,
@@ -2527,15 +2526,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 20.0,
+        "value": 16.6,
         "verification": "LIKELY",
-        "provenance": "peer_reviewed",
-        "institution": "Chelonian Research Monographs（Kinosternon scorpioides 種概説）",
+        "provenance": "academic",
+        "institution": "TTWG 2025（対象分類を注記）",
         "sources": [
-          "https://www.academia.edu/84014187/Kinosternon_dunni_Schmidt_1947_Dunn_s_Mud_Turtle_Cabeza_de_Trozo"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "Kinosternon scorpioides の個体群別最大サイズは150mm〜200mm超。cruentatum は4亜種のひとつで、亜種固有の最大値は未確認",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.133の狭義Kinosternon cruentatum（大西洋側）は最大SCLオス16.6cm・メス14.8cm。以前は同じ種に含まれていた太平洋側のK. mexicanumとは別の種です。以前の販売名だけでは、どちらの種か判断できません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -5329,13 +5328,15 @@
       "page": "species/three-toed-box-turtle.html",
       "wamei": "ミツユビハコガメ",
       "scientific_name": {
-        "value": "Terrapene carolina triunguis",
+        "value": "Terrapene triunguis",
         "verification": "LIKELY",
-        "last_verified": "2026-08-17",
+        "last_verified": "2026-11-12",
         "provenance": "official",
         "sources": [
-          "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
-        ]
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
+          "https://webapps.fhsu.edu/cnah/kansas/species/terrapene-triunguis"
+        ],
+        "note": "TTWG 2025の独立種としての扱いに合わせる。旧表記Terrapene carolina triunguisも同じ対象を指す。法令側の名称・区分を変更するものではない。"
       },
       "english_name": {
         "value": null,
@@ -5348,14 +5349,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 16.5,
+        "value": 17.9,
         "verification": "LIKELY",
-        "provenance": "keeper_consensus",
+        "provenance": "academic",
         "sources": [
-          "https://reptifiles.com/three-toed-box-turtle-care-sheet/"
+          "https://webapps.fhsu.edu/cnah/kansas/species/terrapene-triunguis",
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
+          "https://mha.moherp.org/wp/wp-content/uploads/publications/mhan18.pdf"
         ],
-        "last_verified": "2026-08-17",
-        "note": "通常11〜15cm・記録約16.5cm"
+        "last_verified": "2026-11-12",
+        "note": "TTWG 2025とKansas Herpetofaunal Atlasに17.9cmの記録。Atlasの該当標本はメスKU218958で、通常成体は11.3〜15cmと記載。18.9cmの別報告（Daniel 2005）は、以前の広い分類でT. carolinaとされており、ミツユビハコガメかどうか分かりません。そのため、本種の最大記録には含めていません。17.9cmを超えて育たないという意味でもありません。"
       },
       "conservation": {
         "env_redlist": {
@@ -5957,7 +5960,7 @@
         "value": "Terrapene ornata",
         "rank": "regional_form",
         "verification": "LIKELY",
-        "last_verified": "2026-08-20",
+        "last_verified": "2026-11-12",
         "provenance": "academic",
         "sources": [
           "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
@@ -5976,16 +5979,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 17.0,
+        "value": 17,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
+        "provenance": "academic",
         "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 126）",
         "sources": [
           "https://iucn-tftsg.org/cbftt/species-accounts/terrapene-ornata-126/",
-          "https://www.fws.gov/species/ornate-box-turtle-terrapene-ornata-ornata"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "CBFTT 種概説は ♂ 最大 157mm・♀ 最大 170mm SCL と記載。メス基準で 17.0cm。亜種 T. o. ornata 固有の最大値は確認できず、種の値を用いた。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "TFTSGの種概説（Hughesほか2024）とTTWG 2025では、Terrapene ornata全体の最大直線甲長がオス15.7cm・メス17.0cm。このサイトの「キタ」「ミナミ」は産地による呼び分けです。この数値はそれぞれの産地型の最大値でも、一般的な成体サイズでもありません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6071,7 +6074,7 @@
         "value": "Terrapene ornata",
         "rank": "regional_form",
         "verification": "LIKELY",
-        "last_verified": "2026-08-20",
+        "last_verified": "2026-11-12",
         "provenance": "academic",
         "sources": [
           "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
@@ -6090,16 +6093,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 17.0,
+        "value": 17,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
+        "provenance": "academic",
         "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 126）",
         "sources": [
           "https://iucn-tftsg.org/cbftt/species-accounts/terrapene-ornata-126/",
-          "https://www.fws.gov/species/desert-box-turtle-terrapene-ornata-luteola"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "CBFTT 種概説は ♂ 最大 157mm・♀ 最大 170mm SCL と記載（種 Terrapene ornata）。亜種 T. o. luteola 固有の最大値は確認できず、基亜種と同値として扱う。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "TFTSGの種概説（Hughesほか2024）とTTWG 2025では、Terrapene ornata全体の最大直線甲長がオス15.7cm・メス17.0cm。このサイトの「キタ」「ミナミ」は産地による呼び分けです。この数値はそれぞれの産地型の最大値でも、一般的な成体サイズでもありません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -6657,13 +6660,14 @@
       "page": "species/malayan-box-turtle.html",
       "wamei": "マレーハコガメ",
       "scientific_name": {
-        "value": "Cuora amboinensis",
+        "value": "Cuora amboinensis sensu lato",
         "verification": "LIKELY",
-        "last_verified": "2026-08-17",
+        "last_verified": "2026-11-12",
         "provenance": "official",
         "sources": [
-          "https://cites.org"
-        ]
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
+        ],
+        "note": "旧広義群として扱う。現在のC. couro kamaromaなどを含み、現行狭義C. amboinensis一種の最大値とはしない。"
       },
       "english_name": {
         "value": null,
@@ -6676,15 +6680,14 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 25.0,
+        "value": 27.8,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 053, 2011）",
+        "provenance": "academic",
+        "institution": "TTWG 2025（対象分類を注記）",
         "sources": [
-          "https://iucn-tftsg.org/cbftt/species-accounts/cuora-amboinensis-053/",
-          "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_053_amboinensis_v1_2011.pdf"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "Schoppe & Das (2011) CBFTT種概説053の原典本文を2026-11-12に確認。種全体の直甲長上限25cm、亜種kamaromaは250mm。一般的な成体範囲や全個体の到達サイズではない。",
+        "note": "旧Cuora amboinensis広義群としての掲載。TTWG 2025 p.245では、旧kamaromaを含むC. couro kamaromaのメス27.8cmを記録。狭義C. amboinensisの最大（メス20.8cm）とは別で、全流通個体の将来値ではありません。",
         "last_verified": "2026-11-12"
       },
       "conservation": {
@@ -6784,15 +6787,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 23.0,
+        "value": 26,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "Blanck et al. 2006（TFTSG 掲載論文）",
+        "provenance": "academic",
+        "institution": "TTWG 2025（対象分類を注記）",
         "sources": [
-          "https://iucn-tftsg.org/wp-content/uploads/file/Articles/Blanck_etal_2006a.pdf"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "同論文は Cuora trifasciata sensu lato の最大甲長 30cm、多くの著者の記載は 15〜23cm とする。cyclornata・aurocapitata を分けた狭義の上限として 23cm を採った。30cm 説は s.l. の値。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.257–258の種全体の最大SCLはオス23cm・メス26cm。海南島の亜種luteocephalaを含み、基亜種trifasciataだけのメス23cmとは区別します。通常成体サイズではありません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7752,9 +7755,10 @@
       "wamei": "チェリーヘッドアカアシリクガメ",
       "scientific_name": {
         "value": "Chelonoidis carbonarius",
-        "rank": "variety",
+        "rank": "regional_form",
         "verification": "LIKELY",
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "note": "Chelonoidis carbonarius内の流通名。チェリーヘッドは正式な種・亜種ではない。 rank=regional_formは本サイトの表示用区分で、正式な分類階級を示さない。"
       },
       "english_name": {
         "value": null,
@@ -7765,15 +7769,23 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 35,
-        "verification": "LIKELY",
-        "provenance": "literature",
+        "value": null,
+        "verification": "UNPROVEN",
+        "provenance": "academic",
         "sources": [
-          "https://www.chewy.com/education/reptile-and-amphibian/general/cherry-head-red-footed-tortoise-care-sheet",
-          "https://www.petguide.com/breeds/turtle/cherry-head-red-foot-tortoise/"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
+          "https://chelonia-science.de/images/artikel/2012_1may_en.pdf"
         ],
-        "last_verified": "2026-08-31",
-        "note": "色彩変異モルフで分類学上の基準値はない。成体は通常20〜30cm（8〜12in）と基準種より小型傾向。最大14in（約35cm）級の報告あり。サイト表記は20〜30cm基準"
+        "last_verified": "2026-11-12",
+        "note": "チェリーヘッドはアカアシリクガメの一部に使われる販売名です。Carl May（2012）の飼育報告には直線甲長30cmの雌が登場しますが、1個体の記録です。この名前で売られる個体の平均や最大の大きさは分かっていません。",
+        "captive_record": {
+          "value_cm": 30,
+          "sex": "female",
+          "measurement": "SCL",
+          "source": "https://chelonia-science.de/images/artikel/2012_1may_en.pdf",
+          "interpretation": "individual record, not maximum"
+        },
+        "institution": "TTWG 2025／Carl May 2012（個別飼育記録）"
       },
       "conservation": {
         "env_redlist": {
@@ -10046,7 +10058,12 @@
       "scientific_name": {
         "value": "Chelodina colliei",
         "verification": "LIKELY",
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "note": "TTWG 2025はChelodina oblongaを採用しC. collieiを同物異名として掲載。本サイトの南西オーストラリア種を指す。C. rugosaとは別。",
+        "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
+          "https://rivers.dwer.wa.gov.au/species/chelodina-oblonga/"
+        ]
       },
       "english_name": {
         "value": null,
@@ -10057,15 +10074,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 40.0,
+        "value": 40,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "西オーストラリア州 水資源環境規制省（DWER）",
+        "provenance": "academic",
+        "institution": "西オーストラリア州DWER／TTWG 2025",
         "sources": [
-          "https://rivers.dwer.wa.gov.au/species/chelodina-oblonga/"
+          "https://rivers.dwer.wa.gov.au/species/chelodina-oblonga/",
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "州機関の種解説は甲長ほぼ 400mm まで・通常は 300mm 未満と記載。最大値 40.0cm を採用。学名は州機関が Chelodina oblonga を用いるが、本サイトは C. colliei 表記を維持する（2013年の名称変更を巡る係争がある）。ページ本体は本環境から取得不可（egress BLOCKED）で検索インデックス経由の引用。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "DWERは甲長がほぼ40cm、通常30cm未満と記載。直線甲長かどうかは明記されていません。TTWG 2025は南西オーストラリアの同種をChelodina oblonga（C. collieiは同物異名）として、最大SCLをオス23.3cm・メス31.0cmと掲載。このように資料によって数字が異なり、測り方もそろっているか分からないため、40cmを直線甲長の確定した上限と考えることはできません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -10901,15 +10919,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 25.0,
+        "value": 23,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "USGS NAS",
+        "provenance": "academic",
+        "institution": "TTWG 2025（対象分類を注記）",
         "sources": [
-          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1278"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "甲長112〜250mm（USGS NAS）",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.403の狭義Pelodiscus sinensisの最大SCL記録23cm。以前は同じ種に含まれていた仲間や、養殖・販売されるすべての個体の最大値ではありません。以前掲載していた25cmは平均についての説明で、最大値ではありません。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -10989,7 +11007,8 @@
         "value": "Pelodiscus sinensis",
         "rank": "variety",
         "verification": "LIKELY",
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "note": "アルビノは色彩型。見た目だけでは流通個体の分類・養殖系統は確定しない。"
       },
       "english_name": {
         "value": null,
@@ -11000,15 +11019,15 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 25.0,
-        "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "USGS NAS",
+        "value": null,
+        "verification": "UNPROVEN",
+        "provenance": "academic",
+        "institution": "TTWG 2025（対象分類を注記）",
         "sources": [
-          "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=1278"
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
         ],
-        "note": "基亜種 Pelodiscus sinensis と同値。甲長112〜250mm（USGS NAS）。アルビノは色彩変異で体サイズは変わらない",
-        "last_verified": "2026-09-12"
+        "note": "アルビノという色彩だけでは分類・系統は決まりません。TTWG 2025の狭義P. sinensisには23cmの記録がありますが、アルビノ固有の最大記録ではありません。流通個体の来歴を確認してください。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {

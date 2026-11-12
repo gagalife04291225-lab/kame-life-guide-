@@ -56,15 +56,15 @@ for (const id of ["tub-toro-80", "hospital-container"]) {
   check(`${id} 用途制限がある製品のCTAを生成しない`, e.cta_enabled === false && T.ctaHtml(e) === "");
   check(`${id} 保留中も既存URLを捏造・削除しない`, e.affiliate.amazon === ({ "tub-toro-80": "https://amzn.to/4p0SGUV", "hospital-container": "https://amzn.to/3RcHBDP" })[id]);
   check(`${id} 未確認範囲の色帯がない`, !c.includes('class="gauge-track"') && !c.includes('class="gauge-band"'));
-  check(`${id} 詳細の対応甲長も未確認`, /<dt>対応甲長<\/dt><dd>未確認。/.test(c));
+  check(`${id} 詳細の対応甲長も未確認`, /<dt>対応甲長<\/dt><dd>未確認です。/.test(c));
   check(`${id} メーカー資料の型番限定を表示`, c.includes("型番を限定した寸法資料") && c.includes(e.dimension_reference.url.replace(/&/g, "&amp;")));
   check(`${id} 倍率から適合甲長を算出しない`, !/甲長×[35]|甲長(?:16|17)cm/.test(c));
 }
 const toro = KID.equipment.find(x => x.id === "tub-toro-80");
 check("トロ舟の807×500は底面外寸と明記", toro.dimension_reference.text.includes("底面外寸 約807×500mm") && toro.dimension_reference.text.includes("内寸ではありません"));
-check("トロ舟のメーカー用途制限を隠さない", toro.dimension_reference.text.includes("表示用途以外") && toro.dimension_reference.text.includes("転用実例の有無とは別"));
+check("トロ舟のメーカー用途制限を隠さない", toro.dimension_reference.text.includes("表示用途以外") && toro.dimension_reference.text.includes("メーカーが案内している用途には含まれていません"));
 const hospital = KID.equipment.find(x => x.id === "hospital-container");
-check("530M寸法を他モデル・購入先に当てはめない", hospital.dimension_reference.text.includes("530Mだけの収納寸法") && hospital.dimension_reference.text.includes("飼育適合や使用できる甲長を示しません"));
+check("530M寸法を他モデル・購入先に当てはめない", hospital.dimension_reference.text.includes("530Mの寸法です") && hospital.dimension_reference.text.includes("どの甲長まで飼えるかは、この数字だけでは分かりません"));
 check("移行先に一律の×5を戻さない", !KID.equipment.find(x => x.id === "tote-water-juv").risk_warnings.some(x => /甲長×5/.test(x.text)));
 // 一般の寸法／倍率の矛盾も検知する。外寸を内寸に代用せず、倍率の妥当性は別途要出典。
 for (const e of KID.equipment) {
@@ -80,13 +80,13 @@ check("トロ舟80型は未確認表示", fit("tub-toro-80", "XL").includes("未
 check("頑丈コンテナは未確認表示", fit("hospital-container", "XL").includes("未確認"));
 const toroCard = T.cardHtml(KID.equipment.find((x) => x.id === "tub-toro-80"));
 check("未確認カードにサイズ条件の注記", toroCard.includes("サイズ条件は未確認"));
-check("未確認カードは対応甲長を『めやす』と断定しない", toroCard.includes("対応甲長：未確認") && !toroCard.includes("対応甲長めやす"));
+check("未確認カードは対応甲長を『めやす』と断定しない", toroCard.includes("使える甲長は未確認です") && !toroCard.includes("対応甲長めやす"));
 for (const e of KID.equipment) {
   const c = T.cardHtml(e);
   check(`${e.id} 甲長表示に「〜〜」がない`, !c.includes("〜〜"));
 }
 // 読み上げ名（aria-label）と表示: 未確認2件は数値を含めず「未確認」を伝える。確認済みは従来どおり
-const UNV = "対応甲長：未確認。下のサイズ条件を確認してください。";
+const UNV = "使える甲長は未確認です。下のサイズ条件をご覧ください。";
 const EXPECT_VERIFIED = {
   "nest-tote-soil": "対応甲長 6〜25cm", "hide-terracotta": "対応甲長 3〜25cm", "bask-brick": "対応甲長 上限なし",
   "light-stand": "対応甲長 上限なし", "filter-sponge": "対応甲長 上限なし", "tote-land-juv": "対応甲長 3〜12cm",
@@ -101,7 +101,7 @@ for (const e of KID.equipment) {
     check(`${e.id} 読み上げ名に数値なし`, !/\d/.test(label), label);
     check(`${e.id} 表示と読み上げ名が一致`, note === UNV, note);
   } else if (e.size_check?.status === "not_applicable") {
-    check(`${e.id} 甲長非該当の表示と読上げ名`, label === "甲長では判定しません。対応器具と設置条件を確認してください。" && note === label);
+    check(`${e.id} 甲長非該当の表示と読上げ名`, label === "使っている器具に合うか、設置方法とあわせて確認してください。" && note === label);
     check(`${e.id} 甲長非該当は数値ゲージなし`, !c.includes('class="gauge-track"'));
   } else {
     check(`${e.id} 確認済みの読み上げ名は従来どおり`, label === EXPECT_VERIFIED[e.id], label);
@@ -207,7 +207,7 @@ check("ライトドーム専用条件を明示", stand.conditions.some(x => x.in
 check("5cmをUVB基準にしない", stand.conditions.some(x => x.includes("UVB量の基準ではありません")));
 const sponge = KID.equipment.find(e => e.id === "filter-sponge");
 check("GDは対応フィルターを限定", sponge.conditions.some(x => x.includes("グランデ600シリーズ・デュアルクリーンシリーズ")));
-check("GDの魚類用途を亀溺水防止保証にしない", sponge.conditions.some(x => x.includes("溺水を防ぎ切る保証ではありません")));
+check("GDの魚類用途を亀溺水防止保証にしない", sponge.conditions.some(x => x.includes("モーターの保護と稚魚の吸い込み防止") && x.includes("吸い込みの強さや泳ぐ様子を見てください")) && sponge.risk_warnings.some(x => x.text.includes("溺水")));
 check("標準レンガの寸法を汎用に流用しない", KID.equipment.find(e => e.id === "bask-brick").dim_external.w === null);
 check("依存警告に旧倍率保証なし", !KID.failures.some(e => JSON.stringify(e).includes("甲幅×1.5以上") || JSON.stringify(e).includes("甲長×1〜1.5")));
 check("満水警告に1/3以下なら可を残さない", KID.dangerous.find(e => e.id === "danger-full-water-tote").reason.includes("1/3以下ならよいとは判断せず"));
@@ -226,15 +226,23 @@ for (const e of [hospital, nest]) {
  check(`${e.id} 確認済みメーカー寸法を未確認としない`, T.cardHtml(e).includes('<dt>メーカー寸法</dt>') && !T.cardHtml(e).includes('<dt>実内寸</dt>'));
 }
 for (const e of [stand, sponge]) check(`${e.id} 器具に頭数を割り当てない`, !T.cardHtml(e).includes('<dt>頭数</dt>'));
-check("ヒロ氏の推薦例を型番未特定と明示", toro.evidence.some(e => e.url.includes("QliTKh5nSMc") && e.label.includes("型番未特定")) && toro.conditions.some(x => x.includes("個人の飼育経験・見解")));
+check("ヒロ氏の推薦例を型番未特定と明示", toro.evidence.some(e => e.url.includes("QliTKh5nSMc") && e.label.includes("型番未特定")) && toro.conditions.some(x => x.includes("その人の亀に合わせた使い方") && x.includes("そのまま当てはめない")));
 const waterCase = KID.equipment.find(e => e.id === "tote-water-juv");
 check("衣装ケース利用を複数の実践例として掲載", waterCase.conditions.some(x => x.includes("複数の飼育者")));
-check("5年飼育を同一ケースの寿命にしない", waterCase.conditions.some(x => x.includes("同じケースの耐用年数")));
+check("5年飼育を同一ケースの寿命にしない", waterCase.conditions.some(x => x.includes("同じケースを何年使ったかまでは分かりません") && x.includes("別の製品でも同じように使えるとは限らない")));
 check("長期利用と破損例の両方を掲載", waterCase.evidence.some(x => x.url.includes("growthvest1.com")) && waterCase.evidence.some(x => x.url.includes("sato000000.net")));
-check("天馬注意を全衣装ケースへ一般化しない", waterCase.conditions.some(x => x.includes("他社の全製品へ広げず")));
+check("天馬注意を全衣装ケースへ一般化しない", waterCase.conditions.some(x => x.includes("製品ごとに確かめてください") && x.includes("天馬のFAQ")));
 check("危険カードは注水非対応製品に限定", KID.dangerous.find(x => x.id === "danger-full-water-tote").name_ja === "注水非対応の衣装ケースへの注水");
 check("Owner未許可のナフコ体験を公開しない", !JSON.stringify(KID).includes("ナフコ"));
 check("衣装ケース破損の断定を製品条件に限定", waterCase.risk_warnings[0].text.includes("注水非対応の製品や劣化したケース") && waterCase.risk_warnings[0].text.includes("おそれ"));
+// 文体改善でも、未確認・用途条件・購入導線の意味を変えない。
+const kidPage = readFileSync(new URL("../kid/index.html", import.meta.url), "utf8");
+check("根拠未確認の運営者失敗談を作らない", !kidPage.includes("私自身も") && !kidPage.includes("環境を組み直した失敗"));
+check("初期表示と再描画案内を同期", kidPage.includes("まずはすべての用品を表示しています") && readFileSync(new URL("../js/kid-lookup.js", import.meta.url), "utf8").includes("まずはすべての用品を表示しています"));
+check("素材転用の未知の適合を確定しない", KID.equipment.filter(e=>e.size_check?.status === "unverified").every(e=>T.cardHtml(e).includes("未確認")));
+check("530Lの注水に関するメーカー注意を維持", nest.conditions.some(x=>x.includes("水を入れて使わないよう案内")));
+check("旧修正理由の無意味な数値を再掲しない", !KID.equipment.some(e=>(e.conditions||[]).join(" ").match(/12cm以下なら|一律15cm|甲幅×1.5という/)));
+check("冒頭で甲長だけを事故原因にしない", kidPage.includes("亀が動ける広さや水深、床材・設備") && !kidPage.includes("亀の甲長に合っていないと"));
 console.log("──────────────────────────────");
 console.log(`PASS ${pass} / FAIL ${fail}`);
 process.exit(fail ? 1 : 0);

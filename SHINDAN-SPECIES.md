@@ -47,8 +47,8 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 | トウブドロガメ | Kinosternon subrubrum subrubrum | S | 入門 | CITES II | 基亜種 |
 | ミシシッピドロガメ | Kinosternon subrubrum hippocrepis | S | 入門 | CITES II | トウブドロガメの亜種 |
 | サラドロガメ | Kinosternon integrum | M | 中級 | CITES II | 国内CB流通増加中 |
-| サソリドロガメ | Kinosternon scorpioides | L | 上級 | CITES II | ホオアカドロガメの基亜種を含む種 |
-| ホオアカドロガメ | Kinosternon scorpioides cruentatum | M | 中級 | CITES II | 頬が赤い・温和。TTWG第9版(2021)ではサソリドロガメの亜種 |
+| サソリドロガメ | Kinosternon scorpioides | L | 上級 | CITES II | サソリドロガメ。TTWG 2025ではホオアカドロガメを別種K. cruentatumとして区別 |
+| ホオアカドロガメ | Kinosternon cruentatum | M | 中級 | CITES II | 頬が赤い。旧資料ではサソリドロガメの亜種とされたが、TTWG 2025では大西洋側のK. cruentatumとして区別 |
 | ハナナガドロガメ | Kinosternon acutum | S | 中級 | CITES II | 旧表記オオアタマドロガメ・タバスコドロガメとも（標準和名へ2026-08修正） |
 | フロリダドロガメ | Kinosternon steindachneri | S | 入門〜中級 | CITES II | ミスジドロガメとは別種 |
 | ミスジドロガメ | Kinosternon baurii | S | 入門〜中級 | CITES II | 甲羅に3本の筋 |
@@ -116,7 +116,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 |---|---|---|---|---|---|
 | キボシイシガメ | Clemmys guttata | S | 中級 | CITES II | 黒甲羅に黄水玉・CoP16（2013）掲載 |
 | モリイシガメ | Glyptemys insculpta | M | 中〜上級 | なし | 橙色の模様・低温好む |
-| ミツユビハコガメ | Terrapene carolina triunguis | M | 中〜上級 | CITES II | 後ろ脚3本指 |
+| ミツユビハコガメ | Terrapene triunguis | M | 中〜上級 | CITES II | 後ろ脚3本指 |
 | トウブハコガメ | Terrapene carolina carolina | M | 中〜上級 | CITES II | 国内CB盛ん |
 | ガルフコーストハコガメ | Terrapene carolina major | M〜L | 中〜上級 | CITES II | ハコガメ最大亜種 |
 | フロリダハコガメ | Terrapene carolina bauri | M | 中〜上級 | CITES II | 放射状模様・carolinaの亜種 |
@@ -139,7 +139,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 | スペングラーヤマガメ | Geoemyda spengleri | S | 中〜上級 | CITES II | 夏の保冷管理が最大課題 |
 | ヒラセガメ | Cuora mouhotii | M | 中〜上級 | CITES II | 扁平な甲羅（旧属名Pyxidea）。別名モンホットハコガメ |
 | オプストヒラセガメ | Cuora mouhotii obsti | M | 中〜上級 | CITES II | ヒラセガメの亜種・腹甲に放射状の黒斑。適格写真が無く写真なしで掲載 |
-| マレーハコガメ | Cuora amboinensis | M | 中〜上級 | CITES II | 東南アジア広域 |
+| マレーハコガメ | Cuora amboinensis sensu lato | M | 中〜上級 | CITES II | 東南アジア広域 |
 | モエギハコガメ | Cuora galbinifrons | M | 上級 | CITES I | CoP19で附属書Iへ移行・萌黄色の甲羅 |
 | ユカタンハコガメ | Terrapene yucatana | M | 上級 | CITES II | メキシコ固有 |
 | ミスジハコガメ | Cuora trifasciata | M | 上級 | CITES II | 高価・流通少 |

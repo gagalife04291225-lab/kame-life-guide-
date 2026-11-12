@@ -219,26 +219,26 @@
     {
       "slug": "three-toed-box-turtle",
       "wamei": "ミツユビハコガメ",
-      "gakumei": "Terrapene carolina triunguis",
+      "gakumei": "Terrapene triunguis",
       "eimei": "Three-toed Box Turtle",
-      "koura": "ドーム状の甲で、可動式の腹甲ヒンジにより完全に閉じる。甲は褐色〜オリーブで模様は控えめ・やや細長い。サイトは USFWS/CITES 掲載表と同じ Terrapene carolina triunguis 表記を採用（分類は下記 unresolved のとおり未決着）。",
+      "koura": "ドーム状の甲で、可動式の腹甲ヒンジにより完全に閉じる。甲は褐色〜オリーブで模様は控えめ・やや細長い。サイトはTTWG（2025）の独立種Terrapene triunguisを採用。旧名Terrapene carolina triunguisも流通・法規制資料で使われる。",
       "iro_moyou": "甲は tan〜オリーブで暗色の縫合線と不明瞭な斑。腹甲は淡黄。頭部・前肢に橙・赤・黄の斑が出る個体が多く、オスは頭部が赤くなる個体もある。",
-      "tobu": "後肢の指が3本（本亜種名の由来。carolina群の他亜種は4本が多い）。頭部に橙〜赤斑。",
-      "size": "12〜18cm。carolinaと同程度かやや長く、甲はより細い。",
-      "bunpu": "米中南部（ミズーリ〜テキサス、南中部アラバマ）。落葉樹林・草地・復元プレーリー。独立種 T. mexicana（メキシコ・ユカタン亜種を含む）の米国産亜種。",
+      "tobu": "後肢の指は通常3本（和名・英名の由来）。他の北米ハコガメには4本のものが多い。頭部に橙〜赤斑。指の数だけで同定せず、模様や来歴も合わせて確認する。",
+      "size": "通常の成体甲長は11.3〜15cm。記録上の最大甲長は17.9cm。通常範囲と最大記録は区別する。",
+      "bunpu": "米中南部（ミズーリ〜テキサス、南中部アラバマ）。落葉樹林・草地・復元プレーリー。TTWG（2025）では独立種Terrapene triunguisとして扱う。",
       "kondou_shu": [
         {
           "aite": "トウブハコガメ (Terrapene carolina carolina)",
-          "kubetsu": "本亜種は後肢3指・甲の模様控えめ・tan〜オリーブ地/基亜種carolinaは後肢4指・甲に橙黄の派手な放射模様。分布境界で交雑帯があり中間個体は同定困難。"
+          "kubetsu": "ミツユビハコガメは通常後肢3指・甲の模様控えめ・tan〜オリーブ地。トウブハコガメは通常後肢4指・甲に橙黄の派手な放射模様。分布境界で交雑帯があり、中間個体は形態だけでは同定困難。"
         },
         {
           "aite": "ガルフコーストハコガメ (Terrapene carolina major)",
-          "kubetsu": "majorは最大亜種(18cm超)・多湿好み・後縁がフレア/本亜種はより小型で後肢3指。"
+          "kubetsu": "ガルフコーストハコガメは大型（18cm超）で、甲の後縁がフレア状に広がる。ミツユビハコガメは通常より小型で、後肢は通常3指。"
         }
       ],
-      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19で採択・2023年2月23日発効）。輸入個体は附属書II証明が必要。国内CB流通。※分類は暫定的で、triunguis×carolinaの遺伝子浸透を理由に単一種とすべきとの反論(Fritz & Havaš)もあり未決着。",
-      "photo_hantei": "後肢の指が3本であること（後肢が写ったカットが最有効）＋控えめな模様のtan〜オリーブ甲＋橙赤斑の頭部。",
-      "photo_chuui": "①他の北米ハコガメ亜種と混同注意。指の数が決め手だが後肢が写らないと判別困難。②交雑帯個体は亜種断定不可—産地不明で中間的な個体は無理に採用しない。③旧学名 Terrapene carolina triunguis で流通・記載されている画像が多いので学名検索時に留意。",
+      "houkisei": "CITES附属書II掲載（Terrapene spp. 属全体、CoP19で採択・2023年2月23日発効）。輸入個体は附属書II証明が必要。国内CB流通。※本サイトの科学分類はTTWG（2025）に合わせるが、法規制資料の旧学名表記は掲載区分とは分けて扱う。",
+      "photo_hantei": "後肢が通常3指であること（後肢が写ったカットが有用）＋控えめな模様のtan〜オリーブ甲＋橙赤斑の頭部を合わせて確認。形態だけで不明な場合は産地・来歴も確認する。",
+      "photo_chuui": "①他の北米ハコガメとの混同に注意。後肢の指の数だけで断定せず、甲や頭部の模様も確認する。②交雑帯個体は種の断定が難しい。産地不明で中間的な個体は無理に採用しない。③旧学名 Terrapene carolina triunguis で流通・記載されている画像が多いので学名検索時に留意。",
       "sources": [
         "https://cnah.org/taxon.aspx?taxon=Terrapene_triunguis",
         "https://pubmed.ncbi.nlm.nih.gov/23523575/",
@@ -246,7 +246,7 @@
         "https://animaldiversity.org/accounts/Terrapene_carolina/",
         "https://reptilesmagazine.com/new-2023-cites-herp-listings/"
       ],
-      "unresolved": "【2026-08-22 記録】属内分類が未決着で、現行文献に3つの扱いが併存する。①TTWG第9版(2021)は独立種 Terrapene triunguis を「暫定的に」承認。②Martin et al.(2013/2014/2020/2021)は T. mexicana の亜種 T. m. triunguis を支持。③USFWS・CITES掲載表など法規制文書は従来の T. carolina triunguis を使用。サイトは法規制表記と一致し流通実態にも合う③ T. carolina triunguis を全層で採用する（master の provenance=official / USFWS に準拠）。TTWGが暫定承認を確定させた時点で①への移行を再検討する。なお photo-credits.html の学名 Terrapene triunguis は出典（iNaturalist）側のtaxon表記であり、そのまま保持する。交雑帯個体は同定不可。旧学名での流通画像多数。",
+      "unresolved": "【2026-11-12 分類表記同期】TTWG第10版（2025）に合わせ独立種Terrapene triunguisとして扱う。旧名Terrapene carolina triunguisやT. mexicana triunguisを用いる文献もあるため、引用元の対象範囲を区別する。科学分類の採用とCITES等の規制文書の表記は別であり、掲載区分は変更しない。交雑帯個体・産地不明画像をこの名称だけで同定しない。",
       "status": "confirmed"
     },
     {
@@ -653,12 +653,12 @@
       "slug": "red-cheeked-mud-turtle",
       "wamei": "ホオアカドロガメ",
       "gakumei": "Kinosternon cruentatum",
-      "eimei": "Red-cheeked Mud Turtle",
+      "eimei": "Atlantic Red-cheeked Mud Turtle",
       "koura": "腹甲2ヒンジ。背甲は滑らかで鋸歯なし・キールなし・ドーム状でほぼ半球形。",
       "iro_moyou": "頭・喉・四肢・尾に赤〜橙の斑が不規則に散る(種名cruentatum=血の意、赤斑の由来)。",
       "tobu": "頭部に鮮やかな赤橙斑。オスの尾端にスパー。",
-      "size": "甲長約13〜17cm。オスがやや大型。",
-      "bunpu": "メキシコ南東部〜ベリーズ・グアテマラ・北エルサルバドル。",
+      "size": "記録上の最大直線甲長：オス16.6cm、メス14.8cm（TTWG 2025、狭義K. cruentatum）。",
+      "bunpu": "メキシコ・ベリーズ・グアテマラの大西洋側。旧分類に含まれた太平洋側はK. mexicanumとして区別（TTWG 2025）。",
       "kondou_shu": [
         {
           "aite": "サソリドロガメ (K. scorpioides)",
@@ -671,8 +671,8 @@
       ],
       "houkisei": "CITES附属書II掲載（2023年発効、Kinosternon spp. として属単位で掲載。CoP19 Prop.29 で採択され、附属書I は K. cora と K. vogti のみ）。輸入個体には書類が必要だが、国内CB個体の飼育・購入に許可や登録は不要。IUCN軽度懸念（種 Kinosternon scorpioides としての評価）。※古い資料は「CITES未掲載」と記載しているので注意。",
       "photo_hantei": "頭部の赤橙斑＋なめらかなドーム甲。頭部カットが決定的。",
-      "photo_chuui": "scorpioidesと近縁で混同。赤橙斑の有無・キールの有無が手がかり。",
-      "unresolved": "【2026-08-22 記録・未解決】データ層間で学名表記が矛盾している。species-master.json / shindan/species.js / SHINDAN-SPECIES.md / species/red-cheeked-mud-turtle.html の4層はいずれも三名法 Kinosternon scorpioides cruentatum（サソリドロガメの亜種）を採用しているのに対し、本ファイルの gakumei のみ独立種 Kinosternon cruentatum を採用している。本フィールドにあった「サイトは独立種K. cruentatum表記で最新研究に整合する」という記述はサイトの実態と一致しないため撤回する。分類の経緯: 従来は K. s. cruentatum（TTWG第9版 2021・ITIS・GBIF・USFWS）。2024年 Hurtado-Gómez et al. の分子研究が cruentatum の独立種化を支持したとされるが、本記録の作成時点で当該論文本文および TTWG 第10版（2025）本文には到達できておらず、根拠を実物で確認できていない。したがって今回は学名を変更せず、矛盾の存在のみを記録する。解消条件: 一次資料（Hurtado-Gómez et al. 2024 本文）または TTWG 2025 チェックリスト本文を確認したうえで、4層＋本ファイルを同時に片方の表記へ統一する。片側だけを直さない。なお本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.29（Kinosternon spp. 属単位・附属書II、附属書I は K. cora と K. vogti のみ）で 附属書II掲載を確認したため、2026-08-22 に附属書II掲載へ修正した。USFWS のカメ類CITES掲載表（2024年5月版）は米国産種の一覧のため本種は載らず、出典からは外した。これは学名の矛盾とは別件で、CITES の掲載区分は全層（master / 本ファイル / 公開ページ / SHINDAN-SPECIES.md / species.js）で一致している。発効日そのものは master の cites.since が LIKELY（CITES通知原文での最終確認が未了）のままである。",
+      "photo_chuui": "scorpioidesと近縁で混同。赤橙斑の有無・キールの有無が手がかり。旧名だけでは現在のK. cruentatumとK. mexicanumを分けられない。産地不明個体を外見だけで断定しない。",
+      "unresolved": "【2026-11-12 分類根拠確認】TTWG2025第10版133頁・注37/38、Hurtado-Gómez et al.2024の著者公開本文（DOI:10.1016/j.ympev.2024.108083）、Iverson & Berry2024本文（DOI:10.2744/CCB-1589.1）を確認。ここでは大西洋側の独立種Kinosternon cruentatumを扱い、太平洋側のK. mexicanumと区別する。旧名K. scorpioides cruentatumの対象範囲を現在のK. cruentatum全体と同一視しない。データ5層の同期は本変更一式の受入時に検証する。流通名だけによる個体同定は保証しない。なお本フィールドの houkisei は「CITES未掲載」と記載していたが、CoP19 Prop.29（Kinosternon spp. 属単位・附属書II、附属書I は K. cora と K. vogti のみ）で 附属書II掲載を確認したため、2026-08-22 に附属書II掲載へ修正した。USFWS のカメ類CITES掲載表（2024年5月版）は米国産種の一覧のため本種は載らず、出典からは外した。これは学名の矛盾とは別件で、CITES の掲載区分は全層（master / 本ファイル / 公開ページ / SHINDAN-SPECIES.md / species.js）で一致している。発効日そのものは master の cites.since が LIKELY（CITES通知原文での最終確認が未了）のままである。",
       "status": "confirmed",
       "sources": [
         "https://en.wikipedia.org/wiki/Kinosternon",
@@ -1493,7 +1493,7 @@
       "bunpu": "米東部（メイン州南部〜フロリダ北部、ニューヨーク・ミシガン、西はイリノイ南部・ケンタッキー・テネシー・ミシシッピ/アラバマ北部）。落葉樹林。歴史的にカナダ南部オンタリオにも。",
       "kondou_shu": [
         {
-          "aite": "ミツユビハコガメ (Terrapene carolina triunguis)",
+          "aite": "ミツユビハコガメ (Terrapene triunguis、旧名T. carolina triunguis)",
           "kubetsu": "carolinaは後肢4指・派手な放射模様/triunguisは後肢3指・模様控えめなtan〜オリーブ甲。"
         },
         {

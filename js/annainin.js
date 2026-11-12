@@ -64,6 +64,7 @@
   function sizeSummary() {
     var min = null, max = null, minName = null, maxName = null;
     allSpecies().forEach(function (s) {
+      if (s.sizeEvidenceKind === 'uncertain_report') return;
       var nums = s.coreSpecs && parseNums(s.coreSpecs.size);
       if (!nums) return;
       var hi = Math.max.apply(null, nums);

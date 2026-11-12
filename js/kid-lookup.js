@@ -46,7 +46,7 @@
   /* ---------- 甲長ゲージ ---------- */
   function gaugeHtml(minCm, maxCm, unverified, notApplicable) {
     if (notApplicable) {
-      var text = "甲長では判定しません。対応器具と設置条件を確認してください。";
+      var text = "使っている器具に合うか、設置方法とあわせて確認してください。";
       return '<div class="gauge" role="img" aria-label="' + esc(text) + '"><p class="gauge-note">' + esc(text) + "</p></div>";
     }
     var lo = Math.max(0, minCm), hi = Math.min(GAUGE_MAX, maxCm);
@@ -55,7 +55,7 @@
       ? (minCm > 0 ? minCm + "cm〜（上限なし）" : "上限なし")
       : ((minCm > 0 ? minCm : "") + "〜" + maxCm + "cm");
     // 未確認の容器は、確認できていない数値を読み上げ名・表示の対応範囲に含めない。
-    var UNVERIFIED_TXT = "対応甲長：未確認。下のサイズ条件を確認してください。";
+    var UNVERIFIED_TXT = "使える甲長は未確認です。下のサイズ条件をご覧ください。";
     // 未確認の数値範囲を色帯や目盛りでも適合範囲として示さない。
     if (unverified) {
       return '<div class="gauge" role="img" aria-label="' + esc(UNVERIFIED_TXT) + '"><p class="gauge-note">' + esc(UNVERIFIED_TXT) + '</p></div>';
@@ -120,7 +120,7 @@
     if (notApplicable) {
       row("器具の適合", esc(du && du.note));
     } else if (item.dim_confidence === "manufacturer_documented" && item.dimension_reference) {
-      row("メーカー寸法", "下記の型番別資料で確認済みです。設備や床材を置いた空間・対応甲長の判定とは区別します。");
+      row("メーカー寸法", "下の資料にメーカー寸法を載せています。床材や設備を入れたあと、亀が動ける広さも確かめてください。");
     } else if (di && (di.w || di.d || di.h)) {
       row("実内寸", esc(di.w + "×" + di.d + "×" + di.h + (di.unit || "")));
     } else {
@@ -129,7 +129,7 @@
     if (du && du.note && (!di || !(di.w))) { /* note already shown */ }
     else if (du && du.note) { row("使用可寸", esc(du.note)); }
     var unverified = item.size_check && item.size_check.status === "unverified";
-    row("対応甲長", notApplicable ? "甲長では判定しません。対応器具と設置条件を確認してください。" : unverified ? "未確認。検索用の区分は適合範囲を示しません。"
+    row("対応甲長", notApplicable ? "使っている器具に合うか、設置方法とあわせて確認してください。" : unverified ? "未確認です。検索結果に出ても、その甲長で使えるとは限りません。"
       : esc(item.shell_min_cm + "〜" + (item.shell_max_cm >= 999 ? "上限なし" : item.shell_max_cm + "cm")));
     var ref = item.dimension_reference;
     if (ref) {
@@ -186,7 +186,7 @@
 
   /* ---------- full equipment card ---------- */
   function labelClass(l) { return "label label-" + l.toLowerCase(); }
-  var LABEL_JA = { SAFE: "適正サイズなら常用可", CONDITIONAL: "条件付き — まず条件を確認", TEMPORARY: "一時利用のみ", UNSAFE: "推奨しません", UNKNOWN: "情報不足 — 要確認" };
+  var LABEL_JA = { SAFE: "適正サイズなら常用可", CONDITIONAL: "使う前に条件を確認", TEMPORARY: "一時利用のみ", UNSAFE: "推奨しません", UNKNOWN: "詳しい確認が必要" };
 
   function cardHtml(item) {
     var head = '<div class="card-head"><h3>' + esc(item.name_ja) + "</h3>" +
@@ -272,7 +272,7 @@
   /* ---------- 区分と対応甲長の重なり ---------- */
   // 区分（bk）の全範囲を対応甲長がカバーしないときだけ、使える範囲を返す。
   function fitMessage(mn, mx, unverified, bk) {
-    if (unverified) { return "この区分で使えるかは未確認です（下のサイズ条件を参照）。"; }
+    if (unverified) { return "この甲長で使えるかは未確認です。下のサイズ条件をご覧ください。"; }
     if (mn > bk.min || mx < bk.max) {
       var lo = Math.max(mn, bk.min), hi = Math.min(mx, bk.max);
       return "この区分のうち、甲長" + lo + "〜" + (hi >= 999 ? "" : hi) + "cmの個体向けです。";
@@ -303,9 +303,9 @@
       fit.hidden = !msg;
     });
     if (groupNote) {
-      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分に登録された候補を表示します。対応甲長を確認できていない用品と、甲長で選ばない器具も含みます。"; }
+      if (!bucket) { groupNote.textContent = "まずはすべての用品を表示しています。上で甲長を選ぶと候補を絞れます。サイズが合うか未確認の用品や、甲長では選ばない器具も含まれるので、カードの説明を読んで選んでください。"; }
       else {
-        groupNote.textContent = "甲長 " + bk.label + " の区分に登録された候補：" + shown + "件。対応甲長を確認できていない用品と、甲長で選ばない器具も含みます。各カードの対応甲長と使用条件を確認してください。";
+        groupNote.textContent = "甲長 " + bk.label + " の候補：" + shown + "件。サイズが合うか未確認の用品や、甲長では選ばない器具も含まれます。各カードで大きさや使い方を確かめてください。";
       }
     }
     var clear = document.getElementById("selector-clear");
