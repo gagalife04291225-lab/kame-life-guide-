@@ -191,3 +191,8 @@ img{display:block;max-width:100%;}
 .gr-src{font-size:.82rem;color:var(--parchment-dim);padding-left:1.5em;margin:14px 0 6px;}
 .gr-src li{margin:4px 0;word-break:break-word;scroll-margin-top:20px;}
 .gr-src a{color:var(--gold);text-decoration:underline;margin-left:4px;}
+/* KID: 区分との部分一致・サイズ条件未確認 */
+.bucket-fit{font-size:.82rem;color:var(--gold);margin:6px 0 0;}
+.size-unverified{font-size:.82rem;color:var(--parchment);background:var(--ink-soft);border:1px dashed var(--gold-deep);border-radius:8px;padding:8px 10px;margin:8px 0 0;}
+.size-unverified strong{display:block;color:var(--gold);margin-bottom:2px;}
+.kid-howto{font-size:.84rem;color:var(--parchment-dim);margin-top:10px;}

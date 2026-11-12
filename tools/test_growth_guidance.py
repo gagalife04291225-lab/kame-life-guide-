@@ -77,6 +77,22 @@ class GrowthGuidance(unittest.TestCase):
         self.assertIn('水棲ガメ', part)
         self.assertIn('リクガメ・ハコガメ', part)
 
+    def test_kid_wording_matches_function(self):
+        # KID は甲長の区分で候補を絞るだけ。種への適合・安全を判定するような表現をしない
+        kid = read('kid/index.html') + read('js/kid-lookup.js')
+        for bad in ('今使えるもの', 'うちの子に合うものだけ', '今使えるかを見る'):
+            self.assertNotIn(bad, kid)
+        self.assertIn('kid-howto', read('kid/index.html'))
+        self.assertNotIn('安全判定', read('index.html'))
+        for f in sorted(glob.glob(os.path.join(ROOT, 'species', '*.html'))):
+            t = open(f, encoding='utf-8').read()
+            self.assertNotIn('KID 安全判定', t, os.path.basename(f))
+
+    def test_ranking_breathing_is_fixed_now(self):
+        t = read('ranking-beginner-top10.html')
+        self.assertNotIn('水面まで行きにくそうになったら次の水槽', t)
+        self.assertIn('買い替えを待たずに今の水位と足場を直す', t)
+
     def test_entry_points_link_to_growth(self):
         for rel in ('guides/small-best-turtles.html', 'species/musk-turtle.html',
                     'ranking-beginner-top10.html', 'guides/keeper-hacks.html',
@@ -101,6 +117,8 @@ class GrowthGuidance(unittest.TestCase):
         self.assertNotIn('最低ラインは45cm', t)
         self.assertNotIn('成体の最低ライン', t)
         self.assertNotIn('水面に届く深さが基本', t)
+        self.assertNotIn('甲長11cmを超えたら60cm', t)
+        self.assertIn('外部資料の基準ではない', t)
 
 
 if __name__ == '__main__':

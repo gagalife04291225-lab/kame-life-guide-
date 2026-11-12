@@ -8002,13 +8002,13 @@
           "sources": []
         },
         "enclosure_jp": {
-          "value": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ",
+          "value": "成体は120cm規格でも手狭。特注ケージか部屋飼い（屋外は高温多湿を避けられる時期に限る）",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
             "basis": "甲長35cm×5=175cm。国内ケージ規格（最大120cm）を超える。通常の成体は21〜27cm程度だが、上限の35cmを前提に計画する",
-            "jp_note": "成体は120cm規格でも手狭。特注・夏季屋外の組み合わせ"
+            "jp_note": "成体は120cm規格でも手狭。特注ケージか部屋飼い（屋外は高温多湿を避けられる時期に限る）"
           },
           "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
@@ -8444,13 +8444,13 @@
           "sources": []
         },
         "enclosure_jp": {
-          "value": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+          "value": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
             "basis": "甲長31cm×5=155cm。国内ケージ規格（最大120cm）を超える。飼育難易度が高く『impressa病』で知られる種でもあり、環境は広めに取る",
-            "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
+            "jp_note": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）"
           },
           "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
