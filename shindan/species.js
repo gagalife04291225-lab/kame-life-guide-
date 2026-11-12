@@ -149,6 +149,8 @@ land: [
   },
   { name: 'パンケーキリクガメ', latin: 'Malacochersus tornieri', emoji: '🫓', difficulty: '上級', size: 'S（14〜18cm）', cites: 'CITES I', legal: 'cites_i',
     reason: '甲羅が薄く平たいリクガメ。岩の隙間に逃げ込む独特の習性を持ち、他のリクガメとは全く異なる生態が面白い。タンザニア・ケニア原産。通気性の良い岩場環境が必要。CITES I（附属書I）へ移行済みで野生個体の商業目的の国際取引は原則禁止。国内流通は希少。',
+    diagnosisNotice: '当サイトでは新しく迎える人向けの診断候補から外しています。飼育自体が一律禁止という意味ではありません。CITES附属書I・日本の国際希少野生動植物種です。国内の売買・譲渡等は原則禁止ですが、登録済み個体は有効な登録票と一緒に譲り渡せます。国内CBやインボイスだけでは登録票の代わりになりません。譲り受けた人は30日以内に届出が必要です。',
+    legalNote: 'CITES附属書I・日本の国際希少野生動植物種です。国内の売買・譲渡等は原則禁止ですが、登録済み個体は有効な登録票と一緒に譲り渡せます。国内CBやインボイスだけでは登録票の代わりになりません。譲り受けた人は30日以内に届出が必要です。',
     specs: { '最大甲長': '18cm', '主な食事': '野草・乾草', '水容量': '浅め水入れ', '温度': '25〜34℃' },
     coreSpecs: { size: '18cm', temp: '25〜34℃', lifespan: '20〜30年', diet: '草食（野草・乾草中心）' },
     extraSpecs: {},
@@ -462,7 +464,9 @@ aquatic: [
     availability: 'common'
   },
   { name: 'キバラガメ', latin: 'Trachemys scripta scripta', emoji: '💛', difficulty: '入門', size: 'M（17〜27cm）', cites: null, legal: 'conditional_invasive',
-    reason: 'アカミミガメ（Trachemys scripta）の亜種。2023年6月より種全体が条件付特定外来生物に指定され、新規の購入・販売・輸入・野外放出が禁止。既に飼育中の個体は終生飼養できるが、これから入手することはできない。',
+    reason: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    diagnosisNotice: '当サイトでは新しく迎える人向けの診断候補から外しています。飼育自体が一律禁止という意味ではありません。条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    legalNote: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
     specs: { '最大甲長': '27cm', '水槽サイズ': '60cm〜', '水温': '22〜28℃', '難易度': '入門' },
     coreSpecs: { size: '27cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
@@ -473,7 +477,9 @@ aquatic: [
     availability: 'rare'
   },
   { name: 'ミシシッピアカミミガメ', latin: 'Trachemys scripta elegans', emoji: '🔴', difficulty: '入門', size: 'L（20〜30cm）', cites: null, legal: 'conditional_invasive',
-    reason: '【条件付特定外来生物】新規購入・販売は禁止ですが、既に飼育中の場合は継続飼育・少数無償譲渡が可能。野外への放流は厳禁。責任ある飼育が求められます。',
+    reason: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    diagnosisNotice: '当サイトでは新しく迎える人向けの診断候補から外しています。飼育自体が一律禁止という意味ではありません。条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    legalNote: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
     specs: { '最大甲長': '30cm', '水槽サイズ': '90cm〜', '水温': '22〜28℃', '難易度': '入門' },
     coreSpecs: { size: '30cm', temp: '22〜28℃', lifespan: '30〜40年', diet: '雑食' },
     extraSpecs: { tankSize: '90cm〜' },
@@ -606,8 +612,9 @@ aquatic: [
     score: function(s){ return (s.medium_tank||0)+(s.intermediate||0)+(s.maintenance||0)+(s.rare_water||0)+(s.mud_lover||0)+(s.na_water||0)+(s.tropical_climate||0); },
     availability: 'common'
   },
-  { name: 'ヨーロッパヌマガメ', latin: 'Emys orbicularis', emoji: '🌿', difficulty: '中級', size: 'M（15〜20cm）', cites: null, legal: null,
+  { name: 'ヨーロッパヌマガメ', latin: 'Emys orbicularis', emoji: '🌿', difficulty: '中級', size: 'M（15〜20cm）', cites: 'CITES III（ウクライナ個体群のみ）', legal: null,
     reason: 'ユーラシア大陸唯一のヌマガメ科。国内CB・EUCB流通あり。低温に強く日本の温帯気候にも馴染みやすい。甲羅と頭部の黄色い斑点が美しい。',
+    legalNote: 'CITES附属書IIIはウクライナ個体群のみが対象です。本種の全個体群ではありません。個体の由来と必要な輸出入書類を確認してください。',
     specs: { '最大甲長': '20cm', '水槽サイズ': '60cm〜', '水温': '16〜26℃', '難易度': '中級' },
     coreSpecs: { size: '20cm', temp: '16〜26℃', lifespan: '15〜30年', diet: '雑食' },
     extraSpecs: { tankSize: '60cm〜' },
@@ -732,7 +739,9 @@ aquatic: [
     availability: 'common'
   },
   { name: 'カンバーランドスライダー', latin: 'Trachemys scripta troostii', emoji: '🌿', difficulty: '入門', size: 'M（18〜28cm）', cites: null, legal: 'conditional_invasive',
-    reason: 'アカミミガメ（Trachemys scripta）の亜種。2023年6月より種全体が条件付特定外来生物に指定され、新規の購入・販売・輸入・野外放出が禁止。既に飼育中の個体は終生飼養できるが、これから入手することはできない。',
+    reason: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    diagnosisNotice: '当サイトでは新しく迎える人向けの診断候補から外しています。飼育自体が一律禁止という意味ではありません。条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
+    legalNote: '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。',
     specs: { '最大甲長': '28cm', '水槽サイズ': '60〜90cm', '水温': '22〜28℃', '難易度': '入門' },
     coreSpecs: { size: '28cm', temp: '22〜28℃', lifespan: '20〜30年', diet: '雑食（幼体肉食寄り）' },
     extraSpecs: { tankSize: '60〜90cm' },
@@ -764,8 +773,9 @@ aquatic: [
     score: function(){ return -9999; },
     availability: 'archive'
   },
-  { name: 'アラバマチズガメ', latin: 'Graptemys pulchra', emoji: '💎', difficulty: '中〜上級', size: 'M（オス〜12cm/メス〜27cm）', cites: 'CITES III', legal: null,
+  { name: 'アラバマチズガメ', latin: 'Graptemys pulchra', emoji: '💎', difficulty: '中〜上級', size: 'M（オス〜12cm/メス〜27cm）', cites: 'CITES II', legal: null,
     reason: 'アラバマ州・フロリダ州西部の河川系に生息するチズガメ。メスの甲幅が特に広くなる大型個体が魅力。水質・酸素量への要求が高く、本格的な水棲ガメ飼育を楽しみたい上級者向け。',
+    legalNote: 'CITES附属書II（2023年2月23日から）。輸出入には必要な許可書等を確認します。附属書IIだけで日本国内の飼育が禁止されるわけではありません。',
     specs: { '最大甲長': '27.9cm（資料上限）', '水槽サイズ': '60〜90cm', '水温': '20〜26℃', '難易度': '中〜上級' },
     coreSpecs: { size: '27.9cm（資料上限）', temp: '20〜26℃', lifespan: '15〜25年', diet: '雑食（水生無脊椎動物中心）' },
     sizeNote: 'TTWG 2025 p.170 掲載の最大直線甲長（SCL）：オス12.2cm・メス27.9cm。一般的な成体サイズや将来の成長予測ではない。',
@@ -1126,8 +1136,9 @@ forest: [
 
 // ==================== マニアック・特殊ルート ====================
 exotic: [
-  { name: 'トゲスッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: 'CITES II', legal: null,
+  { name: 'トゲスッポン', latin: 'Apalone spinifera', emoji: '💫', recommendationPriority: 35, difficulty: '上級', size: 'L（30〜50cm）', cites: 'CITES II（atraはI）', legal: null,
     reason: '最も流通量の多いスッポン属。砂底必須・水流弱め・甲羅を傷つけないよう注意。独特の柔らかい甲羅と素早い動きが魅力。',
+    legalNote: 'CITES附属書II。ただし亜種 Apalone spinifera atra は附属書Iで、日本では国際希少野生動植物種です。亜種と由来を確認し、atra の国内取引では登録票等の要件を確認してください。',
     specs: { '最大甲長': '50cm（メス）', '水槽サイズ': '90cm〜', '底床': '細かい砂必須', '水温': '24〜30℃' },
     coreSpecs: { size: '50cm（メス）', temp: '24〜30℃', lifespan: '20〜40年', diet: '肉食寄り雑食' },
     extraSpecs: { tankSize: '90cm〜', substrate: '細かい砂必須' },

@@ -98,7 +98,7 @@ def main():
                 if binomial(e["latin"]) != binomial(sci["value"]):
                     mismatch("species.js:" + slug, "学名", sci["value"], e["latin"])
             if cit.get("verification") == "CONFIRMED" and cites_known:
-                want = None if cit["value"] == "not_listed" else cites_label(cit["value"])
+                want = None if cit["value"] == "not_listed" else cit.get("display_label", cites_label(cit["value"]))
                 if e["cites"] != want:
                     mismatch("species.js:" + slug, "CITES", want, e["cites"])
             mx = sp["max_shell_length_cm"]
