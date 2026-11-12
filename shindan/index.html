@@ -3731,7 +3731,7 @@ function showResult(sp, pct, runners) {
   var specGrid = document.getElementById('res-specs');
   specGrid.innerHTML = '';
   // coreSpecs/extraSpecs（新スキーマ）を優先、specsフィールド（旧）にフォールバック
-  var coreLabels = { size: '最大甲長', temp: '温度帯', lifespan: sp.lifespanEvidence ? '寿命の資料' : '寿命', diet: '食性' };
+  var coreLabels = { size: sp.sizeLabel || '最大甲長', temp: '温度帯', lifespan: sp.lifespanEvidence ? '寿命の資料' : '寿命', diet: '食性' };
   var extraLabels = { tankSize: '水槽サイズ', substrate: '底床', salinity: '塩分濃度', waterFlow: '水流', uvb: 'UVB', humidity: '湿度', filter: 'フィルター', basking: 'バスキング' };
   if (sp.coreSpecs) {
     Object.entries(sp.coreSpecs).forEach(function(entry){
@@ -3768,7 +3768,7 @@ function showResult(sp, pct, runners) {
   if (sp.sizeNote) {
     var sizeNoteEl = document.createElement('p');
     sizeNoteEl.className = 'spec-note';
-    sizeNoteEl.textContent = '※最大甲長：' + sp.sizeNote;
+    sizeNoteEl.textContent = '※' + (sp.sizeLabel || '最大甲長') + '：' + sp.sizeNote;
     specGrid.appendChild(sizeNoteEl);
   }
 

@@ -49,7 +49,7 @@ class ShelterSizeGuidance(unittest.TestCase):
             with self.subTest(asin=asin):
                 text = card(asin)
                 self.assertIn('内寸・入口要確認', text)
-                self.assertIn('入口の幅・高さと内部の奥行・幅・高さは本記事では未確認', text)
+                self.assertIn('入口の幅・高さと内部の奥行・幅・高さは、まだ確認できていません', text)
                 for obsolete in ('成体対応', 'まず大きさで困りません', '余裕をもって全身を隠せます',
                                  '甲長8cm前後まで', '甲長10cm前後まで', '甲長13cm以上',
                                  '成体はこのサイズでは入れない', '入れるサイズです'):

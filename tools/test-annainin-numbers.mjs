@@ -57,7 +57,7 @@ const s = A._test.sizeSummary();
 // 期待値を独立に計算する: 各種の coreSpecs.size の中の最大の数（小数込み）
 const ctx2 = {}; vm.createContext(ctx2);
 vm.runInContext(realSpecies + ';this.S = SPECIES;', ctx2);
-const uppers = ctx2.S.all.map(x => x.coreSpecs && String(x.coreSpecs.size || '').match(/\d+(?:\.\d+)?/g))
+const uppers = ctx2.S.all.filter(x => x.sizeEvidenceKind !== 'uncertain_report').map(x => x.coreSpecs && String(x.coreSpecs.size || '').match(/\d+(?:\.\d+)?/g))
   .filter(Boolean).map(a => Math.max(...a.map(Number)));
 t('最小値＝各種の上限のうち最小（小数を分割しない）', s.min, Math.min(...uppers));
 t('最大値', s.max, Math.max(...uppers));
@@ -78,6 +78,14 @@ console.log('\n[5] 「大きさ」の回答が一般的な成体サイズと読�
 const reply = A.getAnnaininResponse('size').reply;
 t('上限側の数字だと書いている', /一般的な成体の大きさではなく上限側/.test(reply), true);
 t('「成体の甲長はおおよそ」と書いていない', /成体の甲長はおおよそ/.test(reply), false);
+
+const E = load("const SPECIES = { all: [ {name:'valid',coreSpecs:{size:'17cm'}},{name:'uncertain',sizeEvidenceKind:'uncertain_report',coreSpecs:{size:'999cm'}},{name:'cherry',coreSpecs:{size:'地域型の上限は未確立'},sizeNote:'飼育個体30cm'},{name:'albino',coreSpecs:{size:'色彩型固有の記録なし'},sizeNote:'参考23cm'} ] };");
+t('疑義ある最大報告と型の個別記録を集計しない', E._test.sizeSummary(), {min:17,max:17,minName:'valid',maxName:'valid'});
+for (const slug of ['cherry-head-tortoise','albino-chinese-softshell']) {
+ const rec=ctx2.S.all.find(x=>x.slug===slug);
+ t(slug+'の最大欄に集計可能な数字なし', P(rec.coreSpecs.size), null);
+}
+t('ギリシャの疑義を集計除外用属性で示す',ctx2.S.all.find(x=>x.slug==='greek-tortoise').sizeEvidenceKind,'uncertain_report');
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
