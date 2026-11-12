@@ -1383,3 +1383,41 @@ exotic: [
   }
 
 }; // end SPECIES
+
+
+// 種別の設備条件。商品の適合・塩分・水深・照射距離を一律に確定する表ではない。
+var DIAGNOSIS_EQUIPMENT_CONDITIONS = {};
+var _dbtEquipmentConditions = {
+  title: 'テラピンの用品を選ぶ前に',
+  items: [
+    '陸場は全身を水から出して甲羅を乾かせるもの。今の体格だけでなく、成体の大きさと重さも考えて選びます。',
+    '室内の陸場ではUVB照明と保温の条件を確認します。ランプの照射距離は器具ごとに確認し、陸場の温度も測ります。',
+    '汽水で管理する場合は、ろ過器やヒーターが汽水に対応しているか確認します。飲用の淡水も必要です。',
+    '雌雄で体格差が大きいため、容器や陸場は種ページの成体サイズと照らし合わせて選びます。'
+  ],
+  note: '候補一覧に陸場や照明が出なくても、省略してよいという意味ではありません。下の商品がすべての成体に合うわけではないので、サイズと使用条件を確かめてください。',
+  sourceNote: 'テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。',
+  sources: [
+    {label:'Animal Diversity Web：生態・甲羅干し・淡水摂取',url:'https://animaldiversity.org/accounts/Malaclemys_terrapin/'},
+    {label:'Virginia Herpetological Society：ノーザンの生態',url:'https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php'},
+    {label:'CTTC：飼育例（1993年）',url:'https://www.tortoise.org/archives/malaclem.html'}
+  ]
+};
+['northern','carolina','ornate','mississippi','texas','mangrove'].forEach(function(prefix) {
+  DIAGNOSIS_EQUIPMENT_CONDITIONS[prefix + '-diamondback-terrapin'] = _dbtEquipmentConditions;
+});
+DIAGNOSIS_EQUIPMENT_CONDITIONS['west-african-mud-turtle'] = {
+  title: 'ヒメハコヨコクビの用品を選ぶ前に',
+  items: [
+    '水場は甲長程度の浅さをひとつの目安に、体格と泳ぎ方を見て調整します。水面に出やすい足場も用意します。',
+    '自分で上り下りでき、全身を乾かせる陸場を用意します。',
+    '陸場にはUVB照明と保温を用意し、器具ごとの照射距離と陸場の温度を確認します。',
+    '容器は底面を広く取り、ろ過器や保温器具は実際の水量・浅い水位で使えるものを選びます。'
+  ],
+  note: '大きな水槽や強い機器を選ぶだけでは、浅場と陸場の代わりにはなりません。下の候補とは別に、この条件を確認してください。',
+  sourceNote: '飼育者の水深の記録は個別の飼育例です。固定の安全上限として扱っていません。',
+  sources: [
+    {label:'All About：ヒメハコヨコクビの飼育案内',url:'https://allabout.co.jp/gm/gc/70686/'},
+    {label:'たなの飼育記録：3頭の観察例',url:'https://pets.tana.cc/2014-01-20-pelusios-nanus/'}
+  ]
+};

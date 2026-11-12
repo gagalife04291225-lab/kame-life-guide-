@@ -275,7 +275,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00O0QM6H0?tag=kamelife090e-22',
     asin: 'B00O0QM6H0',
     image: '/assets/products/placeholder.webp',
-    why: 'マグネット式で水位に合わせて上下する浮島（約29.8×17.8cm）。幅45〜60cm水槽・甲長15cm前後までの個体向け。60cm水槽で飼うニオイガメ・クサガメ・テラピンの陸場はこのサイズから',
+    why: 'マグネット式の浮島（約29.8×17.8×高さ5.4cm）。メーカーの適合水槽は幅45〜60cm・ガラス厚5mm以下。甲長だけで適合を決めず、全身が乾く面積と、乗ったときに沈まないかを確認します。大型の成体に一律で使える陸場ではありません',
     rating: null,
     badge: null,
     recommendedFor: ['semi_aquatic_small', 'semi_aquatic_medium'],
