@@ -1988,3 +1988,14 @@ Claude Code は各作業の完了後、**同じPRの中で**本ファイルを�
 - COMPLETED と NEXT に同じ作業を同時に置かない
 - FIXED_FACTS に書いた事項を NEXT で再調査させる構造にしない
 - 「たぶん終わっている」ものを COMPLETED に書かない。PR番号か merge commit で裏付ける
+
+
+## 2026-11-12 診断ルート名の undefined 修正
+
+- BASE: 6e253000189fa7b42a5723802c183e5381c52b8c
+- CLOSED（実装修正）: shindan/index.html の通常質問・飼育準備質問で、存在しない route.emoji を参照せず route.name を表示。選択画面の SVG アイコン、診断条件、計測、購入リンクは変更なし。
+- 回帰テスト: tools/test-shindan-route-labels.mjs。全5ルートの通常質問・準備質問・通常質問への復帰の15表示を確認。旧コードで失敗し修正後PASS。
+- ローカル Chrome: 全5ルートを実際に選択し最後の診断結果まで通過。通常質問・準備質問に undefined なし。
+- 既存検証: Python サイト関連59件、KID269件、案内人25件、寿命90件、楽天20件PASS。validate_species MISMATCH0/WARN0。
+- BLOCKED: GA4関連テスト2件は環境のtzdata不足（America/Los_Angeles）。今回はGA4変更なし。
+- 公開確認: マージ後に実施。既存NEXTのGA4定刻実測・他の未解決項目は変更しない。

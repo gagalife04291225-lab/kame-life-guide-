@@ -2505,7 +2505,7 @@ function showQuestion() {
     }
   }
 
-  document.getElementById('route-badge').textContent = route.emoji + ' ' + route.name;
+  document.getElementById('route-badge').textContent = route.name;
   var qt = document.getElementById('question-text');
   qt.textContent = q.text;
   qt.focus();
@@ -2589,7 +2589,7 @@ function showGateQuestion() {
       dotsWrap.appendChild(dot);
     }
   }
-  document.getElementById('route-badge').textContent = route.emoji + ' ' + route.name;
+  document.getElementById('route-badge').textContent = route.name;
   var qt = document.getElementById('question-text');
   qt.textContent = q.text;
   qt.focus();
