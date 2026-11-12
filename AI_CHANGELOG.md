@@ -737,3 +737,8 @@
 - 既存検証: Python サイト関連59件、KID269件、案内人25件、寿命90件、楽天20件PASS。validate_species MISMATCH0/WARN0。
 - BLOCKED: GA4関連テスト2件は環境のtzdata不足（America/Los_Angeles）。今回はGA4変更なし。
 - 公開確認: マージ後に実施。既存NEXTのGA4定刻実測・他の未解決項目は変更しない。
+
+
+## 2026-11-12 — 5比較記事の評価根拠を是正
+- 根拠不明な本文★とProduct/Reviewをセットで撤去。床材6種の実使用断定・売れ筋引用・順位番号・短評を整理。商品リンクと計測は不変。
+- 5件の回帰テストとWindows/Chrome検証。GA4テスト2件はtzdata環境エラーを区別。QA記録: docs/qa/review-evidence-five-20261112.md。
