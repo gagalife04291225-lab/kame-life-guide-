@@ -23,3 +23,5 @@ Scope: food-review.html, shelter-review.html, substrate-review.html, uvb-light-r
 - Production and merge are separate stages; not yet verified in this record.
 
 Independent review: removed ranking badges/unsupported short comments, corrected food intro and frozen-bloodworm medical wording. Final additional corrections: UVB universal replacement prescription, natural-substrate safety/best-choice claim, daily-water-change-without-filter claim.
+
+Final aggregate after #226 integration: 85 / 85 Python PASS with existing PC tzdata at care-qa-20261112-verified/deps on per-process PYTHONPATH. No package installed or system setting changed. Earlier two environment errors resolved. Final three wording changes also read back in Chrome; overflow 0, console errors on filter page 0.

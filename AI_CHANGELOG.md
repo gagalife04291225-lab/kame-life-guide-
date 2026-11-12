@@ -741,7 +741,7 @@
 
 ## 2026-11-12 — 5比較記事の評価根拠を是正
 - 根拠不明な本文★とProduct/Reviewをセットで撤去。床材6種の実使用断定・売れ筋引用・順位番号・短評を整理。商品リンクと計測は不変。
-- 5件の回帰テストとWindows/Chrome検証。GA4テスト2件はtzdata環境エラーを区別。QA記録: docs/qa/review-evidence-five-20261112.md。
+- 5件の回帰テストとWindows/Chrome検証。初回GA4環境エラーは既存検証用tzdata参照で解消し全85件PASS。QA記録: docs/qa/review-evidence-five-20261112.md。
 
 ## [2026-11-12] ケージ比較記事の体験・評価と製品分類を是正
 - Actor: OpenAI dot

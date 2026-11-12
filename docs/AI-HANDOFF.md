@@ -2010,5 +2010,5 @@ Claude Code は各作業の完了後、**同じPRの中で**本ファイルを�
 
 - 基準 main `f84fbc2e1894c3c878da618b5580bce0bb182ce7`。food / shelter / substrate / uvb-light / water-filter の5比較記事の根拠不明な★とProduct/Reviewを撤去。Amazon評価には置換していない。
 - 床材6種の実使用断定、売れ筋順位の無出典引用、順位番号・無根拠短評を撤去。関連する誤飲安全保証・フィルター効果保証も是正。別ページの個別使用談は変更なし。
-- PC 81テスト中79PASS、GA4の2件はtzdata環境ERROR。Node25/269/20 PASS。Chrome5ページ×390/1280pxで横溢れ0。リンク・実行JS不変。詳細は `docs/qa/review-evidence-five-20261112.md`。
+- PC初回GA4の2件はtzdata環境ERROR。既存PC検証用tzdataを実行時に参照して解消し、#226統合後はPython85/85PASS。Node25/269/20 PASS。Chrome5ページ×390/1280pxで横溢れ0。リンク・実行JS不変。詳細は `docs/qa/review-evidence-five-20261112.md`。
 - この記録は5記事全飼育記述の一次資料検証を意味しない。公開状態はこの変更を含むPRのmerge・Pages・配信本文照合で確認する。独立の既存NEXTは書き換えない。
