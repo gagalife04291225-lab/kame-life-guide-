@@ -44,7 +44,11 @@
   }
 
   /* ---------- 甲長ゲージ ---------- */
-  function gaugeHtml(minCm, maxCm, unverified) {
+  function gaugeHtml(minCm, maxCm, unverified, notApplicable) {
+    if (notApplicable) {
+      var text = "甲長では判定しません。対応器具と設置条件を確認してください。";
+      return '<div class="gauge" role="img" aria-label="' + esc(text) + '"><p class="gauge-note">' + esc(text) + "</p></div>";
+    }
     var lo = Math.max(0, minCm), hi = Math.min(GAUGE_MAX, maxCm);
     var left = (lo / GAUGE_MAX) * 100, width = Math.max(4, ((hi - lo) / GAUGE_MAX) * 100);
     var rangeTxt = (maxCm >= 999)
@@ -112,7 +116,12 @@
     var rows = [];
     function row(dt, dd) { rows.push('<div><dt>' + esc(dt) + "</dt><dd>" + dd + "</dd></div>"); }
     var di = item.dim_internal, du = item.dim_usable;
-    if (di && (di.w || di.d || di.h)) {
+    var notApplicable = item.size_check && item.size_check.status === "not_applicable";
+    if (notApplicable) {
+      row("器具の適合", esc(du && du.note));
+    } else if (item.dim_confidence === "manufacturer_documented" && item.dimension_reference) {
+      row("メーカー寸法", "下記の型番別資料で確認済みです。設備や床材を置いた空間・対応甲長の判定とは区別します。");
+    } else if (di && (di.w || di.d || di.h)) {
       row("実内寸", esc(di.w + "×" + di.d + "×" + di.h + (di.unit || "")));
     } else {
       row("実内寸", '<span class="tbc">要確認</span>' + (du && du.note ? "（" + esc(du.note) + "）" : ""));
@@ -120,7 +129,7 @@
     if (du && du.note && (!di || !(di.w))) { /* note already shown */ }
     else if (du && du.note) { row("使用可寸", esc(du.note)); }
     var unverified = item.size_check && item.size_check.status === "unverified";
-    row("対応甲長", unverified ? "未確認。検索用の区分は適合範囲を示しません。"
+    row("対応甲長", notApplicable ? "甲長では判定しません。対応器具と設置条件を確認してください。" : unverified ? "未確認。検索用の区分は適合範囲を示しません。"
       : esc(item.shell_min_cm + "〜" + (item.shell_max_cm >= 999 ? "上限なし" : item.shell_max_cm + "cm")));
     var ref = item.dimension_reference;
     if (ref) {
@@ -129,7 +138,7 @@
     }
     if (item.water_depth) { row("水深", esc((item.water_depth.rule || "") + (item.water_depth.note ? "／" + item.water_depth.note : ""))); }
     if (item.substrate_depth) { row("床材深", esc((item.substrate_depth.min || "") + "（" + (item.substrate_depth.rule || "") + "）")); }
-    row("頭数", ({ single: "単独1頭", pair: "ペア可", area_additive: "面積を頭数分加算", temp_only: "一時のみ" })[item.animal_count] || esc(item.animal_count));
+    if (!notApplicable) row("頭数", ({ single: "単独1頭", pair: "ペア可", area_additive: "面積を頭数分加算", temp_only: "一時のみ" })[item.animal_count] || esc(item.animal_count));
     return '<dl class="spec">' + rows.join("") + "</dl>";
   }
 
@@ -157,8 +166,10 @@
 
   function evidenceHtml(item) {
     if (!item.evidence || !item.evidence.length) { return ""; }
-    var e = item.evidence[0];
-    return '<p class="evidence-line">実飼育の参考：<a href="' + esc(e.url) + '" target="_blank" rel="noopener nofollow">' + esc(e.type + " / " + (e.region || "")) + "</a></p>";
+    return item.evidence.map(function (e) {
+      var kind = e.type === "manufacturer" ? "メーカー資料" : (e.type === "keeper" ? "飼育者の実例" : "参考資料");
+      return '<p class="evidence-line">' + kind + '：<a href="' + esc(e.url) + '" target="_blank" rel="noopener nofollow">' + esc(e.label || (e.type + " / " + (e.region || ""))) + "</a></p>";
+    }).join("");
   }
 
   /* ---------- owner photo (only when image.ok===true and path exists) ---------- */
@@ -183,7 +194,8 @@
       '<span class="' + labelClass(item.safety_label) + '">' + esc(LABEL_JA[item.safety_label] || item.safety_label) + "</span></div>";
 
     var unverified = !!(item.size_check && item.size_check.status === "unverified");
-    var gauge = gaugeHtml(item.shell_min_cm, item.shell_max_cm, unverified);
+    var notApplicable = !!(item.size_check && item.size_check.status === "not_applicable");
+    var gauge = gaugeHtml(item.shell_min_cm, item.shell_max_cm, unverified, notApplicable);
     var ks = kscoreHtml(item.kscore);
 
     var detail = '<div class="card-detail" id="detail-' + esc(item.id) + '">' +
@@ -196,7 +208,7 @@
     var photo = imageHtml(item);
 
     return '<article class="kid-card" id="' + esc(item.id) + '" data-buckets="' + esc((item.shell_buckets || []).join(",")) +
-      '" data-min="' + esc(item.shell_min_cm) + '" data-max="' + esc(item.shell_max_cm) + '"' + (unverified ? ' data-unverified="1"' : "") + ">" +
+      '" data-min="' + esc(item.shell_min_cm) + '" data-max="' + esc(item.shell_max_cm) + '"' + (unverified ? ' data-unverified="1"' : "") + (notApplicable ? ' data-size-na="1"' : "") + ">" +
       photo + head + gauge + '<p class="bucket-fit" hidden></p>' + sizeCheckHtml(item) + ks + toggle + detail + cta + "</article>";
   }
 
@@ -286,13 +298,14 @@
       if (!fit) { return; }
       var msg = (match && bk) ? fitMessage(Number(card.getAttribute("data-min")), Number(card.getAttribute("data-max")),
         card.getAttribute("data-unverified") === "1", bk) : "";
+      if (match && bk && card.getAttribute("data-size-na") === "1") { msg = "甲長ではなく、対応器具と設置条件を確認してください。"; }
       fit.textContent = msg;
       fit.hidden = !msg;
     });
     if (groupNote) {
-      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分に登録された候補を表示します。適合未確認の容器も含みます。"; }
+      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分に登録された候補を表示します。対応甲長を確認できていない用品と、甲長で選ばない器具も含みます。"; }
       else {
-        groupNote.textContent = "甲長 " + bk.label + " の区分に登録された候補：" + shown + "件。適合未確認の容器も含みます。各カードの対応甲長と使用条件を確認してください。";
+        groupNote.textContent = "甲長 " + bk.label + " の区分に登録された候補：" + shown + "件。対応甲長を確認できていない用品と、甲長で選ばない器具も含みます。各カードの対応甲長と使用条件を確認してください。";
       }
     }
     var clear = document.getElementById("selector-clear");
