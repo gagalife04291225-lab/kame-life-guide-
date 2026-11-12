@@ -820,3 +820,11 @@ NEXT: 最新mainと差分を再確認、PRで公開判断。その後は残87種
 - PR/Commit: codex-version-equipment-assets-20261112（公開結果はPRに追記）
 - Approver: Owner。将来の楽天自動更新がHTMLも変更する旨を説明後「いいよ」。
 - Conforms: 最新mainと独立レビューを確認して公開。ブラウザデータの消去は行わない。
+
+## 2026-11-12 Home セオレ法令訂正・候補復旧
+- BASE 88b143a9。CITES I・国際希少野生動植物種（2026-03-05）を環境省/JWRCで確認。種ページ・診断・master・識別・一覧資料を同期。登録票と飼育継続を区別。
+- 旧候補消失に伴う再作成。専用4件/validate0/0/714用品/238renders/asset hash PASS。全Python96件のうち既存GA4環境1 ERROR。他95成功。未公開。
+
+## 2026-11-13 Home法令訂正のPC検証
+- Libraryで回収した候補へ診断推薦除外・直接URL参考表示・30日譲受届を追補。資料・種ページ・既飼育者用品は保持。
+- Python96全PASS。Windows既存tzdataを利用。商品714構成、他118種早見表、Chrome表示確認。Owner了承に基づきPR経由で公開工程へ。

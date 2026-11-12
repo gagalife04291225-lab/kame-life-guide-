@@ -8311,25 +8311,37 @@
       },
       "cites": {
         "appendix": {
-          "value": "II",
+          "value": "I",
           "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局",
+          "institution": "環境省",
           "sources": [
-            "https://cites.org/eng/taxonomy/term/4664",
-            "https://cites.org/eng/taxonomy/term/4663"
+            "https://www.env.go.jp/press/press_02851.html"
           ],
-          "note": "リクガメ科の科単位掲載（附属書I種を除く）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日に附属書Iへの移行が発効。同日から日本の国際希少野生動植物種に指定。",
+          "last_verified": "2026-11-12"
         },
         "since": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "2026-03-05",
+          "verification": "CONFIRMED",
+          "sources": [
+            "https://www.env.go.jp/press/press_02851.html"
+          ],
+          "note": "附属書Iへの移行日",
+          "last_verified": "2026-11-12"
         }
       },
       "domestic_law": {
-        "value": null,
-        "verification": "UNPROVEN"
+        "value": "国際希少野生動植物種（2026年3月5日指定）",
+        "verification": "CONFIRMED",
+        "provenance": "official",
+        "institution": "環境省・自然環境研究センター",
+        "sources": [
+          "https://www.env.go.jp/press/press_02851.html",
+          "https://jwrc.or.jp/service/cites/information/news20260217.htm"
+        ],
+        "note": "譲渡し等や販売・頒布目的の陳列・広告等は原則禁止。登録等の例外要件を確認する。規制前から適法に入手した個体の飼育継続は可能。国内CBやインボイスは登録票の代わりにならない。",
+        "last_verified": "2026-11-12"
       },
       "lifespan": {
         "value": null,

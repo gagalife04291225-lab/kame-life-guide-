@@ -2273,14 +2273,16 @@
           "kubetsu": "erosaも雨林性で近縁。homeより大型で後縁縁甲板が鋸歯状に強く尖る傾向。両者は雨林性クレードで酷似し産地・後縁形状の詳細で区別。"
         }
       ],
-      "houkisei": "CITES附属書II掲載(Kinixys spp.)。IUCNはVulnerable(危急)。雨林伐採・食用/ペット採取が脅威。輸入に附属書II証明が必要。",
+      "houkisei": "2026年3月5日からCITES附属書I・国際希少野生動植物種。国内での売買・譲渡等は原則禁止。登録を受けた個体の取引では有効な登録票などの要件を確認する。国内CBやインボイスだけでは登録票の代わりにならない。規制前から適法に入手した個体の飼育継続は可能。",
       "photo_hantei": "背甲後半の蝶番(セオレ構造)＋後縁が急角度で下方に落ち込み反り返る甲形＋暗褐色＋雨林産。急落する後縁が決め手。",
       "photo_chuui": "①ベルセオレ(belliana)と混同—後縁が急落・反り返るのがhome、緩いドームがbell。側面からの写真で後縁形状を確認。②モリセオレ(erosa)とは雨林性クレードで酷似—後縁の鋸歯の強さと産地で区別。③蝶番は幼体で未発達。",
       "sources": [
         "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise",
         "https://www.researchgate.net/publication/249992487_Molecular_phylogeny_of_African_hinge-back_tortoises_Kinixys_Implications_for_phylogeography_and_taxonomy_Testudines_Testudinidae",
         "https://tortoise.org/archives/kinixys.html",
-        "https://thetortoiseproject.com/tortoise-species-of-the-world/"
+        "https://thetortoiseproject.com/tortoise-species-of-the-world/",
+        "https://www.env.go.jp/press/press_02851.html",
+        "https://jwrc.or.jp/service/cites/information/news20260217.htm"
       ],
       "unresolved": "K. homeana は雨林性クレードでK. erosaと姉妹群。両者は形態的に酷似し、後縁縁甲板の鋸歯の強さ・産地で区別されるが、標本情報なしの写真では erosa との判別が難しい場合がある。サバンナ性のbelliana群とは後縁の急落で明確に区別可能。",
       "status": "confirmed"
