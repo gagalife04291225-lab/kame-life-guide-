@@ -811,3 +811,12 @@ Reason: User requested remaining species verification and fixes. Approver: owner
 - 独立レビュー: 技術・3森林種・RSPCA/エロンガータ資料照合PASS。RVC資料は調査担当取得、独立再取得は403で未確認。
 - 残件: 87種の外部条件、個別製品の適合全件、実内寸/必要数/UVB距離/療養用や飼料給与の根拠。guide-aridの森林群説明も別途。メーカー確認によりPRO L2は中大型/60〜90cm用であり、小型用との推測で外さない。
 NEXT: 最新mainと差分を再確認、PRで公開判断。その後は残87種を優先順に継続。
+
+
+## [2026-11-12] 用品資材の内容ハッシュによるキャッシュ対策
+- Actor: OpenAI Codex
+- Change: 3資材を参照する123 HTMLに内容ハッシュ版番号。更新スクリプト・回帰テスト、楽天通常更新でのHTML連動を追加。商品・価格・購入リンク・資材の処理内容は変更なし。
+- Reason: PR #234配信後にブラウザで旧用品JSが残ったため。
+- PR/Commit: codex-version-equipment-assets-20261112（公開結果はPRに追記）
+- Approver: Owner。将来の楽天自動更新がHTMLも変更する旨を説明後「いいよ」。
+- Conforms: 最新mainと独立レビューを確認して公開。ブラウザデータの消去は行わない。
