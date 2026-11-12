@@ -653,3 +653,5 @@
 - **Validation:** Python36/36、旧mainは新規テスト4メソッド/6 assertionでFAIL。375/1280pxで横はみ出し0・JS例外0、12スクリーンショット目視。商品名/順位/14 ASIN/非schema script/CSS/既存リンク/他10商品/比較記事は不変。外部フォント・本番・実商品適合は未評価。詳細は `docs/qa/shelter-size-evidence-20261112.md`。
 - **Branch/Base:** `codex/shelter-size-evidence-20261112` / 実測main `0bc29360579461b90c3ddaf095a083671d8ded54`。
 - **Publication:** push・PR・merge・公開アップロードなし。外部送信の許可待ち。
+
+- **公開工程への追記（2026-11-12）:** Ownerが今回のシェルター修正を含む3候補の送信・mergeを承認。先行PRの内容を保持し、最終検証と公開確認を行う。初回ローカル検証の記録を公開成功に読み替えない。
