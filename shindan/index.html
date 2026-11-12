@@ -1085,6 +1085,12 @@ body {
   opacity: .65;
 }
 /* ===== /Phase 31-C2b theme overrides ===== */
+.equipment-conditions { margin: 24px 0; padding: 20px; border: 1px solid #b4cbb7; border-radius: 12px; background: #f5faf5; color: #223b29; line-height: 1.8; }
+.equipment-conditions h2 { font-size: 1.1rem; margin: 0 0 12px; }
+.equipment-conditions ul { padding-left: 1.3em; }
+.equipment-conditions li { margin: 8px 0; }
+.equipment-conditions summary { cursor: pointer; padding: 12px 0; }
+.equipment-conditions a { color: #215c34; overflow-wrap: anywhere; }
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -1280,6 +1286,7 @@ body {
   </div>
   <!-- Phase 31-C1→Phase5-B: Starter Kit を信頼コンテンツの下（用品ゾーンの先頭）へ配置 -->
   <!-- PHASE 6-B: おすすめ飼育セット -->
+  <div id="species-equipment-conditions"></div>
   <div id="starter-kit-section" style="display:none"></div>
   <!-- Phase 25-C→Phase5-B: 統合commerce CTA（旧res-cta-top）。Starter Kit の下へ配置 -->
   <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
@@ -2158,6 +2165,29 @@ var SK_CAT_LABELS = {
  * Bridges shindan sp object → mountStarterKit(V2) call.
  * Keeps starter_kit_visible observer (V2 engine has no built-in viewport event).
  */
+function renderSpeciesEquipmentConditions(sp) {
+  var data = typeof DIAGNOSIS_EQUIPMENT_CONDITIONS !== 'undefined' && DIAGNOSIS_EQUIPMENT_CONDITIONS[sp.slug];
+  if (!data) return '';
+  function esc(value) { return String(value).replace(/[&<>"']/g, function(ch) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+  }); }
+  return '<section class="equipment-conditions" aria-label="' + esc(data.title) + '">' +
+    '<h2>' + esc(data.title) + '</h2><ul>' + data.items.map(function(item) {
+      return '<li>' + esc(item) + '</li>';
+    }).join('') + '</ul><p>' + esc(data.note) + '</p>' +
+    '<details><summary>参考にした資料</summary><p>' + esc(data.sourceNote) + '</p><ul>' +
+    data.sources.map(function(source) { return '<li><a href="' + esc(source.url) +
+      '" target="_blank" rel="noopener">' + esc(source.label) + '</a></li>'; }).join('') +
+    '</ul></details></section>';
+}
+
+function updateSpeciesEquipmentConditions(sp) {
+  var slot = document.getElementById('species-equipment-conditions');
+  if (!slot) return;
+  var refOnly = sp.commerceAllowed === false || sp.availability === 'reference_only';
+  slot.innerHTML = refOnly ? '' : renderSpeciesEquipmentConditions(sp);
+}
+
 function renderStarterKitV2(sp) {
   var sec = document.getElementById('starter-kit-section');
   if (!sec) return;
@@ -2967,6 +2997,7 @@ function calcResult() {
 
 // ===== 結果表示 =====
 function showResult(sp, pct, runners) {
+  updateSpeciesEquipmentConditions(sp);
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
   document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
