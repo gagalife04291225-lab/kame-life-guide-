@@ -1,0 +1,2625 @@
+{
+  "date": "2026-11-12",
+  "base": "4baf1b8770c810c0b6f5f2a487dfbbdd14d868c1",
+  "scope": "All 119 species structural inventory. No product-fit guarantees. Flags are review queue, not proof of unsuitability. Master is not automatically rendered to users.",
+  "counts": {
+    "total": 119,
+    "route_candidate_differences": 46,
+    "external_conditions_only": 11
+  },
+  "rows": [
+    {
+      "name": "ロシアリクガメ",
+      "slug": "russian-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヘルマンリクガメ",
+      "slug": "hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（Testudo中でも大型）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ギリシャリクガメ",
+      "slug": "greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フチゾリリクガメ",
+      "slug": "marginated-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級推奨（Testudo最大級）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "エロンガータリクガメ",
+      "slug": "elongated-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アカアシリクガメ",
+      "slug": "red-footed-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "チャコリクガメ",
+      "slug": "chaco-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヒョウモンガメ",
+      "slug": "leopard-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は室内規格超・屋外飼育場＋冬の大空間加温",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ベルセオレガメ",
+      "slug": "bell-hinge-back-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（床面積優先・隠れ家必須）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ケヅメリクガメ（スルカタ）",
+      "slug": "sulcata-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は屋外飼育場が必須（甲長60〜80cm・室内ケージ規格では終生飼育不可）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アルダブラゾウガメ",
+      "slug": "aldabra-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "施設級の屋外飼育場＋冬の大空間加温が前提（個人の一般住宅では現実的でない）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "インプレッサムツアシガメ",
+      "slug": "impressed-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "パンケーキリクガメ",
+      "slug": "pancake-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm（岩組み必須）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "インドホシガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ビルマホシガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "エジプトリクガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ソリガメ",
+      "slug": "bowsprit-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注ケージか部屋飼い（屋外は高温多湿を避けられる時期に限る）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ホームセオレガメ",
+      "slug": "home-hinge-back-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（床面積優先・高湿度維持）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "マダガスカルクモノスガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "イベラギリシャリクガメ",
+      "slug": "iberian-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "チュニジアギリシャリクガメ",
+      "slug": "tunisian-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "モロッコギリシャリクガメ",
+      "slug": "moroccan-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "リビアギリシャリクガメ",
+      "slug": "libyan-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヒガシヘルマンリクガメ",
+      "slug": "eastern-hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（本種群で最大の亜種）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニシヘルマンリクガメ",
+      "slug": "western-hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ゴールデンギリシャリクガメ",
+      "slug": "golden-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "チェリーヘッドアカアシリクガメ",
+      "slug": "cherry-head-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "「小型のまま」を前提にしない（通常のアカアシ水準で計画）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミシシッピニオイガメ",
+      "slug": "musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45cmで開始・成体は60cm以上の水槽（単独・当サイト目安）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヒラタニオイガメ",
+      "slug": null,
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミシシッピドロガメ",
+      "slug": "mississippi-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミスジドロガメ",
+      "slug": "striped-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "カブトニオイガメ",
+      "slug": "razorback-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独60cm水槽・ペア90cm（海外24インチ/36インチ推奨が国内規格へほぼ一致）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スジクビニオイガメ",
+      "slug": "stripe-necked-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ホオアカドロガメ",
+      "slug": "red-cheeked-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニシキガメ",
+      "slug": "painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "セイブニシキガメ",
+      "slug": "western-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "トウブニシキガメ",
+      "slug": "eastern-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "チュウブニシキガメ",
+      "slug": "midland-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "クサガメ",
+      "slug": "reeves-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "キバラガメ",
+      "slug": "yellow-bellied-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミシシッピアカミミガメ",
+      "slug": "red-eared-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25〜28cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミシシッピチズガメ",
+      "slug": "mississippi-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニセチズガメ",
+      "slug": "false-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニホンイシガメ",
+      "slug": "japanese-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "japanese_pond"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヤエヤマイシガメ",
+      "slug": "yaeyama-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "japanese_pond"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミナミイシガメ",
+      "slug": "yellow-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニシキマゲクビガメ（ピンクベリー）",
+      "slug": "pink-bellied-side-necked-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ペニンシュラクーター",
+      "slug": "peninsula-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "幼体60cm可・成体メスは120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スワニークーター",
+      "slug": "suwannee-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ブランディングガメ",
+      "slug": "blandings-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋乾ける陸場",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "マタマタ",
+      "slug": "matamata",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上（底面積優先）＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "サラドロガメ",
+      "slug": "mexican-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・余裕があれば90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヨーロッパヌマガメ",
+      "slug": "european-pond-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "カントンクサガメ",
+      "slug": "canton-reeves-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "キイロドロガメ",
+      "slug": "yellow-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ハーレラドロガメ",
+      "slug": "herrera-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "シロクチドロガメ",
+      "slug": "white-lipped-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽から・余裕があれば90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "クロコブチズガメ",
+      "slug": "black-knobbed-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm推奨",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ワモンチズガメ",
+      "slug": "ringed-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フトマユチズガメ",
+      "slug": "ouachita-map-turtle-sp",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "サルヴィンオオニオイガメ",
+      "slug": "giant-musk-turtle-mx",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独で90cm水槽基準",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ハナガメ",
+      "slug": "chinese-stripe-necked-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60〜90cm可・成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "トウブドロガメ",
+      "slug": "eastern-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "カンバーランドスライダー",
+      "slug": "cumberland-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "キタチズガメ",
+      "slug": "northern-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "テキサスチズガメ",
+      "slug": null,
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アラバマチズガメ",
+      "slug": "alabama-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm規格可・メス90〜120cm規格必須",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ホオジロクロガメ",
+      "slug": "asian-black-marsh-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ハナナガドロガメ",
+      "slug": "narrow-bridged-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm開始",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フロリダドロガメ",
+      "slug": "florida-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "オオアタマヒメニオイガメ",
+      "slug": "loggerhead-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "リバークーター",
+      "slug": "river-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "リオグランデクーター",
+      "slug": "rio-grande-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フロリダアカハラガメ",
+      "slug": "florida-red-bellied-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "幼体60cm可・成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "キボシイシガメ",
+      "slug": "spotted-turtle",
+      "route": "forest",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "モリイシガメ",
+      "slug": "wood-turtle",
+      "route": "forest",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "水場と陸場の両方を広く（半陸半水）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スペングラーヤマガメ",
+      "slug": "spenglers-leaf-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cmケージ〜（床面積優先・高さ不要）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヒラセガメ",
+      "slug": "hirase-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "オプストヒラセガメ",
+      "slug": "obsti-hirase-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "enclosure_evidence_missing"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アカスジヤマガメ",
+      "slug": "painted-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ネンリンヤマガメ",
+      "slug": "annulated-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "マンヤマガメ",
+      "slug": "brown-wood-turtle-manni",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ニカラグアクジャクガメ",
+      "slug": "nicaragua-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ソノラクジャクガメ",
+      "slug": "sonora-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ゲレーロクジャクガメ",
+      "slug": "guerrero-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミツユビハコガメ",
+      "slug": "three-toed-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "トウブハコガメ",
+      "slug": "eastern-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "室内90〜120cm級。温帯種のため春〜秋は屋外囲いも選択肢",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ガルフコーストハコガメ",
+      "slug": "gulf-coast-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "最大亜種のため成体は120cm級推奨（90cmは亜成体まで）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フロリダハコガメ",
+      "slug": "florida-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級から（床材厚敷き＋浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "キタニシキハコガメ",
+      "slug": "ornate-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "タイワンセマルハコガメ",
+      "slug": "taiwan-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先・浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "マレーハコガメ",
+      "slug": "malayan-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "チュウゴクセマルハコガメ",
+      "slug": "chinese-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先・浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "モエギハコガメ",
+      "slug": "indochinese-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミスジハコガメ",
+      "slug": "three-striped-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ノコヘリマルガメ",
+      "slug": "asian-leaf-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm＋広い陸場（アクアテラ型）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ミナミニシキハコガメ",
+      "slug": "desert-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "トゲスッポン",
+      "slug": "spiny-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スベスッポン",
+      "slug": "smooth-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "フロリダスッポン",
+      "slug": "florida-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スッポンモドキ",
+      "slug": "pig-nosed-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "終生飼育は120cm超〜池クラス（個人では極めて困難）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "スッポン（シナスッポン）",
+      "slug": "chinese-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋砂を敷ける底面積",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アルビノシナスッポン",
+      "slug": "albino-chinese-softshell",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋砂を敷ける底面積",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ノーザンダイヤモンドバックテラピン",
+      "slug": "northern-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "カロリナダイヤモンドバックテラピン",
+      "slug": "carolina-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上＋乾ける陸場",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "オルナータダイヤモンドバックテラピン",
+      "slug": "ornate-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "ミシシッピダイヤモンドバックテラピン",
+      "slug": "mississippi-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "テキサスダイヤモンドバックテラピン",
+      "slug": "texas-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "マングローブダイヤモンドバックテラピン",
+      "slug": "mangrove-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "オーストラリアナガクビガメ",
+      "slug": "eastern-long-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm（首の長さ込み）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ジーベンロックナガクビガメ",
+      "slug": "siebenrocks-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級（首の長さ込み）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "アフリカヌマヨコクビガメ",
+      "slug": "african-helmeted-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm推奨",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "ヒメハコヨコクビガメ",
+      "slug": "west-african-mud-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽から可・推奨90cm（推奨床面積0.35㎡は60cm規格0.18㎡を上回る）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "ヒラリーカエルガメ",
+      "slug": "hilaire-side-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "オリノコマタマタ",
+      "slug": "amazon-matamata",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上（底面積優先）＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "external_requirements_reviewed_not_product_fit"
+    },
+    {
+      "name": "サソリドロガメ",
+      "slug": "scorpion-mud-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "スジオオニオイガメ",
+      "slug": "giant-musk-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独で120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "マッコードナガクビガメ",
+      "slug": "mccords-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    },
+    {
+      "name": "コウホソナガクビガメ",
+      "slug": "collier-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "inventory_only_not_product_fit_verified"
+    }
+  ]
+}

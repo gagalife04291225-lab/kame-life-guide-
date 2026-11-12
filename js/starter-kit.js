@@ -331,9 +331,9 @@ function renderCostBox(picks, opts) {
     '<div class="sk-cost-title">📊 飼育コスト早見表</div>' +
     '<div class="sk-cost-grid">' +
       '<div class="sk-cost-item">' +
-        '<div class="sk-cost-label">初期費用目安</div>' +
+        '<div class="sk-cost-label">標準価格帯の候補合計</div>' +
         '<div class="sk-cost-value">' + costText + '</div>' +
-        '<div class="sk-cost-sub">標準価格帯の候補合計' + (missingPriceCount ? '（価格未掲載' + missingPriceCount + '点を除く）' : '') + '</div>' +
+        '<div class="sk-cost-sub">飼育開始にかかる総額ではありません' + (missingPriceCount ? '（価格未掲載' + missingPriceCount + '点を除く）' : '') + '</div>' +
       '</div>' +
       '<div class="sk-cost-item">' +
         '<div class="sk-cost-label">月額維持費</div>' +

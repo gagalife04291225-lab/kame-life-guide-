@@ -1421,3 +1421,39 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS['west-african-mud-turtle'] = {
     {label:'たなの飼育記録：3頭の観察例',url:'https://pets.tana.cc/2014-01-20-pelusios-nanus/'}
   ]
 };
+
+var _matamataEquipmentConditions = {
+  title: 'マタマタの用品を選ぶ前に',
+  items: [
+    '底に足をつけたまま、首を伸ばして鼻先を水面へ出せる深さに調整します。',
+    '水量を増やすために深くするのではなく、底を歩ける広さを確保します。',
+    'ヒーターやろ過器は、その水位で使えるかを確認します。大きな水槽向けの機器でも、浅い水位で使えるとは限りません。'
+  ],
+  note: '候補の水槽・機器が、この条件を満たす組み合わせかは別に確認が必要です。',
+  sourceNote: '2021年の分布論文はマタマタとオリノコマタマタの両種を扱います。浅場を利用する生態を参考にした選び方で、固定の水深上限や機器の適合を示すものではありません。',
+  sources: [{label:'Cunhaほか（2021）：マタマタ2種の分布・生態',url:'https://www.researchgate.net/publication/352260587_Distribution_of_Chelus_fimbriata_and_Chelus_orinocensis_Testudines_Chelidae'}]
+};
+['matamata','amazon-matamata'].forEach(function(slug) { DIAGNOSIS_EQUIPMENT_CONDITIONS[slug] = _matamataEquipmentConditions; });
+DIAGNOSIS_EQUIPMENT_CONDITIONS['pig-nosed-turtle'] = {
+  title: 'スッポンモドキの用品を選ぶ前に',
+  items: [
+    '成体は大きくなるため、今の体格だけでなく、成長後も泳いで向きを変えられる広さを見込んで水槽を選びます。',
+    '水中の隠れ場所を設けます。隠れ家も、成長後の体格に合わせて見直します。',
+    '同居では傷つけ合うことがあります。広い水槽なら複数飼育できるとは限りません。'
+  ],
+  note: '下の水槽を、どの個体にも終生使えるものとして選んではいません。成体の体格と、設置できる広さを先に確認してください。',
+  sourceNote: '種概説の飼育節を参照しています。特定の水槽寸法を終生飼育の最低基準として指定してはいません。',
+  sources: [{label:'IUCN/SSC TFTSG（2008）：スッポンモドキ種概説・飼育節',url:'https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_009_insculpta_v1_2008.pdf'}]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['home-hinge-back-tortoise'] = {
+  title: 'ホームセオレの用品を選ぶ前に',
+  items: [
+    '湿った森林の環境で暮らすリクガメです。乾燥系リクガメと同じ感覚で床材を選ばず、湿り気を保てる環境を用意します。',
+    '水を飲んだり浸かったりできる水場を用意します。容器は体格に合わせて選びます。',
+    '候補の床材に乾燥環境向けと書かれていても、それが本種の標準という意味ではありません。種に必要な環境を先に確認してください。'
+  ],
+  note: '用品は共通の分類から表示しています。本種の飼育条件をすべて満たすセットとして選んだものではありません。',
+  sourceNote: '種概説の飼育節を参照しています。固定の湿度値や、個々の床材製品の適合を指定するものではありません。',
+  sources: [{label:'IUCN/SSC TFTSG（2013）：ホームセオレ種概説・飼育節',url:'https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_070_homeana_v1_2013.pdf'}]
+};
