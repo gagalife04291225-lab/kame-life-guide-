@@ -737,3 +737,12 @@
 - 既存検証: Python サイト関連59件、KID269件、案内人25件、寿命90件、楽天20件PASS。validate_species MISMATCH0/WARN0。
 - BLOCKED: GA4関連テスト2件は環境のtzdata不足（America/Los_Angeles）。今回はGA4変更なし。
 - 公開確認: マージ後に実施。既存NEXTのGA4定刻実測・他の未解決項目は変更しない。
+
+
+## [2026-11-12] ケージ比較記事の体験・評価と製品分類を是正
+- Actor: OpenAI dot
+- Change: cage-reviewの実使用主張・4.8/Review schema・順位を撤去、WH6045成体案内とDC600分類を訂正。旧年タイトルを無年号へ。回帰4件と根拠記録を追加。
+- Reason: Owner本人が5製品の実使用を否定。Amazon評価の出所は確認できず。メーカー仕様と記事に明確な矛盾あり。
+- PR/Commit: 本ブランチ。公開工程の実測結果はPRコメント。
+- Approver: Owner「確認して 不具合なおして」と本人の実使用否定、既存merge指示の範囲。
+- Conforms: 最小限の事実是正。商品リンク/GA不変。
