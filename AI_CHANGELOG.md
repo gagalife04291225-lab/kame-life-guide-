@@ -618,3 +618,14 @@
 
 - **追記（同PR・2026-11-12）:** レビュー指摘（PR #216 r4544118146）に対応し、診断画面が表示する `coreSpecs.size` を4種（ロシアリクガメ22cm・カブトニオイガメ17.6cm・スペングラーヤマガメ10.7cm・フロリダハコガメ18.7cm）で正本・記事にそろえた。`tools/test_species_size_sync.py`（3テスト）を追加。旧データでは失敗し、修正後は通ることを確認済み。
 - **追記2（同PR・2026-11-12）:** 公開前確認で、診断の説明文・水槽サイズが記事と食い違う5種を正本の成体向け目安にそろえ、7種の「最大甲長」に注記（sizeNote）を表示。案内人の小数分割（既存不具合）を修正し、回答を上限側の数字だと明記。回帰テスト（Python 4件・node 21件）を追加。
+
+
+## 2026-11-12 JST — 成長に合わせた容器の見直し（B案）
+
+- **Actor:** Claude Code（RO-3）
+- **Change:** `/kid/` に静的節「成長と容器の見直し」（#growth・出典8件）を追加し、小型種記事・ミシシッピニオイガメ・はじめての方向けランキング・代用品ガイド・陸系種ページ44枚から短い答えとリンクで案内。陸系ページの水棲向け「甲長の約4倍」注記を数字なしの陸系向け注記へ置換。ミシシッピニオイガメの水深を正本「浅め＋足場」へ、水槽目安を「当サイトの目安」と明記。回帰テスト `tools/test_growth_guidance.py` 追加。
+- **Reason:** Owner の明示指示（前回調査の推奨B案）。子ガメの容器をいつ広げるかに、月齢の断定でなく暮らしぶりと甲長で答えるため。陸系ページの水棲倍率は正本ルール（陸生×5）と食い違っていた。
+- **Validation:** tools 26テスト OK、annainin 21 / rakuten 20 PASS、validate_species MISMATCH 0、check_enclosure_sync 110/0、check_compare_enclosure 378/0/10（変更前と出力同一）、JSON-LD 解析 OK、320/390/1280px で横はみ出し0・JSエラー0、KID ツールの5段階表示件数が main と一致、新規文字色のコントラスト最小 7.77:1。
+- **PR/Commit:** ブランチ `claude/turtle-growth-tank-review-20261112`。開始時 main `dc2ebfb2544938b2ee86498ad028bfe9b3197844`。
+- **Approver:** Owner の作業指示。merge・公開は未承認。
+- **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
