@@ -1363,7 +1363,7 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=bd2618bc60ca');
+  return window.__loadScriptOnce('species.js?v=81e80863c3e8');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
@@ -1592,7 +1592,7 @@ function buildCautionPoints(sp, sc, routeId) {
 
   // 最優先: 購入・入手に関わる法的制約（既存res-legalボックスと重複しても、購入不可は最重要のため残す）
   if (sp.legal === 'conditional_invasive') {
-    points.push('条件付特定外来生物のため新規購入はできません（既飼育個体のみ継続飼育可）。');
+    points.push('販売・購入・頒布等は原則禁止です。家庭での飼育や少数の相手との無償譲渡は手続き不要ですが、逃がしてはいけません。');
   }
 
   // Phase 46-E の屋外・多湿注意（renderHusbandryCaution）と同条件を短縮版で補足
@@ -1634,6 +1634,8 @@ function buildCautionPoints(sp, sc, routeId) {
     points.push('上級者向け・登録票の確認が必須な種です。');
   } else if (points.length < 2 && sp.legal === 'unknown_hold') {
     points.push('取り扱いに注意が必要な種のため、登録票の確認が必須です。');
+  } else if (points.length < 2 && sp.legalNote) {
+    points.push(sp.legalNote);
   } else if (points.length < 2 && sp.cites) {
     points.push('CITES対象種のため、CB個体（国内繁殖）であることを購入前に確認してください。');
   }
@@ -1729,7 +1731,7 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
 
   // \u6CD5\u898F\u5236\u7A2E
   if (sp.legal === 'conditional_invasive') {
-    return '\u65E2\u306B\u98FC\u80B2\u3057\u3066\u3044\u308B\u500B\u4F53\u306B\u9650\u308A\u3001\u7D99\u7D9A\u98FC\u80B2\u304C\u8A8D\u3081\u3089\u308C\u3066\u3044\u308B\u7A2E\u3067\u3059\u3002\u9069\u5207\u306A\u98FC\u80B2\u74B0\u5883\u3092\u6574\u3048\u3001\u6CD5\u4EE4\u3092\u9075\u5B88\u3057\u305F\u4E0A\u3067\u3068\u3082\u306B\u904E\u3054\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
+    return '条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。';
   }
   var _isAdv = (sp.difficulty || '').indexOf('\u4E0A\u7D1A') >= 0;
   var _isXL  = (sp.size || '').indexOf('XL') >= 0;
@@ -1739,6 +1741,7 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
   // Phase 46-E fix: \u300C\u5E0C\u5C11\u7A2E\u300D\u306F availability:'rare' \u7B49\u306E\u660E\u78BA\u306A\u30C7\u30FC\u30BF\u304C\u3042\u308B\u5834\u5408\u306E\u307F\u4F7F\u3046\u3002
   // CITES\u6307\u5B9A\u306E\u6709\u7121\u3060\u3051\u3067\u306F\u5B9F\u969B\u306E\u6D41\u901A\u91CF\uFF08common/rare\uFF09\u3092\u8868\u3055\u306A\u3044\u305F\u3081\u3001
   // sp.cites \u306E\u771F\u507D\u3060\u3051\u3067\u300C\u5E0C\u5C11\u7A2E\u300D\u3068\u8868\u73FE\u3057\u306A\u3044\u3088\u3046\u5206\u5C90\u3092\u5206\u96E2\u3057\u305F\u3002
+  if (sp.legalNote) return sp.legalNote;
   if (sp.availability === 'rare') {
     return '\u6D41\u901A\u91CF\u304C\u9650\u3089\u308C\u305F\u5E0C\u5C11\u306A\u7A2E\u3067\u3059\u3002CB\u500B\u4F53\uFF08\u56FD\u5185\u7E41\u6B96\u500B\u4F53\uFF09\u3092\u5165\u624B\u3057\u3001\u9069\u5207\u306A\u66F8\u985E\u3092\u78BA\u8A8D\u3057\u3066\u304B\u3089\u98FC\u80B2\u3092\u958B\u59CB\u3057\u3066\u304F\u3060\u3055\u3044\u3002\u98FC\u80B2\u30AC\u30A4\u30C9\u3067\u3055\u3089\u306B\u8A73\u3057\u304F\u89E3\u8AAC\u3057\u3066\u3044\u307E\u3059\u3002';
   }
@@ -1811,7 +1814,7 @@ var BEGINNER_WARN_DATA = {
   'インプレッサムツアシガメ':
     '⚠️ <strong>極めて飼育困難：</strong>低温・高湿度・高通気の三立が必要で、長期飼育記録が世界的にも少ない最難関種です。経験豊富な専門家のみ推奨します。',
   'ミシシッピアカミミガメ':
-    '⚠️ <strong>条件付特定外来生物：</strong>新規購入・販売は法律で禁止されています。既飼育個体のみ継続飼育可。野外放流は絶対に禁止です。',
+    '⚠️ <strong>条件付特定外来生物：</strong>販売・購入・頒布等は原則禁止です。家庭での飼育や頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要です。野外へ放してはいけません。',
   'スジオオニオイガメ':
     '⚠️ <strong>取扱注意：</strong>噛みつき力が非常に強く、素手での取り扱いは厳禁です。CITES II規制対象で入手時は書類確認が必須。',
   'フロリダスッポン':
@@ -3684,6 +3687,10 @@ function showResult(sp, pct, runners) {
     legalBox.style.display = '';
     legalBox.className = 'legal-box';
     legalBox.textContent = sp.diagnosisNotice;
+  } else if (sp.legalNote) {
+    legalBox.style.display = '';
+    legalBox.className = 'legal-box';
+    legalBox.textContent = sp.legalNote;
   } else if (refOnly || sp.legal === 'cites_i' || sp.legal === 'unknown_hold') {
     legalBox.style.display = '';
     legalBox.className = 'legal-box';
