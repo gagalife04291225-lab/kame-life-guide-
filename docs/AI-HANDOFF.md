@@ -2004,3 +2004,16 @@ Claude Code は各作業の完了後、**同じPRの中で**本ファイルを�
 - 既存検証: Python サイト関連59件、KID269件、案内人25件、寿命90件、楽天20件PASS。validate_species MISMATCH0/WARN0。
 - BLOCKED: GA4関連テスト2件は環境のtzdata不足（America/Los_Angeles）。今回はGA4変更なし。
 - 公開確認: マージ後に実施。既存NEXTのGA4定刻実測・他の未解決項目は変更しない。
+
+
+
+## 2026-11-12 便利ワザ記事の実用化
+
+- BASE: f84fbc2e1894c3c878da618b5580bce0bb182ce7。公開前に main 179b1c19498929bc32964d6096ee3509a44644b6（PR #226）を競合なく取り込み。
+- 26サイトの本文調査から8つの工夫を採用。水換え・清掃・温度/記録の3分類、短い効果説明と開閉式3手順。獣医・メーカー・飼育者の出典を区別し、本人の使用体験は追加しない。
+- guides/keeper-hacks.html の既存購入URL8本/tagと飼育情報を保持。全ページ必須のGA4欠落とsitemap登録漏れを補修。
+- 独立レビューの指摘（排水前の電源停止を手順の先頭へ）を修正済み。内容・HTMLの未修正指摘0。
+- Chrome実画面: 320/390/1280pxで横溢れ0、390pxでdetails8件の開閉16操作PASS、Enter開閉と#cleanジャンプPASS、summary高さ52.8px、console error0。外部GA4読込をローカルQA時のみ除去し本物の計測は送信しない。
+- 追加テスト7 PASS。KID269/案内人25/寿命90/楽天20 PASS。全Python83件はクラウド82 PASS・既存private_outputテスト1件が/tmp/.gitで失敗、PC81 PASS・既存GA4日時テスト2件がtzdata不足で失敗。実装対象テストに失敗なし。
+- 公開はPR/merge後に配信一致と実画面を別途確認し、PRコメントへ記録する。未確認を公開済みとは扱わない。
+- NEXTは既存のGA4定刻実測を維持。今回の記事を再調査・再実装しない。
