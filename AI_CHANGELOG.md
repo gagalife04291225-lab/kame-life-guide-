@@ -629,3 +629,4 @@
 - **PR/Commit:** ブランチ `claude/turtle-growth-tank-review-20261112`。開始時 main `dc2ebfb2544938b2ee86498ad028bfe9b3197844`。
 - **Approver:** Owner の作業指示。merge・公開は未承認。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+- **追記（同PR・2026-11-12）:** PM 監査（HEAD 9c1e2b71）に対応。水棲／陸棲の説明を冒頭から分離、定期の見直しと緊急の環境修正を分離、ミシシッピニオイガメの45cm/60cmの説明を甲長11cm前後で統一し海外資料の条件を併記、水深・UVBの出典表現を一致、外貼り目盛りの文章を簡潔化、陸系44枚の注記を簡潔化、出典の文字を拡大。トロ舟80型の甲長範囲と×5条件の既存不整合、種ページの「KID 安全判定」表記は別課題として記録。

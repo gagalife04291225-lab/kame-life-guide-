@@ -52,7 +52,7 @@ class GrowthGuidance(unittest.TestCase):
         s = growth_section()
         self.assertTrue(s, '/kid/ に id="growth" の節がない')
         for phrase in ('見直しのサイン', '甲長の測り方', '頭と尾を含めず', 'まっすぐ',
-                       '水槽の外に貼るメジャー', '目安', '餌を減らし',
+                       '水槽の外に貼る目盛り', '目安', '餌を減らし', 'すぐに今の環境を直す',
                        '（水棲ガメ）', '（リクガメ・ハコガメ）'):
             self.assertIn(phrase, s)
         self.assertNotIn('amazon.co.jp', s)
@@ -63,6 +63,19 @@ class GrowthGuidance(unittest.TestCase):
         ids = set(re.findall(r'id="(gr-src-\d+)"', s))
         self.assertTrue(refs)
         self.assertEqual(refs - ids, set())
+
+    def test_first_answer_separates_aquatic_and_land(self):
+        s = growth_section()
+        ans = re.search(r'<div class="gr-answer">(.*?)</div>', s, re.S).group(1)
+        self.assertIn('水棲ガメ', ans)
+        self.assertIn('リクガメ・ハコガメ', ans)
+        self.assertIn('species-list.html', ans)
+        # 当たり前の禁止を重ねない（外貼り目盛りの説明）
+        self.assertNotIn('追いかけて', s)
+        small = read('guides/small-best-turtles.html')
+        part = small[small.index('id="from-hatchling"'):][:900]
+        self.assertIn('水棲ガメ', part)
+        self.assertIn('リクガメ・ハコガメ', part)
 
     def test_entry_points_link_to_growth(self):
         for rel in ('guides/small-best-turtles.html', 'species/musk-turtle.html',
@@ -84,6 +97,10 @@ class GrowthGuidance(unittest.TestCase):
         card = re.search(r'<div class="env-label">水深</div>\s*<div class="env-value">([^<]*)</div>', t)
         self.assertIsNotNone(card)
         self.assertNotIn('30cm', card.group(1))
+        # 45cm を全成体の最低基準として断定しない／水深を唯一の基本と断定しない
+        self.assertNotIn('最低ラインは45cm', t)
+        self.assertNotIn('成体の最低ライン', t)
+        self.assertNotIn('水面に届く深さが基本', t)
 
 
 if __name__ == '__main__':
