@@ -1363,7 +1363,7 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=3f4b82d04b7d');
+  return window.__loadScriptOnce('species.js?v=bd2618bc60ca');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
@@ -3001,7 +3001,7 @@ function showResult(sp, pct, runners) {
   updateSpeciesEquipmentConditions(sp);
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
-  document.title = sp.name + 'があなたに合う亀です | カメライフガイド';
+  document.title = sp.name + (sp.diagnosisNotice ? 'の参考情報 | カメライフガイド' : 'があなたに合う亀です | カメライフガイド');
   // 実写写真: slug（一意キー）で紐付け。読み込み失敗時は絵文字にfallback
   (function(){
     var photo = document.getElementById('res-photo');
@@ -3019,9 +3019,12 @@ function showResult(sp, pct, runners) {
       emoji.style.display = 'block';
     }
   })();
+  document.querySelector('.result-label').textContent = sp.diagnosisNotice ? '参考情報（診断のおすすめ対象外）' : 'あなたにおすすめの亀';
+  document.getElementById('score-meter').style.display = sp.diagnosisNotice ? 'none' : '';
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
   document.getElementById('res-reason').textContent = sp.reason;
+  document.getElementById('res-reason').previousElementSibling.textContent = sp.diagnosisNotice ? 'この種について' : 'おすすめのポイント';
 
   // バッジ
   var badges = document.getElementById('res-badges');
@@ -3070,7 +3073,11 @@ function showResult(sp, pct, runners) {
     if (!copyEl) return;
     var routeId = selectedRoute ? selectedRoute.id : 'all';
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
-    var copy = buildEmotionCopy(sp, equipKey, pct);
+    var copy = sp.diagnosisNotice ? '' : buildEmotionCopy(sp, equipKey, pct);
+    if (sp.diagnosisNotice) {
+      document.getElementById('res-match-badge-wrap').innerHTML = '';
+      document.getElementById('res-why-block-wrap').innerHTML = '';
+    }
     if (copy) {
       copyEl.textContent = copy;
       copyEl.style.display = '';
@@ -3673,7 +3680,11 @@ function showResult(sp, pct, runners) {
   // 法規制
   var legalBox = document.getElementById('res-legal');
   var _rf = sp.riskFlags || [];
-  if (refOnly || sp.legal === 'cites_i' || sp.legal === 'unknown_hold') {
+  if (sp.diagnosisNotice) {
+    legalBox.style.display = '';
+    legalBox.className = 'legal-box';
+    legalBox.textContent = sp.diagnosisNotice;
+  } else if (refOnly || sp.legal === 'cites_i' || sp.legal === 'unknown_hold') {
     legalBox.style.display = '';
     legalBox.className = 'legal-box';
     var _w = '⚠️ 上級者向け・登録票確認必須';
@@ -3843,7 +3854,7 @@ function showResult(sp, pct, runners) {
 
   // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
   var scoreMeter = document.getElementById('score-meter');
-  if (pct === null || pct === undefined) {
+  if (sp.diagnosisNotice || pct === null || pct === undefined) {
     scoreMeter.style.display = 'none';
   } else {
     scoreMeter.style.display = '';
@@ -4016,14 +4027,14 @@ if (_btnGateRetry) _btnGateRetry.addEventListener('click', resetToStart);
 document.getElementById('btn-share').addEventListener('click', function(){
   if (!result) return;
   var pct = document.getElementById('score-num').textContent;
-  var text = '【亀診断】私に合う亀は「' + result.name + '」(相性' + pct + '%)でした！🐢 #亀診断 #カメライフガイド';
+  var text = result.diagnosisNotice ? '【カメライフガイド】' + result.name + 'の参考情報（診断のおすすめ対象外）' : '【亀診断】私に合う亀は「' + result.name + '」(相性' + pct + '%)でした！🐢 #亀診断 #カメライフガイド';
   var shareUrl = 'https://kamelifeguide.com/shindan/?r=' +
     encodeURIComponent(selectedRoute ? selectedRoute.id : '') +
     '&s=' + encodeURIComponent(result.name);
   // GA4: シェアイベント
   ga4Event('shindan_share', { species_name: result.name, method: navigator.share ? 'native' : 'clipboard' });
   if (navigator.share) {
-    navigator.share({ title: 'あなたに合う亀診断', text: text, url: shareUrl })
+    navigator.share({ title: result.diagnosisNotice ? '亀の参考情報' : 'あなたに合う亀診断', text: text, url: shareUrl })
       .catch(function(){});
   } else {
     // クリップボードコピー → fallback でTwitter

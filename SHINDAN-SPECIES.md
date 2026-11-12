@@ -179,7 +179,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 | チャコリクガメ | Chelonoidis chilensis | M | 上級 | CITES II | 南米乾燥地帯産 |
 | ソリガメ | Chersina angulata | M | 上級 | CITES II | 南アフリカ産・単型属・流通少 |
 | ベルセオレガメ | Kinixys belliana | M | 上級 | CITES II | ヒンジバック・WC多い・狭義はアンゴラ〜ブルンジ（nogueyi/zombensisは別種） |
-| ホームセオレガメ | Kinixys homeana | M | 上級 | CITES II | 同属・よりデリケート・流通少 |
+| ホームセオレガメ | Kinixys homeana | M | 上級 | CITES I | 2026-03-05移行・国際希少野生動植物種・取引には登録等の要件確認 |
 | エジプトリクガメ | Testudo kleinmanni | S | 上級 | CITES I | 世界最小級・1995年に附属書Iへ |
 | パンケーキリクガメ | Malacochersus tornieri | S | 上級 | CITES I | CoP18で附属書Iへ・商業輸入不可・診断除外 |
 | インドホシガメ | Geochelone elegans | M | 上級 | CITES I | CoP18で附属書Iへ・商業輸入不可・診断除外 |

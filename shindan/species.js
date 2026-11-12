@@ -203,17 +203,18 @@ land: [
     score: function(s){ return (s.compact||0)+(s.dry||0)+(s.advanced||0)+(s.charisma||0)+(s.collector||0)+(s.ultra_rare||0); },
     availability: 'rare'
   },
-  { name: 'ホームセオレガメ', latin: 'Kinixys homeana', emoji: '🔒', difficulty: '上級', size: 'M（18〜25cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: '西アフリカの熱帯雨林に生息するセオレガメ。甲羅後半がヒンジで閉じる独特の機構を持つ。高湿度・高温の環境が必要で、WC個体はストレスや寄生虫に弱い。CB個体推奨の難種。CITES II。',
+  { name: 'ホームセオレガメ', latin: 'Kinixys homeana', emoji: '🔒', difficulty: '上級', size: 'M（18〜25cm）', cites: 'CITES I', legal: 'cites_i',
+    reason: '西アフリカの熱帯雨林に生息するセオレガメ。甲羅後半がヒンジで閉じる独特の機構を持つ。高湿度・高温の環境が必要で、WC個体はストレスや寄生虫に弱い。2026年3月5日からCITES I・国際希少野生動植物種。購入・譲渡には登録等の要件を確認してください。国内CBやインボイスだけでは登録票の代わりになりません。',
     specs: { '最大甲長': '25.8cm（資料上限）', '主な食事': 'キノコ・果実・ミミズ', '水容量': '浅め水入れ', '温度': '26〜32℃' },
     coreSpecs: { size: '25.8cm（資料上限）', temp: '26〜32℃', lifespan: '20〜40年', diet: '雑食（キノコ・果実・小動物）' },
     sizeNote: 'TTWG 2025 p.339 掲載の最大直線甲長（SCL）：オス25.1cm・メス25.8cm。一般的な成体サイズや将来の成長予測ではない。',
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-moist.html' }], asin: null,
     slug: 'home-hinge-back-tortoise', hasPage: true,
-    match: function(s){ return (s.humid||0) >= 2 && (s.advanced||0) >= 2 && (s.tropical_climate||0) >= 1; },
-    score: function(s){ return (s.humid||0)+(s.advanced||0)+(s.tropical_climate||0)+(s.charisma||0)+(s.collector||0)+(s.expert||0); },
-    availability: 'rare'
+    match: function(){ return false; },
+    score: function(){ return -9999; },
+    availability: 'archive',
+    diagnosisNotice: '当サイトの診断ではおすすめ候補に含めていません。飼育が一律に禁止されたという意味ではありません。2026年3月5日からCITES附属書I・国際希少野生動植物種。国内での売買・譲渡等は原則禁止され、登録を受けた個体の取引には有効な登録票の引渡し等が必要です。規制前から適法に入手した個体の継続飼育は可能です。'
   },
   { name: 'マダガスカルクモノスガメ', latin: 'Pyxis arachnoides', emoji: '🕸️', difficulty: '上級', size: 'S（12〜15cm）', cites: 'CITES I', legal: 'cites_i',
     reason: 'マダガスカル固有の超希少リクガメ。甲羅に蜘蛛の巣のような放射状模様が入る。CITES I・商業取引禁止で世界的にも飼育記録が少ない。乾燥と季節変化（乾季・雨季）の再現が飼育の鍵。',
