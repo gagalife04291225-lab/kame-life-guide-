@@ -60,12 +60,32 @@ check("トロ舟80型は未確認表示", fit("tub-toro-80", "XL").includes("未
 check("頑丈コンテナは未確認表示", fit("hospital-container", "XL").includes("未確認"));
 const toroCard = T.cardHtml(KID.equipment.find((x) => x.id === "tub-toro-80"));
 check("未確認カードにサイズ条件の注記", toroCard.includes("サイズ条件は未確認"));
-check("未確認カードは対応甲長を『めやす』と断定しない", toroCard.includes("対応甲長：未確認"));
+check("未確認カードは対応甲長を『めやす』と断定しない", toroCard.includes("対応甲長：未確認") && !toroCard.includes("対応甲長めやす"));
 for (const e of KID.equipment) {
   const c = T.cardHtml(e);
   check(`${e.id} 甲長表示に「〜〜」がない`, !c.includes("〜〜"));
 }
-check("トロ舟の甲長表示", toroCard.includes("データ上は 6〜25cm"), toroCard.match(/gauge-note">[^<]*/));
+// 読み上げ名（aria-label）と表示: 未確認2件は数値を含めず「未確認」を伝える。確認済みは従来どおり
+const UNV = "対応甲長：未確認。下のサイズ条件を確認してください。";
+const EXPECT_VERIFIED = {
+  "nest-tote-soil": "対応甲長 6〜25cm", "hide-terracotta": "対応甲長 3〜25cm", "bask-brick": "対応甲長 0〜cm",
+  "light-stand": "対応甲長 0〜cm", "filter-sponge": "対応甲長 0〜cm", "tote-land-juv": "対応甲長 3〜12cm",
+  "tote-water-juv": "対応甲長 3〜10cm", "hide-pvc": "対応甲長 3〜25cm",
+};
+for (const e of KID.equipment) {
+  const c = T.cardHtml(e);
+  const label = (c.match(/class="gauge" role="img" aria-label="([^"]*)"/) || [])[1];
+  const note = (c.match(/gauge-note">([^<]*)/) || [])[1];
+  if (e.size_check && e.size_check.status === "unverified") {
+    check(`${e.id} 読み上げ名は未確認`, label === UNV, label);
+    check(`${e.id} 読み上げ名に数値なし`, !/\d/.test(label), label);
+    check(`${e.id} 表示と読み上げ名が一致`, note === UNV, note);
+  } else {
+    check(`${e.id} 確認済みの読み上げ名は従来どおり`, label === EXPECT_VERIFIED[e.id], label);
+    check(`${e.id} 確認済みの表示は「めやす」`, note.startsWith("対応甲長めやす："), note);
+  }
+}
+check("未確認は2件", KID.equipment.filter((e) => e.size_check && e.size_check.status === "unverified").length === 2);
 
 // 4. 購入リンク: 条件付き（CONDITIONAL）はロック中 href なし、data-href に実URL
 for (const e of KID.equipment) {

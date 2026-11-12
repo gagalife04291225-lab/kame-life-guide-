@@ -50,10 +50,13 @@
     var rangeTxt = (maxCm >= 999)
       ? (minCm > 0 ? minCm + "cm〜（上限なし）" : "上限なし")
       : ((minCm > 0 ? minCm : "") + "〜" + maxCm + "cm");
-    return '<div class="gauge" role="img" aria-label="対応甲長 ' + esc(minCm + "〜" + (maxCm >= 999 ? "" : maxCm) + "cm") + '">' +
+    // 未確認の容器は、確認できていない数値を読み上げ名・表示の対応範囲に含めない。
+    var UNVERIFIED_TXT = "対応甲長：未確認。下のサイズ条件を確認してください。";
+    var label = unverified ? UNVERIFIED_TXT : "対応甲長 " + minCm + "〜" + (maxCm >= 999 ? "" : maxCm) + "cm";
+    return '<div class="gauge" role="img" aria-label="' + esc(label) + '">' +
       '<div class="gauge-track"><div class="gauge-band" style="left:' + left.toFixed(1) + "%;width:" + width.toFixed(1) + '%"></div></div>' +
       '<div class="gauge-scale"><span>0</span><span>10</span><span>20</span><span>30cm</span></div>' +
-      '<p class="gauge-note">' + (unverified ? "対応甲長：未確認（データ上は " : "対応甲長めやす：") + esc(rangeTxt) + (unverified ? "）" : "") + "</p></div>";
+      '<p class="gauge-note">' + (unverified ? esc(UNVERIFIED_TXT) : "対応甲長めやす：" + esc(rangeTxt)) + "</p></div>";
   }
 
   /* ---------- CTA block (safety-gated) ---------- */
