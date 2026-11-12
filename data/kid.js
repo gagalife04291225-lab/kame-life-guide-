@@ -39,6 +39,7 @@
       kscore: { swim: 3, turn: 3, bask: 2, shelter: 1, secure: 1, climate: 2 },
       drown_badge: false, safety_label: "CONDITIONAL",
       conditions: ["逃走防止フタ必須", "長辺＝甲長×5以上で判定", "屋外設置時は日陰を確保"],
+      size_check: { status: "unverified", note: "内寸の長辺約80.7cmに「長辺＝甲長×5以上」を当てはめると甲長16cm程度までになり、対応甲長（〜25cm）と一致しません。内傾で底面はさらに狭く、実際に使える寸法も確認できていません。" },
       risk_warnings: [
         { text: "屋外直射下は高水温になり致命的", sev: "high" },
         { text: "横から観察できない", sev: "low" }
@@ -261,6 +262,7 @@
       kscore: { swim: null, turn: 2, bask: null, shelter: 2, secure: 3, climate: 2 },
       drown_badge: false, safety_label: "TEMPORARY",
       conditions: ["一時飼育・隔離・通院・薬浴用に限る", "ロック付きフタは通気孔を確保", "常設化しない"],
+      size_check: { status: "unverified", note: "外寸の長辺53cmでも「内寸長辺≧甲長×3」なら甲長17cm程度まで。内寸はリブで外寸より狭く未確認のため、対応甲長（〜18cm）は確認できていません。" },
       risk_warnings: [
         { text: "フタ閉め切りは酸欠の危険。通気必須", sev: "high" },
         { text: "一時のつもりが常設化する失敗が最多", sev: "med" }
@@ -325,10 +327,10 @@
     },
     {
       id: "fail-size-outgrow", title_ja: "成体でサイズが破綻する", severity: "serious", urgency: "adjust_setup",
-      symptoms: ["常に壁沿いを徘徊", "甲羅・鼻先の擦り傷"],
+      symptoms: ["壁沿いの徘徊が続く", "甲羅・鼻先の擦り傷"],
       cause: "幼体基準で容器を選び、成長して床面積・水量が不足する。",
-      warning_signs: ["方向転換が窮屈", "壁を登ろうとする"],
-      prevention: ["成体甲長で最終環境を逆算", "卒業サイズを最初から把握"],
+      warning_signs: ["方向転換が窮屈", "壁を登ろうとする", "壁沿いの徘徊は、ほかのサインと合わせて判断する"],
+      prevention: ["成体甲長で最終環境を逆算", "卒業サイズを最初から把握", "擦り傷があれば、ぶつかる角や設備をすぐ見直す"],
       related_equipment: ["tote-land-juv", "tote-water-juv"], related_type: ["aquatic", "box", "forest", "tortoise"],
       related_buckets: ["L", "XL", "XXL"], related_contested: [],
       evidence: [{ url: "https://tortoiseforum.org/threads/largest-plastic-box-we-can-buy-from-walmart-home-deopt-amazon-for-tortoise-enclosure.187820/", type: "forum" }],
@@ -362,6 +364,7 @@
     {
       id: "fail-overheat", title_ja: "屋外トロ舟の過熱", severity: "fatal", urgency: "adjust_setup",
       symptoms: ["過度なバスキング回避", "ぐったりする"],
+      vet_note: "ぐったりしている、反応が鈍いときは、早めに爬虫類を診られる動物病院へ相談してください。",
       cause: "直射日光下でトロ舟の水温が致命的に上昇する。",
       warning_signs: ["水温が高い", "日陰がない"],
       prevention: ["必ず日陰を確保", "水量を多めに", "夏季は特に注意"],
@@ -385,13 +388,14 @@
     },
     {
       id: "fail-sealed-humid", title_ja: "密閉蒸れによる呼吸器リスク", severity: "serious", urgency: "adjust_setup",
-      symptoms: ["結露過多", "鼻水・開口呼吸"],
-      cause: "無換気で密閉すると蒸れ、温度が伴わないと呼吸器感染のリスクが上がる。",
+      symptoms: ["容器内の結露が引かない・悪臭（環境のサイン）", "鼻水・口や鼻の泡・開口呼吸（呼吸器の症状）"],
+      vet_note: "鼻水、口や鼻の泡、首を伸ばした呼吸、開口呼吸、元気や食欲の低下があれば、環境を直すだけで様子を見ず、早めに爬虫類を診られる動物病院へ相談してください。",
+      cause: "換気のない密閉で蒸れ、温度不足などが重なると、呼吸器のトラブルにつながるおそれがある。適した湿度は種によって違う。",
       warning_signs: ["容器内が常に結露", "悪臭"],
-      prevention: ["通気孔を必ず確保", "密閉しない", "湿度を上げるなら温度を切らさない"],
+      prevention: ["通気孔を確保し、密閉しない", "湿度は下げればよいわけではない。その種に合う温度・湿度・換気をそろえる"],
       related_equipment: ["tote-land-juv"], related_type: ["box", "forest", "tortoise"],
       related_buckets: ["S", "M", "L"], related_contested: ["contest-humidity", "contest-closed-chamber"],
-      evidence: [{ url: "https://tortoiseforum.org/threads/current-consensus-on-humidity.226076/", type: "forum" }],
+      evidence: [{ url: "https://vcahospitals.com/know-your-pet/turtles-box-diseases", type: "vet" }, { url: "https://tortoiseforum.org/threads/current-consensus-on-humidity.226076/", type: "forum" }],
       owner_note: null, owner_note_flag: false,
       cta_opportunity: { safe: false, equipment_id: null }
     }
@@ -459,7 +463,7 @@
       id: "contest-humidity", topic_ja: "高湿度は呼吸器感染を起こすか",
       claim_a: "高湿度が呼吸器感染（RI）の原因になる（俗説寄り）。",
       claim_b: "主因は低温・温度変動で、湿度は温度が不適なときの寄与因子（forum/獣医の合意寄り）。",
-      safe_side_default: "湿度を上げるなら温度を切らさない。温度が保てない時期は湿度を下げる。",
+      safe_side_default: "適した湿度は種によって違う。その種に合う温度・湿度・換気をそろえ、温度が保てないまま高湿度にしない。",
       who_should_care: "幼体を高湿度で立ち上げる人（pyramiding予防目的）",
       what_not_to_say: ["湿度が高いと必ずRIになる", "湿度さえ高ければ安全"],
       field_confidence: "leaning",

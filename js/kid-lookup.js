@@ -44,14 +44,19 @@
   }
 
   /* ---------- 甲長ゲージ ---------- */
-  function gaugeHtml(minCm, maxCm) {
+  function gaugeHtml(minCm, maxCm, unverified) {
     var lo = Math.max(0, minCm), hi = Math.min(GAUGE_MAX, maxCm);
     var left = (lo / GAUGE_MAX) * 100, width = Math.max(4, ((hi - lo) / GAUGE_MAX) * 100);
-    var noteMax = (maxCm >= 999) ? "上限なし" : ("〜" + maxCm + "cm");
-    return '<div class="gauge" role="img" aria-label="対応甲長 ' + esc(minCm + "〜" + (maxCm >= 999 ? "" : maxCm) + "cm") + '">' +
+    var rangeTxt = (maxCm >= 999)
+      ? (minCm > 0 ? minCm + "cm〜（上限なし）" : "上限なし")
+      : ((minCm > 0 ? minCm : "") + "〜" + maxCm + "cm");
+    // 未確認の容器は、確認できていない数値を読み上げ名・表示の対応範囲に含めない。
+    var UNVERIFIED_TXT = "対応甲長：未確認。下のサイズ条件を確認してください。";
+    var label = unverified ? UNVERIFIED_TXT : "対応甲長 " + minCm + "〜" + (maxCm >= 999 ? "" : maxCm) + "cm";
+    return '<div class="gauge" role="img" aria-label="' + esc(label) + '">' +
       '<div class="gauge-track"><div class="gauge-band" style="left:' + left.toFixed(1) + "%;width:" + width.toFixed(1) + '%"></div></div>' +
       '<div class="gauge-scale"><span>0</span><span>10</span><span>20</span><span>30cm</span></div>' +
-      '<p class="gauge-note">対応甲長めやす：' + esc((minCm > 0 ? minCm + "〜" : "") + noteMax) + "</p></div>";
+      '<p class="gauge-note">' + (unverified ? esc(UNVERIFIED_TXT) : "対応甲長めやす：" + esc(rangeTxt)) + "</p></div>";
   }
 
   /* ---------- CTA block (safety-gated) ---------- */
@@ -69,9 +74,13 @@
       var placeholder = !url;
       var cls = "cta cta-" + kind + (placeholder ? " is-placeholder" : "") + lockCls;
       var txt = placeholder ? (label + "（準備中）") : label;
-      var href = placeholder ? "#" : esc(url);
-      var aria = placeholder ? ' aria-disabled="true"' : "";
-      return '<a class="' + cls + '" href="' + href + '"' + aria +
+      // 準備中・ロック中は href を持たせない（Tab で止まらず、Enter・クリック・タッチでも遷移しない）。
+      // ロック中の実URLは data-href に置き、条件を開いたときに href へ戻す。
+      var attrs;
+      if (placeholder) { attrs = ' aria-disabled="true"'; }
+      else if (locked) { attrs = ' data-href="' + esc(url) + '" aria-disabled="true"'; }
+      else { attrs = ' href="' + esc(url) + '"'; }
+      return '<a class="' + cls + '"' + attrs +
         ' data-eqid="' + esc(item.id) + '" data-channel="' + kind + '">' + esc(txt) + "</a>";
     }
 
@@ -84,7 +93,7 @@
     buttons += btn("rakuten", "楽天で見る", aff.rakuten);
 
     var gateMsg = locked
-      ? '<p class="cta-gate-msg">条件を確認してから購入してください（上の「詳細・条件を見る」を開くとリンクが有効になります）。</p>'
+      ? '<p class="cta-gate-msg">購入リンクは、上の「詳細・条件を見る」で使用条件を開くと使えるようになります。</p>'
       : "";
 
     return '<div class="cta-block" data-cta-for="' + esc(item.id) + '">' + gateMsg +
@@ -108,6 +117,12 @@
     if (item.substrate_depth) { row("床材深", esc((item.substrate_depth.min || "") + "（" + (item.substrate_depth.rule || "") + "）")); }
     row("頭数", ({ single: "単独1頭", pair: "ペア可", area_additive: "面積を頭数分加算", temp_only: "一時のみ" })[item.animal_count] || esc(item.animal_count));
     return '<dl class="spec">' + rows.join("") + "</dl>";
+  }
+
+  function sizeCheckHtml(item) {
+    var sc = item.size_check;
+    if (!sc || sc.status !== "unverified") { return ""; }
+    return '<p class="size-unverified"><strong>サイズ条件は未確認</strong>' + esc(sc.note) + "</p>";
   }
 
   function conditionsHtml(item) {
@@ -153,7 +168,8 @@
       (item.drown_badge ? '<span class="drown-badge">溺死注意</span>' : "") +
       '<span class="' + labelClass(item.safety_label) + '">' + esc(LABEL_JA[item.safety_label] || item.safety_label) + "</span></div>";
 
-    var gauge = gaugeHtml(item.shell_min_cm, item.shell_max_cm);
+    var unverified = !!(item.size_check && item.size_check.status === "unverified");
+    var gauge = gaugeHtml(item.shell_min_cm, item.shell_max_cm, unverified);
     var ks = kscoreHtml(item.kscore);
 
     var detail = '<div class="card-detail" id="detail-' + esc(item.id) + '">' +
@@ -165,8 +181,9 @@
 
     var photo = imageHtml(item);
 
-    return '<article class="kid-card" id="' + esc(item.id) + '" data-buckets="' + esc((item.shell_buckets || []).join(",")) + '">' +
-      photo + head + gauge + ks + toggle + detail + cta + "</article>";
+    return '<article class="kid-card" id="' + esc(item.id) + '" data-buckets="' + esc((item.shell_buckets || []).join(",")) +
+      '" data-min="' + esc(item.shell_min_cm) + '" data-max="' + esc(item.shell_max_cm) + '"' + (unverified ? ' data-unverified="1"' : "") + ">" +
+      photo + head + gauge + '<p class="bucket-fit" hidden></p>' + sizeCheckHtml(item) + ks + toggle + detail + cta + "</article>";
   }
 
   /* ---------- dangerous card ---------- */
@@ -199,7 +216,8 @@
       '<div class="frow"><span class="flabel">警告サイン</span>' + esc((f.warning_signs || []).join("／")) + "</div>" +
       '<div class="frow"><span class="flabel">回避</span>' + esc((f.prevention || []).join("／")) + "</div>" +
       "</div>" + owner +
-      (urg ? '<p class="fail-urgent">⚠ ' + esc(urg) + "</p>" : "") + "</div>";
+      (urg ? '<p class="fail-urgent">⚠ ' + esc(urg) + "</p>" : "") +
+      (f.vet_note ? '<p class="fail-urgent fail-vet">🩺 ' + esc(f.vet_note) + "</p>" : "") + "</div>";
   }
 
   /* ---------- contested card ---------- */
@@ -225,6 +243,17 @@
     if (ctWrap) { ctWrap.innerHTML = KID.contested.map(contestHtml).join(""); }
   }
 
+  /* ---------- 区分と対応甲長の重なり ---------- */
+  // 区分（bk）の全範囲を対応甲長がカバーしないときだけ、使える範囲を返す。
+  function fitMessage(mn, mx, unverified, bk) {
+    if (unverified) { return "この区分で使えるかは未確認です（下のサイズ条件を参照）。"; }
+    if (mn > bk.min || mx < bk.max) {
+      var lo = Math.max(mn, bk.min), hi = Math.min(mx, bk.max);
+      return "この区分のうち、甲長" + lo + "〜" + (hi >= 999 ? "" : hi) + "cmの個体向けです。";
+    }
+    return "";
+  }
+
   /* ---------- reverse lookup filter ---------- */
   var activeBucket = null;
 
@@ -233,17 +262,23 @@
     var cards = document.querySelectorAll("#kid-equipment .kid-card");
     var groupNote = document.getElementById("kid-result-note");
     var shown = 0;
+    var bk = bucket ? KID.buckets[bucket] : null;
     cards.forEach(function (card) {
       var buckets = (card.getAttribute("data-buckets") || "").split(",");
       var match = !bucket || buckets.indexOf(bucket) !== -1;
       card.style.display = match ? "" : "none";
       if (match) { shown++; }
+      var fit = card.querySelector(".bucket-fit");
+      if (!fit) { return; }
+      var msg = (match && bk) ? fitMessage(Number(card.getAttribute("data-min")), Number(card.getAttribute("data-max")),
+        card.getAttribute("data-unverified") === "1", bk) : "";
+      fit.textContent = msg;
+      fit.hidden = !msg;
     });
     if (groupNote) {
-      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、うちの子に合うものだけに絞れます。"; }
+      if (!bucket) { groupNote.textContent = "安いけど、狭かったら意味がない。まずは全部を並べています。上で甲長を選ぶと、その区分を対応範囲に含む候補に絞れます。"; }
       else {
-        var b = KID.buckets[bucket];
-        groupNote.textContent = "甲長 " + b.label + " に今使えるもの：" + shown + "件。ここに出ていないものは「そろそろ卒業」か「次に買う」対象です。";
+        groupNote.textContent = "甲長 " + bk.label + " を対応範囲に含む候補：" + shown + "件。各カードの対応甲長と使用条件を確認してください。";
       }
     }
     var clear = document.getElementById("selector-clear");
@@ -285,7 +320,13 @@
       if (open) {
         var block = document.querySelector('[data-cta-for="' + id + '"]');
         if (block) {
-          block.querySelectorAll(".cta.is-locked").forEach(function (a) { a.classList.remove("is-locked"); });
+          block.querySelectorAll(".cta.is-locked").forEach(function (a) {
+            a.classList.remove("is-locked");
+            var h = a.getAttribute("data-href");
+            if (h) { a.setAttribute("href", h); a.removeAttribute("data-href"); a.removeAttribute("aria-disabled"); }
+          });
+          var gm = block.querySelector(".cta-gate-msg");
+          if (gm) { gm.textContent = "使用条件を確認できたら、購入リンクを使えます。"; }
         }
         ga("kid_card_expand", { equipment_id: id });
       }
@@ -294,10 +335,13 @@
     document.addEventListener("click", function (e) {
       var a = e.target.closest ? e.target.closest(".cta") : null;
       if (!a) { return; }
-      if (a.classList.contains("is-placeholder") || a.classList.contains("is-locked")) { return; }
+      if (a.classList.contains("is-placeholder") || a.classList.contains("is-locked") || !a.getAttribute("href")) { e.preventDefault(); return; }
       ga("affiliate_click", { equipment_id: a.getAttribute("data-eqid"), channel: a.getAttribute("data-channel"), source: "kid" });
     });
   }
+
+  // テスト用（tools/test-kid-lookup.mjs）。画面の動作には使わない。
+  window.KIDLookupTest = { ctaHtml: ctaHtml, cardHtml: cardHtml, fitMessage: fitMessage, failHtml: failHtml };
 
   function init() {
     renderAll();
