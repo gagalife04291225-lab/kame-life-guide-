@@ -1,0 +1,62 @@
+{
+  "spotted-turtle": {
+    "title": "キボシイシガメの用品を選ぶ前に",
+    "items": [
+      "浅い水場と、体を水から出して休める陸場を用意します。水中にも足をかけて水面へ出られる場所を作ります。",
+      "ろ過器やヒーターは、実際に使う浅い水位で動かせるか確認します。水流が強すぎる場合は、向きや流量を調整します。",
+      "陸場には上りやすい道を設け、室内ではUVB照明と保温の条件を確認します。"
+    ],
+    "note": "水槽の容量だけで選ばず、陸場を置いた後に残る水場と、歩いて休める場所も見てください。",
+    "sourceNote": "動物病院の飼育案内と専門誌を参照。資料ごとの水深や陸水の比率を、全個体に共通の固定値にはしていません。",
+    "sources": [
+      {
+        "label": "Tree of Life動物病院：キボシイシガメの飼育案内",
+        "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/american-spotted-turtle-care"
+      },
+      {
+        "label": "Reptiles Magazine：キボシイシガメの飼育案内",
+        "url": "https://reptilesmagazine.com/listings/turtles-tortoises-care/spotted-turtle/"
+      }
+    ]
+  },
+  "malayan-box-turtle": {
+    "title": "マレーハコガメの用品を選ぶ前に",
+    "items": [
+      "水場をよく使うハコガメです。小さな飲み水皿だけで済ませず、体格に合う広い水場と、自分で上り下りできる陸場を用意します。",
+      "水場を清潔に保てる構成にし、ろ過器は水量と水位に合わせて選びます。",
+      "水温と陸場の温度は別々に確認します。水中を加温する必要がある場合は、水中用の器具とその使用条件を確認してください。"
+    ],
+    "note": "一覧の水入れや床面ヒーターだけで、水域と水温管理までそろうとは限りません。設置する水場に合わせて必要な設備を確かめてください。",
+    "sourceNote": "動物病院の種別案内を参照。研究論文にも陸水を分けた飼育例がありますが、その面積比や飼育頭数を推奨値として流用していません。",
+    "sources": [
+      {
+        "label": "Pismo Beach動物病院：マレーハコガメの水域・温度管理",
+        "url": "https://pismobeachvet.com/box-turtle-care/"
+      },
+      {
+        "label": "Heissほか（2008）：マレーハコガメ研究の飼育環境",
+        "url": "https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/ar.20695"
+      }
+    ]
+  },
+  "ornate-box-turtle": {
+    "title": "キタニシキハコガメの用品を選ぶ前に",
+    "items": [
+      "乾いた場所だけでなく、湿り気のある床材に潜れる場所も用意します。空気の湿度と、潜る場所の湿り気は分けて考えます。",
+      "隠れ家と日陰、出入りしやすい浅い水場を用意します。床全体を水浸しにするのではなく、湿った場所と乾いた場所を作ります。",
+      "室内ではUVB照明と保温を用意し、暖かい側と涼しい側を行き来できる広さを取ります。"
+    ],
+    "note": "容器に床材・隠れ家・水場を置いた状態で、歩ける床がどれだけ残るか確認してください。",
+    "sourceNote": "Tortoise Trustと飼育者の案内を参照。草原の種であることを、床を常に乾かしてよいという意味にはしていません。",
+    "sources": [
+      {
+        "label": "Tortoise Trust：キタニシキハコガメの飼育案内",
+        "url": "https://www.tortoisetrust.org/care/cornata.html"
+      },
+      {
+        "label": "Austin’s Turtle Page：キタニシキハコガメの飼育例",
+        "url": "https://www.austinsturtlepage.com/Care/cs-ornateboxie.htm"
+      }
+    ]
+  }
+}

@@ -10,7 +10,7 @@ function context(reader){const c=vm.createContext({console,window:{},document:{}
 const old=context(base),now=context(read),plain=x=>JSON.parse(JSON.stringify(x));
 const stripped=p=>{const o=plain(p);delete o.why;return o;};
 assert.deepEqual(Object.keys(now.products),Object.keys(old.products));
-for(const id of Object.keys(old.products)){assert.deepEqual(stripped(now.products[id]),stripped(old.products[id]),id);if(id!=='substrate_grassland_mix')assert.equal(now.products[id].why,old.products[id].why,id);}
+for(const id of Object.keys(old.products)){assert.deepEqual(stripped(now.products[id]),stripped(old.products[id]),id);if(!['substrate_grassland_mix','thermometer_dual_probe'].includes(id))assert.equal(now.products[id].why,old.products[id].why,id);}
 const js=read('js/starter-kit.js');assert.ok(!js.includes('SK_SPECIES_PRODUCT_HOLDS'));assert.ok(!js.includes('getHeldKitItems'));
 let count=0;
 for(const [route,list] of Object.entries(now.species).filter(([r])=>r!=='all'))for(let i=0;i<list.length;i++)for(const r of [route,'all'])for(const tier of ['budget','standard','premium']){
@@ -36,7 +36,7 @@ assert.ok(now.renderHomeEquipmentNote({name:'ホームセオレガメ'}).include
 // Mount actual implementation with an inert DOM; capture GA in memory, no network.
 function mountEvents(c,key){const events=[];const root={style:{},innerHTML:'',querySelectorAll(){return [];},querySelector(){return null;}};c.document={getElementById(){return root;}};c.gtag=(...args)=>events.push(plain(args));c.mountStarterKit({name:'ホームセオレガメ',slug:'home-hinge-back-tortoise',equipmentKey:key},'test',{sourcePage:'diagnosis'});return events;}
 for(const key of ['tortoise_dry_small','tortoise_forest'])assert.deepEqual(mountEvents(now,key),mountEvents(old,key));
-console.log('PASS: 119 species x native/all x 3 tiers (714), full product records except one why unchanged, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.');
+console.log('PASS: 119 species x native/all x 3 tiers (714), full product records except approved why updates unchanged, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.');
 // Quick Facts: Home-only prose changes; all other species retain exact generated HTML.
 vm.runInContext(base('js/quick-facts.js'),old);
 vm.runInContext(read('js/quick-facts.js'),now);

@@ -53,7 +53,7 @@ var SK_DISPLAY_CAT_MAP = {
   heating:          '保温器具',
   filter:           'フィルター',
   substrate:        '床材',
-  thermometer:      '温湿度計',
+  thermometer:      '温度・湿度の測定器',
   shelter:          'シェルター',
   water_dish:       '水入れ・水浴び容器',
   food:             'フード',
@@ -64,6 +64,23 @@ var SK_DISPLAY_CAT_MAP = {
   accessory: '飼育用品',
   temperature_control: '温度制御器',
 };
+
+// 表示上の測定機能。型番未確認品は既存の商品名の範囲を超えて機能を追加しない。
+function getMeasurementLabel(product) {
+  var labels = {
+    thermometer_digital: '温湿度計',
+    thermometer_aqua: '水温計',
+    thermometer_dual_probe: '温度計（本体・外部センサー）',
+    thermometer_infrared: '赤外線温度計（表面温度）',
+    thermometer_wifi: '温湿度計',
+    thermometer_analog: '温度計'
+  };
+  return labels[product && product.id] || '温度・湿度の測定器';
+}
+
+function _skProductDisplayCat(product, cat) {
+  return cat === 'thermometer' ? getMeasurementLabel(product) : _skDisplayCat(cat);
+}
 
 function _skDisplayCat(cat) {
   return SK_DISPLAY_CAT_MAP[cat] || _skStr(cat);
@@ -209,7 +226,7 @@ var SK_CAT_LABELS_PAGE = {
   heating:          '保温器具',
   filter:           'フィルター',
   substrate:        '床材',
-  thermometer:      '温湿度計',
+  thermometer:      '温度・湿度の測定器',
   shelter:          'シェルター',
   water_dish:       '水入れ・水浴び容器',
   food:             'フード',
@@ -466,7 +483,7 @@ function renderSkCardMedia(p) {
  */
 function renderSkCard(item, speciesName, equipmentKey) {
   var p = item.product;
-  var catLabel  = SK_CAT_LABELS_PAGE[item.cat] || item.cat;
+  var catLabel  = item.cat === 'thermometer' ? getMeasurementLabel(p) : (SK_CAT_LABELS_PAGE[item.cat] || item.cat);
   var tierLabel = SK_TIER_LABEL_PAGE[item.tier] || '比較候補';
   var tierCls   = item.tier === 'budget'  ? 'sk-badge-budget'
                 : item.tier === 'premium' ? 'sk-badge-premium'
@@ -481,7 +498,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-asin="' + (p.asin||'') + '" data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
-      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-display-cat="' + _skProductDisplayCat(p, p.category) + '"' +
       ' data-provider="amazon"' +
       ' data-click-url="' + p.affiliateUrl + '">' + amazonCtaText + '</a>'
     : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
@@ -507,7 +524,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
-      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-display-cat="' + _skProductDisplayCat(p, p.category) + '"' +
       ' data-provider="rakuten" data-mode="affiliate"' +
       ' data-click-url="' + p.rakutenUrl + '">楽天で価格・ポイントを見る →</a>';
   } else if (showRakSearch) {
@@ -519,7 +536,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-cat="' + p.category + '" data-species="' + (speciesName||'') + '"' +
       ' data-tier="' + (item.tier||'standard') + '"' +
       ' data-equipment-key="' + (equipmentKey||'') + '" data-product-id="' + p.id + '"' +
-      ' data-display-cat="' + _skDisplayCat(p.category) + '"' +
+      ' data-display-cat="' + _skProductDisplayCat(p, p.category) + '"' +
       ' data-provider="rakuten" data-mode="search"' +
       ' data-click-url="' + _rakSearchUrl + '">楽天で商品を探す →</a>';
   } // Case C (pending): show Amazon only — rakutenBtn stays ''
@@ -697,7 +714,7 @@ function renderBundleSummary(tabData, speciesName) {
 
     // Phase 20-E: カテゴリプレビュー（最大4件 + 残数）
     var previewTags = picks.slice(0, 4).map(function(item) {
-      return '<span class="sk-bundle-item-tag">' + _skDisplayCat(item.cat) + '</span>';
+      return '<span class="sk-bundle-item-tag">' + _skProductDisplayCat(item.product, item.cat) + '</span>';
     }).join('');
     var moreTag = picks.length > 4
       ? '<span class="sk-bundle-item-more">+' + (picks.length - 4) + '点</span>'
@@ -820,6 +837,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
       '<h2 class="sk-heading-main">' + heading + '</h2>' +
       waterCareHtml +
       costBoxHtml +
+      '<p class="sk-hint sk-cost-scope">合計は掲載した商品単位の価格です。床材の必要袋数や、別売の照明器具・取り付け用品は含まれていない場合があります。ランプは対応する器具、床材は実際に敷く面積と厚さを確認してください。</p>' +
       '<p class="sk-hint">容器は、価格より先に今の甲長と成体に必要な広さを確認しましょう。小さく始める場合は成長に合わせて広げます。下の用品は比較候補で、そのまま一式そろえれば飼えるという意味ではありません。</p>' +
       renderHomeEquipmentNote(opts) +
       bundleSummaryHtml +
