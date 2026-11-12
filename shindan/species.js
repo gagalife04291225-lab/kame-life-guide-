@@ -1451,9 +1451,98 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS['home-hinge-back-tortoise'] = {
   items: [
     '湿った森林の環境で暮らすリクガメです。乾燥系リクガメと同じ感覚で床材を選ばず、湿り気を保てる環境を用意します。',
     '水を飲んだり浸かったりできる水場を用意します。容器は体格に合わせて選びます。',
-    '候補の床材に乾燥環境向けと書かれていても、それが本種の標準という意味ではありません。種に必要な環境を先に確認してください。'
+    '床材は加温した状態でも湿り気を保てるかを確認します。下の用品欄に、必要量・水場・保温の見方をまとめています。'
   ],
   note: '用品は共通の分類から表示しています。本種の飼育条件をすべて満たすセットとして選んだものではありません。',
   sourceNote: '種概説の飼育節を参照しています。固定の湿度値や、個々の床材製品の適合を指定するものではありません。',
   sources: [{label:'IUCN/SSC TFTSG（2013）：ホームセオレ種概説・飼育節',url:'https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_070_homeana_v1_2013.pdf'}]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["eastern-long-necked-turtle"] = {
+  "title": "オーストラリアナガクビの用品を選ぶ前に",
+  "items": [
+    "自分で上れて、全身を水から出せる陸場を用意します。",
+    "室内では陸場のUVB照明と保温も確認します。照明が候補に出ていなくても、不要という意味ではありません。",
+    "陸場は体格と重さ、照明は設置距離に合わせて選びます。"
+  ],
+  "note": "下の商品が、この条件を満たす組み合わせかは別に確認が必要です。",
+  "sourceNote": "動物病院の飼育案内を参考にしています。古い器具を前提とする照射距離・交換周期は転記していません。",
+  "sources": [
+    {
+      "label": "Inner South動物病院：カメの飼育案内",
+      "url": "https://innersouthvets.com.au/wp-content/uploads/2018/05/Caring-for-your-turtle2.pdf"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["siebenrocks-snake-necked-turtle"] = {
+  "title": "ジーベンロックナガクビの用品を選ぶ前に",
+  "items": [
+    "自分で上れて、全身を水から出せる陸場を用意します。",
+    "室内では陸場のUVB照明と保温も確認します。照明が候補に出ていなくても、不要という意味ではありません。",
+    "陸場は体格と重さ、照明は設置距離に合わせて選びます。"
+  ],
+  "note": "下の商品が、この条件を満たす組み合わせかは別に確認が必要です。",
+  "sourceNote": "Chelodina rugosaのメーカー飼育案内を参考にしています。資料掲載の器具を、この一覧の商品へ置き換えて適合確認したものではありません。",
+  "sources": [
+    {
+      "label": "Reptile One：Northern Long Neck Turtle飼育案内",
+      "url": "https://reptileone.com.au/care-sheets/Northern-Long-Neck-Turtle.pdf"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["african-helmeted-turtle"] = {
+  "title": "アフリカヌマヨコクビの用品を選ぶ前に",
+  "items": [
+    "自分で上れて、全身を水から出せる陸場を用意します。",
+    "室内では陸場のUVB照明と保温も確認します。照明が候補に出ていなくても、不要という意味ではありません。",
+    "陸場は体格と重さ、照明は設置距離に合わせて選びます。"
+  ],
+  "note": "下の商品が、この条件を満たす組み合わせかは別に確認が必要です。",
+  "sourceNote": "病院の案内はPelomedusaとPelusiosをまとめて扱っています。固定の水深やUVB割合を、本種独自の基準としては採っていません。",
+  "sources": [
+    {
+      "label": "Tree of Life動物病院：アフリカ産ヨコクビガメの飼育",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/african-side-necked-turtle-care"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["hilaire-side-necked-turtle"] = {
+  "title": "ヒラリーカエルガメの用品を選ぶ前に",
+  "items": [
+    "自分で上れて、全身を水から出せる陸場を用意します。",
+    "室内では陸場のUVB照明と保温も確認します。照明が候補に出ていなくても、不要という意味ではありません。",
+    "陸場は体格と重さ、照明は設置距離に合わせて選びます。"
+  ],
+  "note": "下の商品が、この条件を満たす組み合わせかは別に確認が必要です。",
+  "sourceNote": "野外の甲羅干しの観察と、動物病院の飼育案内を区別して参照しています。個々の器具の適合を確認したものではありません。",
+  "sources": [
+    {
+      "label": "Tree of Life動物病院：ヒラリーカエルガメの飼育",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/hilaire-s-side-neck-turtle-care"
+    },
+    {
+      "label": "2017年研究：野外の甲羅干し観察",
+      "url": "https://sedici.unlp.edu.ar/bitstream/handle/10915/109403/Documento_completo.pdf-PDFA.pdf?isAllowed=y&sequence=1"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["mccords-snake-necked-turtle"] = {
+  "title": "マッコードナガクビの用品を選ぶ前に",
+  "items": [
+    "動物園の飼育例では、休める枝から陸場へ上がれるようにしています。",
+    "その飼育例ではUVB照明と保温照明も設けています。水中で過ごすことが多いからと、陸場と照明を省いた構成にはしません。",
+    "陸場は体格と重さ、照明は設置距離に合わせて選びます。"
+  ],
+  "note": "下の商品が、この条件を満たす組み合わせかは別に確認が必要です。",
+  "sourceNote": "Wrocław動物園での4成体の飼育を紹介した記事です。動物園の公式基準や、全個体共通の水深・温度の基準ではありません。",
+  "sources": [
+    {
+      "label": "Terrarium：Wrocław動物園での飼育記述",
+      "url": "https://www.terrarium.com.pl/chelodina-mccordi-zolw-wezoszyi-mccorda/"
+    }
+  ]
 };

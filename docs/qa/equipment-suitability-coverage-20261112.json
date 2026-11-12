@@ -1,11 +1,11 @@
 {
   "date": "2026-11-12",
-  "base": "4baf1b8770c810c0b6f5f2a487dfbbdd14d868c1",
+  "base": "6b1ac588c776d3c75ee77d7bc6d15d3bb03a9cf4",
   "scope": "All 119 species structural inventory. No product-fit guarantees. Flags are review queue, not proof of unsuitability. Master is not automatically rendered to users.",
   "counts": {
     "total": 119,
     "route_candidate_differences": 46,
-    "external_conditions_only": 11
+    "external_conditions_only": 16
   },
   "rows": [
     {
@@ -2408,7 +2408,7 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_requirements_reviewed_not_product_fit"
     },
     {
       "name": "ジーベンロックナガクビガメ",
@@ -2432,7 +2432,7 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_requirements_reviewed_not_product_fit"
     },
     {
       "name": "アフリカヌマヨコクビガメ",
@@ -2455,7 +2455,7 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_requirements_reviewed_not_product_fit"
     },
     {
       "name": "ヒメハコヨコクビガメ",
@@ -2502,7 +2502,7 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_requirements_reviewed_not_product_fit"
     },
     {
       "name": "オリノコマタマタ",
@@ -2595,7 +2595,7 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_requirements_reviewed_not_product_fit"
     },
     {
       "name": "コウホソナガクビガメ",

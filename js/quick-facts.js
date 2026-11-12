@@ -78,11 +78,12 @@ function qfSmellBar(level) {
    2. Quick Facts ブロック HTML 生成
    ──────────────────────────────────────────────── */
 function renderQuickFacts(opts) {
+  var isHome = opts.name === 'ホームセオレガメ';
   var key        = opts.equipmentKey || '';
   var difficulty = opts.difficulty   || '';
   var lifespan   = opts.lifespan     || '';
   var monthly    = opts.monthlyCost  || QF_MONTHLY[key] || '¥1,000〜5,000';
-  var typeLabel  = QF_TYPE_LABEL[key] || key || '—';
+  var typeLabel  = isHome ? '森林性リクガメ（湿った床・水場）' : (QF_TYPE_LABEL[key] || key || '—');
   var smellData  = QF_SMELL[key]  || { level: 3, label: 'やや強め', note: '換気・清掃で改善' };
   var diff       = qfDiffBadge(difficulty);
 
@@ -120,9 +121,9 @@ function renderQuickFacts(opts) {
     },
     {
       icon: '💰',
-      label: '初期費用目安',
+      label: isHome ? '低価格帯の候補合計' : '初期費用目安',
       value: '<span class="qf-cost">' + initCostText + '</span>',
-      sub: '機材セット合計（目安）',
+      sub: isHome ? '掲載価格の合計。必要な床材量・別途用品は含みません' : '機材セット合計（目安）',
     },
     {
       icon: '📅',
@@ -133,8 +134,8 @@ function renderQuickFacts(opts) {
     {
       icon: '💨',
       label: '臭い',
-      value: '<span class="qf-smell">' + qfSmellBar(smellData.level) + '</span>',
-      sub: smellData.label + '：' + smellData.note,
+      value: '<span class="qf-smell">' + (isHome ? '床材・水場の清掃で変わる' : qfSmellBar(smellData.level)) + '</span>',
+      sub: isHome ? '湿った床材と水場を清潔に保つ' : smellData.label + '：' + smellData.note,
     },
     {
       icon: '⏳',
@@ -164,7 +165,7 @@ function renderQuickFacts(opts) {
       '<div class="qf-heading-row">' +
         '<span class="qf-heading-text">Quick Facts</span>' +
         '<a class="qf-cta-link" href="#starter-kit-root">' +
-          'この亀を今日から飼えるセットを見る →' +
+          (isHome ? '用品の比較候補と選び方を見る →' : 'この亀を今日から飼えるセットを見る →') +
         '</a>' +
       '</div>' +
       '<div class="qf-grid">' + cards + '</div>' +
@@ -178,7 +179,7 @@ function renderQuickFacts(opts) {
    ──────────────────────────────────────────────── */
 function renderStickyCTA(opts) {
   var isEasy = /入門/.test(opts.difficulty || '');
-  var ctaText = isEasy
+  var ctaText = opts.name === 'ホームセオレガメ' ? '用品の比較候補と選び方を見る' : isEasy
     ? 'はじめての方向けに全部選んだ飼育セットを見る'
     : 'はじめての方向け飼育セットを見る';
 
