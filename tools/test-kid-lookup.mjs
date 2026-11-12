@@ -42,19 +42,35 @@ check("素焼き鉢 S区分は3〜6cm", fit("hide-terracotta", "S").includes("�
 check("衣装ケース（水）M区分は全域対応", fit("tote-water-juv", "M") === "", fit("tote-water-juv", "M"));
 check("レンガ XXL は全域対応", fit("bask-brick", "XXL") === "");
 
-// 3. 使用条件と対応甲長が算術上両立しない用品は「未確認」扱い
-const RATIO = /甲長×(\d+(?:\.\d+)?)/;
+// 3. 未確認容器は型番・実内寸・適合甲長を推定しない。
+for (const id of ["tub-toro-80", "hospital-container"]) {
+  const e = KID.equipment.find(x => x.id === id);
+  const c = T.cardHtml(e);
+  check(`${id} 用途未確認を安全評価にしない`, e.safety_label === "UNKNOWN" && e.kscore === null && !c.includes('class="kscore"'));
+  check(`${id} 実内寸に型番不明の値を置かない`, !e.dim_internal.w && !e.dim_internal.d && !e.dim_internal.h);
+  check(`${id} 外寸を汎用品の寸法として流用しない`, !e.dim_external.w && !e.dim_external.d && !e.dim_external.h);
+  check(`${id} 購入先の同一型番確認までCTAを生成しない`, e.cta_enabled === false && T.ctaHtml(e) === "");
+  check(`${id} 保留中も既存URLを捏造・削除しない`, e.affiliate.amazon === ({ "tub-toro-80": "https://amzn.to/4p0SGUV", "hospital-container": "https://amzn.to/3RcHBDP" })[id]);
+  check(`${id} 未確認範囲の色帯がない`, !c.includes('class="gauge-track"') && !c.includes('class="gauge-band"'));
+  check(`${id} 詳細の対応甲長も未確認`, /<dt>対応甲長<\/dt><dd>未確認。/.test(c));
+  check(`${id} メーカー資料の型番限定を表示`, c.includes("型番を限定した寸法資料") && c.includes(e.dimension_reference.url.replace(/&/g, "&amp;")));
+  check(`${id} 倍率から適合甲長を算出しない`, !/甲長×[35]|甲長(?:16|17)cm/.test(c));
+}
+const toro = KID.equipment.find(x => x.id === "tub-toro-80");
+check("トロ舟の807×500は底面外寸と明記", toro.dimension_reference.text.includes("底面外寸 約807×500mm") && toro.dimension_reference.text.includes("内寸ではありません"));
+check("トロ舟のメーカー用途制限を隠さない", toro.dimension_reference.text.includes("亀用の推薦例にはできません"));
+const hospital = KID.equipment.find(x => x.id === "hospital-container");
+check("530M寸法を他モデル・購入先に当てはめない", hospital.dimension_reference.text.includes("購入リンクの商品") && hospital.dimension_reference.text.includes("確認できていません"));
+check("移行先に一律の×5を戻さない", !KID.equipment.find(x => x.id === "tote-water-juv").risk_warnings.some(x => /甲長×5/.test(x.text)));
+// 一般の寸法／倍率の矛盾も検知する。外寸を内寸に代用せず、倍率の妥当性は別途要出典。
 for (const e of KID.equipment) {
-  const texts = (e.conditions || []).concat(e.dim_usable && e.dim_usable.note ? [e.dim_usable.note] : []);
-  const rule = texts.find((t) => /長辺/.test(t) && RATIO.test(t));
-  if (!rule) continue;
-  const r = Number(rule.match(RATIO)[1]);
-  const di = e.dim_internal || {}, de = e.dim_external || {};
-  const longMm = Math.max(di.w || 0, di.d || 0) || Math.max(de.w || 0, de.d || 0);
-  if (!longMm) continue;
-  const limit = longMm / 10 / r;
-  const ok = e.shell_max_cm <= limit + 0.05 || (e.size_check && e.size_check.status === "unverified");
-  check(`${e.id} 上限${e.shell_max_cm}cm と条件（長辺${longMm / 10}cm÷${r}=${limit.toFixed(1)}cm）`, ok);
+  const text = (e.conditions || []).concat(e.dim_usable?.note || "").find(t => /長辺/.test(t) && /甲長×[0-9]/.test(t));
+  if (!text) continue;
+  const ratio = Number(text.match(/甲長×([0-9.]+)/)[1]);
+  const inner = e.dim_internal;
+  const known = inner?.unit === "mm" && inner.w > 0 && inner.d > 0;
+  check(`${e.id} 内寸のない倍率判定は未確認`, known || e.size_check?.status === "unverified");
+  if (known) check(`${e.id} 内寸と倍率の算術矛盾を断定しない`, e.shell_max_cm <= Math.max(inner.w, inner.d) / 10 / ratio || e.size_check?.status === "unverified");
 }
 check("トロ舟80型は未確認表示", fit("tub-toro-80", "XL").includes("未確認"));
 check("頑丈コンテナは未確認表示", fit("hospital-container", "XL").includes("未確認"));
@@ -139,6 +155,11 @@ for (const f of KID.failures) {
 }
 const humid = KID.contested.find((c) => c.id === "contest-humidity");
 check("湿度を一律に下げる表現をしない", !/湿度を下げる。?$/.test(humid.safe_side_default), humid.safe_side_default);
+
+for (const d of KID.dangerous) {
+  const alternative = KID.equipment.find(e => e.id === d.alternative_id);
+  check(`${d.id} alternative is not UNKNOWN`, !alternative || alternative.safety_label !== "UNKNOWN");
+}
 
 console.log("──────────────────────────────");
 console.log(`PASS ${pass} / FAIL ${fail}`);

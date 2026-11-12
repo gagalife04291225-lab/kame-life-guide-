@@ -654,3 +654,9 @@
 - Conforms: Constitution v2.1 / handoff-gate / closeout-gate。
 
 - 追記: PR #219作成。Ownerの「入れて　マージして」により送信・merge承認。最終差分16ファイル、範囲外0、MERGEABLE/CLEAN（登録CIなし）、Python41/41再確認。本番はmerge後に別途実測する。
+
+## 2026-11-12 KID 容器2件の寸法根拠是正（公開判断待ち）
+
+外寸を内寸扱いしていた汎用データと×5/×3の安全断定を除去。赤長80L・天馬530Mの公式資料は型番限定の例として保存し、汎用容器への外挿をしない。UNKNOWN・K-SCORE非表示・数値ゲージ非表示・購入CTA保留・未確認トロ舟への代替推薦を除去。KID165件PASS、実Chromeの表示と390px/1249pxを確認。収益導線の変更を含むためOwner判断待ち。
+
+2026-11-12追記: Ownerが購入CTA2件の一時停止を含む修正の送信・mergeを明示承認。PR #220。既存codexブランチとの名前衝突を避けcodex-kid-dimension-evidence-20261112で送信。
