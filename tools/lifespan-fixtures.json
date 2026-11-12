@@ -1,0 +1,50 @@
+{
+  "musk-turtle": [
+    "54年以上の飼育記録（平均は不明）",
+    "カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html",
+    "カナダ環境・気候変動省（2024）"
+  ],
+  "razorback-musk-turtle": [
+    "29年以上の飼育記録",
+    "Slavensの記録集には、29年4か月飼育され、報告時点でも生存していた雌が掲載されています。出生からの年齢や平均寿命を示す数字ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "white-lipped-mud-turtle": [
+    "成体から19年以上の飼育記録",
+    "Slavensの記録集には、成体で迎えてから19年2か月飼育された個体が掲載されています。出生からの年齢や平均寿命を示す数字ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（Snider 1992引用）"
+  ],
+  "florida-box-turtle": [
+    "22年以上の飼育記録",
+    "Slavensの記録集には、フロリダハコガメ（Terrapene carolina bauri）の22年7か月の飼育記録があります。平均寿命や寿命の上限を示す数字ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（Bowler 1977引用）"
+  ],
+  "japanese-pond-turtle": [
+    "雄約10〜15年・雌約20〜30年（動物園の案内）",
+    "福岡市動物園は、寿命を雄約10〜15年、雌約20〜30年と案内しています。統計上の平均や上限を確定した数字ではなく、個体の寿命を保証するものではありません。",
+    "https://zoo.city.fukuoka.lg.jp/animals/detail/117",
+    "福岡市動物園"
+  ],
+  "spenglers-leaf-turtle": [
+    "20年以上（動物園の案内）",
+    "シンシナティ動物園は寿命を20年以上と案内しています。平均や上限の区別は示されていません。長く飼える環境を整えて迎えましょう。",
+    "https://cincinnatizoo.org/animals-archive/black-breasted-leaf-turtle/",
+    "シンシナティ動物園"
+  ],
+  "russian-tortoise": [
+    "60年以上にわたる飼育例",
+    "Tortoise Trustは、1960年代初頭に輸入され、2024年にも生存している雌を紹介しています。これは長期飼育の一例で、平均寿命ではありません。数十年先まで世話を続けられる計画が必要です。",
+    "https://www.tortoisetrust.com/post/captive-care-of-the-russian-tortoise-testudo-horsfieldii",
+    "Tortoise Trust / A. C. Highfield（2024、更新2025）"
+  ],
+  "hermann-tortoise": [
+    "数十年単位・上限は未確立",
+    "IUCNの専門家資料は野外で数十年生きる個体に触れていますが、最大寿命は不確実としています。数十年先まで世話を続ける計画が必要です。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_059_hermanni_v1_2011.pdf",
+    "IUCN TFTSG 種アカウント（2011）"
+  ]
+}
