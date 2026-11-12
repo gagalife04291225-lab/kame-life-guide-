@@ -1,11 +1,12 @@
 {
   "date": "2026-11-12",
-  "base": "6b1ac588c776d3c75ee77d7bc6d15d3bb03a9cf4",
+  "base": "893e89d288f88e3439d4e8d1996f7e9ba724f732",
   "scope": "All 119 species structural inventory. No product-fit guarantees. Flags are review queue, not proof of unsuitability. Master is not automatically rendered to users.",
   "counts": {
     "total": 119,
     "route_candidate_differences": 46,
-    "external_conditions_only": 16
+    "external_conditions_only": 32,
+    "inventory_only": 87
   },
   "rows": [
     {
@@ -26,7 +27,10 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ]
     },
     {
       "name": "ヘルマンリクガメ",
@@ -48,7 +52,10 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ]
     },
     {
       "name": "ギリシャリクガメ",
@@ -70,7 +77,10 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ]
     },
     {
       "name": "フチゾリリクガメ",
@@ -115,7 +125,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/Downloads/Elongata.pdf"
+      ]
     },
     {
       "name": "アカアシリクガメ",
@@ -138,7 +151,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/small-animal/documents/Red-foot-tortoise-care-sheet%202016-1.pdf"
+      ]
     },
     {
       "name": "チャコリクガメ",
@@ -228,7 +244,10 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/Downloads/Sulcata.pdf"
+      ]
     },
     {
       "name": "アルダブラゾウガメ",
@@ -250,7 +269,10 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.aldabragianttortoises.co.uk/should-i-get-a-tortoise/recommendations-of-things-to-include-in-your-tortoise-house-and-pen"
+      ]
     },
     {
       "name": "インプレッサムツアシガメ",
@@ -402,7 +424,10 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_070_homeana_v1_2013.pdf"
+      ]
     },
     {
       "name": "マダガスカルクモノスガメ",
@@ -615,7 +640,10 @@
         "juvenile_notes": true
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/common-musk-turtle-care"
+      ]
     },
     {
       "name": "ヒラタニオイガメ",
@@ -849,7 +877,10 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.pets.gov.hk/english/proper_care_of_pets/turtles.html"
+      ]
     },
     {
       "name": "キバラガメ",
@@ -871,7 +902,10 @@
       "review_flags": [
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ]
     },
     {
       "name": "ミシシッピアカミミガメ",
@@ -893,7 +927,10 @@
       "review_flags": [
         "route_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ]
     },
     {
       "name": "ミシシッピチズガメ",
@@ -959,7 +996,11 @@
       "review_flags": [
         "route_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.exoinfo.jp/care/1990/",
+        "https://kame.mr-b9.net/archives/24"
+      ]
     },
     {
       "name": "ヤエヤマイシガメ",
@@ -1119,7 +1160,10 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.researchgate.net/publication/352260587_Distribution_of_Chelus_fimbriata_and_Chelus_orinocensis_Testudines_Chelidae"
+      ]
     },
     {
       "name": "サラドロガメ",
@@ -1399,7 +1443,10 @@
       "review_flags": [
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ]
     },
     {
       "name": "キタチズガメ",
@@ -1639,7 +1686,11 @@
       "review_flags": [
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/american-spotted-turtle-care",
+        "https://reptilesmagazine.com/listings/turtles-tortoises-care/spotted-turtle/"
+      ]
     },
     {
       "name": "モリイシガメ",
@@ -1956,7 +2007,11 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/cornata.html",
+        "https://www.austinsturtlepage.com/Care/cs-ornateboxie.htm"
+      ]
     },
     {
       "name": "タイワンセマルハコガメ",
@@ -1998,7 +2053,11 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://pismobeachvet.com/box-turtle-care/",
+        "https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/ar.20695"
+      ]
     },
     {
       "name": "チュウゴクセマルハコガメ",
@@ -2198,7 +2257,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_009_insculpta_v1_2008.pdf"
+      ]
     },
     {
       "name": "スッポン（シナスッポン）",
@@ -2269,7 +2331,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "カロリナダイヤモンドバックテラピン",
@@ -2292,7 +2359,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "オルナータダイヤモンドバックテラピン",
@@ -2315,7 +2387,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "ミシシッピダイヤモンドバックテラピン",
@@ -2338,7 +2415,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "テキサスダイヤモンドバックテラピン",
@@ -2361,7 +2443,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "マングローブダイヤモンドバックテラピン",
@@ -2384,7 +2471,12 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ]
     },
     {
       "name": "オーストラリアナガクビガメ",
@@ -2408,7 +2500,10 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://innersouthvets.com.au/wp-content/uploads/2018/05/Caring-for-your-turtle2.pdf"
+      ]
     },
     {
       "name": "ジーベンロックナガクビガメ",
@@ -2432,7 +2527,10 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://reptileone.com.au/care-sheets/Northern-Long-Neck-Turtle.pdf"
+      ]
     },
     {
       "name": "アフリカヌマヨコクビガメ",
@@ -2455,7 +2553,10 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/african-side-necked-turtle-care"
+      ]
     },
     {
       "name": "ヒメハコヨコクビガメ",
@@ -2478,7 +2579,11 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://allabout.co.jp/gm/gc/70686/",
+        "https://pets.tana.cc/2014-01-20-pelusios-nanus/"
+      ]
     },
     {
       "name": "ヒラリーカエルガメ",
@@ -2502,7 +2607,11 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/hilaire-s-side-neck-turtle-care",
+        "https://sedici.unlp.edu.ar/bitstream/handle/10915/109403/Documento_completo.pdf-PDFA.pdf?isAllowed=y&sequence=1"
+      ]
     },
     {
       "name": "オリノコマタマタ",
@@ -2525,7 +2634,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.researchgate.net/publication/352260587_Distribution_of_Chelus_fimbriata_and_Chelus_orinocensis_Testudines_Chelidae"
+      ]
     },
     {
       "name": "サソリドロガメ",
@@ -2595,7 +2707,10 @@
         "route_changes_candidates",
         "page_changes_candidates"
       ],
-      "status": "external_requirements_reviewed_not_product_fit"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.terrarium.com.pl/chelodina-mccordi-zolw-wezoszyi-mccorda/"
+      ]
     },
     {
       "name": "コウホソナガクビガメ",

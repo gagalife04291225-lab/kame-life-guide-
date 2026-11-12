@@ -1,0 +1,113 @@
+{
+  "status": "proposal_not_implemented",
+  "conditions": {
+    "russian-tortoise": {
+      "title": "ロシアリクガメの用品を選ぶ前に",
+      "items": [
+        "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+        "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+        "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+        "床材は掘れることに加え、濡れた状態が続かないことも確認します。"
+      ],
+      "sources": [
+        {
+          "label": "RVC：地中海リクガメの飼育（2024）",
+          "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "hermann-tortoise": {
+      "title": "ヘルマンリクガメの用品を選ぶ前に",
+      "items": [
+        "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+        "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+        "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+        "特に子ガメは乾かしすぎに注意し、床の湿り気と換気を両立させます。"
+      ],
+      "sources": [
+        {
+          "label": "RVC：地中海リクガメの飼育（2024）",
+          "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "greek-tortoise": {
+      "title": "ギリシャリクガメの用品を選ぶ前に",
+      "items": [
+        "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+        "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+        "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+        "産地や亜種で湿度や冬の管理が異なります。飼う個体の由来を確認して設備を選びます。"
+      ],
+      "sources": [
+        {
+          "label": "RVC：地中海リクガメの飼育（2024）",
+          "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "elongated-tortoise": {
+      "title": "エロンガータの用品を選ぶ前に",
+      "items": [
+        "湿った床と換気を両立させ、強い光を避けて休める隠れ家を用意します。",
+        "体を浸せて、無理なく出入りできる水場が必要です。用品一覧に水入れがない場合も別に用意します。",
+        "成長後の広さも考えて容器を選びます。価格帯が上がれば成体まで使える、という分け方ではありません。"
+      ],
+      "sources": [
+        {
+          "label": "Tortoise Trust：エロンガータの飼育",
+          "url": "https://www.tortoisetrust.org/Downloads/Elongata.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "red-footed-tortoise": {
+      "title": "アカアシリクガメの用品を選ぶ前に",
+      "items": [
+        "湿り気を保てる床と換気の両方が必要です。暖かい側・涼しい側に休める場所を作ります。",
+        "室内ではUVBと保温を用意し、照明から離れて休める場所も残します。",
+        "成長後の床面積と体格に合う水場を確保します。植物性中心の配合飼料だけで食事全体がそろうわけではありません。"
+      ],
+      "sources": [
+        {
+          "label": "RVC：アカアシの飼育",
+          "url": "https://www.rvc.ac.uk/Media/Default/small-animal/documents/Red-foot-tortoise-care-sheet%202016-1.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "sulcata-tortoise": {
+      "title": "ケヅメリクガメの用品を選ぶ前に",
+      "items": [
+        "成体には既製ケージだけでなく、歩き回れる強固な飼育場が必要です。掘る力・押す力に耐える囲いも計画します。",
+        "屋外でも日陰と水場を用意し、寒い時期に使える加温した屋内スペースを確保します。",
+        "幼体の用品と成体の設備は分けて考えます。掲載された加温器具だけで飼育場全体を保温できるとは限りません。"
+      ],
+      "sources": [
+        {
+          "label": "Tortoise Trust：ケヅメの飼育例",
+          "url": "https://www.tortoisetrust.org/Downloads/Sulcata.pdf"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    "aldabra-tortoise": {
+      "title": "アルダブラゾウガメの用品を選ぶ前に",
+      "items": [
+        "大きく育った個体には、歩き回れる飼育場と体格に合う出入り口・囲いが必要です。掲載ケージは成体の飼育場の代わりにはなりません。",
+        "日陰と水場を用意し、容器の縁を越えて飲んだり出入りしたりできるか確認します。",
+        "寒い時期の屋内スペースと加温設備も含めて計画します。工事や大型設備の費用は用品候補の合計とは別です。"
+      ],
+      "sources": [
+        {
+          "label": "Aldabra Giant Tortoises UK：飼育場の実例",
+          "url": "https://www.aldabragianttortoises.co.uk/should-i-get-a-tortoise/recommendations-of-things-to-include-in-your-tortoise-house-and-pen"
+        }
+      ],
+      "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    }
+  }
+}

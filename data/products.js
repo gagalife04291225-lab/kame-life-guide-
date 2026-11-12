@@ -2577,7 +2577,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B01KLHZOWA?tag=kamelife090e-22',
     asin: 'B01KLHZOWA',
     image: '/assets/products/placeholder.webp',
-    why: 'ホットスポットとクールゾーンを同時計測。温度勾配の確認に便利',
+    why: '本体の内部センサーと外部センサーで2か所の温度を測る温度計。湿度は測れないため、湿度の確認には別途湿度計を使います。防水は外部センサー部のみで、本体は濡らさないでください',
     rating: 4.5,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_dry_large'],

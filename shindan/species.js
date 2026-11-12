@@ -58,8 +58,8 @@ land: [
   },
   { name: 'エロンガータリクガメ', latin: 'Indotestudo elongata', emoji: '🌴', difficulty: '中〜上級', size: 'M（25〜33cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '東南アジア〜インド産の森林性リクガメ。高温多湿の環境を好み、地中海系リクガメとは異なる飼育感覚が楽しい。ミスト管理がポイント。',
-    specs: { '最大甲長': '38cm（資料上限）', '主な食事': '野草・野菜・果物少量', '水容量': '浅め水入れ', '温度': '27〜32℃' },
-    coreSpecs: { size: '38cm（資料上限）', temp: '27〜32℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
+    specs: { '最大甲長': '38cm（資料上限）', '主な食事': '植物性・動物性の食材', '水容量': '浅め水入れ', '温度': '27〜32℃' },
+    coreSpecs: { size: '38cm（資料上限）', temp: '27〜32℃', lifespan: '30〜80年', diet: '雑食（植物性・動物性の食材）' },
     sizeNote: 'TTWG 2025 p.336 掲載の最大直線甲長（SCL）：オス38.0cm・メス31.0cm。一般的な成体サイズや将来の成長予測ではない。',
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
@@ -71,7 +71,7 @@ land: [
   { name: 'アカアシリクガメ', latin: 'Chelonoidis carbonarius', emoji: '🦶', difficulty: '中〜上級', size: 'L（30〜40cm）', cites: 'CITES II', legal: 'cites_ii',
     reason: '赤い鱗模様が美しい南米産リクガメ。雑食性で果物や動物性タンパクも食べます。高温多湿の環境が必要で大型化するためスペースが必要。',
     specs: { '最大甲長': '60cm（資料値）', '主な食事': '野菜・果物・動物性タンパク', '水容量': '浅め水入れ', '温度': '28〜32℃' },
-    coreSpecs: { size: '60cm（資料値）', temp: '28〜32℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
+    coreSpecs: { size: '60cm（資料値）', temp: '28〜32℃', lifespan: '30〜80年', diet: '雑食（植物性・動物性の食材）' },
     sizeNote: 'VKM 2024の最大直甲長（オス60.0cm・メス44.2cm）。一般的な成体サイズや成長予測ではありません。',
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
@@ -1446,6 +1446,60 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS['pig-nosed-turtle'] = {
   sources: [{label:'IUCN/SSC TFTSG（2008）：スッポンモドキ種概説・飼育節',url:'https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_009_insculpta_v1_2008.pdf'}]
 };
 
+// 2026-11-12: Species care conditions, not endorsements of the listed products.
+DIAGNOSIS_EQUIPMENT_CONDITIONS['japanese-pond-turtle'] = {
+  title: 'ニホンイシガメの用品を選ぶ前に',
+  items: [
+    '水から上がって、全身を乾かせる陸場を用意します。子ガメには登れる高さか、成体には乗っても動かないかを確認します。',
+    '屋内では陸場の保温と紫外線照明を整えます。水槽は長さだけでなく、陸場を置いた後の泳ぐ場所と奥行きも見て選びます。',
+    '水換えとフィルターの掃除を続け、成長に合わせて陸場や容器を見直します。'
+  ],
+  note: '一覧の商品が、今の個体や成体になったときの体格に合うかは別に確認します。',
+  sourceNote: '国内獣医師のイシガメ・クサガメ・アカミミガメ共通の解説と、イシガメ飼育者の陸場使用例を参考にしています。個人の使用例を全個体共通の基準にはしていません。',
+  sources: [
+    {label:'エキゾチックアニマル情報室：イシガメ・クサガメ・アカミミガメの飼育',url:'https://www.exoinfo.jp/care/1990/'},
+    {label:'飼育者の記録：ニホンイシガメの陸場',url:'https://kame.mr-b9.net/archives/24'}
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['reeves-turtle'] = {
+  title: 'クサガメの用品を選ぶ前に',
+  items: [
+    '水から全身を出して乾かせる陸場と、そこへ登れる足場を用意します。屋内では紫外線照明と陸場の保温も整えます。',
+    '子ガメ用の容器や陸場を、そのまま成体まで使えるとは限りません。体格に合わせて泳ぐ場所と陸場の広さを見直します。',
+    'フィルターは水換えと掃除を続けながら使います。加温する場合は、ヒーターの水量・水位の使用条件と保護カバーを確認します。'
+  ],
+  note: '一覧は比較候補です。水槽の長さだけでなく、奥行き・実際の水量・陸場を置いた後の広さも確認してください。',
+  sourceNote: '香港漁農自然護理署のクサガメ向け飼育案内を参考にしています。資料の水深や容器容量を、子ガメを含む全個体の固定基準にはしていません。',
+  sources: [{label:'香港漁農自然護理署：クサガメの飼育',url:'https://www.pets.gov.hk/english/proper_care_of_pets/turtles.html'}]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['musk-turtle'] = {
+  title: 'ミシシッピニオイガメの用品を選ぶ前に',
+  items: [
+    '水面近くで休める足場と、登りやすく全身を乾かせる陸場を用意します。水深は体格や泳ぎ方に合わせて調整します。',
+    '屋内では陸場の保温と紫外線照明も確認します。水中で過ごす時間が長くても、陸場を使えるようにしておきます。',
+    'フィルターを使っていても水換えと掃除は必要です。容器や器具は、成体の体格と実際に入れる水量に合わせて選びます。'
+  ],
+  note: '幼体と成体では足場や水深を見直します。掲載された水槽・浮島が、どの個体にも合うという意味ではありません。',
+  sourceNote: 'Tree of Life動物病院の本種向け飼育案内を参考にしています。資料にある水深や照明の数値を、そのまま全個体・全製品へ当てはめてはいません。',
+  sources: [{label:'Tree of Life動物病院：ミシシッピニオイガメの飼育',url:'https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/common-musk-turtle-care'}]
+};
+
+['red-eared-slider', 'yellow-bellied-slider', 'cumberland-slider'].forEach(function(slug) {
+  DIAGNOSIS_EQUIPMENT_CONDITIONS[slug] = {
+    title: 'スライダー類の用品を選ぶ前に',
+    items: [
+      '水中を泳ぎ回れる広さと、全身を支えて乾かせる陸場を用意します。陸場へ登れる通路と、暑い場所から離れられる場所も必要です。',
+      '子ガメのときに収まる水槽でも、成長すると広げる必要があります。長辺だけでなく奥行きと実際の水量を確認し、成体になったときの容器も計画します。',
+      '屋内では陸場の保温と紫外線照明を整えます。フィルターやヒーターは、水槽の商品名ではなく実際の水量と器具の使用条件を見て選びます。'
+    ],
+    note: 'RSPCAは甲長25cmの個体に水量400Lという例を示しています。一覧の90cm・120cm水槽が、その条件や全個体の終生飼育を満たすとは限りません。',
+    sourceNote: 'アカミミ・キバラ・カンバーランドを対象とするRSPCAの共通案内です。水量の例は同団体の目安で、国内の水槽規格とは区別しています。',
+    sources: [{label:'RSPCA：スライダー類の飼育',url:'https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin'}]
+  };
+});
+
 DIAGNOSIS_EQUIPMENT_CONDITIONS['home-hinge-back-tortoise'] = {
   title: 'ホームセオレの用品を選ぶ前に',
   items: [
@@ -1545,4 +1599,181 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS["mccords-snake-necked-turtle"] = {
       "url": "https://www.terrarium.com.pl/chelodina-mccordi-zolw-wezoszyi-mccorda/"
     }
   ]
+};
+
+// 湿地・ハコガメの種別条件。数値の一律適用や商品一式の適合保証ではない。
+DIAGNOSIS_EQUIPMENT_CONDITIONS["spotted-turtle"] = {
+  "title": "キボシイシガメの用品を選ぶ前に",
+  "items": [
+    "浅い水場と、体を水から出して休める陸場を用意します。水中にも足をかけて水面へ出られる場所を作ります。",
+    "ろ過器やヒーターは、実際に使う浅い水位で動かせるか確認します。水流が強すぎる場合は、向きや流量を調整します。",
+    "陸場には上りやすい道を設け、室内ではUVB照明と保温の条件を確認します。"
+  ],
+  "note": "水槽の容量だけで選ばず、陸場を置いた後に残る水場と、歩いて休める場所も見てください。",
+  "sourceNote": "動物病院の飼育案内と専門誌を参照。資料ごとの水深や陸水の比率を、全個体に共通の固定値にはしていません。",
+  "sources": [
+    {
+      "label": "Tree of Life動物病院：キボシイシガメの飼育案内",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/american-spotted-turtle-care"
+    },
+    {
+      "label": "Reptiles Magazine：キボシイシガメの飼育案内",
+      "url": "https://reptilesmagazine.com/listings/turtles-tortoises-care/spotted-turtle/"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["malayan-box-turtle"] = {
+  "title": "マレーハコガメの用品を選ぶ前に",
+  "items": [
+    "水場をよく使うハコガメです。小さな飲み水皿だけで済ませず、体格に合う広い水場と、自分で上り下りできる陸場を用意します。",
+    "水場を清潔に保てる構成にし、ろ過器は水量と水位に合わせて選びます。",
+    "水温と陸場の温度は別々に確認します。水中を加温する必要がある場合は、水中用の器具とその使用条件を確認してください。"
+  ],
+  "note": "一覧の水入れや床面ヒーターだけで、水域と水温管理までそろうとは限りません。設置する水場に合わせて必要な設備を確かめてください。",
+  "sourceNote": "動物病院のハコガメ飼育案内のうち、本種の説明を参照。研究論文にも陸水を分けた飼育例がありますが、その面積比や飼育頭数を推奨値として流用していません。",
+  "sources": [
+    {
+      "label": "Pismo Beach動物病院：マレーハコガメの水域・温度管理",
+      "url": "https://pismobeachvet.com/box-turtle-care/"
+    },
+    {
+      "label": "Heissほか（2008）：マレーハコガメ研究の飼育環境",
+      "url": "https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/ar.20695"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ornate-box-turtle"] = {
+  "title": "キタニシキハコガメの用品を選ぶ前に",
+  "items": [
+    "乾いた場所だけでなく、湿り気のある床材に潜れる場所も用意します。空気の湿度と、潜る場所の湿り気は分けて考えます。",
+    "隠れ家と日陰、出入りしやすい浅い水場を用意します。床全体を水浸しにするのではなく、湿った場所と乾いた場所を作ります。",
+    "室内ではUVB照明と保温を用意し、暖かい側と涼しい側を行き来できる広さを取ります。"
+  ],
+  "note": "容器に床材・隠れ家・水場を置いた状態で、歩ける床がどれだけ残るか確認してください。",
+  "sourceNote": "Tortoise Trustと飼育者の案内を参照。草原の種であることを、床を常に乾かしてよいという意味にはしていません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：キタニシキハコガメの飼育案内",
+      "url": "https://www.tortoisetrust.org/care/cornata.html"
+    },
+    {
+      "label": "Austin’s Turtle Page：キタニシキハコガメの飼育案内",
+      "url": "https://www.austinsturtlepage.com/Care/cs-ornateboxie.htm"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["russian-tortoise"] = {
+  "title": "ロシアリクガメの用品を選ぶ前に",
+  "items": [
+    "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+    "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+    "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+    "床材は掘れることに加え、濡れた状態が続かないことも確認します。"
+  ],
+  "sources": [
+    {
+      "label": "RVC：地中海リクガメの飼育（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["hermann-tortoise"] = {
+  "title": "ヘルマンリクガメの用品を選ぶ前に",
+  "items": [
+    "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+    "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+    "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+    "特に子ガメは乾かしすぎに注意し、床の湿り気と換気を両立させます。"
+  ],
+  "sources": [
+    {
+      "label": "RVC：地中海リクガメの飼育（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["greek-tortoise"] = {
+  "title": "ギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "容器は体格と成体に必要な床面積で選び、隠れ家や水入れを置いても歩ける場所を残します。",
+    "体を浸せて出入りできる水場と、暖かい側・涼しい側に休める場所を用意します。",
+    "UVBと保温は設置距離と実際の温度を確認します。広い飼育場では設備を増やすこともあります。",
+    "産地や亜種で湿度や冬の管理が異なります。飼う個体の由来を確認して設備を選びます。"
+  ],
+  "sources": [
+    {
+      "label": "RVC：地中海リクガメの飼育（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["elongated-tortoise"] = {
+  "title": "エロンガータの用品を選ぶ前に",
+  "items": [
+    "湿った床と換気を両立させ、強い光を避けて休める隠れ家を用意します。",
+    "体を浸せて、無理なく出入りできる水場が必要です。用品一覧に水入れがない場合も別に用意します。",
+    "成長後の広さも考えて容器を選びます。価格帯が上がれば成体まで使える、という分け方ではありません。"
+  ],
+  "sources": [
+    {
+      "label": "Tortoise Trust：エロンガータの飼育",
+      "url": "https://www.tortoisetrust.org/Downloads/Elongata.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["red-footed-tortoise"] = {
+  "title": "アカアシリクガメの用品を選ぶ前に",
+  "items": [
+    "湿り気を保てる床と換気の両方が必要です。暖かい側・涼しい側に休める場所を作ります。",
+    "室内ではUVBと保温を用意し、照明から離れて休める場所も残します。",
+    "成長後の床面積と体格に合う水場を確保します。植物性中心の配合飼料だけで食事全体がそろうわけではありません。"
+  ],
+  "sources": [
+    {
+      "label": "RVC：アカアシの飼育",
+      "url": "https://www.rvc.ac.uk/Media/Default/small-animal/documents/Red-foot-tortoise-care-sheet%202016-1.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["sulcata-tortoise"] = {
+  "title": "ケヅメリクガメの用品を選ぶ前に",
+  "items": [
+    "成体には既製ケージだけでなく、歩き回れる強固な飼育場が必要です。掘る力・押す力に耐える囲いも計画します。",
+    "屋外でも日陰と水場を用意し、寒い時期に使える加温した屋内スペースを確保します。",
+    "幼体の用品と成体の設備は分けて考えます。掲載された加温器具だけで飼育場全体を保温できるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "Tortoise Trust：ケヅメの飼育例",
+      "url": "https://www.tortoisetrust.org/Downloads/Sulcata.pdf"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["aldabra-tortoise"] = {
+  "title": "アルダブラゾウガメの用品を選ぶ前に",
+  "items": [
+    "大きく育った個体には、歩き回れる飼育場と体格に合う出入り口・囲いが必要です。掲載ケージは成体の飼育場の代わりにはなりません。",
+    "日陰と水場を用意し、容器の縁を越えて飲んだり出入りしたりできるか確認します。",
+    "寒い時期の屋内スペースと加温設備も含めて計画します。工事や大型設備の費用は用品候補の合計とは別です。"
+  ],
+  "sources": [
+    {
+      "label": "Aldabra Giant Tortoises UK：飼育場の実例",
+      "url": "https://www.aldabragianttortoises.co.uk/should-i-get-a-tortoise/recommendations-of-things-to-include-in-your-tortoise-house-and-pen"
+    }
+  ],
+  "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
 };
