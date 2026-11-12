@@ -42,8 +42,8 @@ All headings and surrounding text checked. Original page images checked specific
 - 17 records: master, coreSpecs.size and legacy maximum fields agree. TTWG page + sex-specific record noted. Generic size bands are not certified by this work.
 - New regression tests cover17 values/source notes, stale maximum phrases, JSON-LD parsing, and modified FAQ equality. Existing size sync test retains only cherry-head as known divergence; 5 corrected records removed.
 - Enclosure check110/0 (existing master-absent warnings2), comparison378/0/unknown10. No enclosure dimensions changed. Historical formula basis is explicitly historical, not a validated safe minimum.
-- Parent/root must run visual QA: this cloud Playwright lacks its Chromium executable; no browser display result claimed.
-- All Python suite has existing GA4 private-output path error due environment ancestor Git detection. This is not a passing full suite.
+- Cloud Chromium launch was blocked by a socket permission constraint (not a missing executable). That attempt produced no browser display evidence. Subsequent independent PC Chrome QA covered all28 changed HTML pages at375/1280px with no horizontal overflow; see remaining-care-evidence-20261112.md for actual visual/interaction coverage and limitations.
+- Cloud Python suite had an existing GA4 private-output path error due environment ancestor Git detection. Subsequent isolated PC suite passed58/58 with existing tzdata dependencies; no guard was weakened.
 - No commit/push/merge performed by this worker. Parent integrates handoff/change log and independent QA.
 - Classification-dependent untouched records: greek, cherry-head, red-cheeked, three-toed, ornate, desert, malayan, three-striped, chinese-softshell, albino-softshell, collier. Their evidence and exact scope issues are recorded above. Current values not certified by this review.
 
