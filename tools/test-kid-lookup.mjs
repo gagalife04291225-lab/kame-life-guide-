@@ -68,8 +68,8 @@ for (const e of KID.equipment) {
 // 読み上げ名（aria-label）と表示: 未確認2件は数値を含めず「未確認」を伝える。確認済みは従来どおり
 const UNV = "対応甲長：未確認。下のサイズ条件を確認してください。";
 const EXPECT_VERIFIED = {
-  "nest-tote-soil": "対応甲長 6〜25cm", "hide-terracotta": "対応甲長 3〜25cm", "bask-brick": "対応甲長 0〜cm",
-  "light-stand": "対応甲長 0〜cm", "filter-sponge": "対応甲長 0〜cm", "tote-land-juv": "対応甲長 3〜12cm",
+  "nest-tote-soil": "対応甲長 6〜25cm", "hide-terracotta": "対応甲長 3〜25cm", "bask-brick": "対応甲長 上限なし",
+  "light-stand": "対応甲長 上限なし", "filter-sponge": "対応甲長 上限なし", "tote-land-juv": "対応甲長 3〜12cm",
   "tote-water-juv": "対応甲長 3〜10cm", "hide-pvc": "対応甲長 3〜25cm",
 };
 for (const e of KID.equipment) {
@@ -86,6 +86,25 @@ for (const e of KID.equipment) {
   }
 }
 check("未確認は2件", KID.equipment.filter((e) => e.size_check && e.size_check.status === "unverified").length === 2);
+// 上限なし・上限あり・未確認の3種類で、読み上げ名と表示の意味をそろえる
+const gaugeOf = (e) => {
+  const c = T.cardHtml(e);
+  return { label: c.match(/class="gauge" role="img" aria-label="([^"]*)"/)[1], note: c.match(/gauge-note">([^<]*)/)[1] };
+};
+for (const e of KID.equipment) {
+  const { label, note } = gaugeOf(e);
+  check(`${e.id} 読み上げ名に「0〜cm」「〜cm」だけの不完全な範囲がない`, !/\d〜cm|^対応甲長 〜/.test(label), label);
+  if (e.size_check && e.size_check.status === "unverified") continue;
+  if (e.shell_max_cm >= 999) {
+    check(`${e.id} 上限なしは読み上げも「上限なし」`, label.includes("上限なし") && note.includes("上限なし"), label + " / " + note);
+  } else {
+    check(`${e.id} 上限ありは読み上げに上限の数値`, label.includes(e.shell_max_cm + "cm") && note.includes(e.shell_max_cm + "cm"), label + " / " + note);
+  }
+}
+// 下限ありで上限なしの場合の表現（現データにはないが、関数の分岐を固定する）
+const synth = gaugeOf({ id: "synthetic", name_ja: "x", shell_min_cm: 5, shell_max_cm: 999, shell_buckets: [], safety_label: "SAFE", cta_enabled: false });
+check("下限5cm・上限なしの読み上げ", synth.label === "対応甲長 5cm〜（上限なし）", synth.label);
+check("下限5cm・上限なしの表示", synth.note === "対応甲長めやす：5cm〜（上限なし）", synth.note);
 
 // 4. 購入リンク: 条件付き（CONDITIONAL）はロック中 href なし、data-href に実URL
 for (const e of KID.equipment) {
