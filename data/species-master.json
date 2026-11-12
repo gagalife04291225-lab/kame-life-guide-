@@ -1648,15 +1648,18 @@
           ]
         },
         "enclosure_jp": {
-          "value": "終生45〜60cm水槽",
+          "value": "45cmで開始・成体は60cm以上の水槽（単独・当サイト目安）",
           "verification": "LIKELY",
           "provenance": "keeper_consensus",
           "japan_fit": {
-            "judgment": "same_as_source",
-            "basis": "最大甲長13.7cmの小型種。国内45/60cm規格がそのまま適合",
-            "jp_note": "45cm開始→60cmで終生"
+            "judgment": "adjusted_for_japan",
+            "basis": "PR #216の記事の45cm開始・成体60cmという計画目安に統一。科学的な最低基準ではない。海外には成体100cmの推奨もある。Fishkeeperは対照用の海外推奨であり、60cmの裏付けではない",
+            "jp_note": "45cm開始→成体60cm以上（単独・当サイト目安）"
           },
-          "last_verified": "2026-08-17"
+          "last_verified": "2026-11-12",
+          "sources": [
+            "https://www.fishkeeper.co.uk/fish/freshwater/miscellaneous/musk-turtle"
+          ]
         },
         "cautions": {
           "value": [
@@ -6665,8 +6668,8 @@
           "https://iucn-tftsg.org/cbftt/species-accounts/cuora-amboinensis-053/",
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_053_amboinensis_v1_2011.pdf"
         ],
-        "note": "CBFTT 種概説は直甲長 25cm まで・成体最大は 220〜250mm と記載。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準は共通。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "Schoppe & Das (2011) CBFTT種概説053の原典本文を2026-11-12に確認。種全体の直甲長上限25cm、亜種kamaromaは250mm。一般的な成体範囲や全個体の到達サイズではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7616,13 +7619,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "平均30cm級・40cm超の報告あり。最大記録は資料間で40〜60cmと差が大きく確定不能（conflictとして保持）",
+        "value": 60.0,
+        "verification": "LIKELY",
+        "note": "VKM Report 2024:1 p.39記載の最大直甲長：オス60.0cm、メス44.2cm。報告書に帰属する大型個体の資料値で、一般的な成体サイズや成長予測ではない。ADWの51cmとは紹介値と最大直甲長の区別が必要。",
         "sources": [
+          "https://vkm.no/download/18.1e9d871e18e5134f3943e5f6/1710936141840/Scientific%20assessment%20of%20risk%20to%20the%20populations%20of%20tortoises%20listed%20by%20CITES%20as%20a%20result%20of%20trade_publisert%20versjon%20(1).pdf",
           "https://animaldiversity.org/accounts/Chelonoidis_carbonaria/"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "provenance": "expert_consensus",
+        "institution": "Norwegian Scientific Committee for Food and Environment (VKM)"
       },
       "conservation": {
         "env_redlist": {
@@ -9314,7 +9320,13 @@
       },
       "max_shell_length_cm": {
         "value": null,
-        "verification": "UNPROVEN"
+        "verification": "UNPROVEN",
+        "note": "最大標本の世界記録は未確定。COSEWIC 2018の成体16〜25cmは紹介範囲。2019年の最大成体報告は同一個体でSCL24.0cm・MCL25.1cmであり、測定法の違う値を同一の直甲長最大値として扱わない。",
+        "sources": [
+          "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/wood-turtle-2018.html",
+          "https://www.researchgate.net/publication/337943463_Glyptemys_insculpta_Wood_Turtle_Maximum_adult_size"
+        ],
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
