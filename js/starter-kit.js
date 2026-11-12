@@ -247,10 +247,25 @@ var SK_CAT_ORDER = [
   'shelter', 'water_dish', 'food', 'supplements'
 ];
 
+// 本種の標準候補としての裏付けが不足した商品を保留する。使用不可の断定ではない。
+var SK_SPECIES_PRODUCT_HOLDS = {
+  'home-hinge-back-tortoise': ['substrate_grassland_mix']
+};
+function getHeldKitItems(equipmentKey, tier, speciesSlug) {
+  var ids = SK_SPECIES_PRODUCT_HOLDS[speciesSlug] || [];
+  if (!ids.length) return [];
+  return generateKitByTier(equipmentKey, tier).filter(function(item) { return ids.indexOf(item.product.id) >= 0; });
+}
+function renderKitHoldNote(held, tier) {
+  if (!held || !held.length) return '';
+  var label = tier === 'standard' ? '標準価格帯' : tier === 'budget' ? '低価格帯' : '高価格帯';
+  return '<p class="sk-hint sk-selection-hold" data-sk-held-category="substrate">' + label + 'では、床材の購入候補を選定していません。湿り気を保てる環境に合わせて、別途選んでください。この価格帯の合計に床材代は含めていません。</p>';
+}
+
 /**
  * 指定tierのピックリスト生成
  */
-function generateKitByTier(equipmentKey, tier) {
+function generateKitByTier(equipmentKey, tier, speciesSlug) {
   if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
   if (!EQUIPMENT_MAP[equipmentKey]) return [];
 
@@ -278,7 +293,8 @@ function generateKitByTier(equipmentKey, tier) {
     result.push({ cat: cat, tier: tier, product: pick });
   });
 
-  return result;
+  var heldIds = SK_SPECIES_PRODUCT_HOLDS[speciesSlug] || [];
+  return result.filter(function(item) { return heldIds.indexOf(item.product.id) < 0; });
 }
 
 /**
@@ -565,7 +581,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
 /**
  * タブパネル1枚のHTML
  */
-function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
+function renderTabPanel(tabDef, picks, speciesName, equipmentKey, held) {
   if (!picks.length) {
     return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel" hidden>' +
       '<p class="sk-empty">このカテゴリの商品は現在選定中です。</p>' +
@@ -582,12 +598,13 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
       ' role="status" aria-live="polite">' +
       '<span class="sk-progress-text">購入確認：<span class="sk-progress-done">0</span> / ' +
         _n + '商品</span>' +
-      '<span class="sk-progress-complete" hidden>✓ 必要商品をすべて確認しました</span>' +
+      '<span class="sk-progress-complete" hidden>✓ 表示中の商品をすべて確認しました</span>' +
     '</div>';
 
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
     (tabDef.id !== 'comfort' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
+    renderKitHoldNote(held, tabDef.tiers[0]) +
     progressHtml +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
@@ -687,7 +704,7 @@ function renderBundleSummary(tabData, speciesName) {
           ? fmtYen(range.low) + '〜' + fmtYen(range.high)
           : fmtYen(range.low) + '〜')
       : '価格お問い合わせ';
-    var savingsStr  = (b.idx === 0 && !missingPriceCount && !_stdPicks.some(function(item) { return !item.product.priceRange; })) ? calcSavingsStr(range.low, _stdRange.low) : '';
+    var savingsStr  = (b.idx === 0 && !tabData.some(function(d) { return d.held && d.held.length; }) && !missingPriceCount && !_stdPicks.some(function(item) { return !item.product.priceRange; })) ? calcSavingsStr(range.low, _stdRange.low) : '';
     var savingsHtml = savingsStr
       ? '<div class="sk-bundle-savings">💰 スタンダードより' + savingsStr + '</div>'
       : '';
@@ -764,13 +781,14 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // 各タブのpicks生成
   var tabData = SK_TABS.map(function(tab) {
-    var picks = generateKitByTier(equipmentKey, tab.tiers[0]);
-    return { tab: tab, picks: picks };
+    var picks = generateKitByTier(equipmentKey, tab.tiers[0], opts.slug);
+    return { tab: tab, picks: picks, held: getHeldKitItems(equipmentKey, tab.tiers[0], opts.slug) };
   });
 
   // Cost Box は推奨セット(standard)のpicksで計算（Phase 32-A1b: default tab=comfortと一致）
   var essentialPicks = tabData[1].picks;
   var costBoxHtml = renderCostBox(essentialPicks, opts);
+  if (tabData[1].held.length) costBoxHtml += '<p class="sk-hint">標準価格帯の候補合計は床材代を含みません。</p>';
 
   // Bundle Summary（タブ上部）
   var bundleSummaryHtml = renderBundleSummary(tabData, speciesName);
@@ -797,7 +815,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // パネル
   var panels = tabData.map(function(d) {
-    return renderTabPanel(d.tab, d.picks, speciesName, equipmentKey);
+    return renderTabPanel(d.tab, d.picks, speciesName, equipmentKey, d.held);
   }).join('');
 
   return '<section class="sk-section" aria-label="' + heading + '">' +
@@ -1018,7 +1036,7 @@ function mountStarterKit(species, mountId, analyticsCtx) {
   });
 
   if (typeof gtag === 'function') {
-    var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
+    var essentialPicks = generateKitByTier(species.equipmentKey, 'budget', species.slug);
     gtag('event', 'starter_kit_shown', {
       species_name:     _skStr(species.name),
       species:          _skStr(species.name),
@@ -1035,9 +1053,9 @@ function mountStarterKit(species, mountId, analyticsCtx) {
     });
 
     // Phase 20-E: bundle_view — fired once on kit mount
-    var _bvBudget = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'budget'));
-    var _bvStd    = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'standard'));
-    var _bvPrem   = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'premium'));
+    var _bvBudget = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'budget', species.slug));
+    var _bvStd    = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'standard', species.slug));
+    var _bvPrem   = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'premium', species.slug));
     gtag('event', 'bundle_view', {
       species:              _skStr(species.name),
       equipment_key:        _skStr(species.equipmentKey),

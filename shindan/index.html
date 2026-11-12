@@ -2198,6 +2198,7 @@ function renderStarterKitV2(sp) {
   if (!equipKey) { sec.style.display = 'none'; return; }
 
   var spV2 = {
+    slug:         sp.slug || '',
     equipmentKey: equipKey,
     name:         sp.name       || '',
     difficulty:   sp.difficulty || '',
