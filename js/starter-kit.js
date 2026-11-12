@@ -333,7 +333,7 @@ function renderCostBox(picks, opts) {
         '<div class="sk-cost-value sk-cost-diff">' + diff + '</div>' +
       '</div>' +
       '<div class="sk-cost-item">' +
-        '<div class="sk-cost-label">寿命目安</div>' +
+        '<div class="sk-cost-label">' + (opts.lifespanLabel || '寿命目安') + '</div>' +
         '<div class="sk-cost-value">' + life + '</div>' +
       '</div>' +
     '</div>' +

@@ -690,3 +690,23 @@
 - Node263PASS、Python48OK、実Chromeの10カードと375/1280px確認。公開保留、commit/push/PR/merge未実施。詳細: docs/qa/kid-model-verification-20261112.md。
 
 - 追加指示で衣装ケースの複数実例（長期利用と破損の双方）を反映。天馬FAQを他社全製品へ一般化しない。Node263PASS・独立レビューBLOCKER0・追加表示確認済み。Owner承認で元2CTA停止のままPR/merge工程へ移行。本番未確認。
+
+## [2026-11-12] 飼育情報の残る根拠・意味の是正（ローカル候補、未公開）
+
+- **Actor:** ChatGPT（調査・実装・独立レビュー）
+- **Change:** 17レコードの記録最大甲長を出典・分類範囲とともに同期。根拠のない通常サイズ帯5件を記録上限と区別。寿命8種を平均/飼育期間記録/機関の案内へ分類し、種ページ・診断・共通表示・案内人に反映。容器紹介3ページの一律倍率・長さ/面積の単位混同・無出典流量倍率を条件付き説明へ変更。
+- **Reason:** Owner「未確認を確認して」「他の何々が未確認を無くして」。未確立値を埋めるのでなく、取得資料の意味と掲載範囲を明確にするため。
+- **PR/Commit:** `codex/remaining-care-evidence-20261112`、開始main `e94ef55284f847eb845d46427701bd0307ea144a`。commit/push/PR/merge未実施。
+- **Approver:** Ownerの見直し指示に基づく候補作成。公開前の実画面確認・統合判断は未完了。
+- **Conforms:** 変更範囲固定、根拠と未評価の分離。KID/商品URL/GA4/CITES/順位は変更なし。
+- **Evidence:** `docs/qa/remaining-care-evidence-20261112.md`、`docs/qa/size-evidence-20261112.md`、`docs/fixed-facts/lifespan-evidence-20261112.md`。
+
+## [2026-11-12] 飼育根拠候補のPC確認・KID先行main統合
+
+- **Actor:** ChatGPT（実装・別担当による独立レビュー/PC検証）。
+- **Change/Reason:** Owner「進めて」で画面確認後の反映工程へ。PR #222 main `6b0ff0ad368fa11f79c0feff1e349208fc11068c` を取り込み、KIDコードを保持。共有docsの競合だけを解消し両方の履歴を残した。
+- **Validation:** PC Python58/58、寿命90/90、元43ファイルhash一致、28HTMLの375/1280px横はみ出し0、8種寿命共通部品・実12問診断・代表画面・#growth確認。cloudの57/58環境ERROR履歴は保持。
+- **PR/Commit:** 原候補 `ea1eb764fc7524c589133ef57cd1c20ea64ef551`、PC記録 `8277e00c`、branch `codex-remaining-care-evidence-20261112`。本番確認は未実施。
+- **Approver/Conforms:** Owner継続指示。対象外0を最終差分で確認し、商品URL/GA4/CITES/順位/CSS不変を維持する。
+
+- **KID先行公開の実測報告受領:** PR #222 merge `6b0ff0ad368fa11f79c0feff1e349208fc11068c`、Pages run43169226211成功。担当が公開3ファイルHTTP200/改行正規化完全一致と本番Chrome10カード/21出典/元2CTA停止を確認。careではKIDのサイトファイルを変更せず保持。

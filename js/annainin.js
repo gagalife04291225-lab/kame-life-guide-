@@ -55,15 +55,8 @@
   }
 
   function lifespanSummary() {
-    var min = null, max = null, minName = null, maxName = null;
-    allSpecies().forEach(function (s) {
-      var nums = s.coreSpecs && parseNums(s.coreSpecs.lifespan);
-      if (!nums) return;
-      var lo = Math.min.apply(null, nums), hi = Math.max.apply(null, nums);
-      if (min === null || lo < min) { min = lo; minName = s.name; }
-      if (max === null || hi > max) { max = hi; maxName = s.name; }
-    });
-    return { min: min, max: max, minName: minName, maxName: maxName };
+    // 寿命目安・飼育期間の記録・上限未確立を同じ数値範囲に集計しない。
+    return { min: null, max: null, minName: null, maxName: null };
   }
 
   // coreSpecs.size は「最大甲長」（上限側の数字）。雌雄併記（例「オス7cm/メス12cm」）の
@@ -269,10 +262,7 @@
     },
 
     lifespan: function () {
-      var l = lifespanSummary();
-      var lede = (l.min !== null && l.max !== null)
-        ? 'データベースに登録されている亀では、寿命はおおよそ' + l.min + '〜' + l.max + '年の幅があります（短命な種の例：' + (l.minName || '一部の水棲種') + '、長寿な種の例：' + (l.maxName || '大型リクガメ') + '）。'
-        : '亀は種類によって寿命が大きく異なります。';
+      var lede = '亀の寿命は、平均寿命と長く飼育された個体の記録を分けて見る必要があります。種ごとのページで、資料が示す内容を確認してください。';
       return {
         reply: lede + '長く一緒に暮らす前提で選ぶことが後悔の少なさにつながるので、種類一覧やお迎え前に診断ツールで暮らし方との相性を確認しておくと安心です。',
         quickReplies: ['種類一覧を見る', '診断してみる'],

@@ -1219,15 +1219,17 @@
         "note": "外部一次資料での検証未了。サイト既存表記を正として扱わないこと。"
       },
       "max_shell_length_cm": {
-        "value": 28,
+        "value": 35.7,
         "verification": "LIKELY",
-        "provenance": "official",
-        "note": "資料対立は亜種差で解決(2026-08-17): 西亜種T. h. hermanniはおおむね18cm以下・東亜種boettgeriは最大28cm級。国内流通は東亜種系中心",
+        "provenance": "academic",
+        "note": "TTWG 2025 p.367 掲載の最大直線甲長（SCL）：種全体のオス31.4cm・メス35.7cm。一般的な成体サイズや将来の成長予測ではない。",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_059_hermanni_v1_2011.pdf",
           "https://lafeber.com/vet/basic-information-sheet-hermanns-tortoise/"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -1353,10 +1355,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限。屋外囲いの併用が望ましい",
+            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限。屋外囲いの併用が望ましい【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "120cm級（Testudo中でも大型）"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         },
         "substrate": {
@@ -2965,17 +2967,19 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 17.5,
+        "value": 21.4,
         "verification": "LIKELY",
-        "provenance": "official",
-        "note": "一部個体群でオス175mm超・メス165mm超（Berry & Iverson 2001, CAAR）。Naturalis: オス17.4cm・メス15.8cm（オスの方が大きい）。コロンビアNus川の個体群は他より小型（Ceballos et al. 2016）。旧noteの「コロンビア個体群研究に20cm超」は2026-11-12の確認で原典を特定できず削除。一般的な成体サイズの信頼できる値は未確認。2026-11-12 に17→17.5へ更新（診断・記事の表示「17.5cm超（オス）」とそろえるため）",
+        "provenance": "academic",
+        "note": "TTWG 2025 p.144 掲載の最大直線甲長（SCL）：種全体・基亜種のオス21.4cm・メス20.8cm。一般的な成体サイズや将来の成長予測ではない。旧17.5cm超は別資料の下限を伴う記録で上限ではない。postinguinaleの最大値（オス17.4cm・メス15.8cm）とは区別。一般的な成体サイズはこの最大記録から推定しない。",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=3913",
           "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=8016&epi=11",
           "https://core.ac.uk/download/211381739.pdf",
           "https://doi.org/10.1670/15-035"
         ],
-        "last_verified": "2026-11-12"
+        "last_verified": "2026-11-12",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -3072,7 +3076,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "属最大級のサイズを国内規格へ換算",
+            "basis": "属最大級のサイズを国内規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "60cm開始可"
           },
           "last_verified": "2026-08-17",
@@ -4202,15 +4206,17 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 27.3,
+        "value": 27.9,
         "verification": "LIKELY",
-        "provenance": "official",
-        "note": "メス273mm・オス117mm（USGS/TFTSG）。雌雄差2倍超",
+        "provenance": "academic",
+        "note": "TTWG 2025 p.170 掲載の最大直線甲長（SCL）：オス12.2cm・メス27.9cm。一般的な成体サイズや将来の成長予測ではない。",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://www.usgs.gov/publications/graptemys-pulchra-baur-1893-alabama-map-turtle",
           "https://iucn-tftsg.org/graptemys-pulchra-072/"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -4263,7 +4269,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "雌雄差2倍超のサイズ記録を国内規格へ換算",
+            "basis": "雌雄差2倍超のサイズ記録を国内規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "メスを迎えるなら最初から90cm以上を計画"
           },
           "last_verified": "2026-08-17",
@@ -4892,15 +4898,17 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 23,
+        "value": 20.4,
         "verification": "LIKELY",
-        "provenance": "official",
-        "note": "種として: オス約13cm・メス平均19cm・最大23cm超の記録（北米で最大級の雌雄差）",
+        "provenance": "academic",
+        "note": "TTWG 2025 p.173 掲載の最大直線甲長（SCL）：亜種centrataのオス15.0cm・メス20.4cm。一般的な成体サイズや将来の成長予測ではない。旧23cmは種全体の資料であり、本亜種の最大としては採用しない。",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
           "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -4961,7 +4969,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "雌雄差と遊泳性を国内規格へ換算",
+            "basis": "雌雄差と遊泳性を国内規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "メス前提で90cm以上"
           },
           "last_verified": "2026-08-17",
@@ -5223,9 +5231,15 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": null,
-        "verification": "UNPROVEN",
-        "note": "外部一次資料での検証未了"
+        "value": 20.6,
+        "verification": "LIKELY",
+        "note": "TTWG 2025 p.156 掲載の最大直線甲長（SCL）：オス18.6cm・メス20.6cm。一般的な成体サイズや将来の成長予測ではない。同資料は古い25cmという数値の根拠記録がないと注記。S. triporcatusとは区別。",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
+        "last_verified": "2026-11-12",
+        "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf"
+        ]
       },
       "conservation": {
         "env_redlist": {
@@ -5703,12 +5717,14 @@
       "max_shell_length_cm": {
         "value": 23.5,
         "verification": "LIKELY",
-        "provenance": "official",
-        "note": "TFTSG 2015: 亜種majorの雄で23.5cm（カロリナハコガメ群最大）",
+        "provenance": "academic",
+        "note": "TTWG 2025 p.217 掲載の最大直線甲長（SCL）：オス23.5cm・メス18.9cm。一般的な成体サイズや将来の成長予測ではない。",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_085_carolina_v1_2015.pdf"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-12",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -5759,7 +5775,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "群最大亜種のサイズを国内規格へ換算",
+            "basis": "群最大亜種のサイズを国内規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "120cm級の床面積を計画"
           },
           "last_verified": "2026-08-17",
@@ -7010,15 +7026,16 @@
         "note": "外部一次資料での検証未了"
       },
       "max_shell_length_cm": {
-        "value": 27.9,
+        "value": 30,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "USFWS（Chen & Lue 2009 を引用）",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://www.fws.gov/sites/default/files/documents/Ecological-Risk-Screening-Summary-Chinese-Striped-necked-Turtle.pdf"
         ],
-        "note": "甲長30〜279mm（Chen & Lue 2009）。メスがオスより大型で、メスは26cm級",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.278 掲載の最大直線甲長（SCL）：オス20.0cm・メス30.0cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -7078,7 +7095,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長27.9cm。メス26cm級を前提に国内水槽規格へ換算",
+            "basis": "甲長27.9cm。メス26cm級を前提に国内水槽規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "オス60〜90cm可・成体メスは120cm級"
           },
           "last_verified": "2026-09-12"
@@ -7935,15 +7952,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 35.0,
+        "value": 35.1,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "IUCN Red List／IUCN/SSC TFTSG 種概説",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/cbftt/species-accounts/chersina-angulata-030/"
         ],
-        "note": "最大甲長35cm（350mm）。本種はオスがメスより大型。ただし通常の成体は21〜27cm程度とする資料もあり（Earthpedia: オス27.2cm・メス21.6cm）、35cmは上限値",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.325 掲載の最大直線甲長（SCL）：オス35.1cm・メス21.6cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8013,10 +8031,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長35cm×5=175cm。国内ケージ規格（最大120cm）を超える。通常の成体は21〜27cm程度だが、上限の35cmを前提に計画する",
+            "basis": "甲長35cm×5=175cm。国内ケージ規格（最大120cm）を超える。通常の成体は21〜27cm程度だが、上限の35cmを前提に計画する【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "成体は120cm規格でも手狭。特注ケージか部屋飼い（屋外は高温多湿を避けられる時期に限る）"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         }
       }
@@ -8039,15 +8057,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 36.0,
+        "value": 38,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/indotestudo-elongata-096/"
         ],
-        "note": "直甲長最大360mm（Taylor 1970; Stuart et al. 2001; Auliya 2007）。多くの個体は280〜300mm",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.336 掲載の最大直線甲長（SCL）：オス38.0cm・メス31.0cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8117,10 +8136,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長36cm×5=180cm。国内ケージ規格（最大120cm）を超えるため、規格品だけでは終生飼育できない",
+            "basis": "甲長36cm×5=180cm。国内ケージ規格（最大120cm）を超えるため、規格品だけでは終生飼育できない【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         }
       }
@@ -8150,16 +8169,17 @@
         "last_verified": "2026-08-20"
       },
       "max_shell_length_cm": {
-        "value": 22.0,
+        "value": 23,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "California Turtle & Tortoise Club／Wikipedia",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://tortoise.org/archives/kinixys.html",
           "https://en.wikipedia.org/wiki/Bell's_hinge-back_tortoise"
         ],
-        "note": "最大22cm。独立2資料が一致",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.338 掲載の最大直線甲長（SCL）：23.0cm（性別の記載なし）。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8229,10 +8249,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。サバンナ性で乾季の休眠があるため床材を厚く敷ける床面積を確保する",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。サバンナ性で乾季の休眠があるため床材を厚く敷ける床面積を確保する【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "120cm級（床面積優先・隠れ家必須）"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         }
       }
@@ -8255,15 +8275,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 22.0,
+        "value": 25.8,
         "verification": "LIKELY",
-        "provenance": "official",
-        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group 種概説",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/kinixys-homeana-070/"
         ],
-        "note": "直甲長は220mmを超えない（Luiselli & Diagne 2013）。メスがオスより大型",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.339 掲載の最大直線甲長（SCL）：オス25.1cm・メス25.8cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -8333,10 +8354,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。熱帯雨林性で高湿度の維持が要るため密閉性の高いケージが望ましい",
+            "basis": "甲長22cm×5=110cm。最も近い国内ケージ規格は120cm。熱帯雨林性で高湿度の維持が要るため密閉性の高いケージが望ましい【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "120cm級（床面積優先・高湿度維持）"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         }
       }
@@ -8581,14 +8602,16 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 35,
+        "value": 38.9,
         "verification": "LIKELY",
-        "provenance": "literature",
+        "provenance": "academic",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/cbftt/species-accounts/testudo-graeca-eastern-subspecies-clades-120/"
         ],
-        "last_verified": "2026-08-31",
-        "note": "通常成体はオス〜18cm・メス〜21cm（TFTSG）。大型個体群（アナトリア等）で30cm超、例外的に35cm。サイト表記は18〜25cm基準＋大型個体群30cm超の補足"
+        "last_verified": "2026-11-12",
+        "note": "TTWG 2025 p.358 掲載の最大直線甲長（SCL）：イベラ亜種のオス38.9cm・メス31.5cm。一般的な成体サイズや将来の成長予測ではない。",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025"
       },
       "conservation": {
         "env_redlist": {
@@ -9408,13 +9431,14 @@
       "max_shell_length_cm": {
         "value": 24.1,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 008, 2008）",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_008_mccordi_v1_2008.pdf"
         ],
-        "note": "CBFTT 種概説は記録個体（成熟メス）の甲長 241mm と記載。成熟サイズ（♀ 約178mm・♂ 約190mm）とは別の最大記録値。前回の据え置き理由（成熟サイズしか取れない）は解消した。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.54 掲載の最大直線甲長（SCL）：オス20.2cm・メス24.1cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -9491,7 +9515,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "converted_from_shell_length",
-            "basis": "甲長24.1cm×4=96.4cm → 水槽規格 90cm（差6.4cm）が 120cm（差23.6cm）より近い",
+            "basis": "甲長24.1cm×4=96.4cm → 水槽規格 90cm（差6.4cm）が 120cm（差23.6cm）より近い【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "遊泳性の水棲種。水深より遊泳距離を優先する"
           },
           "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
@@ -9930,16 +9954,17 @@
         "verification": "UNPROVEN"
       },
       "max_shell_length_cm": {
-        "value": 30.0,
+        "value": 30,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "California Turtle & Tortoise Club / Naturalis Turtles of the World",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://www.tortoise.org/archives/chelodin.html",
           "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=7925"
         ],
-        "note": "最大甲長300mm。平均は200mm。メスは甲長17cmで成熟",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.53 掲載の最大直線甲長（SCL）：オス24.9cm・メス28.2cm。一般的な成体サイズや将来の成長予測ではない。CTTC・Naturalisの30cmという別資料値を保持。TTWGの28.2cmとの資料差があり、絶対的な上限とはしない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -10007,7 +10032,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "最大甲長30cm。首が甲長の約6割あり、実際の遊泳長は甲長を大きく上回るため大きめに換算",
+            "basis": "最大甲長30cm。首が甲長の約6割あり、実際の遊泳長は甲長を大きく上回るため大きめに換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "成体は90〜120cm（首の長さ込み）"
           },
           "last_verified": "2026-09-12"
@@ -11490,14 +11515,15 @@
       "max_shell_length_cm": {
         "value": 22.6,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "IUCN/SSC Tortoise and Freshwater Turtle Specialist Group（CBFTT 種概説 123, 2023）",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://iucn-tftsg.org/rhinoclemmys-annulata-123/",
           "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.123.annulata.v1.2023.pdf"
         ],
-        "note": "CBFTT 種概説は最大 SCL 226mm（♀）・♂ は 202mm と記載。メス基準で 22.6cm。原典PDFは本作業環境から取得不可（egress BLOCKED）。検索インデックス経由で該当箇所を引用した。原典確認が残る。判定基準はメス。運営者は本種を飼育していない",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.287 掲載の最大直線甲長（SCL）：オス20.2cm・メス22.6cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -11562,7 +11588,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "converted_from_shell_length",
-            "basis": "甲長22.6cm×5=113cm → ケージ規格 120cm が最も近い",
+            "basis": "甲長22.6cm×5=113cm → ケージ規格 120cm が最も近い【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "湿潤林の陸生種。高湿度と落ち葉の厚い床材を要する"
           },
           "note": "終生飼育の目安。子亀期の値は含めない。運営者は本種を飼育していない",
@@ -12165,13 +12191,14 @@
       "max_shell_length_cm": {
         "value": 26.6,
         "verification": "LIKELY",
-        "provenance": "peer_reviewed",
-        "institution": "Herpetological Review",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://www.researchgate.net/publication/313200344_Chrysemys_picta_bellii_Western_Painted_Turtle_Record_Carapace_Length"
         ],
-        "note": "メス直甲長266mmの記録個体（従来記録254mm）。亜種中最大",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.159 掲載の最大直線甲長（SCL）：オス20.8cm・メス26.6cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12228,7 +12255,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "亜種中最大（メス26.6cm記録）のサイズを国内水槽規格へ換算",
+            "basis": "亜種中最大（メス26.6cm記録）のサイズを国内水槽規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "オス60cm可・メス90〜120cm"
           },
           "last_verified": "2026-09-12"
@@ -12701,16 +12728,17 @@
         "note": "外部一次資料での検証未了。ページ本文の分布記述を正としない。"
       },
       "max_shell_length_cm": {
-        "value": 28.0,
+        "value": 35.7,
         "verification": "LIKELY",
-        "provenance": "expert_consensus",
-        "institution": "Wikipedia／iNaturalist／LafeberVet（いずれも同一の分類文献群に依拠）",
+        "provenance": "academic",
+        "institution": "IUCN/SSC TFTSG・TTWG 2025",
         "sources": [
+          "https://iucn-tftsg.org/wp-content/uploads/crm.10.checklist.atlas_.v10.2025.pdf",
           "https://en.wikipedia.org/wiki/Hermann's_tortoise",
           "https://www.inaturalist.org/guide_taxa/895805"
         ],
-        "note": "T. h. boettgeri は最大28cm。本種群で最大の亜種。平均甲長は13〜18cm（IUCN TFTSG 種概説）",
-        "last_verified": "2026-09-12"
+        "note": "TTWG 2025 p.369 掲載の最大直線甲長（SCL）：東亜種boettgeriのオス31.4cm・メス35.7cm。一般的な成体サイズや将来の成長予測ではない。",
+        "last_verified": "2026-11-12"
       },
       "conservation": {
         "env_redlist": {
@@ -12804,10 +12832,10 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限で、屋外囲いの併用が望ましい",
+            "basis": "甲長28cm×5=140cm。国内ケージ規格では120cm級が上限で、屋外囲いの併用が望ましい【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
             "jp_note": "120cm級（本種群で最大の亜種）"
           },
-          "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
+          "note": "当時採用していた max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
           "last_verified": "2026-09-12"
         }
       }

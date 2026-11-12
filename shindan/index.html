@@ -1262,7 +1262,7 @@ body {
     <!-- PHASE 5: 寿命バナー -->
     <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
       <span class="lifespan-icon">⏳</span>
-      <div class="lifespan-text">寿命の目安：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
+      <div class="lifespan-text"><span id="lifespan-label">寿命の目安</span>：<span class="lifespan-years" id="lifespan-years"></span>　長期的なお付き合いになります。</div>
     </div>
     <!-- PHASE 5: 初心者警告 -->
     <div class="beginner-warn" id="beginner-warn" role="alert"></div>
@@ -1746,12 +1746,12 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
 }
 
 
-// ===== PHASE 5: 寿命データ（平均寿命目安） =====
+// ===== PHASE 5: 寿命データ（既存表示。資料確認済みの種は coreSpecs を優先） =====
 var LIFESPAN_DATA = {
   // リクガメ
-  'ロシアリクガメ':              '40〜50年',
-  'ヘルマンリクガメ（ヒガシ亜種）': '50〜80年',
-  'ヘルマンリクガメ（ニシ亜種）':  '50〜80年',
+  'ロシアリクガメ':              '60年以上にわたる飼育例',
+  'ヘルマンリクガメ（ヒガシ亜種）': '数十年単位・上限は未確立',
+  'ヘルマンリクガメ（ニシ亜種）':  '数十年単位・上限は未確立',
   'ギリシャリクガメ':            '50〜100年',
   'フチゾリリクガメ':            '50〜100年',
   'エロンガータリクガメ':        '40〜60年',
@@ -1764,11 +1764,11 @@ var LIFESPAN_DATA = {
   'アルダブラゾウガメ':          '80〜150年以上',
   'インプレッサムツアシガメ':    '不明（長寿と推定）',
   // 水棲
-  'ニオイガメ':                  '30〜50年',
+  'ニオイガメ':                  '54年以上の飼育記録（平均は不明）',
   'ヒラタニオイガメ':            '20〜30年',
   'ミシシッピドロガメ':          '20〜30年',
   'ミスジドロガメ':              '20〜30年',
-  'カブトニオイガメ':            '20〜30年',
+  'カブトニオイガメ':            '29年以上の飼育記録',
   'スジクビニオイガメ':          '20〜30年',
   'ホオアカドロガメ':            '20〜30年',
   'ペインテッドタートル':        '25〜40年',
@@ -1776,12 +1776,12 @@ var LIFESPAN_DATA = {
   'キバラガメ':                  '25〜40年',
   'ミシシッピアカミミガメ':      '30〜40年',
   'ミシシッピチズガメ':          '20〜30年',
-  'ニホンイシガメ':              '20〜30年',
+  'ニホンイシガメ':              '雄約10〜15年・雌約20〜30年（動物園の案内）',
   'ヤエヤマイシガメ':            '20〜30年',
   'マタマタ':                    '15〜30年',
   'ブランディングガメ':          '60〜80年以上',
   // ヤマガメ・ハコガメ
-  'スペングラーヤマガメ':        '25〜40年',
+  'スペングラーヤマガメ':        '20年以上（動物園の案内）',
   'ヒラセガメ':                  '30〜50年',
   'ミツユビハコガメ':            '30〜50年',
   'トウブハコガメ':              '50〜100年',
@@ -1832,7 +1832,9 @@ function renderPhase5(sp) {
   // 2) 寿命バナー
   var lifespanBanner = document.getElementById('lifespan-banner');
   var lifespanYears = document.getElementById('lifespan-years');
-  var lifespan = LIFESPAN_DATA[sp.name];
+  var lifespan = sp.lifespanEvidence ? sp.coreSpecs.lifespan : LIFESPAN_DATA[sp.name];
+  document.getElementById('lifespan-label').textContent = sp.lifespanEvidence ? '寿命の資料' : '寿命の目安';
+  lifespanBanner.setAttribute('aria-label', sp.lifespanEvidence ? '寿命の資料' : '寿命の目安');
   if (lifespan) {
     lifespanYears.textContent = lifespan;
     lifespanBanner.style.display = '';
@@ -2169,7 +2171,8 @@ function renderStarterKitV2(sp) {
     equipmentKey: equipKey,
     name:         sp.name       || '',
     difficulty:   sp.difficulty || '',
-    lifespan:     LIFESPAN_DATA[sp.name] || '',
+    lifespan:     sp.lifespanEvidence ? sp.coreSpecs.lifespan : (LIFESPAN_DATA[sp.name] || ''),
+    lifespanLabel: sp.lifespanEvidence ? '寿命の資料' : '寿命目安',
     // monthlyCost omitted — V2 uses its own default (¥1,000〜3,000)
   };
 
@@ -2760,7 +2763,8 @@ function calcResult() {
           reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメははじめての1頭に最も適した定番種です。',
           hasPage: true, slug: 'musk-turtle', links: [],
           equipmentKey: '_aquatic_small',
-          coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+          coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
+          lifespanEvidence: { note: 'カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
           match: function(){ return true; }, score: function(){ return 0; }
         };
       }
@@ -2951,7 +2955,8 @@ function calcResult() {
       difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
       reason: 'はじめての1頭に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
       hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
-      coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '20〜30年', diet: '雑食' },
+      coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
+      lifespanEvidence: { note: 'カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
       match: function(){ return true; }, score: function(){ return 0; }
     };
     result = fallbackSp;
@@ -3726,7 +3731,7 @@ function showResult(sp, pct, runners) {
   var specGrid = document.getElementById('res-specs');
   specGrid.innerHTML = '';
   // coreSpecs/extraSpecs（新スキーマ）を優先、specsフィールド（旧）にフォールバック
-  var coreLabels = { size: '最大甲長', temp: '温度帯', lifespan: '寿命', diet: '食性' };
+  var coreLabels = { size: '最大甲長', temp: '温度帯', lifespan: sp.lifespanEvidence ? '寿命の資料' : '寿命', diet: '食性' };
   var extraLabels = { tankSize: '水槽サイズ', substrate: '底床', salinity: '塩分濃度', waterFlow: '水流', uvb: 'UVB', humidity: '湿度', filter: 'フィルター', basking: 'バスキング' };
   if (sp.coreSpecs) {
     Object.entries(sp.coreSpecs).forEach(function(entry){
@@ -3746,6 +3751,18 @@ function showResult(sp, pct, runners) {
     Object.entries(sp.specs).forEach(function(entry){
       specGrid.innerHTML += '<div class="spec-item"><div class="spec-label">' + entry[0] + '</div><div class="spec-value">' + entry[1] + '</div></div>';
     });
+  }
+  if (sp.lifespanEvidence) {
+    var lifeNoteEl = document.createElement('p');
+    lifeNoteEl.className = 'spec-note';
+    lifeNoteEl.textContent = sp.lifespanEvidence.note + ' 出典：';
+    var lifeSource = document.createElement('a');
+    lifeSource.href = sp.lifespanEvidence.url;
+    lifeSource.textContent = sp.lifespanEvidence.source;
+    lifeSource.target = '_blank';
+    lifeSource.rel = 'noopener';
+    lifeNoteEl.appendChild(lifeSource);
+    specGrid.appendChild(lifeNoteEl);
   }
   // 最大甲長の注記（資料に記録された上限か・一般的な成体サイズはどのくらいか）。種データに sizeNote がある種だけ表示
   if (sp.sizeNote) {

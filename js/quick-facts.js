@@ -138,7 +138,7 @@ function renderQuickFacts(opts) {
     },
     {
       icon: '⏳',
-      label: '寿命目安',
+      label: opts.lifespanLabel || '寿命目安',
       value: '<span class="qf-lifespan">' + lifespanText + '</span>',
     },
     {
