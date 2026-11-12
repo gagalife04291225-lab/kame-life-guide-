@@ -2102,12 +2102,12 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 
 
 ## CURRENT_TASK_PH73 — 便利ワザの排水用品例（2026-11-13 JST）
-- CURRENT_BASE（この独立作業）: main `17c981ae55867343f43eeab478f600ff11acd934`、branch `codex/ph73-keeper-20261113`。法令修正PR #237とは独立し、上のNEXTを上書きしない。
+- CURRENT_BASE（この独立作業）: main `17c981ae55867343f43eeab478f600ff11acd934`、branch `codex-ph73-keeper-20261113`。法令修正PR #237とは独立し、上のNEXTを上書きしない。
 - Ownerの商品追加・便利ワザ強化依頼に対応。`guides/keeper-hacks.html`の排水手順の折りたたみ内へ、水作クイック水替えポンプPH-73の例を2短段落で追加。初期表示は長くせず、既存のスポイト・小網の項目へ接続。
 - FIXED: 公式商品ページの浅いカメ水槽用途、説明書のホース約1.1m・水槽からホース先端まで10cm以上の落差を反映。根拠は https://www.suisaku.com/product/maintenance_goods/2045/ と https://www.suisaku.com/sys/wp-content/uploads/2025/09/PK-23_quick-drain-pump-normal.pdf 。販売店の旧魚専用文言でメーカー現行用途を否定しない。
 - 商品価格・評価・運営者の使用体験・砂利やフンの除去性能を新規記載しない。新規購入リンクなし。既存Amazon/楽天8URL・GA4 script・head・CSS・8つの工夫は不変。
 - 検証: 専用9件PASS、Python全98件PASS（UTF-8、作業フォルダ限定tzdataで実行）。旧mainを新2テストに渡すと1 FAIL/1 ERRORで追加欠落を検出。購入8URLとGA4完全一致、diff check PASS。
 - PC Chrome: 320/390/1280pxで横溢れ0、console error0。クリック展開、Enterで閉じる→開く、スポイト項目へのリンク→戻るを確認。390pxと1280pxは画像目視。新規テキスト既存色のコントラストは本文12.89:1/リンク7.22:1。
 - 独立レビュー: BLOCKER0、必須修正0。スマホ実機・実機読み上げは未実施。これはポンプ自体の使用レビューではない。
-- 状態: PR作成前の検証完了。merge/本番確認は未実施。PR番号は作成後に追記する。旧クラウド候補のsocket権限エラーはPCでの画面確認により今回解消。
+- 状態: PR #238（Draft）作成、実装commit `aad07fc2`。merge/本番確認は未実施。旧クラウド候補のsocket権限エラーはPCでの画面確認により今回解消。
 - DO_NOT_REPEAT: PH-73メーカー仕様確認・最小実装。公開時には最新main/他PRとの重複と今回ページの配信内容を確認する。
