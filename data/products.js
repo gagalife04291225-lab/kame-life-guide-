@@ -2142,7 +2142,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B08W314BWC?tag=kamelife090e-22',
     asin: 'B08W314BWC',
     image: '/assets/products/placeholder.webp',
-    why: '国産天然素材100%の細粒床材。通気性が高く地中海系リクガメの乾燥環境を再現でき、軽く掘れるため自然な行動も促しやすい', // Phase 39-P6: 3文→2文に統一
+    why: '通水性・通気性のある天然土の床材。湿らせると色が変わり、湿り具合を確認できます。使用量と湿度は飼育する種に合わせて調整します', // Phase 39-P6: 3文→2文に統一
     rating: 4.3,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small'],

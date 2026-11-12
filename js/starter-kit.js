@@ -247,25 +247,10 @@ var SK_CAT_ORDER = [
   'shelter', 'water_dish', 'food', 'supplements'
 ];
 
-// 本種の標準候補としての裏付けが不足した商品を保留する。使用不可の断定ではない。
-var SK_SPECIES_PRODUCT_HOLDS = {
-  'home-hinge-back-tortoise': ['substrate_grassland_mix']
-};
-function getHeldKitItems(equipmentKey, tier, speciesSlug) {
-  var ids = SK_SPECIES_PRODUCT_HOLDS[speciesSlug] || [];
-  if (!ids.length) return [];
-  return generateKitByTier(equipmentKey, tier).filter(function(item) { return ids.indexOf(item.product.id) >= 0; });
-}
-function renderKitHoldNote(held, tier) {
-  if (!held || !held.length) return '';
-  var label = tier === 'standard' ? '標準価格帯' : tier === 'budget' ? '低価格帯' : '高価格帯';
-  return '<p class="sk-hint sk-selection-hold" data-sk-held-category="substrate">' + label + 'では、床材の購入候補を選定していません。湿り気を保てる環境に合わせて、別途選んでください。この価格帯の合計に床材代は含めていません。</p>';
-}
-
 /**
  * 指定tierのピックリスト生成
  */
-function generateKitByTier(equipmentKey, tier, speciesSlug) {
+function generateKitByTier(equipmentKey, tier) {
   if (typeof PRODUCTS === 'undefined' || typeof EQUIPMENT_MAP === 'undefined') return [];
   if (!EQUIPMENT_MAP[equipmentKey]) return [];
 
@@ -293,8 +278,7 @@ function generateKitByTier(equipmentKey, tier, speciesSlug) {
     result.push({ cat: cat, tier: tier, product: pick });
   });
 
-  var heldIds = SK_SPECIES_PRODUCT_HOLDS[speciesSlug] || [];
-  return result.filter(function(item) { return heldIds.indexOf(item.product.id) < 0; });
+  return result;
 }
 
 /**
@@ -581,7 +565,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
 /**
  * タブパネル1枚のHTML
  */
-function renderTabPanel(tabDef, picks, speciesName, equipmentKey, held) {
+function renderTabPanel(tabDef, picks, speciesName, equipmentKey) {
   if (!picks.length) {
     return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel" hidden>' +
       '<p class="sk-empty">このカテゴリの商品は現在選定中です。</p>' +
@@ -598,13 +582,12 @@ function renderTabPanel(tabDef, picks, speciesName, equipmentKey, held) {
       ' role="status" aria-live="polite">' +
       '<span class="sk-progress-text">購入確認：<span class="sk-progress-done">0</span> / ' +
         _n + '商品</span>' +
-      '<span class="sk-progress-complete" hidden>✓ 表示中の商品をすべて確認しました</span>' +
+      '<span class="sk-progress-complete" hidden>✓ 必要商品をすべて確認しました</span>' +
     '</div>';
 
   return '<div class="sk-tab-panel" id="sk-panel-' + tabDef.id + '" role="tabpanel"' +
     (tabDef.id !== 'comfort' ? ' hidden' : '') + '>' +
     '<p class="sk-tab-desc">' + tabDef.icon + ' ' + tabDef.desc + '</p>' +
-    renderKitHoldNote(held, tabDef.tiers[0]) +
     progressHtml +
     '<div class="sk-scroll">' + cards + '</div>' +
   '</div>';
@@ -704,7 +687,7 @@ function renderBundleSummary(tabData, speciesName) {
           ? fmtYen(range.low) + '〜' + fmtYen(range.high)
           : fmtYen(range.low) + '〜')
       : '価格お問い合わせ';
-    var savingsStr  = (b.idx === 0 && !tabData.some(function(d) { return d.held && d.held.length; }) && !missingPriceCount && !_stdPicks.some(function(item) { return !item.product.priceRange; })) ? calcSavingsStr(range.low, _stdRange.low) : '';
+    var savingsStr  = (b.idx === 0 && !missingPriceCount && !_stdPicks.some(function(item) { return !item.product.priceRange; })) ? calcSavingsStr(range.low, _stdRange.low) : '';
     var savingsHtml = savingsStr
       ? '<div class="sk-bundle-savings">💰 スタンダードより' + savingsStr + '</div>'
       : '';
@@ -760,6 +743,21 @@ function renderBundleSummary(tabData, speciesName) {
   '</div>';
 }
 
+function renderHomeEquipmentNote(opts) {
+  if (opts.slug !== 'home-hinge-back-tortoise' && opts.name !== 'ホームセオレガメ') return '';
+  return '<aside class="sk-hint sk-home-conditions"><strong>ホームセオレでは、湿った床と水場まで考えて選びます</strong>' +
+    '<p>価格帯は飼育段階ではありません。45cm・90cmの容器を成体用として選ばず、本サイトの成体120cm級という目安と、隠れ家・水場を置いた後の床面積を確認してください。</p>' +
+    '<details><summary>床材の量・水場・保温を確認する</summary>' +
+    '<p>湿らせたバークやヤシガラに落ち葉を重ねる飼育例があります。デザートベースも湿り具合を見ながら使える天然土です。赤玉土・ソイル・バークも、商品名だけで決めず、加温した状態で湿り気を保てるかを見ます。水浸しにするのではなく、換気と清掃も続けます。</p>' +
+    '<p>床材の価格は掲載された袋・商品単位です。合計にはケージに必要な袋数を反映していません。必要量の目安は「内底面の長さcm × 幅cm × 敷く厚さcm ÷ 1,000」でLに換算できます。水場などを除く実際の敷く面積で計算してください。kg表示の土は、そのままLに換算できません。</p>' +
+    '<p>デザートベースのメーカー使用目安は厚さ3〜5cmで、種により量・湿度を調整する指定です。これはホームセオレの産卵床まで満たす厚さの指定ではありません。掘れる深さを取った飼育例とは分けて考えます。</p>' +
+    '<p>水入れが一覧にない場合も、飲んだり体を浸したりできる水場は必要です。浅く出入りしやすい容器を体格に合わせて用意します。飲み水用の小皿だけで全身浴まで兼ねられるとは限りません。</p>' +
+    '<p>底面ヒーターは補助加温です。厚く敷いた床材の下や機器の表示温度だけで判断せず、亀がいる床面・隠れ家・空気の温度を確認します。器具の取り付け方とサーモスタットの使用可否は各メーカーの説明に従ってください。UVBは商品名の数字だけで比較せず、設置距離・網の有無・日陰を確認します。</p>' +
+    '<p>診断の入口によって候補の組み合わせが異なるため、上の条件はどの価格帯にも当てはめてください。価格が高いほど本種に適した一式になる、という一覧ではありません。</p>' +
+    '<p>参考：<a href="https://product.gex-fp.co.jp/exoterra/index.php?cid=417&amp;id=2184&amp;m=ProductListDetail" target="_blank" rel="noopener">GEXの床材の使い方</a> / <a href="https://herpetoculturenetwork.com/homeana-at-home-care-and-breeding-of-kinixys-homeana/" target="_blank" rel="noopener">ホームセオレの飼育・繁殖例</a> / <a href="https://pitateki.com/faq.html" target="_blank" rel="noopener">底面ヒーターの使用条件</a></p>' +
+    '</details></aside>';
+}
+
 function renderStarterKitHtmlV2(equipmentKey, opts) {
   var speciesName = opts.name || '';
   var heading = speciesName ? (speciesName + 'の飼育セットガイド') : '飼育セットガイド';
@@ -781,14 +779,13 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // 各タブのpicks生成
   var tabData = SK_TABS.map(function(tab) {
-    var picks = generateKitByTier(equipmentKey, tab.tiers[0], opts.slug);
-    return { tab: tab, picks: picks, held: getHeldKitItems(equipmentKey, tab.tiers[0], opts.slug) };
+    var picks = generateKitByTier(equipmentKey, tab.tiers[0]);
+    return { tab: tab, picks: picks };
   });
 
   // Cost Box は推奨セット(standard)のpicksで計算（Phase 32-A1b: default tab=comfortと一致）
   var essentialPicks = tabData[1].picks;
   var costBoxHtml = renderCostBox(essentialPicks, opts);
-  if (tabData[1].held.length) costBoxHtml += '<p class="sk-hint">標準価格帯の候補合計は床材代を含みません。</p>';
 
   // Bundle Summary（タブ上部）
   var bundleSummaryHtml = renderBundleSummary(tabData, speciesName);
@@ -815,7 +812,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // パネル
   var panels = tabData.map(function(d) {
-    return renderTabPanel(d.tab, d.picks, speciesName, equipmentKey, d.held);
+    return renderTabPanel(d.tab, d.picks, speciesName, equipmentKey);
   }).join('');
 
   return '<section class="sk-section" aria-label="' + heading + '">' +
@@ -824,6 +821,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
       waterCareHtml +
       costBoxHtml +
       '<p class="sk-hint">容器は、価格より先に今の甲長と成体に必要な広さを確認しましょう。小さく始める場合は成長に合わせて広げます。下の用品は比較候補で、そのまま一式そろえれば飼えるという意味ではありません。</p>' +
+      renderHomeEquipmentNote(opts) +
       bundleSummaryHtml +
       controlNoteHtml +
       '<div class="sk-tabs" role="tablist">' + tabBtns + '</div>' +
@@ -1036,7 +1034,7 @@ function mountStarterKit(species, mountId, analyticsCtx) {
   });
 
   if (typeof gtag === 'function') {
-    var essentialPicks = generateKitByTier(species.equipmentKey, 'budget', species.slug);
+    var essentialPicks = generateKitByTier(species.equipmentKey, 'budget');
     gtag('event', 'starter_kit_shown', {
       species_name:     _skStr(species.name),
       species:          _skStr(species.name),
@@ -1053,9 +1051,9 @@ function mountStarterKit(species, mountId, analyticsCtx) {
     });
 
     // Phase 20-E: bundle_view — fired once on kit mount
-    var _bvBudget = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'budget', species.slug));
-    var _bvStd    = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'standard', species.slug));
-    var _bvPrem   = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'premium', species.slug));
+    var _bvBudget = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'budget'));
+    var _bvStd    = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'standard'));
+    var _bvPrem   = calcBundlePriceRange(generateKitByTier(species.equipmentKey, 'premium'));
     gtag('event', 'bundle_view', {
       species:              _skStr(species.name),
       equipment_key:        _skStr(species.equipmentKey),
