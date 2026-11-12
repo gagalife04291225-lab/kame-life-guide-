@@ -643,3 +643,14 @@
 - **PR/Commit:** ブランチ `claude/kid-gauge-aria-unbounded-20261112`。開始時 main `97e7e434f828263b6773c467ce62196e80b9cd30`。
 - **Approver:** Owner の作業指示。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+
+
+## 2026-11-12 — 初心者飼育案内の根拠追補
+
+- Actor: Codex（RO-3）。Owner指示「何故やらなかった？進めて」「見直して 正にして」。
+- Change: 9 HTML・master・診断2種のサイズ注記を整合。muskのUVB/温度/換水、3種のサイズ根拠、固定年齢による成長予測の撤去。順位・購入URL・CITES表示は不変。
+- Validation: Python41/41、13ファイルhash一致、9ページ375/1280横はみ出し0、重要箇所目視。詳細と未測定事項はdocs/qa/care-evidence-followup-20261112.md。
+- Status: 検証完了・PR/merge待ち。BASE0bc29360579461b90c3ddaf095a083671d8ded54、branch claude/care-evidence-followup-20261112、実装75e966c。PR番号・merge SHA・公開結果は未確定。
+- Conforms: Constitution v2.1 / handoff-gate / closeout-gate。
+
+- 追記: PR #219作成。Ownerの「入れて　マージして」により送信・merge承認。最終差分16ファイル、範囲外0、MERGEABLE/CLEAN（登録CIなし）、Python41/41再確認。本番はmerge後に別途実測する。
