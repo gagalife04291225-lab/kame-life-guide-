@@ -828,3 +828,10 @@ NEXT: 最新mainと差分を再確認、PRで公開判断。その後は残87種
 ## 2026-11-13 Home法令訂正のPC検証
 - Libraryで回収した候補へ診断推薦除外・直接URL参考表示・30日譲受届を追補。資料・種ページ・既飼育者用品は保持。
 - Python96全PASS。Windows既存tzdataを利用。商品714構成、他118種早見表、Chrome表示確認。Owner了承に基づきPR経由で公開工程へ。
+
+
+## 2026-11-13 — PH-73を便利ワザの排水例へ追加（未公開候補）
+- Actor: Codex / Change: keeper-hacksの折りたたみ内にメーカー確認済みPH-73の仕様・選ぶ条件・公式出典を追加。専用テスト2件。
+- Reason: Ownerの「商品を追加するものはない？」と便利ワザ強化依頼。初期表示の長文化、架空体験、未確認購入リンクを避ける。
+- BASE: 17c981ae55867343f43eeab478f600ff11acd934 / PR・Commit: 作成後PRに記録。
+- Approver: Ownerの作業依頼の範囲。merge/公開は未実施。Conforms: 専用9・Python98 PASS、実Chrome3幅、独立レビューBLOCKER0、購入URL8本/GA/CITES不変。
