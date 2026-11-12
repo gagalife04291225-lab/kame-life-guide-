@@ -6,7 +6,7 @@
 
 - **ローカル実装・検証完了**。初回検証時は外部送信なし。その後Ownerが送信・mergeを承認。本番反映はmerge後に別途確認する。
 - 作業開始時のmain: `0bc29360579461b90c3ddaf095a083671d8ded54`（`git ls-remote`で実測）。
-- ブランチ: `codex/shelter-size-evidence-20261112`。
+- ブランチ: `codex-shelter-size-evidence-20261112`。
 - 既存候補とは別cloneで作成。元候補をcheckout・編集・commitせず保存した。
 - 変更対象: `shelter-best10.html`、専用テスト、AI-HANDOFF、AI_CHANGELOG、本記録。サイト側は1 HTMLだけ。
 - 本件は3商品の適合断定の修正であり、全商品・全119種の根拠確認ではない。

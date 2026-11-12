@@ -50,7 +50,7 @@
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-11-12 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `codex/shelter-size-evidence-20261112`（既存の承認待ち候補とは別） |
+| 作業ブランチ | `codex-shelter-size-evidence-20261112`（既存の承認待ち候補とは別） |
 | 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
@@ -1912,7 +1912,7 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ### シェルター限定修正のmerge・本番確認ゲート
 
-**対象**: `codex/shelter-size-evidence-20261112` の記事・回帰テスト・同一ブランチの記録。
+**対象**: `codex-shelter-size-evidence-20261112` の記事・回帰テスト・同一ブランチの記録。
 
 **Scope**: 先行する飼育案内/KIDのmerge結果を保持してmainを統合し、差分・試験・CI・独立レビューを確認する。Owner承認済みのmerge後、公開ページと実測merge SHAを照合する。
 
