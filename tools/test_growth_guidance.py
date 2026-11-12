@@ -118,7 +118,8 @@ class GrowthGuidance(unittest.TestCase):
         self.assertNotIn('成体の最低ライン', t)
         self.assertNotIn('水面に届く深さが基本', t)
         self.assertNotIn('甲長11cmを超えたら60cm', t)
-        self.assertIn('外部資料の基準ではない', t)
+        self.assertIn('科学的に確定した最低基準ではありません', t)
+        self.assertNotIn('甲長×4', t)
 
 
 if __name__ == '__main__':

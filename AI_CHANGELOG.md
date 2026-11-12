@@ -645,6 +645,23 @@
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
 
 
+## 2026-11-12 — 初心者飼育案内の根拠追補
+
+- Actor: Codex（RO-3）。Owner指示「何故やらなかった？進めて」「見直して 正にして」。
+- Change: 9 HTML・master・診断2種のサイズ注記を整合。muskのUVB/温度/換水、3種のサイズ根拠、固定年齢による成長予測の撤去。順位・購入URL・CITES表示は不変。
+- Validation: Python41/41、13ファイルhash一致、9ページ375/1280横はみ出し0、重要箇所目視。詳細と未測定事項はdocs/qa/care-evidence-followup-20261112.md。
+- Status: 検証完了・PR/merge待ち。BASE0bc29360579461b90c3ddaf095a083671d8ded54、branch claude/care-evidence-followup-20261112、実装75e966c。PR番号・merge SHA・公開結果は未確定。
+- Conforms: Constitution v2.1 / handoff-gate / closeout-gate。
+
+- 追記: PR #219作成。Ownerの「入れて　マージして」により送信・merge承認。最終差分16ファイル、範囲外0、MERGEABLE/CLEAN（登録CIなし）、Python41/41再確認。本番はmerge後に別途実測する。
+
+## 2026-11-12 KID 容器2件の寸法根拠是正（公開判断待ち）
+
+外寸を内寸扱いしていた汎用データと×5/×3の安全断定を除去。赤長80L・天馬530Mの公式資料は型番限定の例として保存し、汎用容器への外挿をしない。UNKNOWN・K-SCORE非表示・数値ゲージ非表示・購入CTA保留・未確認トロ舟への代替推薦を除去。KID165件PASS、実Chromeの表示と390px/1249pxを確認。収益導線の変更を含むためOwner判断待ち。
+
+2026-11-12追記: Ownerが購入CTA2件の一時停止を含む修正の送信・mergeを明示承認。PR #220。既存codexブランチとの名前衝突を避けcodex-kid-dimension-evidence-20261112で送信。
+
+
 ## 2026-11-12 — シェルター記事のサイズ根拠・適合表現を限定修正（ローカルのみ）
 
 - **Actor:** Codex（RO-3）
@@ -657,3 +674,9 @@
 - **公開工程への追記（2026-11-12）:** Ownerが今回のシェルター修正を含む3候補の送信・mergeを承認。先行PRの内容を保持し、最終検証と公開確認を行う。初回ローカル検証の記録を公開成功に読み替えない。
 
 - **送信ブランチ名:** 既存remoteブランチ `codex` と階層名が衝突するため、元のローカル候補を保持し、`codex-shelter-size-evidence-20261112` を公開用に使用。
+
+
+## 2026-11-12 — シェルター修正PR #221に先行mainを統合
+
+- PR #219/#220を含むmain `b1f0256bd94dbf790939a24bde9792a5bf8288a8` を取り込み、共有記録の競合のみ解消。飼育案内とKIDのソース・本番確認結果を保持した。KID2件の型番/用途未確認と購入CTA HOLDは継続。
+- シェルター記事と専用テストはレビュー済み `97fb14b` と同一。Python 48/48、KID 165/165 PASS（WindowsはUTF-8モードと既存tzdataを使用）。公開前差分は当初の5ファイルのみ。
