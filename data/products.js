@@ -845,7 +845,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004IH1VOK?tag=kamelife090e-22',
     asin: 'B004IH1VOK',
     image: '/assets/products/placeholder.webp',
-    why: '夜間の底面加温に。ケージ下に設置するタイプで省スペース',
+    why: '底面を補助的に温めるフィルムヒーターで、ケージ全体の空気を暖める器具ではありません。メーカーはサーモスタット接続を推奨していません。設置面の材質と説明書の使用条件を確認してください',
     rating: 4.0,
     badge: 'Budget Pick',
     recommendedFor: ['beginner', 'tortoise_dry_small'],
@@ -869,7 +869,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004IH1VRC?tag=kamelife090e-22',
     asin: 'B004IH1VRC',
     image: '/assets/products/placeholder.webp',
-    why: '中型ケージの夜間・冬季保温。サーモスタット併用推奨',
+    why: '底面を補助的に温めるフィルムヒーターで、ケージ全体の空気を暖める器具ではありません。メーカーはサーモスタット接続を推奨していません。設置面の材質と説明書の使用条件を確認してください',
     rating: 4.2,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'tortoise_forest'],
@@ -1007,7 +1007,7 @@ const PRODUCTS = {
   thermostat: {
     id: 'thermostat',
     name: 'サーモスタット（アナログ）',
-    category: 'heating',
+    category: 'temperature_control',
     tier: 'budget',
     priceRange: '¥2,500–5,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00BKULMIS?tag=kamelife090e-22',
@@ -1037,7 +1037,7 @@ const PRODUCTS = {
     // 残置レコード（無報酬CTA）。成果対象URLを確認できないため search へ降格。
     // 正しい affiliateUrl は推測せず、日次 sync の再照合に委ねる
     name: 'コトブキ工芸 ヒュドラサーモ HT-330XD',
-    category: 'heating',
+    category: 'temperature_control',
     tier: 'budget',
     priceRange: '¥4,000–4,500',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B08L9JRQ2D?tag=kamelife090e-22',
@@ -1083,13 +1083,13 @@ const PRODUCTS = {
   thermostat_digital: {
     id: 'thermostat_digital',
     name: 'GEX EXOTERRA タイマーサーモ RTT-1',
-    category: 'heating',
+    category: 'temperature_control',
     tier: 'premium',
     priceRange: '¥6,000–15,000',
     affiliateUrl: 'https://www.amazon.co.jp/dp/B00JGLKPFE?tag=kamelife090e-22',
     asin: 'B00JGLKPFE',
     image: '/assets/products/placeholder.webp',
-    why: '昼夜の温度スケジュールを自動制御。複数機器の同時管理に対応',
+    why: '接続した保温・照明器具のON/OFFを制御する機器で、本体は発熱しません。接続する器具の対応と定格を説明書で確認してください',
     rating: 4.7,
     badge: 'Premium',
     recommendedFor: ['advanced'],
@@ -1161,7 +1161,7 @@ const PRODUCTS = {
     affiliateUrl: 'https://www.amazon.co.jp/dp/B004IGXYX2?tag=kamelife090e-22',
     asin: 'B004IGXYX2',
     image: '/assets/products/placeholder.webp',
-    why: '120cm以上の大型木製ケージの保温補助に。薄型で設置場所を選ばない',
+    why: '底面を補助的に温めるフィルムヒーターで、ケージ全体の空気を暖める器具ではありません。メーカーはサーモスタット接続を推奨していません。設置面の材質と説明書の使用条件を確認してください',
     rating: 4.2,
     badge: null,
     recommendedFor: ['tortoise_dry_large'],
@@ -1181,7 +1181,7 @@ const PRODUCTS = {
   thermostat_nisso_generic: {
     id: 'thermostat_nisso_generic',
     name: 'Nisso 爬虫類サーモスタット',
-    category: 'heating',
+    category: 'temperature_control',
     tier: 'budget',
     priceRange: '¥2,000–4,500',
     affiliateUrl: '#',
@@ -1199,7 +1199,7 @@ const PRODUCTS = {
   thermostat_habistat_dimming: {
     id: 'thermostat_habistat_dimming',
     name: 'Habistat Dimming Thermostat',
-    category: 'heating',
+    category: 'temperature_control',
     tier: 'premium',
     priceRange: '¥10,000–18,000',
     affiliateUrl: '#',
@@ -3469,7 +3469,7 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_ceramic_100w' },
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: null }, // 2026-09-08 商品不足監査: shelter_moist_hide(入口5×3.5cm・ヤモリ向け)はカメが入れないため外し、standardへフォールバック
     thermometer:      { budget: 'thermometer_digital',   standard: 'thermometer_dual_probe', premium: 'thermometer_wifi' },
@@ -3531,7 +3531,7 @@ const EQUIPMENT_MAP = {
     enclosure:        { budget: 'enclosure_glass_45',    standard: 'enclosure_kayuso_90',    premium: 'enclosure_tortoise_120' },
     lighting_uvb:     { budget: 'uvb_compact',           standard: 'uvb_t5_forest_std',          premium: 'uvb_t5_tropical_6' },
     lighting_basking: { budget: 'basking_50w',           standard: 'basking_75w',            premium: 'basking_halogen_50w' }, // Phase 39-P7: ASIN重複解消(21a50df)によりbasking_halogen_50wを復帰
-    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: 'thermostat_digital' },
+    heating:          { budget: 'heater_cord_20w',       standard: 'heater_panel_45',       premium: null },
     filter:           { budget: 'filter_small',          standard: 'filter_submersible_medium',premium: null },
     substrate:        { budget: 'substrate_coco',        standard: 'substrate_gex_terrarium_soil', premium: 'substrate_cypress' }, // Phase 39-P3: standard:nullをGEX実商品(B016B0MXVQ)で解消
     shelter:          { budget: 'shelter_small',         standard: 'shelter_bark_hide',      premium: null }, // 2026-09-08 商品不足監査: shelter_moist_hide(入口5×3.5cm・ヤモリ向け)はカメが入れないため外し、standardへフォールバック

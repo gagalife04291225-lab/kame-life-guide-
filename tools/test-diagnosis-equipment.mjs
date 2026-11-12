@@ -41,3 +41,29 @@ assert.ok(html.includes('最初に確認する用品'));
 assert.ok(!html.includes('迷ったらこの'));
 for(const p of Object.values(c.products).filter(p=>p.category==='enclosure'))assert.ok(!/成体になっても手狭にならない|小型種なら十分|大型リクガメ成体向け/.test(p.why));
 console.log(`PASS: ${count} species comparison guidance; ${cards} product cards; all tier comparison guidance`);
+
+for(const key of Object.keys(c.equipment))for(const tier of ['budget','standard','premium']){
+ const heater=c.getTierProduct(key,'heating',tier);
+ if(heater)assert.notEqual(heater.category,'temperature_control',key+' '+tier);
+}
+for(const key of ['tortoise_forest','box_turtle']){
+ assert.equal(c.getTierProduct(key,'heating','premium').id,'heater_panel_45');
+ const rendered=c.renderStarterKitHtmlV2(key,{name:'test'});
+ assert.ok(rendered.includes('本体は発熱しません'));
+ assert.ok(rendered.includes('メーカーがサーモスタットとの接続を推奨していません'));
+ assert.ok(!c.generateKitByTier(key,'premium').some(x=>x.product.id==='thermostat_digital'));
+}
+for(const slug of ['tunisian-greek-tortoise','moroccan-greek-tortoise']){
+ const sp=c.species.land.find(x=>x.slug===slug);
+ assert.ok(sp.reason.includes('当サイトの目安で90〜120cm級'));
+ assert.ok(!sp.reason.includes('60〜90cmケージで通せる'));
+}
+console.log('PASS: thermostat never substitutes for a heater; two site enclosure guidelines synchronized');
+
+for(const p of Object.values(c.products)){
+ if(p.id.startsWith('thermostat'))assert.equal(p.category,'temperature_control',p.id);
+ if(p.name.includes('ピタリ適温プラス')){
+  assert.ok(!p.why.includes('併用推奨'));
+  assert.ok(p.why.includes('ケージ全体の空気を暖める器具ではありません'));
+ }
+}

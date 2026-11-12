@@ -239,7 +239,7 @@ land: [
     availability: 'common'
   },
   { name: 'チュニジアギリシャリクガメ', latin: 'Testudo graeca nabeulensis', emoji: '🫒', difficulty: '中〜上級', size: 'S（13〜17cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'ギリシャリクガメの亜種で最小級。成体でも13〜17cm程度にとどまり、60〜90cmケージで通せる。北アフリカ産で冬眠しない系統として扱う。国内流通は限られる。CITES II。',
+    reason: 'ギリシャリクガメの亜種で最小級。成体でも13〜17cm程度にとどまり、飼育スペースは当サイトの目安で90〜120cm級（床面積優先）。北アフリカ産で冬眠しない系統として扱う。国内流通は限られる。CITES II。',
     specs: { '最大甲長': '17cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '26〜32℃' },
     coreSpecs: { size: '17cm', temp: '26〜32℃', lifespan: '50〜80年', diet: '草食（野草・野菜）' },
     extraSpecs: {},
@@ -250,7 +250,7 @@ land: [
     availability: 'rare'
   },
   { name: 'モロッコギリシャリクガメ', latin: 'Testudo graeca graeca', emoji: '🐪', difficulty: '中〜上級', size: 'M（15〜20cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'ギリシャリクガメの基亜種。モロッコ・アルジェリアを中心とする北アフリカ産で、甲長15〜20cm程度。イベラ亜種より一回り小さく60〜90cmケージで通せる。北アフリカ産で冬眠しない系統として扱う。CITES II。',
+    reason: 'ギリシャリクガメの基亜種。モロッコ・アルジェリアを中心とする北アフリカ産で、甲長15〜20cm程度。イベラ亜種より一回り小さめ。飼育スペースは当サイトの目安で90〜120cm級（床面積優先）。北アフリカ産で冬眠しない系統として扱う。CITES II。',
     specs: { '最大甲長': '20cm', '主な食事': '野草・野菜', '水容量': '浅め水入れ', '温度': '26〜32℃' },
     coreSpecs: { size: '20cm', temp: '26〜32℃', lifespan: '50〜80年', diet: '草食（野草・野菜）' },
     extraSpecs: {},

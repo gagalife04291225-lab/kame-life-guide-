@@ -62,6 +62,7 @@ var SK_DISPLAY_CAT_MAP = {
   fixture: '照明用スタンド・器具',
   filter_media: 'ろ材',
   accessory: '飼育用品',
+  temperature_control: '温度制御器',
 };
 
 function _skDisplayCat(cat) {
@@ -217,6 +218,7 @@ var SK_CAT_LABELS_PAGE = {
   fixture: '照明用スタンド・器具',
   filter_media: 'ろ材',
   accessory: '飼育用品',
+  temperature_control: '温度制御器',
 };
 
 var SK_TIER_LABEL_PAGE = {
@@ -772,6 +774,14 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
 
   // Bundle Summary（タブ上部）
   var bundleSummaryHtml = renderBundleSummary(tabData, speciesName);
+  var controlNoteHtml = '';
+  if (equipmentKey === 'tortoise_forest' || equipmentKey === 'box_turtle') {
+    controlNoteHtml = '<aside class="sk-hint"><strong>保温器具と温度制御器は別のものです</strong>' +
+      '<p>タイマーサーモRTT-1は接続した器具を制御する製品で、本体は発熱しません。上の候補合計には含めていません。必要な場合は、接続する保温器具の説明書を先に確認してください。</p>' +
+      '<p>この一覧のピタリ適温プラスは、メーカーがサーモスタットとの接続を推奨していません。この2製品を組み合わせる案内ではありません。</p>' +
+      '<p><a href="https://product.gex-fp.co.jp/exoterra/?cid=407&amp;id=984&amp;m=ProductListDetail" target="_blank" rel="noopener">GEXの温度制御器の説明</a> / ' +
+      '<a href="https://pitateki.com/faq.html" target="_blank" rel="noopener">ピタリ適温プラスの接続条件</a></p></aside>';
+  }
 
   // タブボタン
   var tabBtns = SK_TABS.map(function(tab, i) {
@@ -797,6 +807,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
       costBoxHtml +
       '<p class="sk-hint">容器は、価格より先に今の甲長と成体に必要な広さを確認しましょう。小さく始める場合は成長に合わせて広げます。下の用品は比較候補で、そのまま一式そろえれば飼えるという意味ではありません。</p>' +
       bundleSummaryHtml +
+      controlNoteHtml +
       '<div class="sk-tabs" role="tablist">' + tabBtns + '</div>' +
       panels +
       '<p class="sk-disclaimer">※Amazonアソシエイトリンクを含みます　価格は目安です（変動あり）</p>' +
