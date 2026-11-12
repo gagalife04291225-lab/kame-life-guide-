@@ -44,6 +44,17 @@ class KeeperHacks(unittest.TestCase):
         self.assertIn('普段の水換えや水質確認は続けます',self.html)
         self.assertIn('全製品を同じ月数にはしません',self.html)
         self.assertNotIn('<!-- PRACTICAL_TIPS -->',self.html)
+    def test_quick_drain_pump_manufacturer_conditions(self):
+        self.assertIn('id="quick-drain-pump"', self.html)
+        for text in ('PH-73', '約1.1m', '10cm以上', '排水先を低くできるか'):
+            self.assertIn(text, self.html)
+        for url in ('https://www.suisaku.com/product/maintenance_goods/2045/',
+                    'https://www.suisaku.com/sys/wp-content/uploads/2025/09/PK-23_quick-drain-pump-normal.pdf'):
+            self.assertIn(url, [a.get('href') for a in self.page.links])
+    def test_quick_drain_pump_has_no_unverified_purchase_claims(self):
+        section = self.html.split('id="quick-drain-pump"', 1)[1].split('</article>', 1)[0]
+        for forbidden in ('amazon.co.jp', 'rakuten.co.jp', 'B09WYHW7G8', '使用しています', '砂利掃除', '作業時間が半分'):
+            self.assertNotIn(forbidden, section)
     def test_local_destinations(self):
         for a in self.page.links:
             h=a.get('href','').split('#')[0]

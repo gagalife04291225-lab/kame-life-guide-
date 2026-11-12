@@ -831,3 +831,10 @@ NEXT: 最新mainと差分を再確認、PRで公開判断。その後は残87種
 
 ## 2026-11-13 他種7種の法令訂正
 CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登録票、スライダー飼育/無償譲渡条件を同期。独立レビューと回帰・Chrome確認を実施。詳細 docs/qa/other-species-law-20261113.md。公開実測はPRコメントへ。
+
+
+## 2026-11-13 — PH-73を便利ワザの排水例へ追加（未公開候補）
+- Actor: Codex / Change: keeper-hacksの折りたたみ内にメーカー確認済みPH-73の仕様・選ぶ条件・公式出典を追加。専用テスト2件。
+- Reason: Ownerの「商品を追加するものはない？」と便利ワザ強化依頼。初期表示の長文化、架空体験、未確認購入リンクを避ける。
+- BASE: 17c981ae55867343f43eeab478f600ff11acd934 / PR #238（Draft）・実装commit aad07fc2。
+- Approver: Ownerの作業依頼の範囲。merge/公開は未実施。Conforms: 専用9・Python98 PASS、実Chrome3幅、独立レビューBLOCKER0、購入URL8本/GA/CITES不変。
