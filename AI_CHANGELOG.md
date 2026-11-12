@@ -726,3 +726,14 @@
 - 共通文115HTML/406置換、分類の注記、KIDの文体、比較表32ページと初心者記事を修正。ニシキ2ページの旧通常値6表示を追加是正。競合5ページは変更行・対象比較行だけを統合し分類の新事実を保持。
 - PC Python76/76、案内人25、寿命90、KID269、楽天20 PASS。121HTML×2幅でページ横溢れ0。初心者FAQ・診断注記・KID条件展開と元2CTA停止を実画面確認。
 - 商品URL/tag・GA4・CITES判断・CSS・順位・元2CTA停止を保持。本番検証はmerge後の実測をPRへ記録。今回追記時点で公開完了とはしていない。
+
+
+## 2026-11-12 診断ルート名の undefined 修正
+
+- BASE: 6e253000189fa7b42a5723802c183e5381c52b8c
+- CLOSED（実装修正）: shindan/index.html の通常質問・飼育準備質問で、存在しない route.emoji を参照せず route.name を表示。選択画面の SVG アイコン、診断条件、計測、購入リンクは変更なし。
+- 回帰テスト: tools/test-shindan-route-labels.mjs。全5ルートの通常質問・準備質問・通常質問への復帰の15表示を確認。旧コードで失敗し修正後PASS。
+- ローカル Chrome: 全5ルートを実際に選択し最後の診断結果まで通過。通常質問・準備質問に undefined なし。
+- 既存検証: Python サイト関連59件、KID269件、案内人25件、寿命90件、楽天20件PASS。validate_species MISMATCH0/WARN0。
+- BLOCKED: GA4関連テスト2件は環境のtzdata不足（America/Los_Angeles）。今回はGA4変更なし。
+- 公開確認: マージ後に実施。既存NEXTのGA4定刻実測・他の未解決項目は変更しない。
