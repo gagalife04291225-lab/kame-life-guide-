@@ -3341,14 +3341,14 @@
       "cites": {
         "appendix": {
           "value": "not_listed",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局/USFWS/カナダ政府",
+          "institution": "CITES条約附属書（オランダ政府官報）",
           "sources": [
-            "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
-          "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
-          "last_verified": "2026-08-17"
+          "note": "Trachemys scripta はCITES附属書に非掲載。日本国内の条件付特定外来生物の指定とは別。",
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": null,
@@ -3356,14 +3356,15 @@
         }
       },
       "domestic_law": {
-        "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+        "value": "条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。",
         "verification": "CONFIRMED",
         "provenance": "official",
         "institution": "環境省",
         "sources": [
-          "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+          "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html",
+          "https://www.env.go.jp/nature/intro/2outline/regulation/kisei.html"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-13"
       },
       "lifespan": {
         "value": null,
@@ -3447,14 +3448,14 @@
       "cites": {
         "appendix": {
           "value": "not_listed",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局/USFWS/カナダ政府",
+          "institution": "CITES条約附属書（オランダ政府官報）",
           "sources": [
-            "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
-          "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
-          "last_verified": "2026-08-17"
+          "note": "Trachemys scripta はCITES附属書に非掲載。日本国内の条件付特定外来生物の指定とは別。",
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": null,
@@ -3462,14 +3463,15 @@
         }
       },
       "domestic_law": {
-        "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+        "value": "条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。",
         "verification": "CONFIRMED",
         "provenance": "official",
         "institution": "環境省",
         "sources": [
-          "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+          "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html",
+          "https://www.env.go.jp/nature/intro/2outline/regulation/kisei.html"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-13"
       },
       "lifespan": {
         "value": null,
@@ -3550,14 +3552,14 @@
       "cites": {
         "appendix": {
           "value": "not_listed",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局/USFWS/カナダ政府",
+          "institution": "CITES条約附属書（オランダ政府官報）",
           "sources": [
-            "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
-          "note": "Trachemys scriptaはCITES非掲載（USFWS掲載表と整合）。非掲載の悉皆確認は附属書原文で継続",
-          "last_verified": "2026-08-17"
+          "note": "Trachemys scripta はCITES附属書に非掲載。日本国内の条件付特定外来生物の指定とは別。",
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": null,
@@ -3565,14 +3567,15 @@
         }
       },
       "domestic_law": {
-        "value": "条件付特定外来生物（種 Trachemys scripta として2023-06-01指定。全亜種が対象。新規の販売・購入・頒布は原則不可、放出禁止、既飼育は手続き不要で継続可）",
+        "value": "条件付特定外来生物（Trachemys scripta の全亜種、2023年6月1日指定）。一般家庭での飼育・捕獲・頒布に当たらない少数の相手との無償譲渡・譲受けは手続き不要。販売・購入・頒布・輸入・野外への放出等は原則禁止。逃がさず、最後まで飼えることが前提です。",
         "verification": "CONFIRMED",
         "provenance": "official",
         "institution": "環境省",
         "sources": [
-          "https://www.env.go.jp/nature/intro/2outline/attention/akamimi.html"
+          "https://www.env.go.jp/nature/intro/2outline/regulation/jokentsuki.html",
+          "https://www.env.go.jp/nature/intro/2outline/regulation/kisei.html"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-13"
       },
       "lifespan": {
         "value": null,
@@ -4235,21 +4238,25 @@
       },
       "cites": {
         "appendix": {
-          "value": "III",
+          "value": "II",
           "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局/USFWS/カナダ政府",
+          "institution": "CITES条約附属書（オランダ政府官報）",
           "sources": [
-            "https://www.govinfo.gov/content/pkg/FR-2005-12-16/pdf/05-24099.pdf",
-            "https://www.fws.gov/sites/default/files/documents/2024-05/turtle-appendices-chart-updated-may-2024_1.pdf"
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
-          "note": "米国がGraptemys属一括で附属書III掲載",
-          "last_verified": "2026-08-17"
+          "note": "CITES附属書II（2023年2月23日から）。輸出入には必要な許可書等を確認します。附属書IIだけで日本国内の飼育が禁止されるわけではありません。",
+          "last_verified": "2026-11-13"
         },
         "since": {
-          "value": "2006-06-14",
-          "verification": "LIKELY",
-          "last_verified": "2026-08-17"
+          "value": "2023-02-23",
+          "verification": "CONFIRMED",
+          "provenance": "official",
+          "sources": [
+            "https://www.legislation.gov.au/F2023L00133/asmade/2023-02-22/text/original/pdf"
+          ],
+          "note": "掲載対象個体群・亜種の範囲はappendix.noteを参照",
+          "last_verified": "2026-11-13"
         }
       },
       "domestic_law": {
@@ -4516,17 +4523,23 @@
           "value": "II",
           "verification": "CONFIRMED",
           "provenance": "official",
-          "institution": "CITES事務局/USFWS/カナダ政府",
+          "institution": "CITES条約附属書（オランダ政府官報）",
           "sources": [
-            "https://www.fws.gov/sites/default/files/documents/CoP19%20Species%20Outcomes%20Table%20final-web.pdf",
-            "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/conference-of-parties/19-species-proposal-outcomes.html"
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
-          "note": "CoP19でApalone spp.掲載（附属書I亜種を除く）",
-          "last_verified": "2026-08-17"
+          "note": "CITES附属書II。ただし亜種 Apalone spinifera atra は附属書Iで、日本では国際希少野生動植物種です。亜種と由来を確認し、atra の国内取引では登録票等の要件を確認してください。",
+          "last_verified": "2026-11-13",
+          "display_label": "CITES II（atraはI）"
         },
         "since": {
           "value": "2023-02-23",
-          "verification": "UNPROVEN"
+          "verification": "CONFIRMED",
+          "provenance": "official",
+          "sources": [
+            "https://www.legislation.gov.au/F2023L00133/asmade/2023-02-22/text/original/pdf"
+          ],
+          "note": "掲載対象個体群・亜種の範囲はappendix.noteを参照",
+          "last_verified": "2026-11-13"
         }
       },
       "domestic_law": {
@@ -8940,13 +8953,16 @@
         }
       },
       "domestic_law": {
-        "value": "国際希少野生動植物種（種の保存法）。CITES附属書I移行（CoP18・2019年）に伴い国内の譲渡・販売には登録票が必要",
-        "verification": "LIKELY",
+        "value": "国際希少野生動植物種（2019年11月26日適用）",
+        "verification": "CONFIRMED",
         "provenance": "official",
         "sources": [
-          "https://www.env.go.jp/nature/kisho/kisei/species/trade/"
+          "https://www.env.go.jp/content/000395814.pdf",
+          "https://www.jwrc.or.jp/service/cites/regist/gaiyo.htm",
+          "https://www.jwrc.or.jp/service/cites/regist/yuzuriuke.htm"
         ],
-        "last_verified": "2026-08-17"
+        "last_verified": "2026-11-13",
+        "note": "CITES附属書I・日本の国際希少野生動植物種です。国内の売買・譲渡等は原則禁止ですが、登録済み個体は有効な登録票と一緒に譲り渡せます。国内CBやインボイスだけでは登録票の代わりになりません。譲り受けた人は30日以内に届出が必要です。"
       },
       "lifespan": {
         "value": null,
@@ -10866,15 +10882,26 @@
       },
       "cites": {
         "appendix": {
-          "value": "not_listed",
-          "verification": "LIKELY",
+          "value": "III",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "非掲載の悉皆確認は附属書原文で継続",
-          "last_verified": "2026-08-17"
+          "note": "CITES附属書IIIはウクライナ個体群のみが対象です。本種の全個体群ではありません。個体の由来と必要な輸出入書類を確認してください。",
+          "last_verified": "2026-11-13",
+          "institution": "CITES条約附属書（オランダ政府官報）",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "display_label": "CITES III（ウクライナ個体群のみ）"
         },
         "since": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "2021-06-22",
+          "verification": "CONFIRMED",
+          "provenance": "official",
+          "sources": [
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2280"
+          ],
+          "note": "掲載対象個体群・亜種の範囲はappendix.noteを参照",
+          "last_verified": "2026-11-13"
         }
       },
       "domestic_law": {

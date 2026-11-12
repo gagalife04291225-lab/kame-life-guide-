@@ -8,6 +8,7 @@ for(const [route,list] of Object.entries(now.species).filter(([r])=>r!=='all'))f
  if(targets.includes(actual.slug)){expected.coreSpecs.diet='雑食（植物性・動物性の食材）';if(actual.slug==='elongated-tortoise')expected.specs['主な食事']='植物性・動物性の食材';changes++;}
  // Home legal correction is covered explicitly by test_home_cites.py; keep all care/product fields frozen.
  if(actual.slug==='home-hinge-back-tortoise'){for(const k of ['cites','legal','reason','availability','diagnosisNotice']){delete actual[k];delete expected[k];}}
+ if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(actual.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(actual.legal==='conditional_invasive'?['reason']:[])]){delete actual[k];delete expected[k];}}
  assert.deepEqual(actual,expected,actual.name);count++;
 }assert.equal(count,119);assert.equal(changes,2);
 assert.equal(Object.keys(now.conditions).length,32);assert.equal(Object.keys(now.conditions).filter(k=>!old.conditions[k]).length,16);

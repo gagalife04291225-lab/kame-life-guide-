@@ -77,7 +77,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 | ミナミイシガメ | Mauremys mutica | M | 中級 | CITES II | 国内CB流通 |
 | ヤエヤマイシガメ | Mauremys mutica kami | M | 中級 | CITES II | ミナミイシガメの亜種。国内では八重山諸島に分布（種全体の台湾・中国南部分布は基亜種） |
 | カントンクサガメ | Mauremys nigricans | M | 入門〜中級 | CITES II | クサガメとは別種。国内CB確認済み |
-| ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | なし | EUCB流通・やや低温好む |
+| ヨーロッパヌマガメ | Emys orbicularis | M | 中級 | CITES III（ウクライナ個体群のみ） | EUCB流通・やや低温好む |
 | カンバーランドスライダー | Trachemys scripta troostii | M | 入門 | なし | 条件付特定外来（種として指定）・新規購入不可 |
 | クーター | Pseudemys spp. | L | 中級 | なし | 大型化・90cm水槽必要 |
 | ペニンシュラクーター | Pseudemys peninsularis | L | 中級 | なし | フロリダ半島産 |
@@ -99,7 +99,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 |---|---|---|---|---|
 | ミシシッピチズガメ | Graptemys pseudogeographica kohnii | M | 中級 | 入門として最も流通量多い・CITES III（米国・2006） |
 | キタチズガメ | Graptemys geographica | M | 中級 | メスは28cmと大型・CITES III（米国・2006） |
-| アラバマチズガメ | Graptemys pulchra | M | 中〜上級 | 雌雄差が大きい・CITES III（米国・2006） |
+| アラバマチズガメ | Graptemys pulchra | M | 中〜上級 | 雌雄差が大きい・CITES II（2023-02-23移行） |
 | ニセチズガメ | Graptemys pseudogeographica pseudogeographica | M | 中級 | ミシシッピに近縁・CITES III（米国・2006） |
 | フトマユチズガメ | Graptemys ouachitensis | M | 中級 | 眉のような模様・CITES III（米国・2006） |
 | クロコブチズガメ | Graptemys nigrinoda | M | 中〜上級 | 黒いコブ状キール・CITES III（米国・2006） |
@@ -232,7 +232,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 |---|---|---|---|---|
 | フロリダスッポン | Apalone ferox | L | 上級 | 砂底必須・ストレスに弱い・CITES II（2023）  |
 | スベスッポン | Apalone mutica | L | 上級 | 砂底必須・CITES II（2023）  |
-| トゲスッポン | Apalone spinifera | L | 上級 | 最も流通する・砂底必須・CITES II（2023）  |
+| トゲスッポン | Apalone spinifera | L | 上級 | 砂底必須・CITES II（atraはI）。亜種と由来の確認が必要  |
 | スッポンモドキ | Carettochelys insculpta | XL | 上級 | 26〜30℃高水温必要・CITES II |
 
 ---
