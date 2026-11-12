@@ -1276,7 +1276,7 @@ body {
   <!-- Phase5-B: 「必要になる飼育用品」導入見出し。診断結果への納得のあとに用品導線を置く -->
   <div class="commerce-lead" id="commerce-lead">
     <div class="commerce-lead-title">必要になる飼育用品</div>
-    <p class="commerce-lead-desc">この子をむかえるときに、はじめに用意しておきたい飼育用品をまとめました。まずは下の「まず買うべき」から揃えると失敗が少なくなります。</p>
+    <p class="commerce-lead-desc">用品を価格帯ごとに比較できます。容器の広さや器具の性能は、飼う種と今の体格に合わせて選びましょう。</p>
   </div>
   <!-- Phase 31-C1→Phase5-B: Starter Kit を信頼コンテンツの下（用品ゾーンの先頭）へ配置 -->
   <!-- PHASE 6-B: おすすめ飼育セット -->
@@ -3092,9 +3092,9 @@ function showResult(sp, pct, runners) {
     // ── TOP3 必要品 ──────────────────────────────────────────
     var TOP3 = {
       land:    ['UVBライト', '飼育ケース（爬虫類用）', '床材（赤玉土・ヤシガラ等）'],
-      aquatic: ['水槽（45〜60cm）', 'フィルター', 'バスキングライト'],
-      forest:  ['UVBライト', '飼育ケース（爬虫類用）', 'フィルターまたはウォータードッシュ'],
-      exotic:  ['水槽（60cm以上）', '強力フィルター', 'ヒーター（水中）'],
+      aquatic: ['水槽（種と体格に合う広さ）', 'フィルター', 'バスキングライト'],
+      forest:  ['UVBライト', '飼育ケース（爬虫類用）', '種に合わせた水場・ろ過器'],
+      exotic:  ['水槽・飼育場（成体の広さを確認）', '強力フィルター', 'ヒーター（水中）'],
       all:     ['UVBライト', '飼育ケース', '床材またはフィルター']
     };
     var top3 = TOP3[routeId] || TOP3['all'];
@@ -3112,7 +3112,7 @@ function showResult(sp, pct, runners) {
           '<div class="res-rev-metric"><div class="res-rev-metric-label">初期費用</div><div class="res-rev-metric-value">' + initText + '</div></div>' +
           '<div class="res-rev-metric"><div class="res-rev-metric-label">維持コスト</div><div class="res-rev-metric-value">' + monthlyText + '</div></div>' +
         '</div>' +
-        '<div class="res-rev-top3-title">まず必要なもの TOP3</div>' +
+        '<div class="res-rev-top3-title">先に確認する用品</div>' +
         '<ul class="res-rev-top3-list">' +
           top3.map(function(item, i) {
             return '<li class="res-rev-top3-item"><span class="res-rev-top3-num">' + (i+1) + '</span>' + item + '</li>';
@@ -3459,59 +3459,33 @@ function showResult(sp, pct, runners) {
         '</div>';
     }
 
-    // ── Phase 41: 診断経験値からtierを決定 ──────────────────────
-    // beginner/intermediate/advanced(+expert) は routes.js の「飼育経験」設問でのみ
-    // 加点される累積スコア。最大値のディメンションでtierを判定し、同点・未回答時はbudgetへ。
-    function resolveTop3Tier(sc) {
-      sc = sc || {};
-      var beg = sc.beginner || 0;
-      var inter = sc.intermediate || 0;
-      var adv = (sc.advanced || 0) + (sc.expert || 0);
-      if (adv > inter && adv > beg) return 'premium';
-      if (inter > beg && inter >= adv) return 'standard';
-      return 'budget';
-    }
-    var top3Tier = resolveTop3Tier(scores);
-
-    // ── Phase 40/41: まず買うべき3点（経験値に応じてtierを自動選択） ──
+    // 価格帯や経験から容器・器具の寸法を自動決定しない。
+    // この診断は現在の甲長を質問していないため、まず選定条件を案内する。
     var top3Html = '';
     var top3Count = 0;
-    try {
-      if (typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey] && typeof getTierProduct === 'function') {
-        var TOP3_CAT_PRIORITY = ['enclosure', 'lighting_uvb', 'heating', 'filter', 'lighting_basking', 'substrate', 'thermometer', 'shelter', 'food', 'supplements'];
-        var TOP3_CAT_LABELS = {
-          enclosure: 'ケージ', lighting_uvb: 'UVB', lighting_basking: 'バスキング',
-          heating: '保温', filter: 'フィルター', substrate: '床材',
-          thermometer: '温度計', shelter: 'シェルター', food: 'フード', supplements: 'サプリ',
-        };
-        var top3Items = [];
-        for (var ti = 0; ti < TOP3_CAT_PRIORITY.length && top3Items.length < 3; ti++) {
-          var top3Cat = TOP3_CAT_PRIORITY[ti];
-          // getTierProduct自体がpremium→standard→budgetのフォールバックを内包している
-          var top3P = getTierProduct(equipKey, top3Cat, top3Tier);
-          if (top3P && top3P.name) {
-            top3Items.push({ cat: TOP3_CAT_LABELS[top3Cat] || top3Cat, name: top3P.name });
-          }
-        }
-        top3Count = top3Items.length;
-        if (top3Count > 0) {
-          var TOP3_TIER_LABEL = { standard: 'スタンダード', premium: 'プレミアム' };
-          var top3TitleSuffix = TOP3_TIER_LABEL[top3Tier] ? '（' + TOP3_TIER_LABEL[top3Tier] + '構成）' : '';
-          top3Html =
-            '<div class="res-cta-top3">' +
-              '<div class="res-cta-top3-title">まず買うべき' + top3Count + '点' + top3TitleSuffix + '</div>' +
-              '<div class="res-cta-top3-reassure">💡 迷ったらこの' + top3Count + '点から揃えればOK</div>' +
-              top3Items.map(function(it, idx) {
-                return '<div class="res-cta-top3-item">' +
-                  '<span class="res-cta-top3-num">' + (idx + 1) + '</span>' +
-                  '<span class="res-cta-top3-cat">' + it.cat + '</span>' +
-                  '<span class="res-cta-top3-name">' + it.name + '</span>' +
-                '</div>';
-              }).join('') +
-            '</div>';
-        }
+    if (typeof EQUIPMENT_MAP !== 'undefined' && equipKey && EQUIPMENT_MAP[equipKey]) {
+      var TOP3_REQUIREMENTS = [
+        { key: 'enclosure', label: '容器', note: '種ページの成体サイズを先に確認。子ガメ用から始める場合は、成長に合わせて広げます。' },
+        { key: 'lighting_uvb', label: 'UVBライト', note: '種に必要な強さと、器具から亀までの距離を確認します。' },
+        { key: 'heating', label: '保温器具', note: '水中用か陸上用かを確認し、容器の大きさと室温に合わせて選びます。' },
+        { key: 'filter', label: 'フィルター', note: '実際の水量・水深に合うものを選びます。' }
+      ];
+      var top3Items = TOP3_REQUIREMENTS.filter(function(it) {
+        return !!EQUIPMENT_MAP[equipKey][it.key];
+      }).slice(0, 3);
+      top3Count = top3Items.length;
+      if (top3Count) {
+        top3Html = '<div class="res-cta-top3">' +
+          '<div class="res-cta-top3-title">最初に確認する用品</div>' +
+          '<div class="res-cta-top3-reassure">同じ種でも、子ガメと成体では必要なサイズが変わります。</div>' +
+          top3Items.map(function(it, idx) {
+            return '<div class="res-cta-top3-item">' +
+              '<span class="res-cta-top3-num">' + (idx + 1) + '</span>' +
+              '<span class="res-cta-top3-cat">' + it.label + '</span>' +
+              '<span class="res-cta-top3-name">' + it.note + '</span></div>';
+          }).join('') + '</div>';
       }
-    } catch(e) {}
+    }
 
     // ── Phase 47-B: 回答タイプ別CTA補助文 ──────────────────────
     // 既存scoresタグ（beginner/budget_*/route/advanced等）のみを使用。新規データ追加なし。
@@ -3699,7 +3673,7 @@ function showResult(sp, pct, runners) {
           init_cost: initText,
           monthly_cost: monthlyText,
           top3_count: top3Count, // Phase 40: 追加パラメータ（既存キーは変更なし）
-          top3_tier: top3Tier, // Phase 41: 追加パラメータ（既存キーは変更なし）
+          top3_tier: 'requirements', // Phase 41: 追加パラメータ（既存キーは変更なし）
         });
       }
     } catch(e) {}

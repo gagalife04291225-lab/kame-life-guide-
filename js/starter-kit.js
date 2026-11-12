@@ -58,6 +58,10 @@ var SK_DISPLAY_CAT_MAP = {
   water_dish:       '水入れ・水浴び容器',
   food:             'フード',
   supplements:      'サプリメント',
+  water_test: '水質検査用品',
+  fixture: '照明用スタンド・器具',
+  filter_media: 'ろ材',
+  accessory: '飼育用品',
 };
 
 function _skDisplayCat(cat) {
@@ -206,13 +210,18 @@ var SK_CAT_LABELS_PAGE = {
   substrate:        '床材',
   thermometer:      '温湿度計',
   shelter:          'シェルター',
+  water_dish:       '水入れ・水浴び容器',
   food:             'フード',
   supplements:      'サプリ',
+  water_test: '水質検査用品',
+  fixture: '照明用スタンド・器具',
+  filter_media: 'ろ材',
+  accessory: '飼育用品',
 };
 
 var SK_TIER_LABEL_PAGE = {
   budget:   'コスパ重視',
-  standard: 'まずはこれ',
+  standard: '標準価格帯',
   premium:  '本格派',
 };
 
@@ -225,9 +234,9 @@ var SK_TIER_CTA = {
 
 // 3段階タブ定義
 var SK_TABS = [
-  { id: 'essential', label: '必須セット',   icon: '✅', desc: '飼育開始に最低限必要な機材',     tiers: ['budget'] },
-  { id: 'comfort',   label: '推奨セット',   icon: '⭐', desc: '快適化・失敗防止のプラスアルファ', tiers: ['standard'] },
-  { id: 'advanced',  label: '上級セット',   icon: '🏆', desc: '余裕が出てきたら揃えたい本格装備', tiers: ['premium'] },
+  { id: 'essential', label: '低価格帯の候補',   icon: '✅', desc: '価格を抑えた用品を比較。容器や器具のサイズは個体に合わせて選びます',     tiers: ['budget'] },
+  { id: 'comfort',   label: '標準価格帯の候補',   icon: '⭐', desc: '標準価格帯の用品を比較。成体まで使えるかは種と製品ごとに確認します', tiers: ['standard'] },
+  { id: 'advanced',  label: '高価格帯の候補',   icon: '🏆', desc: '機能や仕様を比較。価格の高さだけで適合は決まりません', tiers: ['premium'] },
 ];
 
 var SK_CAT_ORDER = [
@@ -302,6 +311,7 @@ var SK_MONTHLY_COST = {
  */
 function renderCostBox(picks, opts) {
   var totalLow = 0, totalHigh = 0;
+  var missingPriceCount = picks.filter(function(item) { return !item.product.priceRange; }).length;
   picks.forEach(function(item) {
     var r = parsePriceRange(item.product.priceRange);
     totalLow  += r.low;
@@ -321,7 +331,7 @@ function renderCostBox(picks, opts) {
       '<div class="sk-cost-item">' +
         '<div class="sk-cost-label">初期費用目安</div>' +
         '<div class="sk-cost-value">' + costText + '</div>' +
-        '<div class="sk-cost-sub">推奨セット合計</div>' +
+        '<div class="sk-cost-sub">標準価格帯の候補合計' + (missingPriceCount ? '（価格未掲載' + missingPriceCount + '点を除く）' : '') + '</div>' +
       '</div>' +
       '<div class="sk-cost-item">' +
         '<div class="sk-cost-label">月額維持費</div>' +
@@ -369,9 +379,9 @@ function getCvrBadge(item, equipmentKey) {
     return { icon: '🐢', label: '定番フード' };
   }
   if (cat === 'enclosure') {
-    if (tier === 'budget')   return { icon: '💰', label: 'コスパ◎' };
-    if (tier === 'premium')  return { icon: '🏆', label: '本格仕様' };
-    return { icon: '🔰', label: 'はじめての方向け' };
+    if (tier === 'budget')   return { icon: '💰', label: 'サイズを確認' };
+    if (tier === 'premium')  return { icon: '🏆', label: 'サイズを確認' };
+    return { icon: '🔰', label: 'サイズを確認' };
   }
   if (cat === 'substrate') {
     var isDryTortoise = ek.indexOf('tortoise_dry') >= 0;
@@ -455,7 +465,7 @@ function renderSkCardMedia(p) {
 function renderSkCard(item, speciesName, equipmentKey) {
   var p = item.product;
   var catLabel  = SK_CAT_LABELS_PAGE[item.cat] || item.cat;
-  var tierLabel = SK_TIER_LABEL_PAGE[item.tier] || 'まずはこれ';
+  var tierLabel = SK_TIER_LABEL_PAGE[item.tier] || '比較候補';
   var tierCls   = item.tier === 'budget'  ? 'sk-badge-budget'
                 : item.tier === 'premium' ? 'sk-badge-premium'
                 : 'sk-badge-standard';
@@ -542,8 +552,9 @@ function renderSkCard(item, speciesName, equipmentKey) {
     '</div>' +
     '<span class="sk-card-badge ' + tierCls + '">' + tierLabel + '</span>' +
     '<div class="sk-card-name">' + p.name + '</div>' +
-    '<div class="sk-card-price">' + p.priceRange + '<span class="sk-price-note">（目安）</span></div>' +
+    '<div class="sk-card-price">' + (p.priceRange ? p.priceRange + '<span class="sk-price-note">（目安）</span>' : '価格は販売先で確認') + '</div>' +
     (p.why ? '<div class="sk-card-why">' + p.why + '</div>' : '') +
+    (item.cat === 'enclosure' ? '<p class="sk-card-why">種ページの成体の飼育スペースと、製品の内寸を比べて選んでください。子ガメ用の容器は、成長後に買い替えが必要になることがあります。</p>' : '') +
     btn +
     checkHtml +
   '</div>';
@@ -621,7 +632,7 @@ function calcBundlePriceRange(picks) {
 function calcSavingsStr(thisLow, standardLow) {
   if (!thisLow || !standardLow) return '';
   var diff = standardLow - thisLow;
-  if (diff > 0) return fmtYen(Math.round(diff / 100) * 100) + 'お得';
+  if (diff > 0) return fmtYen(Math.round(diff / 100) * 100) + 'の価格差';
   return '';
 }
 
@@ -634,28 +645,28 @@ function renderBundleSummary(tabData, speciesName) {
       tabId:    'essential',
       tier:     'budget',
       idx:      0,
-      label:    'エントリー構成',
+      label:    '低価格帯',
       icon:     '🌱',
-      desc:     '飼育を始めるための最低限セット。まずはここから。',
+      desc:     '低価格帯の用品候補。必要な大きさや性能を満たすか確認してください。',
       mod:      'sk-bundle--budget',
     },
     {
       tabId:    'comfort',
       tier:     'standard',
       idx:      1,
-      label:    'スタンダード構成',
+      label:    '標準価格帯',
       icon:     '⭐',
-      desc:     'コストと快適さのベストバランス。最もおすすめ。',
+      desc:     '標準価格帯の用品候補。容器の広さは種ページの目安と照らし合わせてください。',
       mod:      'sk-bundle--standard',
-      recommended: true,
+      recommended: false,
     },
     {
       tabId:    'advanced',
       tier:     'premium',
       idx:      2,
-      label:    'プレミアム構成',
+      label:    '高価格帯',
       icon:     '🏆',
-      desc:     '長期管理が楽になる本格仕様。余裕のある方に。',
+      desc:     '高価格帯の用品候補。大型種の成体には、別途飼育場が必要な場合があります。',
       mod:      'sk-bundle--premium',
     },
   ];
@@ -668,12 +679,13 @@ function renderBundleSummary(tabData, speciesName) {
     var picks    = tabData[b.idx] ? tabData[b.idx].picks : [];
     var range    = calcBundlePriceRange(picks);
     var count    = picks.length;
+    var missingPriceCount = picks.filter(function(item) { return !item.product.priceRange; }).length;
     var priceStr = range.low > 0
       ? (range.high > range.low
           ? fmtYen(range.low) + '〜' + fmtYen(range.high)
           : fmtYen(range.low) + '〜')
       : '価格お問い合わせ';
-    var savingsStr  = (b.idx === 0) ? calcSavingsStr(range.low, _stdRange.low) : '';
+    var savingsStr  = (b.idx === 0 && !missingPriceCount && !_stdPicks.some(function(item) { return !item.product.priceRange; })) ? calcSavingsStr(range.low, _stdRange.low) : '';
     var savingsHtml = savingsStr
       ? '<div class="sk-bundle-savings">💰 スタンダードより' + savingsStr + '</div>'
       : '';
@@ -695,8 +707,8 @@ function renderBundleSummary(tabData, speciesName) {
     var ctaHtml = count > 0
       ? '<button class="sk-bundle-cta" type="button"' +
           ' data-bundle-panel="sk-panel-' + b.tabId + '"' +
-          ' aria-label="' + b.label + 'の必要な' + count + '商品を確認する">' +
-          '必要な' + count + '商品を確認する →' +
+          ' aria-label="' + b.label + 'の候補' + count + '商品を確認する">' +
+          '候補の' + count + '商品を確認する →' +
         '</button>'
       : '';
 
@@ -715,7 +727,8 @@ function renderBundleSummary(tabData, speciesName) {
       itemsHtml +
       '<div class="sk-bundle-meta">' +
         '<span class="sk-bundle-price">' + priceStr + '</span>' +
-        '<span class="sk-bundle-count">' + count + '点セット</span>' +
+        '<span class="sk-bundle-count">' + count + '点の候補</span>' +
+        (missingPriceCount ? '<span class="sk-price-note">価格未掲載' + missingPriceCount + '点を除く合計</span>' : '') +
       '</div>' +
       savingsHtml +
       ctaHtml +
@@ -723,7 +736,7 @@ function renderBundleSummary(tabData, speciesName) {
   }).join('');
 
   return '<div class="sk-bundle-summary" role="region" aria-label="構成別セットガイド">' +
-    '<p class="sk-bundle-eyebrow">まず構成を選んでください</p>' +
+    '<p class="sk-bundle-eyebrow">価格帯ごとに用品を比較</p>' +
     '<div class="sk-bundle-grid">' + cards + '</div>' +
   '</div>';
 }
@@ -768,7 +781,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
       ' data-target="sk-panel-' + tab.id + '"' +
       ' role="tab" aria-selected="' + (isDefault ? 'true' : 'false') + '">' +
       tab.icon + ' ' + tab.label +
-      (tab.id === 'comfort' ? '<span class="sk-tab-rec-badge">おすすめ</span>' : '') +
+      '' +
     '</button>';
   }).join('');
 
@@ -782,7 +795,7 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
       '<h2 class="sk-heading-main">' + heading + '</h2>' +
       waterCareHtml +
       costBoxHtml +
-      '<p class="sk-hint">💡 迷ったら <strong>推奨セット</strong> から始めるのがおすすめです</p>' +
+      '<p class="sk-hint">容器は、価格より先に今の甲長と成体に必要な広さを確認しましょう。小さく始める場合は成長に合わせて広げます。下の用品は比較候補で、そのまま一式そろえれば飼えるという意味ではありません。</p>' +
       bundleSummaryHtml +
       '<div class="sk-tabs" role="tablist">' + tabBtns + '</div>' +
       panels +
