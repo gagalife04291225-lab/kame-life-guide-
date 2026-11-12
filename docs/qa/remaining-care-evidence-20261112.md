@@ -45,3 +45,10 @@
 - スクリーンショット目視はニオイガメ記事と診断トップのdesktop、ニホンイシガメ寿命注記・診断結果・容器関連3記事のmobile。全28ページ全領域の目視や実機スクリーンリーダーの検証ではない。
 - 既存の診断質問badgeに「undefined 水棲ガメルート」を発見。baseにも同じroute.emoji参照がある。今回のサイズ/寿命変更とは別課題として保持し、スコープを広げて修正していない。
 - Owner「進めて」の継続指示により、PC確認後の反映工程へ進む。KID先行変更を統合し、最終レビュー・PR・merge条件を確認する。本番配信確認はまだ未実施。
+
+## KID先行main統合後の最終検証
+
+- 実測origin/main `6b0ff0ad368fa11f79c0feff1e349208fc11068c`（PR #222）を統合。競合はAI-HANDOFF/AI_CHANGELOGのみで、両工程の記録を保持。
+- Python58/58、寿命90/90、KID263/263、案内人21/21、楽天20/20 PASS。diff-check PASS。
+- main比43ファイル、元manifestと対象集合が一致（Scope外0）。削除/rename0。元候補からの差は文書4件のみ、39ファイルはSHA256一致。KIDのデータ/JS/HTML/テスト/QA記録はmainと同一。
+- 変更HTML28件のaffiliate URL列、GA ID列、styleブロックはmainと一致。CITES/法令ロジックは変更なし。本番反映は別途検証する。

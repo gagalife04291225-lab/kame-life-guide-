@@ -681,6 +681,16 @@
 - PR #219/#220を含むmain `b1f0256bd94dbf790939a24bde9792a5bf8288a8` を取り込み、共有記録の競合のみ解消。飼育案内とKIDのソース・本番確認結果を保持した。KID2件の型番/用途未確認と購入CTA HOLDは継続。
 - シェルター記事と専用テストはレビュー済み `97fb14b` と同一。Python 48/48、KID 165/165 PASS（WindowsはUTF-8モードと既存tzdataを使用）。公開前差分は当初の5ファイルのみ。
 
+
+## 2026-11-12 KID用品・実例とメーカー資料の整理（未公開候補）
+
+- 販売先5商品の型番を照合し、ROX530M/530L内寸A/B、GEX専用器具条件、赤長80L外寸を型番限定で記録。
+- Ownerの訂正を反映し、メーカー用途外と実飼育例の不存在を混同する一律非推奨案を撤回。床材/注水/湿潤床材、別型番の条件を区別。
+- 全10用品の根拠なしSAFE/スコア/倍率を見直し、8用品の適合甲長未確認と2器具の甲長非該当を表示。元2CTA停止維持、既存3導線は条件確認ロック。URL/tag/GA4不変。
+- Node263PASS、Python48OK、実Chromeの10カードと375/1280px確認。公開保留、commit/push/PR/merge未実施。詳細: docs/qa/kid-model-verification-20261112.md。
+
+- 追加指示で衣装ケースの複数実例（長期利用と破損の双方）を反映。天馬FAQを他社全製品へ一般化しない。Node263PASS・独立レビューBLOCKER0・追加表示確認済み。Owner承認で元2CTA停止のままPR/merge工程へ移行。本番未確認。
+
 ## [2026-11-12] 飼育情報の残る根拠・意味の是正（ローカル候補、未公開）
 
 - **Actor:** ChatGPT（調査・実装・独立レビュー）
@@ -690,3 +700,13 @@
 - **Approver:** Ownerの見直し指示に基づく候補作成。公開前の実画面確認・統合判断は未完了。
 - **Conforms:** 変更範囲固定、根拠と未評価の分離。KID/商品URL/GA4/CITES/順位は変更なし。
 - **Evidence:** `docs/qa/remaining-care-evidence-20261112.md`、`docs/qa/size-evidence-20261112.md`、`docs/fixed-facts/lifespan-evidence-20261112.md`。
+
+## [2026-11-12] 飼育根拠候補のPC確認・KID先行main統合
+
+- **Actor:** ChatGPT（実装・別担当による独立レビュー/PC検証）。
+- **Change/Reason:** Owner「進めて」で画面確認後の反映工程へ。PR #222 main `6b0ff0ad368fa11f79c0feff1e349208fc11068c` を取り込み、KIDコードを保持。共有docsの競合だけを解消し両方の履歴を残した。
+- **Validation:** PC Python58/58、寿命90/90、元43ファイルhash一致、28HTMLの375/1280px横はみ出し0、8種寿命共通部品・実12問診断・代表画面・#growth確認。cloudの57/58環境ERROR履歴は保持。
+- **PR/Commit:** 原候補 `ea1eb764fc7524c589133ef57cd1c20ea64ef551`、PC記録 `8277e00c`、branch `codex-remaining-care-evidence-20261112`。本番確認は未実施。
+- **Approver/Conforms:** Owner継続指示。対象外0を最終差分で確認し、商品URL/GA4/CITES/順位/CSS不変を維持する。
+
+- **KID先行公開の実測報告受領:** PR #222 merge `6b0ff0ad368fa11f79c0feff1e349208fc11068c`、Pages run43169226211成功。担当が公開3ファイルHTTP200/改行正規化完全一致と本番Chrome10カード/21出典/元2CTA停止を確認。careではKIDのサイトファイルを変更せず保持。
