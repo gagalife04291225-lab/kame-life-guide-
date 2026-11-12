@@ -643,3 +643,13 @@
 - **PR/Commit:** ブランチ `claude/kid-gauge-aria-unbounded-20261112`。開始時 main `97e7e434f828263b6773c467ce62196e80b9cd30`。
 - **Approver:** Owner の作業指示。
 - **Conforms:** Constitution v2.1 / handoff-gate / closeout-gate。
+
+
+## 2026-11-12 — シェルター記事のサイズ根拠・適合表現を限定修正（ローカルのみ）
+
+- **Actor:** Codex（RO-3）
+- **Change:** `shelter-best10.html` のスペングラー成体サイズ3箇所と雌雄差を資料に沿って修正。XXL・GEX S/Mの適合保証と未確認の甲長境界を撤去。入口/内寸と個体の実寸を照合する案内へ変更し、導入・まとめ・metadataを同期。専用回帰テスト7件を追加。
+- **Reason:** 比較記事とシェルター記事の新しい矛盾への限定対応。既存の承認待ち2件は変更せず、別clone/branchでローカル検証までとする指示。
+- **Validation:** Python36/36、旧mainは新規テスト4メソッド/6 assertionでFAIL。375/1280pxで横はみ出し0・JS例外0、12スクリーンショット目視。商品名/順位/14 ASIN/非schema script/CSS/既存リンク/他10商品/比較記事は不変。外部フォント・本番・実商品適合は未評価。詳細は `docs/qa/shelter-size-evidence-20261112.md`。
+- **Branch/Base:** `codex/shelter-size-evidence-20261112` / 実測main `0bc29360579461b90c3ddaf095a083671d8ded54`。
+- **Publication:** push・PR・merge・公開アップロードなし。外部送信の許可待ち。
