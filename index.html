@@ -1935,7 +1935,48 @@ section.cost-sim{ padding:34px 0 36px; }
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0d1f1a">
 <link rel="stylesheet" href="css/system.css">
-<body class="klg-has-nav">
+<style>
+
+/* Homepage readability: display headings retained, reading text enlarged. */
+body.klg-home{--home-reading-font:"Yu Gothic UI","Meiryo","Hiragino Sans","Noto Sans JP",sans-serif;font-family:var(--home-reading-font);font-size:1rem;--accent-dark:#805521;}
+.klg-home h2,.klg-home h3,.klg-home .entry-card-label,.klg-home .gl-situation,.klg-home .tg-title{font-family:"Playfair Display","Noto Serif JP",serif;}
+.klg-home .h12-support,.klg-home .entry-card-sub,.klg-home .gl-desc,.klg-home .tg-benefit,.klg-home .pc-card-s2-body,.klg-home .gl-sub,.klg-home .rtg-sub,.klg-home .csim-sub,.klg-home .csim-examples,.klg-home .cl-sub,.klg-home .author-box p{font-size:1rem;line-height:1.8;}
+.klg-home .entry-card-sub,.klg-home .gl-desc,.klg-home .tg-benefit,.klg-home .pc-card-s2-body,.klg-home .gl-sub,.klg-home .rtg-sub{color:#405548;}
+.klg-home .h12-support,.klg-home .h12-emotion,.klg-home .csim-sub,.klg-home .csim-examples,.klg-home .csim-reassure,.klg-home .cl-sub,.klg-home .hero-eeeat p{color:#d9e0d6;}
+.klg-home .h12-emotion{font-size:1rem;line-height:1.8;}
+.klg-home .hero-eeeat p{font-size:.9375rem;line-height:1.8;max-width:70rem;margin-inline:auto;}
+.klg-home .hero-eeeat strong{color:#e0bd85;}
+.klg-home .hero-annainin-link,.klg-home .entry-card-cta,.klg-home .gl-cta,.klg-home .tg-cta,.klg-home .gl-sub-link,.klg-home .ch-more,.klg-home .spx-lead,.klg-home .spx-cat,.klg-home .csim-tab,.klg-home .csim-cta-secondary,.klg-home .cl-secondary{font-family:var(--home-reading-font);font-size:.9375rem;line-height:1.65;}
+.klg-home .hero-annainin-link{color:#e5eadd;}
+.klg-home .hero-annainin-link--onlight{color:#2f4a3c;}
+.klg-home .gl-cta,.klg-home .tg-cta,.klg-home .ch-more,.klg-home .spx-cat-n{color:#805521;}
+.klg-home .gl-card:hover .gl-cta{color:#2f4a3c;}
+.klg-home .ch-gear-links a{font-size:.9375rem;color:#805521;}
+.klg-home .hero-cta-primary,.klg-home .hero-cta-secondary,.klg-home .csim-cta,.klg-home .cl-cta-primary{font-family:var(--home-reading-font);font-size:1rem;height:auto;min-height:52px;padding-block:12px;line-height:1.5;}
+.klg-home .hero-cta-group{flex-wrap:wrap;}
+.klg-home .hero-cta-group>a{max-width:100%;}
+.klg-home .csim-reassure,.klg-home .csim-cost-label,.klg-home .csim-path-label,.klg-home .csim-tier,.klg-home .cl-chip,.klg-home .trust-facts span,.klg-home .rtg-own,.klg-home .rtg-latin,.klg-home .rtg-credits a,.klg-home footer,.klg-home .disclaimer,.klg-home .spx-cat-n{font-size:.875rem;line-height:1.7;}
+.klg-home .csim-cost-label,.klg-home .csim-path-label,.klg-home .csim-examples strong,.klg-home .cl-secondary{color:#e0bd85;}
+.klg-home .csim-tab,.klg-home .csim-tier,.klg-home .csim-cta-secondary,.klg-home .cl-chip{color:#d9e0d6;}
+.klg-home .csim-tab.active{color:#e0bd85;}
+.klg-home .rtg-latin,.klg-home .rtg-credits a{color:#586450;}
+.klg-home .rtg-latin{white-space:normal;overflow-wrap:anywhere;}
+.klg-home .rtg-name{font-size:1rem;line-height:1.5;}
+.klg-home footer,.klg-home .disclaimer{color:#b8c5ba;}
+.klg-home .h12-eyebrow,.klg-home .h12-brand,.klg-home .rtg-eyebrow,.klg-home .gl-eyebrow,.klg-home .gl-module-label,.klg-home .tg-cat,.klg-home .pc-card-s2-num,.klg-home .pc-eyebrow-s2,.klg-home .cl-eyebrow{font-size:.875rem;letter-spacing:.08em;line-height:1.5;opacity:1;}
+.klg-home .rtg-eyebrow,.klg-home .gl-eyebrow,.klg-home .gl-module-label,.klg-home .tg-cat{color:#805521;}
+.klg-home .h12-brand,.klg-home .h12-brand em{color:#c9a96b;}
+.klg-home .entry-card>div{min-width:0;}
+.klg-home .entry-card{align-items:flex-start;}
+.klg-home .gl-card,.klg-home .tg-card{min-width:0;}
+.klg-home .klg-nav-link,.klg-home .klg-nav-cta{font-family:var(--home-reading-font);font-size:.875rem;}
+.klg-home .klg-nav-link{color:#e0e7df;padding-inline:8px;}
+.klg-home .klg-nav-logo{font-size:.875rem;}
+@media(min-width:720px){.klg-home .klg-nav-link,.klg-home .klg-nav-cta{font-size:1rem;}.klg-home .klg-nav-link{padding-inline:12px;}}
+@media(max-width:719px){.klg-home .klg-nav-logo .klg-nav-logo-text{display:none;}.klg-home .klg-nav-inner{gap:2px;padding-inline:8px;}.klg-home .klg-nav-link{padding-inline:5px;}.klg-home .klg-nav-cta{padding-inline:10px;margin-left:4px;}}
+
+</style>
+<body class="klg-has-nav klg-home">
 <svg class="klg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs>
 <symbol id="klg-i-tortoise" viewBox="0 0 24 24"><path d="M4.4 13.6c0-3.4 3.2-6 7.6-6s7.6 2.6 7.6 6"/><path d="M4.4 13.6h15.2"/><path d="M12 7.6v6M8.2 8.4l-1.1 5.2M15.8 8.4l1.1 5.2"/><path d="M6.2 13.6v2.2M17.8 13.6v2.2M9.4 13.6v1.6M14.6 13.6v1.6"/><path d="M19.6 11.8h1.6a1 1 0 0 1 0 2h-1.2"/></symbol>
 <symbol id="klg-i-forest" viewBox="0 0 24 24"><path d="M4.6 14.2c0-3.2 3.3-5.8 7.4-5.8s7.4 2.6 7.4 5.8"/><path d="M4.6 14.2h14.8"/><path d="M12 8.4v5.8"/><path d="M7.4 9.6 6.2 14.2M16.6 9.6l1.2 4.6"/><path d="M3 18.4c1.8-1 3.4-1 5 0M16 18.4c1.8-1 3.4-1 5 0"/></symbol>
