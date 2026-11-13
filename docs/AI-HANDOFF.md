@@ -2202,3 +2202,8 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - NEXT: independent review, PR, then wait for parent to publish after safety fixes. Do not repeat question/scoring or species research.
 
 - Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).
+
+## PR #239 final integration (2026-11-13)
+- BASE: main 9b371457254bfad87d767b1b958ae39613908cc9. Integrated after diagnosis PR #243; article and official affiliate evidence unchanged.
+- PR #243 is merged and production verified in issuecomment-6843065965 (Pages run43360177434); its older pending-publication entry is historical.
+- NEXT: finish authorized PR #239 publication and verify served keeper-hacks article; then reconcile operations PR #246. Final merge/production evidence will be recorded on the PR.
