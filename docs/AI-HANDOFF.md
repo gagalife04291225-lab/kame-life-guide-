@@ -18,7 +18,7 @@
 ## 2026-11-13 商品比較記事：表現と購入導線（レビュー待ち・未公開）
 - BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef。対象は cage/dish/food/shelter/substrate/water-filter-best10.html の6ページ。UVBは安全PR #242を待ち別途統合する。
 - COMPLETED: 裏付けのない売れ筋・ベスト10を比較案内へ変更、掲載番号の欠番を修正。楽天ボタンの検索対象を商品カード全体へ修正（旧DOMではh3を取得できなかった）。販売先の品名・型番を照合した既存4商品のみ、PRODUCTSの正規楽天URLを再利用。その他は商品名検索と明記。商品マスター・ASIN・GA4イベント・Amazonタグ・価格・写真・本人使用体験は変更なし。
-- 検証: 新規テスト4件PASS。6ページ×320/390/1280pxで楽天ボタン件数=商品カード件数、4直リンク、横はみ出し0。Python全124件中122件PASS、GA4の2件は環境にtzdataがないため実行エラー（今回変更外）。JSON-LD解析・git diff --check PASS。
+- 検証: 新規テスト4件PASS。6ページ×320/390/1280pxで楽天ボタン件数=商品カード件数、4直リンク、横はみ出し0。Python全124件PASS（QA専用フォルダに公式tzdataを導入してGA4の2件も完走）。JSON-LD解析・git diff --check PASS。
 - UNRESOLVED: UVBで異なる品名への同一ASIN割当（B00JZFJ5R0/B00BF91PYA）、食餌と床材の同一ASIN重複を別途照合中。ASINのみで楽天URLを横展開しない。PR #239は別作業でmerge未承認。
 - NEXT: UVB安全PRのmerge後に最新mainへ統合し、商品同定の残確認を実施。公開/本番確認は未実施。今回の6ページだけで全商品監査完了としない。
 
