@@ -9,9 +9,12 @@ const paths=['species/spenglers-leaf-turtle.html','species/brown-wood-turtle-man
 const addedSources=['https://theturtleroom.org/species-profile/geoemyda-spengleri/','https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-central-american-wood-turtle-care'];
 const urls=s=>[...s.matchAll(/\bhref="([^"]+)"/g)].map(x=>x[1]).filter(x=>!addedSources.includes(x));
 const scripts=s=>[...s.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(x=>x[0].replace(/(\.\.\/(?:data\/products|js\/starter-kit)\.js)\?v=[a-f0-9]+/g,'$1'));
+// PR240 law-only text is independently tested and must match its committed content exactly.
+execFileSync('python',['tools/test_cites_document_wording.py'],{cwd:root,stdio:'pipe'});
+const normalizeLaw=(text,path)=>{const legal=execFileSync('git',['-C',root,'show','c763fa94:'+path],{encoding:'utf8'}).replace(/\r\n/g,'\n');const box=x=>x.match(/<div class="cites-box">.*?<\/div>/)?.[0];assert.equal(box(text),box(legal));return text.replace(box(text),box(base(path)));};
 let checks=0;const ok=x=>{assert.ok(x);checks++;};
 for(const path of paths){
- const now=load(path),old=base(path);
+ const now=normalizeLaw(load(path),path),old=base(path);
  assert.deepEqual(urls(now),urls(old),'Existing links/order unchanged');checks++;
  assert.deepEqual(scripts(now),scripts(old),'Scripts including JSON-LD/GA4 unchanged except shared asset cache version');checks++;
  for(const m of now.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)){JSON.parse(m[1]);checks++;}

@@ -16,6 +16,7 @@ const stable=s=>JSON.stringify(s,(k,v)=>typeof v==='function'?v.toString():v);
 // These exact care edits are asserted by test-next-species-conditions.
 // Preserve all legal/routing/function fields in this original-baseline comparison.
 function normalizeIndependentCare(a,b){
+ if(a.slug==='chinese-stripe-necked-turtle'){assert.equal(b.cites,'CITES III');delete a.cites;delete b.cites;}
  if(a.slug==='impressed-tortoise'){
   a.reason=b.reason;
   a.specs={...a.specs,'主な食事':b.specs['主な食事'],'温度':b.specs['温度']};

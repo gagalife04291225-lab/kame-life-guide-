@@ -1,7 +1,7 @@
-.......................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:51: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\shindan\\species.js' mode='r' encoding='utf-8'>
+..........................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:51: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\shindan\\species.js' mode='r' encoding='utf-8'>
   raw = open(os.path.join(ROOT, 'shindan', 'species.js'), encoding='utf-8').read()
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
-....................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides/small-best-turtles.html' mode='r' encoding='utf-8'>
+........................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides/small-best-turtles.html' mode='r' encoding='utf-8'>
   return open(os.path.join(ROOT, rel), encoding='utf-8').read()
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species/musk-turtle.html' mode='r' encoding='utf-8'>
@@ -733,7 +733,7 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-pond-turtle.html' mode='r' encoding='utf-8'>
   t = open(f, encoding='utf-8').read()
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
-........................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:82: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\data\\species-master.json' mode='r' encoding='utf-8'>
+..............................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:82: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\data\\species-master.json' mode='r' encoding='utf-8'>
   master = json.load(open(os.path.join(ROOT, 'data', 'species-master.json'), encoding='utf-8'))
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:84: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides\\small-best-turtles.html' mode='r' encoding='utf-8'>
@@ -741,6 +741,6 @@ C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.p
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ....
 ----------------------------------------------------------------------
-Ran 107 tests in 0.655s
+Ran 120 tests in 2.096s
 
 OK

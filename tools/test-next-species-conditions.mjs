@@ -10,6 +10,7 @@ for(const [route,list] of Object.entries(now.species).filter(([r])=>r!=='all'))f
  if(actual.slug==='home-hinge-back-tortoise'){for(const k of ['cites','legal','reason','availability','diagnosisNotice']){delete actual[k];delete expected[k];}}
  if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(actual.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(actual.legal==='conditional_invasive'?['reason']:[])]){delete actual[k];delete expected[k];}}
  if(actual.slug==='impressed-tortoise'){expected.reason='リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林にすむ種。湿った床と通気、暑さを避ける場所と冷え込んだときの保温を両立させます。長期飼育記録が少なく専門家でも難しい究極の挑戦種。';expected.specs['主な食事']='キノコを中心に植物性の餌';expected.specs['温度']='場所・昼夜で調整（種ページ参照）';expected.coreSpecs.temp='場所・昼夜で調整（種ページ参照）';expected.coreSpecs.diet='菌食中心（キノコ・植物）';}
+ if(actual.slug==='chinese-stripe-necked-turtle'){assert.equal(actual.cites,'CITES III');expected.cites='CITES III';}
  assert.deepEqual(actual,expected,actual.name);count++;
 }assert.equal(count,119);assert.equal(changes,2);
 assert.equal(Object.keys(now.conditions).length,119);assert.equal(Object.keys(now.conditions).filter(k=>!old.conditions[k]).length,103);

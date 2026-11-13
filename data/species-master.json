@@ -201,10 +201,12 @@
           "provenance": "official",
           "institution": "CITES事務局",
           "sources": [
-            "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+            "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf",
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html",
+            "https://www.env.go.jp/press/101740.html"
           ],
-          "note": "CoP16採択・2013-06-12発効。野生個体の商業目的輸出はゼロ枠",
-          "last_verified": "2026-08-17"
+          "note": "CoP16採択・2013-06-12発効。附属書II。環境省の輸出助言方針では野外捕獲個体と飼育繁殖個体で条件が異なる。野生個体すべての商業輸出がゼロ枠という扱いではない。",
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": "2013-06-12",
@@ -7066,9 +7068,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "NEEDS_REVIEW",
-          "note": "附属書III（中国）の可能性。原文確認要"
+          "value": "III",
+          "verification": "CONFIRMED",
+          "note": "附属書III（中国が掲載国）。2026年3月5日適用の統合附属書で確認。国内の外来生物法による規制とは別。",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -8876,10 +8884,11 @@
           "institution": "CITES事務局",
           "sources": [
             "https://cites.org/eng/taxonomy/term/4665",
-            "https://cites.org/sites/default/files/eng/cop/09/prop/E09-Prop-45_Testudo.PDF"
+            "https://cites.org/sites/default/files/eng/cop/09/prop/E09-Prop-45_Testudo.PDF",
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
           "note": "CoP9で附属書IIからIへ移行",
-          "last_verified": "2026-08-17"
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": "1995-02-16",
@@ -9055,10 +9064,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -9110,10 +9123,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -9165,10 +9182,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -10135,8 +10156,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,
@@ -10216,8 +10244,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,
@@ -10293,8 +10328,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,

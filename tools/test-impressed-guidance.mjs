@@ -4,7 +4,12 @@ import {execFileSync} from 'node:child_process';
 const base='fde885bd';
 const before=p=>execFileSync('git',['show',`${base}:${p}`],{encoding:'utf8'});
 const read=p=>fs.readFileSync(p,'utf8').replace(/\r\n/g,'\n');
-const path='species/impressed-tortoise.html', html=read(path), old=before(path);
+const path='species/impressed-tortoise.html', old=before(path);
+execFileSync('python',['tools/test_cites_document_wording.py'],{stdio:'pipe'});
+const legalHtml=execFileSync('git',['show','c763fa94:'+path],{encoding:'utf8'}).replace(/\r\n/g,'\n');
+const box=s=>s.match(/<div class="cites-box">.*?<\/div>/)?.[0];
+assert.equal(box(read(path)),box(legalHtml),'committed law text');
+const html=read(path).replace(box(read(path)),box(old));
 const faq=s=>[...s.matchAll(/<div class="faq-body">([\s\S]*?)<\/div>/g)].map(m=>m[1]);
 const blocks=s=>[...s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
 const all=blocks(html).flatMap(b=>b['@graph']||[b]);
@@ -40,5 +45,8 @@ for(const [slug,value] of Object.entries(enclosureWording)){const a=normalized.s
 execFileSync('python',['tools/test_canton_enclosure_basis.py'],{stdio:'pipe'});
 const canton=normalized.species.find(s=>s.slug==='canton-reeves-turtle');
 canton.care.enclosure_jp.japan_fit.basis=prior.species.find(s=>s.slug==='canton-reeves-turtle').care.enclosure_jp.japan_fit.basis;
+// Exact CITES-only records from separately merged PR240; all non-CITES fields stay frozen.
+const lawMaster=JSON.parse(execFileSync('git',['show','c763fa94:data/species-master.json'],{encoding:'utf8'}));
+for(const rec of normalized.species){const original=prior.species.find(s=>s.slug===rec.slug),law=lawMaster.species.find(s=>s.slug===rec.slug);if(JSON.stringify(original.cites)!==JSON.stringify(law.cites)){assert.deepEqual(rec.cites,law.cites,rec.slug+' committed CITES correction');rec.cites=original.cites;}}
 assert.deepEqual(normalized,prior,'all other master species/fields unchanged');
 console.log('PASS impressed guidance: FAQ JSON-LD, old failure, temperature meanings, existing links/scripts unchanged, master scope/verification preserved');
