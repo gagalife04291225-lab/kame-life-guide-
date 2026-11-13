@@ -1,7 +1,8 @@
 """Structural checks for the no-secret, standard-runner quality gate."""
 import importlib.util
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).parents[1]
 SPEC = importlib.util.spec_from_file_location('offline_checks', ROOT / 'scripts/run-offline-checks.py')
@@ -12,7 +13,16 @@ SPEC.loader.exec_module(mod)
 class OfflineGateTests(unittest.TestCase):
     def test_node_tests_discovered_without_fixed_count(self):
         actual = [cmd[1] for cmd in mod.commands() if cmd[:1] == ['node'] and cmd[1].startswith('tools/test-')]
-        self.assertEqual(actual, [str(p.relative_to(ROOT)) for p in sorted((ROOT / 'tools').glob('test-*.mjs'))])
+        self.assertEqual(actual, [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'tools').glob('test-*.mjs'))])
+
+    def test_node_paths_normalized_for_windows_and_posix(self):
+        for path_type, root_text in ((PureWindowsPath, 'C:/repo'), (PurePosixPath, '/repo')):
+            root = path_type(root_text)
+            # relative_to must receive the matching pure path, while glob is mocked.
+            with mock.patch.object(mod, 'ROOT', root), mock.patch.object(
+                    path_type, 'glob', return_value=[root / 'tools' / 'test-example.mjs'], create=True):
+                commands = list(mod.commands())
+            self.assertIn(['node', 'tools/test-example.mjs'], commands)
 
     def test_ci_cost_and_secret_boundaries(self):
         text = (ROOT / '.github/workflows/site-offline-checks.yml').read_text()
