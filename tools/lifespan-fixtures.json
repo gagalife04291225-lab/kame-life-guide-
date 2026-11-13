@@ -1,50 +1,716 @@
 {
   "musk-turtle": [
     "54年以上の飼育記録（平均は不明）",
-    "カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。",
+    "カナダの管理計画には、飼育下で54年以上生きた記録が載っています。平均寿命は分かっておらず、54年が長生きの限界というわけでもありません。",
     "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html",
     "カナダ環境・気候変動省（2024）"
   ],
   "razorback-musk-turtle": [
     "29年以上の飼育記録",
-    "Slavensの記録集には、29年4か月飼育され、報告時点でも生存していた雌が掲載されています。出生からの年齢や平均寿命を示す数字ではありません。",
+    "Slavensの記録集には、29年4か月飼育され、報告時にも生きていた雌が載っています。これは飼育された期間で、出生からの年齢や平均寿命ではありません。",
     "https://www.pondturtle.com/lturtle.html",
     "Slavens 飼育記録集"
   ],
   "white-lipped-mud-turtle": [
     "成体から19年以上の飼育記録",
-    "Slavensの記録集には、成体で迎えてから19年2か月飼育された個体が掲載されています。出生からの年齢や平均寿命を示す数字ではありません。",
+    "Slavensの記録集には、成体で迎えてから19年2か月飼育した例があります。迎える前にも生きていた期間があるため、この年数は出生からの年齢や平均寿命とは別です。",
     "https://www.pondturtle.com/lturtle.html",
     "Slavens 飼育記録集（Snider 1992引用）"
   ],
   "florida-box-turtle": [
     "22年以上の飼育記録",
-    "Slavensの記録集には、フロリダハコガメ（Terrapene carolina bauri）の22年7か月の飼育記録があります。平均寿命や寿命の上限を示す数字ではありません。",
+    "Slavensの記録集には、フロリダハコガメ（Terrapene carolina bauri）を22年7か月飼育した記録があります。一例の飼育期間なので、平均寿命や長生きの限界はこの数字からは分かりません。",
     "https://www.pondturtle.com/lturtle.html",
     "Slavens 飼育記録集（Bowler 1977引用）"
   ],
   "japanese-pond-turtle": [
     "雄約10〜15年・雌約20〜30年（動物園の案内）",
-    "福岡市動物園は、寿命を雄約10〜15年、雌約20〜30年と案内しています。統計上の平均や上限を確定した数字ではなく、個体の寿命を保証するものではありません。",
+    "福岡市動物園は、雄が約10〜15年、雌が約20〜30年と案内しています。統計上の平均か上限かは示されていません。個体による違いがあるため、どのカメもこの年数を生きると決められるものではありません。",
     "https://zoo.city.fukuoka.lg.jp/animals/detail/117",
     "福岡市動物園"
   ],
   "spenglers-leaf-turtle": [
     "20年以上（動物園の案内）",
-    "シンシナティ動物園は寿命を20年以上と案内しています。平均や上限の区別は示されていません。長く飼える環境を整えて迎えましょう。",
+    "シンシナティ動物園は、寿命を20年以上と案内しています。平均か上限かの説明はありませんが、長く世話を続けるつもりで環境を整えておきたいカメです。",
     "https://cincinnatizoo.org/animals-archive/black-breasted-leaf-turtle/",
     "シンシナティ動物園"
   ],
   "russian-tortoise": [
     "60年以上にわたる飼育例",
-    "Tortoise Trustは、1960年代初頭に輸入され、2024年にも生存している雌を紹介しています。これは長期飼育の一例で、平均寿命ではありません。数十年先まで世話を続けられる計画が必要です。",
+    "Tortoise Trustが紹介する雌は、1960年代初頭に輸入され、2024年にも生きていました。この一頭の長期飼育記録で、平均寿命ではありません。",
     "https://www.tortoisetrust.com/post/captive-care-of-the-russian-tortoise-testudo-horsfieldii",
     "Tortoise Trust / A. C. Highfield（2024、更新2025）"
   ],
   "hermann-tortoise": [
     "数十年単位・上限は未確立",
-    "IUCNの専門家資料は野外で数十年生きる個体に触れていますが、最大寿命は不確実としています。数十年先まで世話を続ける計画が必要です。",
+    "IUCNの専門家資料には、野外で数十年生きる個体が紹介されています。一方、何歳まで生きるかはまだはっきりしていません。数十年先も世話を続けられるか、迎える前に考えておきたい種です。",
     "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_059_hermanni_v1_2011.pdf",
     "IUCN TFTSG 種アカウント（2011）"
+  ],
+  "reeves-turtle": [
+    "20〜45年（動物園の案内）",
+    "コルケアサーリ動物園は、寿命を20〜45年と案内しています。ただし、平均なのか、野生と飼育下のどちらなのかは書かれていません。45年を上限と決めることもできません。",
+    "https://korkeasaari.fi/en/animal/chinese-pond-turtle/",
+    "コルケアサーリ動物園"
+  ],
+  "red-eared-slider": [
+    "飼育下で40年に達する（専門機関の案内）",
+    "Pennsylvania Sea Grantは、飼育下で40年に達すると案内しています。平均寿命や全個体に共通する上限ではありませんが、数十年先まで世話を続ける準備が必要です。",
+    "https://seagrant.psu.edu/resources/resource-item/red-eared-slider-ais-fact-sheet/",
+    "Pennsylvania Sea Grant（2025）"
+  ],
+  "sulcata-tortoise": [
+    "飼育下54年以上の報告",
+    "IUCNの専門家資料には、飼育下で54年以上生きたという文献報告が載っています。野生での寿命は不明で、54年も平均や上限ではありません。自分だけでなく、世話を引き継ぐ人のことまで考えて迎えたい種です。",
+    "https://iucn-tftsg.org/wp-content/uploads/crm.5.110.sulcata.v1.2020.pdf",
+    "IUCN TFTSG 種アカウント（2020、Biegler 1966引用）"
+  ],
+  "red-footed-tortoise": [
+    "50年以上（動物園の案内）",
+    "スミソニアン国立動物園は、50歳以上に達することが多いと案内しています。野生と飼育下の区別や平均の求め方は書かれておらず、50年が上限という意味でもありません。",
+    "https://www.nationalzoo.si.edu/animals/red-footed-tortoise",
+    "スミソニアン国立動物園"
+  ],
+  "greek-tortoise": [
+    "100年に達することも（動物園の案内）",
+    "メリーランド動物園は、100年に達することもあると案内しています。ただし、亜種や野生・飼育下の区別、具体的な個体記録はありません。平均100年と考えたり、全亜種の上限として使ったりはできません。",
+    "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "メリーランド動物園"
+  ],
+  "eastern-box-turtle": [
+    "25〜35年（動物園の案内）",
+    "スミソニアン国立動物園のトウブハコガメのページでは、ハコガメの寿命を一般に25〜35年とし、100年を超える例も紹介しています。ただし、個体の記録や野生・飼育下の区別はありません。平均や上限が確かめられた数字ではありません。",
+    "https://nationalzoo.si.edu/animals/eastern-box-turtle",
+    "スミソニアン国立動物園"
+  ],
+  "malayan-box-turtle": [
+    "25〜30年（専門家資料の目安）",
+    "IUCNの専門家資料では寿命の目安が25〜30年とされ、飼育下で38.2年という文献記録も紹介されています。目安と個体の記録は別で、平均寿命や現在の最長記録を確定したものではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_053_amboinensis_v1_2011.pdf",
+    "IUCN TFTSG 種アカウント（2011）"
+  ],
+  "elongated-tortoise": [
+    "成体から44年間の飼育例",
+    "IUCNの専門家資料には、1972年に成体で迎えた雌が、2016年にも生きて産卵していた記録があります。44年は迎えてからの期間です。出生からの年齢や平均寿命ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_096_elongata_v1_2016.pdf",
+    "IUCN TFTSG 種アカウント（2016）"
+  ],
+  "home-hinge-back-tortoise": [
+    "飼育下60年という推定",
+    "ノルウェーのVKMの評価資料では、飼育下の寿命を60年と推定しています。Luiselliら（2021）を引用した値ですが、60年間追跡した個体の記録や、平均寿命の求め方は載っていません。",
+    "https://www.vkm.no/download/18.1e9d871e18e5134f3943db3b/1710934445385/Scientific%20assessment%20of%20risk%20to%20the%20populations%20of%20tortoises%20listed%20by%20CITES%20as%20a%20result%20of%20trade_publisert%20versjon.pdf",
+    "VKM CITESリクガメ類リスク評価（2024）"
+  ],
+  "leopard-tortoise": [
+    "100年に達することも（動物園の案内）",
+    "オレゴン動物園は、平均寿命には幅があり、100年に達することもあると案内しています。平均で100年生きるという話ではなく、種の上限が100年と確かめられているわけでもありません。",
+    "https://www.oregonzoo.org/animals/leopard-tortoise",
+    "オレゴン動物園"
+  ],
+  "spotted-turtle": [
+    "野生で44年を超える個体の報告",
+    "カナダのCOSEWIC評価資料には、野生で44年を超える個体の報告があります。同じ資料にある雌110年・雄65年は生存率からの計算値で、そこまで生きた個体を追跡した年齢ではありません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/spotted-turtle-2014.html",
+    "COSEWIC 評価資料（2014）"
+  ],
+  "west-african-mud-turtle": [
+    "長期の個体記録を確認できず",
+    "The Turtle Sourceは、群れを6年間飼育し、最後の2年に繁殖した経験を紹介しています。飼育や繁殖の例はありますが、群れを飼った年数だけでは、一頭が何年生きるかまでは分かりません。",
+    "https://theturtlesource.com/african-dwarf-mud-turtle/",
+    "The Turtle Source（飼育繁殖経験）"
+  ],
+  "western-painted-turtle": [
+    "50年を超える可能性（保全計画の推定）",
+    "カナダの管理計画では、山間・ロッキー山脈地域の個体群は50年を超えて生きる可能性があるとされています。あくまで推定で、50年以上追跡した個体の記録や平均寿命ではありません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/western-painted-turtle-2018.html",
+    "カナダ環境・気候変動省 管理計画（2018）"
+  ],
+  "eastern-painted-turtle": [
+    "野生で約50歳の雌の報告",
+    "COSEWICの評価資料には、メリーランドで再捕獲された雌を約50歳とする報告があります。出生から年齢を確かめた記録ではなく、この数字だけで平均寿命や上限も分かりません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/midland-eastern-painted-turtle-2018.html",
+    "COSEWIC 評価資料（2018、Siess 2005引用）"
+  ],
+  "northern-diamondback-terrapin": [
+    "40年を超えることも（州の案内）",
+    "ノースカロライナ州は、寿命が40年を超えることもあると案内しています。州内のノーザンとカロリナを扱う種全体の解説で、平均寿命や、どちらかの亜種の最長記録ではありません。",
+    "https://www.ncwildlife.gov/diamond-back-terrapin-species-profile/open",
+    "ノースカロライナ州野生生物資源委員会"
+  ],
+  "pancake-tortoise": [
+    "30年以上（動物園の案内）",
+    "スミソニアン国立動物園は、30年以上生きることがあると案内しています。野生と飼育下の区別や平均の求め方は載っておらず、30年が上限というわけでもありません。",
+    "https://nationalzoo.si.edu/animals/african-pancake-tortoise",
+    "スミソニアン国立動物園"
+  ],
+  "name:インドホシガメ": [
+    "25〜50年（動物園の案内）",
+    "福岡市動物園の案内では、寿命は25〜50年です。野生と飼育下の区別や平均の求め方は書かれていないため、平均寿命や50年という上限が確かめられた数字としては扱えません。",
+    "https://zoo.city.fukuoka.lg.jp/animals/detail/120",
+    "福岡市動物園"
+  ],
+  "aldabra-tortoise": [
+    "成体から50年間の飼育例",
+    "スミソニアン国立動物園では、1976年に成体で迎えた2頭が、2026年に来園50周年を迎えました。50年は来園後の飼育期間で、80〜100歳という年齢は推定です。どちらも平均寿命や種の上限ではありません。",
+    "https://nationalzoo.si.edu/animals/news/happy-50th-zooniversary-chyna-and-rulon-zoos-aldabra-giant-tortoises",
+    "スミソニアン国立動物園（2026年9月8日）"
+  ],
+  "wood-turtle": [
+    "野生で46年以上生存した雌の報告",
+    "COSEWICの評価資料には、ペンシルベニアで標識された雌が少なくとも46年生存したという報告があります。この個体の記録から、平均寿命や種の最長記録が決まるわけではありません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/wood-turtle-2018.html",
+    "COSEWIC 評価資料（2018、Ernst 2001引用）"
+  ],
+  "european-pond-turtle": [
+    "50年に達することも（動物園の案内）",
+    "パリ動物園は、基亜種Emys orbicularis orbicularisが50年に達することもあると案内しています。野生と飼育下の区別や平均の求め方は載っていません。他の亜種も含めて50年が上限という意味ではありません。",
+    "https://www.parczoologiquedeparis.fr/fr/cistude-d-europe",
+    "パリ動物園"
+  ],
+  "pig-nosed-turtle": [
+    "飼育下で30歳台後半まで生きた例",
+    "スミソニアン国立動物園は、飼育下で30歳台後半まで生きた例を紹介する一方、野生での寿命は不明としています。平均寿命や種の上限が確かめられた数字ではありません。",
+    "https://www.nationalzoo.si.edu/animals/fly-river-turtle",
+    "スミソニアン国立動物園"
+  ],
+  "yellow-mud-turtle": [
+    "野外調査で推定58歳の個体を含む報告",
+    "ネブラスカの野生個体群の研究では、2018年に調べた成体200匹の年齢は7〜58歳でした。初回捕獲時の成長輪から年齢を推定し、その後の経過年数を加えたものです。58歳は平均寿命でも、種の上限でもありません。",
+    "https://link.springer.com/article/10.1186/s12979-023-00335-x",
+    "Bronikowskiら（2023、標識再捕獲研究）"
+  ],
+  "african-helmeted-turtle": [
+    "旧分類の飼育記録で20年以上",
+    "2008年の専門家資料には、20年以上の飼育記録が載っています。ただし、当時Pelomedusa subrufaにまとめられていたカメは、後に複数種へ分けられました。記録の個体が現在のPelomedusa subrufaかは分からず、本種固有の寿命とは言えません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_007_subrufa_v1_2008.pdf",
+    "IUCN TFTSG 種アカウント（2008、再分類前）"
+  ],
+  "matamata": [
+    "旧分類の記録で成体から35年9か月の飼育例",
+    "Slavensの記録集には、1961年に成体で迎えた雌を35年9か月飼育し、報告時も生きていた例があります。2020年にオリノコマタマタが別種になる前の記録で、現在のどちらの種かは不明です。出生からの年齢や、本種固有の上限を示す数字ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（再分類前）"
+  ],
+  "marginated-tortoise": [
+    "成体から21年2か月の飼育記録",
+    "Slavensの記録集には、1976年に成体で迎えた雄を21年2か月飼育し、報告時も生きていた例があります。迎えてからの期間なので、出生からの年齢や平均寿命、長生きの限界とは別です。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "impressed-tortoise": [
+    "保全評価の計算で35年を仮定",
+    "2021年のIUCN保全評価では、世代長を計算するために寿命を35年と仮定しています。35年生きた個体を観察した記録や平均寿命ではなく、計算の前提として置いた数字です。飼育期間の目安とは分けて考える必要があります。",
+    "https://www.researchgate.net/publication/356711655_Manouria_impressa_Impressed_Tortoise_Assessment_by_View_on_wwwiucnredlistorg_THE_IUCN_RED_LIST_OF_THREATENED_SPECIES",
+    "Cotaら IUCN評価（2021、著者公開全文）"
+  ],
+  "name:ビルマホシガメ": [
+    "野生では50年超の可能性（資料上の推定）",
+    "サンディエゴ動物園は、野生での寿命は十分分かっていないとしながら、50年を超える可能性を紹介しています。平均や確認済みの上限ではありません。同じ資料の飼育集団の数字とは集計条件が違うため、そのまま比べることもできません。",
+    "https://ielc.libguides.com/sdzg/factsheets/burmese-star-tortoise/reproduction",
+    "サンディエゴ動物園 Wildlife Alliance 資料（2026）"
+  ],
+  "name:エジプトリクガメ": [
+    "飼育下70〜100年（動物園の案内）",
+    "オレゴン動物園は、飼育下で70〜100年生きる可能性を案内していますが、個体の追跡記録や計算根拠は載っていません。専門施設の手引きには別の推定もあり、70〜100年を確定した平均や上限とはできません。",
+    "https://www.oregonzoo.org/animals/egyptian-tortoise",
+    "オレゴン動物園"
+  ],
+  "blandings-turtle": [
+    "野生で推定83歳以上の雌の報告",
+    "ミシガン大学は、1954年に成熟個体として標識し、2016年に再捕獲した雌を83歳以上と推定しています。出生年が分かる個体ではなく、平均寿命や現在の世界記録を示す数字でもありません。",
+    "https://lsa.umich.edu/eeb/news-events/all-news/archived-news/2016/05/on-u-m-gateway--oldest-well-documented-blanding-s-turtle-recaptu.html",
+    "ミシガン大学（2016）"
+  ],
+  "northern-map-turtle": [
+    "野生で20年を超える生存例",
+    "COSEWICの評価資料には、野生で20年を超えて生存するという報告があります。平均寿命や種の上限を確定した値ではありません。また、同じ資料に出てくる世代長32年は寿命とは別の指標です。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/northern-map-turtle-2012.html",
+    "COSEWIC 評価資料（2012）"
+  ],
+  "mississippi-map-turtle": [
+    "幼体で捕獲後35年5か月の飼育記録",
+    "Snider・Bowlerの記録集には、旧学名Graptemys kohniiとして、野生由来の幼体雄を35年5か月飼育した例が載っています。迎えてからの期間で、出生からの年齢や平均寿命、上限ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p13）"
+  ],
+  "florida-softshell-turtle": [
+    "36年8か月の飼育記録",
+    "Slavensの記録集には、スミソニアンの個体が1930年に迎えられ、1967年に死亡するまで36年8か月飼育された記録があります。迎えた時の年齢は不明なので、出生からの年齢や平均寿命とは別です。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "chinese-softshell-turtle": [
+    "野生で15〜20年（動物園の案内）",
+    "Reptilia Zooは、野生では通常15〜20年と紹介しています。「平均寿命」の欄にある数字ですが、調査対象・計算方法・元の研究は示されていないため、動物園の案内値として紹介します。",
+    "https://reptilia.org/animal/chinese-softshell-turtle/",
+    "Reptilia Zoo"
+  ],
+  "pink-bellied-side-necked-turtle": [
+    "15〜20年（動物園の案内）",
+    "Parken Zooの案内では15〜20年です。野生か飼育下か、平均か最長かは書かれておらず、個体を追跡した記録としては扱えません。",
+    "https://parkenzoo.se/en/djur/rodbukad-vandhalsskoldpadda/",
+    "Parken Zoo"
+  ],
+  "chaco-tortoise": [
+    "飼育下で50年を超える例の記述（専門書）",
+    "Tracchiaの爬虫類医学の専門書には、飼育下で50年を超える例があると書かれています。個体ごとの出生・取得日や追跡表はないため、平均寿命や野生での最長年齢までは分かりません。",
+    "https://www.fundacionazara.org.ar/img/libros/medicina-de-quelonios.pdf",
+    "A. C. Tracchia『Medicina en quelonios y otros reptiles』p123"
+  ],
+  "bell-hinge-back-tortoise": [
+    "旧分類で成体から26年6か月の飼育記録",
+    "Slavensの記録集には、成体で迎えた雄と雌をそれぞれ26年6か月飼育した例があります。ただし、当時のベルセオレガメは後に複数種へ分けられました。この2頭が現在のKinixys bellianaかは分からず、本種だけの寿命を知るには種の確認が必要です。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（再分類前）"
+  ],
+  "bowsprit-tortoise": [
+    "飼育下で32年の記録（SANBIの案内）",
+    "南アフリカ国立生物多様性研究所は、飼育下で32年の記録を紹介しています。個体の取得日などは掲載されていませんが、長期飼育の一例です。平均や寿命の限界を表す数字ではありません。",
+    "https://www.sanbi.org/gardens/hantam/wildlife-and-biodiversity-2/angulate-tortoise/",
+    "南アフリカ国立生物多様性研究所（SANBI）"
+  ],
+  "name:マダガスカルクモノスガメ": [
+    "70年に達する可能性（動物園の推定）",
+    "スミソニアン国立動物園は、確かなデータはないものの70年に達する可能性があると紹介しています。70年間飼育した記録ではなく、平均でもありません。種全体についての推定で、各亜種を調べた結果ではない点にも注意が必要です。",
+    "https://nationalzoo.si.edu/animals/spider-tortoise",
+    "スミソニアン国立動物園"
+  ],
+  "mississippi-mud-turtle": [
+    "成体から18年4か月の飼育記録",
+    "Snider・Bowlerの記録集には、亜種Kinosternon subrubrum hippocrepisの野生由来の成体を18年4か月飼育した例があります。迎える前の年齢は含まれていないので、これは一生の長さではなく飼育期間です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992）"
+  ],
+  "striped-mud-turtle": [
+    "成体から49年7か月の飼育記録",
+    "IUCNの専門家資料には、野生で成体として捕獲した雌を49年7か月飼育した記録があります。54歳以上という総年齢は推定です。飼育期間と推定年齢を分けて読める、長期飼育の一例です。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.116.baurii.v1.2021.pdf",
+    "IUCN TFTSG 種アカウント（2021、Johnson 1984引用）"
+  ],
+  "spiny-softshell-turtle": [
+    "50年を超える可能性（保全資料の推定）",
+    "COSEWICの評価資料では、カナダの基亜種Apalone spinifera spiniferaは50年を超えて生きる可能性があるとされています。出生から50年以上追跡した記録ではなく推定なので、他の亜種を含めた平均寿命には置き換えられません。",
+    "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/spiny-softshell-2016.html",
+    "COSEWIC 評価資料（2016）"
+  ],
+  "smooth-softshell-turtle": [
+    "20年を超える可能性（資料上の推定）",
+    "長寿データベースAnAgeは、野生で20年を超えると推定される個体を紹介しています。最大寿命はまだ定まっておらず、この数字も確定した年齢や平均ではありません。",
+    "https://genomics.senescence.info/species/entry.php?species=Apalone_mutica",
+    "AnAge 長寿データベース"
+  ],
+  "eastern-long-necked-turtle": [
+    "飼育下で37年以上の文献報告",
+    "IUCNの専門家資料には、飼育下で37年以上という文献報告があります。野外の推定年齢とは別の記録です。成体の年齢を推定するのは難しく、この例だけで平均や最長寿命は決められません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_031_longicollis_v1_2009.pdf",
+    "IUCN TFTSG 種アカウント（2009）"
+  ],
+  "siebenrocks-snake-necked-turtle": [
+    "30年超という推測（専門家資料）",
+    "2014年の専門家資料は、北部の大型個体が30年を超える可能性に触れています。当時の学名はChelodina oblongaですが、現在のrugosaを指す記述です。野生個体群の寿命データはなく、30年間の追跡で確かめた数字ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_077_oblonga_v1_2014.pdf",
+    "IUCN TFTSG 種アカウント（2014、当時の学名oblonga）"
+  ],
+  "hilaire-side-necked-turtle": [
+    "成体から37年5か月の飼育記録",
+    "Snider・Bowlerの記録集には、野生由来の成体雄を37年5か月飼育した例があります。すでに成体だったため、実際の年齢はそれより上ですが、出生年は分かりません。平均ではなく、長期飼育の一例です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p12）"
+  ],
+  "scorpion-mud-turtle": [
+    "旧分類の記録では現行種を特定できず",
+    "旧分類の記録には44年8か月の飼育例がありますが、亜種と入手時の年齢が分かりません。また、26年1か月の記録は現在では別種のKinosternon abaxillareです。現在のサソリドロガメの寿命として、そのまま引用できる記録ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（旧分類）"
+  ],
+  "red-cheeked-mud-turtle": [
+    "成体から24年間の飼育例",
+    "IUCNの専門家資料には、1987年にQuintana Rooで成体として捕獲し、2011年まで24年間飼育した個体が登場します。産地は現在の本種の分布と一致するものの、新分類での再同定は確認できていません。24年は迎えてからの期間で、出生からの年齢ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_063_scorpioides_v1_2011.pdf",
+    "IUCN TFTSG 種アカウント（2011、当時のcruentatum亜種）"
+  ],
+  "mexican-mud-turtle": [
+    "飼育下で33.8年の文献記録",
+    "2026年のIUCN専門家資料は、飼育下で33.8年という文献記録を紹介しています。入手時の年齢など、引用元の詳細までは確かめられていません。同じ資料に出てくる50〜60年は計算上の推定で、その年齢まで追跡した記録とは別です。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.143.integrum.v1.2026.pdf",
+    "IUCN TFTSG 種アカウント（2026、Dathe 1998引用）"
+  ],
+  "herrera-mud-turtle": [
+    "成体から19年6か月の飼育記録",
+    "Snider・Bowlerの記録集には、野生由来の成体雄を19年6か月飼育した例があります。迎える前にも生きていた期間があるため、死亡時の総年齢は分かりません。平均寿命ではなく、この個体の飼育記録です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p15）"
+  ],
+  "narrow-bridged-mud-turtle": [
+    "16年2か月の飼育記録",
+    "Snider・Bowlerの記録集には、野生由来の個体を16年2か月飼育した例があります。入手時の年齢が不明なので、何歳まで生きたかは分かりません。16年2か月はこの個体の飼育期間です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p15）"
+  ],
+  "loggerhead-musk-turtle": [
+    "幼体から23年11か月の飼育記録",
+    "Snider・Bowlerの記録集には、野生由来の幼体雄を23年11か月飼育した例があります。旧基亜種Sternotherus minor minorの記録で、近縁のスジクビニオイガメとは別です。この期間は迎えてからの長さで、平均や最長寿命ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p15）"
+  ],
+  "stripe-necked-musk-turtle": [
+    "種単独の寿命を示す資料が不足",
+    "BfNの報告書にある30〜50年は、Sternotherus属全体の参考値です。本種の個体を長期追跡した記録ではありません。近縁のSternotherus minorの飼育記録も、そのままスジクビニオイガメの寿命には置き換えられません。",
+    "https://bfn.bsz-bw.de/files/1987/Schrift740.pdf",
+    "ドイツ連邦自然保護庁（BfN）報告書"
+  ],
+  "eastern-mud-turtle": [
+    "野生で40年近く生きる個体がいるとの推定",
+    "IUCNの専門家資料では、サウスカロライナの基亜種について、一部は40年近く生きると推定しています。20年間の標識再捕獲研究から作った生命表による計算で、実際に40歳を確認した記録や平均40年という意味ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_101_subrubrum_v1_2017.pdf",
+    "IUCN TFTSG 種アカウント（2017、Frazerら1991引用）"
+  ],
+  "florida-mud-turtle": [
+    "本種と確認された長期記録が不足",
+    "旧分類の資料に出てくる40年近い寿命は、基亜種Kinosternon subrubrum subrubrumの研究からの推定です。フロリダドロガメを調べた数字ではないため、この種の寿命を示す根拠にはなりません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_101_subrubrum_v1_2017.pdf",
+    "IUCN TFTSG 種アカウント（2017、旧分類）"
+  ],
+  "false-map-turtle": [
+    "基亜種固有の長期記録を確認できず",
+    "原記録集の32年6か月という飼育例は、Graptemys pseudogeographicaの亜種が不明です。35年5か月という別の例もミシシッピチズガメのものです。このページの基亜種pseudogeographicaに絞った長期記録とは区別が必要です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p13）"
+  ],
+  "ouachita-map-turtle-sp": [
+    "旧分類ouachitensisで8年5か月の飼育記録",
+    "原記録集には、旧学名Graptemys pseudogeographica ouachitensisの雄を8年5か月飼育した例があります。入手時の年齢は資料によって食い違い、現在の亜種も特定されていません。確かめられるのは飼育期間であり、8年5か月が寿命の限界という意味ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p13）"
+  ],
+  "ringed-map-turtle": [
+    "野生雌で少なくとも31〜37歳との推定",
+    "IUCNの専門家資料には、1988年に成体で標識し、2009年まで再捕獲した記録があります。初回捕獲時にすでに成熟していたことを踏まえ、雌は少なくとも31〜37歳と推定されています。出生年の分かる個体の年齢や平均寿命ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_033_oculifera_v1_2009.pdf",
+    "IUCN TFTSG 種アカウント（2009）"
+  ],
+  "black-knobbed-map-turtle": [
+    "20年3か月の飼育記録",
+    "Slavensの記録集には、1977年に迎えた雄を20年3か月飼育し、報告時も生存していた例があります。入手時の成長段階は資料によって異なり、亜種も不明です。出生からの年齢は分かりませんが、長期飼育の一例として読めます。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "hirase-turtle": [
+    "基亜種は50年以上（動物園の案内）",
+    "札幌市円山動物園は、基亜種Cuora mouhotii mouhotiiが野生・飼育下とも50年以上生きると案内しています。個体の出生年や調査方法は載っていないため、平均や最長寿命の記録ではなく、動物園の解説値として紹介します。",
+    "https://www.city.sapporo.jp/zoo/093-j.html",
+    "札幌市円山動物園"
+  ],
+  "obsti-hirase-turtle": [
+    "亜種固有の寿命記録は未確認",
+    "保全計画では、ヒラセガメ全体の雌の寿命の中央値を50年と見積もり、計算に使っています。オブストヒラセガメだけを追跡して得た数字ではないので、この亜種固有の平均や最長寿命までは分かりません。",
+    "https://www.cpsg.org/sites/default/files/2025-01/AnnamitesRp310323_FINALDRAFT_COVERED_NoKTable.pdf",
+    "Annamites Tortoise and Freshwater Turtle Conservation Plan（2023、付録A2.1）"
+  ],
+  "indochinese-box-turtle": [
+    "保全計画では雌の寿命を50年と推定",
+    "2023年の保全計画は、雌の寿命の中央値を50年と見積もって計算に使っています。モエギハコガメの保全を考えるための仮定で、出生から死亡まで調べた個体の平均ではありません。",
+    "https://www.cpsg.org/sites/default/files/2025-01/AnnamitesRp310323_FINALDRAFT_COVERED_NoKTable.pdf",
+    "Annamites Tortoise and Freshwater Turtle Conservation Plan（2023、付録A2.3）"
+  ],
+  "three-striped-box-turtle": [
+    "旧分類で31年9か月の飼育記録",
+    "Slavensの記録集には、1966年に成体で迎えた個体を31年9か月飼育し、報告時も生存していた例があります。産地は不明で、現在では別種のCuora cyclornataも含めた旧分類の記録です。飼育期間は分かりますが、総年齢や現在のミスジハコガメの記録かどうかは確かめられません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（旧分類）"
+  ],
+  "taiwan-box-turtle": [
+    "種全体では約44年間の飼育報告",
+    "2018年の報告では、1974年に成体として購入した雄2頭が、約44年の飼育を経ても生存していました。産地・亜種・出生年は記録されていません。セマルハコガメの長期飼育例ですが、台湾の個体や亜種に限った記録ではありません。",
+    "https://ksoutdoors.gov/content/download/56514/613616/version/1/file/2018-%2BHerpetological%2BReview%2BVol%2B49%2C%2BN%2B3%2BSeptember%2B2018.pdf",
+    "Bartlett・Bartlett（2018）Herpetological Review 49(3):487–488"
+  ],
+  "chinese-box-turtle": [
+    "種全体では約44年間の飼育報告",
+    "2018年の報告では、1974年に成体として購入した雄2頭が、約44年の飼育を経ても生存していました。産地・亜種・出生年は記録されていません。セマルハコガメの長期飼育例ですが、中国の個体や亜種に限った記録ではありません。",
+    "https://ksoutdoors.gov/content/download/56514/613616/version/1/file/2018-%2BHerpetological%2BReview%2BVol%2B49%2C%2BN%2B3%2BSeptember%2B2018.pdf",
+    "Bartlett・Bartlett（2018）Herpetological Review 49(3):487–488"
+  ],
+  "painted-wood-turtle": [
+    "基亜種に成体から20年5か月の飼育記録",
+    "原記録集には、基亜種Rhinoclemmys pulcherrima pulcherrimaの野生由来の成体雄を20年5か月飼育した例があります。出生年は不明です。同じ種の長期飼育例として参考になりますが、全亜種に共通する平均や最長寿命ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "brown-wood-turtle-manni": [
+    "20年の飼育記録",
+    "Slavensの記録集には、野生由来の雌（個体番号300004）を1975年から1995年まで20年間飼育した例があります。出生年と入手時の年齢は書かれておらず、分かるのは飼育期間です。種の平均寿命ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "nicaragua-wood-turtle": [
+    "9年1か月の飼育記録",
+    "バッファロー動物園では、野生由来の雄（個体番号80R50）を1980年9月から1989年11月まで飼育した記録があります。Slavensが記した期間は9年1か月です。出生年と入手時の年齢は不明で、この亜種の寿命が9年ほどという意味ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "sonora-wood-turtle": [
+    "亜種固有の長期記録は未確認",
+    "原記録集にある20年5か月の成体飼育例は、同じ種の基亜種のものです。ソノラクジャクガメと特定された個体の記録は見つかっておらず、他の亜種の数字だけでは本亜種の平均や最長寿命は分かりません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "guerrero-wood-turtle": [
+    "成体から20年5か月の飼育記録",
+    "原記録集には、Rhinoclemmys pulcherrima pulcherrimaの野生由来の雄を、成体で迎えてから20年5か月飼育した例があります。出生年は不明なので、総年齢は分かりません。本亜種の長期飼育例として紹介します。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "annulated-wood-turtle": [
+    "飼育下で30年以上生きた個体の報告",
+    "IUCNの専門家資料には、パラグアイで飼育された1個体が30年以上生きた例が紹介されています。飼育者からの私信に基づくもので、出生年や取得年月日は載っていません。確定した総年齢や平均寿命ではなく、飼育者が伝えた長期飼育例です。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.123.annulata.v1.2023.pdf",
+    "Carrほか IUCN TFTSG 種アカウント（2023、私信の紹介）"
+  ],
+  "yellow-pond-turtle": [
+    "成体から22年1か月の飼育記録",
+    "原記録集には、野生由来の成体雌を22年1か月飼育した例があります。出生年と亜種は書かれていません。種全体の長期飼育例としては参考になりますが、特定亜種の平均や最長寿命を示すものではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p13）"
+  ],
+  "yaeyama-pond-turtle": [
+    "野外で50歳超の個体がいるとの解説",
+    "日本自然保護協会は、野外の生態研究で50歳を超える個体が知られていると紹介しています。ただし、個体の情報・年齢の推定方法・元研究の引用は載っていません。出生から50年追跡した記録や平均50年ということではなく、専門家による野外研究の紹介です。",
+    "https://www.nacsj.or.jp/wp/wp-content/uploads/2013/05/No534_kyokarahajimeru.pdf",
+    "矢部隆「カメの暮らしをのぞいてみよう」自然保護534号（2013、p33）"
+  ],
+  "canton-reeves-turtle": [
+    "36年の飼育記録が文献で紹介される",
+    "36年間飼育され、報告時も生きていた雌が紹介されています。IUCNの専門家資料が引用するIpserの報告で、元の全文は未確認です。迎えたときの年齢は推定のため、何歳まで生きたかは分かりません。36年は飼育期間で、平均寿命ではありません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_068_nigricans_v1_2012.pdf",
+    "IUCN TFTSG 種アカウント（2012、Ipser2011引用）"
+  ],
+  "chinese-stripe-necked-turtle": [
+    "幼体から22年9か月の飼育記録",
+    "野生由来の雄を幼体から22年9か月飼育した記録があります。原記録では旧属名Ocadia sinensisで掲載されています。生まれた年は不明で、分かるのは迎えてからの期間です。平均や最長寿命を調べた記録ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "asian-black-marsh-turtle": [
+    "成体から16年8か月の飼育記録",
+    "原記録集には、野生由来の雌を成体から16年8か月飼育した例があります。学名はSiebenrockiella crassicollis。生まれた年は分からないため、実際の年齢はこの期間より上です。平均や最長寿命は、この一例からは分かりません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "asian-leaf-turtle": [
+    "旧記録の現在の種同定が不明",
+    "Slavensには、成体から14年8か月飼育された記録があります。ただし、当時Cyclemys dentataと呼ばれていたカメは、後に複数の種に分けられました。産地や分類を調べ直した情報がなく、この個体が現在のノコヘリマルガメに当たるかは不明です。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（分類再整理前）"
+  ],
+  "iberian-greek-tortoise": [
+    "野外で55年以上との文献報告",
+    "野外で55年以上生きるという報告が、IUCNの専門家資料に紹介されています。引用元は旧名nikolskiiの個体群を調べた学会要旨です。元の本文と年齢の調べ方は未確認で、出生から55年間追跡した記録や平均寿命としては読めません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm.5.120.eastern.graeca.v1.2023.pdf",
+    "IUCN TFTSG 東部ギリシャ亜種群アカウント（2023、Galichenko1997引用）"
+  ],
+  "tunisian-greek-tortoise": [
+    "チュニジア型に31年の飼育歴報告",
+    "Tortoise Trustの調査報告には、英国で31年飼育された個体が登場します。チュニジアの野生個体と形態が同じと判断されていますが、現在の亜種名が付く前の報告のため、本亜種かどうかは確定していません。出生年も不明で、31年は飼育期間です。平均寿命ではありません。",
+    "https://www.tortoisetrust.org/articles/tunisprelim.html",
+    "Highfield チュニジア調査報告（Tortoise Trust）"
+  ],
+  "moroccan-greek-tortoise": [
+    "現在の亜種に対応する長期記録は未確認",
+    "動物園には「100年に達することもある」という案内がありますが、ギリシャリクガメ全体の話で、亜種は書かれていません。古い資料のgraecaという名前も、現在の基亜種と同じ範囲とは限りません。モロッコ亜種の平均や最長寿命を決める材料にはできません。",
+    "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "メリーランド動物園（種全体の案内）"
+  ],
+  "libyan-greek-tortoise": [
+    "亜種固有の長期記録は未確認",
+    "ギリシャリクガメ全体には「100年に達することもある」という動物園の案内があります。ただ、キレナイカ亜種の個体記録ではありません。この亜種だと確認できる長期記録は見つかっておらず、平均や最長寿命は分かりません。",
+    "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "メリーランド動物園（種全体の案内）"
+  ],
+  "golden-greek-tortoise": [
+    "100年との報告書解説（個体記録なし）",
+    "Jabal Moussa生物圏保護区の報告書には、terrestrisの寿命を100年とする説明があります。どの個体の記録か、野生か飼育下か、元の資料や出生年は書かれていません。報告書の解説としては参考になりますが、平均や確認済みの最長寿命ではありません。",
+    "https://miteco-prod.adobecqms.net/content/dam/miteco/es/parques-nacionales-oapn/proyectos-de-cooperacion/biodiversidad_tcm30-287284.pdf",
+    "Jabal Moussa生物多様性評価報告書（2012、p107）"
+  ],
+  "cherry-head-tortoise": [
+    "種全体は50年以上（動物園の案内）",
+    "スミソニアン国立動物園は、アカアシリクガメには50歳以上になる個体が多いと案内しています。チェリーヘッドだけを調べた記録ではなく、平均寿命の計算方法も不明です。この地域・外見上の型だけの寿命や上限は、別に考える必要があります。",
+    "https://www.nationalzoo.si.edu/animals/red-footed-tortoise",
+    "スミソニアン国立動物園（種全体の案内）"
+  ],
+  "eastern-hermann-tortoise": [
+    "幼体から31年8か月の飼育記録",
+    "Slavensには、boettgeriの雄を幼体から31年8か月飼育した記録があります。生まれた年は不明なので、これは飼育期間です。亜種名は明記されていますが、総年齢や平均・最長寿命を表すものではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "western-hermann-tortoise": [
+    "22年8か月の飼育記録",
+    "Slavensには、hermanniの雄を22年8か月飼育した記録があります。生まれた年も、迎えたときの年齢も不明です。分かるのは飼育期間で、この亜種の平均や最長寿命ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "peninsula-cooter": [
+    "成体から11年4か月の飼育記録",
+    "旧名Pseudemys floridana peninsularisで、成体から11年4か月飼育された記録があります。野生由来で、性別と出生年は不明です。飼育を始める前にも生きていた期間があるため、11年4か月を寿命と読むことはできません。平均や上限も不明です。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "suwannee-cooter": [
+    "幼体から40年8か月の飼育記録",
+    "原記録集には、Pseudemys suwanniensisの雄を幼体から40年8か月飼育した例があります。野生由来で出生年は不明です。長く飼育された一例であり、平均寿命や最長記録を確定する数字ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "river-cooter": [
+    "基亜種に成体から14年9か月の飼育記録",
+    "Slavensには、基亜種Pseudemys concinna concinnaを成体から14年9か月飼育した記録があります。野生由来で、性別と出生年は不明です。別亜種の記録とは分けて読む必要があり、リバークーター全体の平均や最長寿命ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "rio-grande-cooter": [
+    "別種を参考に20〜25年と推定",
+    "米国魚類野生生物局は寿命を20〜25年と推定しています。ただし、参考にしたのは別種のスライダーガメです。本種を長く追跡して求めた平均寿命ではありません。",
+    "https://www.fws.gov/species/rio-grande-cooter-pseudemys-gorzugi",
+    "米国魚類野生生物局"
+  ],
+  "florida-red-bellied-turtle": [
+    "成体から26年2か月の飼育記録",
+    "野生由来の雌を、成体から26年2か月飼育した記録があります。生まれた年は分からず、分かるのは迎えてからの期間です。平均や最長寿命を示す記録ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p14）"
+  ],
+  "yellow-bellied-slider": [
+    "24年5か月の飼育記録",
+    "Slavensには、亜種scriptaの雌を24年5か月飼育した記録があります。出生年と迎えたときの年齢は不明です。飼育期間と総年齢は別で、平均や最長寿命もこの記録だけでは分かりません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "cumberland-slider": [
+    "23年7か月の飼育記録",
+    "Slavensには、雌を23年7か月飼育した記録が、troostiという亜種名で載っています。出生年と迎えたときの年齢は不明です。この期間は平均寿命でも、何年まで生きられるかを示す上限でもありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "carolina-diamondback-terrapin": [
+    "成体から14年1か月の飼育記録",
+    "Slavensには、野生由来の雌を成体から14年1か月飼育した例があります。生まれた年は分かりません。迎える前の年齢を含まない飼育期間で、平均や最長寿命を示すものではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "mississippi-diamondback-terrapin": [
+    "成体から9年1か月の飼育記録",
+    "原記録集には、野生由来の雌を成体から9年1か月飼育した例があります。出生年は不明です。この1頭を飼った期間の話で、「9年ほどしか生きない」という意味ではありません。",
+    "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "Snider・Bowler 飼育下長寿記録集（1992、p13）"
+  ],
+  "ornate-diamondback-terrapin": [
+    "亜種固有の長期記録は未確認",
+    "ノースカロライナ州には「40年を超えることもある」という案内がありますが、扱っているのは同州のノーザンとカロリナです。オルナータ亜種の長期記録は確認できていません。種全体の案内を、そのまま本亜種の平均や上限にはできません。",
+    "https://www.ncwildlife.gov/diamond-back-terrapin-species-profile/open",
+    "ノースカロライナ州野生生物資源委員会（種全体の案内）"
+  ],
+  "mangrove-diamondback-terrapin": [
+    "野外で少なくとも20歳との推定例",
+    "2025年の研究では、調べた656頭のうち7頭が少なくとも20歳と推定されています。捕まえてから再び捕まえるまでの間隔をもとにした年齢で、出生年は確認されていません。平均や最長寿命を調べた数字ではありません。",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12058646/",
+    "Interpreting a Sudden Population Decline in a Long-Lived Species（2025）"
+  ],
+  "albino-chinese-softshell": [
+    "アルビノ固有の長期記録は未確認",
+    "動物園の案内には「野生では通常15〜20年」とありますが、シナスッポン全体の話です。アルビノの飼育個体を追跡した記録ではありません。アルビノだけの長期記録は見つかっておらず、この数字で寿命を決めることはできません。",
+    "https://reptilia.org/animal/chinese-softshell-turtle/",
+    "Reptilia Zoo（種全体の野生の案内）"
+  ],
+  "amazon-matamata": [
+    "旧記録の現在の種同定が不明",
+    "マタマタには、成体から35年9か月飼育され、報告時も生きていた雌の記録があります。ただし、2020年に種が分けられる前の記録です。産地や再同定の情報がなく、オリノコマタマタだったかは分かりません。本種の平均や最長寿命には使えない記録です。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（再分類前）"
+  ],
+  "texas-diamondback-terrapin": [
+    "40年に達する（州の案内）",
+    "テキサス州は、この亜種が40年に達すると案内しています。個体の出生年や観察記録、計算方法は書かれていません。州の解説として紹介していますが、平均寿命や確かめられた上限ではありません。",
+    "https://tpwd.texas.gov/huntwild/wild/species/terrapin/",
+    "Texas Parks and Wildlife"
+  ],
+  "three-toed-box-turtle": [
+    "成体から52年の飼育記録",
+    "Slavensには、成体で迎えた野生由来の雄を52年飼育し、その時点でも生きていた記録があります。旧名Terrapene carolina triunguisで掲載されており、取得日と出生年は不明です。52年は迎えてからの期間で、平均や最長寿命ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "gulf-coast-box-turtle": [
+    "成体から23年3か月の飼育記録",
+    "Slavensには、亜種majorを成体から23年3か月飼育した記録があります。野生由来で、性別と出生年は不明です。飼育を始める前の年齢は含まず、平均や最長寿命もこの記録だけでは分かりません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "ornate-box-turtle": [
+    "野外で推定50歳以上の報告",
+    "1983年に成熟した雌として捕まり、2017年に再び捕まった個体が、IUCNの専門家資料に紹介されています。成体として初めて確認してから34年後にも生存が確認されています。最初の年齢を加えて少なくとも約50歳と推定されていますが、出生から50年追った記録や平均寿命ではありません。",
+    "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+    "IUCN TFTSG 種アカウント（2024、p126.17）"
+  ],
+  "desert-box-turtle": [
+    "luteolaの野外調査で40歳超との推定",
+    "亜種Terrapene ornata luteola（ミナミニシキハコガメ）を23年間調べた研究では、40歳を超えている可能性のある個体が報告されています。年齢には推定が入り、出生から40年間追跡したわけではありません。原論文は要旨と後年の専門家解説までの確認で、平均や上限を決められる資料ではありません。",
+    "https://www.researchgate.net/publication/269793559_Activity_Growth_Reproduction_and_Population_Structure_of_Desert_Box_Turtles_Terrapene_ornata_luteola_at_the_Northern_Edge_of_the_Chihuahuan_Desert",
+    "Germano（2014、要旨）・TFTSG（2024）"
+  ],
+  "alabama-map-turtle": [
+    "旧記録の現在の種同定が不明",
+    "旧名Graptemys pulchraには、成体から15年8か月飼育された記録があります。その後、この名前で扱われていたカメは複数種に分けられました。元の個体の産地や再同定の情報がないため、現在のアラバマチズガメだったかは不明です。本種の平均や上限には使えません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集（種の分離前）"
+  ],
+  "name:ヒラタニオイガメ": [
+    "直接の長期個体記録は未確認",
+    "資料にある30〜60年は、最大体サイズに達するまでの年齢を成長モデルで推定した数字です。「何年生きたか」という記録ではありません。実際に長く追跡した個体の記録は確認できておらず、この推定を寿命として載せることはできません。",
+    "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf",
+    "IUCN TFTSG 種アカウント（2008）"
+  ],
+  "name:テキサスチズガメ": [
+    "種固有の長期記録は未確認",
+    "Animal Diversity Webも、本種の寿命情報は少ないとしています。紹介されているのは他のチズガメ類の記録で、テキサスチズガメの平均や上限ではありません。本種だと確認できる個体の長期記録は、まだ確認できていません。",
+    "https://animaldiversity.org/accounts/Graptemys_versa/",
+    "Animal Diversity Web"
+  ],
+  "painted-turtle": [
+    "ミッドランド亜種に23年11か月の飼育記録",
+    "Slavensには、ミッドランド亜種marginataの野生由来の雄を、成体から23年11か月飼育した記録があります。出生年は不明です。ニシキガメを飼ううえで参考になる一例ですが、全亜種に共通する平均や最長寿命ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "midland-painted-turtle": [
+    "成体から23年11か月の飼育記録",
+    "Slavensには、野生由来の雄を成体から23年11か月飼育した記録があります。出生年が分からないため、総年齢ではなく迎えてからの期間です。平均や最長寿命を調べた数字ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "giant-musk-turtle-mx": [
+    "成体から26年4か月の飼育記録",
+    "Slavensには、野生由来の雌R71-22を成体から26年4か月飼育し、その時点でも生きていた記録があります。出生年は不明です。長く飼育された一例で、平均寿命や上限ではありません。",
+    "https://www.pondturtle.com/lturtle.html",
+    "Slavens 飼育記録集"
+  ],
+  "giant-musk-turtle": [
+    "34年以上の飼育記録・年齢は50歳超と推定",
+    "1981年に成体で迎えた雄が、2016年まで34年9か月飼育された記録があります。IUCNの2026年評価によると、2023年末にも生存し、50歳を超えたとされています。この年齢には、迎えたときの大きさからの推定が入っています。50年間飼育した記録でも、出生年から数えた年齢でもありません。",
+    "https://www.researchgate.net/publication/411200383_Staurotypus_triporcatus_Northern_Giant_Musk_Turtle_Assessment",
+    "IUCN評価（2026、Iverson2016の追跡情報）"
+  ],
+  "mccords-snake-necked-turtle": [
+    "本種の長期個体記録は未確認",
+    "ザグレブ動物園は、野生・動物園のどちらも寿命のデータがないと案内しています。本種の取得日や最後に生存を確認した時期が分かる長期記録は、まだ確認できていません。他のナガクビガメ類の数字で代用せず、本種の記録が必要です。",
+    "https://zoo.hr/mccordova-vijovratka-chelodina-mccordi/",
+    "ザグレブ動物園"
+  ],
+  "collier-snake-necked-turtle": [
+    "40年以上（生息地の自治体の案内）",
+    "生息地のCockburn市は、本種が40年以上生きると紹介しています。個体の出生年や年齢の調べ方は書かれていません。自治体の生態紹介として参考にできますが、出生年を確かめた個体記録や平均寿命ではありません。",
+    "https://www.cockburn.wa.gov.au/Environment-and-Waste/Sustainability-and-Conservation/Native-Animals-(1)/Turtles",
+    "西オーストラリア州Cockburn市"
   ]
 }

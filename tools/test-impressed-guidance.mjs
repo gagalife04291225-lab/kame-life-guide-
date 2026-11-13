@@ -21,9 +21,16 @@ assert.throws(()=>assert.ok(!old.includes('水槽用クーラー')),'old wording
 // Existing navigation / purchase URLs retain order, with only two explicit research citations added.
 const links=s=>[...s.matchAll(/\bhref="([^"]*)"/g)].map(m=>m[1]);
 const added=['https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232','https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf#page=70'];
+const life=JSON.parse(read('tools/lifespan-fixtures.json'))['impressed-tortoise'];
+assert.ok(html.includes(life[0])&&html.includes(life[1]));
+assert.equal(links(html).filter(u=>u===life[2]).length,1,'one exact lifespan source link');
+added.push(life[2]);
 assert.deepEqual(links(html).filter(u=>!added.includes(u)),links(old));
 const scripts=s=>[...s.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(m=>m[0].replace(/(\.\.\/(?:data\/products|js\/starter-kit)\.js)\?v=[a-f0-9]{12}/g,'$1?v=HASH')).filter(s=>!s.includes('application/ld+json'));
-assert.deepEqual(scripts(html),scripts(old),'selection/GA/mount scripts unchanged');
+const lifeMount="lifespan: '"+life[0]+"', lifespanLabel: '寿命の資料'";
+assert.equal(html.split(lifeMount).length-1,2,'exact lifespan-only edits in both widgets');
+const scriptNormalized=html.replaceAll(lifeMount,"lifespan: '30〜80年'");
+assert.deepEqual(scripts(scriptNormalized),scripts(old),'selection/GA/mount scripts unchanged except exact sourced lifespan labels');
 const master=JSON.parse(read('data/species-master.json')), prior=JSON.parse(before('data/species-master.json'));
 const target=master.species.find(s=>s.slug==='impressed-tortoise'), prev=prior.species.find(s=>s.slug==='impressed-tortoise');
 assert.ok(html.includes(target.care.enclosure_jp.value));

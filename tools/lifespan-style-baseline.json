@@ -1,0 +1,1083 @@
+{
+  "musk-turtle": {
+    "value": "54年以上の飼育記録（平均は不明）",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html",
+    "source": "カナダ環境・気候変動省（2024）",
+    "numbers": [
+      "54"
+    ]
+  },
+  "razorback-musk-turtle": {
+    "value": "29年以上の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "29",
+      "4"
+    ]
+  },
+  "white-lipped-mud-turtle": {
+    "value": "成体から19年以上の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（Snider 1992引用）",
+    "numbers": [
+      "19",
+      "2"
+    ]
+  },
+  "florida-box-turtle": {
+    "value": "22年以上の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（Bowler 1977引用）",
+    "numbers": [
+      "22",
+      "7"
+    ]
+  },
+  "japanese-pond-turtle": {
+    "value": "雄約10〜15年・雌約20〜30年（動物園の案内）",
+    "url": "https://zoo.city.fukuoka.lg.jp/animals/detail/117",
+    "source": "福岡市動物園",
+    "numbers": [
+      "10",
+      "15",
+      "20",
+      "30"
+    ]
+  },
+  "spenglers-leaf-turtle": {
+    "value": "20年以上（動物園の案内）",
+    "url": "https://cincinnatizoo.org/animals-archive/black-breasted-leaf-turtle/",
+    "source": "シンシナティ動物園",
+    "numbers": [
+      "20"
+    ]
+  },
+  "russian-tortoise": {
+    "value": "60年以上にわたる飼育例",
+    "url": "https://www.tortoisetrust.com/post/captive-care-of-the-russian-tortoise-testudo-horsfieldii",
+    "source": "Tortoise Trust / A. C. Highfield（2024、更新2025）",
+    "numbers": [
+      "1960",
+      "2024"
+    ]
+  },
+  "hermann-tortoise": {
+    "value": "数十年単位・上限は未確立",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_059_hermanni_v1_2011.pdf",
+    "source": "IUCN TFTSG 種アカウント（2011）",
+    "numbers": []
+  },
+  "reeves-turtle": {
+    "value": "20〜45年（動物園の案内）",
+    "url": "https://korkeasaari.fi/en/animal/chinese-pond-turtle/",
+    "source": "コルケアサーリ動物園",
+    "numbers": [
+      "20",
+      "45"
+    ]
+  },
+  "red-eared-slider": {
+    "value": "飼育下で40年に達する（専門機関の案内）",
+    "url": "https://seagrant.psu.edu/resources/resource-item/red-eared-slider-ais-fact-sheet/",
+    "source": "Pennsylvania Sea Grant（2025）",
+    "numbers": [
+      "40"
+    ]
+  },
+  "sulcata-tortoise": {
+    "value": "飼育下54年以上の報告",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/crm.5.110.sulcata.v1.2020.pdf",
+    "source": "IUCN TFTSG 種アカウント（2020、Biegler 1966引用）",
+    "numbers": [
+      "54"
+    ]
+  },
+  "red-footed-tortoise": {
+    "value": "50年以上（動物園の案内）",
+    "url": "https://www.nationalzoo.si.edu/animals/red-footed-tortoise",
+    "source": "スミソニアン国立動物園",
+    "numbers": [
+      "50"
+    ]
+  },
+  "greek-tortoise": {
+    "value": "100年に達することも（動物園の案内）",
+    "url": "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "source": "メリーランド動物園",
+    "numbers": [
+      "100"
+    ]
+  },
+  "eastern-box-turtle": {
+    "value": "25〜35年（動物園の案内）",
+    "url": "https://nationalzoo.si.edu/animals/eastern-box-turtle",
+    "source": "スミソニアン国立動物園",
+    "numbers": [
+      "100",
+      "25",
+      "35"
+    ]
+  },
+  "malayan-box-turtle": {
+    "value": "25〜30年（専門家資料の目安）",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_053_amboinensis_v1_2011.pdf",
+    "source": "IUCN TFTSG 種アカウント（2011）",
+    "numbers": [
+      "25",
+      "30",
+      "38.2"
+    ]
+  },
+  "elongated-tortoise": {
+    "value": "成体から44年間の飼育例",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_096_elongata_v1_2016.pdf",
+    "source": "IUCN TFTSG 種アカウント（2016）",
+    "numbers": [
+      "1972",
+      "2016",
+      "44"
+    ]
+  },
+  "home-hinge-back-tortoise": {
+    "value": "飼育下60年という推定",
+    "url": "https://www.vkm.no/download/18.1e9d871e18e5134f3943db3b/1710934445385/Scientific%20assessment%20of%20risk%20to%20the%20populations%20of%20tortoises%20listed%20by%20CITES%20as%20a%20result%20of%20trade_publisert%20versjon.pdf",
+    "source": "VKM CITESリクガメ類リスク評価（2024）",
+    "numbers": [
+      "2021",
+      "60"
+    ]
+  },
+  "leopard-tortoise": {
+    "value": "100年に達することも（動物園の案内）",
+    "url": "https://www.oregonzoo.org/animals/leopard-tortoise",
+    "source": "オレゴン動物園",
+    "numbers": [
+      "100"
+    ]
+  },
+  "spotted-turtle": {
+    "value": "野生で44年を超える個体の報告",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/spotted-turtle-2014.html",
+    "source": "COSEWIC 評価資料（2014）",
+    "numbers": [
+      "110",
+      "44",
+      "65"
+    ]
+  },
+  "west-african-mud-turtle": {
+    "value": "長期の個体記録を確認できず",
+    "url": "https://theturtlesource.com/african-dwarf-mud-turtle/",
+    "source": "The Turtle Source（飼育繁殖経験）",
+    "numbers": [
+      "2",
+      "6"
+    ]
+  },
+  "western-painted-turtle": {
+    "value": "50年を超える可能性（保全計画の推定）",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/western-painted-turtle-2018.html",
+    "source": "カナダ環境・気候変動省 管理計画（2018）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "eastern-painted-turtle": {
+    "value": "野生で約50歳の雌の報告",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/midland-eastern-painted-turtle-2018.html",
+    "source": "COSEWIC 評価資料（2018、Siess 2005引用）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "northern-diamondback-terrapin": {
+    "value": "40年を超えることも（州の案内）",
+    "url": "https://www.ncwildlife.gov/diamond-back-terrapin-species-profile/open",
+    "source": "ノースカロライナ州野生生物資源委員会",
+    "numbers": [
+      "40"
+    ]
+  },
+  "pancake-tortoise": {
+    "value": "30年以上（動物園の案内）",
+    "url": "https://nationalzoo.si.edu/animals/african-pancake-tortoise",
+    "source": "スミソニアン国立動物園",
+    "numbers": [
+      "30"
+    ]
+  },
+  "name:インドホシガメ": {
+    "value": "25〜50年（動物園の案内）",
+    "url": "https://zoo.city.fukuoka.lg.jp/animals/detail/120",
+    "source": "福岡市動物園",
+    "numbers": [
+      "25",
+      "50"
+    ]
+  },
+  "aldabra-tortoise": {
+    "value": "成体から50年間の飼育例",
+    "url": "https://nationalzoo.si.edu/animals/news/happy-50th-zooniversary-chyna-and-rulon-zoos-aldabra-giant-tortoises",
+    "source": "スミソニアン国立動物園（2026年9月8日）",
+    "numbers": [
+      "100",
+      "1976",
+      "2",
+      "2026",
+      "50",
+      "80"
+    ]
+  },
+  "wood-turtle": {
+    "value": "野生で46年以上生存した雌の報告",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/wood-turtle-2018.html",
+    "source": "COSEWIC 評価資料（2018、Ernst 2001引用）",
+    "numbers": [
+      "46"
+    ]
+  },
+  "european-pond-turtle": {
+    "value": "50年に達することも（動物園の案内）",
+    "url": "https://www.parczoologiquedeparis.fr/fr/cistude-d-europe",
+    "source": "パリ動物園",
+    "numbers": [
+      "50"
+    ]
+  },
+  "pig-nosed-turtle": {
+    "value": "飼育下で30歳台後半まで生きた例",
+    "url": "https://www.nationalzoo.si.edu/animals/fly-river-turtle",
+    "source": "スミソニアン国立動物園",
+    "numbers": [
+      "30"
+    ]
+  },
+  "yellow-mud-turtle": {
+    "value": "野外調査で推定58歳の個体を含む報告",
+    "url": "https://link.springer.com/article/10.1186/s12979-023-00335-x",
+    "source": "Bronikowskiら（2023、標識再捕獲研究）",
+    "numbers": [
+      "200",
+      "2018",
+      "58",
+      "7"
+    ]
+  },
+  "african-helmeted-turtle": {
+    "value": "旧分類の飼育記録で20年以上",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_007_subrufa_v1_2008.pdf",
+    "source": "IUCN TFTSG 種アカウント（2008、再分類前）",
+    "numbers": [
+      "20",
+      "2008"
+    ]
+  },
+  "matamata": {
+    "value": "旧分類の記録で成体から35年9か月の飼育例",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（再分類前）",
+    "numbers": [
+      "1961",
+      "2020",
+      "35",
+      "9"
+    ]
+  },
+  "marginated-tortoise": {
+    "value": "成体から21年2か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1976",
+      "2",
+      "21"
+    ]
+  },
+  "impressed-tortoise": {
+    "value": "保全評価の計算で35年を仮定",
+    "url": "https://www.researchgate.net/publication/356711655_Manouria_impressa_Impressed_Tortoise_Assessment_by_View_on_wwwiucnredlistorg_THE_IUCN_RED_LIST_OF_THREATENED_SPECIES",
+    "source": "Cotaら IUCN評価（2021、著者公開全文）",
+    "numbers": [
+      "2021",
+      "35"
+    ]
+  },
+  "name:ビルマホシガメ": {
+    "value": "野生では50年超の可能性（資料上の推定）",
+    "url": "https://ielc.libguides.com/sdzg/factsheets/burmese-star-tortoise/reproduction",
+    "source": "サンディエゴ動物園 Wildlife Alliance 資料（2026）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "name:エジプトリクガメ": {
+    "value": "飼育下70〜100年（動物園の案内）",
+    "url": "https://www.oregonzoo.org/animals/egyptian-tortoise",
+    "source": "オレゴン動物園",
+    "numbers": [
+      "100",
+      "70"
+    ]
+  },
+  "blandings-turtle": {
+    "value": "野生で推定83歳以上の雌の報告",
+    "url": "https://lsa.umich.edu/eeb/news-events/all-news/archived-news/2016/05/on-u-m-gateway--oldest-well-documented-blanding-s-turtle-recaptu.html",
+    "source": "ミシガン大学（2016）",
+    "numbers": [
+      "1954",
+      "2016",
+      "83"
+    ]
+  },
+  "northern-map-turtle": {
+    "value": "野生で20年を超える生存例",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/northern-map-turtle-2012.html",
+    "source": "COSEWIC 評価資料（2012）",
+    "numbers": [
+      "20",
+      "32"
+    ]
+  },
+  "mississippi-map-turtle": {
+    "value": "幼体で捕獲後35年5か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p13）",
+    "numbers": [
+      "35",
+      "5"
+    ]
+  },
+  "florida-softshell-turtle": {
+    "value": "36年8か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1930",
+      "1967",
+      "36",
+      "8"
+    ]
+  },
+  "chinese-softshell-turtle": {
+    "value": "野生で15〜20年（動物園の案内）",
+    "url": "https://reptilia.org/animal/chinese-softshell-turtle/",
+    "source": "Reptilia Zoo",
+    "numbers": [
+      "15",
+      "20"
+    ]
+  },
+  "pink-bellied-side-necked-turtle": {
+    "value": "15〜20年（動物園の案内）",
+    "url": "https://parkenzoo.se/en/djur/rodbukad-vandhalsskoldpadda/",
+    "source": "Parken Zoo",
+    "numbers": [
+      "15",
+      "20"
+    ]
+  },
+  "chaco-tortoise": {
+    "value": "飼育下で50年を超える例の記述（専門書）",
+    "url": "https://www.fundacionazara.org.ar/img/libros/medicina-de-quelonios.pdf",
+    "source": "A. C. Tracchia『Medicina en quelonios y otros reptiles』p123",
+    "numbers": [
+      "50"
+    ]
+  },
+  "bell-hinge-back-tortoise": {
+    "value": "旧分類で成体から26年6か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（再分類前）",
+    "numbers": [
+      "1",
+      "2",
+      "26",
+      "6"
+    ]
+  },
+  "bowsprit-tortoise": {
+    "value": "飼育下で32年の記録（SANBIの案内）",
+    "url": "https://www.sanbi.org/gardens/hantam/wildlife-and-biodiversity-2/angulate-tortoise/",
+    "source": "南アフリカ国立生物多様性研究所（SANBI）",
+    "numbers": [
+      "32"
+    ]
+  },
+  "name:マダガスカルクモノスガメ": {
+    "value": "70年に達する可能性（動物園の推定）",
+    "url": "https://nationalzoo.si.edu/animals/spider-tortoise",
+    "source": "スミソニアン国立動物園",
+    "numbers": [
+      "70"
+    ]
+  },
+  "mississippi-mud-turtle": {
+    "value": "成体から18年4か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992）",
+    "numbers": [
+      "18",
+      "4"
+    ]
+  },
+  "striped-mud-turtle": {
+    "value": "成体から49年7か月の飼育記録",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.116.baurii.v1.2021.pdf",
+    "source": "IUCN TFTSG 種アカウント（2021、Johnson 1984引用）",
+    "numbers": [
+      "49",
+      "54",
+      "7"
+    ]
+  },
+  "spiny-softshell-turtle": {
+    "value": "50年を超える可能性（保全資料の推定）",
+    "url": "https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/spiny-softshell-2016.html",
+    "source": "COSEWIC 評価資料（2016）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "smooth-softshell-turtle": {
+    "value": "20年を超える可能性（資料上の推定）",
+    "url": "https://genomics.senescence.info/species/entry.php?species=Apalone_mutica",
+    "source": "AnAge 長寿データベース",
+    "numbers": [
+      "20"
+    ]
+  },
+  "eastern-long-necked-turtle": {
+    "value": "飼育下で37年以上の文献報告",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_031_longicollis_v1_2009.pdf",
+    "source": "IUCN TFTSG 種アカウント（2009）",
+    "numbers": [
+      "37"
+    ]
+  },
+  "siebenrocks-snake-necked-turtle": {
+    "value": "30年超という推測（専門家資料）",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_077_oblonga_v1_2014.pdf",
+    "source": "IUCN TFTSG 種アカウント（2014、当時の学名oblonga）",
+    "numbers": [
+      "2014",
+      "30"
+    ]
+  },
+  "hilaire-side-necked-turtle": {
+    "value": "成体から37年5か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p12）",
+    "numbers": [
+      "37",
+      "5"
+    ]
+  },
+  "scorpion-mud-turtle": {
+    "value": "旧分類の記録では現行種を特定できず",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（旧分類）",
+    "numbers": [
+      "1",
+      "26",
+      "44",
+      "8"
+    ]
+  },
+  "red-cheeked-mud-turtle": {
+    "value": "成体から24年間の飼育例",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_063_scorpioides_v1_2011.pdf",
+    "source": "IUCN TFTSG 種アカウント（2011、当時のcruentatum亜種）",
+    "numbers": [
+      "1987",
+      "2011",
+      "24"
+    ]
+  },
+  "mexican-mud-turtle": {
+    "value": "飼育下で33.8年の文献記録",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.143.integrum.v1.2026.pdf",
+    "source": "IUCN TFTSG 種アカウント（2026、Dathe 1998引用）",
+    "numbers": [
+      "2026",
+      "33.8",
+      "50",
+      "60"
+    ]
+  },
+  "herrera-mud-turtle": {
+    "value": "成体から19年6か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p15）",
+    "numbers": [
+      "19",
+      "6"
+    ]
+  },
+  "narrow-bridged-mud-turtle": {
+    "value": "16年2か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p15）",
+    "numbers": [
+      "16",
+      "2"
+    ]
+  },
+  "loggerhead-musk-turtle": {
+    "value": "幼体から23年11か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p15）",
+    "numbers": [
+      "11",
+      "23"
+    ]
+  },
+  "stripe-necked-musk-turtle": {
+    "value": "種単独の寿命を示す資料が不足",
+    "url": "https://bfn.bsz-bw.de/files/1987/Schrift740.pdf",
+    "source": "ドイツ連邦自然保護庁（BfN）報告書",
+    "numbers": [
+      "30",
+      "50"
+    ]
+  },
+  "eastern-mud-turtle": {
+    "value": "野生で40年近く生きる個体がいるとの推定",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_101_subrubrum_v1_2017.pdf",
+    "source": "IUCN TFTSG 種アカウント（2017、Frazerら1991引用）",
+    "numbers": [
+      "20",
+      "40"
+    ]
+  },
+  "florida-mud-turtle": {
+    "value": "本種と確認された長期記録が不足",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_101_subrubrum_v1_2017.pdf",
+    "source": "IUCN TFTSG 種アカウント（2017、旧分類）",
+    "numbers": [
+      "40"
+    ]
+  },
+  "false-map-turtle": {
+    "value": "基亜種固有の長期記録を確認できず",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p13）",
+    "numbers": [
+      "32",
+      "35",
+      "5",
+      "6"
+    ]
+  },
+  "ouachita-map-turtle-sp": {
+    "value": "旧分類ouachitensisで8年5か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p13）",
+    "numbers": [
+      "5",
+      "8"
+    ]
+  },
+  "ringed-map-turtle": {
+    "value": "野生雌で少なくとも31〜37歳との推定",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_033_oculifera_v1_2009.pdf",
+    "source": "IUCN TFTSG 種アカウント（2009）",
+    "numbers": [
+      "1988",
+      "2009",
+      "31",
+      "37"
+    ]
+  },
+  "black-knobbed-map-turtle": {
+    "value": "20年3か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1977",
+      "20",
+      "3"
+    ]
+  },
+  "hirase-turtle": {
+    "value": "基亜種は50年以上（動物園の案内）",
+    "url": "https://www.city.sapporo.jp/zoo/093-j.html",
+    "source": "札幌市円山動物園",
+    "numbers": [
+      "50"
+    ]
+  },
+  "obsti-hirase-turtle": {
+    "value": "亜種固有の寿命記録は未確認",
+    "url": "https://www.cpsg.org/sites/default/files/2025-01/AnnamitesRp310323_FINALDRAFT_COVERED_NoKTable.pdf",
+    "source": "Annamites Tortoise and Freshwater Turtle Conservation Plan（2023、付録A2.1）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "indochinese-box-turtle": {
+    "value": "保全計画では雌の寿命を50年と推定",
+    "url": "https://www.cpsg.org/sites/default/files/2025-01/AnnamitesRp310323_FINALDRAFT_COVERED_NoKTable.pdf",
+    "source": "Annamites Tortoise and Freshwater Turtle Conservation Plan（2023、付録A2.3）",
+    "numbers": [
+      "2023",
+      "50"
+    ]
+  },
+  "three-striped-box-turtle": {
+    "value": "旧分類で31年9か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（旧分類）",
+    "numbers": [
+      "1966",
+      "31",
+      "9"
+    ]
+  },
+  "taiwan-box-turtle": {
+    "value": "種全体では約44年間の飼育報告",
+    "url": "https://ksoutdoors.gov/content/download/56514/613616/version/1/file/2018-%2BHerpetological%2BReview%2BVol%2B49%2C%2BN%2B3%2BSeptember%2B2018.pdf",
+    "source": "Bartlett・Bartlett（2018）Herpetological Review 49(3):487–488",
+    "numbers": [
+      "1974",
+      "2",
+      "2018",
+      "44"
+    ]
+  },
+  "chinese-box-turtle": {
+    "value": "種全体では約44年間の飼育報告",
+    "url": "https://ksoutdoors.gov/content/download/56514/613616/version/1/file/2018-%2BHerpetological%2BReview%2BVol%2B49%2C%2BN%2B3%2BSeptember%2B2018.pdf",
+    "source": "Bartlett・Bartlett（2018）Herpetological Review 49(3):487–488",
+    "numbers": [
+      "1974",
+      "2",
+      "2018",
+      "44"
+    ]
+  },
+  "painted-wood-turtle": {
+    "value": "基亜種に成体から20年5か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "20",
+      "5"
+    ]
+  },
+  "brown-wood-turtle-manni": {
+    "value": "20年の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1975",
+      "1995",
+      "20",
+      "300004"
+    ]
+  },
+  "nicaragua-wood-turtle": {
+    "value": "9年1か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1",
+      "11",
+      "1980",
+      "1989",
+      "50",
+      "80",
+      "9"
+    ]
+  },
+  "sonora-wood-turtle": {
+    "value": "亜種固有の長期記録は未確認",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "20",
+      "5"
+    ]
+  },
+  "guerrero-wood-turtle": {
+    "value": "成体から20年5か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "20",
+      "5"
+    ]
+  },
+  "annulated-wood-turtle": {
+    "value": "飼育下で30年以上生きた個体の報告",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts2/crm.5.123.annulata.v1.2023.pdf",
+    "source": "Carrほか IUCN TFTSG 種アカウント（2023、私信の紹介）",
+    "numbers": [
+      "1",
+      "30"
+    ]
+  },
+  "yellow-pond-turtle": {
+    "value": "成体から22年1か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p13）",
+    "numbers": [
+      "1",
+      "22"
+    ]
+  },
+  "yaeyama-pond-turtle": {
+    "value": "野外で50歳超の個体がいるとの解説",
+    "url": "https://www.nacsj.or.jp/wp/wp-content/uploads/2013/05/No534_kyokarahajimeru.pdf",
+    "source": "矢部隆「カメの暮らしをのぞいてみよう」自然保護534号（2013、p33）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "canton-reeves-turtle": {
+    "value": "36年の飼育記録が文献で紹介される",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_068_nigricans_v1_2012.pdf",
+    "source": "IUCN TFTSG 種アカウント（2012、Ipser2011引用）",
+    "numbers": [
+      "36"
+    ]
+  },
+  "chinese-stripe-necked-turtle": {
+    "value": "幼体から22年9か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "22",
+      "9"
+    ]
+  },
+  "asian-black-marsh-turtle": {
+    "value": "成体から16年8か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "16",
+      "8"
+    ]
+  },
+  "asian-leaf-turtle": {
+    "value": "旧記録の現在の種同定が不明",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（分類再整理前）",
+    "numbers": [
+      "14",
+      "8"
+    ]
+  },
+  "iberian-greek-tortoise": {
+    "value": "野外で55年以上との文献報告",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm.5.120.eastern.graeca.v1.2023.pdf",
+    "source": "IUCN TFTSG 東部ギリシャ亜種群アカウント（2023、Galichenko1997引用）",
+    "numbers": [
+      "55"
+    ]
+  },
+  "tunisian-greek-tortoise": {
+    "value": "チュニジア型に31年の飼育歴報告",
+    "url": "https://www.tortoisetrust.org/articles/tunisprelim.html",
+    "source": "Highfield チュニジア調査報告（Tortoise Trust）",
+    "numbers": [
+      "31"
+    ]
+  },
+  "moroccan-greek-tortoise": {
+    "value": "現在の亜種に対応する長期記録は未確認",
+    "url": "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "source": "メリーランド動物園（種全体の案内）",
+    "numbers": [
+      "100"
+    ]
+  },
+  "libyan-greek-tortoise": {
+    "value": "亜種固有の長期記録は未確認",
+    "url": "https://www.marylandzoo.org/animal/greek-tortoise/",
+    "source": "メリーランド動物園（種全体の案内）",
+    "numbers": [
+      "100"
+    ]
+  },
+  "golden-greek-tortoise": {
+    "value": "100年との報告書解説（個体記録なし）",
+    "url": "https://miteco-prod.adobecqms.net/content/dam/miteco/es/parques-nacionales-oapn/proyectos-de-cooperacion/biodiversidad_tcm30-287284.pdf",
+    "source": "Jabal Moussa生物多様性評価報告書（2012、p107）",
+    "numbers": [
+      "100"
+    ]
+  },
+  "cherry-head-tortoise": {
+    "value": "種全体は50年以上（動物園の案内）",
+    "url": "https://www.nationalzoo.si.edu/animals/red-footed-tortoise",
+    "source": "スミソニアン国立動物園（種全体の案内）",
+    "numbers": [
+      "50"
+    ]
+  },
+  "eastern-hermann-tortoise": {
+    "value": "幼体から31年8か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "31",
+      "8"
+    ]
+  },
+  "western-hermann-tortoise": {
+    "value": "22年8か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "22",
+      "8"
+    ]
+  },
+  "peninsula-cooter": {
+    "value": "成体から11年4か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "11",
+      "4"
+    ]
+  },
+  "suwannee-cooter": {
+    "value": "幼体から40年8か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "40",
+      "8"
+    ]
+  },
+  "river-cooter": {
+    "value": "基亜種に成体から14年9か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "14",
+      "9"
+    ]
+  },
+  "rio-grande-cooter": {
+    "value": "別種を参考に20〜25年と推定",
+    "url": "https://www.fws.gov/species/rio-grande-cooter-pseudemys-gorzugi",
+    "source": "米国魚類野生生物局",
+    "numbers": [
+      "20",
+      "25"
+    ]
+  },
+  "florida-red-bellied-turtle": {
+    "value": "成体から26年2か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p14）",
+    "numbers": [
+      "2",
+      "26"
+    ]
+  },
+  "yellow-bellied-slider": {
+    "value": "24年5か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "24",
+      "5"
+    ]
+  },
+  "cumberland-slider": {
+    "value": "23年7か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "23",
+      "7"
+    ]
+  },
+  "carolina-diamondback-terrapin": {
+    "value": "成体から14年1か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "1",
+      "14"
+    ]
+  },
+  "mississippi-diamondback-terrapin": {
+    "value": "成体から9年1か月の飼育記録",
+    "url": "https://webapps.fhsu.edu/ksherp/bibFiles/21870.pdf",
+    "source": "Snider・Bowler 飼育下長寿記録集（1992、p13）",
+    "numbers": [
+      "1",
+      "9"
+    ]
+  },
+  "ornate-diamondback-terrapin": {
+    "value": "亜種固有の長期記録は未確認",
+    "url": "https://www.ncwildlife.gov/diamond-back-terrapin-species-profile/open",
+    "source": "ノースカロライナ州野生生物資源委員会（種全体の案内）",
+    "numbers": [
+      "40"
+    ]
+  },
+  "mangrove-diamondback-terrapin": {
+    "value": "野外で少なくとも20歳との推定例",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12058646/",
+    "source": "Interpreting a Sudden Population Decline in a Long-Lived Species（2025）",
+    "numbers": [
+      "20",
+      "2025",
+      "656",
+      "7"
+    ]
+  },
+  "albino-chinese-softshell": {
+    "value": "アルビノ固有の長期記録は未確認",
+    "url": "https://reptilia.org/animal/chinese-softshell-turtle/",
+    "source": "Reptilia Zoo（種全体の野生の案内）",
+    "numbers": [
+      "15",
+      "20"
+    ]
+  },
+  "amazon-matamata": {
+    "value": "旧記録の現在の種同定が不明",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（再分類前）",
+    "numbers": [
+      "2020",
+      "35",
+      "9"
+    ]
+  },
+  "texas-diamondback-terrapin": {
+    "value": "40年に達する（州の案内）",
+    "url": "https://tpwd.texas.gov/huntwild/wild/species/terrapin/",
+    "source": "Texas Parks and Wildlife",
+    "numbers": [
+      "40"
+    ]
+  },
+  "three-toed-box-turtle": {
+    "value": "成体から52年の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "52"
+    ]
+  },
+  "gulf-coast-box-turtle": {
+    "value": "成体から23年3か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "23",
+      "3"
+    ]
+  },
+  "ornate-box-turtle": {
+    "value": "野外で推定50歳以上の報告",
+    "url": "https://www.researchgate.net/publication/385209172_Terrapene_ornata_Agassiz_1857_-_Ornate_Box_Turtle",
+    "source": "IUCN TFTSG 種アカウント（2024、p126.17）",
+    "numbers": [
+      "1983",
+      "2017",
+      "34",
+      "50"
+    ]
+  },
+  "desert-box-turtle": {
+    "value": "luteolaの野外調査で40歳超との推定",
+    "url": "https://www.researchgate.net/publication/269793559_Activity_Growth_Reproduction_and_Population_Structure_of_Desert_Box_Turtles_Terrapene_ornata_luteola_at_the_Northern_Edge_of_the_Chihuahuan_Desert",
+    "source": "Germano（2014、要旨）・TFTSG（2024）",
+    "numbers": [
+      "23",
+      "40"
+    ]
+  },
+  "alabama-map-turtle": {
+    "value": "旧記録の現在の種同定が不明",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集（種の分離前）",
+    "numbers": [
+      "15",
+      "8"
+    ]
+  },
+  "name:ヒラタニオイガメ": {
+    "value": "直接の長期個体記録は未確認",
+    "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf",
+    "source": "IUCN TFTSG 種アカウント（2008）",
+    "numbers": [
+      "30",
+      "60"
+    ]
+  },
+  "name:テキサスチズガメ": {
+    "value": "種固有の長期記録は未確認",
+    "url": "https://animaldiversity.org/accounts/Graptemys_versa/",
+    "source": "Animal Diversity Web",
+    "numbers": []
+  },
+  "painted-turtle": {
+    "value": "ミッドランド亜種に23年11か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "11",
+      "23"
+    ]
+  },
+  "midland-painted-turtle": {
+    "value": "成体から23年11か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "11",
+      "23"
+    ]
+  },
+  "giant-musk-turtle-mx": {
+    "value": "成体から26年4か月の飼育記録",
+    "url": "https://www.pondturtle.com/lturtle.html",
+    "source": "Slavens 飼育記録集",
+    "numbers": [
+      "22",
+      "26",
+      "4",
+      "71"
+    ]
+  },
+  "giant-musk-turtle": {
+    "value": "34年以上の飼育記録・年齢は50歳超と推定",
+    "url": "https://www.researchgate.net/publication/411200383_Staurotypus_triporcatus_Northern_Giant_Musk_Turtle_Assessment",
+    "source": "IUCN評価（2026、Iverson2016の追跡情報）",
+    "numbers": [
+      "1981",
+      "2016",
+      "2023",
+      "2026",
+      "34",
+      "50",
+      "9"
+    ]
+  },
+  "mccords-snake-necked-turtle": {
+    "value": "本種の長期個体記録は未確認",
+    "url": "https://zoo.hr/mccordova-vijovratka-chelodina-mccordi/",
+    "source": "ザグレブ動物園",
+    "numbers": []
+  },
+  "collier-snake-necked-turtle": {
+    "value": "40年以上（生息地の自治体の案内）",
+    "url": "https://www.cockburn.wa.gov.au/Environment-and-Waste/Sustainability-and-Conservation/Native-Animals-(1)/Turtles",
+    "source": "西オーストラリア州Cockburn市",
+    "numbers": [
+      "40"
+    ]
+  }
+}
