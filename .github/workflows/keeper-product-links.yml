@@ -1,7 +1,7 @@
 name: Keeper Product Links Temporary
 on:
   push:
-    branches: [codex/keeper-products-20261113]
+    branches: [chatgpt-keeper-products-20261113]
     paths: [scripts/keeper-product-links.cjs, .github/workflows/keeper-product-links.yml]
 permissions:
   contents: read
