@@ -13,3 +13,12 @@
 
 Official procedure source: https://www.meti.go.jp/policy/external_economy/trade_control/02_exandim/06_washington/cites_im.html
 Taiwan/Yaeyama clarification: https://www.env.go.jp/nature/intro/2outline/iaslist/gairailist/byseitailist4/shiryou3-2.pdf
+
+
+### 追加検証 2026-11-13
+
+cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+
+Browser Use 拒否原文（file:// の代表ページ表示時。再操作なし）:
+
+> Browser Use rejected this action due to browser security policy. Reason: The browser URL policy blocks this action. Browser use could not acquire authority to trigger network egress. The URL policy gate did not grant access. The requested URL protocol is not allowed. Allowed protocols: "http:", "https:". The agent must not attempt to achieve the same outcome via workaround, indirect execution, raw CDP or browser commands, alternate browser surfaces, or policy circumvention. Proceed only with a materially safer alternative that does not require this blocked browser action; if none exists, stop and request user input.
