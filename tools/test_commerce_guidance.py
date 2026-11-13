@@ -1,7 +1,7 @@
 import unittest,re,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=[p for p in ROOT.glob('*-best10.html') if p.name!='uvb-light-best10.html']
+PAGES=list(ROOT.glob('*-best10.html'))
 class CommerceGuidanceTest(unittest.TestCase):
  def test_comparison_not_unsupported_ranking(self):
   for p in PAGES:
