@@ -146,10 +146,10 @@ function _skRoute() {
       'box-shadow:0 -4px 20px rgba(0,0,0,.5);}',
       '#kame-ga-debug-hdr{display:flex;align-items:center;justify-content:space-between;',
       'padding:5px 10px;background:rgba(0,0,0,.4);border-bottom:1px solid #2a4a2a;',
-      'font-size:10px;letter-spacing:.08em;color:#6fcf6f;font-weight:700;}',
+      'font-size:14px;letter-spacing:.08em;color:#6fcf6f;font-weight:700;}',
       '#kame-ga-debug-list{overflow-y:auto;max-height:170px;padding:4px 0;}',
       '.kgd-row{display:flex;gap:8px;padding:3px 10px;border-bottom:1px solid rgba(76,175,80,.12);',
-      'font-size:10.5px;align-items:flex-start;transition:background .15s;}',
+      'font-size:14px;align-items:flex-start;transition:background .15s;}',
       '.kgd-row:hover{background:rgba(76,175,80,.08);}',
       '.kgd-row:first-child{background:rgba(76,175,80,.12);}',
       '.kgd-n{flex-shrink:0;color:#aaa;min-width:18px;text-align:right;}',
@@ -168,7 +168,7 @@ function _skRoute() {
       '<span style="color:#f0c060">?debug_ga=1 — 最新10件表示</span>' +
       '<button onclick="document.getElementById(&quot;kame-ga-debug&quot;).remove()" ' +
         'style="background:none;border:1px solid #4caf50;color:#4caf50;' +
-        'cursor:pointer;padding:1px 7px;border-radius:3px;font-size:10px;">✕ 閉じる</button>';
+        'cursor:pointer;padding:1px 7px;border-radius:3px;font-size:14px;">✕ 閉じる</button>';
 
     _list = document.createElement('div');
     _list.id = 'kame-ga-debug-list';
@@ -787,9 +787,9 @@ function renderStarterKitHtmlV2(equipmentKey, opts) {
     waterCareHtml =
       '<div class="sk-watercare" style="margin:0 0 20px;padding:16px 18px;border-radius:12px;background:#eef7fb;border:1px solid #cfe6f0;">' +
         '<div style="font-weight:700;font-size:15px;color:#1a5f7a;margin-bottom:8px;">💧 機材の前に：水質管理でいちばん大切なこと</div>' +
-        '<p style="margin:0 0 8px;font-size:13.5px;line-height:1.7;color:#333;">水棲ガメにとって最も理想的な水質管理は、<strong>毎日少量でも新しい水に交換すること</strong>です。水換えは、アンモニアや雑菌、臭いの原因を直接取り除ける、最も確実な方法です。</p>' +
-        '<p style="margin:0 0 8px;font-size:13.5px;line-height:1.7;color:#333;">フィルターは水換えの代わりになる道具ではなく、<strong>水換えの負担を減らし、水質を安定させる補助器具</strong>です。どんな高性能フィルターでも、水換えを完全になくすことはできません。</p>' +
-        '<p style="margin:0;font-size:13.5px;line-height:1.7;color:#333;">そのうえで、毎日の水換えが難しい方には、ろ過能力の高いフィルターがおすすめです。下記のセットを参考にしてください。</p>' +
+        '<p style="margin:0 0 8px;font-size:14px;line-height:1.7;color:#333;">水棲ガメにとって最も理想的な水質管理は、<strong>毎日少量でも新しい水に交換すること</strong>です。水換えは、アンモニアや雑菌、臭いの原因を直接取り除ける、最も確実な方法です。</p>' +
+        '<p style="margin:0 0 8px;font-size:14px;line-height:1.7;color:#333;">フィルターは水換えの代わりになる道具ではなく、<strong>水換えの負担を減らし、水質を安定させる補助器具</strong>です。どんな高性能フィルターでも、水換えを完全になくすことはできません。</p>' +
+        '<p style="margin:0;font-size:14px;line-height:1.7;color:#333;">そのうえで、毎日の水換えが難しい方には、ろ過能力の高いフィルターがおすすめです。下記のセットを参考にしてください。</p>' +
       '</div>';
   }
 
@@ -965,7 +965,7 @@ function renderRakutenAttribution() {
   } catch (e) { /* window 不在環境では素通し */ }
   // インラインstyleで出す。ガイドページは starter-kit.css を読み込まないため、
   // 外部CSSに依存せず「実画面で必ず見える」ことを保証する。
-  return '<p class="kame-rakuten-attribution" style="font-size:.78rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
+  return '<p class="kame-rakuten-attribution" style="font-size:0.875rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
     '商品画像・商品情報の提供: ' + RAKUTEN_ATTRIBUTION_SNIPPET +
     '</p>';
 }

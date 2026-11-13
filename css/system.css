@@ -53,14 +53,14 @@
 .klg-nav-logo{
   display:inline-flex; align-items:center; gap:6px; min-height:40px;
   font-family:"Playfair Display",serif;
-  font-size:.78rem; font-weight:700; letter-spacing:.14em;
+  font-size:0.875rem; font-weight:700; letter-spacing:.14em;
   color:var(--klg-gold); text-decoration:none; margin-right:auto;
   white-space:nowrap;
 }
 .klg-nav-logo .klg-ico{width:17px;height:17px;}
 .klg-nav-link{
   display:inline-flex; align-items:center; min-height:40px;
-  font-size:.74rem; font-weight:600; letter-spacing:.02em;
+  font-size:0.875rem; font-weight:600; letter-spacing:.02em;
   color:rgba(212,220,215,.78); text-decoration:none;
   padding:0 7px; white-space:nowrap;
   transition:color .18s ease;
@@ -69,7 +69,7 @@
 .klg-nav-cta{
   display:inline-flex; align-items:center; justify-content:center; gap:5px; min-height:40px;
   background:var(--klg-gold); color:#06120d;
-  font-size:.72rem; font-weight:700; white-space:nowrap;
+  font-size:0.875rem; font-weight:700; white-space:nowrap;
   padding:8px 13px; border-radius:var(--klg-radius-pill);
   text-decoration:none; margin-left:var(--klg-sp-2);
   transition:background .18s ease,transform .15s ease;
@@ -84,9 +84,9 @@ body.klg-has-nav{padding-top:var(--klg-nav-h);}
 /* 360px 未満はロゴを記号だけにし、リンクも3→2本へ絞って収める */
 @media(max-width:389px){
   .klg-nav-inner{padding:0 var(--klg-sp-2);}
-  .klg-nav-link{padding:0 5px;font-size:.71rem;}
-  .klg-nav-cta{padding:0 11px;font-size:.7rem;margin-left:var(--klg-sp-1);}
-  .klg-nav-logo{font-size:.72rem;letter-spacing:.08em;}
+  .klg-nav-link{padding:0 5px;font-size:0.875rem;}
+  .klg-nav-cta{padding:0 11px;font-size:0.875rem;margin-left:var(--klg-sp-1);}
+  .klg-nav-logo{font-size:0.875rem;letter-spacing:.08em;}
 }
 @media(max-width:359px){
   .klg-nav-logo .klg-nav-logo-text{display:none;}
@@ -96,8 +96,8 @@ body.klg-has-nav{padding-top:var(--klg-nav-h);}
   :root{--klg-nav-h:58px;}
   .klg-nav-inner{padding:0 var(--klg-sp-5);}
   .klg-nav-logo{font-size:.9rem;}
-  .klg-nav-link{font-size:.82rem;padding:16px 13px;}
-  .klg-nav-cta{font-size:.8rem;padding:9px 18px;}
+  .klg-nav-link{font-size:0.875rem;padding:16px 13px;}
+  .klg-nav-cta{font-size:0.875rem;padding:9px 18px;}
 }
 
 /* ============================================================
@@ -189,19 +189,19 @@ body[data-klg-cat="スッポン・曲頸"]     {--sp-from:#1c2220;--sp-to:#0a0e0
 .klg-kids-home .klg-ico{width:17px;height:17px;}
 .klg-kids-brand{
   font-family:"Playfair Display",serif;
-  font-size:.76rem; font-weight:700; letter-spacing:.12em;
+  font-size:0.875rem; font-weight:700; letter-spacing:.12em;
 }
 .klg-kids-back{
-  margin-left:auto; font-size:.74rem; font-weight:600;
+  margin-left:auto; font-size:0.875rem; font-weight:600;
   color:rgba(212,220,215,.8);
 }
 .klg-kids-home:hover .klg-kids-back{color:var(--klg-gold);}
-@media(max-width:359px){ .klg-kids-brand{letter-spacing:.06em;font-size:.7rem;} }
+@media(max-width:359px){ .klg-kids-brand{letter-spacing:.06em;font-size:0.875rem;} }
 
 /* review系: メタ行を記号なしで読ませる */
 .klg-review .article-meta-row{gap:var(--klg-sp-3);flex-wrap:wrap;}
 .klg-review .klg-meta-item{
-  position:relative; padding-left:11px; font-size:.78rem; color:var(--klg-muted);
+  position:relative; padding-left:11px; font-size:0.875rem; color:var(--klg-muted);
 }
 .klg-review .klg-meta-item::before{
   content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
@@ -226,13 +226,13 @@ body[data-klg-cat="スッポン・曲頸"]     {--sp-from:#1c2220;--sp-to:#0a0e0
    「全て15px以上」の機械置換はしていない。用途と可読性を確認し、
    識別情報・法規制・価格など読ませる必要があるものだけ引き上げる。
    装飾的な eyebrow（全角大文字＋字間広め）は小さいままでよいが、
-   下限を 11.5px に揃える。
+   下限を 14px に揃える。
    ============================================================ */
 :root{
-  --klg-fs-micro:11.5px;  /* eyebrow・装飾ラベル。これ以下は使わない */
-  --klg-fs-label:12px;    /* バッジ・学名・単位・注記 */
-  --klg-fs-sm:13px;       /* 補足文 */
-  --klg-fs-body:15px;     /* 本文 */
+  --klg-fs-micro:14px;  /* eyebrow・装飾ラベル。これ以下は使わない */
+  --klg-fs-label:14px;    /* バッジ・学名・単位・注記 */
+  --klg-fs-sm:14px;       /* 補足文 */
+  --klg-fs-body:16px;     /* 本文 */
   --klg-fs-lg:17px;
   --klg-fs-h3:20px;
   --klg-fs-h2:24px;
@@ -241,24 +241,24 @@ body[data-klg-cat="スッポン・曲頸"]     {--sp-from:#1c2220;--sp-to:#0a0e0
 /* --- 識別情報（学名・サイズ・法規制）。一覧カードで最も読まれる --- */
 .sp-latin{font-size:var(--klg-fs-label);}
 .sp-cm{font-size:var(--klg-fs-label);}
-.sp-sub{font-size:12.5px;}
+.sp-sub{font-size:14px;}
 .sp-legal-k{font-size:var(--klg-fs-micro);}
 .spb{font-size:var(--klg-fs-micro);}
 .rtg-latin{font-size:var(--klg-fs-label);}
-.rank-latin{font-size:12.5px;}
+.rank-latin{font-size:14px;}
 .rank-pill{font-size:var(--klg-fs-label);}
 
 /* --- 機材カード。価格や必須/推奨の判断材料なので小さすぎた --- */
 .sk-cvr-badge{font-size:var(--klg-fs-micro);}
 .sk-cat-label{font-size:var(--klg-fs-label);}
-.sk-price-note{font-size:12.5px;}
-.sk-card-check-text{font-size:12.5px;}
+.sk-price-note{font-size:14px;}
+.sk-card-check-text{font-size:14px;}
 
 /* --- ラベル・注記 --- */
 .csim-cost-label{font-size:var(--klg-fs-label);}
 .gl-module-label{font-size:var(--klg-fs-micro);}
 .related-card-arrow{font-size:var(--klg-fs-label);}
-.klg-review .rank-list-note{font-size:12.5px;}
+.klg-review .rank-list-note{font-size:14px;}
 
 /* --- eyebrow 系は下限だけ揃える（装飾なので大きくしない） --- */
 .section-eyebrow,.pc-eyebrow-s2,.su-eyebrow,.dc-eyebrow,.rtg-eyebrow,
@@ -288,7 +288,7 @@ body.klg-species header.hero .lead{
 }
 /* hero 内の注記ボックスは補足なので、写真を押し下げないよう詰める */
 body.klg-species header.hero .note-box{
-  font-size:12.5px; line-height:1.7;
+  font-size:14px; line-height:1.7;
   padding:10px 12px; margin-top:12px;
   border-radius:var(--klg-radius);
   text-align:left;
@@ -301,7 +301,7 @@ body.klg-species header.hero .note-box{
 .stats-bar .stats-inner{display:flex;flex-wrap:nowrap;}
 .stats-bar .stat-item{flex:1 1 0;min-width:0;padding:10px 6px;text-align:center;}
 .stats-bar .stat-label{font-size:var(--klg-fs-micro);letter-spacing:.04em;opacity:.8;}
-.stats-bar .stat-value{font-size:13.5px;font-weight:700;line-height:1.35;
+.stats-bar .stat-value{font-size:14px;font-weight:700;line-height:1.35;
   overflow-wrap:anywhere;}
 @media(min-width:720px){ .stats-bar .stat-value{font-size:15px;} }
 
@@ -349,3 +349,45 @@ body.klg-species header.hero .note-box{
 .gl-icon .klg-ico{width:26px;height:26px;color:var(--klg-gold-dark);}
 /* 種ページ→機材ページのサイズ帯アンカー：固定ナビに隠れないよう着地位置を下げる */
 [id^="band-"],#cage-size-guide,#filter-size-guide,#uvb-type-guide{scroll-margin-top:calc(var(--klg-nav-h) + 12px);}
+
+/* Readability: body copy and controls use a clear sans-serif face; headings keep the brand serif. */
+body:not(.k-body){font-family:system-ui,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;font-size:1rem;}
+body:not(.k-body) :is(h1,h2,h3,h4){font-family:"Noto Serif JP",serif;}
+body:not(.k-body) :is(input,select,textarea,button){font-family:inherit;}
+body:not(.k-body) :is(.article p,.article li,.lead,.lede){font-size:1rem;}
+.klg-nav-link{font-size:.875rem;color:#e1e7e2;}
+.klg-nav-cta{font-size:.875rem;}
+.klg-nav-logo{letter-spacing:.05em;}
+@media(max-width:719px){.klg-nav-logo-text{display:none;}.klg-nav-inner{gap:2px;}.klg-nav-link{padding:0 5px;}.klg-nav-cta{padding:8px 10px;margin-left:4px;}}
+@media(min-width:720px){.klg-nav-link,.klg-nav-cta{font-size:1rem;}}
+.stats-bar .stat-label{opacity:1;color:#e5e3cf;font-size:.875rem;}
+.stats-bar .stat-value{font-size:1rem;}
+@media(max-width:479px){.stats-bar .stats-inner{flex-wrap:wrap;}.stats-bar .stat-item{flex-basis:50%;}}
+
+/* Small semantic text still needs a readable floor (ruby and superscript references are separate). */
+small{font-size:.875rem;}
+body.klg-species .rtg-link span{font-size:.875rem;}
+.sp-cat-count,.sp-genus-count,.sp-sub,.sp-latin,.sp-cm,.count-line{color:#526353;}
+.rank-latin,.score-label,.rank-data-item,.bfy-label,.section-sub,.scroll-hint,.pr-note,.ad-disclosure,.cl-sub{color:#526353;}
+.qa-item-label{color:#d4a96a;}
+.jp-num{color:#e2b778;}
+.gh-featured-label,.gh-featured-arrow,.gh-section-label,.gh-hab-eyebrow,.gh-card-tag,.gh-card-cta,.gh-card-arrow{color:#78501f;}
+.gh-cat-title,.gh-gear-lead,.gh-hab-lead,.gh-hab-species{color:#526353;}
+.gh-footer,.gh-footer a{color:#c8d7cd;}
+.dc-eyebrow,.dc-back{color:#78501f;}.dc-intro{color:#526353;}
+
+body.klg-species .rel-btn>span{font-size:.875rem;}
+.klg-review .klg-meta-item{color:#e0e6df;}
+.klg-review footer p,.klg-review footer a,.klg-review .footer-copy,.klg-review .footer-disclaimer{color:#cbd7ce;}
+
+.sp-cat .sp-cat-count,.sp-genus .sp-genus-count{color:#526353;}
+.klg-review .ad-disclosure,.ad-disclosure{color:#526353;}
+.rank-link,.btn-amz,.amazon-btn{color:#172c21;}
+.badge.badge-b,.cause-tag.mid{color:#8c4214;}
+.urgency-tag,.nec-badge--cond{background:#9a431e;}
+
+.btn-amz[style*="--forest"]{color:#fff;}
+header.hero .urgency-tag{background:#9a431e;}
+.trouble-cta a,.diagnosis-cta a{color:#172c21;}
+.klg-review .breadcrumb,.klg-review .breadcrumb a{color:#526353;}
+.klg-review .product-verdict p{color:#526353;}

@@ -38,7 +38,7 @@
 }
 
 .qf-cta-link {
-  font-size: .8rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--forest, #2f4a3c);
   text-decoration: none;
@@ -90,7 +90,7 @@
 }
 
 .qf-card-label {
-  font-size: .65rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -107,14 +107,14 @@
 }
 
 .qf-card-sub {
-  font-size: .65rem;
+  font-size: 0.875rem;
   color: #8a7a60;
   margin-top: 3px;
   line-height: 1.4;
 }
 
 /* 難易度 */
-.qf-diff { font-size: .85rem; }
+.qf-diff { font-size: 0.875rem; }
 .qf-diff--easy { color: #2e7d32; }
 .qf-diff--mid  { color: #e65100; }
 .qf-diff--hard { color: #c62828; }
@@ -133,13 +133,13 @@
 
 /* 飼育タイプ */
 .qf-type {
-  font-size: .78rem;
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
 /* 注記 */
 .qf-note {
-  font-size: .65rem;
+  font-size: 0.875rem;
   color: #aaa;
   margin-top: 12px;
   line-height: 1.5;
@@ -212,8 +212,16 @@
   }
 }
 
-.qf-card-label{font-size:11.5px;}
+.qf-card-label{font-size:14px;}
 
-.qf-card-sub{font-size:11.5px;}
+.qf-card-sub{font-size:14px;}
 
-.qf-note{font-size:11.5px;}
+.qf-note{font-size:14px;}
+
+/* Readability: preserve each panel palette while improving small-text contrast. */
+.qf-card-sub,.qf-note{color:#655c4d;}
+.qf-diff--mid{color:#a43c00;}
+.qf-card-value{font-size:1rem;}
+.qf-sticky-btn,.qf-cta-link:hover{color:#17291f;}
+.qf-sticky-btn:hover{color:#fff;}
+.qf-sticky-close{color:#dce4de;}

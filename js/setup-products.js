@@ -46,7 +46,7 @@
     } catch (e) { /* noop */ }
     // インラインstyleで出す。ガイドページは starter-kit.css を読み込まないため、
     // 外部CSSに依存せず「実画面で必ず見える」ことを保証する。
-    return '<p class="kame-rakuten-attribution" style="font-size:.78rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
+    return '<p class="kame-rakuten-attribution" style="font-size:0.875rem;line-height:1.8;margin:14px 0 0;color:#5a5a52;padding-top:10px;border-top:1px solid rgba(0,0,0,.07);">' +
       '商品画像・商品情報の提供: ' + RAKUTEN_ATTRIBUTION_SNIPPET +
       '</p>';
   }
@@ -63,14 +63,14 @@
     // GA4計測用のdata属性（正典 affiliate_click スキーマに対応。Phase 28-C 準拠）
     var da = ' data-product-id="' + esc(p.id) + '" data-cat="' + esc(p.category) + '" data-tier="' + esc(p.tier || '') + '" data-pos="' + esc(pos || 'primary') + '"';
     if (p.affiliateUrl && p.affiliateUrl !== '#') {
-      html += '<a href="' + esc(p.affiliateUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="amazon"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#2f4a3c;color:#f4efe2;text-decoration:none;margin-right:8px;">Amazonで見る</a>';
+      html += '<a href="' + esc(p.affiliateUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="amazon"' + da + ' style="display:inline-block;font-size:0.875rem;padding:4px 12px;border-radius:99px;background:#2f4a3c;color:#f4efe2;text-decoration:none;margin-right:8px;">Amazonで見る</a>';
     }
     try {
       if (p.rakutenStatus === 'available' && p.rakutenUrl) {
-        html += '<a href="' + esc(p.rakutenUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で見る</a>';
+        html += '<a href="' + esc(p.rakutenUrl) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:0.875rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で見る</a>';
       } else if (typeof getRakutenSearchUrl === 'function' && p.rakutenStatus === 'search') {
         var u = getRakutenSearchUrl(p);
-        if (u) html += '<a href="' + esc(u) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:.78rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で探す</a>';
+        if (u) html += '<a href="' + esc(u) + '" target="_blank" rel="nofollow sponsored noopener" data-retailer="rakuten"' + da + ' style="display:inline-block;font-size:0.875rem;padding:4px 12px;border-radius:99px;background:#b02e2e;color:#fff;text-decoration:none;">楽天で探す</a>';
       }
     } catch (e) {}
     return html;
@@ -79,17 +79,17 @@
   function row(catLabel, need, note, primary, alt, avoid) {
     var h = '<div style="padding:12px 0;border-top:1px solid rgba(138,133,112,.25);">';
     h += '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">';
-    h += '<span style="font-size:.72rem;font-weight:700;padding:1px 9px;border-radius:99px;background:' + (NEED_BG[need] || '#8a8570') + ';color:#fff;">' + esc(NEED_LABEL[need] || need) + '</span>';
+    h += '<span style="font-size:0.875rem;font-weight:700;padding:1px 9px;border-radius:99px;background:' + (NEED_BG[need] || '#8a8570') + ';color:#fff;">' + esc(NEED_LABEL[need] || need) + '</span>';
     h += '<span style="font-weight:700;font-size:.9rem;">' + esc(catLabel) + '</span></div>';
-    if (note) h += '<div style="font-size:.8rem;opacity:.85;line-height:1.7;margin-bottom:6px;">' + esc(note) + '</div>';
+    if (note) h += '<div style="font-size:0.875rem;opacity:.85;line-height:1.7;margin-bottom:6px;">' + esc(note) + '</div>';
     if (primary) {
-      h += '<div style="font-size:.85rem;margin-bottom:6px;">候補: ' + esc(primary.name) + (primary.priceRange ? '<span style="opacity:.6;font-size:.75rem;">（' + esc(primary.priceRange) + '）</span>' : '') + '</div>';
+      h += '<div style="font-size:0.875rem;margin-bottom:6px;">候補: ' + esc(primary.name) + (primary.priceRange ? '<span style="opacity:.6;font-size:0.875rem;">（' + esc(primary.priceRange) + '）</span>' : '') + '</div>';
       h += '<div>' + buyButtons(primary, 'primary') + '</div>';
     }
     if (alt && (!primary || alt.id !== primary.id)) {
-      h += '<div style="font-size:.78rem;opacity:.8;margin-top:6px;">代替候補: ' + esc(alt.name) + '　' + buyButtons(alt, 'alt') + '</div>';
+      h += '<div style="font-size:0.875rem;opacity:.8;margin-top:6px;">代替候補: ' + esc(alt.name) + '　' + buyButtons(alt, 'alt') + '</div>';
     }
-    if (avoid) h += '<div style="font-size:.76rem;color:#a05252;margin-top:6px;">避けたい仕様: ' + esc(avoid) + '</div>';
+    if (avoid) h += '<div style="font-size:0.875rem;color:#a05252;margin-top:6px;">避けたい仕様: ' + esc(avoid) + '</div>';
     h += '</div>';
     return h;
   }
@@ -101,11 +101,11 @@
     var h = '<div style="border:1.5px solid rgba(138,133,112,.35);border-radius:12px;padding:16px 18px;margin:6px 0 26px;">';
     h += '<p style="font-weight:700;font-size:.95rem;margin:0 0 2px;">' + (noLinks ? 'この飼育環境を作るための用品の選び方' : 'この飼育環境を作るための用品候補') + '</p>';
     if (noLinks) {
-      h += '<p style="font-size:.74rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズの選び方の目安です。このページには方針として商品リンクを置いていません（<a href="site-policy.html" style="color:inherit;">このサイトの情報について</a>）。</p>';
+      h += '<p style="font-size:0.875rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズの選び方の目安です。このページには方針として商品リンクを置いていません（<a href="site-policy.html" style="color:inherit;">このサイトの情報について</a>）。</p>';
     } else {
-      h += '<p style="font-size:.74rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズを根拠に選んだ候補です（広告リンクを含みます）。価格・仕様は必ず販売ページでご確認ください。</p>';
+      h += '<p style="font-size:0.875rem;opacity:.7;line-height:1.7;margin:0 0 4px;">イメージ図に描かれた機材とは別に、用途・能力・サイズを根拠に選んだ候補です（広告リンクを含みます）。価格・仕様は必ず販売ページでご確認ください。</p>';
     }
-    if (spec.pageNote) h += '<p style="font-size:.78rem;line-height:1.7;margin:0 0 4px;color:#7a5b2e;">' + esc(spec.pageNote) + '</p>';
+    if (spec.pageNote) h += '<p style="font-size:0.875rem;line-height:1.7;margin:0 0 4px;color:#7a5b2e;">' + esc(spec.pageNote) + '</p>';
 
     spec.categories.forEach(function (c) {
       var p = noLinks ? null : resolveProduct(spec.equipmentKey, c.cat, c.tier);
