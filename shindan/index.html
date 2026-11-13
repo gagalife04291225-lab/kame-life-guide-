@@ -1369,7 +1369,7 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=861022bb9d6e');
+  return window.__loadScriptOnce('species.js?v=7fc4075bcf7b');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
@@ -1519,7 +1519,7 @@ var EMOTION_COPY_MAP = {
   'スペングラーヤマガメ': '小型で個性的な山地性ガメ。ハコガメに近い生態を持ち、陸上でも水中でも観察が楽しめます。著者も実際に飼育中の種です。',
   'ヒラセガメ': '平たい甲羅と落ち着いた行動が特徴のアジア産ガメ。著者が実際に飼育しており、飼い込むほどに愛着が増す種です。',
   'ミツユビハコガメ': '三本指の後脚と蝶番式の腹甲が特徴のハコガメ。著者も飼育中で、慣れると動き回る姿が楽しみになる一種です。',
-  'トウブハコガメ': '蝶番のある腹甲で完全に甲羅に閉じこもれる独特のガメ。長生きすることで知られ、50〜100年生きることもあります。',
+  'トウブハコガメ': '蝶番のある腹甲で完全に甲羅に閉じこもれる独特のガメ。長い期間の世話を見込んで迎えたい種です。',
   'キバラガメ': 'ミシシッピアカミミガメの近縁種で、耳の模様が黄色いのが特徴。新規購入・飼育が可能な種で、活発な泳ぎが見ていて楽しい。',
 };
 
@@ -1762,52 +1762,8 @@ function buildEmotionCopy(sp, equipKey, pctArg) {
 }
 
 
-// ===== PHASE 5: 寿命データ（既存表示。資料確認済みの種は coreSpecs を優先） =====
-var LIFESPAN_DATA = {
-  // リクガメ
-  'ロシアリクガメ':              '60年以上にわたる飼育例',
-  'ヘルマンリクガメ（ヒガシ亜種）': '数十年単位・上限は未確立',
-  'ヘルマンリクガメ（ニシ亜種）':  '数十年単位・上限は未確立',
-  'ギリシャリクガメ':            '50〜100年',
-  'フチゾリリクガメ':            '50〜100年',
-  'エロンガータリクガメ':        '40〜60年',
-  'アカアシリクガメ':            '50〜80年',
-  'チャコリクガメ':              '50〜80年',
-  'ヒョウモンガメ':              '50〜100年',
-  'ベルセオレガメ':              '25〜50年',
-  'ソマリアリクガメ（エジプトリクガメ）': '20〜40年',
-  'ケヅメリクガメ（スルカタ）':  '50〜80年',
-  'アルダブラゾウガメ':          '80〜150年以上',
-  'インプレッサムツアシガメ':    '不明（長寿と推定）',
-  // 水棲
-  'ニオイガメ':                  '54年以上の飼育記録（平均は不明）',
-  'ヒラタニオイガメ':            '20〜30年',
-  'ミシシッピドロガメ':          '20〜30年',
-  'ミスジドロガメ':              '20〜30年',
-  'カブトニオイガメ':            '29年以上の飼育記録',
-  'スジクビニオイガメ':          '20〜30年',
-  'ホオアカドロガメ':            '20〜30年',
-  'ペインテッドタートル':        '25〜40年',
-  'クサガメ':                    '25〜40年',
-  'キバラガメ':                  '25〜40年',
-  'ミシシッピアカミミガメ':      '30〜40年',
-  'ミシシッピチズガメ':          '20〜30年',
-  'ニホンイシガメ':              '雄約10〜15年・雌約20〜30年（動物園の案内）',
-  'ヤエヤマイシガメ':            '20〜30年',
-  'マタマタ':                    '15〜30年',
-  'ブランディングガメ':          '60〜80年以上',
-  // ヤマガメ・ハコガメ
-  'スペングラーヤマガメ':        '20年以上（動物園の案内）',
-  'ヒラセガメ':                  '30〜50年',
-  'ミツユビハコガメ':            '30〜50年',
-  'トウブハコガメ':              '50〜100年',
-  'キボシイシガメ':              '25〜50年',
-  'モリイシガメ':                '40〜60年',
-  'タイワンセマルハコガメ':      '25〜35年',
-  'マレーハコガメ':              '25〜30年',
-  'モエギハコガメ':              '30〜50年',
-  'ミスジハコガメ':              '30〜50年',
-};
+// 寿命は species.js の出典付き情報を使う。資料のない種に旧推定値を補わない。
+var LIFESPAN_DATA = {};
 
 // ===== PHASE 5: 初心者警告データ =====
 var BEGINNER_WARN_DATA = {
@@ -2821,7 +2777,7 @@ function calcResult() {
           hasPage: true, slug: 'musk-turtle', links: [],
           equipmentKey: '_aquatic_small',
           coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
-          lifespanEvidence: { note: 'カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
+          lifespanEvidence: { note: 'カナダの管理計画には、飼育下で54年以上生きた記録が載っています。平均寿命は分かっておらず、54年が長生きの限界というわけでもありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
           match: function(){ return true; }, score: function(){ return 0; }
         };
       }
@@ -3013,7 +2969,7 @@ function calcResult() {
       reason: 'はじめての1頭に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
       hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
       coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
-      lifespanEvidence: { note: 'カナダの管理計画は平均寿命を不明とし、飼育下で54年以上生きた記録を紹介しています。記録の年数は、平均寿命や寿命の上限ではありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
+      lifespanEvidence: { note: 'カナダの管理計画には、飼育下で54年以上生きた記録が載っています。平均寿命は分かっておらず、54年が長生きの限界というわけでもありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
       match: function(){ return true; }, score: function(){ return 0; }
     };
     result = fallbackSp;
