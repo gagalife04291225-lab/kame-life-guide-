@@ -3197,3 +3197,107 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS["giant-musk-turtle"] = {
   "title": "スジオオニオイガメの用品を選ぶ前に",
   "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
 };
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["インドホシガメ"] = {
+  "items": [
+    "暖まる場所だけでなく日陰も作り、容器全体が暑くならないようにします。",
+    "飲水・水浴び用の浅い水皿を置き、清潔に保ちます。"
+  ],
+  "sourceNote": "インドホシガメの飼育資料から、日陰と水場の条件を確認しています。器具の出力や容器の適合を保証するものではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：Indian Star Tortoises",
+      "url": "https://www.tortoisetrust.org/care/celegans.html"
+    }
+  ],
+  "title": "インドホシガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ビルマホシガメ"] = {
+  "items": [
+    "冷えたときに暖まれる場所と、いつでも飲める清潔な水を用意します。",
+    "幼体の床や隠れ場所を乾かしすぎず、保温・UVBの設備を年齢と飼育環境に合わせます。"
+  ],
+  "sourceNote": "ビルマホシガメの種別報告にある飼育条件です。現地施設の広さや温度を、そのまま家庭の固定値にはしていません。",
+  "sources": [
+    {
+      "label": "TFTSG：Geochelone platynota（Captive Husbandry）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_057_platynota_v1_2011.pdf"
+    }
+  ],
+  "title": "ビルマホシガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["エジプトリクガメ"] = {
+  "items": [
+    "小型でも歩く場所を十分に残し、容器の通気を確保します。",
+    "暖かい場所から離れられる配置にし、隠れ家と浅い飲水皿を用意します。"
+  ],
+  "sourceNote": "エジプトリクガメの飼育プロジェクトの方法を参考にしています。砂の安全性や特定の器具を一律に勧めるものではありません。",
+  "sources": [
+    {
+      "label": "Kleinmanni Assurance Project：Care Guide",
+      "url": "https://www.kleinmanniassuranceproject.com/care-guide"
+    }
+  ],
+  "title": "エジプトリクガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["マダガスカルクモノスガメ"] = {
+  "items": [
+    "潜って身を隠せる床材と、日陰の休み場所を用意します。",
+    "飲水できる水場を確保し、乾燥した容器だけで済ませないようにします。"
+  ],
+  "sourceNote": "Pyxis属の飼育資料で共通して扱われる床材・日陰・水場の条件です。亜種別の温湿度や用品適合まで確認したものではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：Spider Tortoises",
+      "url": "https://www.tortoisetrust.org/care/pyxis.html"
+    }
+  ],
+  "title": "マダガスカルクモノスガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ヒラタニオイガメ"] = {
+  "scope": "species_natural_history_plus_family_guidance",
+  "title": "ヒラタニオイガメの用品を選ぶ前に",
+  "items": [
+    "水中で身を隠せる場所を用意します。石やシェルターはぐらつかず、出入りを妨げないように置きます。",
+    "水を清潔に保てるよう、ろ過と日々の掃除を組み合わせます。隠れ場所の下も掃除できる配置にします。",
+    "水面へ移れる足場と、上陸して休める場所を用意します。水位は体格と実際の動き方を見て調整します。"
+  ],
+  "sourceNote": "本種の自然史資料にある、澄んだ水と岩の隙間を利用する生態を参考にしています。足場や陸場の案内は、ドロガメ・ニオイガメ類の共通の飼育資料を補っています。",
+  "sources": [
+    {
+      "label": "Dodd：ヒラタニオイガメの自然史（2008）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf"
+    },
+    {
+      "label": "Kirkpatrick：ドロガメ・ニオイガメ類の飼育",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["テキサスチズガメ"] = {
+  "scope": "species_keeper",
+  "title": "テキサスチズガメの用品を選ぶ前に",
+  "items": [
+    "泳ぐ場所と、全身が水から出て乾く陸場を用意します。陸場は体重を支えられ、無理なく上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整え、水を清潔に保ちます。",
+    "メスはオスより大きくなります。成長後の体格に合わせて、容器の広さと陸場の大きさを見直します。"
+  ],
+  "sourceNote": "Graptemys versaを対象とした飼育者向け資料を参照しています。雌雄で体格が違うため、小さい個体向けの用品をそのまま終生用とは考えません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：テキサスチズガメの飼育",
+      "url": "https://www.austinsturtlepage.com/Care/cs-texmap.htm"
+    }
+  ],
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};

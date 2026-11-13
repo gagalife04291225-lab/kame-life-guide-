@@ -1363,7 +1363,7 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=9e42546948b6');
+  return window.__loadScriptOnce('species.js?v=cd542c9eca8c');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
@@ -2180,7 +2180,7 @@ var SK_CAT_LABELS = {
  * Keeps starter_kit_visible observer (V2 engine has no built-in viewport event).
  */
 function renderSpeciesEquipmentConditions(sp) {
-  var data = typeof DIAGNOSIS_EQUIPMENT_CONDITIONS !== 'undefined' && DIAGNOSIS_EQUIPMENT_CONDITIONS[sp.slug];
+  var data = typeof DIAGNOSIS_EQUIPMENT_CONDITIONS !== 'undefined' && DIAGNOSIS_EQUIPMENT_CONDITIONS[sp.slug || sp.name];
   if (!data) return '';
   function esc(value) { return String(value).replace(/[&<>"']/g, function(ch) {
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
@@ -2189,7 +2189,7 @@ function renderSpeciesEquipmentConditions(sp) {
     '<h2>' + esc(data.title) + '</h2><ul>' + data.items.map(function(item) {
       return '<li>' + esc(item) + '</li>';
     }).join('') + '</ul><p>' + esc(data.note) + '</p>' +
-    '<details><summary>参考にした資料</summary><p>' + esc(data.sourceNote) + '</p><ul>' +
+    '<details><summary>参考にした資料</summary>' + (data.sourceNote ? '<p>' + esc(data.sourceNote) + '</p>' : '') + '<ul>' +
     data.sources.map(function(source) { return '<li><a href="' + esc(source.url) +
       '" target="_blank" rel="noopener">' + esc(source.label) + '</a></li>'; }).join('') +
     '</ul></details></section>';

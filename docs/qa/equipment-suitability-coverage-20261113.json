@@ -1,12 +1,13 @@
 {
   "date": "2026-11-13",
   "base": "fde885bd1485ae74ce9527bb63f432e400c80008",
-  "scope": "119 entries reviewed. 113 named species have source-scoped equipment guidance; six no-slug reference entries have no purchasable species page. No individual product-fit certification.",
+  "scope": "All 119 entries reviewed with source-scoped equipment guidance. 113 slug keys and six name fallbacks. No individual product-fit certification; legal/commerce gates unchanged.",
   "counts": {
     "total": 119,
     "route_candidate_differences": 0,
-    "source_scoped_conditions": 113,
-    "reference_only_no_slug": 6,
+    "source_scoped_conditions": 119,
+    "slug_keys": 113,
+    "name_fallbacks": 6,
     "inventory_only": 0
   },
   "rows": [
@@ -371,8 +372,11 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/celegans.html"
+      ],
+      "source_scope_note": "インドホシガメの飼育資料から、日陰と水場の条件を確認しています。器具の出力や容器の適合を保証するものではありません。"
     },
     {
       "name": "ビルマホシガメ",
@@ -393,8 +397,11 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_057_platynota_v1_2011.pdf"
+      ],
+      "source_scope_note": "ビルマホシガメの種別報告にある飼育条件です。現地施設の広さや温度を、そのまま家庭の固定値にはしていません。"
     },
     {
       "name": "エジプトリクガメ",
@@ -415,8 +422,11 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.kleinmanniassuranceproject.com/care-guide"
+      ],
+      "source_scope_note": "エジプトリクガメの飼育プロジェクトの方法を参考にしています。砂の安全性や特定の器具を一律に勧めるものではありません。"
     },
     {
       "name": "ソリガメ",
@@ -491,8 +501,11 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/pyxis.html"
+      ],
+      "source_scope_note": "Pyxis属の飼育資料で共通して扱われる床材・日陰・水場の条件です。亜種別の温湿度や用品適合まで確認したものではありません。"
     },
     {
       "name": "イベラギリシャリクガメ",
@@ -749,8 +762,12 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf",
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "本種の自然史資料にある、澄んだ水と岩の隙間を利用する生態を参考にしています。足場や陸場の案内は、ドロガメ・ニオイガメ類の共通の飼育資料を補っています。"
     },
     {
       "name": "ミシシッピドロガメ",
@@ -1702,8 +1719,11 @@
         "enclosure_evidence_missing",
         "no_unique_species_page"
       ],
-      "status": "reference_only_no_species_purchase_route",
-      "condition_sources": []
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-texmap.htm"
+      ],
+      "source_scope_note": "Graptemys versaを対象とした飼育者向け資料を参照しています。雌雄で体格が違うため、小さい個体向けの用品をそのまま終生用とは考えません。"
     },
     {
       "name": "アラバマチズガメ",

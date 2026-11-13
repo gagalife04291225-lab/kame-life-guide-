@@ -32,7 +32,7 @@
   {
     "test": "test-home-legal-routing.mjs",
     "exit": 0,
-    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;97 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: Home excluded from actual calcResult in 20 route/score cases; other 118 species legal/routing/functions identical; independently asserted care fields normalized; Home page retained.\n"
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: Home excluded from actual calcResult in 20 route/score cases; other 118 species legal/routing/functions identical; independently asserted care fields normalized; Home page retained.\n"
   },
   {
     "test": "test-impressed-guidance.mjs",
@@ -57,12 +57,12 @@
   {
     "test": "test-next-species-conditions.mjs",
     "exit": 0,
-    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;97 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\n"
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\n"
   },
   {
     "test": "test-other-cites.mjs",
     "exit": 0,
-    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;97 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: 119 species legal/routing stable outside 7 legal records; independently asserted care changes normalized; 7 pages schema/commerce retained with validated asset hashes\n"
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: 119 species legal/routing stable outside 7 legal records; independently asserted care changes normalized; 7 pages schema/commerce retained with validated asset hashes\n"
   },
   {
     "test": "test-rakuten-image.mjs",
@@ -82,6 +82,6 @@
   {
     "test": "test-species-equipment-conditions.mjs",
     "exit": 0,
-    "output": "PASS: all 113 named species conditions; reference-only and missing-slug suppression; slot reset and 238 kit renders\nPASS: reference-only transitions clear equipment conditions at showResult entry\nPASS: CTA impression event emits after fee teaser removal\n"
+    "output": "PASS: all 119 species conditions; name fallback plus reference-only suppression; slot reset and 238 kit renders\nPASS: reference-only transitions clear equipment conditions at showResult entry\nPASS: CTA impression event emits after fee teaser removal\n"
   }
 ]
