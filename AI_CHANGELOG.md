@@ -913,3 +913,5 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 
 - 追加検証: 独立一次確認できなかったRVCの7日という数値を本文/FAQから撤去。症状時は日数を待たず相談する案内に統一。
 
+
+- 公開実測: PR #242 merge 183ffb5587f1e23e1b4ecb65e4b1237dcdd1ed83、Pages run43356117469 success。本番HTTP200、Chrome320/390/1280で横はみ出し/JSエラー0・出典開閉OK。実測者: UVB担当。https://github.com/gagalife04291225-lab/kame-life-guide-/pull/242#issuecomment-6842531365
