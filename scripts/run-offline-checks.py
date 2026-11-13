@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def commands():
     yield [sys.executable, '-m', 'unittest', 'discover', '-s', 'tools', '-p', 'test_*.py']
     for path in sorted((ROOT / 'tools').glob('test-*.mjs')):
-        yield ['node', str(path.relative_to(ROOT))]
+        yield ['node', path.relative_to(ROOT).as_posix()]
     yield [sys.executable, 'tools/validate_species.py', '--strict']
     yield [sys.executable, 'scripts/check_enclosure_sync.py']
     yield [sys.executable, 'scripts/check_compare_enclosure.py']
