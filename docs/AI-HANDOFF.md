@@ -74,7 +74,7 @@
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-11-13 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `codex/ops-reliability-20261113` |
+| 作業ブランチ | `chatgpt-ops-reliability-20261113` |
 | 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
@@ -2000,7 +2000,9 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 
 ## NEXT — 評価後修正の統合確認
 
-今回の運営変更（全体オフライン検査・楽天更新競合対策）を、並行する本文・診断・商品 PR の最新 main と統合し、同じ検査を実行して PR の最終差分を確認する。公開・実 workflow の成功はそれぞれ実測後に記録する。既済の PR #240 法規照合、PR #241 全119件用品条件照合を再作業の NEXT に戻さない。具体的な新証拠・新しい差分は別範囲として評価する。
+今回の運営変更（全体オフライン検査・楽天更新競合対策）を、並行する本文・診断・商品 PR の最新 main と統合し、同じ検査を実行して PR の最終差分を確認する。PR #246 の全体CIとGA4 CIは初回success（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/246#issuecomment-6842153091）。merge後の定時楽天同期は別に実測する。既済の PR #240 法規照合、PR #241 全119件用品条件照合を再作業の NEXT に戻さない。具体的な新証拠・新しい差分は別範囲として評価する。
+
+Ownerの個人写真・飼育記録の追加は今回の依頼から除外する。
 
 運営変更の設計と制約: [offline-quality-gate.md](operations/offline-quality-gate.md)。この変更はサイト本文・商品DB・秘密・課金設定を変更しない。過去の調査ログ中の残件表記より、対応 PR の公開確認と上記の現在状態を優先する。
 
@@ -2138,17 +2140,17 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 
 ## REMAINING_LAW_20261113 — 全121件の現行CITES区分と読者向け法規説明
 
-- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。実装・検証済み、未merge/本番未確認。
+- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。merge済み（`c763fa94ddf0e5873c0d05abc6eb2da25a286164`）。Pagesと本番確認済み。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240#issuecomment-6841235116 。
 - 全121件の現行CITES区分を公式統合附属書に照合。既済Home/7種/ドロガメ日付は固定入力とし再調査していない。根拠表: `docs/qa/remaining-law-sources-20261113.md`。
 - 4 nullを確定（ハナガメIII、コウホソ/ジーベンロック/ヒラリー非掲載）。archive4種Iのverificationを確定。ニホンイシガメの一律ゼロ輸出枠を撤去。ハナガメJS/MD同期。選択除外/順位/用品は不変。
 - オリノコマタマタの旧非掲載本文・FAQをIIへ訂正。アカミミ共通2ページの家庭飼育・限定無償譲渡例外を整合。II共通注記47ファイル（template含む）と関連FAQで国内CB証明・インボイス・CITES輸出入書類の混同を訂正。モエギ登録票発行元、台湾セマルの捕獲規制と許可例外も訂正。
 - 独立レビュー: FAQ215回答と可視本文一致、商品URL/通常scripts(GA含む)不変、現121区分と正本一致、残るblocker0。
 - 検証: Python111件中109PASS、GA4の2件はPCにtzdata無しの環境エラー。追加法規13件PASS。validate_species MISMATCH0/WARN0。annainin25、rakuten20、既存Home/7種法規NodeテストPASS。enclosure110/0、compare378/0/判定不能10（Windows globのパス区切りを実行時のみ正規化）。diff check PASS。
-- 実画面はBLOCKED: 既存Playwright無し。ブラウザのローカルfile表示はポリシー拒否、明示された迂回禁止を遵守。公開前/本番の画面確認済みとはしない。デザイン/CSS/購入先/GAコード変更なし。
+- 公開確認: 当該commitのPages成功。変更HTML54件と診断JS・正本JSONは公開内容と一致。Chromeで代表3ページの本文を確認、390px横溢れなし。代表3ページすべてのスマホ見た目確認とは扱わない。公開前のローカルfile表示拒否は迂回せず、公開HTTPSで検証した。
 - CLOSED: B6カントンクサガメ現行IIは公式S1で確認、IIIへ戻さない。歴史的な全掲載日/自治体条例/個別個体の取引適法性まで確認済みとはしない。
-- NEXT: 本差分のPRレビューと許可範囲確認後にmergeし、配信内容を検証。全121区分の再調査・既済用品32種の再実行は不要。
+- DO_NOT_REPEAT: #240の法規照合・merge・公開確認。用品条件は後続#241で全119件が完了しており、32件を現状の件数として使わない。次工程は単一の `## NEXT` を参照。
 
 
 ### 追加検証 2026-11-13
 
-cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。その後の公開実画面確認は上記#240公開コメントで完了。
