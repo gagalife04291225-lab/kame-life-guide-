@@ -866,3 +866,11 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 ### 追加検証 2026-11-13
 
 cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+
+## [2026-11-13] UVB記事の安全表現（未merge）
+- Actor: ChatGPT
+- Change: 日光浴・測定カード・UVBランプ選択の過大な断定を修正、出典3件と回帰テストを追加。
+- Reason: サイト評価で確認した誤認リスク。
+- PR/Commit: codex-uv-guidance-20261113（PR準備）
+- Approver: Ownerの修正指示。公開判断は別。
+- Conforms: 商品/ASIN/CTA/GA4を変更しない限定修正。
