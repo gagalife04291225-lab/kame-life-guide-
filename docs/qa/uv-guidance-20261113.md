@@ -18,3 +18,5 @@ Base: ee222b930a4b9bcc118249c9276999a5fa7689ef
 
 ## Scope
 No head, scripts, ASIN, image, product ordering, affiliate settings changed. Product identity/ASIN pairing audit belongs to the separate commerce task. No production verification before merge. This is not a veterinary review or an all-products performance certification.
+
+PR: #242 (Draft, not merged).

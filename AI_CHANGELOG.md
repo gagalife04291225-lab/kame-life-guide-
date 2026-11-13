@@ -871,6 +871,6 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - Actor: ChatGPT
 - Change: 日光浴・測定カード・UVBランプ選択の過大な断定を修正、出典3件と回帰テストを追加。
 - Reason: サイト評価で確認した誤認リスク。
-- PR/Commit: codex-uv-guidance-20261113（PR準備）
+- PR/Commit: PR #242 / codex-uv-guidance-20261113
 - Approver: Ownerの修正指示。公開判断は別。
 - Conforms: 商品/ASIN/CTA/GA4を変更しない限定修正。
