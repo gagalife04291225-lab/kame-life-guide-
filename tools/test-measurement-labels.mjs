@@ -1,9 +1,11 @@
+import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
 import './test-shared-products-round3.mjs';
 import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
 const cwd=fileURLToPath(new URL('../',import.meta.url));const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8').replace(/\r\n/g,'\n');const base=p=>execFileSync('git',['-C',cwd,'show','893e89d2:'+p],{encoding:'utf8'}).replace(/\r\n/g,'\n');
 function ctx(rd){let h=rd('shindan/index.html'),a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a),c=vm.createContext({window:{},document:{},console});vm.runInContext(rd('data/products.js')+'\n'+rd('js/starter-kit.js')+'\n'+rd('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=ctx(base),now=ctx(read),plain=x=>JSON.parse(JSON.stringify(x));
+applyReviewedAmazonHolds(old.products,now.products);
 // Feed-only changes are required to match committed main exactly.
 const mainProducts=(()=>{const c=vm.createContext({});vm.runInContext(execFileSync('git',['-C',cwd,'show','fde885bd:data/products.js'],{encoding:'utf8'})+';this.p=PRODUCTS;',c);return c.p;})();
 for(const[id,p]of Object.entries(now.products))for(const k of ['rakutenLastUpdated','rakutenConfidence','rakutenPrice','rakutenImageUrl']){assert.deepEqual(p[k],mainProducts[id][k],id+' committed feed '+k);if(p[k]===undefined)delete old.products[id][k];else old.products[id][k]=p[k];}
@@ -18,7 +20,7 @@ let n=0;for(const [r,list] of Object.entries(now.species).filter(([r])=>r!=='all
 const labels={thermometer_digital:'温湿度計',thermometer_aqua:'水温計',thermometer_dual_probe:'温度計（本体・外部センサー）',thermometer_infrared:'赤外線温度計（表面温度）',thermometer_wifi:'温湿度計',thermometer_analog:'温度計'};
 for(const [id,p] of Object.entries(now.products)){
  const item={cat:p.category,tier:'standard',product:p},html=now.renderSkCard(item,'test','tortoise_dry_small');
- if(p.category!=='thermometer'){let expected=old.renderSkCard({...item,product:old.products[id]},'test','tortoise_dry_small');if(['food_tortoise_gel','supplement_multivitamin'].includes(id))expected=expected.replace(old.products[id].why,p.why);if(p.category==='lighting_uvb')expected=expected.replace('必須アイテム','照射条件を確認');if(p.category==='lighting_basking')expected=expected.replace('必須アイテム','照射先の温度を確認');assert.equal(html,expected,id);continue;}
+ if(p.category!=='thermometer'){let expected=old.renderSkCard({...item,product:old.products[id]},'test','tortoise_dry_small');if(['food_tortoise_gel','supplement_multivitamin'].includes(id))expected=expected.replace(old.products[id].why,p.why);if(p.category==='lighting_uvb')expected=expected.replace('必須アイテム','照射条件を確認');if(p.category==='lighting_basking')expected=expected.replace('必須アイテム','照射先の温度を確認');if(p.amazonLinkStatus==='identity_review')expected=expected.replace(/(<span class="sk-card-btn sk-card-btn--soon">)[^<]*(<\/span>)/,'$1Amazonの掲載先を確認中$2');assert.equal(html,expected,id);continue;}
  assert.ok(html.includes('<div class="sk-cat-label">'+labels[id]+'</div>'),id);
  for(const [,display] of html.matchAll(/data-display-cat="([^"]*)"/g))assert.equal(display,labels[id]);
  const tabs=vm.runInContext('SK_TABS',now).map(tab=>({tab,picks:[item]}));

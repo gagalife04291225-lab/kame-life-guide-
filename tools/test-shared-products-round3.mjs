@@ -1,7 +1,9 @@
+import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url)),read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8').replace(/\r\n/g,'\n'),base=p=>execFileSync('git',['-C',root,'show','fde885bd:'+p],{encoding:'utf8'}).replace(/\r\n/g,'\n');
 function ctx(rd){const h=rd('shindan/index.html'),a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a),c=vm.createContext({window:{},document:{},console});vm.runInContext(rd('data/products.js')+'\n'+rd('js/starter-kit.js')+'\n'+rd('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.products=PRODUCTS;this.species=SPECIES;',c);return c;}
 const old=ctx(base),now=ctx(read),plain=x=>JSON.parse(JSON.stringify(x)),whyIds=['food_tortoise_gel','supplement_multivitamin'];
+applyReviewedAmazonHolds(old.products,now.products);
 assert.deepEqual(Object.keys(now.products),Object.keys(old.products));
 for(const[id,p]of Object.entries(now.products)){const a=plain(p),b=plain(old.products[id]);if(whyIds.includes(id)){delete a.why;delete b.why;}assert.deepEqual(a,b,id);}
 assert.ok(now.products.food_tortoise_gel.why.includes('熱湯'));assert.ok(now.products.food_tortoise_gel.why.includes('時々のおやつ'));assert.ok(!/療養|偏食/.test(now.products.food_tortoise_gel.why));assert.ok(!/週1|人工飼料のみ/.test(now.products.supplement_multivitamin.why));

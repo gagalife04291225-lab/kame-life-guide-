@@ -371,15 +371,16 @@ const PRODUCTS = {
 
   uvb_t5_desert_std: {
     id: 'uvb_t5_desert_std',
-    name: 'Zoo Med ReptiSun 10.0 UVB T5',
+    name: 'Zoo Med ReptiSun 10.0 T5 HO 24W 交換管（OS5-24）',
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife090e-22',
-    asin: 'B00JZFJ5R0',
+    amazonLinkStatus: 'verified',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00AQU8HAO?tag=kamelife090e-22', // Amazon商品詳細・メーカー型番で照合
+    asin: 'B00AQU8HAO',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med ReptiSun 10.0 T5',
+    rakutenSearchTerm: 'Zoo Med ReptiSun 10.0 T5 HO 24W OS5-24',
     image: '/assets/products/placeholder.webp',
     why: 'UV指数の高い乾燥系・リクガメ用UVBランプ。カルシウム代謝に必須',
     rating: 4.7,
@@ -389,15 +390,16 @@ const PRODUCTS = {
 
   uvb_t5_forest_std: {
     id: 'uvb_t5_forest_std',
-    name: 'Zoo Med ReptiSun 5.0 UVB T5',
+    name: 'Zoo Med ReptiSun 5.0 T5 HO 24W 交換管（FS5-24）',
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5LQ?tag=kamelife090e-22',
-    asin: 'B00JZFJ5LQ',
+    amazonLinkStatus: 'verified',
+    affiliateUrl: 'https://www.amazon.co.jp/dp/B00AQU8GF0?tag=kamelife090e-22', // Amazon商品詳細・メーカー型番で照合
+    asin: 'B00AQU8GF0',
     rakutenUrl: null,
     rakutenStatus: 'search',
-    rakutenSearchTerm: 'Zoo Med ReptiSun 5.0 T5',
+    rakutenSearchTerm: 'Zoo Med ReptiSun 5.0 T5 HO 24W FS5-24',
     image: '/assets/products/placeholder.webp',
     why: '森林・半水棲ガメ向けのUVBランプ。適度なUV量でビタミンD3生成',
     rating: 4.6,
