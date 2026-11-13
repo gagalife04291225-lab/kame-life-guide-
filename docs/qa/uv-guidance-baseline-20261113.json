@@ -1,6 +1,6 @@
 {
   "base": "ee222b930a4b9bcc118249c9276999a5fa7689ef",
-  "revision": "PR245 commerce integration: title/metadata/Rakuten DOM changed, two mismatched ASIN links withheld; PR242 safety copy preserved",
+  "revision": "PR245 verified T5 24W replacement-tube ASINs; UVB200 overseas reference only, not purchase candidate; safety assertions retained",
   "safety_only_baseline": {
     "base": "ee222b930a4b9bcc118249c9276999a5fa7689ef",
     "head_sha256": "f796fbeeaeaec12d8bae3aa1be89a8012f78df2c2db048f8b876bdf7b50bbc45",
@@ -83,6 +83,7 @@
     "B07BBMVJ6H",
     "B0BJV8CWRC",
     "B00AQU8HAO",
+    "B00AQU8GF0",
     "B084ZLQG81",
     "B0002AQDJK",
     "B07FHLTXQQ"
@@ -107,6 +108,8 @@
     "shindan/index.html",
     "#klg-i-arrow",
     "index.html",
+    "https://exo-terra.com/products/lighting/uvb-compact-bulbs/reptile-uvb200-13w/",
+    "#",
     "#",
     "#",
     "#",
