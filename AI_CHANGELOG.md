@@ -893,6 +893,12 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 
 - Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).
 
+## 2026-11-13 運営基盤の品質ゲート・価格同期競合対策（未公開）
+- BASE ee222b930a4b9bcc118249c9276999a5fa7689ef。サイト本文・商品DB・課金・Secretsは変更なし。
+- 全オフライン回帰を一括実行するrunnerと、公開repo標準Ubuntuのread-only CIを追加。
+- 楽天自動更新は同時実行を抑制。非競合のmain進行を保持して統合・hash再生成・全検査、衝突時は上書きせず停止。
+- 一時bare repoで競合/通信応答喪失/検査失敗等を検証。GA4合成テストの環境依存のみ除去し、出力先保護は不変。
+- PR #233/#235/#240/#241の公開済み範囲を現在状態に反映。運営変更のmerge・実CIは未実施。
 ## [2026-11-13] 商品比較6ページの順位表現・楽天導線修正（レビュー待ち）
 - Actor: ChatGPT
 - Change: 根拠のない売れ筋/ベスト10を比較案内へ変更、掲載順明記、楽天ボタンDOM参照修正、既存正規楽天URL4商品を型番一致のカードに接続。
@@ -944,3 +950,7 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 
 ## 2026-11-13 PR #239 final integration
 - Integrated main 9b371457 after diagnosis UX publication. No change to product descriptions or the four official Rakuten URLs. Full offline regression rerun under UTF-8 with existing local tzdata dependency.
+
+
+## 2026-11-13 PR #246 final integration
+- Integrated main 78112e33, preserving diagnosis #243 and keeper products #239. Resolved only append-only documentation conflicts; operations code unchanged. Updated published diagnosis evidence.

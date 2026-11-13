@@ -15,14 +15,14 @@
 ---
 
 
-## 2026-11-13 商品比較記事：表現と購入導線（PR #245・公開承認済み）
+## 2026-11-13 商品比較記事：表現と購入導線（PR #245・公開確認済み）
 - BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef。対象は7商品比較記事、マスターのT5 2件、対応テストとJS参照ハッシュ。Ownerの公開了承を受け、#244→#242→#245の順で反映する。merge・本番確認の実測はPRコメントに記録。
 - COMPLETED: 売上根拠のない売れ筋/ベスト10を比較案内へ変更。掲載番号は順位でない旨を明記。楽天ボタンのDOM参照を修正。型番を照合した既存4商品の正規URLのみ再利用、他は商品名検索と明示。
 - 重複4カード（WH9045、907gフード、フォレストバークのフロア誤記、テラリウムソイル4kg）を整理し先行カードを維持。裏付けのない本人使用体験とDAISO100円/最強断定を撤去。
 - FIXED: Amazon Japan実ページとメーカー型番を照合。T5 HO 5.0 24W交換管はB00AQU8GF0 / FS5-24、10.0はB00AQU8HAO / OS5-24。正しいタグ付きリンクへ訂正し灯具別売と明示。在庫は購入先で最新確認する。
 - UVB200 13Wは公式PT2340として実在するが、日本仕様と国内販売先は確認できない。購入カードから外し公式参考リンクへ分離。別商品への置換はしない。「掲載先を確認中」の残件は終了。根拠: docs/qa/commerce-identity-20261113.json。
 - 検証: Python131件、Node18スイートPASS。7ページ×320/390/1280pxでJSエラー・横はみ出し0、正しいT5リンクを確認。旧安全テストは維持。変更したhead/scripts/ASIN基準は明示更新し旧基準も保存。商品凍結例外は2件の型番/ASIN/名称/検索語だけに限定。配信ハッシュ検査0件。
-- NEXT: 依存PR反映後のmainを統合・検証し、独立レビューで問題がなければ承認済み#245をマージして本番確認。本作業を全商品の性能や全購入先の検証完了とは扱わない。PR #239は本作業の範囲外。
+- 公開確認: #245 merge `926fd49e9dde09cfc73cc1b44aebcc4efb59a457`、Pages run43356392711 success。7比較記事HTTP200、Chrome390pxのJS/横はみ出し0、T5正リンクと参考限定PT2340を確認。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/245#issuecomment-6842558769 。全商品性能・全購入先・スマホ実機の検証完了とは扱わない。PR #239は本作業の範囲外。次工程は単一の `## NEXT` を参照。
 
 ## 2026-11-13 UVB記事の安全表現修正（PR #242・公開確認済み）
 - BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef。Ownerのサイト評価に基づく修正指示で着手。
@@ -31,13 +31,13 @@
 - 検証: Python125件PASS、旧コードで安全テスト2件FAIL、320/390/1280px横はみ出し0・JSエラー0・出典開閉OK。独立内容レビュー実施。詳細 docs/qa/uv-guidance-20261113.md。
 - 公開工程: #242はmain 183ffb5587f1e23e1b4ecb65e4b1237dcdd1ed83へマージ済み。Pages run43356117469 success、本番HTTP200、Chrome320/390/1280pxで横はみ出し・JSエラー0、出典開閉を担当が実測（PR #242 comment6842531365）。商品とASINの照合は#245で対応。本修正を全商品の性能検証済みとは扱わない。
 
-## 2026-11-13 緊急症状の受診案内修正（PR #244・マージ済み）
+## 2026-11-13 緊急症状の受診案内修正（PR #244・公開確認済み）
 - BASE: `ee222b930a4b9bcc118249c9276999a5fa7689ef`。独立ブランチ `codex-emergency-guidance-20261113`。
 - COMPLETED: trouble の入口・鼻水・甲羅/MBD・目の腫れ・拒食・元気消失・冬眠トラブルの7ページ。呼吸異常で数日/翌日待つ表現、甲羅変形の一律1週間様子見、拒食の一律2週間/体重5%基準を撤去。弱った個体に温浴を先行させず、呼吸・反応の異常は先に病院へ連絡。診断や投薬をサイトで代行しない。
 - 根拠: Tree of Life Exotic Pet Medical Center の respiratory-infections-in-aquatic-turtles、VCA の turtles-aquatic-diseases。RVC の post-hibernation は直接取得403で独立一次確認もできなかったため、本文の7日という数値は採用せず、異常時は日数を待たない案内にした。
 - 検証: 全Python129件・専用回帰9件PASS、変更前は8失敗。7ページ×320/390/1280pxで横はみ出し/JSエラー0。390pxの入口・鼻水・MBDを目視。FAQとJSON-LD一致。購入リンクと実行JSは旧版と完全一致。
 - 独立レビュー: 別担当が実差分を確認。元気消失の要観察ラベル/温度先行、目の左右差による診断断定の3点を修正。獣医師の監修を受けたという表記はしない。
-- 公開工程: #244は#242に先行してマージ済み。本番7ページの照合結果は同PRコメントに実測記録。
+- 公開確認: #244 merge `2dbd384bda3eaa1990998177ddd4e2dfc671cff0`、Pages success。本番7ページ×390/1280pxで旧待機表現なし・横はみ出し/JSエラー0。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/244#issuecomment-6842512649 。
 - DO_NOT_REPEAT: 上記7ページの待機表現修正。UVBレビューは別作業で、この変更には含まない。
 
 
@@ -59,14 +59,14 @@
 ---
 
 
-## 2026-11-12 PR #233 修正版：Homeの用品を残して条件を説明
+## 2026-11-12 PR #233 修正版：Homeの用品を残して条件を説明（公開済みの履歴）
 - BASE main 6b1ac588c776d3c75ee77d7bc6d15d3bb03a9cf4。Ownerが候補除外を拒否し再調査を指示。除外機構は撤回、商品・URL・価格・選定キーを保持。
 - GEXデザートベースは湿潤使用への言及があり、名前を理由に不適合としない。メーカー使用厚とHome飼育実例の深さを区別、袋単位の価格と必要量、水場、保温、UVBの設置条件を種ページと診断両経路に説明。
 - Homeの温度はTortoise Trust24〜27℃とTFTSG気温27〜32℃を出典別に示し、夏の高温安全・24/25℃危険境界・バスキング32〜38℃の根拠なし断定を訂正。FAQ/JSON-LD一致。キノコの動物性扱いも訂正。
 - Homeだけ早見表の乾燥系分類・完成セット表現を修正。商品価格/選定/計測は保持。
 - 前候補の水棲5種条件を保持（豪ナガクビ/ジーベン/アフリカヌマ/ヒラリー/マコード）。外部条件整理16種、残103種は構造棚卸しのみ、全商品の適合確認ではない。
 - 検証：714通りの商品不変・Home実mount GA不変・FAQ一致、Python75、16種条件/238renders、119種213cards PASS。Home3経路×3幅×3価格帯=27操作・注記展開9表示で横溢れ0/JS0。独立技術/内容レビュー指摘反映。
-- 公開状況：PR233を修正版へ更新。merge・本番確認は未実施。旧除外案を公開しない。
+- 公開状況：PR #233 は修正版を merge・本番確認済み（`893e89d2`）。旧除外案を公開しない。以後の条件照合・公開範囲は PR #241 の記録を参照。
 - 既知範囲：入口による候補差は保持し説明。製品のHome固有長期実績や必要袋数を保証しない。実機読み上げ未確認。QA記録 docs/qa/home-product-hold-20261112.md。
 
 
@@ -91,7 +91,7 @@
 - Chrome実画面：119件×320/390/1280px、横はみ出し0・JS例外0・購入可種の条件欠落0。全回帰の最終結果と公開確認は今回PRに記録。
 - CLOSED: 119件の構造・資料範囲照合と表示訂正。DROP: 掲載商品を全種で実地飼育検証済みとする認定（実施しておらず、今回の完了定義ではない）。既存の購入表示条件は変更しない。
 - DO_NOT_REPEAT: 32件＋回収12件＋残75件の同じ条件調査、通常/all46件の修正。特定商品の実内寸や使用実績を後日確認する際は、その商品・種・条件を指定して別検証する。
-- 公開状況: 実装・ローカル検証済み。mergeと本番検証は今回PRの最新コメントを正とする。
+- 公開状況: PR #241 merge（`ee222b930a4b9bcc118249c9276999a5fa7689ef`）、Pages 成功。本番119診断×3幅と関連11ページ×2幅の確認済み。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/241#issuecomment-6841250681
 
 
 ## CURRENT_BASE
@@ -108,12 +108,12 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 作業開始時実測 main = **fde885bd1485ae74ce9527bb63f432e400c80008**（2026-11-13）。全119件用品条件の照合 |
-| サイトファイルの状態 | PR #233は公開確認済み。PR #234はmerge・Pages成功・配信本文確認済みだが、ブラウザの旧JS残留を確認。内容ハッシュ版番号を123 HTMLへ実装・独立レビュー・ローカル表示検証済み。公開確認は今回PRコメントへ記録 |
+| 基準 | 統合時実測 main = **78112e33899199bdcc035c27002cc190edf4e766**（2026-11-13）。運営PR #246へ通常merge済み（統合commit c3e98c5e）。 |
+| サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 は本番確認済み。商品 #239 はmerge・Pages成功・公開本文HTTP200を確認済み。運営 #246 は最新main統合・最終検証中。 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
-| 最終更新日 | 2026-11-12 JST |
+| 最終更新日 | 2026-11-13 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
-| 作業ブランチ | `codex-equipment-finish-20261113` |
+| 作業ブランチ | `chatgpt-ops-reliability-20261113` |
 | 直近の ASIN 定期点検 | 2026-10-30 開始時 `origin/main` = **bc565b21017c2f73e13e8b7c9ff694f9c17ab5c4**／ブランチ `claude/asin-recheck-20261030` |
 
 ---
@@ -1609,7 +1609,7 @@ Owner（ChatGPT側）が楽天公式一次資料で確認済み。**Claude 側�
 | 経路 | 可否 | 根拠 |
 |------|------|------|
 | Amazon PA-API | **不可** | 2026-05-15 廃止済み |
-| Amazon Creators API | **資格未充足** | 直近30日で10件以上の発送実績が条件。リポジトリ内に Amazon 系 Secret 0件 |
+| Amazon Creators API | **登録済み・画像取得は未成功** | 2026-11-13 にアプリ・認証情報を登録し、Owner了承の非公開設定へ保存。OAuth成功後GetItemsは403。利用資格/権限の原因は未確定で、単純な販売数不足と断定しない。画像配信は未公開。 |
 | Amazon 画像の保存・スクレイピング | **禁止** | アソシエイト規約違反。**代替案として検討しない** |
 | 楽天 IchibaItem Search API | **技術的には可能** | 既存 Secret 3件が稼働中。`imageFlag: '1'` を送信済みで応答に画像URLが含まれる |
 | 楽天画像の保存・自サイト再配置 | **採らない** | 公式提供URL（`thumbnail.image.rakuten.co.jp`）の参照で足りる。保存は権利上の追加リスクだけを増やす |
@@ -1847,12 +1847,9 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 - **B00E0GLLKI（グラステラリウム 9045）**: 検索インデックスのタイトルが「ナノキューブ PT2599」と食い違う（URLスラッグは 9045 と整合）。商品同一性を確定できず据え置き。
 - **B00CB8KY78 と B00BF91SQK**: どちらもグラステラリウム 6030（同一製品の2ASIN併用）。B00CB8KY78 は今回ページ取得不可。整理の判断は未実施。
 
-### 初心者亀TOP10のCITES法規制表示 — PR #207（2026-10-11、Owner実行指示あり）
+### PR #207 — 完了済み（未解決ではない）
 
-- **修正PRは作成済み。マージと本番反映はPR・公開URLでそれぞれ実測して判定する。** `guides/beginner-top10-turtles.html` の10種について正本 `data/species-master.json` と照合し、誤って「なし」と記載された8種をCITES II / IIIへ修正。修正後内訳は **II=8、III=2、規制なし=0**。
-- **重要な読者向け補足を追加**: CITES掲載は日本国内の飼育禁止と同義ではなく、国内CBなどの適法取得個体は飼育できること、国際取引手続き・購入時の出自書類の確認を明記。**既存の種別ページ・正本CITES区分・ランキングスコア・順位・商品リンクは変更しない**。
-- **ブランチcommit** `46bfc30cb48a2fdd1e9e86eeade0fac6f0c6227e`。PR: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/207 。HTMLの法規制表示10/10照合PASS、旧「なし」0、script 3→3、table 1→1、GA4識別子2→2。
-- **OWNER承認**: 2026-10-11、PR #207の修正を優先して次工程へ進む説明に対しOwnerから「進めて」と明示指示。法令表示の修正として差分レビュー・一次資料照合を行った上でマージし、main反映・公開ページを実測する。公開未確認の場合は分離して報告する。クローズ済みPR #189と完了済み餌・ランキング案件を再監査しない。
+GitHubで2026-10-11のmergeを確認（`5ecbcb2f9de0d6dc47e9d29c105f0e31e70007a5`）。旧「merge・公開を進める」指示を再実行しない。法規の現行内容は後続PR #240の照合・公開記録を正とし、当時の内訳を現行の全種検証と混同しない。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/207 。
 
 ### PR #189 はマージせずクローズ（2026-10-11 / 再着手しない）
 
@@ -2013,7 +2010,7 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
 <!-- B6 CLOSED: 現行区分は公式2026統合附属書でII確認。REMAINING_LAW_20261113参照。 -->
 | **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
-| **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife090e-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
+| **B12 Amazon 商品画像** | 2026-11-13 登録・非公開認証設定済み。GetItemsの資格/権限エラー解消と、公式条件を守る画像URL期限配信の検証 | API資格を再確認してから画像取得・配信を検証する。48時間経過だけで利用可能と判定しない。画像URLをGit履歴へ恒久保存する方式は採用しない。既存Amazon静的リンクは変更しない。 |
 | **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
 
 ### DROP — 今後やらない。**未解決リストから外す**
@@ -2040,9 +2037,14 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 - HomeとKinosternon11種の発効日は最新mainで完了済み、再実装なし。用品/価格/GA4/飼育値/診断score/match不変。既存除外4種の直接診断を参考表示へ。
 - 実装 commit 554c38b1、PR #237。根拠と検証は docs/qa/other-species-law-20261113.md。公開結果は今回PRのmerge SHAと本番実測コメントを正とする。
 
-## NEXT — 法令監査の未処理範囲を公式資料で照合
-今回7種と完了済みHome/ドロガメ発効日は固定入力。残りの種・共通ページの法令説明を既存監査記録と現行mainで照合し、具体的誤記がある場合だけ公式資料で訂正。商品・価格・購入URL・GA4は変更しない。全種完了とする前に対象一覧と検査範囲を記録する。
+## NEXT — 運営PR #246の公開完了
 
+最新main 78112e33を統合済み。Python156件・Node19スイート・正本照合・ハッシュ検査を含むオフライン検査はPASS。最終HEADのGitHub CIを確認し、承認済みのPR #246をmerge、mainのCI・Pagesを確認して閉じる。サイト本文・商品DB・秘密・課金設定は変更しない。mergeと本番結果は同PRコメントを最終証拠とし、これを同期するだけのPRは作らない。
+
+#240法規、#241用品、#244受診、#242UVB、#245商品比較、#243診断は公開確認済み。#239商品追加もmerge・Pages成功・公開本文反映済み。これらを監査や実装の残件へ戻さない。用品条件照合は実物全商品の飼育試験ではない。
+Ownerの個人写真・飼育記録の追加（④）は対象外。Amazon画像は利用資格による別件で、既存の再確認予定に従う。将来の定時楽天同期は今回のテスト実行と区別し、未発生の運転を成功済みとはしない。
+
+運営変更の設計と制約: [offline-quality-gate.md](operations/offline-quality-gate.md)。
 
 ## 更新ルール（作業終了時に必ず実施）
 
@@ -2167,7 +2169,7 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 - 検証: 専用9件PASS、Python全98件PASS（UTF-8、作業フォルダ限定tzdataで実行）。旧mainを新2テストに渡すと1 FAIL/1 ERRORで追加欠落を検出。購入8URLとGA4完全一致、diff check PASS。
 - PC Chrome: 320/390/1280pxで横溢れ0、console error0。クリック展開、Enterで閉じる→開く、スポイト項目へのリンク→戻るを確認。390pxと1280pxは画像目視。新規テキスト既存色のコントラストは本文12.89:1/リンク7.22:1。
 - 独立レビュー: BLOCKER0、必須修正0。スマホ実機・実機読み上げは未実施。これはポンプ自体の使用レビューではない。
-- 状態: PR #238（Draft）作成、実装commit `aad07fc2`。merge/本番確認は未実施。旧クラウド候補のsocket権限エラーはPCでの画面確認により今回解消。
+- 状態: PR #238 は merge済み（`de4ae88e`）、Pages・本番確認済み。旧クラウド候補のsocket権限エラーはPCでの画面確認により解消。再merge不要。
 - DO_NOT_REPEAT: PH-73メーカー仕様確認・最小実装。公開時には最新main/他PRとの重複と今回ページの配信内容を確認する。
 
 ## 2026-11-13 PR #237 / #238 公開了承後の統合
@@ -2178,32 +2180,33 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 
 ## REMAINING_LAW_20261113 — 全121件の現行CITES区分と読者向け法規説明
 
-- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。実装・検証済み、未merge/本番未確認。
+- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。merge済み（`c763fa94ddf0e5873c0d05abc6eb2da25a286164`）。Pagesと本番確認済み。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240#issuecomment-6841235116 。
 - 全121件の現行CITES区分を公式統合附属書に照合。既済Home/7種/ドロガメ日付は固定入力とし再調査していない。根拠表: `docs/qa/remaining-law-sources-20261113.md`。
 - 4 nullを確定（ハナガメIII、コウホソ/ジーベンロック/ヒラリー非掲載）。archive4種Iのverificationを確定。ニホンイシガメの一律ゼロ輸出枠を撤去。ハナガメJS/MD同期。選択除外/順位/用品は不変。
 - オリノコマタマタの旧非掲載本文・FAQをIIへ訂正。アカミミ共通2ページの家庭飼育・限定無償譲渡例外を整合。II共通注記47ファイル（template含む）と関連FAQで国内CB証明・インボイス・CITES輸出入書類の混同を訂正。モエギ登録票発行元、台湾セマルの捕獲規制と許可例外も訂正。
 - 独立レビュー: FAQ215回答と可視本文一致、商品URL/通常scripts(GA含む)不変、現121区分と正本一致、残るblocker0。
 - 検証: Python111件中109PASS、GA4の2件はPCにtzdata無しの環境エラー。追加法規13件PASS。validate_species MISMATCH0/WARN0。annainin25、rakuten20、既存Home/7種法規NodeテストPASS。enclosure110/0、compare378/0/判定不能10（Windows globのパス区切りを実行時のみ正規化）。diff check PASS。
-- 実画面はBLOCKED: 既存Playwright無し。ブラウザのローカルfile表示はポリシー拒否、明示された迂回禁止を遵守。公開前/本番の画面確認済みとはしない。デザイン/CSS/購入先/GAコード変更なし。
+- 公開確認: 当該commitのPages成功。変更HTML54件と診断JS・正本JSONは公開内容と一致。Chromeで代表3ページの本文を確認、390px横溢れなし。代表3ページすべてのスマホ見た目確認とは扱わない。公開前のローカルfile表示拒否は迂回せず、公開HTTPSで検証した。
 - CLOSED: B6カントンクサガメ現行IIは公式S1で確認、IIIへ戻さない。歴史的な全掲載日/自治体条例/個別個体の取引適法性まで確認済みとはしない。
-- NEXT: 本差分のPRレビューと許可範囲確認後にmergeし、配信内容を検証。全121区分の再調査・既済用品32種の再実行は不要。
+- DO_NOT_REPEAT: #240の法規照合・merge・公開確認。用品条件は後続#241で全119件が完了しており、32件を現状の件数として使わない。次工程は単一の `## NEXT` を参照。
 
 
 ### 追加検証 2026-11-13
 
-cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。その後の公開実画面確認は上記#240公開コメントで完了。
 
-## 2026-11-13 Diagnosis UX follow-up (pending PR; not published)
+## 2026-11-13 Diagnosis UX follow-up (PR #243, published)
 - BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef. Scope: route entry/progress counts, native button semantics, entry explanation contrast, main landmarks on diagnosis and home.
 - COMPLETED: all five routes display totals from route questions plus readiness questions (9/12/9/8/10). The all-route description no longer promises eight questions. Question content, scoring, species data, GA4 and affiliate links are unchanged.
 - COMPLETED: native route buttons in a named group, visible keyboard focus, readable entry descriptions; one semantic main per page. Existing diagnosis screens already had main roles; this consolidates rather than claims they were absent.
 - VERIFIED: Python 120 tests, Node 18 test scripts, diff check; new UX assertions fail on the old base. Chrome at 320/390/1280: five route starts via keyboard, counts/progress, quit/cancel, ten-question all-route result/retry, one main, five AX buttons, no horizontal overflow or page errors. Local requests only; analytics blocked. Contrast 7.99:1 or higher on entry text. 390/1280 diagnosis screenshots inspected.
-- UNRESOLVED: independent review and ordered publication with parent coordinator; no merge or production verification yet. Physical VoiceOver/TalkBack not tested.
-- NEXT: independent review, PR, then wait for parent to publish after safety fixes. Do not repeat question/scoring or species research.
+- PUBLISHED: PR #243 merge 9b371457254bfad87d767b1b958ae39613908cc9; Pages run43360177434 success; production Chrome 320/390/1280 counts/routes/retry and asset hash verified in issuecomment-6843065965. Physical VoiceOver/TalkBack not tested.
+- DO_NOT_REPEAT: diagnosis publication and production route validation are complete.
 
 - Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).
 
 ## PR #239 final integration (2026-11-13)
 - BASE: main 9b371457254bfad87d767b1b958ae39613908cc9. Integrated after diagnosis PR #243; article and official affiliate evidence unchanged.
 - PR #243 is merged and production verified in issuecomment-6843065965 (Pages run43360177434); its older pending-publication entry is historical.
-- NEXT: finish authorized PR #239 publication and verify served keeper-hacks article; then reconcile operations PR #246. Final merge/production evidence will be recorded on the PR.
+- MERGED: #239 merge 78112e33899199bdcc035c27002cc190edf4e766. Pages run43362517824 success; public article HTTP200 with all new product names and official links. Final browser evidence is recorded on the PR. Operations #246 integrates this main without modifying its article.
+

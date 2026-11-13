@@ -156,11 +156,21 @@ class Tests(unittest.TestCase):
             ga.private_output(root / "private-ga4")
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2]) as temp:
             path = Path(temp)
-            self.assertEqual(ga.private_output(path / "reports"), (path / "reports").resolve())
+            # Synthetic filesystem topology: the runner's /tmp or its checkout
+            # parent may itself be a Git repository. Do not weaken production
+            # protection just to make a temporary fixture look private.
             original = Path.exists
-            with patch.object(Path, "exists", lambda item: item == path / ".git" or original(item)):
-                with self.assertRaises(ga.Blocked):
-                    ga.private_output(path / "reports")
+            for git_root in (None, path, path.parent):
+                def exists(item):
+                    if item.name == ".git":
+                        return git_root is not None and item == git_root / ".git"
+                    return original(item)
+                with patch.object(Path, "exists", exists):
+                    if git_root is None:
+                        self.assertEqual(ga.private_output(path / "reports"), (path / "reports").resolve())
+                    else:
+                        with self.assertRaises(ga.Blocked):
+                            ga.private_output(path / "reports")
 
     def test_no_remote_error_body_or_token_in_logs(self):
         import os
