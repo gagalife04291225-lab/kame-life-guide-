@@ -840,6 +840,22 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 - Approver: Ownerの作業依頼の範囲。merge/公開は未実施。Conforms: 専用9・Python98 PASS、実Chrome3幅、独立レビューBLOCKER0、購入URL8本/GA/CITES不変。
 
 
+## [2026-11-13] 便利ワザの商品3件とPH-73購入導線（未merge）
+- Actor: ChatGPT
+- Change: GEXスポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と活用条件を既存details内に追加。PH-73含む4件に型番照合済みの通常楽天リンクを追加。記事テストを12件に拡張。
+- Reason: 商品候補調査を具体的な読者の選択肢へつなげる。使用体験を捏造せず、公式仕様と活用案を区別する。
+- PR/Commit: chatgpt-keeper-products-20261113（本コミット）。公開前。
+- Approver: Ownerの商品追加依頼に基づく実装。mergeは本作業で行わない。
+- Conforms: 既存GA4・Amazon ID・既存8購入リンク・商品DB・価格は不変。新規4件は非アフィリエイト通常URL。Python101件、記事12件、独立レビューBLOCKER0/SHOULD0、Chrome320/390/1280px横はみ出し0。
+
+
+## [2026-11-13] 追加4商品リンクを本人の楽天アフィリエイトURLへ更新（未merge）
+- Actor: ChatGPT
+- Change: 公式APIが本人の既存設定から発行したaffiliateUrlへ4件を置換。rel=nofollow sponsored、リンク先の完全一致をテスト。安全検査済み取得結果をdocs/qaへ保存。
+- Reason: 通常リンクのままでは収益対象にならないため、正規APIを利用。未確認ID・他者タグ・手組みURLは不使用。
+- PR/Commit: chatgpt-keeper-products-20261113。本コミット。取得run 43336738624 success。
+- Approver: Ownerの商品購入導線追加依頼。merge・本番変更は未実施。
+- Conforms: 公開repoの無料標準runner、実行約1分、contents:read。Secrets変更なし・秘密値出力なし・本番データ変更なし。一時調査workflowは取得後削除。
 ## [2026-11-13] 用品条件の全119件照合と診断ルート統一
 - Actor: ChatGPT（実装・独立内容/技術レビュー）。Approver: Owner「3早く終わらせて」「終わるまで止めないで」。
 - Change: 未公開12件を回収、残75件の対象範囲を判定し全119件に出典範囲つき条件を表示。slugなし6件も名前照合で条件を追加。購入表示条件は変更せず。通常/allの46件の候補差を解消。
@@ -867,6 +883,15 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 
 cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
 
+## [2026-11-13] Diagnosis entry UX (pending PR)
+- Actor: OpenAI assistant.
+- Change: dynamic total question counts; native route buttons; visible focus and readable entry text; semantic main landmarks on home/diagnosis. Regression tests added/updated.
+- Reason: remove the eight-versus-ten question contradiction and restore keyboard/accessibility semantics without changing diagnosis decisions.
+- PR/Commit: codex-diagnosis-ux-20261113, pending review; not merged.
+- Approver: owner requested sequential fixes and completion; parent controls publication order.
+- Conforms: no scoring/species, commerce, tracking, legal or billing changes.
+
+- Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).
 
 ## 2026-11-13 運営基盤の品質ゲート・価格同期競合対策（未公開）
 - BASE ee222b930a4b9bcc118249c9276999a5fa7689ef。サイト本文・商品DB・課金・Secretsは変更なし。
@@ -922,3 +947,10 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 
 - 公開実測: PR #242 merge 183ffb5587f1e23e1b4ecb65e4b1237dcdd1ed83、Pages run43356117469 success。本番HTTP200、Chrome320/390/1280で横はみ出し/JSエラー0・出典開閉OK。実測者: UVB担当。https://github.com/gagalife04291225-lab/kame-life-guide-/pull/242#issuecomment-6842531365
 
+
+## 2026-11-13 PR #239 final integration
+- Integrated main 9b371457 after diagnosis UX publication. No change to product descriptions or the four official Rakuten URLs. Full offline regression rerun under UTF-8 with existing local tzdata dependency.
+
+
+## 2026-11-13 PR #246 final integration
+- Integrated main 78112e33, preserving diagnosis #243 and keeper products #239. Resolved only append-only documentation conflicts; operations code unchanged. Updated published diagnosis evidence.

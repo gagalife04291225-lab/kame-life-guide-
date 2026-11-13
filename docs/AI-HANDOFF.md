@@ -69,6 +69,17 @@
 - 公開状況：PR #233 は修正版を merge・本番確認済み（`893e89d2`）。旧除外案を公開しない。以後の条件照合・公開範囲は PR #241 の記録を参照。
 - 既知範囲：入口による候補差は保持し説明。製品のHome固有長期実績や必要袋数を保証しない。実機読み上げ未確認。QA記録 docs/qa/home-product-hold-20261112.md。
 
+
+## 2026-11-13 便利ワザの商品導線（公開前）
+- BASE: fde885bd1485ae74ce9527bb63f432e400c80008。branch: chatgpt-keeper-products-20261113。
+- COMPLETED: keeper-hacks の既存詳細内にGEXクリーナースポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と使い分けを追加。PH-73を含め4件の公式API発行楽天アフィリエイトリンク。メーカー資料と販売店の型番/JANを照合。体験談・価格・在庫の断定はなし。
+- FIXED: GEX通常品28.5cm/パイプ22.4cm、ロング水深36cm。KJ-305は容器込み3kg、0.1g表示は容器込み300gまで。ST-422Iは64cm+30cm各1枚、再貼付不可、水槽外貼りは釣り用品の活用案・観察目安。PH-73のホース1.1m/落差10cmは維持。
+- 検証: Python101件PASS（記事12件）、独立レビューBLOCKER0/SHOULD0。重複商品リンク検査を追加。Chromeローカル320/390/1280pxで横はみ出し0、開閉後の4導線表示・URLを確認。既存8購入リンク・GA4・head・商品DBは変更なし。
+- UNRESOLVED: 楽天公式APIの本人設定で4件のaffiliateUrlを取得済み（Actions 43336738624 success）。全件が採用商品URLと完全一致、API availability=1。証拠はdocs/qa/keeper-product-links-20261113.json。一時workflowは取得後削除、Secrets・既存同期設定は不変。実機読み上げ・本番確認・mergeは未実施。Prohose Extraはメーカー観賞魚用のため今回追加しない。
+- NEXT: 公開判断と公開後確認。他の既存NEXTは未完了のまま維持。
+- DO_NOT_REPEAT: 上記メーカー条件照合、商品3件とPH-73購入導線の再実装。
+- 再整合（2026-11-13）: main926fd49eと比較し、追加3説明・購入導線4件は未反映で重複なし。記事/テストは競合なし、記録2ファイルのみ双方保持で統合。公開はOwnerの明確な承認待ち。
+
 ## 2026-11-13 用品条件の全119件照合（今回の現在状態）
 - BASE: main `fde885bd1485ae74ce9527bb63f432e400c80008`。branch `codex-equipment-finish-20261113`。
 - 以前の32件に、未公開だった12件を回収し、残75件を再調査対象から分離。残75はページあり69件＋slugなし6件。全113ページあり種と名前で照合する6件、計119件へ出典の対象範囲に沿った用品条件を追加し、未処理棚卸しは0件。
@@ -81,6 +92,7 @@
 - CLOSED: 119件の構造・資料範囲照合と表示訂正。DROP: 掲載商品を全種で実地飼育検証済みとする認定（実施しておらず、今回の完了定義ではない）。既存の購入表示条件は変更しない。
 - DO_NOT_REPEAT: 32件＋回収12件＋残75件の同じ条件調査、通常/all46件の修正。特定商品の実内寸や使用実績を後日確認する際は、その商品・種・条件を指定して別検証する。
 - 公開状況: PR #241 merge（`ee222b930a4b9bcc118249c9276999a5fa7689ef`）、Pages 成功。本番119診断×3幅と関連11ページ×2幅の確認済み。根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/241#issuecomment-6841250681
+
 
 ## CURRENT_BASE
 
@@ -97,7 +109,7 @@
 | 項目 | 値 |
 |------|-----|
 | 基準 | 統合時実測 main = **926fd49e9dde09cfc73cc1b44aebcc4efb59a457**（2026-11-13）。運営PR #246のブランチへmainを通常merge済み（統合commit766d9a71）。 |
-| サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 と運営 #246 は未公開。 |
+| サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 は本番確認済み。商品 #239 はmerge済み、Pages確認中。運営 #246 は最新main統合・最終検証中。 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-11-13 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
@@ -2183,3 +2195,19 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 ### 追加検証 2026-11-13
 
 cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。その後の公開実画面確認は上記#240公開コメントで完了。
+
+## 2026-11-13 Diagnosis UX follow-up (PR #243, published)
+- BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef. Scope: route entry/progress counts, native button semantics, entry explanation contrast, main landmarks on diagnosis and home.
+- COMPLETED: all five routes display totals from route questions plus readiness questions (9/12/9/8/10). The all-route description no longer promises eight questions. Question content, scoring, species data, GA4 and affiliate links are unchanged.
+- COMPLETED: native route buttons in a named group, visible keyboard focus, readable entry descriptions; one semantic main per page. Existing diagnosis screens already had main roles; this consolidates rather than claims they were absent.
+- VERIFIED: Python 120 tests, Node 18 test scripts, diff check; new UX assertions fail on the old base. Chrome at 320/390/1280: five route starts via keyboard, counts/progress, quit/cancel, ten-question all-route result/retry, one main, five AX buttons, no horizontal overflow or page errors. Local requests only; analytics blocked. Contrast 7.99:1 or higher on entry text. 390/1280 diagnosis screenshots inspected.
+- PUBLISHED: PR #243 merge 9b371457254bfad87d767b1b958ae39613908cc9; Pages run43360177434 success; production Chrome 320/390/1280 counts/routes/retry and asset hash verified in issuecomment-6843065965. Physical VoiceOver/TalkBack not tested.
+- DO_NOT_REPEAT: diagnosis publication and production route validation are complete.
+
+- Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).
+
+## PR #239 final integration (2026-11-13)
+- BASE: main 9b371457254bfad87d767b1b958ae39613908cc9. Integrated after diagnosis PR #243; article and official affiliate evidence unchanged.
+- PR #243 is merged and production verified in issuecomment-6843065965 (Pages run43360177434); its older pending-publication entry is historical.
+- MERGED: #239 merge 78112e33899199bdcc035c27002cc190edf4e766. Pages/article delivery verification is in progress; final evidence is recorded on the PR. Operations #246 integrates this main without modifying its article.
+
