@@ -25,7 +25,7 @@ class OfflineGateTests(unittest.TestCase):
             self.assertIn(['node', 'tools/test-example.mjs'], commands)
 
     def test_ci_cost_and_secret_boundaries(self):
-        text = (ROOT / '.github/workflows/site-offline-checks.yml').read_text()
+        text = (ROOT / '.github/workflows/site-offline-checks.yml').read_text(encoding='utf-8')
         self.assertIn('runs-on: ubuntu-latest', text)
         self.assertIn('github.event.repository.private == false', text)
         self.assertIn('contents: read', text)
@@ -38,7 +38,7 @@ class OfflineGateTests(unittest.TestCase):
         self.assertNotIn('pull_request_target:', text)
 
     def test_rakuten_schedule_unchanged_and_races_not_cancelled(self):
-        text = (ROOT / '.github/workflows/rakuten-sync.yml').read_text()
+        text = (ROOT / '.github/workflows/rakuten-sync.yml').read_text(encoding='utf-8')
         self.assertIn("cron: '0 18 * * *'", text)
         self.assertIn('group: rakuten-sync\n  cancel-in-progress: false', text)
         self.assertIn('python scripts/push-rakuten-update.py', text)
