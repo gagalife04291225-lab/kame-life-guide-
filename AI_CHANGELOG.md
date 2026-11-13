@@ -874,3 +874,5 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - PR/Commit: codex-diagnosis-ux-20261113, pending review; not merged.
 - Approver: owner requested sequential fixes and completion; parent controls publication order.
 - Conforms: no scoring/species, commerce, tracking, legal or billing changes.
+
+- Review follow-up (2026-11-13): routes.js now uses the existing LF-normalized SHA256/12-character asset version scheme and is included in automatic asset-version refresh. Dedicated tests verify the rendered reference and fixture propagation, avoiding old cached eight-question descriptions. Final Node regression log: diagnosis-ux-qa/node-final.log (the earlier node.log retains an intermediate test-harness failure).

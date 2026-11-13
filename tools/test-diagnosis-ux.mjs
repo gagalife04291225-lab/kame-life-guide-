@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -25,3 +26,6 @@ function lum(rgb) {return rgb.map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1
 const fg=[199,211,203],base=[13,31,26];
 for(const alpha of [0,.06,.11]) { const bg=base.map(v=>Math.round(255*alpha+v*(1-alpha)));const ratio=(lum(fg)+.05)/(lum(bg)+.05);assert.ok(ratio>=4.5);console.log('contrast',alpha,ratio.toFixed(2)); }
 console.log('diagnosis UX assertions PASS');
+
+const routeHash=crypto.createHash('sha256').update(fs.readFileSync('shindan/routes.js','utf8').replace(/\r\n/g,'\n')).digest('hex').slice(0,12);
+assert.ok(html.includes('src="routes.js?v='+routeHash+'"'));
