@@ -31,9 +31,9 @@ class CommerceGuidanceTest(unittest.TestCase):
    asins=re.findall(r'data-asin="([^"]+)"',s)
    self.assertEqual(len(asins),len(set(asins)),name)
  def test_no_unverified_personal_use_claims(self):
-  for name in ['food-best10.html','dish-best10.html']:
+  for name in ['food-best10.html','dish-best10.html','shelter-best10.html']:
    s=(ROOT/name).read_text(encoding='utf-8')
-   self.assertNotRegex(s,'筆者も使用中|筆者実使用品|筆者も実際に使っています|筆者が.*実際に使っています')
+   self.assertNotRegex(s,'筆者も使用中|筆者実使用品|筆者も実際に使っています|筆者が.*実際に使っています|筆者自身|実際にムオヒラセガメ')
  def test_jsonld_valid(self):
   for p in PAGES:
    for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>',p.read_text(encoding='utf-8'),re.S):json.loads(raw)
