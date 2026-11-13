@@ -500,7 +500,7 @@ function renderSkCard(item, speciesName, equipmentKey) {
       ' data-display-cat="' + _skProductDisplayCat(p, p.category) + '"' +
       ' data-provider="amazon"' +
       ' data-click-url="' + p.affiliateUrl + '">' + amazonCtaText + '</a>'
-    : '<span class="sk-card-btn sk-card-btn--soon">' + catLabel + 'は選定中</span>';
+    : '<span class="sk-card-btn sk-card-btn--soon">' + (p.amazonLinkStatus === 'identity_review' ? 'Amazonの掲載先を確認中' : catLabel + 'は選定中') + '</span>';
 
   // ── Rakuten CTA: TASK 2 Dual CTA UX (CASE A/B/C/D) ──────────
   // CASE A: amazon + rakuten available → 2ボタン（Amazon primary, Rakuten secondary）

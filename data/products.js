@@ -375,6 +375,7 @@ const PRODUCTS = {
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
+    amazonLinkStatus: 'identity_review',
     affiliateUrl: null, // 商品名(T5)と旧ASINの同一性を確認できないため直リンクを保留
     asin: null,
     rakutenUrl: null,
@@ -393,6 +394,7 @@ const PRODUCTS = {
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
+    amazonLinkStatus: 'identity_review',
     affiliateUrl: null, // 商品名(T5)と旧ASINの同一性を確認できないため直リンクを保留
     asin: null,
     rakutenUrl: null,
