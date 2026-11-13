@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-export const ASSETS = ['js/starter-kit.js', 'data/products.js', 'shindan/species.js'];
+export const ASSETS = ['js/starter-kit.js', 'data/products.js', 'shindan/species.js', 'shindan/routes.js'];
 const DEFAULT_ROOT = fileURLToPath(new URL('../', import.meta.url));
 const SKIP_DIRS = new Set(['.git', 'node_modules', '.venv', 'venv']);
 

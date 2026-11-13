@@ -131,7 +131,10 @@ body {
 .route-emoji .klg-ico { width:30px; height:30px; color: var(--accent-gold, #c9a96b); }
 .route-info { flex: 1; min-width: 0; }
 .route-name { font-size: 1rem; font-weight: 600; color: var(--parchment); }
-.route-desc { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
+.route-desc { font-size: .9rem; line-height: 1.6; color: #c7d3cb; margin-top: 2px; }
+.route-count { display: block; font-size: .85rem; line-height: 1.6; color: #c7d3cb; margin-top: 4px; }
+.route-card:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+#screen-start .route-intro-label, #screen-start .jp-step-label, #screen-start .jp-step-copy { color: #c7d3cb; }
 #screen-quiz { gap: 0; }
 .quiz-header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
 .btn-back { background: none; border: 1px solid rgba(255,255,255,.18); color: var(--parchment); border-radius: 8px; padding: 8px 14px; font-size: .85rem; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; flex-shrink: 0; }
@@ -1136,14 +1139,15 @@ body {
 </nav>
 
 
-<section id="screen-start" class="screen active" role="main" aria-label="亀診断トップ">
+<main id="main-content" aria-label="亀診断">
+<section id="screen-start" class="screen active" aria-label="亀診断トップ">
   <div class="logo-mark" aria-hidden="true"><svg class="klg-ico" aria-hidden="true"><use href="#klg-i-tortoise"/></svg></div>
   <h1 class="start-title">あなたに合う亀診断</h1>
   <p class="start-sub">カメライフガイド</p>
   <div class="species-count" aria-label="対応種数">119種対応</div>
   <div class="route-intro">
     <div class="route-intro-label" id="route-cards-label">ルートをタップして30秒で診断スタート</div>
-    <div class="route-cards" id="route-cards" role="list" aria-labelledby="route-cards-label"></div>
+    <div class="route-cards" id="route-cards" role="group" aria-labelledby="route-cards-label"></div>
   </div>
 
   <!-- Phase 4 移設: index.html の journey-preview（How it works）。文言は逐語。
@@ -1189,7 +1193,7 @@ body {
   </div>
 </section>
 
-<section id="screen-quiz" class="screen" role="main" aria-label="診断質問">
+<section id="screen-quiz" class="screen" aria-label="診断質問">
   <div class="quiz-header">
     <button class="btn-back" id="btn-back" aria-label="前の画面に戻る">← 戻る</button>
     <div class="progress-wrap" role="status" aria-live="polite">
@@ -1206,7 +1210,7 @@ body {
 </section>
 
 <!-- TRUST-1: Readiness Gate C判定画面（種を推薦しない・商品リンクを置かない） -->
-<section id="screen-gate-stop" class="screen" role="main" aria-label="診断結果（準備の確認）">
+<section id="screen-gate-stop" class="screen" aria-label="診断結果（準備の確認）">
   <div class="gate-stop-inner">
     <p class="gate-stop-label">診断結果</p>
     <h2 class="gate-stop-title">今は飼わない方がいいかもしれません</h2>
@@ -1223,7 +1227,7 @@ body {
   </div>
 </section>
 
-<section id="screen-result" class="screen" role="main" aria-label="診断結果">
+<section id="screen-result" class="screen" aria-label="診断結果">
   <!-- TRUST-1: B判定（条件付き）の準備不足通知。ランキング・種の表示には影響しない -->
   <div id="gate-notice" class="gate-notice" hidden role="note"></div>
   <!-- ════════ ABOVE FOLD ════════ -->
@@ -1330,6 +1334,8 @@ body {
   </div>
 </section>
 
+</main>
+
 <!-- PHASE 3: 確認モーダル -->
 <div class="modal-overlay" id="modal-quit" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-box">
@@ -1346,7 +1352,7 @@ body {
 
 <!-- データファイル -->
 <!-- perf(shindan): species.js は初回ロードせず、診断開始時に遅延読み込みする（下記 loadSpecies）。routes.js の route.species は getter のため species.js 非依存で先に読める。 -->
-<script src="routes.js"></script>
+<script src="routes.js?v=1930eb30200a"></script>
 <script>
 // 結果画面でのみ必要な重いJS（species.js / products.js / starter-kit.js）は初回ロードせず、
 // 診断開始時に先読み → 結果表示前にロード完了を保証する（idempotent・二重読込なし）。
@@ -2474,6 +2480,11 @@ function renderStarterKit(sp) {
   }
 }
 
+// 質問数は準備確認も含め、入口と進捗表示で同じ配列から数える。
+function getRouteQuestionCount(route) {
+  return route.questions.length + (typeof READINESS_QUESTIONS !== 'undefined' ? READINESS_QUESTIONS.length : 0);
+}
+
 // ===== スタート画面初期化 =====
 function initStart() {
   clearResultUrl();
@@ -2483,12 +2494,13 @@ function initStart() {
     var card = document.createElement('button');
     card.className = 'route-card';
     card.dataset.id = route.id;
-    card.setAttribute('role', 'listitem');
+    card.type = 'button';
     card.innerHTML =
       '<span class="route-emoji" aria-hidden="true"><svg class="klg-ico"><use href="#' + (route.icon || 'klg-i-tortoise') + '"/></svg></span>' +
       '<div class="route-info">' +
         '<div class="route-name">' + route.name + '</div>' +
         '<div class="route-desc">' + route.desc + '</div>' +
+        '<span class="route-count">全' + getRouteQuestionCount(route) + '問（飼育の準備確認を含む）</span>' +
       '</div>' +
       '<span class="route-card-arrow" aria-hidden="true">▶</span>';
     card.addEventListener('click', function(){ startQuizWithRoute(route.id); });
@@ -2529,7 +2541,7 @@ function showQuestion() {
       });
     }
   }
-  var total = route.questions.length + (typeof READINESS_QUESTIONS !== 'undefined' ? READINESS_QUESTIONS.length : 0);
+  var total = getRouteQuestionCount(route);
   var pct = Math.round((currentQuestionIndex / total) * 100);
 
   // プログレスバー更新
@@ -2611,7 +2623,7 @@ function showGateQuestion() {
   var route = selectedRoute;
   var q = READINESS_QUESTIONS[gateIndex];
   var routeLen = route.questions.length;
-  var total = routeLen + READINESS_QUESTIONS.length;
+  var total = getRouteQuestionCount(selectedRoute);
   var idx = routeLen + gateIndex;
   if (!_viewedSteps[idx]) {
     _viewedSteps[idx] = true;

@@ -5,12 +5,13 @@ const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 try{
  for(const [i,a] of ASSETS.entries())put(a,`// asset ${i}\r\nconst x=${i};\r\n`);
  put('index.html','\uFEFF<script src="js/starter-kit.js"></script>\r\n<script src="/data/products.js?mode=x&amp;v=old&amp;lang=ja#tail"></script>\r\n<script src="https://example.com/js/starter-kit.js"></script>\r\n<script src="//example.com/data/products.js"></script>\r\n<script src="js/other.js?v=old"></script>\r\n<!-- <script src="js/starter-kit.js"></script> -->\r\n');
- put('shindan/index.html',`<script src='species.js?v=old&v=duplicate#hash'></script>\n<script>window.__loadScriptOnce('species.js');window.__loadScriptOnce('../data/products.js?mode=x&v=old#h');__loadScriptOnce('../js/starter-kit.js');__loadScriptOnce('https://host/js/starter-kit.js');</script>`);
+ put('shindan/index.html',`<script src='routes.js?v=old'></script><script src='species.js?v=old&v=duplicate#hash'></script>\n<script>window.__loadScriptOnce('species.js');window.__loadScriptOnce('../data/products.js?mode=x&v=old#h');__loadScriptOnce('../js/starter-kit.js');__loadScriptOnce('https://host/js/starter-kit.js');</script>`);
  put('species/sample.html','<SCRIPT defer SRC = "../js/starter-kit.js?foo=a%20b#h"></SCRIPT>');
  put('unrelated.html','<script src="js/other.js"></script>');put('notes.txt','../js/starter-kit.js');
  const original=read('index.html'),unrelated=read('unrelated.html');
  let result=updateAssetVersions(root,{check:true});assert.equal(result.changed.length,3);assert.equal(read('index.html'),original);
  for(const a of ASSETS)assert.equal(result.versions[a],crypto.createHash('sha256').update(read(a).replace(/\r\n/g,'\n')).digest('hex').slice(0,12));
+ assert.ok(ASSETS.includes('shindan/routes.js'));
  const versions=result.versions;result=updateAssetVersions(root);assert.equal(result.changed.length,3);
  assert.ok(read('index.html').startsWith('\uFEFF'));assert.ok(read('index.html').includes('\r\n'));
  assert.ok(read('index.html').includes('?mode=x&amp;lang=ja&amp;v='+versions['data/products.js']+'#tail'));
@@ -18,6 +19,7 @@ try{
  assert.ok(read('index.html').includes('<!-- <script src="js/starter-kit.js"></script> -->'));
  assert.ok(read('species/sample.html').includes('?foo=a%20b&v='+versions['js/starter-kit.js']+'#h'));
  assert.ok(read('shindan/index.html').includes("__loadScriptOnce('species.js?v="+versions['shindan/species.js']+"')"));
+ assert.ok(read('shindan/index.html').includes('routes.js?v='+versions['shindan/routes.js']));
  assert.ok(!read('shindan/index.html').includes('v=old'));assert.ok(!read('shindan/index.html').includes('v=duplicate'));
  assert.equal(read('unrelated.html'),unrelated);assert.equal(read('notes.txt'),'../js/starter-kit.js');
  assert.equal(updateAssetVersions(root).changed.length,0);assert.equal(updateAssetVersions(root,{check:true}).changed.length,0);
@@ -68,5 +70,5 @@ try{
  // A scheduled event has no manual inputs. A manual audit/dry-run must not
  // refresh references or commit, even when the earlier diff reports a change.
  assert.equal(evaluate(refresh,{'github.event_name':'schedule','github.event.inputs.audit_images':'','github.event.inputs.identity_dryrun':'','github.event.inputs.dry_run':'','steps.diff.outputs.changed':'true'}),true);
- console.log('PASS: three assets; normal/root/nested/delayed URLs; query/hash; externals/comments/unrelated unchanged; CRLF hash stability; idempotency; changed asset propagation; CLI check; missing asset causes no partial HTML writes; workflow refresh/commit gate matrix '+matrixCases+' cases.');
+ console.log('PASS: four assets; normal/root/nested/delayed URLs; query/hash; externals/comments/unrelated unchanged; CRLF hash stability; idempotency; changed asset propagation; CLI check; missing asset causes no partial HTML writes; workflow refresh/commit gate matrix '+matrixCases+' cases.');
 }finally{fs.rmSync(root,{recursive:true,force:true});}
