@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-11-13T00:24:10.304Z",
+  "results": [
+    {
+      "id": "suisaku-ph73",
+      "expectedUrl": "https://item.rakuten.co.jp/chanet/268072/",
+      "attempts": [
+        {
+          "query": "4974105005733",
+          "count": 1
+        }
+      ],
+      "match": {
+        "itemName": "水作　クイック水替えポンプ　小型水槽・水位の低い水槽向け　水槽　掃除　関東当日便",
+        "itemCode": "chanet:11083530",
+        "itemPrice": 1047,
+        "availability": 1,
+        "itemUrl": "https://item.rakuten.co.jp/chanet/268072/",
+        "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F268072%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F11083530%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be"
+      }
+    },
+    {
+      "id": "gex-cleaner-dropper",
+      "expectedUrl": "https://item.rakuten.co.jp/chanet/168159/",
+      "attempts": [
+        {
+          "query": "4972547026545",
+          "count": 1
+        }
+      ],
+      "match": {
+        "itemName": "GEX　おそうじラクラク　クリーナースポイト　関東当日便",
+        "itemCode": "chanet:10260926",
+        "itemPrice": 418,
+        "availability": 1,
+        "itemUrl": "https://item.rakuten.co.jp/chanet/168159/",
+        "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pyjhn.nhbnncfa.g00pyjhn.nhbnodd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fchanet%2F168159%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fchanet%2Fi%2F10260926%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be"
+      }
+    },
+    {
+      "id": "tanita-kj305",
+      "expectedUrl": "https://item.rakuten.co.jp/webby/50892153/",
+      "attempts": [
+        {
+          "query": "4904785196100",
+          "count": 1
+        }
+      ],
+      "match": {
+        "itemName": "タニタ タニタ デジタルクッキングスケール KJ-305",
+        "itemCode": "webby:14685329",
+        "itemPrice": 3715,
+        "availability": 1,
+        "itemUrl": "https://item.rakuten.co.jp/webby/50892153/",
+        "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00q0qhn.nhbnnc2d.g00q0qhn.nhbno8c5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwebby%2F50892153%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwebby%2Fi%2F14685329%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be"
+      }
+    },
+    {
+      "id": "shimano-st422i",
+      "expectedUrl": "https://item.rakuten.co.jp/naturum/2455158/",
+      "attempts": [
+        {
+          "query": "4969363724885",
+          "count": 1
+        }
+      ],
+      "match": {
+        "itemName": "シマノ(SHIMANO) ST-422I メジャーステッカー シルバー 724885",
+        "itemCode": "naturum:16177100",
+        "itemPrice": 1056,
+        "availability": 1,
+        "itemUrl": "https://item.rakuten.co.jp/naturum/2455158/",
+        "affiliateUrl": "https://hb.afl.rakuten.co.jp/hgc/g00pn5fn.nhbnnf34.g00pn5fn.nhbnoc01/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnaturum%2F2455158%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnaturum%2Fi%2F16177100%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be"
+      }
+    }
+  ]
+}

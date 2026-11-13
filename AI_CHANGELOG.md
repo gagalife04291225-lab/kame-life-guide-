@@ -844,6 +844,15 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 - Actor: ChatGPT
 - Change: GEXスポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と活用条件を既存details内に追加。PH-73含む4件に型番照合済みの通常楽天リンクを追加。記事テストを12件に拡張。
 - Reason: 商品候補調査を具体的な読者の選択肢へつなげる。使用体験を捏造せず、公式仕様と活用案を区別する。
-- PR/Commit: codex/keeper-products-20261113（本コミット）。公開前。
+- PR/Commit: chatgpt-keeper-products-20261113（本コミット）。公開前。
 - Approver: Ownerの商品追加依頼に基づく実装。mergeは本作業で行わない。
 - Conforms: 既存GA4・Amazon ID・既存8購入リンク・商品DB・価格は不変。新規4件は非アフィリエイト通常URL。Python101件、記事12件、独立レビューBLOCKER0/SHOULD0、Chrome320/390/1280px横はみ出し0。
+
+
+## [2026-11-13] 追加4商品リンクを本人の楽天アフィリエイトURLへ更新（未merge）
+- Actor: ChatGPT
+- Change: 公式APIが本人の既存設定から発行したaffiliateUrlへ4件を置換。rel=nofollow sponsored、リンク先の完全一致をテスト。安全検査済み取得結果をdocs/qaへ保存。
+- Reason: 通常リンクのままでは収益対象にならないため、正規APIを利用。未確認ID・他者タグ・手組みURLは不使用。
+- PR/Commit: chatgpt-keeper-products-20261113。本コミット。取得run 43336738624 success。
+- Approver: Ownerの商品購入導線追加依頼。merge・本番変更は未実施。
+- Conforms: 公開repoの無料標準runner、実行約1分、contents:read。Secrets変更なし・秘密値出力なし・本番データ変更なし。一時調査workflowは取得後削除。

@@ -44,11 +44,11 @@
 
 
 ## 2026-11-13 便利ワザの商品導線（公開前）
-- BASE: fde885bd1485ae74ce9527bb63f432e400c80008。branch: codex/keeper-products-20261113。
-- COMPLETED: keeper-hacks の既存詳細内にGEXクリーナースポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と使い分けを追加。PH-73を含め4件の通常楽天商品リンク。メーカー資料と販売店の型番/JANを照合。体験談・価格・在庫の断定はなし。
+- BASE: fde885bd1485ae74ce9527bb63f432e400c80008。branch: chatgpt-keeper-products-20261113。
+- COMPLETED: keeper-hacks の既存詳細内にGEXクリーナースポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と使い分けを追加。PH-73を含め4件の公式API発行楽天アフィリエイトリンク。メーカー資料と販売店の型番/JANを照合。体験談・価格・在庫の断定はなし。
 - FIXED: GEX通常品28.5cm/パイプ22.4cm、ロング水深36cm。KJ-305は容器込み3kg、0.1g表示は容器込み300gまで。ST-422Iは64cm+30cm各1枚、再貼付不可、水槽外貼りは釣り用品の活用案・観察目安。PH-73のホース1.1m/落差10cmは維持。
 - 検証: Python101件PASS（記事12件）、独立レビューBLOCKER0/SHOULD0。重複商品リンク検査を追加。Chromeローカル320/390/1280pxで横はみ出し0、開閉後の4導線表示・URLを確認。既存8購入リンク・GA4・head・商品DBは変更なし。
-- UNRESOLVED: 新規4件は通常URLでありアフィリエイト収益導線ではない。正規アフィリエイトURLは未作成。実機読み上げ・本番確認・mergeは未実施。Prohose Extraはメーカー観賞魚用のため今回追加しない。
+- UNRESOLVED: 楽天公式APIの本人設定で4件のaffiliateUrlを取得済み（Actions 43336738624 success）。全件が採用商品URLと完全一致、API availability=1。証拠はdocs/qa/keeper-product-links-20261113.json。一時workflowは取得後削除、Secrets・既存同期設定は不変。実機読み上げ・本番確認・mergeは未実施。Prohose Extraはメーカー観賞魚用のため今回追加しない。
 - NEXT: 公開判断と公開後確認。他の既存NEXTは未完了のまま維持。
 - DO_NOT_REPEAT: 上記メーカー条件照合、商品3件とPH-73購入導線の再実装。
 

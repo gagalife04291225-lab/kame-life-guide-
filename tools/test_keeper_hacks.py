@@ -1,6 +1,7 @@
 """Keeper-hacks article structure and site integration regression checks."""
 import unittest
 import re
+from urllib.parse import urlparse, parse_qs
 from pathlib import Path
 from html.parser import HTMLParser
 import xml.etree.ElementTree as ET
@@ -63,13 +64,14 @@ class KeeperHacks(unittest.TestCase):
             'shimano-st422i': 'https://item.rakuten.co.jp/naturum/2455158/',
         }
         self.assertEqual(sum('data-product' in a for a in self.page.links), 4)
-        actual = {a['data-product']: a['href'] for a in self.page.links if 'data-product' in a}
+        actual = {a['data-product']: parse_qs(urlparse(a['href']).query).get('pc', [''])[0] for a in self.page.links if 'data-product' in a}
         self.assertEqual(actual, expected)
         for a in self.page.links:
             if 'data-product' in a:
-                self.assertEqual(a.get('rel'), 'nofollow')
-                self.assertNotIn('tag=', a['href'])
-                self.assertNotIn('hb.afl', a['href'])
+                self.assertEqual(a.get('rel'), 'nofollow sponsored')
+                self.assertEqual(urlparse(a['href']).hostname, 'hb.afl.rakuten.co.jp')
+                self.assertNotIn('accessKey', a['href'])
+                self.assertNotIn('applicationId=', a['href'])
     def test_product_conditions_without_experience_claim(self):
         for value in ('28.5cm', '22.4cm', '水深36cm', '容器と亀を合わせて3kg',
                       '容器込み300g', '本体は濡らさず', '64cmと30cm', '貼り直せない',
