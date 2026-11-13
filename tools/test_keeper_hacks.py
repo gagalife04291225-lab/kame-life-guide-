@@ -1,6 +1,7 @@
 """Keeper-hacks article structure and site integration regression checks."""
 import unittest
 import re
+import json
 from urllib.parse import urlparse, parse_qs
 from pathlib import Path
 from html.parser import HTMLParser
@@ -66,6 +67,9 @@ class KeeperHacks(unittest.TestCase):
         self.assertEqual(sum('data-product' in a for a in self.page.links), 4)
         actual = {a['data-product']: parse_qs(urlparse(a['href']).query).get('pc', [''])[0] for a in self.page.links if 'data-product' in a}
         self.assertEqual(actual, expected)
+        evidence = json.loads((ROOT/'docs/qa/keeper-product-links-20261113.json').read_text(encoding='utf-8'))
+        issued = {r['id']: r['match']['affiliateUrl'] for r in evidence['results']}
+        self.assertEqual({a['data-product']: a['href'] for a in self.page.links if 'data-product' in a}, issued)
         for a in self.page.links:
             if 'data-product' in a:
                 self.assertEqual(a.get('rel'), 'nofollow sponsored')
