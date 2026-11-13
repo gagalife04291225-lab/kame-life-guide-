@@ -108,8 +108,8 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 統合時実測 main = **926fd49e9dde09cfc73cc1b44aebcc4efb59a457**（2026-11-13）。運営PR #246のブランチへmainを通常merge済み（統合commit766d9a71）。 |
-| サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 は本番確認済み。商品 #239 はmerge済み、Pages確認中。運営 #246 は最新main統合・最終検証中。 |
+| 基準 | 統合時実測 main = **78112e33899199bdcc035c27002cc190edf4e766**（2026-11-13）。運営PR #246へ通常merge済み（統合commit c3e98c5e）。 |
+| サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 は本番確認済み。商品 #239 はmerge・Pages成功・公開本文HTTP200を確認済み。運営 #246 は最新main統合・最終検証中。 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-11-13 JST |
 | 掲載種数 | **119種**（通常一覧 115 ＋ 参考掲載 4） |
@@ -2037,15 +2037,14 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 - HomeとKinosternon11種の発効日は最新mainで完了済み、再実装なし。用品/価格/GA4/飼育値/診断score/match不変。既存除外4種の直接診断を参考表示へ。
 - 実装 commit 554c38b1、PR #237。根拠と検証は docs/qa/other-species-law-20261113.md。公開結果は今回PRのmerge SHAと本番実測コメントを正とする。
 
-## NEXT — 評価後修正の統合確認
+## NEXT — 運営PR #246の公開完了
 
-1. 未公開の診断UX PR #243を、最新mainと競合・回帰を確認してから承認範囲内で公開する。公開済みと混同しない。
-2. 運営PR #246はmain926fd49eを通常merge済み。最新差分で全体オフライン検査とGitHub CIを再確認し、診断との統合後も確認して公開判断へ進む。初回CIの成功根拠: https://github.com/gagalife04291225-lab/kame-life-guide-/pull/246#issuecomment-6842153091 。merge後の定時楽天同期は別に実測する。
-3. #240法規121件、#241用品条件119件、#244受診案内、#242UVB、#245商品導線は公開確認済み。具体的な新証拠・新差分がない限り、同じ監査・merge・公開確認を残件へ戻さない。用品条件照合は実物全商品の飼育試験を意味しない。
+最新main 78112e33を統合済み。Python156件・Node19スイート・正本照合・ハッシュ検査を含むオフライン検査はPASS。最終HEADのGitHub CIを確認し、承認済みのPR #246をmerge、mainのCI・Pagesを確認して閉じる。サイト本文・商品DB・秘密・課金設定は変更しない。mergeと本番結果は同PRコメントを最終証拠とし、これを同期するだけのPRは作らない。
 
-Ownerの個人写真・飼育記録の追加（④）は今回の依頼から除外する。
+#240法規、#241用品、#244受診、#242UVB、#245商品比較、#243診断は公開確認済み。#239商品追加もmerge・Pages成功・公開本文反映済み。これらを監査や実装の残件へ戻さない。用品条件照合は実物全商品の飼育試験ではない。
+Ownerの個人写真・飼育記録の追加（④）は対象外。Amazon画像は利用資格による別件で、既存の再確認予定に従う。将来の定時楽天同期は今回のテスト実行と区別し、未発生の運転を成功済みとはしない。
 
-運営変更の設計と制約: [offline-quality-gate.md](operations/offline-quality-gate.md)。この変更はサイト本文・商品DB・秘密・課金設定を変更しない。過去の調査ログ中の残件表記より、対応 PR の公開確認と上記の現在状態を優先する。
+運営変更の設計と制約: [offline-quality-gate.md](operations/offline-quality-gate.md)。
 
 ## 更新ルール（作業終了時に必ず実施）
 
@@ -2209,5 +2208,5 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 ## PR #239 final integration (2026-11-13)
 - BASE: main 9b371457254bfad87d767b1b958ae39613908cc9. Integrated after diagnosis PR #243; article and official affiliate evidence unchanged.
 - PR #243 is merged and production verified in issuecomment-6843065965 (Pages run43360177434); its older pending-publication entry is historical.
-- MERGED: #239 merge 78112e33899199bdcc035c27002cc190edf4e766. Pages/article delivery verification is in progress; final evidence is recorded on the PR. Operations #246 integrates this main without modifying its article.
+- MERGED: #239 merge 78112e33899199bdcc035c27002cc190edf4e766. Pages run43362517824 success; public article HTTP200 with all new product names and official links. Final browser evidence is recorded on the PR. Operations #246 integrates this main without modifying its article.
 
