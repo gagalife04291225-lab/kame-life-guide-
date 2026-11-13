@@ -247,6 +247,9 @@
     header.hero h1{font-size:1.65rem;}
     .tg-grid{grid-template-columns:1fr;}
   }
+  .medical-sources{padding:24px 0 36px;font-size:.9rem;}
+  .medical-sources h2{font-size:1.1rem;}
+  .medical-sources ul{padding-left:1.3em;overflow-wrap:anywhere;}
 </style>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -349,7 +352,7 @@
   <div class="wrap">
     <div class="medical-notice">
       <strong>このサイトは医療診断を行いません。</strong>
-      症状が続く場合、または緊急度「高」の症状が見られる場合は、爬虫類対応の動物病院を受診してください。記載内容は一般的な情報であり、個体の状態によって判断は異なります。
+      <strong>口を開けて苦しそうに呼吸する、首を伸ばして息をする、ぐったりして反応が乏しい場合は、待たずに爬虫類対応の動物病院へ連絡してください。</strong> 下の分類は診断ではありません。受診の時期は症状と個体の状態を伝えて相談します。
     </div>
   </div>
 </section>
@@ -363,7 +366,7 @@
         <div class="tc-band caution"></div>
         <div class="tc-body">
           <div class="tc-icon">🍃</div>
-          <span class="tc-urgency caution">⚠ 要観察</span>
+          <span class="tc-urgency caution">⚠ 環境確認と受診相談</span>
           <div class="tc-name">餌を食べない</div>
           <p class="tc-desc">拒食・食欲不振の原因は多岐にわたります。温度・季節・ストレスから病気まで、順番に確認するポイントを解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -374,7 +377,7 @@
         <div class="tc-band urgent"></div>
         <div class="tc-body">
           <div class="tc-icon">💧</div>
-          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <span class="tc-urgency urgent">● 受診相談</span>
           <div class="tc-name">鼻水・鼻詰まり</div>
           <p class="tc-desc">上部気道感染症のサインである可能性があります。放置すると肺炎に進行するリスクがあるため、早期の対応が重要です。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -385,7 +388,7 @@
         <div class="tc-band urgent"></div>
         <div class="tc-body">
           <div class="tc-icon">👁</div>
-          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <span class="tc-urgency urgent">● 受診相談</span>
           <div class="tc-name">目の腫れ・開かない</div>
           <p class="tc-desc">ビタミンA欠乏・細菌感染・異物刺激など複数の原因が考えられます。両眼か片眼かで原因の絞り込みが変わります。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -398,7 +401,7 @@
         <div class="tc-band urgent"></div>
         <div class="tc-body">
           <div class="tc-icon">🐚</div>
-          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <span class="tc-urgency urgent">● 受診相談</span>
           <div class="tc-name">甲羅が腐る・シェルロット</div>
           <p class="tc-desc">甲羅が柔らかい・崩れる・においがある場合は甲羅の感染（シェルロット）の可能性。早めの環境改善と受診の目安を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -409,9 +412,9 @@
         <div class="tc-band caution"></div>
         <div class="tc-body">
           <div class="tc-icon">🦴</div>
-          <span class="tc-urgency caution">⚠ 要観察</span>
+          <span class="tc-urgency caution">⚠ 環境確認と受診相談</span>
           <div class="tc-name">甲羅がやわらかい・変形（くる病）</div>
-          <p class="tc-desc">紫外線（UVB）やカルシウム不足による代謝性骨疾患（MBD）の可能性。原因の確認と環境改善、予防を解説します。</p>
+          <p class="tc-desc">紫外線（UVB）やカルシウム不足による代謝性骨疾患（MBD）の可能性。環境の確認と並行して受診相談が必要なサイン、予防を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
         </div>
       </a>
@@ -420,7 +423,7 @@
         <div class="tc-band caution"></div>
         <div class="tc-body">
           <div class="tc-icon">🌫</div>
-          <span class="tc-urgency caution">⚠ 要観察</span>
+          <span class="tc-urgency caution">⚠ 環境確認と受診相談</span>
           <div class="tc-name">水カビ病</div>
           <p class="tc-desc">皮膚や甲羅に白い綿状のものが付く水カビ病。水質・水温・バスキングの見直しと受診の目安を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -431,9 +434,9 @@
         <div class="tc-band urgent"></div>
         <div class="tc-body">
           <div class="tc-icon">❄️</div>
-          <span class="tc-urgency urgent">● 緊急度 高</span>
+          <span class="tc-urgency urgent">● 受診相談</span>
           <div class="tc-name">冬眠の失敗・冬眠明けの不調</div>
-          <p class="tc-desc">冬眠中に痩せた・目覚めても食べない。体を温める応急対応と、来季に向けた安全な冬眠の準備を解説します。</p>
+          <p class="tc-desc">冬眠中に痩せた・目覚めても食べない。受診相談を優先するサインと、来季に向けた冬眠の準備を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
         </div>
       </a>
@@ -442,9 +445,9 @@
         <div class="tc-band caution"></div>
         <div class="tc-body">
           <div class="tc-icon">😴</div>
-          <span class="tc-urgency caution">⚠ 要観察</span>
+          <span class="tc-urgency caution">⚠ 環境確認と受診相談</span>
           <div class="tc-name">動かない・元気がない</div>
-          <p class="tc-desc">低体温・脱水・病気など複数の可能性。温度と水分を最初に確認する順番と受診の目安を解説します。</p>
+          <p class="tc-desc">低体温・脱水・病気など複数の可能性。呼吸や反応を確認し、受診を急ぐサインと環境の確認点を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
         </div>
       </a>
@@ -453,7 +456,7 @@
         <div class="tc-band caution"></div>
         <div class="tc-body">
           <div class="tc-icon">💧</div>
-          <span class="tc-urgency caution">⚠ 要観察</span>
+          <span class="tc-urgency caution">⚠ 環境確認と受診相談</span>
           <div class="tc-name">水質悪化のサイン</div>
           <p class="tc-desc">水が濁る・臭う・ぬめる。皮膚病や甲羅トラブルの引き金になる水質悪化の立て直し方を解説します。</p>
           <div class="tc-link">原因と対処法を見る</div>
@@ -482,22 +485,22 @@
       <div class="ug-item">
         <div class="ug-dot urgent"></div>
         <div class="ug-item-body">
-          <div class="ug-label urgent">緊急度 高：数日以内に受診を検討</div>
-          <p>明らかな感染症・呼吸困難・急激な体重減少・両眼の閉眼など。放置すると急速に悪化するリスクがある症状です。</p>
+          <div class="ug-label urgent">すぐに連絡：呼吸や反応がおかしい</div>
+          <p>苦しそうな開口呼吸、首を伸ばして息をする、体を支えられないほどぐったりしている場合は、様子見をせず動物病院へ連絡します。環境の確認や記事を読むことより、連絡を優先してください。</p>
         </div>
       </div>
       <div class="ug-item">
         <div class="ug-dot caution"></div>
         <div class="ug-item-body">
-          <div class="ug-label caution">要観察：1週間以上続くなら受診を</div>
-          <p>温度・環境など飼育側の要因で改善できる可能性がある症状。まず環境を見直し、改善しなければ受診してください。</p>
+          <div class="ug-label caution">早めに相談：鼻水・目の腫れ・甲羅の異常</div>
+          <p>鼻水や目の腫れ、甲羅の軟化・変形、食欲や体重の変化は、環境だけでは原因を判断できません。飼育条件を確認しながら病院へ相談し、一律に数日・1週間と待たないでください。</p>
         </div>
       </div>
       <div class="ug-item">
         <div class="ug-dot watch"></div>
         <div class="ug-item-body">
-          <div class="ug-label watch">経過観察：変化を記録しながら見守る</div>
-          <p>季節・ストレス・個体差の範囲内である可能性が高い症状。記録をつけながら様子を見て、悪化すれば受診を。</p>
+          <div class="ug-label watch">観察の記録を相談に役立てる</div>
+          <p>気づいた時刻、食事・排泄・体重、飼育温度、写真や動画を記録します。季節やストレスのせいと決めつけず、普段と違う状態が続く・悪化する場合や判断に迷う場合は相談してください。</p>
         </div>
       </div>
     </div>
@@ -518,6 +521,18 @@
       <a href="../food-best10.html">餌・フード</a>
       <a href="../kids/index.html" onclick="(typeof gtag==='function')&amp;&amp;gtag('event','site_kids_click',{from:'hub'})">🧒 カメふしぎ島（こども向け）</a>
     </div>
+  </div>
+</section>
+
+
+<section class="medical-sources" aria-label="受診案内の参考資料">
+  <div class="wrap">
+    <h2>受診案内の参考資料</h2>
+    <p>症状だけで病名を決めず、診察につなげるための案内です（2026年11月13日確認）。</p>
+    <ul>
+      <li><a href="https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/respiratory-infections-in-aquatic-turtles">Tree of Life Exotic Pet Medical Center：水棲ガメの呼吸器症状と迅速な受診</a></li>
+      <li><a href="https://vcahospitals.com/all-creatures/know-your-pet/turtles-aquatic-diseases">VCA Animal Hospitals：水棲ガメの病気・甲羅や動きの異常</a></li>
+    </ul>
   </div>
 </section>
 
