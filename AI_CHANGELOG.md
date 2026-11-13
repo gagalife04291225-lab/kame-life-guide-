@@ -838,3 +838,12 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 - Reason: Ownerの「商品を追加するものはない？」と便利ワザ強化依頼。初期表示の長文化、架空体験、未確認購入リンクを避ける。
 - BASE: 17c981ae55867343f43eeab478f600ff11acd934 / PR #238（Draft）・実装commit aad07fc2。
 - Approver: Ownerの作業依頼の範囲。merge/公開は未実施。Conforms: 専用9・Python98 PASS、実Chrome3幅、独立レビューBLOCKER0、購入URL8本/GA/CITES不変。
+
+
+## [2026-11-13] 便利ワザの商品3件とPH-73購入導線（未merge）
+- Actor: ChatGPT
+- Change: GEXスポイト・TANITA KJ-305・SHIMANO ST-422Iの仕様と活用条件を既存details内に追加。PH-73含む4件に型番照合済みの通常楽天リンクを追加。記事テストを12件に拡張。
+- Reason: 商品候補調査を具体的な読者の選択肢へつなげる。使用体験を捏造せず、公式仕様と活用案を区別する。
+- PR/Commit: codex/keeper-products-20261113（本コミット）。公開前。
+- Approver: Ownerの商品追加依頼に基づく実装。mergeは本作業で行わない。
+- Conforms: 既存GA4・Amazon ID・既存8購入リンク・商品DB・価格は不変。新規4件は非アフィリエイト通常URL。Python101件、記事12件、独立レビューBLOCKER0/SHOULD0、Chrome320/390/1280px横はみ出し0。

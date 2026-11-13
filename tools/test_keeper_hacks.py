@@ -53,8 +53,36 @@ class KeeperHacks(unittest.TestCase):
             self.assertIn(url, [a.get('href') for a in self.page.links])
     def test_quick_drain_pump_has_no_unverified_purchase_claims(self):
         section = self.html.split('id="quick-drain-pump"', 1)[1].split('</article>', 1)[0]
-        for forbidden in ('amazon.co.jp', 'rakuten.co.jp', 'B09WYHW7G8', '使用しています', '砂利掃除', '作業時間が半分'):
+        for forbidden in ('amazon.co.jp', 'B09WYHW7G8', '使用しています', '砂利掃除', '作業時間が半分'):
             self.assertNotIn(forbidden, section)
+    def test_concrete_product_links(self):
+        expected = {
+            'suisaku-ph73': 'https://item.rakuten.co.jp/chanet/268072/',
+            'gex-cleaner-dropper': 'https://item.rakuten.co.jp/chanet/168159/',
+            'tanita-kj305': 'https://item.rakuten.co.jp/webby/50892153/',
+            'shimano-st422i': 'https://item.rakuten.co.jp/naturum/2455158/',
+        }
+        self.assertEqual(sum('data-product' in a for a in self.page.links), 4)
+        actual = {a['data-product']: a['href'] for a in self.page.links if 'data-product' in a}
+        self.assertEqual(actual, expected)
+        for a in self.page.links:
+            if 'data-product' in a:
+                self.assertEqual(a.get('rel'), 'nofollow')
+                self.assertNotIn('tag=', a['href'])
+                self.assertNotIn('hb.afl', a['href'])
+    def test_product_conditions_without_experience_claim(self):
+        for value in ('28.5cm', '22.4cm', '水深36cm', '容器と亀を合わせて3kg',
+                      '容器込み300g', '本体は濡らさず', '64cmと30cm', '貼り直せない',
+                      'もともとは釣り用', 'ガラス越しの見え方や角度'):
+            self.assertIn(value, self.html)
+        for section_id in ('cleaner-dropper', 'weight-scale', 'measure-sticker'):
+            section = self.html.split('id="'+section_id+'"', 1)[1].split('</article>', 1)[0]
+            for phrase in ('使っています', '使ってみました', '正確に測れる', '在庫あり'):
+                self.assertNotIn(phrase, section)
+    def test_new_products_inside_existing_details(self):
+        for product in ('suisaku-ph73', 'gex-cleaner-dropper', 'tanita-kj305', 'shimano-st422i'):
+            before = self.html.split('data-product="'+product+'"')[0]
+            self.assertGreater(before.rfind('<details>'), before.rfind('</details>'))
     def test_local_destinations(self):
         for a in self.page.links:
             h=a.get('href','').split('#')[0]
