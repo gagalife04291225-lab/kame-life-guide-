@@ -1,0 +1,34 @@
+{
+  "spenglers-leaf-turtle": {
+    "title": "スペングラーの用品を選ぶ前に",
+    "items": [
+      "湿り気を保てる床材と、落ち葉やコルクなどの隠れ場所を用意します。床材は容器の面積と敷く厚さに合わせてそろえます。",
+      "水を飲んだり体を浸したりできる、出入りしやすい浅い水場も用意します。候補に水入れがなくても、不要という意味ではありません。",
+      "複数飼育では隠れ場所や水場の取り合いにも注意が必要です。参考にした飼育団体は成体・幼体を個別に飼育しています。"
+    ],
+    "note": "水入れや追加の隠れ家、床材の必要量によって費用は変わります。",
+    "sourceNote": "theTurtleRoomの飼育例を参考にしています。個別商品の適合や一律のUVB出力を示す資料ではありません。",
+    "sources": [
+      {
+        "label": "theTurtleRoom：Geoemyda spengleri（Captive Habitat）",
+        "url": "https://theturtleroom.org/species-profile/geoemyda-spengleri/"
+      }
+    ]
+  },
+  "brown-wood-turtle-manni": {
+    "title": "マンヤマガメの用品を選ぶ前に",
+    "items": [
+      "湿った床と隠れ場所に加え、体を浸せて出入りしやすい浅い水場を用意します。小さな飲み水皿だけで済ませず、体格に合わせて選びます。",
+      "陸場と水場を配置した後も、歩き回れる広さを残します。種ページの90cmは当サイトの目安で、参考にした動物病院は成体1匹に120×60cm以上を案内しています。",
+      "暖まる場所と日陰を分け、床の温度や湿り気を確認します。UVBランプは対応器具と照射距離を確認して設置します。"
+    ],
+    "note": "水場や追加の床材、広い容器への変更にかかる費用は、用品候補の合計とは別に見込んでください。",
+    "sourceNote": "Rhinoclemmys pulcherrima manniを対象にした動物病院の飼育案内です。他の亜種へそのまま当てはめるものではありません。",
+    "sources": [
+      {
+        "label": "Tree of Life Exotic Pet Medical Center：Painted Central American Wood Turtle Care",
+        "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-central-american-wood-turtle-care"
+      }
+    ]
+  }
+}

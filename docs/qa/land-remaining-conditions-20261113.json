@@ -1,0 +1,246 @@
+{
+  "marginated-tortoise": {
+    "title": "フチゾリリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "iberian-greek-tortoise": {
+    "title": "イベラギリシャリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "tunisian-greek-tortoise": {
+    "title": "チュニジアギリシャリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "寒く湿った環境が続かないようにします。冬や悪天候時に使う屋内設備も用意し、他のギリシャリクガメと同じ冬眠管理にはしません。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      },
+      {
+        "label": "Tortoise Trust：Tunisian tortoise care（2025）",
+        "url": "https://www.tortoisetrust.com/post/tunisian-tortoise-care-updated"
+      }
+    ]
+  },
+  "moroccan-greek-tortoise": {
+    "title": "モロッコギリシャリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "libyan-greek-tortoise": {
+    "title": "リビアギリシャリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "eastern-hermann-tortoise": {
+    "title": "ヒガシヘルマンリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "western-hermann-tortoise": {
+    "title": "ニシヘルマンリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "golden-greek-tortoise": {
+    "title": "ゴールデンギリシャリクガメの用品を選ぶ前に",
+    "items": [
+      "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+      "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+      "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "地中海沿岸のリクガメに共通する設備条件を整理しています。亜種ごとの温湿度や、掲載商品の適合を確認した一覧ではありません。",
+    "sources": [
+      {
+        "label": "RVC：Mediterranean tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "LafeberVet：Greek tortoise",
+        "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      }
+    ]
+  },
+  "cherry-head-tortoise": {
+    "title": "チェリーヘッドアカアシリクガメの用品を選ぶ前に",
+    "items": [
+      "湿り気を保てる床材と、光を避けて休める隠れ家を用意します。",
+      "浅い水場は出入りしやすく、体が収まるものを選びます。水替えできる位置に置きます。",
+      "暖まる場所だけでなく日陰も残します。成長後の体に合わせて、歩ける床面積と隠れ家の大きさを見直します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "アカアシリクガメの飼育資料に基づく設備条件です。チェリーヘッドだけの飼育試験や、商品の実地比較ではありません。",
+    "sources": [
+      {
+        "label": "Tortoise Library：Chelonoidis",
+        "url": "https://tortoiselibrary.com/species-information-2/chelonoidis/"
+      }
+    ]
+  },
+  "bowsprit-tortoise": {
+    "title": "ソリガメの用品を選ぶ前に",
+    "items": [
+      "水はけのよい床材と、身を隠せる場所を用意します。屋外なら雨水がたまらない場所を選びます。",
+      "浅い水入れは出入りしやすく置き、日なたと日陰の両方を残します。",
+      "よく動くため、設備を並べた後の床面積も確認します。オス同士を同居させる前提でケージを選ばないようにします。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "飼育者の実例を参考にしています。海外の屋外飼育時期や温度を、そのまま日本の飼育環境には当てはめません。",
+    "sources": [
+      {
+        "label": "Chris Leone：Angulate Tortoise（飼育記録）",
+        "url": "https://reptilesmagazine.com/the-angulate-tortoise-of-south-africa/"
+      }
+    ]
+  },
+  "pancake-tortoise": {
+    "title": "パンケーキリクガメの用品を選ぶ前に",
+    "items": [
+      "登れるため、壁の高さだけでなく上部から抜け出せない構造を確認します。",
+      "岩のすき間を模した隠れ家は、重い石が崩れないように固定します。",
+      "浅い水場と暖まる場所、熱を避ける隠れ家を分けます。UVBランプは製品ごとの照射距離を確認します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "飼育資料に基づく設備条件です。参考閲覧の種には購入候補を表示しません。",
+    "sources": [
+      {
+        "label": "Zoo Med：Pancake Tortoise",
+        "url": "https://zoomed.com/pancake-tortoise/"
+      }
+    ]
+  },
+  "chaco-tortoise": {
+    "title": "チャコリクガメの用品を選ぶ前に",
+    "items": [
+      "歩ける場所と、夜間や悪天候に退避できる屋内設備を用意します。",
+      "床材を敷き、保温器具は温度を測りながら使います。古い飼育例の器具やワット数をそのまま再現する必要はありません。",
+      "同居個体をひっくり返す行動が報告されています。複数飼育では分けて飼える場所も確保します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "古い飼育記録から住まいの確認事項を拾っています。現在の標準的な温度・食事・商品適合を裏付ける資料としては扱っていません。",
+    "sources": [
+      {
+        "label": "Heinz Wermuth：Chaco tortoise飼育記録（1967、翻訳再録）",
+        "url": "https://www.anapsid.org/chaco2.html"
+      }
+    ]
+  },
+  "bell-hinge-back-tortoise": {
+    "title": "ベルセオレガメの用品を選ぶ前に",
+    "items": [
+      "湿り気を残せる床材と隠れ家を用意します。乾燥系の用品候補だけで環境がそろうとは限りません。",
+      "体が収まり、無理なく出入りできる水場を用意します。",
+      "植物だけを食べるリクガメと同じ食事にはしません。購入時に食べていた餌と種類を確認して、食材も準備します。"
+    ],
+    "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+    "sourceNote": "分類が見直される前のセオレガメ属の資料を参考にしています。現在のベルセオレガメだけの温湿度や食餌配分は、この資料から一律に決めていません。",
+    "sources": [
+      {
+        "label": "Tortoise Trust：Kinixys属の飼育",
+        "url": "https://www.tortoisetrust.org/care/ckinixys.html"
+      }
+    ]
+  }
+}

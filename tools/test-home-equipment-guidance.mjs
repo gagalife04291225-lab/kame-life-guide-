@@ -1,3 +1,6 @@
+import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
+import './test-shared-products-round3.mjs';
+import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -8,14 +11,19 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8').replace(/
 const base=p=>execFileSync('git',['-C',cwd,'show','6b1ac588:'+p],{encoding:'utf8'}).replace(/\r\n/g,'\n');
 function context(reader){const c=vm.createContext({console,window:{},document:{}});const h=reader('shindan/index.html');const a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a);vm.runInContext(reader('data/products.js')+'\n'+reader('js/starter-kit.js')+'\n'+reader('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=context(base),now=context(read),plain=x=>JSON.parse(JSON.stringify(x));
+applyReviewedAmazonHolds(old.products,now.products);
+// Feed-only changes are required to match committed main exactly.
+const mainProducts=(()=>{const c=vm.createContext({});vm.runInContext(execFileSync('git',['-C',cwd,'show','fde885bd:data/products.js'],{encoding:'utf8'})+';this.p=PRODUCTS;',c);return c.p;})();
+for(const[id,p]of Object.entries(now.products))for(const k of ['rakutenLastUpdated','rakutenConfidence','rakutenPrice','rakutenImageUrl']){assert.deepEqual(p[k],mainProducts[id][k],id+' committed feed '+k);if(p[k]===undefined)delete old.products[id][k];else old.products[id][k]=p[k];}
+
 const stripped=p=>{const o=plain(p);delete o.why;return o;};
 assert.deepEqual(Object.keys(now.products),Object.keys(old.products));
-for(const id of Object.keys(old.products)){assert.deepEqual(stripped(now.products[id]),stripped(old.products[id]),id);if(!['substrate_grassland_mix','thermometer_dual_probe'].includes(id))assert.equal(now.products[id].why,old.products[id].why,id);}
+for(const id of Object.keys(old.products)){assert.deepEqual(stripped(now.products[id]),stripped(old.products[id]),id);if(!['substrate_grassland_mix','thermometer_dual_probe','food_tortoise_gel','supplement_multivitamin'].includes(id))assert.equal(now.products[id].why,old.products[id].why,id);}
 const js=read('js/starter-kit.js');assert.ok(!js.includes('SK_SPECIES_PRODUCT_HOLDS'));assert.ok(!js.includes('getHeldKitItems'));
 let count=0;
 for(const [route,list] of Object.entries(now.species).filter(([r])=>r!=='all'))for(let i=0;i<list.length;i++)for(const r of [route,'all'])for(const tier of ['budget','standard','premium']){
  const sp=list[i],prior=old.species[route][i];assert.equal(sp.name,prior.name);
- const key=now.resolveEquipmentKey(r,sp);assert.equal(key,old.resolveEquipmentKey(r,prior));
+ const key=now.resolveEquipmentKey(r,sp);assert.equal(key,old.resolveEquipmentKey(route,prior));
  const a=now.generateKitByTier(key,tier,sp.slug),b=old.generateKitByTier(key,tier);
  const clean=arr=>plain(arr).map(x=>({...x,product:stripped(x.product)}));assert.deepEqual(clean(a),clean(b),sp.name+' '+r+' '+tier);
  assert.deepEqual(plain(now.calcBundlePriceRange(a)),plain(old.calcBundlePriceRange(b)));
@@ -36,7 +44,7 @@ assert.ok(now.renderHomeEquipmentNote({name:'ホームセオレガメ'}).include
 // Mount actual implementation with an inert DOM; capture GA in memory, no network.
 function mountEvents(c,key){const events=[];const root={style:{},innerHTML:'',querySelectorAll(){return [];},querySelector(){return null;}};c.document={getElementById(){return root;}};c.gtag=(...args)=>events.push(plain(args));c.mountStarterKit({name:'ホームセオレガメ',slug:'home-hinge-back-tortoise',equipmentKey:key},'test',{sourcePage:'diagnosis'});return events;}
 for(const key of ['tortoise_dry_small','tortoise_forest'])assert.deepEqual(mountEvents(now,key),mountEvents(old,key));
-console.log('PASS: 119 species x native/all x 3 tiers (714), full product records except approved why updates unchanged, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.');
+console.log('PASS: 119 species x native/all x 3 tiers (714), native selections preserved; all normalized to native; product records unchanged except separately tested why and exact committed Rakuten-feed fields, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.');
 // Quick Facts: Home-only prose changes; all other species retain exact generated HTML.
 vm.runInContext(base('js/quick-facts.js'),old);
 vm.runInContext(read('js/quick-facts.js'),now);

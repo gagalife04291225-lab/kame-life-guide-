@@ -1,0 +1,87 @@
+[
+  {
+    "test": "test-annainin-numbers.mjs",
+    "exit": 0,
+    "output": "\n[1] parseNums — 整数・小数・範囲・未設定\n  PASS  整数\n  PASS  小数\n  PASS  小数（10.7）\n  PASS  範囲（整数）\n  PASS  範囲（小数を含む）\n  PASS  注記付き\n  PASS  雌雄の併記\n  PASS  数字なし\n  PASS  空文字\n  PASS  null\n  PASS  undefined\n  PASS  数値0\n\n[2] sizeSummary — 実データで小数が分割されない\n  PASS  最小値＝各種の上限のうち最小（小数を分割しない）\n  PASS  最大値\n  PASS  最小値は 6cm（17.6 の「6」等）にならない\n  PASS  最小の種の名前がある\n\n[3] sizeSummary — 小数だけのデータ\n  PASS  min/max/名前\n  PASS  雌雄併記は上限側（12）で比べる\n\n[4] 種データなし\n  PASS  sizeSummary は null を返す\n\n[5] 「大きさ」の回答が一般的な成体サイズと読めない\n  PASS  上限側の数字だと書いている\n  PASS  「成体の甲長はおおよそ」と書いていない\n  PASS  疑義ある最大報告と型の個別記録を集計しない\n  PASS  cherry-head-tortoiseの最大欄に集計可能な数字なし\n  PASS  albino-chinese-softshellの最大欄に集計可能な数字なし\n  PASS  ギリシャの疑義を集計除外用属性で示す\n\n25 passed, 0 failed\n"
+  },
+  {
+    "test": "test-asset-versions.mjs",
+    "exit": 0,
+    "output": "PASS: three assets; normal/root/nested/delayed URLs; query/hash; externals/comments/unrelated unchanged; CRLF hash stability; idempotency; changed asset propagation; CLI check; missing asset causes no partial HTML writes; workflow refresh/commit gate matrix 162 cases.\n"
+  },
+  {
+    "test": "test-diagnosis-equipment.mjs",
+    "exit": 0,
+    "output": "PASS: 119 species comparison guidance; 213 product cards; all tier comparison guidance\nPASS: thermostat never substitutes for a heater; two site enclosure guidelines synchronized\n"
+  },
+  {
+    "test": "test-equipment-route-consistency.mjs",
+    "exit": 0,
+    "output": "c\",\"slug\":\"eastern-long-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"siebenrocks-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"african-helmeted-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"west-african-mud-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"hilaire-side-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"amazon-matamata\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"scorpion-mud-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"giant-musk-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"mccords-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"collier-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"}]\n"
+  },
+  {
+    "test": "test-forest-round3-guidance.mjs",
+    "exit": 0,
+    "output": "PASS 21: forest guidance; old fails; links/scripts/JSON-LD/prices/temperature/CITES unchanged\n"
+  },
+  {
+    "test": "test-home-equipment-guidance.mjs",
+    "exit": 0,
+    "output": ",{\"route\":\"exotic\",\"slug\":\"hilaire-side-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"amazon-matamata\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"scorpion-mud-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"giant-musk-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"mccords-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"collier-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"}]\nPASS: 119 species x native/all x 3 tiers (714), native selections preserved; all normalized to native; product records unchanged except separately tested why and exact committed Rakuten-feed fields, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.\nPASS: Quick Facts and sticky CTA exact equality for other 118 species x 2 routes; Home labels corrected with cost text unchanged.\n"
+  },
+  {
+    "test": "test-home-legal-routing.mjs",
+    "exit": 0,
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: Home excluded from actual calcResult in 20 route/score cases; other 118 species legal/routing/functions identical; independently asserted care fields normalized; Home page retained.\n"
+  },
+  {
+    "test": "test-impressed-guidance.mjs",
+    "exit": 0,
+    "output": "PASS impressed guidance: FAQ JSON-LD, old failure, temperature meanings, existing links/scripts unchanged, master scope/verification preserved\n"
+  },
+  {
+    "test": "test-kid-lookup.mjs",
+    "exit": 0,
+    "output": "──────────────────────────────\nPASS 269 / FAIL 0\n"
+  },
+  {
+    "test": "test-lifespan-evidence.mjs",
+    "exit": 0,
+    "output": "90 lifespan checks passed\n"
+  },
+  {
+    "test": "test-measurement-labels.mjs",
+    "exit": 0,
+    "output": "ic\",\"slug\":\"amazon-matamata\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"scorpion-mud-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"giant-musk-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"mccords-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"},{\"route\":\"exotic\",\"slug\":\"collier-snake-necked-turtle\",\"from\":\"semi_aquatic_small\",\"to\":\"fully_aquatic\"}]\nPASS: 714 native-baseline selections; all normalized to native; commercial fields frozen except exact committed Rakuten-feed fields; six measurement labels/card link analytics attributes/bundle labels; other cards identical except separately tested two food descriptions and lighting badges; shared cost note.\nPASS: actual mount/click handlers for all six measurement products preserve canonical category keys and match display labels; base73117 demonstrably fails corrected-label assertion. No network APIs supplied.\n"
+  },
+  {
+    "test": "test-next-species-conditions.mjs",
+    "exit": 0,
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\n"
+  },
+  {
+    "test": "test-other-cites.mjs",
+    "exit": 0,
+    "output": "PASS:119 species unchanged except prior3 diet fields and sourced impressed description/temp/diet;103 conditions added/16 preserved; actual core/fallback renderer checked across119; old2 species diet displays fail corrected assertions.\nPASS: 119 species legal/routing stable outside 7 legal records; independently asserted care changes normalized; 7 pages schema/commerce retained with validated asset hashes\n"
+  },
+  {
+    "test": "test-rakuten-image.mjs",
+    "exit": 0,
+    "output": "\n[1] extractRakutenImageUrl — レスポンス形の両対応\n  PASS  v1 mediumImageUrls (オブジェクト配列)\n  PASS  v2 mediumImageUrls (文字列配列)\n  PASS  small へフォールバック\n  PASS  medium を small より優先\n  PASS  URLを改変しない（_ex をそのまま保持）\n\n[2] extractRakutenImageUrl — 不正入力は必ず null\n  PASS  画像フィールドなし\n  PASS  空配列\n  PASS  null / undefined\n  PASS  http は拒否\n  PASS  楽天外ホストは拒否\n  PASS  ホスト偽装は拒否\n  PASS  URLでない文字列は拒否\n  PASS  不正を飛ばして有効を拾う\n\n[3] patchProductInSource — 新フィールドの追加と降格クリア\n  PASS  未定義フィールドを追加できる\n  PASS  既存フィールドを壊さない\n  PASS  冪等: 重複行が増えない\n  PASS  降格で rakutenImageUrl が null\n  PASS  降格で status が search\n  PASS  降格で rakutenUrl が null\n\n[4] demotionUpdates が画像を落とすこと\n  PASS  demotionUpdates に rakutenImageUrl: null\n\n──────────────────────────────\nPASS 20 / FAIL 0\n"
+  },
+  {
+    "test": "test-shared-products-round3.mjs",
+    "exit": 0,
+    "output": "lighting_uvb {\"native\":97,\"all\":97,\"slots\":582}\nlighting_basking {\"native\":97,\"all\":97,\"slots\":582}\nfood_tortoise_gel {\"native\":27,\"all\":27,\"slots\":86}\nsupplement_multivitamin {\"native\":16,\"all\":16,\"slots\":64}\nPASS:714 selections match native-route baseline (all-route correction intentional); only two product why fields changed; only UVB/basking badges changed; all unrelated cards unchanged; old code fails corrected prose/badge assertions.\n"
+  },
+  {
+    "test": "test-shindan-route-labels.mjs",
+    "exit": 0,
+    "output": "PASS: 15 route badge renders across all 5 routes, including gate and return\n"
+  },
+  {
+    "test": "test-species-equipment-conditions.mjs",
+    "exit": 0,
+    "output": "PASS: all 119 species conditions; name fallback plus reference-only suppression; slot reset and 238 kit renders\nPASS: reference-only transitions clear equipment conditions at showResult entry\nPASS: CTA impression event emits after fee teaser removal\n"
+  }
+]

@@ -1,0 +1,648 @@
+{
+  "date": "2026-11-13",
+  "scope": "残40行の資料適用範囲整理。種直接の条件確認と科・群からの共通条件を分離。全品適合検証ではない。",
+  "counts": {
+    "archive_no_page_slug": 2,
+    "species_keeper": 18,
+    "species_group_not_subspecies_test": 1,
+    "species_breeder": 1,
+    "group_only": 4,
+    "family_group_only": 9,
+    "species_specialist_review": 1,
+    "species_review_explicit_group_inference": 1,
+    "historical_species_group": 2,
+    "species_rescue_document_mirror": 1
+  },
+  "rows": [
+    {
+      "name": "ヒラタニオイガメ",
+      "slug": null,
+      "route": "aquatic",
+      "condition_scope": "archive_no_page_slug",
+      "product_fit_verified": false,
+      "note": "公開ページslugなし。通常の公開条件追加対象ではない。テキサスチズの既存資料は再取得せず、ヒラタニオイの新規個別検証は未実施。"
+    },
+    {
+      "name": "ミスジドロガメ",
+      "slug": "striped-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/caresheet-3_striped_mud.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "スジクビニオイガメ",
+      "slug": "stripe-necked-musk-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/nackenstreifen-moschusschildkroeten-sternotherus-minor-peltifer/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "ホオアカドロガメ",
+      "slug": "red-cheeked-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "ニシキガメ",
+      "slug": "painted-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "チュウブニシキガメ",
+      "slug": "midland-painted-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ミシシッピチズガメ",
+      "slug": "mississippi-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/caresheet-mississippi_map.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ニセチズガメ",
+      "slug": "false-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/falsche-landkarten-mississippi-hoeckerschildkroeten-graptemys-pseudogeographica-kohnii/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ヤエヤマイシガメ",
+      "slug": "yaeyama-pond-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_group_not_subspecies_test",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates"
+      ]
+    },
+    {
+      "name": "ミナミイシガメ",
+      "slug": "yellow-pond-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ニシキマゲクビガメ（ピンクベリー）",
+      "slug": "pink-bellied-side-necked-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_breeder",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://reptilesmagazine.com/pink-bellied-side-necked-turtle-care-sheet/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "スワニークーター",
+      "slug": "suwannee-cooter",
+      "route": "aquatic",
+      "condition_scope": "group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://tortoisetrust.org/articles/aquatic.html"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "ブランディングガメ",
+      "slug": "blandings-turtle",
+      "route": "aquatic",
+      "condition_scope": "group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://tortoisetrust.org/articles/aquatic.html"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "サラドロガメ",
+      "slug": "mexican-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "ヨーロッパヌマガメ",
+      "slug": "european-pond-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.tortoisetrust.org/articles/orbicularis.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "カントンクサガメ",
+      "slug": "canton-reeves-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_specialist_review",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_068_nigricans_v1_2012.pdf"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "キイロドロガメ",
+      "slug": "yellow-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "ハーレラドロガメ",
+      "slug": "herrera-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "enclosure_evidence_missing"
+      ]
+    },
+    {
+      "name": "シロクチドロガメ",
+      "slug": "white-lipped-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "クロコブチズガメ",
+      "slug": "black-knobbed-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/cs-bkmap.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ワモンチズガメ",
+      "slug": "ringed-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/pracht-hoeckerschildkroeten-graptemys-oculifera/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "フトマユチズガメ",
+      "slug": "ouachita-map-turtle-sp",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/cs-ouamap.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "サルヴィンオオニオイガメ",
+      "slug": "giant-musk-turtle-mx",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates"
+      ]
+    },
+    {
+      "name": "ハナガメ",
+      "slug": "chinese-stripe-necked-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/chinesische-streifenschildkroeten-ocadia-mauremys-sinensis/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "トウブドロガメ",
+      "slug": "eastern-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "キタチズガメ",
+      "slug": "northern-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/caresheet-northern_map.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "テキサスチズガメ",
+      "slug": null,
+      "route": "aquatic",
+      "condition_scope": "archive_no_page_slug",
+      "product_fit_verified": false,
+      "note": "公開ページslugなし。通常の公開条件追加対象ではない。テキサスチズの既存資料は再取得せず、ヒラタニオイの新規個別検証は未実施。"
+    },
+    {
+      "name": "アラバマチズガメ",
+      "slug": "alabama-map-turtle",
+      "route": "aquatic",
+      "condition_scope": "group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://tortoisetrust.org/articles/aquatic.html"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "ホオジロクロガメ",
+      "slug": "asian-black-marsh-turtle",
+      "route": "aquatic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/schwarze-dickkopf-schildkroete-siebenrockiella-crassicollis/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "ハナナガドロガメ",
+      "slug": "narrow-bridged-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "フロリダドロガメ",
+      "slug": "florida-mud-turtle",
+      "route": "aquatic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": []
+    },
+    {
+      "name": "リオグランデクーター",
+      "slug": "rio-grande-cooter",
+      "route": "aquatic",
+      "condition_scope": "species_review_explicit_group_inference",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_100_gorzugi_v1_2016.pdf"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "トゲスッポン",
+      "slug": "spiny-softshell-turtle",
+      "route": "exotic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://austinsturtlepage.com/Care/caresheet-spiny_softshell.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "スベスッポン",
+      "slug": "smooth-softshell-turtle",
+      "route": "exotic",
+      "condition_scope": "group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://tortoisetrust.org/articles/aquatic.html"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "フロリダスッポン",
+      "slug": "florida-softshell-turtle",
+      "route": "exotic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.austinsturtlepage.com/Care/cs-flsoft.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "スッポン（シナスッポン）",
+      "slug": "chinese-softshell-turtle",
+      "route": "exotic",
+      "condition_scope": "historical_species_group",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "アルビノシナスッポン",
+      "slug": "albino-chinese-softshell",
+      "route": "exotic",
+      "condition_scope": "historical_species_group",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "サソリドロガメ",
+      "slug": "scorpion-mud-turtle",
+      "route": "exotic",
+      "condition_scope": "species_keeper",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ]
+    },
+    {
+      "name": "スジオオニオイガメ",
+      "slug": "giant-musk-turtle",
+      "route": "exotic",
+      "condition_scope": "family_group_only",
+      "sources": [
+        {
+          "label": "参考資料（共通条件）",
+          "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    },
+    {
+      "name": "コウホソナガクビガメ",
+      "slug": "collier-snake-necked-turtle",
+      "route": "exotic",
+      "condition_scope": "species_rescue_document_mirror",
+      "sources": [
+        {
+          "label": "参考資料（飼育条件）",
+          "url": "https://paperzz.com/doc/9451149/care-and-husbandry-of-captive-oblong-turtles"
+        }
+      ],
+      "product_fit_verified": false,
+      "existing_route_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ]
+    }
+  ]
+}

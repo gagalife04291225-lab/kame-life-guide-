@@ -201,10 +201,12 @@
           "provenance": "official",
           "institution": "CITES事務局",
           "sources": [
-            "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf"
+            "https://cites.org/sites/default/files/eng/news/pr/2013/cop16_final_%20decisions.pdf",
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html",
+            "https://www.env.go.jp/press/101740.html"
           ],
-          "note": "CoP16採択・2013-06-12発効。野生個体の商業目的輸出はゼロ枠",
-          "last_verified": "2026-08-17"
+          "note": "CoP16採択・2013-06-12発効。附属書II。環境省の輸出助言方針では野外捕獲個体と飼育繁殖個体で条件が異なる。野生個体すべての商業輸出がゼロ枠という扱いではない。",
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": "2013-06-12",
@@ -2277,7 +2279,7 @@
       },
       "care": {
         "enclosure_jp": {
-          "value": "45〜60cm規格で終生飼育可",
+          "value": "45〜60cm規格（当サイト目安・体格で見直し）",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
@@ -7066,9 +7068,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "NEEDS_REVIEW",
-          "note": "附属書III（中国）の可能性。原文確認要"
+          "value": "III",
+          "verification": "CONFIRMED",
+          "note": "附属書III（中国が掲載国）。2026年3月5日適用の統合附属書で確認。国内の外来生物法による規制とは別。",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -7313,7 +7321,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "Mauremys reevesii と同種。甲長24cm（CONFIRMED）を国内水槽規格へ換算",
+            "basis": "Mauremys nigricansはM. reevesiiとは別種。90cm以上は当サイトの既存目安であり、別種の甲長から換算した最低寸法ではない。体格・奥行き・陸場を置いた後の広さを別途確認する。",
             "jp_note": "成体（メス25cm級）は90cm以上＋強力ろ過"
           },
           "last_verified": "2026-09-12"
@@ -8470,28 +8478,33 @@
       },
       "care": {
         "air_temp_c": {
-          "value": "冷涼多湿（高地林・冷やす系）",
+          "value": "暑さを避ける場所と、冷え込むときに暖まれる場所を用意する",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
             "basis": "",
-            "jp_note": "夏はエアコン前提"
+            "jp_note": "隠れ家と活動場所で温度を測り、必要に応じて空調や保温で調整する"
           },
-          "last_verified": "2026-08-17",
-          "sources": []
+          "last_verified": "2026-11-12",
+          "sources": [
+            "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232",
+            "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+          ]
         },
         "diet": {
-          "value": "キノコ食中心・餌付け極難",
+          "value": "キノコを中心に植物性の餌も組み合わせる",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "not_recommended_jp",
             "basis": "",
-            "jp_note": "一般には推奨しない"
+            "jp_note": "一般的なリクガメ用フードだけで食事をそろえず、キノコと植物性の餌を用意する。一般には推奨しない"
           },
-          "last_verified": "2026-08-17",
-          "sources": []
+          "last_verified": "2026-11-12",
+          "sources": [
+            "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232"
+          ]
         },
         "cautions": {
           "value": [
@@ -8508,16 +8521,20 @@
           "sources": []
         },
         "enclosure_jp": {
-          "value": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）",
+          "value": "成体は120cm規格でも手狭。特注ケージや広い飼育場所を用意し、暑さを避ける場所と必要時に暖まれる場所を確保する",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
             "basis": "甲長31cm×5=155cm。国内ケージ規格（最大120cm）を超える。飼育難易度が高く『impressa病』で知られる種でもあり、環境は広めに取る",
-            "jp_note": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）"
+            "jp_note": "成体は120cm規格でも手狭。特注ケージや広い飼育場所を用意し、暑さを避ける場所と必要時に暖まれる場所を確保する"
           },
           "note": "検証済みの max_shell_length_cm から換算ルール（陸生＝甲長×5→最近傍規格）で算出。運営者は本種を飼育していない",
-          "last_verified": "2026-09-12"
+          "last_verified": "2026-11-12",
+          "sources": [
+            "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232",
+            "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+          ]
         }
       }
     },
@@ -8867,10 +8884,11 @@
           "institution": "CITES事務局",
           "sources": [
             "https://cites.org/eng/taxonomy/term/4665",
-            "https://cites.org/sites/default/files/eng/cop/09/prop/E09-Prop-45_Testudo.PDF"
+            "https://cites.org/sites/default/files/eng/cop/09/prop/E09-Prop-45_Testudo.PDF",
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
           ],
           "note": "CoP9で附属書IIからIへ移行",
-          "last_verified": "2026-08-17"
+          "last_verified": "2026-11-13"
         },
         "since": {
           "value": "1995-02-16",
@@ -9046,10 +9064,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -9101,10 +9123,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -9156,10 +9182,14 @@
       "cites": {
         "appendix": {
           "value": "I",
-          "verification": "LIKELY",
+          "verification": "CONFIRMED",
           "provenance": "official",
-          "note": "附属書I（species.jsのarchive扱いと整合。原文最終確認は次フェーズ）",
-          "last_verified": "2026-08-17"
+          "note": "2026年3月5日適用の統合附属書で附属書Iへの掲載を確認。",
+          "last_verified": "2026-11-13",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）"
         },
         "since": {
           "value": null,
@@ -10126,8 +10156,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,
@@ -10207,8 +10244,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,
@@ -10284,8 +10328,15 @@
       },
       "cites": {
         "appendix": {
-          "value": null,
-          "verification": "UNPROVEN"
+          "value": "not_listed",
+          "verification": "CONFIRMED",
+          "last_verified": "2026-11-13",
+          "provenance": "official",
+          "sources": [
+            "https://zoek.officielebekendmakingen.nl/trb-2026-100.html"
+          ],
+          "institution": "オランダ政府官報（CITES附属書の統合公表）",
+          "note": "2026年3月5日適用の統合附属書では非掲載。種名だけでなく属・科の一括掲載がないことも確認。輸出国の国内法など、CITES以外の規制がないことを意味しない。"
         },
         "since": {
           "value": null,
@@ -12099,7 +12150,7 @@
       },
       "care": {
         "enclosure_jp": {
-          "value": "45〜60cm規格で終生飼育可",
+          "value": "45〜60cm規格（当サイト目安・体格で見直し）",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
@@ -12308,13 +12359,13 @@
           "note": "亜種 Chrysemys picta bellii の care 値は親種 Chrysemys picta のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
         },
         "enclosure_jp": {
-          "value": "オス60cm可・メス90〜120cm",
+          "value": "オス60cm・メス90〜120cm（当サイト目安）",
           "verification": "LIKELY",
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
             "basis": "亜種中最大（メス26.6cm記録）のサイズを国内水槽規格へ換算【算出経緯】ここに残す数値は既存の国内目安を作った当時の計算。今回の記録最大値から安全な最小寸法を確定したものではない。",
-            "jp_note": "オス60cm可・メス90〜120cm"
+            "jp_note": "オス60cm・メス90〜120cm（当サイト目安）"
           },
           "last_verified": "2026-09-12"
         }

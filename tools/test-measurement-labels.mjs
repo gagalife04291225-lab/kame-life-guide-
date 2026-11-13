@@ -1,18 +1,26 @@
+import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
+import './test-shared-products-round3.mjs';
+import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
 const cwd=fileURLToPath(new URL('../',import.meta.url));const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8').replace(/\r\n/g,'\n');const base=p=>execFileSync('git',['-C',cwd,'show','893e89d2:'+p],{encoding:'utf8'}).replace(/\r\n/g,'\n');
 function ctx(rd){let h=rd('shindan/index.html'),a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a),c=vm.createContext({window:{},document:{},console});vm.runInContext(rd('data/products.js')+'\n'+rd('js/starter-kit.js')+'\n'+rd('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=ctx(base),now=ctx(read),plain=x=>JSON.parse(JSON.stringify(x));
+applyReviewedAmazonHolds(old.products,now.products);
+// Feed-only changes are required to match committed main exactly.
+const mainProducts=(()=>{const c=vm.createContext({});vm.runInContext(execFileSync('git',['-C',cwd,'show','fde885bd:data/products.js'],{encoding:'utf8'})+';this.p=PRODUCTS;',c);return c.p;})();
+for(const[id,p]of Object.entries(now.products))for(const k of ['rakutenLastUpdated','rakutenConfidence','rakutenPrice','rakutenImageUrl']){assert.deepEqual(p[k],mainProducts[id][k],id+' committed feed '+k);if(p[k]===undefined)delete old.products[id][k];else old.products[id][k]=p[k];}
+
 const strip=p=>{let x=plain(p);delete x.why;return x;};
-for(const [id,p] of Object.entries(old.products)){assert.deepEqual(strip(now.products[id]),strip(p));if(id!=='thermometer_dual_probe')assert.equal(now.products[id].why,p.why);}
+for(const [id,p] of Object.entries(old.products)){assert.deepEqual(strip(now.products[id]),strip(p));if(!['thermometer_dual_probe','food_tortoise_gel','supplement_multivitamin'].includes(id))assert.equal(now.products[id].why,p.why);}
 let n=0;for(const [r,list] of Object.entries(now.species).filter(([r])=>r!=='all'))for(let i=0;i<list.length;i++)for(const route of [r,'all'])for(const tier of ['budget','standard','premium']){
- const key=now.resolveEquipmentKey(route,list[i]);assert.equal(key,old.resolveEquipmentKey(route,old.species[r][i]));
+ const key=now.resolveEquipmentKey(route,list[i]);assert.equal(key,old.resolveEquipmentKey(r,old.species[r][i]));
  const a=now.generateKitByTier(key,tier),b=old.generateKitByTier(key,tier);
  assert.deepEqual(plain(a).map(x=>({...x,product:strip(x.product)})),plain(b).map(x=>({...x,product:strip(x.product)})));assert.deepEqual(plain(now.calcBundlePriceRange(a)),plain(old.calcBundlePriceRange(b)));n++;
 }assert.equal(n,714);
 const labels={thermometer_digital:'温湿度計',thermometer_aqua:'水温計',thermometer_dual_probe:'温度計（本体・外部センサー）',thermometer_infrared:'赤外線温度計（表面温度）',thermometer_wifi:'温湿度計',thermometer_analog:'温度計'};
 for(const [id,p] of Object.entries(now.products)){
  const item={cat:p.category,tier:'standard',product:p},html=now.renderSkCard(item,'test','tortoise_dry_small');
- if(p.category!=='thermometer'){assert.equal(html,old.renderSkCard({...item,product:old.products[id]},'test','tortoise_dry_small'),id);continue;}
+ if(p.category!=='thermometer'){let expected=old.renderSkCard({...item,product:old.products[id]},'test','tortoise_dry_small');if(['food_tortoise_gel','supplement_multivitamin'].includes(id))expected=expected.replace(old.products[id].why,p.why);if(p.category==='lighting_uvb')expected=expected.replace('必須アイテム','照射条件を確認');if(p.category==='lighting_basking')expected=expected.replace('必須アイテム','照射先の温度を確認');if(p.amazonLinkStatus==='identity_review')expected=expected.replace(/(<span class="sk-card-btn sk-card-btn--soon">)[^<]*(<\/span>)/,'$1Amazonの掲載先を確認中$2');assert.equal(html,expected,id);continue;}
  assert.ok(html.includes('<div class="sk-cat-label">'+labels[id]+'</div>'),id);
  for(const [,display] of html.matchAll(/data-display-cat="([^"]*)"/g))assert.equal(display,labels[id]);
  const tabs=vm.runInContext('SK_TABS',now).map(tab=>({tab,picks:[item]}));
@@ -21,7 +29,7 @@ for(const [id,p] of Object.entries(now.products)){
 assert.equal(now._skDisplayCat('thermometer'),'温度・湿度の測定器');assert.equal(now.getMeasurementLabel({id:'unknown'}),'温度・湿度の測定器');
 assert.ok(now.products.thermometer_dual_probe.why.includes('湿度は測れない'));assert.ok(!now.products.thermometer_dual_probe.why.includes('プローブ2本'));
 const html=now.renderStarterKitHtmlV2('tortoise_dry_small',{name:'test'});assert.equal((html.match(/class="sk-hint sk-cost-scope"/g)||[]).length,1);assert.ok(html.includes('床材の必要袋数'));assert.ok(html.includes('別売の照明器具'));
-console.log('PASS: 714 selections and all product commercial fields unchanged; six measurement labels/card link analytics attributes/bundle labels; other 136 product cards byte-identical; shared cost note.');
+console.log('PASS: 714 native-baseline selections; all normalized to native; commercial fields frozen except exact committed Rakuten-feed fields; six measurement labels/card link analytics attributes/bundle labels; other cards identical except separately tested two food descriptions and lighting badges; shared cost note.');
 // Execute real mountStarterKit click handlers with an inert DOM and memory-only gtag.
 // Links are parsed from the actual rendered card HTML, not constructed from expected labels.
 function clickEvents(context,product){

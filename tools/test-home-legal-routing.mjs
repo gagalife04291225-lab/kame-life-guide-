@@ -1,3 +1,4 @@
+import './test-next-species-conditions.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -24,13 +25,28 @@ for(const [id,list] of Object.entries(c.S)) for(const scores of [{},{humid:100,a
 }
 assert.equal(cases,20);assert.deepEqual(warnings,[]);
 const stable=s=>JSON.stringify(s,(k,v)=>typeof v==='function'?v.toString():v);
+
+// These exact care edits are asserted by test-next-species-conditions.
+// Preserve all legal/routing/function fields in this original-baseline comparison.
+function normalizeIndependentCare(a,b){
+ if(a.slug==='chinese-stripe-necked-turtle'){assert.equal(b.cites,'CITES III');delete a.cites;delete b.cites;}
+ if(a.slug==='impressed-tortoise'){
+  a.reason=b.reason;
+  a.specs={...a.specs,'主な食事':b.specs['主な食事'],'温度':b.specs['温度']};
+  a.coreSpecs={...a.coreSpecs,temp:b.coreSpecs.temp,diet:b.coreSpecs.diet};
+ }
+ if(['elongated-tortoise','red-footed-tortoise'].includes(a.slug)){
+  a.coreSpecs={...a.coreSpecs,diet:b.coreSpecs.diet};
+  if(a.slug==='elongated-tortoise')a.specs={...a.specs,'主な食事':b.specs['主な食事']};
+ }
+}
 let unchanged=0;
 for(const route of ['land','aquatic','forest','exotic']){
  assert.equal(old[route].length,c.S[route].length);
- old[route].forEach((sp,i)=>{const now=c.S[route][i];assert.equal(sp.name,now.name);if(sp.name!=='ホームセオレガメ'){const a={...sp},b={...now};if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(sp.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(sp.legal==='conditional_invasive'?['reason']:[])]){delete a[k];delete b[k];}}assert.equal(stable(a),stable(b),sp.name);unchanged++;}});
+ old[route].forEach((sp,i)=>{const now=c.S[route][i];assert.equal(sp.name,now.name);if(sp.name!=='ホームセオレガメ'){const a={...sp},b={...now};if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(sp.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(sp.legal==='conditional_invasive'?['reason']:[])]){delete a[k];delete b[k];}}normalizeIndependentCare(a,b);assert.equal(stable(a),stable(b),sp.name);unchanged++;}});
 }
 assert.equal(unchanged,118);
 const home=c.S.land.find(s=>s.name==='ホームセオレガメ');
 assert.ok(home.hasPage);assert.equal(home.slug,'home-hinge-back-tortoise');assert.equal(home.legal,'cites_i');assert.equal(home.availability,'archive');assert.equal(home.match({}),false);assert.equal(home.score({}),-9999);
 assert.ok(home.diagnosisNotice.includes('飼育が一律に禁止されたという意味ではありません'));
-console.log(`PASS: Home excluded from actual calcResult in ${cases} route/score cases; other ${unchanged} species data/functions identical; Home page retained.`);
+console.log(`PASS: Home excluded from actual calcResult in ${cases} route/score cases; other ${unchanged} species legal/routing/functions identical; independently asserted care fields normalized; Home page retained.`);

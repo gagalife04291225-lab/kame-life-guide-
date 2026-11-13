@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-13",
+  "decision": "Resolved exact T5 24W replacement-tube identity through Amazon Japan product details, manufacturer model and UPC. UVB200 excluded from purchase candidates without substituting another product.",
+  "products": [
+    {
+      "id": "uvb_t5_desert_std",
+      "old_asin": "B00JZFJ5R0",
+      "name_preserved": "Zoo Med ReptiSun 10.0 UVB T5",
+      "evidence": [
+        "https://item.rakuten.co.jp/hakuei8981/b00jzfj5r0/",
+        "https://www.w-monster.com/shop/products/detail/192",
+        "https://www.amazon.co.jp/dp/B00AQU8HAO",
+        "https://zoomed.com/t5-ho-reptisun-10-0-uvb/"
+      ],
+      "limit": "Amazon Japan live DOM verified 2026-11-13. Stock is dynamic; 10.0 was unavailable at observation. No stock promise or API image use.",
+      "verified_asin": "B00AQU8HAO",
+      "model": "OS5-24",
+      "upc": "097612348248",
+      "variant": "24W T5 HO replacement tube; fixture not included"
+    },
+    {
+      "id": "uvb_t5_forest_std",
+      "old_asin": "B00JZFJ5LQ",
+      "name_preserved": "Zoo Med ReptiSun 5.0 UVB T5",
+      "evidence": [
+        "https://rium-data.com/products/detail/16064",
+        "https://www.w-monster.com/shop/products/detail/193",
+        "https://www.amazon.co.jp/dp/B00AQU8GF0",
+        "https://zoomed.com/reptisun-5-0-uvb-t5-ho-high-output-linear-lamp/"
+      ],
+      "limit": "Amazon Japan live DOM verified 2026-11-13. Stock is dynamic; 10.0 was unavailable at observation. No stock promise or API image use.",
+      "verified_asin": "B00AQU8GF0",
+      "model": "FS5-24",
+      "upc": "097612347241",
+      "variant": "24W T5 HO replacement tube; fixture not included"
+    }
+  ],
+  "uvb200": {
+    "model": "PT2340",
+    "upc": "015561223409",
+    "evidence": [
+      "https://exo-terra.com/products/lighting/uvb-compact-bulbs/reptile-uvb200-13w/",
+      "https://www.interaquaristik.de/Exo-Terra-Reptile-UVB-200-13-W-E27/250488"
+    ],
+    "limit": "Amazon Japan exact model+UPC query returned no matching pet products. This is not proof of worldwide absence. Japanese 100V/GEX domestic version not established. Overseas reference link only, no shopping card."
+  }
+}

@@ -89,7 +89,7 @@ master が UNPROVEN のため、どちらかへ寄せる作業は**根拠がな�
 | ブランディングガメ | Emydoidea blandingii | M | 上級 | CITES II | 黄色い喉元・国内CB確認・CoP16（2013）掲載 |
 | チキンタートル | Deirochelys reticularia | M | 上級 | なし | 首がきわめて長い稀少種 |
 | ホオジロクロガメ | Siebenrockiella crassicollis | M | 中〜上級 | CITES II | 東南アジア産・黒色で頭部に白斑 |
-| ハナガメ | Mauremys sinensis | M | 入門〜中級 | なし | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
+| ハナガメ | Mauremys sinensis | M | 入門〜中級 | CITES III | 特定外来生物（2016指定・交雑種も対象）・診断では案内しない |
 
 ---
 
