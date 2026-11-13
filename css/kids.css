@@ -660,3 +660,22 @@ span.k-stop .k-dot{border-color:#b8d0c0;color:#4f6a5a}
 /* ゴールの補足リンク行 */
 .k-fact .k-note{font-size:17px;color:var(--k-ink-soft);margin-top:12px;line-height:1.9}
 .k-fact .k-note a{color:var(--k-green);font-weight:700}
+
+/* 子ども向け本文・ふりがなは大人向けの共通サイズから独立させる。 */
+body.k-body{font-size:20px;}
+body.k-body ruby rt{font-size:clamp(12px,.65em,18px);line-height:1.2;}
+.k-hero p,.k-card p,.k-promise li,.k-dont p,.k-q-choices button,.k-q-feedback,
+.k-fact p,.k-wow p,.k-lookrow p,.k-mini button,.k-reveal p{font-size:20px;}
+.k-top a,.k-furigana-bar span,.k-q-progress,.k-link span,.k-footer p,
+.k-here,.k-map-title,.k-nav .lbl,.k-find,.k-rule p{font-size:18px;}
+.k-photo figcaption,.k-illust figcaption,.k-stop-no{font-size:16px;}
+.k-map-title{line-height:2;}
+.k-nav .lbl{line-height:1.7;}
+.k-dot,.k-stop[aria-current="page"] .k-dot{font-size:18px;}
+.k-fact .k-note,.k-caution{font-size:18px!important;}
+@media(max-width:599px){
+  .k-map-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 2px;}
+  .k-map-list::before{display:none;}
+  .k-stop{min-width:0;min-height:64px;}
+  .k-stop-no{display:block;font-size:16px;line-height:1.7;font-weight:700;white-space:normal;}
+}
