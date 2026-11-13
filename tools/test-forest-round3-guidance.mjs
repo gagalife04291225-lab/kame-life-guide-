@@ -14,7 +14,16 @@ execFileSync('python',['tools/test_cites_document_wording.py'],{cwd:root,stdio:'
 const normalizeLaw=(text,path)=>{const legal=execFileSync('git',['-C',root,'show','c763fa94:'+path],{encoding:'utf8'}).replace(/\r\n/g,'\n');const box=x=>x.match(/<div class="cites-box">.*?<\/div>/)?.[0];assert.equal(box(text),box(legal));return text.replace(box(text),box(base(path)));};
 let checks=0;const ok=x=>{assert.ok(x);checks++;};
 for(const path of paths){
- const now=normalizeLaw(load(path),path),old=base(path);
+ let now=normalizeLaw(load(path),path);const old=base(path);
+ if(path==='species/brown-wood-turtle-manni.html'){
+  const [value,note,url]=JSON.parse(load('tools/lifespan-fixtures.json'))['brown-wood-turtle-manni'];
+  assert.ok(now.includes(note));
+  assert.equal([...now.matchAll(/href="([^"]+)"/g)].filter(m=>m[1]===url).length,1);
+  now=now.replace('href="'+url+'"','data-lifespan-source="'+url+'"');
+  const exact="lifespan: '"+value+"', lifespanLabel: '寿命の資料'";
+  assert.equal(now.split(exact).length-1,2);
+  now=now.replaceAll(exact,"lifespan: '20〜50年'");
+ }
  assert.deepEqual(urls(now),urls(old),'Existing links/order unchanged');checks++;
  assert.deepEqual(scripts(now),scripts(old),'Scripts including JSON-LD/GA4 unchanged except shared asset cache version');checks++;
  for(const m of now.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)){JSON.parse(m[1]);checks++;}
