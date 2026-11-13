@@ -20,15 +20,15 @@
 }
 .species-photo figcaption{
   font-family:"Noto Serif JP",serif;
-  font-size:.74rem;
+  font-size:0.875rem;
   line-height:1.5;
-  color:#8a8474;
+  color:#625e51;
   padding:8px 12px 10px;
   background:var(--parchment,#f4efe2);
   text-align:right;
 }
-.species-photo figcaption a{color:#8a8474;text-decoration:underline;}
+.species-photo figcaption a{color:#625e51;text-decoration:underline;}
 @media(max-width:520px){
   .species-photo{margin-top:18px;padding:0 14px;}
-  .species-photo figcaption{font-size:.68rem;}
+  .species-photo figcaption{font-size:0.875rem;}
 }

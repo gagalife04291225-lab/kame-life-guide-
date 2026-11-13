@@ -148,7 +148,7 @@
     s.id = 'comparison-cta-styles';
     s.textContent = [
       '.cmp-section{margin:44px 0 0;}',
-      '.cmp-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;',
+      '.cmp-eyebrow{font-size:0.875rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;',
         'color:var(--accent-dark,#8f5f2c);margin-bottom:10px;}',
       '.cmp-heading{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;',
         'font-size:1.25rem;color:var(--forest,#2f4a3c);margin-bottom:16px;}',
@@ -164,7 +164,7 @@
       '.cmp-label{font-weight:700;font-size:.97rem;color:var(--forest-deep,#0d1f1a);',
         'margin-bottom:10px;line-height:1.35;}',
       '.cmp-points{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}',
-      '.cmp-point{font-size:.72rem;font-weight:700;',
+      '.cmp-point{font-size:0.875rem;font-weight:700;',
         'background:var(--parchment,#f4efe2);border:1px solid #ddd5be;',
         'color:var(--accent-dark,#8f5f2c);padding:3px 10px;border-radius:20px;}',
       '.cmp-btn{display:inline-flex;align-items:center;justify-content:center;',

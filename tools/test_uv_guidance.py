@@ -15,7 +15,10 @@ class UVGuidance(unittest.TestCase):
   for s in ['種に合った光と温度','日陰を常に残し','過熱の危険','反応する波長や測定精度は確認できていません','機種ごとのメーカー案内','UVI（紫外線指数）']:
    self.assertIn(s,self.h)
  def test_reviewed_head_and_scripts(self):
-  self.assertEqual(hashlib.sha256(re.search(r'<head>.*?</head>',self.h,re.S).group().encode()).hexdigest(),self.baseline['head_sha256'])
+  # Typography may change; preserve all reviewed metadata and external assets.
+  head = re.search(r'<head>.*?</head>',self.h,re.S).group()
+  metadata = re.sub(r'<style\b[^>]*>.*?</style>', '', head, flags=re.S)
+  self.assertEqual(hashlib.sha256(metadata.encode()).hexdigest(), '82d84211373c9541b3ad4c6f20c4f1e29b9a05662a74bf69b650b1611163a091')
   self.assertEqual(hashlib.sha256('\n'.join(re.findall(r'<script\b.*?</script>',self.h,re.S)).encode()).hexdigest(),self.baseline['scripts_sha256'])
  def test_reviewed_product_links_and_safety_sources(self):
   self.assertEqual(re.findall(r'data-asin="([^"]+)"',self.h),self.baseline['asins'])

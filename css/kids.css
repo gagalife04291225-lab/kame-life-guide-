@@ -376,7 +376,7 @@ a.k-stop:focus-visible{outline:3px solid var(--k-green);outline-offset:2px}
   background:#ffffff;
   border:2px solid #7d9a88;
   display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:800;line-height:1;
+  font-size:14px;font-weight:800;line-height:1;
   color:#2b4a39;
 }
 /* まだ行っていない場所は道の色に近づけて、行ける場所と区別する */
@@ -398,7 +398,7 @@ span.k-stop .k-dot{border-color:#b8d0c0;color:#4f6a5a}
 /* 画面が広いときだけ場所の名前も出す */
 @media(min-width:600px){
   .k-map-list::before{top:30px}
-  .k-stop-no{display:block;font-size:12px;font-weight:700;color:#3d5c4b;white-space:nowrap}
+  .k-stop-no{display:block;font-size:14px;font-weight:700;color:#3d5c4b;white-space:nowrap}
   span.k-stop .k-stop-no{color:#4f6a5a}
 }
 
@@ -577,7 +577,7 @@ span.k-stop .k-dot{border-color:#b8d0c0;color:#4f6a5a}
   gap:4px;padding:12px 14px;
 }
 .k-illust .ph .no{
-  font-size:12px;font-weight:800;letter-spacing:.08em;
+  font-size:14px;font-weight:800;letter-spacing:.08em;
   color:#3d5c4b;                 /* 対 #f2f7ef 6.4:1 */
 }
 .k-illust .ph .cut{
