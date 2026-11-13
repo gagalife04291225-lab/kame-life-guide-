@@ -875,3 +875,5 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - PR/Commit: codex-emergency-guidance-20261113（このコミット、未merge）
 - Approver: Owner のサイト不具合修正・優先順の修正指示。公開は個別確認前。
 - Conforms: Scopeは受診タイミングと関連する誤解の修正。医療監修の捏造なし。商品リンク・計測変更なし。
+
+- 追加検証: 独立一次確認できなかったRVCの7日という数値を本文/FAQから撤去。症状時は日数を待たず相談する案内に統一。

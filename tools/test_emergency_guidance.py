@@ -21,7 +21,7 @@ class EmergencyGuidance(unittest.TestCase):
   s=read("lethargy");self.assertNotIn("⚠ 要観察",s);self.assertNotIn("まず最初に温度の実測",s)
   self.assertNotIn("この一点で、原因の可能性が大きく絞り込まれます",read("swollen-eyes"))
  def test_hibernation_scope(self):
-  s=read('hibernation-trouble');self.assertNotIn('1〜2週間',s);self.assertIn('7日を待ちません',s);self.assertIn('全種共通の待機日数ではありません',s)
+  s=read('hibernation-trouble');self.assertNotIn('1〜2週間',s);self.assertNotIn('7日',s);self.assertIn('日数を待たずに連絡',s)
  def test_jsonld_matches_visible_faq(self):
   for name in NAMES:
    s=read(name);body=re.sub(r'<script.*?</script>','',s,flags=re.S)
