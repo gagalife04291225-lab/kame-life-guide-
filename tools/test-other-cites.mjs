@@ -15,6 +15,7 @@ let n=0;
 for(const route of ['land','aquatic','forest','exotic']) for(let i=0;i<before[route].length;i++){
  const a={...before[route][i]},b={...after[route][i]};assert.equal(a.slug,b.slug);
  if(slugs.includes(a.slug)) for(const k of ['cites','legalNote','diagnosisNotice',...(a.legal==='conditional_invasive'?['reason']:[])]){delete a[k];delete b[k];}
+ if(a.slug==='chinese-stripe-necked-turtle'){assert.equal(b.cites,'CITES III');delete a.cites;delete b.cites;}
  assert.equal(stable(a),stable(b),a.slug);n++;
 }
 assert.equal(n,119);
@@ -33,7 +34,9 @@ for(const slug of slugs){
  for(const m of page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))JSON.parse(m[1]);
  const prev=execFileSync('git',['-C',root,'show',base+':species/'+slug+'.html'],{encoding:'utf8'});
  const commerce=s=>[...s.matchAll(/(?:href|src)="([^"]+)"/g)].map(x=>x[1]).filter(x=>/amazon|amzn|rakuten|googletagmanager|starter-kit|products\.js/.test(x));
- assert.deepEqual(commerce(page),commerce(prev),slug+' commerce');
+ // Product cache hashes legitimately change after catalog updates; preserve actual destinations.
+ const withoutVersion=xs=>xs.map(x=>x.replace(/([?&])v=[a-f0-9]+(?=&|$)/g,''));
+ assert.deepEqual(withoutVersion(commerce(page)),withoutVersion(commerce(prev)),slug+' commerce');
 }
 assert.ok(!read('species/european-pond-turtle.html').includes('CITES II 掲載種'));
 assert.ok(!read('species/cumberland-slider.html').includes('CITES III'));

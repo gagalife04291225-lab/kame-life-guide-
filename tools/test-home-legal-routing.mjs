@@ -27,7 +27,7 @@ const stable=s=>JSON.stringify(s,(k,v)=>typeof v==='function'?v.toString():v);
 let unchanged=0;
 for(const route of ['land','aquatic','forest','exotic']){
  assert.equal(old[route].length,c.S[route].length);
- old[route].forEach((sp,i)=>{const now=c.S[route][i];assert.equal(sp.name,now.name);if(sp.name!=='ホームセオレガメ'){const a={...sp},b={...now};if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(sp.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(sp.legal==='conditional_invasive'?['reason']:[])]){delete a[k];delete b[k];}}assert.equal(stable(a),stable(b),sp.name);unchanged++;}});
+ old[route].forEach((sp,i)=>{const now=c.S[route][i];assert.equal(sp.name,now.name);if(sp.name!=='ホームセオレガメ'){const a={...sp},b={...now};if(['alabama-map-turtle','european-pond-turtle','spiny-softshell-turtle','pancake-tortoise','red-eared-slider','yellow-bellied-slider','cumberland-slider'].includes(sp.slug)){for(const k of ['cites','legalNote','diagnosisNotice',...(sp.legal==='conditional_invasive'?['reason']:[])]){delete a[k];delete b[k];}}if(sp.slug==='chinese-stripe-necked-turtle'){assert.equal(b.cites,'CITES III');delete a.cites;delete b.cites;}assert.equal(stable(a),stable(b),sp.name);unchanged++;}});
 }
 assert.equal(unchanged,118);
 const home=c.S.land.find(s=>s.name==='ホームセオレガメ');
