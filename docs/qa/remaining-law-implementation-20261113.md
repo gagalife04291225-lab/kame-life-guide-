@@ -1,7 +1,7 @@
 
 ## REMAINING_LAW_20261113 — 全121件の現行CITES区分と読者向け法規説明
 
-- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。実装・検証済み、未merge/本番未確認。
+- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。実装・検証済み、未merge/本番未確認。
 - 全121件の現行CITES区分を公式統合附属書に照合。既済Home/7種/ドロガメ日付は固定入力とし再調査していない。根拠表: `docs/qa/remaining-law-sources-20261113.md`。
 - 4 nullを確定（ハナガメIII、コウホソ/ジーベンロック/ヒラリー非掲載）。archive4種Iのverificationを確定。ニホンイシガメの一律ゼロ輸出枠を撤去。ハナガメJS/MD同期。選択除外/順位/用品は不変。
 - オリノコマタマタの旧非掲載本文・FAQをIIへ訂正。アカミミ共通2ページの家庭飼育・限定無償譲渡例外を整合。II共通注記47ファイル（template含む）と関連FAQで国内CB証明・インボイス・CITES輸出入書類の混同を訂正。モエギ登録票発行元、台湾セマルの捕獲規制と許可例外も訂正。
