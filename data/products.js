@@ -375,8 +375,8 @@ const PRODUCTS = {
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5R0?tag=kamelife090e-22',
-    asin: 'B00JZFJ5R0',
+    affiliateUrl: null, // 商品名(T5)と旧ASINの同一性を確認できないため直リンクを保留
+    asin: null,
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'Zoo Med ReptiSun 10.0 T5',
@@ -393,8 +393,8 @@ const PRODUCTS = {
     category: 'lighting_uvb',
     tier: 'standard',
     priceRange: '¥3,000–6,000',
-    affiliateUrl: 'https://www.amazon.co.jp/dp/B00JZFJ5LQ?tag=kamelife090e-22',
-    asin: 'B00JZFJ5LQ',
+    affiliateUrl: null, // 商品名(T5)と旧ASINの同一性を確認できないため直リンクを保留
+    asin: null,
     rakutenUrl: null,
     rakutenStatus: 'search',
     rakutenSearchTerm: 'Zoo Med ReptiSun 5.0 T5',

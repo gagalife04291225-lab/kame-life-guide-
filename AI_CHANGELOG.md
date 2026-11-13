@@ -875,3 +875,5 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - PR/Commit: codex-commerce-evidence-20261113（本変更）
 - Approver: Ownerの全体修正指示。公開前レビュー待ち、mergeは未実施。
 - Conforms: Amazonタグ/GA4/マスター/写真不変。有料サービス・偽の使用体験・売上根拠の追加なし。
+
+- 追加確認: T5商品名2件のAmazonリンクの同一性不整合を記録し、ASIN/直リンクのみ保留。既存推奨品を別製品へ置換せず、楽天の商品名検索を保持。全124 Pythonテスト、診断商品/ルート回帰テストPASS。
