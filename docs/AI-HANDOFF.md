@@ -15,7 +15,7 @@
 ---
 
 
-## 2026-11-13 旧PRの必要差分整理（候補・未公開）
+## 2026-11-13 旧PRの必要差分整理（PR #247・Draft・未公開）
 - BASE: 9e80f824a8e64578a7e557f8f594a4660ddafd4c。Owner の継続指示により旧 #190/#191/#192/#206/#208 を最新mainと照合。
 - PREPARED: #190のトップ文字色修正を移植し、未解決だった .gl-module-label の opacity を1に修正。#206の3記事の自然な日本語を現行本文へ移植。採点・飼育数値、全href・onclickは不変。
 - VERIFIED: Python unittest 156件PASS、変更4ページJSON-LD各1件parse OK、git diff --check PASS。独立レビューでD3の一律禁止への意味強化を指摘され、「自己判断で」を加えて修正。ランキングの本文採点との整合・CSS参照も静的確認。
