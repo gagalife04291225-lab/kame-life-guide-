@@ -866,3 +866,11 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 ### 追加検証 2026-11-13
 
 cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+
+## [2026-11-13] Diagnosis entry UX (pending PR)
+- Actor: OpenAI assistant.
+- Change: dynamic total question counts; native route buttons; visible focus and readable entry text; semantic main landmarks on home/diagnosis. Regression tests added/updated.
+- Reason: remove the eight-versus-ten question contradiction and restore keyboard/accessibility semantics without changing diagnosis decisions.
+- PR/Commit: codex-diagnosis-ux-20261113, pending review; not merged.
+- Approver: owner requested sequential fixes and completion; parent controls publication order.
+- Conforms: no scoring/species, commerce, tracking, legal or billing changes.

@@ -11,6 +11,7 @@ const elements = new Map();
 function node(){return {textContent:'',innerHTML:'',style:{},className:'',parentElement:{setAttribute(){}},setAttribute(){},appendChild(){},addEventListener(){},focus(){}};}
 const document = {getElementById(id){if(!elements.has(id))elements.set(id,node());return elements.get(id);},createElement:node};
 const testContext = vm.createContext({document, Math, _viewedSteps:{}, currentQuestionIndex:0, gateIndex:0, READINESS_QUESTIONS:[{text:'Gate',choices:[]}],selectChoice(){},selectGateChoice(){}});
+vm.runInContext(html.match(/function getRouteQuestionCount\(route\) \{[\s\S]*?\n\}/)[0],testContext);
 vm.runInContext(extract('showQuestion')+'\n'+extract('showGateQuestion'),testContext);
 let checks=0;
 for(const route of context.routes){

@@ -2153,3 +2153,11 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 ### 追加検証 2026-11-13
 
 cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。
+
+## 2026-11-13 Diagnosis UX follow-up (pending PR; not published)
+- BASE: ee222b930a4b9bcc118249c9276999a5fa7689ef. Scope: route entry/progress counts, native button semantics, entry explanation contrast, main landmarks on diagnosis and home.
+- COMPLETED: all five routes display totals from route questions plus readiness questions (9/12/9/8/10). The all-route description no longer promises eight questions. Question content, scoring, species data, GA4 and affiliate links are unchanged.
+- COMPLETED: native route buttons in a named group, visible keyboard focus, readable entry descriptions; one semantic main per page. Existing diagnosis screens already had main roles; this consolidates rather than claims they were absent.
+- VERIFIED: Python 120 tests, Node 18 test scripts, diff check; new UX assertions fail on the old base. Chrome at 320/390/1280: five route starts via keyboard, counts/progress, quit/cancel, ten-question all-route result/retry, one main, five AX buttons, no horizontal overflow or page errors. Local requests only; analytics blocked. Contrast 7.99:1 or higher on entry text. 390/1280 diagnosis screenshots inspected.
+- UNRESOLVED: independent review and ordered publication with parent coordinator; no merge or production verification yet. Physical VoiceOver/TalkBack not tested.
+- NEXT: independent review, PR, then wait for parent to publish after safety fixes. Do not repeat question/scoring or species research.
