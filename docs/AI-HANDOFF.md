@@ -1959,7 +1959,7 @@ Owner 指示「信用問題になるのでしっかり調べてすぐ直して�
 | **B9 species メイン写真の品質（12件）** | **種同定・商用可ライセンス・出典が確認できる代替写真**。本実行環境から iNaturalist / Commons へは到達できないため取得不可。**B4/B5/B7 の HOLD 4件とは別件**（それらは再探索しない） | 全107枚をコンタクトシートで目視した結果、以下がメイン写真として品質を落としている。差し替え候補が確認できた時点で 800×600 WebP 化し、クレジット4層（`credits_map.json` / `pc_parsed.json` / `photo-credits.html` / 種ページ figcaption）を同期する。<br>**最優先** `eastern-box-turtle`（手持ち＋背景に赤いピックアップトラックと人物）<br>**手持ち** `alabama-map-turtle` / `amazon-matamata` / `guerrero-wood-turtle` / `herrera-mud-turtle`（背景に車両）/ `loggerhead-musk-turtle` / `tunisian-greek-tortoise` / `spotted-turtle` / `stripe-necked-musk-turtle`<br>**被写体が判別しにくい** `chinese-stripe-necked-turtle`（濁った水中）/ `white-lipped-mud-turtle`（暗所）/ `ringed-map-turtle`（被写体が小さい）<br>**人工物が主役** `painted-turtle`（黄色い金網が画面を占める）<br>※**AIアップスケールによる「高解像度化」は禁止**。元画像が存在する場合のみ再書き出しする |
 | **B4 写真HOLD 3件** | 亀好きさんが候補画像を見つけた時点。**能動的な定期探索は行わない**（`CLAUDE.md` 2026-08-24 恒久方針） | `Emydura subglobosa worrelli`（商用可3枚が全て同一個体の死骸）／`Malaclemys terrapin tequesta`（**入ればテラピン7亜種が完備＝掲載価値は最優先**）／`Graptemys nigrinoda delticola`（10枚全て CC-BY-NC。加えて Ennen et al. 2014 が形態的診断性を否定しており**亜種ページを作る価値から再判断が要る**） |
 | **B5 オプストヒラセガメの生体写真** | **腹甲の放射状黒斑が写り、かつ産地が本亜種の分布域（トゥアティエン＝フエ〜ダクラク）と一致する**商用可・800×600以上の写真。両方そろわない限り亜種同定は成立しない | `species/obsti-hirase-turtle.html` は写真なしで公開済み。写真が入手できたら、ページの「写真を掲載していません」注記とFAQ「なぜ写真がないのですか？」を差し替え、クレジット4層を追加する。**旧候補 photo 134512961 は不採用で確定（再検討しない）** |
-| **B6 カントンクサガメの CITES 区分** | CITES Species+ または EU規則 1332/2005 の確認（本実行環境は egress ポリシーで到達不可） | 現在 **附属書II** で全層統一済み。close した PR #35 は出典付きで **III** を主張しており、同日付の記録が食い違っている。**III が正しい場合に直すのは4箇所**（`species-master.json` の `cites.appendix.value` ／ `species-identification.json` の `houkisei` ／ `shindan/species.js` の `cites` ／ `SHINDAN-SPECIES.md` の CITES列）＋公開本文の「附属書II」3箇所 |
+<!-- B6 CLOSED: 現行区分は公式2026統合附属書でII確認。REMAINING_LAW_20261113参照。 -->
 | **B7 ゴールデンギリシャリクガメの写真** | **良質な確定写真**（research grade × 商用可 × 800×600以上 × 自然な姿勢 × 種同定が証明できる）。**探索は打ち止め済**（FIXED_FACTS）。能動的に探しに行かない | 現候補は Owner 判断で不採用が確定。`species/golden-greek-tortoise.html` は写真なしのまま運用する |
 | **B12 Amazon 商品画像の取得資格** | **Amazon アソシエイト管理画面で「直近30日の発送実績」が10件以上あることの実測スクリーンショット**、および Creators API の申請可否。実績が満たせない場合は受領しても解けない | 満たしていれば Creators API を申請し、`AMAZON_*` Secret を GitHub Secrets へ登録。その後 `rakuten-sync.yml` と同型の日次ワークフローで `amazonImageUrl` を静的化する。**満たすまで Amazon 画像は一切表示しない。**（現行の `/dp/ASIN?tag=kamelife090e-22` 静的リンクは API 不要で適法なため、**この BLOCKED は既存導線に影響しない**） |
 | **B8 `ouachita-map-turtle-sp` の三名法/二名法** | **TTWG 第9版(2021)本文で *Graptemys ouachitensis sabinensis* の階級を確認できる資料**。本実行環境からは到達不可 | `data/species-identification.json:378` の HOLD を維持。**根拠が確定するまでどちらへも統一しない。** 解除する場合は identification だけでなく `species/ouachita-map-turtle-sp.html` の**4箇所**（meta description / og:description / JSON-LD description / `.latin`）も同時に直さないと不整合が増える（うち3箇所は SEO 層で B3 に触れる） |
@@ -2121,3 +2121,20 @@ BASE: 893e89d288f88e3439d4e8d1996f7e9ba724f732。商品削除・選定・URL・�
 ## 2026-11-13 PR #237 / #238 公開了承後の統合
 - Ownerが法規7種訂正とPH-73記事追加の各公開確認へ「よかよ」と承諾。PR #237 merge `5a1c1fed8a4cff5e8427cbd57e409f64f4611ce4`。
 - PR #238に最新mainを統合。競合はAI_CHANGELOGの追記部分のみで両方の記録を保持。記事・法令コードに競合なし。最終mergeと本番確認の実測は両PRのコメントへ記録する。
+
+## REMAINING_LAW_20261113 — 全121件の現行CITES区分と読者向け法規説明
+
+- BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。実装・検証済み、未merge/本番未確認。
+- 全121件の現行CITES区分を公式統合附属書に照合。既済Home/7種/ドロガメ日付は固定入力とし再調査していない。根拠表: `docs/qa/remaining-law-sources-20261113.md`。
+- 4 nullを確定（ハナガメIII、コウホソ/ジーベンロック/ヒラリー非掲載）。archive4種Iのverificationを確定。ニホンイシガメの一律ゼロ輸出枠を撤去。ハナガメJS/MD同期。選択除外/順位/用品は不変。
+- オリノコマタマタの旧非掲載本文・FAQをIIへ訂正。アカミミ共通2ページの家庭飼育・限定無償譲渡例外を整合。II共通注記47ファイル（template含む）と関連FAQで国内CB証明・インボイス・CITES輸出入書類の混同を訂正。モエギ登録票発行元、台湾セマルの捕獲規制と許可例外も訂正。
+- 独立レビュー: FAQ215回答と可視本文一致、商品URL/通常scripts(GA含む)不変、現121区分と正本一致、残るblocker0。
+- 検証: Python111件中109PASS、GA4の2件はPCにtzdata無しの環境エラー。追加法規13件PASS。validate_species MISMATCH0/WARN0。annainin25、rakuten20、既存Home/7種法規NodeテストPASS。enclosure110/0、compare378/0/判定不能10（Windows globのパス区切りを実行時のみ正規化）。diff check PASS。
+- 実画面はBLOCKED: 既存Playwright無し。ブラウザのローカルfile表示はポリシー拒否、明示された迂回禁止を遵守。公開前/本番の画面確認済みとはしない。デザイン/CSS/購入先/GAコード変更なし。
+- CLOSED: B6カントンクサガメ現行IIは公式S1で確認、IIIへ戻さない。歴史的な全掲載日/自治体条例/個別個体の取引適法性まで確認済みとはしない。
+- NEXT: 本差分のPRレビューと許可範囲確認後にmergeし、配信内容を検証。全121区分の再調査・既済用品32種の再実行は不要。
+
+
+### 追加検証 2026-11-13
+
+cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足で失敗していた2件も成功。Git管理外の独立一時検証環境で実行し、コード・保護・テストは不変。実画面は引き続き未確認。

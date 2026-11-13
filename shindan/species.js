@@ -715,7 +715,7 @@ aquatic: [
     score: function(s){ return (s.large_mud||0)+(s.advanced||0)+(s.budget_high||0)+(s.expert||0)+(s.ultra_rare||0); },
     availability: 'rare'
   },
-  { name: 'ハナガメ', latin: 'Mauremys sinensis', emoji: '🌸', difficulty: '入門〜中級', size: 'M（20〜25cm）', cites: null, legal: 'unknown_hold',
+  { name: 'ハナガメ', latin: 'Mauremys sinensis', emoji: '🌸', difficulty: '入門〜中級', size: 'M（20〜25cm）', cites: 'CITES III', legal: 'unknown_hold',
     reason: '【特定外来生物】2016年に指定され、許可なく飼育・販売・購入・輸入はできない（ニホンイシガメ等との交雑種も指定対象）。首のストライプが美しい東・東南アジア産の中型水棲ガメだが、現在は新規飼育が原則不可のため診断では案内しない。',
     specs: { '最大甲長': '30cm（資料上限）', '水槽サイズ': '60〜90cm', '水温': '20〜28℃', '難易度': '入門〜中級' },
     coreSpecs: { size: '30cm（資料上限）', temp: '20〜28℃', lifespan: '20〜30年', diet: '雑食' },
