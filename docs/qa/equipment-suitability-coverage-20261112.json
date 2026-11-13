@@ -1,12 +1,12 @@
 {
   "date": "2026-11-12",
-  "base": "893e89d288f88e3439d4e8d1996f7e9ba724f732",
+  "base": "88b143a9336aa8b41a0d3d886e0554320c7bdc94",
   "scope": "All 119 species structural inventory. No product-fit guarantees. Flags are review queue, not proof of unsuitability. Master is not automatically rendered to users.",
   "counts": {
     "total": 119,
     "route_candidate_differences": 46,
-    "external_conditions_only": 32,
-    "inventory_only": 87
+    "external_conditions_only": 44,
+    "inventory_only": 75
   },
   "rows": [
     {
@@ -198,7 +198,11 @@
       "review_flags": [
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Leopard%20tortoise%20care%202024%20jh.pdf",
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/tortoises/leopard-tortoise-care"
+      ]
     },
     {
       "name": "ベルセオレガメ",
@@ -295,7 +299,11 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232",
+        "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+      ]
     },
     {
       "name": "パンケーキリクガメ",
@@ -684,7 +692,10 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://austinsturtlepage.com/Care/cs-mismud.htm"
+      ]
     },
     {
       "name": "ミスジドロガメ",
@@ -724,7 +735,10 @@
         "juvenile_notes": true
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-razrbk.htm"
+      ]
     },
     {
       "name": "スジクビニオイガメ",
@@ -810,7 +824,10 @@
         "page_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+      ]
     },
     {
       "name": "トウブニシキガメ",
@@ -832,7 +849,10 @@
       "review_flags": [
         "page_changes_candidates"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+      ]
     },
     {
       "name": "チュウブニシキガメ",
@@ -1090,7 +1110,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+      ]
     },
     {
       "name": "スワニークーター",
@@ -1595,7 +1618,10 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-logger.htm"
+      ]
     },
     {
       "name": "リバークーター",
@@ -1618,7 +1644,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+      ]
     },
     {
       "name": "リオグランデクーター",
@@ -1664,7 +1693,10 @@
         "route_changes_candidates",
         "adult_large_or_custom_habitat_review"
       ],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-flredbelly.htm"
+      ]
     },
     {
       "name": "キボシイシガメ",
@@ -1732,7 +1764,10 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://theturtleroom.org/species-profile/geoemyda-spengleri/"
+      ]
     },
     {
       "name": "ヒラセガメ",
@@ -1837,7 +1872,10 @@
         "juvenile_notes": false
       },
       "review_flags": [],
-      "status": "inventory_only_not_product_fit_verified"
+      "status": "external_conditions_only_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-central-american-wood-turtle-care"
+      ]
     },
     {
       "name": "ニカラグアクジャクガメ",

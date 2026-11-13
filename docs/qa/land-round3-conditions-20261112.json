@@ -1,0 +1,42 @@
+{
+  "leopard-tortoise": {
+    "title": "ヒョウモンリクガメの用品を選ぶ前に",
+    "items": [
+      "成体には歩き回れる広さと、体が収まる隠れ家・水場を用意します。候補のケージだけで終生飼えるとは限りません。",
+      "暖まる場所と涼しい場所を分け、亀がいる高さで温度を測ります。UVBランプは製品ごとの設置距離を確認してください。",
+      "掘れる床材と、湿り気のある隠れ家を用意し、清潔に保ちます。水場や隠れ家を置いた後にも歩ける場所を残します。"
+    ],
+    "note": "広い飼育場所の整備や追加の床材・隠れ家・水場にかかる費用は、用品候補の合計に含まれていません。",
+    "sourceNote": "ヒョウモンリクガメの飼育資料をもとにした確認事項です。掲載商品の適合や、必要な個数まで保証するものではありません。",
+    "sources": [
+      {
+        "label": "RVC：Leopard tortoise care（2024）",
+        "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Leopard%20tortoise%20care%202024%20jh.pdf"
+      },
+      {
+        "label": "Tree of Life Exotic Pet Medical Center：Leopard Tortoise Care",
+        "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/tortoises/leopard-tortoise-care"
+      }
+    ]
+  },
+  "impressed-tortoise": {
+    "title": "インプレッサムツアシガメの用品を選ぶ前に",
+    "items": [
+      "潜れる湿った落ち葉や床材、隠れ家、出入りしやすい浅い水場を用意します。",
+      "暑さを避けられる場所だけでなく、冷え込んだときに暖まれる場所も必要です。部屋全体を冷やすだけでなく、隠れ家と活動場所の温度を測ります。",
+      "キノコを中心に、野菜など植物性の餌も組み合わせます。一般的なリクガメ用フードだけで食事がそろうとは考えず、食べているものを確認します。"
+    ],
+    "note": "追加の床材や水場、室温管理、食材の費用は用品候補の合計に含まれていません。",
+    "sourceNote": "動物園の飼育報告と欧州の幼体・亜成体の飼育記録を参考にしています。掲載商品の適合や、日本での一律の温度設定を示すものではありません。",
+    "sources": [
+      {
+        "label": "Jason Brock（Zoo Atlanta）：Keeping and Breeding Impressed Tortoises（2009）",
+        "url": "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232"
+      },
+      {
+        "label": "Gaby Herzog：Notes on the Captive Husbandry of F1 Impressed Tortoises in Europe（2014、p.68）",
+        "url": "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+      }
+    ]
+  }
+}

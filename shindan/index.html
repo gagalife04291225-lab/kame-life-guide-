@@ -1363,12 +1363,12 @@ window.__loadScriptOnce = function (src) {
 };
 window.loadSpecies = function () {
   if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=81e80863c3e8');
+  return window.__loadScriptOnce('species.js?v=9e42546948b6');
 };
 window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
   return Promise.all([
-    window.__loadScriptOnce('../data/products.js?v=050cf5d37833'),
-    window.__loadScriptOnce('../js/starter-kit.js?v=e933e5259bfe')
+    window.__loadScriptOnce('../data/products.js?v=d2d099835596'),
+    window.__loadScriptOnce('../js/starter-kit.js?v=942cd8d9ab51')
   ]);
 };
 </script>
@@ -1962,6 +1962,17 @@ function renderNoteCta(sp) {
  * shindan/species.js には equipmentKey が存在しないため動的に解決する
  */
 function resolveEquipmentKey(routeId, sp) {
+  // The all getter contains the same species objects as the four native routes.
+  // Use that route instead of guessing again from the display name.
+  if (routeId === 'all' && typeof SPECIES !== 'undefined') {
+    var sourceRoutes = ['land', 'aquatic', 'forest', 'exotic'];
+    for (var ri = 0; ri < sourceRoutes.length; ri++) {
+      if ((SPECIES[sourceRoutes[ri]] || []).indexOf(sp) >= 0) {
+        routeId = sourceRoutes[ri];
+        break;
+      }
+    }
+  }
   var size = (sp.size || '').toUpperCase();
   var diff = (sp.difficulty || '');
   var name = (sp.name || '');

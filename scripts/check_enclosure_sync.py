@@ -11,12 +11,14 @@ import glob
 import json
 import re
 import sys
+from pathlib import Path
 
 # 容器の呼び方はカテゴリで変わる（水棲=水槽／リクガメ・ハコガメ=ケージ／テラリウム）。
 # 大型種は「終生飼育について：」という別の導入文を使う。全パターンを拾う。
 LS_LEAD = re.compile(
-    r'ls-lead">この種の終生飼育'
+    r'ls-lead">(?:この種の終生飼育'
     r'(?:に必要な(?:水槽|ケージ（テラリウム）|ケージ|容器)の目安|について)'
+    r'|当サイトの水槽サイズ目安（飼育段階・体格で見直し）)'
     r'：<strong>(.*?)</strong>'
 )
 # 正本の値には社内向けの根拠が括弧で付くことがある（例: 海外24インチ推奨が国内規格へほぼ一致）。
@@ -38,7 +40,7 @@ def main() -> int:
     master_missing = []
 
     for path in sorted(glob.glob('species/*.html')):
-        slug = path.split('/')[-1][:-5]
+        slug = Path(path).stem
         if 'template' in slug:
             continue
         text = open(path, encoding='utf-8').read()

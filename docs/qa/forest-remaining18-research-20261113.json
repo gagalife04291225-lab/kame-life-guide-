@@ -1,0 +1,354 @@
+{
+  "date": "2026-11-13",
+  "scope": "forest inventory_only 18 entries; previously reviewed 44 excluded",
+  "sources": {
+    "wood": {
+      "url": "https://www.austinsturtlepage.com/Care/cs-nawood.htm",
+      "type": "keeper_care",
+      "read": "Captive habitat/enclosure",
+      "note": "Glyptemys insculptaを明記。陸水・遮陰・視線遮蔽物。水深2ft・混泳・屋外必須の断定は採用しない。"
+    },
+    "obsti": {
+      "url": "https://theturtleroom.org/blog/2014/04/25/cuora-mouhotii-obsti-acclimation-care/",
+      "type": "keeper_case",
+      "read": "Enclosures/care",
+      "note": "obsti4頭9か月の実例。隠れ家、浸水容器、脱走防止。数値・同居・冬眠誘導を一般化しない。"
+    },
+    "mouhotii": {
+      "url": "https://www.cuora.org/cuora-mouhotii",
+      "type": "conservation_natural_history",
+      "read": "species/subspecies description",
+      "note": "主に陸棲、林床・穴。obstiと基亜種区別。用品実験ではない。"
+    },
+    "terrapene": {
+      "url": "https://www.tortoise.org/archives/terrapen.html",
+      "type": "keeper_case",
+      "read": "triunguis/carolina/major/bauri/ornata sections",
+      "note": "1994年。種別の経験例。古い餌・混泳・冬眠方法は転載しない。"
+    },
+    "vca": {
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing",
+      "type": "veterinary_general",
+      "read": "bedding, furnishings, water pan",
+      "note": "北米ハコガメ一般。隠れ家、安定した家具、出入りできる水皿、清掃。個別亜種の温湿度・水深の根拠ではない。"
+    },
+    "triunguis": {
+      "url": "https://www.tortoisetrust.org/care/ctriungis.html",
+      "type": "care_sheet",
+      "read": "full husbandry text",
+      "note": "旧名T.carolina triunguis。湿った場所、遮陰、水場。全ランプ不要と拡張しない。"
+    },
+    "flavo": {
+      "url": "https://www.cuora.org/cuora-flavomarginata",
+      "type": "conservation_natural_history",
+      "read": "species and subspecies",
+      "note": "陸棲性、台湾基亜種、中国sinensisの扱いに異説。国内品の保証ではない。"
+    },
+    "galb": {
+      "url": "https://www.tortoisetrust.org/care/cgalb.html",
+      "type": "care_sheet",
+      "read": "full text",
+      "note": "湿った床と少し乾いた場所、静かな隠れ場所、水皿。古い種概念のためbourreti/picturataへ数値移用しない。UVB不要/餌/加温器具の丸写しはしない。"
+    },
+    "trif": {
+      "url": "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8054",
+      "type": "reference_natural_history",
+      "read": "Habitat/Natural history",
+      "note": "広東の流水域と飼育下の陸利用。旧分類を含むので生息域・最大値・亜種別数値には用いない。"
+    },
+    "trifcurrent": {
+      "url": "https://www.cuora.org/cuora-trifasciata",
+      "type": "conservation_taxonomy",
+      "read": "species/subspecies",
+      "note": "現行C.trifasciata2亜種を確認。cyclornataと同一視しない。"
+    },
+    "rhino": {
+      "url": "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/",
+      "type": "keeper_care",
+      "read": "subspecies, land/water and housing sections",
+      "note": "incisa・pulcherrima・manniを分けた飼育例。rogerbarbouriの欧州飼育実績なしと著者が明記。割合/水深/温度は独立裏付けなしのためサイト固定値にしない。"
+    },
+    "annulata": {
+      "url": "https://www.reptilesofecuador.com/rhinoclemmys_annulata.html",
+      "type": "referenced_natural_history",
+      "read": "Natural history",
+      "note": "陸棲主体だが水利用あり、落葉・根元に隠れる。用品適合実験ではない。"
+    },
+    "cyclemys": {
+      "url": "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8060",
+      "type": "old_reference_natural_history",
+      "read": "Geographic variation/Habitat",
+      "note": "浅い流れの半水棲。現行種分割前の広義dentataを含む。数値や全ノコヘリ属の適合に転用しない。"
+    }
+  },
+  "rows": [
+    {
+      "slug": "wood-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "水中だけでなく、歩ける陸地と日陰も確保する。",
+        "水場から陸へ移れる足場を作り、水温と日陰の温度を別々に見る。"
+      ],
+      "source_ids": [
+        "wood"
+      ],
+      "limits": "冷却の要否は設置環境の実測で判断。深さ2ftや屋外飼育を一律条件にしない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "hirase-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "床材と隠れ家を置ける陸地を中心に組む。",
+        "水場と乾いた休み場所を用意し、登って外へ出られないか確認する。"
+      ],
+      "source_ids": [
+        "mouhotii",
+        "obsti"
+      ],
+      "limits": "種自然史とobstiの飼育実例。obstiの温度や湿度をヒラセ全個体へ転用しない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "obsti-hirase-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "潜れる床材と暗い隠れ家を用意する。",
+        "体を浸せる水場は出入りしやすくし、壁際や家具からの脱走にも気をつける。"
+      ],
+      "source_ids": [
+        "obsti",
+        "mouhotii"
+      ],
+      "limits": "4頭の飼育例に基づく。成体用容器寸法や灯具能力の保証ではない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "painted-wood-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "陸地・隠れ家・水場を組み合わせる。",
+        "クジャクガメの仲間でも水場の使い方は異なる。亜種を確かめてから、水場の広さを決める。"
+      ],
+      "source_ids": [
+        "rhino"
+      ],
+      "limits": "masterはR.pulcherrima種全体。一般名だけでmanni用数値を採用しない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "annulated-wood-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "歩ける陸地と、落葉や隠れ家で身を隠せる場所を確保する。",
+        "陸棲寄りでも水を使う。水場を省かず、自分で出入りできるようにする。"
+      ],
+      "source_ids": [
+        "annulata"
+      ],
+      "limits": "自然史からの環境構成案。特定床材製品、面積、水深、灯具性能は未保証。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "nicaragua-wood-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "床材のある陸地と水場の両方を確保する。",
+        "水場には滑りにくい出口を設け、陸の隠れ家まで行き来できるようにする。"
+      ],
+      "source_ids": [
+        "rhino"
+      ],
+      "limits": "incisaを明示した飼育資料。manniの浅い水皿だけで十分とは扱わない。水陸比率の固定値は採用しない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "guerrero-wood-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "床材のある陸地と水場の両方を確保する。",
+        "水場には滑りにくい出口を設け、陸の隠れ家まで行き来できるようにする。"
+      ],
+      "source_ids": [
+        "rhino"
+      ],
+      "limits": "pulcherrimaを明示した飼育資料。manniの浅い水皿だけで十分とは扱わない。水陸比率の固定値は採用しない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "sonora-wood-turtle",
+      "status": "species_group_conditions_only",
+      "proposed_conditions": [
+        "亜種を確認したうえで、陸地・隠れ家・水場を組み合わせる。",
+        "水場を使ったあと自分で陸へ戻れる出口を用意する。"
+      ],
+      "source_ids": [
+        "rhino"
+      ],
+      "limits": "資料はrogerbarbouriの形態・分布のみ個別記載し、飼育実績なしと明記。条件は種群の構成案に限定。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "three-toed-box-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "潜れる湿った場所と、日陰の隠れ家を用意する。",
+        "浅い水場へ無理なく出入りできるようにし、床全体の乾燥や過熱を避ける。"
+      ],
+      "source_ids": [
+        "triunguis",
+        "vca"
+      ],
+      "limits": "種を指定した旧careと一般獣医資料。固定湿度や器具不要の断定なし。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "eastern-box-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "陸地に隠れ家と潜れる場所を作り、水場も用意する。",
+        "水皿の縁には出入りできる足場を付け、汚れた水を替えやすい配置にする。"
+      ],
+      "source_ids": [
+        "terrapene",
+        "vca"
+      ],
+      "limits": "carolina飼育実例と北米群の一般条件。具体的な床材商品保証ではない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "gulf-coast-box-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "湿った隠れ場所に加え、体を浸せる水場を確保する。",
+        "水をよく使う個体もいるため、出入りしやすさと水の汚れを確認する。"
+      ],
+      "source_ids": [
+        "terrapene",
+        "vca"
+      ],
+      "limits": "majorの個体差を含む飼育記録。水中冬眠や他種との混泳を勧める根拠にはしない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "florida-box-turtle",
+      "status": "species_group_conditions_only",
+      "proposed_conditions": [
+        "隠れ家と、出入りしやすい水皿を設ける。",
+        "水皿は毎日確認し、床材や隠れ家を置いても歩ける場所が残るようにする。"
+      ],
+      "source_ids": [
+        "vca",
+        "terrapene"
+      ],
+      "limits": "bauriの生態数値はこの資料で未確定。北米ハコガメ共通の家具と水皿条件に限定。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "taiwan-box-turtle",
+      "status": "natural_history_conditions_only",
+      "proposed_conditions": [
+        "陸地を中心に、身を隠せる場所と水場を組み合わせる。",
+        "タイワン・中国由来の個体を区別し、別のハコガメの飼育数値をそのまま使わない。"
+      ],
+      "source_ids": [
+        "flavo"
+      ],
+      "limits": "陸棲性と分類の確認。具体的な用品能力、温湿度、水深の外部照合完了とはしない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "chinese-box-turtle",
+      "status": "natural_history_conditions_only",
+      "proposed_conditions": [
+        "陸地を中心に、身を隠せる場所と水場を組み合わせる。",
+        "タイワン・中国由来の個体を区別し、別のハコガメの飼育数値をそのまま使わない。"
+      ],
+      "source_ids": [
+        "flavo"
+      ],
+      "limits": "陸棲性と分類の確認。具体的な用品能力、温湿度、水深の外部照合完了とはしない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "indochinese-box-turtle",
+      "status": "conditions_reviewed_with_scope_limits",
+      "proposed_conditions": [
+        "静かな隠れ場所と湿った床材を用意し、少し乾いた場所も残す。",
+        "加温で床が乾きすぎないか確認し、飲水・水浴び用の水場を用意する。"
+      ],
+      "source_ids": [
+        "galb"
+      ],
+      "limits": "旧galbinifrons種群資料。現行種の同定を前提とし、数値・UVB不要・冬眠不要の断定に使わない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "three-striped-box-turtle",
+      "status": "natural_history_conditions_only",
+      "proposed_conditions": [
+        "水場と陸地の両方を設け、陸でも休めるようにする。",
+        "水中だけで完結させず、水場から逃げ出せる出口と隠れ場所を確保する。"
+      ],
+      "source_ids": [
+        "trif",
+        "trifcurrent"
+      ],
+      "limits": "現行分類を別照合。旧資料のcyclornataを含み得る数値は使わない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "asian-leaf-turtle",
+      "status": "species_group_conditions_only",
+      "proposed_conditions": [
+        "水場に加えて、体を休められる陸地を確保する。",
+        "水場と陸を行き来できる出口を作り、流通名だけで別種の水深を当てはめない。"
+      ],
+      "source_ids": [
+        "cyclemys"
+      ],
+      "limits": "広義dentataの旧資料。現行C.dentata個別数値/個別用品の保証ではない。",
+      "product_fit_verified": false
+    },
+    {
+      "slug": "desert-box-turtle",
+      "status": "species_group_conditions_only",
+      "proposed_conditions": [
+        "乾燥地の仲間でも水場は省かず、浅く出入りしやすくする。",
+        "日陰の隠れ場所を用意し、容器全体が熱くならないようにする。"
+      ],
+      "source_ids": [
+        "terrapene",
+        "vca"
+      ],
+      "limits": "和名ミナミニシキはluteolaを指すがmasterはT.ornata。亜種確定前に基亜種の数値を転用しない。",
+      "product_fit_verified": false
+    }
+  ],
+  "issues": [
+    "通常と全表示でforest→tortoise_dry_smallへ変わるヒラセ/obsti/ニカラグア/ソノラ/ゲレーロは導線不一致。",
+    "Cyclemysはforestキーとsemi_aquatic_mediumページの不一致。水場を欠く陸用セットでは完結しない。",
+    "painted-wood-turtle masterはR.pulcherrima種全体。manni固有条件として扱わない。",
+    "desert-box-turtle和名ミナミニシキに対してmasterはT.ornataで亜種未記載。",
+    "中国セマルmasterはC.flavomarginata種全体。sinensisの学名採用は分類見解を明示して別途判断。",
+    "資料に温湿度などが載ることと用品の能力・適合確認は別。全18件にproduct_fit_verified=falseを保持。"
+  ],
+  "blocked_sources": [
+    {
+      "url": "https://www.turtlepuddle.org/cuora/flavomarginata.html",
+      "reason": "502"
+    },
+    {
+      "url": "https://original.iguanastropicales.com/en/wood-care/",
+      "reason": "timeout twice"
+    },
+    {
+      "url": "https://chiangmai.zoothailand.org/en/animal_view.php?detail_id=550",
+      "reason": "timeout"
+    },
+    {
+      "url": "https://iucn-tftsg.org/wp-content/uploads/crm.5.126.ornata.v1.2024.pdf",
+      "reason": "web content too large 13MB"
+    }
+  ]
+}
