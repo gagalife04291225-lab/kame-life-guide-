@@ -1,0 +1,29 @@
+name: Keeper Product Links Temporary
+on:
+  push:
+    branches: [codex/keeper-products-20261113]
+    paths: [scripts/keeper-product-links.cjs, .github/workflows/keeper-product-links.yml]
+permissions:
+  contents: read
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Query four approved products with existing credentials
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+        run: node scripts/keeper-product-links.cjs
+      - name: Verify production unchanged
+        run: git diff --exit-code
+      - uses: actions/upload-artifact@v4
+        with:
+          name: keeper-product-links
+          path: keeper-product-links.json
+          retention-days: 1
