@@ -14,10 +14,10 @@ class UVGuidance(unittest.TestCase):
  def test_conditions_and_limits(self):
   for s in ['種に合った光と温度','日陰を常に残し','過熱の危険','反応する波長や測定精度は確認できていません','機種ごとのメーカー案内','UVI（紫外線指数）']:
    self.assertIn(s,self.h)
- def test_head_and_scripts_unchanged(self):
+ def test_reviewed_head_and_scripts(self):
   self.assertEqual(hashlib.sha256(re.search(r'<head>.*?</head>',self.h,re.S).group().encode()).hexdigest(),self.baseline['head_sha256'])
   self.assertEqual(hashlib.sha256('\n'.join(re.findall(r'<script\b.*?</script>',self.h,re.S)).encode()).hexdigest(),self.baseline['scripts_sha256'])
- def test_products_and_existing_links_unchanged(self):
+ def test_reviewed_product_links_and_safety_sources(self):
   self.assertEqual(re.findall(r'data-asin="([^"]+)"',self.h),self.baseline['asins'])
   sources=['https://zoomed.com/lighting-uvb-education-additional-information/','https://zoomed.com/lighting-uvb-education-what-is-uvb/','https://vcahospitals.com/know-your-pet/turtles-aquatic-housing']
   links=re.findall(r'href="([^"]+)"',self.h)

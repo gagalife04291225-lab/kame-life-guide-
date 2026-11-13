@@ -1,3 +1,4 @@
+import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
 import './test-shared-products-round3.mjs';
 import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';
@@ -10,6 +11,7 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8').replace(/
 const base=p=>execFileSync('git',['-C',cwd,'show','6b1ac588:'+p],{encoding:'utf8'}).replace(/\r\n/g,'\n');
 function context(reader){const c=vm.createContext({console,window:{},document:{}});const h=reader('shindan/index.html');const a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a);vm.runInContext(reader('data/products.js')+'\n'+reader('js/starter-kit.js')+'\n'+reader('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=context(base),now=context(read),plain=x=>JSON.parse(JSON.stringify(x));
+applyReviewedAmazonHolds(old.products,now.products);
 // Feed-only changes are required to match committed main exactly.
 const mainProducts=(()=>{const c=vm.createContext({});vm.runInContext(execFileSync('git',['-C',cwd,'show','fde885bd:data/products.js'],{encoding:'utf8'})+';this.p=PRODUCTS;',c);return c.p;})();
 for(const[id,p]of Object.entries(now.products))for(const k of ['rakutenLastUpdated','rakutenConfidence','rakutenPrice','rakutenImageUrl']){assert.deepEqual(p[k],mainProducts[id][k],id+' committed feed '+k);if(p[k]===undefined)delete old.products[id][k];else old.products[id][k]=p[k];}

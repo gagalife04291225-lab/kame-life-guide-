@@ -20,3 +20,5 @@ Base: ee222b930a4b9bcc118249c9276999a5fa7689ef
 No head, scripts, ASIN, image, product ordering, affiliate settings changed. Product identity/ASIN pairing audit belongs to the separate commerce task. No production verification before merge. This is not a veterinary review or an all-products performance certification.
 
 PR: #242 (Draft, not merged).
+
+- 公開実測: PR #242 merge 183ffb5587f1e23e1b4ecb65e4b1237dcdd1ed83、Pages run43356117469 success。本番HTTP200、Chrome320/390/1280で横はみ出し/JSエラー0・出典開閉OK。実測者: UVB担当。https://github.com/gagalife04291225-lab/kame-life-guide-/pull/242#issuecomment-6842531365
