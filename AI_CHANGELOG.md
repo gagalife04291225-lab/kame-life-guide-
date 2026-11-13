@@ -874,3 +874,14 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - PR/Commit: PR #242 / codex-uv-guidance-20261113
 - Approver: Ownerの修正指示。公開判断は別。
 - Conforms: 商品/ASIN/CTA/GA4を変更しない限定修正。
+
+
+## [2026-11-13] 緊急症状の受診案内（公開前）
+- Actor: ChatGPT / Codex
+- Change: trouble 7ページの一律待機・自己治療先行を修正し獣医資料を表示。専用回帰テスト9件を追加。
+- Reason: 呼吸困難でも数日待つ、甲羅変形でも1週間待つと読める案内を解消するため。
+- PR/Commit: codex-emergency-guidance-20261113（このコミット、未merge）
+- Approver: Owner のサイト不具合修正・優先順の修正指示。公開は個別確認前。
+- Conforms: Scopeは受診タイミングと関連する誤解の修正。医療監修の捏造なし。商品リンク・計測変更なし。
+
+- 追加検証: 独立一次確認できなかったRVCの7日という数値を本文/FAQから撤去。症状時は日数を待たず相談する案内に統一。
