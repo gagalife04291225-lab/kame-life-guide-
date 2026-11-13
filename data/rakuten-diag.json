@@ -448,11 +448,11 @@
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4",
+  "reason": "score=4.2",
   "best": {
-   "itemName": "ジェックス カメ元気 ごちそうごはん 特大粒500g | カメの餌 フード 爬虫類 ペットのいる暮らし 多頭飼い 留守番 冬",
-   "price": 749,
-   "shop": "ベイシア楽天市場店"
+   "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
+   "price": 798,
+   "shop": "Joshin web 家電とPCの大型専門店"
   }
  },
  "food_gex_tortoise_balance_400": {
@@ -475,7 +475,7 @@
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2192,
+   "price": 2148,
    "shop": "ラサンタ"
   }
  },
@@ -580,7 +580,7 @@
   "best": {
    "itemName": "マズリ トータスダイエット 560g 5M21-S Mazuri リクガメ フード アメリカ カメ用フード 爬虫類",
    "price": 1959,
-   "shop": "ライフス���イル&生活雑貨のMoFu"
+   "shop": "ライフスタイル&生活雑貨のMoFu"
   }
  },
  "food_reptomin_medium_70": {
@@ -596,14 +596,14 @@
   }
  },
  "food_reptomin_small_70": {
-  "date": "2026-11-07",
+  "date": "2026-11-13",
   "query": "テトラ レプトミン 小粒 70g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "テトラ (Tetra) レプトミン 小粒 70G ニオイ 汚れを抑える カメの主食 天然原料のみ使用の安心フード 着色料 保存料 不使用 水をキレイに保つ 食い",
-   "price": 1360,
+   "price": 1440,
    "shop": "スマイルセレクションプラス"
   }
  },
@@ -719,7 +719,7 @@
   "reason": "score=7.9",
   "best": {
    "itemName": "ジェックス GEX AQUA HEATER セーフカバーナビパック 300 サーモスタット+ヒーター 縦横設置 安全機能付 SP規格適合 約15",
-   "price": 6841,
+   "price": 7206,
    "shop": "ショウマーケット"
   }
  },
@@ -750,7 +750,7 @@
  "heater_panel_60": {
   "date": "2026-11-13",
   "query": "みどり商会 ピタリ適温プラス 3号",
-  "resultCount": 3,
+  "resultCount": 2,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:みどり商会,3号,series:ピタリ適温プラス",
   "best": {
@@ -936,13 +936,13 @@
   }
  },
  "media_gex_6090_set": {
-  "date": "2026-10-10",
+  "date": "2026-11-13",
   "query": "GEX メガパワー 6090 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4.2",
   "best": {
-   "itemName": "新ハイクオリティ 21点水槽セット（GEX　メガパワー6090） 用　交換ろ材 セット（2回分）【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリウ",
+   "itemName": "新ハイクオリティ 21点水槽セット（GEX　メ��パワー6090） 用　交換ろ材 セット（2回分）【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリ",
    "price": 4000,
    "shop": "ネオス 楽天市場店"
   }
@@ -1192,12 +1192,16 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-11-03",
+  "date": "2026-11-13",
   "query": "ジェックス カメ元気 プロバイオフード 180g",
-  "resultCount": 0,
-  "outcome": "NO_RESULT",
-  "reason": null,
-  "best": null
+  "resultCount": 1,
+  "outcome": "KEPT_SEARCH_LEGACY_STRONG",
+  "reason": "score=3.6",
+  "best": {
+   "itemName": "ジェックス カメ元気 プロバイオフード 180g",
+   "price": 3230,
+   "shop": "デイリープラス 楽天市場店"
+  }
  },
  "tank_120_aqua": {
   "date": "2026-08-29",
@@ -1246,9 +1250,9 @@
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
-   "price": 701,
-   "shop": "ペッツマム"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1420,16 +1424,16 @@
   }
  },
  "uvb_t5_desert_std": {
-  "date": "2026-08-29",
-  "query": "Zoo Med ReptiSun 10.0 T5",
+  "date": "2026-11-13",
+  "query": "Zoo Med ReptiSun 10.0 T5 HO 24W OS5-24",
   "resultCount": 0,
   "outcome": "NO_RESULT",
   "reason": null,
   "best": null
  },
  "uvb_t5_forest_std": {
-  "date": "2026-08-29",
-  "query": "Zoo Med ReptiSun 5.0 T5",
+  "date": "2026-11-13",
+  "query": "Zoo Med ReptiSun 5.0 T5 HO 24W FS5-24",
   "resultCount": 0,
   "outcome": "NO_RESULT",
   "reason": null,
@@ -1463,7 +1467,7 @@
   "reason": "score=3.6",
   "best": {
    "itemName": "【スペクトラムブランズ SpectrumBrands】テトラ テスト 試験紙 NH3 NH4+ アンモニア 淡水用 25回 スペクトラムブランズ",
-   "price": 1726,
+   "price": 1936,
    "shop": "あきばお〜楽天市場支店"
   }
  },
