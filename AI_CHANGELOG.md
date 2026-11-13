@@ -895,3 +895,4 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - PR/Commit: #245 / codex-commerce-evidence-20261113。#242はmain未merge。
 - Approver: Ownerの「③やって」。本番公開の判断は親に報告後調整。
 - Conforms: 有料サービス/偽体験を追加しない。安全テスト維持、旧baselineも履歴保持。
+- 独立レビューBLOCKER 0。NITの英語Best 10表記を修正。旧商品完全凍結テストは正確な旧ASIN/新保留値を検証して2件のみ正規化。Python131・Node18スイートPASS、asset --check 0件。

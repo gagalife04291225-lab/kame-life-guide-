@@ -7,7 +7,7 @@ class CommerceGuidanceTest(unittest.TestCase):
   for p in PAGES:
    s=p.read_text(encoding='utf-8')
    with self.subTest(page=p.name):
-    self.assertNotRegex(s,'売れ筋|ベスト10|以下のランキング')
+    self.assertNotRegex(s,'売れ筋|ベスト10|Best 10|以下のランキング')
     self.assertIn('番号は掲載順です。売上や性能の順位ではありません。',s)
     nums=[int(x) for x in re.findall(r'<div class="rank-num"[^>]*>(\d+)</div>',s)]
     self.assertEqual(nums,list(range(1,len(nums)+1)))
