@@ -888,3 +888,10 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 - Approver: Ownerの修正指示。公開判断は別。
 - Conforms: 商品/ASIN/CTA/GA4を変更しない限定修正。
 
+## [2026-11-13] PR #245 UVB安全修正との統合（未公開）
+- Actor: ChatGPT
+- Change: PR #242を作業ブランチに統合し、UVBの比較表題/metadata/楽天DOMを修正。不整合Amazon直リンク2件を保留、楽天商品名検索を維持。T5マスター2件の保留表示を明確化。根拠のないプラ鉢本人使用体験も撤去。
+- Reason: 商品を別製品へ置換せず誤購入を防ぎ、安全本文と購入導線を同時に検証するため。
+- PR/Commit: #245 / codex-commerce-evidence-20261113。#242はmain未merge。
+- Approver: Ownerの「③やって」。本番公開の判断は親に報告後調整。
+- Conforms: 有料サービス/偽体験を追加しない。安全テスト維持、旧baselineも履歴保持。
