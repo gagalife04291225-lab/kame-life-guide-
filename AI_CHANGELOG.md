@@ -839,6 +839,17 @@ CITES区分/個体群/亜種例外と国内規制を分離。パンケーキ登�
 - BASE: 17c981ae55867343f43eeab478f600ff11acd934 / PR #238（Draft）・実装commit aad07fc2。
 - Approver: Ownerの作業依頼の範囲。merge/公開は未実施。Conforms: 専用9・Python98 PASS、実Chrome3幅、独立レビューBLOCKER0、購入URL8本/GA/CITES不変。
 
+
+## [2026-11-13] 用品条件の全119件照合と診断ルート統一
+- Actor: ChatGPT（実装・独立内容/技術レビュー）。Approver: Owner「3早く終わらせて」「終わるまで止めないで」。
+- Change: 未公開12件を回収、残75件の対象範囲を判定し全119件に出典範囲つき条件を表示。slugなし6件も名前照合で条件を追加。購入表示条件は変更せず。通常/allの46件の候補差を解消。
+- Reason: 既存調査を繰り返さず未処理を閉じる。飼育実例を尊重し、科群共通資料を種固有の商品適合認定へ変えない。
+- Related: インプレッサ等の本文整合、共通ゲル/ビタミン/照明バッジ、カントン容器根拠。商品・リンク・価格・計測・通常診断の選定は維持。
+- PR/Commit: codex-equipment-finish-20261113（本コミット）。最終merge/本番確認はPRコメントに記録。
+- Conforms: 最小差分、既存資料回収、出典の適用範囲、全件台帳、全回帰・実画面確認。
+
+- 最終補完：slugなし6件にも既存の用品表示があるため、日本語名で条件を表示。出典注記のない既存条件で「undefined」が出る不具合も修正。全119件の条件欠落を検査する。
+
 ## REMAINING_LAW_20261113 — 全121件の現行CITES区分と読者向け法規説明
 
 - BASE: `fde885bd1485ae74ce9527bb63f432e400c80008`。作業branch: `codex-remaining-law-20261113`。PR #240（https://github.com/gagalife04291225-lab/kame-life-guide-/pull/240）。実装・検証済み、未merge/本番未確認。

@@ -1,0 +1,3142 @@
+{
+  "date": "2026-11-13",
+  "base": "fde885bd1485ae74ce9527bb63f432e400c80008",
+  "scope": "All 119 entries reviewed with source-scoped equipment guidance. 113 slug keys and six name fallbacks. No individual product-fit certification; legal/commerce gates unchanged.",
+  "counts": {
+    "total": 119,
+    "route_candidate_differences": 0,
+    "source_scoped_conditions": 119,
+    "slug_keys": 113,
+    "name_fallbacks": 6,
+    "inventory_only": 0
+  },
+  "rows": [
+    {
+      "name": "ロシアリクガメ",
+      "slug": "russian-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "ヘルマンリクガメ",
+      "slug": "hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（Testudo中でも大型）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "ギリシャリクガメ",
+      "slug": "greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "フチゾリリクガメ",
+      "slug": "marginated-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級推奨（Testudo最大級）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "エロンガータリクガメ",
+      "slug": "elongated-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/Downloads/Elongata.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "アカアシリクガメ",
+      "slug": "red-footed-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注・部屋飼い・夏季屋外の組み合わせ",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/small-animal/documents/Red-foot-tortoise-care-sheet%202016-1.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "チャコリクガメ",
+      "slug": "chaco-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.anapsid.org/chaco2.html"
+      ],
+      "source_scope_note": "チャコリクガメの過去の飼育記録を参考にしています。古い器具や設定値を、そのまま現在の製品に当てはめてはいません。"
+    },
+    {
+      "name": "ヒョウモンガメ",
+      "slug": "leopard-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は室内規格超・屋外飼育場＋冬の大空間加温",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Leopard%20tortoise%20care%202024%20jh.pdf",
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/tortoises/leopard-tortoise-care"
+      ],
+      "source_scope_note": "ヒョウモンリクガメの飼育資料をもとにした確認事項です。掲載商品の適合や、必要な個数まで保証するものではありません。"
+    },
+    {
+      "name": "ベルセオレガメ",
+      "slug": "bell-hinge-back-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（床面積優先・隠れ家必須）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/ckinixys.html"
+      ],
+      "source_scope_note": "分類が見直される前のセオレガメ類の資料を参考にしています。現在のベルセオレガメだけの温湿度や食事の配分を示すものではありません。"
+    },
+    {
+      "name": "ケヅメリクガメ（スルカタ）",
+      "slug": "sulcata-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は屋外飼育場が必須（甲長60〜80cm・室内ケージ規格では終生飼育不可）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/Downloads/Sulcata.pdf"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "アルダブラゾウガメ",
+      "slug": "aldabra-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_large",
+      "all": "tortoise_dry_large",
+      "pageKeys": [
+        "tortoise_dry_large"
+      ],
+      "adult_enclosure_existing_site_guideline": "施設級の屋外飼育場＋冬の大空間加温が前提（個人の一般住宅では現実的でない）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.aldabragianttortoises.co.uk/should-i-get-a-tortoise/recommendations-of-things-to-include-in-your-tortoise-house-and-pen"
+      ],
+      "source_scope_note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+    },
+    {
+      "name": "インプレッサムツアシガメ",
+      "slug": "impressed-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注ケージか、冷房で低温を保てる部屋飼いが前提（夏の屋外は不向き）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232",
+        "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+      ],
+      "source_scope_note": "動物園の飼育報告と欧州の幼体・亜成体の飼育記録を参考にしています。掲載商品の適合や、日本での一律の温度設定を示すものではありません。"
+    },
+    {
+      "name": "パンケーキリクガメ",
+      "slug": "pancake-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm（岩組み必須）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://zoomed.com/pancake-tortoise/"
+      ],
+      "source_scope_note": "パンケーキリクガメの飼育資料を参考にしています。"
+    },
+    {
+      "name": "インドホシガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/celegans.html"
+      ],
+      "source_scope_note": "インドホシガメの飼育資料から、日陰と水場の条件を確認しています。器具の出力や容器の適合を保証するものではありません。"
+    },
+    {
+      "name": "ビルマホシガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_057_platynota_v1_2011.pdf"
+      ],
+      "source_scope_note": "ビルマホシガメの種別報告にある飼育条件です。現地施設の広さや温度を、そのまま家庭の固定値にはしていません。"
+    },
+    {
+      "name": "エジプトリクガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.kleinmanniassuranceproject.com/care-guide"
+      ],
+      "source_scope_note": "エジプトリクガメの飼育プロジェクトの方法を参考にしています。砂の安全性や特定の器具を一律に勧めるものではありません。"
+    },
+    {
+      "name": "ソリガメ",
+      "slug": "bowsprit-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm規格でも手狭。特注ケージか部屋飼い（屋外は高温多湿を避けられる時期に限る）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://reptilesmagazine.com/the-angulate-tortoise-of-south-africa/"
+      ],
+      "source_scope_note": "ソリガメの飼育者の実例を参考にしています。海外での屋外飼育時期は、日本の気候にそのまま当てはめずに考えます。"
+    },
+    {
+      "name": "ホームセオレガメ",
+      "slug": "home-hinge-back-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（床面積優先・高湿度維持）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_070_homeana_v1_2013.pdf"
+      ],
+      "source_scope_note": "種概説の飼育節を参照しています。固定の湿度値や、個々の床材製品の適合を指定するものではありません。"
+    },
+    {
+      "name": "マダガスカルクモノスガメ",
+      "slug": null,
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/pyxis.html"
+      ],
+      "source_scope_note": "Pyxis属の飼育資料で共通して扱われる床材・日陰・水場の条件です。亜種別の温湿度や用品適合まで確認したものではありません。"
+    },
+    {
+      "name": "イベラギリシャリクガメ",
+      "slug": "iberian-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "チュニジアギリシャリクガメ",
+      "slug": "tunisian-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/",
+        "https://www.tortoisetrust.com/post/tunisian-tortoise-care-updated"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "モロッコギリシャリクガメ",
+      "slug": "moroccan-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "リビアギリシャリクガメ",
+      "slug": "libyan-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "ヒガシヘルマンリクガメ",
+      "slug": "eastern-hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm級（本種群で最大の亜種）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "ニシヘルマンリクガメ",
+      "slug": "western-hermann-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "ゴールデンギリシャリクガメ",
+      "slug": "golden-greek-tortoise",
+      "route": "land",
+      "normal": "tortoise_dry_small",
+      "all": "tortoise_dry_small",
+      "pageKeys": [
+        "tortoise_dry_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "90〜120cm級（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": true,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf",
+        "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+      ],
+      "source_scope_note": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。"
+    },
+    {
+      "name": "チェリーヘッドアカアシリクガメ",
+      "slug": "cherry-head-tortoise",
+      "route": "land",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "「小型のまま」を前提にしない（通常のアカアシ水準で計画）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://tortoiselibrary.com/species-information-2/chelonoidis/"
+      ],
+      "source_scope_note": "アカアシリクガメの飼育資料を参考にしています。チェリーヘッドだけを対象にした飼育試験ではありません。"
+    },
+    {
+      "name": "ミシシッピニオイガメ",
+      "slug": "musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45cmで開始・成体は60cm以上の水槽（単独・当サイト目安）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/common-musk-turtle-care"
+      ],
+      "source_scope_note": "Tree of Life動物病院の本種向け飼育案内を参考にしています。資料にある水深や照明の数値を、そのまま全個体・全製品へ当てはめてはいません。"
+    },
+    {
+      "name": "ヒラタニオイガメ",
+      "slug": null,
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf",
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "本種の自然史資料にある、澄んだ水と岩の隙間を利用する生態を参考にしています。足場や陸場の案内は、ドロガメ・ニオイガメ類の共通の飼育資料を補っています。"
+    },
+    {
+      "name": "ミシシッピドロガメ",
+      "slug": "mississippi-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://austinsturtlepage.com/Care/cs-mismud.htm"
+      ],
+      "source_scope_note": "Austin’s Turtle Pageのミシシッピドロガメ（旧学名Kinosternon subrubrum hippocrepis）向け案内を参照しています。本文にある成体の水深例や混泳の説明は、幼体や他種へ転用していません。"
+    },
+    {
+      "name": "ミスジドロガメ",
+      "slug": "striped-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/caresheet-3_striped_mud.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "カブトニオイガメ",
+      "slug": "razorback-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独60cm水槽・ペア90cm（海外24インチ/36インチ推奨が国内規格へほぼ一致）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-razrbk.htm"
+      ],
+      "source_scope_note": "Austin’s Turtle Pageの本種向け飼育案内を参照しています。深い水域での飼育にも言及がありますが、全幼体へ深水を勧めるものではありません。この資料だけで個々の照明製品の適合は判断していません。"
+    },
+    {
+      "name": "スジクビニオイガメ",
+      "slug": "stripe-necked-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/nackenstreifen-moschusschildkroeten-sternotherus-minor-peltifer/"
+      ],
+      "source_scope_note": "旧名Sternotherus minor peltiferで紹介されている、スジクビニオイガメの飼育記録を参考にしています。"
+    },
+    {
+      "name": "ホオアカドロガメ",
+      "slug": "red-cheeked-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+      ],
+      "source_scope_note": "ホオアカドロガメを含むサソリドロガメの仲間の飼育案内を参考にしています。水深や容器の大きさは、種類と体格で変わります。"
+    },
+    {
+      "name": "ニシキガメ",
+      "slug": "painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+      ],
+      "source_scope_note": "ニシキガメのうち、トウブ・セイブ・チュウブの飼育案内を参考にしています。"
+    },
+    {
+      "name": "セイブニシキガメ",
+      "slug": "western-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+      ],
+      "source_scope_note": "動物病院のトウブ・セイブニシキガメ向け案内を参照しています。資料の容量や水深、照明の数値を全個体・全製品共通の基準にはしていません。"
+    },
+    {
+      "name": "トウブニシキガメ",
+      "slug": "eastern-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+      ],
+      "source_scope_note": "動物病院のトウブ・セイブニシキガメ向け案内を参照しています。資料の容量や水深、照明の数値を全個体・全製品共通の基準にはしていません。"
+    },
+    {
+      "name": "チュウブニシキガメ",
+      "slug": "midland-painted-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+      ],
+      "source_scope_note": "チュウブニシキガメを含む3亜種の飼育案内を参考にしています。"
+    },
+    {
+      "name": "クサガメ",
+      "slug": "reeves-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.pets.gov.hk/english/proper_care_of_pets/turtles.html"
+      ],
+      "source_scope_note": "香港漁農自然護理署のクサガメ向け飼育案内を参考にしています。資料の水深や容器容量を、子ガメを含む全個体の固定基準にはしていません。"
+    },
+    {
+      "name": "キバラガメ",
+      "slug": "yellow-bellied-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ],
+      "source_scope_note": "アカミミ・キバラ・カンバーランドを対象とするRSPCAの共通案内です。水量の例は同団体の目安で、国内の水槽規格とは区別しています。"
+    },
+    {
+      "name": "ミシシッピアカミミガメ",
+      "slug": "red-eared-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25〜28cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ],
+      "source_scope_note": "アカミミ・キバラ・カンバーランドを対象とするRSPCAの共通案内です。水量の例は同団体の目安で、国内の水槽規格とは区別しています。"
+    },
+    {
+      "name": "ミシシッピチズガメ",
+      "slug": "mississippi-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/caresheet-mississippi_map.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "ニセチズガメ",
+      "slug": "false-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/falsche-landkarten-mississippi-hoeckerschildkroeten-graptemys-pseudogeographica-kohnii/"
+      ],
+      "source_scope_note": "ニセチズガメとミシシッピチズガメを扱う飼育案内を参考にしています。"
+    },
+    {
+      "name": "ニホンイシガメ",
+      "slug": "japanese-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "japanese_pond"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": true
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.exoinfo.jp/care/1990/",
+        "https://kame.mr-b9.net/archives/24"
+      ],
+      "source_scope_note": "国内獣医師のイシガメ・クサガメ・アカミミガメ共通の解説と、イシガメ飼育者の陸場使用例を参考にしています。個人の使用例を全個体共通の基準にはしていません。"
+    },
+    {
+      "name": "ヤエヤマイシガメ",
+      "slug": "yaeyama-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "japanese_pond"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+      ],
+      "source_scope_note": "ミナミイシガメの飼育記録から共通する設備を参考にしています。ヤエヤマイシガメ固有の水深や冬の管理を示す資料ではありません。"
+    },
+    {
+      "name": "ミナミイシガメ",
+      "slug": "yellow-pond-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+      ],
+      "source_scope_note": "スイスの飼育者によるミナミイシガメの飼育・繁殖記録を参考にしています。プールやプラスチック箱を使った例も紹介されています。"
+    },
+    {
+      "name": "ニシキマゲクビガメ（ピンクベリー）",
+      "slug": "pink-bellied-side-necked-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://reptilesmagazine.com/pink-bellied-side-necked-turtle-care-sheet/"
+      ],
+      "source_scope_note": "ニシキマゲクビガメの繁殖者による飼育記事を参考にしています。"
+    },
+    {
+      "name": "ペニンシュラクーター",
+      "slug": "peninsula-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "幼体60cm可・成体メスは120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+      ],
+      "source_scope_note": "両クーターを対象一覧に含むWinter Park動物病院の水棲ガメ共通案内を参照しています。本種だけの推奨容量や水深、個別商品の適合を検証した資料ではありません。"
+    },
+    {
+      "name": "スワニークーター",
+      "slug": "suwannee-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://tortoisetrust.org/articles/aquatic.html"
+      ],
+      "source_scope_note": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "ブランディングガメ",
+      "slug": "blandings-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋乾ける陸場",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://tortoisetrust.org/articles/aquatic.html"
+      ],
+      "source_scope_note": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "マタマタ",
+      "slug": "matamata",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上（底面積優先）＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.researchgate.net/publication/352260587_Distribution_of_Chelus_fimbriata_and_Chelus_orinocensis_Testudines_Chelidae"
+      ],
+      "source_scope_note": "2021年の分布論文はマタマタとオリノコマタマタの両種を扱います。浅場を利用する生態を参考にした選び方で、固定の水深上限や機器の適合を示すものではありません。"
+    },
+    {
+      "name": "サラドロガメ",
+      "slug": "mexican-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・余裕があれば90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "ヨーロッパヌマガメ",
+      "slug": "european-pond-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/articles/orbicularis.htm"
+      ],
+      "source_scope_note": "Tortoise Trustによるヨーロッパヌマガメの飼育・繁殖記録を参考にしています。"
+    },
+    {
+      "name": "カントンクサガメ",
+      "slug": "canton-reeves-turtle",
+      "route": "aquatic",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体（メス25cm級）は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_068_nigricans_v1_2012.pdf"
+      ],
+      "source_scope_note": "Mauremys nigricansの種概説にある飼育記録を参考にしています。クサガメとは別種として扱っています。"
+    },
+    {
+      "name": "キイロドロガメ",
+      "slug": "yellow-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "ハーレラドロガメ",
+      "slug": "herrera-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "シロクチドロガメ",
+      "slug": "white-lipped-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽から・余裕があれば90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "クロコブチズガメ",
+      "slug": "black-knobbed-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm推奨",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-bkmap.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "ワモンチズガメ",
+      "slug": "ringed-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/pracht-hoeckerschildkroeten-graptemys-oculifera/"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "フトマユチズガメ",
+      "slug": "ouachita-map-turtle-sp",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-ouamap.htm"
+      ],
+      "source_scope_note": "資料はGraptemys ouachitensis ouachitensis向け。サイトのsp表記から別種まで対象を広げません。"
+    },
+    {
+      "name": "サルヴィンオオニオイガメ",
+      "slug": "giant-musk-turtle-mx",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独で90cm水槽基準",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "ハナガメ",
+      "slug": "chinese-stripe-necked-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60〜90cm可・成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/chinesische-streifenschildkroeten-ocadia-mauremys-sinensis/"
+      ],
+      "source_scope_note": "ハナガメの飼育案内を参考にしています。ランプの出力や設置距離は、使う製品に合わせて確認してください。"
+    },
+    {
+      "name": "トウブドロガメ",
+      "slug": "eastern-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "カンバーランドスライダー",
+      "slug": "cumberland-slider",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.rspca.org.uk/adviceandwelfare/pets/other/terrapin"
+      ],
+      "source_scope_note": "アカミミ・キバラ・カンバーランドを対象とするRSPCAの共通案内です。水量の例は同団体の目安で、国内の水槽規格とは区別しています。"
+    },
+    {
+      "name": "キタチズガメ",
+      "slug": "northern-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm可・メス90〜120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/caresheet-northern_map.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "テキサスチズガメ",
+      "slug": null,
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "enclosure_evidence_missing",
+        "no_unique_species_page"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-texmap.htm"
+      ],
+      "source_scope_note": "Graptemys versaを対象とした飼育者向け資料を参照しています。雌雄で体格が違うため、小さい個体向けの用品をそのまま終生用とは考えません。"
+    },
+    {
+      "name": "アラバマチズガメ",
+      "slug": "alabama-map-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "オス60cm規格可・メス90〜120cm規格必須",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://tortoisetrust.org/articles/aquatic.html"
+      ],
+      "source_scope_note": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "ホオジロクロガメ",
+      "slug": "asian-black-marsh-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/schwarze-dickkopf-schildkroete-siebenrockiella-crassicollis/"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "ハナナガドロガメ",
+      "slug": "narrow-bridged-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm開始",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "フロリダドロガメ",
+      "slug": "florida-mud-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "オオアタマヒメニオイガメ",
+      "slug": "loggerhead-musk-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "45〜60cm規格で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-logger.htm"
+      ],
+      "source_scope_note": "Austin’s Turtle Pageの本種向け飼育案内を参照しています。深い水域での飼育にも言及がありますが、全幼体へ深水を勧めるものではありません。この資料だけで個々の照明製品の適合は判断していません。"
+    },
+    {
+      "name": "リバークーター",
+      "slug": "river-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+      ],
+      "source_scope_note": "両クーターを対象一覧に含むWinter Park動物病院の水棲ガメ共通案内を参照しています。本種だけの推奨容量や水深、個別商品の適合を検証した資料ではありません。"
+    },
+    {
+      "name": "リオグランデクーター",
+      "slug": "rio-grande-cooter",
+      "route": "aquatic",
+      "normal": "semi_aquatic_small",
+      "all": "semi_aquatic_small",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_100_gorzugi_v1_2016.pdf"
+      ],
+      "source_scope_note": "種概説では、クーター類に共通する飼育方法を参考にしています。本種固有の詳細な条件は、まだ十分に記載されていません。"
+    },
+    {
+      "name": "フロリダアカハラガメ",
+      "slug": "florida-red-bellied-turtle",
+      "route": "aquatic",
+      "normal": "semi_aquatic_medium",
+      "all": "semi_aquatic_medium",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "幼体60cm可・成体は120cm級＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-flredbelly.htm"
+      ],
+      "source_scope_note": "Austin’s Turtle PageのPseudemys nelsoni向け案内を参照しています。掲載された容量は執筆者の目安で、国内の水槽規格や全個体に共通の基準ではありません。"
+    },
+    {
+      "name": "キボシイシガメ",
+      "slug": "spotted-turtle",
+      "route": "forest",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽で終生飼育可",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/american-spotted-turtle-care",
+        "https://reptilesmagazine.com/listings/turtles-tortoises-care/spotted-turtle/"
+      ],
+      "source_scope_note": "動物病院の飼育案内と専門誌を参照。資料ごとの水深や陸水の比率を、全個体に共通の固定値にはしていません。"
+    },
+    {
+      "name": "モリイシガメ",
+      "slug": "wood-turtle",
+      "route": "forest",
+      "normal": "japanese_pond",
+      "all": "japanese_pond",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "水場と陸場の両方を広く（半陸半水）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-nawood.htm"
+      ],
+      "source_scope_note": "モリイシガメの飼育資料を参考にしています。冷却が必要かどうかは、設置場所の温度を測って判断します。"
+    },
+    {
+      "name": "スペングラーヤマガメ",
+      "slug": "spenglers-leaf-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cmケージ〜（床面積優先・高さ不要）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://theturtleroom.org/species-profile/geoemyda-spengleri/"
+      ],
+      "source_scope_note": "theTurtleRoomの飼育例を参考にしています。個別商品の適合や一律のUVB出力を示す資料ではありません。"
+    },
+    {
+      "name": "ヒラセガメ",
+      "slug": "hirase-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.cuora.org/cuora-mouhotii",
+        "https://theturtleroom.org/blog/2014/04/25/cuora-mouhotii-obsti-acclimation-care/"
+      ],
+      "source_scope_note": "ヒラセガメの生態とオプストヒラセガメの飼育例を参考にしています。温度や湿度を、すべての個体に共通する数値にはしていません。"
+    },
+    {
+      "name": "オプストヒラセガメ",
+      "slug": "obsti-hirase-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [],
+      "adult_enclosure_existing_site_guideline": null,
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "enclosure_evidence_missing"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://theturtleroom.org/blog/2014/04/25/cuora-mouhotii-obsti-acclimation-care/",
+        "https://www.cuora.org/cuora-mouhotii"
+      ],
+      "source_scope_note": "オプストヒラセガメ4頭の飼育例を参考にしています。"
+    },
+    {
+      "name": "アカスジヤマガメ",
+      "slug": "painted-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+      ],
+      "source_scope_note": "Rhinoclemmys pulcherrima全体を対象にしています。亜種によって水場の使い方が異なります。"
+    },
+    {
+      "name": "ネンリンヤマガメ",
+      "slug": "annulated-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.reptilesofecuador.com/rhinoclemmys_annulata.html"
+      ],
+      "source_scope_note": "生息環境や暮らし方から、陸地・隠れ場所・水場の組み合わせを考えています。飼育設備を比較した資料ではありません。"
+    },
+    {
+      "name": "マンヤマガメ",
+      "slug": "brown-wood-turtle-manni",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-central-american-wood-turtle-care"
+      ],
+      "source_scope_note": "Rhinoclemmys pulcherrima manniを対象にした動物病院の飼育案内です。他の亜種へそのまま当てはめるものではありません。"
+    },
+    {
+      "name": "ニカラグアクジャクガメ",
+      "slug": "nicaragua-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+      ],
+      "source_scope_note": "ニカラグアクジャクガメを明示した飼育案内を参考にしています。水場と陸地の比率は固定していません。"
+    },
+    {
+      "name": "ソノラクジャクガメ",
+      "slug": "sonora-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+      ],
+      "source_scope_note": "資料にソノラクジャクガメの飼育実績はないため、クジャクガメ類に共通する環境の組み合わせを参考にしています。"
+    },
+    {
+      "name": "ゲレーロクジャクガメ",
+      "slug": "guerrero-wood-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "tortoise_forest"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+      ],
+      "source_scope_note": "ゲレーロクジャクガメを明示した飼育案内を参考にしています。水場と陸地の比率は固定していません。"
+    },
+    {
+      "name": "ミツユビハコガメ",
+      "slug": "three-toed-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": true,
+        "basking_temp_c": true,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/ctriungis.html",
+        "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+      ],
+      "source_scope_note": "ミツユビハコガメの飼育案内と、動物病院によるハコガメ類の案内を参考にしています。"
+    },
+    {
+      "name": "トウブハコガメ",
+      "slug": "eastern-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "室内90〜120cm級。温帯種のため春〜秋は屋外囲いも選択肢",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoise.org/archives/terrapen.html",
+        "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+      ],
+      "source_scope_note": "トウブハコガメの飼育例と、北米のハコガメ類に共通する案内を参考にしています。"
+    },
+    {
+      "name": "ガルフコーストハコガメ",
+      "slug": "gulf-coast-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "最大亜種のため成体は120cm級推奨（90cmは亜成体まで）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoise.org/archives/terrapen.html",
+        "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+      ],
+      "source_scope_note": "ガルフコーストハコガメの飼育記録を参考にしています。水場の使い方には個体差があります。"
+    },
+    {
+      "name": "フロリダハコガメ",
+      "slug": "florida-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級から（床材厚敷き＋浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://vcahospitals.com/know-your-pet/turtles-box-housing",
+        "https://www.tortoise.org/archives/terrapen.html"
+      ],
+      "source_scope_note": "北米のハコガメ類に共通する、隠れ家と水場の案内を参考にしています。"
+    },
+    {
+      "name": "キタニシキハコガメ",
+      "slug": "ornate-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/cornata.html",
+        "https://www.austinsturtlepage.com/Care/cs-ornateboxie.htm"
+      ],
+      "source_scope_note": "Tortoise Trustと飼育者の案内を参照。草原の種であることを、床を常に乾かしてよいという意味にはしていません。"
+    },
+    {
+      "name": "タイワンセマルハコガメ",
+      "slug": "taiwan-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先・浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.cuora.org/cuora-flavomarginata"
+      ],
+      "source_scope_note": "陸上で暮らす生態をもとに、設備の組み合わせを考えています。温湿度や水深の数値を示すものではありません。"
+    },
+    {
+      "name": "マレーハコガメ",
+      "slug": "malayan-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://pismobeachvet.com/box-turtle-care/",
+        "https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/ar.20695"
+      ],
+      "source_scope_note": "動物病院のハコガメ飼育案内のうち、本種の説明を参照。研究論文にも陸水を分けた飼育例がありますが、その面積比や飼育頭数を推奨値として流用していません。"
+    },
+    {
+      "name": "チュウゴクセマルハコガメ",
+      "slug": "chinese-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm級ケージ〜（床面積優先・浅い水場）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.cuora.org/cuora-flavomarginata"
+      ],
+      "source_scope_note": "陸上で暮らす生態をもとに、設備の組み合わせを考えています。温湿度や水深の数値を示すものではありません。"
+    },
+    {
+      "name": "モエギハコガメ",
+      "slug": "indochinese-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoisetrust.org/care/cgalb.html"
+      ],
+      "source_scope_note": "分類が見直される前のモエギハコガメ類の飼育案内を参考にしています。種類ごとの温湿度や冬の管理は分けて考えます。"
+    },
+    {
+      "name": "ミスジハコガメ",
+      "slug": "three-striped-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8054",
+        "https://www.cuora.org/cuora-trifasciata"
+      ],
+      "source_scope_note": "古い資料には現在別種とされる種類も含まれるため、水場と陸地の組み合わせだけを参考にしています。"
+    },
+    {
+      "name": "ノコヘリマルガメ",
+      "slug": "asian-leaf-turtle",
+      "route": "forest",
+      "normal": "tortoise_forest",
+      "all": "tortoise_forest",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90cm＋広い陸場（アクアテラ型）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8060"
+      ],
+      "source_scope_note": "分類が見直される前のマルガメ類の資料から、水場と陸地の使い方を参考にしています。"
+    },
+    {
+      "name": "ミナミニシキハコガメ",
+      "slug": "desert-box-turtle",
+      "route": "forest",
+      "normal": "box_turtle",
+      "all": "box_turtle",
+      "pageKeys": [
+        "box_turtle"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": true,
+        "juvenile_notes": false
+      },
+      "review_flags": [],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.tortoise.org/archives/terrapen.html",
+        "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+      ],
+      "source_scope_note": "ニシキハコガメ類の共通条件を参考にしています。ミナミニシキハコガメ固有の温湿度は、この資料だけで決めていません。"
+    },
+    {
+      "name": "トゲスッポン",
+      "slug": "spiny-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://austinsturtlepage.com/Care/caresheet-spiny_softshell.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "スベスッポン",
+      "slug": "smooth-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体メスは120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://tortoisetrust.org/articles/aquatic.html"
+      ],
+      "source_scope_note": "スッポン類に共通する住まいの考え方を参考にしています。スベスッポン専用の水深や照明の数値は示していません。"
+    },
+    {
+      "name": "フロリダスッポン",
+      "slug": "florida-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/cs-flsoft.htm"
+      ],
+      "source_scope_note": "本種向けの飼育案内を参考にしています。"
+    },
+    {
+      "name": "スッポンモドキ",
+      "slug": "pig-nosed-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "終生飼育は120cm超〜池クラス（個人では極めて困難）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_009_insculpta_v1_2008.pdf"
+      ],
+      "source_scope_note": "種概説の飼育節を参照しています。特定の水槽寸法を終生飼育の最低基準として指定してはいません。"
+    },
+    {
+      "name": "スッポン（シナスッポン）",
+      "slug": "chinese-softshell-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋砂を敷ける底面積",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+      ],
+      "source_scope_note": "分類が見直される前のシナスッポンの飼育案内から、砂場や足場などの共通点を参考にしています。"
+    },
+    {
+      "name": "アルビノシナスッポン",
+      "slug": "albino-chinese-softshell",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm＋砂を敷ける底面積",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+      ],
+      "source_scope_note": "シナスッポンの飼育案内を参考にしています。アルビノ個体だけを対象にした資料ではありません。"
+    },
+    {
+      "name": "ノーザンダイヤモンドバックテラピン",
+      "slug": "northern-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "カロリナダイヤモンドバックテラピン",
+      "slug": "carolina-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上＋乾ける陸場",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "オルナータダイヤモンドバックテラピン",
+      "slug": "ornate-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "ミシシッピダイヤモンドバックテラピン",
+      "slug": "mississippi-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "テキサスダイヤモンドバックテラピン",
+      "slug": "texas-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "マングローブダイヤモンドバックテラピン",
+      "slug": "mangrove-diamondback-terrapin",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "メスは90cm以上",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://animaldiversity.org/accounts/Malaclemys_terrapin/",
+        "https://www.virginiaherpetologicalsociety.com/reptiles/turtles/northern-diamond-back-terrapin/index.php",
+        "https://www.tortoise.org/archives/malaclem.html"
+      ],
+      "source_scope_note": "テラピン全体の資料を参照しています。ランプの出力・距離や塩分を、6亜種共通の数値として指定していません。"
+    },
+    {
+      "name": "オーストラリアナガクビガメ",
+      "slug": "eastern-long-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は90〜120cm（首の長さ込み）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://innersouthvets.com.au/wp-content/uploads/2018/05/Caring-for-your-turtle2.pdf"
+      ],
+      "source_scope_note": "動物病院の飼育案内を参考にしています。古い器具を前提とする照射距離・交換周期は転記していません。"
+    },
+    {
+      "name": "ジーベンロックナガクビガメ",
+      "slug": "siebenrocks-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級（首の長さ込み）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://reptileone.com.au/care-sheets/Northern-Long-Neck-Turtle.pdf"
+      ],
+      "source_scope_note": "Chelodina rugosaのメーカー飼育案内を参考にしています。資料掲載の器具を、この一覧の商品へ置き換えて適合確認したものではありません。"
+    },
+    {
+      "name": "アフリカヌマヨコクビガメ",
+      "slug": "african-helmeted-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm推奨",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/african-side-necked-turtle-care"
+      ],
+      "source_scope_note": "病院の案内はPelomedusaとPelusiosをまとめて扱っています。固定の水深やUVB割合を、本種独自の基準としては採っていません。"
+    },
+    {
+      "name": "ヒメハコヨコクビガメ",
+      "slug": "west-african-mud-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm水槽から可・推奨90cm（推奨床面積0.35㎡は60cm規格0.18㎡を上回る）",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": true,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://allabout.co.jp/gm/gc/70686/",
+        "https://pets.tana.cc/2014-01-20-pelusios-nanus/"
+      ],
+      "source_scope_note": "飼育者の水深の記録は個別の飼育例です。固定の安全上限として扱っていません。"
+    },
+    {
+      "name": "ヒラリーカエルガメ",
+      "slug": "hilaire-side-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/hilaire-s-side-neck-turtle-care",
+        "https://sedici.unlp.edu.ar/bitstream/handle/10915/109403/Documento_completo.pdf-PDFA.pdf?isAllowed=y&sequence=1"
+      ],
+      "source_scope_note": "野外の甲羅干しの観察と、動物病院の飼育案内を区別して参照しています。個々の器具の適合を確認したものではありません。"
+    },
+    {
+      "name": "オリノコマタマタ",
+      "slug": "amazon-matamata",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "fully_aquatic"
+      ],
+      "adult_enclosure_existing_site_guideline": "成体は120cm級以上（底面積優先）＋強力ろ過",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": true,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.researchgate.net/publication/352260587_Distribution_of_Chelus_fimbriata_and_Chelus_orinocensis_Testudines_Chelidae"
+      ],
+      "source_scope_note": "2021年の分布論文はマタマタとオリノコマタマタの両種を扱います。浅場を利用する生態を参考にした選び方で、固定の水深上限や機器の適合を示すものではありません。"
+    },
+    {
+      "name": "サソリドロガメ",
+      "slug": "scorpion-mud-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_small"
+      ],
+      "adult_enclosure_existing_site_guideline": "60cm開始・成体90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+      ],
+      "source_scope_note": "サソリドロガメの仲間を扱う飼育案内を参考にしています。水深や容器の大きさは、種類と体格で変わります。"
+    },
+    {
+      "name": "スジオオニオイガメ",
+      "slug": "giant-musk-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "単独で120cm級",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+      ],
+      "source_scope_note": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。"
+    },
+    {
+      "name": "マッコードナガクビガメ",
+      "slug": "mccords-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "90cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://www.terrarium.com.pl/chelodina-mccordi-zolw-wezoszyi-mccorda/"
+      ],
+      "source_scope_note": "Wrocław動物園での4成体の飼育を紹介した記事です。動物園の公式基準や、全個体共通の水深・温度の基準ではありません。"
+    },
+    {
+      "name": "コウホソナガクビガメ",
+      "slug": "collier-snake-necked-turtle",
+      "route": "exotic",
+      "normal": "fully_aquatic",
+      "all": "fully_aquatic",
+      "pageKeys": [
+        "semi_aquatic_medium"
+      ],
+      "adult_enclosure_existing_site_guideline": "120cm",
+      "existing_field_presence_not_validation": {
+        "water_depth_cm": false,
+        "uvb": false,
+        "basking_temp_c": false,
+        "humidity_pct": false,
+        "juvenile_notes": false
+      },
+      "review_flags": [
+        "route_changes_candidates",
+        "page_changes_candidates",
+        "adult_large_or_custom_habitat_review"
+      ],
+      "status": "source_scoped_conditions_reviewed_not_product_fit_verified",
+      "condition_sources": [
+        "https://paperzz.com/doc/9451149/care-and-husbandry-of-captive-oblong-turtles"
+      ],
+      "source_scope_note": "Turtle Oblonga Networkの2013年の飼育文書（転載）を参考にしています。最新版の原文とは照合できていません。"
+    }
+  ]
+}

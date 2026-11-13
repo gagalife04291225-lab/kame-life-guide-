@@ -1,0 +1,746 @@
+..........................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:51: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\shindan\\species.js' mode='r' encoding='utf-8'>
+  raw = open(os.path.join(ROOT, 'shindan', 'species.js'), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides/small-best-turtles.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species/musk-turtle.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\ranking-beginner-top10.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides/keeper-hacks.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species/russian-tortoise.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\kid/index.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\js/kid-lookup.js' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:26: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\index.html' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, rel), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\_template-monetized.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\african-helmeted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\alabama-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\albino-chinese-softshell.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\aldabra-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\amazon-matamata.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\annulated-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\asian-black-marsh-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\asian-leaf-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\bell-hinge-back-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\black-knobbed-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\blandings-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\bowsprit-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\brown-wood-turtle-manni.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\canton-reeves-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\carolina-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chaco-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\cherry-head-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-stripe-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\collier-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\cumberland-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\desert-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-long-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\elongated-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\european-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\false-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-red-bellied-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\giant-musk-turtle-mx.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\giant-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\golden-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\guerrero-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\gulf-coast-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hermann-dry-template.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\herrera-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hilaire-side-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hime-nioi-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hirase-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\home-hinge-back-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\iberian-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\impressed-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\indochinese-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\japanese-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\leopard-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\libyan-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\loggerhead-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\malayan-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mangrove-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\marginated-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\matamata.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mccords-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mexican-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\midland-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\moroccan-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\narrow-bridged-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\nicaragua-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\northern-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\northern-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\obsti-hirase-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-cuora.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ouachita-map-turtle-sp.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ouachita-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\painted-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pancake-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\peninsula-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pig-nosed-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pink-bellied-side-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pink-bellied-template.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\razorback-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-cheeked-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-eared-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-footed-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\reeves-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ringed-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\rio-grande-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\river-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\russian-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\scorpion-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\siebenrocks-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\smooth-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\sonora-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spenglers-leaf-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spiny-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spotted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\stripe-necked-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\striped-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\sulcata-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\suwannee-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\taiwan-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\texas-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\three-striped-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\three-toed-box-template.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\three-toed-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\tunisian-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\west-african-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\western-hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\western-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\white-lipped-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yaeyama-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-bellied-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:88: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\african-helmeted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\alabama-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\albino-chinese-softshell.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\aldabra-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\amazon-matamata.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\annulated-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\asian-black-marsh-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\asian-leaf-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\bell-hinge-back-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\black-knobbed-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\blandings-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\bowsprit-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\brown-wood-turtle-manni.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\canton-reeves-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\carolina-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chaco-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\cherry-head-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\chinese-stripe-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\collier-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\cumberland-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\desert-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-long-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\eastern-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\elongated-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\european-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\false-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-red-bellied-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\florida-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\giant-musk-turtle-mx.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\giant-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\golden-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\guerrero-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\gulf-coast-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\herrera-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hilaire-side-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hime-nioi-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\hirase-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\home-hinge-back-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\iberian-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\impressed-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\indochinese-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\japanese-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\leopard-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\libyan-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\loggerhead-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\malayan-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mangrove-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\marginated-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\matamata.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mccords-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mexican-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\midland-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\mississippi-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\moroccan-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\narrow-bridged-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\nicaragua-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\northern-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\northern-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\obsti-hirase-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-cuora.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ornate-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ouachita-map-turtle-sp.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ouachita-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\painted-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pancake-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\peninsula-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pig-nosed-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\pink-bellied-side-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\razorback-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-cheeked-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-eared-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\red-footed-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\reeves-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\ringed-map-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\rio-grande-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\river-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\russian-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\scorpion-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\siebenrocks-snake-necked-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\smooth-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\sonora-wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spenglers-leaf-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spiny-softshell-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\spotted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\stripe-necked-musk-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\striped-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\sulcata-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\suwannee-cooter.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\taiwan-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\texas-diamondback-terrapin.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\three-striped-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\three-toed-box-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\tunisian-greek-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\west-african-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\western-hermann-tortoise.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\western-painted-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\white-lipped-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\wood-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yaeyama-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-bellied-slider.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-mud-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_growth_guidance.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\species\\yellow-pond-turtle.html' mode='r' encoding='utf-8'>
+  t = open(f, encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..............................................C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:82: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\data\\species-master.json' mode='r' encoding='utf-8'>
+  master = json.load(open(os.path.join(ROOT, 'data', 'species-master.json'), encoding='utf-8'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\user\CodexWork\equipment-finish-20261113\tools\test_species_size_sync.py:84: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\user\\CodexWork\\equipment-finish-20261113\\guides\\small-best-turtles.html' mode='r' encoding='utf-8'>
+  cls.article = open(os.path.join(ROOT, 'guides', 'small-best-turtles.html'), encoding='utf-8').read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....
+----------------------------------------------------------------------
+Ran 120 tests in 2.096s
+
+OK

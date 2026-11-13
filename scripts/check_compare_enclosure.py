@@ -15,6 +15,7 @@ import glob
 import json
 import re
 import sys
+from pathlib import Path
 
 SPACE_TH = re.compile(r'必要(?:ケージ|スペース|水槽|環境)$')
 OUTDOOR = re.compile(r'屋外|飼育場|池|㎡|施設')
@@ -46,7 +47,7 @@ def main() -> int:
     unjudged = []
 
     for path in sorted(glob.glob('species/*.html')):
-        slug = path.split('/')[-1][:-5]
+        slug = Path(path).stem
         if 'template' in slug:
             continue
         text = open(path, encoding='utf-8').read()

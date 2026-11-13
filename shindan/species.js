@@ -137,9 +137,9 @@ land: [
     availability: 'rare'
   },
   { name: 'インプレッサムツアシガメ', latin: 'Manouria impressa', emoji: '🏔️', difficulty: '上級', size: 'M（25〜31cm）', cites: 'CITES II', legal: 'cites_ii',
-    reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林産で低温・高湿度・通気の三立が必要。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
-    specs: { '最大甲長': '31cm', '主な食事': 'キノコ・果物・野草', '水容量': '水浴び場必須', '温度': '18〜24℃' },
-    coreSpecs: { size: '31cm', temp: '18〜24℃', lifespan: '30〜80年', diet: '草食（野草・野菜中心）' },
+    reason: 'リクガメ科で最も飼育が難しいとされるアジア産ムツアシガメ属。高標高の多湿林にすむ種。湿った床と通気、暑さを避ける場所と冷え込んだときの保温を両立させます。長期飼育記録が少なく専門家でも難しい究極の挑戦種。',
+    specs: { '最大甲長': '31cm', '主な食事': 'キノコを中心に植物性の餌', '水容量': '水浴び場必須', '温度': '場所・昼夜で調整（種ページ参照）' },
+    coreSpecs: { size: '31cm', temp: '場所・昼夜で調整（種ページ参照）', lifespan: '30〜80年', diet: '菌食中心（キノコ・植物）' },
     extraSpecs: {},
     links: [{ label: '多湿系リクガメ 飼育ガイド', href: '../guide-arid.html' }], asin: null,
     slug: 'impressed-tortoise', hasPage: true,
@@ -1512,6 +1512,136 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS['musk-turtle'] = {
   };
 });
 
+
+// Round 3 aquatic: source-scoped conditions.
+DIAGNOSIS_EQUIPMENT_CONDITIONS["eastern-painted-turtle"] = {
+  "title": "トウブニシキガメの用品を選ぶ前に",
+  "items": [
+    "泳ぐ場所と、全身が水から出て乾く陸場を用意します。陸場は乗っても傾いたり沈んだりせず、上りやすいものを選びます。",
+    "子ガメに合う容器でも、そのまま成体まで使えるとは限りません。水槽の長さだけでなく奥行きと実際の水量を見て選びます。",
+    "屋内では陸場の保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "動物病院のトウブ・セイブニシキガメ向け案内を参照しています。資料の容量や水深、照明の数値を全個体・全製品共通の基準にはしていません。",
+  "sources": [
+    {
+      "label": "Tree of Life動物病院：トウブ・セイブニシキガメの飼育",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["western-painted-turtle"] = {
+  "title": "セイブニシキガメの用品を選ぶ前に",
+  "items": [
+    "泳ぐ場所と、全身が水から出て乾く陸場を用意します。陸場は乗っても傾いたり沈んだりせず、上りやすいものを選びます。",
+    "子ガメに合う容器でも、そのまま成体まで使えるとは限りません。水槽の長さだけでなく奥行きと実際の水量を見て選びます。",
+    "屋内では陸場の保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "動物病院のトウブ・セイブニシキガメ向け案内を参照しています。資料の容量や水深、照明の数値を全個体・全製品共通の基準にはしていません。",
+  "sources": [
+    {
+      "label": "Tree of Life動物病院：トウブ・セイブニシキガメの飼育",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-turtle-care"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["razorback-musk-turtle"] = {
+  "title": "カブトニオイガメの用品を選ぶ前に",
+  "items": [
+    "水中を動き回れる場所と、上がって休める陸場を用意します。陸場に上がる機会が少なくても、使えるようにしておきます。",
+    "子ガメには水面近くで休める足場や隠れ場所を設けます。水深は体格や泳ぎ方を見ながら調整し、陸場へ移れる道も確保します。",
+    "食べ残しや汚れを取り除き、ろ過器は実際の水量と水位に合うものを選びます。水換えと器具の掃除も続けます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "Austin’s Turtle Pageの本種向け飼育案内を参照しています。深い水域での飼育にも言及がありますが、全幼体へ深水を勧めるものではありません。この資料だけで個々の照明製品の適合は判断していません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：カブトニオイガメの飼育案内",
+      "url": "https://www.austinsturtlepage.com/Care/cs-razrbk.htm"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["loggerhead-musk-turtle"] = {
+  "title": "オオアタマヒメニオイガメの用品を選ぶ前に",
+  "items": [
+    "水中を動き回れる場所と、上がって休める陸場を用意します。陸場に上がる機会が少なくても、使えるようにしておきます。",
+    "子ガメには水面近くで休める足場や隠れ場所を設けます。水深は体格や泳ぎ方を見ながら調整し、陸場へ移れる道も確保します。",
+    "食べ残しや汚れを取り除き、ろ過器は実際の水量と水位に合うものを選びます。水換えと器具の掃除も続けます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "Austin’s Turtle Pageの本種向け飼育案内を参照しています。深い水域での飼育にも言及がありますが、全幼体へ深水を勧めるものではありません。この資料だけで個々の照明製品の適合は判断していません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：オオアタマヒメニオイガメの飼育案内",
+      "url": "https://www.austinsturtlepage.com/Care/cs-logger.htm"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["mississippi-mud-turtle"] = {
+  "title": "ミシシッピドロガメの用品を選ぶ前に",
+  "items": [
+    "陸場を広めに取り、水から上がりやすい構成にします。水中にも登ったり休んだりできる足場を用意します。",
+    "特に子ガメは浅い水場から、泳ぎ方と上陸の様子を見て調整します。成体でも水深だけを増やさず、陸場へ移れる道を確保します。",
+    "浅い水位でろ過器やヒーターを使えるか、器具の使用条件を確認します。陸場の保温と水換え・掃除も必要です。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "Austin’s Turtle Pageのミシシッピドロガメ（旧学名Kinosternon subrubrum hippocrepis）向け案内を参照しています。本文にある成体の水深例や混泳の説明は、幼体や他種へ転用していません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：ミシシッピドロガメの飼育案内",
+      "url": "https://austinsturtlepage.com/Care/cs-mismud.htm"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["florida-red-bellied-turtle"] = {
+  "title": "フロリダアカハラガメの用品を選ぶ前に",
+  "items": [
+    "泳ぐための広い水域と、全身を支えて乾かせる陸場を用意します。屋内ではUVB照明と陸場の保温を整えます。",
+    "メスはオスより大きく育ちます。子ガメの現在の大きさだけで決めず、成体の体格と旋回できる奥行きも考えて容器を選びます。",
+    "ろ過器と、水中を加温する場合のヒーターは、実際に入れる水量と器具の使用条件に合わせます。"
+  ],
+  "note": "高価格帯の水槽でも、全個体の終生飼育に合うとは限りません。陸場を置いた後の水域と、成体までの飼育場所を確認してください。",
+  "sourceNote": "Austin’s Turtle PageのPseudemys nelsoni向け案内を参照しています。掲載された容量は執筆者の目安で、国内の水槽規格や全個体に共通の基準ではありません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：フロリダアカハラガメの飼育案内",
+      "url": "https://www.austinsturtlepage.com/Care/cs-flredbelly.htm"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["peninsula-cooter"] = {
+  "title": "ペニンシュラクーターの用品を選ぶ前に",
+  "items": [
+    "成長後も泳げる広さを確保し、全身を水から出せる陸場を用意します。陸場は亀が乗っても倒れないように設置します。",
+    "子ガメ時の体格だけで決めず、成体まで使える広さを見込むか、成長に合わせて広げる計画を立てます。長辺だけでなく奥行きと実際の水量も確認します。",
+    "屋内ではUVB照明と陸場の保温を整えます。ろ過器を使いながら水換えと掃除を続け、加温器具も水量・水位に合わせます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "両クーターを対象一覧に含むWinter Park動物病院の水棲ガメ共通案内を参照しています。本種だけの推奨容量や水深、個別商品の適合を検証した資料ではありません。",
+  "sources": [
+    {
+      "label": "Winter Park動物病院：水棲ガメの飼育案内",
+      "url": "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+    }
+  ]
+};
+DIAGNOSIS_EQUIPMENT_CONDITIONS["river-cooter"] = {
+  "title": "リバークーターの用品を選ぶ前に",
+  "items": [
+    "成長後も泳げる広さを確保し、全身を水から出せる陸場を用意します。陸場は亀が乗っても倒れないように設置します。",
+    "子ガメ時の体格だけで決めず、成体まで使える広さを見込むか、成長に合わせて広げる計画を立てます。長辺だけでなく奥行きと実際の水量も確認します。",
+    "屋内ではUVB照明と陸場の保温を整えます。ろ過器を使いながら水換えと掃除を続け、加温器具も水量・水位に合わせます。"
+  ],
+  "note": "一覧は比較候補です。個体の体格と、陸場を置いた後の広さ・水量に合うかを確認してください。",
+  "sourceNote": "両クーターを対象一覧に含むWinter Park動物病院の水棲ガメ共通案内を参照しています。本種だけの推奨容量や水深、個別商品の適合を検証した資料ではありません。",
+  "sources": [
+    {
+      "label": "Winter Park動物病院：水棲ガメの飼育案内",
+      "url": "https://wpvet.com/exotic-pets-care-guides/aquatic-turtles/"
+    }
+  ]
+};
 DIAGNOSIS_EQUIPMENT_CONDITIONS['home-hinge-back-tortoise'] = {
   title: 'ホームセオレの用品を選ぶ前に',
   items: [
@@ -1788,4 +1918,1386 @@ DIAGNOSIS_EQUIPMENT_CONDITIONS["aldabra-tortoise"] = {
     }
   ],
   "note": "候補の合計には、床材の必要な袋数や追加する設備の費用までは含まれていません。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['leopard-tortoise'] = {
+  "title": "ヒョウモンリクガメの用品を選ぶ前に",
+  "items": [
+    "成体には歩き回れる広さと、体が収まる隠れ家・水場を用意します。候補のケージだけで終生飼えるとは限りません。",
+    "暖まる場所と涼しい場所を分け、亀がいる高さで温度を測ります。UVBランプは製品ごとの設置距離を確認してください。",
+    "掘れる床材と、湿り気のある隠れ家を用意し、清潔に保ちます。水場や隠れ家を置いた後にも歩ける場所を残します。"
+  ],
+  "note": "広い飼育場所の整備や追加の床材・隠れ家・水場にかかる費用は、用品候補の合計に含まれていません。",
+  "sourceNote": "ヒョウモンリクガメの飼育資料をもとにした確認事項です。掲載商品の適合や、必要な個数まで保証するものではありません。",
+  "sources": [
+    {
+      "label": "RVC：Leopard tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Leopard%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "Tree of Life Exotic Pet Medical Center：Leopard Tortoise Care",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/tortoises/leopard-tortoise-care"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['impressed-tortoise'] = {
+  "title": "インプレッサムツアシガメの用品を選ぶ前に",
+  "items": [
+    "潜れる湿った落ち葉や床材、隠れ家、出入りしやすい浅い水場を用意します。",
+    "暑さを避けられる場所だけでなく、冷え込んだときに暖まれる場所も必要です。部屋全体を冷やすだけでなく、隠れ家と活動場所の温度を測ります。",
+    "キノコを中心に、野菜など植物性の餌も組み合わせます。一般的なリクガメ用フードだけで食事がそろうとは考えず、食べているものを確認します。"
+  ],
+  "note": "追加の床材や水場、室温管理、食材の費用は用品候補の合計に含まれていません。",
+  "sourceNote": "動物園の飼育報告と欧州の幼体・亜成体の飼育記録を参考にしています。掲載商品の適合や、日本での一律の温度設定を示すものではありません。",
+  "sources": [
+    {
+      "label": "Jason Brock（Zoo Atlanta）：Keeping and Breeding Impressed Tortoises（2009）",
+      "url": "https://journals.ku.edu/reptilesandamphibians/article/download/15951/14232"
+    },
+    {
+      "label": "Gaby Herzog：Notes on the Captive Husbandry of F1 Impressed Tortoises in Europe（2014、p.68）",
+      "url": "https://colombia.wcs.org/Portals/113/TSA-Magazine-2014.pdf"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['spenglers-leaf-turtle'] = {
+  "title": "スペングラーの用品を選ぶ前に",
+  "items": [
+    "湿り気を保てる床材と、落ち葉やコルクなどの隠れ場所を用意します。床材は容器の面積と敷く厚さに合わせてそろえます。",
+    "水を飲んだり体を浸したりできる、出入りしやすい浅い水場も用意します。候補に水入れがなくても、不要という意味ではありません。",
+    "複数飼育では隠れ場所や水場の取り合いにも注意が必要です。参考にした飼育団体は成体・幼体を個別に飼育しています。"
+  ],
+  "note": "水入れや追加の隠れ家、床材の必要量によって費用は変わります。",
+  "sourceNote": "theTurtleRoomの飼育例を参考にしています。個別商品の適合や一律のUVB出力を示す資料ではありません。",
+  "sources": [
+    {
+      "label": "theTurtleRoom：Geoemyda spengleri（Captive Habitat）",
+      "url": "https://theturtleroom.org/species-profile/geoemyda-spengleri/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS['brown-wood-turtle-manni'] = {
+  "title": "マンヤマガメの用品を選ぶ前に",
+  "items": [
+    "湿った床と隠れ場所に加え、体を浸せて出入りしやすい浅い水場を用意します。小さな飲み水皿だけで済ませず、体格に合わせて選びます。",
+    "陸場と水場を配置した後も、歩き回れる広さを残します。種ページの90cmは当サイトの目安で、参考にした動物病院は成体1匹に120×60cm以上を案内しています。",
+    "暖まる場所と日陰を分け、床の温度や湿り気を確認します。UVBランプは対応器具と照射距離を確認して設置します。"
+  ],
+  "note": "水場や追加の床材、広い容器への変更にかかる費用は、用品候補の合計とは別に見込んでください。",
+  "sourceNote": "Rhinoclemmys pulcherrima manniを対象にした動物病院の飼育案内です。他の亜種へそのまま当てはめるものではありません。",
+  "sources": [
+    {
+      "label": "Tree of Life Exotic Pet Medical Center：Painted Central American Wood Turtle Care",
+      "url": "https://treeoflifeexotics.vet/education-resource-center/for-clients/turtles/painted-central-american-wood-turtle-care"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["marginated-tortoise"] = {
+  "title": "フチゾリリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["iberian-greek-tortoise"] = {
+  "title": "イベラギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["tunisian-greek-tortoise"] = {
+  "title": "チュニジアギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "寒く湿った環境が続かないようにします。冬や悪天候時に使う屋内設備も用意し、他のギリシャリクガメと同じ冬眠管理にはしません。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    },
+    {
+      "label": "Tortoise Trust：Tunisian tortoise care（2025）",
+      "url": "https://www.tortoisetrust.com/post/tunisian-tortoise-care-updated"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["moroccan-greek-tortoise"] = {
+  "title": "モロッコギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["libyan-greek-tortoise"] = {
+  "title": "リビアギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["eastern-hermann-tortoise"] = {
+  "title": "ヒガシヘルマンリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["western-hermann-tortoise"] = {
+  "title": "ニシヘルマンリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["golden-greek-tortoise"] = {
+  "title": "ゴールデンギリシャリクガメの用品を選ぶ前に",
+  "items": [
+    "ケージは長辺だけでなく床面積も見て選び、隠れ家と浅い水入れを用意します。",
+    "暖まる場所と熱を避ける場所を分けます。UVBランプは設置距離を確認し、間にガラスを挟まないようにします。",
+    "冬の管理は亜種や産地で異なります。名前だけで冬眠させる前提にせず、冬も使える保温設備と温度計を準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "地中海沿岸のリクガメに共通する設備の案内を参考にしています。温湿度や冬の管理は、種類と産地に合わせて考えます。",
+  "sources": [
+    {
+      "label": "RVC：Mediterranean tortoise care（2024）",
+      "url": "https://www.rvc.ac.uk/Media/Default/Beaumont%20Sainsbury%20Animal%20Hospital/EXOTICS/Animal%20Care%20Factsheets/Mediterranean%20tortoise%20care%202024%20jh.pdf"
+    },
+    {
+      "label": "LafeberVet：Greek tortoise",
+      "url": "https://lafeber.com/vet/basic-information-sheet-greek-or-spur-thighed-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["cherry-head-tortoise"] = {
+  "title": "チェリーヘッドアカアシリクガメの用品を選ぶ前に",
+  "items": [
+    "湿り気を保てる床材と、光を避けて休める隠れ家を用意します。",
+    "浅い水場は出入りしやすく、体が収まるものを選びます。水替えできる位置に置きます。",
+    "暖まる場所だけでなく日陰も残します。成長後の体に合わせて、歩ける床面積と隠れ家の大きさを見直します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "アカアシリクガメの飼育資料を参考にしています。チェリーヘッドだけを対象にした飼育試験ではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Library：Chelonoidis",
+      "url": "https://tortoiselibrary.com/species-information-2/chelonoidis/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["bowsprit-tortoise"] = {
+  "title": "ソリガメの用品を選ぶ前に",
+  "items": [
+    "水はけのよい床材と、身を隠せる場所を用意します。屋外なら雨水がたまらない場所を選びます。",
+    "浅い水入れは出入りしやすく置き、日なたと日陰の両方を残します。",
+    "よく動くため、設備を並べた後の床面積も確認します。オス同士を同居させる前提でケージを選ばないようにします。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "ソリガメの飼育者の実例を参考にしています。海外での屋外飼育時期は、日本の気候にそのまま当てはめずに考えます。",
+  "sources": [
+    {
+      "label": "Chris Leone：Angulate Tortoise（飼育記録）",
+      "url": "https://reptilesmagazine.com/the-angulate-tortoise-of-south-africa/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["pancake-tortoise"] = {
+  "title": "パンケーキリクガメの用品を選ぶ前に",
+  "items": [
+    "登れるため、壁の高さだけでなく上部から抜け出せない構造を確認します。",
+    "岩のすき間を模した隠れ家は、重い石が崩れないように固定します。",
+    "浅い水場と暖まる場所、熱を避ける隠れ家を分けます。UVBランプは製品ごとの照射距離を確認します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "パンケーキリクガメの飼育資料を参考にしています。",
+  "sources": [
+    {
+      "label": "Zoo Med：Pancake Tortoise",
+      "url": "https://zoomed.com/pancake-tortoise/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["chaco-tortoise"] = {
+  "title": "チャコリクガメの用品を選ぶ前に",
+  "items": [
+    "歩ける場所と、夜間や悪天候に退避できる屋内設備を用意します。",
+    "床材を敷き、保温器具は温度を測りながら使います。古い飼育例の器具やワット数をそのまま再現する必要はありません。",
+    "同居個体をひっくり返す行動が報告されています。複数飼育では分けて飼える場所も確保します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "チャコリクガメの過去の飼育記録を参考にしています。古い器具や設定値を、そのまま現在の製品に当てはめてはいません。",
+  "sources": [
+    {
+      "label": "Heinz Wermuth：Chaco tortoise飼育記録（1967、翻訳再録）",
+      "url": "https://www.anapsid.org/chaco2.html"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["bell-hinge-back-tortoise"] = {
+  "title": "ベルセオレガメの用品を選ぶ前に",
+  "items": [
+    "湿り気を残せる床材と隠れ家を用意します。乾燥系の用品候補だけで環境がそろうとは限りません。",
+    "体が収まり、無理なく出入りできる水場を用意します。",
+    "植物だけを食べるリクガメと同じ食事にはしません。購入時に食べていた餌と種類を確認して、食材も準備します。"
+  ],
+  "note": "隠れ家や水場、床材を置いた後にも歩ける広さを残します。追加設備や室温管理の費用は用品候補の合計に含まれません。",
+  "sourceNote": "分類が見直される前のセオレガメ類の資料を参考にしています。現在のベルセオレガメだけの温湿度や食事の配分を示すものではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：Kinixys属の飼育",
+      "url": "https://www.tortoisetrust.org/care/ckinixys.html"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["wood-turtle"] = {
+  "title": "モリイシガメの用品を選ぶ前に",
+  "items": [
+    "水中だけでなく、歩ける陸地と日陰も確保します。",
+    "水場から陸へ移れる足場を作り、水温と日陰の温度を別々に確認します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "モリイシガメの飼育資料を参考にしています。冷却が必要かどうかは、設置場所の温度を測って判断します。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：モリイシガメ",
+      "url": "https://www.austinsturtlepage.com/Care/cs-nawood.htm"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["hirase-turtle"] = {
+  "title": "ヒラセガメの用品を選ぶ前に",
+  "items": [
+    "床材と隠れ家を置ける陸地を中心に組みます。",
+    "水場と乾いた休み場所を用意し、登って外へ出られないか確認します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ヒラセガメの生態とオプストヒラセガメの飼育例を参考にしています。温度や湿度を、すべての個体に共通する数値にはしていません。",
+  "sources": [
+    {
+      "label": "Cuora Conservation：ヒラセヤマガメ",
+      "url": "https://www.cuora.org/cuora-mouhotii"
+    },
+    {
+      "label": "theTurtleRoom：オブストヒラセの飼育記録",
+      "url": "https://theturtleroom.org/blog/2014/04/25/cuora-mouhotii-obsti-acclimation-care/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["obsti-hirase-turtle"] = {
+  "title": "オプストヒラセガメの用品を選ぶ前に",
+  "items": [
+    "潜れる床材と暗い隠れ家を用意します。",
+    "体を浸せる水場は出入りしやすくし、壁際や設備からの脱走にも気をつけます。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "オプストヒラセガメ4頭の飼育例を参考にしています。",
+  "sources": [
+    {
+      "label": "theTurtleRoom：オブストヒラセの飼育記録",
+      "url": "https://theturtleroom.org/blog/2014/04/25/cuora-mouhotii-obsti-acclimation-care/"
+    },
+    {
+      "label": "Cuora Conservation：ヒラセヤマガメ",
+      "url": "https://www.cuora.org/cuora-mouhotii"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["painted-wood-turtle"] = {
+  "title": "アカスジヤマガメの用品を選ぶ前に",
+  "items": [
+    "陸地・隠れ家・水場を組み合わせます。",
+    "クジャクガメの仲間でも水場の使い方は異なります。亜種を確かめてから、水場の広さを決めます。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "Rhinoclemmys pulcherrima全体を対象にしています。亜種によって水場の使い方が異なります。",
+  "sources": [
+    {
+      "label": "Zierschildkröte：アカスジヤマガメ類の飼育",
+      "url": "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["annulated-wood-turtle"] = {
+  "title": "ネンリンヤマガメの用品を選ぶ前に",
+  "items": [
+    "歩ける陸地と、落葉や隠れ家で身を隠せる場所を確保します。",
+    "陸棲寄りでも水を使います。水場を省かず、自分で出入りできるようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "生息環境や暮らし方から、陸地・隠れ場所・水場の組み合わせを考えています。飼育設備を比較した資料ではありません。",
+  "sources": [
+    {
+      "label": "Reptiles of Ecuador：ネンリンヤマガメ",
+      "url": "https://www.reptilesofecuador.com/rhinoclemmys_annulata.html"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["nicaragua-wood-turtle"] = {
+  "title": "ニカラグアクジャクガメの用品を選ぶ前に",
+  "items": [
+    "床材のある陸地と水場の両方を確保します。",
+    "水場には滑りにくい出口を設け、陸の隠れ家まで行き来できるようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ニカラグアクジャクガメを明示した飼育案内を参考にしています。水場と陸地の比率は固定していません。",
+  "sources": [
+    {
+      "label": "Zierschildkröte：アカスジヤマガメ類の飼育",
+      "url": "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["guerrero-wood-turtle"] = {
+  "title": "ゲレーロクジャクガメの用品を選ぶ前に",
+  "items": [
+    "床材のある陸地と水場の両方を確保します。",
+    "水場には滑りにくい出口を設け、陸の隠れ家まで行き来できるようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ゲレーロクジャクガメを明示した飼育案内を参考にしています。水場と陸地の比率は固定していません。",
+  "sources": [
+    {
+      "label": "Zierschildkröte：アカスジヤマガメ類の飼育",
+      "url": "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["sonora-wood-turtle"] = {
+  "title": "ソノラクジャクガメの用品を選ぶ前に",
+  "items": [
+    "亜種を確認したうえで、陸地・隠れ家・水場を組み合わせます。",
+    "水場を使ったあと自分で陸へ戻れる出口を用意します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "資料にソノラクジャクガメの飼育実績はないため、クジャクガメ類に共通する環境の組み合わせを参考にしています。",
+  "sources": [
+    {
+      "label": "Zierschildkröte：アカスジヤマガメ類の飼育",
+      "url": "https://www.zierschildkroete.de/pracht-erdschildkroeten-rhinoclemmys-pulcherrima-incisa-manni-rogerbarbouri/"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["three-toed-box-turtle"] = {
+  "title": "ミツユビハコガメの用品を選ぶ前に",
+  "items": [
+    "潜れる湿った場所と、日陰の隠れ家を用意します。",
+    "浅い水場へ無理なく出入りできるようにし、床全体の乾燥や過熱を避けます。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ミツユビハコガメの飼育案内と、動物病院によるハコガメ類の案内を参考にしています。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：ミツユビハコガメ",
+      "url": "https://www.tortoisetrust.org/care/ctriungis.html"
+    },
+    {
+      "label": "VCA動物病院：ハコガメの住まい",
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["eastern-box-turtle"] = {
+  "title": "トウブハコガメの用品を選ぶ前に",
+  "items": [
+    "陸地に隠れ家と潜れる場所を作り、水場も用意します。",
+    "水皿の縁には出入りできる足場を付け、汚れた水を替えやすい配置にします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "トウブハコガメの飼育例と、北米のハコガメ類に共通する案内を参考にしています。",
+  "sources": [
+    {
+      "label": "California Turtle & Tortoise Club：北米ハコガメ",
+      "url": "https://www.tortoise.org/archives/terrapen.html"
+    },
+    {
+      "label": "VCA動物病院：ハコガメの住まい",
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["gulf-coast-box-turtle"] = {
+  "title": "ガルフコーストハコガメの用品を選ぶ前に",
+  "items": [
+    "湿った隠れ場所に加え、体を浸せる水場を確保します。",
+    "水をよく使う個体もいるため、出入りしやすさと水の汚れを確認します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ガルフコーストハコガメの飼育記録を参考にしています。水場の使い方には個体差があります。",
+  "sources": [
+    {
+      "label": "California Turtle & Tortoise Club：北米ハコガメ",
+      "url": "https://www.tortoise.org/archives/terrapen.html"
+    },
+    {
+      "label": "VCA動物病院：ハコガメの住まい",
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["florida-box-turtle"] = {
+  "title": "フロリダハコガメの用品を選ぶ前に",
+  "items": [
+    "隠れ家と、出入りしやすい水皿を設けます。",
+    "水皿は毎日確認し、床材や隠れ家を置いても歩ける場所が残るようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "北米のハコガメ類に共通する、隠れ家と水場の案内を参考にしています。",
+  "sources": [
+    {
+      "label": "VCA動物病院：ハコガメの住まい",
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+    },
+    {
+      "label": "California Turtle & Tortoise Club：北米ハコガメ",
+      "url": "https://www.tortoise.org/archives/terrapen.html"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["taiwan-box-turtle"] = {
+  "title": "タイワンセマルハコガメの用品を選ぶ前に",
+  "items": [
+    "陸地を中心に、身を隠せる場所と水場を組み合わせます。",
+    "タイワン・中国由来の個体を区別し、別のハコガメの飼育数値をそのまま使わないようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "陸上で暮らす生態をもとに、設備の組み合わせを考えています。温湿度や水深の数値を示すものではありません。",
+  "sources": [
+    {
+      "label": "Cuora Conservation：セマルハコガメ",
+      "url": "https://www.cuora.org/cuora-flavomarginata"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["chinese-box-turtle"] = {
+  "title": "チュウゴクセマルハコガメの用品を選ぶ前に",
+  "items": [
+    "陸地を中心に、身を隠せる場所と水場を組み合わせます。",
+    "タイワン・中国由来の個体を区別し、別のハコガメの飼育数値をそのまま使わないようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "陸上で暮らす生態をもとに、設備の組み合わせを考えています。温湿度や水深の数値を示すものではありません。",
+  "sources": [
+    {
+      "label": "Cuora Conservation：セマルハコガメ",
+      "url": "https://www.cuora.org/cuora-flavomarginata"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["indochinese-box-turtle"] = {
+  "title": "モエギハコガメの用品を選ぶ前に",
+  "items": [
+    "静かな隠れ場所と湿った床材を用意し、少し乾いた場所も残します。",
+    "加温で床が乾きすぎないか確認し、飲水・水浴び用の水場を用意します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "分類が見直される前のモエギハコガメ類の飼育案内を参考にしています。種類ごとの温湿度や冬の管理は分けて考えます。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：インドシナハコガメ",
+      "url": "https://www.tortoisetrust.org/care/cgalb.html"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["three-striped-box-turtle"] = {
+  "title": "ミスジハコガメの用品を選ぶ前に",
+  "items": [
+    "水場と陸地の両方を設け、陸でも休めるようにします。",
+    "水中だけで完結させず、水場から陸へ上がれる出口と隠れ場所を確保します。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "古い資料には現在別種とされる種類も含まれるため、水場と陸地の組み合わせだけを参考にしています。",
+  "sources": [
+    {
+      "label": "Naturalis：ミスジハコガメの自然史",
+      "url": "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8054"
+    },
+    {
+      "label": "Cuora Conservation：ミスジハコガメ",
+      "url": "https://www.cuora.org/cuora-trifasciata"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["asian-leaf-turtle"] = {
+  "title": "ノコヘリマルガメの用品を選ぶ前に",
+  "items": [
+    "水場に加えて、体を休められる陸地を確保します。",
+    "水場と陸を行き来できる出口を作り、流通名だけで別種の水深を当てはめないようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "分類が見直される前のマルガメ類の資料から、水場と陸地の使い方を参考にしています。",
+  "sources": [
+    {
+      "label": "Naturalis：ノコヘリマルガメの自然史",
+      "url": "https://turtles.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/nsr_taxon.php?cat=TAB_DESCRIPTION&id=8060"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["desert-box-turtle"] = {
+  "title": "ミナミニシキハコガメの用品を選ぶ前に",
+  "items": [
+    "乾燥地の仲間でも水場は省かず、浅く出入りしやすくします。",
+    "日陰の隠れ場所を用意し、容器全体が熱くならないようにします。"
+  ],
+  "note": "水場や隠れ家を置いた後の広さも確認します。追加設備や床材の費用は、用品候補の合計とは別にかかります。",
+  "sourceNote": "ニシキハコガメ類の共通条件を参考にしています。ミナミニシキハコガメ固有の温湿度は、この資料だけで決めていません。",
+  "sources": [
+    {
+      "label": "California Turtle & Tortoise Club：北米ハコガメ",
+      "url": "https://www.tortoise.org/archives/terrapen.html"
+    },
+    {
+      "label": "VCA動物病院：ハコガメの住まい",
+      "url": "https://vcahospitals.com/know-your-pet/turtles-box-housing"
+    }
+  ]
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["black-knobbed-map-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/cs-bkmap.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "クロコブチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ouachita-map-turtle-sp"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/cs-ouamap.htm"
+    }
+  ],
+  "sourceNote": "資料はGraptemys ouachitensis ouachitensis向け。サイトのsp表記から別種まで対象を広げません。",
+  "title": "フトマユチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["northern-map-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/caresheet-northern_map.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "キタチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["mississippi-map-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/caresheet-mississippi_map.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "ミシシッピチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["false-map-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/falsche-landkarten-mississippi-hoeckerschildkroeten-graptemys-pseudogeographica-kohnii/"
+    }
+  ],
+  "sourceNote": "ニセチズガメとミシシッピチズガメを扱う飼育案内を参考にしています。",
+  "title": "ニセチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ringed-map-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/pracht-hoeckerschildkroeten-graptemys-oculifera/"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "ワモンチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["painted-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+    }
+  ],
+  "sourceNote": "ニシキガメのうち、トウブ・セイブ・チュウブの飼育案内を参考にしています。",
+  "title": "ニシキガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["midland-painted-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/zierschildkroeten-chrysemys-picta-bellii-marginata/"
+    }
+  ],
+  "sourceNote": "チュウブニシキガメを含む3亜種の飼育案内を参考にしています。",
+  "title": "チュウブニシキガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["chinese-stripe-necked-turtle"] = {
+  "items": [
+    "泳ぐ場所と、腹側まで水から出て乾く陸場を用意します。陸場は体重を支えられ、甲羅をこすらず上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整えます。ろ過器を使っていても、水換えと掃除は続けます。",
+    "メスはオスより大きくなるため、子ガメ用の容器や陸場をそのまま使い続けられるとは限りません。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/chinesische-streifenschildkroeten-ocadia-mauremys-sinensis/"
+    }
+  ],
+  "sourceNote": "ハナガメの飼育案内を参考にしています。ランプの出力や設置距離は、使う製品に合わせて確認してください。",
+  "title": "ハナガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["striped-mud-turtle"] = {
+  "items": [
+    "水場だけでなく、上がって休める陸地や隠れ場所を設けます。水面と陸場へ無理なく移れるようにします。",
+    "子ガメは、足場のない深い水槽に入れるのではなく、水面近くで休める足場を用意します。水深は体格と動き方を見て調整します。",
+    "浅い水位では動かせないろ過器やヒーターもあります。使う水位が器具の使用条件に合うか確かめます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/caresheet-3_striped_mud.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "ミスジドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["stripe-necked-musk-turtle"] = {
+  "items": [
+    "水中を歩いたり登ったりできる足場と隠れ場所を用意します。水面まで登って息継ぎできる道も残します。",
+    "上がって休める陸場を設けます。子ガメの水深は、体格と泳ぎ方を見ながら調整します。",
+    "成長に合わせて、容器の長さだけでなく奥行きや、設備を置いた後に動ける広さも見直します。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/nackenstreifen-moschusschildkroeten-sternotherus-minor-peltifer/"
+    }
+  ],
+  "sourceNote": "旧名Sternotherus minor peltiferで紹介されている、スジクビニオイガメの飼育記録を参考にしています。",
+  "title": "スジクビニオイガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["red-cheeked-mud-turtle"] = {
+  "items": [
+    "水中を歩いたり登ったりできる足場と隠れ場所を用意します。水面まで登って息継ぎできる道も残します。",
+    "上がって休める陸場を設けます。子ガメの水深は、体格と泳ぎ方を見ながら調整します。",
+    "成長に合わせて、容器の長さだけでなく奥行きや、設備を置いた後に動ける広さも見直します。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+    }
+  ],
+  "sourceNote": "ホオアカドロガメを含むサソリドロガメの仲間の飼育案内を参考にしています。水深や容器の大きさは、種類と体格で変わります。",
+  "title": "ホオアカドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["scorpion-mud-turtle"] = {
+  "items": [
+    "水中を歩いたり登ったりできる足場と隠れ場所を用意します。水面まで登って息継ぎできる道も残します。",
+    "上がって休める陸場を設けます。子ガメの水深は、体格と泳ぎ方を見ながら調整します。",
+    "成長に合わせて、容器の長さだけでなく奥行きや、設備を置いた後に動ける広さも見直します。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/rotwangen-klappschildkroeten-kinosternon-scorpioides-cruentatum/"
+    }
+  ],
+  "sourceNote": "サソリドロガメの仲間を扱う飼育案内を参考にしています。水深や容器の大きさは、種類と体格で変わります。",
+  "title": "サソリドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["pink-bellied-side-necked-turtle"] = {
+  "items": [
+    "泳ぐ場所に加え、水中で休める足場や隠れ場所を用意します。流木や岩の間に体が挟まる隙間を作らないようにします。",
+    "子ガメの容器は成長に合わせて広げます。陸場や設備を置いた後の遊泳スペースも確かめます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://reptilesmagazine.com/pink-bellied-side-necked-turtle-care-sheet/"
+    }
+  ],
+  "sourceNote": "ニシキマゲクビガメの繁殖者による飼育記事を参考にしています。",
+  "title": "ニシキマゲクビガメ（ピンクベリー）の用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["spiny-softshell-turtle"] = {
+  "items": [
+    "水中に潜って隠れられる砂場と、休める場所を用意します。皮膚や甲羅をこする鋭い装飾・ざらついた足場は避けます。",
+    "使いやすい陸場も設け、体が挟まらず水面へ出られるようにします。汚れをためず、ろ過と水換えで水を清潔に保ちます。",
+    "成長後、とくに大きなメスでは一般的な水槽に収まらないことがあります。横幅だけでなく奥行きと設備を置いた後の広さを考えます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://austinsturtlepage.com/Care/caresheet-spiny_softshell.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "トゲスッポンの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["florida-softshell-turtle"] = {
+  "items": [
+    "水中に潜って隠れられる砂場と、休める場所を用意します。皮膚や甲羅をこする鋭い装飾・ざらついた足場は避けます。",
+    "使いやすい陸場も設け、体が挟まらず水面へ出られるようにします。汚れをためず、ろ過と水換えで水を清潔に保ちます。",
+    "成長後、とくに大きなメスでは一般的な水槽に収まらないことがあります。横幅だけでなく奥行きと設備を置いた後の広さを考えます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.austinsturtlepage.com/Care/cs-flsoft.htm"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "フロリダスッポンの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["chinese-softshell-turtle"] = {
+  "items": [
+    "水中に潜って隠れられる砂場と、休める場所を用意します。皮膚や甲羅をこする鋭い装飾・ざらついた足場は避けます。",
+    "使いやすい陸場も設け、体が挟まらず水面へ出られるようにします。汚れをためず、ろ過と水換えで水を清潔に保ちます。",
+    "成長後、とくに大きなメスでは一般的な水槽に収まらないことがあります。横幅だけでなく奥行きと設備を置いた後の広さを考えます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+    }
+  ],
+  "sourceNote": "分類が見直される前のシナスッポンの飼育案内から、砂場や足場などの共通点を参考にしています。",
+  "title": "スッポン（シナスッポン）の用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["albino-chinese-softshell"] = {
+  "items": [
+    "水中に潜って隠れられる砂場と、休める場所を用意します。皮膚や甲羅をこする鋭い装飾・ざらついた足場は避けます。",
+    "使いやすい陸場も設け、体が挟まらず水面へ出られるようにします。汚れをためず、ろ過と水換えで水を清潔に保ちます。",
+    "成長後、とくに大きなメスでは一般的な水槽に収まらないことがあります。横幅だけでなく奥行きと設備を置いた後の広さを考えます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.austinsturtlepage.com/Care/caresheet-chinese_softshell.htm"
+    }
+  ],
+  "sourceNote": "シナスッポンの飼育案内を参考にしています。アルビノ個体だけを対象にした資料ではありません。",
+  "title": "アルビノシナスッポンの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["smooth-softshell-turtle"] = {
+  "items": [
+    "水中に潜って隠れられる砂場と、休める場所を用意します。皮膚や甲羅をこする鋭い装飾・ざらついた足場は避けます。",
+    "使いやすい陸場も設け、体が挟まらず水面へ出られるようにします。汚れをためず、ろ過と水換えで水を清潔に保ちます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://tortoisetrust.org/articles/aquatic.html"
+    }
+  ],
+  "sourceNote": "スッポン類に共通する住まいの考え方を参考にしています。スベスッポン専用の水深や照明の数値は示していません。",
+  "title": "スベスッポンの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["european-pond-turtle"] = {
+  "items": [
+    "水場と日光浴できる陸場を用意し、屋内では陸場の保温とUVB照明を整えます。",
+    "ろ過だけに頼らず水換えを続けます。登って脱走できるため、陸場や設備から容器の縁に届かない配置にします。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.tortoisetrust.org/articles/orbicularis.htm"
+    }
+  ],
+  "sourceNote": "Tortoise Trustによるヨーロッパヌマガメの飼育・繁殖記録を参考にしています。",
+  "title": "ヨーロッパヌマガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["yellow-pond-turtle"] = {
+  "items": [
+    "水中の隠れ場所と、上がって休める陸場を用意します。陸場へは登りやすい道を設けます。",
+    "ろ過器を使っていても、汚れ方を見て水換えと容器の掃除を続けます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+    }
+  ],
+  "sourceNote": "スイスの飼育者によるミナミイシガメの飼育・繁殖記録を参考にしています。プールやプラスチック箱を使った例も紹介されています。",
+  "title": "ミナミイシガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["yaeyama-pond-turtle"] = {
+  "items": [
+    "水中の隠れ場所と、上がって休める陸場を用意します。陸場へは登りやすい道を設けます。",
+    "ろ過器を使っていても、汚れ方を見て水換えと容器の掃除を続けます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.sigs.ch/clubdesk/fileservlet?id=1000072"
+    }
+  ],
+  "sourceNote": "ミナミイシガメの飼育記録から共通する設備を参考にしています。ヤエヤマイシガメ固有の水深や冬の管理を示す資料ではありません。",
+  "title": "ヤエヤマイシガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["canton-reeves-turtle"] = {
+  "items": [
+    "落ち着いて隠れられる場所を用意します。設備を並べすぎず、出入りできる広さを残します。",
+    "同じ種でもかみ合いが起こるため、複数飼育を前提に用品を選ばず、個別に分けられる環境を用意します。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_068_nigricans_v1_2012.pdf"
+    }
+  ],
+  "sourceNote": "Mauremys nigricansの種概説にある飼育記録を参考にしています。クサガメとは別種として扱っています。",
+  "title": "カントンクサガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["rio-grande-cooter"] = {
+  "items": [
+    "成体まで使うなら、大きな容器と日光浴できる陸場を置く場所を先に確保します。幼体用水槽を終生用とは考えません。",
+    "水量に見合う循環とろ過を整え、陸場は成長後の体を支えられるものを選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_100_gorzugi_v1_2016.pdf"
+    }
+  ],
+  "sourceNote": "種概説では、クーター類に共通する飼育方法を参考にしています。本種固有の詳細な条件は、まだ十分に記載されていません。",
+  "title": "リオグランデクーターの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["collier-snake-necked-turtle"] = {
+  "items": [
+    "皮膚や腹側をこすらず上り下りできる陸場と、水中で落ち着ける場所を用意します。",
+    "ろ過器に任せきりにせず、水の汚れや温度を確認します。水中ヒーターは接触や破損を防ぐカバー付きのものを使います。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://paperzz.com/doc/9451149/care-and-husbandry-of-captive-oblong-turtles"
+    }
+  ],
+  "sourceNote": "Turtle Oblonga Networkの2013年の飼育文書（転載）を参考にしています。最新版の原文とは照合できていません。",
+  "title": "コウホソナガクビガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["asian-black-marsh-turtle"] = {
+  "items": [
+    "隠れ場所のある陸地と水場を設け、水面へ登って出られる足場を用意します。",
+    "ろ過器を使っていても、水換えは続けます。容器は陸地を入れた後に水中を動ける広さがあるか確認します。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（飼育条件）",
+      "url": "https://www.zierschildkroete.de/schwarze-dickkopf-schildkroete-siebenrockiella-crassicollis/"
+    }
+  ],
+  "sourceNote": "本種向けの飼育案内を参考にしています。",
+  "title": "ホオジロクロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["alabama-map-turtle"] = {
+  "items": [
+    "陸場や隠れ場所を置いた後に、動き回れる広さと水面へ出る道が残るか確認します。",
+    "保温器具は体が触れたり動かしたりして破損しないように設置します。ろ過器だけに頼らず、汚れを取り除き水換えを続けます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://tortoisetrust.org/articles/aquatic.html"
+    }
+  ],
+  "sourceNote": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "アラバマチズガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["suwannee-cooter"] = {
+  "items": [
+    "陸場や隠れ場所を置いた後に、動き回れる広さと水面へ出る道が残るか確認します。",
+    "保温器具は体が触れたり動かしたりして破損しないように設置します。ろ過器だけに頼らず、汚れを取り除き水換えを続けます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://tortoisetrust.org/articles/aquatic.html"
+    }
+  ],
+  "sourceNote": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "スワニークーターの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["blandings-turtle"] = {
+  "items": [
+    "陸場や隠れ場所を置いた後に、動き回れる広さと水面へ出る道が残るか確認します。",
+    "保温器具は体が触れたり動かしたりして破損しないように設置します。ろ過器だけに頼らず、汚れを取り除き水換えを続けます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://tortoisetrust.org/articles/aquatic.html"
+    }
+  ],
+  "sourceNote": "水棲ガメに共通する、陸場や器具の使い方を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "ブランディングガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["mexican-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "サラドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["yellow-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "キイロドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["herrera-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "ハーレラドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["white-lipped-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "シロクチドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["eastern-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "トウブドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["florida-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "フロリダドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["narrow-bridged-mud-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "ハナナガドロガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["giant-musk-turtle-mx"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "サルヴィンオオニオイガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["giant-musk-turtle"] = {
+  "items": [
+    "水場に加え、上がって休める陸場や隠れ場所を用意します。体が挟まらず行き来できる配置にします。",
+    "今の体格だけで容器を決めず、成長後の体格と設備を置いた後の広さで選びます。"
+  ],
+  "sources": [
+    {
+      "label": "参考資料（共通条件）",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "sourceNote": "ドロガメ・ニオイガメ類に共通する住まいの案内を参考にしています。種類ごとの水深や温度は示していません。",
+  "title": "スジオオニオイガメの用品を選ぶ前に",
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["インドホシガメ"] = {
+  "items": [
+    "暖まる場所だけでなく日陰も作り、容器全体が暑くならないようにします。",
+    "飲水・水浴び用の浅い水皿を置き、清潔に保ちます。"
+  ],
+  "sourceNote": "インドホシガメの飼育資料から、日陰と水場の条件を確認しています。器具の出力や容器の適合を保証するものではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：Indian Star Tortoises",
+      "url": "https://www.tortoisetrust.org/care/celegans.html"
+    }
+  ],
+  "title": "インドホシガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ビルマホシガメ"] = {
+  "items": [
+    "冷えたときに暖まれる場所と、いつでも飲める清潔な水を用意します。",
+    "幼体の床や隠れ場所を乾かしすぎず、保温・UVBの設備を年齢と飼育環境に合わせます。"
+  ],
+  "sourceNote": "ビルマホシガメの種別報告にある飼育条件です。現地施設の広さや温度を、そのまま家庭の固定値にはしていません。",
+  "sources": [
+    {
+      "label": "TFTSG：Geochelone platynota（Captive Husbandry）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_057_platynota_v1_2011.pdf"
+    }
+  ],
+  "title": "ビルマホシガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["エジプトリクガメ"] = {
+  "items": [
+    "小型でも歩く場所を十分に残し、容器の通気を確保します。",
+    "暖かい場所から離れられる配置にし、隠れ家と浅い飲水皿を用意します。"
+  ],
+  "sourceNote": "エジプトリクガメの飼育プロジェクトの方法を参考にしています。砂の安全性や特定の器具を一律に勧めるものではありません。",
+  "sources": [
+    {
+      "label": "Kleinmanni Assurance Project：Care Guide",
+      "url": "https://www.kleinmanniassuranceproject.com/care-guide"
+    }
+  ],
+  "title": "エジプトリクガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["マダガスカルクモノスガメ"] = {
+  "items": [
+    "潜って身を隠せる床材と、日陰の休み場所を用意します。",
+    "飲水できる水場を確保し、乾燥した容器だけで済ませないようにします。"
+  ],
+  "sourceNote": "Pyxis属の飼育資料で共通して扱われる床材・日陰・水場の条件です。亜種別の温湿度や用品適合まで確認したものではありません。",
+  "sources": [
+    {
+      "label": "Tortoise Trust：Spider Tortoises",
+      "url": "https://www.tortoisetrust.org/care/pyxis.html"
+    }
+  ],
+  "title": "マダガスカルクモノスガメの用品を選ぶ前に",
+  "note": "水場や隠れ家を置いた後の広さも確認して、必要な設備をそろえます。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["ヒラタニオイガメ"] = {
+  "scope": "species_natural_history_plus_family_guidance",
+  "title": "ヒラタニオイガメの用品を選ぶ前に",
+  "items": [
+    "水中で身を隠せる場所を用意します。石やシェルターはぐらつかず、出入りを妨げないように置きます。",
+    "水を清潔に保てるよう、ろ過と日々の掃除を組み合わせます。隠れ場所の下も掃除できる配置にします。",
+    "水面へ移れる足場と、上陸して休める場所を用意します。水位は体格と実際の動き方を見て調整します。"
+  ],
+  "sourceNote": "本種の自然史資料にある、澄んだ水と岩の隙間を利用する生態を参考にしています。足場や陸場の案内は、ドロガメ・ニオイガメ類の共通の飼育資料を補っています。",
+  "sources": [
+    {
+      "label": "Dodd：ヒラタニオイガメの自然史（2008）",
+      "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_013_depressus_v1_2008.pdf"
+    },
+    {
+      "label": "Kirkpatrick：ドロガメ・ニオイガメ類の飼育",
+      "url": "https://www.turtlerescues.com/mud_and_musk_turtles.htm"
+    }
+  ],
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
+};
+
+DIAGNOSIS_EQUIPMENT_CONDITIONS["テキサスチズガメ"] = {
+  "scope": "species_keeper",
+  "title": "テキサスチズガメの用品を選ぶ前に",
+  "items": [
+    "泳ぐ場所と、全身が水から出て乾く陸場を用意します。陸場は体重を支えられ、無理なく上れるものを選びます。",
+    "屋内では日光浴のための保温とUVB照明を整え、水を清潔に保ちます。",
+    "メスはオスより大きくなります。成長後の体格に合わせて、容器の広さと陸場の大きさを見直します。"
+  ],
+  "sourceNote": "Graptemys versaを対象とした飼育者向け資料を参照しています。雌雄で体格が違うため、小さい個体向けの用品をそのまま終生用とは考えません。",
+  "sources": [
+    {
+      "label": "Austin’s Turtle Page：テキサスチズガメの飼育",
+      "url": "https://www.austinsturtlepage.com/Care/cs-texmap.htm"
+    }
+  ],
+  "note": "用品は比較候補です。設置する容器・実際の水位・個体の体格に合うかを確かめてください。"
 };

@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-13",
+  "rows": [
+    {
+      "name": "インドホシガメ",
+      "latin": "Geochelone elegans",
+      "items": [
+        "暖まる場所だけでなく日陰も作り、容器全体が暑くならないようにします。",
+        "飲水・水浴び用の浅い水皿を置き、清潔に保ちます。"
+      ],
+      "sourceNote": "インドホシガメの飼育資料から、日陰と水場の条件を確認しています。器具の出力や容器の適合を保証するものではありません。",
+      "sources": [
+        {
+          "label": "Tortoise Trust：Indian Star Tortoises",
+          "url": "https://www.tortoisetrust.org/care/celegans.html"
+        }
+      ],
+      "researchNote": "全文実読。古い資料のD3代用・強いUVB・乾燥一律推奨は取り込まない。"
+    },
+    {
+      "name": "ビルマホシガメ",
+      "latin": "Geochelone platynota",
+      "items": [
+        "冷えたときに暖まれる場所と、いつでも飲める清潔な水を用意します。",
+        "幼体の床や隠れ場所を乾かしすぎず、保温・UVBの設備を年齢と飼育環境に合わせます。"
+      ],
+      "sourceNote": "ビルマホシガメの種別報告にある飼育条件です。現地施設の広さや温度を、そのまま家庭の固定値にはしていません。",
+      "sources": [
+        {
+          "label": "TFTSG：Geochelone platynota（Captive Husbandry）",
+          "url": "https://iucn-tftsg.org/wp-content/uploads/file/Accounts/crm_5_057_platynota_v1_2011.pdf"
+        }
+      ],
+      "researchNote": "p057.7 captive husbandry実読。2011法規記述は旧情報のため使用しない。"
+    },
+    {
+      "name": "エジプトリクガメ",
+      "latin": "Testudo kleinmanni",
+      "items": [
+        "小型でも歩く場所を十分に残し、容器の通気を確保します。",
+        "暖かい場所から離れられる配置にし、隠れ家と浅い飲水皿を用意します。"
+      ],
+      "sourceNote": "エジプトリクガメの飼育プロジェクトの方法を参考にしています。砂の安全性や特定の器具を一律に勧めるものではありません。",
+      "sources": [
+        {
+          "label": "Kleinmanni Assurance Project：Care Guide",
+          "url": "https://www.kleinmanniassuranceproject.com/care-guide"
+        }
+      ],
+      "researchNote": "Enclosures/Heating/HideBoxes/Humidity実読。砂誤食安全の主張・固定寸法・灯具距離を転載しない。"
+    },
+    {
+      "name": "マダガスカルクモノスガメ",
+      "latin": "Pyxis arachnoides",
+      "items": [
+        "潜って身を隠せる床材と、日陰の休み場所を用意します。",
+        "飲水できる水場を確保し、乾燥した容器だけで済ませないようにします。"
+      ],
+      "sourceNote": "Pyxis属の飼育資料で共通して扱われる床材・日陰・水場の条件です。亜種別の温湿度や用品適合まで確認したものではありません。",
+      "sources": [
+        {
+          "label": "Tortoise Trust：Spider Tortoises",
+          "url": "https://www.tortoisetrust.org/care/pyxis.html"
+        }
+      ],
+      "researchNote": "属care、arachnoides3亜種とplanicaudaを列挙した全文実読。地域極値・密飼い実例・固定湿度を不採用。"
+    }
+  ]
+}

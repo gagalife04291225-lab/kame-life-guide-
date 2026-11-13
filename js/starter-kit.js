@@ -386,11 +386,10 @@ function getCvrBadge(item, equipmentKey) {
     return { icon: '🧼', label: 'ニオイ対策' };
   }
   if (cat === 'lighting_uvb') {
-    if (tier === 'premium')  return { icon: '⚡', label: '高出力UVB' };
-    return { icon: '☀️', label: '必須アイテム' };
+    return { icon: '☀️', label: '照射条件を確認' };
   }
   if (cat === 'lighting_basking') {
-    return { icon: '🔥', label: '必須アイテム' };
+    return { icon: '🔥', label: '照射先の温度を確認' };
   }
   if (cat === 'food') {
     if (tier === 'budget')   return { icon: '🔰', label: 'はじめての方向け' };
