@@ -936,13 +936,13 @@
   }
  },
  "media_gex_6090_set": {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "query": "GEX メガパワー 6090 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=4.2",
   "best": {
-   "itemName": "新ハイクオリティ 21点水槽セット（GEX　メ��パワー6090） 用　交換ろ材 セット（2回分）【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリ",
+   "itemName": "新ハイクオリティ 21点水槽セット（GEX　メガパワー6090） 用　交換ろ材 セット（2回分）【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクアリウ",
    "price": 4000,
    "shop": "ネオス 楽天市場店"
   }
@@ -1192,15 +1192,15 @@
   }
  },
  "supplement_probiotics": {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "query": "ジェックス カメ元気 プロバイオフード 180g",
-  "resultCount": 1,
+  "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=3.6",
   "best": {
    "itemName": "ジェックス カメ元気 プロバイオフード 180g",
-   "price": 3230,
-   "shop": "デイリープラス 楽天市場店"
+   "price": 3200,
+   "shop": "LINEAR shop"
   }
  },
  "tank_120_aqua": {
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
+   "price": 939,
+   "shop": "ウルマックス 楽天市場店"
   }
  },
  "thermometer_aqua": {
