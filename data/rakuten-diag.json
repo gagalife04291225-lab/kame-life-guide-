@@ -56,9 +56,9 @@
   }
  },
  "basking_dual_150": {
-  "date": "2026-11-13",
+  "date": "2026-11-15",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 150W",
-  "resultCount": 2,
+  "resultCount": 4,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=5.3",
   "best": {
@@ -924,15 +924,15 @@
   "best": null
  },
  "media_gex_2045_set": {
-  "date": "2026-11-05",
+  "date": "2026-11-15",
   "query": "GEX メガパワー 2045 交換ろ材セット",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=4.2 適合表記(2045)",
   "best": {
    "itemName": "ジェックス GEX メガパワー2045用 交換ろ材セット",
-   "price": 2932,
-   "shop": "formanism"
+   "price": 3076,
+   "shop": "まんまるふれすた"
   }
  },
  "media_gex_6090_set": {
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
-   "price": 939,
-   "shop": "ウルマックス 楽天市場店"
+   "itemName": "GEX エキゾテラアナログ温度計 PT2465",
+   "price": 701,
+   "shop": "ペッツマム"
   }
  },
  "thermometer_aqua": {
