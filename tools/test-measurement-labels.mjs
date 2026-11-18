@@ -1,4 +1,4 @@
-import {applyReviewedAmazonHolds} from './commerce-identity-baseline.mjs';
+import {applyReviewedAmazonHolds,applyCommittedRakutenSync} from './commerce-identity-baseline.mjs';
 import './test-shared-products-round3.mjs';
 import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
@@ -6,9 +6,7 @@ const cwd=fileURLToPath(new URL('../',import.meta.url));const read=p=>fs.readFil
 function ctx(rd){let h=rd('shindan/index.html'),a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a),c=vm.createContext({window:{},document:{},console});vm.runInContext(rd('data/products.js')+'\n'+rd('js/starter-kit.js')+'\n'+rd('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=ctx(base),now=ctx(read),plain=x=>JSON.parse(JSON.stringify(x));
 applyReviewedAmazonHolds(old.products,now.products);
-// Feed-only changes are required to match committed main exactly.
-const mainProducts=(()=>{const c=vm.createContext({});vm.runInContext(execFileSync('git',['-C',cwd,'show','fde885bd:data/products.js'],{encoding:'utf8'})+';this.p=PRODUCTS;',c);return c.p;})();
-for(const[id,p]of Object.entries(now.products))for(const k of ['rakutenLastUpdated','rakutenConfidence','rakutenPrice','rakutenImageUrl']){assert.deepEqual(p[k],mainProducts[id][k],id+' committed feed '+k);if(p[k]===undefined)delete old.products[id][k];else old.products[id][k]=p[k];}
+applyCommittedRakutenSync(old.products,now.products,cwd);
 
 const strip=p=>{let x=plain(p);delete x.why;return x;};
 for(const [id,p] of Object.entries(old.products)){assert.deepEqual(strip(now.products[id]),strip(p));if(!['thermometer_dual_probe','food_tortoise_gel','supplement_multivitamin'].includes(id))assert.equal(now.products[id].why,p.why);}
