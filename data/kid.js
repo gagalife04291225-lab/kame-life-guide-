@@ -70,7 +70,7 @@
       risk_warnings: [{"text": "産卵困難には環境・栄養・脱水・卵や個体の状態など複数の原因があります。床材を深くするだけで解決すると考えず、異常時は爬虫類を診る獣医師へ相談してください", "sev": "high"}, {"text": "床材や設備を足すと足場が高くなります。フタ・通気と脱走対策を確認してください", "sev": "med"}],
       linked_failures: ["fail-egg-binding", "fail-escape"], linked_contested: ["contest-sand"],
       cta_enabled: true, cta_channel_hint: "rakuten_pref",
-      affiliate: { amazon: "https://amzn.to/4eKxFKU", rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://www.amazon.co.jp/dp/B001OCBJX0?tag=kamelife090e-22", rakuten: null }, // TODO: affiliate URL
       evidence: [{"url": "https://tenmafitsworld.com/SHOP/rox.html", "type": "manufacturer", "label": "天馬公式・530Lの収納寸法", "region": "JP"}, {"url": "https://tenmafitsworld.com/hpgen/HPB/entries/8.html", "type": "manufacturer", "label": "天馬公式・水使用の注意", "region": "JP"}, {"url": "https://vcahospitals.com/apex/know-your-pet/reptiles---dystocia", "type": "vet", "label": "VCA・産卵困難の複合要因", "region": "International"}],
       image: {"path": "../assets/kid/nest-tote-soil-530l.webp", "license": "owner", "author": "亀好きさん", "caption": "運営者が天馬530Lに床材を敷き、幼体〜ヤングを単独飼育している実例です。使う亀の種類や体格に合わせて、広さや設備を調整してください。", "ok": true},
       confidence: null, unresolved: ["species_specific_nesting_setup"], last_reviewed: "2026-11-12",
@@ -147,7 +147,7 @@
       ],
       linked_failures: ["fail-clamp-fire"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "amazon_pref",
-      affiliate: { amazon: "https://amzn.to/44Ie9IR", rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://www.amazon.co.jp/dp/B07FHM2YKH?tag=kamelife090e-22", rakuten: null }, // TODO: affiliate URL
       evidence: [{"url": "https://product.gex-fp.co.jp/exoterra/index.php?cid=405&id=1699&m=ProductListDetail", "type": "manufacturer", "label": "GEX公式・対応灯具と固定手順", "region": "JP"}],
       image: { path: null, license: null, author: null, ok: false },
       confidence: null, unresolved: [], last_reviewed: "2026-11-12",
@@ -172,7 +172,7 @@
       ],
       linked_failures: ["fail-filter-intake"], linked_contested: [],
       cta_enabled: true, cta_channel_hint: "amazon_pref",
-      affiliate: { amazon: "https://amzn.to/4eGAqga", rakuten: null }, // TODO: affiliate URL
+      affiliate: { amazon: "https://www.amazon.co.jp/dp/B0B4CBBXP6?tag=kamelife090e-22", rakuten: null }, // TODO: affiliate URL
       evidence: [{"url": "https://product.gex-fp.co.jp/fish/index.php?cid=341&id=250&m=ProductListDetail", "type": "manufacturer", "label": "GEX公式・GDの対応フィルターと用途", "region": "JP"}],
       image: { path: null, license: null, author: null, ok: false },
       confidence: null, unresolved: [], last_reviewed: "2026-11-12",
