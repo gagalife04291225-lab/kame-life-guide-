@@ -954,3 +954,8 @@ cloudの既存Pythonで同一PR HEADの全111テストPASS。PCのtzdata不足�
 
 ## 2026-11-13 PR #246 final integration
 - Integrated main 78112e33, preserving diagnosis #243 and keeper products #239. Resolved only append-only documentation conflicts; operations code unchanged. Updated published diagnosis evidence.
+
+## 2026-11-13 旧PR差分の整理（未公開）
+- #190/#206から必要な文字色・日本語のみを最新mainへ移植。gl-module-labelの半透明を解消。
+- #191のレビュー件数を売上とする誤認・釣り用品混入、#192/#208のGSC二重導入を回避。旧PRは未操作。
+- Python 156件PASS、4ページhref/onclick不変、JSON-LD解析OK。ブラウザ起動は環境のsocket権限制限で失敗し、画面未確認として停止。
