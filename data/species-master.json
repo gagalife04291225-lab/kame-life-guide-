@@ -12802,7 +12802,7 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "イベラ系は大きめに育つ",
+            "basis": "親種ギリシャリクガメの既存の国内目安を継承。亜種固有の最低寸法を検証した値ではない。",
             "jp_note": "90cm開始・120cm推奨"
           },
           "last_verified": "2026-08-17",
@@ -13338,14 +13338,14 @@
           "provenance": "expert_consensus",
           "japan_fit": {
             "judgment": "adjusted_for_japan",
-            "basis": "イベラ系は大きめに育つ",
+            "basis": "親種ギリシャリクガメの既存の国内目安を継承。亜種固有の最低寸法を検証した値ではない。",
             "jp_note": "90cm開始・120cm推奨"
           },
           "last_verified": "2026-08-17",
           "sources": [
             "https://iucn-tftsg.org/testudo-graeca-eastern-subspecies-clades-120/"
           ],
-          "note": "亜種 Testudo graeca nabeulensis の care 値は親種 Testudo graeca のレコードを継承（2026-08-21）。亜種単位で独立に検証した値ではない。"
+          "note": "親種 Testudo graeca のレコードを継承（2026-08-21）。モロッコギリシャの独立検証値ではない。"
         }
       }
     },

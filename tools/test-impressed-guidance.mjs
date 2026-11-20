@@ -55,5 +55,19 @@ canton.care.enclosure_jp.japan_fit.basis=prior.species.find(s=>s.slug==='canton-
 // Exact CITES-only records from separately merged PR240; all non-CITES fields stay frozen.
 const lawMaster=JSON.parse(execFileSync('git',['show','c763fa94:data/species-master.json'],{encoding:'utf8'}));
 for(const rec of normalized.species){const original=prior.species.find(s=>s.slug===rec.slug),law=lawMaster.species.find(s=>s.slug===rec.slug);if(JSON.stringify(original.cites)!==JSON.stringify(law.cites)){assert.deepEqual(rec.cites,law.cites,rec.slug+' committed CITES correction');rec.cites=original.cites;}}
+// 2026-11-20 reviewed attribution-only correction: exactly three prose
+// fields. Numeric values, verification, provenance, sources and dates still
+// participate in the full master comparison below.
+for(const slug of ['tunisian-greek-tortoise','moroccan-greek-tortoise']){
+ const a=normalized.species.find(s=>s.slug===slug).care.enclosure_jp;
+ const b=prior.species.find(s=>s.slug===slug).care.enclosure_jp;
+ assert.equal(b.japan_fit.basis,'イベラ系は大きめに育つ');
+ assert.equal(a.japan_fit.basis,'親種ギリシャリクガメの既存の国内目安を継承。亜種固有の最低寸法を検証した値ではない。');
+ a.japan_fit.basis=b.japan_fit.basis;
+ if(slug==='moroccan-greek-tortoise'){
+  assert.equal(a.note,'親種 Testudo graeca のレコードを継承（2026-08-21）。モロッコギリシャの独立検証値ではない。');
+  a.note=b.note;
+ }
+}
 assert.deepEqual(normalized,prior,'all other master species/fields unchanged');
 console.log('PASS impressed guidance: FAQ JSON-LD, old failure, temperature meanings, existing links/scripts unchanged, master scope/verification preserved');
