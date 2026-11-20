@@ -14,6 +14,7 @@ def commands():
     yield [sys.executable, 'tools/validate_species.py', '--strict']
     yield [sys.executable, 'scripts/check_enclosure_sync.py']
     yield [sys.executable, 'scripts/check_compare_enclosure.py']
+    yield [sys.executable, 'scripts/check_audited_enclosure.py']
     yield ['node', 'scripts/update-asset-versions.mjs', '--check']
     yield ['git', 'diff', '--check']
 

@@ -178,8 +178,6 @@ const SETUP_SPECS = {
     label: 'アカアシリクガメ（多湿ビバリウム）',
     equipmentKey: 'tortoise_forest',
     categories: [
-      { cat: 'enclosure', need: 'must', tier: 'standard', altTier: 'premium',
-        note: '最終30cm超の大型。90cm以上・保湿しやすい前開き型' },
       { cat: 'substrate', need: 'must', tier: 'budget', altTier: 'standard',
         note: '湿らせて使えるヤシガラ系。乾燥系の砂・赤玉土単用は不適',
         avoid: '常時乾燥する床材・針葉樹チップ' },
@@ -197,7 +195,10 @@ const SETUP_SPECS = {
       { productId: 'waterdish_sanko_dish', need: 'must',
         note: '全身が入る浅い水入れ。この種はよく水に浸かる' },
     ],
-    missing: [],
+    missing: [
+      { label: '成体の飼育スペース',
+        spec: '成体は120cm規格のケージでも手狭です。隠れ家と水入れを置いたあとも歩き回れる床面積を確保し、保湿と換気を両立できる特注ケージや部屋の一角の専用飼育場などを検討してください。' },
+    ],
   },
 
   'redfoot-b': {

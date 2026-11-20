@@ -64,6 +64,15 @@ class GrowthGuidance(unittest.TestCase):
         self.assertTrue(refs)
         self.assertEqual(refs - ids, set())
 
+    def test_both_growth_paths_have_static_details(self):
+        details = re.findall(r'<details\b[^>]*>\s*<summary>([^<]+)</summary>(.*?)</details>',
+                             growth_section(), re.S)
+        for title, detail in (('最初から成体用', '水深'), ('小さく始めて広げる', '置き場所')):
+            with self.subTest(path=title):
+                options = [body for summary, body in details if title in summary]
+                self.assertEqual(len(options), 1)
+                self.assertIn(detail, options[0])
+
     def test_first_answer_separates_aquatic_and_land(self):
         s = growth_section()
         ans = re.search(r'<div class="gr-answer">(.*?)</div>', s, re.S).group(1)
@@ -96,9 +105,9 @@ class GrowthGuidance(unittest.TestCase):
     def test_entry_points_link_to_growth(self):
         for rel in ('guides/small-best-turtles.html', 'species/musk-turtle.html',
                     'ranking-beginner-top10.html', 'guides/keeper-hacks.html',
-                    'species/russian-tortoise.html'):
+                    'species/russian-tortoise.html', 'guide-beginner.html'):
             with self.subTest(page=rel):
-                self.assertRegex(read(rel), r'href="(?:\.\./)?kid/index\.html#growth"')
+                self.assertRegex(read(rel), r'href="(?:\.\./)?kid/(?:index\.html)?#growth"')
         self.assertIn('href="#growth"', read('kid/index.html'))
 
     def test_no_month_based_replacement_or_food_restriction(self):
