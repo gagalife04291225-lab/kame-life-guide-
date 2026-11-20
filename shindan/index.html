@@ -473,6 +473,27 @@ body {
   white-space: nowrap;
 }
 
+/* 診断結果の案内。飼う前の注意から読み進められるようにする。 */
+.result-kit-jump:not([hidden]) {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  margin: 0 0 16px;
+  color: var(--parchment-dark);
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+#important-notice,
+#starter-kit-section { scroll-margin-top: calc(var(--klg-nav-h, 52px) + 12px); }
+.result-kit-jump:focus-visible,
+#important-notice:focus-visible,
+#starter-kit-section:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+#res-cta-top-link-sec[hidden],
+#res-cta-secondary[hidden] { display: none; }
+
 /* Phase5-B: 用品ゾーン導入見出し（信頼コンテンツ → 用品への自然な橋渡し） */
 .commerce-lead {
   margin: 30px 0 14px;
@@ -1073,6 +1094,8 @@ body {
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.1);
 }
+#screen-result .sk-cost-box .sk-cost-title,
+#screen-result .sk-cost-box .sk-cost-note { color: var(--parchment-dark); }
 #screen-result .sk-cost-label,
 #screen-result .sk-cost-sub { color: var(--accent-light); }
 #screen-result .sk-cost-value { color: var(--parchment); }
@@ -1249,6 +1272,7 @@ body {
     <div class="badges" id="res-badges" aria-label="難易度・サイズ・規制情報"></div>
     <div class="res-barrier-badges" id="res-barrier-badges" style="display:none"></div>
   </div>
+  <a class="result-kit-jump" id="result-kit-jump" href="#important-notice" hidden>飼う前の注意と、用品・費用を見る</a>
   <!-- ════════ TRUST CONTENT（まず診断に納得してもらう）════════ -->
   <!-- Phase5-B: 収益要素（Starter Kit / Revenue CTA）を信頼コンテンツの下へ移動。
        「診断に納得 → 必要な用品を紹介」という自然な情報設計に再構成。
@@ -1267,8 +1291,8 @@ body {
     <div class="spec-grid" id="res-specs"></div>
   </div>
   <!-- Phase 25-C: important-notice（lifespan + beginner-warn + res-legal + res-loss-block-wrap 統合） -->
-  <div class="important-notice" id="important-notice">
-    <div class="important-notice-title">⚠ 飼う前に知っておきたいこと</div>
+  <div class="important-notice" id="important-notice" tabindex="-1" role="region" aria-labelledby="important-notice-title">
+    <div class="important-notice-title" id="important-notice-title">⚠ 飼う前に知っておきたいこと</div>
     <!-- PHASE 5: 寿命バナー -->
     <div class="lifespan-banner" id="lifespan-banner" style="display:none" aria-label="寿命の目安">
       <span class="lifespan-icon">⏳</span>
@@ -1284,14 +1308,14 @@ body {
 
   <!-- ════════ COMMERCE ZONE（納得したあとに必要な用品を紹介）════════ -->
   <!-- Phase5-B: 「必要になる飼育用品」導入見出し。診断結果への納得のあとに用品導線を置く -->
-  <div class="commerce-lead" id="commerce-lead">
+  <div class="commerce-lead" id="commerce-lead" hidden>
     <div class="commerce-lead-title">必要になる飼育用品</div>
     <p class="commerce-lead-desc">用品を価格帯ごとに比較できます。容器の広さや器具の性能は、飼う種と今の体格に合わせて選びましょう。</p>
   </div>
   <!-- Phase 31-C1→Phase5-B: Starter Kit を信頼コンテンツの下（用品ゾーンの先頭）へ配置 -->
   <!-- PHASE 6-B: おすすめ飼育セット -->
   <div id="species-equipment-conditions"></div>
-  <div id="starter-kit-section" style="display:none"></div>
+  <div id="starter-kit-section" tabindex="-1" style="display:none"></div>
   <!-- Phase 25-C→Phase5-B: 統合commerce CTA（旧res-cta-top）。Starter Kit の下へ配置 -->
   <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
   <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
@@ -1403,8 +1427,29 @@ var toastTimer = null;
 var readinessAnswers = [];
 var gateIndex = 0;
 
+function setResultKitNavigation(visible) {
+  ['result-kit-jump', 'commerce-lead', 'res-cta-top-cost-note', 'res-cta-top-link-sec', 'res-cta-secondary'].forEach(function(id) {
+    var node = document.getElementById(id);
+    if (node) node.hidden = !visible;
+  });
+}
+
+function resetResultKitNavigation() {
+  setResultKitNavigation(false);
+  var kit = document.getElementById('starter-kit-section');
+  if (kit) { kit.style.display = 'none'; kit.innerHTML = ''; }
+}
+
+function showRenderedResultKitNavigation() {
+  var kit = document.getElementById('starter-kit-section');
+  var rendered = !!(kit && kit.style.display !== 'none' && kit.querySelector('.sk-card'));
+  if (kit && !rendered) kit.style.display = 'none';
+  setResultKitNavigation(rendered);
+}
+
 // ===== 画面切替 =====
 function show(id) {
+  if (id !== 'screen-result') resetResultKitNavigation();
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
@@ -1434,6 +1479,7 @@ function clearResultUrl() {
     var url = new URL(location.href);
     url.searchParams.delete('r');
     url.searchParams.delete('s');
+    if (url.hash === '#important-notice' || url.hash === '#starter-kit-section') url.hash = '';
     history.replaceState(null, '', url.toString());
   } catch(e){}
 }
@@ -2985,6 +3031,7 @@ function calcResult() {
 // ===== 結果表示 =====
 function showResult(sp, pct, runners) {
   updateSpeciesEquipmentConditions(sp);
+  resetResultKitNavigation();
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
   document.title = sp.name + (sp.diagnosisNotice ? 'の参考情報 | カメライフガイド' : 'があなたに合う亀です | カメライフガイド');
@@ -3528,15 +3575,15 @@ function showResult(sp, pct, runners) {
         topEl.innerHTML =
           scarcityHtml +
           '<div class="res-cta-helper">' + ctaHelperText + '</div>' +
-          '<div class="res-cta-top-sub">' +
+          '<div class="res-cta-top-sub" id="res-cta-top-cost-note" hidden>' +
             '用品ごとの価格と候補合計は、上の一覧で確認できます。' +
           '</div>' +
           top3Html +
           '<a class="res-cta-top-primary" id="res-cta-top-link" href="' + speciesPageUrl + '">' +
             '飼育環境・寿命・費用を詳しく見る' +
           '</a>' +
-          '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '">' +
-            '最初に必要な水槽・ライト・餌を見る' +
+          '<a class="res-cta-top-secondary" id="res-cta-top-link-sec" href="' + skUrlTop + '" hidden>' +
+            '飼育用品と費用の目安を見る' +
           '</a>' +
           '<a class="res-cta-tertiary" id="res-cta-top-link-cmp" href="' + compareHref + '">' +
             '似た亀と迷う人はこちら' +
@@ -3598,8 +3645,8 @@ function showResult(sp, pct, runners) {
           '<a class="res-cta-primary" id="res-cta-primary" href="' + spUrl + '">' +
             '飼育環境・寿命・費用を詳しく見る' +
           '</a>' +
-          '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '">' +
-            '最初に必要な水槽・ライト・餌を見る' +
+          '<a class="res-cta-secondary" id="res-cta-secondary" href="' + skUrl + '" hidden>' +
+            '飼育用品と費用の目安を見る' +
           '</a>' +
           '<a class="res-cta-tertiary" id="res-cta-cmp" href="' + compareHref + '">' +
             '似た亀と迷う人はこちら' +
@@ -3841,6 +3888,7 @@ function showResult(sp, pct, runners) {
   // ===== PHASE 6-B: おすすめ飼育セット (reference-only は commerce抑制) =====
   if (!refOnly) { try { renderStarterKitV2(sp); } catch(e) { console.warn('[renderStarterKitV2]', e); } }
   else { var _skRoot = document.getElementById('starter-kit-section'); if (_skRoot) _skRoot.style.display = 'none'; }
+  showRenderedResultKitNavigation();
 
   // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
   var scoreMeter = document.getElementById('score-meter');
