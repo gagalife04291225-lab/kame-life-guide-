@@ -77,6 +77,24 @@ class GeneratedPushTests(unittest.TestCase):
         git(self.local, 'merge-base', '--is-ancestor', remote, 'HEAD')
         git(self.local, 'merge-base', '--is-ancestor', self.generated, 'HEAD')
 
+    def test_reconcile_checker_receives_premerge_sha_only(self):
+        self.remote_change('species/example.html', 'owner update\n')
+        actual_run = mod.run
+        checker_envs = []
+        def inspect(*args, **kwargs):
+            if len(args) > 1 and args[1] == 'scripts/run-offline-checks.py':
+                env = kwargs['env']
+                checker_envs.append(env)
+                self.assertEqual(env['KLG_RAKUTEN_GENERATED_REF'], self.generated)
+                self.assertEqual(env['KLG_RAKUTEN_GENERATED_BASE'], git(self.local, 'rev-parse', self.generated + '^'))
+                self.assertNotEqual(env['KLG_RAKUTEN_GENERATED_REF'], git(self.local, 'rev-parse', 'HEAD'))
+            else:
+                self.assertNotIn('env', kwargs)
+            return actual_run(*args, **kwargs)
+        with patch.object(mod, 'run', inspect):
+            self.assertEqual(mod.main(), 0)
+        self.assertEqual(len(checker_envs), 1)
+
     def test_conflicting_race_preserves_remote_and_generated_commit(self):
         remote = self.remote_change('data/products.js', 'owner product update\n')
         with self.assertRaisesRegex(RuntimeError, 'conflict'):

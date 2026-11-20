@@ -43,7 +43,7 @@ assert.ok(now.renderHomeEquipmentNote({name:'ホームセオレガメ'}).include
 function mountEvents(c,key){const events=[];const root={style:{},innerHTML:'',querySelectorAll(){return [];},querySelector(){return null;}};c.document={getElementById(){return root;}};c.gtag=(...args)=>events.push(plain(args));c.mountStarterKit({name:'ホームセオレガメ',slug:'home-hinge-back-tortoise',equipmentKey:key},'test',{sourcePage:'diagnosis'});return events;}
 for(const key of ['tortoise_dry_small','tortoise_forest'])assert.deepEqual(mountEvents(now,key),mountEvents(old,key));
 console.log('PASS: 119 species x native/all x 3 tiers (714), native selections preserved; all normalized to native; product records unchanged except separately tested why and exact committed Rakuten-feed fields, Home note only, FAQ matched, actual mount GA unchanged, no exclusion.');
-// Quick Facts: Home-only prose changes; all other species retain exact generated HTML.
+// Quick Facts: retain Home copy; other species differ only by the reviewed cost/CTA wording.
 vm.runInContext(base('js/quick-facts.js'),old);
 vm.runInContext(read('js/quick-facts.js'),now);
 let qfCount=0;
@@ -60,9 +60,14 @@ for(const [route,list] of Object.entries(now.species).filter(([r])=>r!=='all'))f
   assert.ok(stickyAfter.includes('用品の比較候補と選び方を見る'));
   assert.equal(after.match(/<span class="qf-cost">([\s\S]*?)<\/span>/)?.[1],before.match(/<span class="qf-cost">([\s\S]*?)<\/span>/)?.[1]);
  }else{
-  assert.equal(after,before,sp.name+' Quick Facts');
-  assert.equal(stickyAfter,stickyBefore,sp.name+' sticky CTA');qfCount++;
+  const expected=before.replace('初期費用目安','低価格帯の候補合計')
+    .replace('機材セット合計（目安）','価格未掲載の商品・別売器具などは含みません')
+    .replace('この亀を今日から飼えるセットを見る →','飼育セットガイドを見る →');
+  const stickyExpected=stickyBefore.replace('はじめての方向けに全部選んだ飼育セットを見る','飼育セットガイドを見る')
+    .replace('はじめての方向け飼育セットを見る','飼育セットガイドを見る');
+  assert.equal(after,expected,sp.name+' Quick Facts');
+  assert.equal(stickyAfter,stickyExpected,sp.name+' sticky CTA');qfCount++;
  }
 }
 assert.equal(qfCount,236);
-console.log('PASS: Quick Facts and sticky CTA exact equality for other 118 species x 2 routes; Home labels corrected with cost text unchanged.');
+console.log('PASS: Quick Facts and sticky CTA differ only by approved wording for other 118 species x 2 routes; Home labels and cost text preserved.');

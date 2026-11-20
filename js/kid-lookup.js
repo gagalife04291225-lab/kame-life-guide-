@@ -363,7 +363,12 @@
       var a = e.target.closest ? e.target.closest(".cta") : null;
       if (!a) { return; }
       if (a.classList.contains("is-placeholder") || a.classList.contains("is-locked") || !a.getAttribute("href")) { e.preventDefault(); return; }
-      ga("affiliate_click", { equipment_id: a.getAttribute("data-eqid"), channel: a.getAttribute("data-channel"), source: "kid" });
+      // Keep the original KID fields for existing consumers; add canonical aliases.
+      ga("affiliate_click", {
+        equipment_id: a.getAttribute("data-eqid"), channel: a.getAttribute("data-channel"), source: "kid",
+        product_id: a.getAttribute("data-eqid") || "", provider: a.getAttribute("data-channel") || "",
+        location: "kid_lookup", category: "unknown", species_slug: "", tier: ""
+      });
     });
   }
 
