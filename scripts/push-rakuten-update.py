@@ -4,6 +4,7 @@
 Only ordinary pushes and merges are used. Conflicts stop publication, preserving
 both the remote branch and the local generated commit. No force, reset or rebase.
 """
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -11,8 +12,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run(*args, check=True, capture=False):
-    return subprocess.run(args, cwd=ROOT, check=check, text=True,
+def run(*args, check=True, capture=False, env=None):
+    return subprocess.run(args, cwd=ROOT, check=check, text=True, env=env,
                           stdout=subprocess.PIPE if capture else None)
 
 
@@ -29,6 +30,9 @@ def main():
     if not changed or any(p not in ('data/products.js', 'data/rakuten-diag.json') and not p.endswith('.html') for p in changed):
         raise RuntimeError('Refusing a commit outside generated data / HTML references.')
     original = git('rev-parse', 'HEAD', capture=True).stdout.strip()
+    # Capture the generator output BEFORE any remote merge; never trust the
+    # merged candidate as its own expected feed. Scoped to checker child only.
+    generated_base = git('rev-parse', original + '^', capture=True).stdout.strip()
     for attempt in range(3):
         if git('push', 'origin', 'HEAD:refs/heads/main', check=False).returncode == 0:
             print('Generated update published with ordinary fast-forward push.')
@@ -55,7 +59,10 @@ def main():
         if changes:
             git('add', '--', *changes)
             git('commit', '-m', 'chore: refresh asset references after concurrent update')
-        run(sys.executable, 'scripts/run-offline-checks.py')
+        run(sys.executable, 'scripts/run-offline-checks.py', env={
+            **os.environ, 'KLG_RAKUTEN_GENERATED_REF': original,
+            'KLG_RAKUTEN_GENERATED_BASE': generated_base,
+        })
         if git('status', '--porcelain', capture=True).stdout.strip():
             raise RuntimeError('Checks modified the working tree; publication stopped.')
     raise RuntimeError('Remote kept advancing; bounded retries exhausted. Generated commit: ' + original)

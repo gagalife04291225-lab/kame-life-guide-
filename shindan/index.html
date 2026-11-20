@@ -1924,6 +1924,8 @@ function renderNoteCta(sp) {
  * shindan/species.js には equipmentKey が存在しないため動的に解決する
  */
 function resolveEquipmentKey(routeId, sp) {
+  // A beginner redirected from exotic uses the selected species' aquatic group.
+  if (routeId === 'exotic' && sp.equipmentRoute === 'aquatic') routeId = 'aquatic';
   // The all getter contains the same species objects as the four native routes.
   // Use that route instead of guessing again from the display name.
   if (routeId === 'all' && typeof SPECIES !== 'undefined') {
@@ -2769,13 +2771,15 @@ function calcResult() {
         });
         if (exoCandidates.length > 0) exoFallback = exoCandidates[0];
       }
-      if (!exoFallback) {
+      if (exoFallback) {
+        exoFallback = Object.assign({}, exoFallback, { equipmentRoute: 'aquatic' });
+      } else {
         exoFallback = {
           name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
           difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
           reason: '特殊種ルートは経験者向けです。まず水棲・半水棲ガメから始めることをおすすめします。ミシシッピニオイガメははじめての1頭に最も適した定番種です。',
           hasPage: true, slug: 'musk-turtle', links: [],
-          equipmentKey: '_aquatic_small',
+          equipmentKey: 'semi_aquatic_small',
           coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
           lifespanEvidence: { note: 'カナダの管理計画には、飼育下で54年以上生きた記録が載っています。平均寿命は分かっておらず、54年が長生きの限界というわけでもありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
           match: function(){ return true; }, score: function(){ return 0; }
@@ -2967,7 +2971,7 @@ function calcResult() {
       name: 'ミシシッピニオイガメ', latin: 'Sternotherus odoratus', emoji: '🐢',
       difficulty: '入門', size: 'S（〜14cm）', cites: null, legal: 'keepable',
       reason: 'はじめての1頭に最も適した水棲ガメです。小型で管理しやすく、国内での流通量も多い定番種です。',
-      hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: '_aquatic_small',
+      hasPage: true, slug: 'musk-turtle', links: [], equipmentKey: 'semi_aquatic_small',
       coreSpecs: { size: '最大14cm', temp: '25〜28℃', lifespan: '54年以上の飼育記録（平均は不明）', diet: '雑食' },
       lifespanEvidence: { note: 'カナダの管理計画には、飼育下で54年以上生きた記録が載っています。平均寿命は分かっておらず、54年が長生きの限界というわけでもありません。', url: 'https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/management-plans/eastern-musk-turtle-2024.html', source: 'カナダ環境・気候変動省（2024）' },
       match: function(){ return true; }, score: function(){ return 0; }

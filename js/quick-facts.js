@@ -121,14 +121,16 @@ function renderQuickFacts(opts) {
     },
     {
       icon: '💰',
-      label: isHome ? '低価格帯の候補合計' : '初期費用目安',
+      label: '低価格帯の候補合計',
       value: '<span class="qf-cost">' + initCostText + '</span>',
-      sub: isHome ? '掲載価格の合計。必要な床材量・別途用品は含みません' : '機材セット合計（目安）',
+      sub: isHome ? '掲載価格の合計。必要な床材量・別途用品は含みません' : '価格未掲載の商品・別売器具などは含みません',
     },
     {
       icon: '📅',
       label: '月額維持費目安',
-      value: '<span class="qf-cost">' + monthly + '</span>',
+      value: opts.monthlyCostReference
+        ? '<a href="#starter-kit-root">下の飼育セットガイドで確認</a>'
+        : '<span class="qf-cost">' + monthly + '</span>',
       sub: '電気代・フード等',
     },
     {
@@ -165,7 +167,7 @@ function renderQuickFacts(opts) {
       '<div class="qf-heading-row">' +
         '<span class="qf-heading-text">Quick Facts</span>' +
         '<a class="qf-cta-link" href="#starter-kit-root">' +
-          (isHome ? '用品の比較候補と選び方を見る →' : 'この亀を今日から飼えるセットを見る →') +
+          (isHome ? '用品の比較候補と選び方を見る →' : '飼育セットガイドを見る →') +
         '</a>' +
       '</div>' +
       '<div class="qf-grid">' + cards + '</div>' +
@@ -178,10 +180,9 @@ function renderQuickFacts(opts) {
    3. Sticky CTA 生成
    ──────────────────────────────────────────────── */
 function renderStickyCTA(opts) {
-  var isEasy = /入門/.test(opts.difficulty || '');
-  var ctaText = opts.name === 'ホームセオレガメ' ? '用品の比較候補と選び方を見る' : isEasy
-    ? 'はじめての方向けに全部選んだ飼育セットを見る'
-    : 'はじめての方向け飼育セットを見る';
+  var ctaText = opts.name === 'ホームセオレガメ'
+    ? '用品の比較候補と選び方を見る'
+    : '飼育セットガイドを見る';
 
   var sName = opts.name          || '';
   var sKey  = opts.equipmentKey  || '';
