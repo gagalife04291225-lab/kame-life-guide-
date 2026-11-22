@@ -24,15 +24,15 @@
   }
  },
  "basking_75w": {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
-   "itemName": "GEX EXO TERRA（エキゾテラ）　サングローバスキングスポットランプ 75W　PT2132 【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクア",
-   "price": 1530,
-   "shop": "ネオス 楽天市場店"
+   "itemName": "エキゾテラ GEX EXOTERRA サングロー バスキングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 送料無料",
+   "price": 1528,
+   "shop": "ショップflora楽天市場店"
   }
  },
  "basking_arcadia_deep_heat_projector": {
@@ -444,26 +444,26 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-11-20",
+  "date": "2026-11-22",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "reason": "score=4",
   "best": {
-   "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
-   "price": 798,
-   "shop": "Joshin web 家電とPCの大型専門店"
+   "itemName": "ジェックス カメ元気 ごちそうごはん 特大粒500g | カメの餌 フード 爬虫類 ペットのいる暮らし 多頭飼い 留守番 冬",
+   "price": 749,
+   "shop": "ベイシア楽天市場店"
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-11-20",
+  "date": "2026-11-22",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
-  "resultCount": 8,
+  "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
-   "price": 2258,
+   "price": 2261,
    "shop": "SooTune"
   }
  },
@@ -712,14 +712,14 @@
   }
  },
  "heater_gex_navipack_300": {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "query": "GEX セーフカバーナビパック 300",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.9",
   "best": {
    "itemName": "ジェックス GEX AQUA HEATER セーフカバーナビパック 300 サーモスタット+ヒーター 縦横設置 安全機能付 SP規格適合 約15",
-   "price": 6841,
+   "price": 7206,
    "shop": "ショウマーケット"
   }
  },
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-20",
+  "date": "2026-11-22",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "エキゾテラ GEX EXOTERRA アナログ温度計 PT2465 簡単設置 爬虫類・両生類の温度管理",
-   "price": 978,
-   "shop": "Homey Shop 楽天市場店"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1392,14 +1392,14 @@
   }
  },
  "uvb_mvb_100": {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "query": "GEX EXOTERRA ソーラーグローUV 80W",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,80W,series:ソーラーグローuv",
   "best": {
    "itemName": "エキゾテラ GEX EXOTERRA ソーラーグローUV 80W PT2334 UVB＆バ ス キングライト 昼用 砂漠サバンナに棲息する昼行性の爬虫類",
-   "price": 6784,
+   "price": 6870,
    "shop": "川山商店 楽天市場店"
   }
  },
