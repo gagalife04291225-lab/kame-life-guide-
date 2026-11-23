@@ -1,3 +1,5 @@
+import { applyCommittedRakutenSync, RAKUTEN_FEED_KEYS } from './commerce-identity-baseline.mjs';
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -24,7 +26,14 @@ for(const key of Object.keys(after.QF_MONTHLY)){
 const home={equipmentKey:'tortoise_forest',name:'ホームセオレガメ'};
 assert.equal(after.renderQuickFacts(home),before.renderQuickFacts(home));
 assert.equal(after.renderStickyCTA(home),before.renderStickyCTA(home));
-for(const p of ['data/products.js','js/starter-kit.js','shindan/species.js','shindan/routes.js'])assert.equal(read(p),old(p),p+' unchanged');
+// Keep exact text outside fields owned by the trusted Rakuten generator.
+const withoutFeed = source => source.replace(
+ new RegExp('^    (?:' + RAKUTEN_FEED_KEYS.join('|') + '): [^\\r\\n]+,\\r?\\n', 'gm'), '');
+const productObjects = source => JSON.parse(JSON.stringify(vm.runInNewContext(source+'\nPRODUCTS;')));
+const historicalProducts = old('data/products.js'), currentProducts = read('data/products.js');
+assert.equal(withoutFeed(currentProducts), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
+applyCommittedRakutenSync(productObjects(historicalProducts), productObjects(currentProducts), fileURLToPath(root));
+for(const p of ['js/starter-kit.js','shindan/species.js','shindan/routes.js'])assert.equal(read(p),old(p),p+' unchanged');
 console.log('PASS: budget total unchanged, exclusions visible, musk monthly reference only, 8 fallback tables unchanged, Home exact output, products/starter/diagnosis unchanged.');
 
 vm.runInContext(read('shindan/species.js')+';this.species=SPECIES;',after);
