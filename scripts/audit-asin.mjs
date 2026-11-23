@@ -95,6 +95,17 @@ function walk(dir, out = []) {
   return out;
 }
 
+// KID の商品照合記録は購入導線ではない。明示された保留記録の URL だけを除く。
+// フォーマット・型番IDが一致しない場合は除外しない。URLの文字数を保ち行番号も維持する。
+const KID_EVIDENCE_URL = /^([ \t]+product_verification: \{ asin: "([A-Z0-9]{10})", model: "[^"\\\r\n]+", amazon_url: ")(https:\/\/www\.amazon\.co\.jp\/dp\/\2)(", identity_status: "verified", observed_affiliate_tag: "[A-Za-z0-9-]+", affiliate_tag_status: "owner_confirmation_required", reviewed: "\d{4}-\d{2}-\d{2}" \},[ \t]*)(?=\r?$)/gm;
+
+function readAuditSource(file) {
+  const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
+  if (file !== path.join('data', 'kid.js')) return source;
+  return source.replace(KID_EVIDENCE_URL, (_, before, _asin, url, after) =>
+    before + ' '.repeat(url.length) + after);
+}
+
 /* ───────────── ASIN 抽出 ───────────── */
 
 const RX_DP = /amazon\.co\.jp\/(?:[^"'\s)]*\/)?dp\/([A-Z0-9]{10})/g;
@@ -124,7 +135,7 @@ function collect(files) {
     hits.push({ file, asin, name: cleanName(name), kind, prio });
 
   for (const f of files) {
-    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    const src = readAuditSource(f);
 
     const directKind = f.endsWith('.js')
       ? `${path.basename(f)}（affiliateUrl 等の直リンク）`
@@ -183,7 +194,7 @@ function findUntagged(files) {
   const bad = [];
   const rx = /https:\/\/www\.amazon\.co\.jp\/[^"'\s)]+/g;
   for (const f of files) {
-    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    const src = readAuditSource(f);
     for (const m of src.matchAll(rx)) {
       const url = m[0];
       // JS の文字列連結でタグを足している行は対象外
