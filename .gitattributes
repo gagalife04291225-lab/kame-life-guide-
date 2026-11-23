@@ -1,0 +1,2 @@
+# Keep the existing ASIN ledger's CRLF format in whitespace checks.
+docs/asin-audit.csv whitespace=cr-at-eol
