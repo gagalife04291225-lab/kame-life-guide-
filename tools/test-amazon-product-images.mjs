@@ -84,7 +84,20 @@ const guide=readFileSync(new URL('../guide-beginner.html',import.meta.url),'utf8
 const filter=guide.slice(guide.indexOf('<div class="gear-name">飼育水量に合うフィルター'),guide.indexOf('<div class="gear-name">亀用配合飼料'));
 assert.match(filter,/href="water-filter-best10\.html">フィルターを種類別に比較/);
 assert.match(filter,/B0012UO6Q6\?tag=kamelife090e-22[^>]+>外掛け式 AT-50をAmazonで見る/);
-assert.match(readFileSync(new URL('../water-filter-best10.html',import.meta.url),'utf8'),/オートワンタッチフィルター AT-50（外掛け式・大型）/);
+assert.match(filter,/AT-50は外掛け式で、メーカーの適合水槽は幅40〜51cm/);
+assert.match(filter,/モーターの最低水位線より上/);
+const comparison=readFileSync(new URL('../water-filter-best10.html',import.meta.url),'utf8');
+const cards=comparison.split('<div class="item">');
+for (const [model,range,asin] of [['AT-50','40〜51','B0012UO6Q6'],['AT-75W','60〜75','B002JIEPMU']]) {
+  const card=cards.find(value=>value.includes(model+'（外掛け式）'));
+  assert.ok(card,'comparison card: '+model);
+  assert.ok(card.includes('メーカー適合：'+range+'cm水槽'));
+  assert.ok(card.includes('モーターの最低水位線より上'));
+  assert.ok(card.includes('href="https://spectrumbrands.jp/products-aqua/filter/0093-2/"'));
+  assert.ok(card.includes('href="https://spectrumbrands.jp/product-qa/aqua/568/"'));
+  assert.ok(card.includes('data-asin="'+asin+'"'));
+  assert.doesNotMatch(card,/75〜120cm水槽向け|大型水槽|多めの飼育数|90cm以上の水槽で/);
+}
 console.log('Amazon image checks: strict scope, whitelist, redirects, site-only response, same-ASIN, expiry, safe failure and mismatched guide link PASS');
 
 // Execute the actual sizing routine in isolation. Source file is not auto-loaded.
