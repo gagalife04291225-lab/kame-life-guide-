@@ -33,8 +33,15 @@ const productObjects = source => JSON.parse(JSON.stringify(vm.runInNewContext(so
 const historicalProducts = old('data/products.js'), currentProducts = read('data/products.js');
 assert.equal(withoutFeed(currentProducts), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
 applyCommittedRakutenSync(productObjects(historicalProducts), productObjects(currentProducts), fileURLToPath(root));
-for(const p of ['js/starter-kit.js','shindan/species.js','shindan/routes.js'])assert.equal(read(p),old(p),p+' unchanged');
-console.log('PASS: budget total unchanged, exclusions visible, musk monthly reference only, 8 fallback tables unchanged, Home exact output, products/starter/diagnosis unchanged.');
+for(const p of ['js/starter-kit.js','shindan/species.js'])assert.equal(read(p),old(p),p+' unchanged');
+// The maintenance wording cannot prescribe a frequency or say an external filter replaces water changes;
+// every other question, choice and numerical score stays byte-for-byte stable.
+const reviewedRoutes = old('shindan/routes.js')
+ .replace('水替えやフィルター管理はどのくらいできますか？','水換えやフィルターの手入れに、どのくらい時間を取れますか？')
+ .replace('週1〜2回は水替えできる','こまめに水換えや手入れの時間を取れる')
+ .replace('外部フィルターで月1回程度','定期的に時間は取れるが、こまめな手入れは難しい');
+assert.equal(read('shindan/routes.js'),reviewedRoutes,'only reviewed aquatic maintenance wording changed');
+console.log('PASS: budget total unchanged, exclusions visible, musk monthly reference only, 8 fallback tables unchanged, Home exact output, product, kit and species logic unchanged; only reviewed diagnosis choice wording changed.');
 
 vm.runInContext(read('shindan/species.js')+';this.species=SPECIES;',after);
 let checked=0;

@@ -30,10 +30,12 @@ for(const[route,list]of Object.entries(now.species).filter(([r])=>r!=='all'))for
 assert.equal(count,119);assert.equal(tiers,357);assert.equal(changes.length,46);
 // Unknown objects retain legacy fallback, including when no source route exists.
 for(const sp of[{name:'unknown'}, {name:'unknown',size:'XL'}, {name:'unknown',extraSpecs:{tankSize:'x'}}])assert.equal(now.resolveEquipmentKey('all',sp),old.resolveEquipmentKey('all',sp));
-// This fix does not alter reference-only commerce suppression.
-const guards=h=>h.split('\n').filter(l=>/refOnly/.test(l));
-assert.deepEqual(guards(read('shindan/index.html')),guards(base('shindan/index.html')));
-assert.ok(read('shindan/index.html').includes('if (!refOnly) { try { renderStarterKitV2(sp);'));
+// Both reference-only prohibitions still gate commerce, in addition to the newer preparation check.
+const diagnosis = read('shindan/index.html');
+const baseGuards = h => h.split('\n').filter(line => /var refOnly|slot\.innerHTML = refOnly|\} else if \(refOnly \|\| sp\.legal/.test(line));
+assert.deepEqual(baseGuards(diagnosis),baseGuards(base('shindan/index.html')));
+assert.match(diagnosis, /var canShowCommerce = !refOnly && !resultGuard\.blocksCommerce;/);
+assert.match(diagnosis, /if \(canShowCommerce\) mountResultKit\(sp\);/);
 assert.throws(()=>{for(const[r,arr]of Object.entries(old.species).filter(([r])=>r!=='all'))for(const sp of arr)assert.equal(old.resolveEquipmentKey('all',sp),old.resolveEquipmentKey(r,sp));},{name:'AssertionError'});
 console.log('PASS:119 native keys unchanged;357 native tier selections/order/prices unchanged;all matches native;46 all-route corrections;reference-only suppression unchanged;old code fails.');
 console.log(JSON.stringify(changes));

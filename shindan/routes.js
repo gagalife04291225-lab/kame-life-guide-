@@ -65,9 +65,9 @@ const ROUTES = [
         { label: '60〜90cm水槽', scores: { small_tank: 1, medium_tank: 3, large_tank: 0 } },
         { label: '90cm以上', scores: { small_tank: 0, medium_tank: 1, large_tank: 3 } }
       ]},
-      { text: '水替えやフィルター管理はどのくらいできますか？', choices: [
-        { label: '週1〜2回は水替えできる', scores: { maintenance: 3 } },
-        { label: '外部フィルターで月1回程度', scores: { maintenance: 2 } },
+      { text: '水換えやフィルターの手入れに、どのくらい時間を取れますか？', choices: [
+        { label: 'こまめに水換えや手入れの時間を取れる', scores: { maintenance: 3 } },
+        { label: '定期的に時間は取れるが、こまめな手入れは難しい', scores: { maintenance: 2 } },
         { label: 'なるべく手間を減らしたい', scores: { maintenance: 0 } }
       ]},
       { text: '飼育スタイルの好みは？', choices: [

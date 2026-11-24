@@ -37,7 +37,7 @@ for(const ref of [{commerceAllowed:false},{availability:'reference_only'}]){
  c.updateSpeciesEquipmentConditions({...ref,slug:'west-african-mud-turtle'});
  assert.equal(slot.innerHTML,'');
 }
-assert.ok(extract('showResult').startsWith('function showResult(sp, pct, runners) {\n  updateSpeciesEquipmentConditions(sp);'));
+assert.ok(extract('showResult').startsWith('function showResult(sp, pct, runners, restored) {\n  updateSpeciesEquipmentConditions(sp);'));
 console.log('PASS: reference-only transitions clear equipment conditions at showResult entry');
 
 for (const slug of ['matamata','amazon-matamata']) {
@@ -56,13 +56,17 @@ assert.ok(c.conditions['home-hinge-back-tortoise'].items.join('').includes('湿�
 const eventStart=html.indexOf('    // GA4: diagnosis_cta_view');
 const eventEnd=html.indexOf('  })();',eventStart);
 const events=[];
-const ec=vm.createContext({ga4Event:(name,payload)=>events.push({name,payload}),sp:{name:'test',slug:'test'},_lastCandidateCount:3,equipKey:'semi_aquatic_small',top3Count:3});
-vm.runInContext(html.slice(eventStart,eventEnd),ec);
+const ec=vm.createContext({ga4Event:(name,payload)=>events.push({name,payload}),sp:{name:'test',slug:'test'},_lastCandidateCount:3,equipKey:'semi_aquatic_small',top3Count:3,canShowCommerce:true});
+const ctaEventBlock = '(function(){' + html.slice(eventStart,eventEnd) + '})();';
+vm.runInContext(ctaEventBlock,ec);
 assert.equal(events.length,1);assert.equal(events[0].name,'diagnosis_cta_view');
 assert.equal(events[0].payload.has_teaser,false);
 assert.equal(events[0].payload.init_cost,'');assert.equal(events[0].payload.monthly_cost,'');
 assert.equal(events[0].payload.top3_tier,'requirements');
-console.log('PASS: CTA impression event emits after fee teaser removal');
+ec.canShowCommerce = false;
+vm.runInContext(ctaEventBlock,ec);
+assert.equal(events.length,1,'withheld CTA impression stays withheld');
+console.log('PASS: CTA impression event emits after fee teaser removal, only when allowed');
 
 assert.ok(html.includes('用品を買う前に、成体に必要な広さと設置場所'));
 assert.ok(!html.includes('\\u521D\\u6708'));
