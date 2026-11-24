@@ -1230,7 +1230,7 @@ const PRODUCTS = {
     asin: 'B0012UO6Q6',
     rakutenSearchTerm: 'テトラ オートワンタッチフィルター AT-50',
     image: '/assets/products/placeholder.webp',
-    why: '小型水棲ガメの水質維持に。カメは水を汚しやすいため必須',
+    why: '浅い水入れだけなら、このフィルターは不要です。別に水槽を設ける場合は、メーカー適合の幅40〜51cmで、水面をモーターの最低水位線より上に保てることを確認してください。',
     rating: 4.1,
     badge: 'Budget Pick',
     recommendedFor: ['semi_aquatic_small', 'japanese_pond'],

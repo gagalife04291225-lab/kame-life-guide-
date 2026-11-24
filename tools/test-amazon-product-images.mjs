@@ -156,3 +156,27 @@ imageNode.events.error();
 assert.equal(a.getAttribute('href'),original);
 assert.equal(a.frame.removed,true);
 console.log('Attribution: exact unchanged API destination, one original link, failure restores safely; bounded 429 and pacing PASS');
+
+const eastern=readFileSync(new URL('../species/eastern-box-turtle.html',import.meta.url),'utf8');
+assert.match(eastern,/浅い水入れ/);
+const mount=eastern.match(/mountStarterKit\(\{ equipmentKey: '([^']+)', name: '([^']+)'/);
+assert.ok(mount);
+const kitContext={window:{location:{hostname:'kamelifeguide.com',pathname:'/species/eastern-box-turtle.html',search:''}}};
+for (const path of ['../data/products.js','../js/starter-kit.js']) {
+  runInNewContext(readFileSync(new URL(path,import.meta.url),'utf8'),kitContext);
+}
+const kit=kitContext.renderStarterKitHtmlV2(mount[1],{name:mount[2]});
+const at50=kit.split('data-sk-product="filter_small"')[1]?.split('</label>')[0];
+assert.ok(at50,'actual V2 budget card for the named page');
+assert.match(at50,/浅い水入れだけなら、このフィルターは不要/);
+assert.match(at50,/幅40〜51cm/);
+assert.match(at50,/モーターの最低水位線より上/);
+assert.doesNotMatch(at50,/必須/);
+assert.match(at50,/data-asin="B0012UO6Q6"[^>]*data-equipment-key="box_turtle"[^>]*data-product-id="filter_small"[^>]*data-provider="amazon"/);
+assert.ok(at50.indexOf('最低水位線') < at50.indexOf('data-provider="amazon"'));
+for (const [model,range] of [['AT-20','15〜32'],['AT-30','20〜36']]) {
+  const card=cards.find(value=>value.includes(model+'（外掛け式'));
+  assert.ok(card?.includes(range+'cm水槽'));
+  assert.ok(card.includes('モーターの最低水位線より上'));
+  assert.doesNotMatch(card,/モーターが水槽の外側|15〜30cm水槽/);
+}
