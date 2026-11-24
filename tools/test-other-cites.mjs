@@ -1,5 +1,5 @@
 import {normalizeSourcedLifespan} from './lifespan-baseline.mjs';
-import './test-next-species-conditions.mjs';
+import {expectReviewedRedCheekedEnclosure} from './test-next-species-conditions.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -18,6 +18,7 @@ const stable=s=>JSON.stringify(s,(k,v)=>typeof v==='function'?v.toString():v);
 // Preserve all legal/routing/function fields in this original-baseline comparison.
 function normalizeIndependentCare(a,b){
  normalizeSourcedLifespan(a,b);
+ expectReviewedRedCheekedEnclosure(a);
  if(a.slug==='chinese-stripe-necked-turtle'){assert.equal(b.cites,'CITES III');delete a.cites;delete b.cites;}
  if(a.slug==='impressed-tortoise'){
   a.reason=b.reason;

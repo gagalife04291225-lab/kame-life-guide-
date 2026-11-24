@@ -16,7 +16,8 @@ function fn(name) {
 }
 
 function fixture() {
-  const kit = { innerHTML: '', style: { display: 'none' }, querySelectorAll: () => [] };
+  const kit = { innerHTML: '', style: { display: 'none' }, querySelectorAll: () => [],
+    querySelector: () => /class="sk-card[ "]/.test(kit.innerHTML) ? {} : null };
   const gaps = { innerHTML: '', appendChild() {} };
   const hits = { shown: [], events: [], loads: 0, warnings: [] };
   const context = vm.createContext({
@@ -39,17 +40,24 @@ function fixture() {
     hits,
   });
   const refOnly = diagnosis.match(/^  var refOnly = \(sp\.commerceAllowed[^\n]+/m)?.[0];
-  const render = diagnosis.match(/^  if \(!refOnly\) \{ try \{ renderStarterKitV2\(sp\)[^\n]+\n  else [^\n]+/m)?.[0];
-  assert.ok(refOnly && render, 'real result commerce gate');
+  const commerce = diagnosis.match(/^  var canShowCommerce = .*;$/m)?.[0];
+  const render = diagnosis.match(/^  if \(canShowCommerce\) mountResultKit\(sp\);$/m)?.[0];
+  assert.ok(refOnly && commerce && render, 'real result commerce gate');
   const run = js => vm.runInContext(js, context);
   for (const path of ['data/products.js', 'js/starter-kit.js', 'shindan/species.js']) run(read(path));
-  run(['resolveEquipmentKey', 'renderStarterKitV2', 'computeReadiness',
-    'finishQuiz', 'renderGateStop', 'calcResult'].map(fn).join('\n'));
+  run(['resolveEquipmentKey', 'renderStarterKitV2', 'computeReadiness', 'setLoadStatus', 'mountResultKit',
+    'setResultKitNavigation','showRenderedResultKitNavigation','finishQuiz', 'loadDiagnosisResult',
+    'renderGateStop', 'calcResult'].map(fn).join('\n'));
   run(`
     var readinessAnswers = [], scores = {}, selectedRoute, result, _diagnosisCompleted, _lastRunnerUp, _lastCandidateCount;
+    var finishState, diagnosisRun = 0, kitAttempt = 0, quizPhase, retryKit, resultCommerceAllowed;
+    function resultAssetsReady() { return typeof mountStarterKit === 'function'; }
     function showResult(sp) {
       hits.shown.push(sp.slug);
       ${refOnly}
+      var resultGuard = { blocksCommerce: false };
+      ${commerce}
+      resultCommerceAllowed = canShowCommerce;
       ${render}
     }
     var musk = SPECIES.aquatic.find(sp => sp.slug === 'musk-turtle');

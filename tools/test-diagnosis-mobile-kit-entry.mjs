@@ -12,7 +12,7 @@ function extract(name) {
   return html.slice(start, end + 2);
 }
 
-const ids = ['result-kit-jump', 'commerce-lead', 'res-cta-top-cost-note', 'res-cta-top-link-sec', 'res-cta-secondary'];
+const ids = ['result-kit-jump', 'commerce-lead', 'res-cta-top-cost-note', 'res-cta-top-link-sec', 'res-cta-secondary', 'ec-btn-sk'];
 
 test('a native, focusable content jump follows the result badges and lands before kit and commerce', () => {
   const order = ['smart-badges', 'result-kit-jump', 'why-section', 'important-notice', 'res-legal',
@@ -71,21 +71,26 @@ function fixture() {
   }));
   for (const path of ['data/products.js', 'js/starter-kit.js', 'shindan/species.js']) run(read(path));
   run(['resolveEquipmentKey', 'renderStarterKitV2', 'setResultKitNavigation', 'resetResultKitNavigation',
-    'showRenderedResultKitNavigation', 'show', 'clearResultUrl', 'computeReadiness',
-    'finishQuiz', 'renderGateStop', 'resetToStart'].map(extract).join('\n'));
+    'showRenderedResultKitNavigation', 'mountResultKit', 'show', 'setLoadStatus', 'beginDiagnosisRun',
+    'cancelPendingAnswer', 'clearResultUrl', 'computeReadiness', 'finishQuiz', 'renderGateStop', 'resetToStart'].map(extract).join('\n'));
   const result = extract('showResult');
   const initial = result.match(/^  resetResultKitNavigation\(\);$/m)?.[0];
   const ref = result.match(/^  var refOnly = .*;$/m)?.[0];
-  const final = result.match(/^  if \(!refOnly\) \{ try \{ renderStarterKitV2\(sp\)[^\n]+\n  else [^\n]+\n  showRenderedResultKitNavigation\(\);$/m)?.[0];
-  assert.ok(initial && ref && final, 'invoke the production commerce-reset and render sequence');
+  const commerce = result.match(/^  var canShowCommerce = .*;$/m)?.[0];
+  const final = result.match(/^  if \(canShowCommerce\) mountResultKit\(sp\);$/m)?.[0];
+  assert.ok(initial && ref && commerce && final, 'invoke the production commerce-reset and render sequence');
   run(`
     var readinessAnswers = [], scores = {}, selectedRoute, currentQuestionIndex, answerHistory, gateIndex, _diagnosisCompleted;
+    var kitAttempt = 0, diagnosisRun = 0, retryKit, finishState, quizPhase, pendingAnswer, result, resultReferenceOnly, resultCommerceAllowed, resultExitCaptureCleanup, resultSharePercent, _viewedSteps;
     var musk = SPECIES.aquatic.find(sp => sp.slug === 'musk-turtle');
     var hermann = SPECIES.land.find(sp => sp.slug === 'hermann-tortoise');
     var actualMount = mountStarterKit;
+    function resultAssetsReady() { return typeof mountStarterKit === 'function'; }
     function runResult(sp) {
       ${initial}
       ${ref}
+      var resultGuard = { blocksCommerce: false };
+      ${commerce}
       show('screen-result');
       ${final}
     }

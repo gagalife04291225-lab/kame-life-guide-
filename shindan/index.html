@@ -159,6 +159,16 @@ body {
 .gate-notice-tail { opacity: .8; font-size: 0.875rem; margin: 0; }
 .btn-back:active { opacity: .7; }
 .progress-wrap { flex: 1; }
+.diagnosis-loading[hidden], .diagnosis-loading button[hidden], #ec-btn-sk[hidden] { display: none; }
+.diagnosis-loading {
+  width: 100%; margin: 14px 0; padding: 12px 16px; color: var(--parchment);
+  border: 1px solid var(--accent-light); border-radius: 10px; line-height: 1.65;
+}
+.diagnosis-loading p { margin: 0; }
+.diagnosis-loading p:focus-visible, .diagnosis-loading button:focus-visible {
+  outline: 2px solid var(--accent-light); outline-offset: 3px;
+}
+.diagnosis-loading button { margin-top: 8px; min-height: 44px; }
 .progress-label { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 6px; }
 .progress-bar { height: 5px; background: rgba(255,255,255,.12); border-radius: 99px; overflow: hidden; }
 .progress-fill { height: 100%; background: var(--accent-light); border-radius: 99px; transition: width .4s cubic-bezier(.4,0,.2,1); }
@@ -1171,6 +1181,10 @@ body {
   <div class="route-intro">
     <div class="route-intro-label" id="route-cards-label">ルートをタップして30秒で診断スタート</div>
     <div class="route-cards" id="route-cards" role="group" aria-labelledby="route-cards-label"></div>
+    <div id="restore-load" class="diagnosis-loading" hidden>
+      <p id="restore-load-message" role="status" tabindex="-1"></p>
+      <button id="btn-restore-load" class="btn-retry" type="button" hidden>共有された結果をもう一度読み込む</button>
+    </div>
   </div>
 
   <!-- Phase 4 移設: index.html の journey-preview（How it works）。文言は逐語。
@@ -1230,6 +1244,10 @@ body {
   </div>
   <p class="question-text" id="question-text" tabindex="-1"></p>
   <div class="choices" id="choices" role="group" aria-labelledby="question-text"></div>
+  <div id="diagnosis-load" class="diagnosis-loading" hidden>
+    <p id="diagnosis-load-message" role="status" tabindex="-1"></p>
+    <button id="btn-diagnosis-load" class="btn-retry" type="button" hidden>結果をもう一度読み込む</button>
+  </div>
 </section>
 
 <!-- TRUST-1: Readiness Gate C判定画面（種を推薦しない・商品リンクを置かない） -->
@@ -1253,6 +1271,7 @@ body {
 <section id="screen-result" class="screen" aria-label="診断結果">
   <!-- TRUST-1: B判定（条件付き）の準備不足通知。ランキング・種の表示には影響しない -->
   <div id="gate-notice" class="gate-notice" hidden role="note"></div>
+  <section id="result-preparation-note" class="gate-notice" aria-label="迎える前の確認" hidden></section>
   <!-- ════════ ABOVE FOLD ════════ -->
   <div class="result-header">
     <div class="result-label">あなたにおすすめの亀</div>
@@ -1316,6 +1335,10 @@ body {
   <!-- PHASE 6-B: おすすめ飼育セット -->
   <div id="species-equipment-conditions"></div>
   <div id="starter-kit-section" tabindex="-1" style="display:none"></div>
+  <div id="kit-load" class="diagnosis-loading" hidden>
+    <p id="kit-load-message" role="status" tabindex="-1"></p>
+    <button id="btn-kit-load" class="btn-retry" type="button" hidden>用品情報をもう一度読み込む</button>
+  </div>
   <!-- Phase 25-C→Phase5-B: 統合commerce CTA（旧res-cta-top）。Starter Kit の下へ配置 -->
   <div class="res-cta-top" id="res-cta-top" style="display:none"></div>
   <!-- 旧res-cost-summary・res-rev-boxは削除（res-cta-top/res-cta-blockのteaser/scarcityへ機能統合済み） -->
@@ -1376,29 +1399,59 @@ body {
 
 <!-- データファイル -->
 <!-- perf(shindan): species.js は初回ロードせず、診断開始時に遅延読み込みする（下記 loadSpecies）。routes.js の route.species は getter のため species.js 非依存で先に読める。 -->
-<script src="routes.js?v=1930eb30200a"></script>
+<script src="routes.js?v=b76ff7a3fb61"></script>
 <script>
 // 結果画面でのみ必要な重いJS（species.js / products.js / starter-kit.js）は初回ロードせず、
 // 診断開始時に先読み → 結果表示前にロード完了を保証する（idempotent・二重読込なし）。
 window.__lazyScriptCache = {};
-window.__loadScriptOnce = function (src) {
+window.__loadScriptOnce = function (src, ready) {
+  if (ready()) return Promise.resolve();
   if (window.__lazyScriptCache[src]) return window.__lazyScriptCache[src];
-  return (window.__lazyScriptCache[src] = new Promise(function (resolve, reject) {
+  var task = new Promise(function (resolve, reject) {
     var s = document.createElement('script');
     s.src = src;
-    s.onload = function () { resolve(); };
-    s.onerror = function () { window.__lazyScriptCache[src] = null; reject(new Error('load failed: ' + src)); };
+    var timer;
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      s.onload = s.onerror = null;
+      if (ready()) resolve();
+      else {
+        s.remove();
+        reject(new Error('Required diagnosis data unavailable'));
+      }
+    }
+    s.onload = s.onerror = finish;
+    timer = setTimeout(finish, 8000);
     document.head.appendChild(s);
-  }));
+  });
+  window.__lazyScriptCache[src] = task;
+  return task.then(clear, function (error) { clear(); throw error; });
+  function clear() {
+    if (window.__lazyScriptCache[src] === task) delete window.__lazyScriptCache[src];
+  }
 };
+function speciesDataReady() {
+  return typeof SPECIES !== 'undefined' && SPECIES &&
+    ['land', 'aquatic', 'forest', 'exotic', 'all'].every(function (id) {
+      return Array.isArray(SPECIES[id]) && SPECIES[id].length > 0;
+    });
+}
+function productDataReady() {
+  return typeof PRODUCTS !== 'undefined' && PRODUCTS && Object.keys(PRODUCTS).length > 0 &&
+    typeof EQUIPMENT_MAP !== 'undefined' && EQUIPMENT_MAP && Object.keys(EQUIPMENT_MAP).length > 0;
+}
+function kitEngineReady() { return typeof mountStarterKit === 'function'; }
+function resultAssetsReady() { return productDataReady() && kitEngineReady(); }
 window.loadSpecies = function () {
-  if (window.SPECIES) return Promise.resolve();      // 種データ（ランキング計算に必須）
-  return window.__loadScriptOnce('species.js?v=7fc4075bcf7b');
+  return window.__loadScriptOnce('species.js?v=a33ebe666800', speciesDataReady);
 };
-window.loadResultAssets = function () {               // 結果画面 Starter Kit 用（PRODUCTS/EQUIPMENT_MAP + mountStarterKit）
+window.loadResultAssets = function () {
   return Promise.all([
-    window.__loadScriptOnce('../data/products.js?v=973afb88ae0c'),
-    window.__loadScriptOnce('../js/starter-kit.js?v=a2e45cc7db3c')
+    window.__loadScriptOnce('../data/products.js?v=973afb88ae0c', productDataReady),
+    window.__loadScriptOnce('../js/starter-kit.js?v=a2e45cc7db3c', kitEngineReady)
   ]);
 };
 </script>
@@ -1421,20 +1474,82 @@ var scores = {};
 var result = null;
 var resultScore = 0;
 var resultMaxScore = 0;
+var resultSharePercent = null;
 var answerHistory = [];
 var toastTimer = null;
 // TRUST-1 Readiness Gate 状態（scores とは完全分離。ランキング経路へは加算しない）
 var readinessAnswers = [];
 var gateIndex = 0;
+var diagnosisRun = 0;
+var quizPhase = '';
+var pendingAnswer = null;
+var finishState = null;
+var kitAttempt = 0;
+var retryKit = null;
+
+function setLoadStatus(id, state, message, moveFocus) {
+  var box = document.getElementById(id);
+  if (!box) return;
+  var status = document.getElementById(id + '-message');
+  var button = document.getElementById('btn-' + id);
+  box.hidden = !state;
+  if (status) status.textContent = message || '';
+  if (button) button.hidden = state !== 'error';
+  if (state && moveFocus && status) status.focus();
+}
+
+function cancelPendingAnswer() {
+  if (!pendingAnswer) return;
+  clearTimeout(pendingAnswer.timer);
+  pendingAnswer = null;
+  document.querySelectorAll('.choice-btn').forEach(function (button) {
+    button.disabled = false;
+    button.classList.remove('selected');
+  });
+}
+
+function beginDiagnosisRun() {
+  cancelPendingAnswer();
+  diagnosisRun++;
+  finishState = null;
+  quizPhase = '';
+  _viewedSteps = {};
+  _diagnosisCompleted = false;
+  result = null;
+  resultSharePercent = null;
+  resultReferenceOnly = false;
+  resultCommerceAllowed = false;
+  setLoadStatus('diagnosis-load');
+  setLoadStatus('restore-load');
+}
+
+function queueAnswer(phase, clickedBtn, commit) {
+  if (pendingAnswer || quizPhase !== phase || !selectedRoute) return;
+  var buttons = document.querySelectorAll('.choice-btn');
+  if (clickedBtn && !Array.prototype.includes.call(buttons, clickedBtn)) return;
+  var token = { run: diagnosisRun, route: selectedRoute, question: currentQuestionIndex, gate: gateIndex };
+  pendingAnswer = token;
+  buttons.forEach(function (button) { button.disabled = true; });
+  if (clickedBtn) clickedBtn.classList.add('selected');
+  token.timer = setTimeout(function () {
+    if (pendingAnswer !== token || diagnosisRun !== token.run || selectedRoute !== token.route ||
+        currentQuestionIndex !== token.question || gateIndex !== token.gate || quizPhase !== phase) return;
+    pendingAnswer = null;
+    commit();
+  }, 250);
+}
 
 function setResultKitNavigation(visible) {
-  ['result-kit-jump', 'commerce-lead', 'res-cta-top-cost-note', 'res-cta-top-link-sec', 'res-cta-secondary'].forEach(function(id) {
+  ['result-kit-jump', 'commerce-lead', 'res-cta-top-cost-note', 'res-cta-top-link-sec', 'res-cta-secondary', 'ec-btn-sk'].forEach(function(id) {
     var node = document.getElementById(id);
     if (node) node.hidden = !visible;
   });
 }
 
 function resetResultKitNavigation() {
+  kitAttempt++;
+  retryKit = null;
+  setLoadStatus('kit-load');
   setResultKitNavigation(false);
   var kit = document.getElementById('starter-kit-section');
   if (kit) { kit.style.display = 'none'; kit.innerHTML = ''; }
@@ -1445,11 +1560,56 @@ function showRenderedResultKitNavigation() {
   var rendered = !!(kit && kit.style.display !== 'none' && kit.querySelector('.sk-card'));
   if (kit && !rendered) kit.style.display = 'none';
   setResultKitNavigation(rendered);
+  return rendered;
+}
+
+// 用品情報は結果とは別に復旧できる。押し直しても、診断結果や計測をやり直さない。
+function mountResultKit(sp) {
+  var run = diagnosisRun;
+  var attempt = ++kitAttempt;
+  function isCurrent() { return run === diagnosisRun && attempt === kitAttempt; }
+  function failed(focus) {
+    var kit = document.getElementById('starter-kit-section');
+    if (kit) { kit.style.display = 'none'; kit.innerHTML = ''; }
+    setResultKitNavigation(false);
+    setLoadStatus('kit-load', 'error', '用品情報を読み込めませんでした。診断結果はそのままです。', focus);
+    retryKit = function () {
+      if (!isCurrent()) return;
+      retryKit = null;
+      setLoadStatus('kit-load', 'loading', '用品情報を読み込んでいます…', true);
+      window.loadResultAssets().then(function () {
+        if (!isCurrent()) return;
+        if (refreshResultGuardBeforeKit(sp)) render(true);
+        else setLoadStatus('kit-load');
+      }, function () {
+        if (isCurrent()) failed(true);
+      });
+    };
+  }
+  function render(isRetry) {
+    try {
+      renderStarterKitV2(sp);
+      if (showRenderedResultKitNavigation()) {
+        setLoadStatus('kit-load');
+        var kit = document.getElementById('starter-kit-section');
+        if (isRetry && kit) kit.focus();
+      } else {
+        setLoadStatus('kit-load', 'empty', 'この結果に表示できる用品情報はありません。', isRetry);
+      }
+    } catch (error) {
+      failed(isRetry);
+    }
+  }
+  if (resultAssetsReady()) render(false);
+  else failed(false);
 }
 
 // ===== 画面切替 =====
 function show(id) {
-  if (id !== 'screen-result') resetResultKitNavigation();
+  if (id !== 'screen-result') {
+    resetResultKitNavigation();
+    if (resultExitCaptureCleanup) resultExitCaptureCleanup();
+  }
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
@@ -1480,26 +1640,35 @@ function clearResultUrl() {
     url.searchParams.delete('r');
     url.searchParams.delete('s');
     if (url.hash === '#important-notice' || url.hash === '#starter-kit-section') url.hash = '';
-    history.replaceState(null, '', url.toString());
+    if (url.href !== location.href) history.replaceState(null, '', url.toString());
   } catch(e){}
 }
 
 function tryRestoreFromUrl() {
   try {
     var params = new URLSearchParams(location.search);
+    if (params.getAll('r').length !== 1 || params.getAll('s').length !== 1) return false;
     var routeId = params.get('r');
-    var specName = decodeURIComponent(params.get('s') || '');
+    var specName = params.get('s');
     if (!routeId || !specName) return false;
     var route = ROUTES.find(function(r){ return r.id === routeId; });
     if (!route) return false;
+    // 共有URLは単一エンコード、旧保存URLは二重エンコード。名前と所属ルートを完全一致で確認。
     var sp = route.species.find(function(s){ return s.name === specName; });
-    if (!sp) return false;
+    if (!sp) {
+      try { specName = decodeURIComponent(specName); } catch(e) { return false; }
+      sp = route.species.find(function(s){ return s.name === specName; });
+    }
+    if (!sp || ['archive','redirect','exclude'].includes(sp.availability) || sp.legal === 'unknown_hold') return false;
     selectedRoute = route;
     result = sp;
     resultScore = 0;
     resultMaxScore = 1;
-    _lastRunnerUp = null; // Phase 47-A: URL復元時は次点候補データがないため比較優位はリセット
-    showResult(sp, null);  // null = URL復元時はスコア非表示
+    _lastRunnerUp = null;
+    // URLに住まい・世話・予算の回答を含めず、復元時も回答を推定しない。
+    var notice = document.getElementById('gate-notice');
+    if (notice) { notice.hidden = true; notice.innerHTML = ''; }
+    showResult(sp, null, null, true);
     return true;
   } catch(e){ return false; }
 }
@@ -2490,8 +2659,8 @@ function getRouteQuestionCount(route) {
 }
 
 // ===== スタート画面初期化 =====
-function initStart() {
-  clearResultUrl();
+function initStart(keepResultUrl) {
+  if (!keepResultUrl) clearResultUrl();
   var container = document.getElementById('route-cards');
   container.innerHTML = '';
   ROUTES.forEach(function(route) {
@@ -2514,10 +2683,14 @@ function initStart() {
 
 // ===== 診断開始 =====
 function startQuizWithRoute(id) {
+  var route = ROUTES.find(function(r){ return r.id === id; });
+  if (!route) return;
+  beginDiagnosisRun();
+  clearResultUrl();
   // perf: 診断開始時に結果画面用の重いJSを先読み（回答中にバックグラウンド取得）
   if (window.loadSpecies) { window.loadSpecies().catch(function(){}); }
   if (window.loadResultAssets) { window.loadResultAssets().catch(function(){}); }
-  selectedRoute = ROUTES.find(function(r){ return r.id === id; });
+  selectedRoute = route;
   currentQuestionIndex = 0;
   scores = {};
   answerHistory = [];
@@ -2533,6 +2706,7 @@ function startQuizWithRoute(id) {
 
 // ===== 質問表示 =====
 function showQuestion() {
+  quizPhase = 'question';
   var route = selectedRoute;
   var q = route.questions[currentQuestionIndex];
   // Phase 9-C: step view tracking (dedup)
@@ -2584,11 +2758,8 @@ function showQuestion() {
 
 // ===== 選択処理 =====
 function selectChoice(choice, clickedBtn) {
-  // selected状態を表示してから0.25秒後に次へ
-  var allBtns = document.querySelectorAll('.choice-btn');
-  allBtns.forEach(function(b){ b.disabled = true; });
-  if (clickedBtn) clickedBtn.classList.add('selected');
-  setTimeout(function(){
+  // 選択表示の待ち時間中に離脱した回答は、次の診断へ持ち越さない。
+  queueAnswer('question', clickedBtn, function(){
     // Phase 9-C: answer tracking
     if (typeof ga4Event === 'function') {
       ga4Event('shindan_answer_select', {
@@ -2610,7 +2781,7 @@ function selectChoice(choice, clickedBtn) {
     } else {
       finishQuiz();
     }
-  }, 250);
+  });
 }
 
 // ===== TRUST-1: Readiness Gate =====
@@ -2624,6 +2795,7 @@ function selectChoice(choice, clickedBtn) {
 //   A「飼育可能」: blocker が0 かつ warn が1つ以下（従来どおり）
 // readinessAnswers は scores と分離されており、種ランキング（Phase1 Stable / Phase2）へ影響しない。
 function showGateQuestion() {
+  quizPhase = 'gate';
   var route = selectedRoute;
   var q = READINESS_QUESTIONS[gateIndex];
   var routeLen = route.questions.length;
@@ -2666,10 +2838,7 @@ function showGateQuestion() {
 }
 
 function selectGateChoice(choice, clickedBtn) {
-  var allBtns = document.querySelectorAll('.choice-btn');
-  allBtns.forEach(function(b){ b.disabled = true; });
-  if (clickedBtn) clickedBtn.classList.add('selected');
-  setTimeout(function(){
+  queueAnswer('gate', clickedBtn, function(){
     if (typeof ga4Event === 'function') {
       ga4Event('shindan_answer_select', {
         step: selectedRoute.questions.length + gateIndex + 1,
@@ -2684,7 +2853,7 @@ function selectGateChoice(choice, clickedBtn) {
     } else {
       finishQuiz();
     }
-  }, 250);
+  });
 }
 
 function computeReadiness() {
@@ -2708,22 +2877,49 @@ function computeReadiness() {
 }
 
 function finishQuiz() {
+  if (!selectedRoute || finishState) return;
+  quizPhase = 'finish';
   var rv = computeReadiness();
+  var state = { run: diagnosisRun, verdict: rv, loading: false, complete: false, resume: null };
+  finishState = state;
   if (typeof ga4Event === 'function') {
-    ga4Event('readiness_gate_result', { verdict: rv.verdict, blockers: rv.blockers, warns: rv.warns, route_id: selectedRoute ? selectedRoute.id : '' });
+    ga4Event('readiness_gate_result', { verdict: rv.verdict, blockers: rv.blockers, warns: rv.warns, route_id: selectedRoute.id });
   }
   if (rv.verdict === 'C') {
     renderGateStop(rv);
     return;
   }
-  // perf: 結果計算(SPECIES使用)の直前で species.js のロード完了を保証（Race Condition防止・二重読込なし）
-  // perf: 結果計算(SPECIES)＋Starter Kit(PRODUCTS/starter-kit)のロード完了を保証してから結果表示。
-  // species失敗=ランキング不可(元から破綻)。結果資産失敗はcatchで握り、結果種は必ず表示(Starter Kitのみ劣化)。
-  (window.loadSpecies ? window.loadSpecies() : Promise.resolve())
-    .then(function(){ return window.loadResultAssets ? window.loadResultAssets().catch(function(){}) : Promise.resolve(); })
-    .then(calcResult)
-    .then(function(){ if (rv.verdict === 'B') renderGateNotice(rv); })
-    .catch(function(){});
+  loadDiagnosisResult(state, false);
+}
+
+function loadDiagnosisResult(state, moveFocus) {
+  if (!state || state !== finishState || state.loading || state.complete || state.resume) return;
+  state.loading = true;
+  setLoadStatus('diagnosis-load', 'loading', '回答を残したまま、診断結果を読み込んでいます…', moveFocus);
+  function current() { return state === finishState && state.run === diagnosisRun; }
+  function afterLoad(paint) {
+    if (!current()) return;
+    state.loading = false;
+    var modal = document.getElementById('modal-quit');
+    if (modal && modal.classList.contains('open')) state.resume = paint;
+    else paint();
+  }
+  window.loadSpecies().then(function () {
+    if (!current()) return;
+    return window.loadResultAssets().catch(function () {}).then(function () {
+      afterLoad(function () {
+        state.complete = true;
+        setLoadStatus('diagnosis-load');
+        calcResult();
+        if (state.verdict.verdict === 'B' && resultCommerceAllowed) renderGateNotice(state.verdict);
+      });
+    });
+  }, function () {
+    afterLoad(function () {
+      setLoadStatus('diagnosis-load', 'error',
+        '診断結果を読み込めませんでした。回答はこの画面に残っています。通信を確認し、もう一度お試しください。', true);
+    });
+  });
 }
 
 // C判定: 種を推薦せず、商品リンクを一切置かない専用画面を表示する
@@ -3028,13 +3224,139 @@ function calcResult() {
   }
 }
 
+// 個別照合に使うのは、正本 data/species-master.json の care.enclosure_jp で成体幅の
+// 下限または通常規格を超える条件を明記したものだけ。数値は適合保証ではない。
+var ADULT_ENCLOSURE_WIDTH = {
+  'russian-tortoise':90, 'hermann-tortoise':120, 'western-hermann-tortoise':90,
+  'greek-tortoise':90, 'tunisian-greek-tortoise':90, 'moroccan-greek-tortoise':90,
+  'iberian-greek-tortoise':90, 'golden-greek-tortoise':90,
+  'red-footed-tortoise':120, 'elongated-tortoise':120,
+  'bell-hinge-back-tortoise':120, 'bowsprit-tortoise':120,
+  'japanese-pond-turtle':90, 'red-cheeked-mud-turtle':90, 'musk-turtle':60, 'razorback-musk-turtle':60,
+  'western-painted-turtle':60
+};
+var SPACE_REQUIRES_MORE_THAN_STANDARD = {
+  'red-footed-tortoise':true, 'elongated-tortoise':true, 'bowsprit-tortoise':true,
+  'sulcata-tortoise':true, 'aldabra-tortoise':true
+};
+var resultReferenceOnly = false;
+var resultCommerceAllowed = false;
+var resultExitCaptureCleanup = null;
+
+function getResultPreparationGuard(sp, restored) {
+  if (restored) return { restored:true, blocksCommerce:true, notes:[] };
+  var notes = [];
+  var rv = computeReadiness();
+  var blockers = rv.blockers > 0;
+  var routeId = (selectedRoute || {}).id || '';
+  // 上限のない「120cm以上/屋外」「90cm以上」は幅を決めつけない。
+  var maxWidth = routeId === 'land' ? (scores.compact >= 3 ? 60 : scores.medium >= 3 ? 90 : 0) :
+    routeId === 'aquatic' ? (scores.small_tank >= 3 ? 60 : scores.medium_tank >= 3 ? 90 : 0) : 0;
+  var adultWidth = ADULT_ENCLOSURE_WIDTH[sp.slug] || 0;
+  var specialSpace = SPACE_REQUIRES_MORE_THAN_STANDARD[sp.slug];
+  var spaceInsufficient = maxWidth > 0 && (specialSpace || adultWidth > maxWidth);
+  var spaceUnverified = !spaceInsufficient && maxWidth > 0 && (!adultWidth ||
+    (routeId === 'aquatic' && adultWidth > (maxWidth === 60 ? 30 : 60)));
+  if (spaceInsufficient) {
+    var requirement = specialSpace ?
+      (adultWidth === 120 ? '当サイトでは、成体に120cm規格でも手狭としています。' : '通常規格を超える飼育スペースの計画が必要です。') :
+      '当サイトの成体の目安は' + adultWidth + 'cm級以上です。';
+    notes.push('飼育場所：回答は幅' + maxWidth + 'cm程度までです。' + requirement + '奥行きと、使える床面積も見直してください。');
+  } else if (maxWidth && !adultWidth) {
+    notes.push('飼育場所：幅' + maxWidth + 'cm程度までという回答だけでは、成体に必要な広さを満たすか確認できません。成体の飼育条件と、奥行きを含む実際に使える広さを照らし合わせてください。');
+  } else if (routeId === 'aquatic' && maxWidth && adultWidth > (maxWidth === 60 ? 30 : 60)) {
+    notes.push('飼育場所：回答は' + (maxWidth === 60 ? '30〜60' : '60〜90') + 'cmの範囲で、実際の幅は未確認です。' +
+      '当サイトの成体の目安は' + adultWidth + 'cm級以上です。奥行きや、雌雄で必要な広さが変わるかも確認してください。');
+  }
+
+  var cap = scores.budget_under10k ? 10000 : scores.budget_10_30k ? 30000 : scores.budget_30_70k ? 70000 : 0;
+  var budgetInsufficient = false;
+  var cheapest = 0;
+  if (cap && !blockers && typeof generateKitByTier === 'function' && typeof calcBundlePriceRange === 'function') {
+    var key = sp.equipmentKey || resolveEquipmentKey(routeId, sp);
+    var groups = ['budget','standard','premium'].map(function(tier) { return generateKitByTier(key, tier); });
+    // 比較候補が欠けた価格帯を「予算内」とみなさず、不明な場合は断定しない。
+    var sums = groups.map(function(picks) { return calcBundlePriceRange(picks).low; });
+    if (sums.every(function(sum) { return sum > 0; })) cheapest = Math.min.apply(null, sums);
+    budgetInsufficient = cheapest > cap;
+    if (budgetInsufficient) {
+      notes.push('初期費用：回答の上限は' + cap.toLocaleString('ja-JP') + '円です。掲載する用品候補の合計下限は最も低い構成でも' +
+        cheapest.toLocaleString('ja-JP') + '円で、予算を上回ります。別売品や価格未掲載の用品は含めていません。');
+    }
+  }
+  if (blockers || spaceInsufficient || budgetInsufficient) {
+    rv.gaps.forEach(function(gap) {
+      if (!budgetInsufficient || !gap.startsWith('初期費用の見直し')) notes.push(gap);
+    });
+  }
+  if (cap && !blockers && !cheapest) {
+    notes.push('初期費用：掲載候補の合計をまだ比較できません。予算に収まるとは未確認です。');
+  } else if (scores.budget_under10k && !blockers && !budgetInsufficient) {
+    notes.push('初期費用：掲載価格だけで、1万円以内に飼育を始められるとは確認できません。用品一式と別売品を含めて費用を見積もってください。');
+  }
+  return { restored:false, blocksCommerce:!!(blockers || spaceInsufficient || budgetInsufficient),
+    spaceUnverified:spaceUnverified, notes:notes };
+}
+
+function renderResultPreparationGuard(guard) {
+  var note = document.getElementById('result-preparation-note');
+  if (!note) return;
+  note.hidden = !guard.restored && !guard.notes.length;
+  if (note.hidden) { note.innerHTML = ''; return; }
+  var title = guard.restored ? '再表示された結果：飼育の準備は未確認です' :
+    (guard.blocksCommerce ? '迎える前に条件を見直してください' : '迎える前に、追加で確認したいこと');
+  var body = guard.restored
+    ? '<p>共有リンクや再読み込みからは、住まい・留守中の世話・広さ・予算の回答を確認できません。この種は参考情報です。用品を選ぶ前に、チェックリストを確認するか、診断をやり直してください。</p>'
+    : '<ul>' + guard.notes.map(function(text) { return '<li>' + escapeHtml(text) + '</li>'; }).join('') + '</ul>' +
+      (guard.blocksCommerce ? '<p>条件を確認するまでは、購入先は案内していません。</p>' : '');
+  note.innerHTML = '<h2 class="gate-notice-title" id="result-preparation-title" tabindex="-1">' + title + '</h2>' + body +
+    '<p><a href="../before-keeping.html#keeping-checklist">迎える前のチェックリストを見る</a></p>';
+}
+
+// 用品資材の再試行時にも、DOMへ描画する前に費用を再照合する。
+// 全体をもう一度描画して結果/計測イベントを二重に出すことはしない。
+function refreshResultGuardBeforeKit(sp) {
+  if (!resultCommerceAllowed) return false; // 復元・法令・初回時の不一致を再試行で解除しない。
+  var guard = getResultPreparationGuard(sp, false);
+  renderResultPreparationGuard(guard);
+  if (!guard.blocksCommerce) return true;
+  resultReferenceOnly = true;
+  resultCommerceAllowed = false;
+  resultSharePercent = null;
+  resetResultKitNavigation();
+  document.title = sp.name + 'の参考情報 | カメライフガイド';
+  document.querySelector('.result-label').textContent = '条件の見直しが必要な候補種';
+  var reason = document.getElementById('res-reason');
+  if (reason && reason.previousElementSibling) reason.previousElementSibling.textContent = 'この種について';
+  ['res-match-badge-wrap','res-why-block-wrap','res-barrier-badges','res-cta-top','res-cta-block','res-links'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = '';
+  });
+  ['score-meter','res-emotion-copy','res-barrier-badges','res-cta-top','res-cta-block'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  if (resultExitCaptureCleanup) resultExitCaptureCleanup();
+  renderRunnerUps(null);
+  var title = document.getElementById('result-preparation-title');
+  if (title) title.focus();
+  return false;
+}
+
 // ===== 結果表示 =====
-function showResult(sp, pct, runners) {
+function showResult(sp, pct, runners, restored) {
   updateSpeciesEquipmentConditions(sp);
   resetResultKitNavigation();
   // Phase AI-Diagnosis-v1: three-state legal gate — reference-only flag
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
-  document.title = sp.name + (sp.diagnosisNotice ? 'の参考情報 | カメライフガイド' : 'があなたに合う亀です | カメライフガイド');
+  var resultGuard = getResultPreparationGuard(sp, restored === true);
+  var canShowCommerce = !refOnly && !resultGuard.blocksCommerce;
+  resultReferenceOnly = !!(sp.diagnosisNotice || resultGuard.blocksCommerce || resultGuard.spaceUnverified);
+  resultCommerceAllowed = canShowCommerce;
+  resultSharePercent = !resultReferenceOnly && !refOnly && computeReadiness().verdict === 'A' &&
+    Number.isFinite(pct) ? pct : null;
+  renderResultPreparationGuard(resultGuard);
+  document.title = sp.name + (resultReferenceOnly ? 'の参考情報 | カメライフガイド' : 'があなたに合う亀です | カメライフガイド');
   // 実写写真: slug（一意キー）で紐付け。読み込み失敗時は絵文字にfallback
   (function(){
     var photo = document.getElementById('res-photo');
@@ -3052,12 +3374,15 @@ function showResult(sp, pct, runners) {
       emoji.style.display = 'block';
     }
   })();
-  document.querySelector('.result-label').textContent = sp.diagnosisNotice ? '参考情報（診断のおすすめ対象外）' : 'あなたにおすすめの亀';
+  document.querySelector('.result-label').textContent = sp.diagnosisNotice ? '参考情報（診断のおすすめ対象外）' :
+    (resultGuard.restored ? '共有・再表示された種の参考情報' :
+      (resultGuard.blocksCommerce ? '条件の見直しが必要な候補種' :
+        (resultGuard.spaceUnverified ? '飼育場所を確認したい候補種' : 'あなたにおすすめの亀')));
   document.getElementById('score-meter').style.display = sp.diagnosisNotice ? 'none' : '';
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
   document.getElementById('res-reason').textContent = sp.reason;
-  document.getElementById('res-reason').previousElementSibling.textContent = sp.diagnosisNotice ? 'この種について' : 'おすすめのポイント';
+  document.getElementById('res-reason').previousElementSibling.textContent = resultReferenceOnly ? 'この種について' : 'おすすめのポイント';
 
   // バッジ
   var badges = document.getElementById('res-badges');
@@ -3080,6 +3405,11 @@ function showResult(sp, pct, runners) {
   (function() {
     var barrierEl = document.getElementById('res-barrier-badges');
     if (!barrierEl) return;
+    if (resultReferenceOnly) {
+      barrierEl.innerHTML = '';
+      barrierEl.style.display = 'none';
+      return;
+    }
     var routeId = selectedRoute ? selectedRoute.id : 'all';
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
     var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
@@ -3106,8 +3436,8 @@ function showResult(sp, pct, runners) {
     if (!copyEl) return;
     var routeId = selectedRoute ? selectedRoute.id : 'all';
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
-    var copy = sp.diagnosisNotice ? '' : buildEmotionCopy(sp, equipKey, pct);
-    if (sp.diagnosisNotice) {
+    var copy = resultReferenceOnly ? '' : buildEmotionCopy(sp, equipKey, pct);
+    if (resultReferenceOnly) {
       document.getElementById('res-match-badge-wrap').innerHTML = '';
       document.getElementById('res-why-block-wrap').innerHTML = '';
     }
@@ -3406,7 +3736,10 @@ function showResult(sp, pct, runners) {
     var ecBtnComp  = document.getElementById('ec-btn-compare');
     var ecBtnGuide = document.getElementById('ec-btn-guide');
     var ecClose    = document.getElementById('ec-close');
+    if (resultExitCaptureCleanup) resultExitCaptureCleanup();
     if (!ec) return;
+    ec.classList.remove('ec-visible', 'ec-shown');
+    if (!canShowCommerce) return;
 
     var _ecClosed   = false;
     var _ecShown    = false;
@@ -3421,9 +3754,9 @@ function showResult(sp, pct, runners) {
 
     // スクロール35%で表示
     function onScroll() {
-      if (_ecClosed || _ecShown) return;
+      if (_ecClosed || _ecShown || !resultCommerceAllowed) return;
       var result = document.getElementById('screen-result');
-      if (!result) return;
+      if (!result || !result.classList.contains('active')) return;
       var rect = result.getBoundingClientRect();
       var resultH = result.offsetHeight;
       if (resultH === 0) return;
@@ -3433,7 +3766,7 @@ function showResult(sp, pct, runners) {
         _ecShown = true;
         ec.classList.add('ec-visible');
         requestAnimationFrame(function() {
-          ec.classList.add('ec-shown');
+          if (!_ecClosed && resultCommerceAllowed) ec.classList.add('ec-shown');
         });
         // GA4: exit_capture_view（初回のみ）
         if (!_ecFired && typeof ga4Event === 'function') {
@@ -3447,14 +3780,16 @@ function showResult(sp, pct, runners) {
     window.addEventListener('scroll', onScroll, { passive: true });
 
     // × 閉じる
-    if (ecClose) ecClose.addEventListener('click', function() {
+    var hideTimer;
+    function onClose() {
       _ecClosed = true;
       ec.classList.remove('ec-shown');
-      setTimeout(function() { ec.classList.remove('ec-visible'); }, 280);
+      hideTimer = setTimeout(function() { ec.classList.remove('ec-visible'); }, 280);
       if (typeof ga4Event === 'function') ga4Event('exit_capture_close', {
         species: sp.name, slug: spSlug, route: (selectedRoute || {}).id || 'unknown',
       });
-    });
+    }
+    if (ecClose) ecClose.addEventListener('click', onClose);
 
     // GA4 クリック
     var btnDefs = [
@@ -3464,14 +3799,25 @@ function showResult(sp, pct, runners) {
     ];
     btnDefs.forEach(function(d) {
       if (!d.el) return;
-      d.el.addEventListener('click', function() {
+      d.handler = function() {
         if (typeof ga4Event === 'function') ga4Event('exit_capture_click', {
           species: sp.name, slug: spSlug,
           target_type: d.type,
           route: (selectedRoute || {}).id || '',
         });
-      });
+      };
+      d.el.addEventListener('click', d.handler);
     });
+    // 同じ要素を使い回すため、次の結果では前の種・表示状態・計測を持ち越さない。
+    resultExitCaptureCleanup = function() {
+      resultExitCaptureCleanup = null;
+      _ecClosed = true;
+      if (hideTimer) clearTimeout(hideTimer);
+      ec.classList.remove('ec-visible', 'ec-shown');
+      window.removeEventListener('scroll', onScroll);
+      if (ecClose) ecClose.removeEventListener('click', onClose);
+      btnDefs.forEach(function(d) { if (d.el && d.handler) d.el.removeEventListener('click', d.handler); });
+    };
   })();
 
   // ===== Phase 16 Sprint1: CTA生成（Top CTA + 下部CTA 二重配置） =====
@@ -3483,7 +3829,7 @@ function showResult(sp, pct, runners) {
 
     // ── scarcity ─────────────────────────────────────────────
     var scarcityHtml = '';
-    if (_lastCandidateCount > 0 && _lastCandidateCount <= 2) {
+    if (!resultReferenceOnly && _lastCandidateCount > 0 && _lastCandidateCount <= 2) {
       scarcityHtml =
         '<div class="res-cta-scarcity">' +
           '<span class="res-cta-scarcity-icon">🎯</span>' +
@@ -3565,7 +3911,8 @@ function showResult(sp, pct, runners) {
     // ── FIX 1+3: TOP CTA（score直後）────────────────────────
     var topEl = document.getElementById('res-cta-top');
     if (topEl) {
-      if (refOnly || !sp.hasPage || !sp.slug) {
+      if (!canShowCommerce || !sp.hasPage || !sp.slug) {
+        topEl.innerHTML = '';
         topEl.style.display = 'none';
       } else {
         var speciesPageUrl = '../species/' + sp.slug + '.html';
@@ -3632,7 +3979,8 @@ function showResult(sp, pct, runners) {
     // ── 下部 CTA block（既存位置に維持）─────────────────────
     var ctaBlock = document.getElementById('res-cta-block');
     if (ctaBlock) {
-      if (refOnly || !sp.hasPage || !sp.slug) {
+      if (!canShowCommerce || !sp.hasPage || !sp.slug) {
+        ctaBlock.innerHTML = '';
         ctaBlock.style.display = 'none';
       } else {
         var spUrl  = '../species/' + sp.slug + '.html';
@@ -3693,12 +4041,13 @@ function showResult(sp, pct, runners) {
     }
 
     // GA4: diagnosis_cta_view（Top CTAが表示されたタイミング）
+    if (!canShowCommerce) return;
     try {
       if (typeof ga4Event === 'function') {
         ga4Event('diagnosis_cta_view', {
           species: sp.name, slug: sp.slug || '',
           has_teaser: false,
-          has_scarcity: (_lastCandidateCount > 0 && _lastCandidateCount <= 2),
+          has_scarcity: !!scarcityHtml,
           candidate_count: _lastCandidateCount,
           equipment_key: equipKey || '',
           init_cost: '', // 費用の別集計は撤去。候補合計は用品一覧で表示。
@@ -3830,7 +4179,7 @@ function showResult(sp, pct, runners) {
     if (!l || !l.href) return;
     linksDiv.innerHTML += '<a href="' + l.href + '" class="art-link" target="_blank" rel="noopener noreferrer">' + (l.label || '') + '</a>';
   });
-  if (sp.asin) {
+  if (canShowCommerce && sp.asin) {
     linksDiv.innerHTML += '<a href="https://www.amazon.co.jp/dp/' + sp.asin + '?tag=kamelife090e-22" class="amazon-link" id="sp-amazon-link" target="_blank" rel="sponsored noopener noreferrer">Amazon で関連商品を見る</a>';
     // Phase 28-C: 統一affiliate_clickイベント（canonical schema）
     var spAmzLink = document.getElementById('sp-amazon-link');
@@ -3853,7 +4202,10 @@ function showResult(sp, pct, runners) {
   // ── FIX: show('screen-result') を副作用より先に実行 ──
   // 主要テキスト・バッジ・スペックは上で描画済みなので、ここで結果画面を開く
   show('screen-result');
-  try { document.getElementById('res-name').focus(); } catch(e) {}
+  try {
+    var firstResultFocus = (resultGuard.blocksCommerce || resultGuard.spaceUnverified) && document.getElementById('result-preparation-title');
+    (firstResultFocus || document.getElementById('res-name')).focus();
+  } catch(e) {}
 
   // GA4: diagnosis_result_view（FIX2: 主イベントとして明示）
   try {
@@ -3886,26 +4238,27 @@ function showResult(sp, pct, runners) {
   try { renderNoteCta(sp); } catch(e) {}
 
   // ===== PHASE 6-B: おすすめ飼育セット (reference-only は commerce抑制) =====
-  if (!refOnly) { try { renderStarterKitV2(sp); } catch(e) { console.warn('[renderStarterKitV2]', e); } }
-  else { var _skRoot = document.getElementById('starter-kit-section'); if (_skRoot) _skRoot.style.display = 'none'; }
-  showRenderedResultKitNavigation();
+  if (canShowCommerce) mountResultKit(sp);
 
   // スコアメーターをアニメーション表示（pct=nullの場合は非表示）
   var scoreMeter = document.getElementById('score-meter');
-  if (sp.diagnosisNotice || pct === null || pct === undefined) {
+  if (resultReferenceOnly || pct === null || pct === undefined) {
     scoreMeter.style.display = 'none';
   } else {
     scoreMeter.style.display = '';
     var displayPct = typeof pct === 'number' ? pct : 0;
     document.getElementById('score-num').textContent = '0';
     document.getElementById('score-bar').style.width = '0%';
+    var scoreRun = diagnosisRun;
+    function activeScore() { return scoreRun === diagnosisRun && result === sp && !resultReferenceOnly; }
     setTimeout(function(){
+      if (!activeScore()) return;
       document.getElementById('score-bar').style.width = displayPct + '%';
       // カウントアップアニメーション
-      var start = 0;
       var duration = 800;
       var startTime = null;
       function animCount(ts) {
+        if (!activeScore()) return;
         if (!startTime) startTime = ts;
         var elapsed = ts - startTime;
         var progress = Math.min(elapsed / duration, 1);
@@ -3919,7 +4272,7 @@ function showResult(sp, pct, runners) {
 
   // ── Phase 48: あなたに合う他の候補（2位・3位）──
   // 既存の scored 配列から渡された runners を描画するだけ。scoreの再計算はしない。
-  renderRunnerUps(runners);
+  renderRunnerUps(resultGuard.blocksCommerce || resultGuard.spaceUnverified ? null : runners);
 }
 
 // 第2・第3候補カードを描画。runnersが空/未指定なら非表示。
@@ -4009,8 +4362,9 @@ function escapeHtml(s) {
 
 // ===== 戻るボタン（モーダル付き） =====
 document.getElementById('btn-back').addEventListener('click', function(){
+  cancelPendingAnswer();
   if (currentQuestionIndex === 0) {
-    show('screen-start');
+    resetToStart();
   } else {
     // 途中の場合はモーダル確認
     openModal();
@@ -4024,18 +4378,20 @@ function openModal() {
   document.getElementById('modal-cancel').focus();
 }
 function closeModal() {
-  document.getElementById('modal-quit').classList.remove('open');
+  var modal = document.getElementById('modal-quit');
+  if (!modal.classList.contains('open')) return;
+  modal.classList.remove('open');
+  var resume = finishState && finishState.resume;
+  if (resume) {
+    finishState.resume = null;
+    resume();
+  } else {
+    document.getElementById('btn-back').focus();
+  }
 }
 document.getElementById('modal-cancel').addEventListener('click', closeModal);
 document.getElementById('modal-ok').addEventListener('click', function(){
-  closeModal();
-  selectedRoute = null;
-  currentQuestionIndex = 0;
-  scores = {};
-  answerHistory = [];
-  readinessAnswers = [];
-  gateIndex = 0;
-  show('screen-start');
+  resetToStart();
 });
 document.getElementById('modal-quit').addEventListener('click', function(e){
   if (e.target === this) closeModal(); // オーバーレイクリックで閉じる
@@ -4046,6 +4402,9 @@ document.addEventListener('keydown', function(e){
 
 // ===== もう一度ボタン =====
 function resetToStart() {
+  beginDiagnosisRun();
+  var modal = document.getElementById('modal-quit');
+  if (modal) modal.classList.remove('open');
   selectedRoute = null;
   currentQuestionIndex = 0;
   scores = {};
@@ -4060,19 +4419,26 @@ function resetToStart() {
 document.getElementById('btn-retry').addEventListener('click', resetToStart);
 var _btnGateRetry = document.getElementById('btn-gate-retry');
 if (_btnGateRetry) _btnGateRetry.addEventListener('click', resetToStart);
+document.getElementById('btn-diagnosis-load').addEventListener('click', function () {
+  loadDiagnosisResult(finishState, true);
+});
+document.getElementById('btn-kit-load').addEventListener('click', function () {
+  if (retryKit) retryKit();
+});
 
 // ===== シェアボタン（Web Share API + コピーfallback） =====
 document.getElementById('btn-share').addEventListener('click', function(){
   if (!result) return;
-  var pct = document.getElementById('score-num').textContent;
-  var text = result.diagnosisNotice ? '【カメライフガイド】' + result.name + 'の参考情報（診断のおすすめ対象外）' : '【亀診断】私に合う亀は「' + result.name + '」(相性' + pct + '%)でした！🐢 #亀診断 #カメライフガイド';
+  var neutral = resultSharePercent === null;
+  var text = neutral ? '【カメライフガイド】' + result.name + 'の参考情報' :
+    '【亀診断】私に合う亀は「' + result.name + '」(相性' + resultSharePercent + '%)でした！🐢 #亀診断 #カメライフガイド';
   var shareUrl = 'https://kamelifeguide.com/shindan/?r=' +
     encodeURIComponent(selectedRoute ? selectedRoute.id : '') +
     '&s=' + encodeURIComponent(result.name);
   // GA4: シェアイベント
   ga4Event('shindan_share', { species_name: result.name, method: navigator.share ? 'native' : 'clipboard' });
   if (navigator.share) {
-    navigator.share({ title: result.diagnosisNotice ? '亀の参考情報' : 'あなたに合う亀診断', text: text, url: shareUrl })
+    navigator.share({ title: neutral ? '亀の参考情報' : 'あなたに合う亀診断', text: text, url: shareUrl })
       .catch(function(){});
   } else {
     // クリップボードコピー → fallback でTwitter
@@ -4097,17 +4463,29 @@ function openTwitter(text, url) {
 }
 
 // ===== 初期化（URL復元対応） =====
-(function(){
-  var _p = new URLSearchParams(location.search);
-  if (_p.get('r') && _p.get('s') && window.loadSpecies) {
-    // 結果直リンク(URL復元)は SPECIES が必要 → 先読みしてから復元
-    window.loadSpecies()
-      .then(function(){ return window.loadResultAssets ? window.loadResultAssets().catch(function(){}) : Promise.resolve(); })
-      .then(function(){ if (!tryRestoreFromUrl()) initStart(); })
-      .catch(function(){ initStart(); });
-  } else {
-    // 通常表示：URLパラメータ無し → tryRestoreFromUrl は SPECIES 非アクセスで false を返す
+function loadSharedResult(moveFocus) {
+  var run = diagnosisRun;
+  setLoadStatus('restore-load', 'loading', '共有された結果を読み込んでいます…', moveFocus);
+  window.loadSpecies().then(function () {
+    if (run !== diagnosisRun) return;
+    setLoadStatus('restore-load');
     if (!tryRestoreFromUrl()) initStart();
+  }, function () {
+    if (run !== diagnosisRun) return;
+    setLoadStatus('restore-load', 'error',
+      '共有された結果を読み込めませんでした。もう一度試すか、新しく診断を始めてください。', true);
+  });
+}
+document.getElementById('btn-restore-load').addEventListener('click', function () {
+  loadSharedResult(true);
+});
+(function(){
+  var params = new URLSearchParams(location.search);
+  if (params.get('r') && params.get('s')) {
+    initStart(true);
+    loadSharedResult(false);
+  } else {
+    initStart();
   }
 })();
 
@@ -4134,7 +4512,7 @@ function openTwitter(text, url) {
       <div class="ec-text-sub">はじめての亀 TOP3や比較ページも見てみましょう</div>
     </div>
     <div class="ec-btns">
-      <a id="ec-btn-sk"      class="ec-btn ec-btn-primary"   href="#">必要なものを見る</a>
+      <a id="ec-btn-sk"      class="ec-btn ec-btn-primary"   hidden>必要なものを見る</a>
       <a id="ec-btn-compare" class="ec-btn ec-btn-secondary" href="../compare/">他の種と比較する</a>
       <a id="ec-btn-guide"   class="ec-btn ec-btn-secondary" href="../guides/beginner-best-turtles.html">はじめての亀 TOP3</a>
     </div>
