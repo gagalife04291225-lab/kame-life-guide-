@@ -159,13 +159,19 @@ console.log('Attribution: exact unchanged API destination, one original link, fa
 
 const eastern=readFileSync(new URL('../species/eastern-box-turtle.html',import.meta.url),'utf8');
 assert.match(eastern,/浅い水入れ/);
-const mount=eastern.match(/mountStarterKit\(\{ equipmentKey: '([^']+)', name: '([^']+)'/);
+const mount=eastern.match(/<script>\s*([^<]*mountStarterKit\(\{ equipmentKey: 'box_turtle', name: 'トウブハコガメ'[^<]*)<\/script>/);
 assert.ok(mount);
 const kitContext={window:{location:{hostname:'kamelifeguide.com',pathname:'/species/eastern-box-turtle.html',search:''}}};
 for (const path of ['../data/products.js','../js/starter-kit.js']) {
   runInNewContext(readFileSync(new URL(path,import.meta.url),'utf8'),kitContext);
 }
-const kit=kitContext.renderStarterKitHtmlV2(mount[1],{name:mount[2]});
+let kit='';
+const originalRow=runInNewContext('JSON.stringify(PRODUCTS.filter_small)',kitContext);
+kitContext.mountStarterKit=opts=>{kit=kitContext.renderStarterKitHtmlV2(opts.equipmentKey,opts);};
+runInNewContext(mount[1],kitContext);
+const actualRow=JSON.parse(runInNewContext('JSON.stringify(PRODUCTS.filter_small)',kitContext));
+const unchangedRow=JSON.parse(originalRow);
+assert.deepEqual({...actualRow,why:unchangedRow.why},unchangedRow);
 const at50=kit.split('data-sk-product="filter_small"')[1]?.split('</label>')[0];
 assert.ok(at50,'actual V2 budget card for the named page');
 assert.match(at50,/浅い水入れだけなら、このフィルターは不要/);
