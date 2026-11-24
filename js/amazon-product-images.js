@@ -50,6 +50,16 @@
     a.classList.remove('klg-amazon-photo-link');
     entries.delete(a);
   }
+  function frameSize(w, h) {
+    if (!(Number.isFinite(w) && Number.isFinite(h)) || w <= 0 || h <= 0) return null;
+    const ratio = w / h;
+    const boxW = ratio >= 1.45 ? 260 : 200;
+    const boxH = ratio <= 0.7 ? 260 : 200;
+    // Natural resolution caps the size: enlarging a small source does not reveal text.
+    // No upscaling, cropping or re-encoding of the provided image.
+    const scale = Math.min(1, boxW / w, boxH / h);
+    return [Math.max(1, Math.round(w * scale)), Math.max(1, Math.round(h * scale))];
+  }
   function paint(a, asin, photo) {
     if (!validPhoto(photo, asin) || route(a) !== asin || !a.isConnected) return;
     if (entries.get(a)?.photo.url === photo.url) {
@@ -75,6 +85,10 @@
     img.addEventListener('load', () => {
       if (generation.get(a) !== revision || entries.get(a)?.frame !== frame) return;
       if (!a.isConnected || route(a) !== asin || !validPhoto(entries.get(a).photo, asin)) return remove(a);
+      const size = frameSize(img.naturalWidth, img.naturalHeight);
+      if (!size) return remove(a);
+      frame.style.inlineSize = size[0] + 'px';
+      frame.style.aspectRatio = size[0] + ' / ' + size[1];
       a.classList.add('klg-amazon-photo-link');
       frame.hidden = false;
     }, { once: true });

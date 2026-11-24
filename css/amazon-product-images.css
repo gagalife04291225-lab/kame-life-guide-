@@ -2,7 +2,7 @@
 .klg-amazon-photo-link { box-sizing: border-box; max-inline-size: 100%; }
 .klg-amazon-product-frame {
   display: block;
-  inline-size: 200px;
+  inline-size: 200px; /* replaced on successful decode from actual dimensions */
   max-inline-size: 100%;
   aspect-ratio: 1;
   margin: 0 auto .5rem;

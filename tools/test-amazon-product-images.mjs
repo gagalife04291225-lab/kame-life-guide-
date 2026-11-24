@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
 import {serve,refresh} from '../workers/amazon-product-images/src/index.mjs';
 const id='B000NGQZU0', other='B00167XQLG';
 const route='https://kamelifeguide.com/api/amazon-product-images';
@@ -61,3 +62,17 @@ assert.match(filter,/href="water-filter-best10\.html">フィルターを種類�
 assert.match(filter,/B0012UO6Q6\?tag=kamelife090e-22[^>]+>外掛け式 AT-50をAmazonで見る/);
 assert.match(readFileSync(new URL('../water-filter-best10.html',import.meta.url),'utf8'),/オートワンタッチフィルター AT-50（外掛け式・大型）/);
 console.log('Amazon image checks: strict scope, whitelist, redirects, site-only response, same-ASIN, expiry, safe failure and mismatched guide link PASS');
+
+// Execute the actual sizing routine in isolation. Source file is not auto-loaded.
+const js=readFileSync(new URL('../js/amazon-product-images.js',import.meta.url),'utf8');
+const code=js.slice(js.indexOf('  function frameSize('),js.indexOf('  function paint('));
+assert.ok(code.length>100);
+const size=runInNewContext(code+'; frameSize');
+for(const [w,h,want] of [[500,500,[200,200]],[318,500,[165,260]],[500,270,[260,140]],
+  [80,140,[80,140]],[160,90,[160,90]],[1,2000,[1,260]],[0,500,null]]){
+  assert.deepEqual(size(w,h)?Array.from(size(w,h)):null,want);
+}
+const css=readFileSync(new URL('../css/amazon-product-images.css',import.meta.url),'utf8');
+assert.match(css,/max-inline-size: 100%/);
+assert.match(css,/object-fit: contain/);
+console.log('Mobile photo sizing: portrait/landscape, small source, missing dimensions and parent cap PASS');
