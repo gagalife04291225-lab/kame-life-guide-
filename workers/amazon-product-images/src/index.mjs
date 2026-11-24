@@ -1,0 +1,105 @@
+const ORIGIN = 'https://kamelifeguide.com';
+const PATH = '/api/amazon-product-images';
+const KEY = 'jp-primary-v1';
+const TAG = 'kamelife090e-22';
+const MAX_AGE = 18 * 60 * 60 * 1000;
+const asin = x => typeof x === 'string' && /^[A-Z0-9]{10}$/.test(x);
+function matchUrl(raw, test) {
+  try {
+    const u = new URL(raw);
+    return !u.username && !u.password && test(u);
+  } catch { return false; }
+}
+function photo(raw) {
+  return matchUrl(raw,u=>u.origin==='https://m.media-amazon.com'&&!u.search&&!u.hash&&
+    /^\/images\/I\/[\w%+.,-]+\.(?:jpg|jpeg|png|webp)$/i.test(u.pathname));
+}
+function exact(raw,id) {
+  return matchUrl(raw,u=>u.origin==='https://www.amazon.co.jp'&&
+    new RegExp('^/(?:dp|gp/product)/'+id+'/?$').test(u.pathname)&&
+    u.searchParams.getAll('tag').length===1&&u.searchParams.get('tag')===TAG);
+}
+function allowed(env) {
+  const ids=String(env.KLG_APPROVED_ASINS??'').trim().split(/[\s,]+/).filter(Boolean);
+  return ids.length<=240&&ids.every(asin)?new Set(ids):new Set();
+}
+function reply(body,status=200) {
+  return Response.json(body,{status,headers:{
+    'Cache-Control':'private, no-store, max-age=0',
+    'X-Content-Type-Options':'nosniff','Cross-Origin-Resource-Policy':'same-origin'
+  }});
+}
+export async function serve(req,env,now=Date.now()) {
+  const u=new URL(req.url);
+  if(u.origin!==ORIGIN||u.pathname!==PATH)return reply({status:'not_found'},404);
+  if(req.method!=='GET')return reply({status:'method_not_allowed'},405);
+  const mode=req.headers.get('Sec-Fetch-Site');
+  if(mode&&mode!=='same-origin')return reply({status:'cross_origin'},403);
+  const ids=(u.searchParams.get('items')??'').split(',');
+  if(u.searchParams.getAll('items').length!==1||ids.length>20||ids.some(id=>!asin(id)))return reply({status:'invalid_request'},400);
+  const reviewed=allowed(env);
+  const photos=Object.create(null);
+  if(!env.KLG_AMAZON_IMAGES||!ids.some(id=>reviewed.has(id)))return reply({photos});
+  let stored;
+  try{stored=await env.KLG_AMAZON_IMAGES.get(KEY,{type:'json'});}
+  catch{return reply({status:'unavailable'},503);}
+  if(!stored||!Number.isSafeInteger(stored.checkedAt)||stored.checkedAt>now||now-stored.checkedAt>=MAX_AGE)return reply({photos});
+  for(const id of new Set(ids)){
+    const url=stored.photos?.[id];
+    if(reviewed.has(id)&&photo(url))photos[id]={asin:id,url,expiresAt:stored.checkedAt+MAX_AGE};
+  }
+  return reply({photos});
+}
+async function post(fetcher,url,body,headers={}) {
+  let r;
+  try{r=await fetcher(url,{method:'POST',redirect:'error',cache:'no-store',
+    headers:{'Content-Type':'application/json',...headers},body:JSON.stringify(body),
+    signal:AbortSignal.timeout(6500)});}
+  catch{throw Error('official_api_transport');}
+  if(!r.ok)throw Error('official_api_http_'+r.status);
+  try{return await r.json();}catch{throw Error('official_api_invalid_json');}
+}
+export async function refresh(env,{fetcher=fetch,clock=Date.now}={}) {
+  const checkedAt=clock();
+  const ids=[...allowed(env)];
+  if(!ids.length||!env.KLG_AMAZON_IMAGES||!env.KLG_CREATORS_CLIENT_ID||!env.KLG_CREATORS_CLIENT_SECRET)
+    throw Error('image_refresh_unconfigured');
+  const token=await post(fetcher,'https://api.amazon.co.jp/auth/o2/token',{
+    grant_type:'client_credentials',client_id:env.KLG_CREATORS_CLIENT_ID,
+    client_secret:env.KLG_CREATORS_CLIENT_SECRET,scope:'creatorsapi::default'
+  });
+  if(typeof token?.access_token!=='string'||!token.access_token||/[\r\n]/.test(token.access_token))
+    throw Error('official_api_invalid_token');
+  const photos=Object.create(null);
+  const knownFailures=new Set(['ItemNotAccessible','InvalidParameterValue']);
+  for(let i=0;i<ids.length;i+=10){
+    const keys=ids.slice(i,i+10);
+    const data=await post(fetcher,'https://creatorsapi.amazon/catalog/v1/getItems',{
+      itemIds:keys,itemIdType:'ASIN',marketplace:'www.amazon.co.jp',partnerTag:TAG,
+      resources:['images.primary.large','images.primary.medium']
+    },{Authorization:'Bearer '+token.access_token,'x-marketplace':'www.amazon.co.jp'});
+    const rows=data?.itemsResult?.items??[];
+    const failures=data?.errors??[];
+    if(!Array.isArray(rows)||!Array.isArray(failures)||(!rows.length&&!failures.length)||
+       failures.some(x=>!knownFailures.has(x?.code)))throw Error('official_api_unexpected_catalog_result');
+    const seen=new Set();
+    for(const row of rows){
+      if(!keys.includes(row?.asin)||seen.has(row.asin))throw Error('official_api_item_mismatch');
+      seen.add(row.asin);
+      if(!exact(row.detailPageURL??row.detailPageUrl,row.asin))continue;
+      for(const size of ['large','medium']){
+        const candidate=row.images?.primary?.[size]?.url;
+        if(photo(candidate)){photos[row.asin]=candidate;break;}
+      }
+    }
+  }
+  const expirationTtl=Math.floor((checkedAt+MAX_AGE-clock())/1000);
+  if(expirationTtl<60||expirationTtl>MAX_AGE/1000)throw Error('image_refresh_clock');
+  // Replace atomically. Never retain omitted URLs in a successful refresh.
+  await env.KLG_AMAZON_IMAGES.put(KEY,JSON.stringify({checkedAt,photos}),{expirationTtl});
+  return {requested:ids.length,available:Object.keys(photos).length};
+}
+export default{
+  fetch(req,env){return serve(req,env);},
+  async scheduled(_event,env){console.log('Amazon image refresh',await refresh(env));}
+};

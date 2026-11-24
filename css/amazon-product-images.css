@@ -1,0 +1,15 @@
+/* Visible only once the actual image loads. The pre-existing link is the only CTA. */
+.klg-amazon-photo-link { box-sizing: border-box; max-inline-size: 100%; }
+.klg-amazon-product-frame {
+  display: block;
+  inline-size: 200px;
+  max-inline-size: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto .5rem;
+  overflow: hidden;
+  border-radius: .45rem;
+  background: #fff;
+}
+.klg-amazon-product-frame[hidden] { display: none !important; }
+.klg-amazon-product-img { display: block; inline-size: 100%; block-size: 100%; object-fit: contain; }
+.klg-amazon-photo-link:is(.rlink,.prod-cta) { flex-wrap: wrap; }
