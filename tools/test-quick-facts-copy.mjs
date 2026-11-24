@@ -33,7 +33,16 @@ const productObjects = source => JSON.parse(JSON.stringify(vm.runInNewContext(so
 const historicalProducts = old('data/products.js'), currentProducts = read('data/products.js');
 assert.equal(withoutFeed(currentProducts), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
 applyCommittedRakutenSync(productObjects(historicalProducts), productObjects(currentProducts), fileURLToPath(root));
-for(const p of ['js/starter-kit.js','shindan/species.js'])assert.equal(read(p),old(p),p+' unchanged');
+assert.equal(read('js/starter-kit.js'),old('js/starter-kit.js'),'kit engine unchanged');
+const priorSpecies = old('shindan/species.js');
+const redCheekStart = priorSpecies.indexOf("{ name: 'ホオアカドロガメ'");
+const redCheekEnd = priorSpecies.indexOf('\n  },', redCheekStart);
+assert.ok(redCheekStart >= 0 && redCheekEnd > redCheekStart);
+const redCheek = priorSpecies.slice(redCheekStart, redCheekEnd)
+ .replace('温和な性格で45cm水槽から飼育可能。','水槽は開始時60cm級、成体90cm級が当サイトの目安です。体の小さな子亀は、甲長に合った小さめの容器から始めることもできます。')
+ .replaceAll("'45cm〜'","'開始時60cm級・成体90cm級（当サイトの目安）'");
+assert.equal(read('shindan/species.js'),priorSpecies.slice(0,redCheekStart)+redCheek+priorSpecies.slice(redCheekEnd),
+ 'only the approved red-cheeked enclosure copy differs');
 // The maintenance wording cannot prescribe a frequency or say an external filter replaces water changes;
 // every other question, choice and numerical score stays byte-for-byte stable.
 const reviewedRoutes = old('shindan/routes.js')
@@ -41,7 +50,7 @@ const reviewedRoutes = old('shindan/routes.js')
  .replace('週1〜2回は水替えできる','こまめに水換えや手入れの時間を取れる')
  .replace('外部フィルターで月1回程度','定期的に時間は取れるが、こまめな手入れは難しい');
 assert.equal(read('shindan/routes.js'),reviewedRoutes,'only reviewed aquatic maintenance wording changed');
-console.log('PASS: budget total unchanged, exclusions visible, musk monthly reference only, 8 fallback tables unchanged, Home exact output, product, kit and species logic unchanged; only reviewed diagnosis choice wording changed.');
+console.log('PASS: budget total unchanged, exclusions visible, musk monthly reference only, 8 fallback tables unchanged, Home exact output, product, kit and species scoring unchanged; only reviewed diagnosis wording changed.');
 
 vm.runInContext(read('shindan/species.js')+';this.species=SPECIES;',after);
 let checked=0;

@@ -196,4 +196,73 @@ for(const [field,cap] of [['budget_10_30k',30000],['budget_30_70k',70000]]) {
  vm.runInContext(`calcBundlePriceRange=()=>({low:${cap}});`,synthetic.ctx);
  assert.equal(example('land',{large:3,[field]:1},'russian-tortoise').blocksCommerce,false);
 }
+// Run the real question click handlers for the known capped-size false negatives.
+// Inputs come from the wider score-space audit, not from hand-authored score tags.
+async function runRoute(id, options) {
+ const p=harness();p.ctx.startQuizWithRoute(id);
+ for(const idx of [...options,0,0]) { p.btns()[idx].click(); p.ctx.resetTimers(); }
+ await settle();
+ return p;
+}
+const reviewedMismatchCases = [
+ ['red-cheeked-mud-turtle','aquatic',[0,0,0,1,0,0,0,2,2,0],/^60cm開始・成体90cm$/,/60cm程度まで.*成体の目安は90cm/],
+ ['bell-hinge-back-tortoise','land',[0,1,2,2,1,2,0],/^120cm級/,/60cm程度まで.*成体の目安は120cm/],
+ ['bowsprit-tortoise','land',[0,2,2,2,1,2,0],/^成体は120cm規格でも手狭/,/60cm程度まで.*成体に120cm規格でも手狭/],
+ ['iberian-greek-tortoise','land',[0,0,0,1,0,1,0],/^90〜120cm級/,/60cm程度まで.*成体の目安は90cm/],
+ ['golden-greek-tortoise','land',[0,0,0,1,2,1,0],/^90〜120cm級/,/60cm程度まで.*成体の目安は90cm/],
+];
+for(const [slug,route,options,enclosure,wording] of reviewedMismatchCases) {
+ const caseResult=await runRoute(route,options);
+ const row=master.species.find(sp=>sp.slug===slug);
+ assert.match(row.care.enclosure_jp.value,enclosure,slug);
+ assert.equal(vm.runInContext('result.slug',caseResult.ctx),slug);
+ assertNeutral(caseResult);
+ assert.match(notice(caseResult).innerHTML,wording);
+ assert.equal(caseResult.dom.get('res-barrier-badges').innerHTML,'');
+ assert.equal(caseResult.dom.get('res-barrier-badges').style.display,'none');
+ assert.equal(caseResult.dom.get('ec-btn-sk').hidden,true);
+ assert.equal(results(caseResult).length,1);
+ assert.equal(gate(caseResult).verdict,'A'); // A's readiness math is unchanged; enclosure is independently checked.
+ if(slug==='red-cheeked-mud-turtle') {
+  assert.match(caseResult.dom.get('res-reason').textContent,/開始時60cm級、成体90cm級.*子亀.*甲長に合った小さめ/);
+  assert.doesNotMatch(caseResult.dom.get('res-reason').textContent,/45cm水槽から飼育可能/);
+  assert.equal(vm.runInContext("result.specs['水槽サイズ']",caseResult.ctx),'開始時60cm級・成体90cm級（当サイトの目安）');
+  assert.equal(vm.runInContext('result.extraSpecs.tankSize',caseResult.ctx),'開始時60cm級・成体90cm級（当サイトの目安）');
+ }
+}
+const guidePath='species/red-cheeked-mud-turtle.html';
+const currentGuide=read(guidePath);
+const guideBefore=execFileSync('git',['show','319f8a1470a2d73c9e57d658d08156e2d4bd0da1:'+guidePath],{encoding:'utf8',cwd:root});
+assert.doesNotMatch(currentGuide,/45〜60cmの水槽で(?:しっかりした水質管理|陸場)/);
+assert.match(currentGuide,/成体の目安となる90cm級の水槽を用意/);
+assert.match(currentGuide,/開始時60cm級、成体90cm級が当サイトの目安です。体の小さな子亀/);
+assert.match(currentGuide,/<td>開始時60cm級・成体90cm級<\/td><td>本種・熱帯系中型/);
+assert.match(currentGuide,/45cmなら11cm/); // Existing body-size-dependent exception must not become a universal juvenile minimum.
+const preserved=source=>[...source.matchAll(/<a\b[^>]*>|<script\b[^>]*>[\s\S]*?<\/script>/gi)].map(([token])=>token);
+assert.deepEqual(preserved(currentGuide),preserved(guideBefore),'species article links, JS and structured data stay byte-identical');
+
+for (const [route,options] of [
+ ['land',[2,0,0,0,0,2,2]],
+ ['aquatic',[2,0,0,0,0,0,0,0,2,2]],
+ ['all',[0,0,0,1,1,0,2,2]],
+ ['forest',null], ['exotic',null],
+]) {
+ const n=vm.runInContext('ROUTES.find(r=>r.id==='+JSON.stringify(route)+').questions.length',synthetic.ctx);
+ const ordinary=await runRoute(route,options||Array.from({length:n},(_,i)=>i>=n-2?2:0));
+ assert.equal(ordinary.shown,'screen-result',route);
+ assert.equal(hasShownKit(ordinary),true,route);
+ assert.match(vm.runInContext('document.title',ordinary.ctx),/があなたに合う亀です/,route);
+ assert.equal(results(ordinary).length,1,route);
+}
+const widthAmbiguous=await runRoute('aquatic',[0,0,0,0,0,0,0,0,2,2]);
+assert.equal(vm.runInContext('result.slug',widthAmbiguous.ctx),'musk-turtle');
+assert.equal(hasShownKit(widthAmbiguous),true); // uncertain is not a blanket ban.
+assert.match(notice(widthAmbiguous).innerHTML,/30〜60cmの範囲.*実際の幅は未確認/);
+assert.match(vm.runInContext('document.title',widthAmbiguous.ctx),/の参考情報/);
+assert.equal(widthAmbiguous.dom.get('score-meter').style.display,'none');
+assert.equal(widthAmbiguous.dom.get('res-barrier-badges').innerHTML,'');
+widthAmbiguous.dom.get('btn-share').click();
+assert.match(widthAmbiguous.shares[0].text,/の参考情報/);
+assert.doesNotMatch(widthAmbiguous.shares[0].text,/相性|私に合う/);
+console.log('PASS: all 5 independently found capped-width click paths, 5 usable-route controls, uncertain width without an eligibility claim, 3 same-species page scope corrections with links/scripts preserved.');
 console.log('PASS: source-exact old/new 60cm+10k, independent budget & capacity gates, normal result kit byte-equivalent, normal score schema, B/C, restoration & repeated sharing without source answers, invalid URLs and retry re-gate.');

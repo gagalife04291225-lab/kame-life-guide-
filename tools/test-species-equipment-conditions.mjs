@@ -56,11 +56,12 @@ assert.ok(c.conditions['home-hinge-back-tortoise'].items.join('').includes('æ¹¿ã
 const eventStart=html.indexOf('    // GA4: diagnosis_cta_view');
 const eventEnd=html.indexOf('  })();',eventStart);
 const events=[];
-const ec=vm.createContext({ga4Event:(name,payload)=>events.push({name,payload}),sp:{name:'test',slug:'test'},_lastCandidateCount:3,equipKey:'semi_aquatic_small',top3Count:3,canShowCommerce:true});
+const ec=vm.createContext({ga4Event:(name,payload)=>events.push({name,payload}),sp:{name:'test',slug:'test'},_lastCandidateCount:3,equipKey:'semi_aquatic_small',top3Count:3,canShowCommerce:true,scarcityHtml:''});
 const ctaEventBlock = '(function(){' + html.slice(eventStart,eventEnd) + '})();';
 vm.runInContext(ctaEventBlock,ec);
 assert.equal(events.length,1);assert.equal(events[0].name,'diagnosis_cta_view');
 assert.equal(events[0].payload.has_teaser,false);
+assert.equal(events[0].payload.has_scarcity,false);
 assert.equal(events[0].payload.init_cost,'');assert.equal(events[0].payload.monthly_cost,'');
 assert.equal(events[0].payload.top3_tier,'requirements');
 ec.canShowCommerce = false;

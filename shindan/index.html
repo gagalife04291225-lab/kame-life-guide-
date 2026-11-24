@@ -1446,7 +1446,7 @@ function productDataReady() {
 function kitEngineReady() { return typeof mountStarterKit === 'function'; }
 function resultAssetsReady() { return productDataReady() && kitEngineReady(); }
 window.loadSpecies = function () {
-  return window.__loadScriptOnce('species.js?v=7fc4075bcf7b', speciesDataReady);
+  return window.__loadScriptOnce('species.js?v=a33ebe666800', speciesDataReady);
 };
 window.loadResultAssets = function () {
   return Promise.all([
@@ -3229,12 +3229,14 @@ function calcResult() {
 var ADULT_ENCLOSURE_WIDTH = {
   'russian-tortoise':90, 'hermann-tortoise':120, 'western-hermann-tortoise':90,
   'greek-tortoise':90, 'tunisian-greek-tortoise':90, 'moroccan-greek-tortoise':90,
+  'iberian-greek-tortoise':90, 'golden-greek-tortoise':90,
   'red-footed-tortoise':120, 'elongated-tortoise':120,
-  'japanese-pond-turtle':90, 'musk-turtle':60, 'razorback-musk-turtle':60,
+  'bell-hinge-back-tortoise':120, 'bowsprit-tortoise':120,
+  'japanese-pond-turtle':90, 'red-cheeked-mud-turtle':90, 'musk-turtle':60, 'razorback-musk-turtle':60,
   'western-painted-turtle':60
 };
 var SPACE_REQUIRES_MORE_THAN_STANDARD = {
-  'red-footed-tortoise':true, 'elongated-tortoise':true,
+  'red-footed-tortoise':true, 'elongated-tortoise':true, 'bowsprit-tortoise':true,
   'sulcata-tortoise':true, 'aldabra-tortoise':true
 };
 var resultReferenceOnly = false;
@@ -3253,8 +3255,11 @@ function getResultPreparationGuard(sp, restored) {
   var adultWidth = ADULT_ENCLOSURE_WIDTH[sp.slug] || 0;
   var specialSpace = SPACE_REQUIRES_MORE_THAN_STANDARD[sp.slug];
   var spaceInsufficient = maxWidth > 0 && (specialSpace || adultWidth > maxWidth);
+  var spaceUnverified = !spaceInsufficient && maxWidth > 0 && (!adultWidth ||
+    (routeId === 'aquatic' && adultWidth > (maxWidth === 60 ? 30 : 60)));
   if (spaceInsufficient) {
-    var requirement = specialSpace ? '通常規格を超える飼育スペースの計画が必要です。' :
+    var requirement = specialSpace ?
+      (adultWidth === 120 ? '当サイトでは、成体に120cm規格でも手狭としています。' : '通常規格を超える飼育スペースの計画が必要です。') :
       '当サイトの成体の目安は' + adultWidth + 'cm級以上です。';
     notes.push('飼育場所：回答は幅' + maxWidth + 'cm程度までです。' + requirement + '奥行きと、使える床面積も見直してください。');
   } else if (maxWidth && !adultWidth) {
@@ -3289,7 +3294,8 @@ function getResultPreparationGuard(sp, restored) {
   } else if (scores.budget_under10k && !blockers && !budgetInsufficient) {
     notes.push('初期費用：掲載価格だけで、1万円以内に飼育を始められるとは確認できません。用品一式と別売品を含めて費用を見積もってください。');
   }
-  return { restored:false, blocksCommerce:!!(blockers || spaceInsufficient || budgetInsufficient), notes:notes };
+  return { restored:false, blocksCommerce:!!(blockers || spaceInsufficient || budgetInsufficient),
+    spaceUnverified:spaceUnverified, notes:notes };
 }
 
 function renderResultPreparationGuard(guard) {
@@ -3322,11 +3328,11 @@ function refreshResultGuardBeforeKit(sp) {
   document.querySelector('.result-label').textContent = '条件の見直しが必要な候補種';
   var reason = document.getElementById('res-reason');
   if (reason && reason.previousElementSibling) reason.previousElementSibling.textContent = 'この種について';
-  ['res-match-badge-wrap','res-why-block-wrap','res-cta-top','res-cta-block','res-links'].forEach(function(id) {
+  ['res-match-badge-wrap','res-why-block-wrap','res-barrier-badges','res-cta-top','res-cta-block','res-links'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.innerHTML = '';
   });
-  ['score-meter','res-emotion-copy','res-cta-top','res-cta-block'].forEach(function(id) {
+  ['score-meter','res-emotion-copy','res-barrier-badges','res-cta-top','res-cta-block'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
@@ -3345,7 +3351,7 @@ function showResult(sp, pct, runners, restored) {
   var refOnly = (sp.commerceAllowed === false) || (sp.availability === 'reference_only');
   var resultGuard = getResultPreparationGuard(sp, restored === true);
   var canShowCommerce = !refOnly && !resultGuard.blocksCommerce;
-  resultReferenceOnly = !!(sp.diagnosisNotice || resultGuard.blocksCommerce);
+  resultReferenceOnly = !!(sp.diagnosisNotice || resultGuard.blocksCommerce || resultGuard.spaceUnverified);
   resultCommerceAllowed = canShowCommerce;
   resultSharePercent = !resultReferenceOnly && !refOnly && computeReadiness().verdict === 'A' &&
     Number.isFinite(pct) ? pct : null;
@@ -3370,7 +3376,8 @@ function showResult(sp, pct, runners, restored) {
   })();
   document.querySelector('.result-label').textContent = sp.diagnosisNotice ? '参考情報（診断のおすすめ対象外）' :
     (resultGuard.restored ? '共有・再表示された種の参考情報' :
-      (resultGuard.blocksCommerce ? '条件の見直しが必要な候補種' : 'あなたにおすすめの亀'));
+      (resultGuard.blocksCommerce ? '条件の見直しが必要な候補種' :
+        (resultGuard.spaceUnverified ? '飼育場所を確認したい候補種' : 'あなたにおすすめの亀')));
   document.getElementById('score-meter').style.display = sp.diagnosisNotice ? 'none' : '';
   document.getElementById('res-name').textContent = sp.name;
   document.getElementById('res-latin').textContent = sp.latin;
@@ -3398,6 +3405,11 @@ function showResult(sp, pct, runners, restored) {
   (function() {
     var barrierEl = document.getElementById('res-barrier-badges');
     if (!barrierEl) return;
+    if (resultReferenceOnly) {
+      barrierEl.innerHTML = '';
+      barrierEl.style.display = 'none';
+      return;
+    }
     var routeId = selectedRoute ? selectedRoute.id : 'all';
     var equipKey = (sp.equipmentKey) || resolveEquipmentKey(routeId, sp);
     var isAdvanced = (sp.difficulty || '').indexOf('上級') >= 0;
@@ -3817,7 +3829,7 @@ function showResult(sp, pct, runners, restored) {
 
     // ── scarcity ─────────────────────────────────────────────
     var scarcityHtml = '';
-    if (_lastCandidateCount > 0 && _lastCandidateCount <= 2) {
+    if (!resultReferenceOnly && _lastCandidateCount > 0 && _lastCandidateCount <= 2) {
       scarcityHtml =
         '<div class="res-cta-scarcity">' +
           '<span class="res-cta-scarcity-icon">🎯</span>' +
@@ -4035,7 +4047,7 @@ function showResult(sp, pct, runners, restored) {
         ga4Event('diagnosis_cta_view', {
           species: sp.name, slug: sp.slug || '',
           has_teaser: false,
-          has_scarcity: (_lastCandidateCount > 0 && _lastCandidateCount <= 2),
+          has_scarcity: !!scarcityHtml,
           candidate_count: _lastCandidateCount,
           equipment_key: equipKey || '',
           init_cost: '', // 費用の別集計は撤去。候補合計は用品一覧で表示。
@@ -4191,7 +4203,7 @@ function showResult(sp, pct, runners, restored) {
   // 主要テキスト・バッジ・スペックは上で描画済みなので、ここで結果画面を開く
   show('screen-result');
   try {
-    var firstResultFocus = resultGuard.blocksCommerce && document.getElementById('result-preparation-title');
+    var firstResultFocus = (resultGuard.blocksCommerce || resultGuard.spaceUnverified) && document.getElementById('result-preparation-title');
     (firstResultFocus || document.getElementById('res-name')).focus();
   } catch(e) {}
 
@@ -4260,7 +4272,7 @@ function showResult(sp, pct, runners, restored) {
 
   // ── Phase 48: あなたに合う他の候補（2位・3位）──
   // 既存の scored 配列から渡された runners を描画するだけ。scoreの再計算はしない。
-  renderRunnerUps(resultGuard.blocksCommerce ? null : runners);
+  renderRunnerUps(resultGuard.blocksCommerce || resultGuard.spaceUnverified ? null : runners);
 }
 
 // 第2・第3候補カードを描画。runnersが空/未指定なら非表示。
