@@ -1,6 +1,6 @@
 const ORIGIN = 'https://kamelifeguide.com';
 const PATH = '/api/amazon-product-images';
-const KEY = 'jp-primary-v1';
+const KEY = 'jp-primary-v2';
 const TAG = 'kamelife090e-22';
 const MAX_AGE = 18 * 60 * 60 * 1000;
 const asin = x => typeof x === 'string' && /^[A-Z0-9]{10}$/.test(x);
@@ -45,8 +45,9 @@ export async function serve(req,env,now=Date.now()) {
   catch{return reply({status:'unavailable'},503);}
   if(!stored||!Number.isSafeInteger(stored.checkedAt)||stored.checkedAt>now||now-stored.checkedAt>=MAX_AGE)return reply({photos});
   for(const id of new Set(ids)){
-    const url=stored.photos?.[id];
-    if(reviewed.has(id)&&photo(url))photos[id]={asin:id,url,expiresAt:stored.checkedAt+MAX_AGE};
+    const pair=stored.photos?.[id];
+    if(reviewed.has(id)&&photo(pair?.url)&&exact(pair?.detailUrl,id))
+      photos[id]={asin:id,url:pair.url,detailUrl:pair.detailUrl,expiresAt:stored.checkedAt+MAX_AGE};
   }
   return reply({photos});
 }
@@ -56,10 +57,22 @@ async function post(fetcher,url,body,headers={}) {
     headers:{'Content-Type':'application/json',...headers},body:JSON.stringify(body),
     signal:AbortSignal.timeout(6500)});}
   catch{throw Error('official_api_transport');}
-  if(!r.ok)throw Error('official_api_http_'+r.status);
+  if(!r.ok){
+    const err=Error('official_api_http_'+r.status);
+    err.status=r.status;
+    err.retryAfter=r.headers.get('Retry-After');
+    throw err;
+  }
   try{return await r.json();}catch{throw Error('official_api_invalid_json');}
 }
-export async function refresh(env,{fetcher=fetch,clock=Date.now}={}) {
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+function retryDelay(hint,now,floor){
+  if (!hint) return floor;
+  if (/^[0-9]+$/.test(hint)) return Math.max(floor,1000*Number(hint));
+  const target=Date.parse(hint);
+  return Number.isFinite(target) ? Math.max(floor,target-now) : floor;
+}
+export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) {
   const checkedAt=clock();
   const ids=[...allowed(env)];
   if(!ids.length||!env.KLG_AMAZON_IMAGES||!env.KLG_CREATORS_CLIENT_ID||!env.KLG_CREATORS_CLIENT_SECRET)
@@ -72,12 +85,29 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now}={}) {
     throw Error('official_api_invalid_token');
   const photos=Object.create(null);
   const knownFailures=new Set(['ItemNotAccessible','InvalidParameterValue']);
+  // Match the previously successful 2.2 s pacing, not the theoretical account limit.
+  // Three retries total per execution; long Retry-After fails closed until the
+  // next scheduled run. KV is not written on an incomplete refresh.
+  let retries=0;
   for(let i=0;i<ids.length;i+=10){
     const keys=ids.slice(i,i+10);
-    const data=await post(fetcher,'https://creatorsapi.amazon/catalog/v1/getItems',{
-      itemIds:keys,itemIdType:'ASIN',marketplace:'www.amazon.co.jp',partnerTag:TAG,
-      resources:['images.primary.large','images.primary.medium']
-    },{Authorization:'Bearer '+token.access_token,'x-marketplace':'www.amazon.co.jp'});
+    if(i>0) await sleep(2200);
+    let data;
+    for(let attempt=0;;attempt++){
+      try{
+        data=await post(fetcher,'https://creatorsapi.amazon/catalog/v1/getItems',{
+          itemIds:keys,itemIdType:'ASIN',marketplace:'www.amazon.co.jp',partnerTag:TAG,
+          resources:['images.primary.large','images.primary.medium']
+        },{Authorization:'Bearer '+token.access_token,'x-marketplace':'www.amazon.co.jp'});
+        break;
+      }catch(err){
+        if(err.status!==429||attempt>=2||retries>=3)throw err;
+        const delay=retryDelay(err.retryAfter,clock(),2200*2**attempt);
+        if(delay>12000)throw err;
+        retries++;
+        await sleep(delay);
+      }
+    }
     const rows=data?.itemsResult?.items??[];
     const failures=data?.errors??[];
     if(!Array.isArray(rows)||!Array.isArray(failures)||(!rows.length&&!failures.length)||
@@ -86,10 +116,11 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now}={}) {
     for(const row of rows){
       if(!keys.includes(row?.asin)||seen.has(row.asin))throw Error('official_api_item_mismatch');
       seen.add(row.asin);
-      if(!exact(row.detailPageURL??row.detailPageUrl,row.asin))continue;
+      const detailUrl=row.detailPageURL??row.detailPageUrl;
+      if(!exact(detailUrl,row.asin))continue;
       for(const size of ['large','medium']){
         const candidate=row.images?.primary?.[size]?.url;
-        if(photo(candidate)){photos[row.asin]=candidate;break;}
+        if(photo(candidate)){photos[row.asin]={url:candidate,detailUrl};break;}
       }
     }
   }

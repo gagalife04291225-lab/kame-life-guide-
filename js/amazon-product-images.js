@@ -34,7 +34,8 @@
     return asin;
   }
   function validPhoto(row, asin) {
-    if (row?.asin !== asin || !Number.isSafeInteger(row.expiresAt) ||
+    if (row?.asin !== asin || typeof row.detailUrl !== 'string' ||
+        !row.detailUrl.startsWith('https://www.amazon.co.jp/') || asinOf(row.detailUrl) !== asin || !Number.isSafeInteger(row.expiresAt) ||
         row.expiresAt <= Date.now() || row.expiresAt - Date.now() > maxLifetime) return false;
     try {
       const u = new URL(row.url);
@@ -45,6 +46,12 @@
   function remove(a) {
     const entry = entries.get(a);
     if (!entry) return;
+    if (entry.applied && a.getAttribute('href') === entry.photo.detailUrl) {
+      a.setAttribute('href', entry.originalHref);
+    }
+    if (entry.changedTrackingUrl && a.dataset.clickUrl === entry.photo.detailUrl) {
+      a.dataset.clickUrl = a.getAttribute('href') || entry.originalHref;
+    }
     entry.img.removeAttribute('src');
     entry.frame.remove();
     a.classList.remove('klg-amazon-photo-link');
@@ -62,7 +69,8 @@
   }
   function paint(a, asin, photo) {
     if (!validPhoto(photo, asin) || route(a) !== asin || !a.isConnected) return;
-    if (entries.get(a)?.photo.url === photo.url) {
+    if (entries.get(a)?.photo.url === photo.url &&
+        entries.get(a).photo.detailUrl === photo.detailUrl) {
       entries.get(a).photo = photo;
       return;
     }
@@ -81,14 +89,19 @@
     img.referrerPolicy = 'no-referrer';
     frame.append(img);
     a.prepend(frame);
-    entries.set(a, { frame, img, photo, asin });
+    const linked = {frame, img, photo, asin, originalHref:a.getAttribute('href'), applied:false};
+    entries.set(a, linked);
     img.addEventListener('load', () => {
       if (generation.get(a) !== revision || entries.get(a)?.frame !== frame) return;
-      if (!a.isConnected || route(a) !== asin || !validPhoto(entries.get(a).photo, asin)) return remove(a);
+      if (!a.isConnected || route(a) !== asin || a.getAttribute('href') !== linked.originalHref || !validPhoto(linked.photo, asin)) return remove(a);
       const size = frameSize(img.naturalWidth, img.naturalHeight);
       if (!size) return remove(a);
       frame.style.inlineSize = size[0] + 'px';
       frame.style.aspectRatio = size[0] + ' / ' + size[1];
+      linked.applied = true;
+      a.setAttribute('href', linked.photo.detailUrl); // preserve API attribution parameters verbatim
+      linked.changedTrackingUrl = a.dataset.clickUrl === linked.originalHref;
+      if (linked.changedTrackingUrl) a.dataset.clickUrl = linked.photo.detailUrl;
       a.classList.add('klg-amazon-photo-link');
       frame.hidden = false;
     }, { once: true });
@@ -159,7 +172,8 @@
       watched.add(a);
       observer.observe(a);
     }
-    for (const [a, e] of entries) if (route(a) !== e.asin || !validPhoto(e.photo, e.asin)) remove(a);
+    for (const [a, e] of entries) if (route(a) !== e.asin || !validPhoto(e.photo, e.asin) ||
+      a.getAttribute('href') !== (e.applied ? e.photo.detailUrl : e.originalHref)) remove(a);
   }
   let scanTimer = 0;
   new MutationObserver(changes => {

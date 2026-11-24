@@ -6,10 +6,11 @@ const id='B000NGQZU0', other='B00167XQLG';
 const route='https://kamelifeguide.com/api/amazon-product-images';
 const current=Date.parse('2026-11-24T18:00:00Z');
 const url='https://m.media-amazon.com/images/I/test-fixture.jpg';
+const detailUrl='https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22&linkCode=ogi&language=ja_JP&th=1&psc=1';
 const setup={KLG_APPROVED_ASINS:id,KLG_CREATORS_CLIENT_ID:'test',KLG_CREATORS_CLIENT_SECRET:'test'};
 let stored=null, writes=0, reads=0;
 const env={...setup,KLG_AMAZON_IMAGES:{async get(){reads++;return stored;},
- async put(key,data,opt){assert.equal(key,'jp-primary-v1');assert.equal(opt.expirationTtl,64800);
+ async put(key,data,opt){assert.equal(key,'jp-primary-v2');assert.equal(opt.expirationTtl,64800);
    stored=JSON.parse(data);writes++;}}};
 const ask=(items=id,opt={})=>serve(new Request(route+'?items='+items,opt),env,current);
 const body=async resp=>(await resp).json();
@@ -35,15 +36,15 @@ const fake=(catalog)=>{
  };
 };
 const item=(sku=id,link=id,img=url)=>({
- asin:sku,detailPageURL:'https://www.amazon.co.jp/dp/'+link+'?tag=kamelife090e-22',
+ asin:sku,detailPageURL:link===id?detailUrl:'https://www.amazon.co.jp/dp/'+link+'?tag=kamelife090e-22',
  images:{primary:{large:{url:img}}}
 });
-const doRefresh=cat=>refresh(env,{fetcher:fake(cat),clock:()=>current});
+const doRefresh=cat=>refresh(env,{fetcher:fake(cat),clock:()=>current,sleep:async()=>{}});
 assert.deepEqual(await doRefresh({itemsResult:{items:[item()]}}),{requested:1,available:1});
 assert.equal(writes,1);
 const r=await ask(id+','+other);
 assert.match(r.headers.get('cache-control'),/no-store/);
-assert.deepEqual(await r.json(),{photos:{[id]:{asin:id,url,expiresAt:current+64800000}}});
+assert.deepEqual(await r.json(),{photos:{[id]:{asin:id,url,detailUrl,expiresAt:current+64800000}}});
 const n=reads;
 assert.deepEqual(await body(ask(other)),{photos:{}});
 assert.equal(reads,n);
@@ -55,6 +56,29 @@ assert.equal(writes,1);
 assert.equal((await doRefresh({itemsResult:{items:[item(id,other)]}})).available,0);
 assert.equal((await doRefresh({itemsResult:{items:[item(id,id,url.replace('.com/','.com.invalid/'))]}})).available,0);
 assert.equal((await doRefresh({errors:[{code:'ItemNotAccessible'}]})).available,0);
+const waits=[];
+const calls=[];
+const twelve=Array.from({length:12},(_,i)=>'B'+String(i).padStart(9,'0'));
+let tries=0;
+const batched={...env,KLG_APPROVED_ASINS:twelve.join(',')};
+const counts=await refresh(batched,{clock:()=>current,sleep:async ms=>{waits.push(ms);},
+ fetcher:async(url,init)=>{
+   if(url.includes('/token')) return Response.json({access_token:'fixture'});
+   const {itemIds}=JSON.parse(init.body);calls.push(itemIds.length);
+   if(tries++===0)return new Response(null,{status:429,headers:{'Retry-After':'5'}});
+   return Response.json({itemsResult:{items:itemIds.map(x=>item(x,x))}});
+ }});
+assert.deepEqual(waits,[5000,2200]);
+assert.deepEqual(calls,[10,10,2]);
+assert.deepEqual(counts,{requested:12,available:12});
+const beforeRetry=writes;
+await assert.rejects(refresh(env,{clock:()=>current,sleep:()=>assert.fail('must not retry long hint'),
+ fetcher:async(url)=>url.includes('/token')?Response.json({access_token:'fixture'}):
+   new Response(null,{status:429,headers:{'Retry-After':'30'}})}),/official_api_http_429/);
+assert.equal(writes,beforeRetry);
+const old=stored;stored={checkedAt:current,photos:{[id]:{url,detailUrl:detailUrl.replace(id,other)}}};
+assert.deepEqual(await body(ask()),{photos:{}});
+stored=old;
 // Guide mismatch fix: do not advertise an external/top filter and send to an AT-50.
 const guide=readFileSync(new URL('../guide-beginner.html',import.meta.url),'utf8');
 const filter=guide.slice(guide.indexOf('<div class="gear-name">飼育水量に合うフィルター'),guide.indexOf('<div class="gear-name">亀用配合飼料'));
@@ -76,3 +100,46 @@ const css=readFileSync(new URL('../css/amazon-product-images.css',import.meta.ur
 assert.match(css,/max-inline-size: 100%/);
 assert.match(css,/object-fit: contain/);
 console.log('Mobile photo sizing: portrait/landscape, small source, missing dimensions and parent cap PASS');
+
+
+// Execute the exact runtime photo/link controllers with minimal DOM objects.
+// The existing anchor is neither replaced nor given a second click listener.
+const jss=js.slice(js.indexOf('  const asinOf'),js.indexOf('  function scheduleFlush'));
+let imageNode;
+let ctx;
+const el=()=>({className:'',hidden:false,style:{},events:{},
+  attrs:new Map(),dataset:{},isConnected:true,textContent:'Amazonで見る',
+  getAttribute(k){return this.attrs.get(k);},setAttribute(k,v){this.attrs.set(k,v);},
+  removeAttribute(k){this.attrs.delete(k);},remove(){this.removed=true;},
+  append(child){this.child=child;},prepend(child){this.frame=child;},
+  addEventListener(k,fn){this.events[k]=fn;},
+  closest(sel){return sel.startsWith('.item')?ctx:null;},
+  querySelector(){return null;},classList:{add(){},remove(){}}});
+ctx=el();
+const runtime=runInNewContext(jss+'; ({paint,remove,validPhoto})',{
+  location:{origin:'https://kamelifeguide.com'},URL,Date,
+  document:{createElement(type){const n=el();if(type==='img'){imageNode=n;n.naturalWidth=318;n.naturalHeight=500;}return n;}}
+});
+const a=el();
+const original='https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22';
+a.setAttribute('href',original); a.dataset.clickUrl=original;
+const nowPhoto={asin:id,url,detailUrl,expiresAt:Date.now()+50000};
+runtime.paint(a,id,nowPhoto);
+assert.equal(a.getAttribute('href'),original);
+imageNode.events.load();
+assert.equal(a.getAttribute('href'),detailUrl);
+assert.equal(a.dataset.clickUrl,detailUrl);
+assert.equal(a.frame.hidden,false);
+assert.deepEqual(Object.keys(a.events),[]);
+runtime.remove(a);
+assert.equal(a.getAttribute('href'),original);
+assert.equal(a.dataset.clickUrl,original);
+assert.equal(a.frame.removed,true);
+for(const bad of [detailUrl.replace(id,other), detailUrl.replace('.jp/','.jp.evil/'), detailUrl+'&tag=another']){
+  assert.equal(runtime.validPhoto({...nowPhoto,detailUrl:bad},id),false);
+}
+runtime.paint(a,id,nowPhoto);
+imageNode.events.error();
+assert.equal(a.getAttribute('href'),original);
+assert.equal(a.frame.removed,true);
+console.log('Attribution: exact unchanged API destination, one original link, failure restores safely; bounded 429 and pacing PASS');
