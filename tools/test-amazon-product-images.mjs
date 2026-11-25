@@ -70,12 +70,19 @@ await assert.rejects(doRefresh(429),/official_api_http_429/);
 await assert.rejects(doRefresh({itemsResult:{items:[item(other)]}}),/item_mismatch/);
 await assert.rejects(doRefresh({errors:[{code:'UnknownFailure'}]}),/unexpected_catalog/);
 assert.equal(writes,1);
-assert.equal((await doRefresh({itemsResult:{items:[item(id,other)]}})).available,0);
-assert.equal((await doRefresh({itemsResult:{items:[item(id,id,url.replace('.com/','.com.invalid/'))]}})).available,0);
+const invalidPhoto=url.replace('.com/','.com.invalid/');
+await assert.rejects(doRefresh({itemsResult:{items:[item(id,other)]}}),/official_api_invalid_detail_url/);
+await assert.rejects(doRefresh({itemsResult:{items:[item(id,id,invalidPhoto)]}}),/official_api_invalid_photo_url/);
+assert.equal(writes,1);
 const unavailable=(sku,code='ItemNotAccessible')=>({code,message:code==='ItemNotAccessible'
  ? 'The ItemId '+sku+' is not accessible through the Creators API.'
  : 'The ItemIds '+sku+' provided in the request is invalid.'});
 assert.equal((await doRefresh({errors:[unavailable(id)]})).available,0);
+const medium=url.replace('test-fixture','medium-fixture');
+const withMedium=item(id,id,invalidPhoto);
+withMedium.images.primary.medium={url:medium};
+assert.deepEqual(await doRefresh({itemsResult:{items:[withMedium]}}),{requested:1,available:1});
+assert.equal(stored.photos[id].url,medium);
 const pairEnv={...env,KLG_APPROVED_ASINS:id+','+other};
 const pairRefresh=(data,at=current)=>refresh(pairEnv,{fetcher:fake(data),clock:()=>at,sleep:async()=>{}});
 const storePair=()=>pairRefresh({itemsResult:{items:[item(),item(other,other)]}});
@@ -84,6 +91,9 @@ const fresh=stored, freshWrites=writes;
 const unrelated='B012345678';
 for(const [data,error] of [
  [{itemsResult:{items:[item()]}},/incomplete_batch/],
+ [{itemsResult:{items:[item(),item(other,id)]}},/official_api_invalid_detail_url/],
+ [{itemsResult:{items:[item(),item(other,other,invalidPhoto)]}},/official_api_invalid_photo_url/],
+ [{itemsResult:{items:[item(),item(other,other,'')]}},/official_api_invalid_photo_url/],
  [{itemsResult:{items:[item()]},errors:[unavailable(unrelated)]},/item_error_mismatch/],
  [{itemsResult:{items:[item()]},errors:[{code:'ItemNotAccessible'}]},/item_error_mismatch/],
  [{itemsResult:{items:[item()]},errors:[unavailable(id)]},/item_error_mismatch/],

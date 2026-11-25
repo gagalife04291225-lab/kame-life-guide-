@@ -134,11 +134,11 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) 
       if(!keys.includes(row?.asin)||seen.has(row.asin))throw Error('official_api_item_mismatch');
       seen.add(row.asin);
       const detailUrl=row.detailPageURL??row.detailPageUrl;
-      if(!exact(detailUrl,row.asin))continue;
-      for(const size of ['large','medium']){
-        const candidate=row.images?.primary?.[size]?.url;
-        if(photo(candidate)){photos[row.asin]={url:candidate,detailUrl};break;}
-      }
+      if(!exact(detailUrl,row.asin))throw Error('official_api_invalid_detail_url');
+      const candidates=['large','medium'].map(size=>row.images?.primary?.[size]?.url);
+      const candidate=candidates.find(photo);
+      if(candidate)photos[row.asin]={url:candidate,detailUrl};
+      else if(candidates.some(value=>value!=null))throw Error('official_api_invalid_photo_url');
     }
     for(const failure of failures){
       const id=failedItem(failure);
