@@ -79,6 +79,16 @@ function retryDelay(hint,now,floor){
   const target=Date.parse(hint);
   return Number.isFinite(target) ? Math.max(floor,target-now) : floor;
 }
+// Only documented single-item messages account for a missing batch member.
+function failedItem(error) {
+  if(typeof error?.message!=='string')return null;
+  const message=error.message.trim();
+  if(error.code==='ItemNotAccessible')
+    return /^The ItemId ([A-Z0-9]{10}) is not accessible through the Creators API\.$/.exec(message)?.[1]??null;
+  if(error.code==='InvalidParameterValue')
+    return /^The ItemIds ([A-Z0-9]{10}) provided in the request is invalid\.$/.exec(message)?.[1]??null;
+  return null;
+}
 export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) {
   const checkedAt=clock();
   const ids=[...allowed(env)];
@@ -130,10 +140,17 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) 
         if(photo(candidate)){photos[row.asin]={url:candidate,detailUrl};break;}
       }
     }
+    for(const failure of failures){
+      const id=failedItem(failure);
+      if(!id||!keys.includes(id)||seen.has(id))throw Error('official_api_item_error_mismatch');
+      seen.add(id);
+    }
+    if(seen.size!==keys.length)throw Error('official_api_incomplete_batch');
   }
   const expirationTtl=Math.floor((checkedAt+MAX_AGE-clock())/1000);
   if(expirationTtl<60||expirationTtl>MAX_AGE/1000)throw Error('image_refresh_clock');
-  // Replace atomically. Never retain omitted URLs in a successful refresh.
+  // Replace only after all batches are accounted for. On failure the old key and
+  // its original expiry stay intact; never extend the life of previous URLs.
   await env.KLG_AMAZON_IMAGES.put(KEY,JSON.stringify({checkedAt,photos}),{expirationTtl});
   return {requested:ids.length,available:Object.keys(photos).length};
 }

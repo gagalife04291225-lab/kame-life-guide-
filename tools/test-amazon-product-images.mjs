@@ -72,7 +72,47 @@ await assert.rejects(doRefresh({errors:[{code:'UnknownFailure'}]}),/unexpected_c
 assert.equal(writes,1);
 assert.equal((await doRefresh({itemsResult:{items:[item(id,other)]}})).available,0);
 assert.equal((await doRefresh({itemsResult:{items:[item(id,id,url.replace('.com/','.com.invalid/'))]}})).available,0);
-assert.equal((await doRefresh({errors:[{code:'ItemNotAccessible'}]})).available,0);
+const unavailable=(sku,code='ItemNotAccessible')=>({code,message:code==='ItemNotAccessible'
+ ? 'The ItemId '+sku+' is not accessible through the Creators API.'
+ : 'The ItemIds '+sku+' provided in the request is invalid.'});
+assert.equal((await doRefresh({errors:[unavailable(id)]})).available,0);
+const pairEnv={...env,KLG_APPROVED_ASINS:id+','+other};
+const pairRefresh=(data,at=current)=>refresh(pairEnv,{fetcher:fake(data),clock:()=>at,sleep:async()=>{}});
+const storePair=()=>pairRefresh({itemsResult:{items:[item(),item(other,other)]}});
+assert.deepEqual(await storePair(),{requested:2,available:2});
+const fresh=stored, freshWrites=writes;
+const unrelated='B012345678';
+for(const [data,error] of [
+ [{itemsResult:{items:[item()]}},/incomplete_batch/],
+ [{itemsResult:{items:[item()]},errors:[unavailable(unrelated)]},/item_error_mismatch/],
+ [{itemsResult:{items:[item()]},errors:[{code:'ItemNotAccessible'}]},/item_error_mismatch/],
+ [{itemsResult:{items:[item()]},errors:[unavailable(id)]},/item_error_mismatch/],
+ [{itemsResult:{items:[item()]},errors:[unavailable(other),unavailable(other)]},/item_error_mismatch/],
+ [{itemsResult:{items:[item()]},errors:[unavailable(other+', '+unrelated)]},/item_error_mismatch/],
+]) {
+ await assert.rejects(pairRefresh(data,current+60000),error);
+ assert.equal(writes,freshWrites);
+ assert.strictEqual(stored,fresh);
+ const req=new Request(route+'?items='+id+','+other);
+ const both=await body(serve(req,pairEnv,current+60000));
+ assert.deepEqual(Object.keys(both.photos),[id,other]);
+ assert.ok(Object.values(both.photos).every(photo=>photo.expiresAt===current+64800000));
+ assert.deepEqual(await body(serve(req,pairEnv,current+64800000)),{photos:{}});
+}
+for(const data of [
+ {itemsResult:{items:[item()]},errors:[unavailable(other)]},
+ {itemsResult:{items:[item()]},errors:[unavailable(other,'InvalidParameterValue')]},
+ {itemsResult:{items:[item(),{asin:other,detailPageURL:item(other,other).detailPageURL}]}},
+]) {
+ await storePair();
+ const before=writes;
+ assert.deepEqual(await pairRefresh(data,current+60000),{requested:2,available:1});
+ assert.equal(writes,before+1);
+ const req=new Request(route+'?items='+id+','+other);
+ const one=await body(serve(req,pairEnv,current+60000));
+ assert.deepEqual(Object.keys(one.photos),[id]);
+ assert.equal(one.photos[id].expiresAt,current+60000+64800000);
+}
 const waits=[];
 const calls=[];
 const twelve=Array.from({length:12},(_,i)=>'B'+String(i).padStart(9,'0'));
@@ -88,6 +128,22 @@ const counts=await refresh(batched,{clock:()=>current,sleep:async ms=>{waits.pus
 assert.deepEqual(waits,[5000,2200]);
 assert.deepEqual(calls,[10,10,2]);
 assert.deepEqual(counts,{requested:12,available:12});
+const multiBatchSnapshot=stored, multiBatchWrites=writes;
+let batchCalls=0;
+await assert.rejects(refresh(batched,{clock:()=>current+60000,sleep:async()=>{},
+ fetcher:async(url,init)=>{
+   if(url.includes('/token')) return Response.json({access_token:'fixture'});
+   const {itemIds}=JSON.parse(init.body);
+   // The first batch completes; the last drops one member without explanation.
+   return Response.json({itemsResult:{items:(++batchCalls===1?itemIds:itemIds.slice(0,1)).map(x=>item(x,x))}});
+ }}),/incomplete_batch/);
+assert.equal(batchCalls,2);
+assert.equal(writes,multiBatchWrites);
+assert.strictEqual(stored,multiBatchSnapshot);
+await assert.rejects(doRefresh(404),/official_api_http_404/);
+assert.equal(writes,multiBatchWrites);
+assert.strictEqual(stored,multiBatchSnapshot);
+console.log('Refresh coverage: incomplete first/last batches and mismatched errors keep previous snapshot and expiration; confirmed unavailable/no-image entries update safely');
 const beforeRetry=writes;
 await assert.rejects(refresh(env,{clock:()=>current,sleep:()=>assert.fail('must not retry long hint'),
  fetcher:async(url)=>url.includes('/token')?Response.json({access_token:'fixture'}):
