@@ -46,6 +46,7 @@ function routeFor(cta, retailerNodes = []) {
 const counts = { cards: 0, amazonExact: 0, mixedSearch: 0, mixedExact: 0, mixedMedia: 0,
   isolatedControls: 0, eligibleAsRendered: 0 };
 const unique = new Set();
+let eheimFrequencyCards = 0;
 for (const group of kit.groups) {
   const mounted = kit.renderStarterKitHtmlV2(group, { name: 'Fixture' });
   for (const tier of ['budget', 'standard', 'premium']) {
@@ -60,6 +61,12 @@ for (const group of kit.groups) {
       const amazon = links.find(n => n['data-provider'] === 'amazon');
       const id = amazon && guard.asinOf(amazon.href);
       if (!id) continue;
+      if (id === 'B002SGX79U') {
+        const warning = '50Hz用と60Hz用';
+        assert.ok(html.includes(warning), '2217 must warn about the two frequencies');
+        assert.ok(html.indexOf(warning) < html.indexOf(amazon.href), 'show frequency before buying');
+        eheimFrequencyCards++;
+      }
       counts.amazonExact++;
       unique.add(id);
       assert.equal(amazon['data-asin'], id);
@@ -87,5 +94,6 @@ for (const group of kit.groups) {
 assert.ok(counts.mixedExact > 0 && counts.mixedSearch > 0 && counts.mixedMedia > 0,
   'current starter-kit mixed retailer cases were not exercised');
 assert.equal(counts.isolatedControls, counts.amazonExact);
+assert.equal(eheimFrequencyCards, 2, 'cover both 2217 Starter Kit routes');
 console.log('Amazon photo starter-kit coverage (group/tier occurrences, not site totals):',
   JSON.stringify({ groups: kit.groups.length, tiers: 3, ...counts, uniqueAsins: unique.size }));

@@ -1386,7 +1386,7 @@ const PRODUCTS = {
     asin: 'B002SGX79U',
     rakutenSearchTerm: 'エーハイム クラシック 2217',
     image: '/assets/products/placeholder.webp',
-    why: 'メーカー適合目安90〜150cm水槽（約101〜345L）、流量1000L/h、ろ材容量約6L。大型水棲ガメの高負荷水槽で余裕を取りやすい。2217-NEWはろ材別売のため別途ろ材が必要',
+    why: 'メーカー適合目安90〜150cm水槽（約101〜345L）、流量1000L/h、ろ材容量約6L。大型水棲ガメの高負荷水槽で余裕を取りやすい。2217-NEWはろ材別売。50Hz用と60Hz用は別製品です。購入前に、使う場所の電源周波数と販売ページの周波数が合っているか確認してください。',
     rating: 4.9,
     badge: 'Premium',
     recommendedFor: ['fully_aquatic', 'advanced'],
