@@ -27,3 +27,13 @@
 公式: https://developers.cloudflare.com/pages/configuration/custom-domains/ / https://developers.cloudflare.com/pages/functions/advanced-mode/ / https://developers.cloudflare.com/pages/functions/bindings/
 
 Amazon部分応答の公式例: https://affiliate.amazon.co.jp/creatorsapi/docs/en-us/troubleshooting/processing-of-errors#does-creators-api-return-partial-response
+
+## スターターガイドの混在カード（写真を公開する前の確認）
+
+`node tools/test-amazon-image-starter-kit-coverage.mjs` で現行の各飼育グループと3段階を実データから描画し、この候補の判定に通す。結果はグループ×段階で繰り返すカードの数であり、公開ページ数や全サイトのASIN数ではない。「APIから写真が取得できた」は「カードで表示できた」に含めない。楽天の検索リンクも、別売先へのボタンとして扱う。
+
+- **同じカードに写真を置く案を優先**：製品の型番・容量・販売リンクと合致し、商用サイトでAmazon・楽天の両方を案内するカードに使えると権利を確認した独立素材のみ。写真は中立の製品写真とし、既存のAmazon・楽天の購入ボタン、クリック計測、確認チェックを残す。Amazonや楽天のAPI提供画像を中立画像に転用しない。掲載可能な素材の確認には、素材識別子・出典・許諾範囲と型番の証拠を記録する。
+- **Amazon画像しかない場合**：両店のカードに入れず、楽天への誘導がない独立したAmazon専用ページなどを候補とする。画像のクリックは同じASINのAmazon商品だけに行く。混在カードの隣に箱を足す、HTML上で見かけだけ区切る、または楽天検索だけを例外扱いする案は採用しない。独立ページだけでは混在カードへの写真掲載を達成したとしない。公開前に運用アカウント・掲載先・規約との適合を確認する。
+- **代表検証**：楽天検索と併設のGEX 45cmケージ（ASIN `B00E0GLJAK`）、楽天の個別商品と併設のUVB100 26W（`B00BF91Q1W`、写真未確認で負例）、楽天個別商品との併設カードのテトラ AT-50（`B0012UO6Q6`、許諾済みの同型写真を得られた場合の正例）を選ぶ。現行版の実カードで、狭い画面と通常幅で写真のラベル・向き、読み上げ・タブ順、両店リンクと計測、写真が出ない場合の既存導線を確認する。確認済み件数、混在枠の未確認件数、元の7件の例外は区別する。
+
+出典: [Amazonアソシエイト規約・知的財産ライセンス §2、§3](https://affiliate.amazon.co.jp/help/operating/policies#Associates%20Program%20IP%20License%20and%20Usage%20Requirements)。
