@@ -9,7 +9,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const historical='3f6bc64286dc4139dfe7a5ea3402fb160a769546';
 const baseline=()=>execFileSync('git',['show',historical+':shindan/index.html'],{encoding:'utf8',cwd:root});
-function harness({url='https://kamelifeguide.com/shindan/', old=false}={}){
+function harness({url='https://kamelifeguide.com/shindan/', old=false,withoutBoxFit=false}={}){
  const page=old?baseline():read('shindan/index.html');
  const scripts=[...page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
  const main=scripts.find(s=>s.includes('function tryRestoreFromUrl()'));
@@ -57,6 +57,9 @@ function harness({url='https://kamelifeguide.com/shindan/', old=false}={}){
  const w={scrollTo(){},addEventListener(k,f){(winEvents[k]??=[]).push(f);},
   removeEventListener(k,f){winEvents[k]=(winEvents[k]||[]).filter(x=>x!==f);},location:new URL(url)}; const h={replaceState(a,b,s){w.location=new URL(s);ctx.location=w.location;stack.push(s)}};
  ctx=vm.createContext({console:{warn:(...a)=>emitted.push(['warn',...a])},document:doc,window:w,location:w.location,history:h,URL,URLSearchParams,navigator:{share:p=>{shares.push(p);return Promise.resolve();}},ga4Event:(...x)=>emitted.push(x),requestAnimationFrame(){},setTimeout:(f,ms)=>{if(ms===250)timer.push(f);},clearTimeout(){}});
+ if(!withoutBoxFit && page.includes('<script src="../js/box-turtle-filter-fit.js?v=2"></script>')) {
+   vm.runInContext(read('js/box-turtle-filter-fit.js'),ctx);
+ }
  vm.runInContext(read('shindan/routes.js')+'\n'+loader+'\n'+replay,ctx);
  ctx.resetTimers=()=>{const f=timer.shift();assert.ok(f);f();};
  return {ctx,dom,attempts,emitted,stack,shares,winEvents,get shown(){return shown},get focus(){return lastFocus},btns:()=>allButtons};
@@ -266,3 +269,31 @@ assert.match(widthAmbiguous.shares[0].text,/の参考情報/);
 assert.doesNotMatch(widthAmbiguous.shares[0].text,/相性|私に合う/);
 console.log('PASS: all 5 independently found capped-width click paths, 5 usable-route controls, uncertain width without an eligibility claim, 3 same-species page scope corrections with links/scripts preserved.');
 console.log('PASS: source-exact old/new 60cm+10k, independent budget & capacity gates, normal result kit byte-equivalent, normal score schema, B/C, restoration & repeated sharing without source answers, invalid URLs and retry re-gate.');
+
+for(const [choices,expected] of [
+ [[1,0,1,1,0,2,2],'ミツユビハコガメ'],
+ [[1,1,1,1,1,3,1],'タイワンセマルハコガメ'],
+]){
+ async function boxQuiz(withoutBoxFit){
+   const h=harness({withoutBoxFit});
+   h.ctx.startQuizWithRoute('forest');
+   for(const i of [...choices,0,0]) { h.btns()[i].click(); h.ctx.resetTimers(); }
+   await settle();
+   assert.equal(h.shown,'screen-result');
+   assert.equal(h.dom.get('res-name').textContent,expected);
+   assert.ok(hasShownKit(h));
+   assert.equal(notice(h).hidden,true);
+   assert.equal(gate(h).verdict,'A');
+   return h;
+ }
+ const oldBox=await boxQuiz(true), fixedBox=await boxQuiz(false);
+ assert.equal(fixedBox.emitted.find(e=>e[0]==='shindan_result')[1].match_pct,oldBox.emitted.find(e=>e[0]==='shindan_result')[1].match_pct);
+ const html=h=>h.dom.get('starter-kit-section').innerHTML;
+ const oldCopy='小型水棲ガメの水質維持に。カメは水を汚しやすいため必須';
+ const fitCopy='浅い水入れだけなら、このフィルターは不要です。別に水槽を設ける場合は、メーカー適合の幅40〜51cmで、水面をモーターの最低水位線より上に保てることを確認してください。';
+ assert.ok(html(oldBox).includes(oldCopy));
+ assert.equal(html(fixedBox),html(oldBox).replace(oldCopy,fitCopy));
+ const card=html(fixedBox).split('data-sk-product="filter_small"')[1]?.split('</label>')[0];
+ assert.ok(card?.includes('data-asin="B0012UO6Q6"'));
+ assert.ok(card.indexOf('最低水位線より上') < card.indexOf('data-provider="amazon"'));
+}
