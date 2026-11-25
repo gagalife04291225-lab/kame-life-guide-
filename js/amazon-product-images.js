@@ -2,7 +2,10 @@
 (function () {
   'use strict';
   const meta = document.querySelector('meta[name="klg-amazon-image-service"]');
-  if (!meta || meta.content !== '/api/amazon-product-images') return;
+  const sameOriginPath = '/api/amazon-product-images';
+  const dedicatedEndpoint = 'https://amazon-images.kamelifeguide.com' + sameOriginPath;
+  if (!meta || ![sameOriginPath, dedicatedEndpoint].includes(meta.content)) return;
+  if (meta.content === dedicatedEndpoint && location.origin !== 'https://kamelifeguide.com') return;
   const selector = 'a[href*="amazon.co.jp/"]';
   const asinOf = (href) => {
     try {

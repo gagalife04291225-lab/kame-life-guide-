@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const historical='3f6bc64286dc4139dfe7a5ea3402fb160a769546';
@@ -235,14 +236,28 @@ for(const [slug,route,options,enclosure,wording] of reviewedMismatchCases) {
 }
 const guidePath='species/red-cheeked-mud-turtle.html';
 const currentGuide=read(guidePath);
-const guideBefore=execFileSync('git',['show','319f8a1470a2d73c9e57d658d08156e2d4bd0da1:'+guidePath],{encoding:'utf8',cwd:root});
+const guideBase='319f8a1470a2d73c9e57d658d08156e2d4bd0da1';
+const readGuideBase=p=>execFileSync('git',['show',guideBase+':'+p],{encoding:'utf8',cwd:root});
+const guideBefore=readGuideBase(guidePath);
 assert.doesNotMatch(currentGuide,/45〜60cmの水槽で(?:しっかりした水質管理|陸場)/);
 assert.match(currentGuide,/成体の目安となる90cm級の水槽を用意/);
 assert.match(currentGuide,/開始時60cm級、成体90cm級が当サイトの目安です。体の小さな子亀/);
 assert.match(currentGuide,/<td>開始時60cm級・成体90cm級<\/td><td>本種・熱帯系中型/);
 assert.match(currentGuide,/45cmなら11cm/); // Existing body-size-dependent exception must not become a universal juvenile minimum.
 const preserved=source=>[...source.matchAll(/<a\b[^>]*>|<script\b[^>]*>[\s\S]*?<\/script>/gi)].map(([token])=>token);
-assert.deepEqual(preserved(currentGuide),preserved(guideBefore),'species article links, JS and structured data stay byte-identical');
+// The price sync legitimately changes the products asset version. Verify both versions
+// against their actual file bytes, and exclude only that exact fingerprint from the
+// historical comparison; URLs, other parameters, scripts and attributes stay exact.
+function checkedGuideMarkup(source, productData) {
+ const version = createHash('sha256').update(productData.replace(/\r\n/g,'\n'),'utf8').digest('hex').slice(0,12);
+ const exact = '<script src="../data/products.js?v='+version+'"></script>';
+ const items = preserved(source);
+ assert.equal(items.filter(item=>item===exact).length,1,'species article products asset version matches the exact file');
+ return items.map(item=>item===exact?'<script src="../data/products.js?v=verified"></script>':item);
+}
+assert.deepEqual(checkedGuideMarkup(currentGuide,read('data/products.js')),
+ checkedGuideMarkup(guideBefore,readGuideBase('data/products.js')),
+ 'species article links, JS and structured data stay byte-identical except the verified product asset version');
 
 for (const [route,options] of [
  ['land',[2,0,0,0,0,2,2]],

@@ -1,4 +1,5 @@
 const ORIGIN = 'https://kamelifeguide.com';
+const IMAGE_ORIGIN = 'https://amazon-images.kamelifeguide.com';
 const PATH = '/api/amazon-product-images';
 const KEY = 'jp-primary-v2';
 const TAG = 'kamelife090e-22';
@@ -23,33 +24,39 @@ function allowed(env) {
   const ids=String(env.KLG_APPROVED_ASINS??'').trim().split(/[\s,]+/).filter(Boolean);
   return ids.length<=240&&ids.every(asin)?new Set(ids):new Set();
 }
-function reply(body,status=200) {
+function reply(body,status=200,fromSite=false) {
   return Response.json(body,{status,headers:{
     'Cache-Control':'private, no-store, max-age=0',
-    'X-Content-Type-Options':'nosniff','Cross-Origin-Resource-Policy':'same-origin'
+    'X-Content-Type-Options':'nosniff',
+    'Cross-Origin-Resource-Policy':fromSite?'same-site':'same-origin',
+    ...(fromSite ? {'Access-Control-Allow-Origin':ORIGIN,'Vary':'Origin'} : {})
   }});
 }
-export async function serve(req,env,now=Date.now()) {
+export async function serve(req,env,now=Date.now(),dedicated=false) {
   const u=new URL(req.url);
-  if(u.origin!==ORIGIN||u.pathname!==PATH)return reply({status:'not_found'},404);
-  if(req.method!=='GET')return reply({status:'method_not_allowed'},405);
+  if(u.origin!==(dedicated?IMAGE_ORIGIN:ORIGIN)||u.pathname!==PATH)
+    return reply({status:'not_found'},404);
   const mode=req.headers.get('Sec-Fetch-Site');
-  if(mode&&mode!=='same-origin')return reply({status:'cross_origin'},403);
+  if(dedicated && (req.headers.get('Origin')!==ORIGIN||(mode&&mode!=='same-site')))
+    return reply({status:'cross_origin'},403);
+  if(!dedicated&&mode&&mode!=='same-origin')return reply({status:'cross_origin'},403);
+  if(req.method!=='GET')return reply({status:'method_not_allowed'},405,dedicated);
+  const siteReply=(body,status=200)=>reply(body,status,dedicated);
   const ids=(u.searchParams.get('items')??'').split(',');
-  if(u.searchParams.getAll('items').length!==1||ids.length>20||ids.some(id=>!asin(id)))return reply({status:'invalid_request'},400);
+  if(u.searchParams.getAll('items').length!==1||ids.length>20||ids.some(id=>!asin(id)))return siteReply({status:'invalid_request'},400);
   const reviewed=allowed(env);
   const photos=Object.create(null);
-  if(!env.KLG_AMAZON_IMAGES||!ids.some(id=>reviewed.has(id)))return reply({photos});
+  if(!env.KLG_AMAZON_IMAGES||!ids.some(id=>reviewed.has(id)))return siteReply({photos});
   let stored;
   try{stored=await env.KLG_AMAZON_IMAGES.get(KEY,{type:'json'});}
-  catch{return reply({status:'unavailable'},503);}
-  if(!stored||!Number.isSafeInteger(stored.checkedAt)||stored.checkedAt>now||now-stored.checkedAt>=MAX_AGE)return reply({photos});
+  catch{return siteReply({status:'unavailable'},503);}
+  if(!stored||!Number.isSafeInteger(stored.checkedAt)||stored.checkedAt>now||now-stored.checkedAt>=MAX_AGE)return siteReply({photos});
   for(const id of new Set(ids)){
     const pair=stored.photos?.[id];
     if(reviewed.has(id)&&photo(pair?.url)&&exact(pair?.detailUrl,id))
       photos[id]={asin:id,url:pair.url,detailUrl:pair.detailUrl,expiresAt:stored.checkedAt+MAX_AGE};
   }
-  return reply({photos});
+  return siteReply({photos});
 }
 async function post(fetcher,url,body,headers={}) {
   let r;

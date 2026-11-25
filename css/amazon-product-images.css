@@ -12,4 +12,22 @@
 }
 .klg-amazon-product-frame[hidden] { display: none !important; }
 .klg-amazon-product-img { display: block; inline-size: 100%; block-size: 100%; object-fit: contain; }
-.klg-amazon-photo-link:is(.rlink,.prod-cta) { flex-wrap: wrap; }
+.klg-amazon-photo-link.rlink {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.klg-amazon-photo-link.rlink > .klg-amazon-product-frame {
+  grid-column: 1 / -1;
+  margin-block-end: 0;
+}
+/* Inline-flex buttons otherwise squeeze the photo beside a long product label. */
+.klg-amazon-photo-link:is(.amazon-btn,.prod-cta) {
+  display: inline-grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+.klg-amazon-photo-link.amazon-btn { padding-inline: clamp(12px, 4vw, 40px); }
+.klg-amazon-photo-link:is(.amazon-btn,.prod-cta) > .klg-amazon-product-frame {
+  margin-block-end: 0;
+}

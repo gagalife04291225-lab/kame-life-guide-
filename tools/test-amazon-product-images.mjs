@@ -48,6 +48,23 @@ assert.deepEqual(await r.json(),{photos:{[id]:{asin:id,url,detailUrl,expiresAt:c
 const n=reads;
 assert.deepEqual(await body(ask(other)),{photos:{}});
 assert.equal(reads,n);
+const dedicated=new Request(route.replace('kamelifeguide.com','amazon-images.kamelifeguide.com')+'?items='+id,{
+  headers:{Origin:'https://kamelifeguide.com','Sec-Fetch-Site':'same-site'}});
+const dedicatedReply=await serve(dedicated,env,current,true);
+assert.equal(dedicatedReply.headers.get('Access-Control-Allow-Origin'),'https://kamelifeguide.com');
+assert.equal(dedicatedReply.headers.get('Vary'),'Origin');
+assert.equal(dedicatedReply.headers.get('Cross-Origin-Resource-Policy'),'same-site');
+assert.equal((await dedicatedReply.json()).photos[id].detailUrl,detailUrl);
+assert.deepEqual((await (await serve(dedicated,env,current+64800000,true)).json()).photos,{});
+for(const origin of [null,'https://example.com','https://www.kamelifeguide.com','https://kamelifeguide.com.evil.test']){
+ const response=await serve(new Request(dedicated.url,{headers:{...(origin?{Origin:origin}:{}),'Sec-Fetch-Site':'same-site'}}),env,current,true);
+ assert.equal(response.status,403);
+ assert.equal(response.headers.get('Access-Control-Allow-Origin'),null);
+}
+assert.equal((await serve(new Request(dedicated.url,{headers:{Origin:'https://kamelifeguide.com','Sec-Fetch-Site':'cross-site'}}),env,current,true)).status,403);
+assert.equal((await serve(new Request(dedicated.url.replace('amazon-images.kamelifeguide.com','example.pages.dev'),{headers:dedicated.headers}),env,current,true)).status,404);
+assert.equal((await serve(dedicated,env,current)).status,404);
+
 assert.deepEqual(await body(serve(new Request(route+'?items='+id),env,current+64800000)),{photos:{}});
 await assert.rejects(doRefresh(429),/official_api_http_429/);
 await assert.rejects(doRefresh({itemsResult:{items:[item(other)]}}),/item_mismatch/);
@@ -112,6 +129,7 @@ for(const [w,h,want] of [[500,500,[200,200]],[318,500,[165,260]],[500,270,[260,1
 const css=readFileSync(new URL('../css/amazon-product-images.css',import.meta.url),'utf8');
 assert.match(css,/max-inline-size: 100%/);
 assert.match(css,/object-fit: contain/);
+assert.match(css,/\.klg-amazon-photo-link:is\(\.amazon-btn,\.prod-cta\)\s*\{\s*display:\s*inline-grid/);
 console.log('Mobile photo sizing: portrait/landscape, small source, missing dimensions and parent cap PASS');
 
 
