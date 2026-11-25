@@ -386,11 +386,8 @@
   <div id="starter-kit-root"></div>
   <script src="../data/products.js?v=973afb88ae0c"></script>
   <script src="../js/starter-kit.js?v=a2e45cc7db3c"></script>
+  <script src="../js/box-turtle-filter-fit.js?v=1"></script>
   <script>
-    // このページでは浅い水入れが基本。共通データや販売先は変更せず、表示文だけ合わせる。
-    if (typeof PRODUCTS !== 'undefined' && PRODUCTS.filter_small) {
-      PRODUCTS.filter_small = { ...PRODUCTS.filter_small, why: '浅い水入れだけなら、このフィルターは不要です。別に水槽を設ける場合は、メーカー適合の幅40〜51cmで、水面をモーターの最低水位線より上に保てることを確認してください。' };
-    }
     mountStarterKit({ equipmentKey: 'box_turtle', name: 'トウブハコガメ', difficulty: '中〜上級', lifespan: '25〜35年（動物園の案内）', lifespanLabel: '寿命の資料' });
   </script>
   <h2 id="sec-6">日本の住まい・季節に合わせた飼い方</h2>
