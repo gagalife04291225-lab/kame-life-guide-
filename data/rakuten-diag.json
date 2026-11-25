@@ -1,12 +1,12 @@
 {
  "basking_100w": {
-  "date": "2026-11-18",
+  "date": "2026-11-25",
   "query": "GEX EXOTERRA サングロータイトビーム バスキングスポットランプ 100W",
   "resultCount": 3,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,100W,model:PT2138",
   "best": {
-   "itemName": "【エントリー+購入でP5倍★11/19 20時〜11/24】GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用",
+   "itemName": "GEX サングロー タイトビーム バスキングスポットランプ 100W PT2138 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 2280,
    "shop": "プロツールショップヤブモト"
   }
@@ -228,13 +228,13 @@
   }
  },
  "filter_canister_medium": {
-  "date": "2026-11-01",
+  "date": "2026-11-25",
   "query": "EHEIM クラシック 2213 外部フィルター",
   "resultCount": 8,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=8.8 入数(2),消耗品(ろ材)",
   "best": {
-   "itemName": "エーハイム クラシックフィルター 2213 ろ材付 (1個／2個セット／フローパイプ＆水質調整剤付きセット) 45cm〜75cm水槽用 2213320 [EHE",
+   "itemName": "エーハイム クラシックフィルター 2213 2213320 ろ材付き 45〜75cm水槽用 外部フィルター 50/60Hz共通 1個／2個セット／フローパイプ＆",
    "price": 15150,
    "shop": "ミナトワークス"
   }
@@ -444,15 +444,15 @@
   }
  },
  "food_gex_gochisou_xlarge_500": {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "query": "GEX カメ元気 ごちそうごはん 特大粒 500g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
-  "reason": "score=4.2",
+  "reason": "score=4",
   "best": {
-   "itemName": "カメ元気 ごちそうごはん 特大粒 500g ジェックス カメゲンキゴチソウゴハン500G",
-   "price": 798,
-   "shop": "Joshin web 家電とPCの大型専門店"
+   "itemName": "ジェックス カメ元気 ごちそうごはん 特大粒500g | カメの餌 フード 爬虫類 ペットのいる暮らし 多頭飼い 留守番 冬",
+   "price": 749,
+   "shop": "ベイシア楽天市場店"
   }
  },
  "food_gex_tortoise_balance_400": {
@@ -468,14 +468,14 @@
   }
  },
  "food_gex_tortoise_blend_400": {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "query": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g",
   "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.6",
   "best": {
    "itemName": "GEX EXOTERRA RepDeli リクガメブレンドフード 400g リクガメ本来の食性である草本類が主原料 草食性爬虫類の主食 ポリフェ",
-   "price": 2195,
+   "price": 2173,
    "shop": "ラサンタ"
   }
  },
@@ -964,14 +964,14 @@
   "best": null
  },
  "shelter_gex_island_loft": {
-  "date": "2026-11-03",
+  "date": "2026-11-25",
   "query": "GEX カメ元気 カメの島 ロフトタイプ",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
    "itemName": "ジェックス カメ元気 カメの島ロフトタイプ カメ用浮島 拡張性 陸地シェルター 吸盤固定式 はしご付き 日光浴 組立式",
-   "price": 2016,
+   "price": 1999,
    "shop": "Homey Shop 楽天市場店"
   }
  },
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-22",
+  "date": "2026-11-25",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
-   "price": 710,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
+   "price": 939,
+   "shop": "ウルマックス 楽天市場店"
   }
  },
  "thermometer_aqua": {
@@ -1280,15 +1280,15 @@
   }
  },
  "thermometer_dual_probe": {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "query": "シンワ測定 デジタル温度計 73117",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:シンワ測定,model:73117,series:シンワ測定",
   "best": {
-   "itemName": "シンワ測定 デジタル温度計 SMART B 73117",
-   "price": 2300,
-   "shop": "Arclands Online 楽天市場支店"
+   "itemName": "シンワ測定　#73117　デジタル温度計 Smart B　室内・室外 防水外部センサー　【代引き不可】【沖縄・離島配送不可】",
+   "price": 2101,
+   "shop": "Smart normal"
   }
  },
  "thermometer_infrared": {
@@ -1368,26 +1368,26 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-11-18",
+  "date": "2026-11-25",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
   "resultCount": 5,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
-   "itemName": "【エントリー+購入でP5倍★11/19 20時〜11/24】GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス E",
+   "itemName": "GEX レプタイルUVB100 26W PT2187 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3400,
    "shop": "プロツールショップヤブモト"
   }
  },
  "uvb_led_bar": {
-  "date": "2026-11-20",
+  "date": "2026-11-25",
   "query": "UVB LED ライト バー 爬虫類",
   "resultCount": 5,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=5.6",
   "best": {
    "itemName": "爬虫類 紫外線ライト LED UVA UVB フック式 2025US高い人気 モデル メッシュカバー付き爬虫類飼育ケージに使用 ライト選択 光量調整 タイマー ",
-   "price": 6580,
+   "price": 6380,
    "shop": "カシキド楽天市場店"
   }
  },
@@ -1412,13 +1412,13 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-11-20",
+  "date": "2026-11-25",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
   "resultCount": 9,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
-   "itemName": "【BLACK FRIDAY期間中★エントリーP5倍】GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO T",
+   "itemName": "GEX レプタイルUVB150 26W PT2189 爬虫類 両生類用品 爬虫類用品 ジェックス EXO TERRA",
    "price": 3520,
    "shop": "ハッピードライブヤブモト"
   }
@@ -1480,15 +1480,15 @@
   "best": null
  },
  "waterdish_zoomed_ramp_bowl": {
-  "date": "2026-11-04",
+  "date": "2026-11-25",
   "query": "ズーメッド レプティランプボウル LG",
-  "resultCount": 5,
+  "resultCount": 3,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
-  "reason": "score=4",
+  "reason": "score=3.6",
   "best": {
-   "itemName": "レプティランプボウル LG RRB-11 ZOOMED(ズーメッド) 爬虫類 両生類 水飲み 水入れ カラー ランダム レオパ カエル トカゲ ヘビ カメ",
-   "price": 3600,
-   "shop": "ペットと園芸のホムセントックリ"
+   "itemName": "大感謝価格『ZOOMED ズーメッド レプティランプボウル LG RRB-11』『直送品。代引不可・同梱不可・返品キャンセル・割引不可』ペット 飼育 えさ 水入",
+   "price": 5489,
+   "shop": "ロミオニ防災グッズ保存水や食の店"
   }
  }
 }
