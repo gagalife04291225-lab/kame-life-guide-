@@ -8,10 +8,22 @@ const current=Date.parse('2026-11-24T18:00:00Z');
 const url='https://m.media-amazon.com/images/I/test-fixture.jpg';
 const detailUrl='https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22&linkCode=ogi&language=ja_JP&th=1&psc=1';
 const setup={KLG_APPROVED_ASINS:id,KLG_CREATORS_CLIENT_ID:'test',KLG_CREATORS_CLIENT_SECRET:'test'};
-let stored=null, writes=0, reads=0;
-const env={...setup,KLG_AMAZON_IMAGES:{async get(){reads++;return stored;},
- async put(key,data,opt){assert.equal(key,'jp-primary-v2');assert.equal(opt.expirationTtl,64800);
-   stored=JSON.parse(data);writes++;}}};
+const key=asin=>'jp-primary-v3:'+asin;
+const stored=new Map();
+let writes=0,reads=0;
+const env={...setup,KLG_AMAZON_IMAGES:{
+ async get(keys,opt){
+   assert.ok(Array.isArray(keys)); assert.equal(opt.type,'json'); reads++;
+   return new Map(keys.map(k=>[k,stored.get(k)??null]));
+ },
+ async put(k,data,opt){
+   const row=JSON.parse(data);
+   assert.match(k,/^jp-primary-v3:[A-Z0-9]{10}$/);
+   assert.equal(opt.expiration,Math.floor((row.checkedAt+64800000)/1000));
+   stored.set(k,row); writes++;
+ },
+ async delete(k){stored.delete(k); writes++;}
+}};
 const ask=(items=id,opt={})=>serve(new Request(route+'?items='+items,opt),env,current);
 const body=async resp=>(await resp).json();
 assert.deepEqual(await body(ask()),{photos:{}});
@@ -82,12 +94,12 @@ const medium=url.replace('test-fixture','medium-fixture');
 const withMedium=item(id,id,invalidPhoto);
 withMedium.images.primary.medium={url:medium};
 assert.deepEqual(await doRefresh({itemsResult:{items:[withMedium]}}),{requested:1,available:1});
-assert.equal(stored.photos[id].url,medium);
+assert.equal(stored.get(key(id)).url,medium);
 const pairEnv={...env,KLG_APPROVED_ASINS:id+','+other};
 const pairRefresh=(data,at=current)=>refresh(pairEnv,{fetcher:fake(data),clock:()=>at,sleep:async()=>{}});
 const storePair=()=>pairRefresh({itemsResult:{items:[item(),item(other,other)]}});
 assert.deepEqual(await storePair(),{requested:2,available:2});
-const fresh=stored, freshWrites=writes;
+const fresh=new Map(stored), freshWrites=writes;
 const unrelated='B012345678';
 for(const [data,error] of [
  [{itemsResult:{items:[item()]}},/incomplete_batch/],
@@ -102,7 +114,7 @@ for(const [data,error] of [
 ]) {
  await assert.rejects(pairRefresh(data,current+60000),error);
  assert.equal(writes,freshWrites);
- assert.strictEqual(stored,fresh);
+ assert.deepEqual(stored,fresh);
  const req=new Request(route+'?items='+id+','+other);
  const both=await body(serve(req,pairEnv,current+60000));
  assert.deepEqual(Object.keys(both.photos),[id,other]);
@@ -117,7 +129,7 @@ for(const data of [
  await storePair();
  const before=writes;
  assert.deepEqual(await pairRefresh(data,current+60000),{requested:2,available:1});
- assert.equal(writes,before+1);
+ assert.equal(writes,before+2);
  const req=new Request(route+'?items='+id+','+other);
  const one=await body(serve(req,pairEnv,current+60000));
  assert.deepEqual(Object.keys(one.photos),[id]);
@@ -138,30 +150,51 @@ const counts=await refresh(batched,{clock:()=>current,sleep:async ms=>{waits.pus
 assert.deepEqual(waits,[5000,2200]);
 assert.deepEqual(calls,[10,10,2]);
 assert.deepEqual(counts,{requested:12,available:12});
-const multiBatchSnapshot=stored, multiBatchWrites=writes;
-let batchCalls=0;
-await assert.rejects(refresh(batched,{clock:()=>current+60000,sleep:async()=>{},
- fetcher:async(url,init)=>{
-   if(url.includes('/token')) return Response.json({access_token:'fixture'});
-   const {itemIds}=JSON.parse(init.body);
-   // The first batch completes; the last drops one member without explanation.
-   return Response.json({itemsResult:{items:(++batchCalls===1?itemIds:itemIds.slice(0,1)).map(x=>item(x,x))}});
- }}),/incomplete_batch/);
-assert.equal(batchCalls,2);
-assert.equal(writes,multiBatchWrites);
-assert.strictEqual(stored,multiBatchSnapshot);
+const multiBatchSnapshot=new Map(stored), multiBatchWrites=writes;
+const next=current+60000;
+const freshUrl=url.replace('test-fixture','updated-fixture');
+const anyAsk=(when,ids=twelve,e=batched)=>body(serve(new Request(route+'?items='+ids.join(',')),e,when));
+for(const [failOn,mode] of [[2,'404'],[2,'incomplete'],[1,'404']]){
+  stored.clear();
+  for(const [k,v] of multiBatchSnapshot)stored.set(k,v);
+  let batchCalls=0;
+  const before=writes;
+  await assert.rejects(refresh(batched,{clock:()=>next,sleep:async()=>{},
+    fetcher:async(url,init)=>{
+      if(url.includes('/token')) return Response.json({access_token:'fixture'});
+      const {itemIds}=JSON.parse(init.body);
+      if(++batchCalls===failOn){
+        if(mode==='404')return Response.json({__type:'com.amazon.creators#ResourceNotFoundException'},{status:404});
+        return Response.json({itemsResult:{items:itemIds.slice(0,1).map(x=>item(x,x,freshUrl))}});
+      }
+      return Response.json({itemsResult:{items:itemIds.map(x=>item(x,x,freshUrl))}});
+    }
+  }),mode==='404'?/official_api_http_404; failed_batches=1; refreshed=/ : /incomplete_batch/);
+  assert.equal(batchCalls,2,'earlier 404 must not stop later good batches');
+  const good=failOn===2?twelve.slice(0,10):twelve.slice(10);
+  assert.equal(writes,before+good.length);
+  const during=(await anyAsk(next)).photos;
+  for(const sku of twelve){
+    assert.equal(during[sku].expiresAt,(good.includes(sku)?next:current)+64800000);
+    assert.equal(during[sku].url,good.includes(sku)?freshUrl:url);
+  }
+  const reordered={...batched,KLG_APPROVED_ASINS:[...twelve].reverse().join(',')};
+  assert.deepEqual(Object.keys((await anyAsk(current+64800000,twelve,reordered)).photos),good);
+  assert.deepEqual((await anyAsk(next+64800000)).photos,{});
+}
+const before404=writes;
 await assert.rejects(doRefresh(404),/official_api_http_404/);
-assert.equal(writes,multiBatchWrites);
-assert.strictEqual(stored,multiBatchSnapshot);
-console.log('Refresh coverage: incomplete first/last batches and mismatched errors keep previous snapshot and expiration; confirmed unavailable/no-image entries update safely');
+assert.equal(writes,before404);
+assert.ok(writes>multiBatchWrites);
+console.log('Refresh coverage: good batches update independently; failed or incomplete batches retain original expiry; confirmed unavailable/no-image entries are removed');
 const beforeRetry=writes;
 await assert.rejects(refresh(env,{clock:()=>current,sleep:()=>assert.fail('must not retry long hint'),
  fetcher:async(url)=>url.includes('/token')?Response.json({access_token:'fixture'}):
    new Response(null,{status:429,headers:{'Retry-After':'30'}})}),/official_api_http_429/);
 assert.equal(writes,beforeRetry);
-const old=stored;stored={checkedAt:current,photos:{[id]:{url,detailUrl:detailUrl.replace(id,other)}}};
+stored.set(key(id),{checkedAt:current,url,detailUrl:detailUrl.replace(id,other)});
 assert.deepEqual(await body(ask()),{photos:{}});
-stored=old;
+stored.delete(key(id));
 // Guide mismatch fix: do not advertise an external/top filter and send to an AT-50.
 const guide=readFileSync(new URL('../guide-beginner.html',import.meta.url),'utf8');
 const filter=guide.slice(guide.indexOf('<div class="gear-name">飼育水量に合うフィルター'),guide.indexOf('<div class="gear-name">亀用配合飼料'));

@@ -1,7 +1,7 @@
 const ORIGIN = 'https://kamelifeguide.com';
 const IMAGE_ORIGIN = 'https://amazon-images.kamelifeguide.com';
 const PATH = '/api/amazon-product-images';
-const KEY = 'jp-primary-v2';
+const key = id => 'jp-primary-v3:' + id;
 const TAG = 'kamelife090e-22';
 const MAX_AGE = 18 * 60 * 60 * 1000;
 const asin = x => typeof x === 'string' && /^[A-Z0-9]{10}$/.test(x);
@@ -45,16 +45,18 @@ export async function serve(req,env,now=Date.now(),dedicated=false) {
   const ids=(u.searchParams.get('items')??'').split(',');
   if(u.searchParams.getAll('items').length!==1||ids.length>20||ids.some(id=>!asin(id)))return siteReply({status:'invalid_request'},400);
   const reviewed=allowed(env);
+  const selected=[...new Set(ids)].filter(id=>reviewed.has(id));
   const photos=Object.create(null);
-  if(!env.KLG_AMAZON_IMAGES||!ids.some(id=>reviewed.has(id)))return siteReply({photos});
+  if(!env.KLG_AMAZON_IMAGES||!selected.length)return siteReply({photos});
   let stored;
-  try{stored=await env.KLG_AMAZON_IMAGES.get(KEY,{type:'json'});}
+  try{stored=await env.KLG_AMAZON_IMAGES.get(selected.map(key),{type:'json'});}
   catch{return siteReply({status:'unavailable'},503);}
-  if(!stored||!Number.isSafeInteger(stored.checkedAt)||stored.checkedAt>now||now-stored.checkedAt>=MAX_AGE)return siteReply({photos});
-  for(const id of new Set(ids)){
-    const pair=stored.photos?.[id];
-    if(reviewed.has(id)&&photo(pair?.url)&&exact(pair?.detailUrl,id))
-      photos[id]={asin:id,url:pair.url,detailUrl:pair.detailUrl,expiresAt:stored.checkedAt+MAX_AGE};
+  for(const id of selected){
+    const pair=stored.get(key(id));
+    const checkedAt=pair?.checkedAt;
+    if(Number.isSafeInteger(checkedAt)&&checkedAt<=now&&now-checkedAt<MAX_AGE&&
+       photo(pair.url)&&exact(pair.detailUrl,id))
+      photos[id]={asin:id,url:pair.url,detailUrl:pair.detailUrl,expiresAt:checkedAt+MAX_AGE};
   }
   return siteReply({photos});
 }
@@ -89,8 +91,33 @@ function failedItem(error) {
     return /^The ItemIds ([A-Z0-9]{10}) provided in the request is invalid\.$/.exec(message)?.[1]??null;
   return null;
 }
+function validateBatch(data,keys) {
+  const photos=Object.create(null);
+  const knownFailures=new Set(['ItemNotAccessible','InvalidParameterValue']);
+  const rows=data?.itemsResult?.items??[];
+  const failures=data?.errors??[];
+  if(!Array.isArray(rows)||!Array.isArray(failures)||(!rows.length&&!failures.length)||
+     failures.some(x=>!knownFailures.has(x?.code)))throw Error('official_api_unexpected_catalog_result');
+  const seen=new Set();
+  for(const row of rows){
+    if(!keys.includes(row?.asin)||seen.has(row.asin))throw Error('official_api_item_mismatch');
+    seen.add(row.asin);
+    const detailUrl=row.detailPageURL??row.detailPageUrl;
+    if(!exact(detailUrl,row.asin))throw Error('official_api_invalid_detail_url');
+    const candidates=['large','medium'].map(size=>row.images?.primary?.[size]?.url);
+    const candidate=candidates.find(photo);
+    if(candidate)photos[row.asin]={url:candidate,detailUrl};
+    else if(candidates.some(value=>value!=null))throw Error('official_api_invalid_photo_url');
+  }
+  for(const failure of failures){
+    const id=failedItem(failure);
+    if(!id||!keys.includes(id)||seen.has(id))throw Error('official_api_item_error_mismatch');
+    seen.add(id);
+  }
+  if(seen.size!==keys.length)throw Error('official_api_incomplete_batch');
+  return photos;
+}
 export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) {
-  const checkedAt=clock();
   const ids=[...allowed(env)];
   if(!ids.length||!env.KLG_AMAZON_IMAGES||!env.KLG_CREATORS_CLIENT_ID||!env.KLG_CREATORS_CLIENT_SECRET)
     throw Error('image_refresh_unconfigured');
@@ -100,59 +127,60 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) 
   });
   if(typeof token?.access_token!=='string'||!token.access_token||/[\r\n]/.test(token.access_token))
     throw Error('official_api_invalid_token');
-  const photos=Object.create(null);
-  const knownFailures=new Set(['ItemNotAccessible','InvalidParameterValue']);
-  // Match the previously successful 2.2 s pacing, not the theoretical account limit.
-  // Three retries total per execution; long Retry-After fails closed until the
-  // next scheduled run. KV is not written on an incomplete refresh.
-  let retries=0;
+  // Bound retries across the execution. A rate or auth failure stops further
+  // requests; an isolated catalog failure does not erase or stall good batches.
+  let retries=0,available=0,failedBatches=0;
+  let firstError;
   for(let i=0;i<ids.length;i+=10){
     const keys=ids.slice(i,i+10);
     if(i>0) await sleep(2200);
-    let data;
-    for(let attempt=0;;attempt++){
-      try{
-        data=await post(fetcher,'https://creatorsapi.amazon/catalog/v1/getItems',{
-          itemIds:keys,itemIdType:'ASIN',marketplace:'www.amazon.co.jp',partnerTag:TAG,
-          resources:['images.primary.large','images.primary.medium']
-        },{Authorization:'Bearer '+token.access_token,'x-marketplace':'www.amazon.co.jp'});
-        break;
-      }catch(err){
-        if(err.status!==429||attempt>=2||retries>=3)throw err;
-        const delay=retryDelay(err.retryAfter,clock(),2200*2**attempt);
-        if(delay>12000)throw err;
-        retries++;
-        await sleep(delay);
+    // Starting the expiry clock before acquisition is conservative.
+    const checkedAt=clock();
+    try{
+      let data;
+      for(let attempt=0;;attempt++){
+        try{
+          data=await post(fetcher,'https://creatorsapi.amazon/catalog/v1/getItems',{
+            itemIds:keys,itemIdType:'ASIN',marketplace:'www.amazon.co.jp',partnerTag:TAG,
+            resources:['images.primary.large','images.primary.medium']
+          },{Authorization:'Bearer '+token.access_token,'x-marketplace':'www.amazon.co.jp'});
+          break;
+        }catch(err){
+          if(err.status!==429||attempt>=2||retries>=3)throw err;
+          const delay=retryDelay(err.retryAfter,clock(),2200*2**attempt);
+          if(delay>12000)throw err;
+          retries++;
+          await sleep(delay);
+        }
       }
+      const photos=validateBatch(data,keys);
+      const expiration=Math.floor((checkedAt+MAX_AGE)/1000);
+      if(!Number.isSafeInteger(checkedAt)||expiration-Math.floor(clock()/1000)<60||clock()<checkedAt)
+        throw Error('image_refresh_clock');
+      // Validate the entire batch before touching any of its keys. Keys belonging
+      // to failed requests keep their original storage and serving deadlines,
+      // even if the allowlist is reordered or a different batch succeeds.
+      for(let j=0;j<keys.length;j+=5){
+        const results=await Promise.allSettled(keys.slice(j,j+5).map(async id=>{
+          const pair=photos[id];
+          if(pair){
+            await env.KLG_AMAZON_IMAGES.put(key(id),JSON.stringify({checkedAt,...pair}),{expiration});
+            available++;
+          }else await env.KLG_AMAZON_IMAGES.delete(key(id));
+        }));
+        if(results.some(result=>result.status==='rejected'))throw Error('image_refresh_storage');
+      }
+    }catch(err){
+      failedBatches++;
+      firstError??=err;
+      if([401,403,429].includes(err.status))break;
     }
-    const rows=data?.itemsResult?.items??[];
-    const failures=data?.errors??[];
-    if(!Array.isArray(rows)||!Array.isArray(failures)||(!rows.length&&!failures.length)||
-       failures.some(x=>!knownFailures.has(x?.code)))throw Error('official_api_unexpected_catalog_result');
-    const seen=new Set();
-    for(const row of rows){
-      if(!keys.includes(row?.asin)||seen.has(row.asin))throw Error('official_api_item_mismatch');
-      seen.add(row.asin);
-      const detailUrl=row.detailPageURL??row.detailPageUrl;
-      if(!exact(detailUrl,row.asin))throw Error('official_api_invalid_detail_url');
-      const candidates=['large','medium'].map(size=>row.images?.primary?.[size]?.url);
-      const candidate=candidates.find(photo);
-      if(candidate)photos[row.asin]={url:candidate,detailUrl};
-      else if(candidates.some(value=>value!=null))throw Error('official_api_invalid_photo_url');
-    }
-    for(const failure of failures){
-      const id=failedItem(failure);
-      if(!id||!keys.includes(id)||seen.has(id))throw Error('official_api_item_error_mismatch');
-      seen.add(id);
-    }
-    if(seen.size!==keys.length)throw Error('official_api_incomplete_batch');
   }
-  const expirationTtl=Math.floor((checkedAt+MAX_AGE-clock())/1000);
-  if(expirationTtl<60||expirationTtl>MAX_AGE/1000)throw Error('image_refresh_clock');
-  // Replace only after all batches are accounted for. On failure the old key and
-  // its original expiry stay intact; never extend the life of previous URLs.
-  await env.KLG_AMAZON_IMAGES.put(KEY,JSON.stringify({checkedAt,photos}),{expirationTtl});
-  return {requested:ids.length,available:Object.keys(photos).length};
+  if(firstError){
+    // Surface an unhealthy run without exposing ASINs, links or upstream bodies.
+    throw Error(firstError.message+'; failed_batches='+failedBatches+'; refreshed='+available);
+  }
+  return {requested:ids.length,available};
 }
 export default{
   fetch(req,env){return serve(req,env);},
