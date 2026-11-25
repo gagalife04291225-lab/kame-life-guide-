@@ -54,3 +54,9 @@ Amazon部分応答の公式例: https://affiliate.amazon.co.jp/creatorsapi/docs/
 残り3件は保留。ソラリウム50Wは交換球（JAN 4934743004987）だけが見つかり、全セット（JAN 4934743004956）と異なる。120×60×60cmのTakimiケージは同じブランド名でも寸法・扉が異なる候補しか確認できなかった。INKBIRDは通常版が公式APIで B0B429N9L2 と確認され、旧楽天掲載先の末尾が同じため、PLUSのカードでは旧画像と直リンクを外し、PLUS指定の検索に戻した。楽天自動更新で未照合の直リンクに戻らないよう同一性保留を設定。PLUSの購入先と写真は未確定。
 
 一次照合: https://product.gex-fp.co.jp/exoterra/index.php?cid=395&id=935&m=ProductListDetail ・ https://product.gex-fp.co.jp/exoterra/index.php?cid=402&id=957&m=ProductListDetail ・ https://zoomed.com/repti-ramp-bowl/ ・ https://spectrumbrands.jp/products-aqua/food/76828/ ・ https://www.zensui.co.jp/products/reptiles/solarium.html
+
+## 6-hour refresh candidate / first item only
+
+The wrangler.refresh.example.toml file is an inactive refresh-only configuration: a six-hour schedule, no public worker URL or preview URL, and a single approved ASIN. Bind the read-only route to the same KV namespace and verify the serving origin separately. Validate using Wrangler deploy with --config workers/amazon-product-images/wrangler.refresh.example.toml and --dry-run; do not deploy the example as-is. Do not retain credentials, image files, or returned URLs in Git or workflow artifacts.
+
+2026-11-26 JST: the Japanese Creators API returned INKBIRD IBS-TH3 PLUS WIFI (large-display model) for B0BZVLB6R4, with a primary photo and OUT_OF_STOCK at lookup. B0CZ42FLXM was invalid. The draft uses the replacement product link, not the ordinary IBS-TH3; do not present it as in stock or reuse the retail photo. The original Zensui and Takimi ASINs still returned invalid responses; there is no safe photo substitution yet.

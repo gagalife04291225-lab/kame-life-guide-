@@ -101,7 +101,8 @@ export function resolveRakutenBaseline(root,env=process.env){
 
 const PHOTO_LINK_FIXES = [
  ['uvb_compact','B00BF91Q1W','B088X2HCGG'],
- ['waterdish_zoomed_ramp_bowl','B00167XQLG','B00BUFVR56']
+ ['waterdish_zoomed_ramp_bowl','B00167XQLG','B00BUFVR56'],
+ ['thermometer_wifi','B0CZ42FLXM','B0BZVLB6R4']
 ];
 const amazonLink = id => 'https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22';
 const PLUS_SEARCH = 'INKBIRD WiFi 温湿度計 IBS-TH3 PLUS';

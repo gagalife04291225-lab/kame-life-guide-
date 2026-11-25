@@ -7,7 +7,8 @@ const tag='kamelife090e-22';
 for(const [id,asin] of [
  ['uvb_compact','B088X2HCGG'],
  ['waterdish_zoomed_ramp_bowl','B00BUFVR56'],
- ['food_reptomin_super_large_260','B0F31XT1KJ']
+ ['food_reptomin_super_large_260','B0F31XT1KJ'],
+ ['thermometer_wifi','B0BZVLB6R4']
 ]){
  assert.equal(c[id].asin,asin);
  const url=new URL(c[id].affiliateUrl);
@@ -27,7 +28,7 @@ const food=card('food-best10.html','B0F31XT1KJ');
 assert.match(food,/レプトミンスーパー 大粒 260g/);
 assert.doesNotMatch(food,/280g/);
 const plus=c.thermometer_wifi;
-assert.equal(plus.asin,'B0CZ42FLXM');
+assert.match(plus.name,/IBS-TH3 PLUS$/);
 assert.match(plus.rakutenSearchTerm,/IBS-TH3 PLUS$/);
 assert.equal(plus.rakutenStatus,'search');
 assert.equal(plus.rakutenIdentityHold,true);
