@@ -37,3 +37,20 @@ Amazon部分応答の公式例: https://affiliate.amazon.co.jp/creatorsapi/docs/
 - **代表検証**：楽天検索と併設のGEX 45cmケージ（ASIN `B00E0GLJAK`）、楽天の個別商品と併設のUVB100 26W（`B00BF91Q1W`、写真未確認で負例）、楽天個別商品との併設カードのテトラ AT-50（`B0012UO6Q6`、許諾済みの同型写真を得られた場合の正例）を選ぶ。現行版の実カードで、狭い画面と通常幅で写真のラベル・向き、読み上げ・タブ順、両店リンクと計測、写真が出ない場合の既存導線を確認する。確認済み件数、混在枠の未確認件数、元の7件の例外は区別する。
 
 出典: [Amazonアソシエイト規約・知的財産ライセンス §2、§3](https://affiliate.amazon.co.jp/help/operating/policies#Associates%20Program%20IP%20License%20and%20Usage%20Requirements)。
+
+## 2026-11-25 JP Creators API: 取得不可7件の同一商品照合
+
+下記はAPI照会時点の確認。購入先・写真候補の同一性であり、写真の公開や読者の配送日を確認したものではない。返却された期限付きURL・画像ファイルは保存しない。
+
+| 商品 | 旧ASIN → 一致先 | 確認点 |
+|---|---|---|
+| GEX 標準6030 | B00CB8KY78 → B00BF91SQK | PT2604 / JAN 4972547026583、公式写真あり。PROとは別。 |
+| Zoo Med 水入れ LG | B00167XQLG → B00BUFVR56 | RRB-11 / UPC 097612924114、公式写真あり。XLとは別、実際の色の指定可否は販売先で確認。 |
+| GEX レプタイルUVB100 26W | B00BF91Q1W → B088X2HCGG | PT2187 / JAN 4972547026514、公式写真あり。取得時は在庫切れ。 |
+| カメプロス 沈下性 小ペレット120g | B0CSD6VR97 → B00BR05SFO | JAN 4971618205445、1袋の公式写真あり。大スティック・複数セットには置換しない。 |
+
+別件：レプトミンスーパー大粒の比較枠は、型番70276の280g（B093CY2D93、取得時在庫切れ）から、メーカー掲載中の260g（B0F31XT1KJ / JAN 4004218320413）へ、商品名・容量・購入先を一緒に変更。どちらも公式写真あり、別容量の写真を流用しない。
+
+残り3件は保留。ソラリウム50Wは交換球（JAN 4934743004987）だけが見つかり、全セット（JAN 4934743004956）と異なる。120×60×60cmのTakimiケージは同じブランド名でも寸法・扉が異なる候補しか確認できなかった。INKBIRDは通常版が公式APIで B0B429N9L2 と確認され、旧楽天掲載先の末尾が同じため、PLUSのカードでは旧画像と直リンクを外し、PLUS指定の検索に戻した。楽天自動更新で未照合の直リンクに戻らないよう同一性保留を設定。PLUSの購入先と写真は未確定。
+
+一次照合: https://product.gex-fp.co.jp/exoterra/index.php?cid=395&id=935&m=ProductListDetail ・ https://product.gex-fp.co.jp/exoterra/index.php?cid=402&id=957&m=ProductListDetail ・ https://zoomed.com/repti-ramp-bowl/ ・ https://spectrumbrands.jp/products-aqua/food/76828/ ・ https://www.zensui.co.jp/products/reptiles/solarium.html

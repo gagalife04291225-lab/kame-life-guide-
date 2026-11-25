@@ -1,4 +1,4 @@
-import { applyCommittedRakutenSync, RAKUTEN_FEED_KEYS } from './commerce-identity-baseline.mjs';
+import { applyCommittedRakutenSync, RAKUTEN_FEED_KEYS, withoutVerifiedPhotoLinkDifferences } from './commerce-identity-baseline.mjs';
 // Offline only: no browser, network, GA4 account or real events.
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -87,7 +87,7 @@ const withoutFeed = source => source.replace(
  new RegExp('^    (?:' + RAKUTEN_FEED_KEYS.join('|') + '): [^\\r\\n]+,\\r?\\n', 'gm'), '');
 const productObjects = source => JSON.parse(JSON.stringify(vm.runInNewContext(source+'\nPRODUCTS;')));
 const historicalProducts = old('data/products.js'), currentProducts = read('data/products.js');
-assert.equal(withoutFeed(currentProducts), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
+assert.equal(withoutFeed(withoutVerifiedPhotoLinkDifferences(currentProducts,historicalProducts)), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
 applyCommittedRakutenSync(productObjects(historicalProducts), productObjects(currentProducts), root);
 console.log(JSON.stringify(examples,null,2));
 console.log('PASS:37 exact hrefs preserved;22 tagged affiliate_click +15 separate retailer_outbound_click;single listener;dynamic/unrelated ignored;3 KID real unlock flows, legacy+canonical payload,placeholders/disabled/unsafe/unknown gated;no real events.');

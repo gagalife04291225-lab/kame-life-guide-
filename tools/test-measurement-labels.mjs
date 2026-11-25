@@ -1,4 +1,4 @@
-import {applyReviewedAmazonHolds,applyCommittedRakutenSync} from './commerce-identity-baseline.mjs';
+import {applyReviewedAmazonHolds,applyCommittedRakutenSync,applyVerifiedPhotoLinkFixes} from './commerce-identity-baseline.mjs';
 import './test-shared-products-round3.mjs';
 import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
@@ -6,6 +6,7 @@ const cwd=fileURLToPath(new URL('../',import.meta.url));const read=p=>fs.readFil
 function ctx(rd){let h=rd('shindan/index.html'),a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a),c=vm.createContext({window:{},document:{},console});vm.runInContext(rd('data/products.js')+'\n'+rd('js/starter-kit.js')+'\n'+rd('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=ctx(base),now=ctx(read),plain=x=>JSON.parse(JSON.stringify(x));
 applyReviewedAmazonHolds(old.products,now.products);
+applyVerifiedPhotoLinkFixes(old.products,now.products);
 applyCommittedRakutenSync(old.products,now.products,cwd);
 
 const strip=p=>{let x=plain(p);delete x.why;return x;};

@@ -1,4 +1,4 @@
-import { applyCommittedRakutenSync, RAKUTEN_FEED_KEYS } from './commerce-identity-baseline.mjs';
+import { applyCommittedRakutenSync, RAKUTEN_FEED_KEYS, withoutVerifiedPhotoLinkDifferences } from './commerce-identity-baseline.mjs';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -31,7 +31,7 @@ const withoutFeed = source => source.replace(
  new RegExp('^    (?:' + RAKUTEN_FEED_KEYS.join('|') + '): [^\\r\\n]+,\\r?\\n', 'gm'), '');
 const productObjects = source => JSON.parse(JSON.stringify(vm.runInNewContext(source+'\nPRODUCTS;')));
 const historicalProducts = old('data/products.js'), currentProducts = read('data/products.js');
-assert.equal(withoutFeed(currentProducts), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
+assert.equal(withoutFeed(withoutVerifiedPhotoLinkDifferences(currentProducts,historicalProducts)), withoutFeed(historicalProducts), 'product data outside Rakuten feed fields unchanged');
 applyCommittedRakutenSync(productObjects(historicalProducts), productObjects(currentProducts), fileURLToPath(root));
 assert.equal(read('js/starter-kit.js'),old('js/starter-kit.js'),'kit engine unchanged');
 const priorSpecies = old('shindan/species.js');

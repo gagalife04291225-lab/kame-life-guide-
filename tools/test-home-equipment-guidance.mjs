@@ -1,4 +1,4 @@
-import {applyReviewedAmazonHolds,applyCommittedRakutenSync} from './commerce-identity-baseline.mjs';
+import {applyReviewedAmazonHolds,applyCommittedRakutenSync,applyVerifiedPhotoLinkFixes} from './commerce-identity-baseline.mjs';
 import './test-shared-products-round3.mjs';
 import './test-equipment-route-consistency.mjs';
 import fs from 'node:fs';
@@ -12,6 +12,7 @@ const base=p=>execFileSync('git',['-C',cwd,'show','6b1ac588:'+p],{encoding:'utf8
 function context(reader){const c=vm.createContext({console,window:{},document:{}});const h=reader('shindan/index.html');const a=h.indexOf('function resolveEquipmentKey('),b=h.indexOf('\n}',a);vm.runInContext(reader('data/products.js')+'\n'+reader('js/starter-kit.js')+'\n'+reader('shindan/species.js')+'\n'+h.slice(a,b+2)+';this.species=SPECIES;this.products=PRODUCTS;',c);return c;}
 const old=context(base),now=context(read),plain=x=>JSON.parse(JSON.stringify(x));
 applyReviewedAmazonHolds(old.products,now.products);
+applyVerifiedPhotoLinkFixes(old.products,now.products);
 applyCommittedRakutenSync(old.products,now.products,cwd);
 
 const stripped=p=>{const o=plain(p);delete o.why;return o;};
