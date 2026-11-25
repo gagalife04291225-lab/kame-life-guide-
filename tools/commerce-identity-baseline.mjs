@@ -107,6 +107,8 @@ const amazonLink = id => 'https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22
 const PLUS_SEARCH = 'INKBIRD WiFi 温湿度計 IBS-TH3 PLUS';
 const PLUS_HOLD = Object.freeze({rakutenStatus:'search',rakutenUrl:null,rakutenItemCode:null,
  rakutenPrice:null,rakutenShop:null,rakutenConfidence:null,rakutenImageUrl:null,rakutenLastUpdated:null});
+const EHEIM_2217_BEFORE = '2217-NEWはろ材別売のため別途ろ材が必要';
+const EHEIM_2217_AFTER = '2217-NEWはろ材別売。50Hz用と60Hz用は別製品です。購入前に、使う場所の電源周波数と販売ページの周波数が合っているか確認してください。';
 export function applyVerifiedPhotoLinkFixes(before,after){
  for(const [id,old,now] of PHOTO_LINK_FIXES){
   assert.equal(before[id].asin,old);
@@ -116,6 +118,11 @@ export function applyVerifiedPhotoLinkFixes(before,after){
   before[id].asin=now;
   before[id].affiliateUrl=amazonLink(now);
  }
+ const eheim=before.filter_canister_premium;
+ assert.ok(eheim.why.endsWith(EHEIM_2217_BEFORE));
+ const expected=eheim.why.slice(0,-EHEIM_2217_BEFORE.length)+EHEIM_2217_AFTER;
+ assert.equal(after.filter_canister_premium.why,expected);
+ eheim.why=expected;
  assert.equal(after.thermometer_wifi.rakutenSearchTerm,PLUS_SEARCH);
  assert.equal(after.thermometer_wifi.rakutenIdentityHold,true);
  before.thermometer_wifi.rakutenSearchTerm=PLUS_SEARCH;
@@ -126,6 +133,7 @@ export function withoutVerifiedPhotoLinkDifferences(source,historical){
  const parse = s => vm.runInNewContext(s+'\nPRODUCTS;');
  const before=parse(historical),after=parse(source);
  const previousTerm=before.thermometer_wifi.rakutenSearchTerm;
+ const eheimBefore=before.filter_canister_premium.why;
  applyVerifiedPhotoLinkFixes(before,after);
  for(const [id,old,now] of PHOTO_LINK_FIXES){
   const anchor = source.indexOf('\n  '+id+': {');
@@ -136,6 +144,12 @@ export function withoutVerifiedPhotoLinkDifferences(source,historical){
   block=block.replace("asin: '"+now+"'", "asin: '"+old+"'");
   source=source.slice(0,anchor)+block+source.slice(end);
  }
+ const eheimAnchor=source.indexOf('\n  filter_canister_premium: {');
+ const eheimEnd=source.indexOf('\n  },',eheimAnchor);
+ assert.ok(eheimAnchor>=0&&eheimEnd>eheimAnchor);
+ const eheimBlock=source.slice(eheimAnchor,eheimEnd)
+  .replace("why: '"+after.filter_canister_premium.why+"'","why: '"+eheimBefore+"'");
+ source=source.slice(0,eheimAnchor)+eheimBlock+source.slice(eheimEnd);
  const anchor=source.indexOf('\n  thermometer_wifi: {');
  const end=source.indexOf('\n  },',anchor);
  assert.ok(anchor>=0&&end>anchor);

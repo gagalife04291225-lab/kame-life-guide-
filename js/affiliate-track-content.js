@@ -15,7 +15,7 @@
       var provider, kind, productId = '';
       if (u.hostname === 'www.amazon.co.jp' || u.hostname === 'amazon.co.jp') {
         provider = 'amazon';
-        var asin = u.pathname.match(/^\/dp\/([A-Z0-9]{10})(?:\/|$)/);
+        var asin = u.pathname.match(/^\/(?:dp|gp\/product)\/([A-Z0-9]{10})(?:\/|$)/);
         productId = asin ? asin[1] : '';
         kind = u.searchParams.has('tag') ? (asin ? 'affiliate_product' : 'affiliate_search') : 'retailer_search';
       } else if (u.hostname === 'search.rakuten.co.jp') {

@@ -15,14 +15,14 @@ const attrs=s=>Object.fromEntries([...s.matchAll(/([\w-]+)="([^"]*)"/g)].map(m=>
 const anchors=s=>[...s.matchAll(/<a\b[^>]*>/g)].map(m=>attrs(m[0]));
 function anchor(a){
  const classes=new Set((a.class||'').split(' '));
- const n={getAttribute:k=>a[k]??null,setAttribute:(k,v)=>a[k]=v,removeAttribute:k=>delete a[k],classList:{contains:k=>classes.has(k),remove:k=>classes.delete(k)},closest:s=>s==='.cta'&&classes.has('cta')?n:s==='a[data-commerce-static="1"][href]'&&a['data-commerce-static']==='1'&&a.href?n:null};
+ const n={getAttribute:k=>a[k]??null,setAttribute:(k,v)=>a[k]=v,removeAttribute:k=>delete a[k],classList:{contains:k=>classes.has(k),remove:k=>classes.delete(k)},closest:s=>s==='a[href]'&&a.href?n:s==='.cta'&&classes.has('cta')?n:s==='a[data-commerce-static="1"][href]'&&a['data-commerce-static']==='1'&&a.href?n:null};
  return n;
 }
 function harness(path){
  const events=[],handlers={};
  const window={location:{href:'https://kamelifeguide.com/'+path,pathname:'/'+path},gtag:(...x)=>events.push(x)};
  const document={readyState:'complete',addEventListener:(k,f)=>(handlers[k]??=[]).push(f),querySelectorAll:()=>[],querySelector:()=>null,getElementById:()=>null};
- const c=vm.createContext({window,document,URL,console});
+ const c=vm.createContext({window,document,URL,console,gtag:window.gtag});
  return {c,window,document,events,handlers,run:p=>vm.runInContext(read(p),c),click:n=>{let prevented=false;for(const f of handlers.click||[])f({target:{closest:s=>n?.closest(s)},preventDefault:()=>prevented=true});return prevented;}};
 }
 let total=0,tagged=0,searches=0;const examples={};
@@ -54,6 +54,27 @@ for(const [p,count]of Object.entries(pages)){
  h.window.gtag=()=>{throw new Error('mock failure');};assert.equal(h.click(anchor({...list[0]})),false,'analytics failure preserves navigation');
 }
 assert.deepEqual([total,tagged,searches],[37,22,15]);
+// Product links accepted by the photo adapter must retain the ASIN when clicked.
+for(const [path,script,marker] of [
+ ['water-filter-review.html','js/affiliate-track-static.js',{}],
+ ['guide-beginner.html','js/affiliate-track-content.js',{'data-commerce-static':'1'}]
+]){
+ const h=harness(path);h.run(script);
+ const real=anchors(read('water-filter-review.html')).find(a=>a.href?.includes('/dp/B002S152LG'));
+ assert.ok(real&&!real['data-asin']);
+ for(const [suffix,id] of [['/dp/B002S152LG/','B002S152LG'],['/gp/product/B002S152LG','B002S152LG'],['/s?k=2213','']]){
+  const href='https://www.amazon.co.jp'+suffix+(suffix.includes('?')?'&':'?')+'tag=kamelife090e-22';
+  const a=anchor({...real,...marker,href});
+  const before=h.events.length;
+  assert.equal(h.click(a),false);
+  assert.equal(h.events.length,before+1);
+  assert.equal(a.getAttribute('href'),href,'tracking must not rewrite the destination');
+  const [,event,data]=h.events.at(-1);
+  assert.equal(event,'affiliate_click');
+  assert.equal(data.product_id,id);
+  if(marker['data-commerce-static'])assert.equal(data.link_type,id?'affiliate_product':'affiliate_search');
+ }
+}
 // KID actual renderer and bound handlers; mocks provide no network APIs.
 const h=harness('kid/');h.run('data/kid.js');h.run('js/kid-lookup.js');h.run('js/affiliate-track-content.js');
 const {KID,KIDLookupTest:T}=h.window;
