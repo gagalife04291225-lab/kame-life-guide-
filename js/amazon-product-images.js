@@ -24,6 +24,8 @@
   const generation = new WeakMap();
   const maxLifetime = 18 * 60 * 60 * 1000;
   let flushing = false;
+  let pageActive = true;
+  let lifecycle = 0;
   let timer = 0;
   const contextSelectors = '.item,.diy,.gear-card,.gear,.rank-list-item,.amazon-placeholder,.amazon-cta,.info-box,.sk-card,.kid-card,[data-amazon-photo-context]';
   function route(a) {
@@ -122,8 +124,9 @@
   }
   async function flush() {
     timer = 0;
-    if (flushing || !pending.size || document.visibilityState === 'hidden') return;
+    if (flushing || !pending.size || !pageActive || document.visibilityState === 'hidden') return;
     flushing = true;
+    const startedDuring = lifecycle;
     const batch = [...pending].slice(0, 20);
     batch.forEach(id => { pending.delete(id); inflight.add(id); });
     try {
@@ -133,20 +136,24 @@
         credentials: 'omit', signal: AbortSignal.timeout(4500) });
       if (!response.ok || !/^application\/json\b/i.test(response.headers.get('Content-Type') || '')) throw Error();
       const data = await response.json();
+      if (startedDuring !== lifecycle) return;
       for (const id of batch) {
         const row = data?.photos?.[id];
         if (validPhoto(row, id)) items.set(id, row);
         else retry.set(id, Date.now() + 300000);
       }
     } catch (_) {
-      batch.forEach(id => retry.set(id, Date.now() + 300000));
+      if (startedDuring === lifecycle) batch.forEach(id => retry.set(id, Date.now() + 300000));
     } finally {
       batch.forEach(id => inflight.delete(id));
       flushing = false;
-      if (document.visibilityState !== 'hidden') {
-        for (const a of document.querySelectorAll(selector)) {
-          const id = route(a);
-          if (items.has(id)) paint(a, id, items.get(id));
+      if (pageActive && document.visibilityState !== 'hidden') {
+        if (startedDuring !== lifecycle) reconsiderVisible();
+        else {
+          for (const a of document.querySelectorAll(selector)) {
+            const id = route(a);
+            if (items.has(id)) paint(a, id, items.get(id));
+          }
         }
         scheduleFlush();
       }
@@ -158,7 +165,7 @@
   const watched = new Set();
   function consider(a) {
     const id = route(a);
-    if (!id || document.visibilityState === 'hidden') return;
+    if (!id || !pageActive || document.visibilityState === 'hidden') return;
     if (validPhoto(items.get(id), id)) return paint(a, id, items.get(id));
     items.delete(id);
     if (!inflight.has(id) && (retry.get(id) || 0) <= Date.now()) {
@@ -187,19 +194,28 @@
   }).observe(document.body, { subtree: true, childList: true, attributes: true,
     attributeFilter: ['href', 'hidden', 'aria-disabled', 'inert'] });
   function clear() {
+    lifecycle++;
     items.clear(); pending.clear();
     for (const a of entries.keys()) remove(a);
   }
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') return clear();
+  function reconsiderVisible() {
+    if (!pageActive || document.visibilityState === 'hidden') return;
     scan();
     for (const a of watched) {
       const r = a.getBoundingClientRect();
       if (r.bottom >= -250 && r.top <= innerHeight + 250) consider(a);
     }
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') return clear();
+    reconsiderVisible();
   });
-  window.addEventListener('pagehide', clear);
-  window.addEventListener('pageshow', scan);
-  setInterval(scan, 15000);
+  window.addEventListener('pagehide', () => { pageActive = false; clear(); });
+  window.addEventListener('pageshow', event => {
+    pageActive = true;
+    if (event.persisted) reconsiderVisible();
+    else scan();
+  });
+  setInterval(reconsiderVisible, 15000);
   scan();
 }());
