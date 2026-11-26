@@ -195,6 +195,15 @@ assert.equal(writes,beforeRetry);
 stored.set(key(id),{checkedAt:current,url,detailUrl:detailUrl.replace(id,other)});
 assert.deepEqual(await body(ask()),{photos:{}});
 stored.delete(key(id));
+// The pilot remains an inert template until an approved environment opts in.
+const pilot=readFileSync(new URL('../workers/amazon-product-images/tetra-pilot.html.tmpl',import.meta.url),'utf8');
+assert.match(pilot,/<!-- KLG_PILOT_ENDPOINT -->/);
+assert.match(pilot,/content="noindex,nofollow"/);
+assert.match(pilot,/data-amazon-photo-context/);
+assert.match(pilot,/data-asin="B000NGQZU0"/);
+assert.match(pilot,/href="https:\/\/www\.amazon\.co\.jp\/dp\/B000NGQZU0\?tag=kamelife090e-22"/);
+assert.equal((pilot.match(/<a\b/g)||[]).length,1);
+assert.doesNotMatch(pilot,/<img\b|media-amazon\.com|rakuten|name="klg-amazon-image-service"/i);
 // Guide mismatch fix: do not advertise an external/top filter and send to an AT-50.
 const guide=readFileSync(new URL('../guide-beginner.html',import.meta.url),'utf8');
 const filter=guide.slice(guide.indexOf('<div class="gear-name">飼育水量に合うフィルター'),guide.indexOf('<div class="gear-name">亀用配合飼料'));
