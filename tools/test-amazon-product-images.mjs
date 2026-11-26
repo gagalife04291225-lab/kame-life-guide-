@@ -192,6 +192,49 @@ await assert.rejects(refresh(env,{clock:()=>current,sleep:()=>assert.fail('must 
  fetcher:async(url)=>url.includes('/token')?Response.json({access_token:'fixture'}):
    new Response(null,{status:429,headers:{'Retry-After':'30'}})}),/official_api_http_429/);
 assert.equal(writes,beforeRetry);
+
+// Honor the documented JSON hint as well as the HTTP header, without
+// trusting malformed response bodies or extending existing photos on failure.
+for(const [status,headers,payload,expected] of [
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:8},8000],
+  [429,{'Retry-After':'4'}, {type:'ThrottleException',retryAfterSeconds:8},8000],
+  [429,{'Retry-After':'9'}, {type:'ThrottleException',retryAfterSeconds:4},9000],
+  [429,{'Retry-After':new Date(current+10000).toUTCString()}, {type:'ThrottleException',retryAfterSeconds:4},9000],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:12},12000],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:60},null],
+  [429,{'Retry-After':'30'}, {type:'ThrottleException',retryAfterSeconds:3},null],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:-1},2200],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:1.5},2200],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:'60'},2200],
+  [429,{}, {type:'ThrottleException',retryAfterSeconds:1e20},2200],
+  [429,{}, {type:'OtherException',retryAfterSeconds:60},2200],
+  [429,{}, 'not JSON',2200],
+  [403,{}, {type:'ThrottleException',retryAfterSeconds:8},null],
+]){
+  stored.set(key(id),{checkedAt:current,url,detailUrl});
+  const before=writes,delays=[];
+  let catalogCalls=0,tokens=0;
+  const outcome=refresh(env,{clock:()=>current+1000,sleep:async ms=>{delays.push(ms);},
+    fetcher:async endpoint=>{
+      if(endpoint.includes('/token')){tokens++;return Response.json({access_token:'fixture'});}
+      if(catalogCalls++===0)return new Response(typeof payload==='string'?payload:JSON.stringify(payload),{status,headers});
+      return Response.json({itemsResult:{items:[item()]}});
+    }
+  });
+  if(expected===null){
+    await assert.rejects(outcome,new RegExp('official_api_http_'+status));
+    assert.equal(catalogCalls,1);
+    assert.equal(writes,before);
+    assert.equal((await body(ask())).photos[id].expiresAt,current+64800000);
+    assert.deepEqual(await body(serve(new Request(route+'?items='+id),env,current+64800000)),{photos:{}});
+    assert.deepEqual(delays,[]);
+  }else{
+    assert.deepEqual(await outcome,{requested:1,available:1});
+    assert.equal(catalogCalls,2);
+    assert.deepEqual(delays,[expected]);
+  }
+  assert.equal(tokens,1);
+}
 stored.set(key(id),{checkedAt:current,url,detailUrl:detailUrl.replace(id,other)});
 assert.deepEqual(await body(ask()),{photos:{}});
 stored.delete(key(id));

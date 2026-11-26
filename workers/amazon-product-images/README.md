@@ -7,7 +7,7 @@
 ## 有効化前に確認すること
 1. Amazonアソシエイトの利用資格、正規登録済みの掲載先と運用アカウント、認証バージョンを確認する。Workerは公式JP LwA 3.3のみ。既存鍵の同方式による1件での成功記録はあるが、Workerでの本番認証は未実施。未承認の場所へ鍵を移さない。
 2. 実物の型番・容量・写真の一致を確認したASINのみ KLG_APPROVED_ASINS に指定する。ASINが同じだけではサイト表記と実物が一致するとは限らない。混在カードには、別売先と近接しないAmazon専用枠、または許諾済みの独立素材が必要。別サイズや無許可の写真を流用しない。
-3. 承認済みの同一オリジン /api/amazon-product-images に限定する。Workersの別公開入口は無効とし、SecretとKVを含む権限・費用を確認する。メタ名 klg-amazon-image-service で値を正確にこの同一オリジン相対パスとして設定する。写真ブラウザには鍵を渡さない。KVの KLG_AMAZON_IMAGES と専用Secret KLG_CREATORS_CLIENT_ID / KLG_CREATORS_CLIENT_SECRET を利用し、18時間より短い間隔で更新する。閲覧者リクエストからAmazon APIは呼ばない。10 ASINずつ、2.2秒以上空けて取得し、429は短いRetry-Afterを尊重して回数制限付きで再試行する。HTTP 200でも、10 ASINごとに応答全体を検証する。正常な組だけ更新し、失敗した組の既存写真は元の期限までとする。確認済みの取得不可・画像なしは削除する。無料CronのCPU上限10msに収まるか初回実測を必須とする。既存の診断Workerと分ける。全商品対応は、既存の1商品向けの承認やプレビュー条件と区別する。別ホスト構成の候補は下記。
+3. 承認済みの同一オリジン /api/amazon-product-images に限定する。Workersの別公開入口は無効とし、SecretとKVを含む権限・費用を確認する。メタ名 klg-amazon-image-service で値を正確にこの同一オリジン相対パスとして設定する。写真ブラウザには鍵を渡さない。KVの KLG_AMAZON_IMAGES と専用Secret KLG_CREATORS_CLIENT_ID / KLG_CREATORS_CLIENT_SECRET を利用し、18時間より短い間隔で更新する。閲覧者リクエストからAmazon APIは呼ばない。10 ASINずつ、2.2秒以上空けて取得し、429は通常の待機時間、HTTP Retry-After、Creators APIが返すThrottleExceptionのretryAfterSecondsのうち最長を採用する。12秒を超えたら再試行せず、保存済み写真の期限は延長しない。HTTP 200でも、10 ASINごとに応答全体を検証する。正常な組だけ更新し、失敗した組の既存写真は元の期限までとする。確認済みの取得不可・画像なしは削除する。無料CronのCPU上限10msに収まるか初回実測を必須とする。既存の診断Workerと分ける。全商品対応は、既存の1商品向けの承認やプレビュー条件と区別する。別ホスト構成の候補は下記。
 4. 定時取得の成功・取得不可・期限切れとスマホの表示、各カードの正しいリンクを確認する。画像データや期限URLを公開Gitに残さない。ログには集計のみ。7件の例外と全体の表示件数を分ける。問題時は有効化メタやルートを外して元のまま復旧する。
 
 公式: https://affiliate.amazon.co.jp/help/operating/policies および https://affiliate.amazon.co.jp/creatorsapi/docs/en-us/get-started/using-curl

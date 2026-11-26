@@ -70,6 +70,13 @@ async function post(fetcher,url,body,headers={}) {
     const err=Error('official_api_http_'+r.status);
     err.status=r.status;
     err.retryAfter=r.headers.get('Retry-After');
+    if(r.status===429){
+      // Creators API can provide its throttle hint in JSON without a header.
+      const payload=await r.json().catch(()=>null);
+      const seconds=payload?.retryAfterSeconds;
+      if(payload?.type==='ThrottleException'&&Number.isSafeInteger(seconds)&&seconds>=0)
+        err.retryAfterMs=1000*seconds;
+    }
     throw err;
   }
   try{return await r.json();}catch{throw Error('official_api_invalid_json');}
@@ -147,7 +154,7 @@ export async function refresh(env,{fetcher=fetch,clock=Date.now,sleep=wait}={}) 
           break;
         }catch(err){
           if(err.status!==429||attempt>=2||retries>=3)throw err;
-          const delay=retryDelay(err.retryAfter,clock(),2200*2**attempt);
+          const delay=Math.max(retryDelay(err.retryAfter,clock(),2200*2**attempt),err.retryAfterMs??0);
           if(delay>12000)throw err;
           retries++;
           await sleep(delay);
