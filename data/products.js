@@ -129,7 +129,7 @@ const PRODUCTS = {
     rakutenPrice: 12430,
     rakutenShop: 'ペットフォレスト 楽天市場店',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-24/pf-4972814019201.jpg?_ex=128x128',
   },
 
@@ -155,7 +155,7 @@ const PRODUCTS = {
     rakutenPrice: 29170,
     rakutenShop: '楽天ビック(ビックカメラ×楽天)',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/biccamera/cabinet/product/20260/00000015679481_a01.jpg?_ex=128x128',
   },
 
@@ -199,7 +199,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -262,7 +262,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -427,7 +427,7 @@ const PRODUCTS = {
     rakutenPrice: 3400,
     rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/auc-yabumoto/cabinet/tatempo17/lovely-26514-r.jpg?_ex=128x128',
   },
 
@@ -471,7 +471,7 @@ const PRODUCTS = {
     rakutenPrice: 3520,
     rakutenShop: 'ハッピードライブヤブモト',
     rakutenConfidence: 5.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/yabumoto1/cabinet/tatempo17/lovely-26538-r.jpg?_ex=128x128',
   },
 
@@ -497,7 +497,7 @@ const PRODUCTS = {
     rakutenPrice: 6784,
     rakutenShop: '川山商店 楽天市場店',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/kawayamasyouten/cabinet/r_2026080753/20261015072942_221_1.jpg?_ex=128x128',
   },
 
@@ -521,7 +521,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -571,7 +571,7 @@ const PRODUCTS = {
     rakutenPrice: 2980,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/177/17733-1.jpg?_ex=128x128',
   },
 
@@ -589,14 +589,14 @@ const PRODUCTS = {
     rating: 4.4,
     badge: 'Best Overall',
     recommendedFor: ['tortoise_dry_small', 'semi_aquatic_medium'],
-    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00r0znn.nhbnn37a.g00r0znn.nhbno17e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffish-neos%2Fgex251114-3%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffish-neos%2Fi%2F10122696%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
+    rakutenUrl: 'https://hb.afl.rakuten.co.jp/hgc/g00upbjn.nhbnn2ac.g00upbjn.nhbnoba7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshopflora%2Fue712a567cf5%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshopflora%2Fi%2F10022605%2F&rafcid=wsc_i_is_fa8391ab-300d-4c4c-be83-ca2ddfdc47be',
     rakutenStatus: 'available',
-    rakutenItemCode: 'fish-neos:10122696',
-    rakutenPrice: 1530,
-    rakutenShop: 'ネオス 楽天市場店',
-    rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-11-25',
-    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/fish-neos/cabinet/03/gex251114-3_1.jpg?_ex=128x128',
+    rakutenItemCode: 'shopflora:10022605',
+    rakutenPrice: 1528,
+    rakutenShop: 'ショップflora楽天市場店',
+    rakutenConfidence: 5.2,
+    rakutenLastUpdated: '2026-11-26',
+    rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/shopflora/cabinet/onesell018/ue712a567cf5_0.jpg?_ex=128x128',
   },
 
   basking_100w: {
@@ -620,7 +620,7 @@ const PRODUCTS = {
     rakutenPrice: 2280,
     rakutenShop: 'プロツールショップヤブモト',
     rakutenConfidence: 4.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/auc-yabumoto/cabinet/tatempo17/lovely-19103-r.jpg?_ex=128x128',
   },
 
@@ -646,7 +646,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -673,7 +673,7 @@ const PRODUCTS = {
     rakutenPrice: 1303,
     rakutenShop: 'Mori Base',
     rakutenConfidence: 5.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/jackknife/cabinet/onesell071/aj47376a09354647_0.jpg?_ex=128x128',
   },
 
@@ -699,7 +699,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -726,7 +726,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.5,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -750,7 +750,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -774,7 +774,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -858,7 +858,7 @@ const PRODUCTS = {
     rakutenPrice: 3080,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.5,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317321.jpg?_ex=128x128',
   },
 
@@ -882,7 +882,7 @@ const PRODUCTS = {
     rakutenPrice: 3955,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.8,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11262572/imgrc0113317322.jpg?_ex=128x128',
   },
 
@@ -903,7 +903,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -927,7 +927,7 @@ const PRODUCTS = {
     rakutenPrice: 3780,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.1,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/3327/332453-1.jpg?_ex=128x128',
   },
 
@@ -951,7 +951,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.8,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -975,7 +975,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -999,7 +999,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 2.8,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1026,7 +1026,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1056,7 +1056,7 @@ const PRODUCTS = {
     rakutenPrice: 4125,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/2475/247595-1.jpg?_ex=128x128',
   },
 
@@ -1102,7 +1102,7 @@ const PRODUCTS = {
     rakutenPrice: 9350,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.1,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1869/186702-1.jpg?_ex=128x128',
   },
 
@@ -1126,7 +1126,7 @@ const PRODUCTS = {
     rakutenPrice: 12300,
     rakutenShop: 'PALMY EXPRESS',
     rakutenConfidence: 6.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/palmyexpress/cabinet/11213506/imgrc0127010697.jpg?_ex=128x128',
   },
 
@@ -1150,7 +1150,7 @@ const PRODUCTS = {
     rakutenPrice: 5980,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1779/177849-1.jpg?_ex=128x128',
   },
 
@@ -1174,7 +1174,7 @@ const PRODUCTS = {
     rakutenPrice: 6028,
     rakutenShop: '水耕栽培専門店のエコゲリラ',
     rakutenConfidence: 7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/eco-guerrilla/cabinet/daiichi/pitari_3_700.jpg?_ex=128x128',
   },
 
@@ -1240,7 +1240,7 @@ const PRODUCTS = {
     rakutenPrice: 2095,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/129/12725-1.jpg?_ex=128x128',
   },
 
@@ -1264,7 +1264,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 8.8,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1288,7 +1288,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 8.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1310,7 +1310,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1330,7 +1330,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1354,7 +1354,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1396,7 +1396,7 @@ const PRODUCTS = {
     rakutenPrice: 26997,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/459/45560-1.jpg?_ex=128x128',
   },
 
@@ -1420,7 +1420,7 @@ const PRODUCTS = {
     rakutenPrice: 10200,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 9.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/453/45364-1.jpg?_ex=128x128',
   },
 
@@ -1444,7 +1444,7 @@ const PRODUCTS = {
     rakutenPrice: 2733,
     rakutenShop: 'セレクトショップ RST',
     rakutenConfidence: 7.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/r-style-ra/cabinet/r_2023101209/20240606185858_67_1.jpg?_ex=128x128',
   },
 
@@ -1490,7 +1490,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1546,7 +1546,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1581,7 +1581,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1613,7 +1613,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1641,7 +1641,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1675,7 +1675,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1705,7 +1705,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1735,7 +1735,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1765,7 +1765,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.8,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1796,7 +1796,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1826,7 +1826,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1856,7 +1856,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1886,7 +1886,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1917,7 +1917,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1948,7 +1948,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -1978,7 +1978,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2008,7 +2008,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2061,7 +2061,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 8.5,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2129,7 +2129,7 @@ const PRODUCTS = {
     rakutenPrice: 1714,
     rakutenShop: 'ペットフォレスト 楽天市場店',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/petforest/cabinet/japell/japell-15/pf-4972547031426.jpg?_ex=128x128',
   },
 
@@ -2155,7 +2155,7 @@ const PRODUCTS = {
     rakutenPrice: 1009,
     rakutenShop: 'バラエティショップ平和',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/enisey/cabinet/r_2025061801/20260509044538_210_1.jpg?_ex=128x128',
   },
 
@@ -2285,7 +2285,7 @@ const PRODUCTS = {
     rakutenPrice: 760,
     rakutenShop: '爬虫類用品店 トップクリエイト',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/topcreate/cabinet/0036/0036-00121.jpg?_ex=128x128',
   },
 
@@ -2309,7 +2309,7 @@ const PRODUCTS = {
     rakutenPrice: 1210,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/1077/107334-1.jpg?_ex=128x128',
   },
 
@@ -2490,7 +2490,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2564,7 +2564,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.5,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2590,7 +2590,7 @@ const PRODUCTS = {
     rakutenPrice: 2101,
     rakutenShop: 'Smart normal',
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/smartnormal/cabinet/compass1610971031.jpg?_ex=128x128',
   },
 
@@ -2614,7 +2614,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2666,7 +2666,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2694,7 +2694,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 7.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2740,7 +2740,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2764,7 +2764,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2793,7 +2793,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2817,7 +2817,7 @@ const PRODUCTS = {
     rakutenPrice: 210,
     rakutenShop: 'charm 楽天市場店',
     rakutenConfidence: 8.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/chanet/cabinet/147/14730-1.jpg?_ex=128x128',
   },
 
@@ -2864,7 +2864,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2890,7 +2890,7 @@ const PRODUCTS = {
     rakutenPrice: 1735,
     rakutenShop: 'ペットショップ うちのmofu',
     rakutenConfidence: 9.1,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/uchinomofu/cabinet/kyorin/maru/imgrc0098716274.jpg?_ex=128x128',
   },
 
@@ -2952,7 +2952,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2971,7 +2971,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -2990,7 +2990,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3009,7 +3009,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3028,7 +3028,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3049,7 +3049,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3068,7 +3068,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3087,7 +3087,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3106,7 +3106,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 6.4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3125,7 +3125,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3144,7 +3144,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.2,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3163,7 +3163,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3187,7 +3187,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 4.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3216,7 +3216,7 @@ const PRODUCTS = {
     rakutenPrice: 1229,
     rakutenShop: '感花楽天市場店',
     rakutenConfidence: 6.3,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/kankapro/cabinet/r_2024061642/20240616094044_138_1.jpg?_ex=128x128',
   },
 
@@ -3242,7 +3242,7 @@ const PRODUCTS = {
     rakutenPrice: 1180,
     rakutenShop: 'レヨンベールアクア楽天市場店',
     rakutenConfidence: 6.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/12000/11633.jpg?_ex=128x128',
   },
 
@@ -3269,7 +3269,7 @@ const PRODUCTS = {
     rakutenPrice: 502,
     rakutenShop: 'ペット用品専門店HUG',
     rakutenConfidence: 5.7,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/pet-hug/cabinet/images143/4972547020673_1.jpg?_ex=128x128',
   },
 
@@ -3293,7 +3293,7 @@ const PRODUCTS = {
     rakutenPrice: 984,
     rakutenShop: 'hanatomori楽天市場店',
     rakutenConfidence: 5.9,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/hanatomori/cabinet/r_2024100121/20261106075921_161_1.jpg?_ex=128x128',
   },
 
@@ -3375,7 +3375,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3404,7 +3404,7 @@ const PRODUCTS = {
     rakutenPrice: null,
     rakutenShop: null,
     rakutenConfidence: 3.6,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: null,
   },
 
@@ -3429,7 +3429,7 @@ const PRODUCTS = {
     rakutenPrice: 2017,
     rakutenShop: 'レヨンベールアクア楽天市場店',
     rakutenConfidence: 6.1,
-    rakutenLastUpdated: '2026-11-25',
+    rakutenLastUpdated: '2026-11-26',
     rakutenImageUrl: 'https://thumbnail.image.rakuten.co.jp/@0_mall/rayon/cabinet/50000/41840.jpg?_ex=128x128',
   },
 };

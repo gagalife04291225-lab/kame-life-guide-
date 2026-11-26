@@ -24,15 +24,15 @@
   }
  },
  "basking_75w": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX EXOTERRA サングロー バスキングスポットランプ 75W",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,75W,series:サングロー",
   "best": {
-   "itemName": "GEX EXO TERRA（エキゾテラ）　サングローバスキングスポットランプ 75W　PT2132 【水槽/熱帯魚/観賞魚/飼育】【生体】【通販/販売】【アクア",
-   "price": 1530,
-   "shop": "ネオス 楽天市場店"
+   "itemName": "エキゾテラ GEX EXOTERRA サングロー バスキングスポットランプ 75W PT2132 昼用集光型 砂漠・熱帯環境テラリウム用 送料無料",
+   "price": 1528,
+   "shop": "ショップflora楽天市場店"
   }
  },
  "basking_arcadia_deep_heat_projector": {
@@ -120,9 +120,9 @@
   }
  },
  "basking_infrared_red": {
-  "date": "2026-11-08",
+  "date": "2026-11-26",
   "query": "赤外線 バスキングランプ 75W 爬虫類",
-  "resultCount": 4,
+  "resultCount": 2,
   "outcome": "KEPT_SEARCH_LEGACY_AMBIGUOUS",
   "reason": "score=3.2",
   "best": {
@@ -252,13 +252,13 @@
   }
  },
  "filter_canister_xl": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX メガパワー 6090 外部フィルター",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:6090,series:メガパワー",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
+   "itemName": "外部フィルター　GEX　メガパワー　6090　水槽用外部フィルター　ジェックス",
    "price": 10200,
    "shop": "charm 楽天市場店"
   }
@@ -284,13 +284,13 @@
   "best": null
  },
  "filter_gex_dustcatch": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX カメ元気 ダストキャッチフィルター",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　GEX　カメ元気　ダストキャッチフィルター",
+   "itemName": "GEX　カメ元気　ダストキャッチフィルター",
    "price": 2650,
    "shop": "charm 楽天市場店"
   }
@@ -308,13 +308,13 @@
   }
  },
  "filter_small": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "テトラ オートワンタッチフィルター AT-50",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:テトラ,model:AT-50,series:オートワンタッチフィルター",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力",
+   "itemName": "テトラ　外掛けフィルター　オートワンタッチフィルター　AT−50　40〜50cm水槽用　静音　色素吸着能力NO．1　異物ブロック",
    "price": 2095,
    "shop": "charm 楽天市場店"
   }
@@ -340,13 +340,13 @@
   }
  },
  "filter_suisaku_turtle_pro_l2": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "水作 タートルフィルター PRO L2",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.3",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　水作　タートルフィルター［PRO］L2　水中フィルター　亀　水質維持",
+   "itemName": "水作　タートルフィルター［PRO］L2　水中フィルター　亀　水質維持",
    "price": 3100,
    "shop": "charm 楽天市場店"
   }
@@ -432,13 +432,13 @@
   }
  },
  "food_dried_shrimp": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "キョーリン カメのごほうび 乾燥川エビ",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:キョーリン,容量一致,series:カメのごほうび",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り",
+   "itemName": "キョーリン　乾燥川エビ　カメのごほうび　12g　餌　エサ　おやつ　カルシウム　お一人様150点限り",
    "price": 210,
    "shop": "charm 楽天市場店"
   }
@@ -456,15 +456,15 @@
   }
  },
  "food_gex_tortoise_balance_400": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX EXOTERRA リクガメの栄養バランスフード 400g",
-  "resultCount": 7,
+  "resultCount": 6,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=4.2",
   "best": {
-   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性",
-   "price": 1303,
-   "shop": "holly0211"
+   "itemName": "GEX EXOTERRA リクガメの栄養バランスフード 400g 毎日の健康食 高繊維質フード よく食べる 高嗜好性 送料無料",
+   "price": 2261,
+   "shop": "SooTune"
   }
  },
  "food_gex_tortoise_blend_400": {
@@ -492,13 +492,13 @@
   }
  },
  "food_kamepros_healthcare_large_215": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "キョーリン カメプロス ヘルスケア 大スティック 215g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　キョーリン　カメプロス　ヘルスケア　大スティック　215g　餌　水棲カメ用　ニオイ・汚れ防止",
+   "itemName": "キョーリン　カメプロス　ヘルスケア　大スティック　215g　餌　水棲カメ用　ニオイ・汚れ防止",
    "price": 848,
    "shop": "charm 楽天市場店"
   }
@@ -528,25 +528,25 @@
   }
  },
  "food_kamepros_premium_200": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "キョーリン カメプロス プレミアム 大スティック 200g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　キョーリン　カメプロス　プレミアム　大スティック　200g　餌　水棲カメ用　高嗜好性　お一人様30点限り",
+   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　200g　餌　水棲カメ用　高嗜好性　お一人様30点限り",
    "price": 1115,
    "shop": "charm 楽天市場店"
   }
  },
  "food_kamepros_premium_550": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "キョーリン カメプロス プレミアム 550g",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.4",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　キョーリン　カメプロス　プレミアム　大スティック　550g　餌　水棲カメ用　高嗜好性　お一人様20点限り",
+   "itemName": "キョーリン　カメプロス　プレミアム　大スティック　550g　餌　水棲カメ用　高嗜好性　お一人様20点限り",
    "price": 1960,
    "shop": "charm 楽天市場店"
   }
@@ -688,25 +688,25 @@
   }
  },
  "heater_gex_heatnavi_160": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX NEW セーフカバー ヒートナビ 160",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:GEX,series:セーフカバー",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　GEX　NEW　セーフカバー　ヒートナビ160　〜60cm水槽用　縦設置可能　ヒーター、サーモ一体型　熱帯",
+   "itemName": "GEX　NEW　セーフカバー　ヒートナビ160　〜60cm水槽用　縦設置可能　ヒーター、サーモ一体型　熱帯魚",
    "price": 3780,
    "shop": "charm 楽天市場店"
   }
  },
  "heater_gex_heatnavi_220": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX NEW セーフカバー ヒートナビ 220",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=6.8",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯",
+   "itemName": "GEX　NEW　セーフカバー　ヒートナビ220　〜110L水槽用　縦設置可能　ヒーター　サーモ一体型　熱帯魚",
    "price": 4280,
    "shop": "charm 楽天市場店"
   }
@@ -832,25 +832,25 @@
   }
  },
  "media_eheim_2213_coarse": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "エーハイム 2213 粗目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=7.2 入数(2),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　粗目フィルターパッド　2枚入　2213専用ろ材（ろ材コンテナ専用）",
    "price": 1070,
    "shop": "charm 楽天市場店"
   }
  },
  "media_eheim_2213_fine": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "エーハイム 2213 細目フィルターパッド",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_REJECT",
   "reason": "score=6.8 入数(6),消耗品(ろ材),適合表記(2213)",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
+   "itemName": "エーハイム　細目フィルターパッド　6枚入　2213専用ろ材（ろ材コンテナ専用）",
    "price": 1520,
    "shop": "charm 楽天市場店"
   }
@@ -904,13 +904,13 @@
   }
  },
  "media_eheim_substrat_pro_1l": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "エーハイム サブストラットプロ レギュラー 1L",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_STRONG",
   "reason": "score=7.6",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L",
+   "itemName": "エーハイム　サブストラット　プロ　レギュラー　パッケージなし　1L",
    "price": 1880,
    "shop": "charm 楽天市場店"
   }
@@ -976,13 +976,13 @@
   }
  },
  "shelter_medium": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "スドー ロックシェルターSP ML",
   "resultCount": 10,
   "outcome": "REFRESHED_STRONG",
   "reason": "maker:スドー,等級ML,series:ロックシェルターsp",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　スドー　ロックシェルターSP　ML",
+   "itemName": "スドー　ロックシェルターSP　ML",
    "price": 1210,
    "shop": "charm 楽天市場店"
   }
@@ -1220,13 +1220,13 @@
   "best": null
  },
  "tank_60": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "水槽 60cm 亀",
   "resultCount": 10,
   "outcome": "KEPT_AVAILABLE_AMBIGUOUS",
   "reason": null,
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　らんちゅう水槽　600（599×295×230）60cm水槽　金魚　亀　カメ（単体）　お一人様1点限り",
+   "itemName": "らんちゅう水槽　600（599×295×230）60cm水槽　金魚　亀　カメ（単体）　お一人様1点限り",
    "price": 5600,
    "shop": "charm 楽天市場店"
   }
@@ -1244,15 +1244,15 @@
   }
  },
  "thermometer_analog": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "query": "エキゾテラ アナログ温度計 爬虫類",
   "resultCount": 10,
   "outcome": "KEPT_SEARCH_LEGACY_EXACT",
   "reason": "score=7.7",
   "best": {
-   "itemName": "GEX エキゾテラ アナログ温度計 PT2465 爬虫類 両生類 テラリウム用 温度管理 ExoTerra アナログ式 トカゲ カエル ケージ用品",
-   "price": 939,
-   "shop": "ウルマックス 楽天市場店"
+   "itemName": "アナログ温度計 PT2465 ExoTerra（エキゾテラ） 爬虫類 両生類 温度管理 アナログ 両面テープ 温度計 トカゲ カエル ヘビ カメ",
+   "price": 710,
+   "shop": "ペットと園芸のホムセントックリ"
   }
  },
  "thermometer_aqua": {
@@ -1328,13 +1328,13 @@
   }
  },
  "thermostat_digital": {
-  "date": "2026-11-24",
+  "date": "2026-11-26",
   "query": "GEX エキゾテラ タイマーサーモ RTT-1",
   "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,model:RTT-1,series:タイマーサーモ",
   "best": {
-   "itemName": "【11／25限定】当選確率2分の1！1等最大100％　GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
+   "itemName": "GEX　エキゾテラ　タイマーサーモ　RTT−1　爬虫類　サーモスタット",
    "price": 9350,
    "shop": "charm 楽天市場店"
   }
@@ -1368,9 +1368,9 @@
   "best": null
  },
  "uvb_compact": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "query": "GEX EXOTERRA レプタイルUVB100 26W",
-  "resultCount": 5,
+  "resultCount": 6,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB100,series:レプタイルuvb100",
   "best": {
@@ -1412,9 +1412,9 @@
   "best": null
  },
  "uvb_t5_desert_12": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "query": "GEX EXOTERRA レプタイルUVB150 26W",
-  "resultCount": 9,
+  "resultCount": 10,
   "outcome": "REFRESHED_EXACT",
   "reason": "maker:GEX,26W,model:UVB150,series:レプタイルuvb150",
   "best": {
