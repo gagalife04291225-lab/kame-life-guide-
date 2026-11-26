@@ -12,7 +12,7 @@ const client = read('js/amazon-product-images.js');
 const guardCode = client.slice(client.indexOf('  const asinOf ='),client.indexOf('  const items =')) +
   client.slice(client.indexOf('  const contextSelectors ='),client.indexOf('  function validPhoto('));
 assert.match(guardCode,/function route/);
-const guard = runInNewContext(guardCode+'; ({asinOf,route})',{URL,location:{origin}});
+const guard = runInNewContext(guardCode+'; ({asinOf,route,contextSelectors})',{URL,location:{origin}});
 
 const match = (node,rule) => {
   const parts = /^([a-z0-9]+)?(?:\.([\w-]+))?(?:\[([\w-]+)(?:(\*=|=)"([^"]*)")?\])?(?::not\(\.([\w-]+)\))?$/.exec(rule.trim());
@@ -110,3 +110,53 @@ for(const page of pages){
 const sums=Object.values(report).reduce((prev,x)=>[prev[0]+x.exact,prev[1]+x.search,prev[2]+x.direct,prev[3]+x.eligible],[0,0,0,0]);
 assert.ok(sums[1]>0 && sums[2]>0,'exercise search and exact affiliate routes');
 console.log('Comparison photo placement after link generation (occurrences, not live coverage):',JSON.stringify(report));
+
+// Guide equipment has a separate renderer. Exercise actual configured mounts,
+// including guides that deliberately suppress affiliate links.
+const guides=['arid','brackish','dry','japan','moist','softshell','water-full','semi'];
+const specs=read('data/setup-specs.js'), renderer=read('js/setup-products.js');
+const guideReport={};
+const uniqueGuideAsins=new Set();
+for(const name of guides){
+  const markup=read('guide-'+name+'.html');
+  assert.match(markup,/\/?js\/setup-products\.js\b/);
+  const doc=parse(markup.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,''));
+  const boxes=doc.querySelectorAll('.setup-products[data-setup]');
+  assert.ok(boxes.length,name+' missing setup mounts');
+  for(const box of boxes){
+    box.addEventListener=()=>{};
+    Object.defineProperty(box,'innerHTML',{set(html){
+      box.children=[];
+      for(const child of parse(html).children){
+        if(typeof child==='string')box.children.push(child);
+        else box.appendChild(child);
+      }
+    }});
+  }
+  doc.readyState='complete';
+  runInNewContext([products,specs,renderer].join('\n'),{document:doc,window:{}});
+  const row={mounts:boxes.length,exact:0,paired:0,noContext:0,blockedByContext:0,eligible:0};
+  for(const box of boxes){
+    const links=box.querySelectorAll('a[data-retailer]');
+    for(const link of links){
+      if(link.getAttribute('data-retailer')!=='amazon')continue;
+      const asin=guard.asinOf(link.href);
+      if(!asin)continue;
+      row.exact++;
+      uniqueGuideAsins.add(asin);
+      const peers=link.parent.querySelectorAll('a[data-retailer="rakuten"]').filter(other=>
+        ['data-product-id','data-pos'].every(key=>other.getAttribute(key)===link.getAttribute(key)));
+      assert.equal(peers.length,1,name+' exact Amazon guide product must retain its Rakuten option');
+      row.paired++;
+      if(guard.route(link)){row.eligible++;continue;}
+      if(link.closest(guard.contextSelectors))row.blockedByContext++;
+      else row.noContext++;
+    }
+  }
+  if(name==='japan')assert.equal(row.exact,0,'Japanese pond guide is link-free by design');
+  else assert.ok(row.exact>0,name+' did not exercise any guide product links');
+  assert.equal(row.eligible,0,name+' mixed guide links are not Amazon photo coverage');
+  guideReport[name]=row;
+}
+console.log('Guide photo placement after setup rendering (not live coverage):',
+  JSON.stringify({pages:guideReport,uniqueAsins:uniqueGuideAsins.size}));
