@@ -469,7 +469,9 @@ function scoreCandidate(item, product) {
     const matched = guards.some(function(kw) {
       return nameAndShop.includes(kw);
     });
-    if (!matched) return null;  // Hard reject
+    // Permit only the explicitly verified seller/item URL and exact title.
+    // Still apply price, seller, identity, affiliate and promotion checks.
+    if (!matched && !IDN.reviewedOffer(product.id, item)) return null;
   }
 
   // ── Price score (lower is better; reject if < ¥100 or suspicious) ──

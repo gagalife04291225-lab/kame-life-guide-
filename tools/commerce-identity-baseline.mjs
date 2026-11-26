@@ -99,13 +99,76 @@ export function resolveRakutenBaseline(root,env=process.env){
  return commit(root,ref);
 }
 
+const PHOTO_LINK_FIXES = [
+ ['uvb_compact','B00BF91Q1W','B088X2HCGG'],
+ ['waterdish_zoomed_ramp_bowl','B00167XQLG','B00BUFVR56'],
+ ['thermometer_wifi','B0CZ42FLXM','B0BZVLB6R4']
+];
+const amazonLink = id => 'https://www.amazon.co.jp/dp/'+id+'?tag=kamelife090e-22';
+const PLUS_SEARCH = 'INKBIRD WiFi 温湿度計 IBS-TH3 PLUS';
+const PLUS_HOLD = Object.freeze({rakutenStatus:'search',rakutenUrl:null,rakutenItemCode:null,
+ rakutenPrice:null,rakutenShop:null,rakutenConfidence:null,rakutenImageUrl:null,rakutenLastUpdated:null});
+const EHEIM_2217_BEFORE = '2217-NEWはろ材別売のため別途ろ材が必要';
+const EHEIM_2217_AFTER = '2217-NEWはろ材別売。50Hz用と60Hz用は別製品です。購入前に、使う場所の電源周波数と販売ページの周波数が合っているか確認してください。';
+export function applyVerifiedPhotoLinkFixes(before,after){
+ for(const [id,old,now] of PHOTO_LINK_FIXES){
+  assert.equal(before[id].asin,old);
+  assert.equal(before[id].affiliateUrl,amazonLink(old));
+  assert.equal(after[id].asin,now);
+  assert.equal(after[id].affiliateUrl,amazonLink(now));
+  before[id].asin=now;
+  before[id].affiliateUrl=amazonLink(now);
+ }
+ const eheim=before.filter_canister_premium;
+ assert.ok(eheim.why.endsWith(EHEIM_2217_BEFORE));
+ const expected=eheim.why.slice(0,-EHEIM_2217_BEFORE.length)+EHEIM_2217_AFTER;
+ assert.equal(after.filter_canister_premium.why,expected);
+ eheim.why=expected;
+ assert.equal(after.thermometer_wifi.rakutenSearchTerm,PLUS_SEARCH);
+ assert.equal(after.thermometer_wifi.rakutenIdentityHold,true);
+ before.thermometer_wifi.rakutenSearchTerm=PLUS_SEARCH;
+ before.thermometer_wifi.rakutenIdentityHold=true;
+}
+// Validate the exact changed fields first, then compare all other source bytes.
+export function withoutVerifiedPhotoLinkDifferences(source,historical){
+ const parse = s => vm.runInNewContext(s+'\nPRODUCTS;');
+ const before=parse(historical),after=parse(source);
+ const previousTerm=before.thermometer_wifi.rakutenSearchTerm;
+ const eheimBefore=before.filter_canister_premium.why;
+ applyVerifiedPhotoLinkFixes(before,after);
+ for(const [id,old,now] of PHOTO_LINK_FIXES){
+  const anchor = source.indexOf('\n  '+id+': {');
+  const end = source.indexOf('\n  },',anchor);
+  assert.ok(anchor>=0&&end>anchor);
+  let block=source.slice(anchor,end);
+  block=block.replace("affiliateUrl: '"+amazonLink(now)+"'", "affiliateUrl: '"+amazonLink(old)+"'");
+  block=block.replace("asin: '"+now+"'", "asin: '"+old+"'");
+  source=source.slice(0,anchor)+block+source.slice(end);
+ }
+ const eheimAnchor=source.indexOf('\n  filter_canister_premium: {');
+ const eheimEnd=source.indexOf('\n  },',eheimAnchor);
+ assert.ok(eheimAnchor>=0&&eheimEnd>eheimAnchor);
+ const eheimBlock=source.slice(eheimAnchor,eheimEnd)
+  .replace("why: '"+after.filter_canister_premium.why+"'","why: '"+eheimBefore+"'");
+ source=source.slice(0,eheimAnchor)+eheimBlock+source.slice(eheimEnd);
+ const anchor=source.indexOf('\n  thermometer_wifi: {');
+ const end=source.indexOf('\n  },',anchor);
+ assert.ok(anchor>=0&&end>anchor);
+ const block=source.slice(anchor,end)
+  .replace("rakutenSearchTerm: '"+PLUS_SEARCH+"'","rakutenSearchTerm: '"+previousTerm+"'")
+  .replace(/^    rakutenIdentityHold: true,\r?\n/m,'');
+ return source.slice(0,anchor)+block+source.slice(end);
+}
+
 export function applyCommittedRakutenSync(before,after,root){
  const ref=resolveRakutenBaseline(root);
  const committed=productsAt(root,ref);
  assert.deepEqual(Object.keys(committed),Object.keys(before));
  assert.deepEqual(Object.keys(after),Object.keys(before));
  for(const [id,product] of Object.entries(before))for(const key of RAKUTEN_FEED_KEYS){
-  const pinned=committed[id],actual=after[id];
+  const actual=after[id];
+  const pinned=id==='thermometer_wifi' && actual.rakutenIdentityHold===true && !committed[id].rakutenIdentityHold
+    ? PLUS_HOLD : committed[id];
   assert.equal(Object.hasOwn(actual,key),Object.hasOwn(pinned,key),id+' committed feed presence '+key);
   assert.deepEqual(actual[key],pinned[key],id+' committed feed '+key);
   if(Object.hasOwn(pinned,key))product[key]=pinned[key];

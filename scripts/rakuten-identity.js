@@ -205,7 +205,8 @@ function deriveIdentity(product) {
   const productIsSet = /セット/.test(name);
   return { maker: maker, makerAliases: makerAliases, models: models,
            attrs: attrs, series: series, productIsSet: productIsSet,
-           name: name, category: String(product.category || '') };
+           name: name, category: String(product.category || ''),
+           productId: product.id };
 }
 
 // hay 内に「別メーカー」の別名があるか（自メーカー別名は除外して判定）
@@ -242,12 +243,44 @@ function modelInCompatContext(hayNorm, tok) {
 
 // ── 候補1件との照合 ──────────────────────────────────────
 // item: 楽天APIの Item（itemName / catchcopy を参照。URLは見ない）
+// Verified against the official API image/offer and the merchant's own
+// model/barcode on the exact storefront page. Never infer from the URL alone.
+const REVIEWED_OFFERS = {
+  waterdish_zoomed_ramp_bowl: ['chanet:10091840', '/chanet/42102/', /^ZOOMED\s*レプティランプボウル\s*LG(?:\s+爬虫類\s+餌\s+エサ入れ\s+水入れ\s+色おまかせ\s+関東当日便)?\s*$/i],
+  food_reptomin_super_large_260: ['chanet:11165662', '/chanet/313682/', /テトラ\s*レプトミン\s*スーパー\s*大粒\s*260\s*g\s*(?:関東当日便)?\s*$/i],
+};
+function reviewedOffer(id, item) {
+  const record = REVIEWED_OFFERS[id];
+  if (!Array.isArray(record) || item.itemCode !== record[0] ||
+      !record[2].test(String(item.itemName || '').normalize('NFKC'))) return false;
+  try {
+    const url = new URL(item.itemUrl);
+    return url.origin === 'https://item.rakuten.co.jp' && !url.username && !url.password &&
+      url.pathname.replace(/\/?$/, '/') === record[1];
+  } catch (_) { return false; }
+}
 function matchIdentity(idn, item) {
+  const reviewed = reviewedOffer(idn.productId, item);
+  if (idn.productId === 'waterdish_zoomed_ramp_bowl') {
+    // The catchcopy can cross-sell LG or XL. It is never exact-size evidence.
+    const title = String(item.itemName || '').normalize('NFKC');
+    const model = String(item.modelNumber || '').normalize('NFKC');
+    const explicitModels = [...(title + ' ' + model).matchAll(/\bRRB\s*[-‐‑–−]?\s*(\d+)(?![0-9A-Z])/gi)];
+    const conflictingModel = explicitModels.some(m => m[1] !== '11');
+    const conflictingSize = /(?:^|[^0-9A-Z])(?:XL|SMALL|S)(?![0-9A-Z])/i.test(title);
+    const barcode = String(item.jan || '').normalize('NFKC').trim();
+    const upcInTitle = /(?:^|\D)0?097612924114(?!\d)/.test(title);
+    const exactModel = explicitModels.some(m => m[1] === '11') &&
+      !modelInCompatContext(normJa(title), 'RRB-11');
+    if (conflictingModel || conflictingSize || !(exactModel || upcInTitle || /^(?:0)?097612924114$/.test(barcode) || reviewed)) {
+      return { level: 'REJECT', evidence: [], conflicts: ['rrb11-offer-identity'], variantMismatch: [] };
+    }
+  }
   const hayRaw  = String(item.itemName || '') + ' ' + String(item.catchcopy || '');
   const hayNorm = normJa(hayRaw);
   const hayAl   = alnum(hayRaw);
   const hayAttrs = extractAttrs(hayRaw);
-  const evidence = [], conflicts = [];
+  const evidence = reviewed ? ['reviewed-offer:' + item.itemCode] : [], conflicts = [];
 
   // メーカー
   const makerHit = idn.makerAliases.some(function(a) { return hayNorm.indexOf(a) >= 0; });
@@ -355,7 +388,8 @@ function matchIdentity(idn, item) {
   let level;
   if (conflicts.length) {
     level = 'REJECT';
-  } else if (modelHit && isUniqueModel(modelHit) && (makerHit || !idn.maker)) {
+  } else if ((modelHit && isUniqueModel(modelHit) || idn.productId === 'waterdish_zoomed_ramp_bowl' || reviewed) &&
+             (makerHit || !idn.maker)) {
     // JAN/productCode が API 応答に載る日が来たら、ここに JAN完全一致→EXACT を追加する
     level = 'EXACT';
   } else {
@@ -443,6 +477,7 @@ module.exports = {
   isUniqueModel: isUniqueModel,
   deriveIdentity: deriveIdentity,
   matchIdentity: matchIdentity,
+  reviewedOffer: reviewedOffer,
   pickBest: pickBest,
   buildAltQueries: buildAltQueries,
   isCommissionUrl: isCommissionUrl,

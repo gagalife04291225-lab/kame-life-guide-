@@ -1,0 +1,18 @@
+# Example only: this file does not deploy or enable any public photo URLs.
+name = "klg-amazon-photo-refresh"
+main = "src/index.mjs"
+compatibility_date = "2026-11-25"
+workers_dev = false
+preview_urls = false
+
+[triggers]
+crons = ["0 */6 * * *"]
+
+[vars]
+# Start with the independently verified Tetra ReptoFilter 10i only.
+KLG_APPROVED_ASINS = "B000NGQZU0"
+
+[[kv_namespaces]]
+binding = "KLG_AMAZON_IMAGES"
+# The read-only endpoint must be bound to the same namespace after review.
+# Never add secrets or affiliate media URLs to this file.

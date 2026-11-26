@@ -43,7 +43,7 @@
     if (el && el.getAttribute && el.getAttribute('data-asin')) {
       return el.getAttribute('data-asin').trim();
     }
-    var m = href && href.match(/\/dp\/([A-Z0-9]{10})/);
+    var m = href && href.match(/^https:\/\/(?:www\.)?amazon\.co\.jp\/(?:dp|gp\/product)\/([A-Z0-9]{10})(?=[/?#]|$)/);
     return m ? m[1] : '';
   }
 

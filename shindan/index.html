@@ -1450,7 +1450,7 @@ window.loadSpecies = function () {
 };
 window.loadResultAssets = function () {
   return Promise.all([
-    window.__loadScriptOnce('../data/products.js?v=57a41ebaffc2', productDataReady),
+    window.__loadScriptOnce('../data/products.js?v=1839bd824a1e', productDataReady),
     window.__loadScriptOnce('../js/starter-kit.js?v=a2e45cc7db3c', kitEngineReady)
   ]);
 };
@@ -1458,6 +1458,7 @@ window.loadResultAssets = function () {
 <!-- Phase 25-G: equipment.js削除（renderEquipment除去に伴い未使用化） -->
 <!-- Phase 31-C2b: Starter Kit V2 assets — css before scripts, js after products.js -->
 <link rel="stylesheet" href="../css/starter-kit.css">
+<script src="../js/box-turtle-filter-fit.js?v=2"></script>
 <!-- perf(shindan): products.js / starter-kit.js は結果画面(Starter Kit)専用のため初回ロードせず、loadResultAssets() で遅延読み込みする（診断開始時に先読み・結果表示前に完了保証） -->
 
 <script>
@@ -2404,6 +2405,9 @@ function renderStarterKitV2(sp) {
   if (typeof mountStarterKit !== 'function') {
     console.warn('[renderStarterKitV2] mountStarterKit not loaded');
     return;
+  }
+  if (equipKey === 'box_turtle' && typeof applyKlgBoxTurtleFilterFit === 'function') {
+    applyKlgBoxTurtleFilterFit();
   }
   mountStarterKit(spV2, 'starter-kit-section', {
     sourcePage:         'shindan',

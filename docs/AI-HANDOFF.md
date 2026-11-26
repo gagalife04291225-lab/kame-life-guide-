@@ -146,7 +146,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 基準 | 種を選ぶ亀診断の修正作業開始時実測 main = **3f6bc64286dc4139dfe7a5ea3402fb160a769546**（2026-11-24）。 楽天定期同期後に実測 main `319f8a1470a2d73c9e57d658d08156e2d4bd0da1` へ積み直し。 |
+| 基準 | Amazon商品画像・購入導線修正の開始時に実測した main = **cbdfe1a0d461ab05ee62b9ff622615dba2ef5f9f**（2026-11-25 JST）。 |
 | サイトファイルの状態 | PR #235 のハッシュ対策は公開済み。法規 PR #240 と全119件用品 PR #241 は merge・Pages・本番確認済み。安全 #244/#242 と商品 #245 もmerge・本番確認済み。診断 #243 は本番確認済み。商品 #239 はmerge・Pages成功・公開本文HTTP200を確認済み。運営 #246 はmerge・公開確認済み。監査修正 #253 は本番確認済み。診断スマホ案内 #254 は本番確認済み。容器表記の横断修正 #255 は main・Pages 反映済み。追補PR #256はマージ・Pages成功済み。対象3ページの修正本文はOwner確認済み。飼育準備チェックの修正は候補で、公開確認前。 |
 | 確認方法 | 利用可能なら `origin/main`、なければ GitHub の `refs/heads/main` を読み取り専用で直接実測する |
 | 最終更新日 | 2026-11-24 JST |
@@ -1839,6 +1839,12 @@ K4 payoff 3.5秒以内 / K6 原音（BGM・ナレーションなし）/ K7 説�
 - **CLOSED（取得経路）**: ブラウザーからプロパティのタイムゾーン、ストリームと計測ID、実測ホスト、カスタム定義の全行、イベント作成/変更ルールを読み取り。前回のブラウザー取得不能は解消。カスタム定義の画面は最終変更日を示し、登録日の履歴は未取得。GSC Wizardの契約による取得拒否は既知だが、今回のGA4取得に有料契約は不要。
 
 ## UNRESOLVED — 本当に未解決のものだけ
+
+- Amazon商品画像の全ページ展開（未公開）：表示基盤候補は有効化せず、現在の掲載場所・型番・利用許可を検証する。GitHub Pagesと既存のDNSを移管せず専用サブドメインだけを使用するCloudflare Pages読取口の候補を追加し、更新とは分離。Amazonの成功応答でも要求ASINの照合が揃わなければ失敗した組は更新せず、正常な組だけ更新し、以前の有効期限は延長しない。ダミー画像で実ページ3種をChromium幅320・390・1280pxで検証し、横並びの購入ボタンで写真が縮む問題を解消。実写真・本番配信・混在枠の全掲載は未検証。スターターガイドの飼育グループ×価格帯を全描画するオフライン計測を追加。別売先の購入導線を残し、混在カードは独立した掲載許諾のある同型写真を優先する。取得数と表示可能数は別に扱う。過去のAPI取得率とサイト上の画像表示率は別。既に公開中の楽天画像・そのリンクや購入条件は変えない。初心者ガイドと比較ページのAT-50（40〜51cm）・AT-75W（60〜75cm）はメーカー適合幅と最低水位線を区別し、ASINと計測属性は維持する候補を作成。カメのろ過力・飼育数への適合を示す値ではない。浅い水場を明記するハコガメ種ページ10件の現行V2カードでは、同じ条件と浅い水入れには不要である旨を購入リンクの前に表示。説明は専用の小さな共通スクリプトに集約し、共通商品データ・飼育セットエンジンは変更しない。診断のbox_turtle結果でも同じ説明を表示し、陸場中心・水場多めの2経路を回帰検査。採点・準備判定・販売先・計測は維持。浅い水場の記載を確認できていないガルフコーストの種ページは別の確認対象。比較ページのAT-20（15〜32cm）とAT-30（20〜36cm、幅は変更なし）も公式の最低水位線に整合。11月27日の定期実行を確認する既存NEXTは維持。
+  - 画像自動更新の429を回帰検証。AmazonがJSONだけで待機秒数を返す場合も尊重し、12秒を超える指定では再試行しない。未更新写真の既存期限は維持。模擬応答で確認し、本番には未反映。
+  - 表示中の写真を期限前に再照会し、同じ画像・購入先が更新された場合は表示を切り替えない。古い応答や一時障害では元の期限を延長せず、失効時は購入リンクを残す。画面外のカードは再照会対象外。模擬ブラウザーで検証、本番は未変更。
+  - 楽天のJAN指定・読取専用監査で、チャームのZoo Med RRB-11（42102）とテトラ レプトミンスーパー大粒260g単品（313682）に、在庫あり検索で画像とアフィリエイトURLが返ることを確認。店舗ページの型番・JANとAPI画像の商品番号で照合済み。APIのJAN/型番フィールドは空。確認済みの店舗コード・商品URL・出品名が一致する組だけを照合の例外にし、RRB-12や複数個セットを除外する。公開・商品データ・昇格許可リストは未変更。
+- PR #262 (draft): B000NGQZU0 Starter Kit: semi_aquatic_small/standard and japanese_pond/standard both render a Rakuten search link. Keep both retailers; the first Amazon image preview needs a dedicated Amazon-only display surface. The two exact placements and the mixed-card exclusion are tested offline. Offline comparison smoke now runs the actual link generators before applying the photo gate across seven pages: 110 Amazon link occurrences, all with Rakuten alongside, 0 eligible with the current mixed-card guard. These are not unique products, live counts, or additive to Starter Kit totals. The eight setup-guide pages (nine mounts) are also covered: 58 exact Amazon link occurrences, all paired with Rakuten, 0 eligible. Preserve the link-free Japan guide and the mixed retailer choices. A separate inert Tetra pilot template was checked in loopback Chrome with its exact official API photo at 320px and 390px and a working text-link fallback on 503. No screenshot, API URL, public route or production deployment was created. The draft incorporates main's 2026-11-26 Rakuten sync (843ccfb); current Rakuten offer fields stay intact except the existing, intentional INKBIRD PLUS identity hold. Generated script hashes were recomputed, not chosen from either side. Image serving remains blocked; no change to the existing ASIN audit NEXT.
 
 ### シェルターの有効内寸 — 外部入力待ち（2026-11-12）
 
