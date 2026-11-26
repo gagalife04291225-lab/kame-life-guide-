@@ -47,6 +47,7 @@ const counts = { cards: 0, amazonExact: 0, mixedSearch: 0, mixedExact: 0, mixedM
   isolatedControls: 0, eligibleAsRendered: 0 };
 const unique = new Set();
 let eheimFrequencyCards = 0;
+const tetraPilotPlacements = [];
 for (const group of kit.groups) {
   const mounted = kit.renderStarterKitHtmlV2(group, { name: 'Fixture' });
   for (const tier of ['budget', 'standard', 'premium']) {
@@ -84,6 +85,12 @@ for (const group of kit.groups) {
       const hasMedia = adjacent.some(n => (n.class || '').split(/\s+/).includes('sk-card-media'));
       if (hasMedia) counts.mixedMedia++;
       const result = routeFor(amazon, adjacent);
+      if (id === 'B000NGQZU0') {
+        tetraPilotPlacements.push(group + '/' + tier);
+        assert.equal(controls.length, 1, 'preserve the existing retailer route');
+        assert.equal(controls[0]['data-mode'], 'search');
+        assert.equal(result, null, 'do not use the Amazon image in the mixed pilot card');
+      }
       assert.equal(result, controls.length || hasMedia ? null : id, group + '/' + tier + '/' + id);
       if (result) counts.eligibleAsRendered++;
       assert.equal(routeFor(amazon), id, 'Amazon-only positive control');
@@ -95,5 +102,7 @@ assert.ok(counts.mixedExact > 0 && counts.mixedSearch > 0 && counts.mixedMedia >
   'current starter-kit mixed retailer cases were not exercised');
 assert.equal(counts.isolatedControls, counts.amazonExact);
 assert.equal(eheimFrequencyCards, 2, 'cover both 2217 Starter Kit routes');
+assert.deepEqual(tetraPilotPlacements.sort(), ['japanese_pond/standard', 'semi_aquatic_small/standard'],
+  'recheck the exact pilot display surfaces before enabling them');
 console.log('Amazon photo starter-kit coverage (group/tier occurrences, not site totals):',
   JSON.stringify({ groups: kit.groups.length, tiers: 3, ...counts, uniqueAsins: unique.size }));
