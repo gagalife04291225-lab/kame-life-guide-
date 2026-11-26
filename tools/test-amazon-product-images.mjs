@@ -299,7 +299,7 @@ const el=()=>({className:'',hidden:false,style:{},events:{},
   querySelector(){return null;},classList:{add(){},remove(){}}});
 ctx=el();
 const runtime=runInNewContext(jss+'; ({paint,remove,validPhoto})',{
-  location:{origin:'https://kamelifeguide.com'},URL,Date,
+  location:{origin:'https://kamelifeguide.com'},URL,Date,setTimeout,clearTimeout,
   document:{createElement(type){const n=el();if(type==='img'){imageNode=n;n.naturalWidth=318;n.naturalHeight=500;}return n;}}
 });
 const a=el();

@@ -23,6 +23,9 @@
   const entries = new Map();
   const generation = new WeakMap();
   const maxLifetime = 18 * 60 * 60 * 1000;
+  const renewalWindow = 60000;
+  const renewalBackoff = 30000;
+  const failureBackoff = 300000;
   let flushing = false;
   let pageActive = true;
   let lifecycle = 0;
@@ -51,6 +54,7 @@
   function remove(a) {
     const entry = entries.get(a);
     if (!entry) return;
+    clearTimeout(entry.expiryTimer);
     if (entry.applied && a.getAttribute('href') === entry.photo.detailUrl) {
       a.setAttribute('href', entry.originalHref);
     }
@@ -96,6 +100,12 @@
     a.prepend(frame);
     const linked = {frame, img, photo, asin, originalHref:a.getAttribute('href'), applied:false};
     entries.set(a, linked);
+    const checkExpiry = () => {
+      if (entries.get(a) !== linked) return;
+      if (!validPhoto(linked.photo, asin)) return remove(a);
+      linked.expiryTimer = setTimeout(checkExpiry, linked.photo.expiresAt - Date.now());
+    };
+    checkExpiry();
     img.addEventListener('load', () => {
       if (generation.get(a) !== revision || entries.get(a)?.frame !== frame) return;
       if (!a.isConnected || route(a) !== asin || a.getAttribute('href') !== linked.originalHref || !validPhoto(linked.photo, asin)) return remove(a);
@@ -114,7 +124,7 @@
       if (entries.get(a)?.frame === frame) {
         remove(a);
         items.delete(asin);
-        retry.set(asin, Date.now() + 300000);
+        retry.set(asin, Date.now() + failureBackoff);
       }
     }, { once: true });
     img.src = photo.url;
@@ -139,11 +149,15 @@
       if (startedDuring !== lifecycle) return;
       for (const id of batch) {
         const row = data?.photos?.[id];
-        if (validPhoto(row, id)) items.set(id, row);
-        else retry.set(id, Date.now() + 300000);
+        const previous = items.get(id);
+        if (validPhoto(row, id) &&
+            (!validPhoto(previous, id) || row.expiresAt > previous.expiresAt)) {
+          items.set(id, row);
+          retry.delete(id);
+        } else deferLookup(id);
       }
     } catch (_) {
-      if (startedDuring === lifecycle) batch.forEach(id => retry.set(id, Date.now() + 300000));
+      if (startedDuring === lifecycle) batch.forEach(deferLookup);
     } finally {
       batch.forEach(id => inflight.delete(id));
       flushing = false;
@@ -163,11 +177,21 @@
     for (const {isIntersecting, target} of changes) if (isIntersecting) consider(target);
   }, { rootMargin: '250px 0px' });
   const watched = new Set();
+  function deferLookup(id) {
+    const row = items.get(id);
+    const now = Date.now();
+    retry.set(id, validPhoto(row, id)
+      ? Math.min(now + renewalBackoff, row.expiresAt)
+      : now + failureBackoff);
+  }
   function consider(a) {
     const id = route(a);
     if (!id || !pageActive || document.visibilityState === 'hidden') return;
-    if (validPhoto(items.get(id), id)) return paint(a, id, items.get(id));
-    items.delete(id);
+    const row = items.get(id);
+    if (validPhoto(row, id)) {
+      paint(a, id, row);
+      if (row.expiresAt - Date.now() > renewalWindow) return;
+    } else items.delete(id);
     if (!inflight.has(id) && (retry.get(id) || 0) <= Date.now()) {
       pending.add(id);
       scheduleFlush();
